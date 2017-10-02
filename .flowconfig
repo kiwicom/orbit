@@ -1,0 +1,16 @@
+[ignore]
+<PROJECT_ROOT>/lib/.*
+<PROJECT_ROOT>/etc/.*
+
+[include]
+
+[libs]
+types/
+
+[lints]
+
+[options]
+emoji=true
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
+suppress_comment=\\(.\\|\n\\)*\\$FlowExpected

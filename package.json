@@ -6,9 +6,11 @@
   "module": "es/index.js",
   "scripts": {
     "test": "jest",
+    "flow": "flow",
+    "lint": "eslint 'src/**/*.{js,jsx}'",
     "prettier": "prettier --write 'src/**' 'stories/**'",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook:build": "build-storybook"
   },
   "keywords": [
     "kiwi",

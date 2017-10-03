@@ -2,6 +2,10 @@
 <PROJECT_ROOT>/lib/.*
 <PROJECT_ROOT>/etc/.*
 
+.*/node_modules/immutable/.*
+.*/node_modules/radium/.*
+.*/node_modules/styled-components/.*
+
 [include]
 
 [libs]

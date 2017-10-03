@@ -9,5 +9,8 @@
   ],
   "plugins": [
     "flowtype"
-  ]
+  ],
+  "rules": {
+    "jsx-a11y/href-no-hash": "off" // broken rule
+  }
 }

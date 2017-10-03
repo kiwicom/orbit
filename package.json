@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "A set of UI components for kiwi.com.",
   "main": "lib/index.js",
+  "module": "es/index.js",
   "scripts": {
     "test": "jest",
     "prettier": "prettier --write 'src/**' 'stories/**'",

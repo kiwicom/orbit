@@ -1,6 +1,7 @@
 [ignore]
-<PROJECT_ROOT>/lib/.*
+<PROJECT_ROOT>/es/.*
 <PROJECT_ROOT>/etc/.*
+<PROJECT_ROOT>/lib/.*
 
 .*/node_modules/immutable/.*
 .*/node_modules/radium/.*

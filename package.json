@@ -11,7 +11,6 @@
     "build:lib": "babel src --out-dir lib",
     "build:es": "babel src --out-dir es --presets react --no-babelrc",
     "lint": "eslint 'src/**/*.{js,jsx}'",
-    "prettier": "prettier --write 'src/**' 'stories/**'",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
     "clean": "rimraf es lib"

@@ -4,7 +4,12 @@
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook"
   },
-  "keywords": ["blkn", "ui", "library", "component"],
+  "keywords": [
+    "blkn",
+    "ui",
+    "library",
+    "component"
+  ],
   "author": "kiwi.com",
   "license": "MIT",
   "dependencies": {
@@ -23,7 +28,6 @@
     "eslint-plugin-react": "^7.6.1",
     "flow-bin": "^0.65.0",
     "jest": "^22.3.0",
-    "prettier": "^1.10.2",
-    "rimraf": "^2.6.2"
+    "prettier": "^1.10.2"
   }
 }

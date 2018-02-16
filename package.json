@@ -22,5 +22,5 @@
     "prettier": "^1.10.2"
   },
   "private": true,
-  "workspaces": ["blkn", "kiwicom"]
+  "workspaces": ["blkn", "kiwicom", "icons"]
 }

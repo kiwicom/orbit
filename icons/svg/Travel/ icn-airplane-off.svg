@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / 24px / Travel / icn-airplane-off</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M5.38315789,8.13052632 L11.6736842,14.4336842 L4.12,19.1578947 L4.12,21.6842105 L14.2252632,18.5263158 L14.2252632,25.4736842 L11.6989474,27.3684211 L11.6989474,29.2631579 L16.12,28 L20.5410526,29.2631579 L20.5410526,27.3684211 L18.0147368,25.4736842 L18.0147368,20.7621053 L25.24,28 L26.8568421,26.3957895 L6.98736842,6.52631579 L5.38315789,8.13052632 Z M18.0147368,12.8421053 L18.0147368,5.89473684 C18.0147368,4.84830258 17.1664343,4 16.12,4 C15.0735657,4 14.2252632,4.84830258 14.2252632,5.89473684 L14.2252632,10.5431579 L24.1031579,20.4210526 L28.12,21.6842105 L28.12,19.1578947 L18.0147368,12.8421053 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-/-24px-/-Travel-/-icn-airplane-off">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <g id="_Library-Helpers-/-Colors-/-Front-/-Casper" mask="url(#mask-2)" fill="#BAC7D5">
+                <g transform="translate(1.000000, 1.000000)" id="Rectangle">
+                    <rect x="0" y="0" width="30" height="30"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

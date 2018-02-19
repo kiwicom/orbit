@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / 24px / System / icn-contact-mail</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M25,12 L25,11 L22,13 L19,11 L19,12 L22,14 M26,7 L6,7 C4.8954305,7 4,7.8954305 4,9 L4,23 C4,24.1045695 4.8954305,25 6,25 L26,25 C27.1045695,25 28,24.1045695 28,23 L28,9 C28,7.8954305 27.1045695,7 26,7 M12,10 C13.6568542,10 15,11.3431458 15,13 C15,14.6568542 13.6568542,16 12,16 C10.3431458,16 9,14.6568542 9,13 C9,11.3431458 10.3431458,10 12,10 M18,22 L6,22 L6,21 C6,19 10,17.9 12,17.9 C14,17.9 18,19 18,21 M26,16 L18,16 L18,10 L26,10" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-/-24px-/-System-/-icn-contact-mail">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <g id="_Library-Helpers-/-Colors-/-Front-/-Casper" mask="url(#mask-2)" fill="#BAC7D5">
+                <g transform="translate(1.000000, 1.000000)" id="Rectangle">
+                    <rect x="0" y="0" width="30" height="30"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / 24px / System / icn-tune</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M4,22.6666667 L4,25.3333333 L12,25.3333333 L12,22.6666667 L4,22.6666667 L4,22.6666667 Z M4,6.66666667 L4,9.33333333 L17.3333333,9.33333333 L17.3333333,6.66666667 L4,6.66666667 L4,6.66666667 Z M17.3333333,28 L17.3333333,25.3333333 L28,25.3333333 L28,22.6666667 L17.3333333,22.6666667 L17.3333333,20 L14.6666667,20 L14.6666667,28 L17.3333333,28 L17.3333333,28 Z M9.33333333,12 L9.33333333,14.6666667 L4,14.6666667 L4,17.3333333 L9.33333333,17.3333333 L9.33333333,20 L12,20 L12,12 L9.33333333,12 L9.33333333,12 Z M28,17.3333333 L28,14.6666667 L14.6666667,14.6666667 L14.6666667,17.3333333 L28,17.3333333 L28,17.3333333 Z M20,12 L22.6666667,12 L22.6666667,9.33333333 L28,9.33333333 L28,6.66666667 L22.6666667,6.66666667 L22.6666667,4 L20,4 L20,12 L20,12 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-/-24px-/-System-/-icn-tune">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#ABB2BA" xlink:href="#path-1"></use>
+            <g id="_Library-Helpers-/-Colors-/-Front-/-Casper" mask="url(#mask-2)" fill="#BAC7D5">
+                <g transform="translate(1.000000, 1.000000)" id="Rectangle">
+                    <rect x="0" y="0" width="30" height="30"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

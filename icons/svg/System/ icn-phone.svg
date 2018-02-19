@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / 24px / System / icn-phone</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M10.0222222,14.6555556 C11.6222222,17.8 14.2,20.3666667 17.3444444,21.9777778 L19.7888889,19.5333333 C20.0888889,19.2333333 20.5333333,19.1333333 20.9222222,19.2666667 C22.1666667,19.6777778 23.5111111,19.9 24.8888889,19.9 C25.5,19.9 26,20.4 26,21.0111111 L26,24.8888889 C26,25.5 25.5,26 24.8888889,26 C14.4555556,26 6,17.5444444 6,7.11111111 C6,6.5 6.5,6 7.11111111,6 L11,6 C11.6111111,6 12.1111111,6.5 12.1111111,7.11111111 C12.1111111,8.5 12.3333333,9.83333333 12.7444444,11.0777778 C12.8666667,11.4666667 12.7777778,11.9 12.4666667,12.2111111 L10.0222222,14.6555556 L10.0222222,14.6555556 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-/-24px-/-System-/-icn-phone">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#ABB2BA" xlink:href="#path-1"></use>
+            <g id="_Library-Helpers-/-Colors-/-Front-/-Casper" mask="url(#mask-2)" fill="#BAC7D5">
+                <g transform="translate(1.000000, 1.000000)" id="Rectangle">
+                    <rect x="0" y="0" width="30" height="30"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

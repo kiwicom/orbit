@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / 24px / System / icn-refresh (custom)</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M23.6363636,11.3636364 L19.2727273,15.7272727 L22.5454545,15.7272727 C22.5454545,19.3381818 19.6109091,22.2727273 16,22.2727273 C14.8981818,22.2727273 13.8509091,22 12.9454545,21.5090909 L11.3527273,23.1018182 C12.6945455,23.9527273 14.2872727,24.4545455 16,24.4545455 C20.8218182,24.4545455 24.7272727,20.5490909 24.7272727,15.7272727 L28,15.7272727 L23.6363636,11.3636364 L23.6363636,11.3636364 Z M9.45454545,15.7272727 C9.45454545,12.1163636 12.3890909,9.18181818 16,9.18181818 C17.1018182,9.18181818 18.1490909,9.45454545 19.0545455,9.94545455 L20.6472727,8.35272727 C19.3054545,7.50181818 17.7127273,7 16,7 C11.1781818,7 7.27272727,10.9054545 7.27272727,15.7272727 L4,15.7272727 L8.36363636,20.0909091 L12.7272727,15.7272727 L9.45454545,15.7272727 L9.45454545,15.7272727 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-/-24px-/-System-/-icn-refresh-(custom)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#7C8B99" xlink:href="#path-1"></use>
+            <g id="_Library-Helpers-/-Colors-/-Front-/-Casper" mask="url(#mask-2)" fill="#BAC7D5">
+                <g transform="translate(1.000000, 1.000000)" id="Rectangle">
+                    <rect x="0" y="0" width="30" height="30"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

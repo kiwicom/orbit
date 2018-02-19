@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / 24px / Travel / icn-verified</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M6.5,8.22222222 L6.5,14.5555556 C6.5,20.4138889 10.5533333,25.8922222 16,27.2222222 C21.4466667,25.8922222 25.5,20.4138889 25.5,14.5555556 L25.5,8.22222222 L16,4 L6.5,8.22222222 Z M10.4876543,16.2882305 L11.8106173,14.9652675 L14.2407407,17.3860082 L20.4239506,11.2027984 L21.7469136,12.535144 L14.2407407,20.0413169 L10.4876543,16.2882305 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-/-24px-/-Travel-/-icn-verified">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#2F363C" xlink:href="#path-1"></use>
+            <g id="_Library-Helpers-/-Colors-/-Front-/-Casper" mask="url(#mask-2)" fill="#BAC7D5">
+                <g transform="translate(1.000000, 1.000000)" id="Rectangle">
+                    <rect x="0" y="0" width="30" height="30"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / 24px / System / icn-unfold-less</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M21.8000002,8.65882356 L20.1294119,7 L16.4000001,10.7294118 L12.6705883,7 L11,8.65882356 L16.4000001,14.0588237 L21.8000002,8.65882356 Z M11,24.1647062 L12.6705883,25.8235297 L16.4000001,22.0941179 L20.1294119,25.8235297 L21.7882355,24.1647062 L16.4000001,18.7647061 L11,24.1647062 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-/-24px-/-System-/-icn-unfold-less">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <g id="_Library-Helpers-/-Colors-/-Front-/-Casper" mask="url(#mask-2)" fill="#BAC7D5">
+                <g transform="translate(1.000000, 1.000000)" id="Rectangle">
+                    <rect x="0" y="0" width="30" height="30"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

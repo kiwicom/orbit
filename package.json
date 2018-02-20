@@ -1,8 +1,18 @@
 {
   "name": "kiwi-ui",
   "version": "0.0.0",
-  "scripts": {},
-  "keywords": ["kiwi", "ui", "library", "component"],
+  "scripts": {
+    "eslint": "eslint .",
+    "flow:check": "flow check",
+    "test": "jest --config=jest.json",
+    "test-ci": "yarn flow:check && yarn eslint && yarn test"
+  },
+  "keywords": [
+    "kiwi",
+    "ui",
+    "library",
+    "component"
+  ],
   "author": "kiwi.com",
   "license": "MIT",
   "devDependencies": {
@@ -10,11 +20,15 @@
     "babel-eslint": "^8.2.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
     "eslint": "^4.17.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-flowtype": "^2.44.0",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.12.2",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.6.1",
@@ -22,5 +36,9 @@
     "prettier": "^1.10.2"
   },
   "private": true,
-  "workspaces": ["blkn", "kiwicom", "icons"]
+  "workspaces": [
+    "blkn",
+    "kiwicom",
+    "icons"
+  ]
 }

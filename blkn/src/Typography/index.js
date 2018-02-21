@@ -11,27 +11,30 @@ const sizes = {
   normal: `14${UNIT}`,
 };
 
+const additionalVariants = {
+  bold: "font-weight: bold;",
+  normal: "",
+};
+
 type Props = {
   size?: "large" | "small" | "normal",
-  type: "primary" | "secondary" | "attention" | "error" | "input",
+  type?: "primary" | "secondary" | "attention" | "error" | "input",
+  variant?: "bold" | "normal",
   children: React.Node,
 };
 
 const Typography = (props: Props) => (
-  <span>
+  <span className="typography">
     {props.children}
     <style jsx>{`
-      span {
+      .typography {
         font-family: Roboto, -apple-system, sans-serif;
         font-size: ${(props.size && sizes[props.size]) || "inherit"};
-        color: ${fontColors[props.type]};
+        color: ${fontColors[props.type || "primary"]};
+        ${additionalVariants[props.variant || "normal"]};
       }
     `}</style>
   </span>
 );
-
-Typography.defaultProps = {
-  type: "primary", // eslint-disable-line react/default-props-match-prop-types
-};
 
 export default Typography;

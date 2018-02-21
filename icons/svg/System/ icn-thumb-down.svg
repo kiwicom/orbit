@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / 24px / System / icn-thumb-down</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8.36363636,27.8181818 L8.36363636,14.7272727 L4,14.7272727 L4,27.8181818 L8.36363636,27.8181818 Z M25.8181818,13.6363636 L18.9345455,13.6363636 L19.9709091,8.65090909 L20.0036364,8.30181818 C20.0036364,7.85454545 19.8181818,7.44 19.5236364,7.14545455 L18.3672727,6 L11.1890909,13.1890909 C10.7854545,13.5818182 10.5454545,14.1272727 10.5454545,14.7272727 L10.5454545,25.6363636 C10.5454545,26.8363636 11.5272727,27.8181818 12.7272727,27.8181818 L22.5454545,27.8181818 C23.4509091,27.8181818 24.2254545,27.2727273 24.5527273,26.4872727 L27.8472727,18.7963636 C27.9454545,18.5454545 28,18.2836364 28,18 L28,15.9163636 L28,15.8181818 C28,14.6181818 27.0181818,13.6363636 25.8181818,13.6363636 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-/-24px-/-System-/-icn-thumb-down">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#01BBA5" transform="translate(16.000000, 16.909091) rotate(-180.000000) translate(-16.000000, -16.909091) " xlink:href="#path-1"></use>
+            <g id="_Library-Helpers-/-Colors-/-Front-/-Casper" mask="url(#mask-2)" fill="#BAC7D5">
+                <g transform="translate(1.000000, 1.000000)" id="Rectangle">
+                    <rect x="0" y="0" width="30" height="30"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

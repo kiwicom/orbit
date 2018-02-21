@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / 24px / Travel / icn-airplane-down (custom)</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M28,21.6842105 L28,19.1578947 L17.8947368,12.8421053 L17.8947368,5.89473684 C17.8947368,4.84631579 17.0484211,4 16,4 C14.9515789,4 14.1052632,4.84631579 14.1052632,5.89473684 L14.1052632,12.8421053 L4,19.1578947 L4,21.6842105 L14.1052632,18.5263158 L14.1052632,25.4736842 L11.5789474,27.3684211 L11.5789474,29.2631579 L16,28 L20.4210526,29.2631579 L20.4210526,27.3684211 L17.8947368,25.4736842 L17.8947368,18.5263158 L28,21.6842105 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-/-24px-/-Travel-/-icn-airplane-down-(custom)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#171B1E" transform="translate(16.000000, 16.631579) rotate(-180.000000) translate(-16.000000, -16.631579) " xlink:href="#path-1"></use>
+            <g id="_Library-Helpers-/-Colors-/-Front-/-Casper" mask="url(#mask-2)" fill="#BAC7D5">
+                <g transform="translate(1.000000, 1.000000)" id="Rectangle">
+                    <rect x="0" y="0" width="30" height="30"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

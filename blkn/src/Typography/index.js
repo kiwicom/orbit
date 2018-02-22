@@ -35,8 +35,8 @@ const Typography = (props: Props) => (
 );
 
 Typography.defaultProps = {
-  size: "normal",
-  type: "primary",
+  size: "normal", // eslint-disable-line react/default-props-match-prop-types
+  type: "primary", // eslint-disable-line react/default-props-match-prop-types
 };
 
 export default Typography;

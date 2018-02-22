@@ -3,10 +3,10 @@ import * as React from "react";
 import Typography from "./../Typography";
 
 type Props = {
-  label?: string,
-  error?: string,
   value: string,
   onChange: (SyntheticInputEvent<HTMLInputElement>) => any,
+  label?: string,
+  error?: string,
 };
 
 const Input = (props: Props) => (

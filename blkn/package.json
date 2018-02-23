@@ -7,7 +7,7 @@
     "build:flow": "flow-copy-source -v -i '**/*.stories.js,**/*.test.js' src lib",
     "build:module":
       "babel --presets react --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src ",
-    "clean": "rimraf lib && rimraf es",
+    "clean": "rimraf lib es",
     "prepare": "npm run clean && npm run build && npm run build:flow && npm run build:module"
   },
   "keywords": ["blkn", "ui", "library", "component"],

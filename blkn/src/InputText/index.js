@@ -14,7 +14,7 @@ const Input = (props: Props) => (
     <label>
       {props.label && (
         <div>
-          <Typography type="secondary">{props.label}</Typography>
+          <Typography type={props.value ? "secondary" : "primary"}>{props.label}</Typography>
         </div>
       )}
       <input value={props.value} onChange={props.onChange} />
@@ -28,9 +28,11 @@ const Input = (props: Props) => (
     )}
     <style jsx>{`
       input {
+        box-sizing: border-box;
+        width: 100%;
         border-radius: 3px;
         background-color: white;
-        border: solid 1px #bac7d5;
+        border: solid 1px ${props.error ? "#d02228" : "#bac7d5"};
         font-size: 16px;
         line-height: 1.25;
         padding: 12px 16px;

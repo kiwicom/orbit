@@ -6,7 +6,7 @@ function requireAll(requireContext) {
 }
 
 function loadStories() {
-  requireAll(require.context("../stories", true, /\.(js|jsx)?$/));
+  requireAll(require.context("../stories", true, /\.js$/));
 }
 
 configure(loadStories, module);

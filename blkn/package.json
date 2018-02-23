@@ -5,11 +5,14 @@
     "storybook": "start-storybook -p 6007 -c .storybook",
     "build": "babel --out-dir lib --ignore *.stories.js,*.test.js src",
     "build:flow": "flow-copy-source -v -i '**/*.stories.js,**/*.test.js' src lib",
-    "clean": "rimraf lib",
-    "prepare": "npm run clean && npm run build && npm run build:flow"
+    "build:module":
+      "babel --presets react --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src ",
+    "clean": "rimraf lib && rimraf es",
+    "prepare": "npm run clean && npm run build && npm run build:flow && npm run build:module"
   },
   "keywords": ["blkn", "ui", "library", "component"],
   "main": "lib/index.js",
+  "module": "es/index.js",
   "author": "kiwi.com",
   "license": "MIT",
   "dependencies": {

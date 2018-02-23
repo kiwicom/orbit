@@ -27,7 +27,7 @@ const Typography = (props: Props) => (
     <style jsx>{`
       span {
         font-family: Roboto, -apple-system, sans-serif;
-        font-size: ${sizes[props.size]}px;
+        font-size: ${sizes[props.size]};
         color: ${colors[props.type]};
       }
     `}</style>

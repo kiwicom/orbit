@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select should match snapshot 1`] = `
+<div
+  className="jsx-330123443"
+>
+  <label
+    className="jsx-330123443"
+  >
+    <select
+      className="jsx-330123443"
+      onChange={[Function]}
+      required={true}
+      value="1"
+    >
+      <option
+        className="jsx-330123443 placeholder"
+        disabled={true}
+        value=""
+      />
+      <option
+        disabled={false}
+        key="option-1"
+        label="One"
+        value="1"
+      />
+      <option
+        disabled={false}
+        key="option-2"
+        label="Two"
+        value="2"
+      />
+      <option
+        disabled={false}
+        key="option-3"
+        label="Three"
+        value="3"
+      />
+      <option
+        disabled={false}
+        key="option-4"
+        label="Four"
+        value="4"
+      />
+      <option
+        disabled={true}
+        key="option-disabled-six"
+        label="Disabled Six"
+        value="disabled-six"
+      />
+    </select>
+  </label>
+  <JSXStyle
+    css="select.jsx-330123443{border-radius:3px;background-color:white;border:solid 1px #bac7d5;line-height:1.25;padding:12px 16px;}label.jsx-330123443 div.jsx-330123443{font-size:14px;line-height:1.43;}option.placeholder.jsx-330123443{color:red;}option[value=\\"\\"][disabled].jsx-330123443{display:none;}"
+    styleId="330123443"
+  />
+</div>
+`;

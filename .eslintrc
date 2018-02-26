@@ -1,4 +1,8 @@
 {
+  "env": {
+    "jest": true
+  },
+  "root": true,
   "parser": "babel-eslint",
   "extends": [
     "airbnb",
@@ -9,10 +13,26 @@
   ],
   "plugins": [
     "flowtype",
-    "prettier"
+    "prettier",
+    "jest"
   ],
   "rules": {
     "prettier/prettier": "error",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.js",
+          "**/*.spec.js",
+          "**/*.stories.js",
+          "**/stories/**",
+          "/config/**"
+        ]
+      }
+    ],
+    "react/require-default-props": "off", // Optional props can be undefined.
+    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }], // Don't use jsx
+    "jsx-a11y/label-has-for": "off", // control is wrapped in a label
     "jsx-a11y/href-no-hash": "off" // broken rule
   }
 }

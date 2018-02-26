@@ -1,14 +1,16 @@
 // @flow
 import * as React from "react";
 import css from "styled-jsx/css";
+import { ChevronUp } from "@kiwicom/icons";
 import Typography from "./../Typography";
 
-const HASERROR_CLASS = "hasError";
 const ERROR_COLOR = "#d21c1c";
 const LIGHTGRAY_COLOR = "#bac7d5";
 const DARKGRAY_COLOR = "#46515e";
-
 const WHITE_COLOR = "white";
+
+const HASERROR_CLASS = "hasError";
+const ISFILLED_CLASS = "isFilled";
 
 type Option = {
   value: string,
@@ -31,23 +33,41 @@ type State = {
 };
 
 const style = css`
+  label {
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 1.43;
+    position: relative;
+    color: ${DARKGRAY_COLOR};
+  }
   select {
+    font-size: 16px;
     border-radius: 3px;
     background-color: ${WHITE_COLOR};
     border: solid 1px ${LIGHTGRAY_COLOR};
     line-height: 1.25;
     padding: 12px 16px;
     color: ${DARKGRAY_COLOR};
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding-right: 3em;
+  }
+  /*for IE10*/
+  select::-ms-expand {
+    display: none;
   }
   select.${HASERROR_CLASS} {
     border-color: ${ERROR_COLOR};
   }
-  label div {
-    font-size: 14px;
-    line-height: 1.43;
-  }
   option[value=""][disabled] {
     display: none;
+  }
+  .dropdown-icon {
+    position: absolute;
+    right: 1em;
+    top: 0px;
+    pointer-events: none;
   }
 `;
 
@@ -88,7 +108,9 @@ class Select extends React.Component<Props, State> {
         <label>
           {label && (
             <div>
-              <Typography type="secondary">{label}</Typography>
+              <Typography color={value ? LIGHTGRAY_COLOR : DARKGRAY_COLOR} type="secondary">
+                {label}
+              </Typography>
             </div>
           )}
           <select
@@ -101,6 +123,9 @@ class Select extends React.Component<Props, State> {
             {<option disabled value="" label={placeholder} className="placeholder" />}
             {options.map(this.renderOption)}
           </select>
+          <span className="dropdown-icon">
+            <ChevronUp fill={DARKGRAY_COLOR} height={20} />
+          </span>
         </label>
         {this.feedbackLine()}
         <style jsx>{style}</style>

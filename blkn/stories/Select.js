@@ -47,4 +47,10 @@ storiesOf("Select", module)
       error="Error message here"
       onChange={action("onChange")}
     />
+  ))
+  .add("With label NOT filled", () => (
+    <Select label="Choose number" value="" options={objectOptions} onChange={action("onChange")} />
+  ))
+  .add("With label filled", () => (
+    <Select label="Choose number" value="2" options={objectOptions} onChange={action("onChange")} />
   ));

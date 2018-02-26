@@ -21,6 +21,7 @@ type Props = {
   type?: "primary" | "secondary" | "attention" | "error" | "input",
   variant?: "bold" | "normal",
   children: React.Node,
+  color?: string,
 };
 
 const Typography = (props: Props) => (

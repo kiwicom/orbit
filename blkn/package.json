@@ -23,6 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "@kiwicom/icons": "^0.0.1-rc1",
+    "classnames": "^2.2.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "styled-jsx": "^2.2.4"

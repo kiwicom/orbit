@@ -2,15 +2,17 @@
 import * as React from "react";
 import css from "styled-jsx/css";
 import { ChevronUp } from "@kiwicom/icons";
+import classnames from "classnames";
 import Typography from "./../Typography";
 
 const ERROR_COLOR = "#d21c1c";
+const MIDGRAY_COLOR = "#7f91a8";
 const LIGHTGRAY_COLOR = "#bac7d5";
 const DARKGRAY_COLOR = "#46515e";
 const WHITE_COLOR = "white";
 
 const HASERROR_CLASS = "hasError";
-const ISFILLED_CLASS = "isFilled";
+const UNSELECTED_CLASS = "UnSelected";
 
 type Option = {
   value: string,
@@ -35,7 +37,6 @@ type State = {
 const style = css`
   label {
     font-family: Roboto;
-    font-size: 14px;
     line-height: 1.43;
     position: relative;
     color: ${DARKGRAY_COLOR};
@@ -52,6 +53,9 @@ const style = css`
     -webkit-appearance: none;
     appearance: none;
     padding-right: 3em;
+  }
+  select.${UNSELECTED_CLASS} {
+    color: ${MIDGRAY_COLOR};
   }
   /*for IE10*/
   select::-ms-expand {
@@ -108,7 +112,11 @@ class Select extends React.Component<Props, State> {
         <label>
           {label && (
             <div>
-              <Typography color={value ? LIGHTGRAY_COLOR : DARKGRAY_COLOR} type="secondary">
+              <Typography
+                size="normal"
+                color={value ? LIGHTGRAY_COLOR : DARKGRAY_COLOR}
+                type="secondary"
+              >
                 {label}
               </Typography>
             </div>
@@ -118,7 +126,7 @@ class Select extends React.Component<Props, State> {
             value={value}
             required={!!required}
             onChange={this.handleChange}
-            className={error && HASERROR_CLASS}
+            className={classnames(error && HASERROR_CLASS, !value && UNSELECTED_CLASS)}
           >
             {<option disabled value="" label={placeholder} className="placeholder" />}
             {options.map(this.renderOption)}

@@ -2,19 +2,19 @@
 
 exports[`Select should match snapshot 1`] = `
 <div
-  className="jsx-330123443"
+  className="jsx-765376828"
 >
   <label
-    className="jsx-330123443"
+    className="jsx-765376828"
   >
     <select
-      className="jsx-330123443"
+      className="jsx-765376828 "
       onChange={[Function]}
       required={true}
       value="1"
     >
       <option
-        className="jsx-330123443 placeholder"
+        className="jsx-765376828 placeholder"
         disabled={true}
         value=""
       />
@@ -49,10 +49,18 @@ exports[`Select should match snapshot 1`] = `
         value="disabled-six"
       />
     </select>
+    <span
+      className="jsx-765376828 dropdown-icon"
+    >
+      <ChevronUp
+        fill="#46515e"
+        height={20}
+      />
+    </span>
   </label>
   <JSXStyle
-    css="select.jsx-330123443{border-radius:3px;background-color:white;border:solid 1px #bac7d5;line-height:1.25;padding:12px 16px;}label.jsx-330123443 div.jsx-330123443{font-size:14px;line-height:1.43;}option.placeholder.jsx-330123443{color:red;}option[value=\\"\\"][disabled].jsx-330123443{display:none;}"
-    styleId="330123443"
+    css="label.jsx-765376828{font-family:Roboto;line-height:1.43;position:relative;color:#46515e;}select.jsx-765376828{font-size:16px;border-radius:3px;background-color:white;border:solid 1px #bac7d5;line-height:1.25;padding:12px 16px;color:#46515e;-moz-appearance:none;-webkit-appearance:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;padding-right:3em;}select.UnSelected.jsx-765376828{color:#7f91a8;}select.jsx-765376828::-ms-expand{display:none;}select.hasError.jsx-765376828{border-color:#d21c1c;}option[value=\\"\\"][disabled].jsx-765376828{display:none;}.dropdown-icon.jsx-765376828{position:absolute;right:1em;top:0px;pointer-events:none;}"
+    styleId="765376828"
   />
 </div>
 `;

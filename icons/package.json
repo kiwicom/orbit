@@ -2,10 +2,10 @@
   "name": "@kiwicom/icons",
   "version": "0.0.1",
   "scripts": {
-    "build": "node bin/build.js && babel jsx --out-dir dist",
+    "build": "node bin/build.js && babel jsx --out-dir lib",
     "postinstall": "yarn build"
   },
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "camelcase": "^4.1.0",

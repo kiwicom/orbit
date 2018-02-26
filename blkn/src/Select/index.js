@@ -18,7 +18,7 @@ type Option = {
   value: string,
   label?: string,
   disabled?: boolean,
-  visible?: boolean,
+  visible?: boolean, // eslint-disable-line react/no-unused-prop-types
 };
 type Props = {
   disabled?: boolean,

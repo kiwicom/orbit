@@ -1,9 +1,10 @@
 {
   "name": "@kiwicom/icons",
-  "version": "0.0.1",
+  "version": "0.0.1-rc1",
+  "private": false,
   "scripts": {
     "build": "node bin/build.js && babel jsx --out-dir lib",
-    "postinstall": "yarn build"
+    "prepare": "yarn build"
   },
   "main": "lib/index.js",
   "devDependencies": {

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / 24px / System / icn-money</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M16.3066667,14.5333333 C13.28,13.7466667 12.3066667,12.9333333 12.3066667,11.6666667 C12.3066667,10.2133333 13.6533333,9.2 15.9066667,9.2 C18.28,9.2 19.16,10.3333333 19.24,12 L22.1866667,12 C22.0933333,9.70666667 20.6933333,7.6 17.9066667,6.92 L17.9066667,4 L13.9066667,4 L13.9066667,6.88 C11.32,7.44 9.24,9.12 9.24,11.6933333 C9.24,14.7733333 11.7866667,16.3066667 15.5066667,17.2 C18.84,18 19.5066667,19.1733333 19.5066667,20.4133333 C19.5066667,21.3333333 18.8533333,22.8 15.9066667,22.8 C13.16,22.8 12.08,21.5733333 11.9333333,20 L9,20 C9.16,22.92 11.3466667,24.56 13.9066667,25.1066667 L13.9066667,28 L17.9066667,28 L17.9066667,25.1333333 C20.5066667,24.64 22.5733333,23.1333333 22.5733333,20.4 C22.5733333,16.6133333 19.3333333,15.32 16.3066667,14.5333333 L16.3066667,14.5333333 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-/-24px-/-System-/-icn-money">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#ABB2BA" xlink:href="#path-1"></use>
+            <g id="_Library-Helpers-/-Colors-/-Front-/-Casper" mask="url(#mask-2)" fill="#BAC7D5">
+                <g transform="translate(1.000000, 1.000000)" id="Rectangle">
+                    <rect x="0" y="0" width="30" height="30"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

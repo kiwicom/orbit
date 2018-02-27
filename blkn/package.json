@@ -3,12 +3,14 @@
   "version": "0.0.0-rc3",
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook",
-    "build": "babel --out-dir lib --ignore *.stories.js,*.test.js src",
+    "build": "npm run clean && npm run build:lib && npm run build:flow && npm run build:module",
+    "build:lib": "babel --out-dir lib --ignore *.stories.js,*.test.js src",
     "build:flow": "flow-copy-source -v -i '**/*.stories.js,**/*.test.js' src lib",
     "build:module":
       "babel --presets react --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src ",
     "clean": "rimraf lib es",
-    "prepare": "npm run clean && npm run build && npm run build:flow && npm run build:module"
+    "prepare": "npm run build",
+    "watch": "concurrently \"npm run build:lib -- --watch\" \"npm run build:module -- --watch\""
   },
   "keywords": ["blkn", "ui", "library", "component"],
   "main": "lib/index.js",
@@ -26,6 +28,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "concurrently": "^3.5.1",
     "enzyme": "^3.3.0",
     "eslint": "^4.17.0",
     "eslint-config-prettier": "^2.9.0",

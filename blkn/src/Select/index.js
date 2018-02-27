@@ -49,8 +49,6 @@ const style = css`
     line-height: 1.25;
     padding: 12px 16px;
     color: ${DARKGRAY_COLOR};
-    -moz-appearance: none;
-    -webkit-appearance: none;
     appearance: none;
     padding-right: 3em;
   }
@@ -94,12 +92,9 @@ class Select extends React.Component<Props, State> {
   renderOption = ({ value, label, disabled, visible = true }: Option) => {
     if (visible) {
       return (
-        <option
-          key={`option-${value}`}
-          value={value}
-          label={label || value}
-          disabled={!!disabled}
-        />
+        <option key={`option-${value}`} value={value} label={label || value} disabled={!!disabled}>
+          {label || value}
+        </option>
       );
     }
     return null;
@@ -128,7 +123,11 @@ class Select extends React.Component<Props, State> {
             onChange={this.handleChange}
             className={classnames(error && HASERROR_CLASS, !value && UNSELECTED_CLASS)}
           >
-            {<option disabled value="" label={placeholder} className="placeholder" />}
+            {
+              <option disabled value="" label={placeholder} className="placeholder">
+                {placeholder}
+              </option>
+            }
             {options.map(this.renderOption)}
           </select>
           <span className="dropdown-icon">

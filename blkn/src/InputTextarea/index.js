@@ -10,16 +10,17 @@ type Props = {
   error?: string,
 };
 
-const InputText = (props: Props) => (
+const InputTextarea = (props: Props) => (
   <React.Fragment>
     <Label label={props.label} valueEmpty={!!props.value}>
-      <input value={props.value} onChange={props.onChange} />
+      <textarea onChange={props.onChange}>{props.value}</textarea>
     </Label>
     <MaybeError error={props.error} />
     <style jsx>{`
-      input {
+      textarea {
         box-sizing: border-box;
         width: 100%;
+        height: 73px;
         border-radius: 3px;
         background-color: white;
         border: solid 1px ${props.error ? "#d02228" : "#bac7d5"};
@@ -31,4 +32,4 @@ const InputText = (props: Props) => (
   </React.Fragment>
 );
 
-export default InputText;
+export default InputTextarea;

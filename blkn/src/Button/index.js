@@ -7,8 +7,20 @@ type Props = {
   onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void,
   disabled?: boolean,
   secondary?: boolean,
-  size?: string,
+  size?: "normal" | "large" | "small",
   icon?: Function,
+};
+
+const paddings = {
+  normal: "12px 16px",
+  large: "14px 28px",
+  small: "8px 12px",
+};
+
+const fontSizes = {
+  normal: "14px",
+  large: "16px",
+  small: "14px",
 };
 
 const Button = (props: Props) => {
@@ -25,11 +37,9 @@ const Button = (props: Props) => {
         border: none;
         border-radius: 3px;
         font-weight: 500;
-        padding: ${
-          props.size === "normal" ? "12px 16px" : props.size === "small" ? "8px 12px" : "14px 28px"
-        };
+        padding: ${paddings[props.size]};
         padding-left: ${props.icon && "40px"}
-        font-size: ${props.size === "large" ? "16px" : "14px"}
+        font-size: ${fontSizes[props.size]}
         position: relative;
       }
     `}</style>

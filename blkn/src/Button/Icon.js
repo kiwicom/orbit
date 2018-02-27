@@ -2,18 +2,23 @@
 import * as React from "react";
 
 type Props = {
-  size: string,
+  size: "normal" | "small" | "large",
   secondary: string,
   icon: Function,
 };
 
+const sizes = {
+  normal: "20px",
+  small: "20px",
+  large: "26px",
+};
 const Icon = (props: Props) => {
   return (
     <span>
       <props.icon
         fill={props.secondary ? "#46515e" : "white"}
-        height={props.size === "normal" ? "20px" : props.size === "small" ? "20px" : "26px"}
-        width={props.size === "normal" ? "20px" : props.size === "small" ? "20px" : "26px"}
+        height={sizes[props.size]}
+        width={sizes[props.size]}
       />
       <style xml>{`
         svg {

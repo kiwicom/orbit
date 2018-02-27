@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import css from "styled-jsx/css";
-import { ChevronUp } from "@kiwicom/icons";
+import ChevronDown from "react-icons/lib/fa/chevron-down";
 import classnames from "classnames";
 import Typography from "./../Typography";
 
@@ -132,7 +132,7 @@ class Select extends React.Component<Props, State> {
             {options.map(this.renderOption)}
           </select>
           <span className="dropdown-icon">
-            <ChevronUp fill={DARKGRAY_COLOR} height={20} />
+            <ChevronDown fill={DARKGRAY_COLOR} height={20} />
           </span>
         </label>
         {this.feedbackLine()}

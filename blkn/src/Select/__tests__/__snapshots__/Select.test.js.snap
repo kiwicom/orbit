@@ -52,7 +52,7 @@ exports[`Select should match snapshot 1`] = `
     <span
       className="jsx-765376828 dropdown-icon"
     >
-      <ChevronUp
+      <FaChevronDown
         fill="#46515e"
         height={20}
       />

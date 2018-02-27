@@ -11,8 +11,8 @@ const sizes = {
 };
 
 const colors = {
-  primary: "#46515D",
-  secondary: "#8091A7",
+  primary: "#46515e",
+  secondary: "#7f91a8",
   attention: "#171B1E",
   error: "#D02228",
 };

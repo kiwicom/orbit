@@ -4,11 +4,8 @@ import css from "styled-jsx/css";
 import ChevronDown from "react-icons/lib/fa/chevron-down";
 import classnames from "classnames";
 import Typography from "./../Typography";
+import { fontColors } from "../constants";
 
-const ERROR_COLOR = "#d21c1c";
-const MIDGRAY_COLOR = "#7f91a8";
-const LIGHTGRAY_COLOR = "#bac7d5";
-const DARKGRAY_COLOR = "#46515e";
 const WHITE_COLOR = "white";
 
 const HASERROR_CLASS = "hasError";
@@ -39,28 +36,29 @@ const style = css`
     font-family: Roboto;
     line-height: 1.43;
     position: relative;
-    color: ${DARKGRAY_COLOR};
+    color: ${fontColors.primary};
   }
   select {
     font-size: 16px;
     border-radius: 3px;
     background-color: ${WHITE_COLOR};
-    border: solid 1px ${LIGHTGRAY_COLOR};
+    border: solid 1px ${fontColors.input};
     line-height: 1.25;
     padding: 12px 16px;
-    color: ${DARKGRAY_COLOR};
+    color: ${fontColors.primary};
     appearance: none;
     padding-right: 3em;
+    width: 100%;
   }
   select.${UNSELECTED_CLASS} {
-    color: ${MIDGRAY_COLOR};
+    color: ${fontColors.secondary};
   }
   /*for IE10*/
   select::-ms-expand {
     display: none;
   }
   select.${HASERROR_CLASS} {
-    border-color: ${ERROR_COLOR};
+    border-color: ${fontColors.error};
   }
   option[value=""][disabled] {
     display: none;
@@ -107,11 +105,7 @@ class Select extends React.Component<Props, State> {
         <label>
           {label && (
             <div>
-              <Typography
-                size="normal"
-                color={value ? LIGHTGRAY_COLOR : DARKGRAY_COLOR}
-                type="secondary"
-              >
+              <Typography size="normal" type={value ? "input" : "primary"}>
                 {label}
               </Typography>
             </div>
@@ -131,7 +125,7 @@ class Select extends React.Component<Props, State> {
             {options.map(this.renderOption)}
           </select>
           <span className="dropdown-icon">
-            <ChevronDown fill={DARKGRAY_COLOR} height={20} />
+            <ChevronDown fill={fontColors.primary} height={20} />
           </span>
         </label>
         {this.feedbackLine()}

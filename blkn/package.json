@@ -6,7 +6,7 @@
     "build": "npm run clean && npm run build:lib && npm run build:flow && npm run build:module",
     "build:lib": "babel --out-dir lib --ignore *.stories.js,*.test.js src",
     "build:flow": "flow-copy-source -v -i '**/*.stories.js,**/*.test.js' src lib",
-    "build:module": "babel --presets react --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src",
+    "build:module": "babel --presets react --plugins styled-jsx/babel --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src",
     "clean": "rimraf lib es",
     "prepare": "npm run build",
     "watch": "concurrently \"npm run build:lib -- --watch\" \"npm run build:module -- --watch\""

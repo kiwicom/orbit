@@ -1,5 +1,6 @@
 // @flow
 import * as React from "react";
+import Icon from "./Icon";
 
 type Props = {
   title: string,
@@ -13,14 +14,7 @@ type Props = {
 const Button = (props: Props) => {
   return (
     <button onClick={props.onClick} disabled={props.disabled}>
-      {props.icon && (
-        <props.icon
-          fill={props.secondary ? "#46515e" : "white"}
-          height={props.size === "normal" ? "20px" : props.size === "small" ? "20px" : "26px"}
-          width="20px"
-          style={{ position: "absolute", top: "50%", left: "12px", transform: "translateY(-50%)" }}
-        />
-      )}
+      {props.icon && <Icon icon={props.icon} size={props.size} />}
       {props.title}
       <style jsx>{`
       button {

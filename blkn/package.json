@@ -6,7 +6,7 @@
     "build": "npm run clean && npm run build:lib && npm run build:flow && npm run build:module",
     "build:lib": "babel --out-dir lib --ignore *.stories.js,*.test.js src",
     "build:flow": "flow-copy-source -v -i '**/*.stories.js,**/*.test.js' src lib",
-    "build:module": "babel --presets react --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src",
+    "build:module": "babel --presets react --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src ",
     "clean": "rimraf lib es",
     "prepare": "npm run build",
     "watch": "concurrently \"npm run build:lib -- --watch\" \"npm run build:module -- --watch\""
@@ -22,6 +22,7 @@
   "author": "kiwi.com",
   "license": "MIT",
   "dependencies": {
+    "@kiwicom/icons": "^0.0.1-rc1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "styled-jsx": "^2.2.4"
@@ -34,6 +35,7 @@
     "babel-preset-react": "^6.24.1",
     "concurrently": "^3.5.1",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.17.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",

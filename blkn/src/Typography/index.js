@@ -2,10 +2,12 @@
 
 import * as React from "react";
 
+const UNIT = "px";
+
 const sizes = {
-  large: 16,
-  small: 12,
-  normal: 14,
+  large: `16${UNIT}`,
+  small: `12${UNIT}`,
+  normal: `14${UNIT}`,
 };
 
 const colors = {
@@ -16,7 +18,7 @@ const colors = {
 };
 
 type Props = {
-  size: "large" | "small" | "normal",
+  size?: "large" | "small" | "normal",
   type: "primary" | "secondary" | "attention" | "error",
   children: React.Node,
 };
@@ -27,7 +29,7 @@ const Typography = (props: Props) => (
     <style jsx>{`
       span {
         font-family: Roboto, -apple-system, sans-serif;
-        font-size: ${sizes[props.size]};
+        font-size: ${(props.size && sizes[props.size]) || "inherit"};
         color: ${colors[props.type]};
       }
     `}</style>
@@ -35,7 +37,6 @@ const Typography = (props: Props) => (
 );
 
 Typography.defaultProps = {
-  size: "normal", // eslint-disable-line react/default-props-match-prop-types
   type: "primary", // eslint-disable-line react/default-props-match-prop-types
 };
 

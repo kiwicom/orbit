@@ -14,7 +14,7 @@ type Props = {
 const Button = (props: Props) => {
   return (
     <button onClick={props.onClick} disabled={props.disabled}>
-      {props.icon && <Icon icon={props.icon} size={props.size} />}
+      {props.icon && <Icon icon={props.icon} size={props.size} secondary={props.secondary} />}
       {props.title}
       <style jsx>{`
       button {

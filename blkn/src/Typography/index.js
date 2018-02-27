@@ -1,6 +1,7 @@
 // @flow
 
 import * as React from "react";
+import { fontColors } from "../constants";
 
 const UNIT = "px";
 
@@ -10,16 +11,9 @@ const sizes = {
   normal: `14${UNIT}`,
 };
 
-const colors = {
-  primary: "#46515e",
-  secondary: "#7f91a8",
-  attention: "#171B1E",
-  error: "#D02228",
-};
-
 type Props = {
   size?: "large" | "small" | "normal",
-  type: "primary" | "secondary" | "attention" | "error",
+  type: "primary" | "secondary" | "attention" | "error" | "input",
   children: React.Node,
 };
 
@@ -30,7 +24,7 @@ const Typography = (props: Props) => (
       span {
         font-family: Roboto, -apple-system, sans-serif;
         font-size: ${(props.size && sizes[props.size]) || "inherit"};
-        color: ${colors[props.type]};
+        color: ${fontColors[props.type]};
       }
     `}</style>
   </span>

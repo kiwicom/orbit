@@ -3,6 +3,7 @@ import * as React from "react";
 
 type Props = {
   size: string,
+  secondary: string,
   icon: Function,
 };
 

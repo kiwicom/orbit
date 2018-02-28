@@ -18,14 +18,17 @@
   "author": "kiwi.com",
   "license": "MIT",
   "dependencies": {
+    "classnames": "^2.2.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-icons": "^2.2.7",
     "styled-jsx": "^2.2.4"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.14",
     "@storybook/react": "^3.3.13",
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "concurrently": "^3.5.1",

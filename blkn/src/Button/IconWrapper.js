@@ -9,14 +9,14 @@ type Props = {
 };
 
 const IconWrapper = (props: Props) => {
-  const { icon: Icon, type } = props;
+  const { icon: Icon, type, size } = props;
 
   return (
     <span>
       <Icon
         fill={constants.iconColors[type]}
-        height={constants.iconSizes[props.size]}
-        width={constants.iconSizes[props.size]}
+        height={constants.iconSizes[size]}
+        width={constants.iconSizes[size]}
       />
       <style xml>{`
         svg {

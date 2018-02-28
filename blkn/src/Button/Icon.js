@@ -9,13 +9,13 @@ type Props = {
 };
 
 const Icon = (props: Props) => {
-  const { icon, type } = props;
+  const { icon, type, size } = props;
   return (
     <span>
       <icon
         fill={constants.iconColors[type]}
-        height={constants.iconSizes[props.size]}
-        width={constants.iconSizes[props.size]}
+        height={constants.iconSizes[size]}
+        width={constants.iconSizes[size]}
       />
       <style xml>{`
         svg {

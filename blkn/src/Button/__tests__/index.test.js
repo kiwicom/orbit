@@ -1,9 +1,6 @@
 import * as React from "react";
-import Enzyme, { shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import { shallow } from "enzyme";
 import Button from "../";
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe("Button", () => {
   const title = "Title";

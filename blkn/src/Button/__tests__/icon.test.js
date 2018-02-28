@@ -1,10 +1,7 @@
 import * as React from "react";
-import Enzyme, { mount } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import { mount } from "enzyme";
 import { Money } from "@kiwicom/icons";
 import Icon from "../Icon";
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe("Icon", () => {
   const component = mount(<Icon icon={Money} />);

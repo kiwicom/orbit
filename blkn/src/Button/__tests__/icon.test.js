@@ -7,7 +7,6 @@ import Icon from "../Icon";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("Icon", () => {
-  //   const icon = jest.fn();
   const component = mount(<Icon icon={Money} />);
 
   it("should be moiunted with svg element", () => {

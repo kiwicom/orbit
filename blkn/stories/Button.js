@@ -7,17 +7,23 @@ import Button from "../src/Button/";
 
 storiesOf("Button", module)
   .add("normal primary", () => (
-    <Button title="Your Label" onClick={action("clicked")} size="normal" />
+    <Button title="Your Label" onClick={action("clicked")} size="normal" type="primary" />
   ))
-  .add("normal primary disabled", () => <Button title="Your Label" isDisabled size="normal" />)
+  .add("normal primary disabled", () => (
+    <Button title="Your Label" isDisabled size="normal" type="primary" />
+  ))
   .add("small primary", () => (
-    <Button title="Your Label" onClick={action("clicked")} size="small" />
+    <Button title="Your Label" onClick={action("clicked")} size="small" type="primary" />
   ))
-  .add("small primary disabled", () => <Button title="Your Label" isDisabled size="small" />)
+  .add("small primary disabled", () => (
+    <Button title="Your Label" isDisabled size="small" type="primary" />
+  ))
   .add("large primary", () => (
-    <Button title="Your Label" onClick={action("clicked")} size="large" />
+    <Button title="Your Label" onClick={action("clicked")} size="large" type="primary" />
   ))
-  .add("large primary disabled", () => <Button title="Your Label" isDisabled size="large" />)
+  .add("large primary disabled", () => (
+    <Button title="Your Label" isDisabled size="large" type="primary" />
+  ))
   .add("normal secondary", () => (
     <Button title="Your Label" onClick={action("clicked")} size="normal" type="secondary" />
   ))
@@ -37,7 +43,13 @@ storiesOf("Button", module)
     <Button title="Your Label" isDisabled size="large" type="secondary" />
   ))
   .add("normal primary with icon", () => (
-    <Button title="Your Label" onClick={action("clicked")} size="normal" icon={Money} />
+    <Button
+      title="Your Label"
+      onClick={action("clicked")}
+      size="normal"
+      icon={Money}
+      type="primary"
+    />
   ))
   .add("normal secondary with icon", () => (
     <Button title="Your Label" onClick={action("clicked")} size="normal" secondary icon={Money} />

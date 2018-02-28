@@ -8,3 +8,14 @@ export const fontColors = {
   error: "#D02228",
   input: "#bac7d5",
 };
+
+export const iconColors = {
+  primary: "#46515e",
+  secondary: "white",
+};
+
+export const iconSizes = {
+  normal: "20px",
+  small: "20px",
+  large: "26px",
+};

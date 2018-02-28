@@ -52,5 +52,11 @@ storiesOf("Button", module)
     />
   ))
   .add("normal secondary with icon", () => (
-    <Button title="Your Label" onClick={action("clicked")} size="normal" secondary icon={Money} />
+    <Button
+      title="Your Label"
+      onClick={action("clicked")}
+      size="normal"
+      type="secondary"
+      icon={Money}
+    />
   ));

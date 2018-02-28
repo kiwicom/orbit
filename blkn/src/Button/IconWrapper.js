@@ -8,7 +8,7 @@ type Props = {
   icon: Function,
 };
 
-export default (props: Props) => {
+const IconWrapper = (props: Props) => {
   const { icon: Icon, type } = props;
 
   return (
@@ -30,4 +30,4 @@ export default (props: Props) => {
   );
 };
 
-// export default Icon;
+export default IconWrapper;

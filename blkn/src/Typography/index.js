@@ -24,12 +24,12 @@ type Props = {
 };
 
 const Typography = (props: Props) => (
-  <span className="typography">
+  <span>
     {props.children}
     <style jsx>{`
-      .typography {
+      span {
         font-family: Roboto, -apple-system, sans-serif;
-        font-size: ${(props.size && sizes[props.size]) || "inherit"};
+        font-size: ${sizes[props.size || "normal"]};
         color: ${fontColors[props.type || "primary"]};
         ${additionalVariants[props.variant || "normal"]};
       }

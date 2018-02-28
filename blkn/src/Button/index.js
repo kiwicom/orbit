@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import Icon from "./Icon";
+import IconWrapper from "./IconWrapper";
 import * as constants from "../constants";
 
 type Props = {
@@ -14,7 +14,7 @@ type Props = {
 
 const Button = (props: Props) => (
   <button onClick={props.onClick} disabled={props.isDisabled}>
-    {props.icon && <Icon icon={props.icon} size={props.size} type={props.type} />}
+    {props.icon && <IconWrapper icon={props.icon} size={props.size} type={props.type} />}
     {props.title}
     <style jsx>{`
       button {

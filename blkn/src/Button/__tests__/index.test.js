@@ -15,9 +15,9 @@ describe("Button", () => {
     const icon = jest.fn();
     component = shallow(<Button title={title} icon={icon} />);
     const button = component.find("button");
-    it("Should contain an Icon", () => {
+    it("Should contain an IconWrapper", () => {
       //   expect(button.find("Icon").exists()).toBe(true);
-      expect(button.find("Icon").exists()).toBe(true);
+      expect(button.find("IconWrapper").exists()).toBe(true);
     });
   });
 

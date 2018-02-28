@@ -32,8 +32,8 @@ export const btnFontColors = {
 };
 
 export const iconColors = {
-  primary: "#46515e",
-  secondary: "white",
+  primary: "white",
+  secondary: "#46515e",
 };
 
 export const iconSizes = {

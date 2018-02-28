@@ -12,11 +12,13 @@ type Props = {
   icon?: Function,
 };
 
-const Button = (props: Props) => (
-  <button onClick={props.onClick} disabled={props.isDisabled}>
-    {props.icon && <Icon icon={props.icon} size={props.size} type={props.type} />}
-    {props.title}
-    <style jsx>{`
+const Button = (props: Props) => {
+  console.log(props.icon);
+  return (
+    <button onClick={props.onClick} disabled={props.isDisabled}>
+      {props.icon && <Icon icon={props.icon} size={props.size} type={props.type} />}
+      {props.title}
+      <style jsx>{`
       button {
         opacity: ${props.isDisabled ? "0.3" : "1"}
         cursor: ${props.isDisabled ? "default" : "pointer"}
@@ -31,7 +33,8 @@ const Button = (props: Props) => (
         position: relative;
       }
     `}</style>
-  </button>
-);
+    </button>
+  );
+};
 
 export default Button;

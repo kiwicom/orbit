@@ -8,14 +8,15 @@ type Props = {
   icon: Function,
 };
 
-const Icon = (props: Props) => {
-  const { icon, type, size } = props;
+export default (props: Props) => {
+  const { icon: Icon, type } = props;
+
   return (
     <span>
-      <icon
+      <Icon
         fill={constants.iconColors[type]}
-        height={constants.iconSizes[size]}
-        width={constants.iconSizes[size]}
+        height={constants.iconSizes[props.size]}
+        width={constants.iconSizes[props.size]}
       />
       <style xml>{`
         svg {
@@ -29,4 +30,4 @@ const Icon = (props: Props) => {
   );
 };
 
-export default Icon;
+// export default Icon;

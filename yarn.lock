@@ -68,6 +68,10 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@kiwicom/icons@^0.0.1-rc2":
+  version "0.0.1-rc2"
+  resolved "https://registry.yarnpkg.com/@kiwicom/icons/-/icons-0.0.1-rc2.tgz#f7cca218a6b44ed97af839e8e462ff7dfdd1668a"
+
 "@storybook/addon-actions@^3.3.13":
   version "3.3.13"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.3.13.tgz#6ba603e5254ab01d16f9ff97c1656f3746710059"

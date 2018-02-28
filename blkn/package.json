@@ -6,13 +6,17 @@
     "build": "npm run clean && npm run build:lib && npm run build:flow && npm run build:module",
     "build:lib": "babel --out-dir lib --ignore *.stories.js,*.test.js src",
     "build:flow": "flow-copy-source -v -i '**/*.stories.js,**/*.test.js' src lib",
-    "build:module":
-      "babel --presets react --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src ",
+    "build:module": "babel --presets react --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src ",
     "clean": "rimraf lib es",
     "prepare": "npm run build",
     "watch": "concurrently \"npm run build:lib -- --watch\" \"npm run build:module -- --watch\""
   },
-  "keywords": ["blkn", "ui", "library", "component"],
+  "keywords": [
+    "blkn",
+    "ui",
+    "library",
+    "component"
+  ],
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": "kiwi.com",
@@ -23,7 +27,7 @@
     "styled-jsx": "^2.2.4"
   },
   "devDependencies": {
-    "@kiwicom/icons": "^0.0.1-rc1",
+    "@kiwicom/icons": "^0.0.1-rc2",
     "@storybook/addon-actions": "^3.3.14",
     "@storybook/react": "^3.3.13",
     "babel-cli": "^6.26.0",

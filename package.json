@@ -5,7 +5,8 @@
     "eslint": "eslint .",
     "flow:check": "flow check",
     "test": "jest --config=jest.json",
-    "test-ci": "yarn flow:check && yarn eslint && yarn test"
+    "test-ci": "yarn flow:check && yarn eslint && yarn test",
+    "postinstall": "cd icons && yarn build"
   },
   "keywords": [
     "kiwi",

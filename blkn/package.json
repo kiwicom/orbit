@@ -1,13 +1,13 @@
 {
   "name": "@kiwicom/balkan-ui",
-  "version": "0.0.0-rc4",
+  "version": "0.0.0-rc5",
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook",
     "build": "npm run clean && npm run build:lib && npm run build:flow && npm run build:module",
     "build:lib": "babel --out-dir lib --ignore *.stories.js,*.test.js src",
     "build:flow": "flow-copy-source -v -i '**/*.stories.js,**/*.test.js' src lib",
     "build:module":
-      "babel --presets react --plugins styled-jsx/babel --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src",
+      "babel --presets react --plugins styled-jsx/babel,transform-class-properties --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src",
     "clean": "rimraf lib es",
     "prepare": "npm run build",
     "watch": "concurrently \"npm run build:lib -- --watch\" \"npm run build:module -- --watch\""

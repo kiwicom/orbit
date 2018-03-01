@@ -8,3 +8,9 @@ export const fontColors = {
   error: "#D02228",
   input: "#bac7d5",
 };
+
+export const fontSizes = {
+  small: "12px",
+  normal: "14px",
+  large: "16px",
+};

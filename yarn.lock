@@ -68,6 +68,10 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@kiwicom/icons@^0.0.1-rc2":
+  version "0.0.1-rc2"
+  resolved "https://registry.yarnpkg.com/@kiwicom/icons/-/icons-0.0.1-rc2.tgz#f7cca218a6b44ed97af839e8e462ff7dfdd1668a"
+
 "@storybook/addon-actions@^3.3.13":
   version "3.3.13"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.3.13.tgz#6ba603e5254ab01d16f9ff97c1656f3746710059"
@@ -7587,9 +7591,23 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 svgo@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/svgo/-/svgo-1.0.4.tgz#b4c6c275316bc35022a5413a724abfd78bd26b9f"
+=======
+svgo@^1.0.4:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/svgo/-/svgo-1.0.5.tgz#7040364c062a0538abacff4401cea6a26a7a389a"
+>>>>>>> 4b88e87... yarn
+=======
+svgo@^1.0.4:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/svgo/-/svgo-1.0.5.tgz#7040364c062a0538abacff4401cea6a26a7a389a"
+>>>>>>> d5dcec0... yarn
   dependencies:
     coa "~2.0.1"
     colors "~1.1.2"
@@ -7606,6 +7624,16 @@ svgo@^1.0.4:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f087bfb... prepared from fork
+=======
+>>>>>>> 4b88e87... yarn
+=======
+>>>>>>> 37e3aa1... prepared from fork
+=======
+>>>>>>> d5dcec0... yarn
 symbol-observable@1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"

@@ -11,7 +11,7 @@ type Props = {
 const Header = ({ title, description }: Props) => (
   <div className="header">
     <h3>
-      <Typography>{title}</Typography>
+      <Typography size="header">{title}</Typography>
     </h3>
     {description && <Typography>{description}</Typography>}
     <style jsx>{`
@@ -19,7 +19,6 @@ const Header = ({ title, description }: Props) => (
         margin-bottom: 1em;
       }
       h3 {
-        font-size: 22px;
         font-weight: 500;
         line-height: 1.18;
         margin-top: 0;

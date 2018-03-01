@@ -3,12 +3,11 @@
 import * as React from "react";
 import { fontColors } from "../constants";
 
-const UNIT = "px";
-
 const sizes = {
-  large: `16${UNIT}`,
-  small: `12${UNIT}`,
-  normal: `14${UNIT}`,
+  small: "12px",
+  normal: "14px",
+  large: "16px",
+  header: "22px",
 };
 
 const additionalVariants = {
@@ -17,7 +16,7 @@ const additionalVariants = {
 };
 
 type Props = {
-  size?: "large" | "small" | "normal",
+  size?: $Keys<typeof sizes>,
   type?: "primary" | "secondary" | "attention" | "error" | "input",
   variant?: "bold" | "normal",
   children: React.Node,

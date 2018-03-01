@@ -125,5 +125,14 @@ storiesOf("Typography", module).addWithChapters("Typography", {
         },
       ],
     },
+    {
+      title: "Header text",
+      sections: [
+        {
+          sectionFn: () => <Typography size="header">Header sized text</Typography>,
+          options,
+        },
+      ],
+    },
   ],
 });

@@ -29,6 +29,7 @@
     "styled-jsx": "^2.2.4"
   },
   "devDependencies": {
+    "@kiwicom/icons": "^0.0.1-rc2",
     "@storybook/addon-actions": "^3.3.14",
     "@storybook/react": "^3.3.13",
     "babel-cli": "^6.26.0",

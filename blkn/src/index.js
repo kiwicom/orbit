@@ -7,4 +7,5 @@ export { default as Checkbox } from "./Checkbox";
 export { default as Header } from "./Container/Header";
 export { default as Section } from "./Container/Section";
 export { default as Select } from "./Select";
+export { default as SystemMessage } from "./SystemMessage";
 export { default as Typography } from "./Typography";

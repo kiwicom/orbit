@@ -29,4 +29,5 @@ export const fontColors = {
   attention: colors.smoke,
   error: colors.red,
   input: colors.casper,
+  active: colors.teal,
 };

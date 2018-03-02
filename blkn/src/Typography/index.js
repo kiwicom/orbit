@@ -12,13 +12,14 @@ const sizes = {
 
 const additionalVariants = {
   bold: "font-weight: bold;",
+  medium: "font-weight: 500;",
   normal: "",
 };
 
 type Props = {
   size?: $Keys<typeof sizes>,
-  type?: "primary" | "secondary" | "attention" | "error" | "input",
-  variant?: "bold" | "normal",
+  type?: "primary" | "secondary" | "attention" | "error" | "input" | "active",
+  variant?: "bold" | "normal" | "medium",
   children: React.Node,
 };
 

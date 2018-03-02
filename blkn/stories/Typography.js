@@ -41,6 +41,14 @@ storiesOf("Typography", module).addWithChapters("Typography", {
           ),
           options,
         },
+        {
+          sectionFn: () => (
+            <Typography size="large" type="active">
+              Active seeking text.
+            </Typography>
+          ),
+          options,
+        },
       ],
     },
     {
@@ -64,6 +72,10 @@ storiesOf("Typography", module).addWithChapters("Typography", {
         },
         {
           sectionFn: () => <Typography type="attention">Attention seeking text.</Typography>,
+          options,
+        },
+        {
+          sectionFn: () => <Typography type="active">ACtive seeking text.</Typography>,
           options,
         },
       ],
@@ -111,6 +123,14 @@ storiesOf("Typography", module).addWithChapters("Typography", {
           sectionFn: () => (
             <Typography size="small" type="attention" variant="bold">
               Attention seeking bold text.
+            </Typography>
+          ),
+          options,
+        },
+        {
+          sectionFn: () => (
+            <Typography size="small" type="active" variant="bold">
+              Active seeking bold text.
             </Typography>
           ),
           options,

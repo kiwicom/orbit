@@ -16,16 +16,9 @@ describe("When button is clicked", () => {
   const title = "title";
   const component = shallow(<Button title={title} onClick={onClick} />);
   const button = component.find("button");
-<<<<<<< HEAD
-  beforeEach(() => {
-    button.simulate("click");
-  });
-  it("should execute onClick method", () => {
-=======
 
   it("should execute onClick method", () => {
     button.simulate("click");
->>>>>>> 2464380... test cleared
     expect(onClick).toHaveBeenCalled();
   });
 });
@@ -33,7 +26,7 @@ describe("When button is clicked", () => {
 describe("Rendered with icon", () => {
   const title = "title";
   const icon = jest.fn();
-  const component = shallow(<Button title={title} icon={icon} />);
+  const component = shallow(<Button title={title} Icon={icon} />);
   const button = component.find("button");
   it("Should contain IconWrapper", () => {
     expect(button.find("IconWrapper").exists()).toBe(true);

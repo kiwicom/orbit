@@ -47,7 +47,7 @@ storiesOf("Button", module)
       title="Your Label"
       onClick={action("clicked")}
       size="normal"
-      icon={Money}
+      Icon={Money}
       type="primary"
     />
   ))
@@ -57,6 +57,6 @@ storiesOf("Button", module)
       onClick={action("clicked")}
       size="normal"
       type="secondary"
-      icon={Money}
+      Icon={Money}
     />
   ));

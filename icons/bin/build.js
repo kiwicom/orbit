@@ -7,11 +7,7 @@ const camelcase = require("camelcase");
 const mkdirp = require("mkdirp");
 const SVGO = require("svgo");
 const glob = require("glob");
-
-const jsxPath = path.join(__dirname, "..", "jsx");
-mkdirp(jsxPath);
-
-const svgo = new SVGO();
+const svg2png = require("svg2png");
 
 const files = glob.sync("**/*.svg");
 const names = files.map(inputFileName => {
@@ -30,7 +26,14 @@ const names = files.map(inputFileName => {
   };
 });
 
-names.forEach(async ({ inputFileName, outputFileName, functionName }) => {
+const jsxPath = path.join(__dirname, "..", "jsx");
+mkdirp(jsxPath);
+const pngPath = path.join(__dirname, "..", "png");
+mkdirp(pngPath);
+const relativePngPath = pngPath.substring(path.join(__dirname, "..", "..").length);
+const svgo = new SVGO();
+
+names.forEach(async ({ inputFileName, outputBaseName, outputFileName, functionName }) => {
   const dom = await JSDOM.fromFile(inputFileName);
   const shapes = dom.window.document.querySelector("defs").innerHTML;
 
@@ -54,6 +57,9 @@ export default function ${functionName}(props) {
 `;
 
   fs.writeFileSync(path.join(jsxPath, outputFileName), component);
+
+  const png = await svg2png(optimizedSvg);
+  fs.writeFileSync(path.join(pngPath, `${outputBaseName}.png`), png);
 });
 
 const index = names
@@ -63,3 +69,11 @@ const index = names
   )
   .join("");
 fs.writeFileSync(path.join(jsxPath, "index.js"), index);
+
+const iconsIndex = names
+  .map(
+    ({ outputBaseName, functionName }) =>
+      `- ![${functionName}](${relativePngPath}/${outputBaseName}.png?raw=true) ${functionName}\n`,
+  )
+  .join("");
+fs.writeFileSync(path.join(__dirname, "..", "icons.md"), iconsIndex);

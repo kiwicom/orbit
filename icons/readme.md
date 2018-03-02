@@ -1,0 +1,35 @@
+# Kiwi Icons
+
+## Usage
+
+Add it to your dependencies:
+
+    yarn add @kiwicom/icons
+
+Then you can import any icon and use it as a React component:
+
+```js
+import React from "react";
+import { Airplane } from "@kiwicom/icons";
+
+const AirplaneTitle = label => (
+  <h1>
+    <Airplane fill="#0097A9" height="14" />
+    {label}
+  </h1>
+)
+```
+
+Every icon is just a simple piece of inline SVG, see [the code of one of them](/icons/jsx/airplane.jsx).
+
+All props are passed to the `svg` element, so you can override its default `height` and `fill`. Eg. `<Airplane fill="red" height="100" />` to render a 100px red airplane. You can find [other attributes on MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg), but these two will be probably the only ones you will use.
+
+## Included Icons
+
+See the generated [preview of all icons](/icons/icons.md).
+
+## Build Process
+
+In the `svg` folder, there are source SVG files as delivered by our designers. The build script (`bin/build.js`) that executes when you run `yarn build` processes all of them, optimizes them and transforms into JSX in the `jsx` folder. This script also generates previews in the `png` folder. That JSX is then transpiled with Babel into the `lib` folder.
+
+Note that this works only for simple single color icons. If we will be adding more advanced graphics in the future (colorful logos etc.), it will require a different approach.

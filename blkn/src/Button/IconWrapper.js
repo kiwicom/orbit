@@ -16,14 +16,14 @@ const fillColors = {
 type Props = {
   size: $Keys<typeof sizes>,
   type: $Keys<typeof fillColors>,
-  icon: React.StatelessFunctionalComponent<*>,
+  Icon: React.ComponentType<*>,
 };
 
 const IconWrapper = (props: Props) => {
-  const { icon: Icon, type, size } = props;
+  const { Icon, type, size } = props;
 
   return (
-    <span>
+    <React.Fragment>
       <Icon fill={fillColors[type]} height={sizes[size]} />
       <style xml>{`
         svg {
@@ -33,7 +33,7 @@ const IconWrapper = (props: Props) => {
           transform: translateY(-50%);
         }
       `}</style>
-    </span>
+    </React.Fragment>
   );
 };
 

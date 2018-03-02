@@ -9,7 +9,7 @@ type Props = {
   isDisabled?: boolean,
   type: "primary" | "secondary",
   size: "normal" | "large" | "small",
-  icon?: React.StatelessFunctionalComponent<*>,
+  Icon?: React.ComponentType<*>,
 };
 
 const fontColors = {
@@ -30,7 +30,7 @@ const paddings = {
 
 const Button = (props: Props) => (
   <button onClick={props.onClick} disabled={props.isDisabled}>
-    {props.icon && <IconWrapper icon={props.icon} size={props.size} type={props.type} />}
+    {props.Icon && <IconWrapper Icon={props.Icon} size={props.size} type={props.type} />}
     {props.title}
     <style jsx>{`
       button {
@@ -42,7 +42,7 @@ const Button = (props: Props) => (
         border-radius: 3px;
         font-weight: 500;
         padding: ${paddings[props.size]};
-        padding-left: ${props.icon ? "40px" : ""}
+        padding-left: ${props.Icon ? "40px" : ""}
         font-size: ${fontSizes[props.size]}
         position: relative;
       }

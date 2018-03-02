@@ -1,9 +1,16 @@
 // @flow
 
 import * as React from "react";
+import { colors } from "../constants";
 
 type Props = {
   children?: React.Node,
+  type?: "basic" | "compact",
+};
+
+const paddings = {
+  basic: "28px",
+  compact: "16px 28px 17px;",
 };
 
 const Section = (props: Props) => (
@@ -11,10 +18,10 @@ const Section = (props: Props) => (
     {props.children}
     <style jsx>{`
       .section {
-        padding: 28px;
+        padding: ${paddings[props.type || "basic"]};
         border-radius: 3px;
-        background-color: #fff;
-        border: solid 1px #e8edf1;
+        background-color: ${colors.white};
+        border: solid 1px ${colors.silver};
       }
     `}</style>
   </div>
@@ -22,6 +29,7 @@ const Section = (props: Props) => (
 
 Section.defaultProps = {
   children: null,
+  type: "basic",
 };
 
 export default Section;

@@ -17,5 +17,5 @@ storiesOf("Container", module).add("Header with description", () => (
 ));
 
 storiesOf("Container", module).add("Header with icon", () => (
-  <Header icon={<Icon size={32} color={colors.casper} />} title="Section Title" />
+  <Header icon={<Icon size={32} color={colors.ink.lighter} />} title="Section Title" />
 ));

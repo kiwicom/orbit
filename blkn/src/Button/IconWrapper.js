@@ -9,8 +9,8 @@ const sizes = {
 };
 
 const fillColors = {
-  primary: colors.white,
-  secondary: colors.shuttle,
+  primary: colors.white.normal,
+  secondary: colors.ink.normal,
 };
 
 type Props = {

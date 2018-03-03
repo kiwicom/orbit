@@ -13,13 +13,13 @@ type Props = {
 };
 
 const fontColors = {
-  primary: colors.white,
-  secondary: colors.shuttle,
+  primary: colors.white.normal,
+  secondary: colors.ink.normal,
 };
 
 const bgColors = {
-  primary: colors.teal,
-  secondary: colors.silver,
+  primary: colors.teal.normal,
+  secondary: colors.cloud.normal,
 };
 
 const paddings = {

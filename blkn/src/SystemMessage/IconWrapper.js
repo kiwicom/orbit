@@ -4,18 +4,18 @@ import { colors } from "../constants";
 
 type Props = {
   type: "warning" | "error" | "success" | "info",
-  icon: React.StatelessFunctionalComponent<*>,
+  Icon: React.ComponentType<*>,
 };
 
 const fillColors = {
-  warning: "#f9971e",
-  error: colors.red,
-  success: colors.green,
-  info: colors.azure,
+  warning: colors.orange.normal,
+  error: colors.red.normal,
+  success: colors.green.normal,
+  info: colors.blue.normal,
 };
 
 const IconWrapper = (props: Props) => {
-  const { icon: Icon, type } = props;
+  const { Icon, type } = props;
   return (
     <span>
       <Icon fill={fillColors[type]} height="20px" />

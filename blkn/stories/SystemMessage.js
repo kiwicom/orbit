@@ -14,42 +14,42 @@ storiesOf("SystemMessage", module)
     </SystemMessage>
   ))
   .add("error with icon", () => (
-    <SystemMessage type="error" icon={AlertCircle}>
+    <SystemMessage type="error" Icon={AlertCircle}>
       Type your message here
     </SystemMessage>
   ))
   .add("error with title and  icon", () => (
-    <SystemMessage title="Title" type="error" icon={AlertCircle}>
+    <SystemMessage title="Title" type="error" Icon={AlertCircle}>
       Type your message here
     </SystemMessage>
   ))
   .add("warning with icon", () => (
-    <SystemMessage type="warning" icon={Alert}>
+    <SystemMessage type="warning" Icon={Alert}>
       Type your message here
     </SystemMessage>
   ))
   .add("warning with title and  icon", () => (
-    <SystemMessage title="Title" type="warning" icon={Alert}>
+    <SystemMessage title="Title" type="warning" Icon={Alert}>
       Type your message here
     </SystemMessage>
   ))
   .add("info with icon", () => (
-    <SystemMessage type="info" icon={InformationOutline}>
+    <SystemMessage type="info" Icon={InformationOutline}>
       Type your message here
     </SystemMessage>
   ))
   .add("info with title and  icon", () => (
-    <SystemMessage title="Title" type="info" icon={InformationOutline}>
+    <SystemMessage title="Title" type="info" Icon={InformationOutline}>
       Type your message here
     </SystemMessage>
   ))
   .add("success with icon", () => (
-    <SystemMessage type="success" icon={Check}>
+    <SystemMessage type="success" Icon={Check}>
       Type your message here
     </SystemMessage>
   ))
   .add("success with title and  icon", () => (
-    <SystemMessage title="Title" type="success" icon={Check}>
+    <SystemMessage title="Title" type="success" Icon={Check}>
       Type your message here
     </SystemMessage>
   ));

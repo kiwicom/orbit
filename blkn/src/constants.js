@@ -32,12 +32,12 @@ export const colors = {
     dark: "#171b1e",
   },
   orange: {
-    light: "##fcf1cd",
+    light: "#fcf1cd",
     normal: "#f9971e",
     dark: "#a93610",
   },
   blue: {
-    light: "##0f6f9f",
+    light: "#e0f6ff",
     normal: "#10709f",
     dark: "#07405c",
   },

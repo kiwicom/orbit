@@ -18,7 +18,7 @@ describe("Rendered with title ", () => {
 
 describe("Rendered with icon ", () => {
   const icon = jest.fn();
-  const componentWithIcon = shallow(<SystemMessage type="success" icon={icon} />);
+  const componentWithIcon = shallow(<SystemMessage type="success" Icon={icon} />);
   it("Should contain IconWrapper", () => {
     expect(componentWithIcon.find("IconWrapper").exists()).toBe(true);
   });

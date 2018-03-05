@@ -51,3 +51,9 @@ export const fontColors = {
   input: colors.ink.lighter,
   active: colors.teal.normal,
 };
+
+export const fontSizes = {
+  small: "12px",
+  normal: "14px",
+  large: "16px",
+};

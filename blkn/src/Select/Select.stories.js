@@ -1,8 +1,10 @@
+// @flow
+
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import Select from "../src/Select";
+import Select from "./index";
 
 const objectOptions = [
   { value: 1, label: "One" },

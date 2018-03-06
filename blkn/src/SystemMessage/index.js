@@ -33,7 +33,7 @@ const SystemMessage = (props: Props) => (
           padding-left: ${props.Icon ? "48px" : ""}
           font-size: 14px
           border-radius: 3px;
-          width: 100%;
+          max-width: 100%;
           position: relative;
       }
     `}</style>

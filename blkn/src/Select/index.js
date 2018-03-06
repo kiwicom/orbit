@@ -1,4 +1,5 @@
 // @flow
+
 import * as React from "react";
 import css from "styled-jsx/css";
 import ChevronDown from "react-icons/lib/fa/chevron-down";
@@ -12,7 +13,7 @@ const HASERROR_CLASS = "hasError";
 const UNSELECTED_CLASS = "UnSelected";
 
 type Option = {
-  value: string,
+  value: string | number,
   label?: string,
   disabled?: boolean,
   visible?: boolean, // eslint-disable-line react/no-unused-prop-types
@@ -22,7 +23,7 @@ type Props = {
   error?: string,
   label?: string,
   onChange: (SyntheticInputEvent<HTMLSelectElement>) => any,
-  options: Array<Option>,
+  options: Array<any>,
   placeholder?: string,
   required?: boolean,
   value: string,

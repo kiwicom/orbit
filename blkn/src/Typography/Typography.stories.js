@@ -4,7 +4,7 @@ import React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import chaptersAddon from "react-storybook-addon-chapters";
 
-import Typography from "../src/Typography";
+import Typography from "./index";
 
 setAddon(chaptersAddon);
 

@@ -1,7 +1,9 @@
+// @flow
+
 import React from "react";
 import { Alert, AlertCircle, InformationOutline, Check } from "@kiwicom/icons";
 import { storiesOf } from "@storybook/react";
-import SystemMessage from "../src/SystemMessage";
+import SystemMessage from "./index";
 
 storiesOf("SystemMessage", module)
   .add("error basic", () => <SystemMessage type="error">Type your message here</SystemMessage>)

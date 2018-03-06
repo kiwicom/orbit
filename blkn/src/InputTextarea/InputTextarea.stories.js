@@ -1,8 +1,10 @@
+// @flow
+
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import InputTextarea from "../src/InputTextarea";
+import InputTextarea from "./index";
 
 storiesOf("InputTextarea", module)
   .add("default", () => <InputTextarea value="" onChange={action("onChange")} />)
@@ -13,7 +15,7 @@ storiesOf("InputTextarea", module)
       onChange={action("onChange")}
     />
   ))
-  .add("empty", () => <InputTextarea label="Text label" onChange={action("onChange")} />)
+  .add("empty", () => <InputTextarea value="" label="Text label" onChange={action("onChange")} />)
   .add("error", () => (
     <InputTextarea
       label="Text label"

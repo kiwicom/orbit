@@ -4,8 +4,8 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import faker from "faker";
 
-import Section from "../src/Container/Section";
-import Header from "../src/Container/Header";
+import Section from "./Section";
+import Header from "./Header";
 
 storiesOf("Container", module).add("Section", () => <Section />);
 

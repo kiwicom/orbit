@@ -1,22 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
-    <title>Icons / 24px / System / icn-chevron-left</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <polygon id="path-1" points="24.18 9 15 18.16 5.82 9 3 11.82 15 23.82 27 11.82"></polygon>
-    </defs>
-    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icons-/-24px-/-System-/-icn-chevron-left">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use id="Mask" fill="#C0C8D1" transform="translate(15.000000, 16.410000) rotate(-270.000000) translate(-15.000000, -16.410000) " xlink:href="#path-1"></use>
-            <g id="_Library-Helpers-/-Colors-/-Front-/-Casper" mask="url(#mask-2)" fill="#BAC7D5">
-                <g transform="translate(1.000000, 1.000000)" id="Rectangle">
-                    <rect x="0" y="0" width="30" height="30"></rect>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path id="icon" transform="rotate(90, 16, 16)" d="M25.18 9L16 18.16 6.82 9 4 11.82l12 12 12-12z"/>
+  </defs>
+  <use xlink:href="#icon" />
 </svg>

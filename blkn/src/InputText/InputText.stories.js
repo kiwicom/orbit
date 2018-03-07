@@ -19,4 +19,12 @@ storiesOf("InputText", module)
       value="input value"
       onChange={action("onChange")}
     />
+  ))
+  .add("with help", () => (
+    <InputText
+      label="Text label"
+      help="Helpful sentence here"
+      value="input value"
+      onChange={action("onChange")}
+    />
   ));

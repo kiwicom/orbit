@@ -1,13 +1,14 @@
 // @flow
 import * as React from "react";
 import Label from "../Input/Label";
-import MaybeError from "../Input/MaybeError";
+import FieldFeedback from "../FieldFeedback";
 
 type Props = {
   value: string,
   onChange: (SyntheticInputEvent<HTMLInputElement>) => any,
   label?: string,
   error?: string,
+  help?: string,
 };
 
 const InputTextarea = (props: Props) => (
@@ -15,7 +16,7 @@ const InputTextarea = (props: Props) => (
     <Label label={props.label} valueEmpty={!!props.value}>
       <textarea onChange={props.onChange}>{props.value}</textarea>
     </Label>
-    <MaybeError error={props.error} />
+    <FieldFeedback error={props.error} help={props.help} />
     <style jsx>{`
       textarea {
         box-sizing: border-box;

@@ -18,7 +18,7 @@ const additionalVariants = {
 
 type Props = {
   size?: $Keys<typeof sizes>,
-  type?: "primary" | "secondary" | "attention" | "error" | "input" | "active",
+  type?: "primary" | "secondary" | "attention" | "error" | "input" | "active" | "help",
   variant?: "bold" | "normal" | "medium",
   children: React.Node,
 };

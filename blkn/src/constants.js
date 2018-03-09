@@ -50,6 +50,7 @@ export const fontColors = {
   error: colors.red.normal,
   input: colors.ink.lighter,
   active: colors.teal.normal,
+  help: colors.blue.normal,
 };
 
 export const fontSizes = {

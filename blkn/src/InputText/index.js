@@ -1,13 +1,14 @@
 // @flow
 import * as React from "react";
 import Label from "../Input/Label";
-import MaybeError from "../Input/MaybeError";
+import FieldFeedback from "../FieldFeedback";
 
 type Props = {
   value: string,
   onChange: (SyntheticInputEvent<HTMLInputElement>) => any,
   label?: string,
   error?: string,
+  help?: string,
 };
 
 const InputText = (props: Props) => (
@@ -15,7 +16,7 @@ const InputText = (props: Props) => (
     <Label label={props.label} valueEmpty={!!props.value}>
       <input value={props.value} onChange={props.onChange} />
     </Label>
-    <MaybeError error={props.error} />
+    <FieldFeedback error={props.error} help={props.help} />
     <style jsx>{`
       input {
         box-sizing: border-box;

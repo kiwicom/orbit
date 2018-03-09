@@ -6,6 +6,7 @@ import ChevronDown from "react-icons/lib/fa/chevron-down";
 import classnames from "classnames";
 import Typography from "./../Typography";
 import { fontColors } from "../constants";
+import FieldFeedback from "../FieldFeedback";
 
 const WHITE_COLOR = "white";
 
@@ -21,6 +22,7 @@ type Option = {
 type Props = {
   disabled?: boolean,
   error?: string,
+  help?: string,
   label?: string,
   onChange: (SyntheticInputEvent<HTMLSelectElement>) => any,
   options: Array<any>,
@@ -80,14 +82,6 @@ class Select extends React.Component<Props, State> {
     this.setState({ value: e.target.value });
     this.props.onChange(e);
   };
-  feedbackLine = () =>
-    this.props.error && (
-      <div>
-        <Typography size="small" type="error">
-          {this.props.error}
-        </Typography>
-      </div>
-    );
   renderOption = ({ value, label, disabled, visible = true }: Option) => {
     if (visible) {
       return (
@@ -99,7 +93,7 @@ class Select extends React.Component<Props, State> {
     return null;
   };
   render() {
-    const { disabled, label, options, error, placeholder, required = true } = this.props;
+    const { disabled, label, options, error, help, placeholder, required = true } = this.props;
     const { value } = this.state;
     return (
       <div>
@@ -129,7 +123,7 @@ class Select extends React.Component<Props, State> {
             <ChevronDown fill={fontColors.primary} height={20} />
           </span>
         </label>
-        {this.feedbackLine()}
+        <FieldFeedback error={error} help={help} />
         <style jsx>{style}</style>
       </div>
     );

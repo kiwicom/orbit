@@ -4,8 +4,8 @@ import * as React from "react";
 import Typography from "./../Typography";
 
 type Props = {
-  error?: string,
-  help?: string,
+  error?: React.Node,
+  help?: React.Node,
 };
 
 const FieldFeedback = (props: Props) => {

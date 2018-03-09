@@ -50,8 +50,25 @@ storiesOf("Select", module)
       onChange={action("onChange")}
     />
   ))
+  .add("With help feedback", () => (
+    <Select
+      value=""
+      options={objectOptions}
+      help="A helpful message here"
+      onChange={action("onChange")}
+    />
+  ))
   .add("With label NOT filled", () => (
     <Select label="Choose number" value="" options={objectOptions} onChange={action("onChange")} />
+  ))
+  .add("With label with help", () => (
+    <Select
+      label="Choose number"
+      help="Helpful feedback"
+      value=""
+      options={objectOptions}
+      onChange={action("onChange")}
+    />
   ))
   .add("With label filled", () => (
     <Select label="Choose number" value="2" options={objectOptions} onChange={action("onChange")} />

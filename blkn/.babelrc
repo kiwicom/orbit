@@ -1,7 +1,0 @@
-{
-  "presets": ["react", "env"],
-  "plugins": [
-    "styled-jsx/babel",
-    "transform-class-properties"
-  ]
-}

@@ -9,21 +9,7 @@
 
 ## Commit Message
 
-Given that this is a monorepo it is important, for visual clarity in Git History, to preface your commit message with the project that it affects.
-
-#### Bad:
-
-```
-Add React
-```
-
-#### Good:
-
-```
-BLKN: Add React
-```
-
-Please also refer to https://chris.beams.io/posts/git-commit/ for how to write commit messages.
+Please see https://chris.beams.io/posts/git-commit/ for information on how to write commit messages.
 
 ## Commit History
 
@@ -32,7 +18,7 @@ We are using merges in this project without squashing. Please pay attention that
 #### Bad:
 
 ```
-- BLKN: Add React
+- Add React
 - add react-dom
 - fix deps
 - another fix
@@ -42,6 +28,6 @@ We are using merges in this project without squashing. Please pay attention that
 #### Good:
 
 ```
-- BLKN: add React & React-Dom
-- BLKN: resolve peer dependencies of React
+- add React & React-Dom
+- resolve peer dependencies of React
 ```

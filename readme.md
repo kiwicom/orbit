@@ -5,25 +5,42 @@
 * [Motivation](#motivation)
 * [Repository Structure](#repository-structure)
 * [Contributing](#contributing)
+* [Requirements](#requirements)
+* [How to Develop](#how-to-develop)
+* [How to Test](#how-to-test)
 
 ## Motivation
 
 The purpose of this repository is to open-source general UI components in use across Kiwi.com.
 
-It also serves as a testing ground for the best approach when it comes to CSS-in-JS. We have chosen [Styled components](https://www.styled-components.com) and [Styled JSX](https://github.com/zeit/styled-jsx) as the two front-runners. In time this repository will be changed to use only one technology. This discussion is aggregated here: https://github.com/kiwicom/react-kiwi-ui/issues/7.
+It also serves as a testing ground for the best approach when it comes to CSS-in-JS.
 
 ## Repository Structure
 
-This repository is broken up into 3 projects.
-
-| Project | Technology                                             | Description                     |
-| :------ | :----------------------------------------------------- | :------------------------------ |
-| BLKN    | [Styled JSX](https://github.com/zeit/styled-jsx)       | All Components for BLKN project |
-| Kiwicom | [Styled Components](https://www.styled-components.com) | All Components for Kiwi.com     |
-| Icons   |                                                        | All Kiwi Icons                  |
-
-The root folder contains the global ESLint rules, Yarn Workspaces and Flow. Please refer to the README files in all project subfolder for information on how to run them.
-
 ## Contributing
 
-Please checkout https://github.com/kiwicom/react-kiwi-ui/blob/master/contributing.md
+Please checkout our [Contribution Guide](./.github/contributing.md)
+
+## Requirements
+
+* [Node 8.9+](https://nodejs.org/en/)
+* [Yarn](https://yarnpkg.com/en/)
+
+## How to develop
+
+For local development you can use:
+
+* `yarn storybook`
+
+In case you want to develop in your current project:
+
+* `yarn add @kiwicom/balkan-ui`
+* `yarn watch` in this folder
+* `yarn link` in this folder
+* `yarn link @kiwicom/balkan-ui` in the project where you want to use this project
+
+See [Yarn Link](https://yarnpkg.com/lang/en/docs/cli/link/) documentation for more information.
+
+## How to test
+
+This project uses [Yarn workspaces](https://yarnpkg.com/lang/en/docs/workspaces/). Please run `yarn test-ci` from the root folder. By doing this we can enforce the same rules across all projects.

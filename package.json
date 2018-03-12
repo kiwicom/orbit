@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook",
-    "build": "npm run clean && npm run build:lib && npm run build:flow && npm run build:module",
+    "build":
+      "yarn clean && yarn build:icons && yarn build:lib && yarn build:flow && yarn build:module",
     "build:lib": "babel --out-dir lib --ignore *.stories.js,*.test.js src",
     "build:flow": "flow-copy-source -v -i '**/*.?(stories|test).js' src lib",
     "build:module":
       "babel --presets react --plugins styled-jsx/babel,transform-class-properties --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src",
+    "build:icons": "node config/build.js",
     "clean": "rimraf lib es",
     "prepare": "npm run build",
     "watch": "concurrently \"npm run build:lib -- --watch\" \"npm run build:module -- --watch\"",
@@ -38,6 +40,8 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "camelcase": "^4.1.0",
+    "capitalize": "^1.0.0",
     "concurrently": "^3.5.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -54,9 +58,14 @@
     "faker": "^4.1.0",
     "flow-bin": "^0.65.0",
     "flow-copy-source": "^1.3.0",
+    "glob": "^7.1.2",
     "jest": "^22.3.0",
+    "jsdom": "^11.6.2",
+    "mkdirp": "^0.5.1",
     "prettier": "^1.10.2",
     "react-storybook-addon-chapters": "2.1.3",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "svg2png": "^4.1.1",
+    "svgo": "^1.0.4"
   }
 }

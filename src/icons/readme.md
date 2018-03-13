@@ -2,31 +2,27 @@
 
 ## Usage
 
-Add it to your dependencies:
-
-    yarn add @kiwicom/icons
-
-Then you can import any icon and use it as a React component:
+You can import any icon and use it as a React component:
 
 ```js
 import React from "react";
-import { Airplane } from "@kiwicom/icons";
+import { Airplane } from "@kiwicom/orbit-components/icons";
 
 const AirplaneTitle = label => (
   <h1>
     <Airplane fill="#0097A9" height="14" />
     {label}
   </h1>
-)
+);
 ```
 
-Every icon is just a simple piece of inline SVG, see [the code of one of them](/icons/jsx/airplane.jsx).
+Every icon is just a simple piece of inline SVG, see [the code of one of them](./airplane.jsx).
 
 All props are passed to the `svg` element, so you can override its default `height` and `fill`. Eg. `<Airplane fill="red" height="100" />` to render a 100px red airplane. You can find [other attributes on MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg), but these two will be probably the only ones you will use.
 
 ## Included Icons
 
-See the generated [preview of all icons](/icons/icons.md).
+See the generated [preview of all icons](./icons.md).
 
 ## Build Process
 
@@ -40,5 +36,5 @@ The build script takes only the content of the `defs` element and throws away ev
 
 I'm fixing it manually - for example for the ChevronLeft icon I take the path from ChevronUp, place it to `defs` and add a [`transform` attribute](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform) to that path.
 
-- Rotate 90 degrees: `transform="rotate(90, 16, 16)"`
-- Flip horizontaly: `transform="translate(0,32) scale(1, -1)"`
+* Rotate 90 degrees: `transform="rotate(90, 16, 16)"`
+* Flip horizontaly: `transform="translate(0,32) scale(1, -1)"`

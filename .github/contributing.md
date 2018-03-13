@@ -4,6 +4,10 @@
 
 * [Commit Message](#commit-message)
 * [Commit history](#commit-history)
+* [Developement Information](#development-information)
+  * [Repository structure](#repository-structure)
+  * [Requirements](#requirements)
+  * [Testing](#testing)
 
 ---
 
@@ -31,3 +35,42 @@ We are using merges in this project without squashing. Please pay attention that
 - add React & React-Dom
 - resolve peer dependencies of React
 ```
+
+# Development Information
+
+## Repository Structure
+
+`/src` - All Source files
+`/es` - _GENERATED_ ES compliant modules
+`/lib` - _GENERATED_ most compatible modules
+`/config` - All test and build configuration can be found here
+`/flow-typed` - _GENERATED_ types for Flow
+`/.storybook` - Storybook configuration
+
+## Contributing
+
+Please checkout our [Contribution Guide](./.github/contributing.md). It includes contribution guidelines and information about how to run and develop the project.
+
+## Requirements
+
+* [Node 8.9+](https://nodejs.org/en/)
+* [Yarn](https://yarnpkg.com/en/)
+
+## How to develop
+
+For local development you can use:
+
+* `yarn storybook`
+
+In case you want to develop in your current project:
+
+* `yarn add @kiwicom/orbit-components`
+* `yarn watch` in this folder
+* `yarn link` in this folder
+* `yarn link @kiwicom/orbit-components` in the project where you want to use this project
+
+See [Yarn Link](https://yarnpkg.com/lang/en/docs/cli/link/) documentation for more information.
+
+## Testing
+
+This project uses [Yarn workspaces](https://yarnpkg.com/lang/en/docs/workspaces/). Please run `yarn test-ci` from the root folder. By doing this we can enforce the same rules across all projects.

@@ -40,16 +40,12 @@ We are using merges in this project without squashing. Please pay attention that
 
 ## Repository Structure
 
-`/src` - All Source files
-`/es` - _GENERATED_ ES compliant modules
-`/lib` - _GENERATED_ most compatible modules
-`/config` - All test and build configuration can be found here
-`/flow-typed` - _GENERATED_ types for Flow
-`/.storybook` - Storybook configuration
-
-## Contributing
-
-Please checkout our [Contribution Guide](./.github/contributing.md). It includes contribution guidelines and information about how to run and develop the project.
+- `/src` - All Source files
+- `/es` - **GENERATED** ES compliant modules
+- `/lib` - **GENERATED** most compatible modules
+- `/config` - All test and build configuration can be found here
+- `/flow-typed` - **GENERATED** types for Flow
+- `/.storybook` - Storybook configuration
 
 ## Requirements
 

@@ -1,3 +1,5 @@
+// @flow
+
 import * as React from "react";
 import { shallow } from "enzyme";
 import SystemMessage from "../";
@@ -17,7 +19,7 @@ describe("Rendered with title ", () => {
 });
 
 describe("Rendered with icon ", () => {
-  const icon = jest.fn();
+  const icon = () => <i />;
   const componentWithIcon = shallow(<SystemMessage type="success" Icon={icon} />);
   it("Should contain IconWrapper", () => {
     expect(componentWithIcon.find("IconWrapper").exists()).toBe(true);

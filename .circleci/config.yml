@@ -4,12 +4,9 @@
 #
 version: 2
 jobs:
-  build: # blkn
+  build:
     docker:
       - image: circleci/node:8
-
-    working_directory: ~/react-kiwi-ui
-
     steps:
       - checkout
 

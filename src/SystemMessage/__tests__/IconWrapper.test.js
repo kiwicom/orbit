@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { shallow } from "enzyme";
+
 import IconWrapper from "../IconWrapper";
 
 describe("System Message", () => {

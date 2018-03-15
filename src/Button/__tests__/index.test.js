@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { shallow } from "enzyme";
+
 import Button from "../";
 import { Typography } from "../../";
 import Airplane from "../../icons/Airplane";

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendered with children Should contain IconWrapper 1`] = `
+<button
+  className="jsx-2325483322"
+  onClick={[MockFunction]}
+>
+  <Typography
+    type="primary"
+    variant="bold"
+  >
+    Typo children
+  </Typography>
+  <Airplane
+    fill="#F2473F"
+    size="32"
+  />
+  <JSXStyle
+    css="button.__jsx-style-dynamic-selector{opacity:1;cursor:pointer;background-color:#00a991;color:#fff;border:none;border-radius:3px;font-weight:500;padding:14px 28px;padding-left:;font-size:16px;position:relative;}"
+    dynamic={
+      Array [
+        "1",
+        "pointer",
+        "#00a991",
+        "#fff",
+        "14px 28px",
+        "",
+        "16px",
+      ]
+    }
+    styleId="2895249007"
+  />
+</button>
+`;

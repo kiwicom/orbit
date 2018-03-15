@@ -83,7 +83,6 @@ storiesOf("Button", module)
                   isDisabled={boolean("Disabled", false)}
                   onClick={action("clicked")}
                   size="large"
-                  title={label}
                   type={type}
                 >
                   <Typography type="primary" variant="bold">

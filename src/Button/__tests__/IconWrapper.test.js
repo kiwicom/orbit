@@ -2,8 +2,10 @@
 
 import * as React from "react";
 import { shallow } from "enzyme";
-import { Money } from "@kiwicom/icons";
+import { Icons } from "../../";
 import IconWrapper from "../IconWrapper";
+
+const { Money } = Icons;
 
 describe("IconWrapper", () => {
   const component = shallow(<IconWrapper size="normal" type="primary" Icon={Money} />);

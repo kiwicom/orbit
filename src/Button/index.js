@@ -10,6 +10,7 @@ type Props = {
   type: "primary" | "secondary",
   size: "normal" | "large" | "small",
   Icon?: React.ComponentType<*>,
+  children?: React.Node,
 };
 
 const fontColors = {
@@ -31,7 +32,7 @@ const paddings = {
 const Button = (props: Props) => (
   <button onClick={props.onClick} disabled={props.isDisabled}>
     {props.Icon && <IconWrapper Icon={props.Icon} size={props.size} type={props.type} />}
-    {props.title}
+    {props.children ? props.children : props.title}
     <style jsx>{`
       button {
         opacity: ${props.isDisabled ? "0.3" : "1"}

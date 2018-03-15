@@ -1,5 +1,6 @@
 // @flow
 import * as React from "react";
+
 import IconWrapper from "./IconWrapper";
 import { colors, fontSizes } from "../constants";
 

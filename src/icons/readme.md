@@ -6,8 +6,9 @@ You can import any icon and use it as a React component:
 
 ```js
 import React from "react";
-import { Airplane } from "@kiwicom/orbit-components/icons";
+import { Icons } from "@kiwicom/orbit-components";
 
+const { Airplane } = Icons;
 const AirplaneTitle = label => (
   <h1>
     <Airplane fill="#0097A9" height="14" />

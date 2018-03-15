@@ -1,13 +1,17 @@
+// @flow
+
 import React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
-import { Alert } from "@kiwicom/icons";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { action } from "@storybook/addon-actions";
 
+import Alert from "../icons/Alert";
 import Cell from "./Cell";
 import Header from "./Header";
 import Body from "./Body";
 import Footer from "./Footer";
+import Row from "./Row";
+
 import Table from "./index";
 
 setAddon(chaptersAddon);
@@ -19,6 +23,7 @@ const options = {
   allowPropTablesToggling: false,
 };
 
+/*eslint-disable */
 const IconButton = () => (
   <div onClick={action("action")}>
     <Alert />
@@ -31,6 +36,7 @@ const IconButton = () => (
     </style>
   </div>
 );
+/* eslint-enable */
 
 storiesOf("Table", module).addWithChapters("Table", {
   info: "Table Example",
@@ -43,7 +49,7 @@ storiesOf("Table", module).addWithChapters("Table", {
           sectionFn: () => (
             <Table>
               <Header>
-                <Header.Row>
+                <Row>
                   <Cell isBold style={{ width: "150px" }}>
                     Header 1 left
                   </Cell>
@@ -53,36 +59,36 @@ storiesOf("Table", module).addWithChapters("Table", {
                   <Cell isBold align="right" style={{ width: "150px" }}>
                     Header 3 right
                   </Cell>
-                </Header.Row>
+                </Row>
               </Header>
               <Body>
-                <Body.Row>
+                <Row>
                   <Cell>Text left</Cell>
                   <Cell align="center">Text center</Cell>
                   <Cell align="right">Text right</Cell>
                   <Cell>
                     <IconButton />
                   </Cell>
-                </Body.Row>
-                <Body.Row>
+                </Row>
+                <Row>
                   <Cell>Text left</Cell>
                   <Cell align="center">Text center</Cell>
                   <Cell align="right">Text right</Cell>
                   <Cell>
                     <IconButton />
                   </Cell>
-                </Body.Row>
-                <Body.Row>
+                </Row>
+                <Row>
                   <Cell>Text left</Cell>
                   <Cell align="center">Text center</Cell>
                   <Cell align="right">Text right</Cell>
                   <Cell>
                     <IconButton />
                   </Cell>
-                </Body.Row>
+                </Row>
               </Body>
               <Footer>
-                <Footer.Row>
+                <Row>
                   <Cell isBold>Footer left</Cell>
                   <Cell isBold align="center">
                     Footer center
@@ -91,7 +97,7 @@ storiesOf("Table", module).addWithChapters("Table", {
                     Footer rigth
                   </Cell>
                   <Cell />
-                </Footer.Row>
+                </Row>
               </Footer>
             </Table>
           ),

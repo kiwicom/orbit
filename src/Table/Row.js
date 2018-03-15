@@ -4,14 +4,15 @@ import * as React from "react";
 
 import Cell from "./Cell";
 
+type Child = React.Element<typeof Cell>;
+
 type Props = {
-  children: React.Element<typeof Cell>,
-  style: Object,
-  backgroundColor: {
+  children?: Child | Child[],
+  style?: Object,
+  backgroundColor?: {
     default: string,
     hover: string,
   },
-  className: string,
 };
 
 const Row = (props: Props) => {
@@ -19,14 +20,14 @@ const Row = (props: Props) => {
   const bgColor = props.backgroundColor && props.backgroundColor.default;
 
   const children = React.Children.map(props.children, child => {
-    if (child.type !== Cell) {
+    if (child && child.type !== Cell) {
       console.error(`Invalid children type component, it should be Cell component.`); // eslint-disable-line no-console
     }
     return child;
   });
 
   return (
-    <tr className={props.className} style={props.style}>
+    <tr style={props.style}>
       {children}
       <style jsx>
         {`

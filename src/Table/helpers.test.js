@@ -1,5 +1,9 @@
+// @flow
+
 import * as React from "react";
+
 import { isOdd, getChidlName } from "./helpers";
+
 import Table from "./index";
 
 describe("isOdd", () => {
@@ -23,5 +27,10 @@ describe("getChidlName", () => {
   it("should return Table", () => {
     const element = getChidlName(<Table />);
     expect(element).toBe("Table");
+  });
+
+  it("should handle null value", () => {
+    const element = getChidlName(null);
+    expect(element).toBe("unknown");
   });
 });

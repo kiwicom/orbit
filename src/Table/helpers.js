@@ -1,7 +1,10 @@
 // @flow
 
-export function getChidlName(child: React.Element<any>): string {
-  if (typeof child.type === "string") return child.type;
+export function getChidlName(child: ?React.Element<any>): string {
+  if (!child) return "unknown";
+  if (typeof child.type === "string") {
+    return child.type;
+  }
   return child.type.name;
 }
 

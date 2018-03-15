@@ -1,12 +1,13 @@
 // @flow
 
 import * as React from "react";
+
 import { colors } from "../constants";
 
 type Props = {
   rowSpan?: number,
   colSpan?: number,
-  children: React.Node,
+  children?: React.Node,
   isBold?: boolean,
   align?: "center" | "left" | "right",
   style?: Object,
@@ -22,14 +23,14 @@ const Cell = (props: Props) => {
           <style jsx>
             {`
 							span {
-								display: block
-								text-align: ${props.align || "left"}
-								color: ${colors.ink.light}
-					font-weight: ${props.isBold ? 500 : 300}
-								font-size: 15px
-								font-family: Roboto, -apple-system, sans-serif
-							}
-			`}
+							display: block
+							text-align: ${props.align || "left"}
+							color: ${colors.ink.light}
+							font-weight: ${props.isBold ? 500 : 300}
+							font-size: 15px
+							font-family: Roboto, -apple-system, sans-serif
+						}
+						`}
           </style>
         </span>
       );

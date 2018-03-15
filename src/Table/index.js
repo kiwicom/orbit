@@ -1,12 +1,15 @@
 // @flow
 
 import * as React from "react";
+
 import Header from "./Header";
 import Body from "./Body";
 import Footer from "./Footer";
 
+type Children = React.Element<typeof Header | typeof Body | typeof Footer>;
+
 type Props = {
-  children: React.Element<typeof Header | typeof Body | typeof Footer>,
+  children?: Children | Array<Children>,
 };
 
 const Table = (props: Props) => {
@@ -15,7 +18,7 @@ const Table = (props: Props) => {
     if (type !== Header && type !== Body && type !== Footer) {
       console.error("Invalid children type"); // eslint-disable-line no-console
     }
-    return React.cloneElement(child);
+    return child;
   });
   return (
     <table>

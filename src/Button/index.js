@@ -4,7 +4,7 @@ import IconWrapper from "./IconWrapper";
 import { colors, fontSizes } from "../constants";
 
 type Props = {
-  title: string,
+  title?: string,
   onClick: (e: SyntheticEvent<HTMLButtonElement>) => void,
   isDisabled?: boolean,
   type: "primary" | "secondary",

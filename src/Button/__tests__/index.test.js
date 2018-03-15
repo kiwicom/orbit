@@ -3,6 +3,8 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 import Button from "../";
+import { Typography } from "../../";
+import Airplane from "../../icons/Airplane";
 
 describe("Button", () => {
   const title = "Title";
@@ -38,5 +40,19 @@ describe("Rendered with icon", () => {
   const button = component.find("button");
   it("Should contain IconWrapper", () => {
     expect(button.find("IconWrapper").exists()).toBe(true);
+  });
+});
+
+describe("Rendered with children", () => {
+  const component = shallow(
+    <Button type="primary" onClick={jest.fn()} size="large">
+      <Typography type="primary" variant="bold">
+        Typo children
+      </Typography>
+      <Airplane fill="#F2473F" size="32" />
+    </Button>,
+  );
+  it("Should contain IconWrapper", () => {
+    expect(component).toMatchSnapshot();
   });
 });

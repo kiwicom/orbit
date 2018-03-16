@@ -4,6 +4,7 @@ import * as React from "react";
 import css from "styled-jsx/css";
 import ChevronDown from "react-icons/lib/fa/chevron-down";
 import classnames from "classnames";
+
 import Typography from "./../Typography";
 import { fontColors } from "../constants";
 import FieldFeedback from "../FieldFeedback";

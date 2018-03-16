@@ -2,7 +2,9 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
+
 import { Icons } from "../";
+
 import SystemMessage from "./index";
 
 const { Alert, AlertCircle, InformationOutline, Check } = Icons;

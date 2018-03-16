@@ -1,6 +1,7 @@
 // @flow
 
 import * as React from "react";
+
 import { colors } from "../constants";
 
 const paddings = {

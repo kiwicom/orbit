@@ -1,5 +1,7 @@
 // @flow
+
 import * as React from "react";
+
 import Label from "../Input/Label";
 import FieldFeedback from "../FieldFeedback";
 

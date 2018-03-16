@@ -1,6 +1,7 @@
 // @flow
 
 import * as React from "react";
+
 import { fontColors } from "../constants";
 
 const sizes = {

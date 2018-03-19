@@ -9,6 +9,7 @@ type Props = {
   label: string,
   checked?: boolean,
   disabled?: boolean,
+  value?: string,
   onChange: (SyntheticInputEvent<HTMLInputElement>) => any,
 };
 
@@ -23,6 +24,7 @@ const Radio = (props: Props) => (
         checked={props.checked}
         onChange={props.onChange}
         disabled={props.disabled}
+        value={props.value}
       />
     </label>
     <style jsx>{`

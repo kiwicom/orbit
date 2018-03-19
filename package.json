@@ -17,6 +17,11 @@
     "test-ci": "yarn flow:check && yarn eslint && yarn test --ci",
     "deploy-storybook": "storybook-to-ghpages"
   },
+  "storybook-deployer": {
+    "gitUsername": "GH Pages Bot",
+    "gitEmail": "hello@ghbot.com",
+    "commitMessage": "Deploy Storybook to GitHub Pages [skip ci]"
+  },
   "keywords": [
     "orbit",
     "components",

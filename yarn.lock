@@ -270,6 +270,15 @@
     webpack-dev-middleware "^1.12.2"
     webpack-hot-middleware "^2.21.0"
 
+"@storybook/storybook-deployer@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@storybook/storybook-deployer/-/storybook-deployer-2.3.0.tgz#43d3cc105a571e27b9c3e363c43d7da4a6a486e9"
+  dependencies:
+    git-url-parse "^8.1.0"
+    parse-repo "^1.0.4"
+    shelljs "^0.8.1"
+    yargs "^11.0.0"
+
 "@storybook/ui@^3.3.13":
   version "3.3.13"
   resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-3.3.13.tgz#97656822a6503bf07b66a0288c757768f5451805"
@@ -3811,6 +3820,19 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
+git-up@^2.0.0:
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/git-up/-/git-up-2.0.10.tgz#20fe6bafbef4384cae253dc4f463c49a0c3bd2ec"
+  dependencies:
+    is-ssh "^1.3.0"
+    parse-url "^1.3.0"
+
+git-url-parse@^8.1.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/git-url-parse/-/git-url-parse-8.2.0.tgz#74969b0105f805df58873ee5b96bc1a4dc0573b1"
+  dependencies:
+    git-up "^2.0.0"
+
 glamor@^2.20.40:
   version "2.20.40"
   resolved "https://registry.yarnpkg.com/glamor/-/glamor-2.20.40.tgz#f606660357b7cf18dface731ad1a2cfa93817f05"
@@ -4544,6 +4566,12 @@ is-regex@^1.0.4:
 is-resolvable@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-resolvable/-/is-resolvable-1.1.0.tgz#fb18f87ce1feb925169c9a407c19318a3206ed88"
+
+is-ssh@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/is-ssh/-/is-ssh-1.3.0.tgz#ebea1169a2614da392a63740366c3ce049d8dff6"
+  dependencies:
+    protocols "^1.1.0"
 
 is-stream@^1.0.1, is-stream@^1.1.0:
   version "1.1.0"
@@ -5976,6 +6004,17 @@ parse-json@^2.2.0:
   dependencies:
     error-ex "^1.2.0"
 
+parse-repo@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/parse-repo/-/parse-repo-1.0.4.tgz#74b91d2cb8675d11b99976a0065f6ce17fa1bcc8"
+
+parse-url@^1.3.0:
+  version "1.3.11"
+  resolved "https://registry.yarnpkg.com/parse-url/-/parse-url-1.3.11.tgz#57c15428ab8a892b1f43869645c711d0e144b554"
+  dependencies:
+    is-ssh "^1.3.0"
+    protocols "^1.4.0"
+
 parse5@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
@@ -6502,6 +6541,10 @@ prop-types@^15.5.7:
     fbjs "^0.8.16"
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
+
+protocols@^1.1.0, protocols@^1.4.0:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/protocols/-/protocols-1.4.6.tgz#f8bb263ea1b5fd7a7604d26b8be39bd77678bf8a"
 
 proxy-addr@~2.0.2:
   version "2.0.2"
@@ -7406,6 +7449,14 @@ shebang-regex@^1.0.0:
 shelljs@^0.7.8:
   version "0.7.8"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.8.tgz#decbcf874b0d1e5fb72e14b164a9683048e9acb3"
+  dependencies:
+    glob "^7.0.0"
+    interpret "^1.0.0"
+    rechoir "^0.6.2"
+
+shelljs@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.1.tgz#729e038c413a2254c4078b95ed46e0397154a9f1"
   dependencies:
     glob "^7.0.0"
     interpret "^1.0.0"

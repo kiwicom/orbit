@@ -36,6 +36,11 @@ We are using merges in this project without squashing. Please pay attention that
 - resolve peer dependencies of React
 ```
 
+## What to not forget during code reviews
+
+- Never click on grey "update branch" button on GitHub - it merges master into reviewed base branch, which leads to messed up history
+- Please make sure you've deleted base branch as well by clicking on according GitHub button that appears right after you confirm merge
+
 # Development Information
 
 ## Repository Structure

@@ -20,23 +20,23 @@ const names = files.map(inputFileName => {
         .replace(/^ icn-/, ""),
     ),
   );
-  const outputJsxFileName = `${functionName}.jsx`;
+  const outputComponentFileName = `${functionName}.js`;
 
   return {
     inputFileName,
-    outputJsxFileName,
+    outputComponentFileName,
     functionName,
   };
 });
 
-const jsxPath = path.join(__dirname, "..", "src", "icons");
-mkdirp(jsxPath);
+const componentPath = path.join(__dirname, "..", "src", "icons");
+mkdirp(componentPath);
 const pngPath = path.join(__dirname, "..", "src", "icons", "png");
 mkdirp(pngPath);
 const relativePngPath = pngPath.substring(path.join(__dirname, "..").length);
 const svgo = new SVGO();
 
-names.forEach(async ({ inputFileName, outputJsxFileName, functionName }) => {
+names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {
   const dom = await JSDOM.fromFile(inputFileName);
   const shapes = dom.window.document.querySelector("defs").innerHTML;
 
@@ -59,7 +59,7 @@ names.forEach(async ({ inputFileName, outputJsxFileName, functionName }) => {
     }
 `;
 
-  fs.writeFileSync(path.join(jsxPath, outputJsxFileName), component);
+  fs.writeFileSync(path.join(componentPath, outputComponentFileName), component);
 
   const png = await svg2png(optimizedSvg);
   fs.writeFileSync(path.join(pngPath, `${functionName}.png`), png);
@@ -68,7 +68,7 @@ names.forEach(async ({ inputFileName, outputJsxFileName, functionName }) => {
 const index = names
   .map(({ functionName }) => `export { default as ${functionName} } from "./${functionName}";\n`)
   .join("");
-fs.writeFileSync(path.join(jsxPath, "index.js"), index);
+fs.writeFileSync(path.join(componentPath, "index.js"), index);
 
 const iconsIndex = names
   .map(

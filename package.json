@@ -3,12 +3,10 @@
   "version": "0.0.0-rc1",
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook",
-    "build":
-      "yarn clean && yarn build:icons && yarn build:lib && yarn build:flow && yarn build:module",
+    "build": "yarn clean && yarn build:icons && yarn build:lib && yarn build:flow && yarn build:module",
     "build:lib": "babel --out-dir lib --ignore *.stories.js,*.test.js src",
     "build:flow": "flow-copy-source -v -i '**/*.?(stories|test).js' src lib",
-    "build:module":
-      "babel --presets react --plugins styled-jsx/babel,transform-class-properties --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src",
+    "build:module": "babel --presets react --plugins styled-jsx/babel,transform-class-properties --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src",
     "build:icons": "node config/build.js",
     "clean": "rimraf lib es",
     "prepare": "npm run build",
@@ -16,9 +14,16 @@
     "eslint": "eslint .",
     "flow:check": "flow check",
     "test": "jest --config=jest.json",
-    "test-ci": "yarn flow:check && yarn eslint && yarn test"
+    "test-ci": "yarn flow:check && yarn eslint && yarn test --ci",
+    "deploy-storybook": "storybook-to-ghpages"
   },
-  "keywords": ["orbit", "components", "ui", "library", "component"],
+  "keywords": [
+    "orbit",
+    "components",
+    "ui",
+    "library",
+    "component"
+  ],
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": "kiwi.com",
@@ -34,6 +39,7 @@
     "@storybook/addon-actions": "^3.3.14",
     "@storybook/addon-knobs": "^3.3.14",
     "@storybook/react": "^3.3.13",
+    "@storybook/storybook-deployer": "^2.3.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-plugin-transform-class-properties": "^6.24.1",

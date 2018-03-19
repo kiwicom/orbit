@@ -2,11 +2,13 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
+import { withScreenshot } from "storybook-chrome-screenshot";
 import { action } from "@storybook/addon-actions";
 
 import InputTextarea from "./index";
 
 storiesOf("InputTextarea", module)
+  .addDecorator(withScreenshot())
   .add("default", () => <InputTextarea value="" onChange={action("onChange")} />)
   .add("label", () => (
     <InputTextarea

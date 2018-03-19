@@ -1,6 +1,7 @@
 // @flow
 
 import React from "react";
+import { withScreenshot } from "storybook-chrome-screenshot";
 import { storiesOf } from "@storybook/react";
 
 import { Icons } from "../";
@@ -10,6 +11,7 @@ import SystemMessage from "./index";
 const { Alert, AlertCircle, InformationOutline, Check } = Icons;
 
 storiesOf("SystemMessage", module)
+  .addDecorator(withScreenshot())
   .add("error basic", () => <SystemMessage type="error">Type your message here</SystemMessage>)
   .add("warning basic", () => <SystemMessage type="warning">Type your message here</SystemMessage>)
   .add("info basic", () => <SystemMessage type="info">Type your message here</SystemMessage>)

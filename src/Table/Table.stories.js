@@ -3,9 +3,6 @@
 import React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { action } from "@storybook/addon-actions";
-
-import Alert from "../icons/Alert";
 
 import { Table, TableRow, TableBody, TableFooter, TableCell, TableHeader } from "../index";
 
@@ -18,20 +15,29 @@ const options = {
   allowPropTablesToggling: false,
 };
 
-/*eslint-disable */
-const IconButton = () => (
-  <div onClick={action("action")}>
-    <Alert />
-    <style jsx>
-      {`
-        div {
-          cursor: pointer;
-        }
-      `}
-    </style>
-  </div>
-);
-/* eslint-enable */
+const HeaderLabels = [
+  { title: "Header 1 left", align: "left" },
+  { title: "Header 2 center", align: "center" },
+  { title: "Header 3 right", align: "right" },
+];
+
+const data = [
+  [
+    { title: "Text 1 left", align: "left" },
+    { title: "Text 2 center", align: "center" },
+    { title: "Text 3 right", align: "right" },
+  ],
+  [
+    { title: "Text 1 left", align: "left" },
+    { title: "Text 2 center", align: "center" },
+    { title: "Text 3 right", align: "right" },
+  ],
+  [
+    { title: "Text 1 left", align: "left" },
+    { title: "Text 2 center", align: "center" },
+    { title: "Text 3 right", align: "right" },
+  ],
+];
 
 storiesOf("Table", module).addWithChapters("Table", {
   info: "Table Example",
@@ -45,42 +51,19 @@ storiesOf("Table", module).addWithChapters("Table", {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableCell isBold style={{ width: "150px" }}>
-                    Header 1 left
-                  </TableCell>
-                  <TableCell isBold align="center" style={{ width: "150px" }}>
-                    Header 2 center
-                  </TableCell>
-                  <TableCell isBold align="right" style={{ width: "150px" }}>
-                    Header 3 right
-                  </TableCell>
+                  {HeaderLabels.map(col => (
+                    <TableCell style={{ width: "150px" }} key={col.title} isBold align={col.align}>
+                      {col.title}
+                    </TableCell>
+                  ))}
                 </TableRow>
               </TableHeader>
               <TableBody>
-                <TableRow>
-                  <TableCell>Text left</TableCell>
-                  <TableCell align="center">Text center</TableCell>
-                  <TableCell align="right">Text right</TableCell>
-                  <TableCell>
-                    <IconButton />
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>Text left</TableCell>
-                  <TableCell align="center">Text center</TableCell>
-                  <TableCell align="right">Text right</TableCell>
-                  <TableCell>
-                    <IconButton />
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>Text left</TableCell>
-                  <TableCell align="center">Text center</TableCell>
-                  <TableCell align="right">Text right</TableCell>
-                  <TableCell>
-                    <IconButton />
-                  </TableCell>
-                </TableRow>
+                {data.map(row => (
+                  <TableRow>
+                    {row.map(item => <TableCell align={item.align}>{item.title}</TableCell>)}
+                  </TableRow>
+                ))}
               </TableBody>
               <TableFooter>
                 <TableRow>
@@ -91,7 +74,6 @@ storiesOf("Table", module).addWithChapters("Table", {
                   <TableCell isBold align="right">
                     Footer rigth
                   </TableCell>
-                  <TableCell />
                 </TableRow>
               </TableFooter>
             </Table>

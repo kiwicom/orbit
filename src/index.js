@@ -13,4 +13,12 @@ export { default as SystemMessage } from "./SystemMessage";
 export { default as FieldFeedback } from "./FieldFeedback";
 export { default as Typography } from "./Typography";
 export { default as Radio } from "./Radio";
+export {
+  default as Table,
+  Body as TableBody,
+  Header as TableHeader,
+  Footer as TableFooter,
+  Row as TableRow,
+  Cell as TableCell,
+} from "./Table";
 export { Icons };

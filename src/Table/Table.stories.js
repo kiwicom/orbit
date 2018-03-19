@@ -6,13 +6,8 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { action } from "@storybook/addon-actions";
 
 import Alert from "../icons/Alert";
-import Cell from "./Cell";
-import Header from "./Header";
-import Body from "./Body";
-import Footer from "./Footer";
-import Row from "./Row";
 
-import Table from "./index";
+import { Table, TableRow, TableBody, TableFooter, TableCell, TableHeader } from "../index";
 
 setAddon(chaptersAddon);
 
@@ -48,57 +43,57 @@ storiesOf("Table", module).addWithChapters("Table", {
           options,
           sectionFn: () => (
             <Table>
-              <Header>
-                <Row>
-                  <Cell isBold style={{ width: "150px" }}>
+              <TableHeader>
+                <TableRow>
+                  <TableCell isBold style={{ width: "150px" }}>
                     Header 1 left
-                  </Cell>
-                  <Cell isBold align="center" style={{ width: "150px" }}>
+                  </TableCell>
+                  <TableCell isBold align="center" style={{ width: "150px" }}>
                     Header 2 center
-                  </Cell>
-                  <Cell isBold align="right" style={{ width: "150px" }}>
+                  </TableCell>
+                  <TableCell isBold align="right" style={{ width: "150px" }}>
                     Header 3 right
-                  </Cell>
-                </Row>
-              </Header>
-              <Body>
-                <Row>
-                  <Cell>Text left</Cell>
-                  <Cell align="center">Text center</Cell>
-                  <Cell align="right">Text right</Cell>
-                  <Cell>
+                  </TableCell>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell>Text left</TableCell>
+                  <TableCell align="center">Text center</TableCell>
+                  <TableCell align="right">Text right</TableCell>
+                  <TableCell>
                     <IconButton />
-                  </Cell>
-                </Row>
-                <Row>
-                  <Cell>Text left</Cell>
-                  <Cell align="center">Text center</Cell>
-                  <Cell align="right">Text right</Cell>
-                  <Cell>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Text left</TableCell>
+                  <TableCell align="center">Text center</TableCell>
+                  <TableCell align="right">Text right</TableCell>
+                  <TableCell>
                     <IconButton />
-                  </Cell>
-                </Row>
-                <Row>
-                  <Cell>Text left</Cell>
-                  <Cell align="center">Text center</Cell>
-                  <Cell align="right">Text right</Cell>
-                  <Cell>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Text left</TableCell>
+                  <TableCell align="center">Text center</TableCell>
+                  <TableCell align="right">Text right</TableCell>
+                  <TableCell>
                     <IconButton />
-                  </Cell>
-                </Row>
-              </Body>
-              <Footer>
-                <Row>
-                  <Cell isBold>Footer left</Cell>
-                  <Cell isBold align="center">
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+              <TableFooter>
+                <TableRow>
+                  <TableCell isBold>Footer left</TableCell>
+                  <TableCell isBold align="center">
                     Footer center
-                  </Cell>
-                  <Cell isBold align="right">
+                  </TableCell>
+                  <TableCell isBold align="right">
                     Footer rigth
-                  </Cell>
-                  <Cell />
-                </Row>
-              </Footer>
+                  </TableCell>
+                  <TableCell />
+                </TableRow>
+              </TableFooter>
             </Table>
           ),
         },

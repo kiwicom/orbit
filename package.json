@@ -8,7 +8,7 @@
     "build:flow": "flow-copy-source -v -i '**/*.?(stories|test).js' src lib",
     "build:module": "babel --presets react --plugins styled-jsx/babel,transform-class-properties --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src",
     "build:icons": "node config/build.js",
-    "clean": "rimraf lib es",
+    "clean": "rimraf lib es src/icons/*.js",
     "prepare": "npm run build",
     "watch": "concurrently \"npm run build:lib -- --watch\" \"npm run build:module -- --watch\"",
     "eslint": "eslint .",

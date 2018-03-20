@@ -1,6 +1,7 @@
 // @flow
 
 import React from "react";
+import { withScreenshot } from "storybook-chrome-screenshot";
 import { storiesOf } from "@storybook/react";
 import Icon from "react-icons/lib/md/people";
 
@@ -8,6 +9,7 @@ import Header from "./Header";
 import { colors } from "../constants";
 
 storiesOf("Container", module)
+  .addDecorator(withScreenshot())
   .add("Header", () => <Header title="Section Title" />)
   .add("Header with description", () => (
     <Header

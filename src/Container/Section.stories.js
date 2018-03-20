@@ -1,6 +1,7 @@
 // @flow
 
 import React from "react";
+import { withScreenshot } from "storybook-chrome-screenshot";
 import { storiesOf } from "@storybook/react";
 import faker from "faker";
 
@@ -11,6 +12,7 @@ storiesOf("Container", module).add("Section", () => <Section />);
 
 faker.seed(1);
 storiesOf("Container", module)
+  .addDecorator(withScreenshot())
   .add("Section with Header", () => (
     <Section>
       <Header title="Section Title" description={faker.lorem.words(10)} />

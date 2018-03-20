@@ -3,6 +3,7 @@
 import React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
+import { withScreenshot } from "storybook-chrome-screenshot";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean } from "@storybook/addon-knobs/react";
 
@@ -18,6 +19,7 @@ const options = {
 };
 
 storiesOf("Radio", module)
+  .addDecorator(withScreenshot())
   .addDecorator(withKnobs)
   .addWithChapters("default", () => {
     const isChecked = boolean("isChecked", false);

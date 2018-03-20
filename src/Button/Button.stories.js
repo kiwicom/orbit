@@ -3,6 +3,7 @@
 import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
+import { withScreenshot } from "storybook-chrome-screenshot";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 
@@ -21,6 +22,7 @@ const options = {
 };
 
 storiesOf("Button", module)
+  .addDecorator(withScreenshot())
   .addDecorator(withKnobs)
   .addWithChapters("Button types", () => {
     const type = select(

@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Checkbox default 1`] = `
+<div
+  style={
+    Object {
+      "WebkitFontSmoothing": "antialiased",
+      "color": "#444",
+      "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "marginBottom": 60,
+      }
+    }
+  >
+    <div>
+      <h1
+        style={
+          Object {
+            "color": "#363a45",
+            "fontSize": 36,
+            "marginBottom": 10,
+          }
+        }
+      >
+        default
+      </h1>
+      
+      <span
+        style={
+          Object {
+            "color": "#898d97",
+            "fontSize": 18,
+            "marginBottom": 20,
+            "marginTop": 0,
+          }
+        }
+      >
+        <div>
+          <p>
+            You can change props in knobs
+          </p>
+        </div>
+      </span>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        
+        
+        
+        
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div
+          className="jsx-564223145"
+        >
+          <label
+            className="jsx-564223145 label"
+          >
+            <div
+              className="jsx-564223145 checkbox"
+            />
+            <span
+              className="jsx-1620445214"
+            >
+              Text label
+            </span>
+            <input
+              checked={false}
+              className="jsx-564223145 checkboxInput"
+              onChange={[Function]}
+              type="checkbox"
+            />
+          </label>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

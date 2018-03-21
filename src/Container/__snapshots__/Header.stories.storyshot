@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Container Header 1`] = `
+<div
+  className="jsx-452278183 header"
+>
+  <h3
+    className="jsx-452278183"
+  >
+    <span
+      className="jsx-3489231163"
+    >
+      Section Title
+    </span>
+  </h3>
+  
+</div>
+`;
+
+exports[`Storyshots Container Header with description 1`] = `
+<div
+  className="jsx-452278183 header"
+>
+  <h3
+    className="jsx-452278183"
+  >
+    <span
+      className="jsx-3489231163"
+    >
+      Header Title
+    </span>
+  </h3>
+  <span
+    className="jsx-1620445214"
+  >
+    Write some other explaining info for what is this section about
+  </span>
+</div>
+`;
+
+exports[`Storyshots Container Header with icon 1`] = `
+<div
+  className="jsx-452278183 header"
+>
+  <h3
+    className="jsx-452278183"
+  >
+    <span
+      className="jsx-452278183 icon"
+    >
+      <svg
+        fill="currentColor"
+        height={32}
+        preserveAspectRatio="xMidYMid meet"
+        style={
+          Object {
+            "color": "#bac7d5",
+            "verticalAlign": "middle",
+          }
+        }
+        viewBox="0 0 40 40"
+        width={32}
+      >
+        <g>
+          <path
+            d="m26.6 21.6c3.9 0 11.8 2 11.8 5.9v4.1h-10v-4.1c0-2.5-1.4-4.4-3.3-5.8 0.5-0.1 1.1-0.1 1.5-0.1z m-13.2 0c3.9 0 11.6 2 11.6 5.9v4.1h-23.4v-4.1c0-3.9 7.9-5.9 11.8-5.9z m0-3.2c-2.8 0-5-2.3-5-5s2.2-5 5-5 4.9 2.2 4.9 5-2.2 5-4.9 5z m13.2 0c-2.7 0-5-2.3-5-5s2.3-5 5-5 5 2.2 5 5-2.2 5-5 5z"
+          />
+        </g>
+      </svg>
+    </span>
+    <span
+      className="jsx-3489231163"
+    >
+      Header Title
+    </span>
+  </h3>
+  
+</div>
+`;
+
+exports[`Storyshots Container Section 1`] = `
+<div
+  className="jsx-388040312 section"
+/>
+`;
+
+exports[`Storyshots Container Section with Header 1`] = `
+<div
+  className="jsx-388040312 section"
+>
+  <div
+    className="jsx-452278183 header"
+  >
+    <h3
+      className="jsx-452278183"
+    >
+      <span
+        className="jsx-3489231163"
+      >
+        Section Title
+      </span>
+    </h3>
+    <span
+      className="jsx-1620445214"
+    >
+      esse repellat quisquam recusandae alias consequuntur corporis repellat ratione ut
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Container Section with Header in compact mode (different padding) 1`] = `
+<div
+  className="jsx-1404394018 section"
+>
+  <div
+    className="jsx-452278183 header"
+  >
+    <h3
+      className="jsx-452278183"
+    >
+      <span
+        className="jsx-3489231163"
+      >
+        Section Title
+      </span>
+    </h3>
+    <span
+      className="jsx-1620445214"
+    >
+      sunt qui amet iure ut libero qui recusandae ut nulla
+    </span>
+  </div>
+</div>
+`;

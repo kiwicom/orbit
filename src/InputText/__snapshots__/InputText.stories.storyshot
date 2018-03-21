@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots InputText default 1`] = `
+<label
+  className="jsx-1354988747"
+>
+  <input
+    className="jsx-1445025771"
+    onChange={[Function]}
+    value=""
+  />
+</label>
+`;
+
+exports[`Storyshots InputText empty 1`] = `
+<label
+  className="jsx-1354988747"
+>
+  <div
+    className="jsx-1354988747"
+  >
+    <span
+      className="jsx-1620445214"
+    >
+      Text label
+    </span>
+  </div>
+  <input
+    className="jsx-1445025771"
+    onChange={[Function]}
+    value=""
+  />
+</label>
+`;
+
+exports[`Storyshots InputText error 1`] = `
+Array [
+  <label
+    className="jsx-1354988747"
+  >
+    <div
+      className="jsx-1354988747"
+    >
+      <span
+        className="jsx-1867159016"
+      >
+        Text label
+      </span>
+    </div>
+    <input
+      className="jsx-295713875"
+      onChange={[Function]}
+      value="input value"
+    />
+  </label>,
+  <span
+    className="jsx-3092314264"
+  >
+    Error message
+  </span>,
+]
+`;
+
+exports[`Storyshots InputText label 1`] = `
+<label
+  className="jsx-1354988747"
+>
+  <div
+    className="jsx-1354988747"
+  >
+    <span
+      className="jsx-1867159016"
+    >
+      Text label
+    </span>
+  </div>
+  <input
+    className="jsx-1445025771"
+    onChange={[Function]}
+    value="input value"
+  />
+</label>
+`;
+
+exports[`Storyshots InputText with help 1`] = `
+Array [
+  <label
+    className="jsx-1354988747"
+  >
+    <div
+      className="jsx-1354988747"
+    >
+      <span
+        className="jsx-1867159016"
+      >
+        Text label
+      </span>
+    </div>
+    <input
+      className="jsx-1445025771"
+      onChange={[Function]}
+      value="input value"
+    />
+  </label>,
+  <span
+    className="jsx-3483989303"
+  >
+    Helpful sentence here
+  </span>,
+]
+`;

@@ -6,7 +6,7 @@ import { action } from "@storybook/addon-actions";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 
-import { Typography } from "../";
+import Typography from "../Typography";
 import Airplane from "../icons/Airplane";
 
 import Button from "./index";

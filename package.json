@@ -35,6 +35,7 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
+    "polished": "^1.9.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7",

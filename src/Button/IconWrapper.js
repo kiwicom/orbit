@@ -2,41 +2,63 @@
 
 import * as React from "react";
 
-import { colors } from "../constants";
+import { defaultTokens as tokens } from "../constants";
 
-const sizes = {
-  normal: "20px",
-  small: "20px",
-  large: "26px",
+const sizeIcon = {
+  small: tokens.heightIconSmall,
+  normal: tokens.heightIconMedium,
+  large: tokens.heightIconMedium,
 };
 
-const fillColors = {
-  primary: colors.white.normal,
-  secondary: colors.ink.normal,
+const marginRight = {
+  small: tokens.marginButtonIconSmall,
+  normal: tokens.marginButtonIconNormal,
+  large: tokens.marginButtonIconLarge,
+};
+
+const colorIcon = {
+  primary: tokens.colorIconButtonPrimary,
+  secondary: tokens.colorIconButtonSecondary,
+  link: tokens.colorIconButtonLink,
+  facebook: tokens.colorIconButtonFacebook,
+  google: tokens.colorIconButtonGoogle,
+  destructive: tokens.colorIconButtonDestructive,
+};
+
+const colorIconBordered = {
+  primary: tokens.colorIconButtonPrimaryBordered,
+  secondary: tokens.colorIconButtonSecondaryBordered,
+  facebook: tokens.colorIconButtonFacebookBordered,
+  google: tokens.colorIconButtonGoogleBordered,
+  destructive: tokens.colorIconButtonDestructiveBordered,
 };
 
 type Props = {
-  size: $Keys<typeof sizes>,
-  type: $Keys<typeof fillColors>,
-  Icon: React.ComponentType<*>,
+  bordered: boolean,
+  loading: boolean,
+  size: $Keys<typeof sizeIcon>,
+  type: $Keys<typeof colorIcon> | $Keys<typeof colorIconBordered>,
+  Icon: React.ComponentType<*>
 };
 
 const IconWrapper = (props: Props) => {
-  const { Icon, type, size } = props;
+  const { Icon, type, size, bordered } = props;
 
   return (
     <React.Fragment>
-      <Icon fill={fillColors[type]} height={sizes[size]} />
+      <Icon color={bordered ? colorIconBordered[type] : colorIcon[type]} size={sizeIcon[size]} />
       <style xml>{`
         svg {
-          position: absolute;
-          top: 50%;
-          left: 12px;
-          transform: translateY(-50%);
+          margin-right: ${marginRight[props.size]};
         }
       `}</style>
     </React.Fragment>
   );
+};
+
+IconWrapper.defaultProps = {
+  size: sizeIcon.normal,
+  type: colorIcon.primary
 };
 
 export default IconWrapper;

@@ -4,7 +4,7 @@ import * as React from "react";
 import { shallow } from "enzyme";
 
 import Button from "../";
-import { Typography } from "../../";
+import Typography from "../../Typography";
 import Airplane from "../../icons/Airplane";
 
 describe("Button", () => {

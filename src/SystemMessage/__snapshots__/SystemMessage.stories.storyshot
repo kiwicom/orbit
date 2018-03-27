@@ -16,7 +16,9 @@ exports[`Storyshots SystemMessage error with icon 1`] = `
 <div
   className="jsx-3543310177"
 >
-  <span>
+  <span
+    className="jsx-2399753088"
+  >
     <svg
       fill="#d21c1c"
       height="20px"
@@ -27,17 +29,6 @@ exports[`Storyshots SystemMessage error with icon 1`] = `
         d="M17.2 17.2h-2.4V10h2.4v7.2zm0 4.8h-2.4v-2.4h2.4V22zM16 4C9.373 4 4 9.373 4 16A12 12 0 1 0 16 4z"
       />
     </svg>
-    <style
-      xml={true}
-    >
-      
-        svg {
-          position: absolute;
-          top: 16px;
-          left: 14px;
-        }
-      
-    </style>
   </span>
   <span
     className="jsx-3356670990"
@@ -68,7 +59,9 @@ exports[`Storyshots SystemMessage error with title and  icon 1`] = `
 <div
   className="jsx-3543310177"
 >
-  <span>
+  <span
+    className="jsx-2399753088"
+  >
     <svg
       fill="#d21c1c"
       height="20px"
@@ -79,17 +72,6 @@ exports[`Storyshots SystemMessage error with title and  icon 1`] = `
         d="M17.2 17.2h-2.4V10h2.4v7.2zm0 4.8h-2.4v-2.4h2.4V22zM16 4C9.373 4 4 9.373 4 16A12 12 0 1 0 16 4z"
       />
     </svg>
-    <style
-      xml={true}
-    >
-      
-        svg {
-          position: absolute;
-          top: 16px;
-          left: 14px;
-        }
-      
-    </style>
   </span>
   <h4
     className="jsx-3861500783"
@@ -120,7 +102,9 @@ exports[`Storyshots SystemMessage info with icon 1`] = `
 <div
   className="jsx-2937561027"
 >
-  <span>
+  <span
+    className="jsx-2399753088"
+  >
     <svg
       fill="#10709f"
       height="20px"
@@ -131,17 +115,6 @@ exports[`Storyshots SystemMessage info with icon 1`] = `
         d="M14.8 12.4h2.4V10h-2.4v2.4zM16 25.6c-5.292 0-9.6-4.308-9.6-9.6s4.308-9.6 9.6-9.6 9.6 4.308 9.6 9.6-4.308 9.6-9.6 9.6zM16 4C9.373 4 4 9.373 4 16A12 12 0 1 0 16 4zm-1.2 18h2.4v-7.2h-2.4V22z"
       />
     </svg>
-    <style
-      xml={true}
-    >
-      
-        svg {
-          position: absolute;
-          top: 16px;
-          left: 14px;
-        }
-      
-    </style>
   </span>
   <span
     className="jsx-2657584504"
@@ -155,7 +128,9 @@ exports[`Storyshots SystemMessage info with title and  icon 1`] = `
 <div
   className="jsx-2937561027"
 >
-  <span>
+  <span
+    className="jsx-2399753088"
+  >
     <svg
       fill="#10709f"
       height="20px"
@@ -166,17 +141,6 @@ exports[`Storyshots SystemMessage info with title and  icon 1`] = `
         d="M14.8 12.4h2.4V10h-2.4v2.4zM16 25.6c-5.292 0-9.6-4.308-9.6-9.6s4.308-9.6 9.6-9.6 9.6 4.308 9.6 9.6-4.308 9.6-9.6 9.6zM16 4C9.373 4 4 9.373 4 16A12 12 0 1 0 16 4zm-1.2 18h2.4v-7.2h-2.4V22z"
       />
     </svg>
-    <style
-      xml={true}
-    >
-      
-        svg {
-          position: absolute;
-          top: 16px;
-          left: 14px;
-        }
-      
-    </style>
   </span>
   <h4
     className="jsx-3436964697"
@@ -207,7 +171,9 @@ exports[`Storyshots SystemMessage success with icon 1`] = `
 <div
   className="jsx-2338436252"
 >
-  <span>
+  <span
+    className="jsx-2399753088"
+  >
     <svg
       fill="#127f22"
       height="20px"
@@ -218,17 +184,6 @@ exports[`Storyshots SystemMessage success with icon 1`] = `
         d="M28 8.934L11.543 25.39 4 17.848l1.934-1.934 5.609 5.596L26.066 7z"
       />
     </svg>
-    <style
-      xml={true}
-    >
-      
-        svg {
-          position: absolute;
-          top: 16px;
-          left: 14px;
-        }
-      
-    </style>
   </span>
   <span
     className="jsx-3915919481"
@@ -242,7 +197,9 @@ exports[`Storyshots SystemMessage success with title and  icon 1`] = `
 <div
   className="jsx-2338436252"
 >
-  <span>
+  <span
+    className="jsx-2399753088"
+  >
     <svg
       fill="#127f22"
       height="20px"
@@ -253,17 +210,6 @@ exports[`Storyshots SystemMessage success with title and  icon 1`] = `
         d="M28 8.934L11.543 25.39 4 17.848l1.934-1.934 5.609 5.596L26.066 7z"
       />
     </svg>
-    <style
-      xml={true}
-    >
-      
-        svg {
-          position: absolute;
-          top: 16px;
-          left: 14px;
-        }
-      
-    </style>
   </span>
   <h4
     className="jsx-1426517912"
@@ -294,7 +240,9 @@ exports[`Storyshots SystemMessage warning with icon 1`] = `
 <div
   className="jsx-2951260371"
 >
-  <span>
+  <span
+    className="jsx-2399753088"
+  >
     <svg
       fill="#f9971e"
       height="20px"
@@ -305,17 +253,6 @@ exports[`Storyshots SystemMessage warning with icon 1`] = `
         d="M17.09 18.09h-2.18v-4.363h2.18v4.364zm0 4.365h-2.18v-2.182h2.18v2.182zM4 25.727h24L16 5 4 25.727z"
       />
     </svg>
-    <style
-      xml={true}
-    >
-      
-        svg {
-          position: absolute;
-          top: 16px;
-          left: 14px;
-        }
-      
-    </style>
   </span>
   <span
     className="jsx-1932761937"
@@ -329,7 +266,9 @@ exports[`Storyshots SystemMessage warning with title and  icon 1`] = `
 <div
   className="jsx-2951260371"
 >
-  <span>
+  <span
+    className="jsx-2399753088"
+  >
     <svg
       fill="#f9971e"
       height="20px"
@@ -340,17 +279,6 @@ exports[`Storyshots SystemMessage warning with title and  icon 1`] = `
         d="M17.09 18.09h-2.18v-4.363h2.18v4.364zm0 4.365h-2.18v-2.182h2.18v2.182zM4 25.727h24L16 5 4 25.727z"
       />
     </svg>
-    <style
-      xml={true}
-    >
-      
-        svg {
-          position: absolute;
-          top: 16px;
-          left: 14px;
-        }
-      
-    </style>
   </span>
   <h4
     className="jsx-384181360"

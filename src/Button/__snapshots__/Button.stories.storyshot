@@ -402,6 +402,101 @@ exports[`Storyshots Button Button types 1`] = `
         </div>
       </div>
     </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            <p
+              style={
+                Object {
+                  "color": "#898d97",
+                  "fontSize": 14,
+                  "marginBottom": 20,
+                  "marginTop": 0,
+                }
+              }
+            >
+              button with icon
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <button
+          className="jsx-3391529375"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <span
+            className="jsx-2581055507"
+          >
+            <svg
+              fill="#fff"
+              height="20px"
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.09 18.09h-2.18v-4.363h2.18v4.364zm0 4.365h-2.18v-2.182h2.18v2.182zM4 25.727h24L16 5 4 25.727z"
+              />
+            </svg>
+          </span>
+          Hello Button
+        </button>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;

@@ -1,0 +1,1380 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Typography Typography 1`] = `
+<div
+  style={
+    Object {
+      "WebkitFontSmoothing": "antialiased",
+      "color": "#444",
+      "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "marginBottom": 60,
+      }
+    }
+  >
+    <div>
+      <h1
+        style={
+          Object {
+            "color": "#363a45",
+            "fontSize": 36,
+            "marginBottom": 10,
+          }
+        }
+      >
+        Typography
+      </h1>
+      
+      <span
+        style={
+          Object {
+            "color": "#898d97",
+            "fontSize": 18,
+            "marginBottom": 20,
+            "marginTop": 0,
+          }
+        }
+      >
+        <div>
+          <p>
+            Examples of possible combinations to achieve typographically nice texts.
+          </p>
+        </div>
+      </span>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h3
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 24,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Large text
+        </h3>
+        
+        
+        
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-1632180380"
+        >
+          Default text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-1855423850"
+        >
+          Secondary text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-398534955"
+        >
+          Attention seeking text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-4200998682"
+        >
+          Active seeking text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h3
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 24,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Normal text
+        </h3>
+        
+        
+        
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-1620445214"
+        >
+          Default text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-1867159016"
+        >
+          Secondary text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-141524338"
+        >
+          Secondary bold text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-410270121"
+        >
+          Attention seeking text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-4212733848"
+        >
+          ACtive seeking text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h3
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 24,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Small text
+        </h3>
+        
+        
+        
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-4273763992"
+        >
+          Default text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-4162127362"
+        >
+          Default bold text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-3508807534"
+        >
+          Secondary text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-1806643188"
+        >
+          Secondary bold text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-2051918639"
+        >
+          Attention seeking text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-2993152437"
+        >
+          Attention seeking bold text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-2501948932"
+        >
+          Active seeking bold text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-3092314264"
+        >
+          Error text.
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h3
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 24,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Header text
+        </h3>
+        
+        
+        
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <span
+          className="jsx-3489231163"
+        >
+          Header sized text
+        </span>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "height": 15,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #ccd6dd",
+                    "borderRadius": 3,
+                    "color": "#898d97",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "marginLeft": 5,
+                    "padding": "5px 10px",
+                  }
+                }
+              >
+                Show
+                 Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

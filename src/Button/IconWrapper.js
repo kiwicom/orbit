@@ -25,17 +25,17 @@ const IconWrapper = (props: Props) => {
   const { Icon, type, size } = props;
 
   return (
-    <React.Fragment>
+    <span>
       <Icon fill={fillColors[type]} height={sizes[size]} />
-      <style xml>{`
-        svg {
+      <style jsx>{`
+        span {
           position: absolute;
           top: 50%;
           left: 12px;
           transform: translateY(-50%);
         }
       `}</style>
-    </React.Fragment>
+    </span>
   );
 };
 

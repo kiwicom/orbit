@@ -20,8 +20,8 @@ const IconWrapper = (props: Props) => {
   return (
     <span>
       <Icon fill={fillColors[type]} height="20px" />
-      <style xml>{`
-        svg {
+      <style jsx>{`
+        span {
           position: absolute;
           top: 16px;
           left: 14px;

@@ -6,8 +6,9 @@ import { action } from "@storybook/addon-actions";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 
-import { Typography } from "../";
+import Typography from "../Typography";
 import Airplane from "../icons/Airplane";
+import Alert from "../icons/Alert";
 
 import Button from "./index";
 
@@ -92,6 +93,20 @@ storiesOf("Button", module)
                   </Typography>
                   <Airplane fill="#F2473F" size="32" />
                 </Button>
+              ),
+              options,
+            },
+            {
+              subtitle: "button with icon",
+              sectionFn: () => (
+                <Button
+                  isDisabled={boolean("Disabled", false)}
+                  onClick={action("clicked")}
+                  size="normal"
+                  title={label}
+                  type={type}
+                  Icon={Alert}
+                />
               ),
               options,
             },

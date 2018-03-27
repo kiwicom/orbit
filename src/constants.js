@@ -41,8 +41,8 @@ export const colors = {
     dark: "#07405c",
   },
   social: {
-    facebook: "#4465AD",
-    google: "#D24318",
+    facebook: "#3b5998",
+    google: "#dd4b39",
   },
 };
 

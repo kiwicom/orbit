@@ -7,16 +7,18 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 
-import Airplane from "../icons/Airplane";
-import PlusCircle from "../icons/PlusCircle";
-
 import Button from "./index";
+
+import PlusCircle from "../icons/PlusCircle";
+import Facebook from "../icons/Facebook";
+import Google from "../icons/Google";
+import Remove from "../icons/Remove";
 
 setAddon(chaptersAddon);
 
 const options = {
-  showSource: false,
-  allowSourceToggling: true,
+  showSource: true,
+  allowSourceToggling: false,
   showPropTables: false,
   allowPropTablesToggling: false,
 };
@@ -38,18 +40,14 @@ storiesOf("Button", module)
     );
     return {
       title: 'Primary button',
-      info: 'Buttons are used to initialize an action, either in the background or foreground of an experience.\n' +
-      'Primary buttons should be used for the principle call to action on the page. Modify the behavior of the button by changing its event properties.\n' +
-      'Small buttons may be used when there is not enough space for a regular sized button. This issue is most found in tables. Small button should have three words or less.\n' +
-      'The example below shows Primary Button component.',
+      info: 'Some description about this type of button in general.',
       chapters: [
         {
           title: `Without icon`,
-          info: "Some description about the different kinds of button sizes.",
+          info: "Some description about where is the button without icon used and states describing how to not use it in general. ",
           sections: [
             {
               title: `Button ${size}`,
-              info: "Some description about the small button.",
               sectionFn: () => (
                 <Button
                   title={text("Text", `Button ${size}`)}
@@ -65,11 +63,10 @@ storiesOf("Button", module)
         },
         {
           title: `With icon`,
-          info: "Some description about the different kinds of button sizes.",
+          info: "Some description about where is the button with icon used and states describing how to not use it in general.",
           sections: [
             {
               title: `Button ${size}`,
-              info: "Some description about the small button.",
               sectionFn: () => (
                 <Button
                   title={text("Text", `Button ${size}`)}
@@ -100,15 +97,14 @@ storiesOf("Button", module)
     );
     return {
       title: 'Secondary button',
-      info: 'Bla bla',
+      info: 'Some description about this type of button in general.',
       chapters: [
         {
           title: `Without icon`,
-          info: "Some description about the different kinds of button sizes.",
+          info: "Some description about where is the button without icon used and states describing how to not use it in general.",
           sections: [
             {
               title: `Button ${size}`,
-              info: "Some description about the small button.",
               sectionFn: () => (
                 <Button
                   title={text("Text", `Button ${size}`)}
@@ -124,11 +120,10 @@ storiesOf("Button", module)
         },
         {
           title: `With icon`,
-          info: "Some description about the different kinds of button sizes.",
+          info: "Some description about where is the button with icon used and states describing how to not use it in general.",
           sections: [
             {
               title: `Button ${size}`,
-              info: "Some description about the small button.",
               sectionFn: () => (
                 <Button
                   title={text("Text", `Button ${size}`)}
@@ -159,15 +154,14 @@ storiesOf("Button", module)
     );
     return {
       title: 'Link button',
-      info: 'Bla bla',
+      info: 'Some description about this type of button in general.',
       chapters: [
         {
           title: `Without icon`,
-          info: "Some description about the different kinds of button sizes.",
+          info: "Some description about where is the button without icon used and states describing how to not use it in general.",
           sections: [
             {
               title: `Button ${size}`,
-              info: "Some description about the small button.",
               sectionFn: () => (
                 <Button
                   title={text("Text", `Button ${size}`)}
@@ -183,11 +177,10 @@ storiesOf("Button", module)
         },
         {
           title: `With icon`,
-          info: "Some description about the different kinds of button sizes.",
+          info: "Some description about where is the button with icon used and states describing how to not use it in general.",
           sections: [
             {
               title: `Button ${size}`,
-              info: "Some description about the small button.",
               sectionFn: () => (
                 <Button
                   title={text("Text", `Button ${size}`)}
@@ -218,35 +211,14 @@ storiesOf("Button", module)
     );
     return {
       title: 'Facebook button',
-      info: 'Bla bla',
+      info: 'Some description about this type of button in general.',
       chapters: [
         {
-          title: `Without icon`,
-          info: "Some description about the different kinds of button sizes.",
-          sections: [
-            {
-              title: `Button ${size}`,
-              info: "Some description about the small button.",
-              sectionFn: () => (
-                <Button
-                  title={text("Text", `Button ${size}`)}
-                  isDisabled={boolean("Disabled", false)}
-                  onClick={action("clicked")}
-                  size={size}
-                  type="facebook"
-                />
-              ),
-              options,
-            },
-          ],
-        },
-        {
           title: `With icon`,
-          info: "Some description about the different kinds of button sizes.",
+          info: "Some description about where is the button with icon used and states describing how to not use it in general.",
           sections: [
             {
               title: `Button ${size}`,
-              info: "Some description about the small button.",
               sectionFn: () => (
                 <Button
                   title={text("Text", `Button ${size}`)}
@@ -255,7 +227,7 @@ storiesOf("Button", module)
                   onClick={action("clicked")}
                   size={size}
                   type="facebook"
-                  Icon={Airplane}
+                  Icon={Facebook}
                 />
               ),
               options,
@@ -277,35 +249,14 @@ storiesOf("Button", module)
     );
     return {
       title: 'Google Button',
-      info: 'Bla bla',
+      info: 'Some description about this type of button in general.',
       chapters: [
         {
-          title: `Without icon`,
-          info: "Some description about the different kinds of button sizes.",
-          sections: [
-            {
-              title: `Button ${size}`,
-              info: "Some description about the small button.",
-              sectionFn: () => (
-                <Button
-                  title={text("Text", `Button ${size}`)}
-                  isDisabled={boolean("Disabled", false)}
-                  onClick={action("clicked")}
-                  size={size}
-                  type="google"
-                />
-              ),
-              options,
-            },
-          ],
-        },
-        {
           title: `With icon`,
-          info: "Some description about the different kinds of button sizes.",
+          info: "Some description about where is the button with icon used and states describing how to not use it in general.",
           sections: [
             {
               title: `Button ${size}`,
-              info: "Some description about the small button.",
               sectionFn: () => (
                 <Button
                   title={text("Text", `Button ${size}`)}
@@ -314,7 +265,7 @@ storiesOf("Button", module)
                   onClick={action("clicked")}
                   size={size}
                   type="google"
-                  Icon={Airplane}
+                  Icon={Google}
                 />
               ),
               options,
@@ -336,36 +287,14 @@ storiesOf("Button", module)
     );
     return {
       title: 'Destructive Button',
-      info: 'Bla bla',
+      info: 'Some description about this type of button in general.',
       chapters: [
         {
-          title: `Without icon`,
-          info: "Some description about the different kinds of button sizes.",
-          sections: [
-            {
-              title: `Button ${size}`,
-              info: "Some description about the small button.",
-              sectionFn: () => (
-                <Button
-                  title={text("Text", `Button ${size}`)}
-                  isDisabled={boolean("Disabled", false)}
-                  isBordered={boolean("Bordered", false)}
-                  onClick={action("clicked")}
-                  size={size}
-                  type="destructive"
-                />
-              ),
-              options,
-            },
-          ],
-        },
-        {
           title: `With icon`,
-          info: "Some description about the different kinds of button sizes.",
+          info: "Some description about where is the button with icon used and states describing how to not use it in general.",
           sections: [
             {
               title: `Button ${size}`,
-              info: "Some description about the small button.",
               sectionFn: () => (
                 <Button
                   title={text("Text", `Button ${size}`)}
@@ -375,7 +304,7 @@ storiesOf("Button", module)
                   onClick={action("clicked")}
                   size={size}
                   type="destructive"
-                  Icon={Airplane}
+                  Icon={Remove}
                 />
               ),
               options,

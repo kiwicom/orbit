@@ -70,10 +70,10 @@ const paddingButton = {
   small: tokens.paddingButtonSmall,
 };
 
-const borderRadiusButton = {
-  large: tokens.borderRadiusLarge,
-  normal: tokens.borderRadiusNormal,
-  small: tokens.borderRadiusSmall,
+const paddingButtonWithIcon = {
+  large: tokens.paddingButtonLargeWithIcon,
+  normal: tokens.paddingButtonNormalWithIcon,
+  small: tokens.paddingButtonSmallWithIcon,
 };
 
 const Button = (props: Props) => (
@@ -87,29 +87,33 @@ const Button = (props: Props) => (
         justify-content: center;
         align-items: center;
         height: ${heightButton[props.size]};
-        opacity: ${props.isDisabled ? "0.3" : "1"};
-        cursor: ${props.isDisabled ? "default" : "pointer"};
         background: ${props.isBordered ? tokens.backgroundButtonBordered : backgroundButton[props.type]};
         color: ${props.isBordered ? colorButtonBordered[props.type]: colorButton[props.type]};
-        border: ${props.isBordered ? `2px solid ${borderButton[props.type]}` : "none"};
-        border-radius: ${borderRadiusButton[props.size]};
-        font-weight: ${tokens.fontWeightMedium};
-        padding: 0 ${paddingButton[props.size]};
+        border: ${props.isBordered ? `1px solid ${borderButton[props.type]}` : "none"};
+        border-radius: ${tokens.borderRadiusNormal};
+        padding-left: ${props.Icon ? paddingButtonWithIcon[props.size] : paddingButton[props.size]};
+        padding-right: ${paddingButton[props.size]};
+        font-weight: ${tokens.fontWeightBold};
         font-size: ${fontSizeButton[props.size]};
-        position: relative;
+        cursor: ${props.isDisabled ? "default" : "pointer"};
+        opacity: ${props.isDisabled ? tokens.opacityButtonDisabled : "1"};
         transition: all .15s ease-in-out;
         outline: 0;
       }
       button:hover {
-        background: ${props.isBordered ? tokens.backgroundButtonBordered : darken(tokens.modifierDarkenHover, backgroundButton[props.type])};
+        background: ${props.isBordered ? tokens.backgroundButtonBordered :
+                      props.type === 'link' ? tokens.backgroundButtonLinkHover :
+                                              darken(tokens.modifierDarkenHover, backgroundButton[props.type])};
         color: ${props.isBordered ? darken(tokens.modifierDarkenHover, colorButtonBordered[props.type]) : colorButton[props.type]};
-        border: ${props.isBordered ? `2px solid ${darken(tokens.modifierDarkenHover, borderButton[props.type])}` : "none"};
+        border: ${props.isBordered ? `1px solid ${darken(tokens.modifierDarkenHover, borderButton[props.type])}` : "none"};
       }
       button:active {
         transform: scale(${tokens.modifierScaleButtonActive});
-        background: ${props.isBordered ? tokens.backgroundButtonBordered : darken(tokens.modifierDarkenActive, backgroundButton[props.type])};
+        background: ${props.isBordered ? tokens.backgroundButtonBordered :
+                      props.type === 'link' ? darken(tokens.modifierDarkenActive, tokens.backgroundButtonLinkHover) :
+                                              darken(tokens.modifierDarkenActive, backgroundButton[props.type])};
         color: ${props.isBordered ? darken(tokens.modifierDarkenActive, colorButtonBordered[props.type]) : colorButton[props.type]};
-        border: ${props.isBordered ? `2px solid ${darken(tokens.modifierDarkenActive, borderButton[props.type])}` : "none"};
+        border: ${props.isBordered ? `1px solid ${darken(tokens.modifierDarkenActive, borderButton[props.type])}` : "none"};
       }
     `}</style>
   </button>

@@ -16,9 +16,15 @@ const otherTheme = {
   fontFamily: "Times, serif",
 };
 
+const altFullTheme = {
+  color: "red",
+  fontFamily: "Courier",
+  primaryColor: "green",
+};
+
 storiesOf("CSS in JS Theming", module)
   .add("Without Theme using default props", () => <RawComponent />)
-  .add("Without Theme with props", () => <RawComponent theme={defaultTheme} />)
+  .add("Without Theme with props", () => <RawComponent theme={altFullTheme} />)
   .add("Default Theme", () => (
     <ThemeProvider theme={defaultTheme}>
       <ThemedSample />

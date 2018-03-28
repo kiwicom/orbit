@@ -23,5 +23,6 @@ Component.defaultProps = {
   theme: defaultTheme, // eslint-disable-line react/default-props-match-prop-types
 };
 
+// Themed component cannot be used without ThemeProvider
 const ThemedComponent = withTheme(Component);
 export { ThemedComponent as default, Component as RawComponent };

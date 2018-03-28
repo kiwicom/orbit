@@ -8,6 +8,7 @@ import Icon from "./Icon";
 type Props = {
   label: string,
   checked?: boolean,
+  value?: string,
   onChange: (SyntheticInputEvent<HTMLInputElement>) => any,
 };
 
@@ -27,6 +28,7 @@ const Checkbox = (props: Props) => (
         type="checkbox"
         checked={props.checked}
         onChange={props.onChange}
+        value={props.value}
       />
     </label>
     <style jsx>{`

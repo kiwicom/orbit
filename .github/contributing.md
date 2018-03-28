@@ -74,4 +74,8 @@ See [Yarn Link](https://yarnpkg.com/lang/en/docs/cli/link/) documentation for mo
 
 ## Testing
 
-This project uses [Yarn workspaces](https://yarnpkg.com/lang/en/docs/workspaces/). Please run `yarn test-ci` from the root folder. By doing this we can enforce the same rules across all projects.
+Run `yarn test-ci` to perform the same automatic checks as the CI server. You can also run these checks separately:
+
+- `yarn flow` - static type check
+- `yarn eslint` - ESLint, some warnings can be fixed automatically with `yarn eslint --fix`
+- `yarn test` - run all Jest tests

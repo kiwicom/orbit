@@ -135,7 +135,7 @@ Button.defaultProps = {
   isBlock: false,
   type: "primary",
   size: "normal",
-  width: "180px"
+  width: null
 };
 
 export default Button;

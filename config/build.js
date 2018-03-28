@@ -38,13 +38,9 @@ const svgo = new SVGO();
 
 names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {
   const dom = await JSDOM.fromFile(inputFileName);
-  const shapes = dom.window.document.querySelector("defs").innerHTML;
+  const shapes = dom.window.document.querySelector("svg").innerHTML;
 
-  const svg = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24" fill="#bac7d5">
-      <g>
-        ${shapes}
-      </g>
-    </svg>`;
+  const svg = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${shapes}</svg>`;
 
   const optimizationResult = await svgo.optimize(svg);
   const optimizedSvg = optimizationResult.data;
@@ -53,8 +49,9 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
     import * as React from "react";
  
     export default function ${functionName}(props) {
+      const { color, size } = props;
       return (
-        ${optimizedSvg.replace(/<svg(\s[^>]*)>/, "<svg$1 {...props}>")}
+        ${optimizedSvg.replace(/<svg(\s[^>]*)>/, "<svg$1 height={size} fill={color}>")}
       );
     }
 `;

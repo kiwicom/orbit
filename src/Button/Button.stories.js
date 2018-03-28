@@ -5,7 +5,7 @@ import { storiesOf, setAddon } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
+import { withKnobs, text, number, boolean, select } from "@storybook/addon-knobs/react";
 
 import Button from "./index";
 
@@ -29,6 +29,11 @@ storiesOf("Button", module)
     padding: '20px',
   }))
   .addWithChapters("Primary button", () => {
+    const width = number(
+      "Width",
+      null,
+    );
+
     const size = select(
       "Size",
       {
@@ -52,8 +57,10 @@ storiesOf("Button", module)
                 <Button
                   title={text("Text", `Button ${size}`)}
                   isDisabled={boolean("Disabled", false)}
+                  isBlock={boolean("Block", false)}
                   onClick={action("clicked")}
                   size={size}
+                  width={width}
                   type="primary"
                 />
               ),
@@ -72,8 +79,10 @@ storiesOf("Button", module)
                   title={text("Text", `Button ${size}`)}
                   isDisabled={boolean("Disabled", false)}
                   isLoading={boolean("Loading", false)}
+                  isBlock={boolean("Block", false)}
                   onClick={action("clicked")}
                   size={size}
+                  width={width}
                   type="primary"
                   Icon={PlusCircle}
                 />
@@ -86,6 +95,11 @@ storiesOf("Button", module)
     };
   })
   .addWithChapters("Secondary button", () => {
+    const width = number(
+      "Width",
+      null,
+    );
+
     const size = select(
       "Size",
       {
@@ -109,8 +123,10 @@ storiesOf("Button", module)
                 <Button
                   title={text("Text", `Button ${size}`)}
                   isDisabled={boolean("Disabled", false)}
+                  isBlock={boolean("Block", false)}
                   onClick={action("clicked")}
                   size={size}
+                  width={width}
                   type="secondary"
                 />
               ),
@@ -129,8 +145,10 @@ storiesOf("Button", module)
                   title={text("Text", `Button ${size}`)}
                   isDisabled={boolean("Disabled", false)}
                   isLoading={boolean("Loading", false)}
+                  isBlock={boolean("Block", false)}
                   onClick={action("clicked")}
                   size={size}
+                  width={width}
                   type="secondary"
                   Icon={PlusCircle}
                 />
@@ -143,6 +161,11 @@ storiesOf("Button", module)
     };
   })
   .addWithChapters("Link button", () => {
+    const width = number(
+      "Width",
+      null,
+    );
+
     const size = select(
       "Size",
       {
@@ -166,7 +189,9 @@ storiesOf("Button", module)
                 <Button
                   title={text("Text", `Button ${size}`)}
                   isDisabled={boolean("Disabled", false)}
+                  isBlock={boolean("Block", false)}
                   onClick={action("clicked")}
+                  width={width}
                   size={size}
                   type="link"
                 />
@@ -186,8 +211,10 @@ storiesOf("Button", module)
                   title={text("Text", `Button ${size}`)}
                   isDisabled={boolean("Disabled", false)}
                   isLoading={boolean("Loading", false)}
+                  isBlock={boolean("Block", false)}
                   onClick={action("clicked")}
                   size={size}
+                  width={width}
                   type="link"
                   Icon={PlusCircle}
                 />
@@ -200,6 +227,11 @@ storiesOf("Button", module)
     };
   })
   .addWithChapters("Facebook button", () => {
+    const width = number(
+      "Width",
+      null,
+    );
+
     const size = select(
       "Size",
       {
@@ -224,8 +256,10 @@ storiesOf("Button", module)
                   title={text("Text", `Button ${size}`)}
                   isDisabled={boolean("Disabled", false)}
                   isLoading={boolean("Loading", false)}
+                  isBlock={boolean("Block", false)}
                   onClick={action("clicked")}
                   size={size}
+                  width={width}
                   type="facebook"
                   Icon={Facebook}
                 />
@@ -238,6 +272,11 @@ storiesOf("Button", module)
     };
   })
   .addWithChapters("Google button", () => {
+    const width = number(
+      "Width",
+      null,
+    );
+
     const size = select(
       "Size",
       {
@@ -262,8 +301,10 @@ storiesOf("Button", module)
                   title={text("Text", `Button ${size}`)}
                   isDisabled={boolean("Disabled", false)}
                   isLoading={boolean("Loading", false)}
+                  isBlock={boolean("Block", false)}
                   onClick={action("clicked")}
                   size={size}
+                  width={width}
                   type="google"
                   Icon={Google}
                 />
@@ -276,6 +317,11 @@ storiesOf("Button", module)
     };
   })
   .addWithChapters("Destructive button", () => {
+    const width = number(
+      "Width",
+      null,
+    );
+
     const size = select(
       "Size",
       {
@@ -301,8 +347,10 @@ storiesOf("Button", module)
                   isDisabled={boolean("Disabled", false)}
                   isBordered={boolean("Bordered", false)}
                   isLoading={boolean("Loading", false)}
+                  isBlock={boolean("Block", false)}
                   onClick={action("clicked")}
                   size={size}
+                  width={width}
                   type="destructive"
                   Icon={Remove}
                 />

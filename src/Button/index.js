@@ -12,8 +12,10 @@ type Props = {
   isDisabled?: boolean,
   isBordered?: boolean,
   isLoading?: boolean,
+  isBlock?: boolean,
   type: "primary" | "secondary" | "link" | "facebook" | "google" | "destcructive",
   size: "normal" | "large" | "small",
+  width: number,
   Icon?: React.ComponentType<*>,
   children?: React.Node,
 };
@@ -86,6 +88,11 @@ const Button = (props: Props) => (
         display: flex;
         justify-content: center;
         align-items: center;
+        width: ${
+          props.isBlock ? "100%" :
+          props.width ? `${props.width}px` : "auto"
+        };
+        min-width: ${tokens.widthButtonMinimal};
         height: ${heightButton[props.size]};
         background: ${props.isBordered ? tokens.backgroundButtonBordered : backgroundButton[props.type]};
         color: ${props.isBordered ? colorButtonBordered[props.type]: colorButton[props.type]};
@@ -101,22 +108,34 @@ const Button = (props: Props) => (
         outline: 0;
       }
       button:hover {
-        background: ${props.isBordered ? tokens.backgroundButtonBordered :
-                      props.type === 'link' ? tokens.backgroundButtonLinkHover :
-                                              darken(tokens.modifierDarkenHover, backgroundButton[props.type])};
+        background: ${
+          props.isBordered ? tokens.backgroundButtonBordered :
+          props.type === 'link' ? tokens.backgroundButtonLinkHover : darken(tokens.modifierDarkenHover, backgroundButton[props.type])
+        };
         color: ${props.isBordered ? darken(tokens.modifierDarkenHover, colorButtonBordered[props.type]) : colorButton[props.type]};
         border: ${props.isBordered ? `1px solid ${darken(tokens.modifierDarkenHover, borderButton[props.type])}` : "none"};
       }
       button:active {
         transform: scale(${tokens.modifierScaleButtonActive});
-        background: ${props.isBordered ? tokens.backgroundButtonBordered :
-                      props.type === 'link' ? darken(tokens.modifierDarkenActive, tokens.backgroundButtonLinkHover) :
-                                              darken(tokens.modifierDarkenActive, backgroundButton[props.type])};
+        background: ${
+          props.isBordered ? tokens.backgroundButtonBordered :
+          props.type === 'link' ? darken(tokens.modifierDarkenActive, tokens.backgroundButtonLinkHover) : darken(tokens.modifierDarkenActive, backgroundButton[props.type])
+        };
         color: ${props.isBordered ? darken(tokens.modifierDarkenActive, colorButtonBordered[props.type]) : colorButton[props.type]};
         border: ${props.isBordered ? `1px solid ${darken(tokens.modifierDarkenActive, borderButton[props.type])}` : "none"};
       }
     `}</style>
   </button>
 );
+
+Button.defaultProps = {
+  isDisabled: false,
+  isBordered: false,
+  isLoading: false,
+  isBlock: false,
+  type: "primary",
+  size: "normal",
+  width: "180px"
+};
 
 export default Button;

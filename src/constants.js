@@ -154,6 +154,7 @@ export const defaultTokens = {
   heightInputNormal: "44px",
   heightInputLarge: "52px",
   heightInputSmall: "32px",
+  widthButtonMinimal: "180px",
   heightButtonNormal: "44px",
   heightButtonLarge: "52px",
   heightButtonSmall: "32px",

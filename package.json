@@ -35,11 +35,11 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
-    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7",
-    "styled-jsx": "^2.2.4"
+    "styled-jsx": "^2.2.4",
+    "theming": "^1.3.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.14",

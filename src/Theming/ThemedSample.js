@@ -4,13 +4,7 @@ import { withTheme } from "theming";
 
 import defaultTheme from "./defaultTheme";
 
-// const defaultThemeProps = {
-//   color: defaultTheme.color,
-//   fontFamily: defaultTheme.fontFamily,
-// };
-
 type ComponentProps = {
-  // theme: $Shape<typeof defaultTheme>,
   theme: typeof defaultTheme,
 };
 

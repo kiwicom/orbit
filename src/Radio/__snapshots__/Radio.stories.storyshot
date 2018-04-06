@@ -92,13 +92,13 @@ exports[`Storyshots Radio default 1`] = `
         }
       >
         <div
-          className="jsx-2512348022 root"
+          className="jsx-2144441854 root"
         >
           <label
-            className="jsx-2512348022 label"
+            className="jsx-2144441854 label"
           >
             <div
-              className="jsx-2512348022 radio"
+              className="jsx-2144441854 radio"
             />
             <span
               className="jsx-1620445214"
@@ -107,7 +107,7 @@ exports[`Storyshots Radio default 1`] = `
             </span>
             <input
               checked={false}
-              className="jsx-2512348022 radioInput"
+              className="jsx-2144441854 radioInput"
               disabled={false}
               onChange={[Function]}
               type="radio"

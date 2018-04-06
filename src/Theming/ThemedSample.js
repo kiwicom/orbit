@@ -1,15 +1,16 @@
 // @flow
 import React from "react";
 import { withTheme } from "theming";
-
-import defaultTheme from "./defaultTheme";
+import defaultTheme from "orbit-design-token";
 
 type ComponentProps = {
   theme: typeof defaultTheme,
 };
 
 const Component = ({ theme }: ComponentProps) => (
-  <div style={{ color: theme.color, fontFamily: theme.fontFamily }}>{theme.color}</div>
+  <div style={{ color: theme.colorTextPrimary, fontFamily: theme.fontFamily }}>
+    {theme.colorTextPrimary}
+  </div>
 );
 
 // We're passing a default theme for Component that aren't wrapped in the ThemeProvider

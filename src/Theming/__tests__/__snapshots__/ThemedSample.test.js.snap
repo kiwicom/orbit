@@ -4,11 +4,11 @@ exports[`RawComponent should match snapshot 1`] = `
 <div
   style={
     Object {
-      "color": "blue",
-      "fontFamily": "Courier",
+      "color": "#46515e",
+      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif;",
     }
   }
 >
-  blue
+  #46515e
 </div>
 `;

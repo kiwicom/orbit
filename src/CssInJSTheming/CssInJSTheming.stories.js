@@ -2,25 +2,24 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { ThemeProvider } from "theming";
+import defaultTheme from "orbit-design-token";
 
 import ThemedSample, { RawComponent } from "../Theming/ThemedSample";
 import ThemeSwither from "./ThemeSwitcher";
-import defaultTheme from "../Theming/defaultTheme";
 
 const altTheme = {
-  color: "green",
+  colorTextPrimary: "green",
 };
 
 const otherTheme = {
-  color: "purple",
+  colorTextPrimary: "purple",
   fontFamily: "Times, serif",
 };
 
-const altFullTheme = {
-  color: "red",
+const altFullTheme = Object.assign({}, defaultTheme, {
+  colorTextPrimary: "red",
   fontFamily: "Courier",
-  primaryColor: "green",
-};
+});
 
 storiesOf("CSS in JS Theming", module)
   .add("Without Theme using default props", () => <RawComponent />)

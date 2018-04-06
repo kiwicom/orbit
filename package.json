@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "description": "Design tokens for kiwi!",
   "scripts": {},
+  "author": "kiwi.com",
+  "license": "MIT",
   "keywords": [
+    "orbit",
+    "ui",
     "design"
   ]
 }

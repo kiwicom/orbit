@@ -110,6 +110,7 @@ exports[`Storyshots Checkbox default 1`] = `
               className="jsx-564223145 checkboxInput"
               onChange={[Function]}
               type="checkbox"
+              value={undefined}
             />
           </label>
         </div>

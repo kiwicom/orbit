@@ -107,7 +107,7 @@ const defaultTokens = {
   colorIconCheckbox: colors.brand.normal,
   colorIconRadioButton: colors.brand.normal,
   fontFamily:
-    '"Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;',
+    '"Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
   backgroundBody: colors.cloud.light,
   backgroundModal: colors.white.normal,
   backgroundSection: colors.white.normal,

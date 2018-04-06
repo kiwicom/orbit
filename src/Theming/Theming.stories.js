@@ -1,11 +1,11 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { ThemeProvider } from "theming";
 import defaultTheme from "orbit-design-token";
 
 import ThemedSample, { RawComponent } from "../Theming/ThemedSample";
 import ThemeSwither from "./ThemeSwitcher";
+import ThemeProvider from "./ThemeProvider";
 
 const altTheme = {
   colorTextPrimary: "green",
@@ -21,11 +21,11 @@ const altFullTheme = Object.assign({}, defaultTheme, {
   fontFamily: "Courier",
 });
 
-storiesOf("CSS in JS Theming", module)
+storiesOf("Theming", module)
   .add("Without Theme using default props", () => <RawComponent />)
   .add("Without Theme with props", () => <RawComponent theme={altFullTheme} />)
   .add("Default Theme", () => (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider>
       <ThemedSample />
     </ThemeProvider>
   ))

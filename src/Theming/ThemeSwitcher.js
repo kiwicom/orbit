@@ -1,7 +1,8 @@
 // @flow
 import * as React from "react";
-import { ThemeProvider } from "theming";
 import defaultTheme from "orbit-design-token";
+
+import ThemeProvider from "./ThemeProvider";
 
 type ThemeProps = {
   children: any,

@@ -1,5 +1,6 @@
 // @flow
 import defaultTheme from "orbit-design-token";
+import { withTheme } from "theming";
 
 import * as Icons from "./icons";
 
@@ -15,4 +16,4 @@ export { default as FieldFeedback } from "./FieldFeedback";
 export { default as Typography } from "./Typography";
 export { default as Radio } from "./Radio";
 export { default as ThemeProvider } from "./Theming/ThemeProvider";
-export { Icons, defaultTheme };
+export { Icons, defaultTheme, withTheme };

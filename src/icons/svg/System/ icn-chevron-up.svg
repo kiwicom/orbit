@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <path id="icon" transform="translate(0,32) scale(1, -1)" d="M25.18 9L16 18.16 6.82 9 4 11.82l12 12 12-12z"/>
-  </defs>
-  <use xlink:href="#icon" />
-</svg>

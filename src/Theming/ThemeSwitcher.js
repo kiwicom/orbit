@@ -4,17 +4,17 @@ import defaultTheme from "orbit-design-token";
 
 import ThemeProvider from "./ThemeProvider";
 
-type ThemeProps = {
-  children: any,
+type Props = {
+  children: React.Node,
   mainTheme?: typeof defaultTheme,
   themes: any[],
 };
 
-type ThemeState = {
+type State = {
   themeIndex: number,
 };
 
-export default class ThemeSwitherSample extends React.Component<ThemeProps, ThemeState> {
+export default class ThemeSwither extends React.Component<Props, State> {
   static defaultProps = {
     mainTheme: defaultTheme,
   };

@@ -1,13 +1,18 @@
 {
   "name": "orbit-design-token",
-  "version": "0.0.1",
-  "description": "Design tokens for kiwi!",
-  "scripts": {},
+  "version": "0.0.2",
+  "description": "Design tokens for kiwi.com!",
+  "scripts": {
+    "prepublish": "generate"
+  },
   "author": "kiwi.com",
   "license": "MIT",
   "keywords": [
     "orbit",
     "ui",
     "design"
-  ]
+  ],
+  "devDependencies": {
+    "babylon": "^6.18.0"
+  }
 }

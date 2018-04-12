@@ -1,0 +1,1255 @@
+{
+  "props": {
+    "textPrimary": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Primary",
+        "type": "string"
+      }
+    },
+    "textSecondary": {
+      "value": "#7f91a8",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Secondary",
+        "type": "string"
+      }
+    },
+    "textAttention": {
+      "value": "#171b1e",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Attention",
+        "type": "string"
+      }
+    },
+    "textError": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Error",
+        "type": "string"
+      }
+    },
+    "heading": {
+      "value": "1.2",
+      "type": "string",
+      "category": "line-height",
+      "meta": {
+        "name": "Heading",
+        "type": "string"
+      }
+    },
+    "linkPrimary": {
+      "value": "none",
+      "type": "string",
+      "category": "text-decoration",
+      "meta": {
+        "name": "Link Primary",
+        "type": "string"
+      }
+    },
+    "linkSecondary": {
+      "value": "underline",
+      "type": "string",
+      "category": "text-decoration",
+      "meta": {
+        "name": "Link Secondary",
+        "type": "string"
+      }
+    },
+    "textMessageSuccess": {
+      "value": "#065d12",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Message Success",
+        "type": "string"
+      }
+    },
+    "iconMessageSuccess": {
+      "value": "#127f22",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Message Success",
+        "type": "string"
+      }
+    },
+    "textMessageWarning": {
+      "value": "#650808",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Message Warning",
+        "type": "string"
+      }
+    },
+    "iconMessageWarning": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Message Warning",
+        "type": "string"
+      }
+    },
+    "textMessageError": {
+      "value": "#a93610",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Message Error",
+        "type": "string"
+      }
+    },
+    "iconMessageError": {
+      "value": "#f9971e",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Message Error",
+        "type": "string"
+      }
+    },
+    "textMessageInfo": {
+      "value": "#07405c",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Message Info",
+        "type": "string"
+      }
+    },
+    "iconMessageInfo": {
+      "value": "#10709f",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Message Info",
+        "type": "string"
+      }
+    },
+    "textButtonPrimary": {
+      "value": "#fff",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Button Primary",
+        "type": "string"
+      }
+    },
+    "iconButtonPrimary": {
+      "value": "#fff",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Button Primary",
+        "type": "string"
+      }
+    },
+    "textButtonPrimaryBordered": {
+      "value": "#00a991",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Button Primary Bordered",
+        "type": "string"
+      }
+    },
+    "iconButtonPrimaryBordered": {
+      "value": "#00a991",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Button Primary Bordered",
+        "type": "string"
+      }
+    },
+    "textButtonSecondary": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Button Secondary",
+        "type": "string"
+      }
+    },
+    "iconButtonSecondary": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Button Secondary",
+        "type": "string"
+      }
+    },
+    "textButtonSecondaryBordered": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Button Secondary Bordered",
+        "type": "string"
+      }
+    },
+    "iconButtonSecondaryBordered": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Button Secondary Bordered",
+        "type": "string"
+      }
+    },
+    "textButtonLink": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Button Link",
+        "type": "string"
+      }
+    },
+    "iconButtonLink": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Button Link",
+        "type": "string"
+      }
+    },
+    "textButtonLinkBordered": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Button Link Bordered",
+        "type": "string"
+      }
+    },
+    "iconButtonLinkBordered": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Button Link Bordered",
+        "type": "string"
+      }
+    },
+    "textButtonFacebook": {
+      "value": "#fff",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Button Facebook",
+        "type": "string"
+      }
+    },
+    "iconButtonFacebook": {
+      "value": "#fff",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Button Facebook",
+        "type": "string"
+      }
+    },
+    "textButtonFacebookBordered": {
+      "value": "#3b5998",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Button Facebook Bordered",
+        "type": "string"
+      }
+    },
+    "iconButtonFacebookBordered": {
+      "value": "#3b5998",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Button Facebook Bordered",
+        "type": "string"
+      }
+    },
+    "textButtonGoogle": {
+      "value": "#fff",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Button Google",
+        "type": "string"
+      }
+    },
+    "iconButtonGoogle": {
+      "value": "#fff",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Button Google",
+        "type": "string"
+      }
+    },
+    "textButtonGoogleBordered": {
+      "value": "#dd4b39",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Button Google Bordered",
+        "type": "string"
+      }
+    },
+    "iconButtonGoogleBordered": {
+      "value": "#dd4b39",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Button Google Bordered",
+        "type": "string"
+      }
+    },
+    "textButtonDestructive": {
+      "value": "#fff",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Button Destructive",
+        "type": "string"
+      }
+    },
+    "iconButtonDestructive": {
+      "value": "#fff",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Button Destructive",
+        "type": "string"
+      }
+    },
+    "textButtonDestructiveBordered": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Button Destructive Bordered",
+        "type": "string"
+      }
+    },
+    "iconButtonDestructiveBordered": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Button Destructive Bordered",
+        "type": "string"
+      }
+    },
+    "textInput": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Text Input",
+        "type": "string"
+      }
+    },
+    "placeholderInput": {
+      "value": "#bac7d5",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Placeholder Input",
+        "type": "string"
+      }
+    },
+    "labelForm": {
+      "value": "14px",
+      "type": "size",
+      "category": "font-size",
+      "meta": {
+        "name": "Label Form",
+        "type": "string"
+      }
+    },
+    "labelFormFilled": {
+      "value": "#7f91a8",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Label Form Filled",
+        "type": "string"
+      }
+    },
+    "iconCheckbox": {
+      "value": "#00a991",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Checkbox",
+        "type": "string"
+      }
+    },
+    "iconRadioButton": {
+      "value": "#00a991",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Radio Button",
+        "type": "string"
+      }
+    },
+    "iconCheckboxDisabled": {
+      "value": "#bac7d5",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Checkbox Disabled",
+        "type": "string"
+      }
+    },
+    "iconRadioButtonDisabled": {
+      "value": "#bac7d5",
+      "type": "color",
+      "category": "text-color",
+      "meta": {
+        "name": "Icon Radio Button Disabled",
+        "type": "string"
+      }
+    },
+    "primary": {
+      "value": "\"Roboto\", -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif",
+      "type": "string",
+      "category": "font-family",
+      "meta": {
+        "name": "Primary",
+        "type": "string"
+      }
+    },
+    "body": {
+      "value": "#f5f7f9",
+      "type": "color",
+      "category": "background-color",
+      "meta": {
+        "name": "Body",
+        "type": "string"
+      }
+    },
+    "modal": {
+      "value": "#e8edf1",
+      "type": "color",
+      "category": "border-color",
+      "meta": {
+        "name": "Modal",
+        "type": "string"
+      }
+    },
+    "section": {
+      "value": "solid",
+      "type": "string",
+      "category": "border-style",
+      "meta": {
+        "name": "Section",
+        "type": "string"
+      }
+    },
+    "carrierLogo": {
+      "value": "#fff",
+      "type": "color",
+      "category": "background-color",
+      "meta": {
+        "name": "Carrier Logo",
+        "type": "string"
+      }
+    },
+    "buttonPrimary": {
+      "value": "#00a991",
+      "type": "color",
+      "category": "background-color",
+      "meta": {
+        "name": "Button Primary",
+        "type": "string"
+      }
+    },
+    "buttonSecondary": {
+      "value": "#e8edf1",
+      "type": "color",
+      "category": "background-color",
+      "meta": {
+        "name": "Button Secondary",
+        "type": "string"
+      }
+    },
+    "buttonLink": {
+      "value": "rgba(0,0,0,0)",
+      "type": "color",
+      "category": "background-color",
+      "meta": {
+        "name": "Button Link",
+        "type": "string"
+      }
+    },
+    "buttonBordered": {
+      "value": "rgba(0,0,0,0)",
+      "type": "color",
+      "category": "background-color",
+      "meta": {
+        "name": "Button Bordered",
+        "type": "string"
+      }
+    },
+    "buttonFacebook": {
+      "value": "#3b5998",
+      "type": "color",
+      "category": "background-color",
+      "meta": {
+        "name": "Button Facebook",
+        "type": "string"
+      }
+    },
+    "buttonGoogle": {
+      "value": "#dd4b39",
+      "type": "color",
+      "category": "background-color",
+      "meta": {
+        "name": "Button Google",
+        "type": "string"
+      }
+    },
+    "buttonDestructive": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "background-color",
+      "meta": {
+        "name": "Button Destructive",
+        "type": "string"
+      }
+    },
+    "buttonLinkHover": {
+      "value": "#e8edf1",
+      "type": "color",
+      "category": "background-color",
+      "meta": {
+        "name": "Button Link Hover",
+        "type": "string"
+      }
+    },
+    "input": {
+      "value": "#bac7d5",
+      "type": "color",
+      "category": "border-color",
+      "meta": {
+        "name": "Input",
+        "type": "string"
+      }
+    },
+    "messageSuccess": {
+      "value": "#e7f3e8",
+      "type": "color",
+      "category": "background-color",
+      "meta": {
+        "name": "Message Success",
+        "type": "string"
+      }
+    },
+    "messageWarning": {
+      "value": "#fcf1cd",
+      "type": "color",
+      "category": "background-color",
+      "meta": {
+        "name": "Message Warning",
+        "type": "string"
+      }
+    },
+    "messageError": {
+      "value": "#fae8e8",
+      "type": "color",
+      "category": "background-color",
+      "meta": {
+        "name": "Message Error",
+        "type": "string"
+      }
+    },
+    "messageInfo": {
+      "value": "#e0f6ff",
+      "type": "color",
+      "category": "background-color",
+      "meta": {
+        "name": "Message Info",
+        "type": "string"
+      }
+    },
+    "headingDisplay": {
+      "value": "40px",
+      "type": "size",
+      "category": "font-size",
+      "meta": {
+        "name": "Heading Display",
+        "type": "string"
+      }
+    },
+    "headingLarge": {
+      "value": "28px",
+      "type": "size",
+      "category": "font-size",
+      "meta": {
+        "name": "Heading Large",
+        "type": "string"
+      }
+    },
+    "headingMedium": {
+      "value": "22px",
+      "type": "size",
+      "category": "font-size",
+      "meta": {
+        "name": "Heading Medium",
+        "type": "string"
+      }
+    },
+    "headingSmall": {
+      "value": "16px",
+      "type": "size",
+      "category": "font-size",
+      "meta": {
+        "name": "Heading Small",
+        "type": "string"
+      }
+    },
+    "textNormal": {
+      "value": "14px",
+      "type": "size",
+      "category": "font-size",
+      "meta": {
+        "name": "Text Normal",
+        "type": "string"
+      }
+    },
+    "textLarge": {
+      "value": "16px",
+      "type": "size",
+      "category": "font-size",
+      "meta": {
+        "name": "Text Large",
+        "type": "string"
+      }
+    },
+    "textSmall": {
+      "value": "12px",
+      "type": "size",
+      "category": "font-size",
+      "meta": {
+        "name": "Text Small",
+        "type": "string"
+      }
+    },
+    "message": {
+      "value": "14px",
+      "type": "size",
+      "category": "font-size",
+      "meta": {
+        "name": "Message",
+        "type": "string"
+      }
+    },
+    "buttonLarge": {
+      "value": "16px",
+      "type": "size",
+      "category": "font-size",
+      "meta": {
+        "name": "Button Large",
+        "type": "string"
+      }
+    },
+    "buttonNormal": {
+      "value": "14px",
+      "type": "size",
+      "category": "font-size",
+      "meta": {
+        "name": "Button Normal",
+        "type": "string"
+      }
+    },
+    "buttonSmall": {
+      "value": "12px",
+      "type": "size",
+      "category": "font-size",
+      "meta": {
+        "name": "Button Small",
+        "type": "string"
+      }
+    },
+    "messageForm": {
+      "value": "12px",
+      "type": "size",
+      "category": "font-size",
+      "meta": {
+        "name": "Message Form",
+        "type": "string"
+      }
+    },
+    "circle": {
+      "value": "50%",
+      "type": "size",
+      "category": "border-radius",
+      "meta": {
+        "name": "Circle",
+        "type": "string"
+      }
+    },
+    "normal": {
+      "value": "0.3s",
+      "type": "string",
+      "category": "duration",
+      "meta": {
+        "name": "Normal",
+        "type": "string"
+      }
+    },
+    "large": {
+      "value": "24px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": "Large",
+        "type": "string"
+      }
+    },
+    "small": {
+      "value": "12px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": "Small",
+        "type": "string"
+      }
+    },
+    "default": {
+      "value": "1",
+      "type": "string",
+      "category": "spacing",
+      "meta": {
+        "name": "Default",
+        "type": "string"
+      }
+    },
+    "sticky": {
+      "value": "100",
+      "type": "string",
+      "category": "spacing",
+      "meta": {
+        "name": "Sticky",
+        "type": "string"
+      }
+    },
+    "modalOverlay": {
+      "value": "800",
+      "type": "string",
+      "category": "spacing",
+      "meta": {
+        "name": "Modal Overlay",
+        "type": "string"
+      }
+    },
+    "onTheTop": {
+      "value": "900",
+      "type": "string",
+      "category": "spacing",
+      "meta": {
+        "name": "On The Top",
+        "type": "string"
+      }
+    },
+    "widthIconSmall": {
+      "value": "16px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Width Icon Small",
+        "type": "string"
+      }
+    },
+    "heightIconSmall": {
+      "value": "16px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Height Icon Small",
+        "type": "string"
+      }
+    },
+    "heightIconMedium": {
+      "value": "24px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Height Icon Medium",
+        "type": "string"
+      }
+    },
+    "widthIconMedium": {
+      "value": "24px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Width Icon Medium",
+        "type": "string"
+      }
+    },
+    "heightInputNormal": {
+      "value": "44px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Height Input Normal",
+        "type": "string"
+      }
+    },
+    "heightInputLarge": {
+      "value": "52px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Height Input Large",
+        "type": "string"
+      }
+    },
+    "heightInputSmall": {
+      "value": "32px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Height Input Small",
+        "type": "string"
+      }
+    },
+    "widthButtonMinimal": {
+      "value": "180px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Width Button Minimal",
+        "type": "string"
+      }
+    },
+    "heightButtonNormal": {
+      "value": "44px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Height Button Normal",
+        "type": "string"
+      }
+    },
+    "heightButtonLarge": {
+      "value": "52px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Height Button Large",
+        "type": "string"
+      }
+    },
+    "heightButtonSmall": {
+      "value": "32px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Height Button Small",
+        "type": "string"
+      }
+    },
+    "heightRadioButton": {
+      "value": "20px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Height Radio Button",
+        "type": "string"
+      }
+    },
+    "widthRadioButton": {
+      "value": "20px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Width Radio Button",
+        "type": "string"
+      }
+    },
+    "heightCheckbox": {
+      "value": "20px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Height Checkbox",
+        "type": "string"
+      }
+    },
+    "widthCheckbox": {
+      "value": "20px",
+      "type": "size",
+      "category": "sizing",
+      "meta": {
+        "name": "Width Checkbox",
+        "type": "string"
+      }
+    },
+    "inputError": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "border-color",
+      "meta": {
+        "name": "Input Error",
+        "type": "string"
+      }
+    },
+    "tableCell": {
+      "value": "#bac7d5",
+      "type": "color",
+      "category": "border-color",
+      "meta": {
+        "name": "Table Cell",
+        "type": "string"
+      }
+    },
+    "buttonPrimaryBordered": {
+      "value": "#00a991",
+      "type": "color",
+      "category": "border-color",
+      "meta": {
+        "name": "Button Primary Bordered",
+        "type": "string"
+      }
+    },
+    "buttonSecondaryBordered": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "border-color",
+      "meta": {
+        "name": "Button Secondary Bordered",
+        "type": "string"
+      }
+    },
+    "buttonLinkBordered": {
+      "value": "transparent",
+      "type": "string",
+      "category": "border-color",
+      "meta": {
+        "name": "Button Link Bordered",
+        "type": "string"
+      }
+    },
+    "buttonFacebookBordered": {
+      "value": "#3b5998",
+      "type": "color",
+      "category": "border-color",
+      "meta": {
+        "name": "Button Facebook Bordered",
+        "type": "string"
+      }
+    },
+    "buttonGoogleBordered": {
+      "value": "#dd4b39",
+      "type": "color",
+      "category": "border-color",
+      "meta": {
+        "name": "Button Google Bordered",
+        "type": "string"
+      }
+    },
+    "buttonDestructiveBordered": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "border-color",
+      "meta": {
+        "name": "Button Destructive Bordered",
+        "type": "string"
+      }
+    },
+    "widthSection": {
+      "value": "1px",
+      "type": "size",
+      "category": "border-style",
+      "meta": {
+        "name": "Width Section",
+        "type": "string"
+      }
+    },
+    "overlay": {
+      "value": "0.8",
+      "type": "string",
+      "category": "opacity",
+      "meta": {
+        "name": "Overlay",
+        "type": "string"
+      }
+    },
+    "buttonDisabled": {
+      "value": "0.3",
+      "type": "string",
+      "category": "opacity",
+      "meta": {
+        "name": "Button Disabled",
+        "type": "string"
+      }
+    },
+    "radioButtonDisabled": {
+      "value": "0.5",
+      "type": "string",
+      "category": "opacity",
+      "meta": {
+        "name": "Radio Button Disabled",
+        "type": "string"
+      }
+    },
+    "checkboxDisabled": {
+      "value": "0.5",
+      "type": "string",
+      "category": "opacity",
+      "meta": {
+        "name": "Checkbox Disabled",
+        "type": "string"
+      }
+    },
+    "medium": {
+      "value": "16px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": "Medium",
+        "type": "string"
+      }
+    },
+    "bold": {
+      "value": "700",
+      "type": "string",
+      "category": "font-weight",
+      "meta": {
+        "name": "Bold",
+        "type": "string"
+      }
+    },
+    "links": {
+      "value": "500",
+      "type": "string",
+      "category": "font-weight",
+      "meta": {
+        "name": "Links",
+        "type": "string"
+      }
+    },
+    "paddingButtonSmall": {
+      "value": "12px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": "Padding Button Small",
+        "type": "string"
+      }
+    },
+    "paddingButtonNormal": {
+      "value": "16px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": "Padding Button Normal",
+        "type": "string"
+      }
+    },
+    "paddingButtonLarge": {
+      "value": "28px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": "Padding Button Large",
+        "type": "string"
+      }
+    },
+    "paddingButtonSmallWithIcon": {
+      "value": "8px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": "Padding Button Small With Icon",
+        "type": "string"
+      }
+    },
+    "paddingButtonNormalWithIcon": {
+      "value": "8px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": "Padding Button Normal With Icon",
+        "type": "string"
+      }
+    },
+    "paddingButtonLargeWithIcon": {
+      "value": "12px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": "Padding Button Large With Icon",
+        "type": "string"
+      }
+    },
+    "marginButtonIconSmall": {
+      "value": "8px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": "Margin Button Icon Small",
+        "type": "string"
+      }
+    },
+    "marginButtonIconNormal": {
+      "value": "12px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": "Margin Button Icon Normal",
+        "type": "string"
+      }
+    },
+    "marginButtonIconLarge": {
+      "value": "16px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": "Margin Button Icon Large",
+        "type": "string"
+      }
+    },
+    "XXSmall": {
+      "value": "4px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": " X X Small",
+        "type": "string"
+      }
+    },
+    "XSmall": {
+      "value": "8px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": " X Small",
+        "type": "string"
+      }
+    },
+    "XLarge": {
+      "value": "32px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": " X Large",
+        "type": "string"
+      }
+    },
+    "XXLarge": {
+      "value": "40px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": " X X Large",
+        "type": "string"
+      }
+    },
+    "XXXLarge": {
+      "value": "52px",
+      "type": "size",
+      "category": "spacing",
+      "meta": {
+        "name": " X X X Large",
+        "type": "string"
+      }
+    },
+    "fast": {
+      "value": "0.2s",
+      "type": "string",
+      "category": "duration",
+      "meta": {
+        "name": "Fast",
+        "type": "string"
+      }
+    },
+    "slow": {
+      "value": "0.4s",
+      "type": "string",
+      "category": "duration",
+      "meta": {
+        "name": "Slow",
+        "type": "string"
+      }
+    },
+    "darkenHover": {
+      "value": 0.05,
+      "type": "number",
+      "category": "modifier",
+      "meta": {
+        "name": "Darken Hover",
+        "type": "number"
+      }
+    },
+    "darkenActive": {
+      "value": 0.1,
+      "type": "number",
+      "category": "modifier",
+      "meta": {
+        "name": "Darken Active",
+        "type": "number"
+      }
+    },
+    "darkenButtonLink": {
+      "value": 0.05,
+      "type": "number",
+      "category": "modifier",
+      "meta": {
+        "name": "Darken Button Link",
+        "type": "number"
+      }
+    },
+    "scaleButtonActive": {
+      "value": 0.95,
+      "type": "number",
+      "category": "modifier",
+      "meta": {
+        "name": "Scale Button Active",
+        "type": "number"
+      }
+    },
+    "text": {
+      "value": "1.4",
+      "type": "string",
+      "category": "line-height",
+      "meta": {
+        "name": "Text",
+        "type": "string"
+      }
+    },
+    "linkPrimaryHover": {
+      "value": "underline",
+      "type": "string",
+      "category": "text-decoration",
+      "meta": {
+        "name": "Link Primary Hover",
+        "type": "string"
+      }
+    },
+    "linkSecondaryHover": {
+      "value": "underline",
+      "type": "string",
+      "category": "text-decoration",
+      "meta": {
+        "name": "Link Secondary Hover",
+        "type": "string"
+      }
+    }
+  }
+}

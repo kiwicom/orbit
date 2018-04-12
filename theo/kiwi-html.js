@@ -431,7 +431,7 @@ return `
         ${this.renderSection("border-style", "Border Styles")}
         ${this.renderSection("border-color", "Border Colors")}
         ${this.renderSection("radius", "Radius")}
-        ${this.renderSection("border-radius", "Border Radii")}
+        ${this.renderSection("border-radius", "Border Radius")}
         ${this.renderSection("hr-color", "Horizontal Rule Colors")}
         ${this.renderSection("gradient", "Gradients")}
         ${this.renderSection(

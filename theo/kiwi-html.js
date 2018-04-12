@@ -412,7 +412,7 @@ return `
   <body>
     <header role="banner" class="banner">
       <div class="container">
-        <h1>Design Tokens</h1>
+        <h1>Orbit Design Tokens</h1>
       </div>
     </header>
     <div class="container">

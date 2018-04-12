@@ -3,7 +3,8 @@
   "version": "0.0.2",
   "description": "Design tokens for kiwi.com!",
   "scripts": {
-    "prepublish": "generate"
+    "prepublish": "generate",
+    "build-html": "theo --setup ./theo/setup.js theo-spec.json --format kiwi.html --dest ./pages"
   },
   "author": "kiwi.com",
   "license": "MIT",
@@ -13,6 +14,7 @@
     "design"
   ],
   "devDependencies": {
-    "babylon": "^6.18.0"
+    "babylon": "^6.18.0",
+    "theo": "^7.0.1"
   }
 }

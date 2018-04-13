@@ -35,7 +35,7 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
-    "orbit-design-token": "git+https://github.com/kiwicom/orbit-design-tokens.git",
+    "orbit-design-token": "git+https://github.com/kiwicom/orbit-design-tokens.git#v0.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7",

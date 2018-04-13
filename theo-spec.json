@@ -1,1253 +1,1522 @@
 {
   "props": {
-    "textPrimary": {
+    "colorTextPrimary": {
       "value": "#46515e",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Primary",
+        "name": "Color Text Primary",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textSecondary": {
+    "colorTextSecondary": {
       "value": "#7f91a8",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Secondary",
+        "name": "Color Text Secondary",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textAttention": {
+    "colorTextAttention": {
       "value": "#171b1e",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Attention",
+        "name": "Color Text Attention",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textError": {
+    "colorTextError": {
       "value": "#d21c1c",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Error",
+        "name": "Color Text Error",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "heading": {
-      "value": "1.2",
-      "type": "string",
-      "category": "line-height",
+    "colorHeading": {
+      "value": "#171b1e",
+      "type": "color",
+      "category": "Colors",
       "meta": {
-        "name": "Heading",
+        "name": "Color Heading",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "linkPrimary": {
-      "value": "none",
-      "type": "string",
-      "category": "text-decoration",
+    "colorLinkPrimary": {
+      "value": "#00a991",
+      "type": "color",
+      "category": "Colors",
       "meta": {
-        "name": "Link Primary",
+        "name": "Color Link Primary",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "linkSecondary": {
-      "value": "underline",
-      "type": "string",
-      "category": "text-decoration",
+    "colorLinkSecondary": {
+      "value": "#171b1e",
+      "type": "color",
+      "category": "Colors",
       "meta": {
-        "name": "Link Secondary",
+        "name": "Color Link Secondary",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textMessageSuccess": {
+    "colorTextMessageSuccess": {
       "value": "#065d12",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Message Success",
+        "name": "Color Text Message Success",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconMessageSuccess": {
+    "colorIconMessageSuccess": {
       "value": "#127f22",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Message Success",
+        "name": "Color Icon Message Success",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textMessageWarning": {
+    "colorTextMessageWarning": {
       "value": "#650808",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Message Warning",
+        "name": "Color Text Message Warning",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconMessageWarning": {
+    "colorIconMessageWarning": {
       "value": "#d21c1c",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Message Warning",
+        "name": "Color Icon Message Warning",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textMessageError": {
+    "colorTextMessageError": {
       "value": "#a93610",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Message Error",
+        "name": "Color Text Message Error",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconMessageError": {
+    "colorIconMessageError": {
       "value": "#f9971e",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Message Error",
+        "name": "Color Icon Message Error",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textMessageInfo": {
+    "colorTextMessageInfo": {
       "value": "#07405c",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Message Info",
+        "name": "Color Text Message Info",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconMessageInfo": {
+    "colorIconMessageInfo": {
       "value": "#10709f",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Message Info",
+        "name": "Color Icon Message Info",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textButtonPrimary": {
+    "colorTextButtonPrimary": {
       "value": "#fff",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Button Primary",
+        "name": "Color Text Button Primary",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconButtonPrimary": {
+    "colorIconButtonPrimary": {
       "value": "#fff",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Button Primary",
+        "name": "Color Icon Button Primary",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textButtonPrimaryBordered": {
+    "colorTextButtonPrimaryBordered": {
       "value": "#00a991",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Button Primary Bordered",
+        "name": "Color Text Button Primary Bordered",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconButtonPrimaryBordered": {
+    "colorIconButtonPrimaryBordered": {
       "value": "#00a991",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Button Primary Bordered",
+        "name": "Color Icon Button Primary Bordered",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textButtonSecondary": {
+    "colorTextButtonSecondary": {
       "value": "#46515e",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Button Secondary",
+        "name": "Color Text Button Secondary",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconButtonSecondary": {
+    "colorIconButtonSecondary": {
       "value": "#46515e",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Button Secondary",
+        "name": "Color Icon Button Secondary",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textButtonSecondaryBordered": {
+    "colorTextButtonSecondaryBordered": {
       "value": "#46515e",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Button Secondary Bordered",
+        "name": "Color Text Button Secondary Bordered",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconButtonSecondaryBordered": {
+    "colorIconButtonSecondaryBordered": {
       "value": "#46515e",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Button Secondary Bordered",
+        "name": "Color Icon Button Secondary Bordered",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textButtonLink": {
+    "colorTextButtonLink": {
       "value": "#46515e",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Button Link",
+        "name": "Color Text Button Link",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconButtonLink": {
+    "colorIconButtonLink": {
       "value": "#46515e",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Button Link",
+        "name": "Color Icon Button Link",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textButtonLinkBordered": {
+    "colorTextButtonLinkBordered": {
       "value": "#46515e",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Button Link Bordered",
+        "name": "Color Text Button Link Bordered",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconButtonLinkBordered": {
+    "colorIconButtonLinkBordered": {
       "value": "#46515e",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Button Link Bordered",
+        "name": "Color Icon Button Link Bordered",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textButtonFacebook": {
+    "colorTextButtonFacebook": {
       "value": "#fff",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Button Facebook",
+        "name": "Color Text Button Facebook",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconButtonFacebook": {
+    "colorIconButtonFacebook": {
       "value": "#fff",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Button Facebook",
+        "name": "Color Icon Button Facebook",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textButtonFacebookBordered": {
+    "colorTextButtonFacebookBordered": {
       "value": "#3b5998",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Button Facebook Bordered",
+        "name": "Color Text Button Facebook Bordered",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconButtonFacebookBordered": {
+    "colorIconButtonFacebookBordered": {
       "value": "#3b5998",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Button Facebook Bordered",
+        "name": "Color Icon Button Facebook Bordered",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textButtonGoogle": {
+    "colorTextButtonGoogle": {
       "value": "#fff",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Button Google",
+        "name": "Color Text Button Google",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconButtonGoogle": {
+    "colorIconButtonGoogle": {
       "value": "#fff",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Button Google",
+        "name": "Color Icon Button Google",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textButtonGoogleBordered": {
+    "colorTextButtonGoogleBordered": {
       "value": "#dd4b39",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Button Google Bordered",
+        "name": "Color Text Button Google Bordered",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconButtonGoogleBordered": {
+    "colorIconButtonGoogleBordered": {
       "value": "#dd4b39",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Button Google Bordered",
+        "name": "Color Icon Button Google Bordered",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textButtonDestructive": {
+    "colorTextButtonDestructive": {
       "value": "#fff",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Button Destructive",
+        "name": "Color Text Button Destructive",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconButtonDestructive": {
+    "colorIconButtonDestructive": {
       "value": "#fff",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Button Destructive",
+        "name": "Color Icon Button Destructive",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textButtonDestructiveBordered": {
+    "colorTextButtonDestructiveBordered": {
       "value": "#d21c1c",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Button Destructive Bordered",
+        "name": "Color Text Button Destructive Bordered",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconButtonDestructiveBordered": {
+    "colorIconButtonDestructiveBordered": {
       "value": "#d21c1c",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Button Destructive Bordered",
+        "name": "Color Icon Button Destructive Bordered",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "textInput": {
+    "colorTextInput": {
       "value": "#46515e",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Text Input",
+        "name": "Color Text Input",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "placeholderInput": {
+    "colorPlaceholderInput": {
       "value": "#bac7d5",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Placeholder Input",
+        "name": "Color Placeholder Input",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "labelForm": {
-      "value": "14px",
-      "type": "size",
-      "category": "font-size",
+    "colorLabelForm": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Colors",
       "meta": {
-        "name": "Label Form",
+        "name": "Color Label Form",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "labelFormFilled": {
+    "colorLabelFormFilled": {
       "value": "#7f91a8",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Label Form Filled",
+        "name": "Color Label Form Filled",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconCheckbox": {
+    "colorIconCheckbox": {
       "value": "#00a991",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Checkbox",
+        "name": "Color Icon Checkbox",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconRadioButton": {
+    "colorIconRadioButton": {
       "value": "#00a991",
       "type": "color",
-      "category": "text-color",
+      "category": "Colors",
       "meta": {
-        "name": "Icon Radio Button",
+        "name": "Color Icon Radio Button",
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
         "type": "string"
       }
     },
-    "iconCheckboxDisabled": {
-      "value": "#bac7d5",
-      "type": "color",
-      "category": "text-color",
-      "meta": {
-        "name": "Icon Checkbox Disabled",
-        "type": "string"
-      }
-    },
-    "iconRadioButtonDisabled": {
-      "value": "#bac7d5",
-      "type": "color",
-      "category": "text-color",
-      "meta": {
-        "name": "Icon Radio Button Disabled",
-        "type": "string"
-      }
-    },
-    "primary": {
+    "fontFamily": {
       "value": "\"Roboto\", -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif",
       "type": "string",
-      "category": "font-family",
+      "category": "Font family",
       "meta": {
-        "name": "Primary",
+        "name": "Font Family",
+        "categoryDescription": "",
         "type": "string"
       }
     },
-    "body": {
+    "backgroundBody": {
       "value": "#f5f7f9",
       "type": "color",
-      "category": "background-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Body",
+        "name": "Background Body",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "modal": {
-      "value": "#e8edf1",
-      "type": "color",
-      "category": "border-color",
-      "meta": {
-        "name": "Modal",
-        "type": "string"
-      }
-    },
-    "section": {
-      "value": "solid",
-      "type": "string",
-      "category": "border-style",
-      "meta": {
-        "name": "Section",
-        "type": "string"
-      }
-    },
-    "carrierLogo": {
+    "backgroundModal": {
       "value": "#fff",
       "type": "color",
-      "category": "background-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Carrier Logo",
+        "name": "Background Modal",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "buttonPrimary": {
+    "backgroundSection": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "name": "Background Section",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
+        "type": "string"
+      }
+    },
+    "backgroundCarrierLogo": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "name": "Background Carrier Logo",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
+        "type": "string"
+      }
+    },
+    "backgroundButtonPrimary": {
       "value": "#00a991",
       "type": "color",
-      "category": "background-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Button Primary",
+        "name": "Background Button Primary",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "buttonSecondary": {
+    "backgroundButtonSecondary": {
       "value": "#e8edf1",
       "type": "color",
-      "category": "background-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Button Secondary",
+        "name": "Background Button Secondary",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "buttonLink": {
+    "backgroundButtonLink": {
       "value": "rgba(0,0,0,0)",
       "type": "color",
-      "category": "background-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Button Link",
+        "name": "Background Button Link",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "buttonBordered": {
+    "backgroundButtonBordered": {
       "value": "rgba(0,0,0,0)",
       "type": "color",
-      "category": "background-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Button Bordered",
+        "name": "Background Button Bordered",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "buttonFacebook": {
+    "backgroundButtonFacebook": {
       "value": "#3b5998",
       "type": "color",
-      "category": "background-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Button Facebook",
+        "name": "Background Button Facebook",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "buttonGoogle": {
+    "backgroundButtonGoogle": {
       "value": "#dd4b39",
       "type": "color",
-      "category": "background-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Button Google",
+        "name": "Background Button Google",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "buttonDestructive": {
+    "backgroundButtonDestructive": {
       "value": "#d21c1c",
       "type": "color",
-      "category": "background-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Button Destructive",
+        "name": "Background Button Destructive",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "buttonLinkHover": {
+    "backgroundButtonLinkHover": {
       "value": "#e8edf1",
       "type": "color",
-      "category": "background-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Button Link Hover",
+        "name": "Background Button Link Hover",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "input": {
-      "value": "#bac7d5",
+    "backgroundInput": {
+      "value": "#fff",
       "type": "color",
-      "category": "border-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Input",
+        "name": "Background Input",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "messageSuccess": {
+    "backgroundMessageSuccess": {
       "value": "#e7f3e8",
       "type": "color",
-      "category": "background-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Message Success",
+        "name": "Background Message Success",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "messageWarning": {
+    "backgroundMessageWarning": {
       "value": "#fcf1cd",
       "type": "color",
-      "category": "background-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Message Warning",
+        "name": "Background Message Warning",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "messageError": {
+    "backgroundMessageError": {
       "value": "#fae8e8",
       "type": "color",
-      "category": "background-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Message Error",
+        "name": "Background Message Error",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "messageInfo": {
+    "backgroundMessageInfo": {
       "value": "#e0f6ff",
       "type": "color",
-      "category": "background-color",
+      "category": "Background colors",
       "meta": {
-        "name": "Message Info",
+        "name": "Background Message Info",
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
         "type": "string"
       }
     },
-    "headingDisplay": {
+    "fontSizeHeadingDisplay": {
       "value": "40px",
       "type": "size",
-      "category": "font-size",
+      "category": "Font size",
       "meta": {
-        "name": "Heading Display",
+        "name": "Font Size Heading Display",
+        "categoryDescription": "Use these sizing tokens for font sizes.",
         "type": "string"
       }
     },
-    "headingLarge": {
+    "fontSizeHeadingLarge": {
       "value": "28px",
       "type": "size",
-      "category": "font-size",
+      "category": "Font size",
       "meta": {
-        "name": "Heading Large",
+        "name": "Font Size Heading Large",
+        "categoryDescription": "Use these sizing tokens for font sizes.",
         "type": "string"
       }
     },
-    "headingMedium": {
+    "fontSizeHeadingMedium": {
       "value": "22px",
       "type": "size",
-      "category": "font-size",
+      "category": "Font size",
       "meta": {
-        "name": "Heading Medium",
+        "name": "Font Size Heading Medium",
+        "categoryDescription": "Use these sizing tokens for font sizes.",
         "type": "string"
       }
     },
-    "headingSmall": {
+    "fontSizeHeadingSmall": {
       "value": "16px",
       "type": "size",
-      "category": "font-size",
+      "category": "Font size",
       "meta": {
-        "name": "Heading Small",
+        "name": "Font Size Heading Small",
+        "categoryDescription": "Use these sizing tokens for font sizes.",
         "type": "string"
       }
     },
-    "textNormal": {
+    "fontSizeTextNormal": {
       "value": "14px",
       "type": "size",
-      "category": "font-size",
+      "category": "Font size",
       "meta": {
-        "name": "Text Normal",
+        "name": "Font Size Text Normal",
+        "categoryDescription": "Use these sizing tokens for font sizes.",
         "type": "string"
       }
     },
-    "textLarge": {
+    "fontSizeTextLarge": {
       "value": "16px",
       "type": "size",
-      "category": "font-size",
+      "category": "Font size",
       "meta": {
-        "name": "Text Large",
+        "name": "Font Size Text Large",
+        "categoryDescription": "Use these sizing tokens for font sizes.",
         "type": "string"
       }
     },
-    "textSmall": {
+    "fontSizeTextSmall": {
       "value": "12px",
       "type": "size",
-      "category": "font-size",
+      "category": "Font size",
       "meta": {
-        "name": "Text Small",
+        "name": "Font Size Text Small",
+        "categoryDescription": "Use these sizing tokens for font sizes.",
         "type": "string"
       }
     },
-    "message": {
+    "fontSizeMessage": {
       "value": "14px",
       "type": "size",
-      "category": "font-size",
+      "category": "Font size",
       "meta": {
-        "name": "Message",
+        "name": "Font Size Message",
+        "categoryDescription": "Use these sizing tokens for font sizes.",
         "type": "string"
       }
     },
-    "buttonLarge": {
+    "fontSizeButtonLarge": {
       "value": "16px",
       "type": "size",
-      "category": "font-size",
+      "category": "Font size",
       "meta": {
-        "name": "Button Large",
+        "name": "Font Size Button Large",
+        "categoryDescription": "Use these sizing tokens for font sizes.",
         "type": "string"
       }
     },
-    "buttonNormal": {
+    "fontSizeButtonNormal": {
       "value": "14px",
       "type": "size",
-      "category": "font-size",
+      "category": "Font size",
       "meta": {
-        "name": "Button Normal",
+        "name": "Font Size Button Normal",
+        "categoryDescription": "Use these sizing tokens for font sizes.",
         "type": "string"
       }
     },
-    "buttonSmall": {
+    "fontSizeButtonSmall": {
       "value": "12px",
       "type": "size",
-      "category": "font-size",
+      "category": "Font size",
       "meta": {
-        "name": "Button Small",
+        "name": "Font Size Button Small",
+        "categoryDescription": "Use these sizing tokens for font sizes.",
         "type": "string"
       }
     },
-    "messageForm": {
+    "fontSizeInput": {
+      "value": "16px",
+      "type": "size",
+      "category": "Font size",
+      "meta": {
+        "name": "Font Size Input",
+        "categoryDescription": "Use these sizing tokens for font sizes.",
+        "type": "string"
+      }
+    },
+    "fontSizeLabelForm": {
+      "value": "14px",
+      "type": "size",
+      "category": "Font size",
+      "meta": {
+        "name": "Font Size Label Form",
+        "categoryDescription": "Use these sizing tokens for font sizes.",
+        "type": "string"
+      }
+    },
+    "fontSizeMessageForm": {
       "value": "12px",
       "type": "size",
-      "category": "font-size",
+      "category": "Font size",
       "meta": {
-        "name": "Message Form",
+        "name": "Font Size Message Form",
+        "categoryDescription": "Use these sizing tokens for font sizes.",
         "type": "string"
       }
     },
-    "circle": {
+    "borderRadiusCircle": {
       "value": "50%",
       "type": "size",
-      "category": "border-radius",
+      "category": "Border radius",
       "meta": {
-        "name": "Circle",
+        "name": "Border Radius Circle",
+        "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners).",
         "type": "string"
       }
     },
-    "normal": {
-      "value": "0.3s",
-      "type": "string",
-      "category": "duration",
-      "meta": {
-        "name": "Normal",
-        "type": "string"
-      }
-    },
-    "large": {
-      "value": "24px",
+    "borderRadiusNormal": {
+      "value": "3px",
       "type": "size",
-      "category": "spacing",
+      "category": "Border radius",
       "meta": {
-        "name": "Large",
+        "name": "Border Radius Normal",
+        "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners).",
         "type": "string"
       }
     },
-    "small": {
-      "value": "12px",
+    "borderRadiusLarge": {
+      "value": "6px",
       "type": "size",
-      "category": "spacing",
+      "category": "Border radius",
       "meta": {
-        "name": "Small",
+        "name": "Border Radius Large",
+        "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners).",
         "type": "string"
       }
     },
-    "default": {
+    "borderRadiusSmall": {
+      "value": "2px",
+      "type": "size",
+      "category": "Border radius",
+      "meta": {
+        "name": "Border Radius Small",
+        "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners).",
+        "type": "string"
+      }
+    },
+    "zIndexDefault": {
       "value": "1",
       "type": "string",
-      "category": "spacing",
+      "category": "Z Index",
       "meta": {
-        "name": "Default",
+        "name": "Z Index Default",
+        "categoryDescription": "Use layers to show depth of page.",
         "type": "string"
       }
     },
-    "sticky": {
+    "zIndexSticky": {
       "value": "100",
       "type": "string",
-      "category": "spacing",
+      "category": "Z Index",
       "meta": {
-        "name": "Sticky",
+        "name": "Z Index Sticky",
+        "categoryDescription": "Use layers to show depth of page.",
         "type": "string"
       }
     },
-    "modalOverlay": {
+    "zIndexModalOverlay": {
       "value": "800",
       "type": "string",
-      "category": "spacing",
+      "category": "Z Index",
       "meta": {
-        "name": "Modal Overlay",
+        "name": "Z Index Modal Overlay",
+        "categoryDescription": "Use layers to show depth of page.",
         "type": "string"
       }
     },
-    "onTheTop": {
+    "zIndexModal": {
+      "value": "825",
+      "type": "string",
+      "category": "Z Index",
+      "meta": {
+        "name": "Z Index Modal",
+        "categoryDescription": "Use layers to show depth of page.",
+        "type": "string"
+      }
+    },
+    "zIndexOnTheTop": {
       "value": "900",
       "type": "string",
-      "category": "spacing",
+      "category": "Z Index",
       "meta": {
-        "name": "On The Top",
+        "name": "Z Index On The Top",
+        "categoryDescription": "Use layers to show depth of page.",
         "type": "string"
       }
     },
     "widthIconSmall": {
       "value": "16px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Width Icon Small",
+        "categoryDescription": "",
         "type": "string"
       }
     },
     "heightIconSmall": {
       "value": "16px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Height Icon Small",
+        "categoryDescription": "",
         "type": "string"
       }
     },
     "heightIconMedium": {
       "value": "24px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Height Icon Medium",
+        "categoryDescription": "",
         "type": "string"
       }
     },
     "widthIconMedium": {
       "value": "24px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Width Icon Medium",
+        "categoryDescription": "",
         "type": "string"
       }
     },
     "heightInputNormal": {
       "value": "44px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Height Input Normal",
+        "categoryDescription": "",
         "type": "string"
       }
     },
     "heightInputLarge": {
       "value": "52px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Height Input Large",
+        "categoryDescription": "",
         "type": "string"
       }
     },
     "heightInputSmall": {
       "value": "32px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Height Input Small",
+        "categoryDescription": "",
         "type": "string"
       }
     },
     "widthButtonMinimal": {
       "value": "180px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Width Button Minimal",
+        "categoryDescription": "",
         "type": "string"
       }
     },
     "heightButtonNormal": {
       "value": "44px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Height Button Normal",
+        "categoryDescription": "",
         "type": "string"
       }
     },
     "heightButtonLarge": {
       "value": "52px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Height Button Large",
+        "categoryDescription": "",
         "type": "string"
       }
     },
     "heightButtonSmall": {
       "value": "32px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Height Button Small",
+        "categoryDescription": "",
         "type": "string"
       }
     },
     "heightRadioButton": {
       "value": "20px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Height Radio Button",
+        "categoryDescription": "",
         "type": "string"
       }
     },
     "widthRadioButton": {
       "value": "20px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Width Radio Button",
+        "categoryDescription": "",
         "type": "string"
       }
     },
     "heightCheckbox": {
       "value": "20px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Height Checkbox",
+        "categoryDescription": "",
         "type": "string"
       }
     },
     "widthCheckbox": {
       "value": "20px",
       "type": "size",
-      "category": "sizing",
+      "category": "Size (width, height)",
       "meta": {
         "name": "Width Checkbox",
+        "categoryDescription": "",
         "type": "string"
       }
     },
-    "inputError": {
-      "value": "#d21c1c",
-      "type": "color",
-      "category": "border-color",
-      "meta": {
-        "name": "Input Error",
-        "type": "string"
-      }
-    },
-    "tableCell": {
+    "borderColorInput": {
       "value": "#bac7d5",
       "type": "color",
-      "category": "border-color",
+      "category": "Border color",
       "meta": {
-        "name": "Table Cell",
+        "name": "Border Color Input",
+        "categoryDescription": "",
         "type": "string"
       }
     },
-    "buttonPrimaryBordered": {
-      "value": "#00a991",
-      "type": "color",
-      "category": "border-color",
-      "meta": {
-        "name": "Button Primary Bordered",
-        "type": "string"
-      }
-    },
-    "buttonSecondaryBordered": {
-      "value": "#46515e",
-      "type": "color",
-      "category": "border-color",
-      "meta": {
-        "name": "Button Secondary Bordered",
-        "type": "string"
-      }
-    },
-    "buttonLinkBordered": {
-      "value": "transparent",
-      "type": "string",
-      "category": "border-color",
-      "meta": {
-        "name": "Button Link Bordered",
-        "type": "string"
-      }
-    },
-    "buttonFacebookBordered": {
-      "value": "#3b5998",
-      "type": "color",
-      "category": "border-color",
-      "meta": {
-        "name": "Button Facebook Bordered",
-        "type": "string"
-      }
-    },
-    "buttonGoogleBordered": {
-      "value": "#dd4b39",
-      "type": "color",
-      "category": "border-color",
-      "meta": {
-        "name": "Button Google Bordered",
-        "type": "string"
-      }
-    },
-    "buttonDestructiveBordered": {
+    "borderColorInputError": {
       "value": "#d21c1c",
       "type": "color",
-      "category": "border-color",
+      "category": "Border color",
       "meta": {
-        "name": "Button Destructive Bordered",
+        "name": "Border Color Input Error",
+        "categoryDescription": "",
         "type": "string"
       }
     },
-    "widthSection": {
+    "borderColorTableCell": {
+      "value": "#bac7d5",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "name": "Border Color Table Cell",
+        "categoryDescription": "",
+        "type": "string"
+      }
+    },
+    "borderColorSection": {
+      "value": "#e8edf1",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "name": "Border Color Section",
+        "categoryDescription": "",
+        "type": "string"
+      }
+    },
+    "borderColorModal": {
+      "value": "#e8edf1",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "name": "Border Color Modal",
+        "categoryDescription": "",
+        "type": "string"
+      }
+    },
+    "borderColorButtonPrimaryBordered": {
+      "value": "#00a991",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "name": "Border Color Button Primary Bordered",
+        "categoryDescription": "",
+        "type": "string"
+      }
+    },
+    "borderColorButtonSecondaryBordered": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "name": "Border Color Button Secondary Bordered",
+        "categoryDescription": "",
+        "type": "string"
+      }
+    },
+    "borderColorButtonLinkBordered": {
+      "value": "transparent",
+      "type": "string",
+      "category": "Border color",
+      "meta": {
+        "name": "Border Color Button Link Bordered",
+        "categoryDescription": "",
+        "type": "string"
+      }
+    },
+    "borderColorButtonFacebookBordered": {
+      "value": "#3b5998",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "name": "Border Color Button Facebook Bordered",
+        "categoryDescription": "",
+        "type": "string"
+      }
+    },
+    "borderColorButtonGoogleBordered": {
+      "value": "#dd4b39",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "name": "Border Color Button Google Bordered",
+        "categoryDescription": "",
+        "type": "string"
+      }
+    },
+    "borderColorButtonDestructiveBordered": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "name": "Border Color Button Destructive Bordered",
+        "categoryDescription": "",
+        "type": "string"
+      }
+    },
+    "borderStyleSection": {
+      "value": "solid",
+      "type": "string",
+      "category": "Border style",
+      "meta": {
+        "name": "Border Style Section",
+        "categoryDescription": "",
+        "type": "string"
+      }
+    },
+    "borderWidthSection": {
       "value": "1px",
       "type": "size",
-      "category": "border-style",
+      "category": "Border style",
       "meta": {
-        "name": "Width Section",
+        "name": "Border Width Section",
+        "categoryDescription": "",
         "type": "string"
       }
     },
-    "overlay": {
+    "opacityOverlay": {
       "value": "0.8",
       "type": "string",
-      "category": "opacity",
+      "category": "Opacity",
       "meta": {
-        "name": "Overlay",
+        "name": "Opacity Overlay",
+        "categoryDescription": "",
         "type": "string"
       }
     },
-    "buttonDisabled": {
+    "opacityButtonDisabled": {
       "value": "0.3",
       "type": "string",
-      "category": "opacity",
+      "category": "Opacity",
       "meta": {
-        "name": "Button Disabled",
+        "name": "Opacity Button Disabled",
+        "categoryDescription": "",
         "type": "string"
       }
     },
-    "radioButtonDisabled": {
+    "opacityRadioButtonDisabled": {
       "value": "0.5",
       "type": "string",
-      "category": "opacity",
+      "category": "Opacity",
       "meta": {
-        "name": "Radio Button Disabled",
+        "name": "Opacity Radio Button Disabled",
+        "categoryDescription": "",
         "type": "string"
       }
     },
-    "checkboxDisabled": {
+    "opacityCheckboxDisabled": {
       "value": "0.5",
       "type": "string",
-      "category": "opacity",
+      "category": "Opacity",
       "meta": {
-        "name": "Checkbox Disabled",
+        "name": "Opacity Checkbox Disabled",
+        "categoryDescription": "",
         "type": "string"
       }
     },
-    "medium": {
-      "value": "16px",
-      "type": "size",
-      "category": "spacing",
-      "meta": {
-        "name": "Medium",
-        "type": "string"
-      }
-    },
-    "bold": {
-      "value": "700",
+    "fontWeightNormal": {
+      "value": "400",
       "type": "string",
-      "category": "font-weight",
+      "category": "Font weight",
       "meta": {
-        "name": "Bold",
+        "name": "Font Weight Normal",
+        "categoryDescription": "Use this for setting basic font weights.",
         "type": "string"
       }
     },
-    "links": {
+    "fontWeightMedium": {
       "value": "500",
       "type": "string",
-      "category": "font-weight",
+      "category": "Font weight",
       "meta": {
-        "name": "Links",
+        "name": "Font Weight Medium",
+        "categoryDescription": "Use this for setting basic font weights.",
+        "type": "string"
+      }
+    },
+    "fontWeightBold": {
+      "value": "700",
+      "type": "string",
+      "category": "Font weight",
+      "meta": {
+        "name": "Font Weight Bold",
+        "categoryDescription": "Use this for setting basic font weights.",
+        "type": "string"
+      }
+    },
+    "fontWeightLinks": {
+      "value": "500",
+      "type": "string",
+      "category": "Font weight",
+      "meta": {
+        "name": "Font Weight Links",
+        "categoryDescription": "Use this for setting basic font weights.",
         "type": "string"
       }
     },
     "paddingButtonSmall": {
       "value": "12px",
       "type": "size",
-      "category": "spacing",
+      "category": "Spacing",
       "meta": {
         "name": "Padding Button Small",
+        "categoryDescription": "Use this for setting spacings for elements.",
         "type": "string"
       }
     },
     "paddingButtonNormal": {
       "value": "16px",
       "type": "size",
-      "category": "spacing",
+      "category": "Spacing",
       "meta": {
         "name": "Padding Button Normal",
+        "categoryDescription": "Use this for setting spacings for elements.",
         "type": "string"
       }
     },
     "paddingButtonLarge": {
       "value": "28px",
       "type": "size",
-      "category": "spacing",
+      "category": "Spacing",
       "meta": {
         "name": "Padding Button Large",
+        "categoryDescription": "Use this for setting spacings for elements.",
         "type": "string"
       }
     },
     "paddingButtonSmallWithIcon": {
       "value": "8px",
       "type": "size",
-      "category": "spacing",
+      "category": "Spacing",
       "meta": {
         "name": "Padding Button Small With Icon",
+        "categoryDescription": "Use this for setting spacings for elements.",
         "type": "string"
       }
     },
     "paddingButtonNormalWithIcon": {
       "value": "8px",
       "type": "size",
-      "category": "spacing",
+      "category": "Spacing",
       "meta": {
         "name": "Padding Button Normal With Icon",
+        "categoryDescription": "Use this for setting spacings for elements.",
         "type": "string"
       }
     },
     "paddingButtonLargeWithIcon": {
       "value": "12px",
       "type": "size",
-      "category": "spacing",
+      "category": "Spacing",
       "meta": {
         "name": "Padding Button Large With Icon",
+        "categoryDescription": "Use this for setting spacings for elements.",
         "type": "string"
       }
     },
     "marginButtonIconSmall": {
       "value": "8px",
       "type": "size",
-      "category": "spacing",
+      "category": "Spacing",
       "meta": {
         "name": "Margin Button Icon Small",
+        "categoryDescription": "Use this for setting spacings for elements.",
         "type": "string"
       }
     },
     "marginButtonIconNormal": {
       "value": "12px",
       "type": "size",
-      "category": "spacing",
+      "category": "Spacing",
       "meta": {
         "name": "Margin Button Icon Normal",
+        "categoryDescription": "Use this for setting spacings for elements.",
         "type": "string"
       }
     },
     "marginButtonIconLarge": {
       "value": "16px",
       "type": "size",
-      "category": "spacing",
+      "category": "Spacing",
       "meta": {
         "name": "Margin Button Icon Large",
+        "categoryDescription": "Use this for setting spacings for elements.",
         "type": "string"
       }
     },
-    "XXSmall": {
+    "spaceXXSmall": {
       "value": "4px",
       "type": "size",
-      "category": "spacing",
+      "category": "Spacing",
       "meta": {
-        "name": " X X Small",
+        "name": "Space X X Small",
+        "categoryDescription": "Use this for setting spacings for elements.",
         "type": "string"
       }
     },
-    "XSmall": {
+    "spaceXSmall": {
       "value": "8px",
       "type": "size",
-      "category": "spacing",
+      "category": "Spacing",
       "meta": {
-        "name": " X Small",
+        "name": "Space X Small",
+        "categoryDescription": "Use this for setting spacings for elements.",
         "type": "string"
       }
     },
-    "XLarge": {
+    "spaceSmall": {
+      "value": "12px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "name": "Space Small",
+        "categoryDescription": "Use this for setting spacings for elements.",
+        "type": "string"
+      }
+    },
+    "spaceMedium": {
+      "value": "16px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "name": "Space Medium",
+        "categoryDescription": "Use this for setting spacings for elements.",
+        "type": "string"
+      }
+    },
+    "spaceLarge": {
+      "value": "24px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "name": "Space Large",
+        "categoryDescription": "Use this for setting spacings for elements.",
+        "type": "string"
+      }
+    },
+    "spaceXLarge": {
       "value": "32px",
       "type": "size",
-      "category": "spacing",
+      "category": "Spacing",
       "meta": {
-        "name": " X Large",
+        "name": "Space X Large",
+        "categoryDescription": "Use this for setting spacings for elements.",
         "type": "string"
       }
     },
-    "XXLarge": {
+    "spaceXXLarge": {
       "value": "40px",
       "type": "size",
-      "category": "spacing",
+      "category": "Spacing",
       "meta": {
-        "name": " X X Large",
+        "name": "Space X X Large",
+        "categoryDescription": "Use this for setting spacings for elements.",
         "type": "string"
       }
     },
-    "XXXLarge": {
+    "spaceXXXLarge": {
       "value": "52px",
       "type": "size",
-      "category": "spacing",
+      "category": "Spacing",
       "meta": {
-        "name": " X X X Large",
+        "name": "Space X X X Large",
+        "categoryDescription": "Use this for setting spacings for elements.",
         "type": "string"
       }
     },
-    "fast": {
+    "durationFast": {
       "value": "0.2s",
       "type": "string",
-      "category": "duration",
+      "category": "Duration",
       "meta": {
-        "name": "Fast",
+        "name": "Duration Fast",
+        "categoryDescription": "Use this for setting the speed of animation or transition.",
         "type": "string"
       }
     },
-    "slow": {
+    "durationNormal": {
+      "value": "0.3s",
+      "type": "string",
+      "category": "Duration",
+      "meta": {
+        "name": "Duration Normal",
+        "categoryDescription": "Use this for setting the speed of animation or transition.",
+        "type": "string"
+      }
+    },
+    "durationSlow": {
       "value": "0.4s",
       "type": "string",
-      "category": "duration",
+      "category": "Duration",
       "meta": {
-        "name": "Slow",
+        "name": "Duration Slow",
+        "categoryDescription": "Use this for setting the speed of animation or transition.",
         "type": "string"
       }
     },
-    "darkenHover": {
+    "modifierDarkenHover": {
       "value": 0.05,
       "type": "number",
-      "category": "modifier",
+      "category": "Modifier",
       "meta": {
-        "name": "Darken Hover",
+        "name": "Modifier Darken Hover",
+        "categoryDescription": "Use this for values for transform property, etc.",
         "type": "number"
       }
     },
-    "darkenActive": {
+    "modifierDarkenActive": {
       "value": 0.1,
       "type": "number",
-      "category": "modifier",
+      "category": "Modifier",
       "meta": {
-        "name": "Darken Active",
+        "name": "Modifier Darken Active",
+        "categoryDescription": "Use this for values for transform property, etc.",
         "type": "number"
       }
     },
-    "darkenButtonLink": {
+    "modifierDarkenButtonLink": {
       "value": 0.05,
       "type": "number",
-      "category": "modifier",
+      "category": "Modifier",
       "meta": {
-        "name": "Darken Button Link",
+        "name": "Modifier Darken Button Link",
+        "categoryDescription": "Use this for values for transform property, etc.",
         "type": "number"
       }
     },
-    "scaleButtonActive": {
+    "modifierScaleButtonActive": {
       "value": 0.95,
       "type": "number",
-      "category": "modifier",
+      "category": "Modifier",
       "meta": {
-        "name": "Scale Button Active",
+        "name": "Modifier Scale Button Active",
+        "categoryDescription": "Use this for values for transform property, etc.",
         "type": "number"
       }
     },
-    "text": {
+    "lineHeightText": {
       "value": "1.4",
       "type": "string",
-      "category": "line-height",
+      "category": "Line height",
       "meta": {
-        "name": "Text",
+        "name": "Line Height Text",
+        "categoryDescription": "",
         "type": "string"
       }
     },
-    "linkPrimaryHover": {
-      "value": "underline",
+    "lineHeightHeading": {
+      "value": "1.2",
       "type": "string",
-      "category": "text-decoration",
+      "category": "Line height",
       "meta": {
-        "name": "Link Primary Hover",
+        "name": "Line Height Heading",
+        "categoryDescription": "",
         "type": "string"
       }
     },
-    "linkSecondaryHover": {
+    "textDecorationLinkPrimary": {
+      "value": "none",
+      "type": "string",
+      "category": "Text decoration",
+      "meta": {
+        "name": "Text Decoration Link Primary",
+        "categoryDescription": "",
+        "type": "string"
+      }
+    },
+    "textDecorationLinkPrimaryHover": {
       "value": "underline",
       "type": "string",
-      "category": "text-decoration",
+      "category": "Text decoration",
       "meta": {
-        "name": "Link Secondary Hover",
+        "name": "Text Decoration Link Primary Hover",
+        "categoryDescription": "",
+        "type": "string"
+      }
+    },
+    "textDecorationLinkSecondary": {
+      "value": "underline",
+      "type": "string",
+      "category": "Text decoration",
+      "meta": {
+        "name": "Text Decoration Link Secondary",
+        "categoryDescription": "",
+        "type": "string"
+      }
+    },
+    "textDecorationLinkSecondaryHover": {
+      "value": "underline",
+      "type": "string",
+      "category": "Text decoration",
+      "meta": {
+        "name": "Text Decoration Link Secondary Hover",
+        "categoryDescription": "",
         "type": "string"
       }
     }

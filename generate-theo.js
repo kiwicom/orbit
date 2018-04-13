@@ -38,21 +38,30 @@ const getCategory = (category, key) => {
 
 const getProps = (tokenProps, category) => tokenProps.reduce((p, c) => Object.assign(p, getInfo(c, category)), {})
 
-const getInfo = (tokenProp, category) => {
+let category = ""
+let categoryDescription = ""
+
+const getInfo = (tokenProp, xcategory) => {
   const key = tokenProp.key.name
-  const value = category ? tokens[category][key] : tokens[key]
+  const value = xcategory ? tokens[xcategory][key] : tokens[key]
   const type = typeof value
   if (type === "object") return getProps(tokenProp.value.properties, key)
-  const comment = (tokenProp.leadingComments && tokenProp.leadingComments.length) 
-    ? tokenProp.leadingComments[0].value.trim() : undefined
+  const hasComment = (tokenProp.leadingComments && tokenProp.leadingComments.length) 
+  if (hasComment) {
+    const categoryComment = tokenProp.leadingComments.find(c => c.value.startsWith("category:"))
+    if (categoryComment) category = categoryComment.value.substr(9)
+    const categoryDescriptionComm = tokenProp.leadingComments.find(c => c.value.startsWith("description:"))
+    if (categoryDescriptionComm) categoryDescription = categoryDescriptionComm.value.substr(12)
+  }
   return {
     [key]: {
       value: value,
       type: getType(value),
-      category: getCategory(category, key),
-      comment,
+      category, //: getCategory(xcategory, key),
+      // comment,
       "meta": {
         name: camelCaseToText(key),
+        categoryDescription,
         type,
       }
     }

@@ -60,9 +60,9 @@ const getInfo = (tokenProp, xcategory) => {
       category, //: getCategory(xcategory, key),
       // comment,
       "meta": {
-        name: camelCaseToText(key),
+        // name: camelCaseToText(key),
         categoryDescription,
-        type,
+        // type,
       }
     }
   }

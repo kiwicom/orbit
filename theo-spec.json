@@ -5,9 +5,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Primary",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextSecondary": {
@@ -15,9 +13,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Secondary",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextAttention": {
@@ -25,9 +21,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Attention",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextError": {
@@ -35,9 +29,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Error",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorHeading": {
@@ -45,9 +37,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Heading",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorLinkPrimary": {
@@ -55,9 +45,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Link Primary",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorLinkSecondary": {
@@ -65,9 +53,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Link Secondary",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextMessageSuccess": {
@@ -75,9 +61,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Message Success",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconMessageSuccess": {
@@ -85,9 +69,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Message Success",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextMessageWarning": {
@@ -95,9 +77,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Message Warning",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconMessageWarning": {
@@ -105,9 +85,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Message Warning",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextMessageError": {
@@ -115,9 +93,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Message Error",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconMessageError": {
@@ -125,9 +101,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Message Error",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextMessageInfo": {
@@ -135,9 +109,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Message Info",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconMessageInfo": {
@@ -145,9 +117,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Message Info",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextButtonPrimary": {
@@ -155,9 +125,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Button Primary",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconButtonPrimary": {
@@ -165,9 +133,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Button Primary",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextButtonPrimaryBordered": {
@@ -175,9 +141,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Button Primary Bordered",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconButtonPrimaryBordered": {
@@ -185,9 +149,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Button Primary Bordered",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextButtonSecondary": {
@@ -195,9 +157,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Button Secondary",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconButtonSecondary": {
@@ -205,9 +165,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Button Secondary",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextButtonSecondaryBordered": {
@@ -215,9 +173,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Button Secondary Bordered",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconButtonSecondaryBordered": {
@@ -225,9 +181,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Button Secondary Bordered",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextButtonLink": {
@@ -235,9 +189,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Button Link",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconButtonLink": {
@@ -245,9 +197,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Button Link",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextButtonLinkBordered": {
@@ -255,9 +205,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Button Link Bordered",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconButtonLinkBordered": {
@@ -265,9 +213,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Button Link Bordered",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextButtonFacebook": {
@@ -275,9 +221,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Button Facebook",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconButtonFacebook": {
@@ -285,9 +229,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Button Facebook",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextButtonFacebookBordered": {
@@ -295,9 +237,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Button Facebook Bordered",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconButtonFacebookBordered": {
@@ -305,9 +245,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Button Facebook Bordered",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextButtonGoogle": {
@@ -315,9 +253,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Button Google",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconButtonGoogle": {
@@ -325,9 +261,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Button Google",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextButtonGoogleBordered": {
@@ -335,9 +269,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Button Google Bordered",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconButtonGoogleBordered": {
@@ -345,9 +277,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Button Google Bordered",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextButtonDestructive": {
@@ -355,9 +285,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Button Destructive",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconButtonDestructive": {
@@ -365,9 +293,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Button Destructive",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextButtonDestructiveBordered": {
@@ -375,9 +301,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Button Destructive Bordered",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconButtonDestructiveBordered": {
@@ -385,9 +309,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Button Destructive Bordered",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorTextInput": {
@@ -395,9 +317,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Text Input",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorPlaceholderInput": {
@@ -405,9 +325,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Placeholder Input",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorLabelForm": {
@@ -415,9 +333,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Label Form",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorLabelFormFilled": {
@@ -425,9 +341,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Label Form Filled",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconCheckbox": {
@@ -435,9 +349,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Checkbox",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "colorIconRadioButton": {
@@ -445,9 +357,7 @@
       "type": "color",
       "category": "Colors",
       "meta": {
-        "name": "Color Icon Radio Button",
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
     "fontFamily": {
@@ -455,9 +365,7 @@
       "type": "string",
       "category": "Font family",
       "meta": {
-        "name": "Font Family",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "backgroundBody": {
@@ -465,9 +373,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Body",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundModal": {
@@ -475,9 +381,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Modal",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundSection": {
@@ -485,9 +389,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Section",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundCarrierLogo": {
@@ -495,9 +397,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Carrier Logo",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundButtonPrimary": {
@@ -505,9 +405,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Button Primary",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundButtonSecondary": {
@@ -515,9 +413,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Button Secondary",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundButtonLink": {
@@ -525,9 +421,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Button Link",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundButtonBordered": {
@@ -535,9 +429,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Button Bordered",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundButtonFacebook": {
@@ -545,9 +437,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Button Facebook",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundButtonGoogle": {
@@ -555,9 +445,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Button Google",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundButtonDestructive": {
@@ -565,9 +453,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Button Destructive",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundButtonLinkHover": {
@@ -575,9 +461,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Button Link Hover",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundInput": {
@@ -585,9 +469,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Input",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundMessageSuccess": {
@@ -595,9 +477,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Message Success",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundMessageWarning": {
@@ -605,9 +485,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Message Warning",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundMessageError": {
@@ -615,9 +493,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Message Error",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "backgroundMessageInfo": {
@@ -625,9 +501,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "name": "Background Message Info",
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors.",
-        "type": "string"
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
     "fontSizeHeadingDisplay": {
@@ -635,9 +509,7 @@
       "type": "size",
       "category": "Font size",
       "meta": {
-        "name": "Font Size Heading Display",
-        "categoryDescription": "Use these sizing tokens for font sizes.",
-        "type": "string"
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeHeadingLarge": {
@@ -645,9 +517,7 @@
       "type": "size",
       "category": "Font size",
       "meta": {
-        "name": "Font Size Heading Large",
-        "categoryDescription": "Use these sizing tokens for font sizes.",
-        "type": "string"
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeHeadingMedium": {
@@ -655,9 +525,7 @@
       "type": "size",
       "category": "Font size",
       "meta": {
-        "name": "Font Size Heading Medium",
-        "categoryDescription": "Use these sizing tokens for font sizes.",
-        "type": "string"
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeHeadingSmall": {
@@ -665,9 +533,7 @@
       "type": "size",
       "category": "Font size",
       "meta": {
-        "name": "Font Size Heading Small",
-        "categoryDescription": "Use these sizing tokens for font sizes.",
-        "type": "string"
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeTextNormal": {
@@ -675,9 +541,7 @@
       "type": "size",
       "category": "Font size",
       "meta": {
-        "name": "Font Size Text Normal",
-        "categoryDescription": "Use these sizing tokens for font sizes.",
-        "type": "string"
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeTextLarge": {
@@ -685,9 +549,7 @@
       "type": "size",
       "category": "Font size",
       "meta": {
-        "name": "Font Size Text Large",
-        "categoryDescription": "Use these sizing tokens for font sizes.",
-        "type": "string"
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeTextSmall": {
@@ -695,9 +557,7 @@
       "type": "size",
       "category": "Font size",
       "meta": {
-        "name": "Font Size Text Small",
-        "categoryDescription": "Use these sizing tokens for font sizes.",
-        "type": "string"
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeMessage": {
@@ -705,9 +565,7 @@
       "type": "size",
       "category": "Font size",
       "meta": {
-        "name": "Font Size Message",
-        "categoryDescription": "Use these sizing tokens for font sizes.",
-        "type": "string"
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeButtonLarge": {
@@ -715,9 +573,7 @@
       "type": "size",
       "category": "Font size",
       "meta": {
-        "name": "Font Size Button Large",
-        "categoryDescription": "Use these sizing tokens for font sizes.",
-        "type": "string"
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeButtonNormal": {
@@ -725,9 +581,7 @@
       "type": "size",
       "category": "Font size",
       "meta": {
-        "name": "Font Size Button Normal",
-        "categoryDescription": "Use these sizing tokens for font sizes.",
-        "type": "string"
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeButtonSmall": {
@@ -735,9 +589,7 @@
       "type": "size",
       "category": "Font size",
       "meta": {
-        "name": "Font Size Button Small",
-        "categoryDescription": "Use these sizing tokens for font sizes.",
-        "type": "string"
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeInput": {
@@ -745,9 +597,7 @@
       "type": "size",
       "category": "Font size",
       "meta": {
-        "name": "Font Size Input",
-        "categoryDescription": "Use these sizing tokens for font sizes.",
-        "type": "string"
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeLabelForm": {
@@ -755,9 +605,7 @@
       "type": "size",
       "category": "Font size",
       "meta": {
-        "name": "Font Size Label Form",
-        "categoryDescription": "Use these sizing tokens for font sizes.",
-        "type": "string"
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeMessageForm": {
@@ -765,9 +613,7 @@
       "type": "size",
       "category": "Font size",
       "meta": {
-        "name": "Font Size Message Form",
-        "categoryDescription": "Use these sizing tokens for font sizes.",
-        "type": "string"
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "borderRadiusCircle": {
@@ -775,9 +621,7 @@
       "type": "size",
       "category": "Border radius",
       "meta": {
-        "name": "Border Radius Circle",
-        "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners).",
-        "type": "string"
+        "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners)."
       }
     },
     "borderRadiusNormal": {
@@ -785,9 +629,7 @@
       "type": "size",
       "category": "Border radius",
       "meta": {
-        "name": "Border Radius Normal",
-        "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners).",
-        "type": "string"
+        "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners)."
       }
     },
     "borderRadiusLarge": {
@@ -795,9 +637,7 @@
       "type": "size",
       "category": "Border radius",
       "meta": {
-        "name": "Border Radius Large",
-        "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners).",
-        "type": "string"
+        "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners)."
       }
     },
     "borderRadiusSmall": {
@@ -805,9 +645,7 @@
       "type": "size",
       "category": "Border radius",
       "meta": {
-        "name": "Border Radius Small",
-        "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners).",
-        "type": "string"
+        "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners)."
       }
     },
     "zIndexDefault": {
@@ -815,9 +653,7 @@
       "type": "string",
       "category": "Z Index",
       "meta": {
-        "name": "Z Index Default",
-        "categoryDescription": "Use layers to show depth of page.",
-        "type": "string"
+        "categoryDescription": "Use layers to show depth of page."
       }
     },
     "zIndexSticky": {
@@ -825,9 +661,7 @@
       "type": "string",
       "category": "Z Index",
       "meta": {
-        "name": "Z Index Sticky",
-        "categoryDescription": "Use layers to show depth of page.",
-        "type": "string"
+        "categoryDescription": "Use layers to show depth of page."
       }
     },
     "zIndexModalOverlay": {
@@ -835,9 +669,7 @@
       "type": "string",
       "category": "Z Index",
       "meta": {
-        "name": "Z Index Modal Overlay",
-        "categoryDescription": "Use layers to show depth of page.",
-        "type": "string"
+        "categoryDescription": "Use layers to show depth of page."
       }
     },
     "zIndexModal": {
@@ -845,9 +677,7 @@
       "type": "string",
       "category": "Z Index",
       "meta": {
-        "name": "Z Index Modal",
-        "categoryDescription": "Use layers to show depth of page.",
-        "type": "string"
+        "categoryDescription": "Use layers to show depth of page."
       }
     },
     "zIndexOnTheTop": {
@@ -855,9 +685,7 @@
       "type": "string",
       "category": "Z Index",
       "meta": {
-        "name": "Z Index On The Top",
-        "categoryDescription": "Use layers to show depth of page.",
-        "type": "string"
+        "categoryDescription": "Use layers to show depth of page."
       }
     },
     "widthIconSmall": {
@@ -865,9 +693,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Width Icon Small",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "heightIconSmall": {
@@ -875,9 +701,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Height Icon Small",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "heightIconMedium": {
@@ -885,9 +709,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Height Icon Medium",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "widthIconMedium": {
@@ -895,9 +717,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Width Icon Medium",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "heightInputNormal": {
@@ -905,9 +725,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Height Input Normal",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "heightInputLarge": {
@@ -915,9 +733,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Height Input Large",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "heightInputSmall": {
@@ -925,9 +741,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Height Input Small",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "widthButtonMinimal": {
@@ -935,9 +749,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Width Button Minimal",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "heightButtonNormal": {
@@ -945,9 +757,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Height Button Normal",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "heightButtonLarge": {
@@ -955,9 +765,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Height Button Large",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "heightButtonSmall": {
@@ -965,9 +773,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Height Button Small",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "heightRadioButton": {
@@ -975,9 +781,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Height Radio Button",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "widthRadioButton": {
@@ -985,9 +789,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Width Radio Button",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "heightCheckbox": {
@@ -995,9 +797,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Height Checkbox",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "widthCheckbox": {
@@ -1005,9 +805,7 @@
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
-        "name": "Width Checkbox",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "borderColorInput": {
@@ -1015,9 +813,7 @@
       "type": "color",
       "category": "Border color",
       "meta": {
-        "name": "Border Color Input",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "borderColorInputError": {
@@ -1025,9 +821,7 @@
       "type": "color",
       "category": "Border color",
       "meta": {
-        "name": "Border Color Input Error",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "borderColorTableCell": {
@@ -1035,9 +829,7 @@
       "type": "color",
       "category": "Border color",
       "meta": {
-        "name": "Border Color Table Cell",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "borderColorSection": {
@@ -1045,9 +837,7 @@
       "type": "color",
       "category": "Border color",
       "meta": {
-        "name": "Border Color Section",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "borderColorModal": {
@@ -1055,9 +845,7 @@
       "type": "color",
       "category": "Border color",
       "meta": {
-        "name": "Border Color Modal",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "borderColorButtonPrimaryBordered": {
@@ -1065,9 +853,7 @@
       "type": "color",
       "category": "Border color",
       "meta": {
-        "name": "Border Color Button Primary Bordered",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "borderColorButtonSecondaryBordered": {
@@ -1075,9 +861,7 @@
       "type": "color",
       "category": "Border color",
       "meta": {
-        "name": "Border Color Button Secondary Bordered",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "borderColorButtonLinkBordered": {
@@ -1085,9 +869,7 @@
       "type": "string",
       "category": "Border color",
       "meta": {
-        "name": "Border Color Button Link Bordered",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "borderColorButtonFacebookBordered": {
@@ -1095,9 +877,7 @@
       "type": "color",
       "category": "Border color",
       "meta": {
-        "name": "Border Color Button Facebook Bordered",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "borderColorButtonGoogleBordered": {
@@ -1105,9 +885,7 @@
       "type": "color",
       "category": "Border color",
       "meta": {
-        "name": "Border Color Button Google Bordered",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "borderColorButtonDestructiveBordered": {
@@ -1115,9 +893,7 @@
       "type": "color",
       "category": "Border color",
       "meta": {
-        "name": "Border Color Button Destructive Bordered",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "borderStyleSection": {
@@ -1125,9 +901,7 @@
       "type": "string",
       "category": "Border style",
       "meta": {
-        "name": "Border Style Section",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "borderWidthSection": {
@@ -1135,9 +909,7 @@
       "type": "size",
       "category": "Border style",
       "meta": {
-        "name": "Border Width Section",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "opacityOverlay": {
@@ -1145,9 +917,7 @@
       "type": "string",
       "category": "Opacity",
       "meta": {
-        "name": "Opacity Overlay",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "opacityButtonDisabled": {
@@ -1155,9 +925,7 @@
       "type": "string",
       "category": "Opacity",
       "meta": {
-        "name": "Opacity Button Disabled",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "opacityRadioButtonDisabled": {
@@ -1165,9 +933,7 @@
       "type": "string",
       "category": "Opacity",
       "meta": {
-        "name": "Opacity Radio Button Disabled",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "opacityCheckboxDisabled": {
@@ -1175,9 +941,7 @@
       "type": "string",
       "category": "Opacity",
       "meta": {
-        "name": "Opacity Checkbox Disabled",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "fontWeightNormal": {
@@ -1185,9 +949,7 @@
       "type": "string",
       "category": "Font weight",
       "meta": {
-        "name": "Font Weight Normal",
-        "categoryDescription": "Use this for setting basic font weights.",
-        "type": "string"
+        "categoryDescription": "Use this for setting basic font weights."
       }
     },
     "fontWeightMedium": {
@@ -1195,9 +957,7 @@
       "type": "string",
       "category": "Font weight",
       "meta": {
-        "name": "Font Weight Medium",
-        "categoryDescription": "Use this for setting basic font weights.",
-        "type": "string"
+        "categoryDescription": "Use this for setting basic font weights."
       }
     },
     "fontWeightBold": {
@@ -1205,9 +965,7 @@
       "type": "string",
       "category": "Font weight",
       "meta": {
-        "name": "Font Weight Bold",
-        "categoryDescription": "Use this for setting basic font weights.",
-        "type": "string"
+        "categoryDescription": "Use this for setting basic font weights."
       }
     },
     "fontWeightLinks": {
@@ -1215,9 +973,7 @@
       "type": "string",
       "category": "Font weight",
       "meta": {
-        "name": "Font Weight Links",
-        "categoryDescription": "Use this for setting basic font weights.",
-        "type": "string"
+        "categoryDescription": "Use this for setting basic font weights."
       }
     },
     "paddingButtonSmall": {
@@ -1225,9 +981,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Padding Button Small",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "paddingButtonNormal": {
@@ -1235,9 +989,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Padding Button Normal",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "paddingButtonLarge": {
@@ -1245,9 +997,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Padding Button Large",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "paddingButtonSmallWithIcon": {
@@ -1255,9 +1005,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Padding Button Small With Icon",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "paddingButtonNormalWithIcon": {
@@ -1265,9 +1013,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Padding Button Normal With Icon",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "paddingButtonLargeWithIcon": {
@@ -1275,9 +1021,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Padding Button Large With Icon",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "marginButtonIconSmall": {
@@ -1285,9 +1029,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Margin Button Icon Small",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "marginButtonIconNormal": {
@@ -1295,9 +1037,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Margin Button Icon Normal",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "marginButtonIconLarge": {
@@ -1305,9 +1045,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Margin Button Icon Large",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "spaceXXSmall": {
@@ -1315,9 +1053,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Space X X Small",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "spaceXSmall": {
@@ -1325,9 +1061,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Space X Small",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "spaceSmall": {
@@ -1335,9 +1069,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Space Small",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "spaceMedium": {
@@ -1345,9 +1077,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Space Medium",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "spaceLarge": {
@@ -1355,9 +1085,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Space Large",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "spaceXLarge": {
@@ -1365,9 +1093,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Space X Large",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "spaceXXLarge": {
@@ -1375,9 +1101,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Space X X Large",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "spaceXXXLarge": {
@@ -1385,9 +1109,7 @@
       "type": "size",
       "category": "Spacing",
       "meta": {
-        "name": "Space X X X Large",
-        "categoryDescription": "Use this for setting spacings for elements.",
-        "type": "string"
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "durationFast": {
@@ -1395,9 +1117,7 @@
       "type": "string",
       "category": "Duration",
       "meta": {
-        "name": "Duration Fast",
-        "categoryDescription": "Use this for setting the speed of animation or transition.",
-        "type": "string"
+        "categoryDescription": "Use this for setting the speed of animation or transition."
       }
     },
     "durationNormal": {
@@ -1405,9 +1125,7 @@
       "type": "string",
       "category": "Duration",
       "meta": {
-        "name": "Duration Normal",
-        "categoryDescription": "Use this for setting the speed of animation or transition.",
-        "type": "string"
+        "categoryDescription": "Use this for setting the speed of animation or transition."
       }
     },
     "durationSlow": {
@@ -1415,9 +1133,7 @@
       "type": "string",
       "category": "Duration",
       "meta": {
-        "name": "Duration Slow",
-        "categoryDescription": "Use this for setting the speed of animation or transition.",
-        "type": "string"
+        "categoryDescription": "Use this for setting the speed of animation or transition."
       }
     },
     "modifierDarkenHover": {
@@ -1425,9 +1141,7 @@
       "type": "number",
       "category": "Modifier",
       "meta": {
-        "name": "Modifier Darken Hover",
-        "categoryDescription": "Use this for values for transform property, etc.",
-        "type": "number"
+        "categoryDescription": "Use this for values for transform property, etc."
       }
     },
     "modifierDarkenActive": {
@@ -1435,9 +1149,7 @@
       "type": "number",
       "category": "Modifier",
       "meta": {
-        "name": "Modifier Darken Active",
-        "categoryDescription": "Use this for values for transform property, etc.",
-        "type": "number"
+        "categoryDescription": "Use this for values for transform property, etc."
       }
     },
     "modifierDarkenButtonLink": {
@@ -1445,9 +1157,7 @@
       "type": "number",
       "category": "Modifier",
       "meta": {
-        "name": "Modifier Darken Button Link",
-        "categoryDescription": "Use this for values for transform property, etc.",
-        "type": "number"
+        "categoryDescription": "Use this for values for transform property, etc."
       }
     },
     "modifierScaleButtonActive": {
@@ -1455,9 +1165,7 @@
       "type": "number",
       "category": "Modifier",
       "meta": {
-        "name": "Modifier Scale Button Active",
-        "categoryDescription": "Use this for values for transform property, etc.",
-        "type": "number"
+        "categoryDescription": "Use this for values for transform property, etc."
       }
     },
     "lineHeightText": {
@@ -1465,9 +1173,7 @@
       "type": "string",
       "category": "Line height",
       "meta": {
-        "name": "Line Height Text",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "lineHeightHeading": {
@@ -1475,9 +1181,7 @@
       "type": "string",
       "category": "Line height",
       "meta": {
-        "name": "Line Height Heading",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "textDecorationLinkPrimary": {
@@ -1485,9 +1189,7 @@
       "type": "string",
       "category": "Text decoration",
       "meta": {
-        "name": "Text Decoration Link Primary",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "textDecorationLinkPrimaryHover": {
@@ -1495,9 +1197,7 @@
       "type": "string",
       "category": "Text decoration",
       "meta": {
-        "name": "Text Decoration Link Primary Hover",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "textDecorationLinkSecondary": {
@@ -1505,9 +1205,7 @@
       "type": "string",
       "category": "Text decoration",
       "meta": {
-        "name": "Text Decoration Link Secondary",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     },
     "textDecorationLinkSecondaryHover": {
@@ -1515,9 +1213,7 @@
       "type": "string",
       "category": "Text decoration",
       "meta": {
-        "name": "Text Decoration Link Secondary Hover",
-        "categoryDescription": "",
-        "type": "string"
+        "categoryDescription": ""
       }
     }
   }

@@ -16,7 +16,7 @@ exports[`Rendered with children Should contain IconWrapper 1`] = `
     size="32"
   />
   <JSXStyle
-    css="button.__jsx-style-dynamic-selector{opacity:1;cursor:pointer;background-color:#00a991;color:#fff;border:none;border-radius:3px;font-weight:500;padding:14px 28px;padding-left:;font-size:16px;position:relative;}"
+    css="button.__jsx-style-dynamic-selector{opacity:1 cursor:pointer background-color:#00a991 color:#fff border:none;border-radius:3px;font-weight:500;padding:14px 28px;padding-left: font-size:16px position:relative;}"
     dynamic={
       Array [
         "1",

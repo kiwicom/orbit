@@ -7,7 +7,7 @@ import ThemeProvider from "./ThemeProvider";
 type Props = {
   children: React.Node,
   mainTheme?: typeof defaultTheme,
-  themes: any[],
+  themes: Array<$Shape<typeof defaultTheme>>,
 };
 
 type State = {

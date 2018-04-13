@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RawComponent should match snapshot 1`] = `
+<div
+  style={
+    Object {
+      "color": "#46515e",
+      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+    }
+  }
+>
+  #46515e
+</div>
+`;

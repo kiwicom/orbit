@@ -32,6 +32,7 @@ export default class ThemeSwither extends React.Component<Props, State> {
           {themes.map((t, i) => (
             <button
               type="button"
+              key={i} // eslint-disable-line react/no-array-index-key
               onClick={() => this.setState({ themeIndex: i === themeIndex ? -1 : i })}
               style={{ background: i !== themeIndex ? "inherit" : "#eee" }}
             >

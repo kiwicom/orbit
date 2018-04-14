@@ -81,5 +81,8 @@
     "rimraf": "^2.6.2",
     "svg2png": "^4.1.1",
     "svgo": "^1.0.4"
+  },
+  "resolutions": {
+    "@storybook/addons": "3.4.1"
   }
 }

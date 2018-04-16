@@ -20,7 +20,7 @@ const fontColors = {
 };
 
 const bgColors = {
-  primary: colors.teal.normal,
+  primary: colors.brand.normal,
   secondary: colors.cloud.normal,
 };
 

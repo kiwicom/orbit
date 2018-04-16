@@ -358,7 +358,7 @@ exports[`Storyshots Button Button types 1`] = `
           <svg
             fill={undefined}
             height="32"
-            viewBox="0 0 24 24"
+            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -451,7 +451,7 @@ exports[`Storyshots Button Button types 1`] = `
             <svg
               fill={undefined}
               height={undefined}
-              viewBox="0 0 24 24"
+              width="24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path

@@ -34,6 +34,7 @@
   "author": "kiwi.com",
   "license": "MIT",
   "dependencies": {
+    "@sambego/storybook-styles": "^1.0.0",
     "classnames": "^2.2.5",
     "orbit-design-token": "git+https://github.com/kiwicom/orbit-design-tokens.git#v0.0.1",
     "react": "^16.2.0",

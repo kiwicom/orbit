@@ -2,6 +2,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require("path");
 const fs = require("fs");
+const { JSDOM } = require("jsdom");
 const capitalize = require("capitalize");
 const camelcase = require("camelcase");
 const mkdirp = require("mkdirp");
@@ -31,7 +32,9 @@ const relativePngPath = pngPath.substring(path.join(__dirname, "..").length);
 const svgo = new SVGO();
 
 names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {
-  const svg = fs.readFileSync(inputFileName);
+  const dom = await JSDOM.fromFile(inputFileName);
+  const shapes = dom.window.document.querySelector("svg").innerHTML;
+  const svg = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${shapes}</svg>`;
   const optimizationResult = await svgo.optimize(svg);
   const optimizedSvg = optimizationResult.data;
   const component = `/* eslint-disable */

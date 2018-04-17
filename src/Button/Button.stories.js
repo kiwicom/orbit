@@ -7,7 +7,7 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, number, boolean, select } from "@storybook/addon-knobs/react";
 
-import PlusCircle from "../icons/PlusCircle";
+import * as Icons from "../icons";
 import Facebook from "../icons/Facebook";
 import Google from "../icons/Google";
 import Remove from "../icons/Remove";
@@ -32,7 +32,6 @@ storiesOf("Button", module)
   )
   .addWithChapters("Primary button", () => {
     const width = number("Width", 180);
-
     const size = select(
       "Size",
       {
@@ -42,6 +41,7 @@ storiesOf("Button", module)
       },
       "normal",
     );
+    const source = select("Icon", Object.keys(Icons), "PlusCircle");
     return {
       title: "Primary button",
       info: "Some description about this type of button in general.",
@@ -85,7 +85,7 @@ storiesOf("Button", module)
                   size={size}
                   width={width}
                   type="primary"
-                  Icon={PlusCircle}
+                  Icon={Icons[source]}
                 />
               ),
               options,
@@ -97,7 +97,6 @@ storiesOf("Button", module)
   })
   .addWithChapters("Secondary button", () => {
     const width = number("Width", null);
-
     const size = select(
       "Size",
       {
@@ -107,6 +106,7 @@ storiesOf("Button", module)
       },
       "normal",
     );
+    const source = select("Icon", Object.keys(Icons), "PlusCircle");
     return {
       title: "Secondary button",
       info: "Some description about this type of button in general.",
@@ -150,7 +150,7 @@ storiesOf("Button", module)
                   size={size}
                   width={width}
                   type="secondary"
-                  Icon={PlusCircle}
+                  Icon={Icons[source]}
                 />
               ),
               options,
@@ -162,7 +162,6 @@ storiesOf("Button", module)
   })
   .addWithChapters("Link button", () => {
     const width = number("Width", null);
-
     const size = select(
       "Size",
       {
@@ -172,6 +171,7 @@ storiesOf("Button", module)
       },
       "normal",
     );
+    const source = select("Icon", Object.keys(Icons), "PlusCircle");
     return {
       title: "Link button",
       info: "Some description about this type of button in general.",
@@ -215,7 +215,7 @@ storiesOf("Button", module)
                   size={size}
                   width={width}
                   type="link"
-                  Icon={PlusCircle}
+                  Icon={Icons[source]}
                 />
               ),
               options,

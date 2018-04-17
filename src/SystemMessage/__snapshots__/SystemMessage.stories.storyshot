@@ -22,7 +22,7 @@ exports[`Storyshots SystemMessage error with icon 1`] = `
     <svg
       fill={undefined}
       height={undefined}
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -65,7 +65,7 @@ exports[`Storyshots SystemMessage error with title and  icon 1`] = `
     <svg
       fill={undefined}
       height={undefined}
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -149,7 +149,7 @@ exports[`Storyshots SystemMessage success with icon 1`] = `
     <svg
       fill={undefined}
       height={undefined}
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -175,7 +175,7 @@ exports[`Storyshots SystemMessage success with title and  icon 1`] = `
     <svg
       fill={undefined}
       height={undefined}
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -218,7 +218,7 @@ exports[`Storyshots SystemMessage warning with icon 1`] = `
     <svg
       fill={undefined}
       height={undefined}
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -244,7 +244,7 @@ exports[`Storyshots SystemMessage warning with title and  icon 1`] = `
     <svg
       fill={undefined}
       height={undefined}
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

@@ -149,7 +149,7 @@ exports[`Storyshots Button Destructive button 1`] = `
             <svg
               fill="#fff"
               height="24px"
-              width="24"
+              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -577,7 +577,7 @@ exports[`Storyshots Button Facebook button 1`] = `
             <svg
               fill="#fff"
               height="24px"
-              width="24"
+              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1005,7 +1005,7 @@ exports[`Storyshots Button Google button 1`] = `
             <svg
               fill="#fff"
               height="24px"
-              width="24"
+              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1752,7 +1752,7 @@ exports[`Storyshots Button Link button 1`] = `
             <svg
               fill="#46515e"
               height="24px"
-              width="24"
+              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -2468,7 +2468,7 @@ exports[`Storyshots Button Primary button 1`] = `
             <svg
               fill="#fff"
               height="24px"
-              width="24"
+              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -3184,7 +3184,7 @@ exports[`Storyshots Button Secondary button 1`] = `
             <svg
               fill="#46515e"
               height="24px"
-              width="24"
+              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path

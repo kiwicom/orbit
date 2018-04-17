@@ -80,94 +80,70 @@ const paddingButtonWithIcon = {
   small: tokens.paddingButtonSmallWithIcon,
 };
 
-const Button = (props: Props) => {
-  let widthCondition;
-  let backgroundHoverCondition;
-  let backgroundActiveCondition;
-
-  if (props.isBlock) {
-    widthCondition = "100%";
-  } else if (props.width) {
-    widthCondition = `${props.width}px`;
-  } else {
-    widthCondition = "auto";
-  }
-
-  if (props.isBordered) {
-    backgroundHoverCondition = tokens.backgroundButtonBordered;
-  } else if (props.type === "link") {
-    backgroundHoverCondition = tokens.backgroundButtonLinkHover;
-  } else {
-    backgroundHoverCondition = darken(tokens.modifierDarkenHover, backgroundButton[props.type]);
-  }
-
-  if (props.isBordered) {
-    backgroundActiveCondition = tokens.backgroundButtonBordered;
-  } else if (props.type === "link") {
-    backgroundActiveCondition = tokens.backgroundButtonLinkHover;
-  } else {
-    backgroundActiveCondition = darken(tokens.modifierDarkenActive, backgroundButton[props.type]);
-  }
-  return (
-    <button onClick={props.onClick} disabled={props.isDisabled}>
-      {props.Icon && (
-        <IconWrapper
-          Icon={props.isLoading ? Loading : props.Icon}
-          size={props.size}
-          type={props.type}
-          bordered={props.isBordered}
-        />
-      )}
-      {props.children ? props.children : props.title}
-      <style jsx>{`
-        button {
-          box-sizing: border-box;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: ${widthCondition};
-          min-width: ${tokens.widthButtonMinimal};
-          height: ${heightButton[props.size]};
-          background: ${props.isBordered
-            ? tokens.backgroundButtonBordered
-            : backgroundButton[props.type]};
-          color: ${props.isBordered ? colorButtonBordered[props.type] : colorButton[props.type]};
-          border: ${props.isBordered ? `1px solid ${borderButton[props.type]}` : "none"};
-          border-radius: ${tokens.borderRadiusNormal};
-          padding-left: ${props.Icon
-            ? paddingButtonWithIcon[props.size]
-            : paddingButton[props.size]};
-          padding-right: ${paddingButton[props.size]};
-          font-weight: ${tokens.fontWeightBold};
-          font-size: ${fontSizeButton[props.size]};
-          cursor: ${props.isDisabled ? "default" : "pointer"};
-          opacity: ${props.isDisabled ? tokens.opacityButtonDisabled : "1"};
-          transition: all 0.15s ease-in-out;
-          outline: 0;
-        }
-        button:hover {
-          background: ${backgroundHoverCondition};
-          color: ${props.isBordered
-            ? darken(tokens.modifierDarkenHover, colorButtonBordered[props.type])
-            : colorButton[props.type]};
-          border: ${props.isBordered
-            ? `1px solid ${darken(tokens.modifierDarkenHover, borderButton[props.type])}`
-            : "none"};
-        }
-        button:active {
-          transform: scale(${tokens.modifierScaleButtonActive});
-          background: ${backgroundActiveCondition};
-          color: ${props.isBordered
-            ? darken(tokens.modifierDarkenActive, colorButtonBordered[props.type])
-            : colorButton[props.type]};
-          border: ${props.isBordered
-            ? `1px solid ${darken(tokens.modifierDarkenActive, borderButton[props.type])}`
-            : "none"};
-        }
-      `}</style>
-    </button>
-  );
-};
+const Button = (props: Props) => (
+  <button onClick={props.onClick} disabled={props.isDisabled}>
+    {props.Icon && (
+      <IconWrapper
+        Icon={props.isLoading ? Loading : props.Icon}
+        size={props.size}
+        type={props.type}
+        bordered={props.isBordered}
+      />
+    )}
+    {props.children ? props.children : props.title}
+    <style jsx>{`
+      button {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: ${props.isBlock ? "100%" : (props.width && `${props.width}px`) || "auto"};
+        min-width: ${tokens.widthButtonMinimal};
+        height: ${heightButton[props.size]};
+        background: ${props.isBordered
+          ? tokens.backgroundButtonBordered
+          : backgroundButton[props.type]};
+        color: ${props.isBordered ? colorButtonBordered[props.type] : colorButton[props.type]};
+        border: ${props.isBordered ? `1px solid ${borderButton[props.type]}` : "none"};
+        border-radius: ${tokens.borderRadiusNormal};
+        padding-left: ${props.Icon ? paddingButtonWithIcon[props.size] : paddingButton[props.size]};
+        padding-right: ${paddingButton[props.size]};
+        font-weight: ${tokens.fontWeightBold};
+        font-size: ${fontSizeButton[props.size]};
+        cursor: ${props.isDisabled ? "default" : "pointer"};
+        opacity: ${props.isDisabled ? tokens.opacityButtonDisabled : "1"};
+        transition: all 0.15s ease-in-out;
+        outline: 0;
+      }
+      button:hover {
+        background: ${props.isBordered
+          ? tokens.backgroundButtonBordered
+          : (props.type === "link" && tokens.backgroundButtonLinkHover) ||
+            darken(tokens.modifierDarkenHover, backgroundButton[props.type])};
+        color: ${props.isBordered
+          ? darken(tokens.modifierDarkenHover, colorButtonBordered[props.type])
+          : colorButton[props.type]};
+        border: ${props.isBordered
+          ? `1px solid ${darken(tokens.modifierDarkenHover, borderButton[props.type])}`
+          : "none"};
+      }
+      button:active {
+        transform: scale(${tokens.modifierScaleButtonActive});
+        background: ${props.isBordered
+          ? tokens.backgroundButtonBordered
+          : (props.type === "link" &&
+              darken(tokens.modifierDarkenActive, tokens.backgroundButtonLinkHover)) ||
+            darken(tokens.modifierDarkenActive, backgroundButton[props.type])};
+        color: ${props.isBordered
+          ? darken(tokens.modifierDarkenActive, colorButtonBordered[props.type])
+          : colorButton[props.type]};
+        border: ${props.isBordered
+          ? `1px solid ${darken(tokens.modifierDarkenActive, borderButton[props.type])}`
+          : "none"};
+      }
+    `}</style>
+  </button>
+);
 
 Button.defaultProps = {
   isDisabled: false,

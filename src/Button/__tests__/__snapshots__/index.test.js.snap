@@ -2,7 +2,7 @@
 
 exports[`Rendered with children Should contain IconWrapper 1`] = `
 <button
-  className="jsx-251672509"
+  className="jsx-1314013687"
   disabled={false}
   onClick={[MockFunction]}
 >
@@ -42,7 +42,7 @@ exports[`Rendered with children Should contain IconWrapper 1`] = `
         "none",
       ]
     }
-    styleId="3136577638"
+    styleId="4169747830"
   />
 </button>
 `;

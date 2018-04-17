@@ -5,6 +5,7 @@ import { withTheme } from "theming";
 import * as Icons from "./icons";
 
 export { default as Button } from "./Button";
+export { default as CarrierLogo } from "./CarrierLogo";
 export { default as InputText } from "./InputText";
 export { default as InputTextarea } from "./InputTextarea";
 export { default as Checkbox } from "./Checkbox";

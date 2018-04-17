@@ -1,55 +1,156 @@
 // @flow
 import * as React from "react";
+import * as tokens from "orbit-design-token";
+import { darken } from "polished";
 
 import IconWrapper from "./IconWrapper";
-import { colors, fontSizes } from "../constants";
+import Loading from "../icons/Loading";
 
 type Props = {
   title?: string,
   onClick: (e: SyntheticEvent<HTMLButtonElement>) => void,
   isDisabled?: boolean,
-  type: "primary" | "secondary",
+  isBordered?: boolean,
+  isLoading?: boolean,
+  isBlock?: boolean,
+  type: "primary" | "secondary" | "link" | "facebook" | "google" | "destructive",
   size: "normal" | "large" | "small",
+  width?: number,
   Icon?: React.ComponentType<*>,
   children?: React.Node,
 };
 
-const fontColors = {
-  primary: colors.white.normal,
-  secondary: colors.ink.normal,
+const backgroundButton = {
+  primary: tokens.backgroundButtonPrimary,
+  secondary: tokens.backgroundButtonSecondary,
+  link: tokens.backgroundButtonLink,
+  facebook: tokens.backgroundButtonFacebook,
+  google: tokens.backgroundButtonGoogle,
+  destructive: tokens.backgroundButtonDestructive,
 };
 
-const bgColors = {
-  primary: colors.brand.normal,
-  secondary: colors.cloud.normal,
+const borderButton = {
+  primary: tokens.borderColorButtonPrimaryBordered,
+  secondary: tokens.borderColorButtonSecondaryBordered,
+  link: tokens.borderColorButtonLinkBordered,
+  facebook: tokens.borderColorButtonFacebookBordered,
+  google: tokens.borderColorButtonGoogleBordered,
+  destructive: tokens.borderColorButtonDestructiveBordered,
 };
 
-const paddings = {
-  normal: "12px 16px",
-  large: "14px 28px",
-  small: "8px 12px",
+const colorButton = {
+  primary: tokens.colorTextButtonPrimary,
+  secondary: tokens.colorTextButtonSecondary,
+  link: tokens.colorTextButtonLink,
+  facebook: tokens.colorTextButtonFacebook,
+  google: tokens.colorTextButtonGoogle,
+  destructive: tokens.colorTextButtonDestructive,
+};
+
+const colorButtonBordered = {
+  primary: tokens.colorTextButtonPrimaryBordered,
+  secondary: tokens.colorTextButtonSecondaryBordered,
+  link: tokens.colorTextButtonLinkBordered,
+  facebook: tokens.colorTextButtonFacebookBordered,
+  google: tokens.colorTextButtonGoogleBordered,
+  destructive: tokens.colorTextButtonDestructiveBordered,
+};
+
+const heightButton = {
+  large: tokens.heightButtonLarge,
+  normal: tokens.heightButtonNormal,
+  small: tokens.heightButtonSmall,
+};
+
+const fontSizeButton = {
+  large: tokens.fontSizeButtonLarge,
+  normal: tokens.fontSizeButtonNormal,
+  small: tokens.fontSizeButtonSmall,
+};
+
+const paddingButton = {
+  large: tokens.paddingButtonLarge,
+  normal: tokens.paddingButtonNormal,
+  small: tokens.paddingButtonSmall,
+};
+
+const paddingButtonWithIcon = {
+  large: tokens.paddingButtonLargeWithIcon,
+  normal: tokens.paddingButtonNormalWithIcon,
+  small: tokens.paddingButtonSmallWithIcon,
 };
 
 const Button = (props: Props) => (
   <button onClick={props.onClick} disabled={props.isDisabled}>
-    {props.Icon && <IconWrapper Icon={props.Icon} size={props.size} type={props.type} />}
+    {props.Icon && (
+      <IconWrapper
+        Icon={props.isLoading ? Loading : props.Icon}
+        size={props.size}
+        type={props.type}
+        bordered={props.isBordered}
+      />
+    )}
     {props.children ? props.children : props.title}
     <style jsx>{`
       button {
-        opacity: ${props.isDisabled ? "0.3" : "1"}
-        cursor: ${props.isDisabled ? "default" : "pointer"}
-        background-color: ${bgColors[props.type]}
-        color: ${fontColors[props.type]}
-        border: none;
-        border-radius: 3px;
-        font-weight: 500;
-        padding: ${paddings[props.size]};
-        padding-left: ${props.Icon ? "40px" : ""}
-        font-size: ${fontSizes[props.size]}
-        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: ${props.isBlock ? "100%" : (props.width && `${props.width}px`) || "auto"};
+        min-width: ${tokens.widthButtonMinimal};
+        height: ${heightButton[props.size]};
+        background: ${props.isBordered
+          ? tokens.backgroundButtonBordered
+          : backgroundButton[props.type]};
+        color: ${props.isBordered ? colorButtonBordered[props.type] : colorButton[props.type]};
+        border: ${props.isBordered ? `1px solid ${borderButton[props.type]}` : "none"};
+        border-radius: ${tokens.borderRadiusNormal};
+        padding-left: ${props.Icon ? paddingButtonWithIcon[props.size] : paddingButton[props.size]};
+        padding-right: ${paddingButton[props.size]};
+        font-weight: ${tokens.fontWeightBold};
+        font-size: ${fontSizeButton[props.size]};
+        cursor: ${props.isDisabled ? "default" : "pointer"};
+        opacity: ${props.isDisabled ? tokens.opacityButtonDisabled : "1"};
+        transition: all 0.15s ease-in-out;
+        outline: 0;
+      }
+      button:hover {
+        background: ${props.isBordered
+          ? tokens.backgroundButtonBordered
+          : (props.type === "link" && tokens.backgroundButtonLinkHover) ||
+            darken(tokens.modifierDarkenHover, backgroundButton[props.type])};
+        color: ${props.isBordered
+          ? darken(tokens.modifierDarkenHover, colorButtonBordered[props.type])
+          : colorButton[props.type]};
+        border: ${props.isBordered
+          ? `1px solid ${darken(tokens.modifierDarkenHover, borderButton[props.type])}`
+          : "none"};
+      }
+      button:active {
+        transform: scale(${tokens.modifierScaleButtonActive});
+        background: ${props.isBordered
+          ? tokens.backgroundButtonBordered
+          : (props.type === "link" &&
+              darken(tokens.modifierDarkenActive, tokens.backgroundButtonLinkHover)) ||
+            darken(tokens.modifierDarkenActive, backgroundButton[props.type])};
+        color: ${props.isBordered
+          ? darken(tokens.modifierDarkenActive, colorButtonBordered[props.type])
+          : colorButton[props.type]};
+        border: ${props.isBordered
+          ? `1px solid ${darken(tokens.modifierDarkenActive, borderButton[props.type])}`
+          : "none"};
       }
     `}</style>
   </button>
 );
+
+Button.defaultProps = {
+  isDisabled: false,
+  isBordered: false,
+  isLoading: false,
+  isBlock: false,
+  width: 180,
+};
 
 export default Button;

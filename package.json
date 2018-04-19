@@ -1,5 +1,5 @@
 {
-  "name": "orbit-design-token",
+  "name": "@kiwicom/orbit-design-tokens",
   "version": "0.0.2",
   "description": "Design tokens for kiwi!",
   "scripts": {},

@@ -11,7 +11,6 @@ export { default as Select } from "./_deprecated/Select";
 export { default as SystemMessage } from "./_deprecated/SystemMessage";
 export { default as FieldFeedback } from "./_deprecated/FieldFeedback";
 export { default as Typography } from "./_deprecated/Typography";
-export { default as Radio } from "./_deprecated/Radio";
 
 export { Icons };
 
@@ -25,5 +24,6 @@ export { default as Text } from "./Text";
 export { default as Icon } from "./Icon";
 export { default as TextLink } from "./TextLink";
 export { default as ThemeProvider } from "./Theming/ThemeProvider";
+export { default as Radio } from "./Radio";
 export { withTheme } from "theming";
 export { default as defaultTheme } from "@kiwicom/orbit-design-tokens";

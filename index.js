@@ -152,6 +152,8 @@ const defaultTokens = {
 	heightIconSmall: "16px",
     widthIconMedium: "24px",
 	heightIconMedium: "24px",
+    widthIconLarge: "32px",
+    heightIconLarge: "32px",
 	heightInputNormal: "44px",
 	heightInputLarge: "52px",
 	heightInputSmall: "32px",

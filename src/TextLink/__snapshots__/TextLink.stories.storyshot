@@ -122,7 +122,7 @@ exports[`Storyshots TextLink Primary link 1`] = `
           }
         >
           <a
-            className="jsx-2314642939"
+            className="jsx-4115119518"
             href="https://kiwi.com"
             onClick={[Function]}
             target={undefined}
@@ -411,7 +411,7 @@ exports[`Storyshots TextLink Secondary link 1`] = `
           }
         >
           <a
-            className="jsx-2372543942"
+            className="jsx-3375234595"
             href="https://kiwi.com"
             onClick={[Function]}
             target="_blank"

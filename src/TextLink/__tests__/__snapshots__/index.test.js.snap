@@ -2,7 +2,7 @@
 
 exports[`TextLink type: primary, size: default, newTab: false Should match snapshot 1`] = `
 <a
-  className="jsx-2314642939"
+  className="jsx-4115119518"
   href="https://kiwi.com"
   onClick={
     [MockFunction] {
@@ -25,14 +25,14 @@ exports[`TextLink type: primary, size: default, newTab: false Should match snaps
         "#00907b",
       ]
     }
-    styleId="4175427919"
+    styleId="3089605838"
   />
 </a>
 `;
 
 exports[`TextLink type: secondary, size: large, newTab: true Should match snapshot 1`] = `
 <a
-  className="jsx-26466116"
+  className="jsx-2520952609"
   href="https://kiwi.com"
   onClick={
     [MockFunction] {
@@ -57,7 +57,7 @@ exports[`TextLink type: secondary, size: large, newTab: true Should match snapsh
         "#00907b",
       ]
     }
-    styleId="4175427919"
+    styleId="3089605838"
   />
 </a>
 `;

@@ -3,15 +3,6 @@ import * as React from "react";
 import { darken } from "polished";
 import * as tokens from "orbit-design-token";
 
-type Props = {
-  title: string,
-  url: string,
-  onClick: (e: SyntheticEvent<HTMLButtonElement>) => void,
-  newTab: boolean,
-  type: "primary" | "secondary",
-  size: "small" | "normal" | "large",
-};
-
 const colorTextLink = {
   primary: tokens.colorLinkPrimary,
   secondary: tokens.colorLinkSecondary,
@@ -20,6 +11,15 @@ const fontSizeTextLink = {
   small: tokens.fontSizeTextSmall,
   normal: tokens.fontSizeTextNormal,
   large: tokens.fontSizeTextLarge,
+};
+
+type Props = {
+  title: string,
+  url: string,
+  onClick: (SyntheticEvent<HTMLLinkElement>) => any,
+  newTab: boolean,
+  type: $Keys<typeof colorTextLink>,
+  size: $Keys<typeof fontSizeTextLink>,
 };
 
 const TextLink = (props: Props) => {
@@ -34,14 +34,14 @@ const TextLink = (props: Props) => {
           color: ${colorTextLink[type]};
           font-weight: ${tokens.fontWeightLinks};
           text-decoration: ${type === "secondary"
-            ? "underline" // replace for token textDecorationLinkSecondary
-            : "none"}; // replace for token textDecorationPrimary
+            ? tokens.textDecorationLinkSecondary
+            : tokens.textDecorationLinkPrimary};
           cursor: pointer;
         }
         a:hover {
           text-decoration: ${type === "secondary"
-            ? "underline" // replace for token textDecorationLinkSecondaryHover
-            : "underline"}; // replace for token textDecorationLinkPrimaryHover
+            ? tokens.textDecorationLinkSecondaryHover
+            : tokens.textDecorationLinkPrimaryHover};
           color: ${darken(tokens.modifierDarkenHover, tokens.colorLinkPrimary)};
         }
         a:visited {

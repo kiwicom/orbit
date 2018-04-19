@@ -11,8 +11,6 @@ import TextLink from "./index";
 
 setAddon(chaptersAddon);
 
-const url = text("URL", "https://kiwi.com");
-
 const options = {
   allowSourceToggling: false,
   allowPropTablesToggling: false,
@@ -26,6 +24,8 @@ storiesOf("TextLink", module)
     }),
   )
   .addWithChapters("Primary link", () => {
+    const url = text("URL", "https://kiwi.com");
+
     const size = select(
       "Size",
       {
@@ -45,6 +45,7 @@ storiesOf("TextLink", module)
     );
     const newTab = boolean("Open in new tab?", false);
     const title = text("Title", "Primary link");
+
     return {
       title: "Primary link",
       info:
@@ -73,6 +74,8 @@ storiesOf("TextLink", module)
     };
   })
   .addWithChapters("Secondary link", () => {
+    const url = text("URL", "https://kiwi.com");
+
     const size = select(
       "Size",
       {

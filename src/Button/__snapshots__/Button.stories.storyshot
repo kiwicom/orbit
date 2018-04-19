@@ -142,7 +142,7 @@ exports[`Storyshots Button Destructive button 1`] = `
           }
         >
           <button
-            className="jsx-371495103"
+            className="jsx-1588866154"
             disabled={false}
             onClick={[Function]}
           >
@@ -570,7 +570,7 @@ exports[`Storyshots Button Facebook button 1`] = `
           }
         >
           <button
-            className="jsx-565795052"
+            className="jsx-262234713"
             disabled={false}
             onClick={[Function]}
           >
@@ -998,7 +998,7 @@ exports[`Storyshots Button Google button 1`] = `
           }
         >
           <button
-            className="jsx-2189338253"
+            className="jsx-1735277144"
             disabled={false}
             onClick={[Function]}
           >
@@ -1426,7 +1426,7 @@ exports[`Storyshots Button Link button 1`] = `
           }
         >
           <button
-            className="jsx-3000803371"
+            className="jsx-2401004894"
             disabled={false}
             onClick={[Function]}
           >
@@ -1745,7 +1745,7 @@ exports[`Storyshots Button Link button 1`] = `
           }
         >
           <button
-            className="jsx-2002313652"
+            className="jsx-2792682273"
             disabled={false}
             onClick={[Function]}
           >
@@ -2173,7 +2173,7 @@ exports[`Storyshots Button Primary button 1`] = `
           }
         >
           <button
-            className="jsx-421991794"
+            className="jsx-1153840231"
             disabled={false}
             onClick={[Function]}
           >
@@ -2461,7 +2461,7 @@ exports[`Storyshots Button Primary button 1`] = `
           }
         >
           <button
-            className="jsx-1866407245"
+            className="jsx-849819448"
             disabled={false}
             onClick={[Function]}
           >
@@ -2858,7 +2858,7 @@ exports[`Storyshots Button Secondary button 1`] = `
           }
         >
           <button
-            className="jsx-1339973033"
+            className="jsx-512780380"
             disabled={false}
             onClick={[Function]}
           >
@@ -3177,7 +3177,7 @@ exports[`Storyshots Button Secondary button 1`] = `
           }
         >
           <button
-            className="jsx-605992918"
+            className="jsx-1492333315"
             disabled={false}
             onClick={[Function]}
           >

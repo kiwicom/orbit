@@ -91,7 +91,9 @@ const defaultTokens = {
 	colorLabelForm: colors.ink.normal,
 	colorLabelFormFilled: colors.ink.light,
 	colorIconCheckbox: colors.brand.normal,
+	colorIconCheckboxDisabled: colors.ink.lighter,
 	colorIconRadioButton: colors.brand.normal,
+	colorIconRadioButtonDisabled: colors.ink.lighter,
 	//category:Font family
 	//description:
 	fontFamily:
@@ -148,8 +150,10 @@ const defaultTokens = {
 	//description:
 	widthIconSmall: "16px",
 	heightIconSmall: "16px",
-	heightIconMedium: "24px",
 	widthIconMedium: "24px",
+	heightIconMedium: "24px",
+	widthIconLarge: "32px",
+	heightIconLarge: "32px",
 	heightInputNormal: "44px",
 	heightInputLarge: "52px",
 	heightInputSmall: "32px",
@@ -219,7 +223,7 @@ const defaultTokens = {
 	modifierDarkenHover: 0.05,
 	modifierDarkenActive: 0.1,
 	modifierDarkenButtonLink: 0.05,
-	modifierScaleButtonActive: 0.95,
+	modifierScaleButtonActive: 0.9,
 	//category:Line height
 	//description:
 	lineHeightText: "1.4",

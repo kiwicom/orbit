@@ -2,6 +2,8 @@
 
 Usage examples in storybook: [https://kiwicom.github.io/orbit-components/](https://kiwicom.github.io/orbit-components/)
 
+List of all supported [icons](/src/icons/icons.md)
+
 ## Table of Contents
 
 * [Motivation](#motivation)

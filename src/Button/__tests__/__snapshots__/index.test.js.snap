@@ -2,7 +2,7 @@
 
 exports[`Rendered with children Should contain IconWrapper 1`] = `
 <button
-  className="jsx-1314013687"
+  className="jsx-588294754"
   disabled={false}
   onClick={[MockFunction]}
 >
@@ -17,7 +17,7 @@ exports[`Rendered with children Should contain IconWrapper 1`] = `
     size="32"
   />
   <JSXStyle
-    css="button.__jsx-style-dynamic-selector{box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:180px;min-width:180px;height:52px;background:#00a991;color:#fff;border:none;border-radius:3px;padding-left:28px;padding-right:28px;font-weight:700;font-size:16px;cursor:pointer;opacity:1;-webkit-transition:all 0.15s ease-in-out;transition:all 0.15s ease-in-out;outline:0;}button.__jsx-style-dynamic-selector:hover{background:#00907b;color:#fff;border:none;}button.__jsx-style-dynamic-selector:active{-webkit-transform:scale(0.95);-ms-transform:scale(0.95);transform:scale(0.95);background:#007665;color:#fff;border:none;}"
+    css="button.__jsx-style-dynamic-selector{box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:180px;min-width:180px;height:52px;background:#00a991;color:#fff;border:none;border-radius:3px;padding-left:28px;padding-right:28px;font-weight:700;font-size:16px;cursor:pointer;opacity:1;-webkit-transition:all 0.15s ease-in-out;transition:all 0.15s ease-in-out;outline:0;}button.__jsx-style-dynamic-selector:hover{background:#00907b;color:#fff;border:none;}button.__jsx-style-dynamic-selector:active{-webkit-transform:scale(0.9);-ms-transform:scale(0.9);transform:scale(0.9);background:#007665;color:#fff;border:none;}"
     dynamic={
       Array [
         "180px",
@@ -36,7 +36,7 @@ exports[`Rendered with children Should contain IconWrapper 1`] = `
         "#00907b",
         "#fff",
         "none",
-        0.95,
+        0.9,
         "#007665",
         "#fff",
         "none",

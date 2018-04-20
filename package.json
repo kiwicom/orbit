@@ -36,7 +36,7 @@
   "dependencies": {
     "@sambego/storybook-styles": "^1.0.0",
     "classnames": "^2.2.5",
-    "orbit-design-token": "git+https://github.com/kiwicom/orbit-design-tokens.git#v0.0.1",
+    "orbit-design-token": "git+https://github.com/kiwicom/orbit-design-tokens.git#v0.0.2",
     "polished": "^1.9.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

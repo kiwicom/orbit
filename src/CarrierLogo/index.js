@@ -13,7 +13,7 @@ const directorySizes = {
 const renderSizes = {
   small: parseInt(tokens.heightIconSmall, 10),
   medium: parseInt(tokens.heightIconMedium, 10),
-  large: 32, // replace it for token heightIconLarge
+  large: parseInt(tokens.heightIconLarge, 10),
 };
 
 const retinaSizes = {
@@ -22,9 +22,11 @@ const retinaSizes = {
   large: 64,
 };
 
+type Carrier = { code: string, name: string };
+
 type Props = {
   size: "small" | "medium" | "large",
-  carriers: { code: string, name: string }[],
+  carriers: Carrier[],
 };
 
 const CarrierLogo = (props: Props) => {
@@ -56,13 +58,9 @@ const CarrierLogo = (props: Props) => {
       <style jsx>{`
         div {
           border-radius: ${tokens.borderRadiusNormal};
-          background-color: #fff; // replace it for tokens.backgroundCarrierLogo
-          height: ${carriers.length > 1
-            ? "32px" // replace 32px for token heightIconLarge
-            : `${renderSizes[size]}px`};
-          width: ${carriers.length > 1
-            ? "32px" // replace 32px for token heightIconLarge
-            : `${renderSizes[size]}px`};
+          background-color: ${tokens.backgroundCarrierLogo};
+          height: ${carriers.length > 1 ? `${tokens.heightIconLarge}px` : `${renderSizes[size]}px`};
+          width: ${carriers.length > 1 ? `${tokens.heightIconLarge}px` : `${renderSizes[size]}px`};
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
@@ -71,8 +69,8 @@ const CarrierLogo = (props: Props) => {
         img {
           height: ${imageSize}px;
           width: ${imageSize}px;
-          border-radius: 3px; // {tokens.borderRadiusNormal};
-          background-color: #fff; // {tokens.backgroundCarrierLogo};
+          border-radius: ${tokens.borderRadiusNormal};
+          background-color: ${tokens.backgroundCarrierLogo};
           position: absolute;
         }
         /* one item */

@@ -6651,9 +6651,9 @@ optionator@^0.8.1, optionator@^0.8.2:
     type-check "~0.3.2"
     wordwrap "~1.0.0"
 
-"orbit-design-token@git+https://github.com/kiwicom/orbit-design-tokens.git#v0.0.1":
-  version "0.0.1"
-  resolved "git+https://github.com/kiwicom/orbit-design-tokens.git#b1fa6c979a7c8d3345e80dad2095a42e1c5ba3d6"
+"orbit-design-token@git+https://github.com/kiwicom/orbit-design-tokens.git#v0.0.2":
+  version "0.0.2"
+  resolved "git+https://github.com/kiwicom/orbit-design-tokens.git#25f8d91d99bb4ee01d7945473e078300f0f4de3f"
 
 original@>=0.0.5:
   version "1.0.0"

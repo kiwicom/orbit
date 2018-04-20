@@ -2,12 +2,17 @@
   "name": "@kiwicom/orbit-design-tokens",
   "version": "0.0.2",
   "description": "Design tokens for kiwi!",
-  "scripts": {},
+  "scripts": {
+    "ci-publish": "ci-publish"
+  },
   "author": "kiwi.com",
   "license": "MIT",
   "keywords": [
     "orbit",
     "ui",
     "design"
-  ]
+  ],
+  "devDependencies": {
+    "ci-publish": "^1.3.1"
+  }
 }

@@ -25,11 +25,11 @@ exports[`Multiple CarrierLogo Should match snapshot 1`] = `
   size="medium"
 >
   <div
-    className="jsx-1043275969"
+    className="jsx-4086692128"
   >
     <img
       alt="Ryanair"
-      className="jsx-1043275969"
+      className="jsx-4086692128"
       key="FR"
       src="//images.kiwi.com/airlines/16/FR.png"
       srcSet="//images.kiwi.com/airlines/32/FR.png 2x"
@@ -37,7 +37,7 @@ exports[`Multiple CarrierLogo Should match snapshot 1`] = `
     />
     <img
       alt="Transavia France"
-      className="jsx-1043275969"
+      className="jsx-4086692128"
       key="TO"
       src="//images.kiwi.com/airlines/16/TO.png"
       srcSet="//images.kiwi.com/airlines/32/TO.png 2x"
@@ -45,7 +45,7 @@ exports[`Multiple CarrierLogo Should match snapshot 1`] = `
     />
     <img
       alt="Vueling"
-      className="jsx-1043275969"
+      className="jsx-4086692128"
       key="VY"
       src="//images.kiwi.com/airlines/16/VY.png"
       srcSet="//images.kiwi.com/airlines/32/VY.png 2x"
@@ -53,7 +53,7 @@ exports[`Multiple CarrierLogo Should match snapshot 1`] = `
     />
     <img
       alt="Czech Airlines"
-      className="jsx-1043275969"
+      className="jsx-4086692128"
       key="OK"
       src="//images.kiwi.com/airlines/16/OK.png"
       srcSet="//images.kiwi.com/airlines/32/OK.png 2x"
@@ -77,7 +77,7 @@ exports[`Multiple CarrierLogo Should match snapshot 1`] = `
           15,
         ]
       }
-      styleId="3762149548"
+      styleId="1861764096"
     />
   </div>
 </CarrierLogo>
@@ -96,11 +96,11 @@ exports[`Single carrier with name: Czech Airlines and code: OK Should match snap
   size="small"
 >
   <div
-    className="jsx-2497790337"
+    className="jsx-1246239200"
   >
     <img
       alt="Czech Airlines"
-      className="jsx-2497790337"
+      className="jsx-1246239200"
       key="OK"
       src="//images.kiwi.com/airlines/16/OK.png"
       srcSet="//images.kiwi.com/airlines/32/OK.png 2x"
@@ -124,7 +124,7 @@ exports[`Single carrier with name: Czech Airlines and code: OK Should match snap
           15,
         ]
       }
-      styleId="3762149548"
+      styleId="1861764096"
     />
   </div>
 </CarrierLogo>
@@ -143,11 +143,11 @@ exports[`Single carrier with name: Czech Airlines and code: OK Should match snap
   size="medium"
 >
   <div
-    className="jsx-671167553"
+    className="jsx-3714583712"
   >
     <img
       alt="Czech Airlines"
-      className="jsx-671167553"
+      className="jsx-3714583712"
       key="OK"
       src="//images.kiwi.com/airlines/32/OK.png"
       srcSet="//images.kiwi.com/airlines/64/OK.png 2x"
@@ -171,7 +171,7 @@ exports[`Single carrier with name: Czech Airlines and code: OK Should match snap
           15,
         ]
       }
-      styleId="3762149548"
+      styleId="1861764096"
     />
   </div>
 </CarrierLogo>
@@ -190,11 +190,11 @@ exports[`Single carrier with name: Czech Airlines and code: OK Should match snap
   size="large"
 >
   <div
-    className="jsx-928041729"
+    className="jsx-3971457888"
   >
     <img
       alt="Czech Airlines"
-      className="jsx-928041729"
+      className="jsx-3971457888"
       key="OK"
       src="//images.kiwi.com/airlines/32/OK.png"
       srcSet="//images.kiwi.com/airlines/64/OK.png 2x"
@@ -218,7 +218,7 @@ exports[`Single carrier with name: Czech Airlines and code: OK Should match snap
           15,
         ]
       }
-      styleId="3762149548"
+      styleId="1861764096"
     />
   </div>
 </CarrierLogo>
@@ -237,11 +237,11 @@ exports[`Single carrier with name: Ryanair and code: FR Should match snapshot 1`
   size="small"
 >
   <div
-    className="jsx-2497790337"
+    className="jsx-1246239200"
   >
     <img
       alt="Ryanair"
-      className="jsx-2497790337"
+      className="jsx-1246239200"
       key="FR"
       src="//images.kiwi.com/airlines/16/FR.png"
       srcSet="//images.kiwi.com/airlines/32/FR.png 2x"
@@ -265,7 +265,7 @@ exports[`Single carrier with name: Ryanair and code: FR Should match snapshot 1`
           15,
         ]
       }
-      styleId="3762149548"
+      styleId="1861764096"
     />
   </div>
 </CarrierLogo>
@@ -284,11 +284,11 @@ exports[`Single carrier with name: Ryanair and code: FR Should match snapshot 2`
   size="medium"
 >
   <div
-    className="jsx-671167553"
+    className="jsx-3714583712"
   >
     <img
       alt="Ryanair"
-      className="jsx-671167553"
+      className="jsx-3714583712"
       key="FR"
       src="//images.kiwi.com/airlines/32/FR.png"
       srcSet="//images.kiwi.com/airlines/64/FR.png 2x"
@@ -312,7 +312,7 @@ exports[`Single carrier with name: Ryanair and code: FR Should match snapshot 2`
           15,
         ]
       }
-      styleId="3762149548"
+      styleId="1861764096"
     />
   </div>
 </CarrierLogo>
@@ -331,11 +331,11 @@ exports[`Single carrier with name: Ryanair and code: FR Should match snapshot 3`
   size="large"
 >
   <div
-    className="jsx-928041729"
+    className="jsx-3971457888"
   >
     <img
       alt="Ryanair"
-      className="jsx-928041729"
+      className="jsx-3971457888"
       key="FR"
       src="//images.kiwi.com/airlines/32/FR.png"
       srcSet="//images.kiwi.com/airlines/64/FR.png 2x"
@@ -359,7 +359,7 @@ exports[`Single carrier with name: Ryanair and code: FR Should match snapshot 3`
           15,
         ]
       }
-      styleId="3762149548"
+      styleId="1861764096"
     />
   </div>
 </CarrierLogo>
@@ -378,11 +378,11 @@ exports[`Single carrier with name: Transavia France and code: TO Should match sn
   size="small"
 >
   <div
-    className="jsx-2497790337"
+    className="jsx-1246239200"
   >
     <img
       alt="Transavia France"
-      className="jsx-2497790337"
+      className="jsx-1246239200"
       key="TO"
       src="//images.kiwi.com/airlines/16/TO.png"
       srcSet="//images.kiwi.com/airlines/32/TO.png 2x"
@@ -406,7 +406,7 @@ exports[`Single carrier with name: Transavia France and code: TO Should match sn
           15,
         ]
       }
-      styleId="3762149548"
+      styleId="1861764096"
     />
   </div>
 </CarrierLogo>
@@ -425,11 +425,11 @@ exports[`Single carrier with name: Transavia France and code: TO Should match sn
   size="medium"
 >
   <div
-    className="jsx-671167553"
+    className="jsx-3714583712"
   >
     <img
       alt="Transavia France"
-      className="jsx-671167553"
+      className="jsx-3714583712"
       key="TO"
       src="//images.kiwi.com/airlines/32/TO.png"
       srcSet="//images.kiwi.com/airlines/64/TO.png 2x"
@@ -453,7 +453,7 @@ exports[`Single carrier with name: Transavia France and code: TO Should match sn
           15,
         ]
       }
-      styleId="3762149548"
+      styleId="1861764096"
     />
   </div>
 </CarrierLogo>
@@ -472,11 +472,11 @@ exports[`Single carrier with name: Transavia France and code: TO Should match sn
   size="large"
 >
   <div
-    className="jsx-928041729"
+    className="jsx-3971457888"
   >
     <img
       alt="Transavia France"
-      className="jsx-928041729"
+      className="jsx-3971457888"
       key="TO"
       src="//images.kiwi.com/airlines/32/TO.png"
       srcSet="//images.kiwi.com/airlines/64/TO.png 2x"
@@ -500,7 +500,7 @@ exports[`Single carrier with name: Transavia France and code: TO Should match sn
           15,
         ]
       }
-      styleId="3762149548"
+      styleId="1861764096"
     />
   </div>
 </CarrierLogo>
@@ -519,11 +519,11 @@ exports[`Single carrier with name: Vueling and code: VY Should match snapshot 1`
   size="small"
 >
   <div
-    className="jsx-2497790337"
+    className="jsx-1246239200"
   >
     <img
       alt="Vueling"
-      className="jsx-2497790337"
+      className="jsx-1246239200"
       key="VY"
       src="//images.kiwi.com/airlines/16/VY.png"
       srcSet="//images.kiwi.com/airlines/32/VY.png 2x"
@@ -547,7 +547,7 @@ exports[`Single carrier with name: Vueling and code: VY Should match snapshot 1`
           15,
         ]
       }
-      styleId="3762149548"
+      styleId="1861764096"
     />
   </div>
 </CarrierLogo>
@@ -566,11 +566,11 @@ exports[`Single carrier with name: Vueling and code: VY Should match snapshot 2`
   size="medium"
 >
   <div
-    className="jsx-671167553"
+    className="jsx-3714583712"
   >
     <img
       alt="Vueling"
-      className="jsx-671167553"
+      className="jsx-3714583712"
       key="VY"
       src="//images.kiwi.com/airlines/32/VY.png"
       srcSet="//images.kiwi.com/airlines/64/VY.png 2x"
@@ -594,7 +594,7 @@ exports[`Single carrier with name: Vueling and code: VY Should match snapshot 2`
           15,
         ]
       }
-      styleId="3762149548"
+      styleId="1861764096"
     />
   </div>
 </CarrierLogo>
@@ -613,11 +613,11 @@ exports[`Single carrier with name: Vueling and code: VY Should match snapshot 3`
   size="large"
 >
   <div
-    className="jsx-928041729"
+    className="jsx-3971457888"
   >
     <img
       alt="Vueling"
-      className="jsx-928041729"
+      className="jsx-3971457888"
       key="VY"
       src="//images.kiwi.com/airlines/32/VY.png"
       srcSet="//images.kiwi.com/airlines/64/VY.png 2x"
@@ -641,7 +641,7 @@ exports[`Single carrier with name: Vueling and code: VY Should match snapshot 3`
           15,
         ]
       }
-      styleId="3762149548"
+      styleId="1861764096"
     />
   </div>
 </CarrierLogo>

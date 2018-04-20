@@ -2,13 +2,13 @@
 
 Usage examples in storybook: [https://kiwicom.github.io/orbit-components/](https://kiwicom.github.io/orbit-components/)
 
-List of all supported [icons](/src/icons/icons.md)
 
 ## Table of Contents
 
 * [Motivation](#motivation)
 * [Installation](#installation)
 * [Contributing](#contributing)
+* [Icons](#icons)
 
 ## Motivation
 
@@ -33,3 +33,9 @@ Or if you are using [Yarn](https://yarnpkg.com/):
 ## Contributing
 
 Please checkout our [Contribution Guide](./.github/contributing.md). It includes contribution guidelines and information about how to run and develop the project.
+
+## Icons
+
+Orbit Components provides a set of icons easily used following these [instructions](./src/icons/readme.md).
+
+A list of all supported icons is [here](/src/icons/icons.md)

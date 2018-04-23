@@ -24,11 +24,11 @@ type Props = {
   size: $Keys<typeof sizeText>,
   weight: $Keys<typeof weightText>,
   align: "left" | "center" | "right",
-  italic?: boolean,
-  uppercase?: boolean,
+  italic: boolean,
+  uppercase: boolean,
   element: "p" | "span" | "div",
-  className?: string,
   children: React.Node,
+  className?: string,
 };
 
 function resolveScopedStyles(scope) {

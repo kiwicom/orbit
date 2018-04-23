@@ -80,8 +80,8 @@ storiesOf("Text", module)
                   size={size}
                   weight={weight}
                   align={align}
-                  isUppercase={boolean("Uppercase", false)}
-                  isItalic={boolean("Italic", false)}
+                  uppercase={boolean("Uppercase", false)}
+                  italic={boolean("Italic", false)}
                 >
                   {customText}
                 </Text>
@@ -152,8 +152,8 @@ storiesOf("Text", module)
                   size={size}
                   weight={weight}
                   align={align}
-                  isUppercase={boolean("Uppercase", false)}
-                  isItalic={boolean("Italic", false)}
+                  uppercase={boolean("Uppercase", false)}
+                  italic={boolean("Italic", false)}
                 >
                   {customText}
                 </Text>
@@ -224,8 +224,8 @@ storiesOf("Text", module)
                   size={size}
                   weight={weight}
                   align={align}
-                  isUppercase={boolean("Uppercase", false)}
-                  isItalic={boolean("Italic", false)}
+                  uppercase={boolean("Uppercase", false)}
+                  italic={boolean("Italic", false)}
                 >
                   {customText}
                 </Text>

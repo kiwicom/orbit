@@ -125,32 +125,32 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
         }
       >
         <div
-          className="jsx-4086692128"
+          className="jsx-3959991045"
         >
           <img
             alt="Ryanair"
-            className="jsx-4086692128"
+            className="jsx-3959991045"
             src="//images.kiwi.com/airlines/16/FR.png"
             srcSet="//images.kiwi.com/airlines/32/FR.png 2x"
             title="Ryanair"
           />
           <img
             alt="Transavia France"
-            className="jsx-4086692128"
+            className="jsx-3959991045"
             src="//images.kiwi.com/airlines/16/TO.png"
             srcSet="//images.kiwi.com/airlines/32/TO.png 2x"
             title="Transavia France"
           />
           <img
             alt="Vueling"
-            className="jsx-4086692128"
+            className="jsx-3959991045"
             src="//images.kiwi.com/airlines/16/VY.png"
             srcSet="//images.kiwi.com/airlines/32/VY.png 2x"
             title="Vueling"
           />
           <img
             alt="Czech Airlines"
-            className="jsx-4086692128"
+            className="jsx-3959991045"
             src="//images.kiwi.com/airlines/16/OK.png"
             srcSet="//images.kiwi.com/airlines/32/OK.png 2x"
             title="Czech Airlines"
@@ -568,11 +568,11 @@ exports[`Storyshots CarrierLogo One carrier 1`] = `
         }
       >
         <div
-          className="jsx-3714583712"
+          className="jsx-1626299781"
         >
           <img
             alt="Ryanair"
-            className="jsx-3714583712"
+            className="jsx-1626299781"
             src="//images.kiwi.com/airlines/32/FR.png"
             srcSet="//images.kiwi.com/airlines/64/FR.png 2x"
             title="Ryanair"
@@ -868,25 +868,25 @@ exports[`Storyshots CarrierLogo Three carriers 1`] = `
         }
       >
         <div
-          className="jsx-4086692128"
+          className="jsx-3959991045"
         >
           <img
             alt="Ryanair"
-            className="jsx-4086692128"
+            className="jsx-3959991045"
             src="//images.kiwi.com/airlines/16/FR.png"
             srcSet="//images.kiwi.com/airlines/32/FR.png 2x"
             title="Ryanair"
           />
           <img
             alt="Transavia France"
-            className="jsx-4086692128"
+            className="jsx-3959991045"
             src="//images.kiwi.com/airlines/16/TO.png"
             srcSet="//images.kiwi.com/airlines/32/TO.png 2x"
             title="Transavia France"
           />
           <img
             alt="Vueling"
-            className="jsx-4086692128"
+            className="jsx-3959991045"
             src="//images.kiwi.com/airlines/16/VY.png"
             srcSet="//images.kiwi.com/airlines/32/VY.png 2x"
             title="Vueling"
@@ -1302,18 +1302,18 @@ exports[`Storyshots CarrierLogo Two carriers 1`] = `
         }
       >
         <div
-          className="jsx-4086692128"
+          className="jsx-3959991045"
         >
           <img
             alt="Ryanair"
-            className="jsx-4086692128"
+            className="jsx-3959991045"
             src="//images.kiwi.com/airlines/16/FR.png"
             srcSet="//images.kiwi.com/airlines/32/FR.png 2x"
             title="Ryanair"
           />
           <img
             alt="Transavia France"
-            className="jsx-4086692128"
+            className="jsx-3959991045"
             src="//images.kiwi.com/airlines/16/TO.png"
             srcSet="//images.kiwi.com/airlines/32/TO.png 2x"
             title="Transavia France"

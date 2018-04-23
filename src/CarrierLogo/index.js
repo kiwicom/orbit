@@ -59,8 +59,8 @@ const CarrierLogo = (props: Props) => {
         div {
           border-radius: ${tokens.borderRadiusNormal};
           background-color: ${tokens.backgroundCarrierLogo};
-          height: ${carriers.length > 1 ? `${tokens.heightIconLarge}px` : `${renderSizes[size]}px`};
-          width: ${carriers.length > 1 ? `${tokens.widthIconLarge}px` : `${renderSizes[size]}px`};
+          height: ${carriers.length > 1 ? `${tokens.heightIconLarge}` : `${renderSizes[size]}px`};
+          width: ${carriers.length > 1 ? `${tokens.widthIconLarge}` : `${renderSizes[size]}px`};
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;

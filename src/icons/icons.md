@@ -101,6 +101,7 @@
 - ![MenuHamburger](/src/icons/png/MenuHamburger.png?raw=true) MenuHamburger
 - ![MenuKebab](/src/icons/png/MenuKebab.png?raw=true) MenuKebab
 - ![MenuMeatballs](/src/icons/png/MenuMeatballs.png?raw=true) MenuMeatballs
+- ![MessagesOutline](/src/icons/png/MessagesOutline.png?raw=true) MessagesOutline
 - ![Messages](/src/icons/png/Messages.png?raw=true) Messages
 - ![MinusCircle](/src/icons/png/MinusCircle.png?raw=true) MinusCircle
 - ![Minus](/src/icons/png/Minus.png?raw=true) Minus
@@ -116,6 +117,7 @@
 - ![Paid](/src/icons/png/Paid.png?raw=true) Paid
 - ![Parking](/src/icons/png/Parking.png?raw=true) Parking
 - ![PassengerAdd](/src/icons/png/PassengerAdd.png?raw=true) PassengerAdd
+- ![PassengerOutline](/src/icons/png/PassengerOutline.png?raw=true) PassengerOutline
 - ![Passenger](/src/icons/png/Passenger.png?raw=true) Passenger
 - ![Passengers](/src/icons/png/Passengers.png?raw=true) Passengers
 - ![Passport](/src/icons/png/Passport.png?raw=true) Passport
@@ -165,6 +167,7 @@
 - ![ThumbDown](/src/icons/png/ThumbDown.png?raw=true) ThumbDown
 - ![ThumbUp](/src/icons/png/ThumbUp.png?raw=true) ThumbUp
 - ![TicketFlight](/src/icons/png/TicketFlight.png?raw=true) TicketFlight
+- ![TicketOutline](/src/icons/png/TicketOutline.png?raw=true) TicketOutline
 - ![TicketTrain](/src/icons/png/TicketTrain.png?raw=true) TicketTrain
 - ![Ticket](/src/icons/png/Ticket.png?raw=true) Ticket
 - ![Timelapse](/src/icons/png/Timelapse.png?raw=true) Timelapse
@@ -179,4 +182,5 @@
 - ![Walk](/src/icons/png/Walk.png?raw=true) Walk
 - ![Wallet](/src/icons/png/Wallet.png?raw=true) Wallet
 - ![Wheelchair](/src/icons/png/Wheelchair.png?raw=true) Wheelchair
+- ![WifiOff](/src/icons/png/WifiOff.png?raw=true) WifiOff
 - ![Wifi](/src/icons/png/Wifi.png?raw=true) Wifi

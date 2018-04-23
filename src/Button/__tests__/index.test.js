@@ -12,6 +12,7 @@ describe("Button", () => {
   const component = shallow(
     <Button title={title} size="normal" type="primary" onClick={jest.fn()} />,
   );
+
   const button = component.find("button");
   it("Should contain a title ", () => {
     expect(button.render().text()).toBe(title);

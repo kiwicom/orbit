@@ -47,13 +47,13 @@ const Radio = (props: Props) => (
       }
       .root:hover .radio,
       .root:active .radio {
-        border: solid 1px ${props.disabled ? colors.ink.lighter : colors.teal.normal};
+        border: solid 1px ${props.disabled ? colors.ink.lighter : colors.brand.normal};
       }
       .checked {
         width: 12px;
         height: 12px;
         border-radius: 100px;
-        background-color: ${colors.teal.normal};
+        background-color: ${colors.brand.normal};
       }
       .radioInput {
         display: none;

@@ -44,6 +44,7 @@
     "import/no-absolute-path": "error",
     "react/jsx-no-bind": "error",
     "react/require-default-props": "off", // Optional props can be undefined.
+    "react/default-props-match-prop-types": "off", // Conflict between Flow and ESLint
     "react/jsx-filename-extension": ["error", { "extensions": [".js"] }], // Don't use jsx
     "jsx-a11y/label-has-for": "off", // control is wrapped in a label
     "jsx-a11y/href-no-hash": "off", // broken rule

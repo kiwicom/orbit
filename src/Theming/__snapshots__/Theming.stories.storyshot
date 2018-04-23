@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Theming Alt theme 1`] = `
+<div
+  style={
+    Object {
+      "color": "green",
+      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+    }
+  }
+>
+  green
+</div>
+`;
+
+exports[`Storyshots Theming Default Theme 1`] = `
+<div
+  style={
+    Object {
+      "color": "#46515e",
+      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+    }
+  }
+>
+  #46515e
+</div>
+`;
+
+exports[`Storyshots Theming Theme switcher 1`] = `
+Array [
+  <form>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "inherit",
+        }
+      }
+      type="button"
+    >
+      0
+    </button>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "inherit",
+        }
+      }
+      type="button"
+    >
+      1
+    </button>
+  </form>,
+  <hr />,
+  <div
+    style={
+      Object {
+        "color": "#46515e",
+        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+      }
+    }
+  >
+    #46515e
+  </div>,
+]
+`;
+
+exports[`Storyshots Theming Without Theme using default props 1`] = `
+<div
+  style={
+    Object {
+      "color": "#46515e",
+      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+    }
+  }
+>
+  #46515e
+</div>
+`;
+
+exports[`Storyshots Theming Without Theme with props 1`] = `
+<div
+  style={
+    Object {
+      "color": "red",
+      "fontFamily": "Courier",
+    }
+  }
+>
+  red
+</div>
+`;

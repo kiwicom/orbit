@@ -153,7 +153,7 @@ exports[`Storyshots SystemMessage success with icon 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"
+        d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
       />
     </svg>
   </span>
@@ -179,7 +179,7 @@ exports[`Storyshots SystemMessage success with title and  icon 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"
+        d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
       />
     </svg>
   </span>

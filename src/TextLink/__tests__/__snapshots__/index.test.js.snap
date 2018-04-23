@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextLink type: primary, size: default, newTab: false Should match snapshot 1`] = `
+<a
+  className="jsx-4115119518"
+  href="https://kiwi.com"
+  onClick={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+    }
+  }
+>
+  My text link
+  <JSXStyle
+    css="a.__jsx-style-dynamic-selector{font-size:14px;color:#00a991;font-weight:500;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}a.__jsx-style-dynamic-selector:hover{-webkit-text-decoration:underline;text-decoration:underline;color:#00907b;}a.__jsx-style-dynamic-selector:focus{outline-width:3px;}"
+    dynamic={
+      Array [
+        "14px",
+        "#00a991",
+        "500",
+        "none",
+        "underline",
+        "#00907b",
+      ]
+    }
+    styleId="3089605838"
+  />
+</a>
+`;
+
+exports[`TextLink type: secondary, size: large, newTab: true Should match snapshot 1`] = `
+<a
+  className="jsx-2520952609"
+  href="https://kiwi.com"
+  onClick={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+        Array [],
+      ],
+    }
+  }
+  target="_blank"
+>
+  My text link
+  <JSXStyle
+    css="a.__jsx-style-dynamic-selector{font-size:16px;color:#171b1e;font-weight:500;-webkit-text-decoration:underline;text-decoration:underline;cursor:pointer;}a.__jsx-style-dynamic-selector:hover{-webkit-text-decoration:underline;text-decoration:underline;color:#00907b;}a.__jsx-style-dynamic-selector:focus{outline-width:3px;}"
+    dynamic={
+      Array [
+        "16px",
+        "#171b1e",
+        "500",
+        "underline",
+        "underline",
+        "#00907b",
+      ]
+    }
+    styleId="3089605838"
+  />
+</a>
+`;

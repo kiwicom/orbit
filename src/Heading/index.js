@@ -18,8 +18,8 @@ type Props = {
   element: "h1" | "h2" | "h3" | "h4" | "h5",
   size: $Keys<typeof sizeHeading>,
   weight: $Keys<typeof weightHeading>,
-  className?: string,
   children: React.Node,
+  className?: string,
 };
 
 function resolveScopedStyles(scope) {

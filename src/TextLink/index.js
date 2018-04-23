@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { darken } from "polished";
-import * as tokens from "orbit-design-token";
+import * as tokens from "@kiwicom/orbit-design-tokens";
 
 const colorTextLink = {
   primary: tokens.colorLinkPrimary,

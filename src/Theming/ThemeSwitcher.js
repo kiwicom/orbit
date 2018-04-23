@@ -1,13 +1,13 @@
 // @flow
 import * as React from "react";
-import defaultTheme from "orbit-design-token";
+import tokens from "@kiwicom/orbit-design-tokens";
 
 import ThemeProvider from "./ThemeProvider";
 
 type Props = {
   children: React.Node,
-  mainTheme?: typeof defaultTheme,
-  themes: Array<$Shape<typeof defaultTheme>>,
+  mainTheme?: typeof tokens,
+  themes: Array<$Shape<typeof tokens>>,
 };
 
 type State = {
@@ -16,7 +16,7 @@ type State = {
 
 export default class ThemeSwither extends React.Component<Props, State> {
   static defaultProps = {
-    mainTheme: defaultTheme,
+    mainTheme: tokens,
   };
 
   state = {

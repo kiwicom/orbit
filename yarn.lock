@@ -92,6 +92,10 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@kiwicom/orbit-design-tokens@0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.0.2.tgz#7216b228d9e46dc8b4d06ba81cb1c622a5783cb6"
+
 "@sambego/storybook-styles@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@sambego/storybook-styles/-/storybook-styles-1.0.0.tgz#4f840ee26dd0b25dcb803a75caa42e16071dcaae"
@@ -6060,10 +6064,6 @@ optionator@^0.8.1, optionator@^0.8.2:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
     wordwrap "~1.0.0"
-
-"orbit-design-token@git+https://github.com/kiwicom/orbit-design-tokens.git#v0.0.2":
-  version "0.0.2"
-  resolved "git+https://github.com/kiwicom/orbit-design-tokens.git#25f8d91d99bb4ee01d7945473e078300f0f4de3f"
 
 original@>=0.0.5:
   version "1.0.0"

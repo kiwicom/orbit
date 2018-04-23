@@ -6,9 +6,8 @@ You can import any icon and use it as a React component:
 
 ```js
 import React from "react";
-import { Icons } from "@kiwicom/orbit-components";
+import { Airplane } from "@kiwicom/orbit-components/lib/icons";
 
-const { Airplane } = Icons;
 const AirplaneTitle = label => (
   <h1>
     <Airplane fill="#0097A9" height="14" />
@@ -17,7 +16,7 @@ const AirplaneTitle = label => (
 );
 ```
 
-Every icon is just a simple piece of inline SVG, see [the code of one of them](./airplane.jsx).
+Every icon is just a simple piece of inline SVG, see [the code of one of them](./airplane.js).
 
 All props are passed to the `svg` element, so you can override its default `height` and `fill`. Eg. `<Airplane fill="red" height="100" />` to render a 100px red airplane. You can find [other attributes on MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg), but these two will be probably the only ones you will use.
 
@@ -27,7 +26,7 @@ See the generated [preview of all icons](./icons.md).
 
 ## Build Process
 
-In the `svg` folder, there are source SVG files as delivered by our designers. The build script (`bin/build.js`) that executes when you run `yarn build` processes all of them, optimizes them and transforms into JSX in the `jsx` folder. This script also generates previews in the `png` folder. That JSX is then transpiled with Babel into the `lib` folder.
+In the `svg` folder, there are source SVG files as delivered by our designers. The build script (`config/build.js`) that executes when you run `yarn build` processes all of them, optimizes and transforms them into JS React components. This script also generates previews in the `png` folder. Those JS files are then transpiled with Babel and copied to the `lib` folder.
 
 Note that this works only for simple single color icons. If we will be adding more advanced graphics in the future (colorful logos etc.), it will require a different approach.
 

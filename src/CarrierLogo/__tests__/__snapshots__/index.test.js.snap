@@ -1,0 +1,648 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Multiple CarrierLogo Should match snapshot 1`] = `
+<CarrierLogo
+  carriers={
+    Array [
+      Object {
+        "code": "FR",
+        "name": "Ryanair",
+      },
+      Object {
+        "code": "TO",
+        "name": "Transavia France",
+      },
+      Object {
+        "code": "VY",
+        "name": "Vueling",
+      },
+      Object {
+        "code": "OK",
+        "name": "Czech Airlines",
+      },
+    ]
+  }
+  size="medium"
+>
+  <div
+    className="jsx-3959991045"
+  >
+    <img
+      alt="Ryanair"
+      className="jsx-3959991045"
+      key="FR"
+      src="//images.kiwi.com/airlines/16/FR.png"
+      srcSet="//images.kiwi.com/airlines/32/FR.png 2x"
+      title="Ryanair"
+    />
+    <img
+      alt="Transavia France"
+      className="jsx-3959991045"
+      key="TO"
+      src="//images.kiwi.com/airlines/16/TO.png"
+      srcSet="//images.kiwi.com/airlines/32/TO.png 2x"
+      title="Transavia France"
+    />
+    <img
+      alt="Vueling"
+      className="jsx-3959991045"
+      key="VY"
+      src="//images.kiwi.com/airlines/16/VY.png"
+      srcSet="//images.kiwi.com/airlines/32/VY.png 2x"
+      title="Vueling"
+    />
+    <img
+      alt="Czech Airlines"
+      className="jsx-3959991045"
+      key="OK"
+      src="//images.kiwi.com/airlines/16/OK.png"
+      srcSet="//images.kiwi.com/airlines/32/OK.png 2x"
+      title="Czech Airlines"
+    />
+    <JSXStyle
+      css="div.__jsx-style-dynamic-selector{border-radius:3px;background-color:#fff;height:32px;width:32px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;}img.__jsx-style-dynamic-selector{height:16px;width:16px;border-radius:3px;background-color:#fff;position:absolute;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(1){max-width:100%;max-height:100%;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(2)~img.__jsx-style-dynamic-selector:last-child{bottom:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(3){left:0;bottom:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(3){bottom:0;left:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(4){bottom:0;right:0;}"
+      dynamic={
+        Array [
+          "3px",
+          "#fff",
+          "32px",
+          "32px",
+          16,
+          16,
+          "3px",
+          "#fff",
+          15,
+          15,
+          15,
+          15,
+        ]
+      }
+      styleId="1553988802"
+    />
+  </div>
+</CarrierLogo>
+`;
+
+exports[`Single carrier with name: Czech Airlines and code: OK Should match snapshot 1`] = `
+<CarrierLogo
+  carriers={
+    Array [
+      Object {
+        "code": "OK",
+        "name": "Czech Airlines",
+      },
+    ]
+  }
+  size="small"
+>
+  <div
+    className="jsx-3452922565"
+  >
+    <img
+      alt="Czech Airlines"
+      className="jsx-3452922565"
+      key="OK"
+      src="//images.kiwi.com/airlines/16/OK.png"
+      srcSet="//images.kiwi.com/airlines/32/OK.png 2x"
+      title="Czech Airlines"
+    />
+    <JSXStyle
+      css="div.__jsx-style-dynamic-selector{border-radius:3px;background-color:#fff;height:16px;width:16px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;}img.__jsx-style-dynamic-selector{height:16px;width:16px;border-radius:3px;background-color:#fff;position:absolute;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(1){max-width:100%;max-height:100%;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(2)~img.__jsx-style-dynamic-selector:last-child{bottom:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(3){left:0;bottom:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(3){bottom:0;left:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(4){bottom:0;right:0;}"
+      dynamic={
+        Array [
+          "3px",
+          "#fff",
+          "16px",
+          "16px",
+          16,
+          16,
+          "3px",
+          "#fff",
+          15,
+          15,
+          15,
+          15,
+        ]
+      }
+      styleId="1553988802"
+    />
+  </div>
+</CarrierLogo>
+`;
+
+exports[`Single carrier with name: Czech Airlines and code: OK Should match snapshot 2`] = `
+<CarrierLogo
+  carriers={
+    Array [
+      Object {
+        "code": "OK",
+        "name": "Czech Airlines",
+      },
+    ]
+  }
+  size="medium"
+>
+  <div
+    className="jsx-1626299781"
+  >
+    <img
+      alt="Czech Airlines"
+      className="jsx-1626299781"
+      key="OK"
+      src="//images.kiwi.com/airlines/32/OK.png"
+      srcSet="//images.kiwi.com/airlines/64/OK.png 2x"
+      title="Czech Airlines"
+    />
+    <JSXStyle
+      css="div.__jsx-style-dynamic-selector{border-radius:3px;background-color:#fff;height:24px;width:24px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;}img.__jsx-style-dynamic-selector{height:24px;width:24px;border-radius:3px;background-color:#fff;position:absolute;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(1){max-width:100%;max-height:100%;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(2)~img.__jsx-style-dynamic-selector:last-child{bottom:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(3){left:0;bottom:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(3){bottom:0;left:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(4){bottom:0;right:0;}"
+      dynamic={
+        Array [
+          "3px",
+          "#fff",
+          "24px",
+          "24px",
+          24,
+          24,
+          "3px",
+          "#fff",
+          15,
+          15,
+          15,
+          15,
+        ]
+      }
+      styleId="1553988802"
+    />
+  </div>
+</CarrierLogo>
+`;
+
+exports[`Single carrier with name: Czech Airlines and code: OK Should match snapshot 3`] = `
+<CarrierLogo
+  carriers={
+    Array [
+      Object {
+        "code": "OK",
+        "name": "Czech Airlines",
+      },
+    ]
+  }
+  size="large"
+>
+  <div
+    className="jsx-1883173957"
+  >
+    <img
+      alt="Czech Airlines"
+      className="jsx-1883173957"
+      key="OK"
+      src="//images.kiwi.com/airlines/32/OK.png"
+      srcSet="//images.kiwi.com/airlines/64/OK.png 2x"
+      title="Czech Airlines"
+    />
+    <JSXStyle
+      css="div.__jsx-style-dynamic-selector{border-radius:3px;background-color:#fff;height:32px;width:32px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;}img.__jsx-style-dynamic-selector{height:32px;width:32px;border-radius:3px;background-color:#fff;position:absolute;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(1){max-width:100%;max-height:100%;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(2)~img.__jsx-style-dynamic-selector:last-child{bottom:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(3){left:0;bottom:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(3){bottom:0;left:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(4){bottom:0;right:0;}"
+      dynamic={
+        Array [
+          "3px",
+          "#fff",
+          "32px",
+          "32px",
+          32,
+          32,
+          "3px",
+          "#fff",
+          15,
+          15,
+          15,
+          15,
+        ]
+      }
+      styleId="1553988802"
+    />
+  </div>
+</CarrierLogo>
+`;
+
+exports[`Single carrier with name: Ryanair and code: FR Should match snapshot 1`] = `
+<CarrierLogo
+  carriers={
+    Array [
+      Object {
+        "code": "FR",
+        "name": "Ryanair",
+      },
+    ]
+  }
+  size="small"
+>
+  <div
+    className="jsx-3452922565"
+  >
+    <img
+      alt="Ryanair"
+      className="jsx-3452922565"
+      key="FR"
+      src="//images.kiwi.com/airlines/16/FR.png"
+      srcSet="//images.kiwi.com/airlines/32/FR.png 2x"
+      title="Ryanair"
+    />
+    <JSXStyle
+      css="div.__jsx-style-dynamic-selector{border-radius:3px;background-color:#fff;height:16px;width:16px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;}img.__jsx-style-dynamic-selector{height:16px;width:16px;border-radius:3px;background-color:#fff;position:absolute;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(1){max-width:100%;max-height:100%;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(2)~img.__jsx-style-dynamic-selector:last-child{bottom:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(3){left:0;bottom:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(3){bottom:0;left:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(4){bottom:0;right:0;}"
+      dynamic={
+        Array [
+          "3px",
+          "#fff",
+          "16px",
+          "16px",
+          16,
+          16,
+          "3px",
+          "#fff",
+          15,
+          15,
+          15,
+          15,
+        ]
+      }
+      styleId="1553988802"
+    />
+  </div>
+</CarrierLogo>
+`;
+
+exports[`Single carrier with name: Ryanair and code: FR Should match snapshot 2`] = `
+<CarrierLogo
+  carriers={
+    Array [
+      Object {
+        "code": "FR",
+        "name": "Ryanair",
+      },
+    ]
+  }
+  size="medium"
+>
+  <div
+    className="jsx-1626299781"
+  >
+    <img
+      alt="Ryanair"
+      className="jsx-1626299781"
+      key="FR"
+      src="//images.kiwi.com/airlines/32/FR.png"
+      srcSet="//images.kiwi.com/airlines/64/FR.png 2x"
+      title="Ryanair"
+    />
+    <JSXStyle
+      css="div.__jsx-style-dynamic-selector{border-radius:3px;background-color:#fff;height:24px;width:24px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;}img.__jsx-style-dynamic-selector{height:24px;width:24px;border-radius:3px;background-color:#fff;position:absolute;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(1){max-width:100%;max-height:100%;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(2)~img.__jsx-style-dynamic-selector:last-child{bottom:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(3){left:0;bottom:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(3){bottom:0;left:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(4){bottom:0;right:0;}"
+      dynamic={
+        Array [
+          "3px",
+          "#fff",
+          "24px",
+          "24px",
+          24,
+          24,
+          "3px",
+          "#fff",
+          15,
+          15,
+          15,
+          15,
+        ]
+      }
+      styleId="1553988802"
+    />
+  </div>
+</CarrierLogo>
+`;
+
+exports[`Single carrier with name: Ryanair and code: FR Should match snapshot 3`] = `
+<CarrierLogo
+  carriers={
+    Array [
+      Object {
+        "code": "FR",
+        "name": "Ryanair",
+      },
+    ]
+  }
+  size="large"
+>
+  <div
+    className="jsx-1883173957"
+  >
+    <img
+      alt="Ryanair"
+      className="jsx-1883173957"
+      key="FR"
+      src="//images.kiwi.com/airlines/32/FR.png"
+      srcSet="//images.kiwi.com/airlines/64/FR.png 2x"
+      title="Ryanair"
+    />
+    <JSXStyle
+      css="div.__jsx-style-dynamic-selector{border-radius:3px;background-color:#fff;height:32px;width:32px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;}img.__jsx-style-dynamic-selector{height:32px;width:32px;border-radius:3px;background-color:#fff;position:absolute;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(1){max-width:100%;max-height:100%;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(2)~img.__jsx-style-dynamic-selector:last-child{bottom:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(3){left:0;bottom:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(3){bottom:0;left:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(4){bottom:0;right:0;}"
+      dynamic={
+        Array [
+          "3px",
+          "#fff",
+          "32px",
+          "32px",
+          32,
+          32,
+          "3px",
+          "#fff",
+          15,
+          15,
+          15,
+          15,
+        ]
+      }
+      styleId="1553988802"
+    />
+  </div>
+</CarrierLogo>
+`;
+
+exports[`Single carrier with name: Transavia France and code: TO Should match snapshot 1`] = `
+<CarrierLogo
+  carriers={
+    Array [
+      Object {
+        "code": "TO",
+        "name": "Transavia France",
+      },
+    ]
+  }
+  size="small"
+>
+  <div
+    className="jsx-3452922565"
+  >
+    <img
+      alt="Transavia France"
+      className="jsx-3452922565"
+      key="TO"
+      src="//images.kiwi.com/airlines/16/TO.png"
+      srcSet="//images.kiwi.com/airlines/32/TO.png 2x"
+      title="Transavia France"
+    />
+    <JSXStyle
+      css="div.__jsx-style-dynamic-selector{border-radius:3px;background-color:#fff;height:16px;width:16px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;}img.__jsx-style-dynamic-selector{height:16px;width:16px;border-radius:3px;background-color:#fff;position:absolute;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(1){max-width:100%;max-height:100%;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(2)~img.__jsx-style-dynamic-selector:last-child{bottom:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(3){left:0;bottom:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(3){bottom:0;left:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(4){bottom:0;right:0;}"
+      dynamic={
+        Array [
+          "3px",
+          "#fff",
+          "16px",
+          "16px",
+          16,
+          16,
+          "3px",
+          "#fff",
+          15,
+          15,
+          15,
+          15,
+        ]
+      }
+      styleId="1553988802"
+    />
+  </div>
+</CarrierLogo>
+`;
+
+exports[`Single carrier with name: Transavia France and code: TO Should match snapshot 2`] = `
+<CarrierLogo
+  carriers={
+    Array [
+      Object {
+        "code": "TO",
+        "name": "Transavia France",
+      },
+    ]
+  }
+  size="medium"
+>
+  <div
+    className="jsx-1626299781"
+  >
+    <img
+      alt="Transavia France"
+      className="jsx-1626299781"
+      key="TO"
+      src="//images.kiwi.com/airlines/32/TO.png"
+      srcSet="//images.kiwi.com/airlines/64/TO.png 2x"
+      title="Transavia France"
+    />
+    <JSXStyle
+      css="div.__jsx-style-dynamic-selector{border-radius:3px;background-color:#fff;height:24px;width:24px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;}img.__jsx-style-dynamic-selector{height:24px;width:24px;border-radius:3px;background-color:#fff;position:absolute;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(1){max-width:100%;max-height:100%;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(2)~img.__jsx-style-dynamic-selector:last-child{bottom:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(3){left:0;bottom:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(3){bottom:0;left:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(4){bottom:0;right:0;}"
+      dynamic={
+        Array [
+          "3px",
+          "#fff",
+          "24px",
+          "24px",
+          24,
+          24,
+          "3px",
+          "#fff",
+          15,
+          15,
+          15,
+          15,
+        ]
+      }
+      styleId="1553988802"
+    />
+  </div>
+</CarrierLogo>
+`;
+
+exports[`Single carrier with name: Transavia France and code: TO Should match snapshot 3`] = `
+<CarrierLogo
+  carriers={
+    Array [
+      Object {
+        "code": "TO",
+        "name": "Transavia France",
+      },
+    ]
+  }
+  size="large"
+>
+  <div
+    className="jsx-1883173957"
+  >
+    <img
+      alt="Transavia France"
+      className="jsx-1883173957"
+      key="TO"
+      src="//images.kiwi.com/airlines/32/TO.png"
+      srcSet="//images.kiwi.com/airlines/64/TO.png 2x"
+      title="Transavia France"
+    />
+    <JSXStyle
+      css="div.__jsx-style-dynamic-selector{border-radius:3px;background-color:#fff;height:32px;width:32px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;}img.__jsx-style-dynamic-selector{height:32px;width:32px;border-radius:3px;background-color:#fff;position:absolute;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(1){max-width:100%;max-height:100%;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(2)~img.__jsx-style-dynamic-selector:last-child{bottom:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(3){left:0;bottom:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(3){bottom:0;left:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(4){bottom:0;right:0;}"
+      dynamic={
+        Array [
+          "3px",
+          "#fff",
+          "32px",
+          "32px",
+          32,
+          32,
+          "3px",
+          "#fff",
+          15,
+          15,
+          15,
+          15,
+        ]
+      }
+      styleId="1553988802"
+    />
+  </div>
+</CarrierLogo>
+`;
+
+exports[`Single carrier with name: Vueling and code: VY Should match snapshot 1`] = `
+<CarrierLogo
+  carriers={
+    Array [
+      Object {
+        "code": "VY",
+        "name": "Vueling",
+      },
+    ]
+  }
+  size="small"
+>
+  <div
+    className="jsx-3452922565"
+  >
+    <img
+      alt="Vueling"
+      className="jsx-3452922565"
+      key="VY"
+      src="//images.kiwi.com/airlines/16/VY.png"
+      srcSet="//images.kiwi.com/airlines/32/VY.png 2x"
+      title="Vueling"
+    />
+    <JSXStyle
+      css="div.__jsx-style-dynamic-selector{border-radius:3px;background-color:#fff;height:16px;width:16px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;}img.__jsx-style-dynamic-selector{height:16px;width:16px;border-radius:3px;background-color:#fff;position:absolute;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(1){max-width:100%;max-height:100%;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(2)~img.__jsx-style-dynamic-selector:last-child{bottom:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(3){left:0;bottom:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(3){bottom:0;left:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(4){bottom:0;right:0;}"
+      dynamic={
+        Array [
+          "3px",
+          "#fff",
+          "16px",
+          "16px",
+          16,
+          16,
+          "3px",
+          "#fff",
+          15,
+          15,
+          15,
+          15,
+        ]
+      }
+      styleId="1553988802"
+    />
+  </div>
+</CarrierLogo>
+`;
+
+exports[`Single carrier with name: Vueling and code: VY Should match snapshot 2`] = `
+<CarrierLogo
+  carriers={
+    Array [
+      Object {
+        "code": "VY",
+        "name": "Vueling",
+      },
+    ]
+  }
+  size="medium"
+>
+  <div
+    className="jsx-1626299781"
+  >
+    <img
+      alt="Vueling"
+      className="jsx-1626299781"
+      key="VY"
+      src="//images.kiwi.com/airlines/32/VY.png"
+      srcSet="//images.kiwi.com/airlines/64/VY.png 2x"
+      title="Vueling"
+    />
+    <JSXStyle
+      css="div.__jsx-style-dynamic-selector{border-radius:3px;background-color:#fff;height:24px;width:24px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;}img.__jsx-style-dynamic-selector{height:24px;width:24px;border-radius:3px;background-color:#fff;position:absolute;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(1){max-width:100%;max-height:100%;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(2)~img.__jsx-style-dynamic-selector:last-child{bottom:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(3){left:0;bottom:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(3){bottom:0;left:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(4){bottom:0;right:0;}"
+      dynamic={
+        Array [
+          "3px",
+          "#fff",
+          "24px",
+          "24px",
+          24,
+          24,
+          "3px",
+          "#fff",
+          15,
+          15,
+          15,
+          15,
+        ]
+      }
+      styleId="1553988802"
+    />
+  </div>
+</CarrierLogo>
+`;
+
+exports[`Single carrier with name: Vueling and code: VY Should match snapshot 3`] = `
+<CarrierLogo
+  carriers={
+    Array [
+      Object {
+        "code": "VY",
+        "name": "Vueling",
+      },
+    ]
+  }
+  size="large"
+>
+  <div
+    className="jsx-1883173957"
+  >
+    <img
+      alt="Vueling"
+      className="jsx-1883173957"
+      key="VY"
+      src="//images.kiwi.com/airlines/32/VY.png"
+      srcSet="//images.kiwi.com/airlines/64/VY.png 2x"
+      title="Vueling"
+    />
+    <JSXStyle
+      css="div.__jsx-style-dynamic-selector{border-radius:3px;background-color:#fff;height:32px;width:32px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;}img.__jsx-style-dynamic-selector{height:32px;width:32px;border-radius:3px;background-color:#fff;position:absolute;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(1){max-width:100%;max-height:100%;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(2)~img.__jsx-style-dynamic-selector:last-child{bottom:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(3)~img.__jsx-style-dynamic-selector:nth-child(3){left:0;bottom:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4),img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector{width:15px;height:15px;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(2){top:0;right:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(3){bottom:0;left:0;}img.__jsx-style-dynamic-selector:first-child.__jsx-style-dynamic-selector:nth-last-child(4)~img.__jsx-style-dynamic-selector:nth-child(4){bottom:0;right:0;}"
+      dynamic={
+        Array [
+          "3px",
+          "#fff",
+          "32px",
+          "32px",
+          32,
+          32,
+          "3px",
+          "#fff",
+          15,
+          15,
+          15,
+          15,
+        ]
+      }
+      styleId="1553988802"
+    />
+  </div>
+</CarrierLogo>
+`;

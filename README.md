@@ -6,7 +6,7 @@ First thing you will need to do is install the package into your project.
 
 Run [npm](https://www.npmjs.com/) to add the package to your project:
 
-`npm install @kiwicom/orbit-design-tokens`
+`npm install --save @kiwicom/orbit-design-tokens`
 
 or do so with [Yarn](https://yarnpkg.com/):
 
@@ -19,13 +19,10 @@ You will simply need to add this line of code to the top of the file:
 
 `import * as tokens from 'orbit-design-token'`
  
-Now you can use tokens by typing `tokens` and just continue with the dot-notation by typing the appropriate token name you want to use f.e. `tokens.backgroundButtonPrimary`. More advanced text editors should suggest which tokens are available to you in the token object, so you can find tokens quicker than by typing the entire token name.
+Now you can use tokens by typing `tokens` and just continue with the dot-notation by typing the appropriate token name you want to use f.e. `tokens.colorTextPrimary`. More advanced text editors should suggest which tokens are available to you in the token object, so you can find tokens quicker than by typing the entire token name.
  
 ## Formats
-The main structure of the package is written in `JavaScript` for better usage in `JavaScript` projects. We are also generating a `JSON` file which will allow us to transform this type of file into different ones. Currently, it’s possible to transform `JSON` into `SASS`, `LESS`, `Stylus`, `XML` or others.
-
-## Brands
-Info coming soon
+The main structure of the package is written in `JavaScript` for better usage in `JavaScript` projects. We are also able to generate a `JSON` file which will allow us to transform this type of file into different ones. It should be possible to transform `JSON` into `SASS`, `LESS`, `Stylus`, `XML` or others.
 
 ## Naming conventions
 Every design token in the package has a name suggested according to the Orbit naming conventions. These conventions should be systematic, and work according to the following template:

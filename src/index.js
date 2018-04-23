@@ -1,5 +1,5 @@
 // @flow
-import defaultTheme from "orbit-design-token";
+import defaultTheme from "@kiwicom/orbit-design-tokens";
 import { withTheme } from "theming";
 
 import * as Icons from "./icons";

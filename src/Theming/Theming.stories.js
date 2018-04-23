@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import defaultTheme from "orbit-design-token";
+import tokens from "@kiwicom/orbit-design-tokens";
 
 import ThemedSample, { RawComponent } from "../Theming/ThemedSample";
 import ThemeSwither from "./ThemeSwitcher";
@@ -16,7 +16,7 @@ const otherTheme = {
   fontFamily: "Times, serif",
 };
 
-const altFullTheme = Object.assign({}, defaultTheme, {
+const altFullTheme = Object.assign({}, tokens, {
   colorTextPrimary: "red",
   fontFamily: "Courier",
 });
@@ -30,7 +30,7 @@ storiesOf("Theming", module)
     </ThemeProvider>
   ))
   .add("Alt theme", () => (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={tokens}>
       <ThemeProvider theme={altTheme}>
         <ThemedSample />
       </ThemeProvider>

@@ -1,10 +1,10 @@
 // @flow
 import React from "react";
 import { withTheme } from "theming";
-import defaultTheme from "orbit-design-token";
+import tokens from "@kiwicom/orbit-design-tokens";
 
 type ComponentProps = {
-  theme: typeof defaultTheme,
+  theme: typeof tokens,
 };
 
 const Component = ({ theme }: ComponentProps) => (
@@ -15,7 +15,7 @@ const Component = ({ theme }: ComponentProps) => (
 
 // We're passing a default theme for Component that aren't wrapped in the ThemeProvider
 Component.defaultProps = {
-  theme: defaultTheme, // eslint-disable-line react/default-props-match-prop-types
+  theme: tokens, // eslint-disable-line react/default-props-match-prop-types
 };
 
 // Themed component cannot be used without ThemeProvider

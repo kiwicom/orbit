@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendered with children Should contain text 1`] = `
+<React.Fragment>
+  <p
+    className="jsx-487647055 "
+  >
+    Children text
+  </p>
+  <JSXStyle
+    css=".__jsx-style-dynamic-selector{font-family:\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif;font-size:12px;font-weight:400;color:#46515e;line-height:1.4;text-align:left;;;}"
+    dynamic={
+      Array [
+        "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+        "12px",
+        "400",
+        "#46515e",
+        "1.4",
+        "left",
+        "",
+        "",
+      ]
+    }
+    styleId="143391915"
+  />
+</React.Fragment>
+`;

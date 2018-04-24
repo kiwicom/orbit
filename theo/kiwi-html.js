@@ -30,7 +30,7 @@ class Styleguide {
   }
 
   renderRow(prop, example) {
-    let name = this.options.transformPropName(prop.name);
+    let name = prop.name; //this.options.transformPropName(prop.name);
     return `
       <tr>
         <th scope="row">
@@ -146,7 +146,7 @@ class Styleguide {
     return props.map(prop => {
       let example = `
         <td>
-          <div style="font-family: ${prop.value};">
+          <div style='font-family: ${prop.value};'>
             The quick brown fox jumps over the lazy dog.
           </div>
         </td>
@@ -277,6 +277,13 @@ class Styleguide {
       return this.renderRow(prop, example);
     });
   }
+
+  renderValues(props) {
+    return props.map(prop => {
+      return this.renderRow(prop, `<td></td>`);
+    });
+  }
+
 
   renderSection(type, heading, fn) {
     let props = this.categories[type];
@@ -417,6 +424,24 @@ return `
     </header>
     <div class="container">
       <main role="main">
+        ${this.renderSection("Colors", "Colors", this.renderTextColor)}      
+        ${this.renderSection("Background colors", "Background Colors", this.renderBackgroundColor)}
+        ${this.renderSection("Font family", "Font Families", this.renderFontFamily)}
+        ${this.renderSection("Font size", "Font Sizes", this.renderFontSize)}
+        ${this.renderSection("Font weight", "Font Weights", this.renderFontWeight)}
+        
+        ${this.renderSection("Border radius", "Border Radius", this.renderBorderRadius)}
+        ${this.renderSection("Size (width, height)", "Sizing", this.renderSizing)}
+        ${this.renderSection("Border color", "Border Colors", this.renderBorderColor)}
+        ${this.renderSection("Border style", "Border Styles", this.renderBorderStyle)}
+        ${this.renderSection("Spacing", "Spacing", this.renderSpacing)}
+        ${this.renderSection("Line height", "Line Heights", this.renderLineHeight)}
+        ${this.renderSection("Modifier", "Modifier", this.renderValues)}
+        ${this.renderSection("Text decoration", "Text decoration", this.renderValues)}
+        ${this.renderSection("Duration", "Duration", this.renderValues)}
+        ${this.renderSection("Opacity", "Opacity", this.renderValues)}
+        ${this.renderSection("Z Index", "Z Index", this.renderValues)}
+
         ${this.renderSection("text-color", "Text Colors")}
         ${this.renderSection("text-shadow", "Text Shadows")}
         ${this.renderSection("background-color", "Background Colors")}
@@ -426,18 +451,15 @@ return `
         ${this.renderSection("font-style", "Font Styles")}
         ${this.renderSection("font-weight", "Font Weights")}
         ${this.renderSection("font-size", "Font Sizes")}
-        ${this.renderSection("line-height", "Line Heights")}
         ${this.renderSection("font-family", "Font Families")}
+        ${this.renderSection("line-height", "Line Heights")}
         ${this.renderSection("border-style", "Border Styles")}
         ${this.renderSection("border-color", "Border Colors")}
         ${this.renderSection("radius", "Radius")}
         ${this.renderSection("border-radius", "Border Radius")}
         ${this.renderSection("hr-color", "Horizontal Rule Colors")}
         ${this.renderSection("gradient", "Gradients")}
-        ${this.renderSection(
-          "background-gradient",
-          "Background Gradients"
-        )}
+        ${this.renderSection("background-gradient","Background Gradients")}
         ${this.renderSection("drop-shadow", "Drop Shadows")}
         ${this.renderSection("box-shadow", "Box Shadows")}
         ${this.renderSection(

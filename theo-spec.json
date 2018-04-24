@@ -352,8 +352,24 @@
         "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
+    "colorIconCheckboxDisabled": {
+      "value": "#bac7d5",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
     "colorIconRadioButton": {
       "value": "#00a991",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorIconRadioButtonDisabled": {
+      "value": "#bac7d5",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -704,6 +720,14 @@
         "categoryDescription": ""
       }
     },
+    "widthIconMedium": {
+      "value": "24px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "heightIconMedium": {
       "value": "24px",
       "type": "size",
@@ -712,8 +736,16 @@
         "categoryDescription": ""
       }
     },
-    "widthIconMedium": {
-      "value": "24px",
+    "widthIconLarge": {
+      "value": "32px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "heightIconLarge": {
+      "value": "32px",
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
@@ -1161,7 +1193,7 @@
       }
     },
     "modifierScaleButtonActive": {
-      "value": 0.95,
+      "value": 0.9,
       "type": "number",
       "category": "Modifier",
       "meta": {

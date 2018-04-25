@@ -45,8 +45,8 @@ const colors = {
 };
 
 const defaultTokens = {
-	//category:Colors
-	//description:Use these tokens for text colors only. Do not use these for border colors or background colors.
+	// category:Colors
+	// description:Use these tokens for text colors only. Do not use these for border colors or background colors.
 	colorTextInfo: colors.blue.normal,
 	colorTextPrimary: colors.ink.normal,
 	colorTextSecondary: colors.ink.light,
@@ -101,12 +101,12 @@ const defaultTokens = {
 	colorIconCheckboxDisabled: colors.ink.lighter,
 	colorIconRadioButton: colors.brand.normal,
 	colorIconRadioButtonDisabled: colors.ink.lighter,
-	//category:Font family
-	//description:
+	// category:Font family
+	// description:
 	fontFamily:
 		'"Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
-	//category:Background colors
-	//description:Use these tokens for background colors only. Do not use these for border colors or text colors.
+	// category:Background colors
+	// description:Use these tokens for background colors only. Do not use these for border colors or text colors.
 	backgroundBody: colors.cloud.light,
 	backgroundModal: colors.white.normal,
 	backgroundSection: colors.white.normal,
@@ -125,8 +125,8 @@ const defaultTokens = {
 	backgroundAlertInfo: colors.blue.light,
 	backgroundAlertWarning: colors.orange.light,
 	backgroundAlertCritical: colors.red.light,
-	//category:Font size
-	//description:Use these sizing tokens for font sizes.
+	// category:Font size
+	// description:Use these sizing tokens for font sizes.
 	fontSizeHeadingDisplay: "40px",
 	fontSizeHeadingLarge: "28px",
 	fontSizeHeadingMedium: "22px",
@@ -142,21 +142,25 @@ const defaultTokens = {
 	fontSizeInputSmall: "14px",
 	fontSizeLabelForm: "14px",
 	fontSizeMessageForm: "12px",
-	//category:Border radius
-	//description:Use radius tokens to change the border-radius size (rounded corners).
+	// category:Border radius
+	// description:Use radius tokens to change the border-radius size (rounded corners).
+	// use only for square
 	borderRadiusCircle: "50%",
+	// use for all basic elements like buttons, inputs, content containers
 	borderRadiusNormal: "3px",
+	// use for big elements like modal and large buttons
 	borderRadiusLarge: "6px",
+	// use for smaller elements like tags 
 	borderRadiusSmall: "2px",
-	//category:Z Index
-	//description:Use layers to show depth of page.
+	// category:Z Index
+	// description:Use layers to show depth of page.
 	zIndexDefault: "1",
 	zIndexSticky: "100",
 	zIndexModalOverlay: "800",
 	zIndexModal: "825",
 	zIndexOnTheTop: "900",
-	//category:Size (width, height)
-	//description:
+	// category:Size (width, height)
+	// description:
 	widthIconSmall: "16px",
 	heightIconSmall: "16px",
 	widthIconMedium: "24px",
@@ -174,8 +178,8 @@ const defaultTokens = {
 	widthRadioButton: "20px",
 	heightCheckbox: "20px",
 	widthCheckbox: "20px",
-	//category:Border color
-	//description:
+	// category:Border color
+	// description:
 	borderColorInput: colors.ink.lighter,
 	borderColorInputFocus: colors.blue.normal,
 	borderColorInputError: colors.red.normal,
@@ -189,26 +193,26 @@ const defaultTokens = {
 	borderColorButtonFacebookBordered: colors.social.facebook,
 	borderColorButtonGoogleBordered: colors.social.google,
 	borderColorButtonDestructiveBordered: colors.red.normal,
-	//category:Border style
-	//description:
+	// category:Border style
+	// description:
 	borderStyleSection: "solid",
 	borderWidthSection: "1px",
 	borderStyleInput: "solid",
 	borderWidthInput: "1px",
-	//category:Opacity
-	//description:
+	// category:Opacity
+	// description:
 	opacityOverlay: "0.8",
 	opacityButtonDisabled: "0.3",
 	opacityRadioButtonDisabled: "0.5",
 	opacityCheckboxDisabled: "0.5",
-	//category:Font weight
-	//description:Use this for setting basic font weights.
+	// category:Font weight
+	// description:Use this for setting basic font weights.
 	fontWeightNormal: "400",
 	fontWeightMedium: "500",
 	fontWeightBold: "700",
 	fontWeightLinks: "500",
-	//category:Spacing
-	//description:Use this for setting spacings for elements.
+	// category:Spacing
+	// description:Use this for setting spacings for elements.
 	paddingAlert: "16px",
 	paddingAlertWithIcon: "12px",
 	paddingButtonSmall: "12px",
@@ -230,29 +234,29 @@ const defaultTokens = {
 	spaceXLarge: "32px",
 	spaceXXLarge: "40px",
 	spaceXXXLarge: "52px",
-	//category:Duration
-	//description:Use this for setting the speed of animation or transition.
+	// category:Duration
+	// description:Use this for setting the speed of animation or transition.
 	durationFast: "0.2s",
 	durationNormal: "0.3s",
 	durationSlow: "0.4s",
-	//category:Modifier
-	//description:Use this for values for transform property, etc.
+	// category:Modifier
+	// description:Use this for values for transform property, etc.
 	modifierDarkenHover: 0.05,
 	modifierDarkenActive: 0.1,
 	modifierDarkenButtonLink: 0.05,
 	modifierScaleButtonActive: 0.9,
-	//category:Line height
-	//description:
+	// category:Line height
+	// description:
 	lineHeightText: "1.4",
 	lineHeightHeading: "1.2",
-	//category:Text decoration
-	//description:
+	// category:Text decoration
+	// description:
 	textDecorationLinkPrimary: "none",
 	textDecorationLinkPrimaryHover: "underline",
 	textDecorationLinkSecondary: "underline",
 	textDecorationLinkSecondaryHover: "underline",
-	//category:Box shadow
-	//description:
+	// category:Box shadow
+	// description:
 	boxShadowInputFocus: "0px 0px 3px 1px rgba(1,118,210,0.3)",
 	boxShadowInputErrorFocus: "0px 0px 3px 1px rgba(210,28,28,0.3)",
 };

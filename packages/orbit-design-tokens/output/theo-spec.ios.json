@@ -1,0 +1,1058 @@
+{
+  "properties": [
+    {
+      "value": "16px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingInputNormal"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonPrimary"
+    },
+    {
+      "value": "12px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "marginButtonIconNormal"
+    },
+    {
+      "value": "44px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "heightButtonNormal"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonDestructive"
+    },
+    {
+      "value": "solid",
+      "type": "string",
+      "category": "Border style",
+      "name": "borderStyleSection"
+    },
+    {
+      "value": "rgb(1, 118, 210)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorAlertIconInfo"
+    },
+    {
+      "value": "100",
+      "type": "string",
+      "category": "Z Index",
+      "name": "zIndexSticky"
+    },
+    {
+      "value": "4px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "spaceXxSmall"
+    },
+    {
+      "value": "16px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeInputNormal"
+    },
+    {
+      "value": "12px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "spaceSmall"
+    },
+    {
+      "value": "rgb(23, 27, 30)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconAttention"
+    },
+    {
+      "value": "rgb(232, 237, 241)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonLinkHover"
+    },
+    {
+      "value": 0.05,
+      "type": "number",
+      "category": "Modifier",
+      "name": "modifierDarkenButtonLink"
+    },
+    {
+      "value": "rgb(210, 28, 28)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonDestructive"
+    },
+    {
+      "value": "52px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "heightButtonLarge"
+    },
+    {
+      "value": "16px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "marginButtonIconLarge"
+    },
+    {
+      "value": "rgb(0, 169, 145)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonPrimary"
+    },
+    {
+      "value": "8px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonSmallWithIcon"
+    },
+    {
+      "value": "rgb(210, 28, 28)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorInputErrorFocus"
+    },
+    {
+      "value": "12px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonSmall"
+    },
+    {
+      "value": "rgb(127, 145, 168)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextSecondary"
+    },
+    {
+      "value": "14px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeTextNormal"
+    },
+    {
+      "value": "rgb(0, 169, 145)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorButtonPrimaryBordered"
+    },
+    {
+      "value": "rgb(210, 28, 28)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorButtonDestructiveBordered"
+    },
+    {
+      "value": "32px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "heightInputSmall"
+    },
+    {
+      "value": "rgb(1, 118, 210)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorInputFocus"
+    },
+    {
+      "value": "rgb(0, 169, 145)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorLinkPrimary"
+    },
+    {
+      "value": "0.8",
+      "type": "string",
+      "category": "Opacity",
+      "name": "opacityOverlay"
+    },
+    {
+      "value": "solid",
+      "type": "string",
+      "category": "Border style",
+      "name": "borderStyleInput"
+    },
+    {
+      "value": "12px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeButtonSmall"
+    },
+    {
+      "value": "3px",
+      "type": "size",
+      "category": "Border radius",
+      "comment": "use for all basic elements like buttons, inputs, content containers",
+      "name": "borderRadiusNormal"
+    },
+    {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonSecondary"
+    },
+    {
+      "value": "rgb(59, 89, 152)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonFacebook"
+    },
+    {
+      "value": "rgb(221, 75, 57)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonGoogleBordered"
+    },
+    {
+      "value": 0.05,
+      "type": "number",
+      "category": "Modifier",
+      "name": "modifierDarkenHover"
+    },
+    {
+      "value": "20px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "heightRadioButton"
+    },
+    {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconPrimary"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonGoogle"
+    },
+    {
+      "value": "22px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeHeadingMedium"
+    },
+    {
+      "value": "20px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "widthRadioButton"
+    },
+    {
+      "value": "16px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "heightIconSmall"
+    },
+    {
+      "value": "1.2",
+      "type": "string",
+      "category": "Line height",
+      "name": "lineHeightHeading"
+    },
+    {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonLinkBordered"
+    },
+    {
+      "value": "16px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "widthIconSmall"
+    },
+    {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonLink"
+    },
+    {
+      "value": "1.4",
+      "type": "string",
+      "category": "Line height",
+      "name": "lineHeightText"
+    },
+    {
+      "value": "14px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeLabelForm"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonFacebook"
+    },
+    {
+      "value": "8px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonNormalWithIcon"
+    },
+    {
+      "value": "180px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "widthButtonMinimal"
+    },
+    {
+      "value": "32px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "spaceXLarge"
+    },
+    {
+      "value": "1",
+      "type": "string",
+      "category": "Z Index",
+      "name": "zIndexDefault"
+    },
+    {
+      "value": "28px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeHeadingLarge"
+    },
+    {
+      "value": "20px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "widthCheckbox"
+    },
+    {
+      "value": "52px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "spaceXxxLarge"
+    },
+    {
+      "value": "14px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeButtonNormal"
+    },
+    {
+      "value": "2px",
+      "type": "size",
+      "category": "Border radius",
+      "comment": "use for smaller elements like tags",
+      "name": "borderRadiusSmall"
+    },
+    {
+      "value": "12px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeTextSmall"
+    },
+    {
+      "value": "16px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonNormal"
+    },
+    {
+      "value": "0.5",
+      "type": "string",
+      "category": "Opacity",
+      "name": "opacityCheckboxDisabled"
+    },
+    {
+      "value": "44px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "heightInputNormal"
+    },
+    {
+      "value": "20px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "heightCheckbox"
+    },
+    {
+      "value": "12px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingAlertWithIcon"
+    },
+    {
+      "value": "rgb(249, 151, 30)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorAlertIconWarning"
+    },
+    {
+      "value": "1px",
+      "type": "size",
+      "category": "Border style",
+      "name": "borderWidthSection"
+    },
+    {
+      "value": 0.9,
+      "type": "number",
+      "category": "Modifier",
+      "name": "modifierScaleButtonActive"
+    },
+    {
+      "value": "none",
+      "type": "string",
+      "category": "Text decoration",
+      "name": "textDecorationLinkPrimary"
+    },
+    {
+      "value": "rgb(0, 169, 145)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonPrimaryBordered"
+    },
+    {
+      "value": "rgb(210, 28, 28)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonDestructiveBordered"
+    },
+    {
+      "value": "rgb(101, 8, 8)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextAlertCritical"
+    },
+    {
+      "value": "16px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingAlert"
+    },
+    {
+      "value": "rgba(0, 0, 0, 0)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonBordered"
+    },
+    {
+      "value": "700",
+      "type": "string",
+      "category": "Font weight",
+      "name": "fontWeightBold"
+    },
+    {
+      "value": "rgb(221, 75, 57)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorButtonGoogleBordered"
+    },
+    {
+      "value": "14px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeInputSmall"
+    },
+    {
+      "value": "rgb(186, 199, 213)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconRadioButtonDisabled"
+    },
+    {
+      "value": "rgb(250, 232, 232)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundAlertCritical"
+    },
+    {
+      "value": "rgb(232, 237, 241)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorSection"
+    },
+    {
+      "value": "32px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "heightButtonSmall"
+    },
+    {
+      "value": "8px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "marginButtonIconSmall"
+    },
+    {
+      "value": "12px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingInputSmall"
+    },
+    {
+      "value": "0.5",
+      "type": "size",
+      "category": "Border radius",
+      "comment": "use only for square",
+      "name": "borderRadiusCircle"
+    },
+    {
+      "value": "rgb(186, 199, 213)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconInput"
+    },
+    {
+      "value": "rgb(252, 241, 205)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundAlertWarning"
+    },
+    {
+      "value": "transparent",
+      "type": "string",
+      "category": "Border color",
+      "name": "borderColorButtonLinkBordered"
+    },
+    {
+      "value": "400",
+      "type": "string",
+      "category": "Font weight",
+      "name": "fontWeightNormal"
+    },
+    {
+      "value": "rgb(23, 27, 30)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextAttention"
+    },
+    {
+      "value": "0px 0px 3px 1px rgba(210,28,28,0.3)",
+      "type": "size",
+      "category": "Box shadow",
+      "name": "boxShadowInputErrorFocus"
+    },
+    {
+      "value": "0.2s",
+      "type": "string",
+      "category": "Duration",
+      "name": "durationFast"
+    },
+    {
+      "value": "40px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeHeadingDisplay"
+    },
+    {
+      "value": "rgb(169, 54, 16)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextAlertWarning"
+    },
+    {
+      "value": "1px",
+      "type": "size",
+      "category": "Border style",
+      "name": "borderWidthInput"
+    },
+    {
+      "value": "rgb(245, 247, 249)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundBody"
+    },
+    {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonSecondaryBordered"
+    },
+    {
+      "value": "underline",
+      "type": "string",
+      "category": "Text decoration",
+      "name": "textDecorationLinkPrimaryHover"
+    },
+    {
+      "value": "rgb(210, 28, 28)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorAlertIconCritical"
+    },
+    {
+      "value": "rgb(0, 169, 145)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconRadioButton"
+    },
+    {
+      "value": "rgb(70, 182, 85)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorAlertIconSuccess"
+    },
+    {
+      "value": "500",
+      "type": "string",
+      "category": "Font weight",
+      "name": "fontWeightLinks"
+    },
+    {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextPrimary"
+    },
+    {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonSecondary"
+    },
+    {
+      "value": "rgb(221, 75, 57)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonGoogleBordered"
+    },
+    {
+      "value": "\"Roboto\", -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif",
+      "type": "string",
+      "category": "Font family",
+      "name": "fontFamily"
+    },
+    {
+      "value": "rgb(59, 89, 152)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonFacebookBordered"
+    },
+    {
+      "value": "rgb(186, 199, 213)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorInput"
+    },
+    {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonLinkBordered"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonPrimary"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonFacebook"
+    },
+    {
+      "value": "rgb(232, 237, 241)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonSecondary"
+    },
+    {
+      "value": "24px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "widthIconMedium"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonDestructive"
+    },
+    {
+      "value": "8px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "spaceXSmall"
+    },
+    {
+      "value": "40px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "spaceXxLarge"
+    },
+    {
+      "value": "825",
+      "type": "string",
+      "category": "Z Index",
+      "name": "zIndexModal"
+    },
+    {
+      "value": "16px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeHeadingSmall"
+    },
+    {
+      "value": "0.4s",
+      "type": "string",
+      "category": "Duration",
+      "name": "durationSlow"
+    },
+    {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorLabelForm"
+    },
+    {
+      "value": "24px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "spaceLarge"
+    },
+    {
+      "value": "24px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "heightIconMedium"
+    },
+    {
+      "value": "rgb(210, 28, 28)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorInputError"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundCarrierLogo"
+    },
+    {
+      "value": "rgb(231, 243, 232)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundAlertSuccess"
+    },
+    {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorButtonSecondaryBordered"
+    },
+    {
+      "value": "rgb(232, 237, 241)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorModal"
+    },
+    {
+      "value": "rgb(186, 199, 213)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextInputDisabled"
+    },
+    {
+      "value": "12px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonLargeWithIcon"
+    },
+    {
+      "value": "14px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeMessage"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundSection"
+    },
+    {
+      "value": "rgb(6, 93, 18)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextAlertSuccess"
+    },
+    {
+      "value": "rgb(127, 145, 168)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorLabelFormFilled"
+    },
+    {
+      "value": "rgb(23, 27, 30)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorLinkSecondary"
+    },
+    {
+      "value": "rgb(210, 28, 28)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextError"
+    },
+    {
+      "value": "rgb(232, 237, 241)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundInputDisabled"
+    },
+    {
+      "value": "52px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "heightInputLarge"
+    },
+    {
+      "value": "rgb(127, 145, 168)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconSecondary"
+    },
+    {
+      "value": "28px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonLarge"
+    },
+    {
+      "value": "16px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeButtonLarge"
+    },
+    {
+      "value": "0px 0px 3px 1px rgba(1,118,210,0.3)",
+      "type": "size",
+      "category": "Box shadow",
+      "name": "boxShadowInputFocus"
+    },
+    {
+      "value": "rgb(221, 75, 57)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonGoogle"
+    },
+    {
+      "value": "0.3",
+      "type": "string",
+      "category": "Opacity",
+      "name": "opacityButtonDisabled"
+    },
+    {
+      "value": "rgb(186, 199, 213)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorTableCell"
+    },
+    {
+      "value": "rgb(59, 89, 152)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorButtonFacebookBordered"
+    },
+    {
+      "value": "rgba(0, 0, 0, 0)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonLink"
+    },
+    {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextInput"
+    },
+    {
+      "value": "rgb(7, 64, 92)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextAlertInfo"
+    },
+    {
+      "value": "rgb(186, 199, 213)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorPlaceholderInput"
+    },
+    {
+      "value": "16px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "spaceMedium"
+    },
+    {
+      "value": "32px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "heightIconLarge"
+    },
+    {
+      "value": "800",
+      "type": "string",
+      "category": "Z Index",
+      "name": "zIndexModalOverlay"
+    },
+    {
+      "value": "rgb(186, 199, 213)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconCheckboxDisabled"
+    },
+    {
+      "value": "12px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeMessageForm"
+    },
+    {
+      "value": "900",
+      "type": "string",
+      "category": "Z Index",
+      "name": "zIndexOnTheTop"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonGoogle"
+    },
+    {
+      "value": "0.3s",
+      "type": "string",
+      "category": "Duration",
+      "name": "durationNormal"
+    },
+    {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonLink"
+    },
+    {
+      "value": "500",
+      "type": "string",
+      "category": "Font weight",
+      "name": "fontWeightMedium"
+    },
+    {
+      "value": "rgb(224, 246, 255)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundAlertInfo"
+    },
+    {
+      "value": 0.1,
+      "type": "number",
+      "category": "Modifier",
+      "name": "modifierDarkenActive"
+    },
+    {
+      "value": "32px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "widthIconLarge"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundInput"
+    },
+    {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonSecondaryBordered"
+    },
+    {
+      "value": "6px",
+      "type": "size",
+      "category": "Border radius",
+      "comment": "use for big elements like modal and large buttons",
+      "name": "borderRadiusLarge"
+    },
+    {
+      "value": "rgb(186, 199, 213)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconTerciary"
+    },
+    {
+      "value": "underline",
+      "type": "string",
+      "category": "Text decoration",
+      "name": "textDecorationLinkSecondary"
+    },
+    {
+      "value": "0.5",
+      "type": "string",
+      "category": "Opacity",
+      "name": "opacityRadioButtonDisabled"
+    },
+    {
+      "value": "16px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeTextLarge"
+    },
+    {
+      "value": "rgb(1, 118, 210)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextInfo"
+    },
+    {
+      "value": "rgb(23, 27, 30)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorHeading"
+    },
+    {
+      "value": "rgb(210, 28, 28)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonDestructiveBordered"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundModal"
+    },
+    {
+      "value": "rgb(0, 169, 145)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconCheckbox"
+    },
+    {
+      "value": "rgb(0, 169, 145)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonPrimaryBordered"
+    },
+    {
+      "value": "underline",
+      "type": "string",
+      "category": "Text decoration",
+      "name": "textDecorationLinkSecondaryHover"
+    },
+    {
+      "value": "rgb(59, 89, 152)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonFacebookBordered"
+    }
+  ]
+}

@@ -1,0 +1,2895 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Orbit Design Tokens</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" />
+    <style>
+      html {
+        box-sizing: border-box;
+        font-size: 1em;
+        font-family: "Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+        line-height: 1.5;
+        background: #fff;
+        color: #444;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      body { font-size: .75rem; }
+      ::-moz-selection {
+        background: #b3d4fc;
+        text-shadow: none;
+      }
+      ::selection {
+        background: #b3d4fc;
+        text-shadow: none;
+      }
+      .banner,
+      .contentinfo { background: #f5f5f5; }
+      .banner { padding: 1em 0; }
+      .container {
+        margin: 0 auto;
+        padding: 0 2rem;
+        max-width: 80rem;
+      }
+      main {
+        margin-right: -2rem;
+        margin-left:  -2rem;
+        padding-bottom: 2rem;
+      }
+      h1 {
+        margin: 0;
+        font-weight: normal;
+        line-height: 1.25;
+      }
+      table {
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 1rem;
+        width: 100%;
+      }
+      th,
+      td {
+        padding: 0 1rem;
+        vertical-align: baseline;
+        word-break: break-word;
+        hyphens: auto;
+      }
+      th {
+        font-weight: normal;
+        text-align: left;
+      }
+      thead th {
+        border-bottom: 1px solid #eee;
+        padding-top: 1rem;
+        padding-bottom: .5rem;
+        color: #999;
+      }
+      thead th:first-child {
+        font-size: 1.25rem;
+        color: inherit;
+      }
+      code { font-family: monaco, Consolas, monospace, monospace; }
+      hr {
+        display: block;
+        margin: 2rem 0;
+        border: 0;
+        border-top: 1px solid #eee;
+        padding: 0;
+        height: 1px;
+      }
+      .metric-box,
+      .radius-box {
+        display: inline-block;
+        vertical-align: middle;
+        background: #eee;
+      }
+      .radius-box {
+        width: 100%;
+        height: 3rem;
+      }
+      .radius-box.borderRadiusCircle {
+        width: 3rem;
+      }
+      .line-height-example {
+        border-bottom: 1px solid #eee;
+        background-image: -webkit-linear-gradient(#eee 1px, transparent 1px);
+        background-image: linear-gradient(#eee 1px, transparent 1px);
+        background-size: 100% 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header role="banner" class="banner">
+      <div class="container">
+        <h1>Orbit Design Tokens</h1>
+      </div>
+    </header>
+    <div class="container">
+      <main role="main">
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Colors>
+          <th scope="col">Colors</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>colorTextButtonPrimary</code>
+        </th>
+        <td>
+          <code>#fff</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #fff;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextButtonDestructive</code>
+        </th>
+        <td>
+          <code>#fff</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #fff;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorAlertIconInfo</code>
+        </th>
+        <td>
+          <code>#0176D2</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #0176D2;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconAttention</code>
+        </th>
+        <td>
+          <code>#171b1e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #171b1e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextSecondary</code>
+        </th>
+        <td>
+          <code>#7f91a8</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #7f91a8;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorLinkPrimary</code>
+        </th>
+        <td>
+          <code>#00a991</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #00a991;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconButtonSecondary</code>
+        </th>
+        <td>
+          <code>#46515e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #46515e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextButtonGoogleBordered</code>
+        </th>
+        <td>
+          <code>#dd4b39</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #dd4b39;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconPrimary</code>
+        </th>
+        <td>
+          <code>#46515e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #46515e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconButtonGoogle</code>
+        </th>
+        <td>
+          <code>#fff</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #fff;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextButtonLinkBordered</code>
+        </th>
+        <td>
+          <code>#46515e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #46515e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconButtonLink</code>
+        </th>
+        <td>
+          <code>#46515e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #46515e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextButtonFacebook</code>
+        </th>
+        <td>
+          <code>#fff</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #fff;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorAlertIconWarning</code>
+        </th>
+        <td>
+          <code>#f9971e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #f9971e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextButtonPrimaryBordered</code>
+        </th>
+        <td>
+          <code>#00a991</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #00a991;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextButtonDestructiveBordered</code>
+        </th>
+        <td>
+          <code>#d21c1c</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #d21c1c;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextAlertCritical</code>
+        </th>
+        <td>
+          <code>#650808</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #650808;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconRadioButtonDisabled</code>
+        </th>
+        <td>
+          <code>#bac7d5</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #bac7d5;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconInput</code>
+        </th>
+        <td>
+          <code>#bac7d5</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #bac7d5;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextAttention</code>
+        </th>
+        <td>
+          <code>#171b1e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #171b1e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextAlertWarning</code>
+        </th>
+        <td>
+          <code>#a93610</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #a93610;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconButtonSecondaryBordered</code>
+        </th>
+        <td>
+          <code>#46515e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #46515e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorAlertIconCritical</code>
+        </th>
+        <td>
+          <code>#d21c1c</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #d21c1c;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconRadioButton</code>
+        </th>
+        <td>
+          <code>#00a991</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #00a991;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorAlertIconSuccess</code>
+        </th>
+        <td>
+          <code>#46B655</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #46B655;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextPrimary</code>
+        </th>
+        <td>
+          <code>#46515e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #46515e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextButtonSecondary</code>
+        </th>
+        <td>
+          <code>#46515e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #46515e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconButtonGoogleBordered</code>
+        </th>
+        <td>
+          <code>#dd4b39</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #dd4b39;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextButtonFacebookBordered</code>
+        </th>
+        <td>
+          <code>#3b5998</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #3b5998;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconButtonLinkBordered</code>
+        </th>
+        <td>
+          <code>#46515e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #46515e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconButtonPrimary</code>
+        </th>
+        <td>
+          <code>#fff</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #fff;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconButtonFacebook</code>
+        </th>
+        <td>
+          <code>#fff</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #fff;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconButtonDestructive</code>
+        </th>
+        <td>
+          <code>#fff</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #fff;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorLabelForm</code>
+        </th>
+        <td>
+          <code>#46515e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #46515e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextInputDisabled</code>
+        </th>
+        <td>
+          <code>#bac7d5</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #bac7d5;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextAlertSuccess</code>
+        </th>
+        <td>
+          <code>#065d12</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #065d12;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorLabelFormFilled</code>
+        </th>
+        <td>
+          <code>#7f91a8</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #7f91a8;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorLinkSecondary</code>
+        </th>
+        <td>
+          <code>#171b1e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #171b1e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextError</code>
+        </th>
+        <td>
+          <code>#d21c1c</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #d21c1c;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconSecondary</code>
+        </th>
+        <td>
+          <code>#7f91a8</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #7f91a8;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextInput</code>
+        </th>
+        <td>
+          <code>#46515e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #46515e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextAlertInfo</code>
+        </th>
+        <td>
+          <code>#07405c</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #07405c;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorPlaceholderInput</code>
+        </th>
+        <td>
+          <code>#bac7d5</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #bac7d5;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconCheckboxDisabled</code>
+        </th>
+        <td>
+          <code>#bac7d5</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #bac7d5;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextButtonGoogle</code>
+        </th>
+        <td>
+          <code>#fff</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #fff;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextButtonLink</code>
+        </th>
+        <td>
+          <code>#46515e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #46515e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextButtonSecondaryBordered</code>
+        </th>
+        <td>
+          <code>#46515e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #46515e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconTerciary</code>
+        </th>
+        <td>
+          <code>#bac7d5</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #bac7d5;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorTextInfo</code>
+        </th>
+        <td>
+          <code>#0176D2</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #0176D2;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorHeading</code>
+        </th>
+        <td>
+          <code>#171b1e</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #171b1e;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconButtonDestructiveBordered</code>
+        </th>
+        <td>
+          <code>#d21c1c</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #d21c1c;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconCheckbox</code>
+        </th>
+        <td>
+          <code>#00a991</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #00a991;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconButtonPrimaryBordered</code>
+        </th>
+        <td>
+          <code>#00a991</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #00a991;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>colorIconButtonFacebookBordered</code>
+        </th>
+        <td>
+          <code>#3b5998</code>
+        </td>
+        
+        <td style="background-color: #f6f6f6; color: #3b5998;">
+          The quick brown fox jumps over the lazy dog.
+        </td>
+      
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+          
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Background colors>
+          <th scope="col">Background Colors</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>backgroundButtonLinkHover</code>
+        </th>
+        <td>
+          <code>#e8edf1</code>
+        </td>
+        <td style="background-color: #e8edf1; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundButtonDestructive</code>
+        </th>
+        <td>
+          <code>#d21c1c</code>
+        </td>
+        <td style="background-color: #d21c1c; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundButtonPrimary</code>
+        </th>
+        <td>
+          <code>#00a991</code>
+        </td>
+        <td style="background-color: #00a991; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundButtonFacebook</code>
+        </th>
+        <td>
+          <code>#3b5998</code>
+        </td>
+        <td style="background-color: #3b5998; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundButtonBordered</code>
+        </th>
+        <td>
+          <code>rgba(0,0,0,0)</code>
+        </td>
+        <td style="background-color: rgba(0,0,0,0); border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundAlertCritical</code>
+        </th>
+        <td>
+          <code>#fae8e8</code>
+        </td>
+        <td style="background-color: #fae8e8; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundAlertWarning</code>
+        </th>
+        <td>
+          <code>#fcf1cd</code>
+        </td>
+        <td style="background-color: #fcf1cd; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundBody</code>
+        </th>
+        <td>
+          <code>#f5f7f9</code>
+        </td>
+        <td style="background-color: #f5f7f9; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundButtonSecondary</code>
+        </th>
+        <td>
+          <code>#e8edf1</code>
+        </td>
+        <td style="background-color: #e8edf1; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundCarrierLogo</code>
+        </th>
+        <td>
+          <code>#fff</code>
+        </td>
+        <td style="background-color: #fff; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundAlertSuccess</code>
+        </th>
+        <td>
+          <code>#e7f3e8</code>
+        </td>
+        <td style="background-color: #e7f3e8; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundSection</code>
+        </th>
+        <td>
+          <code>#fff</code>
+        </td>
+        <td style="background-color: #fff; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundInputDisabled</code>
+        </th>
+        <td>
+          <code>#e8edf1</code>
+        </td>
+        <td style="background-color: #e8edf1; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundButtonGoogle</code>
+        </th>
+        <td>
+          <code>#dd4b39</code>
+        </td>
+        <td style="background-color: #dd4b39; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundButtonLink</code>
+        </th>
+        <td>
+          <code>rgba(0,0,0,0)</code>
+        </td>
+        <td style="background-color: rgba(0,0,0,0); border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundAlertInfo</code>
+        </th>
+        <td>
+          <code>#e0f6ff</code>
+        </td>
+        <td style="background-color: #e0f6ff; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundInput</code>
+        </th>
+        <td>
+          <code>#fff</code>
+        </td>
+        <td style="background-color: #fff; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>backgroundModal</code>
+        </th>
+        <td>
+          <code>#fff</code>
+        </td>
+        <td style="background-color: #fff; border: 1px solid #f6f6f6;"></td>
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Font family>
+          <th scope="col">Font Families</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>fontFamily</code>
+        </th>
+        <td>
+          <code>"Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif</code>
+        </td>
+        
+        <td>
+          <div style='font-family: "Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;'>
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Font size>
+          <th scope="col">Font Sizes</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>fontSizeInputNormal</code>
+        </th>
+        <td>
+          <code>16px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 16px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontSizeTextNormal</code>
+        </th>
+        <td>
+          <code>14px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 14px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontSizeButtonSmall</code>
+        </th>
+        <td>
+          <code>12px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 12px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontSizeHeadingMedium</code>
+        </th>
+        <td>
+          <code>22px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 22px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontSizeLabelForm</code>
+        </th>
+        <td>
+          <code>14px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 14px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontSizeHeadingLarge</code>
+        </th>
+        <td>
+          <code>28px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 28px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontSizeButtonNormal</code>
+        </th>
+        <td>
+          <code>14px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 14px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontSizeTextSmall</code>
+        </th>
+        <td>
+          <code>12px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 12px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontSizeInputSmall</code>
+        </th>
+        <td>
+          <code>14px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 14px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontSizeHeadingDisplay</code>
+        </th>
+        <td>
+          <code>40px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 40px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontSizeHeadingSmall</code>
+        </th>
+        <td>
+          <code>16px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 16px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontSizeMessage</code>
+        </th>
+        <td>
+          <code>14px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 14px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontSizeButtonLarge</code>
+        </th>
+        <td>
+          <code>16px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 16px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontSizeMessageForm</code>
+        </th>
+        <td>
+          <code>12px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 12px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontSizeTextLarge</code>
+        </th>
+        <td>
+          <code>16px</code>
+        </td>
+        
+        <td>
+          <div style="font-size: 16px;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Font weight>
+          <th scope="col">Font Weights</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>fontWeightBold</code>
+        </th>
+        <td>
+          <code>700</code>
+        </td>
+        
+        <td>
+          <div style="font-weight: 700;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontWeightNormal</code>
+        </th>
+        <td>
+          <code>400</code>
+        </td>
+        
+        <td>
+          <div style="font-weight: 400;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontWeightLinks</code>
+        </th>
+        <td>
+          <code>500</code>
+        </td>
+        
+        <td>
+          <div style="font-weight: 500;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>fontWeightMedium</code>
+        </th>
+        <td>
+          <code>500</code>
+        </td>
+        
+        <td>
+          <div style="font-weight: 500;">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Border radius>
+          <th scope="col">Border Radius</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>borderRadiusNormal</code>
+        </th>
+        <td>
+          <code>3px</code>
+        </td>
+        
+        <td>
+          <div class="radius-box" style="border-radius: 3px;"></div>
+        </td>
+      
+        <td>use for all basic elements like buttons, inputs, content containers</td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderRadiusSmall</code>
+        </th>
+        <td>
+          <code>2px</code>
+        </td>
+        
+        <td>
+          <div class="radius-box" style="border-radius: 2px;"></div>
+        </td>
+      
+        <td>use for smaller elements like tags</td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderRadiusCircle</code>
+        </th>
+        <td>
+          <code>50%</code>
+        </td>
+        
+        <td>
+          <div class="radius-box" style="border-radius: 50%;"></div>
+        </td>
+      
+        <td>use only for square</td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderRadiusLarge</code>
+        </th>
+        <td>
+          <code>6px</code>
+        </td>
+        
+        <td>
+          <div class="radius-box" style="border-radius: 6px;"></div>
+        </td>
+      
+        <td>use for big elements like modal and large buttons</td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Size (width, height)>
+          <th scope="col">Sizing</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>heightButtonNormal</code>
+        </th>
+        <td>
+          <code>44px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 44px; height: 44px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>heightButtonLarge</code>
+        </th>
+        <td>
+          <code>52px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 52px; height: 52px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>heightInputSmall</code>
+        </th>
+        <td>
+          <code>32px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 32px; height: 32px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>heightRadioButton</code>
+        </th>
+        <td>
+          <code>20px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 20px; height: 20px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>widthRadioButton</code>
+        </th>
+        <td>
+          <code>20px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 20px; height: 20px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>heightIconSmall</code>
+        </th>
+        <td>
+          <code>16px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 16px; height: 16px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>widthIconSmall</code>
+        </th>
+        <td>
+          <code>16px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 16px; height: 16px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>widthButtonMinimal</code>
+        </th>
+        <td>
+          <code>180px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 180px; min-height: 16px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>widthCheckbox</code>
+        </th>
+        <td>
+          <code>20px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 20px; height: 20px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>heightInputNormal</code>
+        </th>
+        <td>
+          <code>44px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 44px; height: 44px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>heightCheckbox</code>
+        </th>
+        <td>
+          <code>20px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 20px; height: 20px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>heightButtonSmall</code>
+        </th>
+        <td>
+          <code>32px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 32px; height: 32px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>widthIconMedium</code>
+        </th>
+        <td>
+          <code>24px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 24px; height: 24px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>heightIconMedium</code>
+        </th>
+        <td>
+          <code>24px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 24px; height: 24px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>heightInputLarge</code>
+        </th>
+        <td>
+          <code>52px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 52px; height: 52px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>heightIconLarge</code>
+        </th>
+        <td>
+          <code>32px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 32px; height: 32px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>widthIconLarge</code>
+        </th>
+        <td>
+          <code>32px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 32px; height: 32px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Border color>
+          <th scope="col">Border Colors</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>borderColorInputErrorFocus</code>
+        </th>
+        <td>
+          <code>#d21c1c</code>
+        </td>
+        <td style="border: 2px solid #d21c1c;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderColorButtonPrimaryBordered</code>
+        </th>
+        <td>
+          <code>#00a991</code>
+        </td>
+        <td style="border: 2px solid #00a991;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderColorButtonDestructiveBordered</code>
+        </th>
+        <td>
+          <code>#d21c1c</code>
+        </td>
+        <td style="border: 2px solid #d21c1c;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderColorInputFocus</code>
+        </th>
+        <td>
+          <code>#0176D2</code>
+        </td>
+        <td style="border: 2px solid #0176D2;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderColorButtonGoogleBordered</code>
+        </th>
+        <td>
+          <code>#dd4b39</code>
+        </td>
+        <td style="border: 2px solid #dd4b39;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderColorSection</code>
+        </th>
+        <td>
+          <code>#e8edf1</code>
+        </td>
+        <td style="border: 2px solid #e8edf1;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderColorButtonLinkBordered</code>
+        </th>
+        <td>
+          <code>transparent</code>
+        </td>
+        <td style="border: 2px solid transparent;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderColorInput</code>
+        </th>
+        <td>
+          <code>#bac7d5</code>
+        </td>
+        <td style="border: 2px solid #bac7d5;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderColorInputError</code>
+        </th>
+        <td>
+          <code>#d21c1c</code>
+        </td>
+        <td style="border: 2px solid #d21c1c;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderColorButtonSecondaryBordered</code>
+        </th>
+        <td>
+          <code>#46515e</code>
+        </td>
+        <td style="border: 2px solid #46515e;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderColorModal</code>
+        </th>
+        <td>
+          <code>#e8edf1</code>
+        </td>
+        <td style="border: 2px solid #e8edf1;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderColorTableCell</code>
+        </th>
+        <td>
+          <code>#bac7d5</code>
+        </td>
+        <td style="border: 2px solid #bac7d5;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderColorButtonFacebookBordered</code>
+        </th>
+        <td>
+          <code>#3b5998</code>
+        </td>
+        <td style="border: 2px solid #3b5998;"></td>
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Border style>
+          <th scope="col">Border Styles</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>borderStyleSection</code>
+        </th>
+        <td>
+          <code>solid</code>
+        </td>
+        <td style="border: solid;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderStyleInput</code>
+        </th>
+        <td>
+          <code>solid</code>
+        </td>
+        <td style="border: solid;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderWidthSection</code>
+        </th>
+        <td>
+          <code>1px</code>
+        </td>
+        <td style="border: 1px;"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>borderWidthInput</code>
+        </th>
+        <td>
+          <code>1px</code>
+        </td>
+        <td style="border: 1px;"></td>
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Spacing>
+          <th scope="col">Spacing</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>paddingInputNormal</code>
+        </th>
+        <td>
+          <code>16px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 16px; height: 16px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>marginButtonIconNormal</code>
+        </th>
+        <td>
+          <code>12px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 12px; height: 12px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>spaceXXSmall</code>
+        </th>
+        <td>
+          <code>4px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 4px; height: 4px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>spaceSmall</code>
+        </th>
+        <td>
+          <code>12px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 12px; height: 12px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>marginButtonIconLarge</code>
+        </th>
+        <td>
+          <code>16px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 16px; height: 16px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>paddingButtonSmallWithIcon</code>
+        </th>
+        <td>
+          <code>8px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 8px; height: 8px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>paddingButtonSmall</code>
+        </th>
+        <td>
+          <code>12px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 12px; height: 12px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>paddingButtonNormalWithIcon</code>
+        </th>
+        <td>
+          <code>8px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 8px; height: 8px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>spaceXLarge</code>
+        </th>
+        <td>
+          <code>32px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 32px; height: 32px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>spaceXXXLarge</code>
+        </th>
+        <td>
+          <code>52px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 52px; height: 52px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>paddingButtonNormal</code>
+        </th>
+        <td>
+          <code>16px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 16px; height: 16px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>paddingAlertWithIcon</code>
+        </th>
+        <td>
+          <code>12px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 12px; height: 12px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>paddingAlert</code>
+        </th>
+        <td>
+          <code>16px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 16px; height: 16px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>marginButtonIconSmall</code>
+        </th>
+        <td>
+          <code>8px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 8px; height: 8px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>paddingInputSmall</code>
+        </th>
+        <td>
+          <code>12px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 12px; height: 12px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>spaceXSmall</code>
+        </th>
+        <td>
+          <code>8px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 8px; height: 8px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>spaceXXLarge</code>
+        </th>
+        <td>
+          <code>40px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 40px; height: 40px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>spaceLarge</code>
+        </th>
+        <td>
+          <code>24px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 24px; height: 24px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>paddingButtonLargeWithIcon</code>
+        </th>
+        <td>
+          <code>12px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 12px; height: 12px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>paddingButtonLarge</code>
+        </th>
+        <td>
+          <code>28px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 28px; height: 28px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>spaceMedium</code>
+        </th>
+        <td>
+          <code>16px</code>
+        </td>
+        
+        <td>
+          <div class="metric-box" style="width: 16px; height: 16px;"></div>
+        </td>
+      
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Line height>
+          <th scope="col">Line Heights</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>lineHeightHeading</code>
+        </th>
+        <td>
+          <code>1.2</code>
+        </td>
+        
+        <td>
+          <div class="line-height-example" style="line-height: 1.2; background-size: 100% 1.2em;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            elementum odio et lacus rutrum molestie. Nunc arcu enim, elementum
+            id feugiat at, venenatis quis erat.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>lineHeightText</code>
+        </th>
+        <td>
+          <code>1.4</code>
+        </td>
+        
+        <td>
+          <div class="line-height-example" style="line-height: 1.4; background-size: 100% 1.4em;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            elementum odio et lacus rutrum molestie. Nunc arcu enim, elementum
+            id feugiat at, venenatis quis erat.
+          </div>
+        </td>
+      
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Modifier>
+          <th scope="col">Modifier</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>modifierDarkenButtonLink</code>
+        </th>
+        <td>
+          <code>0.05</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>modifierDarkenHover</code>
+        </th>
+        <td>
+          <code>0.05</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>modifierScaleButtonActive</code>
+        </th>
+        <td>
+          <code>0.9</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>modifierDarkenActive</code>
+        </th>
+        <td>
+          <code>0.1</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Text decoration>
+          <th scope="col">Text decoration</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>textDecorationLinkPrimary</code>
+        </th>
+        <td>
+          <code>none</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>textDecorationLinkPrimaryHover</code>
+        </th>
+        <td>
+          <code>underline</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>textDecorationLinkSecondary</code>
+        </th>
+        <td>
+          <code>underline</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>textDecorationLinkSecondaryHover</code>
+        </th>
+        <td>
+          <code>underline</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Duration>
+          <th scope="col">Duration</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>durationFast</code>
+        </th>
+        <td>
+          <code>0.2s</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>durationSlow</code>
+        </th>
+        <td>
+          <code>0.4s</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>durationNormal</code>
+        </th>
+        <td>
+          <code>0.3s</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Opacity>
+          <th scope="col">Opacity</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>opacityOverlay</code>
+        </th>
+        <td>
+          <code>0.8</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>opacityCheckboxDisabled</code>
+        </th>
+        <td>
+          <code>0.5</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>opacityButtonDisabled</code>
+        </th>
+        <td>
+          <code>0.3</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>opacityRadioButtonDisabled</code>
+        </th>
+        <td>
+          <code>0.5</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Z Index>
+          <th scope="col">Z Index</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>zIndexSticky</code>
+        </th>
+        <td>
+          <code>100</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>zIndexDefault</code>
+        </th>
+        <td>
+          <code>1</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>zIndexModal</code>
+        </th>
+        <td>
+          <code>825</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>zIndexModalOverlay</code>
+        </th>
+        <td>
+          <code>800</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>zIndexOnTheTop</code>
+        </th>
+        <td>
+          <code>900</code>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+        
+      <section>
+        <table>
+          
+      <thead>
+        <tr id=Box shadow>
+          <th scope="col">Box Shadows</th>
+          <th scope="col">Value</th>
+          <th scope="col">Examples</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+        <th scope="row">
+          <code>boxShadowInputErrorFocus</code>
+        </th>
+        <td>
+          <code>0px 0px 3px 1px rgba(210,28,28,0.3)</code>
+        </td>
+        <td style="box-shadow: 0px 0px 3px 1px rgba(210,28,28,0.3);"></td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <th scope="row">
+          <code>boxShadowInputFocus</code>
+        </th>
+        <td>
+          <code>0px 0px 3px 1px rgba(1,118,210,0.3)</code>
+        </td>
+        <td style="box-shadow: 0px 0px 3px 1px rgba(1,118,210,0.3);"></td>
+        <td></td>
+      </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
+    
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </main>
+    </div>
+  </body>
+</html>

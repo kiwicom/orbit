@@ -30,12 +30,12 @@ const colors = {
 	},
 	green: {
 		light: "#e7f3e8",
-		normal: "#127f22",
+		normal: "#46B655",
 		dark: "#065d12"
 	},
 	blue: {
 		light: "#e0f6ff",
-		normal: "#10709f",
+		normal: "#0176D2",
 		dark: "#07405c"
 	},
 	social: {
@@ -47,10 +47,15 @@ const colors = {
 const defaultTokens = {
 	//category:Colors
 	//description:Use these tokens for text colors only. Do not use these for border colors or background colors.
+    colorTextInfo: colors.blue.normal,
 	colorTextPrimary: colors.ink.normal,
 	colorTextSecondary: colors.ink.light,
 	colorTextAttention: colors.ink.dark,
 	colorTextError: colors.red.normal,
+    colorIconPrimary: colors.ink.normal,
+    colorIconSecondary: colors.ink.light,
+    colorIconAttention: colors.ink.dark,
+    colorIconTerciary: colors.ink.lighter,
 	colorHeading: colors.ink.dark,
 	colorLinkPrimary: colors.brand.normal,
 	colorLinkSecondary: colors.ink.dark,
@@ -87,6 +92,8 @@ const defaultTokens = {
 	colorTextButtonDestructiveBordered: colors.red.normal,
 	colorIconButtonDestructiveBordered: colors.red.normal,
 	colorTextInput: colors.ink.normal,
+    colorTextInputDisabled: colors.ink.lighter,
+    colorIconInput: colors.ink.lighter,
 	colorPlaceholderInput: colors.ink.lighter,
 	colorLabelForm: colors.ink.normal,
 	colorLabelFormFilled: colors.ink.light,
@@ -113,6 +120,7 @@ const defaultTokens = {
 	backgroundButtonDestructive: colors.red.normal,
 	backgroundButtonLinkHover: colors.cloud.normal,
 	backgroundInput: colors.white.normal,
+    backgroundInputDisabled: colors.cloud.normal,
 	backgroundMessageSuccess: colors.green.light,
 	backgroundMessageWarning: colors.orange.light,
 	backgroundMessageError: colors.red.light,
@@ -130,7 +138,8 @@ const defaultTokens = {
 	fontSizeButtonLarge: "16px",
 	fontSizeButtonNormal: "14px",
 	fontSizeButtonSmall: "12px",
-	fontSizeInput: "16px",
+	fontSizeInputNormal: "16px",
+    fontSizeInputSmall: "14px",
 	fontSizeLabelForm: "14px",
 	fontSizeMessageForm: "12px",
 	//category:Border radius
@@ -168,7 +177,9 @@ const defaultTokens = {
 	//category:Border color
 	//description:
 	borderColorInput: colors.ink.lighter,
-	borderColorInputError: colors.red.normal,
+    borderColorInputFocus: colors.blue.normal,
+    borderColorInputError: colors.red.normal,
+    borderColorInputErrorFocus: colors.red.normal,
 	borderColorTableCell: colors.ink.lighter,
 	borderColorSection: colors.cloud.normal,
 	borderColorModal: colors.cloud.normal,
@@ -182,6 +193,8 @@ const defaultTokens = {
 	//description:
 	borderStyleSection: "solid",
 	borderWidthSection: "1px",
+    borderStyleInput: "solid",
+    borderWidthInput: "1px",
 	//category:Opacity
 	//description:
 	opacityOverlay: "0.8",
@@ -199,6 +212,8 @@ const defaultTokens = {
 	paddingButtonSmall: "12px",
 	paddingButtonNormal: "16px",
 	paddingButtonLarge: "28px",
+    paddingInputSmall: "12px",
+    paddingInputNormal: "16px",
 	paddingButtonSmallWithIcon: "8px",
 	paddingButtonNormalWithIcon: "8px",
 	paddingButtonLargeWithIcon: "12px",
@@ -233,7 +248,11 @@ const defaultTokens = {
 	textDecorationLinkPrimary: "none",
 	textDecorationLinkPrimaryHover: "underline",
 	textDecorationLinkSecondary: "underline",
-	textDecorationLinkSecondaryHover: "underline"
+	textDecorationLinkSecondaryHover: "underline",
+    //category:Box shadow
+    //description:
+    boxShadowInputFocus: "0px 0px 3px 1px rgba(1,118,210,0.3)",
+    boxShadowInputErrorFocus: "0px 0px 3px 1px rgba(210,28,28,0.3)",
 };
 
 module.exports = defaultTokens;

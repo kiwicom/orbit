@@ -34,7 +34,7 @@
   "author": "kiwi.com",
   "license": "MIT",
   "dependencies": {
-    "@kiwicom/orbit-design-tokens": "^0.0.3",
+    "@kiwicom/orbit-design-tokens": "^0.0.5",
     "@sambego/storybook-styles": "^1.0.0",
     "classnames": "^2.2.5",
     "polished": "^1.9.2",

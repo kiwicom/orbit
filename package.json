@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-design-tokens",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Design tokens for kiwi!",
   "scripts": {
     "prepublish": "node generate-theo",

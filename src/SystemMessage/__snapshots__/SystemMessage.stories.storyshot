@@ -2,7 +2,7 @@
 
 exports[`Storyshots SystemMessage error basic 1`] = `
 <div
-  className="jsx-1475698917"
+  className="jsx-145905035"
 >
   <span
     className="jsx-3356670990"
@@ -14,16 +14,24 @@ exports[`Storyshots SystemMessage error basic 1`] = `
 
 exports[`Storyshots SystemMessage error with icon 1`] = `
 <div
-  className="jsx-3543310177"
+  className="jsx-3997988623"
 >
-  <span
-    className="jsx-2399753088"
-  >
+  <span>
     <svg
-      fill={undefined}
-      height={undefined}
+      fill="currentColor"
+      height="20px"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": "#d21c1c",
+          "left": "14px",
+          "position": "absolute",
+          "top": "16px",
+          "verticalAlign": "middle",
+        }
+      }
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="20px"
     >
       <path
         d="M12 17.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM11 6h2v7h-2V6zm1-4C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
@@ -40,7 +48,7 @@ exports[`Storyshots SystemMessage error with icon 1`] = `
 
 exports[`Storyshots SystemMessage error with title 1`] = `
 <div
-  className="jsx-1475698917"
+  className="jsx-145905035"
 >
   <h4
     className="jsx-3861500783"
@@ -57,16 +65,24 @@ exports[`Storyshots SystemMessage error with title 1`] = `
 
 exports[`Storyshots SystemMessage error with title and  icon 1`] = `
 <div
-  className="jsx-3543310177"
+  className="jsx-3997988623"
 >
-  <span
-    className="jsx-2399753088"
-  >
+  <span>
     <svg
-      fill={undefined}
-      height={undefined}
+      fill="currentColor"
+      height="20px"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": "#d21c1c",
+          "left": "14px",
+          "position": "absolute",
+          "top": "16px",
+          "verticalAlign": "middle",
+        }
+      }
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="20px"
     >
       <path
         d="M12 17.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM11 6h2v7h-2V6zm1-4C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
@@ -88,7 +104,7 @@ exports[`Storyshots SystemMessage error with title and  icon 1`] = `
 
 exports[`Storyshots SystemMessage info basic 1`] = `
 <div
-  className="jsx-3633742151"
+  className="jsx-1685984105"
 >
   <span
     className="jsx-2657584504"
@@ -100,7 +116,7 @@ exports[`Storyshots SystemMessage info basic 1`] = `
 
 exports[`Storyshots SystemMessage info with icon 1`] = `
 <div
-  className="jsx-3633742151"
+  className="jsx-1685984105"
 >
   <span
     className="jsx-2657584504"
@@ -112,7 +128,7 @@ exports[`Storyshots SystemMessage info with icon 1`] = `
 
 exports[`Storyshots SystemMessage info with title and  icon 1`] = `
 <div
-  className="jsx-3633742151"
+  className="jsx-1685984105"
 >
   <h4
     className="jsx-3436964697"
@@ -129,7 +145,7 @@ exports[`Storyshots SystemMessage info with title and  icon 1`] = `
 
 exports[`Storyshots SystemMessage success basic 1`] = `
 <div
-  className="jsx-2991289112"
+  className="jsx-2687967222"
 >
   <span
     className="jsx-3915919481"
@@ -141,16 +157,24 @@ exports[`Storyshots SystemMessage success basic 1`] = `
 
 exports[`Storyshots SystemMessage success with icon 1`] = `
 <div
-  className="jsx-2338436252"
+  className="jsx-250642034"
 >
-  <span
-    className="jsx-2399753088"
-  >
+  <span>
     <svg
-      fill={undefined}
-      height={undefined}
+      fill="currentColor"
+      height="20px"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": "#127f22",
+          "left": "14px",
+          "position": "absolute",
+          "top": "16px",
+          "verticalAlign": "middle",
+        }
+      }
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="20px"
     >
       <path
         d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
@@ -167,16 +191,24 @@ exports[`Storyshots SystemMessage success with icon 1`] = `
 
 exports[`Storyshots SystemMessage success with title and  icon 1`] = `
 <div
-  className="jsx-2338436252"
+  className="jsx-250642034"
 >
-  <span
-    className="jsx-2399753088"
-  >
+  <span>
     <svg
-      fill={undefined}
-      height={undefined}
+      fill="currentColor"
+      height="20px"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": "#127f22",
+          "left": "14px",
+          "position": "absolute",
+          "top": "16px",
+          "verticalAlign": "middle",
+        }
+      }
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="20px"
     >
       <path
         d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
@@ -198,7 +230,7 @@ exports[`Storyshots SystemMessage success with title and  icon 1`] = `
 
 exports[`Storyshots SystemMessage warning basic 1`] = `
 <div
-  className="jsx-244149079"
+  className="jsx-2591358329"
 >
   <span
     className="jsx-1932761937"
@@ -210,16 +242,24 @@ exports[`Storyshots SystemMessage warning basic 1`] = `
 
 exports[`Storyshots SystemMessage warning with icon 1`] = `
 <div
-  className="jsx-2951260371"
+  className="jsx-2787974653"
 >
-  <span
-    className="jsx-2399753088"
-  >
+  <span>
     <svg
-      fill={undefined}
-      height={undefined}
+      fill="currentColor"
+      height="20px"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": "#f9971e",
+          "left": "14px",
+          "position": "absolute",
+          "top": "16px",
+          "verticalAlign": "middle",
+        }
+      }
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="20px"
     >
       <path
         d="M12 19.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM11 10h2v6h-2v-6zm10.895 10.553l-9-18c-.339-.678-1.451-.678-1.79 0l-9 18c-.154.31-.138.678.044.973.183.294.504.474.851.474h18c.347 0 .668-.18.851-.474.182-.295.198-.663.044-.973z"
@@ -236,16 +276,24 @@ exports[`Storyshots SystemMessage warning with icon 1`] = `
 
 exports[`Storyshots SystemMessage warning with title and  icon 1`] = `
 <div
-  className="jsx-2951260371"
+  className="jsx-2787974653"
 >
-  <span
-    className="jsx-2399753088"
-  >
+  <span>
     <svg
-      fill={undefined}
-      height={undefined}
+      fill="currentColor"
+      height="20px"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": "#f9971e",
+          "left": "14px",
+          "position": "absolute",
+          "top": "16px",
+          "verticalAlign": "middle",
+        }
+      }
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="20px"
     >
       <path
         d="M12 19.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM11 10h2v6h-2v-6zm10.895 10.553l-9-18c-.339-.678-1.451-.678-1.79 0l-9 18c-.154.31-.138.678.044.973.183.294.504.474.851.474h18c.347 0 .668-.18.851-.474.182-.295.198-.663.044-.973z"

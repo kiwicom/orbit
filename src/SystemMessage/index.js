@@ -27,15 +27,15 @@ const SystemMessage = (props: Props) => (
     <Message type={props.type}>{props.children}</Message>
     <style jsx>{`
       div {
-          background-color: ${bgColors[props.type]};
-          border: solid 1px #e9eef2;
-          line-height: 20px;
-          padding: 16px;
-          padding-left: ${props.Icon ? "48px" : ""}
-          font-size: 14px
-          border-radius: 3px;
-          max-width: 100%;
-          position: relative;
+        background-color: ${bgColors[props.type]};
+        border: solid 1px #e9eef2;
+        line-height: 20px;
+        padding: 16px;
+        padding-left: ${props.Icon ? "48px" : ""};
+        font-size: 14px;
+        border-radius: 3px;
+        max-width: 100%;
+        position: relative;
       }
     `}</style>
   </div>

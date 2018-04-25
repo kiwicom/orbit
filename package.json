@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-design-tokens",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Design tokens for kiwi!",
   "scripts": {
     "ci-publish": "ci-publish"

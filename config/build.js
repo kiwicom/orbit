@@ -39,14 +39,14 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
   const optimizedSvg = optimizationResult.data;
   const component = `/* eslint-disable */
     import * as React from "react";
-    import { default as Icon } from "../Icon";
+    import OrbitIcon from "../Icon";
 
     export default function ${functionName}(props) {
       const { color, size, customColor } = props;
       return (
         ${optimizedSvg.replace(
           /<svg\b[^>]*>(.*?)<\/svg>/g,
-          `<Icon viewBox="0 0 24 24" size={size} color={color} customColor={customColor}>$1</Icon>`,
+          `<OrbitIcon viewBox="0 0 24 24" size={size} color={color} customColor={customColor}>$1</OrbitIcon>`,
         )}
       );
     }

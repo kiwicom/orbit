@@ -19,11 +19,14 @@ const IconWrapper = (props: Props) => {
   const { Icon, type } = props;
   return (
     <span>
-      <Icon
-        color={fillColors[type]}
-        size="20px"
-        style={{ position: "absolute", top: "16px", left: "14px" }}
-      />
+      <Icon customColor={fillColors[type]} size="medium" />
+      <style jsx>{`
+        span {
+          position: absolute;
+          top: 16px;
+          left: 14px;
+        }
+      `}</style>
     </span>
   );
 };

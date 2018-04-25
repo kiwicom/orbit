@@ -441,6 +441,7 @@ return `
         ${this.renderSection("Duration", "Duration", this.renderValues)}
         ${this.renderSection("Opacity", "Opacity", this.renderValues)}
         ${this.renderSection("Z Index", "Z Index", this.renderValues)}
+        ${this.renderSection("Box shadow", "Box Shadows", this.renderBoxShadow)}
 
         ${this.renderSection("text-color", "Text Colors")}
         ${this.renderSection("text-shadow", "Text Shadows")}

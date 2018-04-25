@@ -744,7 +744,6 @@
       "value": "1",
       "type": "string",
       "category": "Z Index",
-      "comment": "use for smaller elements like tags",
       "meta": {
         "categoryDescription": "Use layers to show depth of page."
       }

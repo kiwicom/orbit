@@ -51,6 +51,7 @@ const getInfo = (tokenProp, xcategory) => {
   const value = xcategory ? tokens[xcategory][key] : tokens[key]
   const type = typeof value
   if (type === "object") return getProps(tokenProp.value.properties, key)
+  comment = undefined
   const hasComment = (tokenProp.leadingComments && tokenProp.leadingComments.length) 
   if (hasComment) {
     const comments = tokenProp.leadingComments.map(x => x.value.trimLeft())
@@ -62,8 +63,6 @@ const getInfo = (tokenProp, xcategory) => {
     if (itemComment.length) {
       comment = itemComment.join(" ").trim()
     }
-  } else {
-    comment = undefined
   }
   return {
     [key]: {

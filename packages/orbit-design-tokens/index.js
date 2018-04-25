@@ -144,13 +144,13 @@ const defaultTokens = {
 	fontSizeMessageForm: "12px",
 	// category:Border radius
 	// description:Use radius tokens to change the border-radius size (rounded corners).
-	// use only for square
+	/** use only for square */
 	borderRadiusCircle: "50%",
-	// use for all basic elements like buttons, inputs, content containers
+	/** use for all basic elements like buttons, inputs, content containers */
 	borderRadiusNormal: "3px",
-	// use for big elements like modal and large buttons
+	/** use for big elements like modal and large buttons */
 	borderRadiusLarge: "6px",
-	// use for smaller elements like tags 
+	/** use for smaller elements like tags */
 	borderRadiusSmall: "2px",
 	// category:Z Index
 	// description:Use layers to show depth of page.

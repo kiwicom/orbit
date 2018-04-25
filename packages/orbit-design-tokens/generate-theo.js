@@ -61,7 +61,7 @@ const getInfo = (tokenProp, xcategory) => {
     if (categoryDescriptionComm) categoryDescription = categoryDescriptionComm.substr(12)
     const itemComment = comments.filter(itemCommentFn)
     if (itemComment.length) {
-      comment = itemComment.join(" ").trim()
+      comment = itemComment.map(c => c.startsWith("*") ? c.substr(1) : c) .join(" ").trim()
     }
   }
   return {

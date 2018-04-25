@@ -19,19 +19,16 @@ exports[`Storyshots SystemMessage error with icon 1`] = `
   <span>
     <svg
       fill="currentColor"
-      height="20px"
+      height="1em"
       preserveAspectRatio="xMidYMid meet"
       style={
         Object {
-          "color": "#d21c1c",
-          "left": "14px",
-          "position": "absolute",
-          "top": "16px",
+          "color": "#000000",
           "verticalAlign": "middle",
         }
       }
       viewBox="0 0 24 24"
-      width="20px"
+      width="1em"
     >
       <path
         d="M12 17.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM11 6h2v7h-2V6zm1-4C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
@@ -70,19 +67,16 @@ exports[`Storyshots SystemMessage error with title and  icon 1`] = `
   <span>
     <svg
       fill="currentColor"
-      height="20px"
+      height="1em"
       preserveAspectRatio="xMidYMid meet"
       style={
         Object {
-          "color": "#d21c1c",
-          "left": "14px",
-          "position": "absolute",
-          "top": "16px",
+          "color": "#000000",
           "verticalAlign": "middle",
         }
       }
       viewBox="0 0 24 24"
-      width="20px"
+      width="1em"
     >
       <path
         d="M12 17.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM11 6h2v7h-2V6zm1-4C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
@@ -162,19 +156,16 @@ exports[`Storyshots SystemMessage success with icon 1`] = `
   <span>
     <svg
       fill="currentColor"
-      height="20px"
+      height="1em"
       preserveAspectRatio="xMidYMid meet"
       style={
         Object {
-          "color": "#127f22",
-          "left": "14px",
-          "position": "absolute",
-          "top": "16px",
+          "color": "#000000",
           "verticalAlign": "middle",
         }
       }
       viewBox="0 0 24 24"
-      width="20px"
+      width="1em"
     >
       <path
         d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
@@ -196,19 +187,16 @@ exports[`Storyshots SystemMessage success with title and  icon 1`] = `
   <span>
     <svg
       fill="currentColor"
-      height="20px"
+      height="1em"
       preserveAspectRatio="xMidYMid meet"
       style={
         Object {
-          "color": "#127f22",
-          "left": "14px",
-          "position": "absolute",
-          "top": "16px",
+          "color": "#000000",
           "verticalAlign": "middle",
         }
       }
       viewBox="0 0 24 24"
-      width="20px"
+      width="1em"
     >
       <path
         d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
@@ -247,19 +235,16 @@ exports[`Storyshots SystemMessage warning with icon 1`] = `
   <span>
     <svg
       fill="currentColor"
-      height="20px"
+      height="1em"
       preserveAspectRatio="xMidYMid meet"
       style={
         Object {
-          "color": "#f9971e",
-          "left": "14px",
-          "position": "absolute",
-          "top": "16px",
+          "color": "#000000",
           "verticalAlign": "middle",
         }
       }
       viewBox="0 0 24 24"
-      width="20px"
+      width="1em"
     >
       <path
         d="M12 19.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM11 10h2v6h-2v-6zm10.895 10.553l-9-18c-.339-.678-1.451-.678-1.79 0l-9 18c-.154.31-.138.678.044.973.183.294.504.474.851.474h18c.347 0 .668-.18.851-.474.182-.295.198-.663.044-.973z"
@@ -281,19 +266,16 @@ exports[`Storyshots SystemMessage warning with title and  icon 1`] = `
   <span>
     <svg
       fill="currentColor"
-      height="20px"
+      height="1em"
       preserveAspectRatio="xMidYMid meet"
       style={
         Object {
-          "color": "#f9971e",
-          "left": "14px",
-          "position": "absolute",
-          "top": "16px",
+          "color": "#000000",
           "verticalAlign": "middle",
         }
       }
       viewBox="0 0 24 24"
-      width="20px"
+      width="1em"
     >
       <path
         d="M12 19.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM11 10h2v6h-2v-6zm10.895 10.553l-9-18c-.339-.678-1.451-.678-1.79 0l-9 18c-.154.31-.138.678.044.973.183.294.504.474.851.474h18c.347 0 .668-.18.851-.474.182-.295.198-.663.044-.973z"

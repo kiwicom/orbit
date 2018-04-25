@@ -40,6 +40,11 @@ const getProps = (tokenProps, category) => tokenProps.reduce((p, c) => Object.as
 
 let category = ""
 let categoryDescription = ""
+let comment = undefined
+
+const categoryCommentFn = c => c.startsWith("category:")
+const categoryDescriptionFn = c => c.startsWith("description:")
+const itemCommentFn = c => !categoryCommentFn(c) && !categoryDescriptionFn(c)
 
 const getInfo = (tokenProp, xcategory) => {
   const key = tokenProp.key.name
@@ -48,21 +53,26 @@ const getInfo = (tokenProp, xcategory) => {
   if (type === "object") return getProps(tokenProp.value.properties, key)
   const hasComment = (tokenProp.leadingComments && tokenProp.leadingComments.length) 
   if (hasComment) {
-    const categoryComment = tokenProp.leadingComments.find(c => c.value.startsWith("category:"))
-    if (categoryComment) category = categoryComment.value.substr(9)
-    const categoryDescriptionComm = tokenProp.leadingComments.find(c => c.value.startsWith("description:"))
-    if (categoryDescriptionComm) categoryDescription = categoryDescriptionComm.value.substr(12)
+    const comments = tokenProp.leadingComments.map(x => x.value.trimLeft())
+    const categoryComment = comments.find(categoryCommentFn)
+    if (categoryComment) category = categoryComment.substr(9)
+    const categoryDescriptionComm = comments.find(categoryDescriptionFn)
+    if (categoryDescriptionComm) categoryDescription = categoryDescriptionComm.substr(12)
+    const itemComment = comments.filter(itemCommentFn)
+    if (itemComment.length) {
+      comment = itemComment.join(" ").trim()
+    }
+  } else {
+    comment = undefined
   }
   return {
     [key]: {
       value: value,
       type: getType(value),
-      category, //: getCategory(xcategory, key),
-      // comment,
+      category,
+      comment,
       "meta": {
-        // name: camelCaseToText(key),
         categoryDescription,
-        // type,
       }
     }
   }

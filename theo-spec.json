@@ -1,5 +1,13 @@
 {
   "props": {
+    "colorTextInfo": {
+      "value": "#0176D2",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
     "colorTextPrimary": {
       "value": "#46515e",
       "type": "color",
@@ -32,6 +40,38 @@
         "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
+    "colorIconPrimary": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorIconSecondary": {
+      "value": "#7f91a8",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorIconAttention": {
+      "value": "#171b1e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorIconTerciary": {
+      "value": "#bac7d5",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
     "colorHeading": {
       "value": "#171b1e",
       "type": "color",
@@ -56,7 +96,15 @@
         "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
-    "colorTextMessageSuccess": {
+    "colorAlertIconSuccess": {
+      "value": "#46B655",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorTextAlertSuccess": {
       "value": "#065d12",
       "type": "color",
       "category": "Colors",
@@ -64,47 +112,15 @@
         "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
-    "colorIconMessageSuccess": {
-      "value": "#127f22",
+    "colorAlertIconInfo": {
+      "value": "#0176D2",
       "type": "color",
       "category": "Colors",
       "meta": {
         "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
-    "colorTextMessageWarning": {
-      "value": "#650808",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
-      }
-    },
-    "colorIconMessageWarning": {
-      "value": "#d21c1c",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
-      }
-    },
-    "colorTextMessageError": {
-      "value": "#a93610",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
-      }
-    },
-    "colorIconMessageError": {
-      "value": "#f9971e",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
-      }
-    },
-    "colorTextMessageInfo": {
+    "colorTextAlertInfo": {
       "value": "#07405c",
       "type": "color",
       "category": "Colors",
@@ -112,8 +128,32 @@
         "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
-    "colorIconMessageInfo": {
-      "value": "#10709f",
+    "colorAlertIconWarning": {
+      "value": "#f9971e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorTextAlertWarning": {
+      "value": "#a93610",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorAlertIconCritical": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorTextAlertCritical": {
+      "value": "#650808",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -320,6 +360,22 @@
         "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
+    "colorTextInputDisabled": {
+      "value": "#bac7d5",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorIconInput": {
+      "value": "#bac7d5",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
     "colorPlaceholderInput": {
       "value": "#bac7d5",
       "type": "color",
@@ -488,7 +544,15 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
-    "backgroundMessageSuccess": {
+    "backgroundInputDisabled": {
+      "value": "#e8edf1",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundAlertSuccess": {
       "value": "#e7f3e8",
       "type": "color",
       "category": "Background colors",
@@ -496,7 +560,15 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
-    "backgroundMessageWarning": {
+    "backgroundAlertInfo": {
+      "value": "#e0f6ff",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundAlertWarning": {
       "value": "#fcf1cd",
       "type": "color",
       "category": "Background colors",
@@ -504,16 +576,8 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
-    "backgroundMessageError": {
+    "backgroundAlertCritical": {
       "value": "#fae8e8",
-      "type": "color",
-      "category": "Background colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
-      }
-    },
-    "backgroundMessageInfo": {
-      "value": "#e0f6ff",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -608,8 +672,16 @@
         "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
-    "fontSizeInput": {
+    "fontSizeInputNormal": {
       "value": "16px",
+      "type": "size",
+      "category": "Font size",
+      "meta": {
+        "categoryDescription": "Use these sizing tokens for font sizes."
+      }
+    },
+    "fontSizeInputSmall": {
+      "value": "14px",
       "type": "size",
       "category": "Font size",
       "meta": {
@@ -636,6 +708,7 @@
       "value": "50%",
       "type": "size",
       "category": "Border radius",
+      "comment": "use only for square",
       "meta": {
         "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners)."
       }
@@ -644,6 +717,7 @@
       "value": "3px",
       "type": "size",
       "category": "Border radius",
+      "comment": "use for all basic elements like buttons, inputs, content containers",
       "meta": {
         "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners)."
       }
@@ -652,6 +726,7 @@
       "value": "6px",
       "type": "size",
       "category": "Border radius",
+      "comment": "use for big elements like modal and large buttons",
       "meta": {
         "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners)."
       }
@@ -660,6 +735,7 @@
       "value": "2px",
       "type": "size",
       "category": "Border radius",
+      "comment": "use for smaller elements like tags",
       "meta": {
         "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners)."
       }
@@ -668,6 +744,7 @@
       "value": "1",
       "type": "string",
       "category": "Z Index",
+      "comment": "use for smaller elements like tags",
       "meta": {
         "categoryDescription": "Use layers to show depth of page."
       }
@@ -848,7 +925,23 @@
         "categoryDescription": ""
       }
     },
+    "borderColorInputFocus": {
+      "value": "#0176D2",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "borderColorInputError": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorInputErrorFocus": {
       "value": "#d21c1c",
       "type": "color",
       "category": "Border color",
@@ -944,6 +1037,22 @@
         "categoryDescription": ""
       }
     },
+    "borderStyleInput": {
+      "value": "solid",
+      "type": "string",
+      "category": "Border style",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderWidthInput": {
+      "value": "1px",
+      "type": "size",
+      "category": "Border style",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "opacityOverlay": {
       "value": "0.8",
       "type": "string",
@@ -1008,6 +1117,22 @@
         "categoryDescription": "Use this for setting basic font weights."
       }
     },
+    "paddingAlert": {
+      "value": "16px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingAlertWithIcon": {
+      "value": "12px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
     "paddingButtonSmall": {
       "value": "12px",
       "type": "size",
@@ -1026,6 +1151,22 @@
     },
     "paddingButtonLarge": {
       "value": "28px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingInputSmall": {
+      "value": "12px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingInputNormal": {
+      "value": "16px",
       "type": "size",
       "category": "Spacing",
       "meta": {
@@ -1244,6 +1385,22 @@
       "value": "underline",
       "type": "string",
       "category": "Text decoration",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "boxShadowInputFocus": {
+      "value": "0px 0px 3px 1px rgba(1,118,210,0.3)",
+      "type": "size",
+      "category": "Box shadow",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "boxShadowInputErrorFocus": {
+      "value": "0px 0px 3px 1px rgba(210,28,28,0.3)",
+      "type": "size",
+      "category": "Box shadow",
       "meta": {
         "categoryDescription": ""
       }

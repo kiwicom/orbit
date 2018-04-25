@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { shallow } from "enzyme";
-import defaultTheme from "orbit-design-token";
+import defaultTheme from "@kiwicom/orbit-design-tokens";
 
 import { RawComponent } from "../ThemedSample";
 

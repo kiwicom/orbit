@@ -42,11 +42,11 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
     import { default as Icon } from "../Icon";
 
     export default function ${functionName}(props) {
-      const { color, size, style } = props;
+      const { color, size, customColor } = props;
       return (
         ${optimizedSvg.replace(
           /<svg\b[^>]*>(.*?)<\/svg>/g,
-          `<Icon viewBox="0 0 24 24" size={size} color={color} style={style}>$1</Icon>`,
+          `<Icon viewBox="0 0 24 24" size={size} color={color} customColor={customColor}>$1</Icon>`,
         )}
       );
     }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Icon Custom only 1`] = `
+exports[`Storyshots Icon Custom color 1`] = `
 <div
   style={
     Object {
@@ -34,7 +34,7 @@ exports[`Storyshots Icon Custom only 1`] = `
             }
           }
         >
-          Custom only
+          Custom color
         </h1>
         
         <span
@@ -87,364 +87,7 @@ exports[`Storyshots Icon Custom only 1`] = `
           >
             <div>
               <p>
-                In edge cases you can customize your Icon with own CSS styles.
-              </p>
-            </div>
-          </span>
-        </div>
-      </div>
-      <div
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
-        >
-          <div>
-            <div>
-              <h3
-                style={
-                  Object {
-                    "color": "#363a45",
-                    "fontSize": 18,
-                    "marginBottom": 10,
-                  }
-                }
-              >
-                Icon example
-              </h3>
-              
-            </div>
-          </div>
-        </div>
-        <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
-        >
-          <svg
-            fill="currentColor"
-            height={50}
-            preserveAspectRatio="xMidYMid meet"
-            style={
-              Object {
-                "color": "#FF0000",
-                "paddingTop": "20px",
-                "transform": "rotate(90, 16, 16)",
-                "verticalAlign": "middle",
-              }
-            }
-            viewBox="0 0 24 24"
-            width={50}
-          >
-            <path
-              d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-            />
-          </svg>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
-                }
-              >
-                <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
-                >
-                  Source
-                </h4>
-                <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
-                >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
-                      }
-                    >
-                      &lt;
-                      Accomodation
-                    </span>
-                    <span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          size
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#a11",
-                                  }
-                                }
-                              >
-                                50
-                              </span>
-                              }
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          color
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              #FF0000
-                              "
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          style
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
-                                }
-                              >
-                                {
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  transform
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  rotate(90, 16, 16)
-                                  "
-                                </span>
-                                , 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  paddingTop
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  20px
-                                  "
-                                </span>
-                                }
-                              </span>
-                              }
-                            </span>
-                          </span>
-                        </span>
-                         
-                      </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
-                      }
-                    >
-                      /&gt;
-                    </span>
-                  </div>
-                </pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Icon Predefined and custom 1`] = `
-<div
-  style={
-    Object {
-      "padding": "20px",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "WebkitFontSmoothing": "antialiased",
-        "color": "#444",
-        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "marginBottom": 60,
-        }
-      }
-    >
-      <div>
-        <h1
-          style={
-            Object {
-              "color": "#363a45",
-              "fontSize": 36,
-              "marginBottom": 10,
-            }
-          }
-        >
-          Predefined and custom
-        </h1>
-        
-        <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
-        >
-          <div>
-            <p>
-              Some description about this component.
-            </p>
-          </div>
-        </span>
-      </div>
-    </div>
-    <div>
-      <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          <hr
-            style={
-              Object {
-                "backgroundColor": "#ccd6dd",
-                "border": "none",
-                "height": 1,
-              }
-            }
-          />
-          <span
-            style={
-              Object {
-                "color": "#898d97",
-                "fontSize": 16,
-                "marginBottom": 20,
-                "marginTop": 0,
-              }
-            }
-          >
-            <div>
-              <p>
-                In edge cases you can customize your Icon with own CSS styles.
+                In edge cases you can customize color for your Icon.
               </p>
             </div>
           </span>
@@ -494,9 +137,7 @@ exports[`Storyshots Icon Predefined and custom 1`] = `
             preserveAspectRatio="xMidYMid meet"
             style={
               Object {
-                "color": "#46515e",
-                "paddingTop": "20px",
-                "transform": "rotate(90, 16, 16)",
+                "color": "#3b5998",
                 "verticalAlign": "middle",
               }
             }
@@ -504,7 +145,7 @@ exports[`Storyshots Icon Predefined and custom 1`] = `
             width="24px"
           >
             <path
-              d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+              d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"
             />
           </svg>
         </div>
@@ -559,7 +200,7 @@ exports[`Storyshots Icon Predefined and custom 1`] = `
                       }
                     >
                       &lt;
-                      Accomodation
+                      Facebook
                     </span>
                     <span>
                       <span>
@@ -594,7 +235,7 @@ exports[`Storyshots Icon Predefined and custom 1`] = `
                         <span
                           style={Object {}}
                         >
-                          color
+                          customColor
                         </span>
                         <span>
                           =
@@ -610,82 +251,8 @@ exports[`Storyshots Icon Predefined and custom 1`] = `
                               }
                             >
                               "
-                              primary
+                              #3b5998
                               "
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          style
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
-                                }
-                              >
-                                {
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  transform
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  rotate(90, 16, 16)
-                                  "
-                                </span>
-                                , 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  paddingTop
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  20px
-                                  "
-                                </span>
-                                }
-                              </span>
-                              }
                             </span>
                           </span>
                         </span>
@@ -713,7 +280,7 @@ exports[`Storyshots Icon Predefined and custom 1`] = `
 </div>
 `;
 
-exports[`Storyshots Icon Predefined only 1`] = `
+exports[`Storyshots Icon Default 1`] = `
 <div
   style={
     Object {
@@ -747,7 +314,7 @@ exports[`Storyshots Icon Predefined only 1`] = `
             }
           }
         >
-          Predefined only
+          Default
         </h1>
         
         <span
@@ -858,7 +425,7 @@ exports[`Storyshots Icon Predefined only 1`] = `
             width="24px"
           >
             <path
-              d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+              d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"
             />
           </svg>
         </div>
@@ -913,7 +480,7 @@ exports[`Storyshots Icon Predefined only 1`] = `
                       }
                     >
                       &lt;
-                      Accomodation
+                      Airplane
                     </span>
                     <span>
                       <span>

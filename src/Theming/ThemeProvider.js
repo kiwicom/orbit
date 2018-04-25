@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { ThemeProvider } from "theming";
-import defaultTheme from "orbit-design-token";
+import defaultTheme from "@kiwicom/orbit-design-tokens";
 
 type Props = {
   children: any,

@@ -4,7 +4,7 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, object, select, number, text } from "@storybook/addon-knobs/react";
+import { withKnobs, select, text } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
 import { iconSizes, iconColors } from "../Icon";
@@ -23,7 +23,7 @@ storiesOf("Icon", module)
       padding: "20px",
     }),
   )
-  .addWithChapters("Predefined only", () => {
+  .addWithChapters("Default", () => {
     const size = select("Size", Object.keys(iconSizes), "medium");
     const color = select("Color", Object.keys(iconColors), "primary");
 
@@ -36,7 +36,7 @@ storiesOf("Icon", module)
           sections: [
             {
               title: `Icon example`,
-              sectionFn: () => <Icons.Accomodation size={size} color={color} />,
+              sectionFn: () => <Icons.Airplane size={size} color={color} />,
               options,
             },
           ],
@@ -44,53 +44,19 @@ storiesOf("Icon", module)
       ],
     };
   })
-  .addWithChapters("Predefined and custom", () => {
+  .addWithChapters("Custom color", () => {
     const size = select("Size", Object.keys(iconSizes), "medium");
-    const customSize = number("Custom size", "");
-    const color = select("Color", Object.keys(iconColors), "primary");
-    const customColor = text("Custom color", undefined);
-    const customStyle = { transform: "rotate(90, 16, 16)", paddingTop: "20px" };
-    const style = object("Custom style", customStyle);
+    const customColor = text("Custom color", "#3b5998");
 
     return {
       info: "Some description about this component.",
       chapters: [
         {
-          info: "In edge cases you can customize your Icon with own CSS styles.",
+          info: "In edge cases you can customize color for your Icon.",
           sections: [
             {
               title: `Icon example`,
-              sectionFn: () => (
-                <Icons.Accomodation
-                  size={customSize || size}
-                  color={customColor || color}
-                  style={style}
-                />
-              ),
-              options,
-            },
-          ],
-        },
-      ],
-    };
-  })
-  .addWithChapters("Custom only", () => {
-    const customSize = number("Custom size", 50);
-    const customColor = text("Custom color", "#FF0000");
-    const customStyle = { transform: "rotate(90, 16, 16)", paddingTop: "20px" };
-    const style = object("Custom style", customStyle);
-
-    return {
-      info: "Some description about this component.",
-      chapters: [
-        {
-          info: "In edge cases you can customize your Icon with own CSS styles.",
-          sections: [
-            {
-              title: `Icon example`,
-              sectionFn: () => (
-                <Icons.Accomodation size={customSize} color={customColor} style={style} />
-              ),
+              sectionFn: () => <Icons.Facebook size={size} customColor={customColor} />,
               options,
             },
           ],

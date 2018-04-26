@@ -34,12 +34,13 @@
   "author": "kiwi.com",
   "license": "MIT",
   "dependencies": {
+    "@kiwicom/orbit-design-tokens": "^0.0.5",
     "@sambego/storybook-styles": "^1.0.0",
     "classnames": "^2.2.5",
-    "orbit-design-token": "git+https://github.com/kiwicom/orbit-design-tokens.git#v0.0.2",
     "polished": "^1.9.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-icon-base": "^2.1.0",
     "react-icons": "^2.2.7",
     "styled-jsx": "^2.2.6",
     "theming": "^1.3.0"

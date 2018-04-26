@@ -1,5 +1,5 @@
 // @flow
-import defaultTheme from "orbit-design-token";
+import defaultTheme from "@kiwicom/orbit-design-tokens";
 import { withTheme } from "theming";
 
 import * as Icons from "./icons";
@@ -8,6 +8,7 @@ export { default as Button } from "./Button";
 export { default as CarrierLogo } from "./CarrierLogo";
 export { default as Heading } from "./Heading";
 export { default as Text } from "./Text";
+export { default as Icon } from "./Icon";
 export { default as InputText } from "./InputText";
 export { default as InputTextarea } from "./InputTextarea";
 export { default as Checkbox } from "./Checkbox";

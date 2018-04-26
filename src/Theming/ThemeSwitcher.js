@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import defaultTheme from "orbit-design-token";
+import defaultTheme from "@kiwicom/orbit-design-tokens";
 
 import ThemeProvider from "./ThemeProvider";
 

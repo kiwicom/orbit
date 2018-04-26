@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import { withTheme } from "theming";
-import defaultTheme from "orbit-design-token";
+import defaultTheme from "@kiwicom/orbit-design-tokens";
 
 type ComponentProps = {
   theme: typeof defaultTheme,

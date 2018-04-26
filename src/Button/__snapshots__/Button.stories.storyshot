@@ -147,10 +147,17 @@ exports[`Storyshots Button Destructive button 1`] = `
             onClick={[Function]}
           >
             <svg
-              fill="#fff"
-              height="24px"
+              fill="currentColor"
+              height="1em"
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "color": "#000000",
+                  "verticalAlign": "middle",
+                }
+              }
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
             >
               <path
                 d="M5 6h14v12c0 1.103-.897 2-2 2H7c-1.103 0-2-.897-2-2V6zm10 10v-6h-2v6h2zm-4 0v-6H9v6h2zm4-13h6v2H3V3h6V1h6v2z"
@@ -575,10 +582,17 @@ exports[`Storyshots Button Facebook button 1`] = `
             onClick={[Function]}
           >
             <svg
-              fill="#fff"
-              height="24px"
+              fill="currentColor"
+              height="1em"
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "color": "#000000",
+                  "verticalAlign": "middle",
+                }
+              }
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
             >
               <path
                 d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"
@@ -1003,10 +1017,17 @@ exports[`Storyshots Button Google button 1`] = `
             onClick={[Function]}
           >
             <svg
-              fill="#fff"
-              height="24px"
+              fill="currentColor"
+              height="1em"
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "color": "#000000",
+                  "verticalAlign": "middle",
+                }
+              }
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
             >
               <g
                 fill="none"
@@ -1767,10 +1788,17 @@ exports[`Storyshots Button Link button 1`] = `
             onClick={[Function]}
           >
             <svg
-              fill="#46515e"
-              height="24px"
+              fill="currentColor"
+              height="1em"
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "color": "#000000",
+                  "verticalAlign": "middle",
+                }
+              }
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
             >
               <path
                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
@@ -2483,10 +2511,17 @@ exports[`Storyshots Button Primary button 1`] = `
             onClick={[Function]}
           >
             <svg
-              fill="#fff"
-              height="24px"
+              fill="currentColor"
+              height="1em"
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "color": "#000000",
+                  "verticalAlign": "middle",
+                }
+              }
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
             >
               <path
                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
@@ -3199,10 +3234,17 @@ exports[`Storyshots Button Secondary button 1`] = `
             onClick={[Function]}
           >
             <svg
-              fill="#46515e"
-              height="24px"
+              fill="currentColor"
+              height="1em"
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "color": "#000000",
+                  "verticalAlign": "middle",
+                }
+              }
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
             >
               <path
                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"

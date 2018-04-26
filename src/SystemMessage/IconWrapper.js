@@ -19,7 +19,7 @@ const IconWrapper = (props: Props) => {
   const { Icon, type } = props;
   return (
     <span>
-      <Icon fill={fillColors[type]} height="20px" />
+      <Icon customColor={fillColors[type]} size="medium" />
       <style jsx>{`
         span {
           position: absolute;

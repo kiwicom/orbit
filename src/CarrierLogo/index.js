@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import * as tokens from "orbit-design-token";
+import * as tokens from "@kiwicom/orbit-design-tokens";
 
 const baseURL = "//images.kiwi.com"; // token or const
 

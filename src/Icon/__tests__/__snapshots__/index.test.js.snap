@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon with color Should match snapshot 1`] = `
+<Accomodation
+  color="attention"
+>
+  <OrbitIcon
+    color="attention"
+    size="medium"
+    viewBox="0 0 24 24"
+  >
+    <IconBase
+      color="#171b1e"
+      size="24px"
+      viewBox="0 0 24 24"
+    >
+      <svg
+        fill="currentColor"
+        height="24px"
+        preserveAspectRatio="xMidYMid meet"
+        style={
+          Object {
+            "color": "#171b1e",
+            "verticalAlign": "middle",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <path
+          d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+        />
+      </svg>
+    </IconBase>
+  </OrbitIcon>
+</Accomodation>
+`;
+
+exports[`Icon with props Should match snapshot 1`] = `
+<Accomodation
+  customColor="#FF0000"
+  size="large"
+>
+  <OrbitIcon
+    color="primary"
+    customColor="#FF0000"
+    size="large"
+    viewBox="0 0 24 24"
+  >
+    <IconBase
+      color="#FF0000"
+      size="32px"
+      viewBox="0 0 24 24"
+    >
+      <svg
+        fill="currentColor"
+        height="32px"
+        preserveAspectRatio="xMidYMid meet"
+        style={
+          Object {
+            "color": "#FF0000",
+            "verticalAlign": "middle",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="32px"
+      >
+        <path
+          d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+        />
+      </svg>
+    </IconBase>
+  </OrbitIcon>
+</Accomodation>
+`;

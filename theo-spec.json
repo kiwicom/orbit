@@ -320,7 +320,7 @@
         "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
-    "colorTextButtonDestructive": {
+    "colorTextButtonInfo": {
       "value": "#fff",
       "type": "color",
       "category": "Colors",
@@ -328,7 +328,7 @@
         "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
-    "colorIconButtonDestructive": {
+    "colorIconButtonInfo": {
       "value": "#fff",
       "type": "color",
       "category": "Colors",
@@ -336,7 +336,103 @@
         "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
-    "colorTextButtonDestructiveBordered": {
+    "colorTextButtonInfoBordered": {
+      "value": "#0176D2",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorIconButtonInfoBordered": {
+      "value": "#0176D2",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorTextButtonSuccess": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorIconButtonSuccess": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorTextButtonSuccessBordered": {
+      "value": "#46B655",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorIconButtonSuccessBordered": {
+      "value": "#46B655",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorTextButtonWarning": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorIconButtonWarning": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorTextButtonWarningBordered": {
+      "value": "#f9971e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorIconButtonWarningBordered": {
+      "value": "#f9971e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorTextButtonCritical": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorIconButtonCritical": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
+      }
+    },
+    "colorTextButtonCriticalBordered": {
       "value": "#d21c1c",
       "type": "color",
       "category": "Colors",
@@ -344,7 +440,7 @@
         "categoryDescription": "Use these tokens for text colors only. Do not use these for border colors or background colors."
       }
     },
-    "colorIconButtonDestructiveBordered": {
+    "colorIconButtonCriticalBordered": {
       "value": "#d21c1c",
       "type": "color",
       "category": "Colors",
@@ -520,7 +616,31 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
-    "backgroundButtonDestructive": {
+    "backgroundButtonInfo": {
+      "value": "#0176D2",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonSuccess": {
+      "value": "#46B655",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonWarning": {
+      "value": "#f9971e",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonCritical": {
       "value": "#d21c1c",
       "type": "color",
       "category": "Background colors",
@@ -1012,7 +1132,31 @@
         "categoryDescription": ""
       }
     },
-    "borderColorButtonDestructiveBordered": {
+    "borderColorButtonInfoBordered": {
+      "value": "#0176D2",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonSuccessBordered": {
+      "value": "#46B655",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonWarningBordered": {
+      "value": "#f9971e",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonCriticalBordered": {
       "value": "#d21c1c",
       "type": "color",
       "category": "Border color",

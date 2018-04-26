@@ -1,6 +1,12 @@
 {
   "properties": [
     {
+      "value": "rgb(70, 182, 85)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonSuccessBordered"
+    },
+    {
       "value": "16px",
       "type": "size",
       "category": "Spacing",
@@ -25,12 +31,6 @@
       "name": "heightButtonNormal"
     },
     {
-      "value": "rgb(255, 255, 255)",
-      "type": "color",
-      "category": "Colors",
-      "name": "colorTextButtonDestructive"
-    },
-    {
       "value": "solid",
       "type": "string",
       "category": "Border style",
@@ -41,6 +41,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorAlertIconInfo"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonCritical"
     },
     {
       "value": "100",
@@ -59,6 +65,12 @@
       "type": "size",
       "category": "Font size",
       "name": "fontSizeInputNormal"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonSuccess"
     },
     {
       "value": "12px",
@@ -85,12 +97,6 @@
       "name": "modifierDarkenButtonLink"
     },
     {
-      "value": "rgb(210, 28, 28)",
-      "type": "color",
-      "category": "Background colors",
-      "name": "backgroundButtonDestructive"
-    },
-    {
       "value": "52px",
       "type": "size",
       "category": "Size (width, height)",
@@ -103,10 +109,22 @@
       "name": "marginButtonIconLarge"
     },
     {
+      "value": "rgb(1, 118, 210)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorButtonInfoBordered"
+    },
+    {
       "value": "rgb(0, 169, 145)",
       "type": "color",
       "category": "Background colors",
       "name": "backgroundButtonPrimary"
+    },
+    {
+      "value": "rgb(70, 182, 85)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonSuccess"
     },
     {
       "value": "8px",
@@ -143,12 +161,6 @@
       "type": "color",
       "category": "Border color",
       "name": "borderColorButtonPrimaryBordered"
-    },
-    {
-      "value": "rgb(210, 28, 28)",
-      "type": "color",
-      "category": "Border color",
-      "name": "borderColorButtonDestructiveBordered"
     },
     {
       "value": "32px",
@@ -194,6 +206,18 @@
       "name": "borderRadiusNormal"
     },
     {
+      "value": "rgb(249, 151, 30)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonWarningBordered"
+    },
+    {
+      "value": "rgb(70, 182, 85)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorButtonSuccessBordered"
+    },
+    {
       "value": "rgb(70, 81, 94)",
       "type": "color",
       "category": "Colors",
@@ -228,6 +252,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorIconPrimary"
+    },
+    {
+      "value": "rgb(1, 118, 210)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonInfoBordered"
     },
     {
       "value": "rgb(255, 255, 255)",
@@ -417,12 +447,6 @@
       "name": "colorTextButtonPrimaryBordered"
     },
     {
-      "value": "rgb(210, 28, 28)",
-      "type": "color",
-      "category": "Colors",
-      "name": "colorTextButtonDestructiveBordered"
-    },
-    {
       "value": "rgb(101, 8, 8)",
       "type": "color",
       "category": "Colors",
@@ -439,6 +463,18 @@
       "type": "color",
       "category": "Background colors",
       "name": "backgroundButtonBordered"
+    },
+    {
+      "value": "rgb(70, 182, 85)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonSuccessBordered"
+    },
+    {
+      "value": "rgb(210, 28, 28)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonCriticalBordered"
     },
     {
       "value": "700",
@@ -463,6 +499,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorIconRadioButtonDisabled"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonCritical"
     },
     {
       "value": "rgb(250, 232, 232)",
@@ -508,10 +550,22 @@
       "name": "colorIconInput"
     },
     {
+      "value": "rgb(1, 118, 210)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonInfo"
+    },
+    {
       "value": "rgb(252, 241, 205)",
       "type": "color",
       "category": "Background colors",
       "name": "backgroundAlertWarning"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonWarning"
     },
     {
       "value": "transparent",
@@ -554,6 +608,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextAlertWarning"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonInfo"
     },
     {
       "value": "1px",
@@ -628,6 +688,12 @@
       "name": "fontFamily"
     },
     {
+      "value": "rgb(210, 28, 28)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorButtonCriticalBordered"
+    },
+    {
       "value": "rgb(59, 89, 152)",
       "type": "color",
       "category": "Colors",
@@ -668,12 +734,6 @@
       "type": "size",
       "category": "Size (width, height)",
       "name": "widthIconMedium"
-    },
-    {
-      "value": "rgb(255, 255, 255)",
-      "type": "color",
-      "category": "Colors",
-      "name": "colorIconButtonDestructive"
     },
     {
       "value": "8px",
@@ -740,6 +800,12 @@
       "type": "color",
       "category": "Background colors",
       "name": "backgroundAlertSuccess"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonSuccess"
     },
     {
       "value": "rgb(70, 81, 94)",
@@ -826,6 +892,12 @@
       "name": "paddingButtonLarge"
     },
     {
+      "value": "rgb(210, 28, 28)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonCriticalBordered"
+    },
+    {
       "value": "16px",
       "type": "size",
       "category": "Font size",
@@ -856,6 +928,12 @@
       "name": "borderColorTableCell"
     },
     {
+      "value": "rgb(249, 151, 30)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonWarningBordered"
+    },
+    {
       "value": "rgb(59, 89, 152)",
       "type": "color",
       "category": "Border color",
@@ -874,6 +952,12 @@
       "name": "colorTextInput"
     },
     {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonWarning"
+    },
+    {
       "value": "rgb(7, 64, 92)",
       "type": "color",
       "category": "Colors",
@@ -890,6 +974,12 @@
       "type": "size",
       "category": "Spacing",
       "name": "spaceMedium"
+    },
+    {
+      "value": "rgb(1, 118, 210)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonInfoBordered"
     },
     {
       "value": "32px",
@@ -934,6 +1024,12 @@
       "name": "durationNormal"
     },
     {
+      "value": "rgb(249, 151, 30)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonWarning"
+    },
+    {
       "value": "rgb(70, 81, 94)",
       "type": "color",
       "category": "Colors",
@@ -950,6 +1046,12 @@
       "type": "color",
       "category": "Background colors",
       "name": "backgroundAlertInfo"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorIconButtonInfo"
     },
     {
       "value": 0.1,
@@ -995,6 +1097,12 @@
       "name": "textDecorationLinkSecondary"
     },
     {
+      "value": "rgb(249, 151, 30)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorButtonWarningBordered"
+    },
+    {
       "value": "0.5",
       "type": "string",
       "category": "Opacity",
@@ -1021,8 +1129,8 @@
     {
       "value": "rgb(210, 28, 28)",
       "type": "color",
-      "category": "Colors",
-      "name": "colorIconButtonDestructiveBordered"
+      "category": "Background colors",
+      "name": "backgroundButtonCritical"
     },
     {
       "value": "rgb(255, 255, 255)",

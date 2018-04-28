@@ -1,8 +1,9 @@
 // @flow
-import defaultTheme from "@kiwicom/orbit-design-tokens";
-import { withTheme } from "theming";
 
+// Icons use a special export method
 import * as Icons from "./icons";
+
+export { Icons };
 
 export { default as Button } from "./Button";
 export { default as CarrierLogo } from "./CarrierLogo";
@@ -21,4 +22,5 @@ export { default as TextLink } from "./TextLink";
 export { default as Typography } from "./Typography";
 export { default as Radio } from "./Radio";
 export { default as ThemeProvider } from "./Theming/ThemeProvider";
-export { Icons, defaultTheme, withTheme };
+export { withTheme } from "theming";
+export { default as defaultTheme } from "@kiwicom/orbit-design-tokens";

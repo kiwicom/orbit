@@ -2,7 +2,11 @@
 const colors = {
 	brand: {
 		light: "#9cdad3",
+		lightHover: "#80cfc6",
+		lightActive: "#73cac0",
 		normal: "#00a991",
+		normalHover: "#009882",
+		normalActive: "#008f7b",
 		dark: "#00826f"
 	},
 	white: {
@@ -10,42 +14,120 @@ const colors = {
 	},
 	cloud: {
 		light: "#f5f7f9",
-		normal: "#e8edf1"
+		lightHover: "#e5eaef",
+		lightActive: "#d6dee6",
+		normal: "#e8edf1",
+		normalHover: "#d9e1e8",
+		normalActive: "#cad5df"
 	},
 	ink: {
 		lighter: "#bac7d5",
 		light: "#7f91a8",
 		normal: "#46515e",
+		normalHover: "#3f4854",
+		normalActive: "#38404b",
 		dark: "#171b1e"
 	},
 	orange: {
 		light: "#fcf1cd",
+		lightHover: "#faeab7",
+		lightActive: "#f9e4a1",
 		normal: "#f9971e",
+		normalHover: "#f48a06",
+		normalActive: "#e68206",
 		dark: "#a93610"
 	},
 	red: {
 		light: "#fae8e8",
+		lightHover: "#f5d4d4",
+		lightActive: "#f1c0c0",
 		normal: "#d21c1c",
+		normalHover: "#bd1919",
+		normalActive: "#b21717",
 		dark: "#650808"
 	},
 	green: {
 		light: "#e7f3e8",
+		lightHover: "#d7ebd8",
+		lightActive: "#c7e3c9",
 		normal: "#46B655",
+		normalHover: "#42ac50",
+		normalActive: "#3fa34c",
 		dark: "#065d12"
 	},
 	blue: {
 		light: "#e0f6ff",
+		lightHover: "#c8effe",
+		lightActive: "#b0e8fe",
 		normal: "#0176D2",
+		normalHover: "#006abd",
+		normalActive: "#0064b2",
 		dark: "#07405c"
 	},
 	social: {
-		facebook: "#3b5998"
+		facebook: "#3b5998",
+		facebookHover: "#385490",
+		facebookActive: "#354f88"
 	}
 };
 
+
 const defaultTokens = {
+	// category:Color palette
+	// description: Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors.
+	paletteBrandLight: colors.brand.light,
+	paletteBrandLightHover: colors.brand.lightHover,
+	paletteBrandLightActive: colors.brand.lightActive,
+	paletteBrandNormal: colors.brand.normal,
+	paletteBrandNormalHover: colors.brand.normalHover,
+	paletteBrandNormalActive: colors.brand.normalActive,
+	paletteBrandDark: colors.brand.dark,
+	paletteWhite: colors.white.normal,
+	paletteCloudLight: colors.brand.light,
+	paletteCloudLightHover: colors.brand.lightHover,
+	paletteCloudLightActive: colors.brand.lightActive,
+	paletteCloudNormal: colors.brand.normal,
+	paletteCloudNormalHover: colors.brand.normalHover,
+	paletteCloudNormalActive: colors.brand.normalActive,
+	paletteInkLighter: colors.ink.ligher,
+	paletteInkLight: colors.ink.light,
+	paletteInkNormal: colors.ink.normal,
+	paletteInkNormalHover: colors.ink.normalHover,
+	paletteInkNormalActive: colors.ink.normalActive,
+	paletteInkDark: colors.ink.dark,
+	paletteOrangeLight: colors.orange.light,
+	paletteOrangeLightHover: colors.orange.lightHover,
+	paletteOrangeLightActive: colors.orange.lightActive,
+	paletteOrangeNormal: colors.orange.normal,
+	paletteOrangeNormalHover: colors.orange.normalHover,
+	paletteOrangeNormalActive: colors.orange.normalActive,
+	paletteOrangeDark: colors.orange.dark,
+	paletteRedLight: colors.red.light,
+	paletteRedLightHover: colors.red.lightHover,
+	paletteRedLightActive: colors.red.lightActive,
+	paletteRedNormal: colors.red.normal,
+	paletteRedNormalHover: colors.red.normalHover,
+	paletteRedNormalActive: colors.red.normalActive,
+	paletteRedDark: colors.red.dark,
+	paletteGreenLight: colors.green.light,
+	paletteGreenLightHover: colors.green.lightHover,
+	paletteGreenLightActive: colors.green.lightActive,
+	paletteGreenNormal: colors.green.normal,
+	paletteGreenNormalHover: colors.green.normalHover,
+	paletteGreenNormalActive: colors.green.normalActive,
+	paletteGreenDark: colors.green.dark,
+	paletteBlueLight: colors.blue.light,
+	paletteBlueLightHover: colors.blue.lightHover,
+	paletteBlueLightActive: colors.blue.lightActive,
+	paletteBlueNormal: colors.blue.normal,
+	paletteBlueNormalHover: colors.blue.normalHover,
+	paletteBlueNormalActive: colors.blue.normalActive,
+	paletteBlueDark: colors.blue.dark,
+	paletteSocialFacebook: colors.social.facebook,
+	paletteSocialFacebookHover: colors.social.facebookHover,
+	paletteSocialFacebookActive: colors.social.facebookActive,
 	// category:Colors
-	// description:Use these tokens for text colors only. Do not use these for border colors or background colors.
+	// description:Use these tokens for text or icon colors. Don't use these for borders and background colors.
 	colorTextInfo: colors.blue.normal,
 	colorTextPrimary: colors.ink.normal,
 	colorTextSecondary: colors.ink.light,

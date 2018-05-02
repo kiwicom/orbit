@@ -39,8 +39,7 @@ const colors = {
 		dark: "#07405c"
 	},
 	social: {
-		facebook: "#3b5998",
-		google: "#dd4b39"
+		facebook: "#3b5998"
 	}
 };
 
@@ -85,8 +84,8 @@ const defaultTokens = {
 	colorIconButtonFacebookBordered: colors.social.facebook,
 	colorTextButtonGoogle: colors.white.normal,
 	colorIconButtonGoogle: colors.white.normal,
-	colorTextButtonGoogleBordered: colors.social.google,
-	colorIconButtonGoogleBordered: colors.social.google,
+	colorTextButtonGoogleBordered: colors.ink.normal,
+	colorIconButtonGoogleBordered: colors.ink.normal,
 	colorTextButtonInfo: colors.white.normal,
 	colorIconButtonInfo: colors.white.normal,
 	colorTextButtonInfoBordered: colors.blue.normal,
@@ -128,7 +127,7 @@ const defaultTokens = {
 	backgroundButtonLink: "rgba(0,0,0,0)",
 	backgroundButtonBordered: "rgba(0,0,0,0)",
 	backgroundButtonFacebook: colors.social.facebook,
-	backgroundButtonGoogle: colors.social.google,
+	backgroundButtonGoogle: colors.ink.normal,
 	backgroundButtonInfo: colors.blue.normal,
 	backgroundButtonSuccess: colors.green.normal,
 	backgroundButtonWarning: colors.orange.normal,

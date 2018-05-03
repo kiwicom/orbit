@@ -4,7 +4,7 @@
 @value color-text-button-primary: rgb(255, 255, 255);
 @value margin-button-icon-normal: 12px;
 @value height-button-normal: 44px;
-@value palette-cloud-light-hover: rgb(128, 207, 198);
+@value palette-cloud-light-hover: rgb(229, 234, 239);
 @value border-style-section: "solid";
 @value palette-red-light: rgb(250, 232, 232);
 @value color-alert-icon-info: rgb(1, 118, 210);
@@ -13,14 +13,14 @@
 @value z-index-sticky: "100";
 @value palette-blue-light: rgb(224, 246, 255);
 @value palette-ink-dark: rgb(23, 27, 30);
-@value palette-cloud-normal: rgb(0, 169, 145);
+@value palette-cloud-normal: rgb(232, 237, 241);
 @value space-xx-small: 4px;
 @value font-size-input-normal: 16px;
 @value color-text-button-success: rgb(255, 255, 255);
 @value space-small: 12px;
 @value palette-blue-normal-active: rgb(0, 100, 178);
 @value color-icon-attention: rgb(23, 27, 30);
-@value palette-cloud-light-active: rgb(115, 202, 192);
+@value palette-cloud-light-active: rgb(214, 222, 230);
 @value background-button-link-hover: rgb(232, 237, 241);
 @value modifier-darken-button-link: 0.05;
 @value palette-brand-dark: rgb(0, 130, 111);
@@ -53,7 +53,7 @@
 @value modifier-darken-hover: 0.05;
 @value height-radio-button: 20px;
 @value color-icon-primary: rgb(70, 81, 94);
-@value palette-cloud-normal-active: rgb(0, 143, 123);
+@value palette-cloud-normal-active: rgb(202, 213, 223);
 @value color-icon-button-info-bordered: rgb(1, 118, 210);
 @value color-icon-button-google: rgb(255, 255, 255);
 @value font-size-heading-medium: 22px;
@@ -215,8 +215,8 @@
 @value z-index-on-the-top: "900";
 @value color-text-button-google: rgb(255, 255, 255);
 @value duration-normal: "0.3s";
-@value palette-cloud-normal-hover: rgb(0, 152, 130);
-@value palette-cloud-light: rgb(156, 218, 211);
+@value palette-cloud-normal-hover: rgb(217, 225, 232);
+@value palette-cloud-light: rgb(245, 247, 249);
 @value background-button-warning: rgb(249, 151, 30);
 @value color-text-button-link: rgb(70, 81, 94);
 @value font-weight-medium: "500";

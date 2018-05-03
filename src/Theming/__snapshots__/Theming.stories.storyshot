@@ -1,93 +1,1468 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Theming Alt theme 1`] = `
+exports[`Storyshots Theming ThemeSwither 1`] = `
 <div
   style={
     Object {
-      "color": "green",
-      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+      "WebkitFontSmoothing": "antialiased",
+      "color": "#444",
+      "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
     }
   }
 >
-  green
-</div>
-`;
-
-exports[`Storyshots Theming Default Theme 1`] = `
-<div
-  style={
-    Object {
-      "color": "#46515e",
-      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
-    }
-  }
->
-  #46515e
-</div>
-`;
-
-exports[`Storyshots Theming Theme switcher 1`] = `
-Array [
-  <form>
-    <button
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "inherit",
-        }
-      }
-      type="button"
-    >
-      0
-    </button>
-    <button
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "inherit",
-        }
-      }
-      type="button"
-    >
-      1
-    </button>
-  </form>,
-  <hr />,
   <div
     style={
       Object {
-        "color": "#46515e",
-        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+        "marginBottom": 60,
       }
     }
   >
-    #46515e
-  </div>,
-]
-`;
-
-exports[`Storyshots Theming Without Theme using default props 1`] = `
-<div
-  style={
-    Object {
-      "color": "#46515e",
-      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
-    }
-  }
->
-  #46515e
+    <div>
+      <h1
+        style={
+          Object {
+            "color": "#363a45",
+            "fontSize": 36,
+            "marginBottom": 10,
+          }
+        }
+      >
+        ThemeSwither
+      </h1>
+      <span
+        style={
+          Object {
+            "color": "#898d97",
+            "fontSize": 18,
+            "marginBottom": 20,
+            "marginTop": 0,
+          }
+        }
+      >
+        Show how to use &lt;ThemedSample /&gt; component with &lt;ThemeSwither&gt;. By clicking on ThemeSwitcher buttons you can enable/disable alternative themes
+      </span>
+      
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        
+        
+        
+        
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <form>
+          <button
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "inherit",
+              }
+            }
+            type="button"
+          >
+            0
+          </button>
+          <button
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "inherit",
+              }
+            }
+            type="button"
+          >
+            1
+          </button>
+        </form>
+        <hr />
+        <div
+          style={
+            Object {
+              "color": "#46515e",
+              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+              "lineHeight": "1.4",
+            }
+          }
+        >
+          colorTextPrimary: 
+          #46515e
+          <br />
+          fontFamily: 
+          "Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
+          <br />
+          lineHeightText: 
+          1.4
+          <br />
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
+            >
+              <h4
+                style={
+                  Object {
+                    "color": "#898d97",
+                    "fontSize": 12,
+                    "letterSpacing": 2,
+                    "textTransform": "uppercase",
+                  }
+                }
+              >
+                Source
+              </h4>
+              <pre
+                style={
+                  Object {
+                    "backgroundColor": "#fafafa",
+                    "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                    "fontSize": ".88em",
+                    "lineHeight": 1.5,
+                    "overflowX": "scroll",
+                    "padding": ".5rem",
+                  }
+                }
+              >
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      ThemeSwither
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          themes
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                <span>
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      colorTextPrimary
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      green
+                                      "
+                                    </span>
+                                    }
+                                  </span>
+                                  }
+                                </span>
+                                , 
+                                <span>
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      colorTextPrimary
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      purple
+                                      "
+                                    </span>
+                                    , 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      fontFamily
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      Times, serif
+                                      "
+                                    </span>
+                                    }
+                                  </span>
+                                  }
+                                </span>
+                                ]
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      ThemedComponent
+                    </span>
+                    <span />
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;/
+                      ThemeSwither
+                      &gt;
+                    </span>
+                  </div>
+                </div>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
-exports[`Storyshots Theming Without Theme with props 1`] = `
+exports[`Storyshots Theming With ThemeProvider 1`] = `
 <div
   style={
     Object {
-      "color": "red",
-      "fontFamily": "Courier",
+      "WebkitFontSmoothing": "antialiased",
+      "color": "#444",
+      "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
     }
   }
 >
-  red
+  <div
+    style={
+      Object {
+        "marginBottom": 60,
+      }
+    }
+  >
+    <div>
+      <h1
+        style={
+          Object {
+            "color": "#363a45",
+            "fontSize": 36,
+            "marginBottom": 10,
+          }
+        }
+      >
+        With ThemeProvider
+      </h1>
+      <span
+        style={
+          Object {
+            "color": "#898d97",
+            "fontSize": 18,
+            "marginBottom": 20,
+            "marginTop": 0,
+          }
+        }
+      >
+        Show how to use &lt;ThemedSample /&gt; component with &lt;ThemeProvider&gt;.
+              Note that &lt;WithTheme(ComponentWithTheme)/&gt; = &lt;ThemedSample /&gt; in sources
+      </span>
+      
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        
+        
+        
+        
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            <h3
+              style={
+                Object {
+                  "color": "#363a45",
+                  "fontSize": 18,
+                  "marginBottom": 10,
+                }
+              }
+            >
+              Basic usage
+            </h3>
+            <p
+              style={
+                Object {
+                  "color": "#898d97",
+                  "fontSize": 14,
+                  "marginBottom": 20,
+                  "marginTop": 0,
+                }
+              }
+            >
+              Provider use default tokens
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#46515e",
+              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+              "lineHeight": "1.4",
+            }
+          }
+        >
+          colorTextPrimary: 
+          #46515e
+          <br />
+          fontFamily: 
+          "Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
+          <br />
+          lineHeightText: 
+          1.4
+          <br />
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
+            >
+              <h4
+                style={
+                  Object {
+                    "color": "#898d97",
+                    "fontSize": 12,
+                    "letterSpacing": 2,
+                    "textTransform": "uppercase",
+                  }
+                }
+              >
+                Source
+              </h4>
+              <pre
+                style={
+                  Object {
+                    "backgroundColor": "#fafafa",
+                    "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                    "fontSize": ".88em",
+                    "lineHeight": 1.5,
+                    "overflowX": "scroll",
+                    "padding": ".5rem",
+                  }
+                }
+              >
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      ThemeProvider
+                    </span>
+                    <span />
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      ThemedComponent
+                    </span>
+                    <span />
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;/
+                      ThemeProvider
+                      &gt;
+                    </span>
+                  </div>
+                </div>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            <h3
+              style={
+                Object {
+                  "color": "#363a45",
+                  "fontSize": 18,
+                  "marginBottom": 10,
+                }
+              }
+            >
+              Alt theme
+            </h3>
+            <p
+              style={
+                Object {
+                  "color": "#898d97",
+                  "fontSize": 14,
+                  "marginBottom": 20,
+                  "marginTop": 0,
+                }
+              }
+            >
+              Provide alternate theme for component using second ThemeProvider.
+                       Note that altTheme can contains only some tokens.
+                       This is usefull in development when you want to try defferent value for some value
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "green",
+              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+              "lineHeight": "1.4",
+            }
+          }
+        >
+          colorTextPrimary: 
+          green
+          <br />
+          fontFamily: 
+          "Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
+          <br />
+          lineHeightText: 
+          1.4
+          <br />
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
+            >
+              <h4
+                style={
+                  Object {
+                    "color": "#898d97",
+                    "fontSize": 12,
+                    "letterSpacing": 2,
+                    "textTransform": "uppercase",
+                  }
+                }
+              >
+                Source
+              </h4>
+              <pre
+                style={
+                  Object {
+                    "backgroundColor": "#fafafa",
+                    "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                    "fontSize": ".88em",
+                    "lineHeight": 1.5,
+                    "overflowX": "scroll",
+                    "padding": ".5rem",
+                  }
+                }
+              >
+                <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      ThemeProvider
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          theme
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  colorTextInfo
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  #0176D2
+                                  "
+                                </span>
+                                , 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  colorTextPrimary
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  #46515e
+                                  "
+                                </span>
+                                , 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  colorTextSecondary
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  #7f91a8
+                                  "
+                                </span>
+                                , 
+                                …
+                                }
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        ThemeProvider
+                      </span>
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            theme
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    colorTextPrimary
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    "
+                                    green
+                                    "
+                                  </span>
+                                  }
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 48,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        ThemedComponent
+                      </span>
+                      <span />
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        /&gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        ThemeProvider
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;/
+                      ThemeProvider
+                      &gt;
+                    </span>
+                  </div>
+                </div>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Theming Without ThemeProvider 1`] = `
+<div
+  style={
+    Object {
+      "WebkitFontSmoothing": "antialiased",
+      "color": "#444",
+      "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "marginBottom": 60,
+      }
+    }
+  >
+    <div>
+      <h1
+        style={
+          Object {
+            "color": "#363a45",
+            "fontSize": 36,
+            "marginBottom": 10,
+          }
+        }
+      >
+        Without ThemeProvider
+      </h1>
+      <span
+        style={
+          Object {
+            "color": "#898d97",
+            "fontSize": 18,
+            "marginBottom": 20,
+            "marginTop": 0,
+          }
+        }
+      >
+        Show how to use &lt;RawComponent /&gt; without &lt;ThemeProvider&gt;
+      </span>
+      
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        
+        
+        
+        
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            <h3
+              style={
+                Object {
+                  "color": "#363a45",
+                  "fontSize": 18,
+                  "marginBottom": 10,
+                }
+              }
+            >
+              RawComponent
+            </h3>
+            
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#46515e",
+              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+              "lineHeight": "1.4",
+            }
+          }
+        >
+          colorTextPrimary: 
+          #46515e
+          <br />
+          fontFamily: 
+          "Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
+          <br />
+          lineHeightText: 
+          1.4
+          <br />
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
+            >
+              <h4
+                style={
+                  Object {
+                    "color": "#898d97",
+                    "fontSize": 12,
+                    "letterSpacing": 2,
+                    "textTransform": "uppercase",
+                  }
+                }
+              >
+                Source
+              </h4>
+              <pre
+                style={
+                  Object {
+                    "backgroundColor": "#fafafa",
+                    "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                    "fontSize": ".88em",
+                    "lineHeight": 1.5,
+                    "overflowX": "scroll",
+                    "padding": ".5rem",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }
+                  >
+                    &lt;
+                    ComponentWithTheme
+                  </span>
+                  <span />
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }
+                  >
+                    /&gt;
+                  </span>
+                </div>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 100,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          <div>
+            <h3
+              style={
+                Object {
+                  "color": "#363a45",
+                  "fontSize": 18,
+                  "marginBottom": 10,
+                }
+              }
+            >
+              RawComponent with props
+            </h3>
+            <p
+              style={
+                Object {
+                  "color": "#898d97",
+                  "fontSize": 14,
+                  "marginBottom": 20,
+                  "marginTop": 0,
+                }
+              }
+            >
+              Provide alternate theme for component.
+                       Note that theme have to contains all tokens and is created using Object.assign function.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "red",
+              "fontFamily": "Courier",
+              "lineHeight": "1.4",
+            }
+          }
+        >
+          colorTextPrimary: 
+          red
+          <br />
+          fontFamily: 
+          Courier
+          <br />
+          lineHeightText: 
+          1.4
+          <br />
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            
+            <div
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
+            >
+              <h4
+                style={
+                  Object {
+                    "color": "#898d97",
+                    "fontSize": 12,
+                    "letterSpacing": 2,
+                    "textTransform": "uppercase",
+                  }
+                }
+              >
+                Source
+              </h4>
+              <pre
+                style={
+                  Object {
+                    "backgroundColor": "#fafafa",
+                    "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                    "fontSize": ".88em",
+                    "lineHeight": 1.5,
+                    "overflowX": "scroll",
+                    "padding": ".5rem",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }
+                  >
+                    &lt;
+                    ComponentWithTheme
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        theme
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          <span>
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                colorTextInfo
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                #0176D2
+                                "
+                              </span>
+                              , 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                colorTextPrimary
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                red
+                                "
+                              </span>
+                              , 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                colorTextSecondary
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                #7f91a8
+                                "
+                              </span>
+                              , 
+                              …
+                              }
+                            </span>
+                            }
+                          </span>
+                        </span>
+                      </span>
+                       
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }
+                  >
+                    /&gt;
+                  </span>
+                </div>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;

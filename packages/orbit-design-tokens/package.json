@@ -1,7 +1,11 @@
 {
   "name": "@kiwicom/orbit-design-tokens",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Design tokens for kiwi!",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiwicom/orbit-design-tokens.git"
+  },
   "scripts": {
     "prepublish": "node generate-theo",
     "build-html": "theo --setup ./theo/setup.js theo-spec.json --format kiwi.html --dest ./pages",

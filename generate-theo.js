@@ -1,5 +1,5 @@
 
-// @flow 
+// @flow
 const babylon = require ("babylon");
 const fs = require("fs")
 const tokens = require("./index") // used for values
@@ -34,7 +34,7 @@ const getCategory = (category, key) => {
   if (category === "zIndex") return "spacing"
   if (category === "size") return "sizing"
   return category.replace(/([A-Z])/g, (g) => `-${g[0].toLowerCase()}`);
-} 
+}
 
 const getProps = (tokenProps, category) => tokenProps.reduce((p, c) => Object.assign(p, getInfo(c, category)), {})
 
@@ -49,10 +49,14 @@ const itemCommentFn = c => !categoryCommentFn(c) && !categoryDescriptionFn(c)
 const getInfo = (tokenProp, xcategory) => {
   const key = tokenProp.key.name
   const value = xcategory ? tokens[xcategory][key] : tokens[key]
+  if (value == null) {
+    console.error("Wrong value for", key)
+    throw new Error(`Wrong value for ${key}`)
+  }
   const type = typeof value
   if (type === "object") return getProps(tokenProp.value.properties, key)
   comment = undefined
-  const hasComment = (tokenProp.leadingComments && tokenProp.leadingComments.length) 
+  const hasComment = (tokenProp.leadingComments && tokenProp.leadingComments.length)
   if (hasComment) {
     const comments = tokenProp.leadingComments.map(x => x.value.trimLeft())
     const categoryComment = comments.find(categoryCommentFn)

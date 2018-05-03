@@ -5,7 +5,7 @@
   <property name="COLORTEXTBUTTONPRIMARY" category="Colors" value="#ffffffff"/>
   <property name="MARGINBUTTONICONNORMAL" category="Spacing" value="12px"/>
   <property name="HEIGHTBUTTONNORMAL" category="Size (width, height)" value="44px"/>
-  <property name="PALETTECLOUDLIGHTHOVER" category="Color palette" value="#ff80cfc6"/>
+  <property name="PALETTECLOUDLIGHTHOVER" category="Color palette" value="#ffe5eaef"/>
   <property name="BORDERSTYLESECTION" category="Border style" value="solid"/>
   <property name="PALETTEREDLIGHT" category="Color palette" value="#fffae8e8"/>
   <property name="COLORALERTICONINFO" category="Colors" value="#ff0176d2"/>
@@ -14,14 +14,14 @@
   <property name="ZINDEXSTICKY" category="Z Index" value="100"/>
   <property name="PALETTEBLUELIGHT" category="Color palette" value="#ffe0f6ff"/>
   <property name="PALETTEINKDARK" category="Color palette" value="#ff171b1e"/>
-  <property name="PALETTECLOUDNORMAL" category="Color palette" value="#ff00a991"/>
+  <property name="PALETTECLOUDNORMAL" category="Color palette" value="#ffe8edf1"/>
   <property name="SPACEXXSMALL" category="Spacing" value="4px"/>
   <property name="FONTSIZEINPUTNORMAL" category="Font size" value="16px"/>
   <property name="COLORTEXTBUTTONSUCCESS" category="Colors" value="#ffffffff"/>
   <property name="SPACESMALL" category="Spacing" value="12px"/>
   <property name="PALETTEBLUENORMALACTIVE" category="Color palette" value="#ff0064b2"/>
   <property name="COLORICONATTENTION" category="Colors" value="#ff171b1e"/>
-  <property name="PALETTECLOUDLIGHTACTIVE" category="Color palette" value="#ff73cac0"/>
+  <property name="PALETTECLOUDLIGHTACTIVE" category="Color palette" value="#ffd6dee6"/>
   <property name="BACKGROUNDBUTTONLINKHOVER" category="Background colors" value="#ffe8edf1"/>
   <property name="MODIFIERDARKENBUTTONLINK" category="Modifier" value="0.05"/>
   <property name="PALETTEBRANDDARK" category="Color palette" value="#ff00826f"/>
@@ -53,7 +53,7 @@
   <property name="MODIFIERDARKENHOVER" category="Modifier" value="0.05"/>
   <property name="HEIGHTRADIOBUTTON" category="Size (width, height)" value="20px"/>
   <property name="COLORICONPRIMARY" category="Colors" value="#ff46515e"/>
-  <property name="PALETTECLOUDNORMALACTIVE" category="Color palette" value="#ff008f7b"/>
+  <property name="PALETTECLOUDNORMALACTIVE" category="Color palette" value="#ffcad5df"/>
   <property name="COLORICONBUTTONINFOBORDERED" category="Colors" value="#ff0176d2"/>
   <property name="COLORICONBUTTONGOOGLE" category="Colors" value="#ffffffff"/>
   <property name="FONTSIZEHEADINGMEDIUM" category="Font size" value="22px"/>
@@ -213,8 +213,8 @@
   <property name="ZINDEXONTHETOP" category="Z Index" value="900"/>
   <property name="COLORTEXTBUTTONGOOGLE" category="Colors" value="#ffffffff"/>
   <property name="DURATIONNORMAL" category="Duration" value="0.3s"/>
-  <property name="PALETTECLOUDNORMALHOVER" category="Color palette" value="#ff009882"/>
-  <property name="PALETTECLOUDLIGHT" category="Color palette" value="#ff9cdad3"/>
+  <property name="PALETTECLOUDNORMALHOVER" category="Color palette" value="#ffd9e1e8"/>
+  <property name="PALETTECLOUDLIGHT" category="Color palette" value="#fff5f7f9"/>
   <property name="BACKGROUNDBUTTONWARNING" category="Background colors" value="#fff9971e"/>
   <property name="COLORTEXTBUTTONLINK" category="Colors" value="#ff46515e"/>
   <property name="FONTWEIGHTMEDIUM" category="Font weight" value="500"/>

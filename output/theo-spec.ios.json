@@ -31,7 +31,7 @@
       "name": "heightButtonNormal"
     },
     {
-      "value": "rgb(128, 207, 198)",
+      "value": "rgb(229, 234, 239)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteCloudLightHover"
@@ -85,7 +85,7 @@
       "name": "paletteInkDark"
     },
     {
-      "value": "rgb(0, 169, 145)",
+      "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteCloudNormal"
@@ -127,7 +127,7 @@
       "name": "colorIconAttention"
     },
     {
-      "value": "rgb(115, 202, 192)",
+      "value": "rgb(214, 222, 230)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteCloudLightActive"
@@ -320,7 +320,7 @@
       "name": "colorIconPrimary"
     },
     {
-      "value": "rgb(0, 143, 123)",
+      "value": "rgb(202, 213, 223)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteCloudNormalActive"
@@ -1282,13 +1282,13 @@
       "name": "durationNormal"
     },
     {
-      "value": "rgb(0, 152, 130)",
+      "value": "rgb(217, 225, 232)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteCloudNormalHover"
     },
     {
-      "value": "rgb(156, 218, 211)",
+      "value": "rgb(245, 247, 249)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteCloudLight"

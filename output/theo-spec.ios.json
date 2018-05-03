@@ -31,16 +31,34 @@
       "name": "heightButtonNormal"
     },
     {
+      "value": "rgb(128, 207, 198)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteCloudLightHover"
+    },
+    {
       "value": "solid",
       "type": "string",
       "category": "Border style",
       "name": "borderStyleSection"
     },
     {
+      "value": "rgb(250, 232, 232)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteRedLight"
+    },
+    {
       "value": "rgb(1, 118, 210)",
       "type": "color",
       "category": "Colors",
       "name": "colorAlertIconInfo"
+    },
+    {
+      "value": "rgb(0, 106, 189)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBlueNormalHover"
     },
     {
       "value": "rgb(255, 255, 255)",
@@ -53,6 +71,24 @@
       "type": "string",
       "category": "Z Index",
       "name": "zIndexSticky"
+    },
+    {
+      "value": "rgb(224, 246, 255)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBlueLight"
+    },
+    {
+      "value": "rgb(23, 27, 30)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteInkDark"
+    },
+    {
+      "value": "rgb(0, 169, 145)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteCloudNormal"
     },
     {
       "value": "4px",
@@ -79,10 +115,22 @@
       "name": "spaceSmall"
     },
     {
+      "value": "rgb(0, 100, 178)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBlueNormalActive"
+    },
+    {
       "value": "rgb(23, 27, 30)",
       "type": "color",
       "category": "Colors",
       "name": "colorIconAttention"
+    },
+    {
+      "value": "rgb(115, 202, 192)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteCloudLightActive"
     },
     {
       "value": "rgb(232, 237, 241)",
@@ -95,6 +143,12 @@
       "type": "number",
       "category": "Modifier",
       "name": "modifierDarkenButtonLink"
+    },
+    {
+      "value": "rgb(0, 130, 111)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBrandDark"
     },
     {
       "value": "52px",
@@ -125,6 +179,12 @@
       "type": "color",
       "category": "Background colors",
       "name": "backgroundButtonSuccess"
+    },
+    {
+      "value": "rgb(178, 23, 23)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteRedNormalActive"
     },
     {
       "value": "8px",
@@ -230,7 +290,13 @@
       "name": "backgroundButtonFacebook"
     },
     {
-      "value": "rgb(221, 75, 57)",
+      "value": "rgb(241, 192, 192)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteRedLightActive"
+    },
+    {
+      "value": "rgb(70, 81, 94)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonGoogleBordered"
@@ -252,6 +318,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorIconPrimary"
+    },
+    {
+      "value": "rgb(0, 143, 123)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteCloudNormalActive"
     },
     {
       "value": "rgb(1, 118, 210)",
@@ -282,6 +354,12 @@
       "type": "size",
       "category": "Size (width, height)",
       "name": "heightIconSmall"
+    },
+    {
+      "value": "rgb(176, 232, 254)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBlueLightActive"
     },
     {
       "value": "1.2",
@@ -350,6 +428,12 @@
       "name": "zIndexDefault"
     },
     {
+      "value": "rgb(0, 152, 130)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBrandNormalHover"
+    },
+    {
       "value": "28px",
       "type": "size",
       "category": "Font size",
@@ -379,6 +463,12 @@
       "category": "Border radius",
       "comment": "use for smaller elements like tags",
       "name": "borderRadiusSmall"
+    },
+    {
+      "value": "rgb(63, 72, 84)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteInkNormalHover"
     },
     {
       "value": "12px",
@@ -411,6 +501,12 @@
       "name": "heightCheckbox"
     },
     {
+      "value": "rgb(156, 218, 211)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBrandLight"
+    },
+    {
       "value": "12px",
       "type": "size",
       "category": "Spacing",
@@ -423,6 +519,12 @@
       "name": "colorAlertIconWarning"
     },
     {
+      "value": "rgb(127, 145, 168)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteInkLight"
+    },
+    {
       "value": "1px",
       "type": "size",
       "category": "Border style",
@@ -433,6 +535,12 @@
       "type": "number",
       "category": "Modifier",
       "name": "modifierScaleButtonActive"
+    },
+    {
+      "value": "rgb(7, 64, 92)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBlueDark"
     },
     {
       "value": "none",
@@ -471,6 +579,18 @@
       "name": "colorTextButtonSuccessBordered"
     },
     {
+      "value": "rgb(244, 138, 6)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteOrangeNormalHover"
+    },
+    {
+      "value": "rgb(101, 8, 8)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteRedDark"
+    },
+    {
       "value": "rgb(210, 28, 28)",
       "type": "color",
       "category": "Colors",
@@ -483,7 +603,7 @@
       "name": "fontWeightBold"
     },
     {
-      "value": "rgb(221, 75, 57)",
+      "value": "rgb(70, 81, 94)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorButtonGoogleBordered"
@@ -499,6 +619,18 @@
       "type": "color",
       "category": "Colors",
       "name": "colorIconRadioButtonDisabled"
+    },
+    {
+      "value": "rgb(252, 241, 205)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteOrangeLight"
+    },
+    {
+      "value": "rgb(66, 172, 80)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteGreenNormalHover"
     },
     {
       "value": "rgb(255, 255, 255)",
@@ -517,6 +649,30 @@
       "type": "color",
       "category": "Border color",
       "name": "borderColorSection"
+    },
+    {
+      "value": "rgb(231, 243, 232)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteGreenLight"
+    },
+    {
+      "value": "rgb(59, 89, 152)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteSocialFacebook"
+    },
+    {
+      "value": "rgb(56, 84, 144)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteSocialFacebookHover"
+    },
+    {
+      "value": "rgb(215, 235, 216)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteGreenLightHover"
     },
     {
       "value": "32px",
@@ -542,6 +698,12 @@
       "category": "Border radius",
       "comment": "use only for square",
       "name": "borderRadiusCircle"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteWhite"
     },
     {
       "value": "rgb(186, 199, 213)",
@@ -586,10 +748,22 @@
       "name": "colorTextAttention"
     },
     {
+      "value": "rgb(70, 182, 85)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteGreenNormal"
+    },
+    {
       "value": "0px 0px 3px 1px rgba(210,28,28,0.3)",
       "type": "size",
       "category": "Box shadow",
       "name": "boxShadowInputErrorFocus"
+    },
+    {
+      "value": "rgb(250, 234, 183)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteOrangeLightHover"
     },
     {
       "value": "0.2s",
@@ -610,10 +784,22 @@
       "name": "colorTextAlertWarning"
     },
     {
+      "value": "rgb(115, 202, 192)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBrandLightActive"
+    },
+    {
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonInfo"
+    },
+    {
+      "value": "rgb(249, 151, 30)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteOrangeNormal"
     },
     {
       "value": "1px",
@@ -658,10 +844,22 @@
       "name": "colorAlertIconSuccess"
     },
     {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteInkNormal"
+    },
+    {
       "value": "500",
       "type": "string",
       "category": "Font weight",
       "name": "fontWeightLinks"
+    },
+    {
+      "value": "rgb(128, 207, 198)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBrandLightHover"
     },
     {
       "value": "rgb(70, 81, 94)",
@@ -676,7 +874,7 @@
       "name": "colorTextButtonSecondary"
     },
     {
-      "value": "rgb(221, 75, 57)",
+      "value": "rgb(70, 81, 94)",
       "type": "color",
       "category": "Colors",
       "name": "colorIconButtonGoogleBordered"
@@ -700,10 +898,22 @@
       "name": "colorTextButtonFacebookBordered"
     },
     {
+      "value": "rgb(0, 169, 145)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBrandNormal"
+    },
+    {
       "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorInput"
+    },
+    {
+      "value": "rgb(249, 228, 161)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteOrangeLightActive"
     },
     {
       "value": "rgb(70, 81, 94)",
@@ -716,6 +926,18 @@
       "type": "color",
       "category": "Colors",
       "name": "colorIconButtonPrimary"
+    },
+    {
+      "value": "rgb(199, 227, 201)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteGreenLightActive"
+    },
+    {
+      "value": "rgb(53, 79, 136)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteSocialFacebookActive"
     },
     {
       "value": "rgb(255, 255, 255)",
@@ -740,6 +962,12 @@
       "type": "size",
       "category": "Spacing",
       "name": "spaceXSmall"
+    },
+    {
+      "value": "rgb(63, 163, 76)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteGreenNormalActive"
     },
     {
       "value": "40px",
@@ -814,6 +1042,12 @@
       "name": "borderColorButtonSecondaryBordered"
     },
     {
+      "value": "rgb(230, 130, 6)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteOrangeNormalActive"
+    },
+    {
       "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "Border color",
@@ -874,10 +1108,22 @@
       "name": "backgroundInputDisabled"
     },
     {
+      "value": "rgb(56, 64, 75)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteInkNormalActive"
+    },
+    {
       "value": "52px",
       "type": "size",
       "category": "Size (width, height)",
       "name": "heightInputLarge"
+    },
+    {
+      "value": "rgb(186, 199, 213)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteInkLighter"
     },
     {
       "value": "rgb(127, 145, 168)",
@@ -910,7 +1156,7 @@
       "name": "boxShadowInputFocus"
     },
     {
-      "value": "rgb(221, 75, 57)",
+      "value": "rgb(70, 81, 94)",
       "type": "color",
       "category": "Background colors",
       "name": "backgroundButtonGoogle"
@@ -926,6 +1172,12 @@
       "type": "color",
       "category": "Border color",
       "name": "borderColorTableCell"
+    },
+    {
+      "value": "rgb(0, 143, 123)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBrandNormalActive"
     },
     {
       "value": "rgb(249, 151, 30)",
@@ -988,6 +1240,12 @@
       "name": "heightIconLarge"
     },
     {
+      "value": "rgb(200, 239, 254)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBlueLightHover"
+    },
+    {
       "value": "800",
       "type": "string",
       "category": "Z Index",
@@ -1024,6 +1282,18 @@
       "name": "durationNormal"
     },
     {
+      "value": "rgb(0, 152, 130)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteCloudNormalHover"
+    },
+    {
+      "value": "rgb(156, 218, 211)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteCloudLight"
+    },
+    {
       "value": "rgb(249, 151, 30)",
       "type": "color",
       "category": "Background colors",
@@ -1042,6 +1312,12 @@
       "name": "fontWeightMedium"
     },
     {
+      "value": "rgb(245, 212, 212)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteRedLightHover"
+    },
+    {
       "value": "rgb(224, 246, 255)",
       "type": "color",
       "category": "Background colors",
@@ -1052,6 +1328,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorIconButtonInfo"
+    },
+    {
+      "value": "rgb(1, 118, 210)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBlueNormal"
     },
     {
       "value": 0.1,
@@ -1070,6 +1352,12 @@
       "type": "color",
       "category": "Background colors",
       "name": "backgroundInput"
+    },
+    {
+      "value": "rgb(210, 28, 28)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteRedNormal"
     },
     {
       "value": "rgb(70, 81, 94)",
@@ -1095,6 +1383,12 @@
       "type": "string",
       "category": "Text decoration",
       "name": "textDecorationLinkSecondary"
+    },
+    {
+      "value": "rgb(6, 93, 18)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteGreenDark"
     },
     {
       "value": "rgb(249, 151, 30)",
@@ -1145,6 +1439,12 @@
       "name": "colorIconCheckbox"
     },
     {
+      "value": "rgb(189, 25, 25)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteRedNormalHover"
+    },
+    {
       "value": "rgb(0, 169, 145)",
       "type": "color",
       "category": "Colors",
@@ -1155,6 +1455,12 @@
       "type": "string",
       "category": "Text decoration",
       "name": "textDecorationLinkSecondaryHover"
+    },
+    {
+      "value": "rgb(169, 54, 16)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteOrangeDark"
     },
     {
       "value": "rgb(59, 89, 152)",

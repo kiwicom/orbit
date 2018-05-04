@@ -1,5 +1,16 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import { configure } from "@storybook/react";
+import { configure, setAddon } from "@storybook/react";
+import chaptersAddon, { setDefaults } from 'react-storybook-addon-chapters';
+
+setDefaults({
+  sectionOptions: {
+    showSource: true,
+    allowSourceToggling: false,
+    showPropTables: false,
+    allowPropTablesToggling: false,
+  }
+});
+setAddon(chaptersAddon);
 
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);

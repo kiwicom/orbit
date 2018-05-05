@@ -42,7 +42,7 @@
     "react-dom": "^16.3.2"
   },
   "dependencies": {
-    "@kiwicom/orbit-design-tokens": "^0.0.5",
+    "@kiwicom/orbit-design-tokens": "^0.0.8",
     "@sambego/storybook-styles": "^1.0.0",
     "classnames": "^2.2.5",
     "polished": "^1.9.2",

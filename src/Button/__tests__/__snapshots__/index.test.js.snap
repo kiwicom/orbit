@@ -1,31 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Rendered with children Should contain IconWrapper 1`] = `
+exports[`Rendered with children Should match snapshot 1`] = `
 <button
-  className="jsx-588294754"
+  className="jsx-4260240931"
   disabled={false}
   onClick={[MockFunction]}
 >
-  <Typography
+  <Text
+    align="left"
+    element="p"
+    italic={false}
+    size="normal"
     type="primary"
+    uppercase={false}
     variant="bold"
+    weight="regular"
   >
     Typo children
-  </Typography>
+  </Text>
   <Airplane
     fill="#F2473F"
     size="32"
   />
   <JSXStyle
-    css="button.__jsx-style-dynamic-selector{box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:180px;min-width:180px;height:52px;background:#00a991;color:#fff;border:none;border-radius:3px;padding-left:28px;padding-right:28px;font-weight:700;font-size:16px;cursor:pointer;opacity:1;-webkit-transition:all 0.15s ease-in-out;transition:all 0.15s ease-in-out;outline:0;}button.__jsx-style-dynamic-selector:hover{background:#00907b;color:#fff;border:none;}button.__jsx-style-dynamic-selector:active{-webkit-transform:scale(0.9);-ms-transform:scale(0.9);transform:scale(0.9);background:#007665;color:#fff;border:none;}"
+    css="button.__jsx-style-dynamic-selector{box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:auto;height:52px;background:transparent;color:#00a991;border:1px solid #00a991;border-radius:3px;padding:0 28px 0 28px;font-weight:700;font-size:16px;cursor:pointer;opacity:1;-webkit-transition:all 0.15s ease-in-out;transition:all 0.15s ease-in-out;outline:0;}button.__jsx-style-dynamic-selector:hover{background:transparent;border-color:#009882;color:#009882;}button.__jsx-style-dynamic-selector:active{-webkit-transform:scale(0.9);-ms-transform:scale(0.9);transform:scale(0.9);background:transparent;border-color:#008f7b;color:#008f7b;}.iconContainer.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin-right:16px;}"
     dynamic={
       Array [
-        "180px",
-        "180px",
+        "auto",
         "52px",
+        "transparent",
         "#00a991",
-        "#fff",
-        "none",
+        "1px solid #00a991",
         "3px",
         "28px",
         "28px",
@@ -33,16 +38,17 @@ exports[`Rendered with children Should contain IconWrapper 1`] = `
         "16px",
         "pointer",
         "1",
-        "#00907b",
-        "#fff",
-        "none",
+        "transparent",
+        "#009882",
+        "#009882",
         0.9,
-        "#007665",
-        "#fff",
-        "none",
+        "transparent",
+        "#008f7b",
+        "#008f7b",
+        "16px",
       ]
     }
-    styleId="4169747830"
+    styleId="3143666043"
   />
 </button>
 `;

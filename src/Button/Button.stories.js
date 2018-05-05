@@ -8,9 +8,6 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, number, boolean, select } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
-import Facebook from "../icons/Facebook";
-import Google from "../icons/Google";
-import Remove from "../icons/Remove";
 
 import Button from "./index";
 
@@ -30,8 +27,34 @@ storiesOf("Button", module)
       padding: "20px",
     }),
   )
-  .addWithChapters("Primary button", () => {
-    const width = number("Width", 180);
+  .addWithChapters("Default button", () => {
+    const title = text("Title", "Button");
+    const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading Icon", false);
+    const block = boolean("Block", false);
+    const type = select(
+      "Type",
+      {
+        filled: "filled",
+        bordered: "bordered",
+        link: "link",
+      },
+      "filled",
+    );
+    const theme = select(
+      "Theme",
+      {
+        primary: "primary",
+        secondary: "secondary",
+        info: "info",
+        success: "success",
+        warning: "warning",
+        critical: "critical",
+        facebook: "facebook",
+        google: "google",
+      },
+      "primary",
+    );
     const size = select(
       "Size",
       {
@@ -41,51 +64,31 @@ storiesOf("Button", module)
       },
       "normal",
     );
-    const source = select("Icon", Object.keys(Icons), "PlusCircle");
+    const width = number("Width", 0);
+    const showIcon = boolean("Show Icon", false);
+    const source = select("Icon", Object.keys(Icons), "Airplane");
+    const onlyIcon = boolean("Only Icon", false);
+
     return {
-      title: "Primary button",
-      info: "Some description about this type of button in general.",
+      title: "Default button",
+      info: "Some description about default settings of Button component.",
       chapters: [
         {
-          title: `Without icon`,
-          info:
-            "Some description about where is the button without icon used and states describing how to not use it in general. ",
           sections: [
             {
-              title: `Button ${size}`,
               sectionFn: () => (
                 <Button
-                  title={text("Text", `Button ${size}`)}
-                  isDisabled={boolean("Disabled", false)}
-                  isBlock={boolean("Block", false)}
+                  title={title}
                   onClick={action("clicked")}
+                  disabled={disabled}
+                  loading={loading}
+                  block={block}
+                  type={type}
+                  theme={theme}
                   size={size}
                   width={width}
-                  type="primary"
-                />
-              ),
-              options,
-            },
-          ],
-        },
-        {
-          title: `With icon`,
-          info:
-            "Some description about where is the button with icon used and states describing how to not use it in general.",
-          sections: [
-            {
-              title: `Button ${size}`,
-              sectionFn: () => (
-                <Button
-                  title={text("Text", `Button ${size}`)}
-                  isDisabled={boolean("Disabled", false)}
-                  isLoading={boolean("Loading", false)}
-                  isBlock={boolean("Block", false)}
-                  onClick={action("clicked")}
-                  size={size}
-                  width={width}
-                  type="primary"
-                  Icon={Icons[source]}
+                  Icon={showIcon ? Icons[source] : undefined}
+                  onlyIcon={onlyIcon}
                 />
               ),
               options,
@@ -95,8 +98,30 @@ storiesOf("Button", module)
       ],
     };
   })
-  .addWithChapters("Secondary button", () => {
-    const width = number("Width", null);
+  .addWithChapters("Icon only", () => {
+    const type = select(
+      "Type",
+      {
+        filled: "filled",
+        bordered: "bordered",
+        link: "link",
+      },
+      "link",
+    );
+    const theme = select(
+      "Theme",
+      {
+        primary: "primary",
+        secondary: "secondary",
+        info: "info",
+        success: "success",
+        warning: "warning",
+        critical: "critical",
+        facebook: "facebook",
+        google: "google",
+      },
+      "info",
+    );
     const size = select(
       "Size",
       {
@@ -104,118 +129,25 @@ storiesOf("Button", module)
         normal: "normal",
         large: "large",
       },
-      "normal",
+      "small",
     );
-    const source = select("Icon", Object.keys(Icons), "PlusCircle");
+    const source = select("Icon", Object.keys(Icons), "CloseCircle");
+
     return {
-      title: "Secondary button",
-      info: "Some description about this type of button in general.",
+      title: "Only icon button",
+      info: "Some description about this type of component.",
       chapters: [
         {
-          title: `Without icon`,
-          info:
-            "Some description about where is the button without icon used and states describing how to not use it in general.",
           sections: [
             {
-              title: `Button ${size}`,
               sectionFn: () => (
                 <Button
-                  title={text("Text", `Button ${size}`)}
-                  isDisabled={boolean("Disabled", false)}
-                  isBlock={boolean("Block", false)}
                   onClick={action("clicked")}
+                  type={type}
+                  theme={theme}
                   size={size}
-                  width={width}
-                  type="secondary"
-                />
-              ),
-              options,
-            },
-          ],
-        },
-        {
-          title: `With icon`,
-          info:
-            "Some description about where is the button with icon used and states describing how to not use it in general.",
-          sections: [
-            {
-              title: `Button ${size}`,
-              sectionFn: () => (
-                <Button
-                  title={text("Text", `Button ${size}`)}
-                  isDisabled={boolean("Disabled", false)}
-                  isLoading={boolean("Loading", false)}
-                  isBlock={boolean("Block", false)}
-                  onClick={action("clicked")}
-                  size={size}
-                  width={width}
-                  type="secondary"
                   Icon={Icons[source]}
-                />
-              ),
-              options,
-            },
-          ],
-        },
-      ],
-    };
-  })
-  .addWithChapters("Link button", () => {
-    const width = number("Width", null);
-    const size = select(
-      "Size",
-      {
-        small: "small",
-        normal: "normal",
-        large: "large",
-      },
-      "normal",
-    );
-    const source = select("Icon", Object.keys(Icons), "PlusCircle");
-    return {
-      title: "Link button",
-      info: "Some description about this type of button in general.",
-      chapters: [
-        {
-          title: `Without icon`,
-          info:
-            "Some description about where is the button without icon used and states describing how to not use it in general.",
-          sections: [
-            {
-              title: `Button ${size}`,
-              sectionFn: () => (
-                <Button
-                  title={text("Text", `Button ${size}`)}
-                  isDisabled={boolean("Disabled", false)}
-                  isBlock={boolean("Block", false)}
-                  onClick={action("clicked")}
-                  width={width}
-                  size={size}
-                  type="link"
-                />
-              ),
-              options,
-            },
-          ],
-        },
-        {
-          title: `With icon`,
-          info:
-            "Some description about where is the button with icon used and states describing how to not use it in general.",
-          sections: [
-            {
-              title: `Button ${size}`,
-              sectionFn: () => (
-                <Button
-                  title={text("Text", `Button ${size}`)}
-                  isDisabled={boolean("Disabled", false)}
-                  isLoading={boolean("Loading", false)}
-                  isBlock={boolean("Block", false)}
-                  onClick={action("clicked")}
-                  size={size}
-                  width={width}
-                  type="link"
-                  Icon={Icons[source]}
+                  onlyIcon
                 />
               ),
               options,
@@ -226,8 +158,10 @@ storiesOf("Button", module)
     };
   })
   .addWithChapters("Facebook button", () => {
-    const width = number("Width", null);
-
+    const title = text("Title", "Sign in with Facebook");
+    const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading Icon", false);
+    const block = boolean("Block", false);
     const size = select(
       "Size",
       {
@@ -237,28 +171,27 @@ storiesOf("Button", module)
       },
       "normal",
     );
+    const width = number("Width", 0);
+
     return {
       title: "Facebook button",
-      info: "Some description about this type of button in general.",
+      info: "Some description about Facebook button. ",
       chapters: [
         {
-          title: `With icon`,
-          info:
-            "Some description about where is the button with icon used and states describing how to not use it in general.",
           sections: [
             {
-              title: `Button ${size}`,
               sectionFn: () => (
                 <Button
-                  title={text("Text", `Button ${size}`)}
-                  isDisabled={boolean("Disabled", false)}
-                  isLoading={boolean("Loading", false)}
-                  isBlock={boolean("Block", false)}
+                  title={title}
                   onClick={action("clicked")}
+                  disabled={disabled}
+                  loading={loading}
+                  block={block}
+                  type="filled"
+                  theme="facebook"
                   size={size}
                   width={width}
-                  type="facebook"
-                  Icon={Facebook}
+                  Icon={Icons.Facebook}
                 />
               ),
               options,
@@ -269,8 +202,10 @@ storiesOf("Button", module)
     };
   })
   .addWithChapters("Google button", () => {
-    const width = number("Width", null);
-
+    const title = text("Title", "Sign in with Google");
+    const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading Icon", false);
+    const block = boolean("Block", false);
     const size = select(
       "Size",
       {
@@ -280,28 +215,27 @@ storiesOf("Button", module)
       },
       "normal",
     );
+    const width = number("Width", 0);
+
     return {
-      title: "Google Button",
-      info: "Some description about this type of button in general.",
+      title: "Google button",
+      info: "Some description about Google button. ",
       chapters: [
         {
-          title: `With icon`,
-          info:
-            "Some description about where is the button with icon used and states describing how to not use it in general.",
           sections: [
             {
-              title: `Button ${size}`,
               sectionFn: () => (
                 <Button
-                  title={text("Text", `Button ${size}`)}
-                  isDisabled={boolean("Disabled", false)}
-                  isLoading={boolean("Loading", false)}
-                  isBlock={boolean("Block", false)}
+                  title={title}
                   onClick={action("clicked")}
+                  disabled={disabled}
+                  loading={loading}
+                  block={block}
+                  type="bordered"
+                  theme="google"
                   size={size}
                   width={width}
-                  type="google"
-                  Icon={Google}
+                  Icon={Icons.Google}
                 />
               ),
               options,
@@ -312,8 +246,10 @@ storiesOf("Button", module)
     };
   })
   .addWithChapters("Destructive button", () => {
-    const width = number("Width", null);
-
+    const title = text("Title", "Delete");
+    const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading Icon", false);
+    const block = boolean("Block", false);
     const size = select(
       "Size",
       {
@@ -323,29 +259,98 @@ storiesOf("Button", module)
       },
       "normal",
     );
+    const width = number("Width", 0);
+
     return {
-      title: "Destructive Button",
-      info: "Some description about this type of button in general.",
+      title: "Destructive button",
+      info: "Some description about Destructive button. ",
       chapters: [
         {
-          title: `With icon`,
-          info:
-            "Some description about where is the button with icon used and states describing how to not use it in general.",
           sections: [
             {
-              title: `Button ${size}`,
               sectionFn: () => (
                 <Button
-                  title={text("Text", `Button ${size}`)}
-                  isDisabled={boolean("Disabled", false)}
-                  isBordered={boolean("Bordered", false)}
-                  isLoading={boolean("Loading", false)}
-                  isBlock={boolean("Block", false)}
+                  title={title}
                   onClick={action("clicked")}
+                  disabled={disabled}
+                  loading={loading}
+                  block={block}
+                  type="filled"
+                  theme="critical"
                   size={size}
                   width={width}
-                  type="destructive"
-                  Icon={Remove}
+                  Icon={Icons.Remove}
+                />
+              ),
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Playground", () => {
+    const title = text("Title", "Button");
+    const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading Icon", false);
+    const block = boolean("Block", false);
+    const type = select(
+      "Type",
+      {
+        filled: "filled",
+        bordered: "bordered",
+        link: "link",
+      },
+      "filled",
+    );
+    const theme = select(
+      "Theme",
+      {
+        primary: "primary",
+        secondary: "secondary",
+        info: "info",
+        success: "success",
+        warning: "warning",
+        critical: "critical",
+        facebook: "facebook",
+        google: "google",
+      },
+      "primary",
+    );
+    const size = select(
+      "Size",
+      {
+        small: "small",
+        normal: "normal",
+        large: "large",
+      },
+      "normal",
+    );
+    const width = number("Width", 0);
+    const showIcon = boolean("Show Icon", false);
+    const source = select("Icon", Object.keys(Icons), "Airplane");
+    const onlyIcon = boolean("Only Icon", false);
+
+    return {
+      title: "Playground button",
+      info: "Some description about this type of component. ",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Button
+                  title={title}
+                  onClick={action("clicked")}
+                  disabled={disabled}
+                  loading={loading}
+                  block={block}
+                  type={type}
+                  theme={theme}
+                  size={size}
+                  width={width}
+                  Icon={showIcon ? Icons[source] : undefined}
+                  onlyIcon={onlyIcon}
                 />
               ),
               options,

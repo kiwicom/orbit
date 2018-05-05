@@ -1,16 +1,16 @@
 // @flow
 
 import * as React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import Button from "../";
-import Typography from "../../Typography";
+import Text from "../../Text";
 import Airplane from "../../icons/Airplane";
 
 describe("Button", () => {
   const title = "Title";
   const component = shallow(
-    <Button title={title} size="normal" type="primary" onClick={jest.fn()} />,
+    <Button title={title} size="normal" type="filled" theme="secondary" onClick={jest.fn()} />,
   );
 
   const button = component.find("button");
@@ -23,7 +23,7 @@ describe("When button is clicked", () => {
   const onClick = jest.fn();
   const title = "title";
   const component = shallow(
-    <Button type="primary" size="normal" title={title} onClick={onClick} />,
+    <Button type="bordered" size="normal" title={title} onClick={onClick} />,
   );
   const button = component.find("button");
 
@@ -35,26 +35,25 @@ describe("When button is clicked", () => {
 
 describe("Rendered with icon", () => {
   const title = "title";
-  const icon = () => <i />;
-  const component = shallow(
-    <Button type="primary" size="normal" title={title} Icon={icon} onClick={jest.fn()} />,
+  const component = mount(
+    <Button type="link" size="normal" title={title} Icon={Airplane} onClick={jest.fn()} />,
   );
   const button = component.find("button");
-  it("Should contain IconWrapper", () => {
-    expect(button.find("IconWrapper").exists()).toBe(true);
+  it("Should contain SVG", () => {
+    expect(button.find("svg").exists()).toBe(true);
   });
 });
 
 describe("Rendered with children", () => {
   const component = shallow(
-    <Button type="primary" onClick={jest.fn()} size="large">
-      <Typography type="primary" variant="bold">
+    <Button type="bordered" theme="primary" onClick={jest.fn()} size="large">
+      <Text type="primary" variant="bold">
         Typo children
-      </Typography>
+      </Text>
       <Airplane fill="#F2473F" size="32" />
     </Button>,
   );
-  it("Should contain IconWrapper", () => {
+  it("Should match snapshot", () => {
     expect(component).toMatchSnapshot();
   });
 });

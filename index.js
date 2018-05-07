@@ -310,6 +310,8 @@ const defaultTokens = {
 	// category:Border color
 	// description:
 	borderColorInput: colors.ink.lighter,
+	borderColorInputHover: colors.ink.lighterHover,
+	borderColorInputActive: colors.ink.lighterActive,
 	borderColorInputFocus: colors.blue.normal,
 	borderColorInputError: colors.red.normal,
 	borderColorInputErrorFocus: colors.red.normal,

@@ -355,14 +355,10 @@ Button.defaultProps = {
   disabled: false,
   loading: false,
   block: false,
-  facebook: false,
-  google: false,
-  destructive: false,
   variation: "filled",
   type: "primary",
   size: "normal",
   onlyIcon: false,
-  children: undefined,
   width: 0,
 };
 

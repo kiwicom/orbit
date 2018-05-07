@@ -4,10 +4,7 @@ exports[`Button with icon Should match snapshot 1`] = `
 <Button
   Icon={[Function]}
   block={false}
-  destructive={false}
   disabled={false}
-  facebook={false}
-  google={false}
   loading={false}
   onClick={
     [MockFunction] {

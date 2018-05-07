@@ -1,413 +1,5 @@
 {
   "props": {
-    "paletteBrandLight": {
-      "value": "#9cdad3",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteBrandLightHover": {
-      "value": "#80cfc6",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteBrandLightActive": {
-      "value": "#73cac0",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteBrandNormal": {
-      "value": "#00a991",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteBrandNormalHover": {
-      "value": "#009882",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteBrandNormalActive": {
-      "value": "#008f7b",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteBrandDark": {
-      "value": "#00826f",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteWhite": {
-      "value": "#fff",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteCloudLight": {
-      "value": "#f5f7f9",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteCloudLightHover": {
-      "value": "#e5eaef",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteCloudLightActive": {
-      "value": "#d6dee6",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteCloudNormal": {
-      "value": "#e8edf1",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteCloudNormalHover": {
-      "value": "#d9e1e8",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteCloudNormalActive": {
-      "value": "#cad5df",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteInkLighter": {
-      "value": "#bac7d5",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteInkLight": {
-      "value": "#7f91a8",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteInkNormal": {
-      "value": "#46515e",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteInkNormalHover": {
-      "value": "#3f4854",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteInkNormalActive": {
-      "value": "#38404b",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteInkDark": {
-      "value": "#171b1e",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteOrangeLight": {
-      "value": "#fcf1cd",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteOrangeLightHover": {
-      "value": "#faeab7",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteOrangeLightActive": {
-      "value": "#f9e4a1",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteOrangeNormal": {
-      "value": "#f9971e",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteOrangeNormalHover": {
-      "value": "#f48a06",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteOrangeNormalActive": {
-      "value": "#e68206",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteOrangeDark": {
-      "value": "#a93610",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteRedLight": {
-      "value": "#fae8e8",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteRedLightHover": {
-      "value": "#f5d4d4",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteRedLightActive": {
-      "value": "#f1c0c0",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteRedNormal": {
-      "value": "#d21c1c",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteRedNormalHover": {
-      "value": "#bd1919",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteRedNormalActive": {
-      "value": "#b21717",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteRedDark": {
-      "value": "#650808",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteGreenLight": {
-      "value": "#e7f3e8",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteGreenLightHover": {
-      "value": "#d7ebd8",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteGreenLightActive": {
-      "value": "#c7e3c9",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteGreenNormal": {
-      "value": "#46B655",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteGreenNormalHover": {
-      "value": "#42ac50",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteGreenNormalActive": {
-      "value": "#3fa34c",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteGreenDark": {
-      "value": "#065d12",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteBlueLight": {
-      "value": "#e0f6ff",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteBlueLightHover": {
-      "value": "#c8effe",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteBlueLightActive": {
-      "value": "#b0e8fe",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteBlueNormal": {
-      "value": "#0176D2",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteBlueNormalHover": {
-      "value": "#006abd",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteBlueNormalActive": {
-      "value": "#0064b2",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteBlueDark": {
-      "value": "#07405c",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteSocialFacebook": {
-      "value": "#3b5998",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteSocialFacebookHover": {
-      "value": "#385490",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
-    "paletteSocialFacebookActive": {
-      "value": "#354f88",
-      "type": "color",
-      "category": "Color palette",
-      "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
-      }
-    },
     "colorTextInfo": {
       "value": "#0176D2",
       "type": "color",
@@ -496,6 +88,14 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
+    "colorLinkPrimaryHover": {
+      "value": "#00a991",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
     "colorLinkSecondary": {
       "value": "#171b1e",
       "type": "color",
@@ -568,6 +168,30 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
+    "colorTextButtonFilled": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonFilledHover": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonFilledActive": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
     "colorTextButtonPrimary": {
       "value": "#fff",
       "type": "color",
@@ -576,7 +200,7 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorIconButtonPrimary": {
+    "colorTextButtonPrimaryHover": {
       "value": "#fff",
       "type": "color",
       "category": "Colors",
@@ -584,16 +208,8 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorTextButtonPrimaryBordered": {
-      "value": "#00a991",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorIconButtonPrimaryBordered": {
-      "value": "#00a991",
+    "colorTextButtonPrimaryActive": {
+      "value": "#fff",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -608,120 +224,16 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorIconButtonSecondary": {
-      "value": "#46515e",
+    "colorTextButtonSecondaryHover": {
+      "value": "#3f4854",
       "type": "color",
       "category": "Colors",
       "meta": {
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorTextButtonSecondaryBordered": {
-      "value": "#46515e",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorIconButtonSecondaryBordered": {
-      "value": "#46515e",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorTextButtonLink": {
-      "value": "#46515e",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorIconButtonLink": {
-      "value": "#46515e",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorTextButtonLinkBordered": {
-      "value": "#46515e",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorIconButtonLinkBordered": {
-      "value": "#46515e",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorTextButtonFacebook": {
-      "value": "#fff",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorIconButtonFacebook": {
-      "value": "#fff",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorTextButtonFacebookBordered": {
-      "value": "#3b5998",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorIconButtonFacebookBordered": {
-      "value": "#3b5998",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorTextButtonGoogle": {
-      "value": "#fff",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorIconButtonGoogle": {
-      "value": "#fff",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorTextButtonGoogleBordered": {
-      "value": "#46515e",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorIconButtonGoogleBordered": {
-      "value": "#46515e",
+    "colorTextButtonSecondaryActive": {
+      "value": "#38404b",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -736,7 +248,7 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorIconButtonInfo": {
+    "colorTextButtonInfoHover": {
       "value": "#fff",
       "type": "color",
       "category": "Colors",
@@ -744,16 +256,8 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorTextButtonInfoBordered": {
-      "value": "#0176D2",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorIconButtonInfoBordered": {
-      "value": "#0176D2",
+    "colorTextButtonInfoActive": {
+      "value": "#fff",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -768,7 +272,7 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorIconButtonSuccess": {
+    "colorTextButtonSuccessHover": {
       "value": "#fff",
       "type": "color",
       "category": "Colors",
@@ -776,16 +280,8 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorTextButtonSuccessBordered": {
-      "value": "#46B655",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorIconButtonSuccessBordered": {
-      "value": "#46B655",
+    "colorTextButtonSuccessActive": {
+      "value": "#fff",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -800,7 +296,7 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorIconButtonWarning": {
+    "colorTextButtonWarningHover": {
       "value": "#fff",
       "type": "color",
       "category": "Colors",
@@ -808,16 +304,8 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorTextButtonWarningBordered": {
-      "value": "#f9971e",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorIconButtonWarningBordered": {
-      "value": "#f9971e",
+    "colorTextButtonWarningActive": {
+      "value": "#fff",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -832,8 +320,184 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorIconButtonCritical": {
+    "colorTextButtonCriticalHover": {
       "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonCriticalActive": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonFacebook": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonFacebookHover": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonFacebookActive": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonGoogle": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonGoogleHover": {
+      "value": "#3f4854",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonGoogleActive": {
+      "value": "#38404b",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonPrimaryBordered": {
+      "value": "#00a991",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonPrimaryBorderedHover": {
+      "value": "#009882",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonPrimaryBorderedActive": {
+      "value": "#008f7b",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonSecondaryBordered": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonSecondaryBorderedHover": {
+      "value": "#3f4854",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonSecondaryBorderedActive": {
+      "value": "#38404b",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonInfoBordered": {
+      "value": "#0176D2",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonInfoBorderedHover": {
+      "value": "#006abd",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonInfoBorderedActive": {
+      "value": "#0064b2",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonSuccessBordered": {
+      "value": "#46B655",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonSuccessBorderedHover": {
+      "value": "#42ac50",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonSuccessBorderedActive": {
+      "value": "#3fa34c",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonWarningBordered": {
+      "value": "#f9971e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonWarningBorderedHover": {
+      "value": "#f48a06",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonWarningBorderedActive": {
+      "value": "#e68206",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -848,8 +512,256 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorIconButtonCriticalBordered": {
+    "colorTextButtonCriticalBorderedHover": {
+      "value": "#bd1919",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonCriticalBorderedActive": {
+      "value": "#b21717",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonFacebookBordered": {
+      "value": "#3b5998",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonFacebookBorderedHover": {
+      "value": "#385490",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonFacebookBorderedActive": {
+      "value": "#354f88",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonGoogleBordered": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonGoogleBorderedHover": {
+      "value": "#3f4854",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonGoogleBorderedActive": {
+      "value": "#38404b",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonPrimaryLink": {
+      "value": "#00a991",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonPrimaryLinkHover": {
+      "value": "#009882",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonPrimaryLinkActive": {
+      "value": "#008f7b",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonSecondaryLink": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonSecondaryLinkHover": {
+      "value": "#3f4854",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonSecondaryLinkActive": {
+      "value": "#38404b",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonInfoLink": {
+      "value": "#0176D2",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonInfoLinkHover": {
+      "value": "#006abd",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonInfoLinkActive": {
+      "value": "#0064b2",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonSuccessLink": {
+      "value": "#46B655",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonSuccessLinkHover": {
+      "value": "#42ac50",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonSuccessLinkActive": {
+      "value": "#3fa34c",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonWarningLink": {
+      "value": "#f9971e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonWarningLinkHover": {
+      "value": "#f48a06",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonWarningLinkActive": {
+      "value": "#e68206",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonCriticalLink": {
       "value": "#d21c1c",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonCriticalLinkHover": {
+      "value": "#bd1919",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonCriticalLinkActive": {
+      "value": "#b21717",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonFacebookLink": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonFacebookLinkHover": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonFacebookLinkActive": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonGoogleLink": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonGoogleLinkHover": {
+      "value": "#3f4854",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonGoogleLinkActive": {
+      "value": "#38404b",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -960,7 +872,7 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
-    "backgroundSection": {
+    "backgroundCard": {
       "value": "#fff",
       "type": "color",
       "category": "Background colors",
@@ -984,6 +896,22 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
+    "backgroundButtonPrimaryHover": {
+      "value": "#009882",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonPrimaryActive": {
+      "value": "#008f7b",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
     "backgroundButtonSecondary": {
       "value": "#e8edf1",
       "type": "color",
@@ -992,16 +920,16 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
-    "backgroundButtonLink": {
-      "value": "rgba(0,0,0,0)",
+    "backgroundButtonSecondaryHover": {
+      "value": "#d9e1e8",
       "type": "color",
       "category": "Background colors",
       "meta": {
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
-    "backgroundButtonBordered": {
-      "value": "rgba(0,0,0,0)",
+    "backgroundButtonSecondaryActive": {
+      "value": "#cad5df",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1016,8 +944,40 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
+    "backgroundButtonFacebookHover": {
+      "value": "#385490",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonFacebookActive": {
+      "value": "#354f88",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
     "backgroundButtonGoogle": {
-      "value": "#46515e",
+      "value": "#f5f7f9",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonGoogleHover": {
+      "value": "#e5eaef",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonGoogleActive": {
+      "value": "#d6dee6",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1032,8 +992,40 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
+    "backgroundButtonInfoHover": {
+      "value": "#006abd",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonInfoActive": {
+      "value": "#0064b2",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
     "backgroundButtonSuccess": {
       "value": "#46B655",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonSuccessHover": {
+      "value": "#42ac50",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonSuccessActive": {
+      "value": "#3fa34c",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1048,6 +1040,22 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
+    "backgroundButtonWarningHover": {
+      "value": "#f48a06",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonWarningActive": {
+      "value": "#e68206",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
     "backgroundButtonCritical": {
       "value": "#d21c1c",
       "type": "color",
@@ -1056,8 +1064,232 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
       }
     },
-    "backgroundButtonLinkHover": {
-      "value": "#e8edf1",
+    "backgroundButtonCriticalHover": {
+      "value": "#bd1919",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonCriticalActive": {
+      "value": "#b21717",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonBordered": {
+      "value": "transparent",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonBorderedHover": {
+      "value": "#f5f7f9",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonBorderedActive": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonPrimaryLink": {
+      "value": "transparent",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonPrimaryLinkHover": {
+      "value": "#80cfc6",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonPrimaryLinkActive": {
+      "value": "#73cac0",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonSecondaryLink": {
+      "value": "transparent",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonSecondaryLinkHover": {
+      "value": "#e5eaef",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonSecondaryLinkActive": {
+      "value": "#d6dee6",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonInfoLink": {
+      "value": "transparent",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonInfoLinkHover": {
+      "value": "#c8effe",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonInfoLinkActive": {
+      "value": "#b0e8fe",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonSuccessLink": {
+      "value": "transparent",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonSuccessLinkHover": {
+      "value": "#d7ebd8",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonSuccessLinkActive": {
+      "value": "#c7e3c9",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonWarningLink": {
+      "value": "transparent",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonWarningLinkHover": {
+      "value": "#faeab7",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonWarningLinkActive": {
+      "value": "#f9e4a1",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonCriticalLink": {
+      "value": "transparent",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonCriticalLinkHover": {
+      "value": "#f5d4d4",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonCriticalLinkActive": {
+      "value": "#f1c0c0",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonFacebookLink": {
+      "value": "#3b5998",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonFacebookLinkHover": {
+      "value": "#385490",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonFacebookLinkActive": {
+      "value": "#354f88",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonGoogleLink": {
+      "value": "transparent",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonGoogleLinkHover": {
+      "value": "#e5eaef",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+      }
+    },
+    "backgroundButtonGoogleLinkActive": {
+      "value": "#d6dee6",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1132,11 +1364,38 @@
       "value": "22px",
       "type": "size",
       "category": "Font size",
+      "comment": "delete in next release",
       "meta": {
         "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeHeadingSmall": {
+      "value": "16px",
+      "type": "size",
+      "category": "Font size",
+      "comment": "delete in next release",
+      "meta": {
+        "categoryDescription": "Use these sizing tokens for font sizes."
+      }
+    },
+    "fontSizeHeadingTitle1": {
+      "value": "28px",
+      "type": "size",
+      "category": "Font size",
+      "comment": "delete in next release",
+      "meta": {
+        "categoryDescription": "Use these sizing tokens for font sizes."
+      }
+    },
+    "fontSizeHeadingTitle2": {
+      "value": "22px",
+      "type": "size",
+      "category": "Font size",
+      "meta": {
+        "categoryDescription": "Use these sizing tokens for font sizes."
+      }
+    },
+    "fontSizeHeadingTitle3": {
       "value": "16px",
       "type": "size",
       "category": "Font size",
@@ -1380,14 +1639,6 @@
         "categoryDescription": ""
       }
     },
-    "widthButtonMinimal": {
-      "value": "180px",
-      "type": "size",
-      "category": "Size (width, height)",
-      "meta": {
-        "categoryDescription": ""
-      }
-    },
     "heightButtonNormal": {
       "value": "44px",
       "type": "size",
@@ -1452,6 +1703,22 @@
         "categoryDescription": ""
       }
     },
+    "borderColorInputHover": {
+      "value": "#a6b6c8",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorInputActive": {
+      "value": "#94a8be",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "borderColorInputFocus": {
       "value": "#0176D2",
       "type": "color",
@@ -1484,7 +1751,7 @@
         "categoryDescription": ""
       }
     },
-    "borderColorSection": {
+    "borderColorCard": {
       "value": "#e8edf1",
       "type": "color",
       "category": "Border color",
@@ -1508,6 +1775,22 @@
         "categoryDescription": ""
       }
     },
+    "borderColorButtonPrimaryBorderedHover": {
+      "value": "#009882",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonPrimaryBorderedActive": {
+      "value": "#008f7b",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "borderColorButtonSecondaryBordered": {
       "value": "#46515e",
       "type": "color",
@@ -1516,9 +1799,17 @@
         "categoryDescription": ""
       }
     },
-    "borderColorButtonLinkBordered": {
-      "value": "transparent",
-      "type": "string",
+    "borderColorButtonSecondaryBorderedHover": {
+      "value": "#3f4854",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonSecondaryBorderedActive": {
+      "value": "#38404b",
+      "type": "color",
       "category": "Border color",
       "meta": {
         "categoryDescription": ""
@@ -1526,6 +1817,22 @@
     },
     "borderColorButtonFacebookBordered": {
       "value": "#3b5998",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonFacebookBorderedHover": {
+      "value": "#385490",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonFacebookBorderedActive": {
+      "value": "#354f88",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -1540,8 +1847,40 @@
         "categoryDescription": ""
       }
     },
+    "borderColorButtonGoogleBorderedHover": {
+      "value": "#3f4854",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonGoogleBorderedActive": {
+      "value": "#38404b",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "borderColorButtonInfoBordered": {
       "value": "#0176D2",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonInfoBorderedHover": {
+      "value": "#006abd",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonInfoBorderedActive": {
+      "value": "#0064b2",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -1556,8 +1895,40 @@
         "categoryDescription": ""
       }
     },
+    "borderColorButtonSuccessBorderedHover": {
+      "value": "#42ac50",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonSuccessBorderedActive": {
+      "value": "#3fa34c",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "borderColorButtonWarningBordered": {
       "value": "#f9971e",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonWarningBorderedHover": {
+      "value": "#f48a06",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonWarningBorderedActive": {
+      "value": "#e68206",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -1572,7 +1943,23 @@
         "categoryDescription": ""
       }
     },
-    "borderStyleSection": {
+    "borderColorButtonCriticalBorderedHover": {
+      "value": "#bd1919",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonCriticalBorderedActive": {
+      "value": "#b21717",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderStyleCard": {
       "value": "solid",
       "type": "string",
       "category": "Border style",
@@ -1580,7 +1967,7 @@
         "categoryDescription": ""
       }
     },
-    "borderWidthSection": {
+    "borderWidthCard": {
       "value": "1px",
       "type": "size",
       "category": "Border style",
@@ -1661,6 +2048,38 @@
       }
     },
     "fontWeightLinks": {
+      "value": "500",
+      "type": "string",
+      "category": "Font weight",
+      "meta": {
+        "categoryDescription": "Use this for setting basic font weights."
+      }
+    },
+    "fontWeightHeadingDisplay": {
+      "value": "700",
+      "type": "string",
+      "category": "Font weight",
+      "meta": {
+        "categoryDescription": "Use this for setting basic font weights."
+      }
+    },
+    "fontWeightHeadingLevel1": {
+      "value": "700",
+      "type": "string",
+      "category": "Font weight",
+      "meta": {
+        "categoryDescription": "Use this for setting basic font weights."
+      }
+    },
+    "fontWeightHeadingLevel2": {
+      "value": "500",
+      "type": "string",
+      "category": "Font weight",
+      "meta": {
+        "categoryDescription": "Use this for setting basic font weights."
+      }
+    },
+    "fontWeightHeadingLevel3": {
       "value": "500",
       "type": "string",
       "category": "Font weight",
@@ -1954,6 +2373,462 @@
       "category": "Box shadow",
       "meta": {
         "categoryDescription": ""
+      }
+    },
+    "paletteBrandLight": {
+      "value": "#9cdad3",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteBrandLightHover": {
+      "value": "#80cfc6",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteBrandLightActive": {
+      "value": "#73cac0",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteBrandNormal": {
+      "value": "#00a991",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteBrandNormalHover": {
+      "value": "#009882",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteBrandNormalActive": {
+      "value": "#008f7b",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteBrandDark": {
+      "value": "#00826f",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteWhite": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteWhiteHover": {
+      "value": "#f5f7f9",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteWhiteActive": {
+      "value": "#e5eaef",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteCloudLight": {
+      "value": "#f5f7f9",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteCloudLightHover": {
+      "value": "#e5eaef",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteCloudLightActive": {
+      "value": "#d6dee6",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteCloudNormal": {
+      "value": "#e8edf1",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteCloudNormalHover": {
+      "value": "#d9e1e8",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteCloudNormalActive": {
+      "value": "#cad5df",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteInkLighter": {
+      "value": "#bac7d5",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteInkLighterHover": {
+      "value": "#a6b6c8",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteInkLighterActive": {
+      "value": "#94a8be",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteInkLight": {
+      "value": "#7f91a8",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteInkLightHover": {
+      "value": "#6d819c",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteInkLightActive": {
+      "value": "#5f738c",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteInkNormal": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteInkNormalHover": {
+      "value": "#3f4854",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteInkNormalActive": {
+      "value": "#38404b",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteInkDark": {
+      "value": "#171b1e",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteOrangeLight": {
+      "value": "#fcf1cd",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteOrangeLightHover": {
+      "value": "#faeab7",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteOrangeLightActive": {
+      "value": "#f9e4a1",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteOrangeNormal": {
+      "value": "#f9971e",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteOrangeNormalHover": {
+      "value": "#f48a06",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteOrangeNormalActive": {
+      "value": "#e68206",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteOrangeDark": {
+      "value": "#a93610",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteRedLight": {
+      "value": "#fae8e8",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteRedLightHover": {
+      "value": "#f5d4d4",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteRedLightActive": {
+      "value": "#f1c0c0",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteRedNormal": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteRedNormalHover": {
+      "value": "#bd1919",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteRedNormalActive": {
+      "value": "#b21717",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteRedDark": {
+      "value": "#650808",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteGreenLight": {
+      "value": "#e7f3e8",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteGreenLightHover": {
+      "value": "#d7ebd8",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteGreenLightActive": {
+      "value": "#c7e3c9",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteGreenNormal": {
+      "value": "#46B655",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteGreenNormalHover": {
+      "value": "#42ac50",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteGreenNormalActive": {
+      "value": "#3fa34c",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteGreenDark": {
+      "value": "#065d12",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteBlueLight": {
+      "value": "#e0f6ff",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteBlueLightHover": {
+      "value": "#c8effe",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteBlueLightActive": {
+      "value": "#b0e8fe",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteBlueNormal": {
+      "value": "#0176D2",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteBlueNormalHover": {
+      "value": "#006abd",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteBlueNormalActive": {
+      "value": "#0064b2",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteBlueDark": {
+      "value": "#07405c",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteSocialFacebook": {
+      "value": "#3b5998",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteSocialFacebookHover": {
+      "value": "#385490",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+      }
+    },
+    "paletteSocialFacebookActive": {
+      "value": "#354f88",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
       }
     }
   }

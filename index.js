@@ -193,7 +193,7 @@ const defaultTokens = {
 	// description:Use these tokens for background colors only. Do not use these for border colors or text colors.
 	backgroundBody: colors.cloud.light,
 	backgroundModal: colors.white.normal,
-	backgroundSection: colors.white.normal,
+	backgroundCard: colors.white.normal,
 	backgroundCarrierLogo: colors.white.normal,
 	backgroundButtonPrimary: colors.brand.normal,
 	backgroundButtonPrimaryHover: colors.brand.normalHover,
@@ -316,7 +316,7 @@ const defaultTokens = {
 	borderColorInputError: colors.red.normal,
 	borderColorInputErrorFocus: colors.red.normal,
 	borderColorTableCell: colors.ink.lighter,
-	borderColorSection: colors.cloud.normal,
+	borderColorCard: colors.cloud.normal,
 	borderColorModal: colors.cloud.normal,
 	borderColorButtonPrimaryBordered: colors.brand.normal,
 	borderColorButtonPrimaryBorderedHover: colors.brand.normalHover,
@@ -344,8 +344,8 @@ const defaultTokens = {
 	borderColorButtonCriticalBorderedActive: colors.red.normalActive,
 	// category:Border style
 	// description:
-	borderStyleSection: "solid",
-	borderWidthSection: "1px",
+	borderStyleCard: "solid",
+	borderWidthCard: "1px",
 	borderStyleInput: "solid",
 	borderWidthInput: "1px",
 	// category:Opacity

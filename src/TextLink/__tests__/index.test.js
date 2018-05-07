@@ -10,7 +10,11 @@ const onClick = jest.fn();
 
 describe("TextLink type: primary, size: default, newTab: false", () => {
   const type = "primary";
-  const component = shallow(<TextLink title={title} onClick={onClick} url={url} type={type} />);
+  const component = shallow(
+    <TextLink onClick={onClick} url={url} type={type}>
+      {title}
+    </TextLink>,
+  );
   const textlink = component.find("a");
   it("Should contain a title ", () => {
     expect(textlink.render().text()).toBe(title);
@@ -32,7 +36,9 @@ describe("TextLink type: secondary, size: large, newTab: true", () => {
   const size = "large";
   const newTab = true;
   const component = shallow(
-    <TextLink title={title} onClick={onClick} url={url} type={type} size={size} newTab={newTab} />,
+    <TextLink onClick={onClick} url={url} type={type} size={size} newTab={newTab}>
+      {title}
+    </TextLink>,
   );
   const textlink = component.find("a");
   it("Should contain a title ", () => {

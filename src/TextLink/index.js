@@ -1,6 +1,5 @@
 // @flow
 import * as React from "react";
-import { darken } from "polished";
 import * as tokens from "@kiwicom/orbit-design-tokens";
 
 const colorTextLink = {
@@ -14,7 +13,7 @@ const fontSizeTextLink = {
 };
 
 type Props = {
-  title: string,
+  children: React.Node,
   url: string,
   onClick: (SyntheticEvent<HTMLLinkElement>) => any,
   newTab: boolean,
@@ -23,11 +22,11 @@ type Props = {
 };
 
 const TextLink = (props: Props) => {
-  const { title, url, onClick, newTab, type, size } = props;
+  const { children, url, onClick, newTab, type, size } = props;
 
   return (
     <a href={url} target={newTab ? "_blank" : undefined} onClick={onClick}>
-      {title}
+      {children}
       <style jsx>{`
         a {
           font-size: ${fontSizeTextLink[size]};
@@ -42,7 +41,7 @@ const TextLink = (props: Props) => {
           text-decoration: ${type === "secondary"
             ? tokens.textDecorationLinkSecondaryHover
             : tokens.textDecorationLinkPrimaryHover};
-          color: ${darken(tokens.modifierDarkenHover, tokens.colorLinkPrimary)};
+          color: ${tokens.colorLinkPrimaryHover};
         }
         a:visited {
           //nothing needs to be here, but this state will be used in the future probably

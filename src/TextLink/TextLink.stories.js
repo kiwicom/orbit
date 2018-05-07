@@ -52,19 +52,18 @@ storiesOf("TextLink", module)
         "Link is used usually in the paragraph text to show that something navigates you to another location.",
       chapters: [
         {
-          info:
-            "You can choose between primary and secondary type and three different sizes. You can also define if you want to open the link in a new tab.",
           sections: [
             {
               sectionFn: () => (
                 <TextLink
-                  title={title}
                   newTab={newTab}
                   onClick={action("clicked")}
                   url={url}
                   type={type}
                   size={size}
-                />
+                >
+                  {title}
+                </TextLink>
               ),
               options,
             },
@@ -101,19 +100,18 @@ storiesOf("TextLink", module)
         "Link is used usually in the paragraph text to show that something navigates you to another location.",
       chapters: [
         {
-          info:
-            "You can choose between primary and secondary type and three different sizes. You can also define if you want to open the link in a new tab.",
           sections: [
             {
               sectionFn: () => (
                 <TextLink
-                  title={title}
                   newTab={newTab}
                   onClick={action("clicked")}
                   url={url}
                   type={type}
                   size={size}
-                />
+                >
+                  {title}
+                </TextLink>
               ),
               options,
             },

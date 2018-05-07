@@ -32,8 +32,8 @@ storiesOf("Button", module)
     const disabled = boolean("Disabled", false);
     const loading = boolean("Loading Icon", false);
     const block = boolean("Block", false);
-    const type = select(
-      "Type",
+    const variation = select(
+      "Variation",
       {
         filled: "filled",
         bordered: "bordered",
@@ -41,8 +41,8 @@ storiesOf("Button", module)
       },
       "filled",
     );
-    const theme = select(
-      "Theme",
+    const type = select(
+      "Type",
       {
         primary: "primary",
         secondary: "secondary",
@@ -83,8 +83,8 @@ storiesOf("Button", module)
                   disabled={disabled}
                   loading={loading}
                   block={block}
+                  variation={variation}
                   type={type}
-                  theme={theme}
                   size={size}
                   width={width}
                   Icon={showIcon ? Icons[source] : undefined}
@@ -99,8 +99,8 @@ storiesOf("Button", module)
     };
   })
   .addWithChapters("Icon only", () => {
-    const type = select(
-      "Type",
+    const variation = select(
+      "Variation",
       {
         filled: "filled",
         bordered: "bordered",
@@ -108,8 +108,8 @@ storiesOf("Button", module)
       },
       "link",
     );
-    const theme = select(
-      "Theme",
+    const type = select(
+      "Type",
       {
         primary: "primary",
         secondary: "secondary",
@@ -143,8 +143,8 @@ storiesOf("Button", module)
               sectionFn: () => (
                 <Button
                   onClick={action("clicked")}
+                  variation={variation}
                   type={type}
-                  theme={theme}
                   size={size}
                   Icon={Icons[source]}
                   onlyIcon
@@ -187,8 +187,8 @@ storiesOf("Button", module)
                   disabled={disabled}
                   loading={loading}
                   block={block}
-                  type="filled"
-                  theme="facebook"
+                  variation="filled"
+                  type="facebook"
                   size={size}
                   width={width}
                   Icon={Icons.Facebook}
@@ -231,8 +231,8 @@ storiesOf("Button", module)
                   disabled={disabled}
                   loading={loading}
                   block={block}
-                  type="bordered"
-                  theme="google"
+                  variation="bordered"
+                  type="google"
                   size={size}
                   width={width}
                   Icon={Icons.Google}
@@ -275,8 +275,8 @@ storiesOf("Button", module)
                   disabled={disabled}
                   loading={loading}
                   block={block}
-                  type="filled"
-                  theme="critical"
+                  variation="filled"
+                  type="critical"
                   size={size}
                   width={width}
                   Icon={Icons.Remove}
@@ -294,8 +294,8 @@ storiesOf("Button", module)
     const disabled = boolean("Disabled", false);
     const loading = boolean("Loading Icon", false);
     const block = boolean("Block", false);
-    const type = select(
-      "Type",
+    const variation = select(
+      "Variation",
       {
         filled: "filled",
         bordered: "bordered",
@@ -303,8 +303,8 @@ storiesOf("Button", module)
       },
       "filled",
     );
-    const theme = select(
-      "Theme",
+    const type = select(
+      "Type",
       {
         primary: "primary",
         secondary: "secondary",
@@ -345,8 +345,8 @@ storiesOf("Button", module)
                   disabled={disabled}
                   loading={loading}
                   block={block}
+                  variation={variation}
                   type={type}
-                  theme={theme}
                   size={size}
                   width={width}
                   Icon={showIcon ? Icons[source] : undefined}

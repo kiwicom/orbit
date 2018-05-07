@@ -69,7 +69,7 @@ const backgroundButtonHover = {
     facebook: tokens.backgroundButtonFacebookHover,
     google: tokens.backgroundButtonGoogleHover,
   },
-  bordered: tokens.backgroundButtonBordered,
+  bordered: tokens.backgroundButtonBorderedHover,
   link: {
     primary: tokens.backgroundButtonPrimaryLinkHover,
     secondary: tokens.backgroundButtonSecondaryLinkHover,
@@ -93,7 +93,7 @@ const backgroundButtonActive = {
     facebook: tokens.backgroundButtonFacebookActive,
     google: tokens.backgroundButtonGoogleActive,
   },
-  bordered: tokens.backgroundButtonBordered,
+  bordered: tokens.backgroundButtonBorderedActive,
   link: {
     primary: tokens.backgroundButtonPrimaryLinkActive,
     secondary: tokens.backgroundButtonSecondaryLinkActive,
@@ -250,13 +250,12 @@ type Props = {
   disabled: boolean,
   loading: boolean,
   block: boolean,
-  type: $Keys<typeof backgroundButton>,
-  theme: $Keys<typeof backgroundButton.filled>,
+  variation: $Keys<typeof backgroundButton>,
+  type: $Keys<typeof backgroundButton.filled>,
   size: $Keys<typeof heightButton>,
   onlyIcon: boolean,
   width: number,
   Icon?: React.ComponentType<*>,
-  children: React.Node,
 };
 
 const Button = (props: Props) => {
@@ -267,11 +266,10 @@ const Button = (props: Props) => {
     loading,
     block,
     type,
-    theme,
+    variation,
     size,
     onlyIcon,
     Icon,
-    children,
     width,
   } = props;
 
@@ -286,14 +284,14 @@ const Button = (props: Props) => {
       {Icon &&
         (loading ? (
           <span className="iconContainer">
-            <Loading size={sizeIcon} customColor={colorTextButton[type][theme]} />
+            <Loading size={sizeIcon} customColor={colorTextButton[variation][type]} />
           </span>
         ) : (
           <span className="iconContainer">
-            <Icon size={sizeIcon} customColor={colorTextButton[type][theme]} />
+            <Icon size={sizeIcon} customColor={colorTextButton[variation][type]} />
           </span>
         ))}
-      {!allowOnlyIcon && (children || title)}
+      {!allowOnlyIcon && title}
       <style jsx>{`
         button {
           box-sizing: border-box;
@@ -305,11 +303,13 @@ const Button = (props: Props) => {
             ? "100%"
             : (width && `${width}px`) || (allowOnlyIcon && `${heightButton[size]}`) || "auto"};
           height: ${heightButton[size]};
-          background: ${type === "bordered"
-            ? backgroundButton[type]
-            : backgroundButton[type][theme]};
-          color: ${colorTextButton[type][theme]};
-          border: ${type === "bordered" ? `1px solid ${borderColorButton[type][theme]}` : "0"};
+          background: ${variation === "bordered"
+            ? backgroundButton[variation]
+            : backgroundButton[variation][type]};
+          color: ${colorTextButton[variation][type]};
+          border: ${variation === "bordered"
+            ? `1px solid ${borderColorButton[variation][type]}`
+            : "0"};
           border-radius: ${tokens.borderRadiusNormal};
           padding: 0 ${allowOnlyIcon ? "0" : paddingButton[size]} 0
             ${(allowOnlyIcon && "0") || (Icon ? paddingButtonWithIcon[size] : paddingButton[size])};
@@ -321,19 +321,23 @@ const Button = (props: Props) => {
           outline: 0;
         }
         button:hover {
-          background: ${type === "bordered"
-            ? backgroundButtonHover[type]
-            : backgroundButtonHover[type][theme]};
-          border-color: ${type === "bordered" ? borderColorButtonHover[type][theme] : "initial"};
-          color: ${colorTextButtonHover[type][theme]};
+          background: ${variation === "bordered"
+            ? backgroundButtonHover[variation]
+            : backgroundButtonHover[variation][type]};
+          border-color: ${variation === "bordered"
+            ? borderColorButtonHover[variation][type]
+            : "initial"};
+          color: ${colorTextButtonHover[variation][type]};
         }
         button:active {
           transform: scale(${tokens.modifierScaleButtonActive});
-          background: ${type === "bordered"
-            ? backgroundButtonActive[type]
-            : backgroundButtonActive[type][theme]};
-          border-color: ${type === "bordered" ? borderColorButtonActive[type][theme] : "initial"};
-          color: ${colorTextButtonActive[type][theme]};
+          background: ${variation === "bordered"
+            ? backgroundButtonActive[variation]
+            : backgroundButtonActive[variation][type]};
+          border-color: ${variation === "bordered"
+            ? borderColorButtonActive[variation][type]
+            : "initial"};
+          color: ${colorTextButtonActive[variation][type]};
         }
         .iconContainer {
           display: flex;
@@ -354,8 +358,8 @@ Button.defaultProps = {
   facebook: false,
   google: false,
   destructive: false,
-  type: "filled",
-  theme: "primary",
+  variation: "filled",
+  type: "primary",
   size: "normal",
   onlyIcon: false,
   children: undefined,

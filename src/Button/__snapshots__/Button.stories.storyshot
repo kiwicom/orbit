@@ -99,7 +99,7 @@ exports[`Storyshots Button Default button 1`] = `
           }
         >
           <button
-            className="jsx-2143753702"
+            className="jsx-2610764904"
             disabled={false}
             onClick={[Function]}
           >
@@ -337,12 +337,12 @@ exports[`Storyshots Button Destructive button 1`] = `
           }
         >
           <button
-            className="jsx-1153538153"
+            className="jsx-3937743335"
             disabled={false}
             onClick={[Function]}
           >
             <span
-              className="jsx-1153538153 iconContainer"
+              className="jsx-3937743335 iconContainer"
             >
               <svg
                 fill="currentColor"
@@ -488,7 +488,7 @@ exports[`Storyshots Button Destructive button 1`] = `
                         <span
                           style={Object {}}
                         >
-                          theme
+                          type
                         </span>
                         <span>
                           =
@@ -663,12 +663,12 @@ exports[`Storyshots Button Facebook button 1`] = `
           }
         >
           <button
-            className="jsx-743403394"
+            className="jsx-1482377868"
             disabled={false}
             onClick={[Function]}
           >
             <span
-              className="jsx-743403394 iconContainer"
+              className="jsx-1482377868 iconContainer"
             >
               <svg
                 fill="currentColor"
@@ -814,7 +814,7 @@ exports[`Storyshots Button Facebook button 1`] = `
                         <span
                           style={Object {}}
                         >
-                          theme
+                          type
                         </span>
                         <span>
                           =
@@ -989,12 +989,12 @@ exports[`Storyshots Button Google button 1`] = `
           }
         >
           <button
-            className="jsx-3987291869"
+            className="jsx-1693235848"
             disabled={false}
             onClick={[Function]}
           >
             <span
-              className="jsx-3987291869 iconContainer"
+              className="jsx-1693235848 iconContainer"
             >
               <svg
                 fill="currentColor"
@@ -1157,7 +1157,7 @@ exports[`Storyshots Button Google button 1`] = `
                         <span
                           style={Object {}}
                         >
-                          type
+                          variation
                         </span>
                         <span>
                           =
@@ -1187,7 +1187,7 @@ exports[`Storyshots Button Google button 1`] = `
                         <span
                           style={Object {}}
                         >
-                          theme
+                          type
                         </span>
                         <span>
                           =
@@ -1362,12 +1362,12 @@ exports[`Storyshots Button Icon only 1`] = `
           }
         >
           <button
-            className="jsx-1042834925"
+            className="jsx-308460387"
             disabled={false}
             onClick={[Function]}
           >
             <span
-              className="jsx-1042834925 iconContainer"
+              className="jsx-308460387 iconContainer"
             >
               <svg
                 fill="currentColor"
@@ -1482,7 +1482,7 @@ exports[`Storyshots Button Icon only 1`] = `
                         <span
                           style={Object {}}
                         >
-                          type
+                          variation
                         </span>
                         <span>
                           =
@@ -1512,7 +1512,7 @@ exports[`Storyshots Button Icon only 1`] = `
                         <span
                           style={Object {}}
                         >
-                          theme
+                          type
                         </span>
                         <span>
                           =
@@ -1728,7 +1728,7 @@ exports[`Storyshots Button Playground 1`] = `
           }
         >
           <button
-            className="jsx-2143753702"
+            className="jsx-2610764904"
             disabled={false}
             onClick={[Function]}
           >

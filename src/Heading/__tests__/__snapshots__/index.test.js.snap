@@ -3,22 +3,22 @@
 exports[`Rendered with children Should contain title 1`] = `
 <React.Fragment>
   <h1
-    className="jsx-2957264124 "
+    className="jsx-2937774018"
   >
     Children title
   </h1>
   <JSXStyle
-    css=".__jsx-style-dynamic-selector{font-family:\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif;font-size:28px;font-weight:700;color:#171b1e;line-height:1.2;}"
+    css=".__jsx-style-dynamic-selector{font-family:\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif;font-size:22px;font-weight:500;color:#171b1e;line-height:1.2;margin:0;}"
     dynamic={
       Array [
         "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
-        "28px",
-        "700",
+        "22px",
+        "500",
         "#171b1e",
         "1.2",
       ]
     }
-    styleId="3067881581"
+    styleId="719312688"
   />
 </React.Fragment>
 `;

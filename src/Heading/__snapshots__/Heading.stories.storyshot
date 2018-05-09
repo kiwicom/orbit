@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Heading Display heading 1`] = `
+exports[`Storyshots Heading Default 1`] = `
 <div
   style={
     Object {
@@ -34,7 +34,7 @@ exports[`Storyshots Heading Display heading 1`] = `
             }
           }
         >
-          Display heading
+          Default
         </h1>
         
         <span
@@ -49,7 +49,7 @@ exports[`Storyshots Heading Display heading 1`] = `
         >
           <div>
             <p>
-              Some description about this type of heading in general.
+              Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.
             </p>
           </div>
         </span>
@@ -64,43 +64,10 @@ exports[`Storyshots Heading Display heading 1`] = `
         }
       >
         <div>
-          <h3
-            style={
-              Object {
-                "color": "#363a45",
-                "fontSize": 24,
-                "marginBottom": 10,
-              }
-            }
-          >
-            Heading large
-          </h3>
           
-          <hr
-            style={
-              Object {
-                "backgroundColor": "#ccd6dd",
-                "border": "none",
-                "height": 1,
-              }
-            }
-          />
-          <span
-            style={
-              Object {
-                "color": "#898d97",
-                "fontSize": 16,
-                "marginBottom": 20,
-                "marginTop": 0,
-              }
-            }
-          >
-            <div>
-              <p>
-                Some description about where is the heading used and states describing how to not use it in general.
-              </p>
-            </div>
-          </span>
+          
+          
+          
         </div>
       </div>
       <div
@@ -132,7 +99,7 @@ exports[`Storyshots Heading Display heading 1`] = `
           }
         >
           <h1
-            className="jsx-2957264124 "
+            className="jsx-2937774018"
           >
             Orbit design system
           </h1>
@@ -161,100 +128,1407 @@ exports[`Storyshots Heading Display heading 1`] = `
                   Source
                 </h4>
                 <pre
-                  className="css-4akams"
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
                 >
                   <div>
-                    <div>
-                      <div
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 18,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Heading
-                        </span>
-                        <span />
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div
+                        &lt;
+                        Heading
+                      </span>
+                      <span />
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Orbit design system
-                        </span>
-                      </div>
-                      <div
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 18,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
+                        Orbit design system
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
                           }
-                        >
-                          &lt;/
-                          Heading
-                          &gt;
-                        </span>
-                      </div>
+                        }
+                      >
+                        &lt;/
+                        Heading
+                        &gt;
+                      </span>
                     </div>
                   </div>
-                  <button
-                    className="css-gydez8"
-                    onClick={[Function]}
-                  >
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading Playground 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Playground
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <h2
+            className="jsx-1884808836"
+          >
+            Orbit design system
+          </h2>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div>
                     <div
-                      className="css-kv47nt"
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
                     >
-                      <div
+                      <span
                         style={
                           Object {
-                            "marginBottom": 6,
+                            "color": "#777",
                           }
                         }
                       >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
+                        &lt;
+                        Heading
+                      </span>
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            element
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                h2
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                display
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
                     </div>
-                  </button>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        Orbit design system
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        Heading
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading Title 1 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Title 1
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <h2
+            className="jsx-1699511114"
+          >
+            Orbit design system
+          </h2>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Heading
+                      </span>
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                title1
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            element
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                h2
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        Orbit design system
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        Heading
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading Title 2 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Title 2
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <h3
+            className="jsx-2937774018"
+          >
+            Orbit design system
+          </h3>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Heading
+                      </span>
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            element
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                h3
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        Orbit design system
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        Heading
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading Title 3 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Title 3
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <h4
+            className="jsx-3535488869"
+          >
+            Orbit design system
+          </h4>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Heading
+                      </span>
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                title3
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            element
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                h4
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        Orbit design system
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        Heading
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading Title Display 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Title Display
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <h1
+            className="jsx-1884808836"
+          >
+            Orbit design system
+          </h1>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Heading
+                      </span>
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                display
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        Orbit design system
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        Heading
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
                 </pre>
               </div>
             </div>

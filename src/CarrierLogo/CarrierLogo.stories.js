@@ -3,6 +3,7 @@
 import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import chaptersAddon from "react-storybook-addon-chapters";
+import styles from "@sambego/storybook-styles";
 import { withKnobs, object, select } from "@storybook/addon-knobs/react";
 
 import CarrierLogo from "./index";
@@ -18,7 +19,61 @@ const carriersLabel = "Carriers";
 
 storiesOf("CarrierLogo", module)
   .addDecorator(withKnobs)
-  .addWithChapters("One carrier", () => {
+  .addDecorator(
+    styles({
+      padding: "20px",
+    }),
+  )
+  .addWithChapters("Default", () => {
+    const carrier = [{ code: "FR", name: "Ryanair" }];
+
+    const carriersObject = object(carriersLabel, carrier);
+
+    return {
+      info: "CarrierLogo in default settings does require carriers prop only.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => <CarrierLogo carriers={carriersObject} />,
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("With size", () => {
+    const size = select(
+      "Size",
+      {
+        small: "small",
+        medium: "medium",
+        large: "large",
+      },
+      "large",
+    );
+
+    const carrier = [{ code: "FR", name: "Ryanair" }];
+
+    const carriersObject = object(carriersLabel, carrier);
+
+    return {
+      info:
+        "If you need to, you can change the size of CarrierLogo, but it only applies when you rendering one - single carrier.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => <CarrierLogo size={size} carriers={carriersObject} />,
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Playground", () => {
     const size = select(
       "Size",
       {
@@ -29,73 +84,6 @@ storiesOf("CarrierLogo", module)
       "medium",
     );
 
-    const carrier = [{ code: "FR", name: "Ryanair" }];
-
-    const carriersObject = object(carriersLabel, carrier);
-
-    return {
-      info: "Some description about this CarrierLogo component with one image.",
-      chapters: [
-        {
-          info: "You can choose between three sizes: small, medium which is default and large.",
-          sections: [
-            {
-              title: `CarrierLogo ${size}`,
-              sectionFn: () => <CarrierLogo size={size} carriers={carriersObject} />,
-              options,
-            },
-          ],
-        },
-      ],
-    };
-  })
-  .addWithChapters("Two carriers", () => {
-    const carrier = [{ code: "FR", name: "Ryanair" }, { code: "TO", name: "Transavia France" }];
-
-    const carriersObject = object(carriersLabel, carrier);
-
-    return {
-      info: "Some description about this CarrierLogo component with more than one image.",
-      chapters: [
-        {
-          info: "You can pass object with maximum of 4 carriers.",
-          sections: [
-            {
-              title: `Two carriers`,
-              sectionFn: () => <CarrierLogo carriers={carriersObject} />,
-              options,
-            },
-          ],
-        },
-      ],
-    };
-  })
-  .addWithChapters("Three carriers", () => {
-    const carrier = [
-      { code: "FR", name: "Ryanair" },
-      { code: "TO", name: "Transavia France" },
-      { code: "VY", name: "Vueling" },
-    ];
-
-    const carriersObject = object(carriersLabel, carrier);
-
-    return {
-      info: "Some description about this CarrierLogo component with more than one image.",
-      chapters: [
-        {
-          info: "You can pass object with maximum of 4 carriers.",
-          sections: [
-            {
-              title: `Three carriers`,
-              sectionFn: () => <CarrierLogo carriers={carriersObject} />,
-              options,
-            },
-          ],
-        },
-      ],
-    };
-  })
-  .addWithChapters("Four carriers", () => {
     const carrier = [
       { code: "FR", name: "Ryanair" },
       { code: "TO", name: "Transavia France" },
@@ -106,14 +94,12 @@ storiesOf("CarrierLogo", module)
     const carriersObject = object(carriersLabel, carrier);
 
     return {
-      info: "Some description about this CarrierLogo component with more than one image.",
+      info: "If you pass more than two carriers, the size prop does not influence anything more.",
       chapters: [
         {
-          info: "You can pass object with maximum of 4 carriers.",
           sections: [
             {
-              title: `Four carriers`,
-              sectionFn: () => <CarrierLogo carriers={carriersObject} />,
+              sectionFn: () => <CarrierLogo size={size} carriers={carriersObject} />,
               options,
             },
           ],

@@ -32,15 +32,9 @@ type Props = {
 const CarrierLogo = (props: Props) => {
   const { size, carriers } = props;
 
-  let sourceSize = directorySizes[size];
-  let imageSize = renderSizes[size];
-  let srcSetSize = retinaSizes[size];
-
-  if (carriers.length > 1) {
-    sourceSize = directorySizes.small;
-    imageSize = renderSizes.small;
-    srcSetSize = retinaSizes.small;
-  }
+  const sourceSize = carriers.length > 1 ? directorySizes.small : directorySizes[size];
+  const imageSize = carriers.length > 1 ? renderSizes.small : renderSizes[size];
+  const srcSetSize = carriers.length > 1 ? retinaSizes.small : retinaSizes[size];
 
   return (
     <div>

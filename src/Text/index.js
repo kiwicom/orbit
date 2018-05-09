@@ -39,18 +39,21 @@ function resolveScopedStyles(scope) {
 }
 
 const Text = (props: Props) => {
+  const { type, size, weight, align, italic, uppercase, element, children, className } = props;
+
   const scoped = resolveScopedStyles(
     <scope>
       <style jsx>
         {`
           font-family: ${tokens.fontFamily};
-          font-size: ${sizeText[props.size]};
-          font-weight: ${weightText[props.weight]};
-          color: ${colorText[props.type]};
+          font-size: ${sizeText[size]};
+          font-weight: ${weightText[weight]};
+          color: ${colorText[type]};
           line-height: ${tokens.lineHeightText};
-          text-align: ${props.align};
-          ${props.uppercase ? `text-transform: uppercase` : ""};
-          ${props.italic ? `font-style: italic` : ""};
+          text-align: ${align};
+          ${uppercase ? `text-transform: uppercase` : ""};
+          ${italic ? `font-style: italic` : ""};
+          margin: 0;
         `}
       </style>
     </scope>,
@@ -59,11 +62,11 @@ const Text = (props: Props) => {
   return (
     <React.Fragment>
       {React.createElement(
-        props.element,
+        element,
         {
-          className: [scoped.className, props.className].join(" "),
+          className: [scoped.className, className].join(" "),
         },
-        props.children,
+        children,
       )}
       {scoped.styles}
     </React.Fragment>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Text Attention text 1`] = `
+exports[`Storyshots Text Default text 1`] = `
 <div
   style={
     Object {
@@ -34,7 +34,7 @@ exports[`Storyshots Text Attention text 1`] = `
             }
           }
         >
-          Attention text
+          Default text
         </h1>
         
         <span
@@ -64,43 +64,10 @@ exports[`Storyshots Text Attention text 1`] = `
         }
       >
         <div>
-          <h3
-            style={
-              Object {
-                "color": "#363a45",
-                "fontSize": 24,
-                "marginBottom": 10,
-              }
-            }
-          >
-            Text normal
-          </h3>
           
-          <hr
-            style={
-              Object {
-                "backgroundColor": "#ccd6dd",
-                "border": "none",
-                "height": 1,
-              }
-            }
-          />
-          <span
-            style={
-              Object {
-                "color": "#898d97",
-                "fontSize": 16,
-                "marginBottom": 20,
-                "marginTop": 0,
-              }
-            }
-          >
-            <div>
-              <p>
-                Some description about where is the text used and states describing how to not use it in general.
-              </p>
-            </div>
-          </span>
+          
+          
+          
         </div>
       </div>
       <div
@@ -132,288 +99,7 @@ exports[`Storyshots Text Attention text 1`] = `
           }
         >
           <p
-            className="jsx-562677310 "
-          >
-            Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
-          </p>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
-                }
-              >
-                <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
-                >
-                  Source
-                </h4>
-                <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
-                >
-                  <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        Text
-                      </span>
-                      <span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            type
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                attention
-                                "
-                              </span>
-                            </span>
-                          </span>
-                          
-                        </span>
-                      </span>
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 33,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;/
-                        Text
-                        &gt;
-                      </span>
-                    </div>
-                  </div>
-                </pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Text Primary text 1`] = `
-<div
-  style={
-    Object {
-      "padding": "20px",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "WebkitFontSmoothing": "antialiased",
-        "color": "#444",
-        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "marginBottom": 60,
-        }
-      }
-    >
-      <div>
-        <h1
-          style={
-            Object {
-              "color": "#363a45",
-              "fontSize": 36,
-              "marginBottom": 10,
-            }
-          }
-        >
-          Primary text
-        </h1>
-        
-        <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
-        >
-          <div>
-            <p>
-              Some description about this type of text in general.
-            </p>
-          </div>
-        </span>
-      </div>
-    </div>
-    <div>
-      <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          <h3
-            style={
-              Object {
-                "color": "#363a45",
-                "fontSize": 24,
-                "marginBottom": 10,
-              }
-            }
-          >
-            Text normal
-          </h3>
-          
-          <hr
-            style={
-              Object {
-                "backgroundColor": "#ccd6dd",
-                "border": "none",
-                "height": 1,
-              }
-            }
-          />
-          <span
-            style={
-              Object {
-                "color": "#898d97",
-                "fontSize": 16,
-                "marginBottom": 20,
-                "marginTop": 0,
-              }
-            }
-          >
-            <div>
-              <p>
-                Some description about where is the text used and states describing how to not use it in general.
-              </p>
-            </div>
-          </span>
-        </div>
-      </div>
-      <div
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
-        >
-          <p
-            className="jsx-2706463433 "
+            className="jsx-2820738493 "
           >
             Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
           </p>
@@ -533,7 +219,7 @@ exports[`Storyshots Text Primary text 1`] = `
 </div>
 `;
 
-exports[`Storyshots Text Secondary text 1`] = `
+exports[`Storyshots Text Playground 1`] = `
 <div
   style={
     Object {
@@ -567,7 +253,7 @@ exports[`Storyshots Text Secondary text 1`] = `
             }
           }
         >
-          Secondary text
+          Playground
         </h1>
         
         <span
@@ -597,43 +283,10 @@ exports[`Storyshots Text Secondary text 1`] = `
         }
       >
         <div>
-          <h3
-            style={
-              Object {
-                "color": "#363a45",
-                "fontSize": 24,
-                "marginBottom": 10,
-              }
-            }
-          >
-            Text normal
-          </h3>
           
-          <hr
-            style={
-              Object {
-                "backgroundColor": "#ccd6dd",
-                "border": "none",
-                "height": 1,
-              }
-            }
-          />
-          <span
-            style={
-              Object {
-                "color": "#898d97",
-                "fontSize": 16,
-                "marginBottom": 20,
-                "marginTop": 0,
-              }
-            }
-          >
-            <div>
-              <p>
-                Some description about where is the text used and states describing how to not use it in general.
-              </p>
-            </div>
-          </span>
+          
+          
+          
         </div>
       </div>
       <div
@@ -665,7 +318,567 @@ exports[`Storyshots Text Secondary text 1`] = `
           }
         >
           <p
-            className="jsx-3915836479 "
+            className="jsx-2929436127 "
+          >
+            Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
+          </p>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Text
+                      </span>
+                      <span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                attention
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            size
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                small
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            weight
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                bold
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            align
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                center
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <br />
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        Text
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Text With size 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          With size
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Some description about this type of text in general.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <p
+            className="jsx-2820738493 "
+          >
+            Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
+          </p>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Text
+                      </span>
+                      <span />
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        Text
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Text With type 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          With type
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Some description about this type of text in general.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <p
+            className="jsx-3574837515 "
           >
             Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
           </p>

@@ -3,23 +3,23 @@ import * as React from "react";
 import * as tokens from "@kiwicom/orbit-design-tokens";
 
 const weightHeading = {
-  medium: tokens.fontWeightMedium,
-  bold: tokens.fontWeightBold,
+  display: tokens.fontWeightHeadingDisplay,
+  title1: tokens.fontWeightHeadingLevel1,
+  title2: tokens.fontWeightHeadingLevel2,
+  title3: tokens.fontWeightHeadingLevel3,
 };
 
 const sizeHeading = {
   display: tokens.fontSizeHeadingDisplay,
-  large: tokens.fontSizeHeadingLarge,
-  medium: tokens.fontSizeHeadingMedium,
-  small: tokens.fontSizeHeadingSmall,
+  title1: tokens.fontSizeHeadingTitle1,
+  title2: tokens.fontSizeHeadingTitle2,
+  title3: tokens.fontSizeHeadingTitle3,
 };
 
 type Props = {
   element: "h1" | "h2" | "h3" | "h4" | "h5",
-  size: $Keys<typeof sizeHeading>,
-  weight: $Keys<typeof weightHeading>,
+  type: $Keys<typeof weightHeading>,
   children: React.Node,
-  className?: string,
 };
 
 function resolveScopedStyles(scope) {
@@ -30,16 +30,19 @@ function resolveScopedStyles(scope) {
 }
 
 const Heading = (props: Props) => {
+  const { type, element, children } = props;
+
   const scoped = resolveScopedStyles(
     <scope>
       <style jsx>
         {`
            {
             font-family: ${tokens.fontFamily};
-            font-size: ${sizeHeading[props.size]};
-            font-weight: ${weightHeading[props.weight]};
+            font-size: ${sizeHeading[type]};
+            font-weight: ${weightHeading[type]};
             color: ${tokens.colorHeading};
             line-height: ${tokens.lineHeightHeading};
+            margin: 0;
           }
         `}
       </style>
@@ -49,11 +52,11 @@ const Heading = (props: Props) => {
   return (
     <React.Fragment>
       {React.createElement(
-        props.element,
+        element,
         {
-          className: [scoped.className, props.className].join(" "),
+          className: [scoped.className].join(" "),
         },
-        props.children,
+        children,
       )}
       {scoped.styles}
     </React.Fragment>
@@ -62,8 +65,7 @@ const Heading = (props: Props) => {
 
 Heading.defaultProps = {
   element: "h1",
-  size: "large",
-  weight: "bold",
+  type: "title2",
 };
 
 export default Heading;

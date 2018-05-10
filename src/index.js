@@ -5,6 +5,7 @@ import * as Icons from "./icons";
 
 export { Icons };
 
+export { default as Alert } from "./Alert";
 export { default as Button } from "./Button";
 export { default as CarrierLogo } from "./CarrierLogo";
 export { default as Heading } from "./Heading";

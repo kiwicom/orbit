@@ -140,7 +140,7 @@ storiesOf("Text", module)
     );
     return {
       info:
-        "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
       chapters: [
         {
           sections: [

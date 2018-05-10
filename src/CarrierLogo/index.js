@@ -115,7 +115,7 @@ const CarrierLogo = (props: Props) => {
 };
 
 CarrierLogo.defaultProps = {
-  size: "medium",
+  size: "large",
 };
 
 export default CarrierLogo;

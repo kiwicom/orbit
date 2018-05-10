@@ -21,7 +21,7 @@ describe("Multiple CarrierLogo", () => {
     }),
   );
   it("DefaultProp size is set", () => {
-    expect(component.prop("size")).toBe("medium");
+    expect(component.prop("size")).toBe("large");
   });
   it("Should contain a div", () => {
     expect(component.find("div").exists()).toBe(true);

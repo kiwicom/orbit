@@ -128,129 +128,115 @@ exports[`Storyshots Text Attention text 1`] = `
                   Source
                 </h4>
                 <pre
-                  className="css-4akams"
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
                 >
                   <div>
-                    <div>
-                      <div
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 18,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Text
-                        </span>
+                        &lt;
+                        Text
+                      </span>
+                      <span>
                         <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
                           <span>
-                             
+                            =
                             <span
                               style={Object {}}
                             >
-                              type
-                            </span>
-                            <span>
-                              =
                               <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
                                   }
-                                >
-                                  "
-                                  attention
-                                  "
-                                </span>
+                                }
+                              >
+                                "
+                                attention
+                                "
                               </span>
                             </span>
-                            
                           </span>
+                          
                         </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div
+                      </span>
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
-                        </span>
-                      </div>
-                      <div
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 18,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
+                        Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
                           }
-                        >
-                          &lt;/
-                          Text
-                          &gt;
-                        </span>
-                      </div>
+                        }
+                      >
+                        &lt;/
+                        Text
+                        &gt;
+                      </span>
                     </div>
                   </div>
-                  <button
-                    className="css-gydez8"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
                 </pre>
               </div>
             </div>
@@ -390,222 +376,208 @@ exports[`Storyshots Text Playground 1`] = `
                   Source
                 </h4>
                 <pre
-                  className="css-4akams"
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
                 >
                   <div>
-                    <div>
-                      <div
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 18,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Text
+                        &lt;
+                        Text
+                      </span>
+                      <span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                attention
+                                "
+                              </span>
+                            </span>
+                          </span>
                         </span>
                         <span>
                           <span>
-                            <span>
-                              <br />
-                                
-                            </span>
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  attention
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                            <span>
-                              <br />
-                                
-                            </span>
-                            <span
-                              style={Object {}}
-                            >
-                              size
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  small
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                            <span>
-                              <br />
-                                
-                            </span>
-                            <span
-                              style={Object {}}
-                            >
-                              weight
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  bold
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                            <span>
-                              <br />
-                                
-                            </span>
-                            <span
-                              style={Object {}}
-                            >
-                              align
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  center
-                                  "
-                                </span>
-                              </span>
-                            </span>
                             <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            size
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                small
+                                "
+                              </span>
+                            </span>
                           </span>
                         </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            weight
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                bold
+                                "
+                              </span>
+                            </span>
+                          </span>
                         </span>
-                      </div>
-                      <div
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            align
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                center
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <br />
+                        </span>
+                      </span>
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
-                        </span>
-                      </div>
-                      <div
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 18,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
+                        Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
                           }
-                        >
-                          &lt;/
-                          Text
-                          &gt;
-                        </span>
-                      </div>
+                        }
+                      >
+                        &lt;/
+                        Text
+                        &gt;
+                      </span>
                     </div>
                   </div>
-                  <button
-                    className="css-gydez8"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
                 </pre>
               </div>
             </div>
@@ -745,100 +717,86 @@ exports[`Storyshots Text Primary text 1`] = `
                   Source
                 </h4>
                 <pre
-                  className="css-4akams"
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
                 >
                   <div>
-                    <div>
-                      <div
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 18,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Text
-                        </span>
-                        <span />
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div
+                        &lt;
+                        Text
+                      </span>
+                      <span />
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
-                        </span>
-                      </div>
-                      <div
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 18,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
+                        Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
                           }
-                        >
-                          &lt;/
-                          Text
-                          &gt;
-                        </span>
-                      </div>
+                        }
+                      >
+                        &lt;/
+                        Text
+                        &gt;
+                      </span>
                     </div>
                   </div>
-                  <button
-                    className="css-gydez8"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
                 </pre>
               </div>
             </div>
@@ -978,129 +936,115 @@ exports[`Storyshots Text Secondary text 1`] = `
                   Source
                 </h4>
                 <pre
-                  className="css-4akams"
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
                 >
                   <div>
-                    <div>
-                      <div
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 18,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Text
-                        </span>
+                        &lt;
+                        Text
+                      </span>
+                      <span>
                         <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
                           <span>
-                             
+                            =
                             <span
                               style={Object {}}
                             >
-                              type
-                            </span>
-                            <span>
-                              =
                               <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
                                   }
-                                >
-                                  "
-                                  secondary
-                                  "
-                                </span>
+                                }
+                              >
+                                "
+                                secondary
+                                "
                               </span>
                             </span>
-                            
                           </span>
+                          
                         </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div
+                      </span>
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
-                        </span>
-                      </div>
-                      <div
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 18,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
+                        Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
                           }
-                        >
-                          &lt;/
-                          Text
-                          &gt;
-                        </span>
-                      </div>
+                        }
+                      >
+                        &lt;/
+                        Text
+                        &gt;
+                      </span>
                     </div>
                   </div>
-                  <button
-                    className="css-gydez8"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
                 </pre>
               </div>
             </div>

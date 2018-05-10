@@ -3,7 +3,7 @@
 import * as React from "react";
 
 import Typography from "../Typography";
-import { colors } from "../constants";
+import { colors } from "../../constants";
 
 type Props = {
   label: string,

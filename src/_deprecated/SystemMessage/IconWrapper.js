@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import { colors } from "../constants";
+import { colors } from "../../constants";
 
 type Props = {
   type: "warning" | "error" | "success" | "info",

@@ -5,7 +5,7 @@ import { storiesOf } from "@storybook/react";
 import Icon from "react-icons/lib/md/people";
 
 import Header from "./Header";
-import { colors } from "../constants";
+import { colors } from "../../constants";
 
 storiesOf("Container", module)
   .add("Header", () => <Header title="Section Title" />)

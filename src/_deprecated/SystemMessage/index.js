@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import { colors } from "../constants";
+import { colors } from "../../constants";
 import Message from "./Message";
 import Title from "./Title";
 import IconWrapper from "./IconWrapper";

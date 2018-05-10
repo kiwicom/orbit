@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { fontColors } from "../constants";
+import { fontColors } from "../../constants";
 
 const sizes = {
   small: "12px",

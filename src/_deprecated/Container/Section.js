@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { colors } from "../constants";
+import { colors } from "../../constants";
 
 const paddings = {
   basic: "28px",

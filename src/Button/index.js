@@ -281,16 +281,17 @@ const Button = (props: Props) => {
 
   return (
     <button onClick={onClick} disabled={disabled}>
+      {loading && (
+        <span className="iconContainer">
+          <Loading size={sizeIcon} customColor={colorTextButton[variation][type]} />
+        </span>
+      )}
       {Icon &&
-        (loading ? (
-          <span className="iconContainer">
-            <Loading size={sizeIcon} customColor={colorTextButton[variation][type]} />
-          </span>
-        ) : (
+        !loading && (
           <span className="iconContainer">
             <Icon size={sizeIcon} customColor={colorTextButton[variation][type]} />
           </span>
-        ))}
+        )}
       {!allowOnlyIcon && title}
       <style jsx>{`
         button {
@@ -312,7 +313,8 @@ const Button = (props: Props) => {
             : "0"};
           border-radius: ${tokens.borderRadiusNormal};
           padding: 0 ${allowOnlyIcon ? "0" : paddingButton[size]} 0
-            ${(allowOnlyIcon && "0") || (Icon ? paddingButtonWithIcon[size] : paddingButton[size])};
+            ${(allowOnlyIcon && "0") ||
+              (Icon || loading ? paddingButtonWithIcon[size] : paddingButton[size])};
           font-weight: ${tokens.fontWeightBold};
           font-size: ${fontSizeButton[size]};
           cursor: ${disabled ? "default" : "pointer"};
@@ -320,7 +322,7 @@ const Button = (props: Props) => {
           transition: all 0.15s ease-in-out;
           outline: 0;
         }
-        button:hover {
+        button:enabled:hover {
           background: ${variation === "bordered"
             ? backgroundButtonHover[variation]
             : backgroundButtonHover[variation][type]};
@@ -329,7 +331,7 @@ const Button = (props: Props) => {
             : "initial"};
           color: ${colorTextButtonHover[variation][type]};
         }
-        button:active {
+        button:enabled:active {
           transform: scale(${tokens.modifierScaleButtonActive});
           background: ${variation === "bordered"
             ? backgroundButtonActive[variation]

@@ -21,22 +21,21 @@ storiesOf("Text", module)
       padding: "20px",
     }),
   )
-  .addWithChapters("Default text", () => {
+  .addWithChapters("Primary text", () => {
     const customText = text(
       "Text",
       "Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't." +
         " Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life." +
         " Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.",
     );
-
     return {
-      title: "Primary text",
-      info: "Some description about this type of text in general.",
+      info:
+        "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
           sections: [
             {
-              sectionFn: () => <Text type="primary">{customText}</Text>,
+              sectionFn: () => <Text>{customText}</Text>,
               options,
             },
           ],
@@ -44,17 +43,7 @@ storiesOf("Text", module)
       ],
     };
   })
-  .addWithChapters("With type", () => {
-    const type = select(
-      "Type",
-      {
-        primary: "primary",
-        secondary: "secondary",
-        attention: "attention",
-      },
-      "secondary",
-    );
-
+  .addWithChapters("Secondary text", () => {
     const customText = text(
       "Text",
       "Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't." +
@@ -62,13 +51,13 @@ storiesOf("Text", module)
         " Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.",
     );
     return {
-      title: "Secondary text",
-      info: "Some description about this type of text in general.",
+      info:
+        "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
           sections: [
             {
-              sectionFn: () => <Text type={type}>{customText}</Text>,
+              sectionFn: () => <Text type="secondary">{customText}</Text>,
               options,
             },
           ],
@@ -76,17 +65,7 @@ storiesOf("Text", module)
       ],
     };
   })
-  .addWithChapters("With size", () => {
-    const size = select(
-      "Size",
-      {
-        small: "small",
-        normal: "normal",
-        large: "large",
-      },
-      "normal",
-    );
-
+  .addWithChapters("Attention text", () => {
     const customText = text(
       "Text",
       "Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't." +
@@ -94,13 +73,13 @@ storiesOf("Text", module)
         " Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.",
     );
     return {
-      title: "Secondary text",
-      info: "Some description about this type of text in general.",
+      info:
+        "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
           sections: [
             {
-              sectionFn: () => <Text size={size}>{customText}</Text>,
+              sectionFn: () => <Text type="attention">{customText}</Text>,
               options,
             },
           ],
@@ -160,8 +139,8 @@ storiesOf("Text", module)
         " Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.",
     );
     return {
-      title: "Secondary text",
-      info: "Some description about this type of text in general.",
+      info:
+        "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
           sections: [

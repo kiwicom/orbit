@@ -1,9 +1,9 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import defaultTheme from "@kiwicom/orbit-design-tokens";
+import tokens from "@kiwicom/orbit-design-tokens";
 
-import ThemedSample, { RawComponent } from "../Theming/ThemedSample";
+import ThemedComponent, { RawComponent } from "../Theming/ThemedSample";
 import ThemeSwither from "./ThemeSwitcher";
 import ThemeProvider from "./ThemeProvider";
 
@@ -16,28 +16,80 @@ const otherTheme = {
   fontFamily: "Times, serif",
 };
 
-const altFullTheme = Object.assign({}, defaultTheme, {
+const altFullTheme = Object.assign({}, tokens, {
   colorTextPrimary: "red",
   fontFamily: "Courier",
 });
 
+// setAddon(chaptersAddon);
+
 storiesOf("Theming", module)
-  .add("Without Theme using default props", () => <RawComponent />)
-  .add("Without Theme with props", () => <RawComponent theme={altFullTheme} />)
-  .add("Default Theme", () => (
-    <ThemeProvider>
-      <ThemedSample />
-    </ThemeProvider>
-  ))
-  .add("Alt theme", () => (
-    <ThemeProvider theme={defaultTheme}>
-      <ThemeProvider theme={altTheme}>
-        <ThemedSample />
-      </ThemeProvider>
-    </ThemeProvider>
-  ))
-  .add("Theme switcher", () => (
-    <ThemeSwither themes={[altTheme, otherTheme]}>
-      <ThemedSample />
-    </ThemeSwither>
-  ));
+  .addWithChapters("Without ThemeProvider", {
+    subtitle: "Show how to use <RawComponent /> without <ThemeProvider>",
+    chapters: [
+      {
+        sections: [
+          {
+            title: `RawComponent`,
+            sectionFn: () => <RawComponent />,
+          },
+          {
+            title: `RawComponent with props`,
+            subtitle: `Provide alternate theme for component.
+                       Note that theme have to contains all tokens and is created using Object.assign function.`,
+            sectionFn: () => <RawComponent theme={altFullTheme} />,
+          },
+        ],
+      },
+    ],
+  })
+
+  .addWithChapters("With ThemeProvider", {
+    subtitle: `Show how to use <ThemedSample /> component with <ThemeProvider>.
+              Note that <WithTheme(ComponentWithTheme)/> = <ThemedSample /> in sources`,
+    chapters: [
+      {
+        sections: [
+          {
+            title: `Basic usage`,
+            subtitle: `Provider use default tokens`,
+            sectionFn: () => (
+              <ThemeProvider>
+                <ThemedComponent />
+              </ThemeProvider>
+            ),
+          },
+          {
+            title: `Alt theme`,
+            subtitle: `Provide alternate theme for component using second ThemeProvider.
+                       Note that altTheme can contains only some tokens.
+                       This is usefull in development when you want to try defferent value for some value`,
+            sectionFn: () => (
+              <ThemeProvider theme={tokens}>
+                <ThemeProvider theme={altTheme}>
+                  <ThemedComponent />
+                </ThemeProvider>
+              </ThemeProvider>
+            ),
+          },
+        ],
+      },
+    ],
+  })
+
+  .addWithChapters("ThemeSwither", {
+    subtitle: `Show how to use <ThemedSample /> component with <ThemeSwither>. By clicking on ThemeSwitcher buttons you can enable/disable alternative themes`,
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <ThemeSwither themes={[altTheme, otherTheme]}>
+                <ThemedComponent />
+              </ThemeSwither>
+            ),
+          },
+        ],
+      },
+    ],
+  });

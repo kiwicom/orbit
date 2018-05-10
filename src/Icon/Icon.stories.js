@@ -29,7 +29,8 @@ storiesOf("Icon", module)
     const source = select("Icon", Object.keys(Icons), "Airplane");
     const Icon = Icons[source];
     return {
-      info: "We use icons to draw attention to specific actions in our products.",
+      info:
+        "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
           sections: [
@@ -48,7 +49,8 @@ storiesOf("Icon", module)
     const source = select("Icon", Object.keys(Icons), "Airplane");
     const Icon = Icons[source];
     return {
-      info: "We use icons to draw attention to specific actions in our products.",
+      info:
+        "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
           sections: [

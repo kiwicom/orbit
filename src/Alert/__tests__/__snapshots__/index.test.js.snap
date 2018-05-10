@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendered with children Should contain message 1`] = `
+<div
+  className="jsx-2358314486 alert"
+>
+  <div
+    className="jsx-2358314486 alertIcon"
+  >
+    <Icon
+      customColor="#0176D2"
+      type="info"
+    />
+  </div>
+  <div
+    className="jsx-2358314486"
+  >
+    <p
+      className="jsx-2358314486 alertContent"
+    >
+      Alert message
+    </p>
+  </div>
+  <JSXStyle
+    css=".alert.__jsx-style-dynamic-selector{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;padding:16px 12px;padding-right:auto;border-radius:3px;background:#e0f6ff;color:#07405c;font-family:\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif;font-size:14px;box-sizing:border-box;}.alertInner.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}.alertIcon.__jsx-style-dynamic-selector{-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;margin-right:12px;}.alertTitle.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-bottom:8px;font-weight:700;line-height:1.2;min-height:24px;}.alertContent.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;min-height:24px;margin:0;}.alertClose.__jsx-style-dynamic-selector{position:absolute;top:4px;right:4px;}"
+    dynamic={
+      Array [
+        "16px 12px",
+        "auto",
+        "3px",
+        "#e0f6ff",
+        "#07405c",
+        "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+        "14px",
+        "12px",
+        "8px",
+        "700",
+        "1.2",
+        "24px",
+        "24px",
+        "0",
+        "4px",
+        "4px",
+      ]
+    }
+    styleId="1379871782"
+  />
+</div>
+`;

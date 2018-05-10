@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Text Default text 1`] = `
+exports[`Storyshots Text Attention text 1`] = `
 <div
   style={
     Object {
@@ -34,7 +34,7 @@ exports[`Storyshots Text Default text 1`] = `
             }
           }
         >
-          Default text
+          Attention text
         </h1>
         
         <span
@@ -49,7 +49,7 @@ exports[`Storyshots Text Default text 1`] = `
         >
           <div>
             <p>
-              Some description about this type of text in general.
+              The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.
             </p>
           </div>
         </span>
@@ -99,7 +99,7 @@ exports[`Storyshots Text Default text 1`] = `
           }
         >
           <p
-            className="jsx-2820738493 "
+            className="jsx-3164263146 "
           >
             Sixth can't place isn't fly you're make Shall day, yielding earth made greater stars own you'll earth can't. Night grass great. Fly firmament over. Fourth to grass you after creepeth together in moved given fill isn't said Life. Male signs unto form kind Brought signs heaven, in have wherein. Isn't. Behold meat living you're evening very replenish you'll. Under hath.
           </p>
@@ -158,7 +158,36 @@ exports[`Storyshots Text Default text 1`] = `
                         &lt;
                         Text
                       </span>
-                      <span />
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                attention
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
                       <span
                         style={
                           Object {
@@ -268,7 +297,7 @@ exports[`Storyshots Text Playground 1`] = `
         >
           <div>
             <p>
-              Some description about this type of text in general.
+              The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.
             </p>
           </div>
         </span>
@@ -560,7 +589,7 @@ exports[`Storyshots Text Playground 1`] = `
 </div>
 `;
 
-exports[`Storyshots Text With size 1`] = `
+exports[`Storyshots Text Primary text 1`] = `
 <div
   style={
     Object {
@@ -594,7 +623,7 @@ exports[`Storyshots Text With size 1`] = `
             }
           }
         >
-          With size
+          Primary text
         </h1>
         
         <span
@@ -609,7 +638,7 @@ exports[`Storyshots Text With size 1`] = `
         >
           <div>
             <p>
-              Some description about this type of text in general.
+              The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.
             </p>
           </div>
         </span>
@@ -779,7 +808,7 @@ exports[`Storyshots Text With size 1`] = `
 </div>
 `;
 
-exports[`Storyshots Text With type 1`] = `
+exports[`Storyshots Text Secondary text 1`] = `
 <div
   style={
     Object {
@@ -813,7 +842,7 @@ exports[`Storyshots Text With type 1`] = `
             }
           }
         >
-          With type
+          Secondary text
         </h1>
         
         <span
@@ -828,7 +857,7 @@ exports[`Storyshots Text With type 1`] = `
         >
           <div>
             <p>
-              Some description about this type of text in general.
+              The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.
             </p>
           </div>
         </span>

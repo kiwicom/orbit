@@ -35,36 +35,26 @@ storiesOf("TextLink", module)
       },
       "normal",
     );
-    const type = select(
-      "Type",
-      {
-        primary: "primary",
-        secondary: "secondary",
-      },
-      "primary",
-    );
-    const newTab = boolean("Open in new tab?", false);
+    const newTab = boolean("New tab", false);
     const title = text("Title", "Primary link");
 
     return {
-      title: "Primary link",
       info:
-        "Link is used usually in the paragraph text to show that something navigates you to another location.",
+        "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
-          info:
-            "You can choose between primary and secondary type and three different sizes. You can also define if you want to open the link in a new tab.",
           sections: [
             {
               sectionFn: () => (
                 <TextLink
-                  title={title}
                   newTab={newTab}
                   onClick={action("clicked")}
                   url={url}
-                  type={type}
+                  type="primary"
                   size={size}
-                />
+                >
+                  {title}
+                </TextLink>
               ),
               options,
             },
@@ -85,35 +75,73 @@ storiesOf("TextLink", module)
       },
       "normal",
     );
+    const newTab = boolean("New tab", false);
+    const title = text("Title", "Secondary link");
+
+    return {
+      info:
+        "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <TextLink
+                  newTab={newTab}
+                  onClick={action("clicked")}
+                  url={url}
+                  type="secondary"
+                  size={size}
+                >
+                  {title}
+                </TextLink>
+              ),
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Playground", () => {
+    const url = text("URL", "https://kiwi.com");
+
+    const size = select(
+      "Size",
+      {
+        small: "small",
+        normal: "normal",
+        large: "large",
+      },
+      "normal",
+    );
     const type = select(
       "Type",
       {
         primary: "primary",
         secondary: "secondary",
       },
-      "secondary",
+      "primary",
     );
-    const newTab = boolean("Open in new tab?", true);
-    const title = text("Text", "Secondary link which opens in new tab");
+    const newTab = boolean("New tab", true);
+    const title = text("Text", "Custom link");
     return {
-      title: "Secondary links",
       info:
-        "Link is used usually in the paragraph text to show that something navigates you to another location.",
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
       chapters: [
         {
-          info:
-            "You can choose between primary and secondary type and three different sizes. You can also define if you want to open the link in a new tab.",
           sections: [
             {
               sectionFn: () => (
                 <TextLink
-                  title={title}
                   newTab={newTab}
                   onClick={action("clicked")}
                   url={url}
                   type={type}
                   size={size}
-                />
+                >
+                  {title}
+                </TextLink>
               ),
               options,
             },

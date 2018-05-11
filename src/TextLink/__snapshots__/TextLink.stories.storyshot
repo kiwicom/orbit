@@ -1,5 +1,292 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots TextLink Playground 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Playground
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <a
+            className="jsx-952623663"
+            href="https://kiwi.com"
+            onClick={[Function]}
+            target="_blank"
+          >
+            Custom link
+          </a>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        TextLink
+                      </span>
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            newTab
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            onClick
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#170",
+                                    }
+                                  }
+                                >
+                                  clicked()
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            url
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                https://kiwi.com
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        Custom link
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        TextLink
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots TextLink Primary link 1`] = `
 <div
   style={
@@ -49,7 +336,7 @@ exports[`Storyshots TextLink Primary link 1`] = `
         >
           <div>
             <p>
-              Link is used usually in the paragraph text to show that something navigates you to another location.
+              Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.
             </p>
           </div>
         </span>
@@ -66,31 +353,8 @@ exports[`Storyshots TextLink Primary link 1`] = `
         <div>
           
           
-          <hr
-            style={
-              Object {
-                "backgroundColor": "#ccd6dd",
-                "border": "none",
-                "height": 1,
-              }
-            }
-          />
-          <span
-            style={
-              Object {
-                "color": "#898d97",
-                "fontSize": 16,
-                "marginBottom": 20,
-                "marginTop": 0,
-              }
-            }
-          >
-            <div>
-              <p>
-                You can choose between primary and secondary type and three different sizes. You can also define if you want to open the link in a new tab.
-              </p>
-            </div>
-          </span>
+          
+          
         </div>
       </div>
       <div
@@ -122,7 +386,7 @@ exports[`Storyshots TextLink Primary link 1`] = `
           }
         >
           <a
-            className="jsx-4115119518"
+            className="jsx-952623663"
             href="https://kiwi.com"
             onClick={[Function]}
             target={undefined}
@@ -165,118 +429,131 @@ exports[`Storyshots TextLink Primary link 1`] = `
                     }
                   }
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      TextLink
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        TextLink
+                      </span>
                       <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          title
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
+                            onClick
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
-                              "
-                              Primary link
-                              "
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#170",
+                                    }
+                                  }
+                                >
+                                  clicked()
+                                </span>
+                                }
+                              </span>
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          onClick
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
-                            <span>
-                              {
+                            url
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               <span
                                 style={
                                   Object {
-                                    "color": "#170",
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
                                   }
                                 }
                               >
-                                clicked()
+                                "
+                                https://kiwi.com
+                                "
                               </span>
-                              }
                             </span>
                           </span>
+                          
                         </span>
                       </span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          url
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              https://kiwi.com
-                              "
-                            </span>
-                          </span>
-                        </span>
-                         
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
                       </span>
-                    </span>
-                    <span
+                    </div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      /&gt;
-                    </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        Primary link
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        TextLink
+                        &gt;
+                      </span>
+                    </div>
                   </div>
                 </pre>
               </div>
@@ -338,7 +615,7 @@ exports[`Storyshots TextLink Secondary link 1`] = `
         >
           <div>
             <p>
-              Link is used usually in the paragraph text to show that something navigates you to another location.
+              Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.
             </p>
           </div>
         </span>
@@ -355,31 +632,8 @@ exports[`Storyshots TextLink Secondary link 1`] = `
         <div>
           
           
-          <hr
-            style={
-              Object {
-                "backgroundColor": "#ccd6dd",
-                "border": "none",
-                "height": 1,
-              }
-            }
-          />
-          <span
-            style={
-              Object {
-                "color": "#898d97",
-                "fontSize": 16,
-                "marginBottom": 20,
-                "marginTop": 0,
-              }
-            }
-          >
-            <div>
-              <p>
-                You can choose between primary and secondary type and three different sizes. You can also define if you want to open the link in a new tab.
-              </p>
-            </div>
-          </span>
+          
+          
         </div>
       </div>
       <div
@@ -411,12 +665,12 @@ exports[`Storyshots TextLink Secondary link 1`] = `
           }
         >
           <a
-            className="jsx-3375234595"
+            className="jsx-2409894130"
             href="https://kiwi.com"
             onClick={[Function]}
-            target="_blank"
+            target={undefined}
           >
-            Secondary link which opens in new tab
+            Secondary link
           </a>
         </div>
         <div>
@@ -454,168 +708,158 @@ exports[`Storyshots TextLink Secondary link 1`] = `
                     }
                   }
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      TextLink
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        TextLink
+                      </span>
                       <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          title
-                        </span>
-                        <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
+                            onClick
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
-                              "
-                              Secondary link which opens in new tab
-                              "
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#170",
+                                    }
+                                  }
+                                >
+                                  clicked()
+                                </span>
+                                }
+                              </span>
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          newTab
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onClick
-                        </span>
-                        <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
-                            <span>
-                              {
+                            url
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               <span
                                 style={
                                   Object {
-                                    "color": "#170",
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
                                   }
                                 }
                               >
-                                clicked()
+                                "
+                                https://kiwi.com
+                                "
                               </span>
-                              }
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          url
-                        </span>
-                        <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
+                            type
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
-                              "
-                              https://kiwi.com
-                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                secondary
+                                "
+                              </span>
                             </span>
                           </span>
+                          
                         </span>
                       </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          type
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              secondary
-                              "
-                            </span>
-                          </span>
-                        </span>
-                        <br />
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
                       </span>
-                    </span>
-                    <span
+                    </div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      /&gt;
-                    </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        Secondary link
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        TextLink
+                        &gt;
+                      </span>
+                    </div>
                   </div>
                 </pre>
               </div>

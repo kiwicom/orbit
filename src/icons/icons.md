@@ -22,6 +22,7 @@
 - ![Baggages](/src/icons/png/Baggages.png?raw=true) Baggages
 - ![BillingDetails](/src/icons/png/BillingDetails.png?raw=true) BillingDetails
 - ![BoardingGate](/src/icons/png/BoardingGate.png?raw=true) BoardingGate
+- ![Boat](/src/icons/png/Boat.png?raw=true) Boat
 - ![Bug](/src/icons/png/Bug.png?raw=true) Bug
 - ![Bus](/src/icons/png/Bus.png?raw=true) Bus
 - ![CalendarAnytime](/src/icons/png/CalendarAnytime.png?raw=true) CalendarAnytime

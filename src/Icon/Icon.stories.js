@@ -26,17 +26,16 @@ storiesOf("Icon", module)
   .addWithChapters("Default", () => {
     const size = select("Size", Object.keys(iconSizes), "medium");
     const color = select("Color", Object.keys(iconColors), "primary");
-
+    const source = select("Icon", Object.keys(Icons), "Airplane");
+    const Icon = Icons[source];
     return {
-      info: "Some description about this Icon component.",
+      info:
+        "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
-          info:
-            "All icons in Orbit components are using size and color prop. If it's possible for you to use predefined sizes and colors, use it.",
           sections: [
             {
-              title: `Icon example`,
-              sectionFn: () => <Icons.Airplane size={size} color={color} />,
+              sectionFn: () => <Icon size={size} color={color} />,
               options,
             },
           ],
@@ -46,17 +45,17 @@ storiesOf("Icon", module)
   })
   .addWithChapters("Custom color", () => {
     const size = select("Size", Object.keys(iconSizes), "medium");
-    const customColor = text("Custom color", "#3b5998");
-
+    const customColor = text("Custom color", "#ABCDEF");
+    const source = select("Icon", Object.keys(Icons), "Airplane");
+    const Icon = Icons[source];
     return {
-      info: "Some description about this component.",
+      info:
+        "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
-          info: "In edge cases you can customize color for your Icon.",
           sections: [
             {
-              title: `Icon example`,
-              sectionFn: () => <Icons.Facebook size={size} customColor={customColor} />,
+              sectionFn: () => <Icon size={size} customColor={customColor} />,
               options,
             },
           ],

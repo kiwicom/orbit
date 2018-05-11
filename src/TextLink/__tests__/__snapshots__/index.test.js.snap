@@ -2,7 +2,7 @@
 
 exports[`TextLink type: primary, size: default, newTab: false Should match snapshot 1`] = `
 <a
-  className="jsx-4115119518"
+  className="jsx-952623663"
   href="https://kiwi.com"
   onClick={
     [MockFunction] {
@@ -14,7 +14,7 @@ exports[`TextLink type: primary, size: default, newTab: false Should match snaps
 >
   My text link
   <JSXStyle
-    css="a.__jsx-style-dynamic-selector{font-size:14px;color:#00a991;font-weight:500;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}a.__jsx-style-dynamic-selector:hover{-webkit-text-decoration:underline;text-decoration:underline;color:#00907b;}a.__jsx-style-dynamic-selector:focus{outline-width:3px;}"
+    css="a.__jsx-style-dynamic-selector{font-size:14px;color:#00a991;font-weight:500;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}a.__jsx-style-dynamic-selector:hover{-webkit-text-decoration:underline;text-decoration:underline;color:#00a991;}a.__jsx-style-dynamic-selector:focus{outline-width:3px;}"
     dynamic={
       Array [
         "14px",
@@ -22,17 +22,17 @@ exports[`TextLink type: primary, size: default, newTab: false Should match snaps
         "500",
         "none",
         "underline",
-        "#00907b",
+        "#00a991",
       ]
     }
-    styleId="3089605838"
+    styleId="211793505"
   />
 </a>
 `;
 
 exports[`TextLink type: secondary, size: large, newTab: true Should match snapshot 1`] = `
 <a
-  className="jsx-2520952609"
+  className="jsx-3896007344"
   href="https://kiwi.com"
   onClick={
     [MockFunction] {
@@ -46,7 +46,7 @@ exports[`TextLink type: secondary, size: large, newTab: true Should match snapsh
 >
   My text link
   <JSXStyle
-    css="a.__jsx-style-dynamic-selector{font-size:16px;color:#171b1e;font-weight:500;-webkit-text-decoration:underline;text-decoration:underline;cursor:pointer;}a.__jsx-style-dynamic-selector:hover{-webkit-text-decoration:underline;text-decoration:underline;color:#00907b;}a.__jsx-style-dynamic-selector:focus{outline-width:3px;}"
+    css="a.__jsx-style-dynamic-selector{font-size:16px;color:#171b1e;font-weight:500;-webkit-text-decoration:underline;text-decoration:underline;cursor:pointer;}a.__jsx-style-dynamic-selector:hover{-webkit-text-decoration:underline;text-decoration:underline;color:#00a991;}a.__jsx-style-dynamic-selector:focus{outline-width:3px;}"
     dynamic={
       Array [
         "16px",
@@ -54,10 +54,10 @@ exports[`TextLink type: secondary, size: large, newTab: true Should match snapsh
         "500",
         "underline",
         "underline",
-        "#00907b",
+        "#00a991",
       ]
     }
-    styleId="3089605838"
+    styleId="211793505"
   />
 </a>
 `;

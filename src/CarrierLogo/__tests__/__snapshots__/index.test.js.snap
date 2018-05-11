@@ -22,7 +22,7 @@ exports[`Multiple CarrierLogo Should match snapshot 1`] = `
       },
     ]
   }
-  size="medium"
+  size="large"
 >
   <div
     className="jsx-3959991045"

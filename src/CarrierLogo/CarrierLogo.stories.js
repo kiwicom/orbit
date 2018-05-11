@@ -4,6 +4,7 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, object, select } from "@storybook/addon-knobs/react";
+import styles from "@sambego/storybook-styles/dist/index";
 
 import CarrierLogo from "./index";
 
@@ -18,6 +19,11 @@ const carriersLabel = "Carriers";
 
 storiesOf("CarrierLogo", module)
   .addDecorator(withKnobs)
+  .addDecorator(
+    styles({
+      padding: "20px",
+    }),
+  )
   .addWithChapters("One carrier", () => {
     const size = select(
       "Size",
@@ -26,7 +32,7 @@ storiesOf("CarrierLogo", module)
         medium: "medium",
         large: "large",
       },
-      "medium",
+      "large",
     );
 
     const carrier = [{ code: "FR", name: "Ryanair" }];
@@ -34,13 +40,12 @@ storiesOf("CarrierLogo", module)
     const carriersObject = object(carriersLabel, carrier);
 
     return {
-      info: "Some description about this CarrierLogo component with one image.",
+      info:
+        "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
-          info: "You can choose between three sizes: small, medium which is default and large.",
           sections: [
             {
-              title: `CarrierLogo ${size}`,
               sectionFn: () => <CarrierLogo size={size} carriers={carriersObject} />,
               options,
             },
@@ -55,13 +60,12 @@ storiesOf("CarrierLogo", module)
     const carriersObject = object(carriersLabel, carrier);
 
     return {
-      info: "Some description about this CarrierLogo component with more than one image.",
+      info:
+        "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
-          info: "You can pass object with maximum of 4 carriers.",
           sections: [
             {
-              title: `Two carriers`,
               sectionFn: () => <CarrierLogo carriers={carriersObject} />,
               options,
             },
@@ -80,13 +84,12 @@ storiesOf("CarrierLogo", module)
     const carriersObject = object(carriersLabel, carrier);
 
     return {
-      info: "Some description about this CarrierLogo component with more than one image.",
+      info:
+        "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
-          info: "You can pass object with maximum of 4 carriers.",
           sections: [
             {
-              title: `Three carriers`,
               sectionFn: () => <CarrierLogo carriers={carriersObject} />,
               options,
             },
@@ -106,13 +109,12 @@ storiesOf("CarrierLogo", module)
     const carriersObject = object(carriersLabel, carrier);
 
     return {
-      info: "Some description about this CarrierLogo component with more than one image.",
+      info:
+        "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
-          info: "You can pass object with maximum of 4 carriers.",
           sections: [
             {
-              title: `Four carriers`,
               sectionFn: () => <CarrierLogo carriers={carriersObject} />,
               options,
             },

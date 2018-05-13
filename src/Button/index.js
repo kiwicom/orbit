@@ -246,6 +246,7 @@ const borderColorButtonActive = {
 
 type Props = {
   title?: string,
+  children: string,
   onClick: (e: SyntheticEvent<HTMLButtonElement>) => void,
   disabled: boolean,
   loading: boolean,
@@ -253,7 +254,6 @@ type Props = {
   variation: $Keys<typeof backgroundButton>,
   type: $Keys<typeof backgroundButton.filled>,
   size: $Keys<typeof heightButton>,
-  onlyIcon: boolean,
   width: number,
   Icon?: React.ComponentType<*>,
 };
@@ -261,6 +261,7 @@ type Props = {
 const Button = (props: Props) => {
   const {
     title,
+    children,
     onClick,
     disabled,
     loading,
@@ -268,7 +269,6 @@ const Button = (props: Props) => {
     type,
     variation,
     size,
-    onlyIcon,
     Icon,
     width,
   } = props;
@@ -277,10 +277,10 @@ const Button = (props: Props) => {
   const sizeIcon = size === "large" || size === "normal" ? "medium" : size;
 
   // allow onlyIcon only when Icon is passed
-  const allowOnlyIcon = !!(onlyIcon && Icon);
+  const allowOnlyIcon = !children && !!Icon;
 
   return (
-    <button onClick={onClick} disabled={disabled}>
+    <button onClick={onClick} disabled={disabled} title={title}>
       {loading && (
         <span className="iconContainer">
           <Loading size={sizeIcon} customColor={colorTextButton[variation][type]} />
@@ -292,7 +292,7 @@ const Button = (props: Props) => {
             <Icon size={sizeIcon} customColor={colorTextButton[variation][type]} />
           </span>
         )}
-      {!allowOnlyIcon && title}
+      {!allowOnlyIcon && children}
       <style jsx>{`
         button {
           box-sizing: border-box;
@@ -360,7 +360,6 @@ Button.defaultProps = {
   variation: "filled",
   type: "primary",
   size: "normal",
-  onlyIcon: false,
   width: 0,
 };
 

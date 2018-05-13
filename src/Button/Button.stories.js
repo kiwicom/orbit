@@ -28,7 +28,7 @@ storiesOf("Button", module)
     }),
   )
   .addWithChapters("Default button", () => {
-    const title = text("Title", "Default button");
+    const children = text("Children", "Default button");
 
     return {
       info:
@@ -37,7 +37,7 @@ storiesOf("Button", module)
         {
           sections: [
             {
-              sectionFn: () => <Button title={title} onClick={action("clicked")} />,
+              sectionFn: () => <Button onClick={action("clicked")}>{children}</Button>,
               options,
             },
           ],
@@ -46,7 +46,7 @@ storiesOf("Button", module)
     };
   })
   .addWithChapters("Basic buttons", () => {
-    const title = text("Title", "Basic button");
+    const children = text("Children", "Basic button");
     const loading = boolean("Loading", false);
     const block = boolean("Block", false);
     const type = select(
@@ -76,13 +76,14 @@ storiesOf("Button", module)
             {
               sectionFn: () => (
                 <Button
-                  title={title}
                   onClick={action("clicked")}
                   loading={loading}
                   block={block}
                   type={type}
                   size={size}
-                />
+                >
+                  {children}
+                </Button>
               ),
               options,
             },
@@ -92,7 +93,7 @@ storiesOf("Button", module)
     };
   })
   .addWithChapters("Link buttons", () => {
-    const title = text("Title", "Link button");
+    const children = text("Children", "Link button");
     const type = select(
       "Type",
       {
@@ -122,13 +123,14 @@ storiesOf("Button", module)
             {
               sectionFn: () => (
                 <Button
-                  title={title}
                   onClick={action("clicked")}
                   variation="link"
                   type={type}
                   size={size}
                   Icon={showIcon ? Icons[source] : undefined}
-                />
+                >
+                  {children}
+                </Button>
               ),
               options,
             },
@@ -138,7 +140,8 @@ storiesOf("Button", module)
     };
   })
   .addWithChapters("Button with icon", () => {
-    const title = text("Title", "Button");
+    const title = text("Title", undefined);
+    const children = text("Children", "Button");
     const type = select(
       "Type",
       {
@@ -156,9 +159,7 @@ storiesOf("Button", module)
       },
       "small",
     );
-    const showIcon = boolean("Show Icon", true);
     const source = select("Icon", Object.keys(Icons), "PlusCircle");
-    const onlyIcon = boolean("onlyIcon", false);
     return {
       info:
         "Buttons with icon are great when you need to draw more attention to the action. However, it's essential to not over-use these buttons. If everything tries to grab attention, things usually get messy. Visit Orbit.Kiwi for more detailed guidelines.",
@@ -173,9 +174,10 @@ storiesOf("Button", module)
                   variation="filled"
                   type={type}
                   size={size}
-                  Icon={showIcon ? Icons[source] : undefined}
-                  onlyIcon={onlyIcon}
-                />
+                  Icon={Icons[source]}
+                >
+                  {children}
+                </Button>
               ),
               options,
             },
@@ -192,24 +194,26 @@ storiesOf("Button", module)
           {
             sectionFn: () => (
               <Button
-                title="Sign in with Facebook"
                 onClick={action("clicked")}
                 variation="bordered"
                 type="facebook"
                 Icon={Icons.Facebook}
-              />
+              >
+                Sign in with Facebook
+              </Button>
             ),
             options,
           },
           {
             sectionFn: () => (
               <Button
-                title="Sign in with Google"
                 onClick={action("clicked")}
                 variation="bordered"
                 type="google"
                 Icon={Icons.Google}
-              />
+              >
+                Sign in with Google
+              </Button>
             ),
             options,
           },
@@ -218,7 +222,7 @@ storiesOf("Button", module)
     ],
   }))
   .addWithChapters("Status buttons", () => {
-    const title = text("Title", "Button");
+    const children = text("Children", "Button");
     const showIcon = boolean("Show Icon", false);
     const source = select("Icon", Object.keys(Icons), "CloseCircle");
 
@@ -231,48 +235,52 @@ storiesOf("Button", module)
             {
               sectionFn: () => (
                 <Button
-                  title={title}
                   onClick={action("clicked")}
                   type="info"
                   size="small"
                   Icon={showIcon ? Icons[source] : undefined}
-                />
+                >
+                  {children}
+                </Button>
               ),
               options,
             },
             {
               sectionFn: () => (
                 <Button
-                  title={title}
                   onClick={action("clicked")}
                   type="success"
                   size="small"
                   Icon={showIcon ? Icons[source] : undefined}
-                />
+                >
+                  {children}
+                </Button>
               ),
               options,
             },
             {
               sectionFn: () => (
                 <Button
-                  title={title}
                   onClick={action("clicked")}
                   type="warning"
                   size="small"
                   Icon={showIcon ? Icons[source] : undefined}
-                />
+                >
+                  {children}
+                </Button>
               ),
               options,
             },
             {
               sectionFn: () => (
                 <Button
-                  title={title}
                   onClick={action("clicked")}
                   type="critical"
                   size="small"
                   Icon={showIcon ? Icons[source] : undefined}
-                />
+                >
+                  {children}
+                </Button>
               ),
               options,
             },
@@ -282,7 +290,7 @@ storiesOf("Button", module)
     };
   })
   .addWithChapters("Destructive buttons", () => {
-    const title = text("Title", "Destructive button");
+    const children = text("Children", "Destructive button");
 
     const variation = select(
       "Variation",
@@ -312,13 +320,14 @@ storiesOf("Button", module)
             {
               sectionFn: () => (
                 <Button
-                  title={title}
                   onClick={action("clicked")}
                   variation={variation}
                   type="critical"
                   size={size}
                   Icon={Icons.Remove}
-                />
+                >
+                  {children}
+                </Button>
               ),
               options,
             },
@@ -328,7 +337,8 @@ storiesOf("Button", module)
     };
   })
   .addWithChapters("Playground", () => {
-    const title = text("Title", "Playground button");
+    const title = text("Title", undefined);
+    const children = text("Children", "Playground button");
     const disabled = boolean("Disabled", false);
     const loading = boolean("Loading", false);
     const block = boolean("Block", false);
@@ -367,7 +377,6 @@ storiesOf("Button", module)
     const width = number("Width", 0);
     const showIcon = boolean("Show Icon", false);
     const source = select("Icon", Object.keys(Icons), "Airplane");
-    const onlyIcon = boolean("Only Icon", false);
 
     return {
       info:
@@ -388,8 +397,9 @@ storiesOf("Button", module)
                   size={size}
                   width={width}
                   Icon={showIcon ? Icons[source] : undefined}
-                  onlyIcon={onlyIcon}
-                />
+                >
+                  {children}
+                </Button>
               ),
               options,
             },

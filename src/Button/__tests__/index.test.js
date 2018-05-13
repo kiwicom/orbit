@@ -6,23 +6,27 @@ import { shallow, mount } from "enzyme";
 import Button from "../";
 import Airplane from "../../icons/Airplane";
 
-const title = "title";
+const children = "button";
 const onClick = jest.fn();
 
 describe("Button", () => {
   const component = shallow(
-    <Button title={title} size="normal" variation="filled" type="secondary" onClick={onClick} />,
+    <Button size="normal" variation="filled" type="secondary" onClick={onClick}>
+      {children}
+    </Button>,
   );
 
   const button = component.find("button");
   it("Should contain a title ", () => {
-    expect(button.render().text()).toBe(title);
+    expect(button.render().text()).toBe(children);
   });
 });
 
 describe("When button is clicked", () => {
   const component = shallow(
-    <Button variation="bordered" size="normal" title={title} onClick={onClick} />,
+    <Button variation="bordered" size="normal" onClick={onClick}>
+      {children}
+    </Button>,
   );
   const button = component.find("button");
 
@@ -34,7 +38,9 @@ describe("When button is clicked", () => {
 
 describe("Button with icon", () => {
   const component = mount(
-    <Button variation="link" size="normal" title={title} Icon={Airplane} onClick={onClick} />,
+    <Button variation="link" size="normal" Icon={Airplane} onClick={onClick}>
+      {children}
+    </Button>,
   );
   const button = component.find("button");
   it("Should contain SVG", () => {

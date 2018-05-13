@@ -13,9 +13,7 @@ exports[`Button with icon Should match snapshot 1`] = `
       ],
     }
   }
-  onlyIcon={false}
   size="normal"
-  title="title"
   type="primary"
   variation="link"
   width={0}
@@ -70,7 +68,7 @@ exports[`Button with icon Should match snapshot 1`] = `
         </OrbitIcon>
       </Airplane>
     </span>
-    title
+    button
     <JSXStyle
       css="button.__jsx-style-dynamic-selector{box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:auto;height:44px;background:transparent;color:#00a991;border:0;border-radius:3px;padding:0 16px 0 8px;font-weight:700;font-size:14px;cursor:pointer;opacity:1;-webkit-transition:all 0.15s ease-in-out;transition:all 0.15s ease-in-out;outline:0;}button.__jsx-style-dynamic-selector:enabled.__jsx-style-dynamic-selector:hover{background:#80cfc6;border-color:initial;color:#009882;}button.__jsx-style-dynamic-selector:enabled.__jsx-style-dynamic-selector:active{-webkit-transform:scale(0.9);-ms-transform:scale(0.9);transform:scale(0.9);background:#73cac0;border-color:initial;color:#008f7b;}.iconContainer.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin-right:12px;}"
       dynamic={

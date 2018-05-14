@@ -3,12 +3,12 @@
 exports[`Rendered with children Should contain text 1`] = `
 <React.Fragment>
   <p
-    className="jsx-487647055 "
+    className="jsx-1052758011 "
   >
     Children text
   </p>
   <JSXStyle
-    css=".__jsx-style-dynamic-selector{font-family:\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif;font-size:12px;font-weight:400;color:#46515e;line-height:1.4;text-align:left;;;}"
+    css=".__jsx-style-dynamic-selector{font-family:\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif;font-size:12px;font-weight:400;color:#46515e;line-height:1.4;text-align:left;;;margin:0;}"
     dynamic={
       Array [
         "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
@@ -21,7 +21,7 @@ exports[`Rendered with children Should contain text 1`] = `
         "",
       ]
     }
-    styleId="143391915"
+    styleId="4206593380"
   />
 </React.Fragment>
 `;

@@ -42,11 +42,11 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
     import OrbitIcon from "../Icon";
 
     export default function ${functionName}(props) {
-      const { color, size, customColor } = props;
+      const { color, size, customColor, className } = props;
       return (
         ${optimizedSvg.replace(
           /<svg\b[^>]*>(.*?)<\/svg>/g,
-          `<OrbitIcon viewBox="0 0 24 24" size={size} color={color} customColor={customColor}>$1</OrbitIcon>`,
+          `<OrbitIcon viewBox="0 0 24 24" size={size} color={color} customColor={customColor} className={className}>$1</OrbitIcon>`,
         )}
       );
     }

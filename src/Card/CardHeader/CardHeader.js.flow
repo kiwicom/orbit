@@ -1,0 +1,17 @@
+// @flow
+import defaultTokens from "@kiwicom/orbit-design-tokens/index";
+
+export type Props = {|
+  icon?: React$Node,
+  title: string,
+  subTitle?: string,
+  theme?: typeof defaultTokens,
+|};
+
+type styledCardHeader = {
+  theme?: typeof defaultTokens,
+};
+
+declare export var StyledCardHeader: React$ComponentType<styledCardHeader>;
+
+declare export default React$ComponentType<Props>;

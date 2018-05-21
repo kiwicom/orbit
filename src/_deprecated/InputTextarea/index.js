@@ -1,9 +1,11 @@
 // @flow
-
 import * as React from "react";
 
 import Label from "../Input/Label";
 import FieldFeedback from "../FieldFeedback";
+import deprecationWarning from "../../../config/deprecationWarning";
+
+deprecationWarning("InputTextarea is deprecated and will be removed in next major release");
 
 type Props = {
   value: string,

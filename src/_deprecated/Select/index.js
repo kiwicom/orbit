@@ -8,11 +8,14 @@ import classnames from "classnames";
 import Typography from "../Typography";
 import { fontColors } from "../../constants";
 import FieldFeedback from "../FieldFeedback";
+import deprecationWarning from "../../../config/deprecationWarning";
 
 const WHITE_COLOR = "white";
 
 const HASERROR_CLASS = "hasError";
 const UNSELECTED_CLASS = "UnSelected";
+
+deprecationWarning("Select is deprecated and will be removed in next major release");
 
 type Option = {
   value: string | number,

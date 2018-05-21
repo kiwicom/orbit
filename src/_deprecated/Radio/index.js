@@ -4,6 +4,9 @@ import * as React from "react";
 
 import Typography from "../Typography";
 import { colors } from "../../constants";
+import deprecationWarning from "../../../config/deprecationWarning";
+
+deprecationWarning("Radio is deprecated and will be removed in next major release");
 
 type Props = {
   label: string,

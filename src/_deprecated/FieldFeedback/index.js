@@ -3,6 +3,9 @@
 import * as React from "react";
 
 import Typography from "../Typography";
+import deprecationWarning from "../../../config/deprecationWarning";
+
+deprecationWarning("FieldFeedback is deprecated and will be removed in next major release");
 
 type Props = {
   error?: React.Node,

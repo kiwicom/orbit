@@ -2,6 +2,17 @@
 // Icons use a special export method
 import * as Icons from "./icons";
 
+// Deprecated
+export { default as InputTextarea } from "./_deprecated/InputTextarea";
+export { default as Checkbox } from "./_deprecated/Checkbox";
+export { default as Header } from "./_deprecated/Container/Header";
+export { default as Section } from "./_deprecated/Container/Section";
+export { default as Select } from "./_deprecated/Select";
+export { default as SystemMessage } from "./_deprecated/SystemMessage";
+export { default as FieldFeedback } from "./_deprecated/FieldFeedback";
+export { default as Typography } from "./_deprecated/Typography";
+export { default as Radio } from "./_deprecated/Radio";
+
 export { Icons };
 
 export { default as Alert } from "./Alert";

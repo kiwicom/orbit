@@ -4,6 +4,9 @@ import * as React from "react";
 
 import Typography from "../Typography";
 import Icon from "./Icon";
+import deprecationWarning from "../../../config/deprecationWarning";
+
+deprecationWarning("Checkbox is deprecated and will be removed in next major release");
 
 type Props = {
   label: string,

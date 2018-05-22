@@ -10,9 +10,9 @@ const ast = babylon.parse(code, {
   plugins: []
 });
 
-const findTokensFn = x => x.type === "VariableDeclaration" && x.declarations[0].id.name === "defaultTokens"
+const findTokensFn = x => x.type === "VariableDeclaration" && x.declarations[0].id.name === "getTokens"
 const tokensDeclaration = ast.program.body.find(findTokensFn)
-const tokenProps = tokensDeclaration.declarations[0].init.properties
+const tokenProps = tokensDeclaration.declarations[0].init.body.properties
 
 const camelCaseToText = text => {
   let result = text.replace( /([A-Z])/g, " $1")

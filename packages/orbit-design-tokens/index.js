@@ -76,7 +76,7 @@ const colors = {
 };
 
 
-const defaultTokens = {
+const getTokens = (colors) => ({
 	// category:Colors
 	// description:Use these tokens for text or icon colors. Don't use these for borders and background colors.
 	colorTextInfo: colors.blue.normal,
@@ -471,6 +471,10 @@ const defaultTokens = {
 	paletteSocialFacebook: colors.social.facebook,
 	paletteSocialFacebookHover: colors.social.facebookHover,
 	paletteSocialFacebookActive: colors.social.facebookActive,
-};
+});
+
+const defaultTokens = getTokens(colors);
 
 module.exports = defaultTokens;
+module.exports.colors = colors;
+module.exports.getTokens = getTokens;

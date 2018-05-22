@@ -15,12 +15,34 @@ or do so with [Yarn](https://yarnpkg.com/):
 ## How to use
 Now that you have installed the latest version of the package, you will need to add an import directly into the file where you want to use the design tokens.
 
-You will simply need to add this line of code to the top of the file:
+For simple usage of defaultTokens just add this line of code to the top of the file:
 
-`import * as tokens from 'orbit-design-token'`
+`import defaultTokens from '@kiwicom/orbit-design-token'`
  
-Now you can use tokens by typing `tokens` and just continue with the dot-notation by typing the appropriate token name you want to use f.e. `tokens.colorTextPrimary`. More advanced text editors should suggest which tokens are available to you in the token object, so you can find tokens quicker than by typing the entire token name.
- 
+Now you can use tokens by typing `defaultTokens` and just continue with the dot-notation by typing the appropriate token name you want to use f.e. `defaultTokens.colorTextPrimary`. More advanced text editors should suggest which tokens are available to you in the token object, so you can find tokens quicker than by typing the entire token name.
+
+From version 0.0.9 there is possibility to change tokens and colors values also. Just simply import `colors` and `getTokens` from this package.
+
+`import { colors, getTokens } from '@kiwicom/orbit-design-token'`
+
+You can overwrite default colors like this:
+
+```
+const alternativeColors = Object.assign({}, colors, {
+  brand: {
+    light: "#F00",
+    lightHover: "#80cfc6",
+    lightActive: "#73cac0",
+    normal: "#F00",
+    normalHover: "#F00",
+    normalActive: "#F00",
+    dark: "#00826f",
+  },
+});
+
+const alternativeTokens = getTokens(alternativeColors);
+```
+
 ## Formats
 The main structure of the package is written in `JavaScript` for better usage in `JavaScript` projects. We are also able to generate a `JSON` file which will allow us to transform this type of file into different ones. It should be possible to transform `JSON` into `SASS`, `LESS`, `Stylus`, `XML` or others.
 

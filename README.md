@@ -30,13 +30,13 @@ You can overwrite default colors like this:
 ```
 const alternativeColors = Object.assign({}, colors, {
   brand: {
-    light: "#F00",
-    lightHover: "#80cfc6",
-    lightActive: "#73cac0",
-    normal: "#F00",
-    normalHover: "#F00",
-    normalActive: "#F00",
-    dark: "#00826f",
+    light: "#ff9999",
+    lightHover: "#ff7f7f",
+    lightActive: "#ff6666",
+    normal: "#ff0000",
+    normalHover: "#e50000",
+    normalActive: "#cc0000",
+    dark: "#990000",
   },
 });
 

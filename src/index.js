@@ -1,5 +1,4 @@
 // @flow
-
 // Icons use a special export method
 import * as Icons from "./icons";
 

@@ -345,6 +345,7 @@ exports[`Storyshots Button Destructive button 1`] = `
               className="jsx-3937743335 iconContainer"
             >
               <svg
+                className={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -671,6 +672,7 @@ exports[`Storyshots Button Facebook button 1`] = `
               className="jsx-1482377868 iconContainer"
             >
               <svg
+                className={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -997,6 +999,7 @@ exports[`Storyshots Button Google button 1`] = `
               className="jsx-1693235848 iconContainer"
             >
               <svg
+                className={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -1370,6 +1373,7 @@ exports[`Storyshots Button Icon only 1`] = `
               className="jsx-308460387 iconContainer"
             >
               <svg
+                className={undefined}
                 fill="currentColor"
                 height="16px"
                 preserveAspectRatio="xMidYMid meet"

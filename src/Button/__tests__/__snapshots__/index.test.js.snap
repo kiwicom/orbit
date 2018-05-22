@@ -39,7 +39,6 @@ exports[`Button with icon Should match snapshot 1`] = `
         size="medium"
       >
         <OrbitIcon
-          color="primary"
           customColor="#00a991"
           size="medium"
           viewBox="0 0 24 24"

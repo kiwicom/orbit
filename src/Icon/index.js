@@ -18,19 +18,22 @@ export const iconColors = {
 
 type Props = {
   size: $Keys<typeof iconSizes>,
-  color: $Keys<typeof iconColors>,
+  color?: $Keys<typeof iconColors>,
+  className: string,
   customColor: string,
   children: React.Node,
   viewBox: string,
 };
 
 const OrbitIcon = (props: Props) => {
-  const { size, color, customColor, children, viewBox } = props;
+  const { size, color, customColor, className, children, viewBox } = props;
+
   return (
     <Icon
       viewBox={viewBox}
       size={iconSizes[size]}
-      color={customColor || iconColors[color] || "#000000"}
+      className={className}
+      color={customColor || (color && iconColors[color])}
     >
       {children}
     </Icon>
@@ -39,7 +42,6 @@ const OrbitIcon = (props: Props) => {
 
 OrbitIcon.defaultProps = {
   size: "medium",
-  color: "primary",
 };
 
 export default OrbitIcon;

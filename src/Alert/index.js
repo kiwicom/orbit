@@ -1,151 +1,153 @@
 // @flow
 import * as React from "react";
-import * as tokens from "@kiwicom/orbit-design-tokens";
+import styled from "styled-components";
+import defaultTokens from "@kiwicom/orbit-design-tokens";
+import { withTheme } from "theming";
 
-import * as Icons from "../icons";
+import {
+  InformationCircle,
+  Check,
+  Alert as AlertTriangle,
+  AlertCircle,
+  CloseCircle,
+} from "../icons";
 import { Button } from "../index";
 
-const Icon = ({ type, Icon: CustomIcon, customColor }) => {
-  switch (type) {
-    case "info":
-      return (
-        (CustomIcon && <CustomIcon customColor={customColor} />) || (
-          <Icons.InformationCircle customColor={customColor} />
-        )
-      );
-    case "success":
-      return (
-        (CustomIcon && <CustomIcon customColor={customColor} />) || (
-          <Icons.Check customColor={customColor} />
-        )
-      );
-    case "warning":
-      return (
-        (CustomIcon && <CustomIcon customColor={customColor} />) || (
-          <Icons.Alert customColor={customColor} />
-        )
-      );
-    case "critical":
-      return (
-        (CustomIcon && <CustomIcon customColor={customColor} />) || (
-          <Icons.AlertCircle customColor={customColor} />
-        )
-      );
-    default:
-      return null;
+export const typeOptions = {
+  info: "info",
+  success: "success",
+  warning: "warning",
+  critical: "critical",
+};
+
+const Icon = ({ icon, type }) => {
+  if (typeof icon === "boolean") {
+    if (type === typeOptions.info) {
+      return <InformationCircle />;
+    }
+    if (type === typeOptions.success) {
+      return <Check />;
+    }
+    if (type === typeOptions.warning) {
+      return <AlertTriangle />;
+    }
+    if (type === typeOptions.critical) {
+      return <AlertCircle />;
+    }
   }
-};
-
-const backgroundAlert = {
-  info: tokens.backgroundAlertInfo,
-  success: tokens.backgroundAlertSuccess,
-  warning: tokens.backgroundAlertWarning,
-  critical: tokens.backgroundAlertCritical,
-};
-
-const colorTextAlert = {
-  info: tokens.colorTextAlertInfo,
-  success: tokens.colorTextAlertSuccess,
-  warning: tokens.colorTextAlertWarning,
-  critical: tokens.colorTextAlertCritical,
-};
-
-const colorIconAlert = {
-  info: tokens.colorAlertIconInfo,
-  success: tokens.colorAlertIconSuccess,
-  warning: tokens.colorAlertIconWarning,
-  critical: tokens.colorAlertIconCritical,
+  return icon;
 };
 
 type Props = {
-  type: $Keys<typeof backgroundAlert | typeof colorTextAlert>,
+  type: $Keys<typeof typeOptions>,
   title?: string,
-  Icon?: React.ComponentType<*>,
+  icon?: React.Element<any> | boolean,
   closable: boolean,
-  noIcon: boolean,
   onClose: () => void,
   children: React.Node,
+  theme: typeof defaultTokens,
 };
 
+const StyledAlert = styled(({ theme, tokens, type, icon, ...props }) => <div {...props} />)`
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: ${({ theme, icon }) =>
+    icon ? `${theme.paddingAlert} ${theme.paddingAlertWithIcon}` : theme.paddingAlert};
+  padding-right: ${({ theme, closable }) => closable && theme.spaceXXLarge};
+  border-radius: ${({ theme }) => theme.borderRadiusNormal};
+  background: ${({ tokens, type }) => tokens.backgroundAlert[type]};
+  color: ${({ tokens, type }) => tokens.colorTextAlert[type]};
+  font-family: ${({ theme }) => theme.fontFamily};
+  font-size: ${({ theme }) => theme.fontSizeTextNormal};
+  box-sizing: border-box;
+`;
+
+const IconContainer = styled(({ theme, tokens, type, ...props }) => <div {...props} />)`
+  flex-shrink: 0;
+  margin-right: ${({ theme }) => theme.spaceSmall};
+  color: ${({ tokens, type }) => tokens.colorIconAlert[type]};
+`;
+
+const Title = styled(({ theme, ...props }) => <div {...props} />)`
+  display: flex;
+  align-items: center;
+  margin-bottom: ${({ theme }) => theme.spaceXSmall};
+  font-weight: ${({ theme }) => theme.fontWeightBold};
+  line-height: ${({ theme }) => theme.lineHeightHeading};
+  min-height: ${({ theme }) => theme.heightIconMedium};
+`;
+
+const Content = styled(({ theme, title, ...props }) => <div {...props} />)`
+  display: flex;
+  align-items: center;
+  min-height: ${({ theme, title }) => !title && theme.heightIconMedium};
+  margin-bottom: ${({ theme, title }) => title && theme.spaceXXSmall};
+`;
+
+const CloseContainer = styled(({ theme, ...props }) => <div {...props} />)`
+  position: absolute;
+  top: ${({ theme }) => theme.spaceXXSmall};
+  right: ${({ theme }) => theme.spaceXXSmall};
+`;
+
 const Alert = (props: Props) => {
-  const { type, title, closable, noIcon, onClose, children } = props;
+  const { type, title, theme, closable, icon, onClose, children } = props;
+  const tokens = {
+    colorIconAlert: {
+      info: theme.colorAlertIconInfo,
+      success: theme.colorAlertIconSuccess,
+      warning: theme.colorAlertIconWarning,
+      critical: theme.colorAlertIconCritical,
+    },
+    backgroundAlert: {
+      info: theme.backgroundAlertInfo,
+      success: theme.backgroundAlertSuccess,
+      warning: theme.backgroundAlertWarning,
+      critical: theme.backgroundAlertCritical,
+    },
+    colorTextAlert: {
+      info: theme.colorTextAlertInfo,
+      success: theme.colorTextAlertSuccess,
+      warning: theme.colorTextAlertWarning,
+      critical: theme.colorTextAlertCritical,
+    },
+  };
   return (
-    <div className="alert">
-      <div className="alertIcon">
-        {!noIcon &&
-          (Icon && <Icon type={type} Icon={props.Icon} customColor={colorIconAlert[type]} />)}
-      </div>
+    <StyledAlert tokens={tokens} {...props}>
+      {icon && (
+        <IconContainer theme={theme} tokens={tokens} type={type}>
+          <Icon type={type} icon={icon} />
+        </IconContainer>
+      )}
       <div>
-        {title && <div className="alertTitle">{title}</div>}
-        <p className="alertContent">{children}</p>
+        {title && <Title theme={theme}>{title}</Title>}
+        <Content theme={theme} title={title}>
+          {children}
+        </Content>
       </div>
       {closable && (
-        <div className="alertClose">
+        <CloseContainer theme={theme}>
           <Button
             onClick={onClose}
             type={type}
             variation="link"
             size="small"
-            Icon={Icons.CloseCircle}
+            Icon={CloseCircle}
             onlyIcon
           />
-        </div>
+        </CloseContainer>
       )}
-      <style jsx>
-        {`
-          .alert {
-            position: relative;
-            display: flex;
-            width: 100%;
-            padding: ${!noIcon
-              ? `${tokens.paddingAlert} ${tokens.paddingAlertWithIcon}`
-              : `${tokens.paddingAlert}`};
-            padding-right: ${closable ? tokens.spaceXXLarge : "auto"};
-            border-radius: ${tokens.borderRadiusNormal};
-            background: ${backgroundAlert[type]};
-            color: ${colorTextAlert[type]};
-            font-family: ${tokens.fontFamily};
-            font-size: ${tokens.fontSizeTextNormal};
-            box-sizing: border-box;
-          }
-          .alertInner {
-            display: flex;
-          }
-          .alertIcon {
-            flex-shrink: 0;
-            margin-right: ${tokens.spaceSmall};
-          }
-          .alertTitle {
-            display: flex;
-            align-items: center;
-            margin-bottom: ${tokens.spaceXSmall};
-            font-weight: ${tokens.fontWeightBold};
-            line-height: ${tokens.lineHeightHeading};
-            min-height: ${tokens.heightIconMedium};
-          }
-          .alertContent {
-            display: flex;
-            align-items: center;
-            min-height: ${!title ? tokens.heightIconMedium : `0`};
-            margin: ${title ? `0 0 ${tokens.spaceXXSmall} 0` : `0`};
-          }
-          .alertClose {
-            position: absolute;
-            top: ${tokens.spaceXXSmall};
-            right: ${tokens.spaceXXSmall};
-          }
-        `}
-      </style>
-    </div>
+    </StyledAlert>
   );
 };
 
-Alert.defaultProps = {
+const AlertWithTheme = withTheme(Alert);
+AlertWithTheme.displayName = "Alert";
+AlertWithTheme.defaultProps = {
   type: "info",
-  title: "",
   closable: false,
-  noIcon: false,
   onClose: () => {},
 };
 
-export default Alert;
+export default AlertWithTheme;

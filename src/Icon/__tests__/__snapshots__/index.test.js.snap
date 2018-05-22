@@ -42,7 +42,6 @@ exports[`Icon with props Should match snapshot 1`] = `
   size="large"
 >
   <OrbitIcon
-    color="primary"
     customColor="#FF0000"
     size="large"
     viewBox="0 0 24 24"

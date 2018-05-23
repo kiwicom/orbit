@@ -475,6 +475,8 @@ const getTokens = (colors) => ({
 
 const defaultTokens = getTokens(colors);
 
-module.exports = defaultTokens;
-module.exports.colors = colors;
-module.exports.getTokens = getTokens;
+module.exports = {
+	defaultTokens,
+	colors,
+	getTokens
+};

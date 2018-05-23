@@ -17,7 +17,7 @@ Now that you have installed the latest version of the package, you will need to 
 
 For simple usage of defaultTokens just add this line of code to the top of the file:
 
-`import defaultTokens from '@kiwicom/orbit-design-token'`
+`import { defaultTokens } from '@kiwicom/orbit-design-token'`
  
 Now you can use tokens by typing `defaultTokens` and just continue with the dot-notation by typing the appropriate token name you want to use f.e. `defaultTokens.colorTextPrimary`. More advanced text editors should suggest which tokens are available to you in the token object, so you can find tokens quicker than by typing the entire token name.
 

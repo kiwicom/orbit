@@ -5,6 +5,8 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, select } from "@storybook/addon-knobs/react";
 
+import ThemeProvider from "../Theming/ThemeProvider";
+
 import Heading from "./index";
 
 setAddon(chaptersAddon);
@@ -21,7 +23,30 @@ storiesOf("Heading", module)
       padding: "20px",
     }),
   )
-  .addWithChapters("Display heading", () => {
+  .addWithChapters("Default", () => {
+    const customTitle = text("Title", "Orbit design system");
+    return {
+      title: "Default",
+      info:
+        "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Heading>{customTitle}</Heading>
+                </ThemeProvider>
+              ),
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Title Display", () => {
+    const customTitle = text("Title", "Orbit design system");
     const element = select(
       "Element",
       {
@@ -33,39 +58,167 @@ storiesOf("Heading", module)
       },
       "h1",
     );
-    const size = select(
-      "Size",
-      {
-        display: "display",
-        large: "large",
-        medium: "medium",
-        small: "small",
-      },
-      "large",
-    );
-    const weight = select(
-      "Weight",
-      {
-        medium: "medium",
-        bold: "bold",
-      },
-      "bold",
-    );
-    const customTitle = text("Title", "Orbit design system");
     return {
-      title: "Display heading",
-      info: "Some description about this type of heading in general.",
+      title: "Title Display",
+      info:
+        "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
-          title: `Heading ${size}`,
-          info:
-            "Some description about where is the heading used and states describing how to not use it in general.",
           sections: [
             {
               sectionFn: () => (
-                <Heading element={element} size={size} weight={weight}>
-                  {customTitle}
-                </Heading>
+                <ThemeProvider>
+                  <Heading type="display" element={element}>
+                    {customTitle}
+                  </Heading>
+                </ThemeProvider>
+              ),
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Title 1", () => {
+    const customTitle = text("Title", "Orbit design system");
+    const element = select(
+      "Element",
+      {
+        h1: "h1",
+        h2: "h2",
+        h3: "h3",
+        h4: "h4",
+        h5: "h5",
+      },
+      "h1",
+    );
+    return {
+      info:
+        "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Heading type="title1" element={element}>
+                    {customTitle}
+                  </Heading>
+                </ThemeProvider>
+              ),
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Title 2", () => {
+    const customTitle = text("Title", "Orbit design system");
+    const element = select(
+      "Element",
+      {
+        h1: "h1",
+        h2: "h2",
+        h3: "h3",
+        h4: "h4",
+        h5: "h5",
+      },
+      "h2",
+    );
+    return {
+      info:
+        "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Heading type="title2" element={element}>
+                    {customTitle}
+                  </Heading>
+                </ThemeProvider>
+              ),
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Title 3", () => {
+    const customTitle = text("Title", "Orbit design system");
+    const element = select(
+      "Element",
+      {
+        h1: "h1",
+        h2: "h2",
+        h3: "h3",
+        h4: "h4",
+        h5: "h5",
+      },
+      "h3",
+    );
+    return {
+      info:
+        "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Heading type="title3" element={element}>
+                    {customTitle}
+                  </Heading>
+                </ThemeProvider>
+              ),
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Playground", () => {
+    const element = select(
+      "Element",
+      {
+        h1: "h1",
+        h2: "h2",
+        h3: "h3",
+        h4: "h4",
+        h5: "h5",
+      },
+      "h2",
+    );
+    const type = select(
+      "Type",
+      {
+        display: "display",
+        title1: "title1",
+        title2: "title2",
+        title3: "title3",
+      },
+      "display",
+    );
+
+    const customTitle = text("Title", "Orbit design system");
+    return {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Heading element={element} type={type}>
+                    {customTitle}
+                  </Heading>
+                </ThemeProvider>
               ),
               options,
             },

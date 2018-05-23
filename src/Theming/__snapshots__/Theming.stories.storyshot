@@ -156,238 +156,224 @@ exports[`Storyshots Theming ThemeSwither 1`] = `
                 Source
               </h4>
               <pre
-                className="css-4akams"
+                style={
+                  Object {
+                    "backgroundColor": "#fafafa",
+                    "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                    "fontSize": ".88em",
+                    "lineHeight": 1.5,
+                    "overflowX": "scroll",
+                    "padding": ".5rem",
+                  }
+                }
               >
                 <div>
-                  <div>
-                    <div
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
                       style={
                         Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
+                          "color": "#777",
                         }
                       }
                     >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        ThemeSwither
-                      </span>
+                      &lt;
+                      ThemeSwither
+                    </span>
+                    <span>
                       <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          themes
+                        </span>
                         <span>
-                           
+                          =
                           <span
                             style={Object {}}
                           >
-                            themes
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span>
-                                {
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
                                   }
-                                >
-                                  [
-                                  <span>
-                                    {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      {
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        colorTextPrimary
-                                      </span>
-                                      : 
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#22a",
-                                            "wordBreak": "break-word",
-                                          }
-                                        }
-                                      >
-                                        "
-                                        green
-                                        "
-                                      </span>
-                                      }
-                                    </span>
-                                    }
-                                  </span>
-                                  , 
-                                  <span>
-                                    {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      {
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        colorTextPrimary
-                                      </span>
-                                      : 
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#22a",
-                                            "wordBreak": "break-word",
-                                          }
-                                        }
-                                      >
-                                        "
-                                        purple
-                                        "
-                                      </span>
-                                      , 
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#666",
-                                          }
-                                        }
-                                      >
-                                        fontFamily
-                                      </span>
-                                      : 
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#22a",
-                                            "wordBreak": "break-word",
-                                          }
-                                        }
-                                      >
-                                        "
-                                        Times, serif
-                                        "
-                                      </span>
-                                      }
-                                    </span>
-                                    }
-                                  </span>
-                                  ]
-                                </span>
                                 }
+                              >
+                                [
+                                <span>
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      colorTextPrimary
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      green
+                                      "
+                                    </span>
+                                    }
+                                  </span>
+                                  }
+                                </span>
+                                , 
+                                <span>
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      colorTextPrimary
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      purple
+                                      "
+                                    </span>
+                                    , 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      fontFamily
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      Times, serif
+                                      "
+                                    </span>
+                                    }
+                                  </span>
+                                  }
+                                </span>
+                                ]
                               </span>
+                              }
                             </span>
                           </span>
-                          
                         </span>
+                        
                       </span>
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
-                    <div
+                    </span>
+                    <span
                       style={
                         Object {
-                          "paddingLeft": 33,
-                          "paddingRight": 3,
+                          "color": "#777",
                         }
                       }
                     >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        ThemedComponent
-                      </span>
-                      <span />
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        /&gt;
-                      </span>
-                    </div>
-                    <div
+                      &gt;
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
                       style={
                         Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
+                          "color": "#777",
                         }
                       }
                     >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
+                      &lt;
+                      ThemedComponent
+                    </span>
+                    <span />
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
                         }
-                      >
-                        &lt;/
-                        ThemeSwither
-                        &gt;
-                      </span>
-                    </div>
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;/
+                      ThemeSwither
+                      &gt;
+                    </span>
                   </div>
                 </div>
-                <button
-                  className="css-gydez8"
-                  onClick={[Function]}
-                >
-                  <div
-                    className="css-kv47nt"
-                  >
-                    <div
-                      style={
-                        Object {
-                          "marginBottom": 6,
-                        }
-                      }
-                    >
-                      Copied!
-                    </div>
-                    <div>
-                      Copy
-                    </div>
-                  </div>
-                </button>
               </pre>
             </div>
           </div>
@@ -551,111 +537,97 @@ exports[`Storyshots Theming With ThemeProvider 1`] = `
                 Source
               </h4>
               <pre
-                className="css-4akams"
+                style={
+                  Object {
+                    "backgroundColor": "#fafafa",
+                    "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                    "fontSize": ".88em",
+                    "lineHeight": 1.5,
+                    "overflowX": "scroll",
+                    "padding": ".5rem",
+                  }
+                }
               >
                 <div>
-                  <div>
-                    <div
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
                       style={
                         Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
+                          "color": "#777",
                         }
                       }
                     >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        ThemeProvider
-                      </span>
-                      <span />
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
-                    <div
+                      &lt;
+                      ThemeProvider
+                    </span>
+                    <span />
+                    <span
                       style={
                         Object {
-                          "paddingLeft": 33,
-                          "paddingRight": 3,
+                          "color": "#777",
                         }
                       }
                     >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        ThemedComponent
-                      </span>
-                      <span />
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        /&gt;
-                      </span>
-                    </div>
-                    <div
+                      &gt;
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 33,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
                       style={
                         Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
+                          "color": "#777",
                         }
                       }
                     >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
+                      &lt;
+                      ThemedComponent
+                    </span>
+                    <span />
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
                         }
-                      >
-                        &lt;/
-                        ThemeProvider
-                        &gt;
-                      </span>
-                    </div>
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;/
+                      ThemeProvider
+                      &gt;
+                    </span>
                   </div>
                 </div>
-                <button
-                  className="css-gydez8"
-                  onClick={[Function]}
-                >
-                  <div
-                    className="css-kv47nt"
-                  >
-                    <div
-                      style={
-                        Object {
-                          "marginBottom": 6,
-                        }
-                      }
-                    >
-                      Copied!
-                    </div>
-                    <div>
-                      Copy
-                    </div>
-                  </div>
-                </button>
               </pre>
             </div>
           </div>
@@ -757,14 +729,153 @@ exports[`Storyshots Theming With ThemeProvider 1`] = `
                 Source
               </h4>
               <pre
-                className="css-4akams"
+                style={
+                  Object {
+                    "backgroundColor": "#fafafa",
+                    "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                    "fontSize": ".88em",
+                    "lineHeight": 1.5,
+                    "overflowX": "scroll",
+                    "padding": ".5rem",
+                  }
+                }
               >
                 <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      ThemeProvider
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          theme
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  colorTextInfo
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  #0176D2
+                                  "
+                                </span>
+                                , 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  colorTextPrimary
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  #46515e
+                                  "
+                                </span>
+                                , 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  colorTextSecondary
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  #7f91a8
+                                  "
+                                </span>
+                                , 
+                                …
+                                }
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &gt;
+                    </span>
+                  </div>
                   <div>
                     <div
                       style={
                         Object {
-                          "paddingLeft": 18,
+                          "paddingLeft": 33,
                           "paddingRight": 3,
                         }
                       }
@@ -809,29 +920,6 @@ exports[`Storyshots Theming With ThemeProvider 1`] = `
                                       }
                                     }
                                   >
-                                    colorTextInfo
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    "
-                                    #0176D2
-                                    "
-                                  </span>
-                                  , 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
                                     colorTextPrimary
                                   </span>
                                   : 
@@ -844,34 +932,9 @@ exports[`Storyshots Theming With ThemeProvider 1`] = `
                                     }
                                   >
                                     "
-                                    #46515e
+                                    green
                                     "
                                   </span>
-                                  , 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    colorTextSecondary
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    "
-                                    #7f91a8
-                                    "
-                                  </span>
-                                  , 
-                                  …
                                   }
                                 </span>
                                 }
@@ -891,143 +954,39 @@ exports[`Storyshots Theming With ThemeProvider 1`] = `
                         &gt;
                       </span>
                     </div>
-                    <div>
-                      <div
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 48,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          ThemeProvider
-                        </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              theme
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span>
-                                  {
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      colorTextPrimary
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      "
-                                      green
-                                      "
-                                    </span>
-                                    }
-                                  </span>
-                                  }
-                                </span>
-                              </span>
-                            </span>
-                            
-                          </span>
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div
+                        &lt;
+                        ThemedComponent
+                      </span>
+                      <span />
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          ThemedComponent
-                        </span>
-                        <span />
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          /&gt;
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          ThemeProvider
-                          &gt;
-                        </span>
-                      </div>
+                        /&gt;
+                      </span>
                     </div>
                     <div
                       style={
                         Object {
-                          "paddingLeft": 18,
+                          "paddingLeft": 33,
                           "paddingRight": 3,
                         }
                       }
@@ -1045,28 +1004,27 @@ exports[`Storyshots Theming With ThemeProvider 1`] = `
                       </span>
                     </div>
                   </div>
-                </div>
-                <button
-                  className="css-gydez8"
-                  onClick={[Function]}
-                >
                   <div
-                    className="css-kv47nt"
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
                   >
-                    <div
+                    <span
                       style={
                         Object {
-                          "marginBottom": 6,
+                          "color": "#777",
                         }
                       }
                     >
-                      Copied!
-                    </div>
-                    <div>
-                      Copy
-                    </div>
+                      &lt;/
+                      ThemeProvider
+                      &gt;
+                    </span>
                   </div>
-                </button>
+                </div>
               </pre>
             </div>
           </div>
@@ -1218,60 +1176,46 @@ exports[`Storyshots Theming Without ThemeProvider 1`] = `
                 Source
               </h4>
               <pre
-                className="css-4akams"
+                style={
+                  Object {
+                    "backgroundColor": "#fafafa",
+                    "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                    "fontSize": ".88em",
+                    "lineHeight": 1.5,
+                    "overflowX": "scroll",
+                    "padding": ".5rem",
+                  }
+                }
               >
-                <div>
-                  <div
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
                     style={
                       Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
+                        "color": "#777",
                       }
                     }
                   >
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
+                    &lt;
+                    ComponentWithTheme
+                  </span>
+                  <span />
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
                       }
-                    >
-                      &lt;
-                      ComponentWithTheme
-                    </span>
-                    <span />
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
-                      }
-                    >
-                      /&gt;
-                    </span>
-                  </div>
-                </div>
-                <button
-                  className="css-gydez8"
-                  onClick={[Function]}
-                >
-                  <div
-                    className="css-kv47nt"
+                    }
                   >
-                    <div
-                      style={
-                        Object {
-                          "marginBottom": 6,
-                        }
-                      }
-                    >
-                      Copied!
-                    </div>
-                    <div>
-                      Copy
-                    </div>
-                  </div>
-                </button>
+                    /&gt;
+                  </span>
+                </div>
               </pre>
             </div>
           </div>
@@ -1372,41 +1316,57 @@ exports[`Storyshots Theming Without ThemeProvider 1`] = `
                 Source
               </h4>
               <pre
-                className="css-4akams"
+                style={
+                  Object {
+                    "backgroundColor": "#fafafa",
+                    "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                    "fontSize": ".88em",
+                    "lineHeight": 1.5,
+                    "overflowX": "scroll",
+                    "padding": ".5rem",
+                  }
+                }
               >
-                <div>
-                  <div
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
                     style={
                       Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
+                        "color": "#777",
                       }
                     }
                   >
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
-                      }
-                    >
-                      &lt;
-                      ComponentWithTheme
-                    </span>
+                    &lt;
+                    ComponentWithTheme
+                  </span>
+                  <span>
                     <span>
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        theme
+                      </span>
                       <span>
-                         
+                        =
                         <span
                           style={Object {}}
                         >
-                          theme
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
+                          <span>
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
                               {
                               <span
                                 style={
@@ -1415,118 +1375,88 @@ exports[`Storyshots Theming Without ThemeProvider 1`] = `
                                   }
                                 }
                               >
-                                {
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  colorTextInfo
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  #0176D2
-                                  "
-                                </span>
-                                , 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  colorTextPrimary
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  red
-                                  "
-                                </span>
-                                , 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  colorTextSecondary
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  #7f91a8
-                                  "
-                                </span>
-                                , 
-                                …
-                                }
+                                colorTextInfo
                               </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                #0176D2
+                                "
+                              </span>
+                              , 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                colorTextPrimary
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                red
+                                "
+                              </span>
+                              , 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                colorTextSecondary
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                #7f91a8
+                                "
+                              </span>
+                              , 
+                              …
                               }
                             </span>
+                            }
                           </span>
                         </span>
-                         
                       </span>
+                       
                     </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
                       }
-                    >
-                      /&gt;
-                    </span>
-                  </div>
-                </div>
-                <button
-                  className="css-gydez8"
-                  onClick={[Function]}
-                >
-                  <div
-                    className="css-kv47nt"
+                    }
                   >
-                    <div
-                      style={
-                        Object {
-                          "marginBottom": 6,
-                        }
-                      }
-                    >
-                      Copied!
-                    </div>
-                    <div>
-                      Copy
-                    </div>
-                  </div>
-                </button>
+                    /&gt;
+                  </span>
+                </div>
               </pre>
             </div>
           </div>

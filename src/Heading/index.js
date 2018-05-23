@@ -1,69 +1,59 @@
 // @flow
 import * as React from "react";
-import * as tokens from "@kiwicom/orbit-design-tokens";
-
-const weightHeading = {
-  medium: tokens.fontWeightMedium,
-  bold: tokens.fontWeightBold,
-};
-
-const sizeHeading = {
-  display: tokens.fontSizeHeadingDisplay,
-  large: tokens.fontSizeHeadingLarge,
-  medium: tokens.fontSizeHeadingMedium,
-  small: tokens.fontSizeHeadingSmall,
-};
+import styled from "styled-components";
+import defaultTokens from "@kiwicom/orbit-design-tokens";
+import { withTheme } from "theming";
+import createComponentFromTagProp from "react-create-component-from-tag-prop";
 
 type Props = {
   element: "h1" | "h2" | "h3" | "h4" | "h5",
-  size: $Keys<typeof sizeHeading>,
-  weight: $Keys<typeof weightHeading>,
+  type: "display" | "title1" | "title2" | "title3",
   children: React.Node,
-  className?: string,
+  theme: typeof defaultTokens,
 };
 
-function resolveScopedStyles(scope) {
-  return {
-    className: scope.props.className,
-    styles: scope.props.children,
-  };
-}
+const HeadingElement = createComponentFromTagProp({
+  prop: "element",
+  propsToOmit: ["type", "tokens", "theme"],
+});
+
+const StyledHeading = styled(HeadingElement)`
+  font-family: ${props => props.theme.fontFamily};
+  font-size: ${props => props.tokens.sizeHeading[props.type]};
+  font-weight: ${props => props.tokens.weightHeading[props.type]};
+  color: ${props => props.theme.colorHeading};
+  line-height: ${props => props.theme.lineHeightHeading};
+  margin: 0;
+`;
 
 const Heading = (props: Props) => {
-  const scoped = resolveScopedStyles(
-    <scope>
-      <style jsx>
-        {`
-           {
-            font-family: ${tokens.fontFamily};
-            font-size: ${sizeHeading[props.size]};
-            font-weight: ${weightHeading[props.weight]};
-            color: ${tokens.colorHeading};
-            line-height: ${tokens.lineHeightHeading};
-          }
-        `}
-      </style>
-    </scope>,
-  );
-
+  const { children, theme } = props;
+  const tokens = {
+    weightHeading: {
+      display: theme.fontWeightHeadingDisplay,
+      title1: theme.fontWeightHeadingLevel1,
+      title2: theme.fontWeightHeadingLevel2,
+      title3: theme.fontWeightHeadingLevel3,
+    },
+    sizeHeading: {
+      display: theme.fontSizeHeadingDisplay,
+      title1: theme.fontSizeHeadingTitle1,
+      title2: theme.fontSizeHeadingTitle2,
+      title3: theme.fontSizeHeadingTitle3,
+    },
+  };
   return (
-    <React.Fragment>
-      {React.createElement(
-        props.element,
-        {
-          className: [scoped.className, props.className].join(" "),
-        },
-        props.children,
-      )}
-      {scoped.styles}
-    </React.Fragment>
+    <StyledHeading tokens={tokens} {...props}>
+      {children}
+    </StyledHeading>
   );
 };
 
-Heading.defaultProps = {
+const HeadingWithTheme = withTheme(Heading);
+HeadingWithTheme.displayName = "Heading";
+HeadingWithTheme.defaultProps = {
   element: "h1",
-  size: "large",
-  weight: "bold",
+  type: "title1",
 };
 
-export default Heading;
+export default HeadingWithTheme;

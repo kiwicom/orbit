@@ -99,9 +99,10 @@ exports[`Storyshots TextLink Playground 1`] = `
           }
         >
           <a
-            className="jsx-952623663"
+            className="TextLink__StyledTextLink-cKDOFV iXNJyj"
             href="https://kiwi.com"
             onClick={[Function]}
+            rel={undefined}
             target="_blank"
           >
             Custom link
@@ -167,7 +168,7 @@ exports[`Storyshots TextLink Playground 1`] = `
                           <span
                             style={Object {}}
                           >
-                            newTab
+                            external
                           </span>
                         </span>
                         <span>
@@ -203,7 +204,7 @@ exports[`Storyshots TextLink Playground 1`] = `
                           <span
                             style={Object {}}
                           >
-                            url
+                            href
                           </span>
                           <span>
                             =
@@ -386,9 +387,10 @@ exports[`Storyshots TextLink Primary link 1`] = `
           }
         >
           <a
-            className="jsx-952623663"
+            className="TextLink__StyledTextLink-cKDOFV iXNJyj"
             href="https://kiwi.com"
             onClick={[Function]}
+            rel={undefined}
             target={undefined}
           >
             Primary link
@@ -482,7 +484,7 @@ exports[`Storyshots TextLink Primary link 1`] = `
                           <span
                             style={Object {}}
                           >
-                            url
+                            href
                           </span>
                           <span>
                             =
@@ -665,9 +667,10 @@ exports[`Storyshots TextLink Secondary link 1`] = `
           }
         >
           <a
-            className="jsx-2409894130"
+            className="TextLink__StyledTextLink-cKDOFV hTszaV"
             href="https://kiwi.com"
             onClick={[Function]}
+            rel={undefined}
             target={undefined}
           >
             Secondary link
@@ -761,7 +764,7 @@ exports[`Storyshots TextLink Secondary link 1`] = `
                           <span
                             style={Object {}}
                           >
-                            url
+                            href
                           </span>
                           <span>
                             =

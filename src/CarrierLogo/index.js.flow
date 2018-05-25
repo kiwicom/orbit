@@ -1,0 +1,4 @@
+// @flow
+import type { Props } from "./CarrierLogo";
+
+declare export default React$ComponentType<Props>;

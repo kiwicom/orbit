@@ -17,6 +17,7 @@ export { Icons };
 
 export { default as Alert } from "./Alert";
 export { default as Button } from "./Button";
+export { default as ButtonLink } from "./ButtonLink";
 export { default as CarrierLogo } from "./CarrierLogo";
 export { default as Checkbox } from "./Checkbox";
 export { default as Heading } from "./Heading";

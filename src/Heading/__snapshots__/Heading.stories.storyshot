@@ -9,6 +9,7 @@ exports[`Storyshots Heading Default 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -18,14 +19,18 @@ exports[`Storyshots Heading Default 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -38,14 +43,8 @@ exports[`Storyshots Heading Default 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -57,6 +56,7 @@ exports[`Storyshots Heading Default 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -71,6 +71,7 @@ exports[`Storyshots Heading Default 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -78,11 +79,8 @@ exports[`Storyshots Heading Default 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -92,11 +90,8 @@ exports[`Storyshots Heading Default 1`] = `
           </div>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-component-container"
+          style={Object {}}
         >
           <h1
             className="Heading__StyledHeading-gucmUp fTGtTr"
@@ -109,6 +104,7 @@ exports[`Storyshots Heading Default 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -116,64 +112,20 @@ exports[`Storyshots Heading Default 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
+                  style={undefined}
                 >
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        ThemeProvider
-                      </span>
-                      <span />
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
                     <div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -186,7 +138,7 @@ exports[`Storyshots Heading Default 1`] = `
                           }
                         >
                           &lt;
-                          Heading
+                          ThemeProvider
                         </span>
                         <span />
                         <span
@@ -199,28 +151,79 @@ exports[`Storyshots Heading Default 1`] = `
                           &gt;
                         </span>
                       </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
+                      <div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          Orbit design system
-                        </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Heading
+                          </span>
+                          <span />
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Orbit design system
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Heading
+                            &gt;
+                          </span>
+                        </div>
                       </div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -233,32 +236,33 @@ exports[`Storyshots Heading Default 1`] = `
                           }
                         >
                           &lt;/
-                          Heading
+                          ThemeProvider
                           &gt;
                         </span>
                       </div>
                     </div>
+                  </div>
+                  <button
+                    className="css-gydez8"
+                    onClick={[Function]}
+                  >
                     <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
+                      className="css-kv47nt"
                     >
-                      <span
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "marginBottom": 6,
                           }
                         }
                       >
-                        &lt;/
-                        ThemeProvider
-                        &gt;
-                      </span>
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
                     </div>
-                  </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -279,6 +283,7 @@ exports[`Storyshots Heading Playground 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -288,14 +293,18 @@ exports[`Storyshots Heading Playground 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -308,14 +317,8 @@ exports[`Storyshots Heading Playground 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -327,6 +330,7 @@ exports[`Storyshots Heading Playground 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -341,6 +345,7 @@ exports[`Storyshots Heading Playground 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -348,11 +353,8 @@ exports[`Storyshots Heading Playground 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -362,11 +364,8 @@ exports[`Storyshots Heading Playground 1`] = `
           </div>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-component-container"
+          style={Object {}}
         >
           <h2
             className="Heading__StyledHeading-gucmUp bpBGQT"
@@ -379,6 +378,7 @@ exports[`Storyshots Heading Playground 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -386,64 +386,20 @@ exports[`Storyshots Heading Playground 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
+                  style={undefined}
                 >
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        ThemeProvider
-                      </span>
-                      <span />
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
                     <div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -456,65 +412,9 @@ exports[`Storyshots Heading Playground 1`] = `
                           }
                         >
                           &lt;
-                          Heading
+                          ThemeProvider
                         </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              element
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  h2
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  display
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                            
-                          </span>
-                        </span>
+                        <span />
                         <span
                           style={
                             Object {
@@ -525,28 +425,135 @@ exports[`Storyshots Heading Playground 1`] = `
                           &gt;
                         </span>
                       </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
+                      <div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          Orbit design system
-                        </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Heading
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                element
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    h2
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                type
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    display
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Orbit design system
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Heading
+                            &gt;
+                          </span>
+                        </div>
                       </div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -559,32 +566,33 @@ exports[`Storyshots Heading Playground 1`] = `
                           }
                         >
                           &lt;/
-                          Heading
+                          ThemeProvider
                           &gt;
                         </span>
                       </div>
                     </div>
+                  </div>
+                  <button
+                    className="css-gydez8"
+                    onClick={[Function]}
+                  >
                     <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
+                      className="css-kv47nt"
                     >
-                      <span
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "marginBottom": 6,
                           }
                         }
                       >
-                        &lt;/
-                        ThemeProvider
-                        &gt;
-                      </span>
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
                     </div>
-                  </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -605,6 +613,7 @@ exports[`Storyshots Heading Title 1 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -614,14 +623,18 @@ exports[`Storyshots Heading Title 1 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -634,14 +647,8 @@ exports[`Storyshots Heading Title 1 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -653,6 +660,7 @@ exports[`Storyshots Heading Title 1 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -667,6 +675,7 @@ exports[`Storyshots Heading Title 1 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -674,11 +683,8 @@ exports[`Storyshots Heading Title 1 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -688,11 +694,8 @@ exports[`Storyshots Heading Title 1 1`] = `
           </div>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-component-container"
+          style={Object {}}
         >
           <h1
             className="Heading__StyledHeading-gucmUp fTGtTr"
@@ -705,6 +708,7 @@ exports[`Storyshots Heading Title 1 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -712,64 +716,20 @@ exports[`Storyshots Heading Title 1 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
+                  style={undefined}
                 >
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        ThemeProvider
-                      </span>
-                      <span />
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
                     <div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -782,7 +742,7 @@ exports[`Storyshots Heading Title 1 1`] = `
                           }
                         >
                           &lt;
-                          Heading
+                          ThemeProvider
                         </span>
                         <span />
                         <span
@@ -795,28 +755,79 @@ exports[`Storyshots Heading Title 1 1`] = `
                           &gt;
                         </span>
                       </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
+                      <div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          Orbit design system
-                        </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Heading
+                          </span>
+                          <span />
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Orbit design system
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Heading
+                            &gt;
+                          </span>
+                        </div>
                       </div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -829,32 +840,33 @@ exports[`Storyshots Heading Title 1 1`] = `
                           }
                         >
                           &lt;/
-                          Heading
+                          ThemeProvider
                           &gt;
                         </span>
                       </div>
                     </div>
+                  </div>
+                  <button
+                    className="css-gydez8"
+                    onClick={[Function]}
+                  >
                     <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
+                      className="css-kv47nt"
                     >
-                      <span
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "marginBottom": 6,
                           }
                         }
                       >
-                        &lt;/
-                        ThemeProvider
-                        &gt;
-                      </span>
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
                     </div>
-                  </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -875,6 +887,7 @@ exports[`Storyshots Heading Title 2 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -884,14 +897,18 @@ exports[`Storyshots Heading Title 2 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -904,14 +921,8 @@ exports[`Storyshots Heading Title 2 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -923,6 +934,7 @@ exports[`Storyshots Heading Title 2 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -937,6 +949,7 @@ exports[`Storyshots Heading Title 2 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -944,11 +957,8 @@ exports[`Storyshots Heading Title 2 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -958,11 +968,8 @@ exports[`Storyshots Heading Title 2 1`] = `
           </div>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-component-container"
+          style={Object {}}
         >
           <h2
             className="Heading__StyledHeading-gucmUp iMNCfy"
@@ -975,6 +982,7 @@ exports[`Storyshots Heading Title 2 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -982,64 +990,20 @@ exports[`Storyshots Heading Title 2 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
+                  style={undefined}
                 >
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        ThemeProvider
-                      </span>
-                      <span />
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
                     <div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -1052,65 +1016,9 @@ exports[`Storyshots Heading Title 2 1`] = `
                           }
                         >
                           &lt;
-                          Heading
+                          ThemeProvider
                         </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  title2
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              element
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  h2
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                            
-                          </span>
-                        </span>
+                        <span />
                         <span
                           style={
                             Object {
@@ -1121,28 +1029,135 @@ exports[`Storyshots Heading Title 2 1`] = `
                           &gt;
                         </span>
                       </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
+                      <div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          Orbit design system
-                        </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Heading
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                type
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    title2
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                element
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    h2
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Orbit design system
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Heading
+                            &gt;
+                          </span>
+                        </div>
                       </div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -1155,32 +1170,33 @@ exports[`Storyshots Heading Title 2 1`] = `
                           }
                         >
                           &lt;/
-                          Heading
+                          ThemeProvider
                           &gt;
                         </span>
                       </div>
                     </div>
+                  </div>
+                  <button
+                    className="css-gydez8"
+                    onClick={[Function]}
+                  >
                     <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
+                      className="css-kv47nt"
                     >
-                      <span
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "marginBottom": 6,
                           }
                         }
                       >
-                        &lt;/
-                        ThemeProvider
-                        &gt;
-                      </span>
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
                     </div>
-                  </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -1201,6 +1217,7 @@ exports[`Storyshots Heading Title 3 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -1210,14 +1227,18 @@ exports[`Storyshots Heading Title 3 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -1230,14 +1251,8 @@ exports[`Storyshots Heading Title 3 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -1249,6 +1264,7 @@ exports[`Storyshots Heading Title 3 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -1263,6 +1279,7 @@ exports[`Storyshots Heading Title 3 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -1270,11 +1287,8 @@ exports[`Storyshots Heading Title 3 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -1284,11 +1298,8 @@ exports[`Storyshots Heading Title 3 1`] = `
           </div>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-component-container"
+          style={Object {}}
         >
           <h3
             className="Heading__StyledHeading-gucmUp iPRwMQ"
@@ -1301,6 +1312,7 @@ exports[`Storyshots Heading Title 3 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -1308,64 +1320,20 @@ exports[`Storyshots Heading Title 3 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
+                  style={undefined}
                 >
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        ThemeProvider
-                      </span>
-                      <span />
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
                     <div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -1378,65 +1346,9 @@ exports[`Storyshots Heading Title 3 1`] = `
                           }
                         >
                           &lt;
-                          Heading
+                          ThemeProvider
                         </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  title3
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              element
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  h3
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                            
-                          </span>
-                        </span>
+                        <span />
                         <span
                           style={
                             Object {
@@ -1447,28 +1359,135 @@ exports[`Storyshots Heading Title 3 1`] = `
                           &gt;
                         </span>
                       </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
+                      <div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          Orbit design system
-                        </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Heading
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                type
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    title3
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                element
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    h3
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Orbit design system
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Heading
+                            &gt;
+                          </span>
+                        </div>
                       </div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -1481,32 +1500,33 @@ exports[`Storyshots Heading Title 3 1`] = `
                           }
                         >
                           &lt;/
-                          Heading
+                          ThemeProvider
                           &gt;
                         </span>
                       </div>
                     </div>
+                  </div>
+                  <button
+                    className="css-gydez8"
+                    onClick={[Function]}
+                  >
                     <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
+                      className="css-kv47nt"
                     >
-                      <span
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "marginBottom": 6,
                           }
                         }
                       >
-                        &lt;/
-                        ThemeProvider
-                        &gt;
-                      </span>
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
                     </div>
-                  </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -1527,6 +1547,7 @@ exports[`Storyshots Heading Title Display 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -1536,14 +1557,18 @@ exports[`Storyshots Heading Title Display 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -1556,14 +1581,8 @@ exports[`Storyshots Heading Title Display 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -1575,6 +1594,7 @@ exports[`Storyshots Heading Title Display 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -1589,6 +1609,7 @@ exports[`Storyshots Heading Title Display 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -1596,11 +1617,8 @@ exports[`Storyshots Heading Title Display 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -1610,11 +1628,8 @@ exports[`Storyshots Heading Title Display 1`] = `
           </div>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-component-container"
+          style={Object {}}
         >
           <h1
             className="Heading__StyledHeading-gucmUp bpBGQT"
@@ -1627,6 +1642,7 @@ exports[`Storyshots Heading Title Display 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -1634,64 +1650,20 @@ exports[`Storyshots Heading Title Display 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
+                  style={undefined}
                 >
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        ThemeProvider
-                      </span>
-                      <span />
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
                     <div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -1704,38 +1676,9 @@ exports[`Storyshots Heading Title Display 1`] = `
                           }
                         >
                           &lt;
-                          Heading
+                          ThemeProvider
                         </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  display
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                            
-                          </span>
-                        </span>
+                        <span />
                         <span
                           style={
                             Object {
@@ -1746,28 +1689,108 @@ exports[`Storyshots Heading Title Display 1`] = `
                           &gt;
                         </span>
                       </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
+                      <div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          Orbit design system
-                        </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Heading
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                type
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    display
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Orbit design system
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Heading
+                            &gt;
+                          </span>
+                        </div>
                       </div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -1780,32 +1803,33 @@ exports[`Storyshots Heading Title Display 1`] = `
                           }
                         >
                           &lt;/
-                          Heading
+                          ThemeProvider
                           &gt;
                         </span>
                       </div>
                     </div>
+                  </div>
+                  <button
+                    className="css-gydez8"
+                    onClick={[Function]}
+                  >
                     <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
+                      className="css-kv47nt"
                     >
-                      <span
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "marginBottom": 6,
                           }
                         }
                       >
-                        &lt;/
-                        ThemeProvider
-                        &gt;
-                      </span>
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
                     </div>
-                  </div>
+                  </button>
                 </pre>
               </div>
             </div>

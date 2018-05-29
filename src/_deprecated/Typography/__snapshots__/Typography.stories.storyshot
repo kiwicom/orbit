@@ -2,6 +2,7 @@
 
 exports[`Storyshots Typography Typography 1`] = `
 <div
+  className="story"
   style={
     Object {
       "WebkitFontSmoothing": "antialiased",
@@ -11,14 +12,18 @@ exports[`Storyshots Typography Typography 1`] = `
   }
 >
   <div
+    className="story-header"
     style={
       Object {
-        "marginBottom": 60,
+        "color": "#565d6b",
+        "fontSize": 14,
+        "lineHeight": 1.5,
       }
     }
   >
     <div>
       <h1
+        className="story-title"
         style={
           Object {
             "color": "#363a45",
@@ -31,14 +36,8 @@ exports[`Storyshots Typography Typography 1`] = `
       </h1>
       
       <span
-        style={
-          Object {
-            "color": "#898d97",
-            "fontSize": 18,
-            "marginBottom": 20,
-            "marginTop": 0,
-          }
-        }
+        className="story-subtitle"
+        style={Object {}}
       >
         <div>
           <p>
@@ -50,6 +49,7 @@ exports[`Storyshots Typography Typography 1`] = `
   </div>
   <div>
     <div
+      className="chapter-header"
       style={
         Object {
           "marginBottom": 60,
@@ -58,6 +58,7 @@ exports[`Storyshots Typography Typography 1`] = `
     >
       <div>
         <h3
+          className="chapter-h3"
           style={
             Object {
               "color": "#363a45",
@@ -74,6 +75,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -81,11 +83,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -95,11 +94,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-1632180380"
@@ -112,6 +108,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -119,6 +116,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -142,6 +140,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -149,11 +148,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -163,11 +159,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-1855423850"
@@ -180,6 +173,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -187,6 +181,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -210,6 +205,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -217,11 +213,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -231,11 +224,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-398534955"
@@ -248,6 +238,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -255,6 +246,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -278,6 +270,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -285,11 +278,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -299,11 +289,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-4200998682"
@@ -316,6 +303,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -323,6 +311,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -348,6 +337,7 @@ exports[`Storyshots Typography Typography 1`] = `
   </div>
   <div>
     <div
+      className="chapter-header"
       style={
         Object {
           "marginBottom": 60,
@@ -356,6 +346,7 @@ exports[`Storyshots Typography Typography 1`] = `
     >
       <div>
         <h3
+          className="chapter-h3"
           style={
             Object {
               "color": "#363a45",
@@ -372,6 +363,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -379,11 +371,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -393,11 +382,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-1620445214"
@@ -410,6 +396,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -417,6 +404,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -440,6 +428,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -447,11 +436,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -461,11 +447,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-1867159016"
@@ -478,6 +461,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -485,6 +469,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -508,6 +493,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -515,11 +501,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -529,11 +512,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-141524338"
@@ -546,6 +526,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -553,6 +534,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -576,6 +558,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -583,11 +566,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -597,11 +577,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-410270121"
@@ -614,6 +591,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -621,6 +599,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -644,6 +623,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -651,11 +631,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -665,11 +642,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-4212733848"
@@ -682,6 +656,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -689,6 +664,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -714,6 +690,7 @@ exports[`Storyshots Typography Typography 1`] = `
   </div>
   <div>
     <div
+      className="chapter-header"
       style={
         Object {
           "marginBottom": 60,
@@ -722,6 +699,7 @@ exports[`Storyshots Typography Typography 1`] = `
     >
       <div>
         <h3
+          className="chapter-h3"
           style={
             Object {
               "color": "#363a45",
@@ -738,6 +716,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -745,11 +724,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -759,11 +735,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-4273763992"
@@ -776,6 +749,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -783,6 +757,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -806,6 +781,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -813,11 +789,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -827,11 +800,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-4162127362"
@@ -844,6 +814,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -851,6 +822,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -874,6 +846,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -881,11 +854,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -895,11 +865,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-3508807534"
@@ -912,6 +879,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -919,6 +887,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -942,6 +911,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -949,11 +919,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -963,11 +930,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-1806643188"
@@ -980,6 +944,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -987,6 +952,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -1010,6 +976,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -1017,11 +984,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -1031,11 +995,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-2051918639"
@@ -1048,6 +1009,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -1055,6 +1017,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -1078,6 +1041,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -1085,11 +1049,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -1099,11 +1060,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-2993152437"
@@ -1116,6 +1074,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -1123,6 +1082,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -1146,6 +1106,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -1153,11 +1114,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -1167,11 +1125,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-2501948932"
@@ -1184,6 +1139,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -1191,6 +1147,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -1214,6 +1171,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -1221,11 +1179,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -1235,11 +1190,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-3092314264"
@@ -1252,6 +1204,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -1259,6 +1212,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {
@@ -1284,6 +1238,7 @@ exports[`Storyshots Typography Typography 1`] = `
   </div>
   <div>
     <div
+      className="chapter-header"
       style={
         Object {
           "marginBottom": 60,
@@ -1292,6 +1247,7 @@ exports[`Storyshots Typography Typography 1`] = `
     >
       <div>
         <h3
+          className="chapter-h3"
           style={
             Object {
               "color": "#363a45",
@@ -1308,6 +1264,7 @@ exports[`Storyshots Typography Typography 1`] = `
       </div>
     </div>
     <div
+      className="section-container"
       style={
         Object {
           "marginBottom": 100,
@@ -1315,11 +1272,8 @@ exports[`Storyshots Typography Typography 1`] = `
       }
     >
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-header"
+        style={Object {}}
       >
         <div>
           <div>
@@ -1329,11 +1283,8 @@ exports[`Storyshots Typography Typography 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
+        className="section-component-container"
+        style={Object {}}
       >
         <span
           className="jsx-3489231163"
@@ -1346,6 +1297,7 @@ exports[`Storyshots Typography Typography 1`] = `
           <div>
             
             <div
+              className="section-button-container"
               style={
                 Object {
                   "height": 15,
@@ -1353,6 +1305,7 @@ exports[`Storyshots Typography Typography 1`] = `
               }
             >
               <button
+                className="button"
                 onClick={[Function]}
                 style={
                   Object {

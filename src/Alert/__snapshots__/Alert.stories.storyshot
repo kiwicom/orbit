@@ -9,6 +9,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -18,14 +19,18 @@ exports[`Storyshots Alert Critical alert 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -38,14 +43,8 @@ exports[`Storyshots Alert Critical alert 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -57,6 +56,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -71,6 +71,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -78,11 +79,8 @@ exports[`Storyshots Alert Critical alert 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -92,11 +90,8 @@ exports[`Storyshots Alert Critical alert 1`] = `
           </div>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-component-container"
+          style={Object {}}
         >
           <div
             className="Alert__StyledAlert-dqYNhl ilDRCe"
@@ -137,6 +132,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -144,135 +140,143 @@ exports[`Storyshots Alert Critical alert 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
+                  style={undefined}
                 >
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                    <div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &lt;
-                        Alert
-                      </span>
-                      <span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          Alert
+                        </span>
                         <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            type
-                          </span>
                           <span>
-                            =
+                             
                             <span
                               style={Object {}}
                             >
+                              type
+                            </span>
+                            <span>
+                              =
                               <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
+                                style={Object {}}
                               >
                                 "
-                                critical
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  critical
+                                </span>
                                 "
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            icon
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              icon
+                            </span>
+                            
                           </span>
-                          
                         </span>
-                      </span>
-                      <span
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &gt;
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 33,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          The quick, brown fox jumps over a lazy dog.
+                        </span>
+                      </div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        The quick, brown fox jumps over a lazy dog.
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
                           }
-                        }
-                      >
-                        &lt;/
-                        Alert
-                        &gt;
-                      </span>
+                        >
+                          &lt;/
+                          Alert
+                          &gt;
+                        </span>
+                      </div>
                     </div>
                   </div>
+                  <button
+                    className="css-gydez8"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -293,6 +297,7 @@ exports[`Storyshots Alert Default 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -302,14 +307,18 @@ exports[`Storyshots Alert Default 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -322,14 +331,8 @@ exports[`Storyshots Alert Default 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -341,6 +344,7 @@ exports[`Storyshots Alert Default 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -355,6 +359,7 @@ exports[`Storyshots Alert Default 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -362,11 +367,8 @@ exports[`Storyshots Alert Default 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -376,11 +378,8 @@ exports[`Storyshots Alert Default 1`] = `
           </div>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-component-container"
+          style={Object {}}
         >
           <div
             className="Alert__StyledAlert-dqYNhl fUtCMj"
@@ -399,6 +398,7 @@ exports[`Storyshots Alert Default 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -406,98 +406,106 @@ exports[`Storyshots Alert Default 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
+                  style={undefined}
                 >
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                    <div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &lt;
-                        Alert
-                      </span>
-                      <span />
-                      <span
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          Alert
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &gt;
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 33,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          The quick, brown fox jumps over a lazy dog.
+                        </span>
+                      </div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        The quick, brown fox jumps over a lazy dog.
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
                           }
-                        }
-                      >
-                        &lt;/
-                        Alert
-                        &gt;
-                      </span>
+                        >
+                          &lt;/
+                          Alert
+                          &gt;
+                        </span>
+                      </div>
                     </div>
                   </div>
+                  <button
+                    className="css-gydez8"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -518,6 +526,7 @@ exports[`Storyshots Alert Info alert 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -527,14 +536,18 @@ exports[`Storyshots Alert Info alert 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -547,14 +560,8 @@ exports[`Storyshots Alert Info alert 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -566,6 +573,7 @@ exports[`Storyshots Alert Info alert 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -580,6 +588,7 @@ exports[`Storyshots Alert Info alert 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -587,11 +596,8 @@ exports[`Storyshots Alert Info alert 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -601,11 +607,8 @@ exports[`Storyshots Alert Info alert 1`] = `
           </div>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-component-container"
+          style={Object {}}
         >
           <div
             className="Alert__StyledAlert-dqYNhl doPSCL"
@@ -646,6 +649,7 @@ exports[`Storyshots Alert Info alert 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -653,108 +657,116 @@ exports[`Storyshots Alert Info alert 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
+                  style={undefined}
                 >
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                    <div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &lt;
-                        Alert
-                      </span>
-                      <span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            icon
-                          </span>
-                          
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          Alert
                         </span>
-                      </span>
-                      <span
+                        <span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              icon
+                            </span>
+                            
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &gt;
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 33,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          The quick, brown fox jumps over a lazy dog.
+                        </span>
+                      </div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        The quick, brown fox jumps over a lazy dog.
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
                           }
-                        }
-                      >
-                        &lt;/
-                        Alert
-                        &gt;
-                      </span>
+                        >
+                          &lt;/
+                          Alert
+                          &gt;
+                        </span>
+                      </div>
                     </div>
                   </div>
+                  <button
+                    className="css-gydez8"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -775,6 +787,7 @@ exports[`Storyshots Alert Playground 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -784,14 +797,18 @@ exports[`Storyshots Alert Playground 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -804,14 +821,8 @@ exports[`Storyshots Alert Playground 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -823,6 +834,7 @@ exports[`Storyshots Alert Playground 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -837,6 +849,7 @@ exports[`Storyshots Alert Playground 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -844,11 +857,8 @@ exports[`Storyshots Alert Playground 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -858,11 +868,8 @@ exports[`Storyshots Alert Playground 1`] = `
           </div>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-component-container"
+          style={Object {}}
         >
           <div
             className="Alert__StyledAlert-dqYNhl doPSCL"
@@ -908,6 +915,7 @@ exports[`Storyshots Alert Playground 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -915,62 +923,47 @@ exports[`Storyshots Alert Playground 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
+                  style={undefined}
                 >
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                    <div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &lt;
-                        Alert
-                      </span>
-                      <span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          Alert
+                        </span>
                         <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            icon
-                          </span>
                           <span>
-                            =
+                             
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              icon
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -985,47 +978,45 @@ exports[`Storyshots Alert Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            title
-                          </span>
                           <span>
-                            =
+                             
                             <span
                               style={Object {}}
                             >
+                              title
+                            </span>
+                            <span>
+                              =
                               <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
+                                style={Object {}}
                               >
                                 "
-                                You can change the title by changing the Title kno…
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  You can change the title by changing the Title kno…
+                                </span>
                                 "
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            onClose
-                          </span>
                           <span>
-                            =
+                             
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              onClose
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -1039,59 +1030,80 @@ exports[`Storyshots Alert Playground 1`] = `
                                 }
                               </span>
                             </span>
+                            
                           </span>
-                          
                         </span>
-                      </span>
-                      <span
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &gt;
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 33,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          Also you can change the message by changing the Message knob
+                        </span>
+                      </div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        Also you can change the message by changing the Message knob
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
                           }
-                        }
-                      >
-                        &lt;/
-                        Alert
-                        &gt;
-                      </span>
+                        >
+                          &lt;/
+                          Alert
+                          &gt;
+                        </span>
+                      </div>
                     </div>
                   </div>
+                  <button
+                    className="css-gydez8"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -1112,6 +1124,7 @@ exports[`Storyshots Alert Success alert 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -1121,14 +1134,18 @@ exports[`Storyshots Alert Success alert 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -1141,14 +1158,8 @@ exports[`Storyshots Alert Success alert 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -1161,6 +1172,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -1175,6 +1187,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -1182,11 +1195,8 @@ Avoid using success banner if there is any follow-up action, for example, in cas
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -1196,11 +1206,8 @@ Avoid using success banner if there is any follow-up action, for example, in cas
           </div>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-component-container"
+          style={Object {}}
         >
           <div
             className="Alert__StyledAlert-dqYNhl gnhZp"
@@ -1241,6 +1248,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -1248,135 +1256,143 @@ Avoid using success banner if there is any follow-up action, for example, in cas
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
+                  style={undefined}
                 >
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                    <div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &lt;
-                        Alert
-                      </span>
-                      <span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          Alert
+                        </span>
                         <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            type
-                          </span>
                           <span>
-                            =
+                             
                             <span
                               style={Object {}}
                             >
+                              type
+                            </span>
+                            <span>
+                              =
                               <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
+                                style={Object {}}
                               >
                                 "
-                                success
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  success
+                                </span>
                                 "
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            icon
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              icon
+                            </span>
+                            
                           </span>
-                          
                         </span>
-                      </span>
-                      <span
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &gt;
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 33,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          The quick, brown fox jumps over a lazy dog.
+                        </span>
+                      </div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        The quick, brown fox jumps over a lazy dog.
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
                           }
-                        }
-                      >
-                        &lt;/
-                        Alert
-                        &gt;
-                      </span>
+                        >
+                          &lt;/
+                          Alert
+                          &gt;
+                        </span>
+                      </div>
                     </div>
                   </div>
+                  <button
+                    className="css-gydez8"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -1397,6 +1413,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -1406,14 +1423,18 @@ exports[`Storyshots Alert Warning alert 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -1426,14 +1447,8 @@ exports[`Storyshots Alert Warning alert 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -1445,6 +1460,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -1459,6 +1475,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -1466,11 +1483,8 @@ exports[`Storyshots Alert Warning alert 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -1480,11 +1494,8 @@ exports[`Storyshots Alert Warning alert 1`] = `
           </div>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-component-container"
+          style={Object {}}
         >
           <div
             className="Alert__StyledAlert-dqYNhl kbCxwb"
@@ -1525,6 +1536,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -1532,135 +1544,143 @@ exports[`Storyshots Alert Warning alert 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
+                  style={undefined}
                 >
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                    <div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &lt;
-                        Alert
-                      </span>
-                      <span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          Alert
+                        </span>
                         <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            type
-                          </span>
                           <span>
-                            =
+                             
                             <span
                               style={Object {}}
                             >
+                              type
+                            </span>
+                            <span>
+                              =
                               <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
+                                style={Object {}}
                               >
                                 "
-                                warning
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  warning
+                                </span>
                                 "
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            icon
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              icon
+                            </span>
+                            
                           </span>
-                          
                         </span>
-                      </span>
-                      <span
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &gt;
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 33,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          The quick, brown fox jumps over a lazy dog.
+                        </span>
+                      </div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        The quick, brown fox jumps over a lazy dog.
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
                           }
-                        }
-                      >
-                        &lt;/
-                        Alert
-                        &gt;
-                      </span>
+                        >
+                          &lt;/
+                          Alert
+                          &gt;
+                        </span>
+                      </div>
                     </div>
                   </div>
+                  <button
+                    className="css-gydez8"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>

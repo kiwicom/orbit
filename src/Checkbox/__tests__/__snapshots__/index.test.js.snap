@@ -375,6 +375,12 @@ exports[`Default CheckBox should match snapshot 1`] = `
         "calls": Array [
           Array [],
         ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
       }
     }
     theme={

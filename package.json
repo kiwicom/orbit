@@ -43,7 +43,7 @@
     "styled-jsx": "^2.2.6"
   },
   "dependencies": {
-    "@kiwicom/orbit-design-tokens": "^0.0.8",
+    "@kiwicom/orbit-design-tokens": "^0.0.13",
     "@sambego/storybook-styles": "^1.0.0",
     "classnames": "^2.2.5",
     "polished": "^1.9.2",

@@ -20,6 +20,7 @@ exports[`Storyshots SystemMessage error with icon 1`] = `
     className="jsx-2399753088"
   >
     <svg
+      className={undefined}
       fill="currentColor"
       height="24px"
       preserveAspectRatio="xMidYMid meet"
@@ -70,6 +71,7 @@ exports[`Storyshots SystemMessage error with title and  icon 1`] = `
     className="jsx-2399753088"
   >
     <svg
+      className={undefined}
       fill="currentColor"
       height="24px"
       preserveAspectRatio="xMidYMid meet"
@@ -161,6 +163,7 @@ exports[`Storyshots SystemMessage success with icon 1`] = `
     className="jsx-2399753088"
   >
     <svg
+      className={undefined}
       fill="currentColor"
       height="24px"
       preserveAspectRatio="xMidYMid meet"
@@ -194,6 +197,7 @@ exports[`Storyshots SystemMessage success with title and  icon 1`] = `
     className="jsx-2399753088"
   >
     <svg
+      className={undefined}
       fill="currentColor"
       height="24px"
       preserveAspectRatio="xMidYMid meet"
@@ -244,6 +248,7 @@ exports[`Storyshots SystemMessage warning with icon 1`] = `
     className="jsx-2399753088"
   >
     <svg
+      className={undefined}
       fill="currentColor"
       height="24px"
       preserveAspectRatio="xMidYMid meet"
@@ -277,6 +282,7 @@ exports[`Storyshots SystemMessage warning with title and  icon 1`] = `
     className="jsx-2399753088"
   >
     <svg
+      className={undefined}
       fill="currentColor"
       height="24px"
       preserveAspectRatio="xMidYMid meet"

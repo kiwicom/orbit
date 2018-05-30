@@ -9,13 +9,13 @@ import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 import ThemeProvider from "../Theming/ThemeProvider";
 import * as Icons from "../icons";
 
-import Alert, { typeOptions } from "./index";
+import Alert, { TYPE_OPTIONS } from "./index";
 
 setAddon(chaptersAddon);
 
 const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
-const renderTitle = title => title !== "" && title;
+const renderTitle = title => (title === "" ? undefined : title);
 
 const options = {
   showSource: true,
@@ -150,7 +150,7 @@ storiesOf("Alert", module)
     };
   })
   .addWithChapters("Playground", () => {
-    const type = select("Type", typeOptions, "info");
+    const type = select("Type", TYPE_OPTIONS, "info");
     const title = text("Title", "You can change the title by changing the Title knob");
     const message = text("Message", "Also you can change the message by changing the Message knob");
     const closable = boolean("Closable", false);

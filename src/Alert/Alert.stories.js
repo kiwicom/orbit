@@ -150,7 +150,7 @@ storiesOf("Alert", module)
     };
   })
   .addWithChapters("Playground", () => {
-    const type = select("Type", TYPE_OPTIONS, "info");
+    const type = select("Type", Object.values(TYPE_OPTIONS), "info");
     const title = text("Title", "You can change the title by changing the Title knob");
     const message = text("Message", "Also you can change the message by changing the Message knob");
     const closable = boolean("Closable", false);

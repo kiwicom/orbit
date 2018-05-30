@@ -20,7 +20,12 @@ export const TYPE_OPTIONS = {
   CRITICAL: "critical",
 };
 
-const Icon = ({ icon, type }) => {
+type IconProps = {
+  icon: React.Node,
+  type: string,
+};
+
+const Icon = ({ icon, type }: IconProps) => {
   // Icon should be boolean and TRUE
   if (typeof icon === "boolean" && icon) {
     if (type === TYPE_OPTIONS.INFO) {
@@ -40,7 +45,7 @@ const Icon = ({ icon, type }) => {
 };
 
 type Props = {
-  type: $Keys<typeof TYPE_OPTIONS>,
+  type: $Values<typeof TYPE_OPTIONS>,
   title?: string,
   icon?: React.Element<any> | boolean,
   closable: boolean,

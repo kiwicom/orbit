@@ -99,6 +99,7 @@ exports[`Storyshots Icon Custom color 1`] = `
           }
         >
           <svg
+            className={undefined}
             fill="currentColor"
             height="24px"
             preserveAspectRatio="xMidYMid meet"
@@ -346,6 +347,7 @@ exports[`Storyshots Icon Default 1`] = `
           }
         >
           <svg
+            className={undefined}
             fill="currentColor"
             height="24px"
             preserveAspectRatio="xMidYMid meet"

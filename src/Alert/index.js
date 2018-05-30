@@ -13,25 +13,26 @@ import {
 } from "../icons";
 import { Button } from "../index";
 
-export const typeOptions = {
-  info: "info",
-  success: "success",
-  warning: "warning",
-  critical: "critical",
+export const TYPE_OPTIONS = {
+  INFO: "info",
+  SUCCESS: "success",
+  WARNING: "warning",
+  CRITICAL: "critical",
 };
 
 const Icon = ({ icon, type }) => {
-  if (typeof icon === "boolean") {
-    if (type === typeOptions.info) {
+  // Icon should be boolean and TRUE
+  if (typeof icon === "boolean" && icon) {
+    if (type === TYPE_OPTIONS.INFO) {
       return <InformationCircle />;
     }
-    if (type === typeOptions.success) {
+    if (type === TYPE_OPTIONS.SUCCESS) {
       return <Check />;
     }
-    if (type === typeOptions.warning) {
+    if (type === TYPE_OPTIONS.WARNING) {
       return <AlertTriangle />;
     }
-    if (type === typeOptions.critical) {
+    if (type === TYPE_OPTIONS.CRITICAL) {
       return <AlertCircle />;
     }
   }
@@ -39,7 +40,7 @@ const Icon = ({ icon, type }) => {
 };
 
 type Props = {
-  type: $Keys<typeof typeOptions>,
+  type: $Keys<typeof TYPE_OPTIONS>,
   title?: string,
   icon?: React.Element<any> | boolean,
   closable: boolean,
@@ -95,22 +96,22 @@ const Alert = (props: Props) => {
   const { type, title, theme, closable, icon, onClose, children } = props;
   const tokens = {
     colorIconAlert: {
-      info: theme.colorAlertIconInfo,
-      success: theme.colorAlertIconSuccess,
-      warning: theme.colorAlertIconWarning,
-      critical: theme.colorAlertIconCritical,
+      [TYPE_OPTIONS.INFO]: theme.colorAlertIconInfo,
+      [TYPE_OPTIONS.SUCCESS]: theme.colorAlertIconSuccess,
+      [TYPE_OPTIONS.WARNING]: theme.colorAlertIconWarning,
+      [TYPE_OPTIONS.CRITICAL]: theme.colorAlertIconCritical,
     },
     backgroundAlert: {
-      info: theme.backgroundAlertInfo,
-      success: theme.backgroundAlertSuccess,
-      warning: theme.backgroundAlertWarning,
-      critical: theme.backgroundAlertCritical,
+      [TYPE_OPTIONS.INFO]: theme.backgroundAlertInfo,
+      [TYPE_OPTIONS.SUCCESS]: theme.backgroundAlertSuccess,
+      [TYPE_OPTIONS.WARNING]: theme.backgroundAlertWarning,
+      [TYPE_OPTIONS.CRITICAL]: theme.backgroundAlertCritical,
     },
     colorTextAlert: {
-      info: theme.colorTextAlertInfo,
-      success: theme.colorTextAlertSuccess,
-      warning: theme.colorTextAlertWarning,
-      critical: theme.colorTextAlertCritical,
+      [TYPE_OPTIONS.INFO]: theme.colorTextAlertInfo,
+      [TYPE_OPTIONS.SUCCESS]: theme.colorTextAlertSuccess,
+      [TYPE_OPTIONS.WARNING]: theme.colorTextAlertWarning,
+      [TYPE_OPTIONS.CRITICAL]: theme.colorTextAlertCritical,
     },
   };
   return (

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import Typography from "../Typography";
+import Typography from "../Typography/Typography";
 
 type Props = {
   icon?: React.Node,

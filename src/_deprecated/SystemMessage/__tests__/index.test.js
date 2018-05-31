@@ -3,7 +3,7 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import SystemMessage from "../";
+import SystemMessage from "../SystemMessage";
 
 describe("System Message", () => {
   it("Should contain a Message ", () => {

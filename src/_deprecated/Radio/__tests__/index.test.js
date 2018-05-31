@@ -3,7 +3,7 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import Radio from "../";
+import Radio from "../Radio";
 
 describe("Radio", () => {
   const label = "label";
@@ -22,7 +22,9 @@ describe("Radio", () => {
 describe("When radio is clicked", () => {
   const onChange = jest.fn();
   const label = "label";
-  const component = shallow(<Radio label={label} onChange={onChange} />);
+  const component = shallow(<Radio label={label} onChange={onChange} />)
+    .first()
+    .shallow();
 
   it("should execute onChange method", () => {
     component.find("input").simulate("change");

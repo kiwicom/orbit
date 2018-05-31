@@ -3,7 +3,7 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import Select from "../";
+import Select from "../Select";
 
 const objectOptions = [
   { value: "1", label: "One" },

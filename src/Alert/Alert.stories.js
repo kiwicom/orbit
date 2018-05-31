@@ -6,7 +6,7 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 
-import ThemeProvider from "../Theming/ThemeProvider";
+import withTheme from "../withTheme";
 import * as Icons from "../icons";
 
 import Alert, { TYPE_OPTIONS } from "./index";
@@ -25,6 +25,7 @@ const options = {
 };
 
 storiesOf("Alert", module)
+  .addDecorator(withTheme)
   .addDecorator(withKnobs)
   .addDecorator(
     styles({
@@ -41,9 +42,7 @@ storiesOf("Alert", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Alert>{message}</Alert>
-                </ThemeProvider>
+                <Alert>{message}</Alert>
               ),
               options,
             },
@@ -63,11 +62,9 @@ storiesOf("Alert", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Alert title={renderTitle(title)} icon>
-                    {message}
-                  </Alert>
-                </ThemeProvider>
+                <Alert title={renderTitle(title)} icon>
+                  {message}
+                </Alert>
               ),
               options,
             },
@@ -88,11 +85,9 @@ storiesOf("Alert", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Alert type="success" title={renderTitle(title)} icon>
-                    {message}
-                  </Alert>
-                </ThemeProvider>
+                <Alert type="success" title={renderTitle(title)} icon>
+                  {message}
+                </Alert>
               ),
               options,
             },
@@ -112,11 +107,9 @@ storiesOf("Alert", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Alert type="warning" title={renderTitle(title)} icon>
-                    {message}
-                  </Alert>
-                </ThemeProvider>
+                <Alert type="warning" title={renderTitle(title)} icon>
+                  {message}
+                </Alert>
               ),
               options,
             },
@@ -136,11 +129,9 @@ storiesOf("Alert", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Alert type="critical" title={renderTitle(title)} icon>
-                    {message}
-                  </Alert>
-                </ThemeProvider>
+                <Alert type="critical" title={renderTitle(title)} icon>
+                  {message}
+                </Alert>
               ),
               options,
             },
@@ -163,17 +154,15 @@ storiesOf("Alert", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Alert
-                    type={type}
-                    icon={Icon && <Icon />}
-                    title={renderTitle(title)}
-                    closable={closable}
-                    onClose={action("Close")}
-                  >
-                    {message}
-                  </Alert>
-                </ThemeProvider>
+                <Alert
+                  type={type}
+                  icon={Icon && <Icon />}
+                  title={renderTitle(title)}
+                  closable={closable}
+                  onClose={action("Close")}
+                >
+                  {message}
+                </Alert>
               ),
               options,
             },

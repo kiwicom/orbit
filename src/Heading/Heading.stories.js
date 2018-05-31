@@ -34,9 +34,7 @@ storiesOf("Heading", module)
         {
           sections: [
             {
-              sectionFn: () => (
-                <Heading>{customTitle}</Heading>
-              ),
+              sectionFn: () => <Heading>{customTitle}</Heading>,
               options,
             },
           ],

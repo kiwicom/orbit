@@ -156,7 +156,7 @@ exports[`Storyshots Heading Default 1`] = `
                         }
                       >
                         &lt;
-                        ThemeProvider
+                        Heading
                       </span>
                       <span />
                       <span
@@ -169,74 +169,23 @@ exports[`Storyshots Heading Default 1`] = `
                         &gt;
                       </span>
                     </div>
-                    <div>
-                      <div
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Heading
-                        </span>
-                        <span />
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Orbit design system
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          Heading
-                          &gt;
-                        </span>
-                      </div>
+                        Orbit design system
+                      </span>
                     </div>
                     <div
                       style={
@@ -254,7 +203,7 @@ exports[`Storyshots Heading Default 1`] = `
                         }
                       >
                         &lt;/
-                        ThemeProvider
+                        Heading
                         &gt;
                       </span>
                     </div>
@@ -426,9 +375,65 @@ exports[`Storyshots Heading Playground 1`] = `
                         }
                       >
                         &lt;
-                        ThemeProvider
+                        Heading
                       </span>
-                      <span />
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            element
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                h2
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                display
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
                       <span
                         style={
                           Object {
@@ -439,130 +444,23 @@ exports[`Storyshots Heading Playground 1`] = `
                         &gt;
                       </span>
                     </div>
-                    <div>
-                      <div
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Heading
-                        </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              element
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  h2
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  display
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                            
-                          </span>
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Orbit design system
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          Heading
-                          &gt;
-                        </span>
-                      </div>
+                        Orbit design system
+                      </span>
                     </div>
                     <div
                       style={
@@ -580,7 +478,7 @@ exports[`Storyshots Heading Playground 1`] = `
                         }
                       >
                         &lt;/
-                        ThemeProvider
+                        Heading
                         &gt;
                       </span>
                     </div>
@@ -752,7 +650,7 @@ exports[`Storyshots Heading Title 1 1`] = `
                         }
                       >
                         &lt;
-                        ThemeProvider
+                        Heading
                       </span>
                       <span />
                       <span
@@ -765,74 +663,23 @@ exports[`Storyshots Heading Title 1 1`] = `
                         &gt;
                       </span>
                     </div>
-                    <div>
-                      <div
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Heading
-                        </span>
-                        <span />
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Orbit design system
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          Heading
-                          &gt;
-                        </span>
-                      </div>
+                        Orbit design system
+                      </span>
                     </div>
                     <div
                       style={
@@ -850,7 +697,7 @@ exports[`Storyshots Heading Title 1 1`] = `
                         }
                       >
                         &lt;/
-                        ThemeProvider
+                        Heading
                         &gt;
                       </span>
                     </div>
@@ -1022,9 +869,65 @@ exports[`Storyshots Heading Title 2 1`] = `
                         }
                       >
                         &lt;
-                        ThemeProvider
+                        Heading
                       </span>
-                      <span />
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                title2
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            element
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                h2
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
                       <span
                         style={
                           Object {
@@ -1035,130 +938,23 @@ exports[`Storyshots Heading Title 2 1`] = `
                         &gt;
                       </span>
                     </div>
-                    <div>
-                      <div
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Heading
-                        </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  title2
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              element
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  h2
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                            
-                          </span>
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Orbit design system
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          Heading
-                          &gt;
-                        </span>
-                      </div>
+                        Orbit design system
+                      </span>
                     </div>
                     <div
                       style={
@@ -1176,7 +972,7 @@ exports[`Storyshots Heading Title 2 1`] = `
                         }
                       >
                         &lt;/
-                        ThemeProvider
+                        Heading
                         &gt;
                       </span>
                     </div>
@@ -1348,9 +1144,65 @@ exports[`Storyshots Heading Title 3 1`] = `
                         }
                       >
                         &lt;
-                        ThemeProvider
+                        Heading
                       </span>
-                      <span />
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                title3
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            element
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                h3
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
                       <span
                         style={
                           Object {
@@ -1361,130 +1213,23 @@ exports[`Storyshots Heading Title 3 1`] = `
                         &gt;
                       </span>
                     </div>
-                    <div>
-                      <div
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Heading
-                        </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  title3
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              element
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  h3
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                            
-                          </span>
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Orbit design system
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          Heading
-                          &gt;
-                        </span>
-                      </div>
+                        Orbit design system
+                      </span>
                     </div>
                     <div
                       style={
@@ -1502,7 +1247,7 @@ exports[`Storyshots Heading Title 3 1`] = `
                         }
                       >
                         &lt;/
-                        ThemeProvider
+                        Heading
                         &gt;
                       </span>
                     </div>
@@ -1674,9 +1419,38 @@ exports[`Storyshots Heading Title Display 1`] = `
                         }
                       >
                         &lt;
-                        ThemeProvider
+                        Heading
                       </span>
-                      <span />
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                display
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
                       <span
                         style={
                           Object {
@@ -1687,103 +1461,23 @@ exports[`Storyshots Heading Title Display 1`] = `
                         &gt;
                       </span>
                     </div>
-                    <div>
-                      <div
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
                         style={
                           Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
+                            "color": "#777",
                           }
                         }
                       >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Heading
-                        </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  display
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                            
-                          </span>
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Orbit design system
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          Heading
-                          &gt;
-                        </span>
-                      </div>
+                        Orbit design system
+                      </span>
                     </div>
                     <div
                       style={
@@ -1801,7 +1495,7 @@ exports[`Storyshots Heading Title Display 1`] = `
                         }
                       >
                         &lt;/
-                        ThemeProvider
+                        Heading
                         &gt;
                       </span>
                     </div>

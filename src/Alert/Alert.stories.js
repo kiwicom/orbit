@@ -41,9 +41,7 @@ storiesOf("Alert", module)
         {
           sections: [
             {
-              sectionFn: () => (
-                <Alert>{message}</Alert>
-              ),
+              sectionFn: () => <Alert>{message}</Alert>,
               options,
             },
           ],

@@ -267,6 +267,7 @@
   <property name="COLORPLACEHOLDERINPUT" category="Colors" value="#ffbac7d5"/>
   <property name="SPACEMEDIUM" category="Spacing" value="16px"/>
   <property name="COLORTEXTBUTTONINFOBORDERED" category="Colors" value="#ff0176d2"/>
+  <property name="HEIGHTCOUNTRYFLAG" category="Size (width, height)" value="20px"/>
   <property name="HEIGHTICONLARGE" category="Size (width, height)" value="32px"/>
   <property name="PALETTEBLUELIGHTHOVER" category="Color palette" value="#ffc8effe"/>
   <property name="COLORTEXTBUTTONCRITICALHOVER" category="Colors" value="#ffffffff"/>
@@ -283,6 +284,7 @@
   <property name="PALETTECLOUDLIGHT" category="Color palette" value="#fff5f7f9"/>
   <property name="BACKGROUNDBUTTONWARNING" category="Background colors" value="#fff9971e"/>
   <property name="FONTWEIGHTMEDIUM" category="Font weight" value="500"/>
+  <property name="WIDTHCOUNTRYFLAG" category="Size (width, height)" value="20px"/>
   <property name="PALETTEREDLIGHTHOVER" category="Color palette" value="#fff5d4d4"/>
   <property name="BACKGROUNDALERTINFO" category="Background colors" value="#ffe0f6ff"/>
   <property name="PALETTEBLUENORMAL" category="Color palette" value="#ff0176d2"/>

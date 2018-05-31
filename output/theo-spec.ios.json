@@ -1606,6 +1606,12 @@
       "name": "colorTextButtonInfoBordered"
     },
     {
+      "value": "20px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "heightCountryFlag"
+    },
+    {
       "value": "32px",
       "type": "size",
       "category": "Size (width, height)",
@@ -1700,6 +1706,12 @@
       "type": "string",
       "category": "Font weight",
       "name": "fontWeightMedium"
+    },
+    {
+      "value": "20px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "widthCountryFlag"
     },
     {
       "value": "rgb(245, 212, 212)",

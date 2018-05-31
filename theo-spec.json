@@ -1396,6 +1396,22 @@
         "categoryDescription": ""
       }
     },
+    "heightCountryFlag": {
+      "value": "20px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "widthCountryFlag": {
+      "value": "20px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "borderColorInput": {
       "value": "#bac7d5",
       "type": "color",

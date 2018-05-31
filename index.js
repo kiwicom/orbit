@@ -270,6 +270,8 @@ const getTokens = (colors) => ({
 	widthRadioButton: "20px",
 	heightCheckbox: "20px",
 	widthCheckbox: "20px",
+	heightCountryFlag: "20px",
+	widthCountryFlag: "20px",
 	// category:Border color
 	// description:
 	borderColorInput: colors.ink.lighter,

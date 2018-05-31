@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import deprecationWarning from "../../../config/deprecationWarning";
+import DeprecatedComponent from "../../../config/DeprecatedComponent";
 import { fontColors } from "../../constants";
 
 const sizes = {
@@ -24,8 +24,6 @@ type Props = {
   children: React.Node,
 };
 
-deprecationWarning("Typography is deprecated and will be removed in next major release");
-
 const Typography = (props: Props) => (
   <span>
     {props.children}
@@ -40,4 +38,7 @@ const Typography = (props: Props) => (
   </span>
 );
 
-export default Typography;
+export default DeprecatedComponent(
+  Typography,
+  "Typography is deprecated and will be removed in next major release",
+);

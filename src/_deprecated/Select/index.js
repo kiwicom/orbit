@@ -8,14 +8,12 @@ import classnames from "classnames";
 import Typography from "../Typography";
 import { fontColors } from "../../constants";
 import FieldFeedback from "../FieldFeedback";
-import deprecationWarning from "../../../config/deprecationWarning";
+import DeprecatedComponent from "../../../config/DeprecatedComponent";
 
 const WHITE_COLOR = "white";
 
 const HASERROR_CLASS = "hasError";
 const UNSELECTED_CLASS = "UnSelected";
-
-deprecationWarning("Select is deprecated and will be removed in next major release");
 
 type Option = {
   value: string | number,
@@ -134,4 +132,7 @@ class Select extends React.Component<Props, State> {
   }
 }
 
-export default Select;
+export default DeprecatedComponent(
+  Select,
+  "Select is deprecated and will be removed in next major release",
+);

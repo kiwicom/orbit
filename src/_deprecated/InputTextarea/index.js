@@ -3,9 +3,7 @@ import * as React from "react";
 
 import Label from "../Input/Label";
 import FieldFeedback from "../FieldFeedback";
-import deprecationWarning from "../../../config/deprecationWarning";
-
-deprecationWarning("InputTextarea is deprecated and will be removed in next major release");
+import DeprecatedComponent from "../../../config/DeprecatedComponent";
 
 type Props = {
   value: string,
@@ -37,4 +35,7 @@ const InputTextarea = (props: Props) => (
   </React.Fragment>
 );
 
-export default InputTextarea;
+export default DeprecatedComponent(
+  InputTextarea,
+  "InputTextarea is deprecated and will be removed in next major release",
+);

@@ -4,9 +4,7 @@ import * as React from "react";
 
 import Typography from "../Typography";
 import { colors } from "../../constants";
-import deprecationWarning from "../../../config/deprecationWarning";
-
-deprecationWarning("Radio is deprecated and will be removed in next major release");
+import DeprecatedComponent from "../../../config/DeprecatedComponent";
 
 type Props = {
   label: string,
@@ -65,4 +63,7 @@ const Radio = (props: Props) => (
   </div>
 );
 
-export default Radio;
+export default DeprecatedComponent(
+  Radio,
+  "Radio is deprecated and will be removed in next major release",
+);

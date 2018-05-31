@@ -5,7 +5,7 @@ import { colors } from "../../constants";
 import Message from "./Message";
 import Title from "./Title";
 import IconWrapper from "./IconWrapper";
-import deprecationWarning from "../../../config/deprecationWarning";
+import DeprecatedComponent from "../../../config/DeprecatedComponent";
 
 type Props = {
   type: "warning" | "error" | "success" | "info",
@@ -20,8 +20,6 @@ const bgColors = {
   success: colors.green.light,
   info: colors.blue.light,
 };
-
-deprecationWarning("SystemMessage is deprecated and will be removed in next major release");
 
 const SystemMessage = (props: Props) => (
   <div>
@@ -44,4 +42,7 @@ const SystemMessage = (props: Props) => (
   </div>
 );
 
-export default SystemMessage;
+export default DeprecatedComponent(
+  SystemMessage,
+  "SystemMessage is deprecated and will be removed in next major release, please use Alert instead",
+);

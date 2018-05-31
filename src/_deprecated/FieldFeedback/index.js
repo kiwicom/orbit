@@ -3,9 +3,7 @@
 import * as React from "react";
 
 import Typography from "../Typography";
-import deprecationWarning from "../../../config/deprecationWarning";
-
-deprecationWarning("FieldFeedback is deprecated and will be removed in next major release");
+import DeprecatedComponent from "../../../config/DeprecatedComponent";
 
 type Props = {
   error?: React.Node,
@@ -29,4 +27,7 @@ const FieldFeedback = (props: Props) => {
   return null;
 };
 
-export default FieldFeedback;
+export default DeprecatedComponent(
+  FieldFeedback,
+  "FieldFeedback is deprecated and will be removed in next major release",
+);

@@ -27,85 +27,99 @@ type Props = {
   theme: typeof defaultTokens,
 };
 
-const IconContainer = styled(({ tokens, variation, sizeIcon, ...props }) => <div {...props} />)`
+const IconContainer = styled(({ theme, tokens, variation, sizeIcon, type, onlyIcon, ...props }) => (
+  <div {...props} />
+))`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-right: ${props => (props.onlyIcon ? "0" : props.tokens.marginRightIcon[props.size])};
-  color: ${props => props.tokens.colorTextButton[props.variation][props.type]};
+  margin-right: ${({ onlyIcon, tokens, size }) => (onlyIcon ? "0" : tokens.marginRightIcon[size])};
+  color: ${({ tokens, variation, type }) => tokens.colorTextButton[variation][type]};
+  transition: all ${({ theme }) => theme.durationFast} ease-in-out;
 
   > * {
-    width: ${props => iconSizes[props.sizeIcon]};
-    height: ${props => iconSizes[props.sizeIcon]};
+    width: ${({ sizeIcon }) => iconSizes[sizeIcon]};
+    height: ${({ sizeIcon }) => iconSizes[sizeIcon]};
   }
 `;
 
 const StyledButton = styled(
-  ({ tokens, theme, type, variation, icon, sizeIcon, width, disabled, ...props }) => (
-    <button {...props} />
-  ),
+  ({
+    tokens,
+    theme,
+    type,
+    variation,
+    icon,
+    sizeIcon,
+    width,
+    bordered,
+    onlyIcon,
+    block,
+    ...props
+  }) => <button {...props} />,
 )`
   box-sizing: border-box;
   appearance: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${props =>
-    props.block
+  width: ${({ block, width, onlyIcon, tokens, size }) =>
+    block
       ? "100%"
-      : (props.width && `${props.width}px`) ||
-        (props.onlyIcon && `${props.tokens.heightButton[props.size]}`) ||
-        "auto"};
-  height: ${props => props.tokens.heightButton[props.size]};
-  background: ${props =>
-    props.bordered
-      ? props.tokens.backgroundButton.bordered
-      : props.tokens.backgroundButton[props.variation][props.type]};
-  color: ${props => props.tokens.colorTextButton[props.variation][props.type]};
+      : (width && `${width}px`) || (onlyIcon && `${tokens.heightButton[size]}`) || "auto"};
+  height: ${({ tokens, size }) => tokens.heightButton[size]};
+  background: ${({ bordered, tokens, variation, type }) =>
+    bordered ? tokens.backgroundButton.bordered : tokens.backgroundButton[variation][type]};
+  color: ${({ tokens, variation, type }) => tokens.colorTextButton[variation][type]};
   border: 0;
-  box-shadow: ${props =>
-    props.bordered
-      ? `inset 0 0 0 1px ${props.tokens.borderColorButton[props.variation][props.type]}`
-      : "0"};
-  border-radius: ${props => props.theme.borderRadiusNormal};
-  padding: 0 ${props => (props.onlyIcon ? "0" : props.tokens.paddingButton[props.size])} 0
-    ${props =>
-      (props.onlyIcon && "0") ||
-      (props.icon
-        ? props.tokens.paddingButtonWithIcon[props.size]
-        : props.tokens.paddingButton[props.size])};
-  font-weight: ${props => props.theme.fontWeightBold};
-  font-size: ${props => props.tokens.fontSizeButton[props.size]};
-  cursor: ${props => (props.disabled ? "default" : "pointer")};
-  opacity: ${props => (props.disabled ? props.theme.opacityButtonDisabled : "1")};
+  box-shadow: ${({ bordered, tokens, variation, type }) =>
+    bordered ? `inset 0 0 0 1px ${tokens.borderColorButton[variation][type]}` : "0"};
+  border-radius: ${({ theme }) => theme.borderRadiusNormal};
+  padding: 0 ${({ onlyIcon, tokens, size }) => (onlyIcon ? "0" : tokens.paddingButton[size])} 0
+    ${({ onlyIcon, icon, tokens, size }) =>
+      (onlyIcon && "0") ||
+      (icon ? tokens.paddingButtonWithIcon[size] : tokens.paddingButton[size])};
+  font-weight: ${({ theme }) => theme.fontWeightBold};
+  font-size: ${({ tokens, size }) => tokens.fontSizeButton[size]};
+  cursor: pointer;
   transition: all 0.15s ease-in-out;
   outline: 0;
 
-  &:hover {
-    background: ${props =>
-      props.bordered
-        ? props.tokens.backgroundButtonHover[props.variation]
-        : props.tokens.backgroundButtonHover[props.variation][props.type]};
-    border-color: ${props =>
-      props.bordered && props.tokens.borderColorButtonHover[props.variation][props.type]};
-    color: ${props => props.tokens.colorTextButtonHover[props.variation][props.type]};
+  &:disabled {
+    cursor: default;
+    opacity: ${({ theme }) => theme.opacityButtonDisabled};
+  }
+  &:enabled:hover {
+    background: ${({ bordered, tokens, variation, type }) =>
+      bordered
+        ? tokens.backgroundButtonHover[variation]
+        : tokens.backgroundButtonHover[variation][type]};
+    border-color: ${({ bordered, tokens, variation, type }) =>
+      bordered && tokens.borderColorButtonHover[variation][type]};
+    color: ${({ tokens, variation, type }) => tokens.colorTextButtonHover[variation][type]};
+    & ${IconContainer} {
+      color: ${({ tokens, variation, type }) => tokens.colorTextButtonHover[variation][type]};
+    }
   }
 
-  &:active {
-    transform: scale(${props => props.theme.modifierScaleButtonActive});
-    background: ${props =>
-      props.bordered
-        ? props.tokens.backgroundButtonActive[props.variation]
-        : props.tokens.backgroundButtonActive[props.variation][props.type]};
-    border-color: ${props =>
-      props.bordered && props.tokens.borderColorButtonActive[props.variation][props.type]};
-    color: ${props => props.tokens.colorTextButtonActive[props.variation][props.type]};
+  &:enabled:active {
+    transform: scale(${({ theme }) => theme.modifierScaleButtonActive});
+    background: ${({ bordered, tokens, variation, type }) =>
+      bordered
+        ? tokens.backgroundButtonActive[variation]
+        : tokens.backgroundButtonActive[variation][type]};
+    border-color: ${({ bordered, tokens, variation, type }) =>
+      bordered && tokens.borderColorButtonActive[variation][type]};
+    color: ${({ tokens, variation, type }) => tokens.colorTextButtonActive[variation][type]};
+    & ${IconContainer} {
+      color: ${({ tokens, variation, type }) => tokens.colorTextButtonActive[variation][type]};
+    }
   }
 `;
 
 const Button = (props: Props) => {
-  const { children, bordered, size, icon, theme } = props;
+  const { children, bordered, size, icon, theme, type } = props;
   const sizeIcon = size === "small" ? "small" : "medium";
   const onlyIcon = icon && !children;
   const variation = bordered ? "bordered" : "filled";
@@ -293,6 +307,8 @@ const Button = (props: Props) => {
           variation={variation}
           sizeIcon={sizeIcon}
           tokens={tokens}
+          type={type}
+          theme={theme}
         >
           {icon}
         </IconContainer>

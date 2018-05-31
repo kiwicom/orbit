@@ -31,29 +31,89 @@ storiesOf("Button", module)
       padding: "20px",
     }),
   )
-  .addWithChapters("Default button", () => ({
-    title: "Default button",
-    info: "Some description about default settings of Button component.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <ThemeProvider>
-                <Button type="primary" size="normal">
-                  Button
-                </Button>
-              </ThemeProvider>
-            ),
-            options,
-          },
-        ],
-      },
-    ],
-  }))
-  .addWithChapters("Facebook button", () => ({
-    title: "Facebook button",
-    info: "Some description about Facebook button. ",
+  .addWithChapters("Default", () => {
+    const title = text("Title", "Default button");
+
+    return {
+      info:
+        "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Button onClick={action("clicked")}>{title}</Button>
+                </ThemeProvider>
+              ),
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Basic buttons", () => {
+    const title = text("Title", "Button");
+    const block = boolean("Block", false);
+    const type = select("Type", ["primary", "secondary"], "primary");
+    const size = select("Size", ["small", "normal", "large"], "normal");
+    return {
+      info:
+        "Basic buttons have three sizes (large, normal and small) and can be either primary or secondary type. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Button onClick={action("clicked")} block={block} type={type} size={size}>
+                    {title}
+                  </Button>
+                </ThemeProvider>
+              ),
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Button with icon", () => {
+    const title = text("Title", "Button");
+    const block = boolean("Block", false);
+    const type = select("Type", ["primary", "secondary"], "primary");
+    const size = select("Size", ["small", "normal", "large"], "small");
+    const Icon = getIcon(getIcons("PlusCircle"));
+    return {
+      info:
+        "Buttons with icon are great when you need to draw more attention to the action. However, it's essential to not over-use these buttons. If everything tries to grab attention, things usually get messy. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Button
+                    onClick={action("clicked")}
+                    block={block}
+                    type={type}
+                    size={size}
+                    icon={Icon && <Icon />}
+                  >
+                    {title}
+                  </Button>
+                </ThemeProvider>
+              ),
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Social buttons", () => ({
+    info: "We use social buttons only in normal size.",
     chapters: [
       {
         sections: [
@@ -63,8 +123,8 @@ storiesOf("Button", module)
                 <Button
                   onClick={action("clicked")}
                   type="facebook"
-                  size="normal"
                   icon={<Icons.Facebook />}
+                  bordered
                 >
                   Sign in with Facebook
                 </Button>
@@ -72,26 +132,10 @@ storiesOf("Button", module)
             ),
             options,
           },
-        ],
-      },
-    ],
-  }))
-  .addWithChapters("Google button", () => ({
-    title: "Google button",
-    info: "Some description about Google button. ",
-    chapters: [
-      {
-        sections: [
           {
             sectionFn: () => (
               <ThemeProvider>
-                <Button
-                  onClick={action("clicked")}
-                  type="google"
-                  size="normal"
-                  icon={<Icons.Google />}
-                  bordered
-                >
+                <Button onClick={action("clicked")} type="google" icon={<Icons.Google />} bordered>
                   Sign in with Google
                 </Button>
               </ThemeProvider>
@@ -102,31 +146,122 @@ storiesOf("Button", module)
       },
     ],
   }))
-  .addWithChapters("Destructive button", () => ({
-    title: "Destructive button",
-    info: "Some description about Destructive button. ",
-    chapters: [
+  .addWithChapters("Status buttons", () => {
+    const title = text("Title", "Button");
+    const Icon = getIcon(getIcons("CloseCircle"));
+
+    return {
+      info:
+        "We use status buttons exclusively in Alert messages when we need to show supporting action connected to the displayed message. We only use the small size of buttons. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Button
+                    title={title}
+                    onClick={action("clicked")}
+                    type="info"
+                    size="small"
+                    icon={Icon && <Icon />}
+                  >
+                    {title}
+                  </Button>
+                </ThemeProvider>
+              ),
+              options,
+            },
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Button
+                    onClick={action("clicked")}
+                    type="success"
+                    size="small"
+                    icon={Icon && <Icon />}
+                  >
+                    {title}
+                  </Button>
+                </ThemeProvider>
+              ),
+              options,
+            },
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Button
+                    onClick={action("clicked")}
+                    type="warning"
+                    size="small"
+                    icon={Icon && <Icon />}
+                  >
+                    {title}
+                  </Button>
+                </ThemeProvider>
+              ),
+              options,
+            },
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Button
+                    onClick={action("clicked")}
+                    type="critical"
+                    size="small"
+                    icon={Icon && <Icon />}
+                  >
+                    {title}
+                  </Button>
+                </ThemeProvider>
+              ),
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Destructive buttons", () => {
+    const title = text("Title", "Destructive button");
+    const bordered = boolean("Bordered", false);
+    const size = select(
+      "Size",
       {
-        sections: [
-          {
-            sectionFn: () => (
-              <ThemeProvider>
-                <Button
-                  onClick={action("clicked")}
-                  type="critical"
-                  size="normal"
-                  icon={<Icons.Remove />}
-                >
-                  Delete
-                </Button>
-              </ThemeProvider>
-            ),
-            options,
-          },
-        ],
+        small: "small",
+        normal: "normal",
+        large: "large",
       },
-    ],
-  }))
+      "normal",
+    );
+
+    return {
+      info:
+        "Destructive buttons are a specific version of critical status buttons, paired together with 'Remove' icon. We use them when we need to inform our users about possible dangerous actions (canceling a booking, removing an item, etc.). Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Button
+                    onClick={action("clicked")}
+                    bordered={bordered}
+                    type="critical"
+                    size={size}
+                    icon={<Icons.Remove />}
+                  >
+                    {title}
+                  </Button>
+                </ThemeProvider>
+              ),
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Playground", () => {
     const title = text("Title", "Button");
     const disabled = boolean("Disabled", false);

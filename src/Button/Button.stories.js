@@ -8,10 +8,14 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, number, boolean, select } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
+import { ThemeProvider } from "../index";
 
-import Button from "./index";
+import Button, { TYPE_OPTIONS, SIZE_OPTIONS } from "./index";
 
 setAddon(chaptersAddon);
+
+const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)], defaultIcon);
+const getIcon = source => Icons[source];
 
 const options = {
   showSource: true,
@@ -27,69 +31,47 @@ storiesOf("Button", module)
       padding: "20px",
     }),
   )
-  .addWithChapters("Default button", () => {
+  .addWithChapters("Default", () => {
+    const title = text("Title", "Default button");
+
+    return {
+      info:
+        "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Button onClick={action("clicked")}>{title}</Button>
+                </ThemeProvider>
+              ),
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Basic buttons", () => {
     const title = text("Title", "Button");
-    const disabled = boolean("Disabled", false);
-    const loading = boolean("Loading Icon", false);
     const block = boolean("Block", false);
-    const variation = select(
-      "Variation",
-      {
-        filled: "filled",
-        bordered: "bordered",
-        link: "link",
-      },
-      "filled",
-    );
-    const type = select(
-      "Type",
-      {
-        primary: "primary",
-        secondary: "secondary",
-        info: "info",
-        success: "success",
-        warning: "warning",
-        critical: "critical",
-        facebook: "facebook",
-        google: "google",
-      },
-      "primary",
-    );
-    const size = select(
-      "Size",
-      {
-        small: "small",
-        normal: "normal",
-        large: "large",
-      },
-      "normal",
-    );
-    const width = number("Width", 0);
-    const showIcon = boolean("Show Icon", false);
-    const source = select("Icon", Object.keys(Icons), "Airplane");
-    const onlyIcon = boolean("Only Icon", false);
+    const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
+    const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
 
     return {
-      title: "Default button",
-      info: "Some description about default settings of Button component.",
+      info:
+        "Basic buttons have three sizes (large, normal and small) and can be either primary or secondary type. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
           sections: [
             {
               sectionFn: () => (
-                <Button
-                  title={title}
-                  onClick={action("clicked")}
-                  disabled={disabled}
-                  loading={loading}
-                  block={block}
-                  variation={variation}
-                  type={type}
-                  size={size}
-                  width={width}
-                  Icon={showIcon ? Icons[source] : undefined}
-                  onlyIcon={onlyIcon}
-                />
+                <ThemeProvider>
+                  <Button onClick={action("clicked")} block={block} type={type} size={size}>
+                    {title}
+                  </Button>
+                </ThemeProvider>
               ),
               options,
             },
@@ -98,57 +80,32 @@ storiesOf("Button", module)
       ],
     };
   })
-  .addWithChapters("Icon only", () => {
-    const variation = select(
-      "Variation",
-      {
-        filled: "filled",
-        bordered: "bordered",
-        link: "link",
-      },
-      "link",
-    );
-    const type = select(
-      "Type",
-      {
-        primary: "primary",
-        secondary: "secondary",
-        info: "info",
-        success: "success",
-        warning: "warning",
-        critical: "critical",
-        facebook: "facebook",
-        google: "google",
-      },
-      "info",
-    );
-    const size = select(
-      "Size",
-      {
-        small: "small",
-        normal: "normal",
-        large: "large",
-      },
-      "small",
-    );
-    const source = select("Icon", Object.keys(Icons), "CloseCircle");
+  .addWithChapters("Button with icon", () => {
+    const title = text("Title", "Button");
+    const block = boolean("Block", false);
+    const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
+    const size = select("Size", Object.values(SIZE_OPTIONS), "small");
+    const Icon = getIcon(getIcons("PlusCircle"));
 
     return {
-      title: "Only icon button",
-      info: "Some description about this type of component.",
+      info:
+        "Buttons with icon are great when you need to draw more attention to the action. However, it's essential to not over-use these buttons. If everything tries to grab attention, things usually get messy. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
           sections: [
             {
               sectionFn: () => (
-                <Button
-                  onClick={action("clicked")}
-                  variation={variation}
-                  type={type}
-                  size={size}
-                  Icon={Icons[source]}
-                  onlyIcon
-                />
+                <ThemeProvider>
+                  <Button
+                    onClick={action("clicked")}
+                    block={block}
+                    type={type}
+                    size={size}
+                    icon={Icon && <Icon />}
+                  >
+                    {title}
+                  </Button>
+                </ThemeProvider>
               ),
               options,
             },
@@ -157,42 +114,108 @@ storiesOf("Button", module)
       ],
     };
   })
-  .addWithChapters("Facebook button", () => {
-    const title = text("Title", "Sign in with Facebook");
-    const disabled = boolean("Disabled", false);
-    const loading = boolean("Loading Icon", false);
-    const block = boolean("Block", false);
-    const size = select(
-      "Size",
+  .addWithChapters("Social buttons", () => ({
+    info: "We use social buttons only in normal size.",
+    chapters: [
       {
-        small: "small",
-        normal: "normal",
-        large: "large",
-      },
-      "normal",
-    );
-    const width = number("Width", 0);
-
-    return {
-      title: "Facebook button",
-      info: "Some description about Facebook button. ",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
+        sections: [
+          {
+            sectionFn: () => (
+              <ThemeProvider>
                 <Button
-                  title={title}
                   onClick={action("clicked")}
-                  disabled={disabled}
-                  loading={loading}
-                  block={block}
-                  variation="filled"
                   type="facebook"
-                  size={size}
-                  width={width}
-                  Icon={Icons.Facebook}
-                />
+                  icon={<Icons.Facebook />}
+                  bordered
+                >
+                  Sign in with Facebook
+                </Button>
+              </ThemeProvider>
+            ),
+            options,
+          },
+          {
+            sectionFn: () => (
+              <ThemeProvider>
+                <Button onClick={action("clicked")} type="google" icon={<Icons.Google />} bordered>
+                  Sign in with Google
+                </Button>
+              </ThemeProvider>
+            ),
+            options,
+          },
+        ],
+      },
+    ],
+  }))
+  .addWithChapters("Status buttons", () => {
+    const title = text("Title", "Button");
+    const Icon = getIcon(getIcons("CloseCircle"));
+
+    return {
+      info:
+        "We use status buttons exclusively in Alert messages when we need to show supporting action connected to the displayed message. We only use the small size of buttons. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Button
+                    title={title}
+                    onClick={action("clicked")}
+                    type="info"
+                    size="small"
+                    icon={Icon && <Icon />}
+                  >
+                    {title}
+                  </Button>
+                </ThemeProvider>
+              ),
+              options,
+            },
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Button
+                    onClick={action("clicked")}
+                    type="success"
+                    size="small"
+                    icon={Icon && <Icon />}
+                  >
+                    {title}
+                  </Button>
+                </ThemeProvider>
+              ),
+              options,
+            },
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Button
+                    onClick={action("clicked")}
+                    type="warning"
+                    size="small"
+                    icon={Icon && <Icon />}
+                  >
+                    {title}
+                  </Button>
+                </ThemeProvider>
+              ),
+              options,
+            },
+            {
+              sectionFn: () => (
+                <ThemeProvider>
+                  <Button
+                    onClick={action("clicked")}
+                    type="critical"
+                    size="small"
+                    icon={Icon && <Icon />}
+                  >
+                    {title}
+                  </Button>
+                </ThemeProvider>
               ),
               options,
             },
@@ -201,86 +224,30 @@ storiesOf("Button", module)
       ],
     };
   })
-  .addWithChapters("Google button", () => {
-    const title = text("Title", "Sign in with Google");
-    const disabled = boolean("Disabled", false);
-    const loading = boolean("Loading Icon", false);
-    const block = boolean("Block", false);
-    const size = select(
-      "Size",
-      {
-        small: "small",
-        normal: "normal",
-        large: "large",
-      },
-      "normal",
-    );
-    const width = number("Width", 0);
+  .addWithChapters("Destructive buttons", () => {
+    const title = text("Title", "Destructive button");
+    const bordered = boolean("Bordered", false);
+    const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
 
     return {
-      title: "Google button",
-      info: "Some description about Google button. ",
+      info:
+        "Destructive buttons are a specific version of critical status buttons, paired together with 'Remove' icon. We use them when we need to inform our users about possible dangerous actions (canceling a booking, removing an item, etc.). Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
           sections: [
             {
               sectionFn: () => (
-                <Button
-                  title={title}
-                  onClick={action("clicked")}
-                  disabled={disabled}
-                  loading={loading}
-                  block={block}
-                  variation="bordered"
-                  type="google"
-                  size={size}
-                  width={width}
-                  Icon={Icons.Google}
-                />
-              ),
-              options,
-            },
-          ],
-        },
-      ],
-    };
-  })
-  .addWithChapters("Destructive button", () => {
-    const title = text("Title", "Delete");
-    const disabled = boolean("Disabled", false);
-    const loading = boolean("Loading Icon", false);
-    const block = boolean("Block", false);
-    const size = select(
-      "Size",
-      {
-        small: "small",
-        normal: "normal",
-        large: "large",
-      },
-      "normal",
-    );
-    const width = number("Width", 0);
-
-    return {
-      title: "Destructive button",
-      info: "Some description about Destructive button. ",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Button
-                  title={title}
-                  onClick={action("clicked")}
-                  disabled={disabled}
-                  loading={loading}
-                  block={block}
-                  variation="filled"
-                  type="critical"
-                  size={size}
-                  width={width}
-                  Icon={Icons.Remove}
-                />
+                <ThemeProvider>
+                  <Button
+                    onClick={action("clicked")}
+                    bordered={bordered}
+                    type="critical"
+                    size={size}
+                    icon={<Icons.Remove />}
+                  >
+                    {title}
+                  </Button>
+                </ThemeProvider>
               ),
               options,
             },
@@ -292,44 +259,12 @@ storiesOf("Button", module)
   .addWithChapters("Playground", () => {
     const title = text("Title", "Button");
     const disabled = boolean("Disabled", false);
-    const loading = boolean("Loading Icon", false);
     const block = boolean("Block", false);
-    const variation = select(
-      "Variation",
-      {
-        filled: "filled",
-        bordered: "bordered",
-        link: "link",
-      },
-      "filled",
-    );
-    const type = select(
-      "Type",
-      {
-        primary: "primary",
-        secondary: "secondary",
-        info: "info",
-        success: "success",
-        warning: "warning",
-        critical: "critical",
-        facebook: "facebook",
-        google: "google",
-      },
-      "primary",
-    );
-    const size = select(
-      "Size",
-      {
-        small: "small",
-        normal: "normal",
-        large: "large",
-      },
-      "normal",
-    );
+    const type = select("Type", Object.values(TYPE_OPTIONS), "primary");
+    const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
     const width = number("Width", 0);
-    const showIcon = boolean("Show Icon", false);
-    const source = select("Icon", Object.keys(Icons), "Airplane");
-    const onlyIcon = boolean("Only Icon", false);
+    const bordered = boolean("Bordered", false);
+    const Icon = getIcon(getIcons("Airplane"));
 
     return {
       title: "Playground button",
@@ -339,19 +274,20 @@ storiesOf("Button", module)
           sections: [
             {
               sectionFn: () => (
-                <Button
-                  title={title}
-                  onClick={action("clicked")}
-                  disabled={disabled}
-                  loading={loading}
-                  block={block}
-                  variation={variation}
-                  type={type}
-                  size={size}
-                  width={width}
-                  Icon={showIcon ? Icons[source] : undefined}
-                  onlyIcon={onlyIcon}
-                />
+                <ThemeProvider>
+                  <Button
+                    onClick={action("clicked")}
+                    disabled={disabled}
+                    block={block}
+                    bordered={bordered}
+                    type={type}
+                    size={size}
+                    icon={Icon && <Icon />}
+                    width={width}
+                  >
+                    {title}
+                  </Button>
+                </ThemeProvider>
               ),
               options,
             },

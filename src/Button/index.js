@@ -6,28 +6,37 @@ import { withTheme } from "theming";
 
 import { iconSizes } from "../Icon";
 
+export const TYPE_OPTIONS = {
+  PRIMARY: "primary",
+  SECONDARY: "secondary",
+  INFO: "info",
+  SUCCESS: "success",
+  WARNING: "warning",
+  CRITICAL: "critical",
+  FACEBOOK: "facebook",
+  GOOGLE: "google",
+};
+
+export const SIZE_OPTIONS = {
+  SMALL: "small",
+  NORMAL: "normal",
+  LARGE: "large",
+};
+
 type Props = {
   children?: React.Node,
   onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void,
   bordered: boolean,
   disabled: boolean,
   block: boolean,
-  type:
-    | "primary"
-    | "secondary"
-    | "info"
-    | "success"
-    | "warning"
-    | "critical"
-    | "facebook"
-    | "google",
-  size: "small" | "normal" | "large",
+  type: $Values<typeof TYPE_OPTIONS>,
+  size: $Values<typeof SIZE_OPTIONS>,
   width: number,
   icon?: React.Node,
   theme: typeof defaultTokens,
 };
 
-const IconContainer = styled(({ theme, tokens, variation, sizeIcon, type, onlyIcon, ...props }) => (
+const IconContainer = styled(({ theme, tokens, bordered, sizeIcon, type, onlyIcon, ...props }) => (
   <div {...props} />
 ))`
   display: flex;
@@ -35,7 +44,8 @@ const IconContainer = styled(({ theme, tokens, variation, sizeIcon, type, onlyIc
   align-items: center;
   justify-content: center;
   margin-right: ${({ onlyIcon, tokens, size }) => (onlyIcon ? "0" : tokens.marginRightIcon[size])};
-  color: ${({ tokens, variation, type }) => tokens.colorTextButton[variation][type]};
+  color: ${({ tokens, bordered, type }) =>
+    bordered ? tokens.colorTextButtonBordered[type] : tokens.colorTextButton[type]};
   transition: all ${({ theme }) => theme.durationFast} ease-in-out;
 
   > * {
@@ -45,19 +55,9 @@ const IconContainer = styled(({ theme, tokens, variation, sizeIcon, type, onlyIc
 `;
 
 const StyledButton = styled(
-  ({
-    tokens,
-    theme,
-    type,
-    variation,
-    icon,
-    sizeIcon,
-    width,
-    bordered,
-    onlyIcon,
-    block,
-    ...props
-  }) => <button {...props} />,
+  ({ tokens, theme, type, icon, sizeIcon, width, bordered, onlyIcon, block, ...props }) => (
+    <button {...props} />
+  ),
 )`
   box-sizing: border-box;
   appearance: none;
@@ -69,12 +69,13 @@ const StyledButton = styled(
       ? "100%"
       : (width && `${width}px`) || (onlyIcon && `${tokens.heightButton[size]}`) || "auto"};
   height: ${({ tokens, size }) => tokens.heightButton[size]};
-  background: ${({ bordered, tokens, variation, type }) =>
-    bordered ? tokens.backgroundButton.bordered : tokens.backgroundButton[variation][type]};
-  color: ${({ tokens, variation, type }) => tokens.colorTextButton[variation][type]};
+  background: ${({ bordered, tokens, type }) =>
+    bordered ? tokens.backgroundButtonBordered : tokens.backgroundButton[type]};
+  color: ${({ tokens, bordered, type }) =>
+    bordered ? tokens.colorTextButtonBordered[type] : tokens.colorTextButton[type]};
   border: 0;
-  box-shadow: ${({ bordered, tokens, variation, type }) =>
-    bordered ? `inset 0 0 0 1px ${tokens.borderColorButton[variation][type]}` : "0"};
+  box-shadow: ${({ bordered, tokens, type }) =>
+    bordered ? `inset 0 0 0 1px ${tokens.borderColorButton[type]}` : "0"};
   border-radius: ${({ theme }) => theme.borderRadiusNormal};
   padding: 0 ${({ onlyIcon, tokens, size }) => (onlyIcon ? "0" : tokens.paddingButton[size])} 0
     ${({ onlyIcon, icon, tokens, size }) =>
@@ -91,29 +92,29 @@ const StyledButton = styled(
     opacity: ${({ theme }) => theme.opacityButtonDisabled};
   }
   &:enabled:hover {
-    background: ${({ bordered, tokens, variation, type }) =>
-      bordered
-        ? tokens.backgroundButtonHover[variation]
-        : tokens.backgroundButtonHover[variation][type]};
-    border-color: ${({ bordered, tokens, variation, type }) =>
-      bordered && tokens.borderColorButtonHover[variation][type]};
-    color: ${({ tokens, variation, type }) => tokens.colorTextButtonHover[variation][type]};
+    background: ${({ bordered, tokens, type }) =>
+      bordered ? tokens.backgroundButtonBorderedHover : tokens.backgroundButtonHover[type]};
+    border-color: ${({ bordered, tokens, type }) =>
+      bordered && tokens.borderColorButtonHover[type]};
+    color: ${({ tokens, bordered, type }) =>
+      bordered ? tokens.colorTextButtonBorderedHover[type] : tokens.colorTextButtonHover[type]};
     & ${IconContainer} {
-      color: ${({ tokens, variation, type }) => tokens.colorTextButtonHover[variation][type]};
+      color: ${({ tokens, bordered, type }) =>
+        bordered ? tokens.colorTextButtonBorderedHover[type] : tokens.colorTextButtonHover[type]};
     }
   }
 
   &:enabled:active {
     transform: scale(${({ theme }) => theme.modifierScaleButtonActive});
-    background: ${({ bordered, tokens, variation, type }) =>
-      bordered
-        ? tokens.backgroundButtonActive[variation]
-        : tokens.backgroundButtonActive[variation][type]};
-    border-color: ${({ bordered, tokens, variation, type }) =>
-      bordered && tokens.borderColorButtonActive[variation][type]};
-    color: ${({ tokens, variation, type }) => tokens.colorTextButtonActive[variation][type]};
+    background: ${({ bordered, tokens, type }) =>
+      bordered ? tokens.backgroundButtonBorderedActive : tokens.backgroundButtonActive[type]};
+    border-color: ${({ bordered, tokens, type }) =>
+      bordered && tokens.borderColorButtonActive[type]};
+    color: ${({ tokens, bordered, type }) =>
+      bordered ? tokens.colorTextButtonBorderedActive[type] : tokens.colorTextButtonActive[type]};
     & ${IconContainer} {
-      color: ${({ tokens, variation, type }) => tokens.colorTextButtonActive[variation][type]};
+      color: ${({ tokens, bordered, type }) =>
+        bordered ? tokens.colorTextButtonBorderedActive[type] : tokens.colorTextButtonActive[type]};
     }
   }
 `;
@@ -122,189 +123,164 @@ const Button = (props: Props) => {
   const { children, bordered, size, icon, theme, type } = props;
   const sizeIcon = size === "small" ? "small" : "medium";
   const onlyIcon = icon && !children;
-  const variation = bordered ? "bordered" : "filled";
   const tokens = {
     heightButton: {
-      large: theme.heightButtonLarge,
-      normal: theme.heightButtonNormal,
-      small: theme.heightButtonSmall,
+      [SIZE_OPTIONS.LARGE]: theme.heightButtonLarge,
+      [SIZE_OPTIONS.NORMAL]: theme.heightButtonNormal,
+      [SIZE_OPTIONS.SMALL]: theme.heightButtonSmall,
     },
     fontSizeButton: {
-      large: theme.fontSizeButtonLarge,
-      normal: theme.fontSizeButtonNormal,
-      small: theme.fontSizeButtonSmall,
+      [SIZE_OPTIONS.LARGE]: theme.fontSizeButtonLarge,
+      [SIZE_OPTIONS.NORMAL]: theme.fontSizeButtonNormal,
+      [SIZE_OPTIONS.SMALL]: theme.fontSizeButtonSmall,
     },
     paddingButton: {
-      large: theme.paddingButtonLarge,
-      normal: theme.paddingButtonNormal,
-      small: theme.paddingButtonSmall,
+      [SIZE_OPTIONS.LARGE]: theme.paddingButtonLarge,
+      [SIZE_OPTIONS.NORMAL]: theme.paddingButtonNormal,
+      [SIZE_OPTIONS.SMALL]: theme.paddingButtonSmall,
     },
     paddingButtonWithIcon: {
-      large: theme.paddingButtonLargeWithIcon,
-      normal: theme.paddingButtonNormalWithIcon,
-      small: theme.paddingButtonSmallWithIcon,
+      [SIZE_OPTIONS.LARGE]: theme.paddingButtonLargeWithIcon,
+      [SIZE_OPTIONS.NORMAL]: theme.paddingButtonNormalWithIcon,
+      [SIZE_OPTIONS.SMALL]: theme.paddingButtonSmallWithIcon,
     },
     marginRightIcon: {
-      small: theme.marginButtonIconSmall,
-      normal: theme.marginButtonIconNormal,
-      large: theme.marginButtonIconLarge,
+      [SIZE_OPTIONS.LARGE]: theme.marginButtonIconLarge,
+      [SIZE_OPTIONS.NORMAL]: theme.marginButtonIconNormal,
+      [SIZE_OPTIONS.SMALL]: theme.marginButtonIconSmall,
     },
     backgroundButton: {
-      filled: {
-        primary: theme.backgroundButtonPrimary,
-        secondary: theme.backgroundButtonSecondary,
-        info: theme.backgroundButtonInfo,
-        success: theme.backgroundButtonSuccess,
-        warning: theme.backgroundButtonWarning,
-        critical: theme.backgroundButtonCritical,
-        facebook: theme.backgroundButtonFacebook,
-        google: theme.backgroundButtonGoogle,
-      },
-      bordered: theme.backgroundButtonBordered,
+      [TYPE_OPTIONS.PRIMARY]: theme.backgroundButtonPrimary,
+      [TYPE_OPTIONS.SECONDARY]: theme.backgroundButtonSecondary,
+      [TYPE_OPTIONS.INFO]: theme.backgroundButtonInfo,
+      [TYPE_OPTIONS.SUCCESS]: theme.backgroundButtonSuccess,
+      [TYPE_OPTIONS.WARNING]: theme.backgroundButtonWarning,
+      [TYPE_OPTIONS.CRITICAL]: theme.backgroundButtonCritical,
+      [TYPE_OPTIONS.FACEBOOK]: theme.backgroundButtonFacebook,
+      [TYPE_OPTIONS.GOOGLE]: theme.backgroundButtonGoogle,
     },
+    backgroundButtonBordered: theme.backgroundButtonBordered,
     backgroundButtonHover: {
-      filled: {
-        primary: theme.backgroundButtonPrimaryHover,
-        secondary: theme.backgroundButtonSecondaryHover,
-        info: theme.backgroundButtonInfoHover,
-        success: theme.backgroundButtonSuccessHover,
-        warning: theme.backgroundButtonWarningHover,
-        critical: theme.backgroundButtonCriticalHover,
-        facebook: theme.backgroundButtonFacebookHover,
-        google: theme.backgroundButtonGoogleHover,
-      },
-      bordered: theme.backgroundButtonBorderedHover,
+      [TYPE_OPTIONS.PRIMARY]: theme.backgroundButtonPrimaryHover,
+      [TYPE_OPTIONS.SECONDARY]: theme.backgroundButtonSecondaryHover,
+      [TYPE_OPTIONS.INFO]: theme.backgroundButtonInfoHover,
+      [TYPE_OPTIONS.SUCCESS]: theme.backgroundButtonSuccessHover,
+      [TYPE_OPTIONS.WARNING]: theme.backgroundButtonWarningHover,
+      [TYPE_OPTIONS.CRITICAL]: theme.backgroundButtonCriticalHover,
+      [TYPE_OPTIONS.FACEBOOK]: theme.backgroundButtonFacebookHover,
+      [TYPE_OPTIONS.GOOGLE]: theme.backgroundButtonGoogleHover,
     },
+    backgroundButtonBorderedHover: theme.backgroundButtonBorderedHover,
     backgroundButtonActive: {
-      filled: {
-        primary: theme.backgroundButtonPrimaryActive,
-        secondary: theme.backgroundButtonSecondaryActive,
-        info: theme.backgroundButtonInfoActive,
-        success: theme.backgroundButtonSuccessActive,
-        warning: theme.backgroundButtonWarningActive,
-        critical: theme.backgroundButtonCriticalActive,
-        facebook: theme.backgroundButtonFacebookActive,
-        google: theme.backgroundButtonGoogleActive,
-      },
-      bordered: theme.backgroundButtonBorderedActive,
+      [TYPE_OPTIONS.PRIMARY]: theme.backgroundButtonPrimaryActive,
+      [TYPE_OPTIONS.SECONDARY]: theme.backgroundButtonSecondaryActive,
+      [TYPE_OPTIONS.INFO]: theme.backgroundButtonInfoActive,
+      [TYPE_OPTIONS.SUCCESS]: theme.backgroundButtonSuccessActive,
+      [TYPE_OPTIONS.WARNING]: theme.backgroundButtonWarningActive,
+      [TYPE_OPTIONS.CRITICAL]: theme.backgroundButtonCriticalActive,
+      [TYPE_OPTIONS.FACEBOOK]: theme.backgroundButtonFacebookActive,
+      [TYPE_OPTIONS.GOOGLE]: theme.backgroundButtonGoogleActive,
     },
+    backgroundButtonBorderedActive: theme.backgroundButtonBorderedActive,
     colorTextButton: {
-      filled: {
-        primary: theme.colorTextButtonPrimary,
-        secondary: theme.colorTextButtonSecondary,
-        info: theme.colorTextButtonInfo,
-        success: theme.colorTextButtonSuccess,
-        warning: theme.colorTextButtonWarning,
-        critical: theme.colorTextButtonCritical,
-        facebook: theme.colorTextButtonFacebook,
-        google: theme.colorTextButtonGoogle,
-      },
-      bordered: {
-        primary: theme.colorTextButtonPrimaryBordered,
-        secondary: theme.colorTextButtonSecondaryBordered,
-        info: theme.colorTextButtonInfoBordered,
-        success: theme.colorTextButtonSuccessBordered,
-        warning: theme.colorTextButtonWarningBordered,
-        critical: theme.colorTextButtonCriticalBordered,
-        facebook: theme.colorTextButtonFacebookBordered,
-        google: theme.colorTextButtonGoogleBordered,
-      },
+      [TYPE_OPTIONS.PRIMARY]: theme.colorTextButtonPrimary,
+      [TYPE_OPTIONS.SECONDARY]: theme.colorTextButtonSecondary,
+      [TYPE_OPTIONS.INFO]: theme.colorTextButtonInfo,
+      [TYPE_OPTIONS.SUCCESS]: theme.colorTextButtonSuccess,
+      [TYPE_OPTIONS.WARNING]: theme.colorTextButtonWarning,
+      [TYPE_OPTIONS.CRITICAL]: theme.colorTextButtonCritical,
+      [TYPE_OPTIONS.FACEBOOK]: theme.colorTextButtonFacebook,
+      [TYPE_OPTIONS.GOOGLE]: theme.colorTextButtonGoogle,
+    },
+    colorTextButtonBordered: {
+      [TYPE_OPTIONS.PRIMARY]: theme.colorTextButtonPrimaryBordered,
+      [TYPE_OPTIONS.SECONDARY]: theme.colorTextButtonSecondaryBordered,
+      [TYPE_OPTIONS.INFO]: theme.colorTextButtonInfoBordered,
+      [TYPE_OPTIONS.SUCCESS]: theme.colorTextButtonSuccessBordered,
+      [TYPE_OPTIONS.WARNING]: theme.colorTextButtonWarningBordered,
+      [TYPE_OPTIONS.CRITICAL]: theme.colorTextButtonCriticalBordered,
+      [TYPE_OPTIONS.FACEBOOK]: theme.colorTextButtonFacebookBordered,
+      [TYPE_OPTIONS.GOOGLE]: theme.colorTextButtonGoogleBordered,
     },
     colorTextButtonHover: {
-      filled: {
-        primary: theme.colorTextButtonPrimaryHover,
-        secondary: theme.colorTextButtonSecondaryHover,
-        info: theme.colorTextButtonInfoHover,
-        success: theme.colorTextButtonSuccessHover,
-        warning: theme.colorTextButtonWarningHover,
-        critical: theme.colorTextButtonCriticalHover,
-        facebook: theme.colorTextButtonFacebookHover,
-        google: theme.colorTextButtonGoogleHover,
-      },
-      bordered: {
-        primary: theme.colorTextButtonPrimaryBorderedHover,
-        secondary: theme.colorTextButtonSecondaryBorderedHover,
-        info: theme.colorTextButtonInfoBorderedHover,
-        success: theme.colorTextButtonSuccessBorderedHover,
-        warning: theme.colorTextButtonWarningBorderedHover,
-        critical: theme.colorTextButtonCriticalBorderedHover,
-        facebook: theme.colorTextButtonFacebookBorderedHover,
-        google: theme.colorTextButtonGoogleBorderedHover,
-      },
+      [TYPE_OPTIONS.PRIMARY]: theme.colorTextButtonPrimaryHover,
+      [TYPE_OPTIONS.SECONDARY]: theme.colorTextButtonSecondaryHover,
+      [TYPE_OPTIONS.INFO]: theme.colorTextButtonInfoHover,
+      [TYPE_OPTIONS.SUCCESS]: theme.colorTextButtonSuccessHover,
+      [TYPE_OPTIONS.WARNING]: theme.colorTextButtonWarningHover,
+      [TYPE_OPTIONS.CRITICAL]: theme.colorTextButtonCriticalHover,
+      [TYPE_OPTIONS.FACEBOOK]: theme.colorTextButtonFacebookHover,
+      [TYPE_OPTIONS.GOOGLE]: theme.colorTextButtonGoogleHover,
+    },
+    colorTextButtonBorderedHover: {
+      [TYPE_OPTIONS.PRIMARY]: theme.colorTextButtonPrimaryBorderedHover,
+      [TYPE_OPTIONS.SECONDARY]: theme.colorTextButtonSecondaryBorderedHover,
+      [TYPE_OPTIONS.INFO]: theme.colorTextButtonInfoBorderedHover,
+      [TYPE_OPTIONS.SUCCESS]: theme.colorTextButtonSuccessBorderedHover,
+      [TYPE_OPTIONS.WARNING]: theme.colorTextButtonWarningBorderedHover,
+      [TYPE_OPTIONS.CRITICAL]: theme.colorTextButtonCriticalBorderedHover,
+      [TYPE_OPTIONS.FACEBOOK]: theme.colorTextButtonFacebookBorderedHover,
+      [TYPE_OPTIONS.GOOGLE]: theme.colorTextButtonGoogleBorderedHover,
     },
     colorTextButtonActive: {
-      filled: {
-        primary: theme.colorTextButtonPrimaryActive,
-        secondary: theme.colorTextButtonSecondaryActive,
-        info: theme.colorTextButtonInfoActive,
-        success: theme.colorTextButtonSuccessActive,
-        warning: theme.colorTextButtonWarningActive,
-        critical: theme.colorTextButtonCriticalActive,
-        facebook: theme.colorTextButtonFacebookActive,
-        google: theme.colorTextButtonGoogleActive,
-      },
-      bordered: {
-        primary: theme.colorTextButtonPrimaryBorderedActive,
-        secondary: theme.colorTextButtonSecondaryBorderedActive,
-        info: theme.colorTextButtonInfoBorderedActive,
-        success: theme.colorTextButtonSuccessBorderedActive,
-        warning: theme.colorTextButtonWarningBorderedActive,
-        critical: theme.colorTextButtonCriticalBorderedActive,
-        facebook: theme.colorTextButtonFacebookBorderedActive,
-        google: theme.colorTextButtonGoogleBorderedActive,
-      },
+      [TYPE_OPTIONS.PRIMARY]: theme.colorTextButtonPrimaryActive,
+      [TYPE_OPTIONS.SECONDARY]: theme.colorTextButtonSecondaryActive,
+      [TYPE_OPTIONS.INFO]: theme.colorTextButtonInfoActive,
+      [TYPE_OPTIONS.SUCCESS]: theme.colorTextButtonSuccessActive,
+      [TYPE_OPTIONS.WARNING]: theme.colorTextButtonWarningActive,
+      [TYPE_OPTIONS.CRITICAL]: theme.colorTextButtonCriticalActive,
+      [TYPE_OPTIONS.FACEBOOK]: theme.colorTextButtonFacebookActive,
+      [TYPE_OPTIONS.GOOGLE]: theme.colorTextButtonGoogleActive,
+    },
+    colorTextButtonBorderedActive: {
+      [TYPE_OPTIONS.PRIMARY]: theme.colorTextButtonPrimaryBorderedActive,
+      [TYPE_OPTIONS.SECONDARY]: theme.colorTextButtonSecondaryBorderedActive,
+      [TYPE_OPTIONS.INFO]: theme.colorTextButtonInfoBorderedActive,
+      [TYPE_OPTIONS.SUCCESS]: theme.colorTextButtonSuccessBorderedActive,
+      [TYPE_OPTIONS.WARNING]: theme.colorTextButtonWarningBorderedActive,
+      [TYPE_OPTIONS.CRITICAL]: theme.colorTextButtonCriticalBorderedActive,
+      [TYPE_OPTIONS.FACEBOOK]: theme.colorTextButtonFacebookBorderedActive,
+      [TYPE_OPTIONS.GOOGLE]: theme.colorTextButtonGoogleBorderedActive,
     },
     borderColorButton: {
-      bordered: {
-        primary: theme.borderColorButtonPrimaryBordered,
-        secondary: theme.borderColorButtonSecondaryBordered,
-        info: theme.borderColorButtonInfoBordered,
-        success: theme.borderColorButtonSuccessBordered,
-        warning: theme.borderColorButtonWarningBordered,
-        critical: theme.borderColorButtonCriticalBordered,
-        facebook: theme.borderColorButtonFacebookBordered,
-        google: theme.borderColorButtonGoogleBordered,
-      },
+      [TYPE_OPTIONS.PRIMARY]: theme.borderColorButtonPrimaryBordered,
+      [TYPE_OPTIONS.SECONDARY]: theme.borderColorButtonSecondaryBordered,
+      [TYPE_OPTIONS.INFO]: theme.borderColorButtonInfoBordered,
+      [TYPE_OPTIONS.SUCCESS]: theme.borderColorButtonSuccessBordered,
+      [TYPE_OPTIONS.WARNING]: theme.borderColorButtonWarningBordered,
+      [TYPE_OPTIONS.CRITICAL]: theme.borderColorButtonCriticalBordered,
+      [TYPE_OPTIONS.FACEBOOK]: theme.borderColorButtonFacebookBordered,
+      [TYPE_OPTIONS.GOOGLE]: theme.borderColorButtonGoogleBordered,
     },
     borderColorButtonHover: {
-      bordered: {
-        primary: theme.borderColorButtonPrimaryBorderedHover,
-        secondary: theme.borderColorButtonSecondaryBorderedHover,
-        info: theme.borderColorButtonInfoBorderedHover,
-        success: theme.borderColorButtonSuccessBorderedHover,
-        warning: theme.borderColorButtonWarningBorderedHover,
-        critical: theme.borderColorButtonCriticalBorderedHover,
-        facebook: theme.borderColorButtonFacebookBorderedHover,
-        google: theme.borderColorButtonGoogleBorderedHover,
-      },
+      [TYPE_OPTIONS.PRIMARY]: theme.borderColorButtonPrimaryBorderedHover,
+      [TYPE_OPTIONS.SECONDARY]: theme.borderColorButtonSecondaryBorderedHover,
+      [TYPE_OPTIONS.INFO]: theme.borderColorButtonInfoBorderedHover,
+      [TYPE_OPTIONS.SUCCESS]: theme.borderColorButtonSuccessBorderedHover,
+      [TYPE_OPTIONS.WARNING]: theme.borderColorButtonWarningBorderedHover,
+      [TYPE_OPTIONS.CRITICAL]: theme.borderColorButtonCriticalBorderedHover,
+      [TYPE_OPTIONS.FACEBOOK]: theme.borderColorButtonFacebookBorderedHover,
+      [TYPE_OPTIONS.GOOGLE]: theme.borderColorButtonGoogleBorderedHover,
     },
     borderColorButtonActive: {
-      bordered: {
-        primary: theme.borderColorButtonPrimaryBorderedActive,
-        secondary: theme.borderColorButtonSecondaryBorderedActive,
-        info: theme.borderColorButtonInfoBorderedActive,
-        success: theme.borderColorButtonSuccessBorderedActive,
-        warning: theme.borderColorButtonWarningBorderedActive,
-        critical: theme.borderColorButtonCriticalBorderedActive,
-        facebook: theme.borderColorButtonFacebookBorderedActive,
-        google: theme.borderColorButtonGoogleBorderedActive,
-      },
+      [TYPE_OPTIONS.PRIMARY]: theme.borderColorButtonPrimaryBorderedActive,
+      [TYPE_OPTIONS.SECONDARY]: theme.borderColorButtonSecondaryBorderedActive,
+      [TYPE_OPTIONS.INFO]: theme.borderColorButtonInfoBorderedActive,
+      [TYPE_OPTIONS.SUCCESS]: theme.borderColorButtonSuccessBorderedActive,
+      [TYPE_OPTIONS.WARNING]: theme.borderColorButtonWarningBorderedActive,
+      [TYPE_OPTIONS.CRITICAL]: theme.borderColorButtonCriticalBorderedActive,
+      [TYPE_OPTIONS.FACEBOOK]: theme.borderColorButtonFacebookBorderedActive,
+      [TYPE_OPTIONS.GOOGLE]: theme.borderColorButtonGoogleBorderedActive,
     },
   };
 
   return (
-    <StyledButton
-      onlyIcon={onlyIcon}
-      variation={variation}
-      sizeIcon={sizeIcon}
-      tokens={tokens}
-      {...props}
-    >
+    <StyledButton onlyIcon={onlyIcon} sizeIcon={sizeIcon} tokens={tokens} {...props}>
       {icon && (
         <IconContainer
           size={size}
           onlyIcon={onlyIcon}
-          variation={variation}
+          bordered={bordered}
           sizeIcon={sizeIcon}
           tokens={tokens}
           type={type}

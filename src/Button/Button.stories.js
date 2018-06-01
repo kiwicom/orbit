@@ -10,7 +10,7 @@ import { withKnobs, text, number, boolean, select } from "@storybook/addon-knobs
 import * as Icons from "../icons";
 import { ThemeProvider } from "../index";
 
-import Button from "./index";
+import Button, { TYPE_OPTIONS, SIZE_OPTIONS } from "./index";
 
 setAddon(chaptersAddon);
 
@@ -56,8 +56,9 @@ storiesOf("Button", module)
   .addWithChapters("Basic buttons", () => {
     const title = text("Title", "Button");
     const block = boolean("Block", false);
-    const type = select("Type", ["primary", "secondary"], "primary");
-    const size = select("Size", ["small", "normal", "large"], "normal");
+    const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
+    const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
+
     return {
       info:
         "Basic buttons have three sizes (large, normal and small) and can be either primary or secondary type. Visit Orbit.Kiwi for more detailed guidelines.",
@@ -82,9 +83,10 @@ storiesOf("Button", module)
   .addWithChapters("Button with icon", () => {
     const title = text("Title", "Button");
     const block = boolean("Block", false);
-    const type = select("Type", ["primary", "secondary"], "primary");
-    const size = select("Size", ["small", "normal", "large"], "small");
+    const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
+    const size = select("Size", Object.values(SIZE_OPTIONS), "small");
     const Icon = getIcon(getIcons("PlusCircle"));
+
     return {
       info:
         "Buttons with icon are great when you need to draw more attention to the action. However, it's essential to not over-use these buttons. If everything tries to grab attention, things usually get messy. Visit Orbit.Kiwi for more detailed guidelines.",
@@ -225,15 +227,7 @@ storiesOf("Button", module)
   .addWithChapters("Destructive buttons", () => {
     const title = text("Title", "Destructive button");
     const bordered = boolean("Bordered", false);
-    const size = select(
-      "Size",
-      {
-        small: "small",
-        normal: "normal",
-        large: "large",
-      },
-      "normal",
-    );
+    const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
 
     return {
       info:
@@ -266,29 +260,8 @@ storiesOf("Button", module)
     const title = text("Title", "Button");
     const disabled = boolean("Disabled", false);
     const block = boolean("Block", false);
-    const type = select(
-      "Type",
-      {
-        primary: "primary",
-        secondary: "secondary",
-        info: "info",
-        success: "success",
-        warning: "warning",
-        critical: "critical",
-        facebook: "facebook",
-        google: "google",
-      },
-      "primary",
-    );
-    const size = select(
-      "Size",
-      {
-        small: "small",
-        normal: "normal",
-        large: "large",
-      },
-      "normal",
-    );
+    const type = select("Type", Object.values(TYPE_OPTIONS), "primary");
+    const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
     const width = number("Width", 0);
     const bordered = boolean("Bordered", false);
     const Icon = getIcon(getIcons("Airplane"));

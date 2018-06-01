@@ -1262,7 +1262,7 @@ exports[`Button should match snapshot 1`] = `
           <Component
             block={false}
             bordered={false}
-            className="Button__StyledButton-jJDkJK hcIbh"
+            className="Button__StyledButton-jJDkJK etUXlb"
             disabled={false}
             icon={<Airplane />}
             onClick={[MockFunction]}
@@ -1782,7 +1782,7 @@ exports[`Button should match snapshot 1`] = `
             width={0}
           >
             <button
-              className="Button__StyledButton-jJDkJK hcIbh"
+              className="Button__StyledButton-jJDkJK etUXlb"
               disabled={false}
               onClick={[MockFunction]}
               size="normal"

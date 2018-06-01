@@ -75,7 +75,7 @@ const StyledButton = styled(
     bordered ? tokens.colorTextButtonBordered[type] : tokens.colorTextButton[type]};
   border: 0;
   box-shadow: ${({ bordered, tokens, type }) =>
-    bordered ? `inset 0 0 0 1px ${tokens.borderColorButton[type]}` : "0"};
+    bordered && `inset 0 0 0 1px ${tokens.borderColorButton[type]}`};
   border-radius: ${({ theme }) => theme.borderRadiusNormal};
   padding: 0 ${({ onlyIcon, tokens, size }) => (onlyIcon ? "0" : tokens.paddingButton[size])} 0
     ${({ onlyIcon, icon, tokens, size }) =>
@@ -94,8 +94,8 @@ const StyledButton = styled(
   &:enabled:hover {
     background: ${({ bordered, tokens, type }) =>
       bordered ? tokens.backgroundButtonBorderedHover : tokens.backgroundButtonHover[type]};
-    border-color: ${({ bordered, tokens, type }) =>
-      bordered && tokens.borderColorButtonHover[type]};
+    box-shadow: ${({ bordered, tokens, type }) =>
+      bordered && `inset 0 0 0 1px ${tokens.borderColorButtonHover[type]}`};
     color: ${({ tokens, bordered, type }) =>
       bordered ? tokens.colorTextButtonBorderedHover[type] : tokens.colorTextButtonHover[type]};
     & ${IconContainer} {
@@ -108,8 +108,8 @@ const StyledButton = styled(
     transform: scale(${({ theme }) => theme.modifierScaleButtonActive});
     background: ${({ bordered, tokens, type }) =>
       bordered ? tokens.backgroundButtonBorderedActive : tokens.backgroundButtonActive[type]};
-    border-color: ${({ bordered, tokens, type }) =>
-      bordered && tokens.borderColorButtonActive[type]};
+    box-shadow: ${({ bordered, tokens, type }) =>
+      bordered && `inset 0 0 0 1px ${tokens.borderColorButtonActive[type]}`};
     color: ${({ tokens, bordered, type }) =>
       bordered ? tokens.colorTextButtonBorderedActive[type] : tokens.colorTextButtonActive[type]};
     & ${IconContainer} {

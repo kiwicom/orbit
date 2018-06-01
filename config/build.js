@@ -46,7 +46,7 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
       return (
         ${optimizedSvg.replace(
           /<svg\b[^>]*>(.*?)<\/svg>/g,
-          `<OrbitIcon viewBox="0 0 24 24" size={size} color={color} customColor={customColor}>$1</OrbitIcon>`,
+          `<OrbitIcon viewBox="0 0 24 24" size={size} color={color} customColor={customColor} className={className}>$1</OrbitIcon>`,
         )}
       );
     }

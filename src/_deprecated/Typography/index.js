@@ -1,6 +1,6 @@
 // @flow
 import Typography from "./Typography";
-import DeprecatedComponent from "../../../config/DeprecatedComponent";
+import DeprecatedComponent from "../DeprecatedComponent";
 
 export default DeprecatedComponent(
   Typography,

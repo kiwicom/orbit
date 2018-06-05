@@ -1,6 +1,6 @@
 // @flow
 import Radio from "./Radio";
-import DeprecatedComponent from "../../../config/DeprecatedComponent";
+import DeprecatedComponent from "../DeprecatedComponent";
 
 export default DeprecatedComponent(
   Radio,

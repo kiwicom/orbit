@@ -1,6 +1,6 @@
 // @flow
 import FieldFeedback from "./FieldFeedback";
-import DeprecatedComponent from "../../../config/DeprecatedComponent";
+import DeprecatedComponent from "../DeprecatedComponent";
 
 export default DeprecatedComponent(
   FieldFeedback,

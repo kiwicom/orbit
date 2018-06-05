@@ -59,6 +59,7 @@
 - ![Entertainment](/src/icons/png/Entertainment.png?raw=true) Entertainment
 - ![Exchange](/src/icons/png/Exchange.png?raw=true) Exchange
 - ![Facebook](/src/icons/png/Facebook.png?raw=true) Facebook
+- ![Feedback](/src/icons/png/Feedback.png?raw=true) Feedback
 - ![Filters](/src/icons/png/Filters.png?raw=true) Filters
 - ![FlightDirect](/src/icons/png/FlightDirect.png?raw=true) FlightDirect
 - ![FlightMulticity](/src/icons/png/FlightMulticity.png?raw=true) FlightMulticity

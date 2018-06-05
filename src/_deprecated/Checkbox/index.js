@@ -1,6 +1,6 @@
 // @flow
 import Checkbox from "./Checkbox";
-import DeprecatedComponent from "../../../config/DeprecatedComponent";
+import DeprecatedComponent from "../DeprecatedComponent";
 
 export default DeprecatedComponent(
   Checkbox,

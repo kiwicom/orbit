@@ -1,6 +1,6 @@
 // @flow
 import InputTextarea from "./InputTextarea";
-import DeprecatedComponent from "../../../config/DeprecatedComponent";
+import DeprecatedComponent from "../DeprecatedComponent";
 
 export default DeprecatedComponent(
   InputTextarea,

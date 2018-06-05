@@ -1,6 +1,6 @@
 // @flow
 import Select from "./Select";
-import DeprecatedComponent from "../../../config/DeprecatedComponent";
+import DeprecatedComponent from "../DeprecatedComponent";
 
 export default DeprecatedComponent(
   Select,

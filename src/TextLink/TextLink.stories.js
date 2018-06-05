@@ -24,7 +24,7 @@ storiesOf("TextLink", module)
     }),
   )
   .addWithChapters("Primary link", () => {
-    const url = text("URL", "https://kiwi.com");
+    const href = text("href", "https://kiwi.com");
 
     const size = select(
       "Size",
@@ -49,7 +49,7 @@ storiesOf("TextLink", module)
                 <TextLink
                   newTab={newTab}
                   onClick={action("clicked")}
-                  url={url}
+                  href={href}
                   type="primary"
                   size={size}
                 >
@@ -64,7 +64,7 @@ storiesOf("TextLink", module)
     };
   })
   .addWithChapters("Secondary link", () => {
-    const url = text("URL", "https://kiwi.com");
+    const href = text("href", "https://kiwi.com");
 
     const size = select(
       "Size",
@@ -89,7 +89,7 @@ storiesOf("TextLink", module)
                 <TextLink
                   newTab={newTab}
                   onClick={action("clicked")}
-                  url={url}
+                  href={href}
                   type="secondary"
                   size={size}
                 >
@@ -104,7 +104,7 @@ storiesOf("TextLink", module)
     };
   })
   .addWithChapters("Playground", () => {
-    const url = text("URL", "https://kiwi.com");
+    const href = text("href", "https://kiwi.com");
 
     const size = select(
       "Size",
@@ -136,7 +136,7 @@ storiesOf("TextLink", module)
                 <TextLink
                   newTab={newTab}
                   onClick={action("clicked")}
-                  url={url}
+                  href={href}
                   type={type}
                   size={size}
                 >

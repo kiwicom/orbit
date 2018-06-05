@@ -203,7 +203,7 @@ exports[`Storyshots TextLink Playground 1`] = `
                           <span
                             style={Object {}}
                           >
-                            url
+                            href
                           </span>
                           <span>
                             =
@@ -482,7 +482,7 @@ exports[`Storyshots TextLink Primary link 1`] = `
                           <span
                             style={Object {}}
                           >
-                            url
+                            href
                           </span>
                           <span>
                             =
@@ -761,7 +761,7 @@ exports[`Storyshots TextLink Secondary link 1`] = `
                           <span
                             style={Object {}}
                           >
-                            url
+                            href
                           </span>
                           <span>
                             =

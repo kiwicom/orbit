@@ -14,7 +14,7 @@ const fontSizeTextLink = {
 
 type Props = {
   children: React.Node,
-  url: string,
+  href: string,
   onClick: (SyntheticEvent<HTMLLinkElement>) => any,
   newTab: boolean,
   type: $Keys<typeof colorTextLink>,
@@ -22,10 +22,10 @@ type Props = {
 };
 
 const TextLink = (props: Props) => {
-  const { children, url, onClick, newTab, type, size } = props;
+  const { children, href, onClick, newTab, type, size } = props;
 
   return (
-    <a href={url} target={newTab ? "_blank" : undefined} onClick={onClick}>
+    <a href={href} target={newTab ? "_blank" : undefined} onClick={onClick}>
       {children}
       <style jsx>{`
         a {

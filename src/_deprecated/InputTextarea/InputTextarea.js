@@ -15,7 +15,7 @@ type Props = {
 const InputTextarea = (props: Props) => (
   <React.Fragment>
     <Label label={props.label} valueEmpty={!!props.value}>
-      <textarea onChange={props.onChange}>{props.value}</textarea>
+      <textarea onChange={props.onChange} value={props.value} />
     </Label>
     <FieldFeedback error={props.error} help={props.help} />
     <style jsx>{`

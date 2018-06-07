@@ -7,9 +7,8 @@ exports[`Storyshots InputTextarea default 1`] = `
   <textarea
     className="jsx-1873754240"
     onChange={[Function]}
-  >
-    
-  </textarea>
+    value=""
+  />
 </label>
 `;
 
@@ -29,9 +28,8 @@ exports[`Storyshots InputTextarea empty 1`] = `
   <textarea
     className="jsx-1873754240"
     onChange={[Function]}
-  >
-    
-  </textarea>
+    value=""
+  />
 </label>
 `;
 
@@ -52,9 +50,8 @@ Array [
     <textarea
       className="jsx-3284876408"
       onChange={[Function]}
-    >
-      input value
-    </textarea>
+      value="input value"
+    />
   </label>,
   <span
     className="jsx-3092314264"
@@ -80,10 +77,9 @@ exports[`Storyshots InputTextarea label 1`] = `
   <textarea
     className="jsx-1873754240"
     onChange={[Function]}
-  >
-    First line,
+    value="First line,
 second line,
-third line...
-  </textarea>
+third line..."
+  />
 </label>
 `;

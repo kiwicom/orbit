@@ -5,7 +5,7 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, select } from "@storybook/addon-knobs/react";
 
-import ThemeProvider from "../Theming/ThemeProvider";
+import withTheme from "../withTheme";
 
 import Heading from "./index";
 
@@ -23,6 +23,7 @@ storiesOf("Heading", module)
       padding: "20px",
     }),
   )
+  .addDecorator(withTheme)
   .addWithChapters("Default", () => {
     const customTitle = text("Title", "Orbit design system");
     return {
@@ -33,11 +34,7 @@ storiesOf("Heading", module)
         {
           sections: [
             {
-              sectionFn: () => (
-                <ThemeProvider>
-                  <Heading>{customTitle}</Heading>
-                </ThemeProvider>
-              ),
+              sectionFn: () => <Heading>{customTitle}</Heading>,
               options,
             },
           ],
@@ -67,11 +64,9 @@ storiesOf("Heading", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Heading type="display" element={element}>
-                    {customTitle}
-                  </Heading>
-                </ThemeProvider>
+                <Heading type="display" element={element}>
+                  {customTitle}
+                </Heading>
               ),
               options,
             },
@@ -101,11 +96,9 @@ storiesOf("Heading", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Heading type="title1" element={element}>
-                    {customTitle}
-                  </Heading>
-                </ThemeProvider>
+                <Heading type="title1" element={element}>
+                  {customTitle}
+                </Heading>
               ),
               options,
             },
@@ -135,11 +128,9 @@ storiesOf("Heading", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Heading type="title2" element={element}>
-                    {customTitle}
-                  </Heading>
-                </ThemeProvider>
+                <Heading type="title2" element={element}>
+                  {customTitle}
+                </Heading>
               ),
               options,
             },
@@ -169,11 +160,9 @@ storiesOf("Heading", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Heading type="title3" element={element}>
-                    {customTitle}
-                  </Heading>
-                </ThemeProvider>
+                <Heading type="title3" element={element}>
+                  {customTitle}
+                </Heading>
               ),
               options,
             },
@@ -214,11 +203,9 @@ storiesOf("Heading", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Heading element={element} type={type}>
-                    {customTitle}
-                  </Heading>
-                </ThemeProvider>
+                <Heading element={element} type={type}>
+                  {customTitle}
+                </Heading>
               ),
               options,
             },

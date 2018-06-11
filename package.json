@@ -16,7 +16,7 @@
 		"build-ios": "theo ./theo-spec.json --transform ios --format ios.json --dest ./output",
 		"build-android": "theo ./theo-spec.json --transform android --format android.xml --dest ./output",
 		"build": "npm run build-html && npm run build-web && npm run build-ios && npm run build-android",
-		"ci-publish": "ci-publish"
+		"ci-publish": "prepublish && ci-publish"
 	},
 	"author": "kiwi.com",
 	"license": "MIT",

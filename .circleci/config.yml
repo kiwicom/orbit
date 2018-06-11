@@ -8,7 +8,7 @@ jobs:
       - run:
           name: Install dependencies
           command: npm i
-			-run:
+			- run:
 					name: Flow
 					command: npm run flow
       - run:

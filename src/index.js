@@ -514,7 +514,7 @@ function getTokens(palette?: Colors) {
 	});
 }
 
-const defaultTokens = getTokens(COLORS);
+const defaultTokens = getTokens();
 
 module.exports = {
 	defaultTokens,

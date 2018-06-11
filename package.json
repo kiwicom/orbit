@@ -1,30 +1,45 @@
 {
-  "name": "@kiwicom/orbit-design-tokens",
-  "version": "0.0.12",
-  "description": "Design tokens for kiwi!",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kiwicom/orbit-design-tokens.git"
-  },
-  "scripts": {
-    "prepublish": "node generate-theo",
-    "build-html": "theo --setup ./theo/setup.js theo-spec.json --format kiwi.html --dest ./pages",
-    "build-web": "theo theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",
-    "build-ios": "theo theo-spec.json --transform ios --format ios.json --dest ./output",
-    "build-android": "theo theo-spec.json --transform android --format android.xml --dest ./output",
-    "build": "npm run build-html && npm run build-web && npm run build-ios && npm run build-android",
-    "ci-publish": "ci-publish"
-  },
-  "author": "kiwi.com",
-  "license": "MIT",
-  "keywords": [
-    "orbit",
-    "ui",
-    "design"
-  ],
-  "devDependencies": {
-    "babylon": "^6.18.0",
-    "theo": "^7.0.1",
-    "ci-publish": "^1.3.1"
-  }
+	"name": "@kiwicom/orbit-design-tokens",
+	"version": "0.0.13",
+	"description": "Design tokens for kiwi!",
+	"main": "dist/index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kiwicom/orbit-design-tokens.git"
+	},
+	"files": [
+		"dist/*",
+		"package.json",
+		"README.md",
+		"output/*",
+		"theo/*",
+		"pages/*"
+	],
+	"scripts": {
+		"prepublish": "npm run strip-flow && node generate-theo && npm run build",
+		"flow": "flow",
+		"strip-flow": "flow-remove-types src/ -d dist/ -p && yarn flow-copy-source -v src dist",
+		"build-html": "theo --setup ./theo/setup.js ./theo-spec.json --format kiwi.html --dest ./pages",
+		"build-web": "theo ./theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",
+		"build-ios": "theo ./theo-spec.json --transform ios --format ios.json --dest ./output",
+		"build-android": "theo ./theo-spec.json --transform android --format android.xml --dest ./output",
+		"build": "npm run build-html && npm run build-web && npm run build-ios && npm run build-android",
+		"ci-publish": "ci-publish"
+	},
+	"author": "kiwi.com",
+	"license": "MIT",
+	"keywords": [
+		"orbit",
+		"ui",
+		"design"
+	],
+	"devDependencies": {
+		"babylon": "^6.18.0",
+		"ci-publish": "^1.3.1",
+		"flow-bin": "^0.74.0",
+		"flow-copy-source": "^2.0.0",
+		"flow-remove-types": "^1.2.3",
+		"lodash": "^4.17.10",
+		"theo": "^7.0.1"
+	}
 }

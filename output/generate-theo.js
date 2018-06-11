@@ -1,18 +1,18 @@
 
-// @flow
+//      
 const babylon = require ("babylon");
 const fs = require("fs")
-const tokens = require("./dist/index").defaultTokens // used for values
+const tokens = require("./index").defaultTokens // used for values
 
-const code = fs.readFileSync("./dist/index.js", 'utf8')
+const code = fs.readFileSync("./index.js", 'utf8')
 const ast = babylon.parse(code, {
   sourceType: "module", // allow export
   plugins: []
 });
 
-const findTokensFn = x => x.type === "FunctionDeclaration" && x.id.name === "getTokens"
+const findTokensFn = x => x.type === "VariableDeclaration" && x.declarations[0].id.name === "getTokens"
 const tokensDeclaration = ast.program.body.find(findTokensFn)
-const tokenProps = tokensDeclaration.body.body[1].argument.properties
+const tokenProps = tokensDeclaration.declarations[0].init.body.properties
 
 const camelCaseToText = text => {
   let result = text.replace( /([A-Z])/g, " $1")

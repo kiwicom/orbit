@@ -9,6 +9,9 @@ jobs:
           name: Install dependencies
           command: npm i
       - run:
+          name: Flow
+          command: npm run flow
+      - run:
           name: Publish to NPM
           command: npm run ci-publish || true
 

@@ -1,4 +1,4 @@
-// @flow
+//      
 const colors = {
 	brand: {
 		light: "#9cdad3",
@@ -76,7 +76,7 @@ const colors = {
 };
 
 
-const getTokens = (colors) => ({
+const getTokens = (colors               ) => ({
 	// category:Colors
 	// description:Use these tokens for text or icon colors. Don't use these for borders and background colors.
 	colorTextInfo: colors.blue.normal,

@@ -733,7 +733,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundModal": {
@@ -741,7 +741,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundCard": {
@@ -749,7 +749,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundCarrierLogo": {
@@ -757,7 +757,7 @@
       "type": "string",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonPrimary": {
@@ -765,7 +765,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonPrimaryHover": {
@@ -773,7 +773,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonPrimaryActive": {
@@ -781,7 +781,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonSecondary": {
@@ -789,7 +789,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonSecondaryHover": {
@@ -797,7 +797,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonSecondaryActive": {
@@ -805,7 +805,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonFacebook": {
@@ -813,7 +813,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonFacebookHover": {
@@ -821,7 +821,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonFacebookActive": {
@@ -829,7 +829,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonGoogle": {
@@ -837,7 +837,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonGoogleHover": {
@@ -845,7 +845,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonGoogleActive": {
@@ -853,7 +853,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonInfo": {
@@ -861,7 +861,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonInfoHover": {
@@ -869,7 +869,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonInfoActive": {
@@ -877,7 +877,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonSuccess": {
@@ -885,7 +885,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonSuccessHover": {
@@ -893,7 +893,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonSuccessActive": {
@@ -901,7 +901,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonWarning": {
@@ -909,7 +909,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonWarningHover": {
@@ -917,7 +917,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonWarningActive": {
@@ -925,7 +925,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonCritical": {
@@ -933,7 +933,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonCriticalHover": {
@@ -941,7 +941,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonCriticalActive": {
@@ -949,7 +949,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonBordered": {
@@ -957,7 +957,7 @@
       "type": "string",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonBorderedHover": {
@@ -965,7 +965,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonBorderedActive": {
@@ -973,7 +973,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonLinkPrimary": {
@@ -981,7 +981,7 @@
       "type": "string",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonLinkPrimaryHover": {
@@ -989,7 +989,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonLinkPrimaryActive": {
@@ -997,7 +997,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonLinkSecondary": {
@@ -1005,7 +1005,7 @@
       "type": "string",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonLinkSecondaryHover": {
@@ -1013,7 +1013,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundButtonLinkSecondaryActive": {
@@ -1021,7 +1021,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundInput": {
@@ -1029,7 +1029,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundInputDisabled": {
@@ -1037,7 +1037,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundAlertSuccess": {
@@ -1045,7 +1045,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundAlertInfo": {
@@ -1053,7 +1053,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundAlertWarning": {
@@ -1061,7 +1061,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "backgroundAlertCritical": {
@@ -1069,7 +1069,7 @@
       "type": "color",
       "category": "Background colors",
       "meta": {
-        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text colors."
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
     "fontSizeHeadingDisplay": {
@@ -2073,7 +2073,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteProductLightHover": {
@@ -2081,7 +2081,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteProductLightActive": {
@@ -2089,7 +2089,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteProductNormal": {
@@ -2097,7 +2097,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteProductNormalHover": {
@@ -2105,7 +2105,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteProductNormalActive": {
@@ -2113,7 +2113,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteProductDark": {
@@ -2121,7 +2121,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteWhite": {
@@ -2129,7 +2129,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteWhiteHover": {
@@ -2137,7 +2137,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteWhiteActive": {
@@ -2145,7 +2145,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteCloudLight": {
@@ -2153,7 +2153,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteCloudLightHover": {
@@ -2161,7 +2161,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteCloudLightActive": {
@@ -2169,7 +2169,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteCloudNormal": {
@@ -2177,7 +2177,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteCloudNormalHover": {
@@ -2185,7 +2185,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteCloudNormalActive": {
@@ -2193,7 +2193,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteInkLighter": {
@@ -2201,7 +2201,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteInkLighterHover": {
@@ -2209,7 +2209,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteInkLighterActive": {
@@ -2217,7 +2217,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteInkLight": {
@@ -2225,7 +2225,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteInkLightHover": {
@@ -2233,7 +2233,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteInkLightActive": {
@@ -2241,7 +2241,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteInkNormal": {
@@ -2249,7 +2249,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteInkNormalHover": {
@@ -2257,7 +2257,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteInkNormalActive": {
@@ -2265,7 +2265,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteInkDark": {
@@ -2273,7 +2273,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteOrangeLight": {
@@ -2281,7 +2281,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteOrangeLightHover": {
@@ -2289,7 +2289,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteOrangeLightActive": {
@@ -2297,7 +2297,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteOrangeNormal": {
@@ -2305,7 +2305,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteOrangeNormalHover": {
@@ -2313,7 +2313,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteOrangeNormalActive": {
@@ -2321,7 +2321,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteOrangeDark": {
@@ -2329,7 +2329,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteRedLight": {
@@ -2337,7 +2337,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteRedLightHover": {
@@ -2345,7 +2345,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteRedLightActive": {
@@ -2353,7 +2353,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteRedNormal": {
@@ -2361,7 +2361,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteRedNormalHover": {
@@ -2369,7 +2369,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteRedNormalActive": {
@@ -2377,7 +2377,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteRedDark": {
@@ -2385,7 +2385,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteGreenLight": {
@@ -2393,7 +2393,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteGreenLightHover": {
@@ -2401,7 +2401,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteGreenLightActive": {
@@ -2409,7 +2409,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteGreenNormal": {
@@ -2417,7 +2417,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteGreenNormalHover": {
@@ -2425,7 +2425,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteGreenNormalActive": {
@@ -2433,7 +2433,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteGreenDark": {
@@ -2441,7 +2441,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteBlueLight": {
@@ -2449,7 +2449,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteBlueLightHover": {
@@ -2457,7 +2457,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteBlueLightActive": {
@@ -2465,7 +2465,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteBlueNormal": {
@@ -2473,7 +2473,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteBlueNormalHover": {
@@ -2481,7 +2481,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteBlueNormalActive": {
@@ -2489,7 +2489,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteBlueDark": {
@@ -2497,7 +2497,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteSocialFacebook": {
@@ -2505,7 +2505,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteSocialFacebookHover": {
@@ -2513,7 +2513,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     },
     "paletteSocialFacebookActive": {
@@ -2521,7 +2521,7 @@
       "type": "color",
       "category": "Color palette",
       "meta": {
-        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base colors."
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors."
       }
     }
   }

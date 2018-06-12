@@ -1,5 +1,5 @@
 # Icon
-To implement Icon component into your project you need to know its name. You can find it in [the list of all icons](../icons/icons.md). Then just add an import of the icon:
+To implement Icon component into your project you need to know its name. You can find it in [the list of all icons](https://kiwicom.github.io/orbit-components/?selectedKind=Icon&selectedStory=List%20of%20all%20icons). Then just add an import of the icon:
 ```jsx
 import Airplane from "@kiwicom/orbit-components/lib/icons/Airplane";
 ```

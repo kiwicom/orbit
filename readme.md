@@ -39,7 +39,7 @@ Please checkout our [Contribution Guide](./.github/contributing.md). It includes
 
 Orbit Components provides a set of icons easily used following these [instructions](./src/icons/readme.md).
 
-A list of all supported icons is [here](./src/icons/icons.md)
+A list of all supported icons is [here](https://kiwicom.github.io/orbit-components/?selectedKind=Icon&selectedStory=List%20of%20all%20icons)
 
 
 ## Theming

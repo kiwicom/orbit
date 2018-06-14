@@ -1,18 +1,14 @@
 // @flow
 import * as React from "react";
-import { shallow, mount } from "enzyme";
+import { mount } from "enzyme";
+import defaultTokens from "@kiwicom/orbit-design-tokens";
 
-import ThemeProvider from "../../Theming/ThemeProvider";
-import Alert from "../index";
+import Alert from "../Alert";
 
 describe("Alert", () => {
   it("should contain children", () => {
     const message = "Alert message";
-    const component = mount(
-      <ThemeProvider>
-        <Alert>{message}</Alert>
-      </ThemeProvider>,
-    );
+    const component = mount(<Alert theme={defaultTokens}>{message}</Alert>);
     expect(
       component
         .find("Alert__Content")
@@ -36,11 +32,7 @@ describe("Alert", () => {
   // });
   it("should match snapshot", () => {
     const message = "Alert message";
-    const component = shallow(
-      <ThemeProvider>
-        <Alert>{message}</Alert>
-      </ThemeProvider>,
-    );
+    const component = mount(<Alert theme={defaultTokens}>{message}</Alert>);
     expect(component).toMatchSnapshot();
   });
 });

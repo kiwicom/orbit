@@ -15,6 +15,7 @@ import typeof ThemeProviderType from "./Theming/ThemeProvider";
 import typeof ThemeSwitcherType from "./Theming/ThemeSwitcher";
 import typeof RadioType from "./Radio";
 import typeof SelectType from "./Select";
+import typeof TextareaType from "./Textarea";
 import typeof CardType from "./Card";
 import typeof CardHeaderType from "./Card/CardHeader";
 import typeof CardContentType from "./Card/CardContent";
@@ -51,6 +52,7 @@ declare export var ThemeSwitcher: ThemeSwitcherType;
 
 declare export var Radio: RadioType;
 declare export var Select: SelectType;
+declare export var Textarea: TextareaType;
 
 declare export var withTheme: any;
 declare export var defaultTheme: any;

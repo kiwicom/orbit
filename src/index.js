@@ -33,5 +33,6 @@ export { default as TextLink } from "./TextLink";
 export { default as ThemeProvider } from "./Theming/ThemeProvider";
 export { default as Radio } from "./Radio";
 export { default as Select } from "./Select";
+export { default as Textarea } from "./Textarea";
 export { withTheme } from "theming";
 export { defaultTokens as defaultTheme, getTokens } from "@kiwicom/orbit-design-tokens";

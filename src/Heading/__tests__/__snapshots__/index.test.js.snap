@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Heading with defaultProps should match snapshot 1`] = `
-<ThemeProvider
+<Heading__StyledHeading
+  element="h1"
   theme={
     Object {
       "backgroundAlertCritical": "#fae8e8",
@@ -359,12 +360,24 @@ exports[`Heading with defaultProps should match snapshot 1`] = `
       "zIndexSticky": "100",
     }
   }
+  tokens={
+    Object {
+      "sizeHeading": Object {
+        "display": "40px",
+        "title1": "28px",
+        "title2": "22px",
+        "title3": "16px",
+      },
+      "weightHeading": Object {
+        "display": "700",
+        "title1": "700",
+        "title2": "500",
+        "title3": "500",
+      },
+    }
+  }
+  type="title1"
 >
-  <Heading
-    element="h1"
-    type="title1"
-  >
-    Children title
-  </Heading>
-</ThemeProvider>
+  Children title
+</Heading__StyledHeading>
 `;

@@ -5,16 +5,9 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, select } from "@storybook/addon-knobs/react";
 
-import ThemeProvider from "../Theming/ThemeProvider";
-
-import Heading from "./index";
+import Heading, { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./Heading";
 
 setAddon(chaptersAddon);
-
-const options = {
-  allowSourceToggling: false,
-  allowPropTablesToggling: false,
-};
 
 storiesOf("Heading", module)
   .addDecorator(withKnobs)
@@ -33,12 +26,7 @@ storiesOf("Heading", module)
         {
           sections: [
             {
-              sectionFn: () => (
-                <ThemeProvider>
-                  <Heading>{customTitle}</Heading>
-                </ThemeProvider>
-              ),
-              options,
+              sectionFn: () => <Heading>{customTitle}</Heading>,
             },
           ],
         },
@@ -47,17 +35,7 @@ storiesOf("Heading", module)
   })
   .addWithChapters("Title Display", () => {
     const customTitle = text("Title", "Orbit design system");
-    const element = select(
-      "Element",
-      {
-        h1: "h1",
-        h2: "h2",
-        h3: "h3",
-        h4: "h4",
-        h5: "h5",
-      },
-      "h1",
-    );
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), "h1");
     return {
       title: "Title Display",
       info:
@@ -67,13 +45,10 @@ storiesOf("Heading", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Heading type="display" element={element}>
-                    {customTitle}
-                  </Heading>
-                </ThemeProvider>
+                <Heading type="display" element={element}>
+                  {customTitle}
+                </Heading>
               ),
-              options,
             },
           ],
         },
@@ -82,17 +57,7 @@ storiesOf("Heading", module)
   })
   .addWithChapters("Title 1", () => {
     const customTitle = text("Title", "Orbit design system");
-    const element = select(
-      "Element",
-      {
-        h1: "h1",
-        h2: "h2",
-        h3: "h3",
-        h4: "h4",
-        h5: "h5",
-      },
-      "h1",
-    );
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), "h1");
     return {
       info:
         "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
@@ -101,13 +66,10 @@ storiesOf("Heading", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Heading type="title1" element={element}>
-                    {customTitle}
-                  </Heading>
-                </ThemeProvider>
+                <Heading type="title1" element={element}>
+                  {customTitle}
+                </Heading>
               ),
-              options,
             },
           ],
         },
@@ -116,17 +78,7 @@ storiesOf("Heading", module)
   })
   .addWithChapters("Title 2", () => {
     const customTitle = text("Title", "Orbit design system");
-    const element = select(
-      "Element",
-      {
-        h1: "h1",
-        h2: "h2",
-        h3: "h3",
-        h4: "h4",
-        h5: "h5",
-      },
-      "h2",
-    );
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), "h2");
     return {
       info:
         "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
@@ -135,13 +87,10 @@ storiesOf("Heading", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Heading type="title2" element={element}>
-                    {customTitle}
-                  </Heading>
-                </ThemeProvider>
+                <Heading type="title2" element={element}>
+                  {customTitle}
+                </Heading>
               ),
-              options,
             },
           ],
         },
@@ -150,17 +99,7 @@ storiesOf("Heading", module)
   })
   .addWithChapters("Title 3", () => {
     const customTitle = text("Title", "Orbit design system");
-    const element = select(
-      "Element",
-      {
-        h1: "h1",
-        h2: "h2",
-        h3: "h3",
-        h4: "h4",
-        h5: "h5",
-      },
-      "h3",
-    );
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), "h3");
     return {
       info:
         "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
@@ -169,13 +108,10 @@ storiesOf("Heading", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Heading type="title3" element={element}>
-                    {customTitle}
-                  </Heading>
-                </ThemeProvider>
+                <Heading type="title3" element={element}>
+                  {customTitle}
+                </Heading>
               ),
-              options,
             },
           ],
         },
@@ -183,27 +119,8 @@ storiesOf("Heading", module)
     };
   })
   .addWithChapters("Playground", () => {
-    const element = select(
-      "Element",
-      {
-        h1: "h1",
-        h2: "h2",
-        h3: "h3",
-        h4: "h4",
-        h5: "h5",
-      },
-      "h2",
-    );
-    const type = select(
-      "Type",
-      {
-        display: "display",
-        title1: "title1",
-        title2: "title2",
-        title3: "title3",
-      },
-      "display",
-    );
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), "h2");
+    const type = select("Type", Object.values(TYPE_OPTIONS), "display");
 
     const customTitle = text("Title", "Orbit design system");
     return {
@@ -214,13 +131,10 @@ storiesOf("Heading", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Heading element={element} type={type}>
-                    {customTitle}
-                  </Heading>
-                </ThemeProvider>
+                <Heading element={element} type={type}>
+                  {customTitle}
+                </Heading>
               ),
-              options,
             },
           ],
         },

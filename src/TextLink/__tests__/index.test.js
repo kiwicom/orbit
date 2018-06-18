@@ -2,59 +2,34 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import TextLink from "../";
+import TextLink from "../TextLink";
 
-const title = "My text link";
-const url = "https://kiwi.com";
-const onClick = jest.fn();
-
-describe("TextLink type: primary, size: default, newTab: false", () => {
+describe("TextLink", () => {
+  const title = "My text link";
+  const href = "https://kiwi.com";
+  const onClick = jest.fn();
   const type = "primary";
-  const component = shallow(
-    <TextLink onClick={onClick} url={url} type={type}>
-      {title}
-    </TextLink>,
-  );
-  const textlink = component.find("a");
-  it("Should contain a title ", () => {
-    expect(textlink.render().text()).toBe(title);
-  });
-  it("Should contain an url ", () => {
-    expect(textlink.render().prop("href")).toBe(url);
-  });
-  it("Should execute onClick method", () => {
-    textlink.simulate("click");
-    expect(onClick).toHaveBeenCalled();
-  });
-  it("Should match snapshot", () => {
-    expect(textlink).toMatchSnapshot();
-  });
-});
 
-describe("TextLink type: secondary, size: large, newTab: true", () => {
-  const type = "secondary";
-  const size = "large";
-  const newTab = true;
   const component = shallow(
-    <TextLink onClick={onClick} url={url} type={type} size={size} newTab={newTab}>
+    <TextLink onClick={onClick} href={href} type={type} external>
       {title}
     </TextLink>,
   );
-  const textlink = component.find("a");
-  it("Should contain a title ", () => {
-    expect(textlink.render().text()).toBe(title);
+
+  it("should contain a children", () => {
+    expect(component.children().exists()).toBe(true);
   });
-  it("Should contain an url ", () => {
-    expect(textlink.render().prop("href")).toBe(url);
+  it("should contain an href", () => {
+    expect(component.render().prop("href")).toBe(href);
   });
-  it("Should contain a target ", () => {
-    expect(textlink.render().prop("target")).toBe("_blank");
+  it("should contain an external href", () => {
+    expect(component.render().prop("target")).toBe("_blank");
   });
-  it("Should execute onClick method", () => {
-    textlink.simulate("click");
+  it("should execute onClick method", () => {
+    component.simulate("click");
     expect(onClick).toHaveBeenCalled();
   });
-  it("Should match snapshot", () => {
-    expect(textlink).toMatchSnapshot();
+  it("should match snapshot", () => {
+    expect(component).toMatchSnapshot();
   });
 });

@@ -7,9 +7,11 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 
-import TextLink from "./index";
+import TextLink, { TYPE_OPTIONS } from "./TextLink";
 
 setAddon(chaptersAddon);
+
+const validate = rel => (rel !== undefined && rel !== "" ? rel : undefined);
 
 const options = {
   allowSourceToggling: false,
@@ -24,18 +26,8 @@ storiesOf("TextLink", module)
     }),
   )
   .addWithChapters("Primary link", () => {
-    const url = text("URL", "https://kiwi.com");
-
-    const size = select(
-      "Size",
-      {
-        small: "small",
-        normal: "normal",
-        large: "large",
-      },
-      "normal",
-    );
-    const newTab = boolean("New tab", false);
+    const href = text("Href", "https://kiwi.com");
+    const external = boolean("External", false);
     const title = text("Title", "Primary link");
 
     return {
@@ -47,11 +39,10 @@ storiesOf("TextLink", module)
             {
               sectionFn: () => (
                 <TextLink
-                  newTab={newTab}
+                  external={external}
                   onClick={action("clicked")}
-                  url={url}
+                  href={href}
                   type="primary"
-                  size={size}
                 >
                   {title}
                 </TextLink>
@@ -64,18 +55,8 @@ storiesOf("TextLink", module)
     };
   })
   .addWithChapters("Secondary link", () => {
-    const url = text("URL", "https://kiwi.com");
-
-    const size = select(
-      "Size",
-      {
-        small: "small",
-        normal: "normal",
-        large: "large",
-      },
-      "normal",
-    );
-    const newTab = boolean("New tab", false);
+    const href = text("Href", "https://kiwi.com");
+    const external = boolean("External", false);
     const title = text("Title", "Secondary link");
 
     return {
@@ -87,11 +68,10 @@ storiesOf("TextLink", module)
             {
               sectionFn: () => (
                 <TextLink
-                  newTab={newTab}
+                  external={external}
                   onClick={action("clicked")}
-                  url={url}
+                  href={href}
                   type="secondary"
-                  size={size}
                 >
                   {title}
                 </TextLink>
@@ -104,27 +84,12 @@ storiesOf("TextLink", module)
     };
   })
   .addWithChapters("Playground", () => {
-    const url = text("URL", "https://kiwi.com");
-
-    const size = select(
-      "Size",
-      {
-        small: "small",
-        normal: "normal",
-        large: "large",
-      },
-      "normal",
-    );
-    const type = select(
-      "Type",
-      {
-        primary: "primary",
-        secondary: "secondary",
-      },
-      "primary",
-    );
-    const newTab = boolean("New tab", true);
+    const href = text("Href", "https://kiwi.com");
+    const type = select("Type", Object.values(TYPE_OPTIONS));
+    const external = boolean("External", true);
     const title = text("Text", "Custom link");
+    const rel = text("Rel", undefined);
+
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -134,11 +99,11 @@ storiesOf("TextLink", module)
             {
               sectionFn: () => (
                 <TextLink
-                  newTab={newTab}
+                  external={external}
                   onClick={action("clicked")}
-                  url={url}
+                  href={href}
                   type={type}
-                  size={size}
+                  rel={validate(rel)}
                 >
                   {title}
                 </TextLink>

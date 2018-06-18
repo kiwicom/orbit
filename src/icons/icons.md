@@ -47,10 +47,12 @@
 - ![CloseCircle](/src/icons/png/CloseCircle.png?raw=true) CloseCircle
 - ![Close](/src/icons/png/Close.png?raw=true) Close
 - ![Cocktail](/src/icons/png/Cocktail.png?raw=true) Cocktail
+- ![Code](/src/icons/png/Code.png?raw=true) Code
 - ![Coffee](/src/icons/png/Coffee.png?raw=true) Coffee
 - ![Compass](/src/icons/png/Compass.png?raw=true) Compass
 - ![ContactEmail](/src/icons/png/ContactEmail.png?raw=true) ContactEmail
 - ![CreditCard](/src/icons/png/CreditCard.png?raw=true) CreditCard
+- ![Deals](/src/icons/png/Deals.png?raw=true) Deals
 - ![Document](/src/icons/png/Document.png?raw=true) Document
 - ![Download](/src/icons/png/Download.png?raw=true) Download
 - ![EditOff](/src/icons/png/EditOff.png?raw=true) EditOff
@@ -80,6 +82,9 @@
 - ![InsuranceOff](/src/icons/png/InsuranceOff.png?raw=true) InsuranceOff
 - ![Insurance](/src/icons/png/Insurance.png?raw=true) Insurance
 - ![Invoice](/src/icons/png/Invoice.png?raw=true) Invoice
+- ![KiwicomCare](/src/icons/png/KiwicomCare.png?raw=true) KiwicomCare
+- ![KiwicomGuarantee](/src/icons/png/KiwicomGuarantee.png?raw=true) KiwicomGuarantee
+- ![Kiwicom](/src/icons/png/Kiwicom.png?raw=true) Kiwicom
 - ![Link](/src/icons/png/Link.png?raw=true) Link
 - ![Linkedin](/src/icons/png/Linkedin.png?raw=true) Linkedin
 - ![List](/src/icons/png/List.png?raw=true) List
@@ -146,6 +151,7 @@
 - ![RouteTwoStops](/src/icons/png/RouteTwoStops.png?raw=true) RouteTwoStops
 - ![Search](/src/icons/png/Search.png?raw=true) Search
 - ![Seat](/src/icons/png/Seat.png?raw=true) Seat
+- ![Security](/src/icons/png/Security.png?raw=true) Security
 - ![SelfTransfer](/src/icons/png/SelfTransfer.png?raw=true) SelfTransfer
 - ![Send](/src/icons/png/Send.png?raw=true) Send
 - ![Settings](/src/icons/png/Settings.png?raw=true) Settings

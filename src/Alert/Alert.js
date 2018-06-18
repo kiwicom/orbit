@@ -86,6 +86,14 @@ const Content = styled(StyledDiv)`
   align-items: center;
   min-height: ${({ theme, title }) => !title && theme.heightIconMedium};
   margin-bottom: ${({ theme, title }) => title && theme.spaceXXSmall};
+  & a {
+    color: ${({ tokens, type }) => tokens.colorTextAlert[type]}!important;
+    font-weight: ${({ theme }) => theme.fontWeightMedium}!important;
+    transition: color ${({ theme }) => theme.durationFast} ease-in-out !important;
+    &:hover {
+      color: ${({ theme }) => theme.paletteInkDark}!important; // TODO create token
+    }
+  }
 `;
 
 const CloseContainer = styled(StyledDiv)`
@@ -132,7 +140,7 @@ const Alert = (props: Props) => {
           </Title>
         )}
         {children && (
-          <Content theme={theme} title={title}>
+          <Content theme={theme} title={title} tokens={tokens} type={type}>
             {children}
           </Content>
         )}

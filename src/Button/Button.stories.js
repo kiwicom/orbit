@@ -8,21 +8,12 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, number, boolean, select } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
-import { ThemeProvider } from "../index";
-
-import Button, { TYPE_OPTIONS, SIZE_OPTIONS } from "./index";
+import Button, { TYPE_OPTIONS, SIZE_OPTIONS } from "./Button";
 
 setAddon(chaptersAddon);
 
 const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
-
-const options = {
-  showSource: true,
-  allowSourceToggling: false,
-  showPropTables: false,
-  allowPropTablesToggling: false,
-};
 
 storiesOf("Button", module)
   .addDecorator(withKnobs)
@@ -41,12 +32,7 @@ storiesOf("Button", module)
         {
           sections: [
             {
-              sectionFn: () => (
-                <ThemeProvider>
-                  <Button onClick={action("clicked")}>{title}</Button>
-                </ThemeProvider>
-              ),
-              options,
+              sectionFn: () => <Button onClick={action("clicked")}>{title}</Button>,
             },
           ],
         },
@@ -67,13 +53,10 @@ storiesOf("Button", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Button onClick={action("clicked")} block={block} type={type} size={size}>
-                    {title}
-                  </Button>
-                </ThemeProvider>
+                <Button onClick={action("clicked")} block={block} type={type} size={size}>
+                  {title}
+                </Button>
               ),
-              options,
             },
           ],
         },
@@ -95,19 +78,16 @@ storiesOf("Button", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Button
-                    onClick={action("clicked")}
-                    block={block}
-                    type={type}
-                    size={size}
-                    icon={Icon && <Icon />}
-                  >
-                    {title}
-                  </Button>
-                </ThemeProvider>
+                <Button
+                  onClick={action("clicked")}
+                  block={block}
+                  type={type}
+                  size={size}
+                  icon={Icon && <Icon />}
+                >
+                  {title}
+                </Button>
               ),
-              options,
             },
           ],
         },
@@ -121,28 +101,22 @@ storiesOf("Button", module)
         sections: [
           {
             sectionFn: () => (
-              <ThemeProvider>
-                <Button
-                  onClick={action("clicked")}
-                  type="facebook"
-                  icon={<Icons.Facebook />}
-                  bordered
-                >
-                  Sign in with Facebook
-                </Button>
-              </ThemeProvider>
+              <Button
+                onClick={action("clicked")}
+                type="facebook"
+                icon={<Icons.Facebook />}
+                bordered
+              >
+                Sign in with Facebook
+              </Button>
             ),
-            options,
           },
           {
             sectionFn: () => (
-              <ThemeProvider>
-                <Button onClick={action("clicked")} type="google" icon={<Icons.Google />} bordered>
-                  Sign in with Google
-                </Button>
-              </ThemeProvider>
+              <Button onClick={action("clicked")} type="google" icon={<Icons.Google />} bordered>
+                Sign in with Google
+              </Button>
             ),
-            options,
           },
         ],
       },
@@ -160,64 +134,51 @@ storiesOf("Button", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Button
-                    title={title}
-                    onClick={action("clicked")}
-                    type="info"
-                    size="small"
-                    icon={Icon && <Icon />}
-                  >
-                    {title}
-                  </Button>
-                </ThemeProvider>
+                <Button
+                  onClick={action("clicked")}
+                  type="info"
+                  size="small"
+                  icon={Icon && <Icon />}
+                >
+                  {title}
+                </Button>
               ),
-              options,
             },
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Button
-                    onClick={action("clicked")}
-                    type="success"
-                    size="small"
-                    icon={Icon && <Icon />}
-                  >
-                    {title}
-                  </Button>
-                </ThemeProvider>
+                <Button
+                  onClick={action("clicked")}
+                  type="success"
+                  size="small"
+                  icon={Icon && <Icon />}
+                >
+                  {title}
+                </Button>
               ),
-              options,
             },
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Button
-                    onClick={action("clicked")}
-                    type="warning"
-                    size="small"
-                    icon={Icon && <Icon />}
-                  >
-                    {title}
-                  </Button>
-                </ThemeProvider>
+                <Button
+                  onClick={action("clicked")}
+                  type="warning"
+                  size="small"
+                  icon={Icon && <Icon />}
+                >
+                  {title}
+                </Button>
               ),
-              options,
             },
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Button
-                    onClick={action("clicked")}
-                    type="critical"
-                    size="small"
-                    icon={Icon && <Icon />}
-                  >
-                    {title}
-                  </Button>
-                </ThemeProvider>
+                <Button
+                  onClick={action("clicked")}
+                  type="critical"
+                  size="small"
+                  icon={Icon && <Icon />}
+                >
+                  {title}
+                </Button>
               ),
-              options,
             },
           ],
         },
@@ -237,19 +198,49 @@ storiesOf("Button", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Button
-                    onClick={action("clicked")}
-                    bordered={bordered}
-                    type="critical"
-                    size={size}
-                    icon={<Icons.Remove />}
-                  >
-                    {title}
-                  </Button>
-                </ThemeProvider>
+                <Button
+                  onClick={action("clicked")}
+                  bordered={bordered}
+                  type="critical"
+                  size={size}
+                  icon={<Icons.Remove />}
+                >
+                  {title}
+                </Button>
               ),
-              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Button as a link", () => {
+    const title = text("Title", "I am a link");
+    const href = text("Href", "https://kiwi.com");
+    const external = boolean("External", false);
+    const disabled = boolean("Disabled", false);
+    const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
+
+    return {
+      info:
+        "If you need to, you can pass some href to this component and it will automatically render into anchor.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Button
+                  onClick={action("clicked")}
+                  href={href}
+                  external={external}
+                  size={size}
+                  disabled={disabled}
+                  bordered
+                  icon={<Icons.Airplane />}
+                >
+                  {title}
+                </Button>
+              ),
             },
           ],
         },
@@ -258,6 +249,9 @@ storiesOf("Button", module)
   })
   .addWithChapters("Playground", () => {
     const title = text("Title", "Button");
+    const href = text("Href", undefined);
+    const external = boolean("External", false);
+    const component = text("Component", "button");
     const disabled = boolean("Disabled", false);
     const block = boolean("Block", false);
     const type = select("Type", Object.values(TYPE_OPTIONS), "primary");
@@ -274,22 +268,22 @@ storiesOf("Button", module)
           sections: [
             {
               sectionFn: () => (
-                <ThemeProvider>
-                  <Button
-                    onClick={action("clicked")}
-                    disabled={disabled}
-                    block={block}
-                    bordered={bordered}
-                    type={type}
-                    size={size}
-                    icon={Icon && <Icon />}
-                    width={width}
-                  >
-                    {title}
-                  </Button>
-                </ThemeProvider>
+                <Button
+                  onClick={action("clicked")}
+                  component={component}
+                  href={href}
+                  external={external}
+                  disabled={disabled}
+                  block={block}
+                  bordered={bordered}
+                  type={type}
+                  size={size}
+                  icon={Icon && <Icon />}
+                  width={width}
+                >
+                  {title}
+                </Button>
               ),
-              options,
             },
           ],
         },

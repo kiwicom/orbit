@@ -1494,9 +1494,32 @@ exports[`Alert should match snapshot 1`] = `
                 "zIndexSticky": "100",
               }
             }
+            tokens={
+              Object {
+                "backgroundAlert": Object {
+                  "critical": "#fae8e8",
+                  "info": "#e0f6ff",
+                  "success": "#e7f3e8",
+                  "warning": "#fcf1cd",
+                },
+                "colorIconAlert": Object {
+                  "critical": "#d21c1c",
+                  "info": "#0176D2",
+                  "success": "#46B655",
+                  "warning": "#f9971e",
+                },
+                "colorTextAlert": Object {
+                  "critical": "#650808",
+                  "info": "#07405c",
+                  "success": "#065d12",
+                  "warning": "#a93610",
+                },
+              }
+            }
+            type="info"
           >
             <StyledDiv
-              className="Alert__Content-icgAru gFLPsb"
+              className="Alert__Content-icgAru geEXrO"
               theme={
                 Object {
                   "backgroundAlertCritical": "#fae8e8",
@@ -1854,9 +1877,32 @@ exports[`Alert should match snapshot 1`] = `
                   "zIndexSticky": "100",
                 }
               }
+              tokens={
+                Object {
+                  "backgroundAlert": Object {
+                    "critical": "#fae8e8",
+                    "info": "#e0f6ff",
+                    "success": "#e7f3e8",
+                    "warning": "#fcf1cd",
+                  },
+                  "colorIconAlert": Object {
+                    "critical": "#d21c1c",
+                    "info": "#0176D2",
+                    "success": "#46B655",
+                    "warning": "#f9971e",
+                  },
+                  "colorTextAlert": Object {
+                    "critical": "#650808",
+                    "info": "#07405c",
+                    "success": "#065d12",
+                    "warning": "#a93610",
+                  },
+                }
+              }
+              type="info"
             >
               <div
-                className="Alert__Content-icgAru gFLPsb"
+                className="Alert__Content-icgAru geEXrO"
               >
                 Alert message
               </div>

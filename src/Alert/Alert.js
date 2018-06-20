@@ -84,8 +84,9 @@ const Title = styled(StyledDiv)`
 const Content = styled(StyledDiv)`
   display: flex;
   align-items: center;
-  min-height: ${({ theme, title }) => !title && theme.heightIconMedium};
   margin-bottom: ${({ theme, title }) => title && theme.spaceXXSmall};
+  line-height: ${({ theme }) => theme.lineHeightText};
+  min-height: ${({ theme, title }) => !title && theme.heightIconMedium};
   & a {
     color: ${({ tokens, type }) => tokens.colorTextAlert[type]}!important;
     font-weight: ${({ theme }) => theme.fontWeightMedium}!important;

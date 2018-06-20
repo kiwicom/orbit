@@ -125,7 +125,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
             </div>
             <div>
               <div
-                className="Alert__Content-icgAru ewMGHw"
+                className="Alert__Content-icgAru iZFOcl"
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>
@@ -387,7 +387,7 @@ exports[`Storyshots Alert Default 1`] = `
           >
             <div>
               <div
-                className="Alert__Content-icgAru geEXrO"
+                className="Alert__Content-icgAru koOjCg"
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>
@@ -634,7 +634,7 @@ exports[`Storyshots Alert Info alert 1`] = `
             </div>
             <div>
               <div
-                className="Alert__Content-icgAru geEXrO"
+                className="Alert__Content-icgAru koOjCg"
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>
@@ -896,7 +896,7 @@ exports[`Storyshots Alert Playground 1`] = `
                 You can change the title by changing the Title knob
               </div>
               <div
-                className="Alert__Content-icgAru frPccs"
+                className="Alert__Content-icgAru jvqgY"
               >
                 Also you can change the message by changing the Message knob
               </div>
@@ -1229,7 +1229,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
             </div>
             <div>
               <div
-                className="Alert__Content-icgAru dVYXLs"
+                className="Alert__Content-icgAru jWteFh"
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>
@@ -1513,7 +1513,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
             </div>
             <div>
               <div
-                className="Alert__Content-icgAru iJaIbk"
+                className="Alert__Content-icgAru byJXAG"
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>

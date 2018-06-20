@@ -10,7 +10,7 @@ export const TYPE_OPTIONS = {
 
 type Props = {|
   children: React.Node,
-  href: string,
+  href?: string,
   onClick?: (SyntheticEvent<HTMLLinkElement>) => any,
   external: boolean,
   type: $Values<typeof TYPE_OPTIONS>,

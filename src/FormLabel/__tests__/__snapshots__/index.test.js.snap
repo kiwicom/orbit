@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormLabel should match snapshot 1`] = `
+<Component
+  className="FormLabel-kJFBRQ bTqPNB"
+>
+  FormLabel
+</Component>
+`;

@@ -1,0 +1,4 @@
+// @flow
+import type { Props } from "./Alert";
+
+declare export default React$ComponentType<Props>;

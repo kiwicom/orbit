@@ -1,0 +1,28 @@
+// @flow
+import defaultTokens from "@kiwicom/orbit-design-tokens";
+
+type Option = {|
+  value: string | number,
+  label?: string,
+  disabled?: boolean,
+|};
+
+type Size = "small" | "normal";
+
+export type Props = {
+  size?: Size,
+  label?: string,
+  placeholder?: string,
+  value?: string,
+  disabled?: boolean,
+  error?: React$Node,
+  help?: React$Node,
+  onChange?: (SyntheticInputEvent<HTMLSelectElement>) => void,
+  onFocus?: (SyntheticInputEvent<HTMLSelectElement>) => void,
+  onBlur?: (SyntheticInputEvent<HTMLSelectElement>) => void,
+  options: Option[],
+  prefix?: React$Node,
+  theme?: typeof defaultTokens,
+};
+
+declare export default React$ComponentType<Props>;

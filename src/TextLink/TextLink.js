@@ -3,20 +3,8 @@ import * as React from "react";
 import defaultTokens from "@kiwicom/orbit-design-tokens";
 import styled from "styled-components";
 
-export const TYPE_OPTIONS = {
-  PRIMARY: "primary",
-  SECONDARY: "secondary",
-};
-
-type Props = {|
-  children: React.Node,
-  href?: string,
-  onClick?: (SyntheticEvent<HTMLLinkElement>) => any,
-  external: boolean,
-  type: $Values<typeof TYPE_OPTIONS>,
-  rel?: string,
-  theme: typeof defaultTokens,
-|};
+import TYPE_OPTIONS from "./consts";
+import type { Props } from "./TextLink";
 
 const StyledTextLink = styled(({ tokens, theme, type, ...props }) => (
   <a {...props}>{props.children}</a>
@@ -41,7 +29,15 @@ const StyledTextLink = styled(({ tokens, theme, type, ...props }) => (
   `;
 
 const TextLink = (props: Props) => {
-  const { type, children, href, external, theme, rel, onClick } = props;
+  const {
+    type = TYPE_OPTIONS.PRIMARY,
+    children,
+    href,
+    external = false,
+    theme = defaultTokens,
+    rel,
+    onClick,
+  } = props;
   const tokens = {
     colorTextLink: {
       [TYPE_OPTIONS.PRIMARY]: theme.colorLinkPrimary,
@@ -62,12 +58,6 @@ const TextLink = (props: Props) => {
       {children}
     </StyledTextLink>
   );
-};
-
-TextLink.defaultProps = {
-  type: "primary",
-  external: false,
-  theme: defaultTokens,
 };
 
 export default TextLink;

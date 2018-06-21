@@ -100,7 +100,7 @@ exports[`Storyshots Button Basic buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK bGQouI"
-            disabled={false}
+            disabled={undefined}
             onClick={[Function]}
             size="normal"
             target={undefined}
@@ -164,7 +164,10 @@ exports[`Storyshots Button Basic buttons 1`] = `
                       </span>
                       <span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -190,7 +193,98 @@ exports[`Storyshots Button Basic buttons 1`] = `
                               </span>
                             </span>
                           </span>
-                          
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            block
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                primary
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            size
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                normal
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <br />
                         </span>
                       </span>
                       <span
@@ -508,6 +602,98 @@ exports[`Storyshots Button Button as a link 1`] = `
                           <span
                             style={Object {}}
                           >
+                            external
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            size
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                normal
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            disabled
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
                             bordered
                           </span>
                         </span>
@@ -704,7 +890,7 @@ exports[`Storyshots Button Button with icon 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK hASPOE"
-            disabled={false}
+            disabled={undefined}
             onClick={[Function]}
             size="small"
             target={undefined}
@@ -790,7 +976,10 @@ exports[`Storyshots Button Button with icon 1`] = `
                       </span>
                       <span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -818,7 +1007,71 @@ exports[`Storyshots Button Button with icon 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            block
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                primary
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -845,7 +1098,10 @@ exports[`Storyshots Button Button with icon 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -871,7 +1127,7 @@ exports[`Storyshots Button Button with icon 1`] = `
                               </span>
                             </span>
                           </span>
-                          
+                          <br />
                         </span>
                       </span>
                       <span
@@ -1034,7 +1290,7 @@ exports[`Storyshots Button Default 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK bGQouI"
-            disabled={false}
+            disabled={undefined}
             onClick={[Function]}
             size="normal"
             target={undefined}
@@ -1287,7 +1543,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK gpGByx"
-            disabled={false}
+            disabled={undefined}
             onClick={[Function]}
             size="normal"
             target={undefined}
@@ -1373,7 +1629,10 @@ exports[`Storyshots Button Destructive buttons 1`] = `
                       </span>
                       <span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -1401,7 +1660,41 @@ exports[`Storyshots Button Destructive buttons 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            bordered
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -1428,7 +1721,40 @@ exports[`Storyshots Button Destructive buttons 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            size
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                normal
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -1454,7 +1780,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
                               </span>
                             </span>
                           </span>
-                          
+                          <br />
                         </span>
                       </span>
                       <span
@@ -1704,7 +2030,10 @@ exports[`Storyshots Button Playground 1`] = `
                       </span>
                       <span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -1732,7 +2061,255 @@ exports[`Storyshots Button Playground 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            component
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                button
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            href
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            external
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            disabled
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            block
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            bordered
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                primary
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            size
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                normal
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -1758,7 +2335,38 @@ exports[`Storyshots Button Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                          
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            width
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  0
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <br />
                         </span>
                       </span>
                       <span
@@ -1921,7 +2529,7 @@ exports[`Storyshots Button Social buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK kJMSRd"
-            disabled={false}
+            disabled={undefined}
             onClick={[Function]}
             size="normal"
             target={undefined}
@@ -2196,7 +2804,7 @@ exports[`Storyshots Button Social buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK esIVcm"
-            disabled={false}
+            disabled={undefined}
             onClick={[Function]}
             size="normal"
             target={undefined}
@@ -2563,7 +3171,7 @@ exports[`Storyshots Button Status buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK cCusLn"
-            disabled={false}
+            disabled={undefined}
             onClick={[Function]}
             size="small"
             target={undefined}
@@ -2857,7 +3465,7 @@ exports[`Storyshots Button Status buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK eUuKOG"
-            disabled={false}
+            disabled={undefined}
             onClick={[Function]}
             size="small"
             target={undefined}
@@ -3151,7 +3759,7 @@ exports[`Storyshots Button Status buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK hwhlDn"
-            disabled={false}
+            disabled={undefined}
             onClick={[Function]}
             size="small"
             target={undefined}
@@ -3445,7 +4053,7 @@ exports[`Storyshots Button Status buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK fYexOQ"
-            disabled={false}
+            disabled={undefined}
             onClick={[Function]}
             size="small"
             target={undefined}

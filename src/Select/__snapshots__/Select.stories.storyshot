@@ -108,7 +108,7 @@ exports[`Storyshots Select Default 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                value=""
+                value={undefined}
               >
                 <option
                   disabled={undefined}
@@ -573,12 +573,12 @@ exports[`Storyshots Select Playground 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk fIOgAI"
+                className="Select__StyledSelect-eyhbyk bExrQw"
                 disabled={false}
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                value=""
+                value={undefined}
               >
                 <option
                   disabled={true}
@@ -687,7 +687,10 @@ exports[`Storyshots Select Playground 1`] = `
                     </span>
                     <span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -714,7 +717,40 @@ exports[`Storyshots Select Playground 1`] = `
                         </span>
                       </span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          size
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              normal
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -925,7 +961,72 @@ exports[`Storyshots Select Playground 1`] = `
                         </span>
                       </span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          disabled
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                false
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                null
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -951,7 +1052,38 @@ exports[`Storyshots Select Playground 1`] = `
                             </span>
                           </span>
                         </span>
-                         
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          value
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                null
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
                       </span>
                     </span>
                     <span
@@ -1088,7 +1220,7 @@ exports[`Storyshots Select With error message 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                value=""
+                value={undefined}
               >
                 <option
                   disabled={undefined}
@@ -1637,7 +1769,7 @@ exports[`Storyshots Select With help message 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                value=""
+                value={undefined}
               >
                 <option
                   disabled={undefined}
@@ -2176,7 +2308,7 @@ exports[`Storyshots Select With placeholder 1`] = `
         >
           <label>
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-kJFBRQ irIxpQ"
             >
               Select box (with placeholder)
             </span>
@@ -2184,12 +2316,12 @@ exports[`Storyshots Select With placeholder 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk fIOgAI"
+                className="Select__StyledSelect-eyhbyk bExrQw"
                 disabled={false}
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                value=""
+                value={undefined}
               >
                 <option
                   disabled={true}
@@ -2760,7 +2892,7 @@ exports[`Storyshots Select With prefix 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                value=""
+                value={undefined}
               >
                 <option
                   disabled={undefined}
@@ -3302,7 +3434,7 @@ exports[`Storyshots Select With small size 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                value=""
+                value={undefined}
               >
                 <option
                   disabled={undefined}

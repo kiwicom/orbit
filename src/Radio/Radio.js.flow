@@ -1,0 +1,15 @@
+// @flow
+import defaultTokens from "@kiwicom/orbit-design-tokens"
+
+export type Props = {|
+  label: string,
+  value?: string,
+  hasError?: boolean,
+  disabled?: boolean,
+  checked?: boolean,
+  info?: React$Node,
+  onChange?: (SyntheticEvent<HTMLInputElement>) => void,
+  theme?: typeof defaultTokens,
+|};
+
+declare export default React$ComponentType<Props>;

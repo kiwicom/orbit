@@ -4,17 +4,7 @@ import styled from "styled-components";
 import defaultTokens from "@kiwicom/orbit-design-tokens";
 
 import Check from "../icons/Check";
-
-type Props = {|
-  label: string,
-  value?: string,
-  hasError: boolean,
-  disabled: boolean,
-  checked: boolean,
-  info?: React.Node,
-  onChange: (SyntheticEvent<HTMLInputElement>) => void,
-  theme: typeof defaultTokens,
-|};
+import type { Props } from "./Checkbox";
 
 const IconContainer = styled.div`
   position: relative;
@@ -103,7 +93,16 @@ const Label = styled(({ tokens, disabled, theme, type, ...props }) => (
 `;
 
 const Checkbox = (props: Props) => {
-  const { label, value, hasError, disabled, checked, onChange, theme, info } = props;
+  const {
+    label,
+    value,
+    hasError = false,
+    disabled = false,
+    checked = false,
+    onChange,
+    theme = defaultTokens,
+    info,
+  } = props;
 
   const tokens = {
     borderColor:
@@ -130,13 +129,6 @@ const Checkbox = (props: Props) => {
       </TextContainer>
     </Label>
   );
-};
-
-Checkbox.defaultProps = {
-  hasError: false,
-  disabled: false,
-  checked: false,
-  theme: defaultTokens,
 };
 
 export default Checkbox;

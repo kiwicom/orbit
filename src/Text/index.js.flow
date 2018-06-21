@@ -1,0 +1,21 @@
+// @flow
+
+type Align = "left" | "center" | "right";
+type Element = "p" | "span" | "div";
+type Type = "primary" | "secondary" | "attention";
+type Size = "large" | "normal" | "small";
+type Weight = "regular" | "bold";
+
+export type Props = {|
+  type?: Type,
+  size?: Size,
+  weight?: Weight,
+  align?: Align,
+  italic?: boolean,
+  uppercase?: boolean,
+  element?: Element,
+  children: React$Node,
+  className?: string,
+|};
+
+declare export default React$ComponentType<Props>;

@@ -2,34 +2,9 @@
 import * as React from "react";
 import * as tokens from "@kiwicom/orbit-design-tokens";
 
-const colorText = {
-  primary: tokens.colorTextPrimary,
-  secondary: tokens.colorTextSecondary,
-  attention: tokens.colorTextAttention,
-};
+import { sizeText, weightText, colorText } from "./consts";
 
-const weightText = {
-  regular: tokens.fontWeightNormal,
-  bold: tokens.fontWeightBold,
-};
-
-const sizeText = {
-  large: tokens.fontSizeTextLarge,
-  normal: tokens.fontSizeTextNormal,
-  small: tokens.fontSizeTextSmall,
-};
-
-type Props = {
-  type: $Keys<typeof colorText>,
-  size: $Keys<typeof sizeText>,
-  weight: $Keys<typeof weightText>,
-  align: "left" | "center" | "right",
-  italic: boolean,
-  uppercase: boolean,
-  element: "p" | "span" | "div",
-  children: React.Node,
-  className?: string,
-};
+import type { Props } from "./index";
 
 function resolveScopedStyles(scope) {
   return {
@@ -39,7 +14,17 @@ function resolveScopedStyles(scope) {
 }
 
 const Text = (props: Props) => {
-  const { type, size, weight, align, italic, uppercase, element, children, className } = props;
+  const {
+    type = "primary",
+    size = "normal",
+    weight = "regular",
+    align = "left",
+    italic = false,
+    uppercase = false,
+    element = "p",
+    children,
+    className,
+  } = props;
 
   const scoped = resolveScopedStyles(
     <scope>
@@ -71,16 +56,6 @@ const Text = (props: Props) => {
       {scoped.styles}
     </React.Fragment>
   );
-};
-
-Text.defaultProps = {
-  type: "primary",
-  size: "normal",
-  weight: "regular",
-  align: "left",
-  element: "p",
-  uppercase: false,
-  italic: false,
 };
 
 export default Text;

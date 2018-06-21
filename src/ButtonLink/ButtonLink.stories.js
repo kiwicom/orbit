@@ -8,7 +8,8 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, number, boolean, select } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
-import ButtonLink, { TYPES, SIZES } from "./ButtonLink";
+import ButtonLink from "./ButtonLink";
+import { TYPES, SIZES } from "./consts";
 
 setAddon(chaptersAddon);
 

@@ -214,6 +214,34 @@ exports[`Storyshots Radio Default 1`] = `
                         <span
                           style={Object {}}
                         >
+                          checked
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                false
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
                           onChange
                         </span>
                         <span>
@@ -527,6 +555,37 @@ exports[`Storyshots Radio Playground 1`] = `
                           style={Object {}}
                         >
                           disabled
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          hasError
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                false
+                              </span>
+                              }
+                            </span>
+                          </span>
                         </span>
                       </span>
                       <span>

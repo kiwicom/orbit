@@ -3,16 +3,8 @@ import * as React from "react";
 import defaultTokens from "@kiwicom/orbit-design-tokens";
 import styled from "styled-components";
 
-export const TYPE_OPTIONS = {
-  HELP: "help",
-  ERROR: "error",
-};
-
-type Props = {
-  children: React.Node,
-  type: $Values<typeof TYPE_OPTIONS>,
-  theme: typeof defaultTokens,
-};
+import TYPE_OPTIONS from "./consts";
+import type { Props } from "./FormFeedback";
 
 const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {...props} />)`
   color: ${({ theme, type }) =>
@@ -34,17 +26,12 @@ const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {...props}
 `;
 
 const FormFeedback = (props: Props) => {
-  const { children, type, theme } = props;
+  const { children, type = TYPE_OPTIONS.HELP, theme = defaultTokens } = props;
   return (
     <StyledFormFeedback theme={theme} type={type}>
       {children}
     </StyledFormFeedback>
   );
-};
-
-FormFeedback.defaultProps = {
-  type: "help",
-  theme: defaultTokens,
 };
 
 export default FormFeedback;

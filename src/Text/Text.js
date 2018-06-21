@@ -4,46 +4,14 @@ import defaultTokens from "@kiwicom/orbit-design-tokens";
 import styled from "styled-components";
 import createComponentFromTagProp from "react-create-component-from-tag-prop";
 
-export const TYPE_OPTIONS = {
-  PRIMARY: "primary",
-  SECONDARY: "secondary",
-  ATTENTION: "attention",
-};
-
-export const SIZE_OPTIONS = {
-  SMALL: "small",
-  NORMAL: "normal",
-  LARGE: "large",
-};
-
-export const WEIGHT_OPTIONS = {
-  NORMAL: "normal",
-  BOLD: "bold",
-};
-
-export const ALIGN_OPTIONS = {
-  LEFT: "left",
-  CENTER: "center",
-  RIGHT: "right",
-};
-
-export const ELEMENT_OPTIONS = {
-  P: "p",
-  SPAN: "span",
-  DIV: "div",
-};
-
-type Props = {|
-  type: $Values<typeof TYPE_OPTIONS>,
-  size: $Values<typeof SIZE_OPTIONS>,
-  weight: $Values<typeof WEIGHT_OPTIONS>,
-  align: $Values<typeof ALIGN_OPTIONS>,
-  italic: boolean,
-  uppercase: boolean,
-  element: $Values<typeof ELEMENT_OPTIONS>,
-  children: React.Node,
-  theme: typeof defaultTokens,
-|};
+import {
+  TYPE_OPTIONS,
+  WEIGHT_OPTIONS,
+  ELEMENT_OPTIONS,
+  ALIGN_OPTIONS,
+  SIZE_OPTIONS,
+} from "./consts";
+import type { Props } from "./Text";
 
 const TextElement = createComponentFromTagProp({
   prop: "element",
@@ -62,8 +30,17 @@ const StyledText = styled(TextElement)`
   margin: 0;
 `;
 
-const Text = (props: Props) => {
-  const { children, theme } = props;
+const Text = ({
+  type = TYPE_OPTIONS.PRIMARY,
+  size = SIZE_OPTIONS.NORMAL,
+  weight = WEIGHT_OPTIONS.NORMAL,
+  align = ALIGN_OPTIONS.LEFT,
+  element = ELEMENT_OPTIONS.P,
+  uppercase = false,
+  italic = false,
+  theme = defaultTokens,
+  children,
+}: Props) => {
   const tokens = {
     colorText: {
       [TYPE_OPTIONS.PRIMARY]: theme.colorTextPrimary,
@@ -81,21 +58,20 @@ const Text = (props: Props) => {
     },
   };
   return (
-    <StyledText tokens={tokens} {...props}>
+    <StyledText
+      tokens={tokens}
+      type={type}
+      size={size}
+      weight={weight}
+      align={align}
+      element={element}
+      uppercase={uppercase}
+      italic={italic}
+      theme={theme}
+    >
       {children}
     </StyledText>
   );
-};
-
-Text.defaultProps = {
-  type: "primary",
-  size: "normal",
-  weight: "normal",
-  align: "left",
-  element: "p",
-  uppercase: false,
-  italic: false,
-  theme: defaultTokens,
 };
 
 export default Text;

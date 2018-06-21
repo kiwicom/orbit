@@ -4,27 +4,8 @@ import styled from "styled-components";
 import defaultTokens from "@kiwicom/orbit-design-tokens";
 import createComponentFromTagProp from "react-create-component-from-tag-prop";
 
-export const ELEMENT_OPTIONS = {
-  H1: "h1",
-  H2: "h2",
-  H3: "h3",
-  H4: "h4",
-  H5: "h5",
-};
-
-export const TYPE_OPTIONS = {
-  DISPLAY: "display",
-  TITLE1: "title1",
-  TITLE2: "title2",
-  TITLE3: "title3",
-};
-
-type Props = {|
-  element: $Values<typeof ELEMENT_OPTIONS>,
-  type: $Values<typeof TYPE_OPTIONS>,
-  children: React.Node,
-  theme: typeof defaultTokens,
-|};
+import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./consts";
+import type { Props } from "./Heading";
 
 const HeadingElement = createComponentFromTagProp({
   prop: "element",
@@ -41,7 +22,12 @@ const StyledHeading = styled(HeadingElement)`
 `;
 
 const Heading = (props: Props) => {
-  const { children, theme, type, element } = props;
+  const {
+    children,
+    theme = defaultTokens,
+    type = TYPE_OPTIONS.TITLE1,
+    element = ELEMENT_OPTIONS.H1,
+  } = props;
   const tokens = {
     weightHeading: {
       [TYPE_OPTIONS.DISPLAY]: theme.fontWeightHeadingDisplay,
@@ -61,12 +47,6 @@ const Heading = (props: Props) => {
       {children}
     </StyledHeading>
   );
-};
-
-Heading.defaultProps = {
-  element: "h1",
-  type: "title1",
-  theme: defaultTokens,
 };
 
 export default Heading;

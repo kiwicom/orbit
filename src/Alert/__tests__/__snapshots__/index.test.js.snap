@@ -2,8 +2,6 @@
 
 exports[`Alert should match snapshot 1`] = `
 <Alert
-  closable={false}
-  onClose={[Function]}
   theme={
     Object {
       "backgroundAlertCritical": "#fae8e8",
@@ -361,11 +359,8 @@ exports[`Alert should match snapshot 1`] = `
       "zIndexSticky": "100",
     }
   }
-  type="info"
 >
   <Alert__StyledAlert
-    closable={false}
-    onClose={[Function]}
     theme={
       Object {
         "backgroundAlertCritical": "#fae8e8",
@@ -749,8 +744,6 @@ exports[`Alert should match snapshot 1`] = `
   >
     <StyledDiv
       className="Alert__StyledAlert-dqYNhl fUtCMj"
-      closable={false}
-      onClose={[Function]}
       theme={
         Object {
           "backgroundAlertCritical": "#fae8e8",

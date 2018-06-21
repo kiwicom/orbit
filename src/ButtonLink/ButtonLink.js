@@ -3,34 +3,9 @@ import * as React from "react";
 import defaultTokens from "@kiwicom/orbit-design-tokens";
 import styled from "styled-components";
 
+import { TYPES, SIZES } from "./consts";
 import { iconSizes } from "../Icon";
-
-export const TYPES = {
-  PRIMARY: "primary",
-  SECONDARY: "secondary",
-};
-
-export const SIZES = {
-  SMALL: "small",
-  NORMAL: "normal",
-  LARGE: "large",
-};
-
-type Props = {|
-  children?: React.Node,
-  component: string | React.Node,
-  onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void,
-  disabled: boolean,
-  block: boolean,
-  external: boolean,
-  type: $Values<typeof TYPES>,
-  size: $Values<typeof SIZES>,
-  href?: string,
-  width: number,
-  icon?: React.Node,
-  theme: typeof defaultTokens,
-  transparent: boolean,
-|};
+import type { Props } from "./ButtonLink";
 
 const IconContainer = styled(({ tokens, sizeIcon, type, onlyIcon, ...props }) => (
   <div {...props} />
@@ -47,7 +22,7 @@ const IconContainer = styled(({ tokens, sizeIcon, type, onlyIcon, ...props }) =>
   }
 `;
 
-const StyledButton = styled(
+const StyledButtonLink = styled(
   ({
     tokens,
     onlyIcon,
@@ -115,7 +90,16 @@ const StyledButton = styled(
 `;
 
 const ButtonLink = (props: Props) => {
-  const { external, children, component, size, icon, type, theme, onClick } = props;
+  const {
+    external,
+    children,
+    component,
+    size = SIZES.NORMAL,
+    icon,
+    type = TYPES.PRIMARY,
+    theme = defaultTokens,
+    onClick,
+  } = props;
 
   const sizeIcon = size === SIZES.SMALL ? "small" : "medium";
 
@@ -173,7 +157,7 @@ const ButtonLink = (props: Props) => {
   };
 
   return (
-    <StyledButton
+    <StyledButtonLink
       onClick={onClick}
       component={component}
       onlyIcon={onlyIcon}
@@ -195,14 +179,12 @@ const ButtonLink = (props: Props) => {
         </IconContainer>
       )}
       {children}
-    </StyledButton>
+    </StyledButtonLink>
   );
 };
 
 ButtonLink.displayName = "ButtonLink";
 ButtonLink.defaultProps = {
-  disabled: false,
-  block: false,
   component: "button",
   external: false,
   type: "primary",

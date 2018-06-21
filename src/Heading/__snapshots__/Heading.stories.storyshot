@@ -652,7 +652,63 @@ exports[`Storyshots Heading Title 1 1`] = `
                         &lt;
                         Heading
                       </span>
-                      <span />
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                title1
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            element
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                h1
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
                       <span
                         style={
                           Object {
@@ -1444,6 +1500,33 @@ exports[`Storyshots Heading Title Display 1`] = `
                               >
                                 "
                                 display
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            element
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                h1
                                 "
                               </span>
                             </span>

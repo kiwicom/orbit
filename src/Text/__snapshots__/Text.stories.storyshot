@@ -408,7 +408,100 @@ exports[`Storyshots Text Playground 1`] = `
                       </span>
                       <span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                primary
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            element
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                p
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            size
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                normal
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -433,7 +526,99 @@ exports[`Storyshots Text Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                          
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            align
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                left
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            uppercase
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            italic
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <br />
                         </span>
                       </span>
                       <span

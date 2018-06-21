@@ -2,11 +2,7 @@
 
 exports[`Button with icon should match snapshot 1`] = `
 <Button__StyledButton
-  block={false}
-  bordered={false}
   component="button"
-  disabled={false}
-  external={false}
   icon={<Airplane />}
   onClick={
     [MockFunction] {
@@ -531,7 +527,6 @@ exports[`Button with icon should match snapshot 1`] = `
   width={0}
 >
   <Button__IconContainer
-    bordered={false}
     onlyIcon={false}
     size="normal"
     sizeIcon="medium"

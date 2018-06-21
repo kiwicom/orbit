@@ -5,13 +5,8 @@ import defaultTokens from "@kiwicom/orbit-design-tokens";
 
 import { InformationCircle, Check, Alert as AlertTriangle, AlertCircle, Close } from "../icons";
 import ButtonLink from "../ButtonLink/ButtonLink";
-
-export const TYPE_OPTIONS = {
-  INFO: "info",
-  SUCCESS: "success",
-  WARNING: "warning",
-  CRITICAL: "critical",
-};
+import TYPE_OPTIONS from "./consts";
+import type { Props } from "./Alert";
 
 type IconProps = {
   icon: React.Node,
@@ -35,16 +30,6 @@ const Icon = ({ icon, type }: IconProps) => {
     }
   }
   return icon;
-};
-
-type Props = {
-  type: $Values<typeof TYPE_OPTIONS>,
-  title?: string,
-  icon?: React.Element<any> | boolean,
-  closable: boolean,
-  onClose: () => void,
-  children: React.Node,
-  theme: typeof defaultTokens,
 };
 
 const StyledDiv = ({ className, children }: { className: string, children: React.Node }) => (
@@ -106,7 +91,15 @@ const CloseContainer = styled(StyledDiv)`
 `;
 
 const Alert = (props: Props) => {
-  const { type, title, theme, closable, icon, onClose, children } = props;
+  const {
+    type = TYPE_OPTIONS.INFO,
+    title,
+    theme = defaultTokens,
+    closable,
+    icon,
+    onClose = () => {},
+    children,
+  } = props;
   const tokens = {
     colorIconAlert: {
       [TYPE_OPTIONS.INFO]: theme.colorAlertIconInfo,
@@ -128,7 +121,7 @@ const Alert = (props: Props) => {
     },
   };
   return (
-    <StyledAlert tokens={tokens} {...props}>
+    <StyledAlert tokens={tokens} theme={theme} type={type} closable={closable} {...props}>
       {icon && (
         <IconContainer theme={theme} tokens={tokens} type={type}>
           <Icon type={type} icon={icon} />
@@ -162,11 +155,5 @@ const Alert = (props: Props) => {
 };
 
 Alert.displayName = "Alert";
-Alert.defaultProps = {
-  type: "info",
-  closable: false,
-  onClose: () => {},
-  theme: defaultTokens,
-};
 
 export default Alert;

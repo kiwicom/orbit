@@ -20,4 +20,6 @@ export type Props = {|
   +transparent?: boolean,
 |};
 
+declare export var StyledButtonLink: React$ComponentType<Props>;
+
 declare export default React$ComponentType<Props>;

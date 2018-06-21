@@ -1,0 +1,10 @@
+// @flow
+import ButtonLink from "../ButtonLink";
+import Button from "../Button";
+
+export type Props = {|
+  +children: Array<React$Element<typeof Button> | React$Element<typeof ButtonLink>>,
+  +connected?: boolean,
+|};
+
+declare export default React$ComponentType<Props>;

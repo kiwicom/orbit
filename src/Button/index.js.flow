@@ -29,4 +29,6 @@ export type Props = {|
   +theme?: typeof defaultTokens,
 |};
 
+declare export var StyledButton: React$ComponentType<Props>;
+
 declare export default React$ComponentType<Props>;

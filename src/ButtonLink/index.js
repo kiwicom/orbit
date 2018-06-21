@@ -27,7 +27,7 @@ IconContainer.defaultProps = {
   theme: defaultTokens,
 };
 
-const StyledButtonLink = styled(
+export const StyledButtonLink = styled(
   ({
     tokens,
     onlyIcon,

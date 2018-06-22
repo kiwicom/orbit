@@ -1265,7 +1265,7 @@ exports[`Storyshots Select With error message 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp jeqxNP"
+              className="FormFeedback__StyledFormFeedback-cuFyWp kBuQBJ"
             >
               <div>
                 You need to select some value.
@@ -1814,7 +1814,7 @@ exports[`Storyshots Select With help message 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp dhwKKr"
+              className="FormFeedback__StyledFormFeedback-cuFyWp dAUFLG"
             >
               <div>
                 Most common choice is 

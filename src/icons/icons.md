@@ -19,6 +19,7 @@
 - ![BaggageNone](/src/icons/png/BaggageNone.png?raw=true) BaggageNone
 - ![BaggageRecheck](/src/icons/png/BaggageRecheck.png?raw=true) BaggageRecheck
 - ![BaggageSmall](/src/icons/png/BaggageSmall.png?raw=true) BaggageSmall
+- ![BaggageStorage](/src/icons/png/BaggageStorage.png?raw=true) BaggageStorage
 - ![Baggages](/src/icons/png/Baggages.png?raw=true) Baggages
 - ![BillingDetails](/src/icons/png/BillingDetails.png?raw=true) BillingDetails
 - ![BoardingGate](/src/icons/png/BoardingGate.png?raw=true) BoardingGate

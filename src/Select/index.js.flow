@@ -1,0 +1,4 @@
+// @flow
+import type { Props } from "./Select";
+
+declare export default React$ComponentType<Props>;

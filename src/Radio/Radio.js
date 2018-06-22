@@ -3,16 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 import defaultTokens from "@kiwicom/orbit-design-tokens";
 
-type Props = {|
-  label: string,
-  value?: string,
-  hasError: boolean,
-  disabled: boolean,
-  checked: boolean,
-  info?: React.Node,
-  onChange: (SyntheticEvent<HTMLInputElement>) => void,
-  theme: typeof defaultTokens,
-|};
+import type { Props } from "./Radio";
 
 const Glyph = styled.span`
   visibility: hidden;
@@ -102,7 +93,16 @@ const Label = styled(({ tokens, disabled, theme, type, ...props }) => (
 `;
 
 const Radio = (props: Props) => {
-  const { label, value, hasError, disabled, checked, onChange, theme, info } = props;
+  const {
+    label,
+    value,
+    hasError = false,
+    disabled = false,
+    checked = false,
+    onChange,
+    theme = defaultTokens,
+    info,
+  } = props;
 
   const tokens = {
     borderColor:
@@ -128,13 +128,6 @@ const Radio = (props: Props) => {
       </TextContainer>
     </Label>
   );
-};
-
-Radio.defaultProps = {
-  hasError: false,
-  disabled: false,
-  checked: false,
-  theme: defaultTokens,
 };
 
 export default Radio;

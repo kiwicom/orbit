@@ -5,34 +5,10 @@ import styled from "styled-components";
 
 import FormLabel from "../FormLabel/FormLabel";
 import ChevronDown from "../icons/ChevronDown";
-import FormFeedback, { TYPE_OPTIONS } from "../FormFeedback/FormFeedback";
-
-export const SIZE_OPTIONS = {
-  SMALL: "small",
-  NORMAL: "normal",
-};
-
-type Option = {
-  value: string | number,
-  label?: string,
-  disabled?: boolean,
-};
-
-type Props = {
-  size: $Values<typeof SIZE_OPTIONS>,
-  label?: string,
-  placeholder?: string,
-  value: string,
-  disabled?: boolean,
-  error?: React.Node,
-  help?: React.Node,
-  onChange?: (SyntheticInputEvent<HTMLSelectElement>) => void,
-  onFocus?: (SyntheticInputEvent<HTMLSelectElement>) => void,
-  onBlur?: (SyntheticInputEvent<HTMLSelectElement>) => void,
-  options: Option[],
-  prefix?: React.Node,
-  theme: typeof defaultTokens,
-};
+import FormFeedback from "../FormFeedback/FormFeedback";
+import TYPE_OPTIONS from "../FormFeedback/consts";
+import SIZE_OPTIONS from "./consts";
+import type { Props } from "./Select";
 
 const StyledSelect = styled(
   ({ className, children, value, disabled, onChange, onFocus, onBlur }) => (
@@ -141,11 +117,11 @@ const SelectSuffix = styled(({ children, className }) => (
 `;
 
 const Select = ({
-  size,
+  size = SIZE_OPTIONS.NORMAL,
   label,
   placeholder,
   value,
-  disabled,
+  disabled = false,
   error,
   help,
   onChange,
@@ -153,9 +129,9 @@ const Select = ({
   onFocus,
   options,
   prefix,
-  theme,
+  theme = defaultTokens,
 }: Props) => {
-  const filled = placeholder && value !== "";
+  const filled = !!placeholder && value !== "";
 
   return (
     <label>
@@ -211,13 +187,6 @@ const Select = ({
       )}
     </label>
   );
-};
-
-Select.defaultProps = {
-  value: "",
-  size: SIZE_OPTIONS.NORMAL,
-  disabled: false,
-  theme: defaultTokens,
 };
 
 export default Select;

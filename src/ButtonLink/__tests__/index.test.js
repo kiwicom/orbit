@@ -15,7 +15,7 @@ describe("ButtonLink with Icon", () => {
       {children}
     </ButtonLink>,
   );
-  const button = component.find("ButtonLink__StyledButton");
+  const button = component.find("ButtonLink__StyledButtonLink");
   it("should contain a title ", () => {
     expect(button.render().text()).toBe(children);
   });
@@ -36,7 +36,7 @@ describe("ButtonLink with Icon", () => {
       {children}
     </ButtonLink>,
   );
-  const button = component.find("ButtonLink__StyledButton");
+  const button = component.find("ButtonLink__StyledButtonLink");
   it("should contain a title ", () => {
     expect(button.render().text()).toBe(children);
   });

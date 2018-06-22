@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Textarea Default 1`] = `
+exports[`Storyshots InputFile Default 1`] = `
 <div
   style={
     Object {
@@ -49,7 +49,7 @@ exports[`Storyshots Textarea Default 1`] = `
         >
           <div>
             <p>
-              Some description about this type of textarea in general.
+              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
             </p>
           </div>
         </span>
@@ -99,20 +99,61 @@ exports[`Storyshots Textarea Default 1`] = `
           }
         >
           <label
-            className="Textarea__Field-kPVRAV bXkLzV"
+            className="InputFile__Field-jAueAE dAafTj"
           >
-            <textarea
-              className="Textarea__StyledTextArea-iLqCZR kfzwzn"
-              disabled={undefined}
-              maxLength={undefined}
+            <input
+              accept={undefined}
+              className="InputFile__Input-kmcYZq bAMqeX"
               name={undefined}
-              onBlur={undefined}
+              onBlur={[Function]}
               onChange={[Function]}
-              onFocus={undefined}
-              placeholder="Placeholder"
-              resize="vertical"
-              value=""
+              onFocus={[Function]}
+              type="file"
             />
+            <span
+              className="FormLabel-kJFBRQ fuYBgg"
+            >
+              Label
+            </span>
+            <div
+              className="InputFile__FakeInput-djykOY ciTDoB"
+            >
+              <div
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hplpJ"
+                disabled={undefined}
+                size="small"
+                target={undefined}
+              >
+                <div
+                  className="Button__IconContainer-bZYzaL gSBBD"
+                >
+                  <svg
+                    className={undefined}
+                    fill="currentColor"
+                    height="24px"
+                    preserveAspectRatio="xMidYMid meet"
+                    style={
+                      Object {
+                        "color": undefined,
+                        "verticalAlign": "middle",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="24px"
+                  >
+                    <path
+                      d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
+                    />
+                  </svg>
+                </div>
+                Select file
+              </div>
+              <div
+                className="InputFile__StyledFileInput-emwhFr UJeXz"
+              >
+                No file selected
+              </div>
+            </div>
           </label>
         </div>
         <div>
@@ -166,15 +207,18 @@ exports[`Storyshots Textarea Default 1`] = `
                       }
                     >
                       &lt;
-                      Textarea
+                      InputFile
                     </span>
                     <span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
-                          placeholder
+                          label
                         </span>
                         <span>
                           =
@@ -190,14 +234,17 @@ exports[`Storyshots Textarea Default 1`] = `
                               }
                             >
                               "
-                              Placeholder
+                              Label
                               "
                             </span>
                           </span>
                         </span>
                       </span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -217,7 +264,7 @@ exports[`Storyshots Textarea Default 1`] = `
                                   }
                                 }
                               >
-                                change()
+                                onChange()
                               </span>
                               }
                             </span>
@@ -225,32 +272,98 @@ exports[`Storyshots Textarea Default 1`] = `
                         </span>
                       </span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
-                          value
+                          onFocus
                         </span>
                         <span>
                           =
                           <span
                             style={Object {}}
                           >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
                                 }
+                              >
+                                onFocus()
+                              </span>
                               }
-                            >
-                              "
-                              
-                              "
                             </span>
                           </span>
                         </span>
-                         
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onBlur
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onBlur()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onRemoveFile
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                removeFile()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
                       </span>
                     </span>
                     <span
@@ -274,7 +387,454 @@ exports[`Storyshots Textarea Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Textarea Playground 1`] = `
+exports[`Storyshots InputFile Filled with file 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Filled with file
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            className="InputFile__Field-jAueAE dAafTj"
+          >
+            <input
+              accept={undefined}
+              className="InputFile__Input-kmcYZq bAMqeX"
+              name={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="file"
+            />
+            <span
+              className="FormLabel-kJFBRQ irIxpQ"
+            >
+              Label
+            </span>
+            <div
+              className="InputFile__FakeInput-djykOY ciTDoB"
+            >
+              <div
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hplpJ"
+                disabled={undefined}
+                size="small"
+                target={undefined}
+              >
+                <div
+                  className="Button__IconContainer-bZYzaL gSBBD"
+                >
+                  <svg
+                    className={undefined}
+                    fill="currentColor"
+                    height="24px"
+                    preserveAspectRatio="xMidYMid meet"
+                    style={
+                      Object {
+                        "color": undefined,
+                        "verticalAlign": "middle",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="24px"
+                  >
+                    <path
+                      d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
+                    />
+                  </svg>
+                </div>
+                Select file
+              </div>
+              <div
+                className="InputFile__StyledFileInput-emwhFr eAUfwC"
+              >
+                file.png
+              </div>
+              <button
+                className="InputFile__CloseButton-izWrBg gSjPGz ButtonLink__StyledButtonLink-eyUiPe cNblSd"
+                onClick={[Function]}
+                size="normal"
+                target={undefined}
+              >
+                <div
+                  className="ButtonLink__IconContainer-flENJD hNEbcs"
+                  size="normal"
+                >
+                  <svg
+                    className={undefined}
+                    fill="currentColor"
+                    height="24px"
+                    preserveAspectRatio="xMidYMid meet"
+                    style={
+                      Object {
+                        "color": undefined,
+                        "verticalAlign": "middle",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="24px"
+                  >
+                    <path
+                      d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+                    />
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      InputFile
+                    </span>
+                    <span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Label
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          fileName
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              file.png
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onChange
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onChange()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onFocus
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onFocus()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onBlur
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onBlur()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onRemoveFile
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                removeFile()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputFile Playground 1`] = `
 <div
   style={
     Object {
@@ -323,7 +883,7 @@ exports[`Storyshots Textarea Playground 1`] = `
         >
           <div>
             <p>
-              Some description about this type of textarea in general.
+              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
             </p>
           </div>
         </span>
@@ -373,29 +933,70 @@ exports[`Storyshots Textarea Playground 1`] = `
           }
         >
           <label
-            className="Textarea__Field-kPVRAV bXkLzV"
+            className="InputFile__Field-jAueAE dAafTj"
           >
+            <input
+              accept={
+                Array [
+                  "media/*",
+                  "image/*",
+                ]
+              }
+              className="InputFile__Input-kmcYZq bAMqeX"
+              name="fileInput"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="file"
+            />
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
               Label
             </span>
-            <textarea
-              className="Textarea__StyledTextArea-iLqCZR hcwkQS"
-              disabled={true}
-              maxLength={undefined}
-              name={undefined}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              placeholder="Placeholder"
-              resize="vertical"
-              value=""
-            />
+            <div
+              className="InputFile__FakeInput-djykOY dilRac"
+            >
+              <div
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hplpJ"
+                disabled={undefined}
+                size="small"
+                target={undefined}
+              >
+                <div
+                  className="Button__IconContainer-bZYzaL gSBBD"
+                >
+                  <svg
+                    className={undefined}
+                    fill="currentColor"
+                    height="24px"
+                    preserveAspectRatio="xMidYMid meet"
+                    style={
+                      Object {
+                        "color": undefined,
+                        "verticalAlign": "middle",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="24px"
+                  >
+                    <path
+                      d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
+                    />
+                  </svg>
+                </div>
+                Please select file
+              </div>
+              <div
+                className="InputFile__StyledFileInput-emwhFr hBGxpC"
+              >
+                No file has been selected yet
+              </div>
+            </div>
             <div
               className="FormFeedback__StyledFormFeedback-cuFyWp kBuQBJ"
             >
-              Something went wrong.
+              No file has been selected yet
             </div>
           </label>
         </div>
@@ -450,39 +1051,9 @@ exports[`Storyshots Textarea Playground 1`] = `
                       }
                     >
                       &lt;
-                      Textarea
+                      InputFile
                     </span>
                     <span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          size
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              small
-                              "
-                            </span>
-                          </span>
-                        </span>
-                      </span>
                       <span>
                         <span>
                           <br />
@@ -521,7 +1092,7 @@ exports[`Storyshots Textarea Playground 1`] = `
                         <span
                           style={Object {}}
                         >
-                          value
+                          title
                         </span>
                         <span>
                           =
@@ -537,7 +1108,37 @@ exports[`Storyshots Textarea Playground 1`] = `
                               }
                             >
                               "
-                              
+                              Please select file
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          name
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              fileInput
                               "
                             </span>
                           </span>
@@ -567,7 +1168,7 @@ exports[`Storyshots Textarea Playground 1`] = `
                               }
                             >
                               "
-                              Placeholder
+                              No file has been selected yet
                               "
                             </span>
                           </span>
@@ -581,7 +1182,7 @@ exports[`Storyshots Textarea Playground 1`] = `
                         <span
                           style={Object {}}
                         >
-                          help
+                          fileName
                         </span>
                         <span>
                           =
@@ -628,7 +1229,7 @@ exports[`Storyshots Textarea Playground 1`] = `
                               }
                             >
                               "
-                              Something went wrong.
+                              No file has been selected yet
                               "
                             </span>
                           </span>
@@ -642,18 +1243,7 @@ exports[`Storyshots Textarea Playground 1`] = `
                         <span
                           style={Object {}}
                         >
-                          disabled
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          maxLength
+                          help
                         </span>
                         <span>
                           =
@@ -684,24 +1274,51 @@ exports[`Storyshots Textarea Playground 1`] = `
                         <span
                           style={Object {}}
                         >
-                          resize
+                          allowedFileTypes
                         </span>
                         <span>
                           =
                           <span
                             style={Object {}}
                           >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
                                 }
+                              >
+                                [
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  media/*
+                                  "
+                                </span>
+                                , 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  image/*
+                                  "
+                                </span>
+                                ]
+                              </span>
                               }
-                            >
-                              "
-                              vertical
-                              "
                             </span>
                           </span>
                         </span>
@@ -730,7 +1347,7 @@ exports[`Storyshots Textarea Playground 1`] = `
                                   }
                                 }
                               >
-                                change()
+                                onChange()
                               </span>
                               }
                             </span>
@@ -761,7 +1378,7 @@ exports[`Storyshots Textarea Playground 1`] = `
                                   }
                                 }
                               >
-                                focus()
+                                onFocus()
                               </span>
                               }
                             </span>
@@ -792,234 +1409,12 @@ exports[`Storyshots Textarea Playground 1`] = `
                                   }
                                 }
                               >
-                                blur()
+                                onBlur()
                               </span>
                               }
                             </span>
                           </span>
                         </span>
-                        <br />
-                      </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
-                      }
-                    >
-                      /&gt;
-                    </span>
-                  </div>
-                </pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Textarea Small size 1`] = `
-<div
-  style={
-    Object {
-      "padding": "20px",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "WebkitFontSmoothing": "antialiased",
-        "color": "#444",
-        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "marginBottom": 60,
-        }
-      }
-    >
-      <div>
-        <h1
-          style={
-            Object {
-              "color": "#363a45",
-              "fontSize": 36,
-              "marginBottom": 10,
-            }
-          }
-        >
-          Small size
-        </h1>
-        
-        <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
-        >
-          <div>
-            <p>
-              Some description about this type of textarea in general.
-            </p>
-          </div>
-        </span>
-      </div>
-    </div>
-    <div>
-      <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
-        >
-          <label
-            className="Textarea__Field-kPVRAV bXkLzV"
-          >
-            <textarea
-              className="Textarea__StyledTextArea-iLqCZR jROCSV"
-              disabled={undefined}
-              maxLength={undefined}
-              name={undefined}
-              onBlur={undefined}
-              onChange={[Function]}
-              onFocus={undefined}
-              placeholder="Placeholder"
-              resize="vertical"
-              value=""
-            />
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
-                }
-              >
-                <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
-                >
-                  Source
-                </h4>
-                <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
-                >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
-                      }
-                    >
-                      &lt;
-                      Textarea
-                    </span>
-                    <span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          size
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              small
-                              "
-                            </span>
-                          </span>
-                        </span>
                       </span>
                       <span>
                         <span>
@@ -1029,37 +1424,7 @@ exports[`Storyshots Textarea Small size 1`] = `
                         <span
                           style={Object {}}
                         >
-                          placeholder
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              Placeholder
-                              "
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onChange
+                          onRemoveFile
                         </span>
                         <span>
                           =
@@ -1075,39 +1440,9 @@ exports[`Storyshots Textarea Small size 1`] = `
                                   }
                                 }
                               >
-                                change()
+                                removeFile()
                               </span>
                               }
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          value
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              
-                              "
                             </span>
                           </span>
                         </span>
@@ -1135,7 +1470,7 @@ exports[`Storyshots Textarea Small size 1`] = `
 </div>
 `;
 
-exports[`Storyshots Textarea With error 1`] = `
+exports[`Storyshots InputFile With error 1`] = `
 <div
   style={
     Object {
@@ -1184,7 +1519,7 @@ exports[`Storyshots Textarea With error 1`] = `
         >
           <div>
             <p>
-              Some description about this type of textarea in general.
+              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
             </p>
           </div>
         </span>
@@ -1234,24 +1569,65 @@ exports[`Storyshots Textarea With error 1`] = `
           }
         >
           <label
-            className="Textarea__Field-kPVRAV bXkLzV"
+            className="InputFile__Field-jAueAE dAafTj"
           >
-            <textarea
-              className="Textarea__StyledTextArea-iLqCZR aHzeJ"
-              disabled={undefined}
-              maxLength={undefined}
+            <input
+              accept={undefined}
+              className="InputFile__Input-kmcYZq bAMqeX"
               name={undefined}
-              onBlur={undefined}
+              onBlur={[Function]}
               onChange={[Function]}
-              onFocus={undefined}
-              placeholder="Placeholder"
-              resize="vertical"
-              value="Something"
+              onFocus={[Function]}
+              type="file"
             />
+            <span
+              className="FormLabel-kJFBRQ fuYBgg"
+            >
+              Label
+            </span>
+            <div
+              className="InputFile__FakeInput-djykOY dilRac"
+            >
+              <div
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hplpJ"
+                disabled={undefined}
+                size="small"
+                target={undefined}
+              >
+                <div
+                  className="Button__IconContainer-bZYzaL gSBBD"
+                >
+                  <svg
+                    className={undefined}
+                    fill="currentColor"
+                    height="24px"
+                    preserveAspectRatio="xMidYMid meet"
+                    style={
+                      Object {
+                        "color": undefined,
+                        "verticalAlign": "middle",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="24px"
+                  >
+                    <path
+                      d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
+                    />
+                  </svg>
+                </div>
+                Select file
+              </div>
+              <div
+                className="InputFile__StyledFileInput-emwhFr hBGxpC"
+              >
+                No file selected
+              </div>
+            </div>
             <div
               className="FormFeedback__StyledFormFeedback-cuFyWp kBuQBJ"
             >
-              Something went wrong.
+              Error message (explain how to solve it)
             </div>
           </label>
         </div>
@@ -1306,7 +1682,7 @@ exports[`Storyshots Textarea With error 1`] = `
                       }
                     >
                       &lt;
-                      Textarea
+                      InputFile
                     </span>
                     <span>
                       <span>
@@ -1317,7 +1693,7 @@ exports[`Storyshots Textarea With error 1`] = `
                         <span
                           style={Object {}}
                         >
-                          placeholder
+                          label
                         </span>
                         <span>
                           =
@@ -1333,7 +1709,7 @@ exports[`Storyshots Textarea With error 1`] = `
                               }
                             >
                               "
-                              Placeholder
+                              Label
                               "
                             </span>
                           </span>
@@ -1363,7 +1739,7 @@ exports[`Storyshots Textarea With error 1`] = `
                               }
                             >
                               "
-                              Something went wrong.
+                              Error message (explain how to solve it)
                               "
                             </span>
                           </span>
@@ -1393,7 +1769,7 @@ exports[`Storyshots Textarea With error 1`] = `
                                   }
                                 }
                               >
-                                change()
+                                onChange()
                               </span>
                               }
                             </span>
@@ -1408,24 +1784,87 @@ exports[`Storyshots Textarea With error 1`] = `
                         <span
                           style={Object {}}
                         >
-                          value
+                          onFocus
                         </span>
                         <span>
                           =
                           <span
                             style={Object {}}
                           >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
                                 }
+                              >
+                                onFocus()
+                              </span>
                               }
-                            >
-                              "
-                              Something
-                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onBlur
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onBlur()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onRemoveFile
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                removeFile()
+                              </span>
+                              }
                             </span>
                           </span>
                         </span>
@@ -1453,7 +1892,7 @@ exports[`Storyshots Textarea With error 1`] = `
 </div>
 `;
 
-exports[`Storyshots Textarea With help 1`] = `
+exports[`Storyshots InputFile With help 1`] = `
 <div
   style={
     Object {
@@ -1502,7 +1941,7 @@ exports[`Storyshots Textarea With help 1`] = `
         >
           <div>
             <p>
-              Some description about this type of textarea in general.
+              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
             </p>
           </div>
         </span>
@@ -1552,343 +1991,71 @@ exports[`Storyshots Textarea With help 1`] = `
           }
         >
           <label
-            className="Textarea__Field-kPVRAV bXkLzV"
+            className="InputFile__Field-jAueAE dAafTj"
           >
-            <textarea
-              className="Textarea__StyledTextArea-iLqCZR kfzwzn"
-              disabled={undefined}
-              maxLength={undefined}
+            <input
+              accept={undefined}
+              className="InputFile__Input-kmcYZq bAMqeX"
               name={undefined}
-              onBlur={undefined}
+              onBlur={[Function]}
               onChange={[Function]}
-              onFocus={undefined}
-              placeholder="Placeholder"
-              resize="vertical"
-              value="Something"
+              onFocus={[Function]}
+              type="file"
             />
-            <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp dAUFLG"
-            >
-              Everything is fine.
-            </div>
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
-                }
-              >
-                <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
-                >
-                  Source
-                </h4>
-                <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
-                >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
-                      }
-                    >
-                      &lt;
-                      Textarea
-                    </span>
-                    <span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          placeholder
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              Placeholder
-                              "
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          help
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              Everything is fine.
-                              "
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onChange
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                change()
-                              </span>
-                              }
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          value
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              Something
-                              "
-                            </span>
-                          </span>
-                        </span>
-                        <br />
-                      </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
-                      }
-                    >
-                      /&gt;
-                    </span>
-                  </div>
-                </pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Textarea With label 1`] = `
-<div
-  style={
-    Object {
-      "padding": "20px",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "WebkitFontSmoothing": "antialiased",
-        "color": "#444",
-        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "marginBottom": 60,
-        }
-      }
-    >
-      <div>
-        <h1
-          style={
-            Object {
-              "color": "#363a45",
-              "fontSize": 36,
-              "marginBottom": 10,
-            }
-          }
-        >
-          With label
-        </h1>
-        
-        <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
-        >
-          <div>
-            <p>
-              Some description about this type of textarea in general.
-            </p>
-          </div>
-        </span>
-      </div>
-    </div>
-    <div>
-      <div
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
-        >
-          <label
-            className="Textarea__Field-kPVRAV bXkLzV"
-          >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
               Label
             </span>
-            <textarea
-              className="Textarea__StyledTextArea-iLqCZR kfzwzn"
-              disabled={undefined}
-              maxLength={undefined}
-              name={undefined}
-              onBlur={undefined}
-              onChange={[Function]}
-              onFocus={undefined}
-              placeholder="Placeholder"
-              resize="vertical"
-              value=""
-            />
+            <div
+              className="InputFile__FakeInput-djykOY ciTDoB"
+            >
+              <div
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hplpJ"
+                disabled={undefined}
+                size="small"
+                target={undefined}
+              >
+                <div
+                  className="Button__IconContainer-bZYzaL gSBBD"
+                >
+                  <svg
+                    className={undefined}
+                    fill="currentColor"
+                    height="24px"
+                    preserveAspectRatio="xMidYMid meet"
+                    style={
+                      Object {
+                        "color": undefined,
+                        "verticalAlign": "middle",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="24px"
+                  >
+                    <path
+                      d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
+                    />
+                  </svg>
+                </div>
+                Select file
+              </div>
+              <div
+                className="InputFile__StyledFileInput-emwhFr UJeXz"
+              >
+                No file selected
+              </div>
+            </div>
+            <div
+              className="FormFeedback__StyledFormFeedback-cuFyWp dAUFLG"
+            >
+              <div>
+                Supported files: 
+                <strong>
+                  PNG, JPG, PDF
+                </strong>
+              </div>
+            </div>
           </label>
         </div>
         <div>
@@ -1942,7 +2109,7 @@ exports[`Storyshots Textarea With label 1`] = `
                       }
                     >
                       &lt;
-                      Textarea
+                      InputFile
                     </span>
                     <span>
                       <span>
@@ -1983,24 +2150,25 @@ exports[`Storyshots Textarea With label 1`] = `
                         <span
                           style={Object {}}
                         >
-                          placeholder
+                          help
                         </span>
                         <span>
                           =
                           <span
                             style={Object {}}
                           >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
                                 }
+                              >
+                                &lt;div /&gt;
+                              </span>
                               }
-                            >
-                              "
-                              Placeholder
-                              "
                             </span>
                           </span>
                         </span>
@@ -2029,7 +2197,7 @@ exports[`Storyshots Textarea With label 1`] = `
                                   }
                                 }
                               >
-                                change()
+                                onChange()
                               </span>
                               }
                             </span>
@@ -2044,24 +2212,87 @@ exports[`Storyshots Textarea With label 1`] = `
                         <span
                           style={Object {}}
                         >
-                          value
+                          onFocus
                         </span>
                         <span>
                           =
                           <span
                             style={Object {}}
                           >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
                                 }
+                              >
+                                onFocus()
+                              </span>
                               }
-                            >
-                              "
-                              
-                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onBlur
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onBlur()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onRemoveFile
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                removeFile()
+                              </span>
+                              }
                             </span>
                           </span>
                         </span>

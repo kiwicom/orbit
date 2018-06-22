@@ -4,39 +4,8 @@ import defaultTokens from "@kiwicom/orbit-design-tokens";
 import styled from "styled-components";
 
 import { iconSizes } from "../Icon";
-
-export const TYPE_OPTIONS = {
-  PRIMARY: "primary",
-  SECONDARY: "secondary",
-  INFO: "info",
-  SUCCESS: "success",
-  WARNING: "warning",
-  CRITICAL: "critical",
-  FACEBOOK: "facebook",
-  GOOGLE: "google",
-};
-
-export const SIZE_OPTIONS = {
-  SMALL: "small",
-  NORMAL: "normal",
-  LARGE: "large",
-};
-
-type Props = {|
-  children?: React.Node,
-  component: string | React.Node,
-  href?: string,
-  onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void,
-  external: boolean,
-  bordered: boolean,
-  disabled: boolean,
-  block: boolean,
-  type: $Values<typeof TYPE_OPTIONS>,
-  size: $Values<typeof SIZE_OPTIONS>,
-  width: number,
-  icon?: React.Node,
-  theme: typeof defaultTokens,
-|};
+import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
+import type { Props } from "./Button";
 
 const IconContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
@@ -144,7 +113,19 @@ const StyledButton = styled(
 `;
 
 const Button = (props: Props) => {
-  const { children, bordered, size, icon, theme, external, type } = props;
+  const {
+    component = "button",
+    disabled,
+    children,
+    bordered,
+    size = SIZE_OPTIONS.NORMAL,
+    icon,
+    theme = defaultTokens,
+    external,
+    type = TYPE_OPTIONS.PRIMARY,
+    block,
+    width = 0,
+  } = props;
   const sizeIcon = size === "small" ? "small" : "medium";
   const onlyIcon = icon && !children;
   const tokens = {
@@ -300,10 +281,18 @@ const Button = (props: Props) => {
 
   return (
     <StyledButton
+      component={component}
+      disabled={disabled}
+      bordered={bordered}
+      block={block}
       onlyIcon={onlyIcon}
       sizeIcon={sizeIcon}
       tokens={tokens}
       target={external ? "_blank" : undefined}
+      theme={theme}
+      size={size}
+      type={type}
+      width={width}
       {...props}
     >
       {icon && (
@@ -322,18 +311,6 @@ const Button = (props: Props) => {
       {children}
     </StyledButton>
   );
-};
-
-Button.defaultProps = {
-  disabled: false,
-  bordered: false,
-  block: false,
-  external: false,
-  component: "button",
-  type: "primary",
-  size: "normal",
-  width: 0,
-  theme: defaultTokens,
 };
 
 export default Button;

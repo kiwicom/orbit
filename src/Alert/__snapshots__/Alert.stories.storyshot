@@ -219,6 +219,34 @@ exports[`Storyshots Alert Critical alert 1`] = `
                           <span
                             style={Object {}}
                           >
+                            title
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
                             icon
                           </span>
                           
@@ -701,6 +729,34 @@ exports[`Storyshots Alert Info alert 1`] = `
                           <span
                             style={Object {}}
                           >
+                            title
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
                             icon
                           </span>
                           
@@ -959,7 +1015,40 @@ exports[`Storyshots Alert Playground 1`] = `
                       </span>
                       <span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                info
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -987,7 +1076,10 @@ exports[`Storyshots Alert Playground 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -1014,7 +1106,41 @@ exports[`Storyshots Alert Playground 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            closable
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -1040,7 +1166,7 @@ exports[`Storyshots Alert Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                          
+                          <br />
                         </span>
                       </span>
                       <span
@@ -1314,6 +1440,34 @@ Avoid using success banner if there is any follow-up action, for example, in cas
                                 "
                                 success
                                 "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            title
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
                               </span>
                             </span>
                           </span>
@@ -1598,6 +1752,34 @@ exports[`Storyshots Alert Warning alert 1`] = `
                                 "
                                 warning
                                 "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            title
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
                               </span>
                             </span>
                           </span>

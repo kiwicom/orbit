@@ -5,13 +5,14 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 
-import Text, {
+import Text from "./Text";
+import {
   TYPE_OPTIONS,
   SIZE_OPTIONS,
   WEIGHT_OPTIONS,
   ALIGN_OPTIONS,
   ELEMENT_OPTIONS,
-} from "./Text";
+} from "./consts";
 
 setAddon(chaptersAddon);
 

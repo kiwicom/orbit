@@ -19,7 +19,7 @@ export { default as ButtonLink } from "./ButtonLink";
 export { default as CarrierLogo } from "./CarrierLogo";
 export { default as Checkbox } from "./Checkbox";
 export { default as Heading } from "./Heading";
-export { default as Text } from "./Text";
+export { default as Text } from "./Text/Text";
 export { default as Icon } from "./Icon";
 export { default as TextLink } from "./TextLink";
 export { default as ThemeProvider } from "./Theming/ThemeProvider";

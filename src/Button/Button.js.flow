@@ -1,0 +1,32 @@
+// @flow
+import defaultTokens from "@kiwicom/orbit-design-tokens";
+
+export type Type =
+  | "primary"
+  | "secondary"
+  | "info"
+  | "success"
+  | "warning"
+  | "critical"
+  | "facebook"
+  | "google";
+
+export type Size = "small" | "normal" | "large";
+
+export type Props = {|
+  children?: React$Node,
+  component?: string | React$Node,
+  href?: string,
+  onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void,
+  external?: boolean,
+  bordered?: boolean,
+  disabled?: boolean,
+  block?: boolean,
+  type?: Type,
+  size?: Size,
+  width?: number,
+  icon?: React$Node,
+  theme?: typeof defaultTokens,
+|};
+
+declare export default React$ComponentType<Props>;

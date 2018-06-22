@@ -2,9 +2,7 @@
 
 exports[`ButtonLink with Icon should match snapshot 1`] = `
 <ButtonLink
-  block={false}
   component="button"
-  disabled={false}
   external={true}
   href="https://kiwi.com"
   size="normal"
@@ -369,10 +367,8 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   type="primary"
   width={0}
 >
-  <ButtonLink__StyledButton
-    block={false}
+  <ButtonLink__StyledButtonLink
     component="button"
-    disabled={false}
     external={true}
     href="https://kiwi.com"
     size="normal"
@@ -793,10 +789,8 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
     width={0}
   >
     <Component
-      block={false}
-      className="ButtonLink__StyledButton-hvelaB VUReO"
+      className="ButtonLink__StyledButtonLink-eyUiPe kKxExn"
       component="button"
-      disabled={false}
       external={true}
       href="https://kiwi.com"
       size="normal"
@@ -1217,8 +1211,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
       width={0}
     >
       <a
-        className="ButtonLink__StyledButton-hvelaB VUReO"
-        disabled={false}
+        className="ButtonLink__StyledButtonLink-eyUiPe kKxExn"
         href="https://kiwi.com"
         size="normal"
         target="_blank"
@@ -1226,15 +1219,13 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
         ButtonLink
       </a>
     </Component>
-  </ButtonLink__StyledButton>
+  </ButtonLink__StyledButtonLink>
 </ButtonLink>
 `;
 
 exports[`ButtonLink with Icon should match snapshot 2`] = `
 <ButtonLink
-  block={false}
   component="button"
-  disabled={false}
   external={false}
   href="https://kiwi.com"
   icon={<Airplane />}
@@ -1600,10 +1591,8 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   type="primary"
   width={0}
 >
-  <ButtonLink__StyledButton
-    block={false}
+  <ButtonLink__StyledButtonLink
     component="button"
-    disabled={false}
     external={false}
     href="https://kiwi.com"
     icon={<Airplane />}
@@ -2025,10 +2014,8 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
     width={0}
   >
     <Component
-      block={false}
-      className="ButtonLink__StyledButton-hvelaB iBfaiu"
+      className="ButtonLink__StyledButtonLink-eyUiPe dnIufj"
       component="button"
-      disabled={false}
       external={false}
       href="https://kiwi.com"
       icon={<Airplane />}
@@ -2450,8 +2437,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
       width={0}
     >
       <a
-        className="ButtonLink__StyledButton-hvelaB iBfaiu"
-        disabled={false}
+        className="ButtonLink__StyledButtonLink-eyUiPe dnIufj"
         href="https://kiwi.com"
         size="normal"
       >
@@ -2613,6 +2599,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
         ButtonLink
       </a>
     </Component>
-  </ButtonLink__StyledButton>
+  </ButtonLink__StyledButtonLink>
 </ButtonLink>
 `;

@@ -3,10 +3,9 @@
   "version": "0.0.0-rc12",
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook",
-    "build": "yarn clean && yarn build:icons && yarn build:lib && yarn build:flow && yarn build:module",
-    "build:lib": "babel --out-dir lib --ignore *.stories.js,*.test.js src",
-    "build:flow": "flow-copy-source -v -i '**/*.?(stories|test).js' src lib",
-    "build:module": "babel --presets react --plugins styled-jsx/babel,babel-plugin-styled-components,transform-class-properties,transform-object-rest-spread --no-babelrc --out-dir es --ignore *.stories.js,*.test.js src",
+    "build": "yarn clean && yarn build:icons && yarn build:lib && yarn build:module",
+    "build:lib": "babel --out-dir lib --ignore *.stories.js,*.test.js,*.storyshot src --copy-files",
+    "build:module": "babel --presets react --plugins styled-jsx/babel,babel-plugin-styled-components,transform-class-properties,transform-object-rest-spread --no-babelrc --out-dir es --ignore *.stories.js,*.test.js,*.storyshot src --copy-files",
     "build:icons": "node config/build.js",
     "clean": "rimraf lib es src/icons/*.js",
     "prepare": "npm run build",

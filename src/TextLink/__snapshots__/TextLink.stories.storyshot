@@ -164,7 +164,10 @@ exports[`Storyshots TextLink Playground 1`] = `
                       </span>
                       <span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -172,7 +175,10 @@ exports[`Storyshots TextLink Playground 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -200,7 +206,10 @@ exports[`Storyshots TextLink Playground 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -225,7 +234,69 @@ exports[`Storyshots TextLink Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                          
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            rel
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <br />
                         </span>
                       </span>
                       <span
@@ -452,7 +523,41 @@ exports[`Storyshots TextLink Primary link 1`] = `
                       </span>
                       <span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            external
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -480,7 +585,10 @@ exports[`Storyshots TextLink Primary link 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -505,7 +613,37 @@ exports[`Storyshots TextLink Primary link 1`] = `
                               </span>
                             </span>
                           </span>
-                          
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                primary
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <br />
                         </span>
                       </span>
                       <span
@@ -732,7 +870,41 @@ exports[`Storyshots TextLink Secondary link 1`] = `
                       </span>
                       <span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            external
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -760,7 +932,10 @@ exports[`Storyshots TextLink Secondary link 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -787,7 +962,10 @@ exports[`Storyshots TextLink Secondary link 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -812,7 +990,7 @@ exports[`Storyshots TextLink Secondary link 1`] = `
                               </span>
                             </span>
                           </span>
-                          
+                          <br />
                         </span>
                       </span>
                       <span

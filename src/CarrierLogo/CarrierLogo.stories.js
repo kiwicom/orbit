@@ -6,7 +6,8 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, object, select } from "@storybook/addon-knobs/react";
 import styles from "@sambego/storybook-styles/dist/index";
 
-import CarrierLogo from "./index";
+import CarrierLogo from "./CarrierLogo";
+import { SIZE_OPTIONS, CARRIER_TYPE_OPTIONS } from "./consts";
 
 setAddon(chaptersAddon);
 
@@ -25,15 +26,7 @@ storiesOf("CarrierLogo", module)
     }),
   )
   .addWithChapters("One carrier", () => {
-    const size = select(
-      "Size",
-      {
-        small: "small",
-        medium: "medium",
-        large: "large",
-      },
-      "large",
-    );
+    const size = select("Size", Object.values(SIZE_OPTIONS), "large");
 
     const carrier = [{ code: "FR", name: "Ryanair" }];
 
@@ -74,11 +67,12 @@ storiesOf("CarrierLogo", module)
       ],
     };
   })
-  .addWithChapters("Three carriers", () => {
+  .addWithChapters("Four carriers", () => {
     const carrier = [
       { code: "FR", name: "Ryanair" },
       { code: "TO", name: "Transavia France" },
       { code: "VY", name: "Vueling" },
+      { code: "OK", name: "Czech Airlines" },
     ];
 
     const carriersObject = object(carriersLabel, carrier);
@@ -98,12 +92,11 @@ storiesOf("CarrierLogo", module)
       ],
     };
   })
-  .addWithChapters("Four carriers", () => {
+  .addWithChapters("Non-existing carriers", () => {
     const carrier = [
-      { code: "FR", name: "Ryanair" },
-      { code: "TO", name: "Transavia France" },
-      { code: "VY", name: "Vueling" },
-      { code: "OK", name: "Czech Airlines" },
+      { code: "LOL", name: "Lorem ipsum", type: "airline" },
+      { code: "KEK", name: "Lorem ipsum", type: "bus" },
+      { code: "BUR", name: "Lorem ipsum", type: "train" },
     ];
 
     const carriersObject = object(carriersLabel, carrier);
@@ -116,6 +109,27 @@ storiesOf("CarrierLogo", module)
           sections: [
             {
               sectionFn: () => <CarrierLogo carriers={carriersObject} />,
+              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Non-existing carrier", () => {
+    const size = select("Size", Object.values(SIZE_OPTIONS), "large");
+    const carrierType = select("Type", Object.values(CARRIER_TYPE_OPTIONS), "airline");
+    const carrier = [{ code: "LAL", name: "Lorem ipsum", type: carrierType }];
+    const carriersObject = object(carriersLabel, carrier);
+
+    return {
+      info:
+        "CarrierLogo can display proper placeholder for non-existing carriers by its type. If not you specify the type of carrier, airline placeholder will be displayed.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => <CarrierLogo size={size} carriers={carriersObject} />,
               options,
             },
           ],

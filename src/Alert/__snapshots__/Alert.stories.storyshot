@@ -123,7 +123,9 @@ exports[`Storyshots Alert Critical alert 1`] = `
                 />
               </svg>
             </div>
-            <div>
+            <div
+              className="Alert__ContentWrapper-jyINpB kzkrJV"
+            >
               <div
                 className="Alert__Content-icgAru iZFOcl"
               >
@@ -413,7 +415,9 @@ exports[`Storyshots Alert Default 1`] = `
           <div
             className="Alert__StyledAlert-dqYNhl fUtCMj"
           >
-            <div>
+            <div
+              className="Alert__ContentWrapper-jyINpB kzkrJV"
+            >
               <div
                 className="Alert__Content-icgAru koOjCg"
               >
@@ -660,7 +664,9 @@ exports[`Storyshots Alert Info alert 1`] = `
                 />
               </svg>
             </div>
-            <div>
+            <div
+              className="Alert__ContentWrapper-jyINpB kzkrJV"
+            >
               <div
                 className="Alert__Content-icgAru koOjCg"
               >
@@ -945,7 +951,9 @@ exports[`Storyshots Alert Playground 1`] = `
                 />
               </svg>
             </div>
-            <div>
+            <div
+              className="Alert__ContentWrapper-jyINpB kzkrJV"
+            >
               <div
                 className="Alert__Title-duZNvF fOOBbl"
               >
@@ -1353,7 +1361,9 @@ Avoid using success banner if there is any follow-up action, for example, in cas
                 />
               </svg>
             </div>
-            <div>
+            <div
+              className="Alert__ContentWrapper-jyINpB kzkrJV"
+            >
               <div
                 className="Alert__Content-icgAru jWteFh"
               >
@@ -1665,7 +1675,9 @@ exports[`Storyshots Alert Warning alert 1`] = `
                 />
               </svg>
             </div>
-            <div>
+            <div
+              className="Alert__ContentWrapper-jyINpB kzkrJV"
+            >
               <div
                 className="Alert__Content-icgAru byJXAG"
               >

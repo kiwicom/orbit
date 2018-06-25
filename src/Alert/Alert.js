@@ -66,6 +66,10 @@ const Title = styled(StyledDiv)`
   min-height: ${({ theme }) => theme.heightIconMedium};
 `;
 
+const ContentWrapper = styled(StyledDiv)`
+  flex: 1; // IE wrapping fix
+`;
+
 const Content = styled(StyledDiv)`
   display: flex;
   align-items: center;
@@ -127,7 +131,7 @@ const Alert = (props: Props) => {
           <Icon type={type} icon={icon} />
         </IconContainer>
       )}
-      <div>
+      <ContentWrapper>
         {title && (
           <Title theme={theme} hasChildren={children}>
             {title}
@@ -138,7 +142,7 @@ const Alert = (props: Props) => {
             {children}
           </Content>
         )}
-      </div>
+      </ContentWrapper>
       {closable && (
         <CloseContainer hasChildren={children} theme={theme}>
           <ButtonLink

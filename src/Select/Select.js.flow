@@ -9,7 +9,7 @@ type Option = {|
 
 type Size = "small" | "normal";
 
-export type Props = {
+export type Props = {|
   size?: Size,
   label?: string,
   placeholder?: string,
@@ -23,6 +23,6 @@ export type Props = {
   options: Option[],
   prefix?: React$Node,
   theme?: typeof defaultTokens,
-};
+|};
 
 declare export default React$ComponentType<Props>;

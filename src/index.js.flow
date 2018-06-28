@@ -10,6 +10,8 @@ import typeof CheckboxType from "./Checkbox";
 import typeof CarrierLogoType from "./CarrierLogo";
 import typeof HeadingType from "./Heading";
 import typeof InputFieldType from "./InputField";
+import typeof ListType from "./List";
+import typeof ListItemType from "./List/ListItem";
 import typeof TextType from "./Text";
 import typeof TextLinkType from "./TextLink";
 import typeof RadioType from "./Radio";
@@ -36,6 +38,9 @@ declare export var ButtonLink: ButtonLinkType;
 declare export var ButtonGroup: ButtonGroupType;
 declare export var CarrierLogo: CarrierLogoType;
 declare export var Checkbox: CheckboxType;
+
+declare export var List: ListType;
+declare export var ListItem: ListItemType;
 
 declare export var Card: CardType;
 declare export var CardHeader: CardHeaderType;

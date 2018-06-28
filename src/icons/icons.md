@@ -42,6 +42,7 @@
 - ![ChevronUp](/src/icons/png/ChevronUp.png?raw=true) ChevronUp
 - ![ChildFriendly](/src/icons/png/ChildFriendly.png?raw=true) ChildFriendly
 - ![Child](/src/icons/png/Child.png?raw=true) Child
+- ![CircleSmall](/src/icons/png/CircleSmall.png?raw=true) CircleSmall
 - ![Circle](/src/icons/png/Circle.png?raw=true) Circle
 - ![City](/src/icons/png/City.png?raw=true) City
 - ![Clock](/src/icons/png/Clock.png?raw=true) Clock
@@ -83,6 +84,7 @@
 - ![InsuranceOff](/src/icons/png/InsuranceOff.png?raw=true) InsuranceOff
 - ![Insurance](/src/icons/png/Insurance.png?raw=true) Insurance
 - ![Invoice](/src/icons/png/Invoice.png?raw=true) Invoice
+- ![ItemCompleted](/src/icons/png/ItemCompleted.png?raw=true) ItemCompleted
 - ![KiwicomCare](/src/icons/png/KiwicomCare.png?raw=true) KiwicomCare
 - ![KiwicomGuarantee](/src/icons/png/KiwicomGuarantee.png?raw=true) KiwicomGuarantee
 - ![Kiwicom](/src/icons/png/Kiwicom.png?raw=true) Kiwicom

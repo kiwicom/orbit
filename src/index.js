@@ -20,6 +20,8 @@ export { default as CardSection } from "./Card/CardSection";
 
 export { default as Heading } from "./Heading";
 export { default as Text } from "./Text";
+export { default as List } from "./List";
+export { default as ListItem } from "./List/ListItem";
 export { default as Icon } from "./Icon";
 export { default as InputField } from "./InputField";
 export { default as TextLink } from "./TextLink";

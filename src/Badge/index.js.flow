@@ -1,0 +1,14 @@
+// @flow
+import defaultTokens from "../defaultTokens";
+
+export type Type = "neutral" | "dark" | "info" | "success" | "warning" | "critical";
+
+export type Props = {|
+  +children: React$Node,
+  +type?: Type,
+  +icon?: React$Node,
+  +circled?: boolean,
+  +theme?: typeof defaultTokens,
+|};
+
+declare export default React$ComponentType<Props>;

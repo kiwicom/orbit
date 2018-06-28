@@ -2,6 +2,7 @@
 import * as React from "react";
 
 import typeof AlertType from "./Alert";
+import typeof BadgeType from "./Badge";
 import typeof ButtonType from "./Button";
 import typeof ButtonLinkType from "./ButtonLink";
 import typeof ButtonGroupType from "./ButtonGroup";
@@ -28,6 +29,7 @@ declare export var FieldFeedback: any;
 declare export var Typography: any;
 
 declare export var Alert: AlertType;
+declare export var Badge: BadgeType;
 declare export var Button: ButtonType;
 declare export var ButtonLink: ButtonLinkType;
 declare export var ButtonGroup: ButtonGroupType;

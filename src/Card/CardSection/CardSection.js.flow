@@ -1,0 +1,15 @@
+// @flow
+import defaultTokens from "@kiwicom/orbit-design-tokens";
+
+export type Props = {|
+  children: React$Node,
+  theme?: typeof defaultTokens,
+|};
+
+type styledCardSection = {
+  theme?: typeof defaultTokens,
+};
+
+declare export var StyledCardSection: React$ComponentType<styledCardSection>;
+
+declare export default React$ComponentType<Props>;

@@ -8,6 +8,7 @@ import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
 import Alert from "./Alert";
+import Button from "../Button/Button";
 import TYPE_OPTIONS from "./consts";
 
 setAddon(chaptersAddon);
@@ -139,6 +140,7 @@ storiesOf("Alert", module)
     const type = select("Type", Object.values(TYPE_OPTIONS), "info");
     const title = text("Title", "You can change the title by changing the Title knob");
     const message = text("Message", "Also you can change the message by changing the Message knob");
+    const button = text("Button", "I am a link");
     const closable = boolean("Closable", false);
     const Icon = getIcon(getIcons("Airplane"));
     return {
@@ -156,7 +158,10 @@ storiesOf("Alert", module)
                   closable={closable}
                   onClose={action("Close")}
                 >
-                  {message}
+                  <div style={{ marginBottom: "12px" }}>{message}</div>
+                  <Button type={type} href="#">
+                    {button}
+                  </Button>
                 </Alert>
               ),
               options,

@@ -13,4 +13,12 @@ export type Props = {|
   +theme?: typeof defaultTokens,
 |};
 
+type styledTextLink = {
+  tokens?: { [key: string]: string | number },
+  type?: Type,
+  theme?: typeof defaultTokens,
+};
+
+declare export var StyledTextLink: React$ComponentType<styledTextLink>;
+
 declare export default React$ComponentType<Props>;

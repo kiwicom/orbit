@@ -5,6 +5,7 @@ import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 import { InformationCircle, Check, Alert as AlertTriangle, AlertCircle, Close } from "../icons";
 import ButtonLink from "../ButtonLink/ButtonLink";
+import { StyledTextLink } from "../TextLink/TextLink";
 import TYPE_OPTIONS from "./consts";
 import type { Props } from "./Alert";
 
@@ -57,6 +58,13 @@ const IconContainer = styled(StyledDiv)`
   color: ${({ tokens, type }) => tokens.colorIconAlert[type]};
 `;
 
+const ContentWrapper = styled(StyledDiv)`
+  flex: 1; // IE wrapping fix
+  display: flex;
+  flex-direction: ${({ title }) => title && "column"};
+  align-items: ${({ title }) => !title && "center"};
+`;
+
 const Title = styled(StyledDiv)`
   display: flex;
   align-items: center;
@@ -66,22 +74,19 @@ const Title = styled(StyledDiv)`
   min-height: ${({ theme }) => theme.heightIconMedium};
 `;
 
-const ContentWrapper = styled(StyledDiv)`
-  flex: 1; // IE wrapping fix
-`;
-
 const Content = styled(StyledDiv)`
-  display: flex;
-  align-items: center;
+  display: block;
   margin-bottom: ${({ theme, title }) => title && theme.spaceXXSmall};
   line-height: ${({ theme }) => theme.lineHeightText};
-  min-height: ${({ theme, title }) => !title && theme.heightIconMedium};
-  & a {
-    color: ${({ tokens, type }) => tokens.colorTextAlert[type]}!important;
-    font-weight: ${({ theme }) => theme.fontWeightMedium}!important;
-    transition: color ${({ theme }) => theme.durationFast} ease-in-out !important;
+
+  & a,
+  & ${StyledTextLink} {
+    color: ${({ tokens, type }) => tokens.colorTextAlert[type]};
+    font-weight: ${({ theme }) => theme.fontWeightMedium};
+    transition: color ${({ theme }) => theme.durationFast} ease-in-out;
+    text-decoration: none;
     &:hover {
-      color: ${({ theme }) => theme.paletteInkDark}!important; // TODO create token
+      color: ${({ theme }) => theme.paletteInkDark}; // TODO create token
     }
   }
 `;
@@ -131,7 +136,7 @@ const Alert = (props: Props) => {
           <Icon type={type} icon={icon} />
         </IconContainer>
       )}
-      <ContentWrapper>
+      <ContentWrapper title={title}>
         {title && (
           <Title theme={theme} hasChildren={children}>
             {title}

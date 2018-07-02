@@ -1016,10 +1016,10 @@ exports[`Alert should match snapshot 1`] = `
       >
         <Alert__ContentWrapper>
           <StyledDiv
-            className="Alert__ContentWrapper-jyINpB kzkrJV"
+            className="Alert__ContentWrapper-jyINpB jgcPgw"
           >
             <div
-              className="Alert__ContentWrapper-jyINpB kzkrJV"
+              className="Alert__ContentWrapper-jyINpB jgcPgw"
             >
               <Alert__Content
                 theme={
@@ -1366,7 +1366,7 @@ exports[`Alert should match snapshot 1`] = `
                 type="info"
               >
                 <StyledDiv
-                  className="Alert__Content-icgAru koOjCg"
+                  className="Alert__Content-icgAru fdWKiW"
                   theme={
                     Object {
                       "backgroundAlertCritical": "#fae8e8",
@@ -1711,7 +1711,7 @@ exports[`Alert should match snapshot 1`] = `
                   type="info"
                 >
                   <div
-                    className="Alert__Content-icgAru koOjCg"
+                    className="Alert__Content-icgAru fdWKiW"
                   >
                     Alert message
                   </div>

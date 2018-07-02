@@ -6,7 +6,7 @@ import styled from "styled-components";
 import TYPE_OPTIONS from "./consts";
 import type { Props } from "./TextLink";
 
-const StyledTextLink = styled(({ tokens, theme, type, ...props }) => (
+export const StyledTextLink = styled(({ tokens, theme, type, ...props }) => (
   <a {...props}>{props.children}</a>
 ))`
       color: ${({ tokens, type }) => tokens.colorTextLink[type]};

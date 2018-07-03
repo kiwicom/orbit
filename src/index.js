@@ -30,6 +30,7 @@ export { default as Illustration } from "./Illustration";
 export { default as TextLink } from "./TextLink";
 export { default as Radio } from "./Radio";
 export { default as Select } from "./Select";
+export { default as ServiceLogo } from "./ServiceLogo";
 export { default as Separator } from "./Separator";
 export { default as Textarea } from "./Textarea";
 export { defaultTokens as defaultTheme, getTokens } from "@kiwicom/orbit-design-tokens";

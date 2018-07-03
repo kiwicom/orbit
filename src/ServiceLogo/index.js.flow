@@ -1,0 +1,27 @@
+// @flow
+
+export type Name =
+  | "AirHelp"
+  | "Amex"
+  | "AxaAssistance"
+  | "DinersClub"
+  | "JCB"
+  | "Maestro"
+  | "MasterCard"
+  | "MIR"
+  | "NewYorkTimes"
+  | "NortonSecured"
+  | "TravelPulse"
+  | "Visa"
+  | "VisaHQ"
+  | "Zooz";
+
+export type Size = "small" | "medium" | "large";
+
+export type Props = {|
+  +name: Name,
+  +size?: Size,
+  +grayScale?: boolean,
+|};
+
+declare export default React$ComponentType<Props>;

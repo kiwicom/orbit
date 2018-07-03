@@ -9,7 +9,9 @@ import typeof CarrierLogoType from "./CarrierLogo";
 import typeof HeadingType from "./Heading";
 import typeof TextType from "./Text";
 import typeof TextLinkType from "./TextLink";
+import typeof ThemedSampleType from "./Theming/ThemedSample";
 import typeof ThemeProviderType from "./Theming/ThemeProvider";
+import typeof ThemeSwitcherType from "./Theming/ThemeSwitcher";
 import typeof RadioType from "./Radio";
 import typeof SelectType from "./Select";
 import typeof CardType from "./Card";
@@ -41,7 +43,10 @@ declare export var Text: TextType;
 declare export var Icons: any;
 declare export var Icon: any;
 declare export var TextLink: TextLinkType;
+declare export var ThemedSample: ThemedSampleType;
 declare export var ThemeProvider: ThemeProviderType;
+declare export var ThemeSwitcher: ThemeSwitcherType;
+
 declare export var Radio: RadioType;
 declare export var Select: SelectType;
 

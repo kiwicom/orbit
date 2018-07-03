@@ -1,10 +1,11 @@
 // @flow
 import * as React from "react";
-import tokens from "@kiwicom/orbit-design-tokens";
+import { defaultTokens as tokens } from "@kiwicom/orbit-design-tokens";
 
 export type Props = {|
   +children: React.Node,
-  +theme?: $Shape<typeof tokens>,
+  +mainTheme?: typeof tokens,
+  +themes: Array<$Shape<typeof tokens>>,
 |};
 
 declare export default React$ComponentType<Props>;

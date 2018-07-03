@@ -4,7 +4,7 @@ import { storiesOf } from "@storybook/react";
 import tokens from "@kiwicom/orbit-design-tokens";
 
 import ThemedComponent, { RawComponent } from "../Theming/ThemedSample";
-import ThemeSwither from "./ThemeSwitcher";
+import ThemeSwitcher from "./ThemeSwitcher";
 import ThemeProvider from "./ThemeProvider";
 
 const altTheme = {
@@ -77,16 +77,16 @@ storiesOf("Theming", module)
     ],
   })
 
-  .addWithChapters("ThemeSwither", {
-    subtitle: `Show how to use <ThemedSample /> component with <ThemeSwither>. By clicking on ThemeSwitcher buttons you can enable/disable alternative themes`,
+  .addWithChapters("ThemeSwitcher", {
+    subtitle: `Show how to use <ThemedSample /> component with <ThemeSwitcher>. By clicking on ThemeSwitcher buttons you can enable/disable alternative themes`,
     chapters: [
       {
         sections: [
           {
             sectionFn: () => (
-              <ThemeSwither themes={[altTheme, otherTheme]}>
+              <ThemeSwitcher themes={[altTheme, otherTheme]}>
                 <ThemedComponent />
-              </ThemeSwither>
+              </ThemeSwitcher>
             ),
           },
         ],

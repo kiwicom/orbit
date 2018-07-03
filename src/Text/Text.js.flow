@@ -8,15 +8,15 @@ type Size = "large" | "normal" | "small";
 type Weight = "regular" | "bold";
 
 export type Props = {|
-  type?: Type,
-  size?: Size,
-  weight?: Weight,
-  align?: Align,
-  italic?: boolean,
-  uppercase?: boolean,
-  element?: Element,
-  children: React$Node,
-  theme?: typeof defaultTokens,
+  +type?: Type,
+  +size?: Size,
+  +weight?: Weight,
+  +align?: Align,
+  +italic?: boolean,
+  +uppercase?: boolean,
+  +element?: Element,
+  +children: React$Node,
+  +theme?: typeof defaultTokens,
 |};
 
 declare export default React$ComponentType<Props>;

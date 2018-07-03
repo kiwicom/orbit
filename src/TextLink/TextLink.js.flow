@@ -4,13 +4,13 @@ import defaultTokens from "@kiwicom/orbit-design-tokens";
 type Type = "primary" | "secondary";
 
 export type Props = {|
-  children: React$Node,
-  href?: string,
-  onClick?: (SyntheticEvent<HTMLLinkElement>) => void,
-  external: boolean,
-  type: Type,
-  rel?: string,
-  theme?: typeof defaultTokens,
+  +children: React$Node,
+  +href?: string,
+  +onClick?: (SyntheticEvent<HTMLLinkElement>) => void,
+  +external: boolean,
+  +type: Type,
+  +rel?: string,
+  +theme?: typeof defaultTokens,
 |};
 
 declare export default React$ComponentType<Props>;

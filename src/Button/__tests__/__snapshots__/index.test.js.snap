@@ -9,6 +9,12 @@ exports[`Button with icon should match snapshot 1`] = `
       "calls": Array [
         Array [],
       ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
     }
   }
   onlyIcon={false}

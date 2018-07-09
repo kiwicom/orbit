@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
-import defaultTokens from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 import { InformationCircle, Check, Alert as AlertTriangle, AlertCircle, Close } from "../icons";
 import ButtonLink from "../ButtonLink/ButtonLink";

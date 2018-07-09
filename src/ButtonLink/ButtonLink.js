@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import defaultTokens from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 import styled from "styled-components";
 
 import { TYPES, SIZES } from "./consts";
@@ -131,28 +131,28 @@ const ButtonLink = (props: Props) => {
       [SIZES.SMALL]: theme.marginButtonIconSmall,
     },
     backgroundButton: {
-      [TYPES.PRIMARY]: theme.backgroundButtonPrimaryLink,
-      [TYPES.SECONDARY]: theme.backgroundButtonSecondaryLink,
+      [TYPES.PRIMARY]: theme.backgroundButtonLinkPrimary,
+      [TYPES.SECONDARY]: theme.backgroundButtonLinkSecondary,
     },
     backgroundButtonHover: {
-      [TYPES.PRIMARY]: theme.backgroundButtonPrimaryLinkHover,
-      [TYPES.SECONDARY]: theme.backgroundButtonSecondaryLinkHover,
+      [TYPES.PRIMARY]: theme.backgroundButtonLinkPrimaryHover,
+      [TYPES.SECONDARY]: theme.backgroundButtonLinkSecondaryHover,
     },
     backgroundButtonActive: {
-      [TYPES.PRIMARY]: theme.backgroundButtonPrimaryLinkActive,
-      [TYPES.SECONDARY]: theme.backgroundButtonSecondaryLinkActive,
+      [TYPES.PRIMARY]: theme.backgroundButtonLinkPrimaryHover,
+      [TYPES.SECONDARY]: theme.backgroundButtonLinkSecondaryHover,
     },
     colorTextButton: {
-      [TYPES.PRIMARY]: theme.colorTextButtonPrimaryLink,
-      [TYPES.SECONDARY]: theme.colorTextButtonSecondaryLink,
+      [TYPES.PRIMARY]: theme.colorTextButtonLinkPrimary,
+      [TYPES.SECONDARY]: theme.colorTextButtonLinkSecondary,
     },
     colorTextButtonHover: {
-      [TYPES.PRIMARY]: theme.colorTextButtonPrimaryLinkHover,
-      [TYPES.SECONDARY]: theme.colorTextButtonSecondaryLinkHover,
+      [TYPES.PRIMARY]: theme.colorTextButtonLinkPrimaryHover,
+      [TYPES.SECONDARY]: theme.colorTextButtonLinkSecondaryHover,
     },
     colorTextButtonActive: {
-      [TYPES.PRIMARY]: theme.colorTextButtonPrimaryLinkActive,
-      [TYPES.SECONDARY]: theme.colorTextButtonSecondaryLinkActive,
+      [TYPES.PRIMARY]: theme.colorTextButtonLinkPrimaryActive,
+      [TYPES.SECONDARY]: theme.colorTextButtonLinkSecondaryActive,
     },
   };
 

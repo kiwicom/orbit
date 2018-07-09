@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import tokens from "@kiwicom/orbit-design-tokens";
+import { defaultTokens as tokens } from "@kiwicom/orbit-design-tokens";
 
 import ThemedComponent, { RawComponent } from "../Theming/ThemedSample";
 import ThemeSwither from "./ThemeSwitcher";

@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import defaultTokens from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 import styled from "styled-components";
 import createComponentFromTagProp from "react-create-component-from-tag-prop";
 

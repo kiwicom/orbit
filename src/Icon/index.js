@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import Icon from "react-icon-base";
-import * as tokens from "@kiwicom/orbit-design-tokens";
+import { defaultTokens as tokens } from "@kiwicom/orbit-design-tokens";
 
 export const iconSizes = {
   small: tokens.widthIconSmall,

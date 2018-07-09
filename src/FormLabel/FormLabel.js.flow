@@ -1,5 +1,5 @@
 // @flow
-import defaultTokens from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 export type Props = {
   children: React$Node,

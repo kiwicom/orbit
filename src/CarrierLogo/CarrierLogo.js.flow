@@ -1,5 +1,5 @@
 // @flow
-import defaultTokens from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 type Carrier = { code: string, name: string, type?: "airline" | "bus" | "train" };
 

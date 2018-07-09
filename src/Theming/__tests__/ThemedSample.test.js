@@ -2,12 +2,13 @@
 
 import * as React from "react";
 import { shallow } from "enzyme";
-import tokens from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 import { RawComponent } from "../ThemedSample";
 
 describe("RawComponent", () => {
   const component = shallow(<RawComponent />);
+  const style = component.prop("style");
   const div = component.find("div");
 
   it("should match snapshot", () => {
@@ -15,21 +16,20 @@ describe("RawComponent", () => {
   });
 
   it("Should contain a default style", () => {
-    const expected = `color:${tokens.colorTextPrimary};font-family:${
-      tokens.fontFamily
-    };line-height:${tokens.lineHeightText}`;
-    expect(div.render().attr("style")).toBe(expected);
+    expect(style.color).toBe(defaultTokens.colorTextPrimary);
+    expect(style.fontFamily).toBe(defaultTokens.fontFamily);
+    expect(style.lineHeight).toBe(defaultTokens.lineHeightText);
   });
 
   it("Should contain a colorTextPrimary value", () => {
-    expect(div.render().text()).toContain(tokens.colorTextPrimary);
+    expect(div.render().text()).toContain(defaultTokens.colorTextPrimary);
   });
 
   it("Should contain a fontFamily value", () => {
-    expect(div.render().text()).toContain(tokens.fontFamily);
+    expect(div.render().text()).toContain(defaultTokens.fontFamily);
   });
 
   it("Should contain a lineHeightText value", () => {
-    expect(div.render().text()).toContain(tokens.lineHeightText);
+    expect(div.render().text()).toContain(defaultTokens.lineHeightText);
   });
 });

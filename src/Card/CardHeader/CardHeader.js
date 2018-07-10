@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
-import defaultTokens from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 import Heading from "../../Heading/Heading";
 import Text from "../../Text/Text";

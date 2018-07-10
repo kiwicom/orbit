@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { mount } from "enzyme";
-import defaultTokens from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 import Alert from "../Alert";
 

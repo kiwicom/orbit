@@ -1,5 +1,5 @@
 // @flow
-import defaultTokens from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 type Align = "left" | "center" | "right";
 type Element = "p" | "span" | "div";

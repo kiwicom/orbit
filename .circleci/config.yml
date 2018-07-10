@@ -2,7 +2,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: circleci/node:8.9
+      - image: circleci/node:8.11
     steps:
       - checkout
       - run:
@@ -13,7 +13,7 @@ jobs:
           command: yarn test-ci
   deploy:
     docker:
-      - image: circleci/node:8.9
+      - image: circleci/node:8.11
     steps:
       - checkout
       - run:

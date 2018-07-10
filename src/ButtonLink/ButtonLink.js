@@ -60,32 +60,32 @@ const StyledButtonLink = styled(
       : (width && `${width}px`) || (onlyIcon && `${tokens.heightButton[size]}`) || "auto"};
   height: ${({ tokens, size }) => tokens.heightButton[size]};
   background: ${({ tokens, type }) => tokens.backgroundButton[type]};
-  color: ${({ tokens, type }) => tokens.colorTextButton[type]};
+  color: ${({ tokens, type }) => tokens.colorTextButton[type]}!important;
   border: 0;
   border-radius: ${({ theme }) => theme.borderRadiusNormal};
   padding: 0 ${({ onlyIcon, tokens, size }) => (onlyIcon ? "0" : tokens.paddingButton[size])} 0
     ${({ onlyIcon, icon, tokens, size }) =>
       (onlyIcon && "0") ||
       (icon ? tokens.paddingButtonWithIcon[size] : tokens.paddingButton[size])};
-  font-weight: ${({ theme }) => theme.fontWeightBold};
+  font-weight: ${({ theme }) => theme.fontWeightBold}!important;
   font-size: ${({ tokens, size }) => tokens.fontSizeButton[size]};
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
   opacity: ${({ disabled, theme }) => (disabled ? theme.opacityButtonDisabled : "1")};
-  transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out !important;
   outline: 0;
   text-decoration: none;
 
   &:enabled:hover {
     background: ${({ transparent, type, tokens }) =>
       !transparent && tokens.backgroundButtonHover[type]};
-    color: ${props => props.tokens.colorTextButtonHover[props.type]};
+    color: ${props => props.tokens.colorTextButtonHover[props.type]}!important;
   }
 
   &:enabled:active {
     transform: scale(${({ theme }) => theme.modifierScaleButtonActive});
     background: ${({ transparent, tokens, type }) =>
       !transparent && tokens.backgroundButtonActive[type]};
-    color: ${({ tokens, type }) => tokens.colorTextButtonActive[type]};
+    color: ${({ tokens, type }) => tokens.colorTextButtonActive[type]}!important;
   }
 `;
 

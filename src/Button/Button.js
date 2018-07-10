@@ -59,7 +59,7 @@ const StyledButton = styled(
   background: ${({ bordered, tokens, type }) =>
     bordered ? tokens.backgroundButtonBordered : tokens.backgroundButton[type]};
   color: ${({ tokens, bordered, type }) =>
-    bordered ? tokens.colorTextButtonBordered[type] : tokens.colorTextButton[type]};
+    bordered ? tokens.colorTextButtonBordered[type] : tokens.colorTextButton[type]}!important;
   border: 0;
   box-shadow: ${({ bordered, tokens, type }) =>
     bordered && `inset 0 0 0 1px ${tokens.borderColorButton[type]}`};
@@ -68,10 +68,10 @@ const StyledButton = styled(
     ${({ onlyIcon, icon, tokens, size }) =>
       (onlyIcon && "0") ||
       (icon ? tokens.paddingButtonWithIcon[size] : tokens.paddingButton[size])};
-  font-weight: ${({ theme }) => theme.fontWeightBold};
+  font-weight: ${({ theme }) => theme.fontWeightBold}!important;
   font-size: ${({ tokens, size }) => tokens.fontSizeButton[size]};
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
-  transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out !important;
   outline: 0;
   opacity: ${({ disabled, theme }) => disabled && theme.opacityButtonDisabled};
   pointer-events: ${({ disabled }) => disabled && "none"};
@@ -84,7 +84,9 @@ const StyledButton = styled(
       !disabled && (bordered && `inset 0 0 0 1px ${tokens.borderColorButtonHover[type]}`)};
     color: ${({ disabled, tokens, bordered, type }) =>
       !disabled &&
-      (bordered ? tokens.colorTextButtonBorderedHover[type] : tokens.colorTextButtonHover[type])};
+      (bordered
+        ? tokens.colorTextButtonBorderedHover[type]
+        : tokens.colorTextButtonHover[type])}!important;
     & ${IconContainer} {
       color: ${({ disabled, tokens, bordered, type }) =>
         !disabled &&
@@ -101,7 +103,9 @@ const StyledButton = styled(
       !disabled && (bordered && `inset 0 0 0 1px ${tokens.borderColorButtonActive[type]}`)};
     color: ${({ disabled, tokens, bordered, type }) =>
       !disabled &&
-      (bordered ? tokens.colorTextButtonBorderedActive[type] : tokens.colorTextButtonActive[type])};
+      (bordered
+        ? tokens.colorTextButtonBorderedActive[type]
+        : tokens.colorTextButtonActive[type])}!important;
     & ${IconContainer} {
       color: ${({ disabled, tokens, bordered, type }) =>
         !disabled &&

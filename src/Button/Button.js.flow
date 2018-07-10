@@ -17,7 +17,7 @@ export type Props = {|
   +children?: React$Node,
   +component?: string | React$Node,
   +href?: string,
-  +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void,
+  +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
   +external?: boolean,
   +bordered?: boolean,
   +disabled?: boolean,

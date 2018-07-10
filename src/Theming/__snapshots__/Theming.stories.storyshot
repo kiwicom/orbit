@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Theming ThemeSwither 1`] = `
+exports[`Storyshots Theming ThemeSwitcher 1`] = `
 <div
   style={
     Object {
@@ -27,7 +27,7 @@ exports[`Storyshots Theming ThemeSwither 1`] = `
           }
         }
       >
-        ThemeSwither
+        ThemeSwitcher
       </h1>
       <span
         style={
@@ -39,7 +39,7 @@ exports[`Storyshots Theming ThemeSwither 1`] = `
           }
         }
       >
-        Show how to use &lt;ThemedSample /&gt; component with &lt;ThemeSwither&gt;. By clicking on ThemeSwitcher buttons you can enable/disable alternative themes
+        Show how to use &lt;ThemedSample /&gt; component with &lt;ThemeSwitcher&gt;. By clicking on ThemeSwitcher buttons you can enable/disable alternative themes
       </span>
       
     </div>
@@ -184,7 +184,7 @@ exports[`Storyshots Theming ThemeSwither 1`] = `
                       }
                     >
                       &lt;
-                      ThemeSwither
+                      ThemeSwitcher
                     </span>
                     <span>
                       <span>
@@ -369,7 +369,7 @@ exports[`Storyshots Theming ThemeSwither 1`] = `
                       }
                     >
                       &lt;/
-                      ThemeSwither
+                      ThemeSwitcher
                       &gt;
                     </span>
                   </div>

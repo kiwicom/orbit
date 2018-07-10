@@ -1,24 +1,21 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
-import createComponentFromTagProp from "react-create-component-from-tag-prop";
 
 import defaultTokens from "../defaultTokens";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./consts";
 
 import type { Props } from "./index";
 
-const HeadingElement = createComponentFromTagProp({
-  prop: "element",
-  propsToOmit: ["type", "tokens", "theme"],
-});
-
-const StyledHeading = styled(HeadingElement)`
-  font-family: ${props => props.theme.orbit.fontFamily};
-  font-size: ${props => props.tokens.sizeHeading[props.type]};
-  font-weight: ${props => props.tokens.weightHeading[props.type]};
-  color: ${props => props.theme.orbit.colorHeading};
-  line-height: ${props => props.theme.orbit.lineHeightHeading};
+const StyledHeading = styled(({ element: Component, className, children }) => (
+  <Component className={className}>{children}</Component>
+))`
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
+  font-size: ${({ tokens, type }) => tokens.sizeHeading[type]};
+  font-weight: ${({ tokens, type }) => tokens.weightHeading[type]};
+  color: ${({ theme, inverted }) =>
+    inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
+  line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
   margin: 0;
 `;
 
@@ -32,6 +29,7 @@ const Heading = (props: Props) => {
     theme = defaultTokens,
     type = TYPE_OPTIONS.TITLE1,
     element = ELEMENT_OPTIONS.H1,
+    inverted = false,
   } = props;
   const tokens = {
     weightHeading: {
@@ -48,7 +46,7 @@ const Heading = (props: Props) => {
     },
   };
   return (
-    <StyledHeading tokens={tokens} type={type} element={element}>
+    <StyledHeading tokens={tokens} type={type} element={element} inverted={inverted}>
       {children}
     </StyledHeading>
   );

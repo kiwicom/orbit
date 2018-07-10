@@ -3,7 +3,7 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, text, select } from "@storybook/addon-knobs/react";
+import { withKnobs, text, select, boolean } from "@storybook/addon-knobs/react";
 
 import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./consts";
 
@@ -37,7 +37,7 @@ storiesOf("Heading", module)
   })
   .addWithChapters("Title Display", () => {
     const customTitle = text("Title", "Orbit design system");
-    const element = select("Element", Object.values(ELEMENT_OPTIONS), "h1");
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
     return {
       title: "Title Display",
       info:
@@ -59,7 +59,7 @@ storiesOf("Heading", module)
   })
   .addWithChapters("Title 1", () => {
     const customTitle = text("Title", "Orbit design system");
-    const element = select("Element", Object.values(ELEMENT_OPTIONS), "h1");
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
     return {
       info:
         "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
@@ -80,7 +80,7 @@ storiesOf("Heading", module)
   })
   .addWithChapters("Title 2", () => {
     const customTitle = text("Title", "Orbit design system");
-    const element = select("Element", Object.values(ELEMENT_OPTIONS), "h2");
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
     return {
       info:
         "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
@@ -101,7 +101,7 @@ storiesOf("Heading", module)
   })
   .addWithChapters("Title 3", () => {
     const customTitle = text("Title", "Orbit design system");
-    const element = select("Element", Object.values(ELEMENT_OPTIONS), "h3");
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H3);
     return {
       info:
         "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
@@ -120,9 +120,35 @@ storiesOf("Heading", module)
       ],
     };
   })
+  .addWithChapters("Inverted heading", () => {
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
+    const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DISPLAY);
+    const inverted = boolean("Inverted", true);
+    const customTitle = text("Title", "Orbit design system");
+
+    return {
+      info:
+        "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <div style={{ padding: 20, backgroundColor: "#46515E" }}>
+                  <Heading type={type} element={element} inverted={inverted}>
+                    {customTitle}
+                  </Heading>
+                </div>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Playground", () => {
-    const element = select("Element", Object.values(ELEMENT_OPTIONS), "h2");
-    const type = select("Type", Object.values(TYPE_OPTIONS), "display");
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
+    const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DISPLAY);
 
     const customTitle = text("Title", "Orbit design system");
     return {

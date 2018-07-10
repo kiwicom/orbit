@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Heading with defaultProps should match snapshot 1`] = `
+exports[`Heading in H2, type Title1, not inverted should match snapshot 1`] = `
 <Heading__StyledHeading
-  element="h1"
+  element="h2"
+  inverted={false}
   theme={
     Object {
       "orbit": Object {
@@ -342,6 +343,6 @@ exports[`Heading with defaultProps should match snapshot 1`] = `
   }
   type="title1"
 >
-  Children title
+  My lovely heading
 </Heading__StyledHeading>
 `;

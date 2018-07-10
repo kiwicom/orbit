@@ -3,18 +3,13 @@ import * as React from "react";
 import { defaultTokens as tokens } from "@kiwicom/orbit-design-tokens";
 
 import ThemeProvider from "./ThemeProvider";
-
-type Props = {
-  children: React.Node,
-  mainTheme?: typeof tokens,
-  themes: Array<$Shape<typeof tokens>>,
-};
+import type { Props } from "./ThemeSwitcher";
 
 type State = {
   themeIndex: number,
 };
 
-export default class ThemeSwither extends React.Component<Props, State> {
+export default class ThemeSwitcher extends React.Component<Props, State> {
   static defaultProps = {
     mainTheme: tokens,
   };

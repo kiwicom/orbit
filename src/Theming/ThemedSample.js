@@ -3,23 +3,21 @@ import * as React from "react";
 import { defaultTokens as tokens } from "@kiwicom/orbit-design-tokens";
 import { withTheme } from "theming";
 
-type ComponentProps = {
-  theme: typeof tokens,
-};
+import type { Props } from "./ThemedSample";
 
-const ComponentWithTheme = ({ theme }: ComponentProps) => (
+const ComponentWithTheme = ({ theme }: Props) => (
   <div
     style={{
-      color: theme.colorTextPrimary,
-      fontFamily: theme.fontFamily,
-      lineHeight: theme.lineHeightText,
+      color: theme && theme.colorTextPrimary,
+      fontFamily: theme && theme.fontFamily,
+      lineHeight: theme && theme.lineHeightText,
     }}
   >
-    colorTextPrimary: {theme.colorTextPrimary}
+    colorTextPrimary: {theme && theme.colorTextPrimary}
     <br />
-    fontFamily: {theme.fontFamily}
+    fontFamily: {theme && theme.fontFamily}
     <br />
-    lineHeightText: {theme.lineHeightText}
+    lineHeightText: {theme && theme.lineHeightText}
     <br />
   </div>
 );

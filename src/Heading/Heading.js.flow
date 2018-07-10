@@ -5,10 +5,10 @@ type Element = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 type Type = "display" | "title1" | "title2" | "title3";
 
 export type Props = {|
-  element?: Element,
-  type?: Type,
-  children: React$Node,
-  theme?: typeof defaultTokens,
+  +element?: Element,
+  +type?: Type,
+  +children: React$Node,
+  +theme?: typeof defaultTokens,
 |};
 
 declare export default React$ComponentType<Props>;

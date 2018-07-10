@@ -4,9 +4,9 @@ import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 type Carrier = { code: string, name: string, type?: "airline" | "bus" | "train" };
 
 export type Props = {|
-  size?: "small" | "medium" | "large",
-  carriers: Carrier[],
-  theme?: typeof defaultTokens,
+  +size?: "small" | "medium" | "large",
+  +carriers: Carrier[],
+  +theme?: typeof defaultTokens,
 |};
 
 declare export default React$ComponentType<Props>;

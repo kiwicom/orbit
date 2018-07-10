@@ -33,4 +33,4 @@ export { default as ThemeProvider } from "./Theming/ThemeProvider";
 export { default as Radio } from "./Radio";
 export { default as Select } from "./Select";
 export { withTheme } from "theming";
-export { default as defaultTheme } from "@kiwicom/orbit-design-tokens";
+export { defaultTokens as defaultTheme, getTokens } from "@kiwicom/orbit-design-tokens";

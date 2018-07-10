@@ -805,7 +805,7 @@ exports[`Storyshots TextLink Secondary link 1`] = `
           }
         >
           <a
-            className="TextLink__StyledTextLink-cKDOFV hTszaV"
+            className="TextLink__StyledTextLink-cKDOFV eWghCU"
             href="https://kiwi.com"
             onClick={[Function]}
             rel={undefined}

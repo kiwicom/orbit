@@ -99,7 +99,7 @@ exports[`Storyshots ButtonLink Default 1`] = `
           }
         >
           <a
-            className="ButtonLink__StyledButtonLink-eyUiPe kKxExn"
+            className="ButtonLink__StyledButtonLink-eyUiPe kLZsNJ"
             href="https://kiwi.com"
             onClick={undefined}
             size="normal"
@@ -351,7 +351,7 @@ exports[`Storyshots ButtonLink Playground 1`] = `
           }
         >
           <button
-            className="ButtonLink__StyledButtonLink-eyUiPe lawQbU"
+            className="ButtonLink__StyledButtonLink-eyUiPe jGddeS"
             disabled={false}
             href=""
             onClick={[Function]}
@@ -814,7 +814,7 @@ exports[`Storyshots ButtonLink Secondary 1`] = `
           }
         >
           <a
-            className="ButtonLink__StyledButtonLink-eyUiPe hajigR"
+            className="ButtonLink__StyledButtonLink-eyUiPe fBxTqg"
             href="https://kiwi.com"
             onClick={undefined}
             size="normal"

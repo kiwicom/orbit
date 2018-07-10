@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
-import defaultTokens from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 import createComponentFromTagProp from "react-create-component-from-tag-prop";
 
 import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./consts";
@@ -31,9 +31,9 @@ const Heading = (props: Props) => {
   const tokens = {
     weightHeading: {
       [TYPE_OPTIONS.DISPLAY]: theme.fontWeightHeadingDisplay,
-      [TYPE_OPTIONS.TITLE1]: theme.fontWeightHeadingLevel1,
-      [TYPE_OPTIONS.TITLE2]: theme.fontWeightHeadingLevel2,
-      [TYPE_OPTIONS.TITLE3]: theme.fontWeightHeadingLevel3,
+      [TYPE_OPTIONS.TITLE1]: theme.fontWeightHeadingTitle1,
+      [TYPE_OPTIONS.TITLE2]: theme.fontWeightHeadingTitle2,
+      [TYPE_OPTIONS.TITLE3]: theme.fontWeightHeadingTitle3,
     },
     sizeHeading: {
       [TYPE_OPTIONS.DISPLAY]: theme.fontSizeHeadingDisplay,

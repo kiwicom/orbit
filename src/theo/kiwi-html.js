@@ -1,17 +1,17 @@
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
-let groupBy = require("lodash/groupBy");
-let camelCase = require("lodash/camelCase");
-let upperfirst = require("lodash/upperFirst");
+const groupBy = require("lodash/groupBy");
+const camelCase = require("lodash/camelCase");
+const upperfirst = require("lodash/upperFirst");
 
 class Styleguide {
   constructor({ props, options }) {
     this.options = Object.assign(
       {
-        transformPropName: camelCase
+        transformPropName: camelCase,
       },
-      options
+      options,
     );
     this.categories = groupBy(props, "category");
   }
@@ -30,7 +30,7 @@ class Styleguide {
   }
 
   renderRow(prop, example) {
-    let name = prop.name; //this.options.transformPropName(prop.name);
+    const name = prop.name; // this.options.transformPropName(prop.name);
     return `
       <tr>
         <th scope="row">
@@ -47,11 +47,9 @@ class Styleguide {
 
   renderSpacing(props) {
     return props.map(prop => {
-      let example = `
+      const example = `
         <td>
-          <div class="metric-box" style="width: ${prop.value}; height: ${
-        prop.value
-      };"></div>
+          <div class="metric-box" style="width: ${prop.value}; height: ${prop.value};"></div>
         </td>
       `;
       return this.renderRow(prop, example);
@@ -60,9 +58,9 @@ class Styleguide {
 
   renderSizing(props) {
     return props.map(prop => {
-      const name = prop.name
-      let style = `width: ${prop.value}; height: ${prop.value};`
-      if (name.startsWith("widthButtonMinimal")) style = `width: ${prop.value}; min-height: 16px;`
+      const name = prop.name;
+      let style = `width: ${prop.value}; height: ${prop.value};`;
+      if (name.startsWith("widthButtonMinimal")) style = `width: ${prop.value}; min-height: 16px;`;
       const example = `
         <td>
           <div class="metric-box" style="${style}"></div>
@@ -74,7 +72,7 @@ class Styleguide {
 
   renderFont(props) {
     return props.map(prop => {
-      let example = `
+      const example = `
         <td>
           <div style="font-family: ${prop.value};">
             The quick brown fox jumps over the lazy dog.
@@ -87,7 +85,7 @@ class Styleguide {
 
   renderFontStyle(props) {
     return props.map(prop => {
-      let example = `
+      const example = `
         <td>
           <div style="font-style: ${prop.value};">
             The quick brown fox jumps over the lazy dog.
@@ -100,7 +98,7 @@ class Styleguide {
 
   renderFontWeight(props) {
     return props.map(prop => {
-      let example = `
+      const example = `
         <td>
           <div style="font-weight: ${prop.value};">
             The quick brown fox jumps over the lazy dog.
@@ -113,7 +111,7 @@ class Styleguide {
 
   renderFontSize(props) {
     return props.map(prop => {
-      let example = `
+      const example = `
         <td>
           <div style="font-size: ${prop.value};">
             The quick brown fox jumps over the lazy dog.
@@ -126,8 +124,8 @@ class Styleguide {
 
   renderLineHeight(props) {
     return props.map(prop => {
-      let vHeight = !isNaN(prop.value) ? `${prop.value}em` : prop.value;
-      let example = `
+      const vHeight = !isNaN(prop.value) ? `${prop.value}em` : prop.value;
+      const example = `
         <td>
           <div class="line-height-example" style="line-height: ${
             prop.value
@@ -144,7 +142,7 @@ class Styleguide {
 
   renderFontFamily(props) {
     return props.map(prop => {
-      let example = `
+      const example = `
         <td>
           <div style='font-family: ${prop.value};'>
             The quick brown fox jumps over the lazy dog.
@@ -157,21 +155,21 @@ class Styleguide {
 
   renderBorderStyle(props) {
     return props.map(prop => {
-      let example = `<td style="border: ${prop.value};"></td>`;
+      const example = `<td style="border: ${prop.value};"></td>`;
       return this.renderRow(prop, example);
     });
   }
 
   renderBorderColor(props) {
     return props.map(prop => {
-      let example = `<td style="border: 2px solid ${prop.value};"></td>`;
+      const example = `<td style="border: 2px solid ${prop.value};"></td>`;
       return this.renderRow(prop, example);
     });
   }
 
   renderHrColor(props) {
     return props.map(prop => {
-      let example = `
+      const example = `
         <td>
           <hr style="border-top-color: ${prop.value};" />
         </td>
@@ -182,12 +180,10 @@ class Styleguide {
 
   renderRadius(props) {
     return props.map(prop => {
-      let name = this.options.transformPropName(prop.name);
-      let example = `
+      const name = this.options.transformPropName(prop.name);
+      const example = `
         <td>
-          <div class="radius-box ${name}" style="border-radius: ${
-        prop.value
-      };"></div>
+          <div class="radius-box ${name}" style="border-radius: ${prop.value};"></div>
         </td>
       `;
       return this.renderRow(prop, example);
@@ -196,7 +192,7 @@ class Styleguide {
 
   renderBorderRadius(props) {
     return props.map(prop => {
-      let example = `
+      const example = `
         <td>
           <div class="radius-box" style="border-radius: ${prop.value};"></div>
         </td>
@@ -207,7 +203,7 @@ class Styleguide {
 
   renderBackgroundColor(props) {
     return props.map(prop => {
-      let example = `<td style="background-color: ${
+      const example = `<td style="background-color: ${
         prop.value
       }; border: 1px solid #f6f6f6;"></td>`;
       return this.renderRow(prop, example);
@@ -216,35 +212,35 @@ class Styleguide {
 
   renderGradient(props) {
     return props.map(prop => {
-      let example = `<td style="background: ${prop.value};"></td>`;
+      const example = `<td style="background: ${prop.value};"></td>`;
       return this.renderRow(prop, example);
     });
   }
 
   renderBackgroundGradient(props) {
     return props.map(prop => {
-      let example = `<td style="background-image: ${prop.value};"></td>`;
+      const example = `<td style="background-image: ${prop.value};"></td>`;
       return this.renderRow(prop, example);
     });
   }
 
   renderDropShadow(props) {
     return props.map(prop => {
-      let example = `<td style="box-shadow: ${prop.value};"></td>`;
+      const example = `<td style="box-shadow: ${prop.value};"></td>`;
       return this.renderRow(prop, example);
     });
   }
 
   renderBoxShadow(props) {
     return props.map(prop => {
-      let example = `<td style="box-shadow: ${prop.value};"></td>`;
+      const example = `<td style="box-shadow: ${prop.value};"></td>`;
       return this.renderRow(prop, example);
     });
   }
 
   renderTextColor(props) {
     return props.map(prop => {
-      let example = `
+      const example = `
         <td style="background-color: #f6f6f6; color: ${prop.value};">
           The quick brown fox jumps over the lazy dog.
         </td>
@@ -255,7 +251,7 @@ class Styleguide {
 
   renderTextShadow(props) {
     return props.map(prop => {
-      let example = `
+      const example = `
         <td style="text-shadow: ${prop.value};">
           The quick brown fox jumps over the lazy dog.
         </td>
@@ -266,32 +262,29 @@ class Styleguide {
 
   renderTime(props) {
     return props.map(prop => {
-      let example = `<td></td>`;
+      const example = `<td></td>`;
       return this.renderRow(prop, example);
     });
   }
 
   renderMediaQuery(props) {
     return props.map(prop => {
-      let example = `<td></td>`;
+      const example = `<td></td>`;
       return this.renderRow(prop, example);
     });
   }
 
   renderValues(props) {
-    return props.map(prop => {
-      return this.renderRow(prop, `<td></td>`);
-    });
+    return props.map(prop => this.renderRow(prop, `<td></td>`));
   }
 
-
   renderSection(type, heading, fn) {
-    let props = this.categories[type];
+    const props = this.categories[type];
     if (!props) {
       return "";
     }
-    let name = upperfirst(camelCase(type));
-    let render = typeof fn === "function" ? fn : this[`render${name}`];
+    const name = upperfirst(camelCase(type));
+    const render = typeof fn === "function" ? fn : this[`render${name}`];
     return `
       <section>
         <table>
@@ -309,7 +302,7 @@ class Styleguide {
   }
 
   render() {
-return `
+    return `
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -460,14 +453,10 @@ return `
         ${this.renderSection("border-radius", "Border Radius")}
         ${this.renderSection("hr-color", "Horizontal Rule Colors")}
         ${this.renderSection("gradient", "Gradients")}
-        ${this.renderSection("background-gradient","Background Gradients")}
+        ${this.renderSection("background-gradient", "Background Gradients")}
         ${this.renderSection("drop-shadow", "Drop Shadows")}
         ${this.renderSection("box-shadow", "Box Shadows")}
-        ${this.renderSection(
-          "inner-shadow",
-          "Inner Drop Shadows",
-          this.renderDropShadow
-        )}
+        ${this.renderSection("inner-shadow", "Inner Drop Shadows", this.renderDropShadow)}
         ${this.renderSection("time", "Time")}
         ${this.renderSection("media-query", "Media Queries")}
       </main>

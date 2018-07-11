@@ -1936,7 +1936,7 @@
       "name": "heightIconLarge"
     },
     {
-      "value": "0 0 4px 1px rgba(1,118,210,0.3)",
+      "value": "0 0 4px 1px rgba(1, 118, 210, 0.3)",
       "type": "size",
       "category": "Box shadow",
       "name": "boxShadowButtonFocus"

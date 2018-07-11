@@ -1,0 +1,25 @@
+{
+  "env": {
+    "jest": true
+  },
+  "extends": [
+    "airbnb/base",
+    "plugin:flowtype/recommended",
+    "prettier",
+    "prettier/flowtype"
+  ],
+  "plugins": [
+    "import",
+    "flowtype",
+    "prettier",
+    "jest"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "import/newline-after-import": "error",
+    "import/no-mutable-exports": "error",
+    "import/no-absolute-path": "error",
+    "object-shorthand": "off",
+    "prefer-destructuring": "off"
+  }
+}

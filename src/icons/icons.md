@@ -119,6 +119,7 @@
 - ![MinusCircle](/src/icons/png/MinusCircle.png?raw=true) MinusCircle
 - ![Minus](/src/icons/png/Minus.png?raw=true) Minus
 - ![Money](/src/icons/png/Money.png?raw=true) Money
+- ![Moon](/src/icons/png/Moon.png?raw=true) Moon
 - ![MusicalInstruments](/src/icons/png/MusicalInstruments.png?raw=true) MusicalInstruments
 - ![NewWindow](/src/icons/png/NewWindow.png?raw=true) NewWindow
 - ![Nonstop](/src/icons/png/Nonstop.png?raw=true) Nonstop
@@ -176,6 +177,8 @@
 - ![StarFull](/src/icons/png/StarFull.png?raw=true) StarFull
 - ![Subway](/src/icons/png/Subway.png?raw=true) Subway
 - ![Suitcase](/src/icons/png/Suitcase.png?raw=true) Suitcase
+- ![Sun](/src/icons/png/Sun.png?raw=true) Sun
+- ![Sunrise](/src/icons/png/Sunrise.png?raw=true) Sunrise
 - ![Taxi](/src/icons/png/Taxi.png?raw=true) Taxi
 - ![TermsAndConditions](/src/icons/png/TermsAndConditions.png?raw=true) TermsAndConditions
 - ![ThumbDown](/src/icons/png/ThumbDown.png?raw=true) ThumbDown

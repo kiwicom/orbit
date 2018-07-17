@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook",
     "build": "yarn clean && yarn build:icons && yarn build:lib && yarn build:module",
@@ -43,7 +43,7 @@
     "styled-jsx": "^2.2.6"
   },
   "dependencies": {
-    "@kiwicom/orbit-design-tokens": "^0.1.0",
+    "@kiwicom/orbit-design-tokens": "^0.1.1",
     "@sambego/storybook-styles": "^1.0.0",
     "classnames": "^2.2.5",
     "polished": "^1.9.2",

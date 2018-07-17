@@ -23,8 +23,13 @@ Table below contains all types of the props available in the Text component.
 
 ### enum
 
-| align      | type          | element  | size       | weight      |
-| :--------- | :------------ | :------- | :--------- | :---------- |
-| `"left"`   | `"attention"` | `"p"`    | `"small"`  | `"regular"` |
-| `"center"` | `"primary"`   | `"span"` | `"normal"` | `"bold"`    |
-| `"right"`  | `"secondary"` | `"div"`  | `"large"`  |             |
+| type            | align      | element  | size       | weight      |
+| :-------------- | :--------- | :------- | :--------- | :---------- |
+| `"attention"`   | `"left"`   | `"p"`    | `"small"`  | `"regular"` |
+| `"primary"`     | `"center"` | `"span"` | `"normal"` | `"bold"`    |
+| `"secondary"`   | `"right"`  | `"div"`  | `"large"`  |             |
+| `"info"`        |            |          |            |             |
+| `"success"`     |            |          |            |             |
+| `"warning"`     |            |          |            |             |
+| `"critical"`    |            |          |            |             |
+| `"white"`       |            |          |            |             |

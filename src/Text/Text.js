@@ -46,6 +46,11 @@ const Text = ({
       [TYPE_OPTIONS.PRIMARY]: theme.colorTextPrimary,
       [TYPE_OPTIONS.SECONDARY]: theme.colorTextSecondary,
       [TYPE_OPTIONS.ATTENTION]: theme.colorTextAttention,
+      [TYPE_OPTIONS.INFO]: theme.paletteBlueNormal,
+      [TYPE_OPTIONS.SUCCESS]: theme.paletteGreenNormal,
+      [TYPE_OPTIONS.WARNING]: theme.paletteOrangeNormal,
+      [TYPE_OPTIONS.CRITICAL]: theme.colorTextError,
+      [TYPE_OPTIONS.WHITE]: theme.paletteWhite,
     },
     weightText: {
       [WEIGHT_OPTIONS.NORMAL]: theme.fontWeightNormal,

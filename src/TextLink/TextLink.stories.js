@@ -8,6 +8,7 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 
 import TYPE_OPTIONS from "./consts";
+import * as Icons from "../icons";
 
 import TextLink from "./index";
 
@@ -15,10 +16,8 @@ setAddon(chaptersAddon);
 
 const validate = rel => (rel !== undefined && rel !== "" ? rel : undefined);
 
-const options = {
-  allowSourceToggling: false,
-  allowPropTablesToggling: false,
-};
+const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)], defaultIcon);
+const getIcon = source => Icons[source];
 
 storiesOf("TextLink", module)
   .addDecorator(withKnobs)
@@ -49,7 +48,6 @@ storiesOf("TextLink", module)
                   {title}
                 </TextLink>
               ),
-              options,
             },
           ],
         },
@@ -78,7 +76,29 @@ storiesOf("TextLink", module)
                   {title}
                 </TextLink>
               ),
-              options,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Link with icon", () => {
+    const href = text("Href", "https://kiwi.com");
+    const title = text("Title", "TextLink with icon");
+    const Icon = getIcon(getIcons("ChevronRight"));
+
+    return {
+      info:
+        "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <TextLink onClick={action("clicked")} href={href} icon={Icon && <Icon />}>
+                  {title}
+                </TextLink>
+              ),
             },
           ],
         },
@@ -87,10 +107,11 @@ storiesOf("TextLink", module)
   })
   .addWithChapters("Playground", () => {
     const href = text("Href", "https://kiwi.com");
-    const type = select("Type", Object.values(TYPE_OPTIONS));
+    const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.SECONDARY);
     const external = boolean("External", true);
     const title = text("Text", "Custom link");
     const rel = text("Rel", undefined);
+    const Icon = getIcon(getIcons("ChevronRight"));
 
     return {
       info:
@@ -106,11 +127,11 @@ storiesOf("TextLink", module)
                   href={href}
                   type={type}
                   rel={validate(rel)}
+                  icon={Icon && <Icon />}
                 >
                   {title}
                 </TextLink>
               ),
-              options,
             },
           ],
         },

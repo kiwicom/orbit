@@ -1,0 +1,3825 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots InputField Default input 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Default input
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Some description about this type of InputField in general.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            className="InputField__Field-hAVqzR jrVYdc"
+          >
+            <span
+              className="FormLabel-kJFBRQ fuYBgg"
+            >
+              Label
+            </span>
+            <div
+              className="InputField__InputContainer-evnRDD ioRuVx"
+            >
+              <input
+                className="InputField__Input-iRjCvp eQumUp"
+                disabled={undefined}
+                max={undefined}
+                maxLength={undefined}
+                min={undefined}
+                minLength={undefined}
+                name={undefined}
+                onBlur={undefined}
+                onChange={[Function]}
+                onFocus={undefined}
+                placeholder="Placeholder"
+                type="text"
+                value=""
+              />
+              <div
+                className="InputField__FakeInput-eneioc jZCIys"
+              />
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      InputField
+                    </span>
+                    <span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Label
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          value
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          placeholder
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Placeholder
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onChange
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                change()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField Email input 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Email input
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Some description about this type of InputField in general.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            className="InputField__Field-hAVqzR jrVYdc"
+          >
+            <span
+              className="FormLabel-kJFBRQ irIxpQ"
+            >
+              Email
+            </span>
+            <div
+              className="InputField__InputContainer-evnRDD ioRuVx"
+            >
+              <input
+                className="InputField__Input-iRjCvp eQumUp"
+                disabled={undefined}
+                max={undefined}
+                maxLength={undefined}
+                min={undefined}
+                minLength={undefined}
+                name={undefined}
+                onBlur={undefined}
+                onChange={[Function]}
+                onFocus={undefined}
+                placeholder="Email"
+                type="email"
+                value="name@example.co"
+              />
+              <div
+                className="InputField__FakeInput-eneioc jZCIys"
+              />
+            </div>
+            <div
+              className="FormFeedback__StyledFormFeedback-cuFyWp dhwKKr"
+            >
+              <div>
+                Did you mean 
+                <a
+                  className="TextLink__StyledTextLink-cKDOFV iXNJyj"
+                  href={undefined}
+                  onClick={[Function]}
+                  rel={undefined}
+                  target={undefined}
+                >
+                  name@example.com
+                </a>
+                ?
+              </div>
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      InputField
+                    </span>
+                    <span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          type
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              email
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Email
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          value
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              name@example.co
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          placeholder
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Email
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onChange
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                change()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          help
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                &lt;div /&gt;
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField Number input 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Number input
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Some description about this type of InputField in general.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            className="InputField__Field-hAVqzR jrVYdc"
+          >
+            <span
+              className="FormLabel-kJFBRQ irIxpQ"
+            >
+              Number
+            </span>
+            <div
+              className="InputField__InputContainer-evnRDD ioRuVx"
+            >
+              <input
+                className="InputField__Input-iRjCvp eQumUp"
+                disabled={undefined}
+                max={3}
+                maxLength={undefined}
+                min={1}
+                minLength={undefined}
+                name={undefined}
+                onBlur={undefined}
+                onChange={[Function]}
+                onFocus={undefined}
+                placeholder="Number"
+                type="number"
+                value={2}
+              />
+              <div
+                className="InputField__FakeInput-eneioc jZCIys"
+              />
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      InputField
+                    </span>
+                    <span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          type
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              number
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Number
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          value
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                2
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          placeholder
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Number
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          maxValue
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                3
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          minValue
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                1
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onChange
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                change()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField Password input 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Password input
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Some description about this type of InputField in general.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            className="InputField__Field-hAVqzR jrVYdc"
+          >
+            <span
+              className="FormLabel-kJFBRQ irIxpQ"
+            >
+              Password
+            </span>
+            <div
+              className="InputField__InputContainer-evnRDD ioRuVx"
+            >
+              <input
+                className="InputField__Input-iRjCvp eQumUp"
+                disabled={undefined}
+                max={undefined}
+                maxLength={undefined}
+                min={undefined}
+                minLength={undefined}
+                name={undefined}
+                onBlur={undefined}
+                onChange={[Function]}
+                onFocus={undefined}
+                placeholder="Password"
+                type="password"
+                value="p422W0rd"
+              />
+              <div
+                className="InputField__FakeInput-eneioc jZCIys"
+              />
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      InputField
+                    </span>
+                    <span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          type
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              password
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Password
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          value
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              p422W0rd
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          placeholder
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Password
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onChange
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                change()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField Playground 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Playground
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Some description about this type of InputField in general.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            className="InputField__Field-hAVqzR jrVYdc"
+          >
+            <span
+              className="FormLabel-kJFBRQ fuYBgg"
+            >
+              Label
+            </span>
+            <div
+              className="InputField__InputContainer-evnRDD bLvidM"
+            >
+              <div
+                className="InputField__Prefix-jLQUQe bYNuXJ"
+              >
+                <svg
+                  className={undefined}
+                  fill="currentColor"
+                  height="24px"
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "color": undefined,
+                      "verticalAlign": "middle",
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                  />
+                </svg>
+              </div>
+              <input
+                className="InputField__Input-iRjCvp hQTYGK"
+                disabled={false}
+                max={undefined}
+                maxLength={undefined}
+                min={undefined}
+                minLength={undefined}
+                name="input"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                placeholder="Placeholder"
+                type="text"
+                value=""
+              />
+              <div
+                className="InputField__Suffix-csEOAt ivHCns"
+              >
+                <button
+                  className="ButtonLink__StyledButtonLink-eyUiPe kiCSRF"
+                  disabled={false}
+                  onClick={[Function]}
+                  size="small"
+                  target={undefined}
+                >
+                  <div
+                    className="ButtonLink__IconContainer-flENJD SXYtt"
+                    size="small"
+                  >
+                    <svg
+                      className={undefined}
+                      fill="currentColor"
+                      height="24px"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "color": undefined,
+                          "verticalAlign": "middle",
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                      width="24px"
+                    >
+                      <path
+                        d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+                      />
+                    </svg>
+                  </div>
+                </button>
+              </div>
+              <div
+                className="InputField__FakeInput-eneioc ePzWQA"
+              />
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      InputField
+                    </span>
+                    <span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          size
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              small
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          type
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              text
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          name
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              input
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Label
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          value
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          placeholder
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Placeholder
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          prefix
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                &lt;Search /&gt;
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          suffix
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                &lt;ButtonLink /&gt;
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          help
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                null
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          error
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                null
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          disabled
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                false
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          maxValue
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                null
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          minValue
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                null
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          maxLength
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                null
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          minLength
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                null
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onChange
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                change()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onFocus
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                focus()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onBlur
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                blur()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField Small input 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Small input
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Some description about this type of InputField in general.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            className="InputField__Field-hAVqzR jrVYdc"
+          >
+            <span
+              className="FormLabel-kJFBRQ fuYBgg"
+            >
+              Label
+            </span>
+            <div
+              className="InputField__InputContainer-evnRDD bLvidM"
+            >
+              <input
+                className="InputField__Input-iRjCvp eAeNAk"
+                disabled={undefined}
+                max={undefined}
+                maxLength={undefined}
+                min={undefined}
+                minLength={undefined}
+                name={undefined}
+                onBlur={undefined}
+                onChange={[Function]}
+                onFocus={undefined}
+                placeholder="Placeholder"
+                type="text"
+                value=""
+              />
+              <div
+                className="InputField__FakeInput-eneioc ePzWQA"
+              />
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      InputField
+                    </span>
+                    <span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          size
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              small
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Label
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          value
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          placeholder
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Placeholder
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onChange
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                change()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField With ButtonLink suffix 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          With ButtonLink suffix
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Some description about this type of InputField in general.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            className="InputField__Field-hAVqzR jrVYdc"
+          >
+            <span
+              className="FormLabel-kJFBRQ fuYBgg"
+            >
+              Label
+            </span>
+            <div
+              className="InputField__InputContainer-evnRDD ioRuVx"
+            >
+              <input
+                className="InputField__Input-iRjCvp eQumUp"
+                disabled={undefined}
+                max={undefined}
+                maxLength={undefined}
+                min={undefined}
+                minLength={undefined}
+                name={undefined}
+                onBlur={undefined}
+                onChange={[Function]}
+                onFocus={undefined}
+                placeholder="Placeholder"
+                type="text"
+                value=""
+              />
+              <div
+                className="InputField__Suffix-csEOAt ooUbL"
+              >
+                <button
+                  className="ButtonLink__StyledButtonLink-eyUiPe dCfcCO"
+                  onClick={[Function]}
+                  size="normal"
+                  target={undefined}
+                >
+                  <div
+                    className="ButtonLink__IconContainer-flENJD hNEbcs"
+                    size="normal"
+                  >
+                    <svg
+                      className={undefined}
+                      fill="currentColor"
+                      height="24px"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "color": undefined,
+                          "verticalAlign": "middle",
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                      width="24px"
+                    >
+                      <path
+                        d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+                      />
+                    </svg>
+                  </div>
+                </button>
+              </div>
+              <div
+                className="InputField__FakeInput-eneioc jZCIys"
+              />
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      InputField
+                    </span>
+                    <span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Label
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          value
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          placeholder
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Placeholder
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          suffix
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                &lt;ButtonLink /&gt;
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onChange
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                change()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField With Icon prefix 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          With Icon prefix
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Some description about this type of InputField in general.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            className="InputField__Field-hAVqzR jrVYdc"
+          >
+            <span
+              className="FormLabel-kJFBRQ fuYBgg"
+            >
+              Label
+            </span>
+            <div
+              className="InputField__InputContainer-evnRDD ioRuVx"
+            >
+              <div
+                className="InputField__Prefix-jLQUQe fFqSCa"
+              >
+                <svg
+                  className={undefined}
+                  fill="currentColor"
+                  height="24px"
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "color": undefined,
+                      "verticalAlign": "middle",
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                  />
+                </svg>
+              </div>
+              <input
+                className="InputField__Input-iRjCvp cbnZj"
+                disabled={undefined}
+                max={undefined}
+                maxLength={undefined}
+                min={undefined}
+                minLength={undefined}
+                name={undefined}
+                onBlur={undefined}
+                onChange={[Function]}
+                onFocus={undefined}
+                placeholder="Placeholder"
+                type="text"
+                value=""
+              />
+              <div
+                className="InputField__FakeInput-eneioc jZCIys"
+              />
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      InputField
+                    </span>
+                    <span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Label
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          value
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          placeholder
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Placeholder
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          prefix
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                &lt;Search /&gt;
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onChange
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                change()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField With text prefix 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          With text prefix
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Some description about this type of InputField in general.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            className="InputField__Field-hAVqzR jrVYdc"
+          >
+            <span
+              className="FormLabel-kJFBRQ fuYBgg"
+            >
+              Label
+            </span>
+            <div
+              className="InputField__InputContainer-evnRDD ioRuVx"
+            >
+              <div
+                className="InputField__Prefix-jLQUQe fFqSCa"
+              >
+                $
+              </div>
+              <input
+                className="InputField__Input-iRjCvp cbnZj"
+                disabled={undefined}
+                max={undefined}
+                maxLength={undefined}
+                min={undefined}
+                minLength={undefined}
+                name={undefined}
+                onBlur={undefined}
+                onChange={[Function]}
+                onFocus={undefined}
+                placeholder="Placeholder"
+                type="text"
+                value=""
+              />
+              <div
+                className="InputField__FakeInput-eneioc jZCIys"
+              />
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      InputField
+                    </span>
+                    <span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Label
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          value
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          placeholder
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              Placeholder
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          prefix
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              $
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onChange
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                change()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

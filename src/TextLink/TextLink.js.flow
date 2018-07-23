@@ -7,8 +7,8 @@ export type Props = {|
   +children: React$Node,
   +href?: string,
   +onClick?: (SyntheticEvent<HTMLLinkElement>) => void | Promise<any>,
-  +external: boolean,
-  +type: Type,
+  +external?: boolean,
+  +type?: Type,
   +rel?: string,
   +theme?: typeof defaultTokens,
 |};

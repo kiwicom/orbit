@@ -8,7 +8,7 @@ export type Props = {|
   +disabled?: boolean,
   +checked?: boolean,
   +info?: React$Node,
-  +onChange?: (SyntheticEvent<HTMLInputElement>) => void,
+  +onChange?: (SyntheticEvent<HTMLInputElement>) => void | Promise<any>,
   +theme?: typeof defaultTokens,
 |};
 

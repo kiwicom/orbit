@@ -28,6 +28,7 @@ export { default as CardSection } from "./Card/CardSection";
 export { default as Heading } from "./Heading";
 export { default as Text } from "./Text/Text";
 export { default as Icon } from "./Icon";
+export { default as InputField } from "./InputField";
 export { default as TextLink } from "./TextLink";
 export { default as ThemeProvider } from "./Theming/ThemeProvider";
 export { default as Radio } from "./Radio";

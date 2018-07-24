@@ -1,0 +1,42 @@
+{
+  "name": "babel-plugin-orbit-components",
+  "version": "0.0.0",
+  "author": "kiwicom",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiwicom/babel-plugin-orbit-components"
+  },
+  "keywords": [
+    "babel",
+    "plugin"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kiwicom/npm-module/issues"
+  },
+  "homepage": "https://github.com/kiwicom/babel-plugin-orbit-components#readme",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js",
+    "test": "tape tests/*.spec.js",
+    "test:coverage": "nyc --reporter=lcov > coverage.lcov npm test",
+    "prepare": "yarn lint && yarn test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.53",
+    "eslint": "^5.1.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "faucet": "^0.0.1",
+    "nyc": "^12.0.2",
+    "prettier": "^1.13.7",
+    "tape": "^4.9.1"
+  },
+  "files": [
+    "index.js",
+    "README.md"
+  ]
+}

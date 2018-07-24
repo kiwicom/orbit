@@ -1,0 +1,13 @@
+language: node_js
+
+node_js:
+  - "8"
+  - "9"
+  - "10"
+
+script:
+  - yarn test:coverage
+  - yarn lint
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

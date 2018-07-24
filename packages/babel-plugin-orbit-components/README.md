@@ -7,7 +7,10 @@ Transforms destructured imports of `@kiwicom/orbit-components` to granular ones!
 
 ## Setup
 
-Just add `@kiwicom/orbit-components` to the list of babel plugins, e.g. to `.babelrc`:
+Install:
+* `yarn add -D @kiwicom/babel-plugin-orbit-components`
+
+Then just add `@kiwicom/orbit-components` to the list of babel plugins, e.g. to `.babelrc`:
 
 ```json
 {

@@ -28,6 +28,13 @@ export { default as ModalHeader } from "./Modal/ModalHeader";
 export { default as ModalSection } from "./Modal/ModalSection";
 export { default as ModalFooter } from "./Modal/ModalFooter";
 
+// Table
+export { default as Table } from "./Table";
+export { default as TableBody } from "./Table/TableBody";
+export { default as TableCell } from "./Table/TableCell";
+export { default as TableRow } from "./Table/TableRow";
+export { default as TableHead } from "./Table/TableHead";
+
 export { default as Heading } from "./Heading";
 export { default as Text } from "./Text";
 export { default as List } from "./List";

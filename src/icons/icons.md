@@ -1,4 +1,4 @@
-- ![Accomodation](/src/icons/png/Accomodation.png?raw=true) Accomodation
+- ![Accommodation](/src/icons/png/Accommodation.png?raw=true) Accommodation
 - ![AccountCircle](/src/icons/png/AccountCircle.png?raw=true) AccountCircle
 - ![AirplaneDown](/src/icons/png/AirplaneDown.png?raw=true) AirplaneDown
 - ![AirplaneLanding](/src/icons/png/AirplaneLanding.png?raw=true) AirplaneLanding

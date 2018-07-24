@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Icon with color Should match snapshot 1`] = `
-<Accomodation
+<Accommodation
   color="attention"
 >
   <OrbitIcon
@@ -33,11 +33,11 @@ exports[`Icon with color Should match snapshot 1`] = `
       </svg>
     </IconBase>
   </OrbitIcon>
-</Accomodation>
+</Accommodation>
 `;
 
 exports[`Icon with props Should match snapshot 1`] = `
-<Accomodation
+<Accommodation
   customColor="#FF0000"
   size="large"
 >
@@ -70,5 +70,5 @@ exports[`Icon with props Should match snapshot 1`] = `
       </svg>
     </IconBase>
   </OrbitIcon>
-</Accomodation>
+</Accommodation>
 `;

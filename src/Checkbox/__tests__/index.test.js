@@ -3,7 +3,7 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import CheckBox from "../Checkbox";
+import CheckBox from "../index";
 
 const label = "Checkbox";
 const onChange = jest.fn();

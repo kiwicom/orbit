@@ -2,10 +2,10 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import Card from "../Card";
-import CardSection from "../CardSection/CardSection";
-import Heading from "../../Heading/Heading";
-import Text from "../../Text/Text";
+import Card from "../index";
+import CardSection from "../CardSection";
+import Heading from "../../Heading";
+import Text from "../../Text";
 
 const text = "Text for testing";
 

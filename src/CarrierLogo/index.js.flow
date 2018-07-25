@@ -1,4 +1,12 @@
 // @flow
-import type { Props } from "./CarrierLogo";
+import defaultTokens from "../defaultTokens";
+
+type Carrier = { code: string, name: string, type?: "airline" | "bus" | "train" };
+
+export type Props = {|
+  +size?: "small" | "medium" | "large",
+  +carriers: Carrier[],
+  +theme?: typeof defaultTokens,
+|};
 
 declare export default React$ComponentType<Props>;

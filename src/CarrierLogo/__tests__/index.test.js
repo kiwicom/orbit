@@ -2,7 +2,7 @@
 import * as React from "react";
 import { mount } from "enzyme";
 
-import CarrierLogo from "../CarrierLogo";
+import CarrierLogo from "../index";
 
 const carriers = [
   { code: "FR", name: "Ryanair" },

@@ -1,29 +1,10 @@
 // @flow
 import * as React from "react";
 import Icon from "react-icon-base";
-import { defaultTokens as tokens } from "@kiwicom/orbit-design-tokens";
 
-export const iconSizes = {
-  small: tokens.widthIconSmall,
-  medium: tokens.widthIconMedium,
-  large: tokens.widthIconLarge,
-};
+import { ICON_SIZES, ICON_COLORS } from "./consts";
 
-export const iconColors = {
-  attention: tokens.colorIconAttention,
-  primary: tokens.colorIconPrimary,
-  secondary: tokens.colorIconSecondary,
-  terciary: tokens.colorIconTerciary,
-};
-
-type Props = {
-  size: $Keys<typeof iconSizes>,
-  color?: $Keys<typeof iconColors>,
-  className: string,
-  customColor: string,
-  children: React.Node,
-  viewBox: string,
-};
+import type { Props } from "./index";
 
 const OrbitIcon = (props: Props) => {
   const { size, color, customColor, className, children, viewBox } = props;
@@ -31,9 +12,9 @@ const OrbitIcon = (props: Props) => {
   return (
     <Icon
       viewBox={viewBox}
-      size={iconSizes[size]}
+      size={ICON_SIZES[size]}
       className={className}
-      color={customColor || (color && iconColors[color])}
+      color={customColor || (color && ICON_COLORS[color])}
     >
       {children}
     </Icon>

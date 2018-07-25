@@ -1,4 +1,11 @@
 // @flow
-import type { Props } from "./CardHeader";
+
+export type Props = {|
+  +icon?: React$Node,
+  +title: string,
+  +subTitle?: string,
+|};
+
+declare export var StyledCardHeader: React$ComponentType<>;
 
 declare export default React$ComponentType<Props>;

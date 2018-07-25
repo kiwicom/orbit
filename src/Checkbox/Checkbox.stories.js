@@ -7,7 +7,7 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean } from "@storybook/addon-knobs/react";
 
-import Checkbox from "./Checkbox";
+import Checkbox from "./index";
 
 setAddon(chaptersAddon);
 

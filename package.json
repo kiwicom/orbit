@@ -5,7 +5,7 @@
     "storybook": "start-storybook -p 6007 -c .storybook",
     "build": "yarn clean && yarn build:icons && yarn build:lib && yarn build:module",
     "build:lib": "babel --out-dir lib --ignore *.stories.js,*.test.js,*.storyshot src --copy-files",
-    "build:module": "babel --presets react --plugins styled-jsx/babel,babel-plugin-styled-components,transform-class-properties,transform-object-rest-spread --no-babelrc --out-dir es --ignore *.stories.js,*.test.js,*.storyshot src --copy-files",
+    "build:module": "babel --presets react --plugins babel-plugin-styled-components,transform-class-properties,transform-object-rest-spread --no-babelrc --out-dir es --ignore *.stories.js,*.test.js,*.storyshot src --copy-files",
     "build:icons": "node config/build.js",
     "clean": "rimraf lib es src/icons/*.js",
     "prepare": "npm run build",
@@ -39,8 +39,7 @@
   "peerDependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "styled-components": "^3.2.6",
-    "styled-jsx": "^2.2.6"
+    "styled-components": "^3.2.6"
   },
   "dependencies": {
     "@kiwicom/orbit-design-tokens": "^0.1.1",
@@ -97,7 +96,6 @@
     "react-test-renderer": "^16.3.2",
     "rimraf": "^2.6.2",
     "styled-components": "^3.2.6",
-    "styled-jsx": "^2.2.6",
     "svg2png": "^4.1.1",
     "svgo": "^1.0.5"
   },

@@ -1,4 +1,9 @@
 // @flow
-import type { Props } from "./Card";
+
+export type Props = {|
+  +children?: React$Node,
+  +closable?: boolean,
+  +onClose?: () => void,
+|};
 
 declare export default React$ComponentType<Props>;

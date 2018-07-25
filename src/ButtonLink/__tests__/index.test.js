@@ -3,7 +3,7 @@
 import * as React from "react";
 import { mount } from "enzyme";
 
-import ButtonLink from "../ButtonLink";
+import ButtonLink from "../index";
 import Airplane from "../../icons/Airplane";
 
 const children = "ButtonLink";

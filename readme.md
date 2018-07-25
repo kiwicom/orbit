@@ -40,3 +40,45 @@ Please checkout our [Contribution Guide](./.github/contributing.md). It includes
 Orbit Components provides a set of icons easily used following these [instructions](./src/icons/readme.md).
 
 A list of all supported icons is [here](./src/icons/icons.md)
+
+
+## Theming
+
+Orbit uses `styled-components` Theme provider
+
+```javascript
+  import { ThemeProvider } from "styled-components";
+  import { defaultTokens } from "@kiwicom/orbit-design-tokens";
+  
+  ...
+  
+  return (
+    <ThemeProvider theme={{ yourCustomTheme: { black: "#000" }, orbit: defaultTokens }}>
+      <Button type="secondary" size="large" />
+    </ThemeProvider>
+  )
+```
+
+### Using custom colors with orbit-components
+
+```javascript
+  import { getTokens } from "@kiwicom/orbit-design-tokens"; 
+  import { ThemeProvider } from "styled-components";
+
+  const customTokens = getTokens({
+    product: {
+      light: "#9ae5da",
+      lightHover: "#7fded0",
+      lightActive: "#64d7c6",
+      normal: "#00a991",
+      normalHover: "#009882",
+      normalActive: "#008f7b",
+      dark: "#005448"
+    },
+  })
+  
+  <ThemeProvider theme={{ yourCustomTheme: { black: "#000" }, orbit: customTokens }}>
+    <Button type="secondary" size="large" />
+  </ThemeProvider>
+```
+  

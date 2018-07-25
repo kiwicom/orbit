@@ -7,12 +7,13 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
-import Heading from "../Heading/Heading";
-import Text from "../Text/Text";
-import Card from "./Card";
-import CardHeader from "./CardHeader/CardHeader";
-import CardContent from "./CardContent/CardContent";
-import CardSection from "./CardSection/CardSection";
+import Heading from "../Heading";
+import Text from "../Text";
+import CardHeader from "./CardHeader";
+import CardContent from "./CardContent";
+import CardSection from "./CardSection";
+
+import Card from "./index";
 
 setAddon(chaptersAddon);
 

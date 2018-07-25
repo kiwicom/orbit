@@ -2,9 +2,9 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import InputField from "../InputField";
-import ButtonLink from "../../ButtonLink/ButtonLink";
-import TextLink from "../../TextLink/TextLink";
+import InputField from "../index";
+import ButtonLink from "../../ButtonLink";
+import TextLink from "../../TextLink";
 import Visibility from "../../icons/Visibility";
 import Search from "../../icons/Search";
 

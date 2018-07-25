@@ -99,7 +99,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl ilDRCe"
+            className="Alert__StyledAlert-dqYNhl edSqTu"
           >
             <div
               className="Alert__IconContainer-haMrUK gUzVST"
@@ -640,7 +640,7 @@ exports[`Storyshots Alert Info alert 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl doPSCL"
+            className="Alert__StyledAlert-dqYNhl fUtCMj"
           >
             <div
               className="Alert__IconContainer-haMrUK jvDZTe"
@@ -927,7 +927,7 @@ exports[`Storyshots Alert Playground 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl doPSCL"
+            className="Alert__StyledAlert-dqYNhl fUtCMj"
           >
             <div
               className="Alert__IconContainer-haMrUK jvDZTe"
@@ -1583,7 +1583,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl gnhZp"
+            className="Alert__StyledAlert-dqYNhl kchFYJ"
           >
             <div
               className="Alert__IconContainer-haMrUK kMFpuN"
@@ -1897,7 +1897,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl kbCxwb"
+            className="Alert__StyledAlert-dqYNhl eMMGtz"
           >
             <div
               className="Alert__IconContainer-haMrUK iInTvA"

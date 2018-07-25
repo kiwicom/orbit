@@ -1,4 +1,24 @@
 // @flow
-import type { Props } from "./TextLink";
+import defaultTokens from "../defaultTokens";
+
+type Type = "primary" | "secondary";
+
+export type Props = {|
+  +children: React$Node,
+  +href?: string,
+  +onClick?: (SyntheticEvent<HTMLLinkElement>) => void | Promise<any>,
+  +external?: boolean,
+  +type?: Type,
+  +rel?: string,
+  +theme?: typeof defaultTokens,
+|};
+
+type styledTextLink = {
+  tokens?: { [key: string]: string | number },
+  type?: Type,
+  theme?: typeof defaultTokens,
+};
+
+declare export var StyledTextLink: React$ComponentType<styledTextLink>;
 
 declare export default React$ComponentType<Props>;

@@ -2,7 +2,7 @@
 import * as React from "react";
 import { mount } from "enzyme";
 
-import Accomodation from "../../icons/Accomodation";
+import Accommodation from "../../icons/Accommodation";
 import { iconColors, iconSizes } from "../index";
 
 const size = "large";
@@ -11,7 +11,7 @@ const color = "attention";
 const customColor = "#FF0000";
 
 describe("Icon with color", () => {
-  const component = mount(<Accomodation color={color} />);
+  const component = mount(<Accommodation color={color} />);
   it("Renders SVG", () => {
     expect(component.find("svg").exists()).toBe(true);
   });
@@ -29,7 +29,7 @@ describe("Icon with color", () => {
   });
 });
 describe("Icon with props", () => {
-  const component = mount(<Accomodation size={size} customColor={customColor} />);
+  const component = mount(<Accommodation size={size} customColor={customColor} />);
   it("Renders SVG", () => {
     expect(component.find("svg").exists()).toBe(true);
   });

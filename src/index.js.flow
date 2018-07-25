@@ -10,6 +10,7 @@ import typeof CheckboxType from "./Checkbox";
 import typeof CarrierLogoType from "./CarrierLogo";
 import typeof HeadingType from "./Heading";
 import typeof InputFieldType from "./InputField";
+import typeof IllustrationType from "./Illustration";
 import typeof ListType from "./List";
 import typeof ListItemType from "./List/ListItem";
 import typeof TextType from "./Text";
@@ -52,6 +53,7 @@ declare export var Text: TextType;
 declare export var Icons: any;
 declare export var Icon: any;
 declare export var InputField: InputFieldType;
+declare export var Illustration: IllustrationType;
 declare export var TextLink: TextLinkType;
 
 declare export var Radio: RadioType;

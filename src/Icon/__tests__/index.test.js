@@ -3,10 +3,10 @@ import * as React from "react";
 import { mount } from "enzyme";
 
 import Accommodation from "../../icons/Accommodation";
-import { iconColors, iconSizes } from "../index";
+import { ICON_SIZES, ICON_COLORS } from "../consts";
 
 const size = "large";
-const defaultSize = iconSizes.medium;
+const defaultSize = ICON_SIZES.medium;
 const color = "attention";
 const customColor = "#FF0000";
 
@@ -22,7 +22,7 @@ describe("Icon with color", () => {
   });
   it("SVG contains a color", () => {
     const svg = component.find("svg");
-    expect(svg.prop("style")).toEqual({ color: iconColors[color], verticalAlign: "middle" });
+    expect(svg.prop("style")).toEqual({ color: ICON_COLORS[color], verticalAlign: "middle" });
   });
   it("Should match snapshot", () => {
     expect(component).toMatchSnapshot();
@@ -35,8 +35,8 @@ describe("Icon with props", () => {
   });
   it("SVG contains default sizing", () => {
     const svg = component.find("svg");
-    expect(svg.prop("height")).toBe(iconSizes[size]);
-    expect(svg.prop("width")).toBe(iconSizes[size]);
+    expect(svg.prop("height")).toBe(ICON_SIZES[size]);
+    expect(svg.prop("width")).toBe(ICON_SIZES[size]);
   });
   it("SVG contains default color", () => {
     const svg = component.find("svg");

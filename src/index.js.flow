@@ -10,9 +10,6 @@ import typeof HeadingType from "./Heading";
 import typeof InputFieldType from "./InputField";
 import typeof TextType from "./Text";
 import typeof TextLinkType from "./TextLink";
-import typeof ThemedSampleType from "./Theming/ThemedSample";
-import typeof ThemeProviderType from "./Theming/ThemeProvider";
-import typeof ThemeSwitcherType from "./Theming/ThemeSwitcher";
 import typeof RadioType from "./Radio";
 import typeof SelectType from "./Select";
 import typeof TextareaType from "./Textarea";
@@ -46,13 +43,9 @@ declare export var Icons: any;
 declare export var Icon: any;
 declare export var InputField: InputFieldType;
 declare export var TextLink: TextLinkType;
-declare export var ThemedSample: ThemedSampleType;
-declare export var ThemeProvider: ThemeProviderType;
-declare export var ThemeSwitcher: ThemeSwitcherType;
 
 declare export var Radio: RadioType;
 declare export var Select: SelectType;
 declare export var Textarea: TextareaType;
 
-declare export var withTheme: any;
 declare export var defaultTheme: any;

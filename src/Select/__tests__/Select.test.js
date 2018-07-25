@@ -3,7 +3,7 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import Select from "../Select";
+import Select from "../index";
 
 const mockChange = jest.fn();
 const placeholder = "Default placeholder";

@@ -6,7 +6,7 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean } from "@storybook/addon-knobs/react";
 
-import Radio from "./Radio";
+import Radio from "./index";
 
 setAddon(chaptersAddon);
 

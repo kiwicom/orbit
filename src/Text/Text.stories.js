@@ -5,7 +5,6 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 
-import Text from "./Text";
 import {
   TYPE_OPTIONS,
   SIZE_OPTIONS,
@@ -13,6 +12,8 @@ import {
   ALIGN_OPTIONS,
   ELEMENT_OPTIONS,
 } from "./consts";
+
+import Text from "./index";
 
 setAddon(chaptersAddon);
 

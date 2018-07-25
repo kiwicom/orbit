@@ -3,7 +3,7 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import Radio from "../Radio";
+import Radio from "../index";
 
 const label = "Radio";
 const onChange = jest.fn();

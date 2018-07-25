@@ -2,7 +2,7 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import FormLabel from "../FormLabel";
+import FormLabel from "../index";
 
 describe("FormLabel", () => {
   const component = shallow(<FormLabel>FormLabel</FormLabel>);

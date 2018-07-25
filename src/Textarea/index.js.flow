@@ -1,4 +1,20 @@
 // @flow
-import type { Props } from "./Textarea";
+import defaultTokens from "../defaultTokens";
+
+export type Props = {|
+  +size?: "small" | "normal",
+  +name?: string,
+  +label?: string,
+  +children?: string,
+  +placeholder?: string,
+  +help?: React$Node,
+  +error?: React$Node,
+  +disabled?: boolean,
+  +maxLength?: number,
+  +onChange?: (ev: SyntheticEvent<HTMLInputElement>) => void | Promise<any>,
+  +onFocus?: (ev: SyntheticEvent<HTMLInputElement>) => void | Promise<any>,
+  +onBlur?: (ev: SyntheticEvent<HTMLInputElement>) => void | Promise<any>,
+  +theme?: typeof defaultTokens,
+|};
 
 declare export default React$ComponentType<Props>;

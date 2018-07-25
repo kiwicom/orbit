@@ -7,8 +7,9 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { object, select, text, boolean, withKnobs } from "@storybook/addon-knobs/react";
 
 import Airplane from "../icons/Airplane";
-import Select from "./Select";
 import SIZE_OPTIONS from "./consts";
+
+import Select from "./index";
 
 setAddon(chaptersAddon);
 

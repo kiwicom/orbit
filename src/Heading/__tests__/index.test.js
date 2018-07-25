@@ -2,7 +2,7 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import Heading from "../Heading";
+import Heading from "../index";
 
 const children = "Children title";
 

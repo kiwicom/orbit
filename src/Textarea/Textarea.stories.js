@@ -7,8 +7,9 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select, number } from "@storybook/addon-knobs/react";
 
-import Textarea from "./Textarea";
 import SIZE_OPTIONS from "./consts";
+
+import Textarea from "./index";
 
 setAddon(chaptersAddon);
 

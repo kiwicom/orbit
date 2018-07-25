@@ -1,4 +1,15 @@
 // @flow
-import type { Props } from "./Radio";
+import defaultTokens from "../defaultTokens";
+
+export type Props = {|
+  +label: string,
+  +value?: string,
+  +hasError?: boolean,
+  +disabled?: boolean,
+  +checked?: boolean,
+  +info?: React$Node,
+  +onChange?: (SyntheticEvent<HTMLInputElement>) => void | Promise<any>,
+  +theme?: typeof defaultTokens,
+|};
 
 declare export default React$ComponentType<Props>;

@@ -1,4 +1,23 @@
 // @flow
-import type { Props } from "./ButtonLink";
+import defaultTokens from "../defaultTokens";
+
+type Type = "primary" | "secondary";
+type Size = "small" | "normal" | "large";
+
+export type Props = {|
+  +children?: React$Node,
+  +component?: string | React$Node,
+  +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  +disabled?: boolean,
+  +block?: boolean,
+  +external?: boolean,
+  +type?: Type,
+  +size?: Size,
+  +href?: string,
+  +width?: number,
+  +icon?: React.Node,
+  +theme?: typeof defaultTokens,
+  +transparent?: boolean,
+|};
 
 declare export default React$ComponentType<Props>;

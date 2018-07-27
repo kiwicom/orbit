@@ -25,6 +25,7 @@ export { default as List } from "./List";
 export { default as ListItem } from "./List/ListItem";
 export { default as Icon } from "./Icon";
 export { default as InputField } from "./InputField";
+export { default as InputGroup } from "./InputGroup";
 export { default as Illustration } from "./Illustration";
 export { default as TextLink } from "./TextLink";
 export { default as Radio } from "./Radio";

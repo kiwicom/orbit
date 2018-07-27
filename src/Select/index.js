@@ -87,7 +87,7 @@ StyledSelect.defaultProps = {
   theme: defaultTokens,
 };
 
-const SelectContainer = styled(({ className, children }) => (
+export const SelectContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
   position: relative;
@@ -151,8 +151,7 @@ const Select = ({
   options,
   prefix,
 }: Props) => {
-  const filled = !!placeholder && value !== "";
-
+  const filled = !!value;
   return (
     <label>
       {label && (

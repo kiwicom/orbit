@@ -1,0 +1,31 @@
+// @flow
+
+import defaultTokens from "../defaultTokens";
+import InputField from "../InputField";
+import Select from "../Select";
+
+export type Props = {|
+  +label?: string,
+  +flex?: string | Array<string>,
+  +size?: "small" | "normal",
+  +help?: React$Node,
+  +children: Array<React$Element<typeof InputField> | React$Element<typeof Select>>,
+  +error?: React$Node,
+  +onChange?: (
+    ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
+  ) => void | Promise<any>,
+  +onFocus?: (
+    ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
+  ) => void | Promise<any>,
+  +onBlur?: (
+    ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
+  ) => void | Promise<any>,
+  +theme?: typeof defaultTokens,
+|};
+
+export type State = {|
+  active: boolean,
+  filled: boolean,
+|};
+
+declare export default React$ComponentType<Props>;

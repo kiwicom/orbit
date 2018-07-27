@@ -33,7 +33,7 @@ Table below contains all types of the props available in InputField component.
 
 ### enum
 
-| type         | type        |
+| type         | size        |
 | :----------- | :---------- |
 | `"text"`     | `"small"`   |
 | `"number"`   | `"normal"`  |

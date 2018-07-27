@@ -19,7 +19,9 @@ Field.defaultProps = {
   theme: defaultTokens,
 };
 
-const FakeInput = styled(({ children, className }) => <div className={className}>{children}</div>)`
+export const FakeInput = styled(({ children, className }) => (
+  <div className={className}>{children}</div>
+))`
   width: 100%;
   position: absolute;
   z-index: -1;
@@ -41,7 +43,7 @@ FakeInput.defaultProps = {
   theme: defaultTokens,
 };
 
-const InputContainer = styled(({ children, className }) => (
+export const InputContainer = styled(({ children, className }) => (
   <div className={className}>{children}</div>
 ))`
   display: flex;
@@ -109,7 +111,7 @@ Suffix.defaultProps = {
   theme: defaultTokens,
 };
 
-const Input = styled(({ theme, tokens, size, prefix, suffix, error, help, ...props }) => (
+export const Input = styled(({ theme, tokens, size, prefix, suffix, error, help, ...props }) => (
   <input {...props} />
 ))`
   appearance: none;

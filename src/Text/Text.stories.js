@@ -16,15 +16,8 @@ import {
 
 setAddon(chaptersAddon);
 
-const options = {
-  allowSourceToggling: false,
-  allowPropTablesToggling: false,
-};
-
-const customText = text(
-  "Text",
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem. Curabitur lectus enim, ornare laoreet tellus vel, tristique porttitor tortor. In lorem ante, feugiat in fringilla sed, rutrum sit amet orci. Nulla ipsum justo, volutpat sed sem sit amet, pretium lacinia metus. Nulla facilisi. Donec dui felis, viverra quis iaculis a, lacinia ut mauris.",
-);
+const customText =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.";
 
 storiesOf("Text", module)
   .addDecorator(withKnobs)
@@ -33,56 +26,113 @@ storiesOf("Text", module)
       padding: "20px",
     }),
   )
-  .addWithChapters("Primary text", () => ({
-    info:
-      "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => <Text>{customText}</Text>,
-            options,
-          },
-        ],
-      },
-    ],
-  }))
-  .addWithChapters("Secondary text", () => ({
-    info:
-      "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => <Text type="secondary">{customText}</Text>,
-            options,
-          },
-        ],
-      },
-    ],
-  }))
-  .addWithChapters("Attention text", () => ({
-    info:
-      "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => <Text type="attention">{customText}</Text>,
-            options,
-          },
-        ],
-      },
-    ],
-  }))
+  .addWithChapters("Primary text", () => {
+    const children = text("Text", customText);
+
+    return {
+      info:
+        "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => <Text>{children}</Text>,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Secondary text", () => {
+    const children = text("Text", customText);
+
+    return {
+      info:
+        "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => <Text type="secondary">{children}</Text>,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Attention text", () => {
+    const children = text("Text", customText);
+
+    return {
+      info:
+        "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => <Text type="attention">{children}</Text>,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Status text", () => {
+    const children = text("Text", customText);
+
+    return {
+      info:
+        "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => <Text type="info">{children}</Text>,
+            },
+            {
+              sectionFn: () => <Text type="success">{children}</Text>,
+            },
+            {
+              sectionFn: () => <Text type="warning">{children}</Text>,
+            },
+            {
+              sectionFn: () => <Text type="critical">{children}</Text>,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("White text", () => {
+    const children = text("Text", customText);
+
+    return {
+      info:
+        "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <div style={{ backgroundColor: "#46515e", padding: "20px" }}>
+                  <Text type="white">{children}</Text>
+                </div>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Playground", () => {
-    const type = select("Type", Object.values(TYPE_OPTIONS), "primary");
-    const element = select("Element", Object.values(ELEMENT_OPTIONS), "p");
-    const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
-    const weight = select("Weight", Object.values(WEIGHT_OPTIONS), "regular");
-    const align = select("Align", Object.values(ALIGN_OPTIONS), "left");
+    const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.P);
+    const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
+    const weight = select("Weight", Object.values(WEIGHT_OPTIONS), WEIGHT_OPTIONS.NORMAL);
+    const align = select("Align", Object.values(ALIGN_OPTIONS), ALIGN_OPTIONS.LEFT);
     const uppercase = boolean("Uppercase", false);
     const italic = boolean("Italic", false);
+    const children = text("Text", customText);
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -100,10 +150,9 @@ storiesOf("Text", module)
                   uppercase={uppercase}
                   italic={italic}
                 >
-                  {customText}
+                  {children}
                 </Text>
               ),
-              options,
             },
           ],
         },

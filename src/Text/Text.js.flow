@@ -3,7 +3,15 @@ import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 type Align = "left" | "center" | "right";
 type Element = "p" | "span" | "div";
-type Type = "primary" | "secondary" | "attention";
+type Type =
+  | "primary"
+  | "secondary"
+  | "attention"
+  | "info"
+  | "success"
+  | "warning"
+  | "critical"
+  | "white";
 type Size = "large" | "normal" | "small";
 type Weight = "regular" | "bold";
 

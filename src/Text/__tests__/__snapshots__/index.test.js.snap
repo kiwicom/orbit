@@ -329,8 +329,13 @@ exports[`Text should match snapshot 1`] = `
     Object {
       "colorText": Object {
         "attention": "#171b1e",
+        "critical": "#d21c1c",
+        "info": "#0176D2",
         "primary": "#46515e",
         "secondary": "#7f91a8",
+        "success": "#46B655",
+        "warning": "#f9971e",
+        "white": "#fff",
       },
       "sizeText": Object {
         "large": "16px",

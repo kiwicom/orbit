@@ -3,6 +3,11 @@ export const TYPE_OPTIONS = {
   PRIMARY: "primary",
   SECONDARY: "secondary",
   ATTENTION: "attention",
+  INFO: "info",
+  SUCCESS: "success",
+  WARNING: "warning",
+  CRITICAL: "critical",
+  WHITE: "white",
 };
 
 export const SIZE_OPTIONS = {

@@ -2,7 +2,7 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import Textarea from "../Textarea";
+import Textarea from "../index";
 import SIZE_OPTIONS from "../consts";
 
 describe(`Textarea with help`, () => {

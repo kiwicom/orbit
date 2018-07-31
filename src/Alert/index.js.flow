@@ -1,4 +1,16 @@
 // @flow
-import type { Props } from "./Alert";
+import defaultTokens from "../defaultTokens";
+
+type Type = "info" | "success" | "warning" | "critical";
+
+export type Props = {|
+  +type?: Type,
+  +children?: React$Node,
+  +title?: string,
+  +icon?: React$Element<any> | boolean,
+  +closable?: boolean,
+  +onClose?: () => void,
+  +theme?: typeof defaultTokens,
+|};
 
 declare export default React$ComponentType<Props>;

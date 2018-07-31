@@ -1,6 +1,19 @@
 // @flow
-import { withTheme } from "theming";
+import * as React from "react";
+import styled from "styled-components";
 
-import CardContent from "./CardContent";
+import defaultTokens from "../../defaultTokens";
 
-export default withTheme(CardContent);
+import type { Props } from "./index";
+
+export const StyledCardContent = styled.div`
+  padding: ${({ theme }) => theme.orbit.spaceLarge};
+`;
+
+StyledCardContent.defaultProps = {
+  theme: defaultTokens,
+};
+
+const CardContent = ({ children }: Props) => <StyledCardContent>{children}</StyledCardContent>;
+
+export default CardContent;

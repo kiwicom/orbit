@@ -1,0 +1,16 @@
+// @flow
+
+type Size = "small" | "medium" | "large";
+
+type Color = "attention" | "primary" | "secondary" | "terciary";
+
+export type Props = {|
+  +size: Size,
+  +color?: Color,
+  +className: string,
+  +customColor: string,
+  +children: React$Node,
+  +viewBox: string,
+|};
+
+declare export default React$ComponentType<Props>;

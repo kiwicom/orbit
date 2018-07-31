@@ -6,8 +6,9 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, object, select } from "@storybook/addon-knobs/react";
 import styles from "@sambego/storybook-styles/dist/index";
 
-import CarrierLogo from "./CarrierLogo";
 import { SIZE_OPTIONS, CARRIER_TYPE_OPTIONS } from "./consts";
+
+import CarrierLogo from "./index";
 
 setAddon(chaptersAddon);
 

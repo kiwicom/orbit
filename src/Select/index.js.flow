@@ -1,4 +1,26 @@
 // @flow
-import type { Props } from "./Select";
+
+type Option = {|
+  +value: string | number,
+  +label?: string,
+  +disabled?: boolean,
+|};
+
+type Size = "small" | "normal";
+
+export type Props = {|
+  +size?: Size,
+  +label?: string,
+  +placeholder?: string,
+  +value?: string,
+  +disabled?: boolean,
+  +error?: React$Node,
+  +help?: React$Node,
+  +onChange?: (SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
+  +onFocus?: (SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
+  +onBlur?: (SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
+  +options: Option[],
+  +prefix?: React$Node,
+|};
 
 declare export default React$ComponentType<Props>;

@@ -2,7 +2,7 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import FormFeedback from "../FormFeedback";
+import FormFeedback from "../index";
 
 describe("FormFeedback", () => {
   const component = shallow(<FormFeedback>FormFeedback</FormFeedback>);

@@ -2,7 +2,7 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import TextLink from "../TextLink";
+import TextLink from "../index";
 
 describe("TextLink", () => {
   const title = "My text link";

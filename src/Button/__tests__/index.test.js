@@ -3,7 +3,7 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import Button from "../Button";
+import Button from "../index";
 import Airplane from "../../icons/Airplane";
 
 const children = "button";

@@ -7,7 +7,7 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, select, text } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
-import { iconSizes, iconColors } from "../Icon";
+import { ICON_SIZES, ICON_COLORS } from "./consts";
 
 setAddon(chaptersAddon);
 
@@ -24,8 +24,8 @@ storiesOf("Icon", module)
     }),
   )
   .addWithChapters("Default", () => {
-    const size = select("Size", Object.keys(iconSizes), "medium");
-    const color = select("Color", Object.keys(iconColors), "primary");
+    const size = select("Size", Object.keys(ICON_SIZES), "medium");
+    const color = select("Color", Object.keys(ICON_COLORS), "primary");
     const source = select("Icon", Object.keys(Icons), "Airplane");
     const Icon = Icons[source];
     return {
@@ -44,7 +44,7 @@ storiesOf("Icon", module)
     };
   })
   .addWithChapters("Custom color", () => {
-    const size = select("Size", Object.keys(iconSizes), "medium");
+    const size = select("Size", Object.keys(ICON_SIZES), "medium");
     const customColor = text("Custom color", "#ABCDEF");
     const source = select("Icon", Object.keys(Icons), "Airplane");
     const Icon = Icons[source];

@@ -17,19 +17,20 @@ Now that you have installed the latest version of the package, you will need to 
 
 For simple usage of defaultTokens just add this line of code to the top of the file:
 
-`import { defaultTokens } from '@kiwicom/orbit-design-token'`
+`import { defaultTokens } from "@kiwicom/orbit-design-tokens"`
  
 Now you can use tokens by typing `defaultTokens` and just continue with the dot-notation by typing the appropriate token name you want to use f.e. `defaultTokens.colorTextPrimary`. More advanced text editors should suggest which tokens are available to you in the token object, so you can find tokens quicker than by typing the entire token name.
 
-From version 0.0.9 there is possibility to change tokens and colors values also. Just simply import `colors` and `getTokens` from this package.
+From version 0.0.9 there is possibility to change tokens and colors values also. Just simply import `getTokens` from this package.
 
-`import { colors, getTokens } from '@kiwicom/orbit-design-token'`
+`import { getTokens } from "@kiwicom/orbit-design-tokens"`
 
-You can overwrite default colors like this:
+You can generate a new theme with your colors simply like this:
 
 ```
-const alternativeColors = Object.assign({}, colors, {
-  brand: {
+// define your colors
+const colors = {
+  product: {
     light: "#ff9999",
     lightHover: "#ff7f7f",
     lightActive: "#ff6666",
@@ -38,9 +39,9 @@ const alternativeColors = Object.assign({}, colors, {
     normalActive: "#cc0000",
     dark: "#990000",
   },
-});
+};
 
-const alternativeTokens = getTokens(alternativeColors);
+const theme = getTokens(colors);
 ```
 
 ## Formats

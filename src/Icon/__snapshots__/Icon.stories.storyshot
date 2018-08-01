@@ -3305,9 +3305,9 @@ exports[`Storyshots Icon List of all icons 1`] = `
                 width="32px"
               >
                 <circle
-                  cx="4.308"
-                  cy="12"
-                  r="2.308"
+                  cx={4.308}
+                  cy={12}
+                  r={2.308}
                 >
                   <animate
                     attributeName="fill-opacity"
@@ -3319,10 +3319,10 @@ exports[`Storyshots Icon List of all icons 1`] = `
                   />
                 </circle>
                 <circle
-                  cx="4.308"
-                  cy="4.308"
-                  fill-opacity=".5"
-                  r="2.308"
+                  cx={4.308}
+                  cy={4.308}
+                  fillOpacity={0.5}
+                  r={2.308}
                 >
                   <animate
                     attributeName="fill-opacity"
@@ -3334,9 +3334,9 @@ exports[`Storyshots Icon List of all icons 1`] = `
                   />
                 </circle>
                 <circle
-                  cx="12"
-                  cy="4.308"
-                  r="2.308"
+                  cx={12}
+                  cy={4.308}
+                  r={2.308}
                 >
                   <animate
                     attributeName="fill-opacity"
@@ -3348,9 +3348,9 @@ exports[`Storyshots Icon List of all icons 1`] = `
                   />
                 </circle>
                 <circle
-                  cx="12"
-                  cy="12"
-                  r="2.308"
+                  cx={12}
+                  cy={12}
+                  r={2.308}
                 >
                   <animate
                     attributeName="fill-opacity"
@@ -3362,9 +3362,9 @@ exports[`Storyshots Icon List of all icons 1`] = `
                   />
                 </circle>
                 <circle
-                  cx="19.692"
-                  cy="4.308"
-                  r="2.308"
+                  cx={19.692}
+                  cy={4.308}
+                  r={2.308}
                 >
                   <animate
                     attributeName="fill-opacity"
@@ -3376,9 +3376,9 @@ exports[`Storyshots Icon List of all icons 1`] = `
                   />
                 </circle>
                 <circle
-                  cx="19.692"
-                  cy="12"
-                  r="2.308"
+                  cx={19.692}
+                  cy={12}
+                  r={2.308}
                 >
                   <animate
                     attributeName="fill-opacity"
@@ -3390,9 +3390,9 @@ exports[`Storyshots Icon List of all icons 1`] = `
                   />
                 </circle>
                 <circle
-                  cx="4.308"
-                  cy="19.692"
-                  r="2.308"
+                  cx={4.308}
+                  cy={19.692}
+                  r={2.308}
                 >
                   <animate
                     attributeName="fill-opacity"
@@ -3404,9 +3404,9 @@ exports[`Storyshots Icon List of all icons 1`] = `
                   />
                 </circle>
                 <circle
-                  cx="12"
-                  cy="19.692"
-                  r="2.308"
+                  cx={12}
+                  cy={19.692}
+                  r={2.308}
                 >
                   <animate
                     attributeName="fill-opacity"
@@ -3418,9 +3418,9 @@ exports[`Storyshots Icon List of all icons 1`] = `
                   />
                 </circle>
                 <circle
-                  cx="19.692"
-                  cy="19.692"
-                  r="2.308"
+                  cx={19.692}
+                  cy={19.692}
+                  r={2.308}
                 >
                   <animate
                     attributeName="fill-opacity"

@@ -9,7 +9,7 @@ Usage examples in storybook: [https://kiwicom.github.io/orbit-components/](https
 * [Installation](#installation)
 * [Contributing](#contributing)
 * [Icons](#icons)
-* [Theming](./docs/theming.md)
+* [Theming](#theming)
 
 ## Motivation
 
@@ -37,7 +37,7 @@ Please checkout our [Contribution Guide](./.github/contributing.md). It includes
 
 ## Icons
 
-Orbit Components provides a set of icons easily used following these [instructions](./src/icons/readme.md).
+Orbit Components provides a set of icons easily used following these [instructions](https://github.com/kiwicom/orbit-components/tree/master/src/Icon).
 
 A list of all supported icons is [here](https://kiwicom.github.io/orbit-components/?selectedKind=Icon&selectedStory=List%20of%20all%20icons)
 

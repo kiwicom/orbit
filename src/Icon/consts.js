@@ -11,5 +11,5 @@ export const ICON_COLORS = {
   attention: defaultTokens.orbit.colorIconAttention,
   primary: defaultTokens.orbit.colorIconPrimary,
   secondary: defaultTokens.orbit.colorIconSecondary,
-  terciary: defaultTokens.orbit.colorIconTerciary,
+  tertiary: defaultTokens.orbit.colorIconTerciary,
 };

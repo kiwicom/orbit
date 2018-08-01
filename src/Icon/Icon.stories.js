@@ -7,14 +7,10 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, select, text } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
+import IconList from "./IconList";
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 
 setAddon(chaptersAddon);
-
-const options = {
-  allowSourceToggling: false,
-  allowPropTablesToggling: false,
-};
 
 storiesOf("Icon", module)
   .addDecorator(withKnobs)
@@ -36,7 +32,6 @@ storiesOf("Icon", module)
           sections: [
             {
               sectionFn: () => <Icon size={size} color={color} />,
-              options,
             },
           ],
         },
@@ -56,10 +51,25 @@ storiesOf("Icon", module)
           sections: [
             {
               sectionFn: () => <Icon size={size} customColor={customColor} />,
-              options,
             },
           ],
         },
       ],
     };
-  });
+  })
+  .addWithChapters("List of all icons", () => ({
+    info:
+      "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => <IconList />,
+            options: {
+              showSource: false,
+            },
+          },
+        ],
+      },
+    ],
+  }));

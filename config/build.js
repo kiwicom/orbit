@@ -8,7 +8,6 @@ const camelcase = require("camelcase");
 const mkdirp = require("mkdirp");
 const SVGO = require("svgo");
 const glob = require("glob");
-const svg2png = require("svg2png");
 
 const files = glob.sync("src/icons/**/*.svg");
 const names = files.map(inputFileName => {
@@ -26,9 +25,6 @@ const names = files.map(inputFileName => {
 
 const componentPath = path.join(__dirname, "..", "src", "icons");
 mkdirp(componentPath);
-const pngPath = path.join(__dirname, "..", "src", "icons", "png");
-mkdirp(pngPath);
-const relativePngPath = pngPath.substring(path.join(__dirname, "..").length);
 const svgo = new SVGO();
 
 names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {
@@ -53,20 +49,9 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
 `;
 
   fs.writeFileSync(path.join(componentPath, outputComponentFileName), component);
-
-  const png = await svg2png(optimizedSvg, { width: 32, height: 32 });
-  fs.writeFileSync(path.join(pngPath, `${functionName}.png`), png);
 });
 
 const index = names
   .map(({ functionName }) => `export { default as ${functionName} } from "./${functionName}";\n`)
   .join("");
 fs.writeFileSync(path.join(componentPath, "index.js"), index);
-
-const iconsIndex = names
-  .map(
-    ({ functionName }) =>
-      `- ![${functionName}](${relativePngPath}/${functionName}.png?raw=true) ${functionName}\n`,
-  )
-  .join("");
-fs.writeFileSync(path.join(__dirname, "..", "src", "icons", "icons.md"), iconsIndex);

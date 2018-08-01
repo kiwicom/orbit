@@ -2,7 +2,7 @@
 
 type Size = "small" | "medium" | "large";
 
-type Color = "attention" | "primary" | "secondary" | "terciary";
+type Color = "attention" | "primary" | "secondary" | "tertiary";
 
 export type Props = {|
   +size: Size,

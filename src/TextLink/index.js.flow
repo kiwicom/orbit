@@ -6,6 +6,7 @@ type Type = "primary" | "secondary";
 export type Props = {|
   +children: React$Node,
   +href?: string,
+  +icon?: React$Node,
   +onClick?: (SyntheticEvent<HTMLLinkElement>) => void | Promise<any>,
   +external?: boolean,
   +type?: Type,

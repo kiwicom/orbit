@@ -2,9 +2,9 @@
 // @flow
 const babylon = require ("babylon");
 const fs = require("fs")
-const tokens = require("./dist/index").defaultTokens // used for values
+const tokens = require("./lib/index").defaultTokens // used for values
 
-const code = fs.readFileSync("./dist/index.js", 'utf8')
+const code = fs.readFileSync("./lib/index.js", 'utf8')
 const ast = babylon.parse(code, {
   sourceType: "module", // allow export
   plugins: []

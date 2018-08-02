@@ -1,14 +1,14 @@
 {
   "name": "@kiwicom/orbit-design-tokens",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Design tokens for kiwi!",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/kiwicom/orbit-design-tokens.git"
   },
   "files": [
-    "dist/*",
+    "lib/*",
     "package.json",
     "README.md",
     "output/*",
@@ -16,9 +16,8 @@
     "pages/*"
   ],
   "scripts": {
-    "prepare": "npm run strip-flow && node generate-theo && npm run build",
+    "prepare": "node generate-theo && npm run build",
     "flow": "flow check",
-    "strip-flow": "flow-remove-types src/ -d dist/ -p && yarn flow-copy-source -v src dist",
     "build-html": "theo --setup ./theo/setup.js ./theo-spec.json --format kiwi.html --dest ./pages",
     "build-web": "theo ./theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",
     "build-ios": "theo ./theo-spec.json --transform ios --format ios.json --dest ./output",
@@ -37,8 +36,6 @@
     "babylon": "^6.18.0",
     "ci-publish": "^1.3.1",
     "flow-bin": "^0.74.0",
-    "flow-copy-source": "^2.0.0",
-    "flow-remove-types": "^1.2.3",
     "lodash": "^4.17.10",
     "theo": "^7.0.1"
   }

@@ -7,6 +7,22 @@ import TYPE_OPTIONS from "./consts";
 
 import type { Props } from "./index";
 
+const IconContainer = styled(({ children, className }) => (
+  <div className={className}>{children}</div>
+))`
+  color: ${({ tokens, type }) => tokens.colorTextLink[type]};
+  transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+
+  & svg {
+    height: 16px;
+    width: 16px;
+  }
+`;
+
+IconContainer.defaultProps = {
+  theme: defaultTokens,
+};
+
 export const StyledTextLink = styled(({ tokens, theme, type, ...props }) => (
   <a {...props}>{props.children}</a>
 ))`
@@ -17,8 +33,11 @@ export const StyledTextLink = styled(({ tokens, theme, type, ...props }) => (
           ? theme.orbit.textDecorationTextLinkSecondary
           : theme.orbit.textDecorationTextLinkPrimary};
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
       transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
     }
+    
     &:hover {
       text-decoration: ${({ theme, type }) =>
         type === [TYPE_OPTIONS.SECONDARY]
@@ -28,6 +47,13 @@ export const StyledTextLink = styled(({ tokens, theme, type, ...props }) => (
         type === [TYPE_OPTIONS.SECONDARY]
           ? theme.orbit.colorTextLinkSecondaryHover
           : theme.orbit.colorTextLinkPrimaryHover};
+      
+      ${IconContainer} {
+        color: ${({ theme, type }) =>
+          type === [TYPE_OPTIONS.SECONDARY]
+            ? theme.orbit.colorTextLinkSecondaryHover
+            : theme.orbit.colorTextLinkPrimaryHover};
+      }
     }
     &:focus {
       outline-width: 3px;
@@ -46,6 +72,7 @@ const TextLink = (props: Props) => {
     external = false,
     theme = defaultTokens,
     rel,
+    icon,
     onClick,
   } = props;
   const tokens = {
@@ -65,6 +92,11 @@ const TextLink = (props: Props) => {
       onClick={onClick}
     >
       {children}
+      {icon && (
+        <IconContainer type={type} tokens={tokens}>
+          {icon}
+        </IconContainer>
+      )}
     </StyledTextLink>
   );
 };

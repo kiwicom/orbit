@@ -14,7 +14,8 @@ Table below contains all types of the props available in Heading component.
 | :------------ | :---------------------| :--------- | :------------------------------- |
 | children      | `React.Node`          |            | The content of the Heading.
 | **element**   | [`enum`](#enum)       | `"h1"`     | The element used for the root node.
-| **type**      | [`enum`](#enum)       | `"title1"` | The color type of Heading.
+| inverted      | `boolean`             |            | The `true`, the Heading color will be white.
+| **type**      | [`enum`](#enum)       | `"title1"` | The size type of Heading.
 
 ### enum
 

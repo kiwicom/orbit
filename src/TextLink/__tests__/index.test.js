@@ -3,6 +3,7 @@ import * as React from "react";
 import { shallow } from "enzyme";
 
 import TextLink from "../index";
+import ChevronRight from "../../icons/ChevronRight";
 
 describe("TextLink", () => {
   const title = "My text link";
@@ -11,7 +12,7 @@ describe("TextLink", () => {
   const type = "primary";
 
   const component = shallow(
-    <TextLink onClick={onClick} href={href} type={type} external>
+    <TextLink onClick={onClick} href={href} type={type} external icon={<ChevronRight />}>
       {title}
     </TextLink>,
   );
@@ -24,6 +25,9 @@ describe("TextLink", () => {
   });
   it("should contain an external href", () => {
     expect(component.render().prop("target")).toBe("_blank");
+  });
+  it("should contain SVG", () => {
+    expect(component.find("ChevronRight").exists()).toBe(true);
   });
   it("should execute onClick method", () => {
     component.simulate("click");

@@ -5,7 +5,7 @@ export type Props = {|
   +size?: "small" | "normal",
   +name?: string,
   +label?: string,
-  +children?: string,
+  +value?: string,
   +placeholder?: string,
   +help?: React$Node,
   +error?: React$Node,

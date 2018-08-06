@@ -16,9 +16,9 @@ export type Props = {|
   +disabled?: boolean,
   +error?: React$Node,
   +help?: React$Node,
-  +onChange?: (SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
-  +onFocus?: (SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
-  +onBlur?: (SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
+  +onChange?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
+  +onFocus?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
+  +onBlur?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +options: Option[],
   +prefix?: React$Node,
 |};

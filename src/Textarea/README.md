@@ -12,7 +12,6 @@ Table below contains all types of the props available in Textarea component.
 
 | Name          | Type              | Default      | Description                      |
 | :------------ | :---------------- | :----------- | :------------------------------- |
-| children      | `React.Node`      |              | Specifies the value of the Textarea.
 | disabled      | `boolean`         |              | If `true`, the Textarea will be disabled.
 | error         | `React.Node`      |              | The error to display beneath the Textarea. [See Functional specs](#functional-specs)
 | help          | `React.Node`      |              | The help to display beneath the Textarea.
@@ -24,6 +23,7 @@ Table below contains all types of the props available in Textarea component.
 | onBlur        | `func`            |              | Function for handling onBlur event.
 | placeholder   | `string`          |              | The placeholder of the Textarea.
 | size          | [`enum`](#enum)   | `"normal"`   | The size of the Textarea.
+| value         | `string`          |              | Specifies the value of the Textarea.
 
 ### enum
 

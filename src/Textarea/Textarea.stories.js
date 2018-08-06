@@ -31,9 +31,7 @@ storiesOf("Textarea", module)
           sections: [
             {
               sectionFn: () => (
-                <Textarea placeholder={placeholder} onChange={action("change")}>
-                  {value}
-                </Textarea>
+                <Textarea placeholder={placeholder} onChange={action("change")} value={value} />
               ),
             },
           ],
@@ -52,9 +50,12 @@ storiesOf("Textarea", module)
           sections: [
             {
               sectionFn: () => (
-                <Textarea size="small" placeholder={placeholder} onChange={action("change")}>
-                  {value}
-                </Textarea>
+                <Textarea
+                  size="small"
+                  placeholder={placeholder}
+                  onChange={action("change")}
+                  value={value}
+                />
               ),
             },
           ],
@@ -74,9 +75,12 @@ storiesOf("Textarea", module)
           sections: [
             {
               sectionFn: () => (
-                <Textarea label={label} placeholder={placeholder} onChange={action("change")}>
-                  {value}
-                </Textarea>
+                <Textarea
+                  label={label}
+                  placeholder={placeholder}
+                  onChange={action("change")}
+                  value={value}
+                />
               ),
             },
           ],
@@ -96,9 +100,12 @@ storiesOf("Textarea", module)
           sections: [
             {
               sectionFn: () => (
-                <Textarea placeholder={placeholder} help={help} onChange={action("change")}>
-                  {value}
-                </Textarea>
+                <Textarea
+                  placeholder={placeholder}
+                  help={help}
+                  onChange={action("change")}
+                  value={value}
+                />
               ),
             },
           ],
@@ -118,9 +125,12 @@ storiesOf("Textarea", module)
           sections: [
             {
               sectionFn: () => (
-                <Textarea placeholder={placeholder} error={error} onChange={action("change")}>
-                  {value}
-                </Textarea>
+                <Textarea
+                  placeholder={placeholder}
+                  error={error}
+                  onChange={action("change")}
+                  value={value}
+                />
               ),
             },
           ],
@@ -148,6 +158,7 @@ storiesOf("Textarea", module)
                 <Textarea
                   size={size}
                   label={label}
+                  value={value}
                   placeholder={placeholder}
                   help={help}
                   error={error}
@@ -156,9 +167,7 @@ storiesOf("Textarea", module)
                   onChange={action("change")}
                   onFocus={action("focus")}
                   onBlur={action("blur")}
-                >
-                  {value}
-                </Textarea>
+                />
               ),
             },
           ],

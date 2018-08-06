@@ -84,14 +84,14 @@ const Textarea = (props: Props) => {
   return (
     <Field>
       {props.label && (
-        <FormLabel filled={!!props.children} disabled={disabled}>
+        <FormLabel filled={!!props.value} disabled={disabled}>
           {props.label}
         </FormLabel>
       )}
       <StyledTextArea
         tokens={tokens}
         name={props.name}
-        value={props.children}
+        value={props.value}
         size={size}
         disabled={disabled}
         error={props.error}

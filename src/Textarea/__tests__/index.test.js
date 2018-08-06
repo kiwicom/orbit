@@ -21,15 +21,14 @@ describe(`Textarea with help`, () => {
       size={size}
       name={name}
       label={label}
+      value={value}
       placeholder={placeholder}
       maxLength={maxLength}
       help={<div>Something useful.</div>}
       onChange={onChange}
       onFocus={onFocus}
       onBlur={onBlur}
-    >
-      {value}
-    </Textarea>,
+    />,
   );
   const area = component.find("Textarea__StyledTextArea");
 

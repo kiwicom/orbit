@@ -1,0 +1,10 @@
+// @flow
+
+export type Props = {|
+  +children: React$Node,
+  +suppressed?: boolean,
+|};
+
+declare export default React$ComponentType<Props>;
+
+declare export var StyledModalSection: React$ComponentType<>;

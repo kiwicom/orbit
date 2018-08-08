@@ -7,7 +7,7 @@ export type Size = "small" | "normal" | "large";
 type Type = "primary" | "secondary";
 
 export type Props = {|
-  +children: Array<React$Element<typeof ListItem>>,
+  +children: Array<React$Element<typeof ListItem>> | React$Element<typeof ListItem>,
   +size?: Size,
   +type?: Type,
   +theme?: typeof defaultTokens,

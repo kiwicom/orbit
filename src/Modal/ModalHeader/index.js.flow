@@ -1,0 +1,15 @@
+// @flow
+
+import Illustration from "../../Illustration";
+
+export type Props = {|
+  +children?: React$Node,
+  +illustration?: React$Element<typeof Illustration>,
+  +title?: React$Node,
+  +description?: React$Node,
+  +suppressed?: boolean,
+|};
+
+declare export default React$ComponentType<Props>;
+
+declare export var StyledModalFooter: React$ComponentType<>;

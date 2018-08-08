@@ -7,7 +7,7 @@ import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./consts";
 
 import type { Props } from "./index";
 
-const StyledHeading = styled(({ element: Component, className, children }) => (
+export const StyledHeading = styled(({ element: Component, className, children }) => (
   <Component className={className}>{children}</Component>
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};

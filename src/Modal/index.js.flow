@@ -1,0 +1,36 @@
+// @flow
+
+import ModalSection from "./ModalSection";
+import ModalHeader from "./ModalHeader";
+import ModalFooter from "./ModalFooter";
+
+export type State = {|
+  scrolled: boolean,
+  loaded: boolean,
+|};
+
+type Size = "small" | "normal" | "large";
+
+type Children =
+  | React$Element<typeof ModalHeader>
+  | React$Element<typeof ModalSection>
+  | React$Element<typeof ModalFooter>;
+
+type onClose = (
+  ev: SyntheticKeyboardEvent<HTMLDivElement> | SyntheticEvent<HTMLButtonElement> | MouseEvent,
+) => void | Promise<any>;
+
+export type CloseElementType = {
+  onClose: onClose,
+};
+
+export type Props = {|
+  +size?: Size,
+  +children: Array<Children> | Children,
+  +closable?: boolean,
+  +onClose?: onClose,
+|};
+
+export type ContentType = { scrolled: boolean, ...Props };
+
+declare export default React$ComponentType<Props>;

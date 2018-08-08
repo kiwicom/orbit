@@ -28,6 +28,13 @@ import typeof CardType from "./Card";
 import typeof CardHeaderType from "./Card/CardHeader";
 import typeof CardContentType from "./Card/CardContent";
 import typeof CardSectionType from "./Card/CardSection";
+import typeof mediaType from "./utils/media";
+import typeof PortalType from "./Portal";
+import typeof ModalType from "./Modal";
+import typeof ModalHeaderType from "./Modal/ModalHeader";
+import typeof ModalSectionType from "./Modal/ModalSection";
+import typeof ModalFooterType from "./Modal/ModalFooter";
+import typeof ClickOutsideType from "./ClickOutside";
 
 declare export var InputText: any;
 declare export var InputTextarea: any;
@@ -54,6 +61,13 @@ declare export var CardHeader: CardHeaderType;
 declare export var CardContent: CardContentType;
 declare export var CardSection: CardSectionType;
 
+declare export var Portal: PortalType;
+declare export var ClickOutside: ClickOutsideType;
+declare export var Modal: ModalType;
+declare export var ModalHeader: ModalHeaderType;
+declare export var ModalSection: ModalSectionType;
+declare export var ModalFooter: ModalFooterType;
+
 declare export var Heading: HeadingType;
 declare export var Text: TextType;
 declare export var Icons: any;
@@ -72,3 +86,5 @@ declare export var ServiceLogo: ServiceLogoType;
 declare export var Textarea: TextareaType;
 
 declare export var defaultTheme: any;
+
+declare export var media: mediaType;

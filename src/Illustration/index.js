@@ -7,7 +7,7 @@ import { SIZE_OPTIONS, baseURL } from "./consts";
 
 import type { Props } from "./index";
 
-const StyledImage = styled.img`
+export const StyledImage = styled.img`
   height: ${({ tokens, size }) => tokens.height[size]};
   width: auto;
   background-color: ${({ theme }) => theme.orbit.backgroundIllustration};

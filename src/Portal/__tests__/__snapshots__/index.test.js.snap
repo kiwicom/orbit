@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Portal with element should match snapshot 1`] = `
+<div
+  id="portal"
+>
+  <div>
+    <p>
+      Content
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Portal with element should match snapshot 2`] = `
+<Portal
+  element="portal"
+>
+  <p>
+    Content
+  </p>
+</Portal>
+`;
+
+exports[`Portal with element unmouted, should match snapshot 1`] = `
+<div
+  id="portal"
+/>
+`;
+
+exports[`Portal with element unmouted, should match snapshot 2`] = `""`;
+
+exports[`Portal without element should match snapshot 1`] = `null`;
+
+exports[`Portal without element should match snapshot 2`] = `
+<Portal>
+  <p>
+    Content
+  </p>
+</Portal>
+`;
+
+exports[`Portal without element unmouted, should match snapshot 1`] = `null`;
+
+exports[`Portal without element unmouted, should match snapshot 2`] = `""`;

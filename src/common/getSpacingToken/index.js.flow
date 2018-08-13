@@ -1,0 +1,13 @@
+// @flow
+import defaultTokens from "../../defaultTokens";
+
+export type spaceAfter = {|
+  +spaceAfter?: "smallest" | "small" | "normal" | "medium" | "large" | "largest",
+|};
+
+export type Props = {|
+  +theme: typeof defaultTokens,
+  ...spaceAfter,
+|};
+
+declare export default function getSpacingToken(): string;

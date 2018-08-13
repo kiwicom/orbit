@@ -13,7 +13,8 @@ export const Item = styled.div`
   align-items: center;
   margin-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
 
-  &:last-child {
+  &:last-child,
+  &:last-of-type {
     margin: 0;
   }
 `;

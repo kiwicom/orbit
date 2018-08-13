@@ -6,6 +6,7 @@ exports[`Illustration of Accommodation should match snapshot 1`] = `
   data-test="test"
   illustrationName="Accommodation"
   size="small"
+  spaceAfter="normal"
   theme={
     Object {
       "orbit": Object {

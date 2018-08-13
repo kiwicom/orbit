@@ -112,7 +112,7 @@ exports[`Storyshots Tile Default 1`] = `
                 className="Tile__StyledTileHeadingWrapper-gxBghg JhNOC"
               >
                 <h3
-                  className="Heading__StyledHeading-gucmUp iPRwMQ"
+                  className="Heading__StyledHeading-gucmUp hgjEuM"
                   data-test={undefined}
                 >
                   Urgent information
@@ -393,7 +393,7 @@ exports[`Storyshots Tile Playground 1`] = `
                   </svg>
                 </div>
                 <h3
-                  className="Heading__StyledHeading-gucmUp iPRwMQ"
+                  className="Heading__StyledHeading-gucmUp hgjEuM"
                   data-test={undefined}
                 >
                   Tile with title

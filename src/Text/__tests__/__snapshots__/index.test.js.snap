@@ -7,6 +7,7 @@ exports[`Text should match snapshot 1`] = `
   element="p"
   italic={false}
   size="small"
+  spaceAfter="normal"
   theme={
     Object {
       "orbit": Object {

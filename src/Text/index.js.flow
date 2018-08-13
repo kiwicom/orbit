@@ -1,4 +1,5 @@
 // @flow
+import type { spaceAfter } from "../common/getSpacingToken/index";
 import type { Globals } from "../common/common.js.flow";
 
 type Align = "left" | "center" | "right";
@@ -25,6 +26,7 @@ export type Props = {|
   +element?: Element,
   +children: React$Node,
   ...Globals,
+  ...spaceAfter,
 |};
 
 declare export default React$ComponentType<Props>;

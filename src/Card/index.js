@@ -8,6 +8,7 @@ import ButtonLink from "../ButtonLink";
 import { StyledCardSection } from "./CardSection";
 import { StyledCardHeader } from "./CardHeader";
 import { StyledCardContent } from "./CardContent";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
 
@@ -21,6 +22,7 @@ const StyledCard = styled.div`
   border-color: ${({ theme }) => theme.orbit.borderColorCard};
   box-sizing: border-box;
   position: relative;
+  margin-bottom: ${getSpacingToken};
  
   ${StyledCardHeader} {
     padding-right: ${({ theme, closable }) => closable && theme.orbit.spaceLarge};
@@ -44,8 +46,8 @@ const CloseContainer = styled.div`
   z-index: 1;
 `;
 
-const Card = ({ closable, onClose, children, dataTest }: Props) => (
-  <StyledCard closable={closable} data-test={dataTest}>
+const Card = ({ closable, onClose, children, dataTest, spaceAfter }: Props) => (
+  <StyledCard closable={closable} data-test={dataTest} spaceAfter={spaceAfter}>
     {closable && (
       <CloseContainer>
         <ButtonLink type="secondary" size="small" icon={<Close />} onClick={onClose} transparent />

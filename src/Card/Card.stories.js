@@ -12,6 +12,7 @@ import Text from "../Text";
 import CardHeader from "./CardHeader";
 import CardContent from "./CardContent";
 import CardSection from "./CardSection";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import Card from "./index";
 
@@ -135,6 +136,7 @@ storiesOf("Card", module)
     const Icon = getIcon(getIcons("Airplane"));
     const closable = boolean("Closable", false);
     const dataTest = text("dataTest", "test");
+    const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -143,7 +145,12 @@ storiesOf("Card", module)
           sections: [
             {
               sectionFn: () => (
-                <Card closable={closable} onClose={action("Close")} dataTest={dataTest}>
+                <Card
+                  closable={closable}
+                  onClose={action("Close")}
+                  dataTest={dataTest}
+                  spaceAfter={spaceAfter}
+                >
                   <CardHeader
                     icon={<Icon />}
                     title={title}

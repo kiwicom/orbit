@@ -18,6 +18,7 @@ const Glyph = styled.span`
   background-color: ${({ theme, disabled }) =>
     disabled ? theme.orbit.colorIconCheckboxRadioDisabled : theme.orbit.colorIconCheckboxRadio};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusCircle};
+  flex-shrink: 0;
 `;
 
 Glyph.defaultProps = {
@@ -27,6 +28,7 @@ Glyph.defaultProps = {
 const IconContainer = styled.div`
   position: relative;
   box-sizing: border-box;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;

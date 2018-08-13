@@ -100,7 +100,7 @@ exports[`Storyshots Illustration Playground 1`] = `
         >
           <img
             alt="Accommodation"
-            className="Illustration__StyledImage-dmuJKG eLtRiZ"
+            className="Illustration__StyledImage-dmuJKG fupFMr"
             data-test="test"
             size="medium"
             src="//images.kiwi.com/illustrations/0x200/Accommodation.png"
@@ -162,7 +162,10 @@ exports[`Storyshots Illustration Playground 1`] = `
                     </span>
                     <span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -189,7 +192,10 @@ exports[`Storyshots Illustration Playground 1`] = `
                         </span>
                       </span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -216,7 +222,10 @@ exports[`Storyshots Illustration Playground 1`] = `
                         </span>
                       </span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -241,7 +250,38 @@ exports[`Storyshots Illustration Playground 1`] = `
                             </span>
                           </span>
                         </span>
-                         
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          spaceAfter
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                null
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
                       </span>
                     </span>
                     <span

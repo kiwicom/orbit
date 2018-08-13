@@ -41,8 +41,14 @@ export { default as Illustration } from "./Illustration";
 export { default as TextLink } from "./TextLink";
 export { default as Radio } from "./Radio";
 export { default as Select } from "./Select";
+export { default as Stack } from "./Stack";
 export { default as ServiceLogo } from "./ServiceLogo";
 export { default as Separator } from "./Separator";
 export { default as Textarea } from "./Textarea";
 export { default as Tile } from "./Tile";
+
+// tokens
 export { defaultTokens as defaultTheme, getTokens } from "@kiwicom/orbit-design-tokens";
+
+// utilities
+export { default as media } from "./utils/media";

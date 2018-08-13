@@ -5,6 +5,7 @@ import styled from "styled-components";
 import defaultTokens from "../defaultTokens";
 import { SIZES, TYPES } from "./consts";
 import { StyledCarrierLogo } from "../CarrierLogo";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
 
@@ -32,11 +33,13 @@ const StyledList = styled(({ className, children, dataTest }) => (
   </div>
 ))`
   display: flex;
+  width: 100%;
   flex-direction: column;
   font-family: ${({ theme }) => theme.orbit.fontfamily};
   font-size: ${getSizeToken()};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   color: ${getTypeToken()};
+  margin-bottom: ${getSpacingToken};
 
   // CarrierLogo images
   ${StyledCarrierLogo} {
@@ -59,8 +62,14 @@ StyledList.defaultProps = {
   theme: defaultTokens,
 };
 
-const List = ({ children, size = SIZES.NORMAL, type = TYPES.PRIMARY, dataTest }: Props) => (
-  <StyledList type={type} size={size} dataTest={dataTest}>
+const List = ({
+  children,
+  size = SIZES.NORMAL,
+  type = TYPES.PRIMARY,
+  dataTest,
+  spaceAfter,
+}: Props) => (
+  <StyledList type={type} size={size} dataTest={dataTest} spaceAfter={spaceAfter}>
     {children}
   </StyledList>
 );

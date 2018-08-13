@@ -1,9 +1,11 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import Heading from "../index";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "../consts";
+import defaultTokens from "../../defaultTokens";
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe("Heading in H2, type Title1, not inverted", () => {
   const element = ELEMENT_OPTIONS.H2;
@@ -33,6 +35,10 @@ describe("Heading in H2, type Title1, not inverted", () => {
   });
   it(`should have been rendered in ${type}`, () => {
     expect(component.render().prop("name")).toBe(element);
+  });
+  it("should have margin-bottom", () => {
+    const mounted = mount(<Heading spaceAfter={SPACINGS_AFTER.NORMAL}>{children}</Heading>);
+    expect(mounted).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

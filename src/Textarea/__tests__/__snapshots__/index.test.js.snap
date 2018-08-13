@@ -330,6 +330,7 @@ exports[`Textarea number with error and help should match snapshot 1`] = `
         Something went wrong.
       </div>
     }
+    resize="none"
     size="small"
     theme={
       Object {
@@ -1373,6 +1374,7 @@ exports[`Textarea with help should match snapshot 1`] = `
       }
     }
     placeholder="placeholder"
+    resize="vertical"
     size="normal"
     theme={
       Object {

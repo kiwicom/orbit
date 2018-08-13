@@ -99,7 +99,7 @@ exports[`Storyshots Loading Button loading 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK jZMwQg"
+            className="Button__StyledButton-jJDkJK eLCrNm"
             data-test={undefined}
             disabled={true}
             size="normal"
@@ -354,7 +354,7 @@ exports[`Storyshots Loading Card loading 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH cIcvap"
+            className="Card__StyledCard-fdVXSH kTWZug"
             data-test={undefined}
           >
             <div

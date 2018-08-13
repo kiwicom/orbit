@@ -11,6 +11,7 @@ import ListItem from "./ListItem";
 import { SIZES, TYPES } from "./consts";
 import { ICON_COLORS } from "../Icon/consts";
 import CarrierLogo from "../CarrierLogo";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import List from "./index";
 
@@ -105,6 +106,7 @@ storiesOf("List", module)
     const Icon = getIcon(getIcons("Check"));
     const iconColor = select("iconColor", Object.keys(ICON_COLORS), "success");
     const content = text("Content", "24,000 locations around the globe");
+    const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
     const dataTest = text("dataTest", "test");
 
     return {
@@ -115,7 +117,7 @@ storiesOf("List", module)
           sections: [
             {
               sectionFn: () => (
-                <List size={size} type={type} dataTest={dataTest}>
+                <List size={size} type={type} dataTest={dataTest} spaceAfter={spaceAfter}>
                   <ListItem icon={Icon && <Icon color={iconColor} />}>{content}</ListItem>
                   <ListItem icon={Icon && <Icon color={iconColor} />}>{content}</ListItem>
                   <ListItem icon={Icon && <Icon color={iconColor} />}>{content}</ListItem>

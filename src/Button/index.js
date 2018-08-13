@@ -249,6 +249,7 @@ export const StyledButton = styled(
     block
       ? "100%"
       : (width && `${width}px`) || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
+  flex: ${({ block }) => (block ? "1 1 100%" : "0 0 auto")};
   height: ${getSizeToken(TOKENS.heightButton)};
   background: ${({ bordered, theme }) =>
     bordered ? theme.orbit.backgroundButtonBordered : getTypeToken(TOKENS.backgroundButton)};

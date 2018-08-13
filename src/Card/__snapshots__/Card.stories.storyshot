@@ -99,7 +99,7 @@ exports[`Storyshots Card Card with description 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH cIcvap"
+            className="Card__StyledCard-fdVXSH kTWZug"
             data-test={undefined}
           >
             <div
@@ -124,7 +124,7 @@ exports[`Storyshots Card Card with description 1`] = `
                   </svg>
                 </div>
                 <h2
-                  className="Heading__StyledHeading-gucmUp iMNCfy"
+                  className="Heading__StyledHeading-gucmUp eKGySM"
                   data-test={undefined}
                 >
                   Card with title & description
@@ -134,7 +134,7 @@ exports[`Storyshots Card Card with description 1`] = `
                 className="CardHeader__StyledSubTitle-gOpdhi itEmg"
               >
                 <p
-                  className="Text__StyledText-guhEiE kLuVzx"
+                  className="Text__StyledText-guhEiE hYZMSR"
                   data-test={undefined}
                 >
                   This is a description of the card.
@@ -452,7 +452,7 @@ exports[`Storyshots Card Card with only content 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH cIcvap"
+            className="Card__StyledCard-fdVXSH kTWZug"
             data-test={undefined}
           >
             <div
@@ -460,7 +460,7 @@ exports[`Storyshots Card Card with only content 1`] = `
               data-test={undefined}
             >
               <p
-                className="Text__StyledText-guhEiE kLuVzx"
+                className="Text__StyledText-guhEiE hYZMSR"
                 data-test={undefined}
               >
                 This is a content of the card.
@@ -784,7 +784,7 @@ exports[`Storyshots Card Card with sections 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH cIcvap"
+            className="Card__StyledCard-fdVXSH kTWZug"
             data-test={undefined}
           >
             <div
@@ -795,7 +795,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                 className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
               >
                 <h2
-                  className="Heading__StyledHeading-gucmUp iMNCfy"
+                  className="Heading__StyledHeading-gucmUp eKGySM"
                   data-test={undefined}
                 >
                   Card with sections
@@ -805,7 +805,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                 className="CardHeader__StyledSubTitle-gOpdhi itEmg"
               >
                 <p
-                  className="Text__StyledText-guhEiE kLuVzx"
+                  className="Text__StyledText-guhEiE hYZMSR"
                   data-test={undefined}
                 >
                   This is a description of the card.
@@ -817,13 +817,13 @@ exports[`Storyshots Card Card with sections 1`] = `
               data-test={undefined}
             >
               <h3
-                className="Heading__StyledHeading-gucmUp iPRwMQ"
+                className="Heading__StyledHeading-gucmUp hgjEuM"
                 data-test={undefined}
               >
                 Insert your title here...
               </h3>
               <p
-                className="Text__StyledText-guhEiE kLuVzx"
+                className="Text__StyledText-guhEiE hYZMSR"
                 data-test={undefined}
               >
                 Insert your content here...
@@ -834,13 +834,13 @@ exports[`Storyshots Card Card with sections 1`] = `
               data-test={undefined}
             >
               <h3
-                className="Heading__StyledHeading-gucmUp iPRwMQ"
+                className="Heading__StyledHeading-gucmUp hgjEuM"
                 data-test={undefined}
               >
                 Insert your title here...
               </h3>
               <p
-                className="Text__StyledText-guhEiE kLuVzx"
+                className="Text__StyledText-guhEiE hYZMSR"
                 data-test={undefined}
               >
                 Insert your content here...
@@ -851,13 +851,13 @@ exports[`Storyshots Card Card with sections 1`] = `
               data-test={undefined}
             >
               <h3
-                className="Heading__StyledHeading-gucmUp iPRwMQ"
+                className="Heading__StyledHeading-gucmUp hgjEuM"
                 data-test={undefined}
               >
                 Insert your title here...
               </h3>
               <p
-                className="Text__StyledText-guhEiE kLuVzx"
+                className="Text__StyledText-guhEiE hYZMSR"
                 data-test={undefined}
               >
                 Insert your content here...
@@ -1881,7 +1881,7 @@ exports[`Storyshots Card Default 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH cIcvap"
+            className="Card__StyledCard-fdVXSH kTWZug"
             data-test={undefined}
           >
             <div
@@ -1906,7 +1906,7 @@ exports[`Storyshots Card Default 1`] = `
                   </svg>
                 </div>
                 <h2
-                  className="Heading__StyledHeading-gucmUp iMNCfy"
+                  className="Heading__StyledHeading-gucmUp eKGySM"
                   data-test={undefined}
                 >
                   Card with title
@@ -2225,7 +2225,7 @@ exports[`Storyshots Card Playground 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH cIcvap"
+            className="Card__StyledCard-fdVXSH kTWZug"
             data-test="test"
           >
             <div
@@ -2250,7 +2250,7 @@ exports[`Storyshots Card Playground 1`] = `
                   </svg>
                 </div>
                 <h2
-                  className="Heading__StyledHeading-gucmUp iMNCfy"
+                  className="Heading__StyledHeading-gucmUp eKGySM"
                   data-test={undefined}
                 >
                   Customisable card title
@@ -2260,7 +2260,7 @@ exports[`Storyshots Card Playground 1`] = `
                 className="CardHeader__StyledSubTitle-gOpdhi itEmg"
               >
                 <p
-                  className="Text__StyledText-guhEiE kLuVzx"
+                  className="Text__StyledText-guhEiE hYZMSR"
                   data-test={undefined}
                 >
                   This is a customisable description of the card.
@@ -2272,13 +2272,13 @@ exports[`Storyshots Card Playground 1`] = `
               data-test="test"
             >
               <h3
-                className="Heading__StyledHeading-gucmUp iPRwMQ"
+                className="Heading__StyledHeading-gucmUp hgjEuM"
                 data-test={undefined}
               >
                 Content with Heading and text
               </h3>
               <p
-                className="Text__StyledText-guhEiE kLuVzx"
+                className="Text__StyledText-guhEiE hYZMSR"
                 data-test={undefined}
               >
                 Text in content
@@ -2289,13 +2289,13 @@ exports[`Storyshots Card Playground 1`] = `
               data-test="test"
             >
               <h3
-                className="Heading__StyledHeading-gucmUp iPRwMQ"
+                className="Heading__StyledHeading-gucmUp hgjEuM"
                 data-test={undefined}
               >
                 Section with Heading and text
               </h3>
               <p
-                className="Text__StyledText-guhEiE kLuVzx"
+                className="Text__StyledText-guhEiE hYZMSR"
                 data-test={undefined}
               >
                 Text in section
@@ -2359,7 +2359,10 @@ exports[`Storyshots Card Playground 1`] = `
                       </span>
                       <span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -2387,7 +2390,10 @@ exports[`Storyshots Card Playground 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -2415,7 +2421,10 @@ exports[`Storyshots Card Playground 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -2440,7 +2449,38 @@ exports[`Storyshots Card Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                          
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            spaceAfter
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <br />
                         </span>
                       </span>
                       <span

@@ -15,7 +15,7 @@ Table below contains all types of the props available in CarrierLogo component.
 | dataTest      | `string`                         |                 | Optional prop for testing purposes.
 | **name**      | [`enum`](#enum)                  |                 | Name for the displayed illustration.
 | size          | [`enum`](#enum)                  | `"medium"`      | The size of the Illustration.
-
+| spaceAfter    | `enum`                           |                 | Additional `margin-bottom` after component. [See this docs](../common/getSpacingToken)
 ### enum
 
 | name                        | size           |

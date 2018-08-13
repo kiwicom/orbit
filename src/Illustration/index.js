@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import { SIZE_OPTIONS, baseURL } from "./consts";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
 
@@ -29,14 +30,21 @@ export const StyledImage = styled.img.attrs({
   height: ${getHeightToken};
   width: auto;
   background-color: ${({ theme }) => theme.orbit.backgroundIllustration};
+  margin-bottom: ${getSpacingToken};
 `;
 
 StyledImage.defaultProps = {
   theme: defaultTokens,
 };
 
-const Illustration = ({ name, size = SIZE_OPTIONS.MEDIUM, dataTest }: Props) => (
-  <StyledImage illustrationName={name} alt={name} size={size} data-test={dataTest} />
+const Illustration = ({ name, size = SIZE_OPTIONS.MEDIUM, dataTest, spaceAfter }: Props) => (
+  <StyledImage
+    illustrationName={name}
+    alt={name}
+    size={size}
+    data-test={dataTest}
+    spaceAfter={spaceAfter}
+  />
 );
 
 export default Illustration;

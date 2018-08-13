@@ -99,7 +99,7 @@ exports[`Storyshots Button Basic buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK cUoyoc"
+            className="Button__StyledButton-jJDkJK cJCXhJ"
             data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
@@ -452,7 +452,7 @@ exports[`Storyshots Button Button as a link 1`] = `
           }
         >
           <a
-            className="Button__StyledButton-jJDkJK gPjmYR"
+            className="Button__StyledButton-jJDkJK ccKmNj"
             data-test={undefined}
             disabled={false}
             href="https://kiwi.com"
@@ -893,7 +893,7 @@ exports[`Storyshots Button Button with icons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK gmdAjy"
+            className="Button__StyledButton-jJDkJK iwSeNi"
             data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
@@ -1261,7 +1261,7 @@ exports[`Storyshots Button Button with icons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK fJgbYr"
+            className="Button__StyledButton-jJDkJK fFBVkf"
             data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
@@ -1659,7 +1659,7 @@ exports[`Storyshots Button Circled button 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK jAOrwt"
+            className="Button__StyledButton-jJDkJK hxaoDS"
             data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
@@ -1996,7 +1996,7 @@ exports[`Storyshots Button Default 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK cUoyoc"
+            className="Button__StyledButton-jJDkJK cJCXhJ"
             data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
@@ -2255,7 +2255,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK kbgEaX"
+            className="Button__StyledButton-jJDkJK McTAy"
             data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
@@ -2653,7 +2653,7 @@ exports[`Storyshots Button Playground 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK fjwApn"
+            className="Button__StyledButton-jJDkJK ivPnan"
             data-test="test"
             disabled={false}
             href={undefined}
@@ -3405,7 +3405,7 @@ exports[`Storyshots Button Social buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK bvheFT"
+            className="Button__StyledButton-jJDkJK lmFCko"
             data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
@@ -3678,7 +3678,7 @@ exports[`Storyshots Button Social buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK iigxVA"
+            className="Button__StyledButton-jJDkJK ivsRmW"
             data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
@@ -4043,7 +4043,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK dtGfi"
+            className="Button__StyledButton-jJDkJK gOiVnr"
             data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
@@ -4335,7 +4335,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK jFCQwL"
+            className="Button__StyledButton-jJDkJK gRXgKw"
             data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
@@ -4627,7 +4627,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK dFKcra"
+            className="Button__StyledButton-jJDkJK fqymBQ"
             data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
@@ -4919,7 +4919,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK iPrRjr"
+            className="Button__StyledButton-jJDkJK gNqqiZ"
             data-test={undefined}
             disabled={undefined}
             onClick={[Function]}

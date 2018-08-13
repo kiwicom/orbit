@@ -150,7 +150,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                   >
                     <img
                       alt="Accommodation"
-                      className="Illustration__StyledImage-dmuJKG hCHaUA"
+                      className="Illustration__StyledImage-dmuJKG jLclvk"
                       data-test={undefined}
                       size="small"
                       src="//images.kiwi.com/illustrations/0x90/Accommodation.png"
@@ -160,7 +160,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       className="ModalHeader__ModalTitle-deoNop cFDEl"
                     >
                       <h1
-                        className="Heading__StyledHeading-gucmUp fTGtTr"
+                        className="Heading__StyledHeading-gucmUp dqcIYA"
                         data-test={undefined}
                       >
                         Orbit design system
@@ -169,7 +169,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                         className="ModalHeader__ModalDescription-lepRjY gLQpOL"
                       >
                         <div
-                          className="Text__StyledText-guhEiE eRajwO"
+                          className="Text__StyledText-guhEiE giPtaX"
                           data-test={undefined}
                         >
                           Lorem ispum dolor sit amet
@@ -187,7 +187,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     data-test={undefined}
                   >
                     <p
-                      className="Text__StyledText-guhEiE kLuVzx"
+                      className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
                       You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
@@ -198,7 +198,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     data-test={undefined}
                   >
                     <p
-                      className="Text__StyledText-guhEiE kLuVzx"
+                      className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
                       You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
@@ -209,7 +209,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     data-test={undefined}
                   >
                     <p
-                      className="Text__StyledText-guhEiE kLuVzx"
+                      className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
                       You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
@@ -223,7 +223,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       className="ModalFooter__StyledChild-bPOqEy jRvsYD"
                     >
                       <button
-                        className="Button__StyledButton-jJDkJK lmUjYq"
+                        className="Button__StyledButton-jJDkJK jzykRp"
                         data-test={undefined}
                         disabled={undefined}
                         size="normal"
@@ -255,7 +255,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       className="ModalFooter__StyledChild-bPOqEy xynvR"
                     >
                       <button
-                        className="Button__StyledButton-jJDkJK iyNAeV"
+                        className="Button__StyledButton-jJDkJK jXpokS"
                         data-test={undefined}
                         disabled={undefined}
                         size="normal"
@@ -1574,7 +1574,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                       className="ModalHeader__ModalTitle-deoNop iOkEWH"
                     >
                       <h1
-                        className="Heading__StyledHeading-gucmUp fTGtTr"
+                        className="Heading__StyledHeading-gucmUp dqcIYA"
                         data-test={undefined}
                       >
                         Orbit design system
@@ -1596,7 +1596,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                     data-test={undefined}
                   >
                     <p
-                      className="Text__StyledText-guhEiE kLuVzx"
+                      className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
                       You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
@@ -1607,7 +1607,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                     data-test={undefined}
                   >
                     <p
-                      className="Text__StyledText-guhEiE kLuVzx"
+                      className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
                       You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
@@ -1618,7 +1618,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                     data-test={undefined}
                   >
                     <p
-                      className="Text__StyledText-guhEiE kLuVzx"
+                      className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
                       You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
@@ -1629,7 +1629,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                     data-test={undefined}
                   >
                     <p
-                      className="Text__StyledText-guhEiE kLuVzx"
+                      className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
                       You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.

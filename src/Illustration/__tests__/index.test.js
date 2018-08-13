@@ -4,6 +4,8 @@ import { shallow } from "enzyme";
 
 import Illustration from "../index";
 import { SIZE_OPTIONS } from "../consts";
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import defaultTokens from "../../defaultTokens";
 
 const size = SIZE_OPTIONS.SMALL;
 const name = "Accommodation";
@@ -13,7 +15,9 @@ const URL = "//images.kiwi.com/illustrations/0x90/Accommodation.png";
 const URL_RETINA = "//images.kiwi.com/illustrations/0x180/Accommodation.png 2x";
 
 describe(`Illustration of ${name}`, () => {
-  const component = shallow(<Illustration size={size} name={name} dataTest={dataTest} />);
+  const component = shallow(
+    <Illustration size={size} name={name} dataTest={dataTest} spaceAfter={SPACINGS_AFTER.NORMAL} />,
+  );
   it("should have passed props", () => {
     expect(component.prop("size")).toBe(size);
     expect(component.render().prop("alt")).toBe(name);
@@ -24,7 +28,9 @@ describe(`Illustration of ${name}`, () => {
     expect(component.render().attr("src")).toContain(URL);
     expect(component.render().attr("srcset")).toContain(URL_RETINA);
   });
-
+  it("should have margin-bottom", () => {
+    expect(component).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
+  });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();
   });

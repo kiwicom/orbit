@@ -1,0 +1,45 @@
+// @flow
+
+import type { spaceAfter } from "../common/getSpacingToken/index";
+
+type Direction = "row" | "column";
+
+type Align = "start" | "end" | "center" | "even";
+
+type Spacing =
+  | "extraTight"
+  | "tight"
+  | "condensed"
+  | "compact"
+  | "natural"
+  | "comfy"
+  | "loose"
+  | "extraLoose";
+
+type Desktop = {|
+  +inline?: boolean,
+  +direction?: Direction,
+  +wrap?: boolean,
+  +grow?: boolean,
+  +shrink?: boolean,
+  +basis?: string,
+  +align?: Align,
+  +spacing?: Spacing,
+  ...spaceAfter,
+|};
+
+export type Props = {|
+  +inline?: boolean,
+  +direction?: Direction,
+  +wrap?: boolean,
+  +grow?: boolean,
+  +shrink?: boolean,
+  +basis?: string,
+  +align?: Align,
+  +spacing?: Spacing,
+  +desktop?: Desktop,
+  +children: React$Node,
+  ...spaceAfter,
+|};
+
+declare export default React$ComponentType<Props>;

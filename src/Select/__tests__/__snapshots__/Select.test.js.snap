@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select should match snapshot 1`] = `
-<label
+<Select__Label
   data-test="test"
 >
   <Select__SelectContainer
@@ -1210,5 +1210,5 @@ exports[`Select should match snapshot 1`] = `
       <ChevronDown />
     </Select__SelectSuffix>
   </Select__SelectContainer>
-</label>
+</Select__Label>
 `;

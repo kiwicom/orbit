@@ -3,7 +3,7 @@ import * as React from "react";
 import { shallow } from "enzyme";
 
 import Textarea from "../index";
-import SIZE_OPTIONS from "../consts";
+import { SIZE_OPTIONS, RESIZE_OPTIONS } from "../consts";
 
 describe(`Textarea with help`, () => {
   const size = SIZE_OPTIONS.NORMAL;
@@ -72,10 +72,12 @@ describe(`Textarea with help`, () => {
 });
 describe(`Textarea number with error and help`, () => {
   const size = SIZE_OPTIONS.SMALL;
+  const resize = RESIZE_OPTIONS.NONE;
 
   const component = shallow(
     <Textarea
       size={size}
+      resize={resize}
       help={<div>Everything is fine.</div>}
       error={<div>Something went wrong.</div>}
     />,
@@ -86,6 +88,9 @@ describe(`Textarea number with error and help`, () => {
   });
   it("should have size prop", () => {
     expect(component.find("Textarea__StyledTextArea").prop("size")).toBe(size);
+  });
+  it("should have size prop", () => {
+    expect(component.find("Textarea__StyledTextArea").prop("resize")).toBe(resize);
   });
   it("should NOT contain FeedBack help", () => {
     expect(component.find(`FormFeedback[type="help"]`).exists()).toBe(false);

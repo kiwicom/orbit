@@ -4,6 +4,7 @@ import * as React from "react";
 import typeof AlertType from "./Alert";
 import typeof ButtonType from "./Button";
 import typeof ButtonLinkType from "./ButtonLink";
+import typeof ButtonGroupType from "./ButtonGroup";
 import typeof CheckboxType from "./Checkbox";
 import typeof CarrierLogoType from "./CarrierLogo";
 import typeof HeadingType from "./Heading";
@@ -29,6 +30,7 @@ declare export var Typography: any;
 declare export var Alert: AlertType;
 declare export var Button: ButtonType;
 declare export var ButtonLink: ButtonLinkType;
+declare export var ButtonGroup: ButtonGroupType;
 declare export var CarrierLogo: CarrierLogoType;
 declare export var Checkbox: CheckboxType;
 

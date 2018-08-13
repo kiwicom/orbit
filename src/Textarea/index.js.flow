@@ -9,6 +9,7 @@ export type Props = {|
   +placeholder?: string,
   +help?: React$Node,
   +error?: React$Node,
+  +resize?: "vertical" | "none",
   +disabled?: boolean,
   +maxLength?: number,
   +onChange?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,

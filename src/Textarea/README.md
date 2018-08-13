@@ -22,15 +22,16 @@ Table below contains all types of the props available in Textarea component.
 | onFocus       | `func`            |              | Function for handling onFocus event.
 | onBlur        | `func`            |              | Function for handling onBlur event.
 | placeholder   | `string`          |              | The placeholder of the Textarea.
+| resize        | [`enum`](#enum)   | `"vertical"` | The resize option for Textarea.
 | size          | [`enum`](#enum)   | `"normal"`   | The size of the Textarea.
 | value         | `string`          |              | Specifies the value of the Textarea.
 
 ### enum
 
-| size         |
-| :----------- |
-| `"small"`    |
-| `"normal"`   |
+| size         | resize        |
+| :----------- | :------------ |
+| `"small"`    | `"vertical"`
+| `"normal"`   | `"none"`
 
 
 ## Functional specs

@@ -30,7 +30,7 @@ IconContainer.defaultProps = {
   theme: defaultTokens,
 };
 
-const StyledButton = styled(
+export const StyledButton = styled(
   ({
     tokens,
     theme,

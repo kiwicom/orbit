@@ -1,8 +1,10 @@
 // @flow
 
-const SIZE_OPTIONS = {
+export const SIZE_OPTIONS = {
   SMALL: "small",
   NORMAL: "normal",
 };
-
-export default SIZE_OPTIONS;
+export const RESIZE_OPTIONS = {
+  VERTICAL: "vertical",
+  NONE: "none",
+};

@@ -102,7 +102,7 @@ exports[`Storyshots Textarea Default 1`] = `
             className="Textarea__Field-kPVRAV bXkLzV"
           >
             <textarea
-              className="Textarea__StyledTextArea-iLqCZR gJcQYq"
+              className="Textarea__StyledTextArea-iLqCZR iGNvEa"
               disabled={undefined}
               maxLength={undefined}
               name={undefined}
@@ -110,6 +110,7 @@ exports[`Storyshots Textarea Default 1`] = `
               onChange={[Function]}
               onFocus={undefined}
               placeholder="Placeholder"
+              resize="vertical"
               value=""
             />
           </label>
@@ -380,7 +381,7 @@ exports[`Storyshots Textarea Playground 1`] = `
               Label
             </span>
             <textarea
-              className="Textarea__StyledTextArea-iLqCZR gMThpy"
+              className="Textarea__StyledTextArea-iLqCZR dmuRbo"
               disabled={true}
               maxLength={undefined}
               name={undefined}
@@ -388,6 +389,7 @@ exports[`Storyshots Textarea Playground 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Placeholder"
+              resize="vertical"
               value=""
             />
             <div
@@ -682,6 +684,36 @@ exports[`Storyshots Textarea Playground 1`] = `
                         <span
                           style={Object {}}
                         >
+                          resize
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              vertical
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
                           onChange
                         </span>
                         <span>
@@ -892,7 +924,7 @@ exports[`Storyshots Textarea Small size 1`] = `
             className="Textarea__Field-kPVRAV bXkLzV"
           >
             <textarea
-              className="Textarea__StyledTextArea-iLqCZR ftiWeK"
+              className="Textarea__StyledTextArea-iLqCZR cJMXZI"
               disabled={undefined}
               maxLength={undefined}
               name={undefined}
@@ -900,6 +932,7 @@ exports[`Storyshots Textarea Small size 1`] = `
               onChange={[Function]}
               onFocus={undefined}
               placeholder="Placeholder"
+              resize="vertical"
               value=""
             />
           </label>
@@ -1204,7 +1237,7 @@ exports[`Storyshots Textarea With error 1`] = `
             className="Textarea__Field-kPVRAV bXkLzV"
           >
             <textarea
-              className="Textarea__StyledTextArea-iLqCZR QEMrH"
+              className="Textarea__StyledTextArea-iLqCZR ifTVOV"
               disabled={undefined}
               maxLength={undefined}
               name={undefined}
@@ -1212,6 +1245,7 @@ exports[`Storyshots Textarea With error 1`] = `
               onChange={[Function]}
               onFocus={undefined}
               placeholder="Placeholder"
+              resize="vertical"
               value="Something"
             />
             <div
@@ -1521,7 +1555,7 @@ exports[`Storyshots Textarea With help 1`] = `
             className="Textarea__Field-kPVRAV bXkLzV"
           >
             <textarea
-              className="Textarea__StyledTextArea-iLqCZR gJcQYq"
+              className="Textarea__StyledTextArea-iLqCZR iGNvEa"
               disabled={undefined}
               maxLength={undefined}
               name={undefined}
@@ -1529,6 +1563,7 @@ exports[`Storyshots Textarea With help 1`] = `
               onChange={[Function]}
               onFocus={undefined}
               placeholder="Placeholder"
+              resize="vertical"
               value="Something"
             />
             <div
@@ -1843,7 +1878,7 @@ exports[`Storyshots Textarea With label 1`] = `
               Label
             </span>
             <textarea
-              className="Textarea__StyledTextArea-iLqCZR gJcQYq"
+              className="Textarea__StyledTextArea-iLqCZR iGNvEa"
               disabled={undefined}
               maxLength={undefined}
               name={undefined}
@@ -1851,6 +1886,7 @@ exports[`Storyshots Textarea With label 1`] = `
               onChange={[Function]}
               onFocus={undefined}
               placeholder="Placeholder"
+              resize="vertical"
               value=""
             />
           </label>

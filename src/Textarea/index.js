@@ -5,7 +5,7 @@ import styled from "styled-components";
 import defaultTokens from "../defaultTokens";
 import FormFeedback from "../FormFeedback";
 import FormLabel from "../FormLabel";
-import SIZE_OPTIONS from "./consts";
+import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 
 import type { Props } from "./index";
 
@@ -38,8 +38,10 @@ const StyledTextArea = styled(({ theme, tokens, size, error, help, ...props }) =
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
   font-family: inherit;
-  resize: none;
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  resize: ${({ resize }) => resize};
+  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out, border-color ${({
+  theme,
+}) => theme.orbit.durationFast} ease-in-out;
   
   &::placeholder {
     color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
@@ -69,7 +71,12 @@ StyledTextArea.defaultProps = {
 };
 
 const Textarea = (props: Props) => {
-  const { size = SIZE_OPTIONS.NORMAL, theme = defaultTokens, disabled } = props;
+  const {
+    size = SIZE_OPTIONS.NORMAL,
+    theme = defaultTokens,
+    disabled,
+    resize = RESIZE_OPTIONS.VERTICAL,
+  } = props;
 
   const tokens = {
     fontSizeInput: {
@@ -100,6 +107,7 @@ const Textarea = (props: Props) => {
         onChange={props.onChange}
         onFocus={props.onFocus}
         onBlur={props.onBlur}
+        resize={resize}
       />
       {props.help && !props.error && <FormFeedback type="help">{props.help}</FormFeedback>}
       {props.error && <FormFeedback type="error">{props.error}</FormFeedback>}

@@ -7,7 +7,7 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select, number } from "@storybook/addon-knobs/react";
 
-import SIZE_OPTIONS from "./consts";
+import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 
 import Textarea from "./index";
 
@@ -146,6 +146,7 @@ storiesOf("Textarea", module)
     const help = text("Help", undefined);
     const error = text("Error", "Something went wrong.");
     const disabled = boolean("Disabled", true);
+    const resize = select("resize", Object.values(RESIZE_OPTIONS), RESIZE_OPTIONS.VERTICAL);
     const maxLength = number("maxLength", undefined);
 
     return {
@@ -164,6 +165,7 @@ storiesOf("Textarea", module)
                   error={error}
                   disabled={disabled}
                   maxLength={maxLength}
+                  resize={resize}
                   onChange={action("change")}
                   onFocus={action("focus")}
                   onBlur={action("blur")}

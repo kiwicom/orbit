@@ -14,6 +14,7 @@ import typeof TextType from "./Text";
 import typeof TextLinkType from "./TextLink";
 import typeof RadioType from "./Radio";
 import typeof SelectType from "./Select";
+import typeof SeparatorType from "./Separator";
 import typeof TextareaType from "./Textarea";
 import typeof CardType from "./Card";
 import typeof CardHeaderType from "./Card/CardHeader";
@@ -50,6 +51,7 @@ declare export var TextLink: TextLinkType;
 
 declare export var Radio: RadioType;
 declare export var Select: SelectType;
+declare export var Separator: SeparatorType;
 declare export var Textarea: TextareaType;
 
 declare export var defaultTheme: any;

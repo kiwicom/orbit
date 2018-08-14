@@ -102,7 +102,7 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
             className="ButtonGroup__StyledButtonGroup-dnkEba epdACx"
           >
             <button
-              className="ButtonLink__StyledButtonLink-eyUiPe blUZwN"
+              className="ButtonLink__StyledButtonLink-eyUiPe kjYsfE"
               onClick={undefined}
               size="normal"
               target={undefined}
@@ -454,7 +454,7 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
               Button
             </button>
             <button
-              className="ButtonLink__StyledButtonLink-eyUiPe cHhFao"
+              className="ButtonLink__StyledButtonLink-eyUiPe eoGGQX"
               onClick={undefined}
               size="normal"
               target={undefined}
@@ -1227,7 +1227,7 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
             className="ButtonGroup__StyledButtonGroup-dnkEba epdACx"
           >
             <button
-              className="Button__StyledButton-jJDkJK iRYclE"
+              className="Button__StyledButton-jJDkJK cAomlN"
               disabled={undefined}
               size="normal"
               target={undefined}
@@ -1257,7 +1257,7 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
               Button
             </button>
             <button
-              className="Button__StyledButton-jJDkJK bnpsrd"
+              className="Button__StyledButton-jJDkJK hyErMg"
               disabled={undefined}
               size="normal"
               target={undefined}

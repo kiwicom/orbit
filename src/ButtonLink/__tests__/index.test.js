@@ -5,6 +5,7 @@ import { mount } from "enzyme";
 
 import ButtonLink from "../index";
 import Airplane from "../../icons/Airplane";
+import ChevronDown from "../../icons/ChevronDown";
 
 const children = "ButtonLink";
 const href = "https://kiwi.com";
@@ -32,7 +33,7 @@ describe("ButtonLink with Icon", () => {
 
 describe("ButtonLink with Icon", () => {
   const component = mount(
-    <ButtonLink icon={<Airplane />} href={href}>
+    <ButtonLink iconLeft={<Airplane />} iconRight={<ChevronDown />} href={href}>
       {children}
     </ButtonLink>,
   );
@@ -40,8 +41,9 @@ describe("ButtonLink with Icon", () => {
   it("should contain a title ", () => {
     expect(button.render().text()).toBe(children);
   });
-  it("should contain SVG", () => {
-    expect(button.find("svg").exists()).toBe(true);
+  it("should contain icons", () => {
+    expect(button.find("Airplane").exists()).toBe(true);
+    expect(button.find("ChevronDown").exists()).toBe(true);
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

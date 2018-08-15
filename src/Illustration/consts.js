@@ -1,0 +1,48 @@
+// @flow
+
+export const NAMES = [
+  "Accommodation",
+  "AirportTransport",
+  "AirportTransportTaxi",
+  "BoardingPass",
+  "CabinBaggage",
+  "EnjoyApp",
+  "Feedback",
+  "Help",
+  "Improve",
+  "Insurance",
+  "InviteAFriend",
+  "Login",
+  "Lounge",
+  "Mailbox",
+  "Meal",
+  "Money",
+  "NetVerify",
+  "NoBookings",
+  "NoFavoriteFlights",
+  "NoNotification",
+  "Offline",
+  "OpenSearch",
+  "Parking",
+  "PlaceholderAirport",
+  "PlaceholderDestination",
+  "PlaceholderHotel",
+  "PlaneAndMoney",
+  "PriorityBoarding",
+  "Rating",
+  "ReferAFriend",
+  "RentalCar",
+  "Time",
+  "TimelineBoarding",
+  "TimelineDropBaggage",
+  "TimelineLeave",
+  "TimelinePick",
+  "Tours",
+  "Train",
+];
+export const SIZE_OPTIONS = {
+  SMALL: "small",
+  MEDIUM: "medium",
+};
+
+export const baseURL = "//images.kiwi.com";

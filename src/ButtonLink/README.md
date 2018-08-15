@@ -18,7 +18,9 @@ Table below contains all types of the props available in ButtonLink component.
 | disabled      | `boolean`             | `false`         | If `true`, the ButtonLink will be disabled.
 | external      | `boolean`             | `false`         | If `true`, the ButtonLink opens link in a new tab.
 | href          | `string`              |                 | The URL of link to open when ButtonLink is clicked. [See Functional specs](#functional-specs)
-| icon          | `React.Node`          |                 | The displayed icon.
+| icon          | `React.Node`          |                 | The displayed icon on the left (will be removed in the future, use iconLeft instead).
+| iconLeft      | `React.Node`          |                 | The displayed icon on the left.
+| iconRight     | `React.Node`          |                 | The displayed icon on the right.
 | onClick       | `func`                |                 | Function for handling onClick event.
 | **size**      | [`enum`](#enum)       | `"normal"`      | The size of the ButtonLink.
 | transparent   | `boolean`             | `false`         | If `true`, the ButtonLink will not have `:hover` and `:active` state.

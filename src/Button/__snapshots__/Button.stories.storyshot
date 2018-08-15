@@ -99,7 +99,7 @@ exports[`Storyshots Button Basic buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK byOxmZ"
+            className="Button__StyledButton-jJDkJK bmgnWr"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -446,7 +446,7 @@ exports[`Storyshots Button Button as a link 1`] = `
           }
         >
           <a
-            className="Button__StyledButton-jJDkJK heVIFP"
+            className="Button__StyledButton-jJDkJK gjyVIL"
             disabled={false}
             href="https://kiwi.com"
             onClick={[Function]}
@@ -705,7 +705,7 @@ exports[`Storyshots Button Button as a link 1`] = `
                           <span
                             style={Object {}}
                           >
-                            icon
+                            iconLeft
                           </span>
                           <span>
                             =
@@ -889,7 +889,7 @@ exports[`Storyshots Button Button with icon 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK deILrL"
+            className="Button__StyledButton-jJDkJK cjJrJY"
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -1105,7 +1105,7 @@ exports[`Storyshots Button Button with icon 1`] = `
                           <span
                             style={Object {}}
                           >
-                            icon
+                            iconLeft
                           </span>
                           <span>
                             =
@@ -1122,6 +1122,331 @@ exports[`Storyshots Button Button with icon 1`] = `
                                   }
                                 >
                                   &lt;PlusCircle /&gt;
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <br />
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        Button
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        Button
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <button
+            className="Button__StyledButton-jJDkJK dtXwoT"
+            disabled={undefined}
+            onClick={[Function]}
+            size="small"
+            target={undefined}
+          >
+            Button
+            <div
+              className="Button__IconContainerRight-fadTMO bJWYgf Button__IconContainer-bZYzaL lnMxEw"
+            >
+              <svg
+                className={undefined}
+                fill="currentColor"
+                height="24px"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "color": undefined,
+                    "verticalAlign": "middle",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Button
+                      </span>
+                      <span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            onClick
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#170",
+                                    }
+                                  }
+                                >
+                                  clicked()
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            block
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                primary
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            size
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                small
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            iconRight
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;ChevronDown /&gt;
                                 </span>
                                 }
                               </span>
@@ -1289,7 +1614,7 @@ exports[`Storyshots Button Default 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK byOxmZ"
+            className="Button__StyledButton-jJDkJK bmgnWr"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -1542,7 +1867,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK efqbgL"
+            className="Button__StyledButton-jJDkJK iprPZf"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -1758,7 +2083,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
                           <span
                             style={Object {}}
                           >
-                            icon
+                            iconLeft
                           </span>
                           <span>
                             =
@@ -1942,7 +2267,7 @@ exports[`Storyshots Button Playground 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK iRYclE"
+            className="Button__StyledButton-jJDkJK dgvReS"
             disabled={false}
             href={undefined}
             onClick={[Function]}
@@ -1972,6 +2297,28 @@ exports[`Storyshots Button Playground 1`] = `
               </svg>
             </div>
             Button
+            <div
+              className="Button__IconContainerRight-fadTMO hFXLWZ Button__IconContainer-bZYzaL knKUId"
+            >
+              <svg
+                className={undefined}
+                fill="currentColor"
+                height="24px"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "color": undefined,
+                    "verticalAlign": "middle",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                />
+              </svg>
+            </div>
           </button>
         </div>
         <div>
@@ -2313,7 +2660,7 @@ exports[`Storyshots Button Playground 1`] = `
                           <span
                             style={Object {}}
                           >
-                            icon
+                            iconLeft
                           </span>
                           <span>
                             =
@@ -2330,6 +2677,37 @@ exports[`Storyshots Button Playground 1`] = `
                                   }
                                 >
                                   &lt;Airplane /&gt;
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            iconRight
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;ChevronDown /&gt;
                                 </span>
                                 }
                               </span>
@@ -2528,7 +2906,7 @@ exports[`Storyshots Button Social buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK lkvTUS"
+            className="Button__StyledButton-jJDkJK hGwFXU"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -2683,7 +3061,7 @@ exports[`Storyshots Button Social buttons 1`] = `
                           <span
                             style={Object {}}
                           >
-                            icon
+                            iconLeft
                           </span>
                           <span>
                             =
@@ -2803,7 +3181,7 @@ exports[`Storyshots Button Social buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK cQcdSu"
+            className="Button__StyledButton-jJDkJK jkFvjW"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -2975,7 +3353,7 @@ exports[`Storyshots Button Social buttons 1`] = `
                           <span
                             style={Object {}}
                           >
-                            icon
+                            iconLeft
                           </span>
                           <span>
                             =
@@ -3170,7 +3548,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK fooPt"
+            className="Button__StyledButton-jJDkJK fLfDKq"
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -3355,7 +3733,7 @@ exports[`Storyshots Button Status buttons 1`] = `
                           <span
                             style={Object {}}
                           >
-                            icon
+                            iconLeft
                           </span>
                           <span>
                             =
@@ -3464,7 +3842,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK EaYqS"
+            className="Button__StyledButton-jJDkJK kuVuUN"
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -3649,7 +4027,7 @@ exports[`Storyshots Button Status buttons 1`] = `
                           <span
                             style={Object {}}
                           >
-                            icon
+                            iconLeft
                           </span>
                           <span>
                             =
@@ -3758,7 +4136,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK iooBXi"
+            className="Button__StyledButton-jJDkJK kMoCHT"
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -3943,7 +4321,7 @@ exports[`Storyshots Button Status buttons 1`] = `
                           <span
                             style={Object {}}
                           >
-                            icon
+                            iconLeft
                           </span>
                           <span>
                             =
@@ -4052,7 +4430,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK gwzKXh"
+            className="Button__StyledButton-jJDkJK kHFcNa"
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -4237,7 +4615,7 @@ exports[`Storyshots Button Status buttons 1`] = `
                           <span
                             style={Object {}}
                           >
-                            icon
+                            iconLeft
                           </span>
                           <span>
                             =

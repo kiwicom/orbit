@@ -30,6 +30,15 @@ IconContainer.defaultProps = {
   theme: defaultTokens,
 };
 
+const IconContainerRight = styled(IconContainer)`
+  margin-right: 0;
+  margin-left: ${({ onlyIcon, tokens, size }) => (onlyIcon ? "0" : tokens.marginRightIcon[size])};
+`;
+
+IconContainerRight.defaultProps = {
+  theme: defaultTokens,
+};
+
 export const StyledButton = styled(
   ({
     tokens,
@@ -38,6 +47,8 @@ export const StyledButton = styled(
     external,
     type,
     icon,
+    iconLeft,
+    iconRight,
     sizeIcon,
     width,
     bordered,
@@ -69,10 +80,13 @@ export const StyledButton = styled(
   box-shadow: ${({ bordered, tokens, type }) =>
     bordered && `inset 0 0 0 1px ${tokens.borderColorButton[type]}`};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  padding: 0 ${({ onlyIcon, tokens, size }) => (onlyIcon ? "0" : tokens.paddingButton[size])} 0
-    ${({ onlyIcon, icon, tokens, size }) =>
-      (onlyIcon && "0") ||
-      (icon ? tokens.paddingButtonWithIcon[size] : tokens.paddingButton[size])};
+  padding: 0;
+  padding-right: ${({ onlyIcon, iconRight, tokens, size }) =>
+    (onlyIcon && "0") ||
+    (iconRight ? tokens.paddingButtonWithIcon[size] : tokens.paddingButton[size])};
+  padding-left: ${({ onlyIcon, icon, iconLeft, tokens, size }) =>
+    (onlyIcon && "0") ||
+    (iconLeft || icon ? tokens.paddingButtonWithIcon[size] : tokens.paddingButton[size])};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
   font-size: ${({ tokens, size }) => tokens.fontSizeButton[size]};
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
@@ -134,14 +148,16 @@ const Button = (props: Props) => {
     bordered,
     size = SIZE_OPTIONS.NORMAL,
     icon,
+    iconRight,
     theme = defaultTokens,
     external,
     type = TYPE_OPTIONS.PRIMARY,
     block,
     width = 0,
   } = props;
+  const iconLeft = props.iconLeft || icon;
   const sizeIcon = size === "small" ? "small" : "medium";
-  const onlyIcon = icon && !children;
+  const onlyIcon = iconLeft && !children;
   const tokens = {
     heightButton: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.heightButtonLarge,
@@ -308,7 +324,7 @@ const Button = (props: Props) => {
       width={width}
       {...props}
     >
-      {icon && (
+      {iconLeft && (
         <IconContainer
           size={size}
           onlyIcon={onlyIcon}
@@ -317,10 +333,22 @@ const Button = (props: Props) => {
           tokens={tokens}
           type={type}
         >
-          {icon}
+          {iconLeft}
         </IconContainer>
       )}
       {children}
+      {iconRight && (
+        <IconContainerRight
+          size={size}
+          onlyIcon={onlyIcon}
+          bordered={bordered}
+          sizeIcon={sizeIcon}
+          tokens={tokens}
+          type={type}
+        >
+          {iconRight}
+        </IconContainerRight>
+      )}
     </StyledButton>
   );
 };

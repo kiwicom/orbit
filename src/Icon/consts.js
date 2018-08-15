@@ -12,8 +12,8 @@ export const ICON_COLORS = {
   primary: defaultTokens.orbit.colorIconPrimary,
   secondary: defaultTokens.orbit.colorIconSecondary,
   tertiary: defaultTokens.orbit.colorIconTerciary,
-  blue: defaultTokens.orbit.paletteBlueNormal,
-  green: defaultTokens.orbit.paletteGreenNormal,
-  orange: defaultTokens.orbit.paletteOrangeNormal,
-  red: defaultTokens.orbit.paletteRedNormal,
+  info: defaultTokens.orbit.paletteBlueNormal,
+  success: defaultTokens.orbit.paletteGreenNormal,
+  warning: defaultTokens.orbit.paletteOrangeNormal,
+  critical: defaultTokens.orbit.paletteRedNormal,
 };

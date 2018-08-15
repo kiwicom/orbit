@@ -103,7 +103,7 @@ storiesOf("List", module)
     const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
     const type = select("Type", Object.values(TYPES), TYPES.PRIMARY);
     const Icon = getIcon(getIcons("Check"));
-    const iconColor = select("iconColor", Object.keys(ICON_COLORS), "green");
+    const iconColor = select("iconColor", Object.keys(ICON_COLORS), "success");
     const content = text("Content", "24,000 locations around the globe");
 
     return {

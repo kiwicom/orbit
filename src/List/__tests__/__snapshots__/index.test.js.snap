@@ -342,7 +342,7 @@ exports[`List with custom colored icons should match snapshot 1`] = `
   <ListItem
     icon={
       <Check
-        color="green"
+        color="success"
       />
     }
   >
@@ -351,7 +351,7 @@ exports[`List with custom colored icons should match snapshot 1`] = `
   <ListItem
     icon={
       <Check
-        color="green"
+        color="success"
       />
     }
   >
@@ -360,7 +360,7 @@ exports[`List with custom colored icons should match snapshot 1`] = `
   <ListItem
     icon={
       <Check
-        color="green"
+        color="success"
       />
     }
   >

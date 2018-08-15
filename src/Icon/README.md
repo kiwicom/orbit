@@ -31,6 +31,10 @@ Table below contains all types of the props available for icons in general.
 | `"primary"`   | `"medium"` |
 | `"secondary"` | `"large"`  |
 | `"tertiary"`  |            |
+| `"blue"`      |            |
+| `"green"`     |            |
+| `"orange"`    |            |
+| `"red"`       |            |
 
 ## Functional specs
 * If you don't pass `customColor` or `color` prop to Icon, it will inherit color from parent container with `currentColor` by default.

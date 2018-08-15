@@ -3,10 +3,21 @@ import defaultTokens from "../defaultTokens";
 
 type Carrier = { code: string, name: string, type?: "airline" | "bus" | "train" };
 
+type Size = "small" | "medium" | "large";
+
 export type Props = {|
-  +size?: "small" | "medium" | "large",
+  +size?: Size,
   +carriers: Carrier[],
   +theme?: typeof defaultTokens,
 |};
+
+type styledCarrierLogo = {
+  tokens?: { [key: string]: string | number },
+  size?: Size,
+  carriers?: Carrier,
+  theme?: typeof defaultTokens,
+};
+
+declare export var StyledCarrierLogo: React$ComponentType<styledCarrierLogo>;
 
 declare export default React$ComponentType<Props>;

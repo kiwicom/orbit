@@ -54,7 +54,7 @@ const template = (code, config, state) => `
 const flowTemplate = `// @flow
 
 export type Props = {|
-  +color?: "attention" | "primary" | "secondary" | "tertiary",
+  +color?: "attention" | "primary" | "secondary" | "tertiary" | "blue" | "green" | "orange" | "red",
   +size?: "small" | "medium" | "large",
   +customColor?: string,
   +className?: string,

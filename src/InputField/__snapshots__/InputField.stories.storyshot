@@ -1663,7 +1663,7 @@ exports[`Storyshots InputField Playground 1`] = `
                 className="InputField__Suffix-csEOAt ivHCns"
               >
                 <button
-                  className="ButtonLink__StyledButtonLink-eyUiPe kiCSRF"
+                  className="ButtonLink__StyledButtonLink-eyUiPe fkQXjZ"
                   disabled={false}
                   onClick={[Function]}
                   size="small"
@@ -3136,7 +3136,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                 className="InputField__Suffix-csEOAt ooUbL"
               >
                 <button
-                  className="ButtonLink__StyledButtonLink-eyUiPe dCfcCO"
+                  className="ButtonLink__StyledButtonLink-eyUiPe hCVhKc"
                   onClick={[Function]}
                   size="normal"
                   target={undefined}

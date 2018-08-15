@@ -15,7 +15,9 @@ export type Props = {|
   +size?: Size,
   +href?: string,
   +width?: number,
-  +icon?: React.Node,
+  +icon?: React$Node,
+  +iconLeft?: React$Node,
+  +iconRight?: React$Node,
   +theme?: typeof defaultTokens,
   +transparent?: boolean,
 |};

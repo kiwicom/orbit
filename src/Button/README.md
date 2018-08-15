@@ -19,7 +19,9 @@ Table below contains all types of the props available in Button component.
 | disabled      | `boolean`             | `false`         | If `true`, the Button will be disabled.
 | external      | `boolean`             | `false`         | If `true`, the Button opens link in a new tab.
 | href          | `string`              |                 | The URL of the link to open when Button is clicked. [See Functional specs](#functional-specs)
-| icon          | `React.Node`          |                 | The displayed icon.
+| icon          | `React.Node`          |                 | The displayed icon (will be removed in the future, use iconLeft instead).
+| iconLeft      | `React.Node`          |                 | The displayed icon on the left.
+| iconRight     | `React.Node`          |                 | The displayed icon on the right.
 | onClick       | `func`                |                 | Function for handling onClick event.
 | **size**      | [`enum`](#enum)       | `"normal"`      | The size of the Button.
 | **type**      | [`enum`](#enum)       | `"primary"`     | The type of Button.

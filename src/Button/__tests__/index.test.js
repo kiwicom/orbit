@@ -5,6 +5,7 @@ import { shallow } from "enzyme";
 
 import Button from "../index";
 import Airplane from "../../icons/Airplane";
+import ChevronDown from "../../icons/ChevronDown";
 
 const children = "button";
 const onClick = jest.fn();
@@ -26,13 +27,14 @@ describe("Button", () => {
 });
 describe("Button with icon", () => {
   const component = shallow(
-    <Button size="normal" icon={<Airplane />} onClick={onClick}>
+    <Button size="normal" iconLeft={<Airplane />} iconRight={<ChevronDown />} onClick={onClick}>
       {children}
     </Button>,
   );
-  it("should contain SVG", () => {
+  it("should contain icons", () => {
     const button = component.find("Button__StyledButton");
     expect(button.find("Airplane").exists()).toBe(true);
+    expect(button.find("ChevronDown").exists()).toBe(true);
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

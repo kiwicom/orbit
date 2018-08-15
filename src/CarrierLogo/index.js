@@ -7,7 +7,7 @@ import { SIZE_OPTIONS, baseURL } from "./consts";
 
 import type { Props } from "./index";
 
-const StyledCarrierLogo = styled.div`
+export const StyledCarrierLogo = styled.div`
   background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};
   height: ${({ theme, tokens, size, carriers }) =>
     carriers.length > 1 ? `${theme.orbit.heightIconLarge}` : `${tokens.renderSizes[size]}px`};

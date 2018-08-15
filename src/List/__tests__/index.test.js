@@ -14,9 +14,9 @@ describe(`List with custom colored icons`, () => {
 
   const component = shallow(
     <List size={size} type={type}>
-      <ListItem icon={<Check color="green" />}>{content}</ListItem>
-      <ListItem icon={<Check color="green" />}>{content}</ListItem>
-      <ListItem icon={<Check color="green" />}>{content}</ListItem>
+      <ListItem icon={<Check color="success" />}>{content}</ListItem>
+      <ListItem icon={<Check color="success" />}>{content}</ListItem>
+      <ListItem icon={<Check color="success" />}>{content}</ListItem>
     </List>,
   );
 

@@ -107,10 +107,10 @@ exports[`Storyshots InputField Default input 1`] = `
               Label
             </span>
             <div
-              className="InputField__InputContainer-evnRDD ioRuVx"
+              className="InputField__InputContainer-evnRDD bJvOHm"
             >
               <input
-                className="InputField__Input-iRjCvp eQumUp"
+                className="InputField__Input-iRjCvp bzgBik"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -125,7 +125,7 @@ exports[`Storyshots InputField Default input 1`] = `
                 value=""
               />
               <div
-                className="InputField__FakeInput-eneioc jZCIys"
+                className="InputField__FakeInput-eneioc jsNOjV"
               />
             </div>
           </label>
@@ -435,10 +435,10 @@ exports[`Storyshots InputField Email input 1`] = `
               Email
             </span>
             <div
-              className="InputField__InputContainer-evnRDD ioRuVx"
+              className="InputField__InputContainer-evnRDD bJvOHm"
             >
               <input
-                className="InputField__Input-iRjCvp eQumUp"
+                className="InputField__Input-iRjCvp bzgBik"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -453,7 +453,7 @@ exports[`Storyshots InputField Email input 1`] = `
                 value="name@example.co"
               />
               <div
-                className="InputField__FakeInput-eneioc jZCIys"
+                className="InputField__FakeInput-eneioc jsNOjV"
               />
             </div>
             <div
@@ -841,10 +841,10 @@ exports[`Storyshots InputField Number input 1`] = `
               Number
             </span>
             <div
-              className="InputField__InputContainer-evnRDD ioRuVx"
+              className="InputField__InputContainer-evnRDD bJvOHm"
             >
               <input
-                className="InputField__Input-iRjCvp eQumUp"
+                className="InputField__Input-iRjCvp bzgBik"
                 disabled={undefined}
                 max={3}
                 maxLength={undefined}
@@ -859,7 +859,7 @@ exports[`Storyshots InputField Number input 1`] = `
                 value={2}
               />
               <div
-                className="InputField__FakeInput-eneioc jZCIys"
+                className="InputField__FakeInput-eneioc jsNOjV"
               />
             </div>
           </label>
@@ -1262,10 +1262,10 @@ exports[`Storyshots InputField Password input 1`] = `
               Password
             </span>
             <div
-              className="InputField__InputContainer-evnRDD ioRuVx"
+              className="InputField__InputContainer-evnRDD bJvOHm"
             >
               <input
-                className="InputField__Input-iRjCvp eQumUp"
+                className="InputField__Input-iRjCvp bzgBik"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -1280,7 +1280,7 @@ exports[`Storyshots InputField Password input 1`] = `
                 value="p422W0rd"
               />
               <div
-                className="InputField__FakeInput-eneioc jZCIys"
+                className="InputField__FakeInput-eneioc jsNOjV"
               />
             </div>
           </label>
@@ -1620,7 +1620,7 @@ exports[`Storyshots InputField Playground 1`] = `
               Label
             </span>
             <div
-              className="InputField__InputContainer-evnRDD bLvidM"
+              className="InputField__InputContainer-evnRDD cDlDsu"
             >
               <div
                 className="InputField__Prefix-jLQUQe bYNuXJ"
@@ -1645,7 +1645,7 @@ exports[`Storyshots InputField Playground 1`] = `
                 </svg>
               </div>
               <input
-                className="InputField__Input-iRjCvp hQTYGK"
+                className="InputField__Input-iRjCvp gGLtYg"
                 disabled={false}
                 max={undefined}
                 maxLength={undefined}
@@ -1695,7 +1695,7 @@ exports[`Storyshots InputField Playground 1`] = `
                 </button>
               </div>
               <div
-                className="InputField__FakeInput-eneioc ePzWQA"
+                className="InputField__FakeInput-eneioc dEFnnS"
               />
             </div>
           </label>
@@ -2436,10 +2436,10 @@ exports[`Storyshots InputField Small input 1`] = `
               Label
             </span>
             <div
-              className="InputField__InputContainer-evnRDD bLvidM"
+              className="InputField__InputContainer-evnRDD cDlDsu"
             >
               <input
-                className="InputField__Input-iRjCvp eAeNAk"
+                className="InputField__Input-iRjCvp jcNEKi"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -2454,7 +2454,7 @@ exports[`Storyshots InputField Small input 1`] = `
                 value=""
               />
               <div
-                className="InputField__FakeInput-eneioc ePzWQA"
+                className="InputField__FakeInput-eneioc dEFnnS"
               />
             </div>
           </label>
@@ -2794,10 +2794,10 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
               Label
             </span>
             <div
-              className="InputField__InputContainer-evnRDD ioRuVx"
+              className="InputField__InputContainer-evnRDD bJvOHm"
             >
               <input
-                className="InputField__Input-iRjCvp eQumUp"
+                className="InputField__Input-iRjCvp bzgBik"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -2846,7 +2846,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                 </button>
               </div>
               <div
-                className="InputField__FakeInput-eneioc jZCIys"
+                className="InputField__FakeInput-eneioc jsNOjV"
               />
             </div>
           </label>
@@ -3187,7 +3187,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
               Label
             </span>
             <div
-              className="InputField__InputContainer-evnRDD ioRuVx"
+              className="InputField__InputContainer-evnRDD bJvOHm"
             >
               <div
                 className="InputField__Prefix-jLQUQe fFqSCa"
@@ -3212,7 +3212,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
                 </svg>
               </div>
               <input
-                className="InputField__Input-iRjCvp cbnZj"
+                className="InputField__Input-iRjCvp iodjEq"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -3227,7 +3227,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
                 value=""
               />
               <div
-                className="InputField__FakeInput-eneioc jZCIys"
+                className="InputField__FakeInput-eneioc jsNOjV"
               />
             </div>
           </label>
@@ -3568,7 +3568,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
               Label
             </span>
             <div
-              className="InputField__InputContainer-evnRDD ioRuVx"
+              className="InputField__InputContainer-evnRDD bJvOHm"
             >
               <div
                 className="InputField__Prefix-jLQUQe fFqSCa"
@@ -3576,7 +3576,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
                 $
               </div>
               <input
-                className="InputField__Input-iRjCvp cbnZj"
+                className="InputField__Input-iRjCvp iodjEq"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -3591,7 +3591,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
                 value=""
               />
               <div
-                className="InputField__FakeInput-eneioc jZCIys"
+                className="InputField__FakeInput-eneioc jsNOjV"
               />
             </div>
           </label>

@@ -26,10 +26,12 @@ const StyledTextArea = styled(({ theme, tokens, size, error, help, ...props }) =
   width: 100%;
   padding: ${({ tokens, size }) => tokens.paddingInput[size]};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  border: ${({ theme, error }) =>
-    `${theme.orbit.borderStyleInput} ${theme.orbit.borderWidthInput} ${
-      error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
-    }`};
+  border: 0;
+  box-shadow: inset 0 0 0
+    ${({ theme, error }) =>
+      `${theme.orbit.borderWidthInput} ${
+        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+      }`};
   background-color: ${({ disabled, theme }) =>
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   color: ${({ disabled, theme }) =>
@@ -39,29 +41,23 @@ const StyledTextArea = styled(({ theme, tokens, size, error, help, ...props }) =
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
   font-family: inherit;
   resize: ${({ resize }) => resize};
-  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out, border-color ${({
-  theme,
-}) => theme.orbit.durationFast} ease-in-out;
-  
+  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+
   &::placeholder {
     color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
   }
 
   &:hover {
-    border-color: ${({ disabled, theme, error }) =>
+    box-shadow: ${({ disabled, theme, error }) =>
       !disabled &&
-      (error
-        ? theme.orbit.paletteRedNormal
-        : theme.orbit.borderColorInputHover)}; // TODO create token
+      `inset 0 0 0 ${theme.orbit.borderWidthInput} ${
+        error ? theme.orbit.paletteRedNormalHover : theme.orbit.borderColorInputHover
+      }`}; // TODO create token
   }
 
   &:focus {
-  box-shadow: ${({ theme, error, disabled }) =>
-    !disabled && (error ? theme.orbit.boxShadowInputErrorFocus : theme.orbit.boxShadowInputFocus)};
-  border-color: ${({ theme, error, disabled }) =>
-    !disabled &&
-    (error ? theme.orbit.borderColorInputErrorFocus : theme.orbit.borderColorInputFocus)};
-  };
+    box-shadow: ${({ theme, disabled }) =>
+      !disabled && `inset 0 0 0 2px ${theme.orbit.borderColorInputFocus}`};
     outline: none;
   }
 `;

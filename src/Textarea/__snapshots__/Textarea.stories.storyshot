@@ -102,7 +102,7 @@ exports[`Storyshots Textarea Default 1`] = `
             className="Textarea__Field-kPVRAV bXkLzV"
           >
             <textarea
-              className="Textarea__StyledTextArea-iLqCZR iGNvEa"
+              className="Textarea__StyledTextArea-iLqCZR dGjnwd"
               disabled={undefined}
               maxLength={undefined}
               name={undefined}
@@ -381,7 +381,7 @@ exports[`Storyshots Textarea Playground 1`] = `
               Label
             </span>
             <textarea
-              className="Textarea__StyledTextArea-iLqCZR dmuRbo"
+              className="Textarea__StyledTextArea-iLqCZR fIoNtg"
               disabled={true}
               maxLength={undefined}
               name={undefined}
@@ -924,7 +924,7 @@ exports[`Storyshots Textarea Small size 1`] = `
             className="Textarea__Field-kPVRAV bXkLzV"
           >
             <textarea
-              className="Textarea__StyledTextArea-iLqCZR cJMXZI"
+              className="Textarea__StyledTextArea-iLqCZR fyQxlL"
               disabled={undefined}
               maxLength={undefined}
               name={undefined}
@@ -1237,7 +1237,7 @@ exports[`Storyshots Textarea With error 1`] = `
             className="Textarea__Field-kPVRAV bXkLzV"
           >
             <textarea
-              className="Textarea__StyledTextArea-iLqCZR ifTVOV"
+              className="Textarea__StyledTextArea-iLqCZR eaKArV"
               disabled={undefined}
               maxLength={undefined}
               name={undefined}
@@ -1555,7 +1555,7 @@ exports[`Storyshots Textarea With help 1`] = `
             className="Textarea__Field-kPVRAV bXkLzV"
           >
             <textarea
-              className="Textarea__StyledTextArea-iLqCZR iGNvEa"
+              className="Textarea__StyledTextArea-iLqCZR dGjnwd"
               disabled={undefined}
               maxLength={undefined}
               name={undefined}
@@ -1878,7 +1878,7 @@ exports[`Storyshots Textarea With label 1`] = `
               Label
             </span>
             <textarea
-              className="Textarea__StyledTextArea-iLqCZR iGNvEa"
+              className="Textarea__StyledTextArea-iLqCZR dGjnwd"
               disabled={undefined}
               maxLength={undefined}
               name={undefined}

@@ -26,10 +26,11 @@ const FakeInput = styled(({ children, className }) => <div className={className}
   box-sizing: border-box;
   height: ${({ tokens, size }) => tokens.heightInput[size]};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  border: ${({ theme, error }) =>
-    `${theme.orbit.borderStyleInput} ${theme.orbit.borderWidthInput} ${
-      error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
-    }`};
+  box-shadow: inset 0 0 0
+    ${({ theme, error }) =>
+      `${theme.orbit.borderWidthInput} ${
+        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+      }`};
   background-color: ${({ disabled, theme }) =>
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   font-size: ${({ size, tokens }) => tokens.fontSizeInput[size]};
@@ -58,8 +59,12 @@ const InputContainer = styled(({ children, className }) => (
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
 
   &:hover > ${FakeInput} {
-    border-color: ${({ disabled, theme, error }) =>
-      !disabled && (error ? theme.orbit.paletteRedNormalHover : theme.orbit.borderColorInputHover)};
+    box-shadow: inset 0 0 0
+      ${({ disabled, theme, error }) =>
+        !disabled &&
+        `${theme.orbit.borderWidthInput} ${
+          error ? theme.orbit.paletteRedNormalHover : theme.orbit.borderColorInputHover
+        }`};
   }
 `;
 
@@ -124,10 +129,8 @@ const Input = styled(({ theme, tokens, size, prefix, suffix, error, help, ...pro
   &:focus {
     outline: none;
     & ~ ${FakeInput} {
-      box-shadow: ${({ theme, error }) =>
-        error ? theme.orbit.boxShadowInputErrorFocus : theme.orbit.boxShadowInputFocus};
-      border-color: ${({ theme, error }) =>
-        error ? theme.orbit.borderColorInputErrorFocus : theme.orbit.borderColorInputFocus};
+      // TODO: create token for 2px borderWidth
+      box-shadow: inset 0 0 0 ${({ theme }) => `2px ${theme.orbit.borderColorInputFocus}`};
     }
   }
 

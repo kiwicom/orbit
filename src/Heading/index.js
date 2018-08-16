@@ -7,30 +7,7 @@ import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./consts";
 
 import type { Props } from "./index";
 
-const StyledHeading = styled(({ element: Component, className, children }) => (
-  <Component className={className}>{children}</Component>
-))`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ tokens, type }) => tokens.sizeHeading[type]};
-  font-weight: ${({ tokens, type }) => tokens.weightHeading[type]};
-  color: ${({ theme, inverted }) =>
-    inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
-  line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
-  margin: 0;
-`;
-
-StyledHeading.defaultProps = {
-  theme: defaultTokens,
-};
-
-const Heading = (props: Props) => {
-  const {
-    children,
-    theme = defaultTokens,
-    type = TYPE_OPTIONS.TITLE1,
-    element = ELEMENT_OPTIONS.H1,
-    inverted = false,
-  } = props;
+const getToken = (theme, type, name) => {
   const tokens = {
     weightHeading: {
       [TYPE_OPTIONS.DISPLAY]: theme.orbit.fontWeightHeadingDisplay,
@@ -45,8 +22,36 @@ const Heading = (props: Props) => {
       [TYPE_OPTIONS.TITLE3]: theme.orbit.fontSizeHeadingTitle3,
     },
   };
+
+  return tokens[name][type];
+};
+
+const StyledHeading = styled(({ element: Component, className, children }) => (
+  <Component className={className}>{children}</Component>
+))`
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
+  font-size: ${({ theme, type }) => getToken(theme, type, "sizeHeading")};
+  font-weight: ${({ theme, type }) => getToken(theme, type, "weightHeading")};
+  color: ${({ theme, inverted }) =>
+    inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
+  line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
+  margin: 0;
+`;
+
+StyledHeading.defaultProps = {
+  theme: defaultTokens,
+};
+
+const Heading = (props: Props) => {
+  const {
+    children,
+    type = TYPE_OPTIONS.TITLE1,
+    element = ELEMENT_OPTIONS.H1,
+    inverted = false,
+  } = props;
+
   return (
-    <StyledHeading tokens={tokens} type={type} element={element} inverted={inverted}>
+    <StyledHeading type={type} element={element} inverted={inverted}>
       {children}
     </StyledHeading>
   );

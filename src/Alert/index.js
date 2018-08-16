@@ -3,7 +3,11 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
-import { InformationCircle, Check, Alert as AlertTriangle, AlertCircle, Close } from "../icons";
+import InformationCircle from "../icons/InformationCircle";
+import Check from "../icons/Check";
+import AlertTriangle from "../icons/Alert";
+import AlertCircle from "../icons/AlertCircle";
+import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
 import { StyledTextLink } from "../TextLink";
 import TYPE_OPTIONS from "./consts";

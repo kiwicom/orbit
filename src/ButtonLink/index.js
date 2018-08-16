@@ -8,7 +8,7 @@ import { ICON_SIZES } from "../Icon/consts";
 
 import type { Props } from "./index";
 
-const IconContainer = styled(({ tokens, sizeIcon, type, onlyIcon, ...props }) => (
+const IconContainer = styled(({ theme, tokens, sizeIcon, type, onlyIcon, ...props }) => (
   <div {...props} />
 ))`
   display: flex;

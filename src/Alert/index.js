@@ -105,7 +105,7 @@ const Content = styled(StyledDiv)`
     transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
     text-decoration: none;
     &:hover {
-      color: ${({ theme }) => theme.orbit.paletteInkDark}; // TODO create token
+      color: ${({ theme }) => theme.orbit.colorTextAlertLink};
     }
   }
 `;

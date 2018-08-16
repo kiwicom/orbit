@@ -9,9 +9,9 @@ const FormLabel = styled(({ className, children }) => (
 ))`
   display: block;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeLabelForm};
+  font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
   color: ${({ theme, filled, disabled }) =>
-    !filled || disabled ? theme.orbit.colorLabelForm : theme.orbit.colorLabelFormFilled};
+    !filled || disabled ? theme.orbit.colorFormLabel : theme.orbit.colorFormLabelFilled};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   margin-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
 `;

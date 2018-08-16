@@ -10,7 +10,7 @@ import type { Props } from "./index";
 const StyledImage = styled.img`
   height: ${({ tokens, size }) => tokens.height[size]};
   width: auto;
-  background-color: transparent; // TODO: create token backgroundIllustration
+  background-color: ${({ theme }) => theme.orbit.backgroundIllustration};
   overflow: hidden;
 `;
 
@@ -18,12 +18,11 @@ StyledImage.defaultProps = {
   theme: defaultTokens,
 };
 
-const Illustration = ({ name, size = SIZE_OPTIONS.MEDIUM }: Props) => {
+const Illustration = ({ name, size = SIZE_OPTIONS.MEDIUM, theme = defaultTokens }: Props) => {
   const tokens = {
     height: {
-      [SIZE_OPTIONS.SMALL]: "90px",
-      [SIZE_OPTIONS.MEDIUM]: "200px",
-      // TODO: create tokens heightIllustration[size]
+      [SIZE_OPTIONS.SMALL]: theme.orbit.heightIllustrationSmall,
+      [SIZE_OPTIONS.MEDIUM]: theme.orbit.heightIllustrationMedium,
     },
   };
 

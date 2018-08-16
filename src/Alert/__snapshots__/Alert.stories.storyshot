@@ -127,7 +127,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
               className="Alert__ContentWrapper-jyINpB jgcPgw"
             >
               <div
-                className="Alert__Content-icgAru dFxigD"
+                className="Alert__Content-icgAru esmlI"
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>
@@ -419,7 +419,7 @@ exports[`Storyshots Alert Default 1`] = `
               className="Alert__ContentWrapper-jyINpB jgcPgw"
             >
               <div
-                className="Alert__Content-icgAru fdWKiW"
+                className="Alert__Content-icgAru delXhj"
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>
@@ -668,7 +668,7 @@ exports[`Storyshots Alert Info alert 1`] = `
               className="Alert__ContentWrapper-jyINpB jgcPgw"
             >
               <div
-                className="Alert__Content-icgAru fdWKiW"
+                className="Alert__Content-icgAru delXhj"
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>
@@ -960,7 +960,7 @@ exports[`Storyshots Alert Playground 1`] = `
                 You can change the title by changing the Title knob
               </div>
               <div
-                className="Alert__Content-icgAru hPuLWs"
+                className="Alert__Content-icgAru eInYTs"
               >
                 <div
                   style={
@@ -972,7 +972,7 @@ exports[`Storyshots Alert Playground 1`] = `
                   Also you can change the message by changing the Message knob
                 </div>
                 <a
-                  className="Button__StyledButton-jJDkJK jUuoUS"
+                  className="Button__StyledButton-jJDkJK OPgbD"
                   disabled={undefined}
                   href="#"
                   size="normal"
@@ -1611,7 +1611,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
               className="Alert__ContentWrapper-jyINpB jgcPgw"
             >
               <div
-                className="Alert__Content-icgAru hAYLYE"
+                className="Alert__Content-icgAru dIqawJ"
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>
@@ -1925,7 +1925,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
               className="Alert__ContentWrapper-jyINpB jgcPgw"
             >
               <div
-                className="Alert__Content-icgAru bxMspt"
+                className="Alert__Content-icgAru iqkKFA"
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>

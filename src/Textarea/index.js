@@ -51,8 +51,8 @@ const StyledTextArea = styled(({ theme, tokens, size, error, help, ...props }) =
     box-shadow: ${({ disabled, theme, error }) =>
       !disabled &&
       `inset 0 0 0 ${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.paletteRedNormalHover : theme.orbit.borderColorInputHover
-      }`}; // TODO create token
+        error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
+      }`};
   }
 
   &:focus {
@@ -80,8 +80,8 @@ const Textarea = (props: Props) => {
       [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
     },
     paddingInput: {
-      [SIZE_OPTIONS.SMALL]: `${theme.orbit.spaceXSmall} ${theme.orbit.paddingInputSmall}`, // TODO create token "8px 12px"
-      [SIZE_OPTIONS.NORMAL]: `${theme.orbit.paddingInputSmall}`, // TODO create token "12px"
+      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingTextareaSmall,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingTextareaNormal,
     },
   };
   return (

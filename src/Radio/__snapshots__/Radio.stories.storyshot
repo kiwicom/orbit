@@ -99,7 +99,7 @@ exports[`Storyshots Radio Default 1`] = `
           }
         >
           <label
-            className="Radio__Label-bpjkjl oDgKl"
+            className="Radio__Label-bpjkjl kuLSih"
           >
             <input
               checked={false}
@@ -110,7 +110,7 @@ exports[`Storyshots Radio Default 1`] = `
               value={undefined}
             />
             <div
-              className="Radio__IconContainer-fQtsRf kfweHY"
+              className="Radio__IconContainer-fQtsRf lfznJU"
             >
               <span
                 className="Radio__Glyph-kyhivX jdVanu"
@@ -398,7 +398,7 @@ exports[`Storyshots Radio Playground 1`] = `
               value="value"
             />
             <div
-              className="Radio__IconContainer-fQtsRf kfweHY"
+              className="Radio__IconContainer-fQtsRf lfznJU"
             >
               <span
                 className="Radio__Glyph-kyhivX hVJQvf"
@@ -771,7 +771,7 @@ exports[`Storyshots Radio With help 1`] = `
           }
         >
           <label
-            className="Radio__Label-bpjkjl oDgKl"
+            className="Radio__Label-bpjkjl kuLSih"
           >
             <input
               checked={false}
@@ -782,7 +782,7 @@ exports[`Storyshots Radio With help 1`] = `
               value="value"
             />
             <div
-              className="Radio__IconContainer-fQtsRf kfweHY"
+              className="Radio__IconContainer-fQtsRf lfznJU"
             >
               <span
                 className="Radio__Glyph-kyhivX jdVanu"

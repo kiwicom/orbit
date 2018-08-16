@@ -11,6 +11,7 @@ export { default as ButtonGroup } from "./ButtonGroup";
 export { default as ButtonLink } from "./ButtonLink";
 export { default as CarrierLogo } from "./CarrierLogo";
 export { default as Checkbox } from "./Checkbox";
+export { default as CountryFlag } from "./CountryFlag";
 
 // Card
 export { default as Card } from "./Card";

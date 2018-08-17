@@ -99,7 +99,7 @@ exports[`Storyshots CheckBox Default 1`] = `
           }
         >
           <label
-            className="Checkbox__Label-gCTMrH dlCiCZ"
+            className="Checkbox__Label-gCTMrH bcLSxT"
           >
             <input
               checked={false}
@@ -401,7 +401,7 @@ exports[`Storyshots CheckBox Playground 1`] = `
           }
         >
           <label
-            className="Checkbox__Label-gCTMrH bsCEvx"
+            className="Checkbox__Label-gCTMrH gaSDRm"
           >
             <input
               checked={true}
@@ -799,7 +799,7 @@ exports[`Storyshots CheckBox With help 1`] = `
           }
         >
           <label
-            className="Checkbox__Label-gCTMrH dlCiCZ"
+            className="Checkbox__Label-gCTMrH bcLSxT"
           >
             <input
               checked={false}

@@ -99,7 +99,7 @@ exports[`Storyshots Radio Default 1`] = `
           }
         >
           <label
-            className="Radio__Label-bpjkjl iMdwqX"
+            className="Radio__Label-bpjkjl jHbmxu"
           >
             <input
               checked={false}
@@ -387,7 +387,7 @@ exports[`Storyshots Radio Playground 1`] = `
           }
         >
           <label
-            className="Radio__Label-bpjkjl ckHBiu"
+            className="Radio__Label-bpjkjl dLsYYr"
           >
             <input
               checked={true}
@@ -771,7 +771,7 @@ exports[`Storyshots Radio With help 1`] = `
           }
         >
           <label
-            className="Radio__Label-bpjkjl iMdwqX"
+            className="Radio__Label-bpjkjl jHbmxu"
           >
             <input
               checked={false}

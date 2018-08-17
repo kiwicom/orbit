@@ -111,7 +111,8 @@ const Label = styled(({ tokens, disabled, theme, type, ...props }) => (
   &:focus {
     outline: 0;
     & ${IconContainer} {
-      box-shadow: 0 0 3px ${({ theme }) => theme.orbit.paletteBlueNormal}; // TODO create token
+      border: ${({ theme }) =>
+        `2px ${theme.orbit.borderStyleInput} ${theme.orbit.borderColorInputFocus}`};
     }
   }
 `;

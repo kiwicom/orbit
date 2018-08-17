@@ -42,6 +42,7 @@ const StyledSelect = styled(
       : `0 ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.spaceSmall}`};
   outline: none;
   width: 100%;
+  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   &::-ms-expand {
     display: none;
@@ -51,23 +52,21 @@ const StyledSelect = styled(
   padding-left: ${({ prefix }) => prefix && "48px"}; // TODO: Create token
 
   /* Based on state of select */
-  border-color: ${({ theme, error }) =>
-    error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput};
+  border: 0;
+  box-shadow: inset 0 0 0 1px
+    ${({ theme, error }) =>
+      error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput};
 
   &:hover {
-    border-color: ${({ theme, error }) =>
-      error
-        ? theme.orbit.paletteRedNormal
-        : theme.orbit.borderColorInputHover}; // TODO: Create hover token
+    box-shadow: inset 0 0 0 1px
+      ${({ theme, error }) =>
+        error
+          ? theme.orbit.paletteRedNormalHover
+          : theme.orbit.borderColorInputHover}; // TODO: Create hover token
   }
 
   &:focus {
-    border-color: ${({ theme, error }) =>
-      error
-        ? theme.orbit.borderColorInputErrorFocus
-        : theme.orbit.borderColorInputFocus}; // TODO: check focus color
-    box-shadow: ${({ theme, error }) =>
-      error ? theme.orbit.boxShadowInputErrorFocus : theme.orbit.boxShadowInputFocus};
+    box-shadow: inset 0 0 0 ${({ theme }) => `2px ${theme.orbit.borderColorInputFocus}`};
   }
 
   &:disabled {

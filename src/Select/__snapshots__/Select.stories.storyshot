@@ -103,7 +103,7 @@ exports[`Storyshots Select Default 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk fIOgAI"
+                className="Select__StyledSelect-eyhbyk FHpMK"
                 disabled={false}
                 onBlur={undefined}
                 onChange={[Function]}
@@ -573,7 +573,7 @@ exports[`Storyshots Select Playground 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk bExrQw"
+                className="Select__StyledSelect-eyhbyk hlAgIh"
                 disabled={false}
                 onBlur={undefined}
                 onChange={[Function]}
@@ -1215,7 +1215,7 @@ exports[`Storyshots Select With error message 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk dQdBvp"
+                className="Select__StyledSelect-eyhbyk iAVQYf"
                 disabled={false}
                 onBlur={undefined}
                 onChange={[Function]}
@@ -1764,7 +1764,7 @@ exports[`Storyshots Select With help message 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk fIOgAI"
+                className="Select__StyledSelect-eyhbyk FHpMK"
                 disabled={false}
                 onBlur={undefined}
                 onChange={[Function]}
@@ -2316,7 +2316,7 @@ exports[`Storyshots Select With placeholder 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk bExrQw"
+                className="Select__StyledSelect-eyhbyk hlAgIh"
                 disabled={false}
                 onBlur={undefined}
                 onChange={[Function]}
@@ -2887,7 +2887,7 @@ exports[`Storyshots Select With prefix 1`] = `
                 </svg>
               </div>
               <select
-                className="Select__StyledSelect-eyhbyk leFTmZ"
+                className="Select__StyledSelect-eyhbyk dGbwEL"
                 disabled={false}
                 onBlur={undefined}
                 onChange={[Function]}
@@ -3429,7 +3429,7 @@ exports[`Storyshots Select With small size 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk qzIze"
+                className="Select__StyledSelect-eyhbyk jgRkDt"
                 disabled={false}
                 onBlur={undefined}
                 onChange={[Function]}

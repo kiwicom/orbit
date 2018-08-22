@@ -7,44 +7,7 @@ import TYPE_OPTIONS from "./consts";
 
 import type { Props } from "./index";
 
-const StyledBadge = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
-))`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  display: inline-flex;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  height: 24px; // TODO: create token
-  line-height: 24px; // TODO: create token
-  width: ${({ circled }) => circled && "24px"}; // TODO: create token
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
-  background-color: ${({ tokens, type }) => tokens.background[type]};
-  color: ${({ tokens, type }) => tokens.color[type]};
-  border-radius: 12px; // TODO: create token borderRadiusBadge
-  padding: 0 8px;
-`;
-
-StyledBadge.defaultProps = {
-  theme: defaultTokens,
-};
-
-const IconContainer = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
-))`
-  display: flex;
-  margin-right: 4px; // TODO: create token
-
-  svg {
-    height: 16px;
-    width: 16px;
-    color: ${({ tokens, type }) => tokens.color[type]};
-  }
-`;
-
-const Badge = (props: Props) => {
-  const { type = TYPE_OPTIONS.NEUTRAL, theme = defaultTokens, icon, children } = props;
+const getToken = (theme, type, name) => {
 
   // TODO: create tokens
   const tokens = {
@@ -66,13 +29,55 @@ const Badge = (props: Props) => {
     },
   };
 
+  return tokens[name][type];
+};
+
+const StyledBadge = styled(({ className, children }) => (
+  <div className={className}>{children}</div>
+))`
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
+  display: inline-flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  height: 24px; // TODO: create token
+  line-height: 24px; // TODO: create token
+  width: ${({ circled }) => circled && "24px"}; // TODO: create token
+  font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
+  font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
+  background-color: ${({ theme, type }) => getToken(theme, type, "background")};
+  color: ${({ theme, type }) => getToken(theme, type, "color")};
+  border-radius: 12px; // TODO: create token borderRadiusBadge
+  padding: 0 8px;
+`;
+
+StyledBadge.defaultProps = {
+  theme: defaultTokens,
+};
+
+const IconContainer = styled(({ className, children }) => (
+  <div className={className}>{children}</div>
+))`
+  display: flex;
+  margin-right: 4px; // TODO: create token
+
+  svg {
+    height: 16px;
+    width: 16px;
+    color: ${({ theme, type }) => getToken(theme, type, "color")};
+  }
+`;
+
+IconContainer.defaultProps = {
+  theme: defaultTokens,
+};
+
+const Badge = (props: Props) => {
+  const { type = TYPE_OPTIONS.NEUTRAL, icon, children } = props;
+
   return (
-    <StyledBadge tokens={tokens} type={type} {...props}>
-      {icon && (
-        <IconContainer tokens={tokens} type={type}>
-          {icon}
-        </IconContainer>
-      )}
+    <StyledBadge type={type} {...props}>
+      {icon && <IconContainer type={type}>{icon}</IconContainer>}
       {children}
     </StyledBadge>
   );

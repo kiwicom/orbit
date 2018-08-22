@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
-import createComponentFromTagProp from "react-create-component-from-tag-prop";
 
 import defaultTokens from "../defaultTokens";
 import {
@@ -14,12 +13,10 @@ import {
 
 import type { Props } from "./index";
 
-const TextElement = createComponentFromTagProp({
-  prop: "element",
-  propsToOmit: ["tokens", "theme", "type", "size", "weight", "align", "uppercase", "italic"],
-});
-
-const StyledText = styled(TextElement)`
+const StyledText = styled(({ element, children, className }) => {
+  const TextElement = element;
+  return <TextElement className={className}>{children}</TextElement>;
+})`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ tokens, size }) => tokens.sizeText[size]};
   font-weight: ${({ tokens, weight }) => tokens.weightText[weight]};

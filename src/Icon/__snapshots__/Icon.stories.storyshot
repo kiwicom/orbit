@@ -2208,6 +2208,60 @@ exports[`Storyshots Icon List of all icons 1`] = `
                 width="32px"
               >
                 <path
+                  d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-1.63 2.45c-.44.66.03 1.55.83 1.55h5.6c.8 0 1.28-.89.83-1.55L14 18h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 12H3V5c0-.55.45-1 1-1h16c.55 0 1 .45 1 1v9z"
+                />
+              </svg>
+              <div
+                className="IconList__IconImport-oZwZP jDaZTJ"
+              >
+                import DeviceDesktop from "@kiwicom/orbit-components/lib/icons/DeviceDesktop
+              </div>
+            </div>
+            <div
+              className="IconList__Container-hTbGgF fGplQy"
+            >
+              <svg
+                className="IconList__Icon-iybRdw hcdenc"
+                fill="currentColor"
+                height="32px"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "color": "#46515e",
+                    "verticalAlign": "middle",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="32px"
+              >
+                <path
+                  d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"
+                />
+              </svg>
+              <div
+                className="IconList__IconImport-oZwZP jDaZTJ"
+              >
+                import DeviceMobile from "@kiwicom/orbit-components/lib/icons/DeviceMobile
+              </div>
+            </div>
+            <div
+              className="IconList__Container-hTbGgF fGplQy"
+            >
+              <svg
+                className="IconList__Icon-iybRdw hcdenc"
+                fill="currentColor"
+                height="32px"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "color": "#46515e",
+                    "verticalAlign": "middle",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="32px"
+              >
+                <path
                   d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"
                 />
               </svg>

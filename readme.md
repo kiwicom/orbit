@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://orbit.kiwi" target="_blank">
-    <img alt="orbit-components" src="https://github.com/kiwicom/orbit-components/blob/master/.github/orbit-components.png" srcSet="https://github.com/kiwicom/orbit-components/blob/master/.github/orbit-components@2x.png 2x" height="150px" />
+    <img alt="orbit-components" src="https://orbit.kiwi/wp-content/uploads/2018/08/orbit-components.png" srcset="https://orbit.kiwi/wp-content/uploads/2018/08/orbit-components@2x.png 2x" height="150px" />
   </a>
 </div>
 
@@ -29,6 +29,7 @@ yarn add @kiwicom/orbit-components
 
 ## Usage
 1. Import fonts that are used in orbit-components:
+
 ```html
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700" rel="stylesheet">
 ```
@@ -39,13 +40,14 @@ Or via CSS:
 ```
 
 2. Include any of our components in your project and use it:
+
 ```jsx
-import Button from "@kiwicom/orbit-components/lib/Button"
+import Alert from "@kiwicom/orbit-components/lib/Alert"
     
-<Button>Hello World!</Button>
+<Alert>Hello World!</Alert>
 ```
 
-If you want to use a custom theme inside your project, it’s necessary to generate a theme object from `orbit-design-tokens` and use it in `<ThemeProvider />` component. See [this document](https://github.com/kiwicom/orbit-components/tree/master/.github/contribution/theming.md) for more information.
+If you want to use a custom theme inside your project, it’s necessary to generate a theme object from `orbit-design-tokens` and use it in `<ThemeProvider />` component from `styled-components`. See [this document](https://github.com/kiwicom/orbit-components/tree/master/.github/contribution/theming.md) for more information.
 
 For live preview check out [Storybook](https://kiwicom.github.io/orbit-components/) or [orbit.kiwi](https://orbit.kiwi).
 ## Main Sections:

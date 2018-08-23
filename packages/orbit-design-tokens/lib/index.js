@@ -79,15 +79,23 @@ function getTokens(palette) {
 	return ({
 		// category:Colors
 		// description:Use these tokens for text or icon colors. Don't use these for borders and background colors.
-		colorTextInfo: _colors.blue.normal,
 		colorTextPrimary: _colors.ink.normal,
 		colorTextSecondary: _colors.ink.light,
 		colorTextAttention: _colors.ink.dark,
 		colorTextError: _colors.red.normal,
+		colorTextInfo: _colors.blue.normal,
+		colorTextSuccess: _colors.green.normal,
+		colorTextWarning: _colors.orange.normal,
+		colorTextCritical: _colors.red.normal,
+		colorTextWhite: _colors.white.normal,
 		colorIconPrimary: _colors.ink.normal,
 		colorIconSecondary: _colors.ink.light,
 		colorIconAttention: _colors.ink.dark,
-		colorIconTerciary: _colors.ink.lighter,
+		colorIconTertiary: _colors.ink.lighter,
+		colorIconInfo: _colors.blue.normal,
+		colorIconSuccess: _colors.green.normal,
+		colorIconWarning: _colors.orange.normal,
+		colorIconCritical: _colors.red.normal,
 		colorHeading: _colors.ink.dark,
 		colorHeadingInverted: _colors.white.normal,
 		colorTextLinkPrimary: _colors.product.normal,
@@ -102,6 +110,7 @@ function getTokens(palette) {
 		colorTextAlertWarning: _colors.orange.dark,
 		colorAlertIconCritical: _colors.red.normal,
 		colorTextAlertCritical: _colors.red.dark,
+		colorTextAlertLink: _colors.ink.dark,
 		colorTextButtonFilled: _colors.white.normal,
 		colorTextButtonFilledHover: _colors.white.normal,
 		colorTextButtonFilledActive: _colors.white.normal,
@@ -160,13 +169,24 @@ function getTokens(palette) {
 		colorTextButtonLinkSecondaryHover: _colors.ink.normalHover,
 		colorTextButtonLinkSecondaryActive: _colors.ink.normalActive,
 		colorTextInput: _colors.ink.normal,
+		colorTextInputPrefix: _colors.ink.light,
 		colorTextInputDisabled: _colors.ink.lighter,
+		colorTextBadgeNeutral: _colors.ink.dark,
+		colorTextBadgeInfo: _colors.blue.normal,
+		colorTextBadgeSuccess: _colors.green.normal,
+		colorTextBadgeWarning: _colors.orange.normal,
+		colorTextBadgeCritical: _colors.red.normal,
+		colorTextBadgeDark: _colors.white.normal,
 		colorIconInput: _colors.ink.lighter,
 		colorPlaceholderInput: _colors.ink.lighter,
-		colorLabelForm: _colors.ink.normal,
-		colorLabelFormFilled: _colors.ink.light,
-		colorIconCheckbox: _colors.product.normal,
-		colorIconCheckboxDisabled: _colors.ink.lighter,
+		colorPlaceholderInputError: _colors.red.normal,
+		colorPlaceholderInputFile: _colors.ink.light,
+		colorPlaceholderInputFileError: _colors.red.normal,
+		colorFormLabel: _colors.ink.normal,
+		colorFormLabelFilled: _colors.ink.light,
+		colorInfoCheckBoxRadio: _colors.ink.light,
+		colorIconCheckboxRadio: _colors.product.normal,
+		colorIconCheckboxRadioDisabled: _colors.ink.lighter,
 		colorIconRadioButton: _colors.product.normal,
 		colorIconRadioButtonDisabled: _colors.ink.lighter,
 		// category:Font family
@@ -179,6 +199,7 @@ function getTokens(palette) {
 		backgroundModal: _colors.white.normal,
 		backgroundCard: _colors.white.normal,
 		backgroundCarrierLogo: "transparent",
+		backgroundCountryFlag: "transparent",
 		backgroundButtonPrimary: _colors.product.normal,
 		backgroundButtonPrimaryHover: _colors.product.normalHover,
 		backgroundButtonPrimaryActive: _colors.product.normalActive,
@@ -218,6 +239,15 @@ function getTokens(palette) {
 		backgroundAlertInfo: _colors.blue.light,
 		backgroundAlertWarning: _colors.orange.light,
 		backgroundAlertCritical: _colors.red.light,
+		backgroundBadgeNeutral: _colors.cloud.light,
+		backgroundBadgeInfo: _colors.blue.light,
+		backgroundBadgeSuccess: _colors.green.light,
+		backgroundBadgeWarning: _colors.orange.light,
+		backgroundBadgeCritical: _colors.red.light,
+		backgroundBadgeDark: _colors.ink.normal,
+		backgroundServiceLogo: "transparent",
+		backgroundIllustration: "transparent",
+		backgroundSeparator: _colors.cloud.normal,
 		// category:Font size
 		// description:Use these sizing tokens for font sizes.
 		fontSizeHeadingDisplay: "40px",
@@ -233,8 +263,8 @@ function getTokens(palette) {
 		fontSizeButtonSmall: "12px",
 		fontSizeInputNormal: "16px",
 		fontSizeInputSmall: "14px",
-		fontSizeLabelForm: "14px",
-		fontSizeMessageForm: "12px",
+		fontSizeFormLabel: "14px",
+		fontSizeFormFeedback: "12px",
 		// category:Border radius
 		// description:Use radius tokens to change the border-radius size (rounded corners).
 		/** use only for square */
@@ -245,6 +275,7 @@ function getTokens(palette) {
 		borderRadiusLarge: "6px",
 		/** use for smaller elements like tags */
 		borderRadiusSmall: "2px",
+		borderRadiusBadge: "12px",
 		// category:Z Index
 		// description:Use layers to show depth of page.
 		zIndexDefault: "1",
@@ -270,8 +301,18 @@ function getTokens(palette) {
 		widthRadioButton: "20px",
 		heightCheckbox: "20px",
 		widthCheckbox: "20px",
-		heightCountryFlag: "20px",
-		widthCountryFlag: "20px",
+		heightCountryFlag: "auto",
+		widthCountryFlag: "24px",
+		heightBadge: "24px",
+		widthBadgeCircled: "24px",
+		heightIllustrationSmall: "90px",
+		heightIllustrationMedium: "200px",
+		heightServiceLogoSmall: "12px",
+		heightServiceLogoMedium: "24px",
+		heightServiceLogoLarge: "48px",
+		heightSeparator: "1px",
+		heightInputGroupSeparatorSmall: "16px",
+		heightInputGroupSeparatorNormal: "24px",
 		// category:Border color
 		// description:
 		borderColorInput: _colors.ink.lighter,
@@ -279,6 +320,7 @@ function getTokens(palette) {
 		borderColorInputActive: _colors.ink.lighterActive,
 		borderColorInputFocus: _colors.blue.normal,
 		borderColorInputError: _colors.red.normal,
+		borderColorInputErrorHover: _colors.red.normalHover,
 		borderColorInputErrorFocus: _colors.red.normal,
 		borderColorTableCell: _colors.ink.lighter,
 		borderColorCard: _colors.cloud.normal,
@@ -307,12 +349,18 @@ function getTokens(palette) {
 		borderColorButtonCriticalBordered: _colors.red.normal,
 		borderColorButtonCriticalBorderedHover: _colors.red.normalHover,
 		borderColorButtonCriticalBorderedActive: _colors.red.normalActive,
+		borderColorCheckboxRadio: _colors.ink.lighter,
+		borderColorCheckboxRadioError: _colors.red.normal,
+		borderColorCheckboxRadioHover: _colors.ink.light,
+		borderColorCheckboxRadioActive: _colors.ink.normal,
+		borderColorCheckboxRadioFocus: _colors.blue.normal,
 		// category:Border style
 		// description:
 		borderStyleCard: "solid",
 		borderWidthCard: "1px",
 		borderStyleInput: "solid",
 		borderWidthInput: "1px",
+		borderWidthInputFocus: "2px",
 		// category:Opacity
 		// description:
 		opacityOverlay: "0.8",
@@ -336,14 +384,23 @@ function getTokens(palette) {
 		paddingButtonSmall: "12px",
 		paddingButtonNormal: "16px",
 		paddingButtonLarge: "28px",
-		paddingInputSmall: "12px",
-		paddingInputNormal: "16px",
+		paddingTextareaSmall: "8px 12px",
+		paddingTextareaNormal: "12px",
+		paddingInputSmall: "0 12px",
+		paddingInputNormal: "0 12px",
 		paddingButtonSmallWithIcon: "8px",
 		paddingButtonNormalWithIcon: "8px",
 		paddingButtonLargeWithIcon: "12px",
 		marginButtonIconSmall: "8px",
 		marginButtonIconNormal: "12px",
 		marginButtonIconLarge: "16px",
+		marginRightButtonGroup: "1px",
+		marginTopFormFeedback: "2px",
+		marginBottomSelectSuffix: "2px",
+		paddingLeftInputFile: "6px",
+		paddingLeftSelectPrefix: "48px",
+		marginRightBadgeIcon: "4px",
+		spaceXXXSmall: "2px",
 		spaceXXSmall: "4px",
 		spaceXSmall: "8px",
 		spaceSmall: "12px",
@@ -354,12 +411,13 @@ function getTokens(palette) {
 		spaceXXXLarge: "52px",
 		// category:Duration
 		// description:Use this for setting the speed of animation or transition.
-		durationFast: "0.2s",
+		durationFast: "0.15s",
 		durationNormal: "0.3s",
 		durationSlow: "0.4s",
 		// category:Modifier
 		// description:Use this for values for transform property, etc.
-		modifierScaleButtonActive: 0.9,
+		modifierScaleButtonActive: 0.95,
+		modifierScaleCheckboxRadioActive: 0.95,
 		// category:Line height
 		// description:
 		lineHeightText: "1.4",
@@ -372,8 +430,10 @@ function getTokens(palette) {
 		textDecorationTextLinkSecondaryHover: "underline",
 		// category:Box shadow
 		// description:
-		boxShadowInputFocus: "0px 0px 3px 1px rgba(1,118,210,0.3)",
-		boxShadowInputErrorFocus: "0px 0px 3px 1px rgba(210,28,28,0.3)",
+		boxShadowButtonFocus: "0 0 4px 1px rgba(1,118,210,0.3)",
+		boxShadowActionable: "0 2px 4px 0 rgba(23, 27, 30, 0.1)",
+		boxShadowElevatedLevel1: "0 4px 12px 0 rgba(23, 27, 30, 0.15)",
+		boxShadowModal: "0 20px 60px 0 rgba(23, 27, 30, 0.4)",
 		// category:Color palette
 		// description: Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base _colors.
 		paletteProductLight: _colors.product.light,
@@ -436,9 +496,26 @@ function getTokens(palette) {
 	});
 }
 
+function fromPlainObject(themePaletteColors) {
+	const colors = {
+		product: {
+			light: themePaletteColors.productLight,
+			lightHover: themePaletteColors.productLightHover,
+			lightActive: themePaletteColors.productLightActive,
+			normal: themePaletteColors.productNormal,
+			normalHover: themePaletteColors.productNormalHover,
+			normalActive: themePaletteColors.productNormalActive,
+			dark: themePaletteColors.productDark,
+		}
+	};
+
+	return getTokens(colors);
+}
+
 const defaultTokens = getTokens();
 
 module.exports = {
 	defaultTokens: defaultTokens,
-	getTokens: getTokens
+	getTokens: getTokens,
+  fromPlainObject: fromPlainObject
 };

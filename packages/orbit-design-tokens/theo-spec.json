@@ -1,13 +1,5 @@
 {
   "props": {
-    "colorTextInfo": {
-      "value": "#0176D2",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
     "colorTextPrimary": {
       "value": "#46515e",
       "type": "color",
@@ -40,6 +32,46 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
+    "colorTextInfo": {
+      "value": "#0176D2",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextSuccess": {
+      "value": "#46B655",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextWarning": {
+      "value": "#f9971e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextCritical": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextWhite": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
     "colorIconPrimary": {
       "value": "#46515e",
       "type": "color",
@@ -64,8 +96,40 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorIconTerciary": {
+    "colorIconTertiary": {
       "value": "#bac7d5",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorIconInfo": {
+      "value": "#0176D2",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorIconSuccess": {
+      "value": "#46B655",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorIconWarning": {
+      "value": "#f9971e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorIconCritical": {
+      "value": "#d21c1c",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -178,6 +242,14 @@
     },
     "colorTextAlertCritical": {
       "value": "#650808",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextAlertLink": {
+      "value": "#171b1e",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -648,8 +720,64 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
+    "colorTextInputPrefix": {
+      "value": "#7f91a8",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
     "colorTextInputDisabled": {
       "value": "#bac7d5",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextBadgeNeutral": {
+      "value": "#171b1e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextBadgeInfo": {
+      "value": "#0176D2",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextBadgeSuccess": {
+      "value": "#46B655",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextBadgeWarning": {
+      "value": "#f9971e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextBadgeCritical": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextBadgeDark": {
+      "value": "#fff",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -672,15 +800,15 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorLabelForm": {
-      "value": "#46515e",
+    "colorPlaceholderInputError": {
+      "value": "#d21c1c",
       "type": "color",
       "category": "Colors",
       "meta": {
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorLabelFormFilled": {
+    "colorPlaceholderInputFile": {
       "value": "#7f91a8",
       "type": "color",
       "category": "Colors",
@@ -688,7 +816,39 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorIconCheckbox": {
+    "colorPlaceholderInputFileError": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorFormLabel": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorFormLabelFilled": {
+      "value": "#7f91a8",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorInfoCheckBoxRadio": {
+      "value": "#7f91a8",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorIconCheckboxRadio": {
       "value": "#00a991",
       "type": "color",
       "category": "Colors",
@@ -696,7 +856,7 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorIconCheckboxDisabled": {
+    "colorIconCheckboxRadioDisabled": {
       "value": "#bac7d5",
       "type": "color",
       "category": "Colors",
@@ -753,6 +913,14 @@
       }
     },
     "backgroundCarrierLogo": {
+      "value": "transparent",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
+      }
+    },
+    "backgroundCountryFlag": {
       "value": "transparent",
       "type": "string",
       "category": "Background colors",
@@ -1072,6 +1240,78 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
       }
     },
+    "backgroundBadgeNeutral": {
+      "value": "#f5f7f9",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
+      }
+    },
+    "backgroundBadgeInfo": {
+      "value": "#e0f6ff",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
+      }
+    },
+    "backgroundBadgeSuccess": {
+      "value": "#e7f3e8",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
+      }
+    },
+    "backgroundBadgeWarning": {
+      "value": "#fcf1cd",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
+      }
+    },
+    "backgroundBadgeCritical": {
+      "value": "#fae8e8",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
+      }
+    },
+    "backgroundBadgeDark": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
+      }
+    },
+    "backgroundServiceLogo": {
+      "value": "transparent",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
+      }
+    },
+    "backgroundIllustration": {
+      "value": "transparent",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
+      }
+    },
+    "backgroundSeparator": {
+      "value": "#e8edf1",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text _colors."
+      }
+    },
     "fontSizeHeadingDisplay": {
       "value": "40px",
       "type": "size",
@@ -1176,7 +1416,7 @@
         "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
-    "fontSizeLabelForm": {
+    "fontSizeFormLabel": {
       "value": "14px",
       "type": "size",
       "category": "Font size",
@@ -1184,7 +1424,7 @@
         "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
-    "fontSizeMessageForm": {
+    "fontSizeFormFeedback": {
       "value": "12px",
       "type": "size",
       "category": "Font size",
@@ -1224,6 +1464,14 @@
       "type": "size",
       "category": "Border radius",
       "comment": "use for smaller elements like tags",
+      "meta": {
+        "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners)."
+      }
+    },
+    "borderRadiusBadge": {
+      "value": "12px",
+      "type": "size",
+      "category": "Border radius",
       "meta": {
         "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners)."
       }
@@ -1397,15 +1645,95 @@
       }
     },
     "heightCountryFlag": {
-      "value": "20px",
-      "type": "size",
+      "value": "auto",
+      "type": "string",
       "category": "Size (width, height)",
       "meta": {
         "categoryDescription": ""
       }
     },
     "widthCountryFlag": {
-      "value": "20px",
+      "value": "24px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "heightBadge": {
+      "value": "24px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "widthBadgeCircled": {
+      "value": "24px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "heightIllustrationSmall": {
+      "value": "90px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "heightIllustrationMedium": {
+      "value": "200px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "heightServiceLogoSmall": {
+      "value": "12px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "heightServiceLogoMedium": {
+      "value": "24px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "heightServiceLogoLarge": {
+      "value": "48px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "heightSeparator": {
+      "value": "1px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "heightInputGroupSeparatorSmall": {
+      "value": "16px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "heightInputGroupSeparatorNormal": {
+      "value": "24px",
       "type": "size",
       "category": "Size (width, height)",
       "meta": {
@@ -1446,6 +1774,14 @@
     },
     "borderColorInputError": {
       "value": "#d21c1c",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorInputErrorHover": {
+      "value": "#bd1919",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -1676,6 +2012,46 @@
         "categoryDescription": ""
       }
     },
+    "borderColorCheckboxRadio": {
+      "value": "#bac7d5",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorCheckboxRadioError": {
+      "value": "#d21c1c",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorCheckboxRadioHover": {
+      "value": "#7f91a8",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorCheckboxRadioActive": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorCheckboxRadioFocus": {
+      "value": "#0176D2",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "borderStyleCard": {
       "value": "solid",
       "type": "string",
@@ -1702,6 +2078,14 @@
     },
     "borderWidthInput": {
       "value": "1px",
+      "type": "size",
+      "category": "Border style",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderWidthInputFocus": {
+      "value": "2px",
       "type": "size",
       "category": "Border style",
       "meta": {
@@ -1844,7 +2228,15 @@
         "categoryDescription": "Use this for setting spacings for elements."
       }
     },
-    "paddingInputSmall": {
+    "paddingTextareaSmall": {
+      "value": "8px 12px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingTextareaNormal": {
       "value": "12px",
       "type": "size",
       "category": "Spacing",
@@ -1852,8 +2244,16 @@
         "categoryDescription": "Use this for setting spacings for elements."
       }
     },
+    "paddingInputSmall": {
+      "value": "0 12px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
     "paddingInputNormal": {
-      "value": "16px",
+      "value": "0 12px",
       "type": "size",
       "category": "Spacing",
       "meta": {
@@ -1902,6 +2302,62 @@
     },
     "marginButtonIconLarge": {
       "value": "16px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "marginRightButtonGroup": {
+      "value": "1px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "marginTopFormFeedback": {
+      "value": "2px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "marginBottomSelectSuffix": {
+      "value": "2px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingLeftInputFile": {
+      "value": "6px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingLeftSelectPrefix": {
+      "value": "48px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "marginRightBadgeIcon": {
+      "value": "4px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "spaceXXXSmall": {
+      "value": "2px",
       "type": "size",
       "category": "Spacing",
       "meta": {
@@ -1973,7 +2429,7 @@
       }
     },
     "durationFast": {
-      "value": "0.2s",
+      "value": "0.15s",
       "type": "string",
       "category": "Duration",
       "meta": {
@@ -1997,7 +2453,15 @@
       }
     },
     "modifierScaleButtonActive": {
-      "value": 0.9,
+      "value": 0.95,
+      "type": "number",
+      "category": "Modifier",
+      "meta": {
+        "categoryDescription": "Use this for values for transform property, etc."
+      }
+    },
+    "modifierScaleCheckboxRadioActive": {
+      "value": 0.95,
       "type": "number",
       "category": "Modifier",
       "meta": {
@@ -2052,16 +2516,32 @@
         "categoryDescription": ""
       }
     },
-    "boxShadowInputFocus": {
-      "value": "0px 0px 3px 1px rgba(1,118,210,0.3)",
+    "boxShadowButtonFocus": {
+      "value": "0 0 4px 1px rgba(1,118,210,0.3)",
       "type": "size",
       "category": "Box shadow",
       "meta": {
         "categoryDescription": ""
       }
     },
-    "boxShadowInputErrorFocus": {
-      "value": "0px 0px 3px 1px rgba(210,28,28,0.3)",
+    "boxShadowActionable": {
+      "value": "0 2px 4px 0 rgba(23, 27, 30, 0.1)",
+      "type": "size",
+      "category": "Box shadow",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "boxShadowElevatedLevel1": {
+      "value": "0 4px 12px 0 rgba(23, 27, 30, 0.15)",
+      "type": "size",
+      "category": "Box shadow",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "boxShadowModal": {
+      "value": "0 20px 60px 0 rgba(23, 27, 30, 0.4)",
       "type": "size",
       "category": "Box shadow",
       "meta": {

@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-design-tokens",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Design tokens for kiwi!",
   "main": "lib/index.js",
   "repository": {

@@ -21,13 +21,15 @@ For simple usage of defaultTokens just add this line of code to the top of the f
  
 Now you can use tokens by typing `defaultTokens` and just continue with the dot-notation by typing the appropriate token name you want to use f.e. `defaultTokens.colorTextPrimary`. More advanced text editors should suggest which tokens are available to you in the token object, so you can find tokens quicker than by typing the entire token name.
 
-From version 0.0.9 there is possibility to change tokens and colors values also. Just simply import `getTokens` from this package.
+### Generating your own theme
 
-`import { getTokens } from "@kiwicom/orbit-design-tokens"`
+From version 0.0.9 there is possibility to change tokens and colors values also. Just simply import `getTokens` from this package.
 
 You can generate a new theme with your colors simply like this:
 
-```
+```jsx
+import { getTokens } from "@kiwicom/orbit-design-tokens"
+
 // define your colors
 const colors = {
   product: {
@@ -43,6 +45,29 @@ const colors = {
 
 const theme = getTokens(colors);
 ```
+
+For usage with NEST, which contains plant object with palette colors, you can use function `fromPlainObject`.
+
+**Example:**
+```jsx
+import { fromPlainObject } from "@kiwicom/orbit-design-tokens"
+
+// from NEST
+const palette = {
+  productLight: "#ff9999",
+  productLightHover: "#ff7f7f",
+  productLightActive: "#ff6666",
+  productNormal: "#ff0000",
+  productNormalHover: "#e50000",
+  productNormalActive: "#cc0000",
+  productDark: "#990000",
+};
+
+const theme = fromPlainObject(theme);
+```
+
+## Full list of design tokens
+If you are unsure which tokens are in this package included, see (https://orbit.kiwi/design-tokens/).
 
 ## Formats
 The main structure of the package is written in `JavaScript` for better usage in `JavaScript` projects. We are also able to generate a `JSON` file which will allow us to transform this type of file into different ones. It should be possible to transform `JSON` into `SASS`, `LESS`, `Stylus`, `XML` or others.

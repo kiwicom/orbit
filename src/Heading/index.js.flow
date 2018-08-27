@@ -1,5 +1,4 @@
 // @flow
-import defaultTokens from "../defaultTokens";
 
 type Element = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 type Type = "display" | "title1" | "title2" | "title3";
@@ -9,7 +8,6 @@ export type Props = {|
   +type?: Type,
   +children: React$Node,
   +inverted?: boolean,
-  +theme?: typeof defaultTokens,
 |};
 
 declare export default React$ComponentType<Props>;

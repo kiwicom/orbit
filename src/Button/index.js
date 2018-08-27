@@ -8,156 +8,7 @@ import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 
 import type { Props } from "./index";
 
-const IconContainer = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
-))`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-right: ${({ onlyIcon, tokens, size }) => (onlyIcon ? "0" : tokens.marginRightIcon[size])};
-  color: ${({ tokens, bordered, type }) =>
-    bordered ? tokens.colorTextButtonBordered[type] : tokens.colorTextButton[type]};
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-
-  > * {
-    width: ${({ sizeIcon }) => ICON_SIZES[sizeIcon]};
-    height: ${({ sizeIcon }) => ICON_SIZES[sizeIcon]};
-  }
-`;
-
-IconContainer.defaultProps = {
-  theme: defaultTokens,
-};
-
-const IconContainerRight = styled(IconContainer)`
-  margin-right: 0;
-  margin-left: ${({ onlyIcon, tokens, size }) => (onlyIcon ? "0" : tokens.marginRightIcon[size])};
-`;
-
-IconContainerRight.defaultProps = {
-  theme: defaultTokens,
-};
-
-export const StyledButton = styled(
-  ({
-    tokens,
-    theme,
-    component,
-    external,
-    type,
-    icon,
-    iconLeft,
-    iconRight,
-    sizeIcon,
-    width,
-    bordered,
-    onlyIcon,
-    block,
-    style,
-    ...props
-  }) => {
-    const Component = component === "button" && props.href ? "a" : component;
-    return <Component {...props}>{props.children}</Component>;
-  },
-)`
-  box-sizing: border-box;
-  appearance: none;
-  display: ${({ href, component }) => (href || component === "a" ? "inline-flex" : "flex")};
-  text-decoration: none;
-  justify-content: center;
-  align-items: center;
-  width: ${({ block, width, onlyIcon, tokens, size }) =>
-    block
-      ? "100%"
-      : (width && `${width}px`) || (onlyIcon && `${tokens.heightButton[size]}`) || "auto"};
-  height: ${({ tokens, size }) => tokens.heightButton[size]};
-  background: ${({ bordered, tokens, type }) =>
-    bordered ? tokens.backgroundButtonBordered : tokens.backgroundButton[type]};
-  color: ${({ tokens, bordered, type }) =>
-    bordered ? tokens.colorTextButtonBordered[type] : tokens.colorTextButton[type]}!important;
-  border: 0;
-  box-shadow: ${({ bordered, tokens, type }) =>
-    bordered && `inset 0 0 0 1px ${tokens.borderColorButton[type]}`};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  padding: 0;
-  padding-right: ${({ onlyIcon, iconRight, tokens, size }) =>
-    (onlyIcon && "0") ||
-    (iconRight ? tokens.paddingButtonWithIcon[size] : tokens.paddingButton[size])};
-  padding-left: ${({ onlyIcon, icon, iconLeft, tokens, size }) =>
-    (onlyIcon && "0") ||
-    (iconLeft || icon ? tokens.paddingButtonWithIcon[size] : tokens.paddingButton[size])};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
-  font-size: ${({ tokens, size }) => tokens.fontSizeButton[size]};
-  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
-  transition: all 0.15s ease-in-out !important;
-  outline: 0;
-  opacity: ${({ disabled, theme }) => disabled && theme.orbit.opacityButtonDisabled};
-  pointer-events: ${({ disabled }) => disabled && "none"};
-
-  &:hover {
-    background: ${({ disabled, bordered, tokens, type }) =>
-      !disabled &&
-      (bordered ? tokens.backgroundButtonBorderedHover : tokens.backgroundButtonHover[type])};
-    box-shadow: ${({ disabled, bordered, tokens, type }) =>
-      !disabled && (bordered && `inset 0 0 0 1px ${tokens.borderColorButtonHover[type]}`)};
-    color: ${({ disabled, tokens, bordered, type }) =>
-      !disabled &&
-      (bordered
-        ? tokens.colorTextButtonBorderedHover[type]
-        : tokens.colorTextButtonHover[type])}!important;
-    & ${IconContainer} {
-      color: ${({ disabled, tokens, bordered, type }) =>
-        !disabled &&
-        (bordered ? tokens.colorTextButtonBorderedHover[type] : tokens.colorTextButtonHover[type])};
-    }
-  }
-
-  &:active {
-    ${({ disabled, theme }) =>
-      !disabled && `transform: scale(${theme.orbit.modifierScaleButtonActive})`};
-    background: ${({ disabled, bordered, tokens, type }) =>
-      !disabled &&
-      (bordered ? tokens.backgroundButtonBorderedActive : tokens.backgroundButtonActive[type])};
-    box-shadow: ${({ disabled, bordered, tokens, type }) =>
-      !disabled && (bordered && `inset 0 0 0 1px ${tokens.borderColorButtonActive[type]}`)};
-    color: ${({ disabled, tokens, bordered, type }) =>
-      !disabled &&
-      (bordered
-        ? tokens.colorTextButtonBorderedActive[type]
-        : tokens.colorTextButtonActive[type])}!important;
-    & ${IconContainer} {
-      color: ${({ disabled, tokens, bordered, type }) =>
-        !disabled &&
-        (bordered
-          ? tokens.colorTextButtonBorderedActive[type]
-          : tokens.colorTextButtonActive[type])};
-    }
-  }
-`;
-
-StyledButton.defaultProps = {
-  theme: defaultTokens,
-};
-
-const Button = (props: Props) => {
-  const {
-    component = "button",
-    disabled,
-    children,
-    bordered,
-    size = SIZE_OPTIONS.NORMAL,
-    icon,
-    iconRight,
-    theme = defaultTokens,
-    external,
-    type = TYPE_OPTIONS.PRIMARY,
-    block,
-    width = 0,
-  } = props;
-  const iconLeft = props.iconLeft || icon;
-  const sizeIcon = size === "small" ? "small" : "medium";
-  const onlyIcon = iconLeft && !children;
+const getToken = (theme, type, name) => {
   const tokens = {
     heightButton: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.heightButtonLarge,
@@ -194,7 +45,6 @@ const Button = (props: Props) => {
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.backgroundButtonFacebook,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonGoogle,
     },
-    backgroundButtonBordered: theme.orbit.backgroundButtonBordered,
     backgroundButtonHover: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonPrimaryHover,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.backgroundButtonSecondaryHover,
@@ -205,7 +55,6 @@ const Button = (props: Props) => {
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.backgroundButtonFacebookHover,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonGoogleHover,
     },
-    backgroundButtonBorderedHover: theme.orbit.backgroundButtonBorderedHover,
     backgroundButtonActive: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonPrimaryActive,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.backgroundButtonSecondaryActive,
@@ -216,7 +65,6 @@ const Button = (props: Props) => {
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.backgroundButtonFacebookActive,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonGoogleActive,
     },
-    backgroundButtonBorderedActive: theme.orbit.backgroundButtonBorderedActive,
     colorTextButton: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimary,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextButtonSecondary,
@@ -309,6 +157,178 @@ const Button = (props: Props) => {
     },
   };
 
+  return tokens[name][type];
+};
+
+const IconContainer = styled(({ className, children }) => (
+  <div className={className}>{children}</div>
+))`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: ${({ onlyIcon, theme, size }) =>
+    onlyIcon ? "0" : getToken(theme, size, "marginRightIcon")};
+  color: ${({ theme, bordered, type }) =>
+    bordered
+      ? getToken(theme, type, "colorTextButtonBordered")
+      : getToken(theme, type, "colorTextButton")};
+  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+
+  > * {
+    width: ${({ sizeIcon }) => ICON_SIZES[sizeIcon]};
+    height: ${({ sizeIcon }) => ICON_SIZES[sizeIcon]};
+  }
+`;
+
+IconContainer.defaultProps = {
+  theme: defaultTokens,
+};
+
+const IconContainerRight = styled(IconContainer)`
+  margin-right: 0;
+  margin-left: ${({ onlyIcon, theme, size }) =>
+    onlyIcon ? "0" : getToken(theme, size, "marginRightIcon")};
+`;
+
+IconContainerRight.defaultProps = {
+  theme: defaultTokens,
+};
+
+export const StyledButton = styled(
+  ({
+    tokens,
+    theme,
+    component,
+    external,
+    type,
+    icon,
+    iconLeft,
+    iconRight,
+    sizeIcon,
+    width,
+    bordered,
+    onlyIcon,
+    block,
+    style,
+    ...props
+  }) => {
+    const Component = component === "button" && props.href ? "a" : component;
+    return <Component {...props}>{props.children}</Component>;
+  },
+)`
+  box-sizing: border-box;
+  appearance: none;
+  display: ${({ href, component }) => (href || component === "a" ? "inline-flex" : "flex")};
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  width: ${({ block, width, onlyIcon, theme, size }) =>
+    block
+      ? "100%"
+      : (width && `${width}px`) ||
+        (onlyIcon && `${getToken(theme, size, "heightButton")}`) ||
+        "auto"};
+  height: ${({ theme, size }) => getToken(theme, size, "heightButton")};
+  background: ${({ bordered, theme, type }) =>
+    bordered ? theme.orbit.backgroundButtonBordered : getToken(theme, type, "backgroundButton")};
+  color: ${({ theme, bordered, type }) =>
+    bordered
+      ? getToken(theme, type, "colorTextButtonBordered")
+      : getToken(theme, type, "colorTextButton")} !important;
+  border: 0;
+  box-shadow: ${({ bordered, theme, type }) =>
+    bordered && `inset 0 0 0 1px ${getToken(theme, type, "borderColorButton")}`};
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  padding: 0;
+  padding-right: ${({ onlyIcon, iconRight, theme, size }) =>
+    (onlyIcon && "0") ||
+    (iconRight
+      ? getToken(theme, size, "paddingButtonWithIcon")
+      : getToken(theme, size, "paddingButton"))};
+  padding-left: ${({ onlyIcon, icon, iconLeft, theme, size }) =>
+    (onlyIcon && "0") ||
+    (iconLeft || icon
+      ? getToken(theme, size, "paddingButtonWithIcon")
+      : getToken(theme, size, "paddingButton"))};
+  font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
+  font-size: ${({ theme, size }) => getToken(theme, size, "fontSizeButton")};
+  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+  transition: all 0.15s ease-in-out !important;
+  outline: 0;
+  opacity: ${({ disabled, theme }) => disabled && theme.orbit.opacityButtonDisabled};
+  pointer-events: ${({ disabled }) => disabled && "none"};
+
+  &:hover {
+    background: ${({ disabled, bordered, theme, type }) =>
+      !disabled &&
+      (bordered
+        ? theme.orbit.backgroundButtonBorderedHover
+        : getToken(theme, type, "backgroundButtonHover"))};
+    box-shadow: ${({ disabled, bordered, theme, type }) =>
+      !disabled &&
+      (bordered && `inset 0 0 0 1px ${getToken(theme, type, "borderColorButtonHover")}`)};
+    color: ${({ disabled, theme, bordered, type }) =>
+      !disabled &&
+      (bordered
+        ? getToken(theme, type, "colorTextButtonBorderedHover")
+        : getToken(theme, type, "colorTextButtonHover"))} !important;
+    & ${IconContainer} {
+      color: ${({ disabled, theme, bordered, type }) =>
+        !disabled &&
+        (bordered
+          ? getToken(theme, type, "colorTextButtonBorderedHover")
+          : getToken(theme, type, "colorTextButtonHover"))};
+    }
+  }
+
+  &:active {
+    ${({ disabled, theme }) =>
+      !disabled && `transform: scale(${theme.orbit.modifierScaleButtonActive})`};
+    background: ${({ disabled, bordered, theme, type }) =>
+      !disabled &&
+      (bordered
+        ? theme.orbit.backgroundButtonBorderedActive
+        : getToken(theme, type, "backgroundButtonActive"))};
+    box-shadow: ${({ disabled, bordered, theme, type }) =>
+      !disabled && (bordered && `inset 0 0 0 1px ${getToken(theme, type, "borderColorButtonActive")}`)};
+    color: ${({ disabled, theme, bordered, type }) =>
+      !disabled &&
+      (bordered
+        ? getToken(theme, type, "colorTextButtonBorderedActive")
+        : getToken(theme, type, "colorTextButtonActive"))} !important;
+    & ${IconContainer} {
+      color: ${({ disabled, theme, bordered, type }) =>
+        !disabled &&
+        (bordered
+          ? getToken(theme, type, "colorTextButtonBorderedActive")
+          : getToken(theme, type, "colorTextButtonActive"))};
+    }
+  }
+`;
+
+StyledButton.defaultProps = {
+  theme: defaultTokens,
+};
+
+const Button = (props: Props) => {
+  const {
+    component = "button",
+    disabled,
+    children,
+    bordered,
+    size = SIZE_OPTIONS.NORMAL,
+    icon,
+    iconRight,
+    external,
+    type = TYPE_OPTIONS.PRIMARY,
+    block,
+    width = 0,
+  } = props;
+  const iconLeft = props.iconLeft || icon;
+  const sizeIcon = size === "small" ? "small" : "medium";
+  const onlyIcon = iconLeft && !children;
+
   return (
     <StyledButton
       component={component}
@@ -317,7 +337,6 @@ const Button = (props: Props) => {
       block={block}
       onlyIcon={onlyIcon}
       sizeIcon={sizeIcon}
-      tokens={tokens}
       target={external ? "_blank" : undefined}
       size={size}
       type={type}
@@ -330,7 +349,6 @@ const Button = (props: Props) => {
           onlyIcon={onlyIcon}
           bordered={bordered}
           sizeIcon={sizeIcon}
-          tokens={tokens}
           type={type}
         >
           {iconLeft}
@@ -343,7 +361,6 @@ const Button = (props: Props) => {
           onlyIcon={onlyIcon}
           bordered={bordered}
           sizeIcon={sizeIcon}
-          tokens={tokens}
           type={type}
         >
           {iconRight}

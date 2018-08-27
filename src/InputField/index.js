@@ -59,12 +59,11 @@ const InputContainer = styled(({ children, className }) => (
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
 
   &:hover > ${FakeInput} {
-    box-shadow: inset 0 0 0
-      ${({ disabled, theme, error }) =>
-        !disabled &&
-        `${theme.orbit.borderWidthInput} ${
-          error ? theme.orbit.paletteRedNormalHover : theme.orbit.borderColorInputHover
-        }`};
+    ${({ disabled, theme, error }) =>
+      !disabled &&
+      `box-shadow: inset 0 0 0 ${theme.orbit.borderWidthInput} ${
+        error ? theme.orbit.paletteRedNormalHover : theme.orbit.borderColorInputHover
+      }`};
   }
 `;
 

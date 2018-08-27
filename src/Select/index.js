@@ -75,7 +75,7 @@ const StyledSelect = styled(
     cursor: default;
 
     &:hover {
-      border-color: ${({ theme }) => theme.orbit.borderColorInput};
+      box-shadow: inset 0 0 0 1px ${({ theme }) => theme.orbit.borderColorInput};
     }
   }
 `;

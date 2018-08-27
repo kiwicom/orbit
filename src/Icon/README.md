@@ -3,15 +3,9 @@ To implement Icon component into your project you need to know its name. You can
 ```jsx
 import Airplane from "@kiwicom/orbit-components/lib/icons/Airplane";
 ```
-or if you want to import more icons at once:
-```jsx
-import { Airplane, ArrowUp, ChevronDown } from "@kiwicom/orbit-components/lib/icons";
-```
 After adding import into your project you can use it simply like:
 ```jsx
 <Airplane />
-<ArrowUp />
-<ChevronDown />
 ```
 ## Props
 Table below contains all types of the props available for icons in general.

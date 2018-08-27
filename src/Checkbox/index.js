@@ -97,11 +97,9 @@ const Label = styled(({ tokens, disabled, theme, type, ...props }) => (
   position: relative;
 
   &:hover ${IconContainer} {
-    border-color: ${({ disabled, theme }) =>
-      disabled
-        ? theme.orbit.borderColorInputHover
-        : theme.orbit.paletteInkLight}; // TODO create token
+    border-color: ${({ disabled, theme }) => !disabled && theme.orbit.borderColorInputHover};
   }
+
   &:active ${IconContainer} {
     border-color: ${({ disabled, theme, tokens }) =>
       disabled ? tokens.borderColor : theme.orbit.paletteInkNormal}; // TODO create token

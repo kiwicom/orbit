@@ -30,7 +30,7 @@ const StyledSelect = styled(
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   cursor: pointer;
   color: ${({ theme, filled }) =>
-    filled ? theme.orbit.colorTextInput : theme.orbit.paletteInkLight};
+    filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme, size }) =>
     size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
@@ -49,24 +49,27 @@ const StyledSelect = styled(
   }
 
   /* With prefix */
-  padding-left: ${({ prefix }) => prefix && "48px"}; // TODO: Create token
+  padding-left: ${({ prefix, theme }) => prefix && theme.orbit.paddingLeftSelectPrefix};
 
   /* Based on state of select */
   border: 0;
-  box-shadow: inset 0 0 0 1px
+  box-shadow: inset 0 0 0
     ${({ theme, error }) =>
-      error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput};
+      `${theme.orbit.borderWidthInput} ${
+        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+      }`};
 
   &:hover {
-    box-shadow: inset 0 0 0 1px
+    box-shadow: inset 0 0 0
       ${({ theme, error }) =>
-        error
-          ? theme.orbit.paletteRedNormalHover
-          : theme.orbit.borderColorInputHover}; // TODO: Create hover token
+        `${theme.orbit.borderWidthInput} ${
+          error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
+        }`};
   }
 
   &:focus {
-    box-shadow: inset 0 0 0 ${({ theme }) => `2px ${theme.orbit.borderColorInputFocus}`};
+    box-shadow: inset 0 0 0
+      ${({ theme }) => `${theme.orbit.borderWidthInputFocus} ${theme.orbit.borderColorInputFocus}`};
   }
 
   &:disabled {
@@ -126,8 +129,7 @@ const SelectSuffix = styled(({ children, className }) => (
   & > * {
     width: ${({ theme, size }) => size === SIZE_OPTIONS.SMALL && theme.orbit.widthIconSmall};
     height: ${({ theme, size }) => size === SIZE_OPTIONS.SMALL && theme.orbit.heightIconSmall};
-    margin-bottom: ${({ size }) =>
-      size === SIZE_OPTIONS.SMALL && "2px"}; // temporary replacement for token spaceXXXSmall
+    margin-bottom: ${({ size, theme }) => size === SIZE_OPTIONS.SMALL && theme.orbit.spaceXXXSmall};
   }
 `;
 

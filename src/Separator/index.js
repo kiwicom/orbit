@@ -6,8 +6,8 @@ import defaultTokens from "../defaultTokens";
 
 const StyledSeparator = styled.hr`
   width: 100%;
-  height: 1px; // TODO create token
-  background: ${({ theme }) => theme.orbit.paletteCloudNormal}; // TODO create token
+  height: ${({ theme }) => theme.orbit.heightSeparator};
+  background: ${({ theme }) => theme.orbit.backgroundSeparator};
   box-sizing: border-box;
   border-style: none;
   margin-top: 0;

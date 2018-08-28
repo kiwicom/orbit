@@ -11,10 +11,10 @@ const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {...props}
   color: ${({ theme, type }) =>
     type === TYPE_OPTIONS.ERROR ? theme.orbit.colorTextError : theme.orbit.colorTextSecondary};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeMessageForm}; // TODO: rename token
+  font-size: ${({ theme }) => theme.orbit.fontSizeFormFeedback};
   font-weight: ${({ theme, type }) =>
     type === TYPE_OPTIONS.ERROR ? theme.orbit.fontWeightMedium : theme.orbit.fontWeightNormal};
-  margin-top: 2px; // TODO: create token for 2px
+  margin-top: ${({ theme }) => theme.orbit.marginTopFormFeedback};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
 
   & a {

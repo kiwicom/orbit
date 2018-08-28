@@ -13,7 +13,8 @@ const StyledButtonGroup = styled.div`
 
   & ${StyledButtonLink}, & ${StyledButton} {
     border-radius: ${({ connected }) => connected && "0"};
-    margin-right: ${({ theme, connected }) => (connected ? "1px" : theme.orbit.spaceXSmall)};
+    margin-right: ${({ theme, connected }) =>
+      connected ? theme.orbit.marginRightButtonGroup : theme.orbit.spaceXSmall};
 
     &:first-child {
       border-radius: ${({ connected, theme }) =>

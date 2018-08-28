@@ -1,5 +1,7 @@
 // @flow
 
+import defaultTokens from "../defaultTokens";
+
 type Name =
   | "Accommodation"
   | "AirportTransport"
@@ -48,6 +50,7 @@ type Name =
 export type Props = {|
   +size?: "small" | "medium",
   +name: Name,
+  +theme?: typeof defaultTokens,
 |};
 
 declare export default React$ComponentType<Props>;

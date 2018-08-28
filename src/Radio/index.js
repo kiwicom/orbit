@@ -11,7 +11,7 @@ const Glyph = styled.span`
   width: 12px;
   height: 12px;
   background-color: ${({ theme, disabled }) =>
-    disabled ? theme.orbit.colorIconCheckboxDisabled : theme.orbit.colorIconCheckbox};
+    disabled ? theme.orbit.colorIconCheckboxRadioDisabled : theme.orbit.colorIconCheckboxRadio};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusCircle};
 `;
 
@@ -51,8 +51,8 @@ TextContainer.defaultProps = {
 };
 
 const Info = styled.span`
-  font-size: ${({ theme }) => theme.orbit.fontSizeMessageForm};
-  color: ${({ theme }) => theme.orbit.paletteInkLight}; // TODO create token
+  font-size: ${({ theme }) => theme.orbit.fontSizeFormFeedback};
+  color: ${({ theme }) => theme.orbit.colorInfoCheckBoxRadio};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
 `;
 
@@ -62,8 +62,8 @@ Info.defaultProps = {
 
 const LabelText = styled.span`
   font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
-  font-size: ${({ theme }) => theme.orbit.fontSizeLabelForm};
-  color: ${({ theme }) => theme.orbit.colorLabelForm};
+  font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
+  color: ${({ theme }) => theme.orbit.colorFormLabel};
   height: ${({ theme }) => theme.orbit.heightCheckbox};
   line-height: ${({ theme }) => theme.orbit.heightCheckbox};
 `;
@@ -101,20 +101,21 @@ const Label = styled(({ tokens, disabled, theme, type, ...props }) => (
   position: relative;
 
   &:hover ${IconContainer} {
-    border-color: ${({ disabled, theme }) => !disabled && theme.orbit.borderColorInputHover};
+    border-color: ${({ disabled, theme }) =>
+      !disabled && theme.orbit.borderColorCheckboxRadioHover};
   }
 
   &:active ${IconContainer} {
     border-color: ${({ disabled, theme, tokens }) =>
-      disabled ? tokens.borderColor : theme.orbit.paletteInkNormal}; // TODO create token
+      disabled ? tokens.borderColor : theme.orbit.borderColorCheckboxRadioActive};
     transform: ${({ disabled, theme }) =>
-      !disabled && `scale(${theme.orbit.modifierScaleButtonActive})`};
+      !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
   }
   &:focus {
     outline: 0;
     & ${IconContainer} {
       border: ${({ theme }) =>
-        `2px ${theme.orbit.borderStyleInput} ${theme.orbit.borderColorInputFocus}`};
+        `2px ${theme.orbit.borderStyleInput} ${theme.orbit.borderColorCheckboxRadioFocus}`};
     }
   }
 `;
@@ -138,8 +139,8 @@ const Radio = (props: Props) => {
   const tokens = {
     borderColor:
       hasError && !disabled && !checked
-        ? theme.orbit.borderColorInputError
-        : theme.orbit.borderColorInput,
+        ? theme.orbit.borderColorCheckboxRadioError
+        : theme.orbit.borderColorCheckboxRadio,
   };
 
   return (

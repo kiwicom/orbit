@@ -15,14 +15,14 @@ const StyledBadge = styled(({ className, children }) => (
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
-  height: 24px; // TODO: create token
-  line-height: 24px; // TODO: create token
-  width: ${({ circled }) => circled && "24px"}; // TODO: create token
+  height: ${({ theme }) => theme.orbit.heightBadge};
+  line-height: ${({ theme }) => theme.orbit.heightBadge};
+  width: ${({ circled, theme }) => circled && theme.orbit.widthBadgeCircled};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
   font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
   background-color: ${({ tokens, type }) => tokens.background[type]};
   color: ${({ tokens, type }) => tokens.color[type]};
-  border-radius: 12px; // TODO: create token borderRadiusBadge
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusBadge};
   padding: 0 8px;
 `;
 
@@ -34,7 +34,7 @@ const IconContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
   display: flex;
-  margin-right: 4px; // TODO: create token
+  margin-right: ${({ theme }) => theme.orbit.marginRightBadgeIcon};
 
   svg {
     height: 16px;
@@ -43,26 +43,29 @@ const IconContainer = styled(({ className, children }) => (
   }
 `;
 
+IconContainer.defaultProps = {
+  theme: defaultTokens,
+};
+
 const Badge = (props: Props) => {
   const { type = TYPE_OPTIONS.NEUTRAL, theme = defaultTokens, icon, children } = props;
 
-  // TODO: create tokens
   const tokens = {
     background: {
-      [TYPE_OPTIONS.NEUTRAL]: theme.orbit.paletteCloudLight,
-      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueLight,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenLight,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeLight,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedLight,
-      [TYPE_OPTIONS.DARK]: theme.orbit.paletteInkNormal,
+      [TYPE_OPTIONS.NEUTRAL]: theme.orbit.backgroundBadgeNeutral,
+      [TYPE_OPTIONS.INFO]: theme.orbit.backgroundBadgeInfo,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.backgroundBadgeSuccess,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.backgroundBadgeWarning,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.backgroundBadgeCritical,
+      [TYPE_OPTIONS.DARK]: theme.orbit.backgroundBadgeDark,
     },
     color: {
-      [TYPE_OPTIONS.NEUTRAL]: theme.orbit.paletteInkDark,
-      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueNormal,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenNormal,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeNormal,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedNormal,
-      [TYPE_OPTIONS.DARK]: theme.orbit.paletteWhite,
+      [TYPE_OPTIONS.NEUTRAL]: theme.orbit.colorTextBadgeNeutral,
+      [TYPE_OPTIONS.INFO]: theme.orbit.colorTextBadgeInfo,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorTextBadgeSuccess,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextBadgeWarning,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextBadgeCritical,
+      [TYPE_OPTIONS.DARK]: theme.orbit.colorTextBadgeDark,
     },
   };
 

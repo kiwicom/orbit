@@ -8,10 +8,10 @@ import { baseURL, CODES } from "./consts";
 import type { Props } from "./index";
 
 const StyledCountryFlag = styled.img`
-  height: auto; // change token heightCountryFlag
-  width: 24px; // change token widthCountryFlag
+  height: ${({ theme }) => theme.orbit.heightCountryFlag};
+  width: ${({ theme }) => theme.orbit.widthCountryFlag};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusSmall};
-  background-color: transparent; // TODO: Use token backgroundCountryFlag
+  background-color: ${({ theme }) => theme.orbit.backgroundCountryFlag};
 `;
 
 StyledCountryFlag.defaultProps = {

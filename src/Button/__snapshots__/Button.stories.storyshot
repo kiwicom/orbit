@@ -99,7 +99,7 @@ exports[`Storyshots Button Basic buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK bmgnWr"
+            className="Button__StyledButton-jJDkJK gIxOYB"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -446,7 +446,7 @@ exports[`Storyshots Button Button as a link 1`] = `
           }
         >
           <a
-            className="Button__StyledButton-jJDkJK gjyVIL"
+            className="Button__StyledButton-jJDkJK erowoy"
             disabled={false}
             href="https://kiwi.com"
             onClick={[Function]}
@@ -454,7 +454,7 @@ exports[`Storyshots Button Button as a link 1`] = `
             target={undefined}
           >
             <div
-              className="Button__IconContainer-bZYzaL eTpMQR"
+              className="Button__IconContainer-bZYzaL dUJOux"
             >
               <svg
                 className={undefined}
@@ -889,14 +889,14 @@ exports[`Storyshots Button Button with icon 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK cjJrJY"
+            className="Button__StyledButton-jJDkJK hThVnS"
             disabled={undefined}
             onClick={[Function]}
             size="small"
             target={undefined}
           >
             <div
-              className="Button__IconContainer-bZYzaL lnMxEw"
+              className="Button__IconContainer-bZYzaL jplId"
             >
               <svg
                 className={undefined}
@@ -1214,7 +1214,7 @@ exports[`Storyshots Button Button with icon 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK dtXwoT"
+            className="Button__StyledButton-jJDkJK hjPdHf"
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -1222,7 +1222,7 @@ exports[`Storyshots Button Button with icon 1`] = `
           >
             Button
             <div
-              className="Button__IconContainerRight-fadTMO bJWYgf Button__IconContainer-bZYzaL lnMxEw"
+              className="Button__IconContainerRight-fadTMO bJWYgf Button__IconContainer-bZYzaL jplId"
             >
               <svg
                 className={undefined}
@@ -1614,7 +1614,7 @@ exports[`Storyshots Button Default 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK bmgnWr"
+            className="Button__StyledButton-jJDkJK gIxOYB"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -1867,14 +1867,14 @@ exports[`Storyshots Button Destructive buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK iprPZf"
+            className="Button__StyledButton-jJDkJK hlbjgZ"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
             target={undefined}
           >
             <div
-              className="Button__IconContainer-bZYzaL knKUId"
+              className="Button__IconContainer-bZYzaL imwegU"
             >
               <svg
                 className={undefined}
@@ -2267,7 +2267,7 @@ exports[`Storyshots Button Playground 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK dgvReS"
+            className="Button__StyledButton-jJDkJK dbFXRQ"
             disabled={false}
             href={undefined}
             onClick={[Function]}
@@ -2275,7 +2275,7 @@ exports[`Storyshots Button Playground 1`] = `
             target={undefined}
           >
             <div
-              className="Button__IconContainer-bZYzaL knKUId"
+              className="Button__IconContainer-bZYzaL imwegU"
             >
               <svg
                 className={undefined}
@@ -2298,7 +2298,7 @@ exports[`Storyshots Button Playground 1`] = `
             </div>
             Button
             <div
-              className="Button__IconContainerRight-fadTMO hFXLWZ Button__IconContainer-bZYzaL knKUId"
+              className="Button__IconContainerRight-fadTMO hFXLWZ Button__IconContainer-bZYzaL imwegU"
             >
               <svg
                 className={undefined}
@@ -2906,14 +2906,14 @@ exports[`Storyshots Button Social buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK hGwFXU"
+            className="Button__StyledButton-jJDkJK fjZUvd"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
             target={undefined}
           >
             <div
-              className="Button__IconContainer-bZYzaL drmtjH"
+              className="Button__IconContainer-bZYzaL jiwtlj"
             >
               <svg
                 className={undefined}
@@ -3181,14 +3181,14 @@ exports[`Storyshots Button Social buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK jkFvjW"
+            className="Button__StyledButton-jJDkJK fHMorX"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
             target={undefined}
           >
             <div
-              className="Button__IconContainer-bZYzaL hhiIIX"
+              className="Button__IconContainer-bZYzaL ldfzcQ"
             >
               <svg
                 className={undefined}
@@ -3548,14 +3548,14 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK fLfDKq"
+            className="Button__StyledButton-jJDkJK eJIwwR"
             disabled={undefined}
             onClick={[Function]}
             size="small"
             target={undefined}
           >
             <div
-              className="Button__IconContainer-bZYzaL lnMxEw"
+              className="Button__IconContainer-bZYzaL jplId"
             >
               <svg
                 className={undefined}
@@ -3842,14 +3842,14 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK kuVuUN"
+            className="Button__StyledButton-jJDkJK bwwFTc"
             disabled={undefined}
             onClick={[Function]}
             size="small"
             target={undefined}
           >
             <div
-              className="Button__IconContainer-bZYzaL lnMxEw"
+              className="Button__IconContainer-bZYzaL jplId"
             >
               <svg
                 className={undefined}
@@ -4136,14 +4136,14 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK kMoCHT"
+            className="Button__StyledButton-jJDkJK hbxuey"
             disabled={undefined}
             onClick={[Function]}
             size="small"
             target={undefined}
           >
             <div
-              className="Button__IconContainer-bZYzaL lnMxEw"
+              className="Button__IconContainer-bZYzaL jplId"
             >
               <svg
                 className={undefined}
@@ -4430,14 +4430,14 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK kHFcNa"
+            className="Button__StyledButton-jJDkJK grUrkw"
             disabled={undefined}
             onClick={[Function]}
             size="small"
             target={undefined}
           >
             <div
-              className="Button__IconContainer-bZYzaL lnMxEw"
+              className="Button__IconContainer-bZYzaL jplId"
             >
               <svg
                 className={undefined}

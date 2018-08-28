@@ -102,7 +102,7 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
             className="ButtonGroup__StyledButtonGroup-dnkEba epdACx"
           >
             <button
-              className="ButtonLink__StyledButtonLink-eyUiPe kjYsfE"
+              className="ButtonLink__StyledButtonLink-eyUiPe RJxxC"
               onClick={undefined}
               size="normal"
               target={undefined}
@@ -133,7 +133,7 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
               Button
             </button>
             <button
-              className="ButtonLink__StyledButtonLink-eyUiPe eoGGQX"
+              className="ButtonLink__StyledButtonLink-eyUiPe jJTYLA"
               onClick={undefined}
               size="normal"
               target={undefined}
@@ -585,13 +585,13 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
             className="ButtonGroup__StyledButtonGroup-dnkEba epdACx"
           >
             <button
-              className="Button__StyledButton-jJDkJK cAomlN"
+              className="Button__StyledButton-jJDkJK exJrlh"
               disabled={undefined}
               size="normal"
               target={undefined}
             >
               <div
-                className="Button__IconContainer-bZYzaL knKUId"
+                className="Button__IconContainer-bZYzaL imwegU"
               >
                 <svg
                   className={undefined}
@@ -615,13 +615,13 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
               Button
             </button>
             <button
-              className="Button__StyledButton-jJDkJK hyErMg"
+              className="Button__StyledButton-jJDkJK bIVoek"
               disabled={undefined}
               size="normal"
               target={undefined}
             >
               <div
-                className="Button__IconContainer-bZYzaL cvmjgP"
+                className="Button__IconContainer-bZYzaL cpOSoG"
               >
                 <svg
                   className={undefined}

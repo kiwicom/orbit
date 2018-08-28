@@ -62,7 +62,7 @@ const InputContainer = styled(({ children, className }) => (
     ${({ disabled, theme, error }) =>
       !disabled &&
       `box-shadow: inset 0 0 0 ${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.paletteRedNormalHover : theme.orbit.borderColorInputHover
+        error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
       }`};
   }
 `;
@@ -73,7 +73,7 @@ InputContainer.defaultProps = {
 
 const Prefix = styled(({ children, className }) => <div className={className}>{children}</div>)`
   height: 100%;
-  color: ${({ theme }) => theme.orbit.paletteInkLight}; // TODO create token
+  color: ${({ theme }) => theme.orbit.colorTextInputPrefix};
   display: flex;
   align-items: center;
   pointer-events: none;
@@ -115,7 +115,7 @@ const Input = styled(({ theme, tokens, size, prefix, suffix, error, help, ...pro
   appearance: none;
   font-family: inherit;
   border: none;
-  padding: ${({ tokens, size, prefix }) => (prefix ? "0" : `0 ${tokens.paddingInput[size]}`)};
+  padding: ${({ tokens, size, prefix }) => (prefix ? "0" : `${tokens.paddingInput[size]}`)};
   font-size: inherit;
   color: inherit;
   background-color: inherit;
@@ -128,8 +128,9 @@ const Input = styled(({ theme, tokens, size, prefix, suffix, error, help, ...pro
   &:focus {
     outline: none;
     & ~ ${FakeInput} {
-      // TODO: create token for 2px borderWidth
-      box-shadow: inset 0 0 0 ${({ theme }) => `2px ${theme.orbit.borderColorInputFocus}`};
+      box-shadow: inset 0 0 0
+        ${({ theme }) =>
+          `${theme.orbit.borderWidthInputFocus} ${theme.orbit.borderColorInputFocus}`};
     }
   }
 
@@ -167,8 +168,8 @@ const InputField = (props: Props) => {
       [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
     },
     paddingInput: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingInputSmall, // TODO: create token (0 12px)
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingInputSmall, // TODO: create token (0 12px)
+      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingInputSmall,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingInputNormal,
     },
     iconSize: {
       [SIZE_OPTIONS.SMALL]: theme.orbit.widthIconSmall,

@@ -6,7 +6,7 @@ type Type = "info" | "success" | "warning" | "critical";
 export type Props = {|
   +type?: Type,
   +children?: React$Node,
-  +title?: string,
+  +title?: string | React$Node,
   +icon?: React$Element<any> | boolean,
   +closable?: boolean,
   +onClose?: () => void,

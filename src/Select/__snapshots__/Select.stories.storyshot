@@ -573,7 +573,7 @@ exports[`Storyshots Select Playground 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk iGpuPP"
+                className="Select__StyledSelect-eyhbyk gsufLD"
                 disabled={false}
                 onBlur={undefined}
                 onChange={[Function]}
@@ -2308,7 +2308,7 @@ exports[`Storyshots Select With placeholder 1`] = `
         >
           <label>
             <span
-              className="FormLabel-kJFBRQ irIxpQ"
+              className="FormLabel-kJFBRQ fuYBgg"
             >
               Select box (with placeholder)
             </span>
@@ -2316,7 +2316,7 @@ exports[`Storyshots Select With placeholder 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk iGpuPP"
+                className="Select__StyledSelect-eyhbyk gsufLD"
                 disabled={false}
                 onBlur={undefined}
                 onChange={[Function]}

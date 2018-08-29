@@ -23,4 +23,10 @@ export type Props = {|
   +theme?: typeof defaultTokens,
 |};
 
+declare export var FakeInput: React$ComponentType<>;
+
+declare export var Input: React$ComponentType<>;
+
+declare export var InputContainer: React$ComponentType<>;
+
 declare export default React$ComponentType<Props>;

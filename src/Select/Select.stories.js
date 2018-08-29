@@ -13,11 +13,6 @@ import Select from "./index";
 
 setAddon(chaptersAddon);
 
-const options = {
-  allowSourceToggling: false,
-  allowPropTablesToggling: false,
-};
-
 const objectOptions = [
   { value: 1, label: "First item" },
   { value: 2, label: "Second item" },
@@ -39,7 +34,6 @@ storiesOf("Select", module)
         sections: [
           {
             sectionFn: () => <Select options={objectOptions} onChange={action("onChange")} />,
-            options,
           },
         ],
       },
@@ -60,7 +54,6 @@ storiesOf("Select", module)
                 prefix={<Airplane color="secondary" />}
               />
             ),
-            options,
           },
         ],
       },
@@ -83,7 +76,6 @@ storiesOf("Select", module)
                   onChange={action("onChange")}
                 />
               ),
-              options,
             },
           ],
         },
@@ -109,7 +101,6 @@ storiesOf("Select", module)
                 onChange={action("onChange")}
               />
             ),
-            options,
           },
         ],
       },
@@ -130,7 +121,6 @@ storiesOf("Select", module)
                 onChange={action("onChange")}
               />
             ),
-            options,
           },
         ],
       },
@@ -151,7 +141,6 @@ storiesOf("Select", module)
                 onChange={action("onChange")}
               />
             ),
-            options,
           },
         ],
       },
@@ -182,7 +171,6 @@ storiesOf("Select", module)
                   value={value}
                 />
               ),
-              options,
             },
           ],
         },

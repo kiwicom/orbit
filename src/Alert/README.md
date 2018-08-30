@@ -16,7 +16,7 @@ Table below contains all types of the props available in Alert component.
 | closable      | `boolean`                       | `false`         | If `true`, the Close icon will be displayed. [See Functional specs](#functional-specs)
 | icon          | `React.Element<any> \| boolean` |                 | The displayed icon. [See Functional specs](#functional-specs)
 | onClose       | `func`                          |                 | Function for handling Alert onClose.
-| title         | `string`                        |                 | The title of the Alert.
+| title         | `string` \| `React.Node`        |                 | The title of the Alert.
 | **type**      | [`enum`](#enum)                 | `"info"`        | The type of Alert.
 
 ### enum

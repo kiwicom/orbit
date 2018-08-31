@@ -21,6 +21,10 @@ import typeof LoadingType from "./Loading";
 import typeof TextType from "./Text";
 import typeof TextLinkType from "./TextLink";
 import typeof TileType from "./Tile";
+import typeof TripSegmentType from "./TripSegment";
+import typeof TripSectorType from "./TripSector";
+import typeof TripDateType from "./TripSector/TripDate";
+import typeof TripLayoverType from "./TripSector/TripLayover";
 import typeof RadioType from "./Radio";
 import typeof RatingStarsType from "./RatingStars";
 import typeof SelectType from "./Select";
@@ -103,7 +107,10 @@ declare export var ServiceLogo: ServiceLogoType;
 declare export var StopoverArrow: StopoverArrowType;
 declare export var Textarea: TextareaType;
 declare export var Tile: TileType;
-
+declare export var TripSegment: TripSegmentType;
+declare export var TripSector: TripSectorType;
+declare export var TripDate: TripDateType;
+declare export var TripLayover: TripLayoverType;
 declare export var defaultTheme: any;
 
 declare export var media: mediaType;

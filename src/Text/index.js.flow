@@ -26,3 +26,4 @@ export type Props = {|
 |};
 
 declare export default React$ComponentType<Props>;
+declare export var StyledText: React$ComponentType<Props>;

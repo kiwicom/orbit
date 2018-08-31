@@ -1,0 +1,21 @@
+// @flow
+import List from "../List";
+
+export type TripType = "airline" | "bus" | "train";
+
+export type Props = {|
+  +children: React$Element<typeof List>,
+  +code: string,
+  +name: string,
+  +arrivalTime: string,
+  +arrivalCity: string,
+  +arrivalCode: string,
+  +departureTime: string,
+  +departureCity: string,
+  +departureCode: string,
+  +duration: string | number,
+  +type: TripType,
+  +onClick?: () => void,
+|};
+
+declare export default React$ComponentType<Props>;

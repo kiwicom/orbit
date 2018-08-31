@@ -22,16 +22,16 @@ const StyledCard = styled.div`
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
- 
+
   ${StyledCardHeader} {
     padding-right: ${({ theme, closable }) => closable && theme.orbit.spaceLarge};
   }
- 
+
   ${StyledCardHeader} + ${StyledCardSection}, ${StyledCardHeader} + ${StyledCardContent} {
     padding-top: 0;
     border-top: 0;
   }
-  
+
 `;
 
 StyledCard.defaultProps = {

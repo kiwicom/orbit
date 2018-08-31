@@ -45,3 +45,4 @@ export { default as ServiceLogo } from "./ServiceLogo";
 export { default as Separator } from "./Separator";
 export { default as Textarea } from "./Textarea";
 export { defaultTokens as defaultTheme, getTokens } from "@kiwicom/orbit-design-tokens";
+export { default as TripSegment } from "./TripSegment";

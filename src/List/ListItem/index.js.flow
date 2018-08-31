@@ -7,4 +7,5 @@ export type Props = {|
   +theme?: typeof defaultTokens,
 |};
 
+declare export var Item: React$ComponentType<>;
 declare export default React$ComponentType<Props>;

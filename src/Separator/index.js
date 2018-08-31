@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 
-const StyledSeparator = styled.hr`
+export const StyledSeparator = styled.hr`
   width: 100%;
   height: ${({ theme }) => theme.orbit.heightSeparator};
   background: ${({ theme }) => theme.orbit.backgroundSeparator};

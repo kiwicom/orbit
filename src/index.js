@@ -44,4 +44,5 @@ export { default as Select } from "./Select";
 export { default as ServiceLogo } from "./ServiceLogo";
 export { default as Separator } from "./Separator";
 export { default as Textarea } from "./Textarea";
+export { default as Tile } from "./Tile";
 export { defaultTokens as defaultTheme, getTokens } from "@kiwicom/orbit-design-tokens";

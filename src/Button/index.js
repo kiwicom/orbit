@@ -5,6 +5,7 @@ import styled from "styled-components";
 import defaultTokens from "../defaultTokens";
 import { ICON_SIZES } from "../Icon/consts";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
+import Loading, { StyledSpinner } from "../Loading";
 
 import type { Props } from "./index";
 
@@ -18,7 +19,8 @@ const IconContainer = styled(({ className, children }) => (
   margin-right: ${({ onlyIcon, tokens, size }) => (onlyIcon ? "0" : tokens.marginRightIcon[size])};
   color: ${({ tokens, bordered, type }) =>
     bordered ? tokens.colorTextButtonBordered[type] : tokens.colorTextButton[type]};
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  transition: background ${({ theme }) => theme.orbit.durationFast} ease-in-out,
+    box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   > * {
     width: ${({ sizeIcon }) => ICON_SIZES[sizeIcon]};
@@ -52,6 +54,7 @@ export const StyledButton = styled(
     sizeIcon,
     width,
     bordered,
+    loading,
     onlyIcon,
     block,
     style,
@@ -61,12 +64,13 @@ export const StyledButton = styled(
     return <Component {...props}>{props.children}</Component>;
   },
 )`
-  box-sizing: border-box;
-  appearance: none;
+  position: relative;
   display: ${({ href, component }) => (href || component === "a" ? "inline-flex" : "flex")};
-  text-decoration: none;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  appearance: none;
+  text-decoration: none;
   width: ${({ block, width, onlyIcon, tokens, size }) =>
     block
       ? "100%"
@@ -134,18 +138,35 @@ export const StyledButton = styled(
           : tokens.colorTextButtonActive[type])};
     }
   }
+
+  ${StyledSpinner} {
+    width: ${({ tokens, size }) => tokens.loadingWidth[size]};
+    height: ${({ tokens, size }) => tokens.loadingHeight[size]};
+  }
 `;
 
 StyledButton.defaultProps = {
   theme: defaultTokens,
 };
 
+const StyledButtonContent = styled.div`
+  visibility: ${({ loading }) => loading && "hidden"};
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+StyledButtonContent.defaultProps = {
+  theme: defaultTokens,
+};
+
 const Button = (props: Props) => {
   const {
     component = "button",
-    disabled,
     children,
     bordered,
+    disabled,
     size = SIZE_OPTIONS.NORMAL,
     icon,
     iconRight,
@@ -153,16 +174,28 @@ const Button = (props: Props) => {
     external,
     type = TYPE_OPTIONS.PRIMARY,
     block,
+    loading = false,
     width = 0,
   } = props;
   const iconLeft = props.iconLeft || icon;
   const sizeIcon = size === "small" ? "small" : "medium";
   const onlyIcon = iconLeft && !children;
+  const isDisabled = loading || disabled;
   const tokens = {
     heightButton: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.heightButtonLarge,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.heightButtonNormal,
       [SIZE_OPTIONS.SMALL]: theme.orbit.heightButtonSmall,
+    },
+    loadingWidth: {
+      [SIZE_OPTIONS.LARGE]: theme.orbit.widthIconMedium,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.widthIconMedium,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.widthIconSmall,
+    },
+    loadingHeight: {
+      [SIZE_OPTIONS.LARGE]: theme.orbit.heightIconMedium,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.heightIconMedium,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.heightIconSmall,
     },
     fontSizeButton: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeButtonLarge,
@@ -311,44 +344,48 @@ const Button = (props: Props) => {
 
   return (
     <StyledButton
-      component={component}
-      disabled={disabled}
       bordered={bordered}
       block={block}
+      component={component}
+      disabled={isDisabled}
+      loading={loading}
       onlyIcon={onlyIcon}
-      sizeIcon={sizeIcon}
-      tokens={tokens}
-      target={external ? "_blank" : undefined}
       size={size}
+      sizeIcon={sizeIcon}
+      target={external ? "_blank" : undefined}
+      tokens={tokens}
       type={type}
       width={width}
       {...props}
     >
-      {iconLeft && (
-        <IconContainer
-          size={size}
-          onlyIcon={onlyIcon}
-          bordered={bordered}
-          sizeIcon={sizeIcon}
-          tokens={tokens}
-          type={type}
-        >
-          {iconLeft}
-        </IconContainer>
-      )}
-      {children}
-      {iconRight && (
-        <IconContainerRight
-          size={size}
-          onlyIcon={onlyIcon}
-          bordered={bordered}
-          sizeIcon={sizeIcon}
-          tokens={tokens}
-          type={type}
-        >
-          {iconRight}
-        </IconContainerRight>
-      )}
+      {loading && <Loading type="buttonLoader" />}
+      <StyledButtonContent loading={loading}>
+        {iconLeft && (
+          <IconContainer
+            bordered={bordered}
+            onlyIcon={onlyIcon}
+            size={size}
+            sizeIcon={sizeIcon}
+            tokens={tokens}
+            type={type}
+          >
+            {iconLeft}
+          </IconContainer>
+        )}
+        {children}
+        {iconRight && (
+          <IconContainerRight
+            bordered={bordered}
+            onlyIcon={onlyIcon}
+            size={size}
+            sizeIcon={sizeIcon}
+            tokens={tokens}
+            type={type}
+          >
+            {iconRight}
+          </IconContainerRight>
+        )}
+      </StyledButtonContent>
     </StyledButton>
   );
 };

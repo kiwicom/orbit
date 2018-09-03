@@ -585,62 +585,70 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
             className="ButtonGroup__StyledButtonGroup-dnkEba epdACx"
           >
             <button
-              className="Button__StyledButton-jJDkJK exJrlh"
+              className="Button__StyledButton-jJDkJK hKKzpf"
               disabled={undefined}
               size="normal"
               target={undefined}
             >
               <div
-                className="Button__IconContainer-bZYzaL imwegU"
+                className="Button__StyledButtonContent-gvDciI pDqSF"
               >
-                <svg
-                  className={undefined}
-                  fill="currentColor"
-                  height="24px"
-                  preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                  width="24px"
+                <div
+                  className="Button__IconContainer-bZYzaL dikZaB"
                 >
-                  <path
-                    d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                  />
-                </svg>
+                  <svg
+                    className={undefined}
+                    fill="currentColor"
+                    height="24px"
+                    preserveAspectRatio="xMidYMid meet"
+                    style={
+                      Object {
+                        "color": undefined,
+                        "verticalAlign": "middle",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="24px"
+                  >
+                    <path
+                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                    />
+                  </svg>
+                </div>
+                Button
               </div>
-              Button
             </button>
             <button
-              className="Button__StyledButton-jJDkJK bIVoek"
+              className="Button__StyledButton-jJDkJK gtuTUc"
               disabled={undefined}
               size="normal"
               target={undefined}
             >
               <div
-                className="Button__IconContainer-bZYzaL cpOSoG"
+                className="Button__StyledButtonContent-gvDciI pDqSF"
               >
-                <svg
-                  className={undefined}
-                  fill="currentColor"
-                  height="24px"
-                  preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                  width="24px"
+                <div
+                  className="Button__IconContainer-bZYzaL hAoIdO"
                 >
-                  <path
-                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                  />
-                </svg>
+                  <svg
+                    className={undefined}
+                    fill="currentColor"
+                    height="24px"
+                    preserveAspectRatio="xMidYMid meet"
+                    style={
+                      Object {
+                        "color": undefined,
+                        "verticalAlign": "middle",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="24px"
+                  >
+                    <path
+                      d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                    />
+                  </svg>
+                </div>
               </div>
             </button>
           </div>

@@ -1,0 +1,14 @@
+// @flow
+
+type Type = "buttonLoader" | "boxLoader" | "searchLoader" | "pageLoader";
+
+export type Props = {|
+  +children?: React$Node,
+  +loading?: boolean,
+  +type?: Type,
+  +text?: string,
+|};
+
+declare export var StyledSpinner: React$ComponentType<>;
+
+declare export default React$ComponentType<Props>;

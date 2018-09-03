@@ -119,34 +119,38 @@ exports[`Storyshots InputFile Default 1`] = `
               className="InputFile__FakeInput-djykOY ciTDoB"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hplpJ"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK FXNZC"
                 disabled={undefined}
                 size="small"
                 target={undefined}
               >
                 <div
-                  className="Button__IconContainer-bZYzaL gSBBD"
+                  className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
-                  <svg
-                    className={undefined}
-                    fill="currentColor"
-                    height="24px"
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
-                    }
-                    viewBox="0 0 24 24"
-                    width="24px"
+                  <div
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
-                    <path
-                      d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
-                    />
-                  </svg>
+                    <svg
+                      className={undefined}
+                      fill="currentColor"
+                      height="24px"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "color": undefined,
+                          "verticalAlign": "middle",
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                      width="24px"
+                    >
+                      <path
+                        d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
+                      />
+                    </svg>
+                  </div>
+                  Select file
                 </div>
-                Select file
               </div>
               <div
                 className="InputFile__StyledFileInput-emwhFr UJeXz"
@@ -506,34 +510,38 @@ exports[`Storyshots InputFile Filled with file 1`] = `
               className="InputFile__FakeInput-djykOY ciTDoB"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hplpJ"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK FXNZC"
                 disabled={undefined}
                 size="small"
                 target={undefined}
               >
                 <div
-                  className="Button__IconContainer-bZYzaL gSBBD"
+                  className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
-                  <svg
-                    className={undefined}
-                    fill="currentColor"
-                    height="24px"
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
-                    }
-                    viewBox="0 0 24 24"
-                    width="24px"
+                  <div
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
-                    <path
-                      d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
-                    />
-                  </svg>
+                    <svg
+                      className={undefined}
+                      fill="currentColor"
+                      height="24px"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "color": undefined,
+                          "verticalAlign": "middle",
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                      width="24px"
+                    >
+                      <path
+                        d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
+                      />
+                    </svg>
+                  </div>
+                  Select file
                 </div>
-                Select file
               </div>
               <div
                 className="InputFile__StyledFileInput-emwhFr eAUfwC"
@@ -958,34 +966,38 @@ exports[`Storyshots InputFile Playground 1`] = `
               className="InputFile__FakeInput-djykOY dilRac"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hplpJ"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK FXNZC"
                 disabled={undefined}
                 size="small"
                 target={undefined}
               >
                 <div
-                  className="Button__IconContainer-bZYzaL gSBBD"
+                  className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
-                  <svg
-                    className={undefined}
-                    fill="currentColor"
-                    height="24px"
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
-                    }
-                    viewBox="0 0 24 24"
-                    width="24px"
+                  <div
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
-                    <path
-                      d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
-                    />
-                  </svg>
+                    <svg
+                      className={undefined}
+                      fill="currentColor"
+                      height="24px"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "color": undefined,
+                          "verticalAlign": "middle",
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                      width="24px"
+                    >
+                      <path
+                        d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
+                      />
+                    </svg>
+                  </div>
+                  Please select file
                 </div>
-                Please select file
               </div>
               <div
                 className="InputFile__StyledFileInput-emwhFr hBGxpC"
@@ -1589,34 +1601,38 @@ exports[`Storyshots InputFile With error 1`] = `
               className="InputFile__FakeInput-djykOY dilRac"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hplpJ"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK FXNZC"
                 disabled={undefined}
                 size="small"
                 target={undefined}
               >
                 <div
-                  className="Button__IconContainer-bZYzaL gSBBD"
+                  className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
-                  <svg
-                    className={undefined}
-                    fill="currentColor"
-                    height="24px"
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
-                    }
-                    viewBox="0 0 24 24"
-                    width="24px"
+                  <div
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
-                    <path
-                      d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
-                    />
-                  </svg>
+                    <svg
+                      className={undefined}
+                      fill="currentColor"
+                      height="24px"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "color": undefined,
+                          "verticalAlign": "middle",
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                      width="24px"
+                    >
+                      <path
+                        d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
+                      />
+                    </svg>
+                  </div>
+                  Select file
                 </div>
-                Select file
               </div>
               <div
                 className="InputFile__StyledFileInput-emwhFr hBGxpC"
@@ -2011,34 +2027,38 @@ exports[`Storyshots InputFile With help 1`] = `
               className="InputFile__FakeInput-djykOY ciTDoB"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hplpJ"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK FXNZC"
                 disabled={undefined}
                 size="small"
                 target={undefined}
               >
                 <div
-                  className="Button__IconContainer-bZYzaL gSBBD"
+                  className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
-                  <svg
-                    className={undefined}
-                    fill="currentColor"
-                    height="24px"
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
-                    }
-                    viewBox="0 0 24 24"
-                    width="24px"
+                  <div
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
-                    <path
-                      d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
-                    />
-                  </svg>
+                    <svg
+                      className={undefined}
+                      fill="currentColor"
+                      height="24px"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "color": undefined,
+                          "verticalAlign": "middle",
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                      width="24px"
+                    >
+                      <path
+                        d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
+                      />
+                    </svg>
+                  </div>
+                  Select file
                 </div>
-                Select file
               </div>
               <div
                 className="InputFile__StyledFileInput-emwhFr UJeXz"

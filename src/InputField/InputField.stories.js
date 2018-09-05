@@ -11,6 +11,7 @@ import * as Icons from "../icons";
 import { SIZE_OPTIONS, TYPE_OPTIONS } from "./consts";
 import ButtonLink from "../ButtonLink";
 import TextLink from "../TextLink";
+import FormLabel from "../FormLabel";
 
 import InputField from "./index";
 
@@ -193,6 +194,66 @@ storiesOf("InputField", module)
       ],
     };
   })
+
+  .addWithChapters("Compact input", () => {
+    const value = text("Value", "");
+    const formLabelText = text("FormLabel", "FormLabel");
+    const placeholder = text("Placeholder", "Placeholder");
+    const required = boolean("required", false);
+    const error = text("Error", undefined);
+
+    return {
+      info: "Compact input with FormLabel as prefix",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <InputField
+                  prefix={filled => (
+                    <FormLabel filled={filled} required={required}>
+                      {formLabelText}
+                    </FormLabel>
+                  )}
+                  error={error}
+                  value={value}
+                  placeholder={placeholder}
+                  onChange={action("change")}
+                />
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Required field", () => {
+    const label = text("Label", "Label");
+    const value = text("Value", "");
+    const required = boolean("required", true);
+    const placeholder = text("Placeholder", "Placeholder");
+
+    return {
+      info: "Some description about this type of InputField in general.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <InputField
+                  label={label}
+                  value={value}
+                  placeholder={placeholder}
+                  required={required}
+                  onChange={action("change")}
+                />
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("With Icon prefix", () => {
     const label = text("Label", "Label");
     const value = text("Value", "");
@@ -265,6 +326,7 @@ storiesOf("InputField", module)
     const disabled = boolean("Disabled", false);
     const maxValue = number("maxValue", undefined);
     const minValue = number("minValue", undefined);
+    const required = boolean("required", false);
     const maxLength = number("maxLength", undefined);
     const minLength = number("minLength", undefined);
 
@@ -282,6 +344,7 @@ storiesOf("InputField", module)
                   label={label}
                   value={value}
                   placeholder={placeholder}
+                  required={required}
                   prefix={Prefix && <Prefix />}
                   suffix={
                     Suffix && (

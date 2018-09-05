@@ -1,5 +1,6 @@
 // @flow
 import defaultTokens from "../defaultTokens";
+import FormLabel from "../FormLabel";
 
 export type Props = {|
   +size?: "small" | "normal",
@@ -8,7 +9,7 @@ export type Props = {|
   +label?: string,
   +value?: string,
   +placeholder?: string,
-  +prefix?: React$Node,
+  +prefix?: React$Node | ((filled: boolean) => React$Element<typeof FormLabel>),
   +suffix?: React$Node,
   +help?: React$Node,
   +error?: React$Node,
@@ -17,6 +18,7 @@ export type Props = {|
   +minValue?: number,
   +maxLength?: number,
   +minLength?: number,
+  required?: boolean,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,

@@ -87,6 +87,12 @@ const Prefix = styled(({ children, className }) => <div className={className}>{c
     height: ${({ tokens, size }) => tokens.iconSize[size]};
     color: ${({ theme }) => theme.orbit.colorIconInput};
   }
+
+  ${FormLabel} {
+    margin-bottom: 0;
+    font-size: ${({ size, tokens }) => tokens.fontSizeInput[size]};
+    line-height: normal;
+  }
 `;
 
 Prefix.defaultProps = {
@@ -122,7 +128,7 @@ export const Input = styled(({ theme, tokens, size, prefix, suffix, error, help,
   color: inherit;
   background-color: inherit;
   cursor: inherit;
-  width: 100%;
+  flex: 1 auto;
   height: 100%;
   line-height: ${({ tokens, size }) => tokens.heightInput[size]};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
@@ -158,7 +164,12 @@ Input.defaultProps = {
 };
 
 const InputField = (props: Props) => {
-  const { size = SIZE_OPTIONS.NORMAL, type = TYPE_OPTIONS.TEXT, theme = defaultTokens } = props;
+  const {
+    size = SIZE_OPTIONS.NORMAL,
+    type = TYPE_OPTIONS.TEXT,
+    theme = defaultTokens,
+    required,
+  } = props;
 
   const tokens = {
     heightInput: {
@@ -178,13 +189,18 @@ const InputField = (props: Props) => {
       [SIZE_OPTIONS.NORMAL]: theme.orbit.widthIconMedium,
     },
   };
+
   return (
     <Field>
-      {props.label && <FormLabel filled={!!props.value}>{props.label}</FormLabel>}
+      {props.label && (
+        <FormLabel filled={!!props.value} required={required}>
+          {props.label}
+        </FormLabel>
+      )}
       <InputContainer tokens={tokens} size={size} disabled={props.disabled} error={props.error}>
         {props.prefix && (
           <Prefix tokens={tokens} size={size}>
-            {props.prefix}
+            {typeof props.prefix === "function" ? props.prefix(!!props.value) : props.prefix}
           </Prefix>
         )}
         <Input

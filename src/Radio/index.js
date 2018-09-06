@@ -29,7 +29,6 @@ const IconContainer = styled.div`
   height: ${({ theme }) => theme.orbit.heightCheckbox};
   width: ${({ theme }) => theme.orbit.widthCheckbox};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusCircle};
-  overflow: hidden;
   border: 1px solid ${({ tokens }) => tokens.borderColor};
   transform: scale(1);
   transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;

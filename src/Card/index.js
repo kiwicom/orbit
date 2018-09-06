@@ -20,7 +20,6 @@ const StyledCard = styled.div`
   border-style: ${({ theme }) => theme.orbit.borderStyleCard};
   border-color: ${({ theme }) => theme.orbit.borderColorCard};
   box-sizing: border-box;
-  overflow: hidden;
   position: relative;
  
   ${StyledCardHeader} {

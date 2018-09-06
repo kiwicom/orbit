@@ -78,7 +78,6 @@ const getFileInputColor = ({ error, fileName }, theme) => {
 const StyledFileInput = styled.div`
   color: ${({ error, fileName, theme }) => getFileInputColor({ error, fileName }, theme)};
   width: 100%;
-  overflow: hidden;
   white-space: nowrap;
   padding-left: ${({ theme }) => theme.orbit.spaceSmall};
 `;

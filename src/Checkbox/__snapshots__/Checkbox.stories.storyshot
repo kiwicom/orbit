@@ -110,7 +110,7 @@ exports[`Storyshots CheckBox Default 1`] = `
               value={undefined}
             />
             <div
-              className="Checkbox__IconContainer-jYfkbc iCWJLx"
+              className="Checkbox__IconContainer-jYfkbc jbTozU"
             >
               <svg
                 className={undefined}
@@ -412,7 +412,7 @@ exports[`Storyshots CheckBox Playground 1`] = `
               value="value"
             />
             <div
-              className="Checkbox__IconContainer-jYfkbc iCWJLx"
+              className="Checkbox__IconContainer-jYfkbc jbTozU"
             >
               <svg
                 className={undefined}
@@ -810,7 +810,7 @@ exports[`Storyshots CheckBox With help 1`] = `
               value="value"
             />
             <div
-              className="Checkbox__IconContainer-jYfkbc iCWJLx"
+              className="Checkbox__IconContainer-jYfkbc jbTozU"
             >
               <svg
                 className={undefined}

@@ -2,11 +2,13 @@
 
 export const NAMES = [
   "Accommodation",
+  "AirHelp",
   "AirportTransport",
   "AirportTransportTaxi",
   "BoardingPass",
   "CabinBaggage",
   "EnjoyApp",
+  "FastTrack",
   "Feedback",
   "Help",
   "Improve",
@@ -23,6 +25,7 @@ export const NAMES = [
   "NoFavoriteFlights",
   "NoNotification",
   "Offline",
+  "OnlineCheckIn",
   "OpenSearch",
   "Parking",
   "Pets",

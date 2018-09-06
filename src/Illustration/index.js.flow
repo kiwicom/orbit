@@ -4,11 +4,13 @@ import defaultTokens from "../defaultTokens";
 
 type Name =
   | "Accommodation"
+  | "AirHelp"
   | "AirportTransport"
   | "AirportTransportTaxi"
   | "BoardingPass"
   | "CabinBaggage"
   | "EnjoyApp"
+  | "FastTrack"
   | "Feedback"
   | "Help"
   | "Improve"
@@ -25,6 +27,7 @@ type Name =
   | "NoFavoriteFlights"
   | "NoNotification"
   | "Offline"
+  | "OnlineCheckIn"
   | "OpenSearch"
   | "Parking"
   | "Pets"

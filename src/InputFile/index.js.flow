@@ -1,0 +1,18 @@
+// @flow
+
+export type Props = {|
+  label?: string,
+  title?: string,
+  name?: string,
+  placeholder?: string,
+  fileName?: string,
+  allowedFileTypes?: string | string[],
+  help?: React$Node,
+  error?: React$Node,
+  onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  onRemoveFile?: () => void,
+|};
+
+declare export default React$ComponentType<Props>;

@@ -11,7 +11,6 @@ export const StyledImage = styled.img`
   height: ${({ tokens, size }) => tokens.height[size]};
   width: auto;
   background-color: ${({ theme }) => theme.orbit.backgroundIllustration};
-  overflow: hidden;
 `;
 
 StyledImage.defaultProps = {

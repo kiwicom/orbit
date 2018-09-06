@@ -669,7 +669,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
                 width="32px"
               >
                 <path
-                  d="M2 8v2l8 5v5.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V15l8-5V8l-8 2.5V5l2-1.5V2l-3.5 1L8 2v1.5L10 5v5.5L2 8z"
+                  d="M2 8l8 2.5V5L8 3.5V2l3.5 1L15 2v1.5L13 5v5.5L21 8v2l-8 5v5.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5V15l-8-5V8z"
                 />
               </svg>
               <div
@@ -750,7 +750,34 @@ exports[`Storyshots Icon List of all icons 1`] = `
                 width="32px"
               >
                 <path
-                  d="M7.5 21.5h2l5-8H20c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5h-5.5l-5-8h-2l2.5 8H4.5L3 8.5H1.5l1 3.5-1 3.5H3l1.5-2H10l-2.5 8z"
+                  d="M6.822 21L5.33 19.508l2.239-9.7-4.104-4.105a1.58 1.58 0 0 1 0-2.238 1.58 1.58 0 0 1 2.238 0l4.104 4.104 9.7-2.239L21 6.822l-7.835 4.104 4.104 4.104 2.612-.373L21 15.777l-3.358 1.865L15.777 21l-1.12-1.12.373-2.611-4.104-4.104L6.822 21z"
+                />
+              </svg>
+              <div
+                className="IconList__IconImport-oZwZP jDaZTJ"
+              >
+                import AirplaneReturn from "@kiwicom/orbit-components/lib/icons/AirplaneReturn
+              </div>
+            </div>
+            <div
+              className="IconList__Container-hTbGgF fGplQy"
+            >
+              <svg
+                className="IconList__Icon-iybRdw hcdenc"
+                fill="currentColor"
+                height="32px"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "color": "#46515e",
+                    "verticalAlign": "middle",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="32px"
+              >
+                <path
+                  d="M7.5 21.5l2.5-8H4.5l-1.5 2H1.5l1-3.5-1-3.5H3l1.5 2H10l-2.5-8h2l5 8H20c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5.5l-5 8h-2z"
                 />
               </svg>
               <div
@@ -784,6 +811,33 @@ exports[`Storyshots Icon List of all icons 1`] = `
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
                 import AirplaneTakeoff from "@kiwicom/orbit-components/lib/icons/AirplaneTakeoff
+              </div>
+            </div>
+            <div
+              className="IconList__Container-hTbGgF fGplQy"
+            >
+              <svg
+                className="IconList__Icon-iybRdw hcdenc"
+                fill="currentColor"
+                height="32px"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "color": "#46515e",
+                    "verticalAlign": "middle",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="32px"
+              >
+                <path
+                  d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"
+                />
+              </svg>
+              <div
+                className="IconList__IconImport-oZwZP jDaZTJ"
+              >
+                import AirplaneUp from "@kiwicom/orbit-components/lib/icons/AirplaneUp
               </div>
             </div>
             <div
@@ -2853,6 +2907,33 @@ exports[`Storyshots Icon List of all icons 1`] = `
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
                 import Google from "@kiwicom/orbit-components/lib/icons/Google
+              </div>
+            </div>
+            <div
+              className="IconList__Container-hTbGgF fGplQy"
+            >
+              <svg
+                className="IconList__Icon-iybRdw hcdenc"
+                fill="currentColor"
+                height="32px"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "color": "#46515e",
+                    "verticalAlign": "middle",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="32px"
+              >
+                <path
+                  d="M21 3L3 10v1l7 3 3 7h1z"
+                />
+              </svg>
+              <div
+                className="IconList__IconImport-oZwZP jDaZTJ"
+              >
+                import GpsIos from "@kiwicom/orbit-components/lib/icons/GpsIos
               </div>
             </div>
             <div

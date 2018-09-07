@@ -1,8 +1,9 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import InputField from "../index";
+import FormLabel from "../../FormLabel";
 import ButtonLink from "../../ButtonLink";
 import TextLink from "../../TextLink";
 import Visibility from "../../icons/Visibility";
@@ -96,6 +97,27 @@ describe(`InputField with help, prefix and suffix`, () => {
     expect(component).toMatchSnapshot();
   });
 });
+
+describe(`Compact input`, () => {
+  const component = shallow(
+    <InputField prefix={filled => <FormLabel filled={filled}>Formlabel in prefix</FormLabel>} />,
+  );
+
+  it("should render FormLabel in prefix", () => {
+    expect(component.find("FormLabel").exists()).toBe(true);
+  });
+});
+
+describe(`Required field`, () => {
+  const label = "Label";
+
+  const component = mount(<InputField label={label} required />);
+
+  it("should render asterisk", () => {
+    expect(component.find("FormLabel__StyledAsterisk").exists()).toBe(true);
+  });
+});
+
 describe(`InputField number with error and help`, () => {
   const size = "normal";
   const type = "number";

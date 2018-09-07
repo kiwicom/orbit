@@ -4,8 +4,23 @@ import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 
-const FormLabel = styled(({ className, children }) => (
-  <span className={className}>{children}</span>
+const StyledAsterisk = styled.span`
+  font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
+  color: ${({ theme, filled }) =>
+    !filled ? theme.orbit.colorTextError : theme.orbit.colorFormLabelFilled};
+  font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel}
+  vertical-align: top;
+`;
+
+StyledAsterisk.defaultProps = {
+  theme: defaultTokens,
+};
+
+const FormLabel = styled(({ className, children, required, filled }) => (
+  <span className={className}>
+    {required && <StyledAsterisk filled={filled}>* </StyledAsterisk>}
+    {children}
+  </span>
 ))`
   display: block;
   font-family: ${({ theme }) => theme.orbit.fontFamily};

@@ -280,6 +280,7 @@ storiesOf("Button", module)
     const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
     const width = number("Width", 0);
     const bordered = boolean("Bordered", false);
+    const loading = boolean("Loading", false);
     const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
     const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
 
@@ -299,6 +300,7 @@ storiesOf("Button", module)
                   disabled={disabled}
                   block={block}
                   bordered={bordered}
+                  loading={loading}
                   type={type}
                   size={size}
                   iconLeft={IconLeft && <IconLeft />}

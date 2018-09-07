@@ -3,6 +3,7 @@
 exports[`FormLabel should match snapshot 1`] = `
 <Component
   className="FormLabel-kJFBRQ fuYBgg"
+  filled={false}
   theme={
     Object {
       "orbit": Object {

@@ -4,6 +4,7 @@ export type Props = {
   children: React$Node,
   filled?: boolean,
   disabled?: boolean,
+  required?: boolean,
 };
 
 declare export default React$ComponentType<Props>;

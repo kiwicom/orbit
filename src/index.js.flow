@@ -16,6 +16,7 @@ import typeof IllustrationType from "./Illustration";
 import typeof ListType from "./List";
 import typeof ListItemType from "./List/ListItem";
 import typeof InputFileType from "./InputFile";
+import typeof LoadingType from "./Loading";
 import typeof TextType from "./Text";
 import typeof TextLinkType from "./TextLink";
 import typeof RadioType from "./Radio";
@@ -62,6 +63,7 @@ declare export var Illustration: IllustrationType;
 declare export var InputGroup: InputGroupType;
 declare export var InputFile: InputFileType;
 declare export var TextLink: TextLinkType;
+declare export var Loading: LoadingType;
 
 declare export var Radio: RadioType;
 declare export var Select: SelectType;

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import defaultTokens from "../defaultTokens";
 import { SIZE_OPTIONS, TYPE_OPTIONS } from "./consts";
 import FormFeedback from "../FormFeedback";
-import FormLabel from "../FormLabel";
+import DefaultFormLabel from "../FormLabel";
 
 import type { Props } from "./index";
 
@@ -73,6 +73,25 @@ InputContainer.defaultProps = {
   theme: defaultTokens,
 };
 
+const StyledInlineLabel = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  justify-content: center;
+  padding-left: ${({ theme }) => theme.orbit.spaceSmall};
+
+  ${DefaultFormLabel} {
+    margin-bottom: 0;
+    font-size: ${({ size, tokens }) => tokens.fontSizeInput[size]};
+    line-height: normal;
+  }
+`;
+
+StyledInlineLabel.defaultProps = {
+  theme: defaultTokens,
+};
+
 const Prefix = styled(({ children, className }) => <div className={className}>{children}</div>)`
   height: 100%;
   color: ${({ theme }) => theme.orbit.colorTextInputPrefix};
@@ -80,18 +99,12 @@ const Prefix = styled(({ children, className }) => <div className={className}>{c
   align-items: center;
   pointer-events: none;
   justify-content: center;
-  padding: 0 ${({ theme }) => theme.orbit.spaceSmall};
+  padding-left: ${({ theme }) => theme.orbit.spaceSmall};
 
   & > svg {
     width: ${({ tokens, size }) => tokens.iconSize[size]};
     height: ${({ tokens, size }) => tokens.iconSize[size]};
     color: ${({ theme }) => theme.orbit.colorIconInput};
-  }
-
-  ${FormLabel} {
-    margin-bottom: 0;
-    font-size: ${({ size, tokens }) => tokens.fontSizeInput[size]};
-    line-height: normal;
   }
 `;
 
@@ -117,13 +130,13 @@ Suffix.defaultProps = {
   theme: defaultTokens,
 };
 
-export const Input = styled(({ theme, tokens, size, prefix, suffix, error, help, ...props }) => (
+export const Input = styled(({ theme, tokens, size, suffix, error, help, ...props }) => (
   <input {...props} />
 ))`
   appearance: none;
   font-family: inherit;
   border: none;
-  padding: ${({ tokens, size, prefix }) => (prefix ? "0" : `${tokens.paddingInput[size]}`)};
+  padding: 0 0 ${({ tokens, size }) => tokens.paddingInput[size]};
   font-size: inherit;
   color: inherit;
   background-color: inherit;
@@ -163,6 +176,20 @@ Input.defaultProps = {
   theme: defaultTokens,
 };
 
+const FormLabel = ({
+  label,
+  isFilled,
+  required,
+}: {
+  label?: string,
+  isFilled: boolean,
+  required?: boolean,
+}) => (
+  <DefaultFormLabel filled={isFilled} required={required}>
+    {label}
+  </DefaultFormLabel>
+);
+
 const InputField = (props: Props) => {
   const {
     size = SIZE_OPTIONS.NORMAL,
@@ -192,16 +219,20 @@ const InputField = (props: Props) => {
 
   return (
     <Field>
-      {props.label && (
-        <FormLabel filled={!!props.value} required={required}>
-          {props.label}
-        </FormLabel>
-      )}
+      {props.label &&
+        !props.inlineLabel && (
+          <FormLabel label={props.label} isFilled={!!props.value} required={required} />
+        )}
       <InputContainer tokens={tokens} size={size} disabled={props.disabled} error={props.error}>
         {props.prefix && (
           <Prefix tokens={tokens} size={size}>
-            {typeof props.prefix === "function" ? props.prefix(!!props.value) : props.prefix}
+            {props.prefix}
           </Prefix>
+        )}
+        {props.inlineLabel && (
+          <StyledInlineLabel tokens={tokens} size={size}>
+            <FormLabel label={props.label} isFilled={!!props.value} required={required} />
+          </StyledInlineLabel>
         )}
         <Input
           onChange={props.onChange}
@@ -219,7 +250,6 @@ const InputField = (props: Props) => {
           size={size}
           tokens={tokens}
           error={props.error}
-          prefix={props.prefix}
         />
         {props.suffix && (
           <Suffix tokens={tokens} size={size}>

@@ -3,7 +3,6 @@ import * as React from "react";
 import { shallow, mount } from "enzyme";
 
 import InputField from "../index";
-import FormLabel from "../../FormLabel";
 import ButtonLink from "../../ButtonLink";
 import TextLink from "../../TextLink";
 import Visibility from "../../icons/Visibility";
@@ -99,12 +98,10 @@ describe(`InputField with help, prefix and suffix`, () => {
 });
 
 describe(`Compact input`, () => {
-  const component = shallow(
-    <InputField prefix={filled => <FormLabel filled={filled}>Formlabel in prefix</FormLabel>} />,
-  );
+  const component = shallow(<InputField label="Label" inlineLabel />);
 
   it("should render FormLabel in prefix", () => {
-    expect(component.find("FormLabel").exists()).toBe(true);
+    expect(component.find("InputField__StyledInlineLabel").exists()).toBe(true);
   });
 });
 

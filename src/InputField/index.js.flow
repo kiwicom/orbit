@@ -1,15 +1,15 @@
 // @flow
 import defaultTokens from "../defaultTokens";
-import FormLabel from "../FormLabel";
 
 export type Props = {|
   +size?: "small" | "normal",
   +type?: "text" | "number" | "email" | "password",
   +name?: string,
   +label?: string,
+  +inlineLabel?: boolean,
   +value?: string,
   +placeholder?: string,
-  +prefix?: React$Node | ((filled: boolean) => React$Element<typeof FormLabel>),
+  +prefix?: React$Node,
   +suffix?: React$Node,
   +help?: React$Node,
   +error?: React$Node,

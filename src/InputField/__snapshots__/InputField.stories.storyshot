@@ -105,16 +105,17 @@ exports[`Storyshots InputField Compact input 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <div
-                className="InputField__Prefix-jLQUQe izAZxZ"
+                className="InputField__StyledInlineLabel-eVtavk bgzWFK"
+                size="normal"
               >
                 <span
                   className="FormLabel-kJFBRQ fuYBgg"
                 >
-                  FormLabel
+                  Label
                 </span>
               </div>
               <input
-                className="InputField__Input-iRjCvp vGfZ"
+                className="InputField__Input-iRjCvp iTwiGO"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -196,27 +197,37 @@ exports[`Storyshots InputField Compact input 1`] = `
                         <span
                           style={Object {}}
                         >
-                          prefix
+                          label
                         </span>
                         <span>
                           =
                           <span
                             style={Object {}}
                           >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
                                 }
-                              >
-                                prefix()
-                              </span>
                               }
+                            >
+                              "
+                              Label
+                              "
                             </span>
                           </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          inlineLabel
                         </span>
                       </span>
                       <span>
@@ -306,6 +317,37 @@ exports[`Storyshots InputField Compact input 1`] = `
                               "
                               Placeholder
                               "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          required
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                false
+                              </span>
+                              }
                             </span>
                           </span>
                         </span>
@@ -474,7 +516,7 @@ exports[`Storyshots InputField Default input 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <input
-                className="InputField__Input-iRjCvp iHzZIa"
+                className="InputField__Input-iRjCvp iTwiGO"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -802,7 +844,7 @@ exports[`Storyshots InputField Email input 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <input
-                className="InputField__Input-iRjCvp iHzZIa"
+                className="InputField__Input-iRjCvp iTwiGO"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -1208,7 +1250,7 @@ exports[`Storyshots InputField Number input 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <input
-                className="InputField__Input-iRjCvp iHzZIa"
+                className="InputField__Input-iRjCvp iTwiGO"
                 disabled={undefined}
                 max={3}
                 maxLength={undefined}
@@ -1629,7 +1671,7 @@ exports[`Storyshots InputField Password input 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <input
-                className="InputField__Input-iRjCvp iHzZIa"
+                className="InputField__Input-iRjCvp iTwiGO"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -1987,7 +2029,7 @@ exports[`Storyshots InputField Playground 1`] = `
               className="InputField__InputContainer-evnRDD cirwSX"
             >
               <div
-                className="InputField__Prefix-jLQUQe THoHK"
+                className="InputField__Prefix-jLQUQe fVzQfk"
               >
                 <svg
                   className={undefined}
@@ -2009,7 +2051,7 @@ exports[`Storyshots InputField Playground 1`] = `
                 </svg>
               </div>
               <input
-                className="InputField__Input-iRjCvp gJRiLd"
+                className="InputField__Input-iRjCvp gWxMWG"
                 disabled={false}
                 max={undefined}
                 maxLength={undefined}
@@ -2234,6 +2276,37 @@ exports[`Storyshots InputField Playground 1`] = `
                               "
                               Label
                               "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          inlineLabel
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                false
+                              </span>
+                              }
                             </span>
                           </span>
                         </span>
@@ -2839,7 +2912,7 @@ exports[`Storyshots InputField Required field 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <input
-                className="InputField__Input-iRjCvp iHzZIa"
+                className="InputField__Input-iRjCvp iTwiGO"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -3178,7 +3251,7 @@ exports[`Storyshots InputField Small input 1`] = `
               className="InputField__InputContainer-evnRDD cirwSX"
             >
               <input
-                className="InputField__Input-iRjCvp kLwTEV"
+                className="InputField__Input-iRjCvp gWxMWG"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -3536,7 +3609,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <input
-                className="InputField__Input-iRjCvp iHzZIa"
+                className="InputField__Input-iRjCvp iTwiGO"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -3929,7 +4002,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <div
-                className="InputField__Prefix-jLQUQe izAZxZ"
+                className="InputField__Prefix-jLQUQe hkHFBd"
               >
                 <svg
                   className={undefined}
@@ -3951,7 +4024,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
                 </svg>
               </div>
               <input
-                className="InputField__Input-iRjCvp vGfZ"
+                className="InputField__Input-iRjCvp iTwiGO"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -4310,12 +4383,12 @@ exports[`Storyshots InputField With text prefix 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <div
-                className="InputField__Prefix-jLQUQe izAZxZ"
+                className="InputField__Prefix-jLQUQe hkHFBd"
               >
                 $
               </div>
               <input
-                className="InputField__Input-iRjCvp vGfZ"
+                className="InputField__Input-iRjCvp iTwiGO"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}

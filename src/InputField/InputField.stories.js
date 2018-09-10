@@ -11,7 +11,6 @@ import * as Icons from "../icons";
 import { SIZE_OPTIONS, TYPE_OPTIONS } from "./consts";
 import ButtonLink from "../ButtonLink";
 import TextLink from "../TextLink";
-import FormLabel from "../FormLabel";
 
 import InputField from "./index";
 
@@ -197,7 +196,7 @@ storiesOf("InputField", module)
 
   .addWithChapters("Compact input", () => {
     const value = text("Value", "");
-    const formLabelText = text("FormLabel", "FormLabel");
+    const label = text("Label", "Label");
     const placeholder = text("Placeholder", "Placeholder");
     const required = boolean("required", false);
     const error = text("Error", undefined);
@@ -210,14 +209,12 @@ storiesOf("InputField", module)
             {
               sectionFn: () => (
                 <InputField
-                  prefix={filled => (
-                    <FormLabel filled={filled} required={required}>
-                      {formLabelText}
-                    </FormLabel>
-                  )}
+                  label={label}
+                  inlineLabel
                   error={error}
                   value={value}
                   placeholder={placeholder}
+                  required={required}
                   onChange={action("change")}
                 />
               ),
@@ -317,6 +314,7 @@ storiesOf("InputField", module)
     const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
     const name = text("Name", "input");
     const label = text("Label", "Label");
+    const inlineLabel = boolean("inline label", false);
     const value = text("Value", "");
     const placeholder = text("Placeholder", "Placeholder");
     const Prefix = getIcon(getIcons("Prefix", "Search"));
@@ -342,6 +340,7 @@ storiesOf("InputField", module)
                   type={type}
                   name={name}
                   label={label}
+                  inlineLabel={inlineLabel}
                   value={value}
                   placeholder={placeholder}
                   required={required}

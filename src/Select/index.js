@@ -43,6 +43,7 @@ const StyledSelect = styled(
   outline: none;
   width: 100%;
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  z-index: 2;
 
   &::-ms-expand {
     display: none;
@@ -125,6 +126,7 @@ const SelectSuffix = styled(({ children, className }) => (
   color: ${({ theme, disabled }) =>
     disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
   pointer-events: none;
+  z-index: 2;
 
   & > * {
     width: ${({ theme, size }) => size === SIZE_OPTIONS.SMALL && theme.orbit.widthIconSmall};

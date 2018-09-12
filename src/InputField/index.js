@@ -14,6 +14,7 @@ const Field = styled.label`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   position: relative;
   display: block;
+  z-index: 2;
 `;
 
 Field.defaultProps = {
@@ -25,7 +26,7 @@ export const FakeInput = styled(({ children, className }) => (
 ))`
   width: 100%;
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   box-sizing: border-box;
   height: ${({ tokens, size }) => tokens.heightInput[size]};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
@@ -101,6 +102,7 @@ const Prefix = styled(({ children, className }) => <div className={className}>{c
   pointer-events: none;
   justify-content: center;
   padding-left: ${({ theme }) => theme.orbit.spaceSmall};
+  z-index: 2;
 
   & > svg {
     width: ${({ tokens, size }) => tokens.iconSize[size]};
@@ -120,6 +122,7 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
   align-items: center;
   justify-content: center;
   pointer-events: ${({ disabled }) => disabled && "none"};
+  z-index: 2;
 
   & svg {
     color: ${({ theme }) => theme.orbit.colorIconSecondary};
@@ -150,6 +153,7 @@ export const Input = styled(({ theme, tokens, size, suffix, error, help, ...prop
   height: 100%;
   line-height: ${({ tokens, size }) => tokens.heightInput[size]};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  z-index: 2;
 
   &:focus {
     outline: none;

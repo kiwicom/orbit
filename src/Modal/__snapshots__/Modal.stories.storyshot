@@ -119,7 +119,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     className="Modal__CloseContainer-ehEpyW cuWRmR"
                   >
                     <button
-                      className="ButtonLink__StyledButtonLink-eyUiPe ljydOm"
+                      className="ButtonLink__StyledButtonLink-eyUiPe iReRJU"
                       onClick={[Function]}
                       size="normal"
                       target={undefined}
@@ -217,7 +217,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       className="ModalFooter__StyledChild-bPOqEy jRvsYD"
                     >
                       <button
-                        className="Button__StyledButton-jJDkJK cprQeJ"
+                        className="Button__StyledButton-jJDkJK hJgXCU"
                         disabled={undefined}
                         size="normal"
                         target={undefined}
@@ -255,7 +255,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       className="ModalFooter__StyledChild-bPOqEy xynvR"
                     >
                       <button
-                        className="Button__StyledButton-jJDkJK kGhIno"
+                        className="Button__StyledButton-jJDkJK iPfWEK"
                         disabled={undefined}
                         size="normal"
                         target={undefined}
@@ -1509,7 +1509,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                     className="Modal__CloseContainer-ehEpyW cuWRmR"
                   >
                     <button
-                      className="ButtonLink__StyledButtonLink-eyUiPe ljydOm"
+                      className="ButtonLink__StyledButtonLink-eyUiPe iReRJU"
                       onClick={[Function]}
                       size="normal"
                       target={undefined}

@@ -139,6 +139,12 @@ export const StyledButton = styled(
     }
   }
 
+  &:enabled:focus {
+    box-shadow: ${({ tokens, bordered, type }) =>
+        bordered && `inset 0 0 0 1px ${tokens.borderColorButton[type]},`}
+      ${({ theme }) => theme.orbit.boxShadowButtonFocus};
+  }
+
   ${StyledSpinner} {
     width: ${({ tokens, size }) => tokens.loadingWidth[size]};
     height: ${({ tokens, size }) => tokens.loadingHeight[size]};

@@ -106,6 +106,10 @@ export const StyledButtonLink = styled(
       !transparent && tokens.backgroundButtonActive[type]};
     color: ${({ tokens, type }) => tokens.colorTextButtonActive[type]}!important;
   }
+
+  &:enabled:focus {
+    box-shadow: ${({ theme }) => theme.orbit.boxShadowButtonFocus};
+  }
 `;
 
 StyledButtonLink.defaultProps = {

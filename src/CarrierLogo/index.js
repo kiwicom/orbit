@@ -29,7 +29,6 @@ const StyledImage = styled.img`
   width: ${({ imageSize }) => imageSize}px;
   background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  overflow: hidden;
   &:last-child {
     align-self: flex-end;
   }

@@ -22,6 +22,8 @@ StyledCardSection.defaultProps = {
   theme: defaultTokens,
 };
 
-const CardSection = ({ children }: Props) => <StyledCardSection>{children}</StyledCardSection>;
+const CardSection = ({ children, dataTest }: Props) => (
+  <StyledCardSection data-test={dataTest}>{children}</StyledCardSection>
+);
 
 export default CardSection;

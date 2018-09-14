@@ -1,4 +1,5 @@
 // @flow
+import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
   label?: string,
@@ -13,6 +14,7 @@ export type Props = {|
   onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   onRemoveFile?: () => void,
+  ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;

@@ -277,11 +277,16 @@ class Modal extends React.PureComponent<Props, State> {
       size = SIZES.NORMAL,
       closable = true,
       fixedFooter = false,
+      dataTest,
     } = this.props;
     const { scrolled, loaded } = this.state;
 
     return (
-      <ModalBody tabIndex="0" onKeyDown={closable ? this.handleKeyDown : undefined}>
+      <ModalBody
+        tabIndex="0"
+        onKeyDown={closable ? this.handleKeyDown : undefined}
+        data-test={dataTest}
+      >
         <ModalWrapper
           size={size}
           loaded={loaded}

@@ -13,6 +13,7 @@ Table below contains all types of the props available in Radio component.
 | Name         | Type         | Default | Description                      |
 | :-------     | :----------- | :------ | :------------------------------- |
 | checked      | `boolean`    | `false` | If `true`, the Radio will be checked.
+| dataTest     | `string`     |         | Optional prop for testing purposes.
 | disabled     | `boolean`    | `false` | If `true`, the Radio will be set up as disabled.
 | hasError     | `boolean`    | `false` | If `true`, the border of the Radio will turn red. [See Functional specs](#functional-specs)
 | info         | `React.Node` |         | The additional info about the Radio.

@@ -18,8 +18,10 @@ const LoaderAnimation = keyframes`
   100%  {opacity: .3; transform:translateY(0px);}
 `;
 
-const StyledLoading = styled(({ children, className }) => (
-  <div className={className}>{children}</div>
+const StyledLoading = styled(({ children, className, dataTest }) => (
+  <div className={className} data-test={dataTest}>
+    {children}
+  </div>
 ))`
   position: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "absolute"};
   left: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
@@ -98,7 +100,7 @@ StyledLoaderCircle.defaultProps = {
 };
 
 const Loading = (props: Props) => {
-  const { loading = false, type = TYPE_OPTIONS.PAGE_LOADER, text, children } = props;
+  const { loading = false, type = TYPE_OPTIONS.PAGE_LOADER, text, children, dataTest } = props;
   const tokens = {
     alignLoadingContainer: {
       [TYPE_OPTIONS.BUTTON_LOADER]: "center",
@@ -117,7 +119,7 @@ const Loading = (props: Props) => {
   return children && !loading ? (
     children
   ) : (
-    <StyledLoading tokens={tokens} type={type}>
+    <StyledLoading tokens={tokens} type={type} dataTest={dataTest}>
       {type === TYPE_OPTIONS.BOX_LOADER || type === TYPE_OPTIONS.SEARCH_LOADER ? (
         <StyledLoader>
           <StyledLoaderCircle />

@@ -14,6 +14,7 @@ Table below contains all types of the props available in Badge component.
 | :------------ | :---------------------| :-------------- | :------------------------------- |
 | circled       | `boolean`             | `false`         | If `true`, the Badge will have circular shape.
 | **children**  | `React.Node`          |                 | The content of the Badge.
+| dataTest      | `string`              |                 | Optional prop for testing purposes.
 | icon          | `React.Node`          |                 | The displayed icon on the left.
 | type          | [`enum`](#enum)       | `"neutral"`     | The color type of the Badge.
 

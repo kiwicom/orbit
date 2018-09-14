@@ -149,6 +149,7 @@ storiesOf("Heading", module)
   .addWithChapters("Playground", () => {
     const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
     const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DISPLAY);
+    const dataTest = text("dataTest", "test");
 
     const customTitle = text("Title", "Orbit design system");
     return {
@@ -159,7 +160,7 @@ storiesOf("Heading", module)
           sections: [
             {
               sectionFn: () => (
-                <Heading element={element} type={type}>
+                <Heading element={element} type={type} dataTest={dataTest}>
                   {customTitle}
                 </Heading>
               ),

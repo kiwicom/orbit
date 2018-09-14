@@ -1,10 +1,12 @@
 // @flow
+import type { Globals } from "../common/common.js.flow";
 
 type Type = "help" | "error";
 
 export type Props = {
   children: React$Node,
   type?: Type,
+  ...Globals,
 };
 
 declare export default React$ComponentType<Props>;

@@ -7,6 +7,7 @@ import Select from "../index";
 
 const mockChange = jest.fn();
 const placeholder = "Default placeholder";
+const dataTest = "test";
 const objectOptions = [
   { value: "1", label: "One" },
   { value: "2", label: "Two" },
@@ -18,11 +19,23 @@ const objectOptions = [
 
 describe("Select", () => {
   const component = shallow(
-    <Select value="1" placeholder={placeholder} options={objectOptions} onChange={mockChange} />,
+    <Select
+      value="1"
+      placeholder={placeholder}
+      options={objectOptions}
+      onChange={mockChange}
+      dataTest={dataTest}
+    />,
   );
-
+  it("should have data-test", () => {
+    expect(component.prop("data-test")).toBe(dataTest);
+  });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();
+  });
+
+  it("should have data-test", () => {
+    expect(component.render().prop("data-test")).toBe(dataTest);
   });
 
   it("should have placeholder", () => {

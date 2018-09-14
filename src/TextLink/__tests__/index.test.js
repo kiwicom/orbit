@@ -10,9 +10,17 @@ describe("TextLink", () => {
   const href = "https://kiwi.com";
   const onClick = jest.fn();
   const type = "primary";
+  const dataTest = "test";
 
   const component = shallow(
-    <TextLink onClick={onClick} href={href} type={type} external icon={<ChevronRight />}>
+    <TextLink
+      onClick={onClick}
+      href={href}
+      type={type}
+      external
+      icon={<ChevronRight />}
+      dataTest={dataTest}
+    >
       {title}
     </TextLink>,
   );
@@ -22,6 +30,9 @@ describe("TextLink", () => {
   });
   it("should contain an href", () => {
     expect(component.render().prop("href")).toBe(href);
+  });
+  it("should have data-test", () => {
+    expect(component.render().prop("data-test")).toBe(dataTest);
   });
   it("should contain an external href", () => {
     expect(component.render().prop("target")).toBe("_blank");

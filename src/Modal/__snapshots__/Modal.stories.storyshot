@@ -100,6 +100,7 @@ exports[`Storyshots Modal Full preview 1`] = `
         >
           <div
             className="Modal__ModalBody-jsvBud hzGqsV"
+            data-test="test"
             onKeyDown={[Function]}
             tabIndex="0"
           >
@@ -120,6 +121,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                   >
                     <button
                       className="ButtonLink__StyledButtonLink-eyUiPe DORaW"
+                      data-test={undefined}
                       onClick={[Function]}
                       size="normal"
                       target={undefined}
@@ -130,6 +132,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       >
                         <svg
                           className={undefined}
+                          data-test={undefined}
                           fill="currentColor"
                           height="24px"
                           preserveAspectRatio="xMidYMid meet"
@@ -151,10 +154,12 @@ exports[`Storyshots Modal Full preview 1`] = `
                   </div>
                   <div
                     className="ModalHeader__StyledModalHeader-hOPket gAJYCS"
+                    data-test={undefined}
                   >
                     <img
                       alt="Accommodation"
                       className="Illustration__StyledImage-dmuJKG hCHaUA"
+                      data-test={undefined}
                       size="small"
                       src="//images.kiwi.com/illustrations/0x90/Accommodation.png"
                       srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x"
@@ -164,6 +169,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     >
                       <h1
                         className="Heading__StyledHeading-gucmUp fTGtTr"
+                        data-test={undefined}
                       >
                         Orbit design system
                       </h1>
@@ -172,6 +178,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       >
                         <div
                           className="Text__StyledText-guhEiE eRajwO"
+                          data-test={undefined}
                         >
                           Lorem ispum dolor sit amet
                         </div>
@@ -185,39 +192,47 @@ exports[`Storyshots Modal Full preview 1`] = `
                   </div>
                   <section
                     className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                    data-test={undefined}
                   >
                     <p
                       className="Text__StyledText-guhEiE kLuVzx"
+                      data-test={undefined}
                     >
                       You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                     </p>
                   </section>
                   <section
                     className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                    data-test={undefined}
                   >
                     <p
                       className="Text__StyledText-guhEiE kLuVzx"
+                      data-test={undefined}
                     >
                       You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                     </p>
                   </section>
                   <section
                     className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                    data-test={undefined}
                   >
                     <p
                       className="Text__StyledText-guhEiE kLuVzx"
+                      data-test={undefined}
                     >
                       You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                     </p>
                   </section>
                   <div
                     className="ModalFooter__StyledModalFooter-heDwTy kuRjye"
+                    data-test={undefined}
                   >
                     <div
                       className="ModalFooter__StyledChild-bPOqEy jRvsYD"
                     >
                       <button
                         className="Button__StyledButton-jJDkJK lmUjYq"
+                        data-test={undefined}
                         disabled={undefined}
                         size="normal"
                         target={undefined}
@@ -230,6 +245,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                           >
                             <svg
                               className={undefined}
+                              data-test={undefined}
                               fill="currentColor"
                               height="24px"
                               preserveAspectRatio="xMidYMid meet"
@@ -256,6 +272,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     >
                       <button
                         className="Button__StyledButton-jJDkJK iyNAeV"
+                        data-test={undefined}
                         disabled={undefined}
                         size="normal"
                         target={undefined}
@@ -427,6 +444,36 @@ exports[`Storyshots Modal Full preview 1`] = `
                                   false
                                 </span>
                                 }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                test
+                                "
                               </span>
                             </span>
                           </span>
@@ -1490,6 +1537,7 @@ exports[`Storyshots Modal Sizes 1`] = `
         >
           <div
             className="Modal__ModalBody-jsvBud hzGqsV"
+            data-test={undefined}
             onKeyDown={[Function]}
             tabIndex="0"
           >
@@ -1510,6 +1558,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                   >
                     <button
                       className="ButtonLink__StyledButtonLink-eyUiPe DORaW"
+                      data-test={undefined}
                       onClick={[Function]}
                       size="normal"
                       target={undefined}
@@ -1520,6 +1569,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                       >
                         <svg
                           className={undefined}
+                          data-test={undefined}
                           fill="currentColor"
                           height="24px"
                           preserveAspectRatio="xMidYMid meet"
@@ -1541,12 +1591,14 @@ exports[`Storyshots Modal Sizes 1`] = `
                   </div>
                   <div
                     className="ModalHeader__StyledModalHeader-hOPket dJFTgo"
+                    data-test={undefined}
                   >
                     <div
                       className="ModalHeader__ModalTitle-deoNop iOkEWH"
                     >
                       <h1
                         className="Heading__StyledHeading-gucmUp fTGtTr"
+                        data-test={undefined}
                       >
                         Orbit design system
                       </h1>
@@ -1564,36 +1616,44 @@ exports[`Storyshots Modal Sizes 1`] = `
                   </div>
                   <section
                     className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                    data-test={undefined}
                   >
                     <p
                       className="Text__StyledText-guhEiE kLuVzx"
+                      data-test={undefined}
                     >
                       You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                     </p>
                   </section>
                   <section
                     className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                    data-test={undefined}
                   >
                     <p
                       className="Text__StyledText-guhEiE kLuVzx"
+                      data-test={undefined}
                     >
                       You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                     </p>
                   </section>
                   <section
                     className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                    data-test={undefined}
                   >
                     <p
                       className="Text__StyledText-guhEiE kLuVzx"
+                      data-test={undefined}
                     >
                       You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                     </p>
                   </section>
                   <section
                     className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                    data-test={undefined}
                   >
                     <p
                       className="Text__StyledText-guhEiE kLuVzx"
+                      data-test={undefined}
                     >
                       You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                     </p>

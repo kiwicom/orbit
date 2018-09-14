@@ -65,6 +65,7 @@ storiesOf("ButtonLink", module)
     const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
     const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
     const href = text("Href", "");
+    const dataTest = text("dataTest", "test");
     const external = boolean("External", false);
     const transparent = boolean("Transparent", false);
 
@@ -82,6 +83,7 @@ storiesOf("ButtonLink", module)
                   type={type}
                   size={size}
                   href={href}
+                  dataTest={dataTest}
                   iconLeft={IconLeft && <IconLeft />}
                   iconRight={IconRight && <IconRight />}
                   width={width}

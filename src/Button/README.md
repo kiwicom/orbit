@@ -16,6 +16,7 @@ Table below contains all types of the props available in Button component.
 | bordered      | `boolean`             | `false`         | If `true`, the Button will have a lighter version, with border and light background.
 | children      | `React.Node`          |                 | The content of the Button. [See Functional specs](#functional-specs)
 | **component** | `string \| React.Node`| `"button"`      | The component used for the root node. Either a string to use a DOM element or a component.
+| dataTest      | `string`              |                 | Optional prop for testing purposes.
 | disabled      | `boolean`             | `false`         | If `true`, the Button will be disabled.
 | external      | `boolean`             | `false`         | If `true`, the Button opens link in a new tab.
 | href          | `string`              |                 | The URL of the link to open when Button is clicked. [See Functional specs](#functional-specs)

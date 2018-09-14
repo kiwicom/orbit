@@ -134,6 +134,8 @@ storiesOf("Text", module)
     const uppercase = boolean("Uppercase", false);
     const italic = boolean("Italic", false);
     const children = text("Text", customText);
+    const dataTest = text("dataTest", "test");
+
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -150,6 +152,7 @@ storiesOf("Text", module)
                   align={align}
                   uppercase={uppercase}
                   italic={italic}
+                  dataTest={dataTest}
                 >
                   {children}
                 </Text>

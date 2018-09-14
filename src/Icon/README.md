@@ -15,6 +15,7 @@ Table below contains all types of the props available for icons in general.
 | className     | `string`        |                 | The optional className of Icon.
 | color         | [`enum`](#enum) | `currentColor`  | The color of the Icon.
 | customColor   | `string`        |                 | The customColor of the Icon. [See Functional specs](#functional-specs)
+| dataTest      | `string`        |                 | Optional prop for testing purposes.
 | **size**      | [`enum`](#enum) | `"medium"`      | The size of the Icon.
 
 ### enum

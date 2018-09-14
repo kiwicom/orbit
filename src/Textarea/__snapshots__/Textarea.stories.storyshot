@@ -100,6 +100,7 @@ exports[`Storyshots Textarea Default 1`] = `
         >
           <label
             className="Textarea__Field-kPVRAV bXkLzV"
+            data-test={undefined}
           >
             <textarea
               className="Textarea__StyledTextArea-iLqCZR kfzwzn"
@@ -374,9 +375,11 @@ exports[`Storyshots Textarea Playground 1`] = `
         >
           <label
             className="Textarea__Field-kPVRAV bXkLzV"
+            data-test="test"
           >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Label
@@ -396,6 +399,7 @@ exports[`Storyshots Textarea Playground 1`] = `
             />
             <div
               className="FormFeedback__StyledFormFeedback-cuFyWp kBuQBJ"
+              data-test={undefined}
             >
               Something went wrong.
             </div>
@@ -800,6 +804,36 @@ exports[`Storyshots Textarea Playground 1`] = `
                             </span>
                           </span>
                         </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          dataTest
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              test
+                              "
+                            </span>
+                          </span>
+                        </span>
                         <br />
                       </span>
                     </span>
@@ -924,6 +958,7 @@ exports[`Storyshots Textarea Small size 1`] = `
         >
           <label
             className="Textarea__Field-kPVRAV bXkLzV"
+            data-test={undefined}
           >
             <textarea
               className="Textarea__StyledTextArea-iLqCZR jROCSV"
@@ -1237,6 +1272,7 @@ exports[`Storyshots Textarea With error 1`] = `
         >
           <label
             className="Textarea__Field-kPVRAV bXkLzV"
+            data-test={undefined}
           >
             <textarea
               className="Textarea__StyledTextArea-iLqCZR aHzeJ"
@@ -1252,6 +1288,7 @@ exports[`Storyshots Textarea With error 1`] = `
             />
             <div
               className="FormFeedback__StyledFormFeedback-cuFyWp kBuQBJ"
+              data-test={undefined}
             >
               Something went wrong.
             </div>
@@ -1555,6 +1592,7 @@ exports[`Storyshots Textarea With help 1`] = `
         >
           <label
             className="Textarea__Field-kPVRAV bXkLzV"
+            data-test={undefined}
           >
             <textarea
               className="Textarea__StyledTextArea-iLqCZR kfzwzn"
@@ -1570,6 +1608,7 @@ exports[`Storyshots Textarea With help 1`] = `
             />
             <div
               className="FormFeedback__StyledFormFeedback-cuFyWp dAUFLG"
+              data-test={undefined}
             >
               Everything is fine.
             </div>
@@ -1873,9 +1912,11 @@ exports[`Storyshots Textarea With label 1`] = `
         >
           <label
             className="Textarea__Field-kPVRAV bXkLzV"
+            data-test={undefined}
           >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Label

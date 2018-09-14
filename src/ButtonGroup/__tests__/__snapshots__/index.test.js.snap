@@ -10,6 +10,7 @@ exports[`ButtonGroup first child should match snapshot 1`] = `
 
 exports[`ButtonGroup should match snapshot 1`] = `
 <ButtonGroup__StyledButtonGroup
+  data-test="test"
   theme={
     Object {
       "orbit": Object {

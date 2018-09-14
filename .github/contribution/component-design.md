@@ -50,13 +50,15 @@ const Component = (props: Props) => {
 ## Component Flow typing
 For static typing we use [Flow](https://flow.org/en/docs/react/). Always create `index.js.flow` file, where the declaration of types is stored. We use `strict` and `read-only` types to be more strict in setting up values of the props, `optional` types are used only when the purpose of the prop is really optional.
 
+Every component should have `dataTest` prop. For this cases, we are using `globals` flow type.
 ```jsx
 // @flow
-import defaultTokens from "../defaultTokens";
+import type { Globals } from "../common/common.js.flow";
     
 export type Props = {|
   +size?: "small" | "medium" | "large",
-  +children: React$Node
+  +children: React$Node,
+  ...Globals,
 |};
     
 declare export default React$ComponentType<Props>;

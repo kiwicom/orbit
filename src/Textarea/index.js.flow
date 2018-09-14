@@ -1,5 +1,6 @@
 // @flow
 import defaultTokens from "../defaultTokens";
+import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
   +size?: "small" | "normal",
@@ -15,6 +16,7 @@ export type Props = {|
   +onChange?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
+  ...Globals,
   +theme?: typeof defaultTokens,
 |};
 

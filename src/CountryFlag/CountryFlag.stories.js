@@ -39,6 +39,7 @@ storiesOf("CountryFlag", module)
   .addWithChapters("Playground", () => {
     const code = select("Code", Object.values(CODES), CODES.ANYWHERE);
     const name = text("Name", "Country");
+    const dataTest = text("dataTest", "test");
     return {
       info:
         "Country flag displays one flag of selected country. Visit Orbit.Kiwi for more detailed guidelines.",
@@ -46,7 +47,7 @@ storiesOf("CountryFlag", module)
         {
           sections: [
             {
-              sectionFn: () => <CountryFlag code={code} name={name} />,
+              sectionFn: () => <CountryFlag code={code} name={name} dataTest={dataTest} />,
             },
           ],
         },

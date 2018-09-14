@@ -2,6 +2,7 @@
 
 exports[`FormFeedback should match snapshot 1`] = `
 <FormFeedback__StyledFormFeedback
+  data-test="test"
   theme={
     Object {
       "orbit": Object {

@@ -74,6 +74,7 @@ const TextLink = (props: Props) => {
     rel,
     icon,
     onClick,
+    dataTest,
   } = props;
   const tokens = {
     colorTextLink: {
@@ -90,6 +91,7 @@ const TextLink = (props: Props) => {
       rel={rel}
       tokens={tokens}
       onClick={onClick}
+      data-test={dataTest}
     >
       {children}
       {icon && (

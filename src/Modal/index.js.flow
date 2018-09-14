@@ -1,5 +1,5 @@
 // @flow
-
+import type { Globals } from "../common/common.js.flow";
 import ModalSection from "./ModalSection";
 import ModalHeader from "./ModalHeader";
 import ModalFooter from "./ModalFooter";
@@ -30,6 +30,7 @@ export type Props = {|
   +closable?: boolean,
   +onClose?: onClose,
   +fixedFooter?: boolean,
+  ...Globals,
 |};
 
 export type ContentType = { scrolled: boolean, ...Props };

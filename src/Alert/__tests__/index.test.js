@@ -4,9 +4,10 @@ import { shallow } from "enzyme";
 
 import Alert from "../index";
 
+const message = "Alert message";
+
 describe("Alert", () => {
   it("should contain children", () => {
-    const message = "Alert message";
     const component = shallow(<Alert>{message}</Alert>);
     expect(
       component
@@ -15,9 +16,13 @@ describe("Alert", () => {
         .exists(),
     ).toBe(true);
   });
+  it("should have data-test", () => {
+    const dataTest = "test";
+    const component = shallow(<Alert dataTest={dataTest}>{message}</Alert>);
+    expect(component.render().prop("data-test")).toBe(dataTest);
+  });
   it("should be closable", () => {
     const onClose = jest.fn();
-    const message = "Alert message";
     const component = shallow(
       <Alert onClose={onClose} closable>
         {message}
@@ -28,7 +33,6 @@ describe("Alert", () => {
     expect(onClose).toHaveBeenCalled();
   });
   it("should match snapshot", () => {
-    const message = "Alert message";
     const component = shallow(<Alert>{message}</Alert>);
     expect(component).toMatchSnapshot();
   });

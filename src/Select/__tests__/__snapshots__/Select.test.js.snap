@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select should match snapshot 1`] = `
-<label>
+<label
+  data-test="test"
+>
   <Select__SelectContainer
     disabled={false}
     theme={

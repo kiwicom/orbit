@@ -7,8 +7,10 @@ import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./consts";
 
 import type { Props } from "./index";
 
-export const StyledHeading = styled(({ element: Component, className, children }) => (
-  <Component className={className}>{children}</Component>
+export const StyledHeading = styled(({ element: Component, className, children, dataTest }) => (
+  <Component className={className} data-test={dataTest}>
+    {children}
+  </Component>
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ tokens, type }) => tokens.sizeHeading[type]};
@@ -29,6 +31,7 @@ const Heading = (props: Props) => {
     theme = defaultTokens,
     type = TYPE_OPTIONS.TITLE1,
     element = ELEMENT_OPTIONS.H1,
+    dataTest,
     inverted = false,
   } = props;
   const tokens = {
@@ -46,7 +49,13 @@ const Heading = (props: Props) => {
     },
   };
   return (
-    <StyledHeading tokens={tokens} type={type} element={element} inverted={inverted}>
+    <StyledHeading
+      tokens={tokens}
+      type={type}
+      element={element}
+      inverted={inverted}
+      dataTest={dataTest}
+    >
       {children}
     </StyledHeading>
   );

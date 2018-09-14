@@ -100,6 +100,7 @@ exports[`Storyshots Text Attention text 1`] = `
         >
           <p
             className="Text__StyledText-guhEiE ixdYMZ"
+            data-test={undefined}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
           </p>
@@ -348,6 +349,7 @@ exports[`Storyshots Text Playground 1`] = `
         >
           <p
             className="Text__StyledText-guhEiE kLuVzx"
+            data-test="test"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
           </p>
@@ -618,6 +620,36 @@ exports[`Storyshots Text Playground 1`] = `
                               </span>
                             </span>
                           </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                test
+                                "
+                              </span>
+                            </span>
+                          </span>
                           <br />
                         </span>
                       </span>
@@ -781,6 +813,7 @@ exports[`Storyshots Text Primary text 1`] = `
         >
           <p
             className="Text__StyledText-guhEiE kLuVzx"
+            data-test={undefined}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
           </p>
@@ -1000,6 +1033,7 @@ exports[`Storyshots Text Secondary text 1`] = `
         >
           <p
             className="Text__StyledText-guhEiE eGYiLp"
+            data-test={undefined}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
           </p>
@@ -1248,6 +1282,7 @@ exports[`Storyshots Text Status text 1`] = `
         >
           <p
             className="Text__StyledText-guhEiE frWsEa"
+            data-test={undefined}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
           </p>
@@ -1421,6 +1456,7 @@ exports[`Storyshots Text Status text 1`] = `
         >
           <p
             className="Text__StyledText-guhEiE hvFaEn"
+            data-test={undefined}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
           </p>
@@ -1594,6 +1630,7 @@ exports[`Storyshots Text Status text 1`] = `
         >
           <p
             className="Text__StyledText-guhEiE cFNyeB"
+            data-test={undefined}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
           </p>
@@ -1767,6 +1804,7 @@ exports[`Storyshots Text Status text 1`] = `
         >
           <p
             className="Text__StyledText-guhEiE dVOnAm"
+            data-test={undefined}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
           </p>
@@ -2023,6 +2061,7 @@ exports[`Storyshots Text White text 1`] = `
           >
             <p
               className="Text__StyledText-guhEiE drQQL"
+              data-test={undefined}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
             </p>

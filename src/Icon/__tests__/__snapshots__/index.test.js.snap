@@ -39,19 +39,23 @@ exports[`Icon with color Should match snapshot 1`] = `
 exports[`Icon with props Should match snapshot 1`] = `
 <Accommodation
   customColor="#FF0000"
+  dataTest="test"
   size="large"
 >
   <OrbitIcon
     customColor="#FF0000"
+    dataTest="test"
     size="large"
     viewBox="0 0 24 24"
   >
     <IconBase
       color="#FF0000"
+      data-test="test"
       size="32px"
       viewBox="0 0 24 24"
     >
       <svg
+        data-test="test"
         fill="currentColor"
         height="32px"
         preserveAspectRatio="xMidYMid meet"

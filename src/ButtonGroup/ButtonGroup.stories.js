@@ -4,7 +4,7 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, boolean } from "@storybook/addon-knobs/react";
+import { withKnobs, boolean, text } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
 import Button from "../Button";
@@ -23,6 +23,7 @@ storiesOf("ButtonGroup", module)
   )
   .addWithChapters("With Buttons", () => {
     const connected = boolean("Connected", true);
+    const dataTest = text("dataTest", "test");
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -31,7 +32,7 @@ storiesOf("ButtonGroup", module)
           sections: [
             {
               sectionFn: () => (
-                <ButtonGroup connected={connected}>
+                <ButtonGroup connected={connected} dataTest={dataTest}>
                   <Button icon={<Icons.Airplane />}>Button</Button>
                   <Button icon={<Icons.ChevronDown />} />
                 </ButtonGroup>
@@ -44,6 +45,7 @@ storiesOf("ButtonGroup", module)
   })
   .addWithChapters("With ButtonLinks", () => {
     const connected = boolean("Connected", true);
+    const dataTest = text("dataTest", "test");
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -52,7 +54,7 @@ storiesOf("ButtonGroup", module)
           sections: [
             {
               sectionFn: () => (
-                <ButtonGroup connected={connected}>
+                <ButtonGroup connected={connected} dataTest={dataTest}>
                   <ButtonLink type="secondary" icon={<Icons.Airplane />}>
                     Button
                   </ButtonLink>

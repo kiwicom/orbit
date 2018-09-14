@@ -1,8 +1,10 @@
 // @flow
+import type { Globals } from "../../common/common.js.flow";
 
 export type Props = {|
   +children: React$Node,
   +flex?: string | Array<string>,
+  ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;

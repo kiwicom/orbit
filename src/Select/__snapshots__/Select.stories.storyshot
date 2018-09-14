@@ -98,7 +98,9 @@ exports[`Storyshots Select Default 1`] = `
             }
           }
         >
-          <label>
+          <label
+            data-test={undefined}
+          >
             <div
               className="Select__SelectContainer-hisSov erDdbv"
             >
@@ -134,6 +136,7 @@ exports[`Storyshots Select Default 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -568,7 +571,9 @@ exports[`Storyshots Select Playground 1`] = `
             }
           }
         >
-          <label>
+          <label
+            data-test="test"
+          >
             <div
               className="Select__SelectContainer-hisSov erDdbv"
             >
@@ -612,6 +617,7 @@ exports[`Storyshots Select Playground 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -1061,6 +1067,36 @@ exports[`Storyshots Select Playground 1`] = `
                         <span
                           style={Object {}}
                         >
+                          dataTest
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              test
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
                           value
                         </span>
                         <span>
@@ -1205,9 +1241,12 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
             }
           }
         >
-          <label>
+          <label
+            data-test={undefined}
+          >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Select box (with prefix)
@@ -1222,6 +1261,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                 <img
                   alt="Anywhere"
                   className="CountryFlag__StyledCountryFlag-cuUbfd jNdwdI"
+                  data-test={undefined}
                   src="//images.kiwi.com/flags/24x0/flag-anywhere.jpg"
                   srcSet="//images.kiwi.com/flags/48x0/flag-anywhere.jpg 2x"
                   title="Anywhere"
@@ -1259,6 +1299,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -1760,9 +1801,12 @@ exports[`Storyshots Select With error message 1`] = `
             }
           }
         >
-          <label>
+          <label
+            data-test={undefined}
+          >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Select box (with error text)
@@ -1803,6 +1847,7 @@ exports[`Storyshots Select With error message 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -1823,6 +1868,7 @@ exports[`Storyshots Select With error message 1`] = `
             </div>
             <div
               className="FormFeedback__StyledFormFeedback-cuFyWp kBuQBJ"
+              data-test={undefined}
             >
               <div>
                 You need to select some value.
@@ -2311,9 +2357,12 @@ exports[`Storyshots Select With help message 1`] = `
             }
           }
         >
-          <label>
+          <label
+            data-test={undefined}
+          >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Select box (with help text)
@@ -2354,6 +2403,7 @@ exports[`Storyshots Select With help message 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -2374,6 +2424,7 @@ exports[`Storyshots Select With help message 1`] = `
             </div>
             <div
               className="FormFeedback__StyledFormFeedback-cuFyWp dAUFLG"
+              data-test={undefined}
             >
               <div>
                 Most common choice is 
@@ -2865,9 +2916,12 @@ exports[`Storyshots Select With placeholder 1`] = `
             }
           }
         >
-          <label>
+          <label
+            data-test={undefined}
+          >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Select box (with placeholder)
@@ -2916,6 +2970,7 @@ exports[`Storyshots Select With placeholder 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -3416,9 +3471,12 @@ exports[`Storyshots Select With prefix 1`] = `
             }
           }
         >
-          <label>
+          <label
+            data-test={undefined}
+          >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Select box (with prefix)
@@ -3432,6 +3490,7 @@ exports[`Storyshots Select With prefix 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -3481,6 +3540,7 @@ exports[`Storyshots Select With prefix 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -3982,9 +4042,12 @@ exports[`Storyshots Select With small size 1`] = `
             }
           }
         >
-          <label>
+          <label
+            data-test={undefined}
+          >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Select box (small size)
@@ -4025,6 +4088,7 @@ exports[`Storyshots Select With small size 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"

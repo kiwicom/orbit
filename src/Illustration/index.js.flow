@@ -1,5 +1,5 @@
 // @flow
-
+import type { Globals } from "../common/common.js.flow";
 import defaultTokens from "../defaultTokens";
 
 type Name =
@@ -53,6 +53,7 @@ type Name =
 export type Props = {|
   +size?: "small" | "medium",
   +name: Name,
+  ...Globals,
   +theme?: typeof defaultTokens,
 |};
 

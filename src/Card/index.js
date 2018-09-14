@@ -44,8 +44,8 @@ const CloseContainer = styled.div`
   z-index: 1;
 `;
 
-const Card = ({ closable, onClose, children }: Props) => (
-  <StyledCard closable={closable}>
+const Card = ({ closable, onClose, children, dataTest }: Props) => (
+  <StyledCard closable={closable} data-test={dataTest}>
     {closable && (
       <CloseContainer>
         <ButtonLink type="secondary" size="small" icon={<Close />} onClick={onClose} transparent />

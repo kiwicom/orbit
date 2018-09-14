@@ -4,12 +4,13 @@ import { shallow } from "enzyme";
 
 import InputFile from "../index";
 
-describe(`InputFiInputFile with help`, () => {
+describe(`InputFile with help`, () => {
   const label = "Select file";
   const title = "Click on me";
   const name = "name";
   const placeholder = "Not file has been selected";
   const fileName = "fileName.png";
+  const dataTest = "test";
   const allowedFileTypes = [".png", ".jpg", ".pdf"];
   const onChange = jest.fn();
   const onFocus = jest.fn();
@@ -23,6 +24,7 @@ describe(`InputFiInputFile with help`, () => {
       title={title}
       placeholder={placeholder}
       fileName={fileName}
+      dataTest={dataTest}
       allowedFileTypes={allowedFileTypes}
       help={
         <div>
@@ -35,6 +37,7 @@ describe(`InputFiInputFile with help`, () => {
       onRemoveFile={onRemoveFile}
     />,
   );
+  const labelComponent = component.find("InputFile__Field");
   const input = component.find("InputFile__Input");
   const closeButton = component.find("InputFile__CloseButton");
 
@@ -52,6 +55,7 @@ describe(`InputFiInputFile with help`, () => {
   it("should have passed props", () => {
     expect(input.prop("name")).toBe(name);
     expect(input.prop("accept")).toBe(allowedFileTypes);
+    expect(labelComponent.render().prop("data-test")).toBe(dataTest);
   });
   it("should contain a input Button", () => {
     expect(component.find("InputFile__InputButton").exists()).toBe(true);

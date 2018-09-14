@@ -3,6 +3,7 @@
 exports[`Default CheckBox should match snapshot 1`] = `
 <Radio__Label
   checked={false}
+  data-test="test"
   disabled={false}
   hasError={false}
   theme={

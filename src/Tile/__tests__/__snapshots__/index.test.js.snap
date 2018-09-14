@@ -2,6 +2,7 @@
 
 exports[`Tile should match snapshot 1`] = `
 <Tile__StyledTile
+  data-test="test"
   href="https://www.kiwi.com/"
   onClick={[MockFunction]}
   target="_blank"

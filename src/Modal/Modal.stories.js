@@ -85,6 +85,7 @@ storiesOf("Modal", module)
       "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     );
     const flex = array("Flex", ["0 0 auto", "1 1 100%"]);
+    const dataTest = text("dataTest", "test");
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -93,7 +94,13 @@ storiesOf("Modal", module)
           sections: [
             {
               sectionFn: () => (
-                <Modal onClose={onClose} size={size} closable={closable} fixedFooter={fixed}>
+                <Modal
+                  onClose={onClose}
+                  size={size}
+                  closable={closable}
+                  fixedFooter={fixed}
+                  dataTest={dataTest}
+                >
                   <ModalHeader
                     title={title}
                     illustration={illustration && <Illustration name={illustration} size="small" />}

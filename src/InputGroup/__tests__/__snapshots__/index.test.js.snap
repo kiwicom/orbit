@@ -3,6 +3,7 @@
 exports[`InputGroup - Phone number should match snapshot 1`] = `
 <InputGroup__StyledInputGroup
   active={false}
+  dataTest="test"
   label="Phone number"
   size="normal"
   theme={

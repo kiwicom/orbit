@@ -206,6 +206,7 @@ const InputField = (props: Props) => {
     size = SIZE_OPTIONS.NORMAL,
     type = TYPE_OPTIONS.TEXT,
     theme = defaultTokens,
+    dataTest,
     required,
   } = props;
 
@@ -229,7 +230,7 @@ const InputField = (props: Props) => {
   };
 
   return (
-    <Field>
+    <Field data-test={dataTest}>
       {props.label &&
         !props.inlineLabel && (
           <FormLabel label={props.label} isFilled={!!props.value} required={required} />

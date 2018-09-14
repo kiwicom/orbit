@@ -1,5 +1,6 @@
 // @flow
 import ListItem from "./ListItem";
+import type { Globals } from "../common/common.js.flow";
 
 export type Size = "small" | "normal" | "large";
 
@@ -9,6 +10,7 @@ export type Props = {|
   +children: Array<React$Element<typeof ListItem>> | React$Element<typeof ListItem>,
   +size?: Size,
   +type?: Type,
+  ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;

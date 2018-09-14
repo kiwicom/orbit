@@ -3,7 +3,7 @@
 import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, select } from "@storybook/addon-knobs/react";
+import { withKnobs, select, text } from "@storybook/addon-knobs/react";
 import styles from "@sambego/storybook-styles/dist/index";
 
 import { SIZE_OPTIONS, NAMES } from "./consts";
@@ -22,6 +22,7 @@ storiesOf("Illustration", module)
   .addWithChapters("Playground", () => {
     const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
     const name = select("Name", Object.values(NAMES), "Accommodation");
+    const dataTest = text("dataTest", "test");
 
     return {
       info: "Explore our new set of illustrations for Kiwi.com.",
@@ -29,7 +30,7 @@ storiesOf("Illustration", module)
         {
           sections: [
             {
-              sectionFn: () => <Illustration size={size} name={name} />,
+              sectionFn: () => <Illustration size={size} name={name} dataTest={dataTest} />,
             },
           ],
         },

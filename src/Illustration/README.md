@@ -12,6 +12,7 @@ Table below contains all types of the props available in CarrierLogo component.
 
 | Name          | Type                             | Default         | Description                      |
 | :------------ | :------------------------------- | :-------------- | :------------------------------- |
+| dataTest      | `string`                         |                 | Optional prop for testing purposes.
 | **name**      | [`enum`](#enum)                  |                 | Name for the displayed illustration.
 | size          | [`enum`](#enum)                  | `"medium"`      | The size of the Illustration.
 

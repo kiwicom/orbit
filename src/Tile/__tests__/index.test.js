@@ -9,8 +9,9 @@ describe("Tile", () => {
   const href = "https://www.kiwi.com/";
   const external = true;
   const onClick = jest.fn();
+  const dataTest = "test";
   const component = shallow(
-    <Tile title={title} href={href} external={external} onClick={onClick} />,
+    <Tile title={title} href={href} external={external} onClick={onClick} dataTest={dataTest} />,
   );
 
   const tile = component;
@@ -47,5 +48,6 @@ describe("Tile", () => {
     expect(tile.prop("onClick")).toBe(onClick);
     expect(tile.prop("href")).toBe(href);
     expect(tile.prop("target")).toBe("_blank");
+    expect(tile.render().prop("data-test")).toBe(dataTest);
   });
 });

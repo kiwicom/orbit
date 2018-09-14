@@ -100,6 +100,7 @@ exports[`Storyshots ButtonLink Default 1`] = `
         >
           <a
             className="ButtonLink__StyledButtonLink-eyUiPe czlUus"
+            data-test={undefined}
             href="https://kiwi.com"
             onClick={undefined}
             size="normal"
@@ -352,6 +353,7 @@ exports[`Storyshots ButtonLink Playground 1`] = `
         >
           <button
             className="ButtonLink__StyledButtonLink-eyUiPe fnzjmn"
+            data-test="test"
             disabled={false}
             href=""
             onClick={[Function]}
@@ -364,6 +366,7 @@ exports[`Storyshots ButtonLink Playground 1`] = `
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -388,6 +391,7 @@ exports[`Storyshots ButtonLink Playground 1`] = `
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -609,6 +613,36 @@ exports[`Storyshots ButtonLink Playground 1`] = `
                               >
                                 "
                                 
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                test
                                 "
                               </span>
                             </span>
@@ -869,6 +903,7 @@ exports[`Storyshots ButtonLink Secondary 1`] = `
         >
           <a
             className="ButtonLink__StyledButtonLink-eyUiPe klwrPH"
+            data-test={undefined}
             href="https://kiwi.com"
             onClick={undefined}
             size="normal"

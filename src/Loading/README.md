@@ -13,6 +13,7 @@ Table below contains all types of the props available for icons in general.
 | Name          | Type            | Default         | Description                      |
 | :------------ | :-------------- | :-------------- | :------------------------------- |
 | children      | `React.Node`    |                 | The content of the Loading. [See Functional specs](#functional-specs)
+| dataTest      | `string`        |                 | Optional prop for testing purposes.
 | loading       | `boolean`       | `false`         | If `true`, the Loading will be displayed.
 | **type**      | [`enum`](#enum) |                 | The type of the Loading.
 | text          | `string`        |                 | The text of the Loading.

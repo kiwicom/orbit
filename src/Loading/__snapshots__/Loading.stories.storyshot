@@ -100,12 +100,14 @@ exports[`Storyshots Loading Button loading 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK jZMwQg"
+            data-test={undefined}
             disabled={true}
             size="normal"
             target={undefined}
           >
             <div
               className="Loading__StyledLoading-jmajcg eCYjyt"
+              data-test={undefined}
             >
               <svg
                 className="Loading__StyledSpinner-zlSqZ fZiZGB"
@@ -352,9 +354,11 @@ exports[`Storyshots Loading Card loading 1`] = `
         >
           <div
             className="Card__StyledCard-fdVXSH cIcvap"
+            data-test={undefined}
           >
             <div
               className="Loading__StyledLoading-jmajcg hELIeX"
+              data-test={undefined}
             >
               <div
                 className="Loading__StyledLoader-lecZdo krYAYh"
@@ -940,6 +944,7 @@ exports[`Storyshots Loading Default 1`] = `
         >
           <div
             className="Loading__StyledLoading-jmajcg eISPmr"
+            data-test={undefined}
           >
             <svg
               className="Loading__StyledSpinner-zlSqZ fZiZGB"
@@ -1134,6 +1139,7 @@ exports[`Storyshots Loading Playground 1`] = `
         >
           <div
             className="Loading__StyledLoading-jmajcg eISPmr"
+            data-test="test"
           >
             <svg
               className="Loading__StyledSpinner-zlSqZ fZiZGB"
@@ -1210,7 +1216,10 @@ exports[`Storyshots Loading Playground 1`] = `
                     </span>
                     <span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -1218,7 +1227,10 @@ exports[`Storyshots Loading Playground 1`] = `
                         </span>
                       </span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -1245,7 +1257,10 @@ exports[`Storyshots Loading Playground 1`] = `
                         </span>
                       </span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -1270,7 +1285,37 @@ exports[`Storyshots Loading Playground 1`] = `
                             </span>
                           </span>
                         </span>
-                         
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          dataTest
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              test
+                              "
+                            </span>
+                          </span>
+                        </span>
+                        <br />
                       </span>
                     </span>
                     <span

@@ -223,10 +223,15 @@ export const StyledButton = styled(
     onlyIcon,
     block,
     style,
+    dataTest,
     ...props
   }) => {
     const Component = component === "button" && props.href ? "a" : component;
-    return <Component {...props}>{props.children}</Component>;
+    return (
+      <Component data-test={dataTest} {...props}>
+        {props.children}
+      </Component>
+    );
   },
 )`
   position: relative;

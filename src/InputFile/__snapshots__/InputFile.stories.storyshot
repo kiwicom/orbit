@@ -100,6 +100,7 @@ exports[`Storyshots InputFile Default 1`] = `
         >
           <label
             className="InputFile__Field-jAueAE dAafTj"
+            data-test={undefined}
           >
             <input
               accept={undefined}
@@ -112,6 +113,7 @@ exports[`Storyshots InputFile Default 1`] = `
             />
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Label
@@ -122,6 +124,7 @@ exports[`Storyshots InputFile Default 1`] = `
             >
               <div
                 className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
+                data-test={undefined}
                 disabled={undefined}
                 size="small"
                 target={undefined}
@@ -134,6 +137,7 @@ exports[`Storyshots InputFile Default 1`] = `
                   >
                     <svg
                       className={undefined}
+                      data-test={undefined}
                       fill="currentColor"
                       height="24px"
                       preserveAspectRatio="xMidYMid meet"
@@ -493,6 +497,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
         >
           <label
             className="InputFile__Field-jAueAE dAafTj"
+            data-test={undefined}
           >
             <input
               accept={undefined}
@@ -505,6 +510,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
             />
             <span
               className="FormLabel-kJFBRQ irIxpQ"
+              data-test={undefined}
             >
               <span>
                 Label
@@ -515,6 +521,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
             >
               <div
                 className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
+                data-test={undefined}
                 disabled={undefined}
                 size="small"
                 target={undefined}
@@ -527,6 +534,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                   >
                     <svg
                       className={undefined}
+                      data-test={undefined}
                       fill="currentColor"
                       height="24px"
                       preserveAspectRatio="xMidYMid meet"
@@ -554,6 +562,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
               </div>
               <button
                 className="InputFile__CloseButton-izWrBg gSjPGz ButtonLink__StyledButtonLink-eyUiPe izGXzt"
+                data-test={undefined}
                 onClick={[Function]}
                 size="normal"
                 target={undefined}
@@ -564,6 +573,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                 >
                   <svg
                     className={undefined}
+                    data-test={undefined}
                     fill="currentColor"
                     height="24px"
                     preserveAspectRatio="xMidYMid meet"
@@ -946,6 +956,7 @@ exports[`Storyshots InputFile Playground 1`] = `
         >
           <label
             className="InputFile__Field-jAueAE dAafTj"
+            data-test="test"
           >
             <input
               accept={
@@ -963,6 +974,7 @@ exports[`Storyshots InputFile Playground 1`] = `
             />
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Label
@@ -973,6 +985,7 @@ exports[`Storyshots InputFile Playground 1`] = `
             >
               <div
                 className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
+                data-test={undefined}
                 disabled={undefined}
                 size="small"
                 target={undefined}
@@ -985,6 +998,7 @@ exports[`Storyshots InputFile Playground 1`] = `
                   >
                     <svg
                       className={undefined}
+                      data-test={undefined}
                       fill="currentColor"
                       height="24px"
                       preserveAspectRatio="xMidYMid meet"
@@ -1013,6 +1027,7 @@ exports[`Storyshots InputFile Playground 1`] = `
             </div>
             <div
               className="FormFeedback__StyledFormFeedback-cuFyWp kBuQBJ"
+              data-test={undefined}
             >
               No file has been selected yet
             </div>
@@ -1280,6 +1295,36 @@ exports[`Storyshots InputFile Playground 1`] = `
                                 null
                               </span>
                               }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          dataTest
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              test
+                              "
                             </span>
                           </span>
                         </span>
@@ -1588,6 +1633,7 @@ exports[`Storyshots InputFile With error 1`] = `
         >
           <label
             className="InputFile__Field-jAueAE dAafTj"
+            data-test={undefined}
           >
             <input
               accept={undefined}
@@ -1600,6 +1646,7 @@ exports[`Storyshots InputFile With error 1`] = `
             />
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Label
@@ -1610,6 +1657,7 @@ exports[`Storyshots InputFile With error 1`] = `
             >
               <div
                 className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
+                data-test={undefined}
                 disabled={undefined}
                 size="small"
                 target={undefined}
@@ -1622,6 +1670,7 @@ exports[`Storyshots InputFile With error 1`] = `
                   >
                     <svg
                       className={undefined}
+                      data-test={undefined}
                       fill="currentColor"
                       height="24px"
                       preserveAspectRatio="xMidYMid meet"
@@ -1650,6 +1699,7 @@ exports[`Storyshots InputFile With error 1`] = `
             </div>
             <div
               className="FormFeedback__StyledFormFeedback-cuFyWp kBuQBJ"
+              data-test={undefined}
             >
               Error message (explain how to solve it)
             </div>
@@ -2016,6 +2066,7 @@ exports[`Storyshots InputFile With help 1`] = `
         >
           <label
             className="InputFile__Field-jAueAE dAafTj"
+            data-test={undefined}
           >
             <input
               accept={undefined}
@@ -2028,6 +2079,7 @@ exports[`Storyshots InputFile With help 1`] = `
             />
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Label
@@ -2038,6 +2090,7 @@ exports[`Storyshots InputFile With help 1`] = `
             >
               <div
                 className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
+                data-test={undefined}
                 disabled={undefined}
                 size="small"
                 target={undefined}
@@ -2050,6 +2103,7 @@ exports[`Storyshots InputFile With help 1`] = `
                   >
                     <svg
                       className={undefined}
+                      data-test={undefined}
                       fill="currentColor"
                       height="24px"
                       preserveAspectRatio="xMidYMid meet"
@@ -2078,6 +2132,7 @@ exports[`Storyshots InputFile With help 1`] = `
             </div>
             <div
               className="FormFeedback__StyledFormFeedback-cuFyWp dAUFLG"
+              data-test={undefined}
             >
               <div>
                 Supported files: 

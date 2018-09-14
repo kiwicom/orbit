@@ -53,8 +53,12 @@ StyledModalSection.defaultProps = {
 };
 
 const ModalSection = (props: Props) => {
-  const { suppressed, children } = props;
-  return <StyledModalSection suppressed={suppressed}>{children}</StyledModalSection>;
+  const { suppressed, children, dataTest } = props;
+  return (
+    <StyledModalSection suppressed={suppressed} data-test={dataTest}>
+      {children}
+    </StyledModalSection>
+  );
 };
 
 export default ModalSection;

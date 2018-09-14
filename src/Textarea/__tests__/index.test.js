@@ -11,6 +11,7 @@ describe(`Textarea with help`, () => {
   const label = "Label";
   const value = "value";
   const placeholder = "placeholder";
+  const dataTest = "test";
   const maxLength = 200;
   const onChange = jest.fn();
   const onFocus = jest.fn();
@@ -28,9 +29,12 @@ describe(`Textarea with help`, () => {
       onChange={onChange}
       onFocus={onFocus}
       onBlur={onBlur}
+      dataTest={dataTest}
     />,
   );
+
   const area = component.find("Textarea__StyledTextArea");
+  const labelField = component.find("Textarea__Field");
 
   it("should contain a label", () => {
     expect(
@@ -49,6 +53,7 @@ describe(`Textarea with help`, () => {
     expect(area.prop("value")).toBe(value);
     expect(area.prop("placeholder")).toBe(placeholder);
     expect(area.prop("maxLength")).toBe(maxLength);
+    expect(labelField.render().prop("data-test")).toBe(dataTest);
   });
   it("should contain FeedBack help", () => {
     expect(component.find(`FormFeedback[type="help"]`).exists()).toBe(true);

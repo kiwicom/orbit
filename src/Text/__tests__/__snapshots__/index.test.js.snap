@@ -3,6 +3,7 @@
 exports[`Text should match snapshot 1`] = `
 <Text__StyledText
   align="left"
+  dataTest="test"
   element="p"
   italic={false}
   size="small"

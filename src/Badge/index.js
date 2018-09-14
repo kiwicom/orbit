@@ -32,8 +32,10 @@ const getTypeToken = name => ({ theme, type }) => {
   return tokens[name][type];
 };
 
-const StyledBadge = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
+const StyledBadge = styled(({ className, children, dataTest }) => (
+  <div className={className} data-test={dataTest}>
+    {children}
+  </div>
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   display: inline-flex;
@@ -73,10 +75,10 @@ IconContainer.defaultProps = {
 };
 
 const Badge = (props: Props) => {
-  const { type = TYPE_OPTIONS.NEUTRAL, icon, children, circled } = props;
+  const { type = TYPE_OPTIONS.NEUTRAL, icon, children, circled, dataTest } = props;
 
   return (
-    <StyledBadge type={type} circled={circled}>
+    <StyledBadge type={type} circled={circled} dataTest={dataTest}>
       {icon && <IconContainer type={type}>{icon}</IconContainer>}
       {children}
     </StyledBadge>

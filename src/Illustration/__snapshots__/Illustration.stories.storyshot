@@ -101,6 +101,7 @@ exports[`Storyshots Illustration Playground 1`] = `
           <img
             alt="Accommodation"
             className="Illustration__StyledImage-dmuJKG eLtRiZ"
+            data-test="test"
             size="medium"
             src="//images.kiwi.com/illustrations/0x200/Accommodation.png"
             srcSet="//images.kiwi.com/illustrations/0x400/Accommodation.png 2x"
@@ -209,6 +210,33 @@ exports[`Storyshots Illustration Playground 1`] = `
                             >
                               "
                               Accommodation
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          dataTest
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              test
                               "
                             </span>
                           </span>

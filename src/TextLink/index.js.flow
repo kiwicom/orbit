@@ -1,5 +1,6 @@
 // @flow
 import defaultTokens from "../defaultTokens";
+import type { Globals } from "../common/common.js.flow";
 
 type Type = "primary" | "secondary";
 
@@ -11,6 +12,7 @@ export type Props = {|
   +external?: boolean,
   +type?: Type,
   +rel?: string,
+  ...Globals,
   +theme?: typeof defaultTokens,
 |};
 

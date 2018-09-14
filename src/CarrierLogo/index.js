@@ -39,7 +39,7 @@ StyledImage.defaultProps = {
 };
 
 const CarrierLogo = (props: Props) => {
-  const { size = SIZE_OPTIONS.LARGE, carriers, theme = defaultTokens } = props;
+  const { size = SIZE_OPTIONS.LARGE, carriers, theme = defaultTokens, dataTest } = props;
   const tokens = {
     directorySizes: {
       [SIZE_OPTIONS.SMALL]: 16,
@@ -65,7 +65,7 @@ const CarrierLogo = (props: Props) => {
     carriers.length > 1 ? tokens.retinaSizes[SIZE_OPTIONS.SMALL] : tokens.retinaSizes[size];
 
   return (
-    <StyledCarrierLogo carriers={carriers} tokens={tokens} size={size}>
+    <StyledCarrierLogo carriers={carriers} tokens={tokens} size={size} data-test={dataTest}>
       {carriers.slice(0, 4).map(carrierImage => {
         const type = carrierImage.type === undefined ? "airline" : carrierImage.type;
         return (

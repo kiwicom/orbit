@@ -134,6 +134,7 @@ storiesOf("Card", module)
     const description = text("Description", "This is a customisable description of the card.");
     const Icon = getIcon(getIcons("Airplane"));
     const closable = boolean("Closable", false);
+    const dataTest = text("dataTest", "test");
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -142,15 +143,20 @@ storiesOf("Card", module)
           sections: [
             {
               sectionFn: () => (
-                <Card closable={closable} onClose={action("Close")}>
-                  <CardHeader icon={<Icon />} title={title} subTitle={description} />
-                  <CardContent>
+                <Card closable={closable} onClose={action("Close")} dataTest={dataTest}>
+                  <CardHeader
+                    icon={<Icon />}
+                    title={title}
+                    subTitle={description}
+                    dataTest={dataTest}
+                  />
+                  <CardContent dataTest={dataTest}>
                     <Heading type="title3" element="h3">
                       Content with Heading and text
                     </Heading>
                     <Text>Text in content</Text>
                   </CardContent>
-                  <CardSection>
+                  <CardSection dataTest={dataTest}>
                     <Heading type="title3" element="h3">
                       Section with Heading and text
                     </Heading>

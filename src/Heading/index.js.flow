@@ -1,6 +1,7 @@
 // @flow
 import type { ReactComponentStyled } from "styled-components";
 
+import type { Globals } from "../common/common.js.flow";
 import defaultTokens from "../defaultTokens";
 
 type Element = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
@@ -11,6 +12,7 @@ export type Props = {|
   +type?: Type,
   +children: React$Node,
   +inverted?: boolean,
+  ...Globals,
   +theme?: typeof defaultTokens,
 |};
 

@@ -100,9 +100,11 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
         >
           <div
             className="ButtonGroup__StyledButtonGroup-dnkEba epdACx"
+            data-test="test"
           >
             <button
               className="ButtonLink__StyledButtonLink-eyUiPe dFYrvl"
+              data-test={undefined}
               onClick={undefined}
               size="normal"
               target={undefined}
@@ -113,6 +115,7 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -134,6 +137,7 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
             </button>
             <button
               className="ButtonLink__StyledButtonLink-eyUiPe kfKTsA"
+              data-test={undefined}
               onClick={undefined}
               size="normal"
               target={undefined}
@@ -144,6 +148,7 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -225,6 +230,33 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
                             style={Object {}}
                           >
                             connected
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                test
+                                "
+                              </span>
+                            </span>
                           </span>
                           
                         </span>
@@ -583,9 +615,11 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
         >
           <div
             className="ButtonGroup__StyledButtonGroup-dnkEba epdACx"
+            data-test="test"
           >
             <button
               className="Button__StyledButton-jJDkJK efFTfw"
+              data-test={undefined}
               disabled={undefined}
               size="normal"
               target={undefined}
@@ -598,6 +632,7 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
                 >
                   <svg
                     className={undefined}
+                    data-test={undefined}
                     fill="currentColor"
                     height="24px"
                     preserveAspectRatio="xMidYMid meet"
@@ -620,6 +655,7 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
             </button>
             <button
               className="Button__StyledButton-jJDkJK FFkqo"
+              data-test={undefined}
               disabled={undefined}
               size="normal"
               target={undefined}
@@ -632,6 +668,7 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
                 >
                   <svg
                     className={undefined}
+                    data-test={undefined}
                     fill="currentColor"
                     height="24px"
                     preserveAspectRatio="xMidYMid meet"
@@ -714,6 +751,33 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
                             style={Object {}}
                           >
                             connected
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                test
+                                "
+                              </span>
+                            </span>
                           </span>
                           
                         </span>

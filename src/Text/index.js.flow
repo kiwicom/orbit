@@ -1,4 +1,5 @@
 // @flow
+import type { Globals } from "../common/common.js.flow";
 
 type Align = "left" | "center" | "right";
 type Element = "p" | "span" | "div";
@@ -23,6 +24,7 @@ export type Props = {|
   +uppercase?: boolean,
   +element?: Element,
   +children: React$Node,
+  ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;

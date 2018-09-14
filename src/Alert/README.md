@@ -14,6 +14,7 @@ Table below contains all types of the props available in Alert component.
 | :------------ | :------------------------------ | :-------------- | :------------------------------- |
 | children      | `React.Node`                    |                 | The content of the Alert.
 | closable      | `boolean`                       | `false`         | If `true`, the Close icon will be displayed. [See Functional specs](#functional-specs)
+| dataTest      | `string`                        |                 | Optional prop for testing purposes.
 | icon          | `React.Element<any> \| boolean` |                 | The displayed icon. [See Functional specs](#functional-specs)
 | onClose       | `func`                          |                 | Function for handling Alert onClose.
 | title         | `string` \| `React.Node`        |                 | The title of the Alert.

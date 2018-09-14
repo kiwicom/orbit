@@ -3,6 +3,7 @@
 exports[`Illustration of Accommodation should match snapshot 1`] = `
 <Illustration__StyledImage
   alt="Accommodation"
+  data-test="test"
   size="small"
   src="//images.kiwi.com/illustrations/0x90/Accommodation.png"
   srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x"

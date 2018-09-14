@@ -357,6 +357,7 @@ storiesOf("InputField", module)
     const required = boolean("required", false);
     const maxLength = number("maxLength", undefined);
     const minLength = number("minLength", undefined);
+    const dataTest = text("dataTest", "test");
 
     return {
       info: "Some description about this type of InputField in general.",
@@ -372,6 +373,7 @@ storiesOf("InputField", module)
                   label={label}
                   inlineLabel={inlineLabel}
                   value={value}
+                  dataTest={dataTest}
                   placeholder={placeholder}
                   required={required}
                   prefix={Prefix && <Prefix />}

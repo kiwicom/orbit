@@ -177,6 +177,7 @@ storiesOf("Select", module)
     const disabled = boolean("Disabled", false);
     const option = object("Options", objectOptions);
     const value = select("Value", [undefined].concat(...objectOptions.map(opt => opt.value)));
+    const dataTest = text("dataTest", "test");
 
     return {
       info:
@@ -193,6 +194,7 @@ storiesOf("Select", module)
                   disabled={disabled}
                   label={text("Label")}
                   onChange={action("onChange")}
+                  dataTest={dataTest}
                   value={value}
                 />
               ),

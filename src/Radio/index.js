@@ -92,7 +92,7 @@ Input.defaultProps = {
   theme: defaultTokens,
 };
 
-const Label = styled(({ tokens, disabled, theme, type, ...props }) => (
+const Label = styled(({ tokens, disabled, theme, type, hasError, ...props }) => (
   <label {...props}>{props.children}</label>
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -139,8 +139,9 @@ const Radio = ({
   checked = false,
   onChange,
   info,
+  dataTest,
 }: Props) => (
-  <Label disabled={disabled} hasError={hasError} checked={checked}>
+  <Label disabled={disabled} hasError={hasError} checked={checked} data-test={dataTest}>
     <Input value={value} type="radio" disabled={disabled} checked={checked} onChange={onChange} />
     <IconContainer>
       <Glyph disabled={disabled} />

@@ -101,6 +101,7 @@ exports[`Storyshots ServiceLogo Playground 1`] = `
           <img
             alt="AirHelp"
             className="ServiceLogo__StyledServiceLogo-gXFeKU kHpmkD"
+            data-test="test"
             src="//images.kiwi.com/logos/0x24/AirHelp.png"
             srcSet="//images.kiwi.com/logos/0x48/AirHelp.png 2x"
           />
@@ -160,7 +161,10 @@ exports[`Storyshots ServiceLogo Playground 1`] = `
                     </span>
                     <span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -187,7 +191,10 @@ exports[`Storyshots ServiceLogo Playground 1`] = `
                         </span>
                       </span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -214,7 +221,10 @@ exports[`Storyshots ServiceLogo Playground 1`] = `
                         </span>
                       </span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -240,7 +250,37 @@ exports[`Storyshots ServiceLogo Playground 1`] = `
                             </span>
                           </span>
                         </span>
-                         
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          dataTest
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              test
+                              "
+                            </span>
+                          </span>
+                        </span>
+                        <br />
                       </span>
                     </span>
                     <span

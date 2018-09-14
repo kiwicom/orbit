@@ -17,6 +17,7 @@ Table below contains all types of the props available in ButtonLink component.
 | :------------ | :---------------------| :-------------- | :------------------------------- |
 | **children**  | `React.Node`          |                 | The content of the ButtonLink. [See Functional specs](#functional-specs)
 | connected     | `string \| React.Node`| `"button"`      | If `true`, there will not be any spaces between individual Buttons/ButtonLinks.
+| dataTest      | `string`              |                 | Optional prop for testing purposes.
 
 ## Functional specs
 * Either Button or ButtonLink components are allowed in **children**.

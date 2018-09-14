@@ -129,6 +129,7 @@ storiesOf("Badge", module)
     const content = text("Content", "Badge");
     const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO);
     const circled = boolean("Circled", false);
+    const dataTest = text("dataTest", "test");
     const Icon = getIcon(getIcons("Airplane"));
 
     return {
@@ -139,7 +140,7 @@ storiesOf("Badge", module)
           sections: [
             {
               sectionFn: () => (
-                <Badge type={type} icon={Icon && <Icon />} circled={circled}>
+                <Badge type={type} icon={Icon && <Icon />} dataTest={dataTest} circled={circled}>
                   {content}
                 </Badge>
               ),

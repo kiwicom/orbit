@@ -13,6 +13,7 @@ Table below contains all types of the props available in CarrierLogo component.
 | Name          | Type                             | Default         | Description                      |
 | :------------ | :------------------------------- | :-------------- | :------------------------------- |
 | **carriers**  | [`Carrier[]`](#carrier)          |                 | The content of the CarrierLogo, passed as array of objects.
+| dataTest      | `string`                         |                 | Optional prop for testing purposes.
 | size          | [`enum`](#enum)                  | `"large"`       | The size of the CarrierLogo. [See Functional specs](#functional-specs)
 
 ### Carrier

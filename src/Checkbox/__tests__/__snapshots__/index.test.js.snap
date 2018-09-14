@@ -2,6 +2,7 @@
 
 exports[`Default CheckBox should match snapshot 1`] = `
 <Checkbox__Label
+  data-test="test"
   disabled={false}
   theme={
     Object {

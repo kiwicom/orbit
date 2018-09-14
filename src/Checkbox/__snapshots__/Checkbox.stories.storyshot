@@ -100,6 +100,7 @@ exports[`Storyshots CheckBox Default 1`] = `
         >
           <label
             className="Checkbox__Label-gCTMrH eIjWcw"
+            data-test={undefined}
           >
             <input
               checked={false}
@@ -114,6 +115,7 @@ exports[`Storyshots CheckBox Default 1`] = `
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -402,6 +404,7 @@ exports[`Storyshots CheckBox Playground 1`] = `
         >
           <label
             className="Checkbox__Label-gCTMrH bnAQKb"
+            data-test="test"
           >
             <input
               checked={true}
@@ -416,6 +419,7 @@ exports[`Storyshots CheckBox Playground 1`] = `
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -624,6 +628,36 @@ exports[`Storyshots CheckBox Playground 1`] = `
                         <span
                           style={Object {}}
                         >
+                          dataTest
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              test
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
                           info
                         </span>
                         <span>
@@ -800,6 +834,7 @@ exports[`Storyshots CheckBox With help 1`] = `
         >
           <label
             className="Checkbox__Label-gCTMrH eIjWcw"
+            data-test={undefined}
           >
             <input
               checked={false}
@@ -814,6 +849,7 @@ exports[`Storyshots CheckBox With help 1`] = `
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"

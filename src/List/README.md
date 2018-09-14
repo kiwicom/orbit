@@ -16,6 +16,7 @@ Table below contains all types of the props available in List component.
 | Name         | Type               | Default     | Description                      |
 | :-------     | :----------------- | :---------- | :------------------------------- |
 | children     | `Array<ListItem>`  |             | The content of the List.
+| dataTest     | `string`           |             | Optional prop for testing purposes.
 | size         | [`enum`](#enum)    | `"normal"`  | The size of the List.
 | type         | [`enum`](#enum)    | `"primary"` | The color type of the List.
 
@@ -25,6 +26,7 @@ Table below contains all types of the props in ListItem component.
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :---------------------| :-------------- | :------------------------------- |
 | **children**  | `React.Node`          |                 | The content of the ListItem.
+| dataTest      | `string`              |                 | Optional prop for testing purposes.
 | icon          | `React.Node`          | `"CircleSmall"` | The displayed Icon or CarrierLogo component. [See Functional specs](#functional-specs)
 
 #### Functional specs

@@ -2,6 +2,7 @@
 
 exports[`Large Modal should match snapshot 1`] = `
 <Modal__ModalBody
+  data-test="test"
   onKeyDown={[Function]}
   tabIndex="0"
   theme={
@@ -782,6 +783,7 @@ exports[`Large Modal should match snapshot 1`] = `
       size="large"
     >
       <ModalHeader
+        dataTest="test"
         description="My description"
         illustration={
           <Illustration
@@ -801,11 +803,13 @@ exports[`Large Modal should match snapshot 1`] = `
         </List>
       </ModalHeader>
       <ModalSection
+        dataTest="test"
         suppressed={true}
       >
         My content
       </ModalSection>
       <ModalFooter
+        dataTest="test"
         flex={
           Array [
             "0 0 auto",

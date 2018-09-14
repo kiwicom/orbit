@@ -14,6 +14,8 @@ StyledCardContent.defaultProps = {
   theme: defaultTokens,
 };
 
-const CardContent = ({ children }: Props) => <StyledCardContent>{children}</StyledCardContent>;
+const CardContent = ({ children, dataTest }: Props) => (
+  <StyledCardContent data-test={dataTest}>{children}</StyledCardContent>
+);
 
 export default CardContent;

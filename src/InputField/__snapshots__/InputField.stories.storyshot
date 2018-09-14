@@ -100,6 +100,7 @@ exports[`Storyshots InputField Compact input 1`] = `
         >
           <label
             className="InputField__Field-hAVqzR cFiTgo"
+            data-test={undefined}
           >
             <div
               className="InputField__InputContainer-evnRDD bHPfak"
@@ -110,6 +111,7 @@ exports[`Storyshots InputField Compact input 1`] = `
               >
                 <span
                   className="FormLabel-kJFBRQ fuYBgg"
+                  data-test={undefined}
                 >
                   <span>
                     Label
@@ -508,9 +510,11 @@ exports[`Storyshots InputField Default input 1`] = `
         >
           <label
             className="InputField__Field-hAVqzR cFiTgo"
+            data-test={undefined}
           >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Label
@@ -838,9 +842,11 @@ exports[`Storyshots InputField Email input 1`] = `
         >
           <label
             className="InputField__Field-hAVqzR cFiTgo"
+            data-test={undefined}
           >
             <span
               className="FormLabel-kJFBRQ irIxpQ"
+              data-test={undefined}
             >
               <span>
                 Email
@@ -870,11 +876,13 @@ exports[`Storyshots InputField Email input 1`] = `
             </div>
             <div
               className="FormFeedback__StyledFormFeedback-cuFyWp dAUFLG"
+              data-test={undefined}
             >
               <div>
                 Did you mean 
                 <a
                   className="TextLink__StyledTextLink-cKDOFV ebltjr"
+                  data-test={undefined}
                   href={undefined}
                   onClick={[Function]}
                   rel={undefined}
@@ -1246,9 +1254,11 @@ exports[`Storyshots InputField Number input 1`] = `
         >
           <label
             className="InputField__Field-hAVqzR cFiTgo"
+            data-test={undefined}
           >
             <span
               className="FormLabel-kJFBRQ irIxpQ"
+              data-test={undefined}
             >
               <span>
                 Number
@@ -1669,9 +1679,11 @@ exports[`Storyshots InputField Password input 1`] = `
         >
           <label
             className="InputField__Field-hAVqzR cFiTgo"
+            data-test={undefined}
           >
             <span
               className="FormLabel-kJFBRQ irIxpQ"
+              data-test={undefined}
             >
               <span>
                 Password
@@ -2029,9 +2041,11 @@ exports[`Storyshots InputField Playground 1`] = `
         >
           <label
             className="InputField__Field-hAVqzR cFiTgo"
+            data-test="test"
           >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Label
@@ -2045,6 +2059,7 @@ exports[`Storyshots InputField Playground 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -2082,6 +2097,7 @@ exports[`Storyshots InputField Playground 1`] = `
               >
                 <button
                   className="ButtonLink__StyledButtonLink-eyUiPe kdbeEm"
+                  data-test={undefined}
                   disabled={false}
                   onClick={[Function]}
                   size="small"
@@ -2093,6 +2109,7 @@ exports[`Storyshots InputField Playground 1`] = `
                   >
                     <svg
                       className={undefined}
+                      data-test={undefined}
                       fill="currentColor"
                       height="24px"
                       preserveAspectRatio="xMidYMid meet"
@@ -2348,6 +2365,36 @@ exports[`Storyshots InputField Playground 1`] = `
                             >
                               "
                               
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          dataTest
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              test
                               "
                             </span>
                           </span>
@@ -2909,9 +2956,11 @@ exports[`Storyshots InputField Required field 1`] = `
         >
           <label
             className="InputField__Field-hAVqzR cFiTgo"
+            data-test={undefined}
           >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span
                 className="FormLabel__StyledAsterisk-hDiwkZ fQiOJe"
@@ -3255,9 +3304,11 @@ exports[`Storyshots InputField Small input 1`] = `
         >
           <label
             className="InputField__Field-hAVqzR cFiTgo"
+            data-test={undefined}
           >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Label
@@ -3615,9 +3666,11 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
         >
           <label
             className="InputField__Field-hAVqzR cFiTgo"
+            data-test={undefined}
           >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Label
@@ -3646,6 +3699,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
               >
                 <button
                   className="ButtonLink__StyledButtonLink-eyUiPe DORaW"
+                  data-test={undefined}
                   onClick={[Function]}
                   size="normal"
                   target={undefined}
@@ -3656,6 +3710,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                   >
                     <svg
                       className={undefined}
+                      data-test={undefined}
                       fill="currentColor"
                       height="24px"
                       preserveAspectRatio="xMidYMid meet"
@@ -4010,9 +4065,11 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
         >
           <label
             className="InputField__Field-hAVqzR cFiTgo"
+            data-test={undefined}
           >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Label
@@ -4026,6 +4083,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -4393,9 +4451,11 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
         >
           <label
             className="InputField__Field-hAVqzR cFiTgo"
+            data-test={undefined}
           >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Label
@@ -4425,6 +4485,7 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
                 <img
                   alt="AirHelp"
                   className="ServiceLogo__StyledServiceLogo-gXFeKU kHpmkD"
+                  data-test={undefined}
                   src="//images.kiwi.com/logos/0x24/AirHelp.png"
                   srcSet="//images.kiwi.com/logos/0x48/AirHelp.png 2x"
                 />
@@ -4764,9 +4825,11 @@ exports[`Storyshots InputField With text prefix 1`] = `
         >
           <label
             className="InputField__Field-hAVqzR cFiTgo"
+            data-test={undefined}
           >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Label

@@ -100,7 +100,7 @@ exports[`Storyshots Illustration Playground 1`] = `
         >
           <img
             alt="Accommodation"
-            className="Illustration__StyledImage-dmuJKG iNQSZo"
+            className="Illustration__StyledImage-dmuJKG eLtRiZ"
             size="medium"
             src="//images.kiwi.com/illustrations/0x200/Accommodation.png"
             srcSet="//images.kiwi.com/illustrations/0x400/Accommodation.png 2x"

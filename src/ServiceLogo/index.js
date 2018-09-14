@@ -32,7 +32,6 @@ const StyledServiceLogo = styled(({ className, name, size, grayScale, theme }) =
   height: ${({ theme, size }) => getHeight(theme, size)};
   width: auto;
   background-color: transparent; // TODO: create token backgroundServiceLogo
-  overflow: hidden;
 `;
 
 StyledServiceLogo.defaultProps = {

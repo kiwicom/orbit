@@ -3,7 +3,7 @@
 exports[`ServiceLogo: AirHelp should match snapshot 1`] = `
 <img
   alt="AirHelp"
-  className="ServiceLogo__StyledServiceLogo-gXFeKU jIhvSc"
+  className="ServiceLogo__StyledServiceLogo-gXFeKU ivlfMy"
   src="//images.kiwi.com/logos/0x48/AirHelp.png"
   srcSet="//images.kiwi.com/logos/0x96/AirHelp.png 2x"
 />
@@ -12,7 +12,7 @@ exports[`ServiceLogo: AirHelp should match snapshot 1`] = `
 exports[`ServiceLogo: AirHelp should match snapshot 2`] = `
 <img
   alt="AirHelp"
-  className="ServiceLogo__StyledServiceLogo-gXFeKU jIhvSc"
+  className="ServiceLogo__StyledServiceLogo-gXFeKU ivlfMy"
   src="//images.kiwi.com/logos-grayscale/0x48/AirHelp.png"
   srcSet="//images.kiwi.com/logos-grayscale/0x96/AirHelp.png 2x"
 />

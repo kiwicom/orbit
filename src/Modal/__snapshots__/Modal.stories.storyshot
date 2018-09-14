@@ -154,7 +154,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                   >
                     <img
                       alt="Accommodation"
-                      className="Illustration__StyledImage-dmuJKG eutPyo"
+                      className="Illustration__StyledImage-dmuJKG hCHaUA"
                       size="small"
                       src="//images.kiwi.com/illustrations/0x90/Accommodation.png"
                       srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x"

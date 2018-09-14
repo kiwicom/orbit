@@ -860,7 +860,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
       >
         <img
           alt="Ryanair"
-          className="CarrierLogo__StyledImage-fRYacf iolHuh"
+          className="CarrierLogo__StyledImage-fRYacf eoMxQG"
           src="//images.kiwi.com/airlines/16/FR.png?default=airline.png"
           srcSet="//images.kiwi.com/airlines/32/FR.png?default=airline.png 2x"
           title="Ryanair"
@@ -1276,7 +1276,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
       >
         <img
           alt="Transavia France"
-          className="CarrierLogo__StyledImage-fRYacf iolHuh"
+          className="CarrierLogo__StyledImage-fRYacf eoMxQG"
           src="//images.kiwi.com/airlines/16/TO.png?default=airline.png"
           srcSet="//images.kiwi.com/airlines/32/TO.png?default=airline.png 2x"
           title="Transavia France"
@@ -1692,7 +1692,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
       >
         <img
           alt="Vueling"
-          className="CarrierLogo__StyledImage-fRYacf iolHuh"
+          className="CarrierLogo__StyledImage-fRYacf eoMxQG"
           src="//images.kiwi.com/airlines/16/VY.png?default=airline.png"
           srcSet="//images.kiwi.com/airlines/32/VY.png?default=airline.png 2x"
           title="Vueling"
@@ -2108,7 +2108,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
       >
         <img
           alt="Czech Airlines"
-          className="CarrierLogo__StyledImage-fRYacf iolHuh"
+          className="CarrierLogo__StyledImage-fRYacf eoMxQG"
           src="//images.kiwi.com/airlines/16/OK.png?default=airline.png"
           srcSet="//images.kiwi.com/airlines/32/OK.png?default=airline.png 2x"
           title="Czech Airlines"

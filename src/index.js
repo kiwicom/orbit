@@ -19,6 +19,15 @@ export { default as CardHeader } from "./Card/CardHeader";
 export { default as CardContent } from "./Card/CardContent";
 export { default as CardSection } from "./Card/CardSection";
 
+// Modal
+export { default as Portal } from "./Portal";
+export { default as ClickOutside } from "./ClickOutside";
+
+export { default as Modal } from "./Modal";
+export { default as ModalHeader } from "./Modal/ModalHeader";
+export { default as ModalSection } from "./Modal/ModalSection";
+export { default as ModalFooter } from "./Modal/ModalFooter";
+
 export { default as Heading } from "./Heading";
 export { default as Text } from "./Text";
 export { default as List } from "./List";

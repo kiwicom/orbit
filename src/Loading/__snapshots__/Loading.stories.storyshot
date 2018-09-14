@@ -99,7 +99,7 @@ exports[`Storyshots Loading Button loading 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK iBqoWO"
+            className="Button__StyledButton-jJDkJK dYQuGp"
             disabled={true}
             size="normal"
             target={undefined}

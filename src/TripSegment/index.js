@@ -2,11 +2,11 @@
 import * as React from "react";
 import styled, { keyframes, css } from "styled-components";
 
-import ChevronUp from "../icons/ChevronUp";
-import ChevronDown from "../icons/ChevronDown";
 import defaultTokens from "../defaultTokens";
 import CarrierLogo, { StyledCarrierLogo } from "../CarrierLogo";
 import Airplane from "../icons/Airplane";
+import ShowMore from "../icons/ShowMore";
+import ShowLess from "../icons/ShowLess";
 import Bus from "../icons/Bus";
 import Train from "../icons/Train";
 import Text from "../Text";
@@ -18,56 +18,30 @@ type State = {|
   shown: boolean,
 |};
 
-// TODO: Fix animations
-const ToggleUp = keyframes`
-  from { max-height: 0%; overflow: hidden; opacity: 0 }
-  to { max-height: 100%; overflow: visible; top: 0; opacity: 1 }
+const ToggleUp = contentHeight => keyframes`
+  0% { max-height: ${contentHeight}px; opacity: 1 }
+  100% { max-height: 0; opacity: 0 }
 `;
 
-const ToggleDown = keyframes`
-  0% { max-height: 0;  overflow: hidden; opacity: 1}
-  75% { opacity: 0.4; max-height: 50% }
-  100%  { max-height: 100%; overflow: visible; opacity: 0}
+const ToggleDown = contentHeight => keyframes`
+  0% { max-height: 0; opacity: 0; overflow: hidden }
+  100% { max-height: ${contentHeight}px; opacity: 1; overflow: visible }
 `;
 
 const Milestone = styled.div`
   display: flex;
   height: 55px;
+  width: 27px;
   align-items: center;
-  padding-right: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 
-Milestone.defaultProps = {
-  theme: defaultTokens,
-};
-
-export const StyledSegment = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
-))`
-  display: flex;
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 289px;
-  border-radius: 3px;
-  flex-wrap: wrap;
-  padding: ${({ theme }) => theme.orbit.spaceXSmall};
-  background: ${({ theme }) => theme.orbit.backgroundCard};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  border-width: ${({ theme }) => theme.orbit.borderWidthCard};
-  border-style: ${({ theme }) => theme.orbit.borderStyleCard};
-  border-color: ${({ theme }) => theme.orbit.paletteCloudNormal};
+const ArrowDecor = styled.div`
   position: relative;
-  &:hover {
-    cursor: pointer;
-  }
+  right: -10px;
+  z-index: 1;
   &:before {
     position: absolute;
     right: 100%;
-    top: 27px;
     content: " ";
     width: 0;
     height: 0;
@@ -88,7 +62,35 @@ export const StyledSegment = styled(({ className, children }) => (
     content: " ";
     position: absolute;
     right: 100%;
-    top: 27px;
+  }
+`;
+
+Milestone.defaultProps = {
+  theme: defaultTokens,
+};
+
+ArrowDecor.defaultProps = {
+  theme: defaultTokens,
+};
+
+export const StyledSegment = styled(({ className, children }) => (
+  <div className={className}>{children}</div>
+))`
+  display: flex;
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
+  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: ${({ theme }) => theme.orbit.spaceXSmall};
+  background: ${({ theme }) => theme.orbit.backgroundCard};
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  border-width: ${({ theme }) => theme.orbit.borderWidthCard};
+  border-style: ${({ theme }) => theme.orbit.borderStyleCard};
+  border-color: ${({ theme }) => theme.orbit.paletteCloudNormal};
+  position: relative;
+  &:hover {
+    cursor: pointer;
   }
 `;
 
@@ -141,7 +143,7 @@ export const Chevrones = styled.div`
   right: -8.4px;
   svg {
     height: 11px;
-    transform: rotate(${({ rotate }) => `${rotate})`};
+    width: 11px;
   }
 `;
 
@@ -152,17 +154,19 @@ Chevrones.defaultProps = {
 export const ChildrenWrapper = styled.div`
   width: 100%;
   position: relative;
+  overflow: hidden;
   flex-wrap: wrap;
-  height: auto;
-  ${({ shown }) =>
+  padding: ${({ theme, shown }) => shown && `${theme.orbit.spaceMedium} 0`};
+  max-height: ${({ shown, contentHeight }) => (shown ? `${contentHeight}px` : "0")};
+  animation: ${({ shown, theme, contentHeight }) =>
     shown
-      ? css`
-          opacity: 1;
-          max-height: 100%;
-          margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
+      ? `${theme.orbit.durationFast}${ToggleUp(contentHeight)} linear;
         `
-      : `opacity: 0; max-height: 0`};
-  animation: ${({ shown }) => (shown ? `${ToggleUp} .4s linear;` : `${ToggleDown} .4s linear`)};
+      : `${theme.orbit.durationFast}${ToggleDown(contentHeight)} linear;
+        `};
+  transition: max-height ${({ theme }) => theme.orbit.durationFast} linear,
+    padding ${({ theme }) => theme.orbit.durationFast} linear;
+
   font-size: ${({ theme }) => theme.orbit.spaceSmall};
   ${({ shown }) =>
     shown &&
@@ -191,6 +195,24 @@ class TripSegment extends React.PureComponent<Props, State> {
     shown: false,
   };
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setHeight();
+    }, 250);
+  }
+
+  setHeight() {
+    const { node } = this;
+    if (node instanceof HTMLElement) {
+      const element = Array.from(node.childNodes).find((item, index) => index === 0 && item);
+      this.contentHeight = Object.values(element.childNodes).reduce(
+        // $FlowExpected
+        (acc, child) => acc + child.offsetHeight,
+        0,
+      );
+    }
+  }
+
   handleToggle = () => {
     const { onClick } = this.props;
     this.setState(prevState => ({
@@ -201,6 +223,9 @@ class TripSegment extends React.PureComponent<Props, State> {
       onClick();
     }
   };
+
+  contentHeight = 0;
+  node = {};
 
   render() {
     const {
@@ -217,13 +242,13 @@ class TripSegment extends React.PureComponent<Props, State> {
       type,
     } = this.props;
     const { shown } = this.state;
+    const { contentHeight } = this;
 
     return (
       <Wrapper>
         <Milestone>
-          {type === "airline" && <Airplane size="small" color="secondary" />}
-          {type === "train" && <Train size="small" color="secondary" />}
-          {type === "bus" && <Bus size="small" color="secondary" />}
+          <Icon />
+          <ArrowDecor />
         </Milestone>
         <StyledSegment>
           <WrapperInner onClick={this.handleToggle}>
@@ -245,16 +270,29 @@ class TripSegment extends React.PureComponent<Props, State> {
                 </Text>
               </FlightPart>
             </Flights>
-            <Text size="small" type="secondary">
-              {duration}
-            </Text>
-            <CarrierLogo size="large" carriers={[{ code, name, type }]} />
-            <Chevrones rotate={shown === true ? "180deg" : "0deg"}>
-              <ChevronUp size="small" color="secondary" />
-              <ChevronDown size="small" color="secondary" />
-            </Chevrones>
+            <WrapperCarrier>
+              <Text size="small" type="secondary">
+                {`~${duration}`}
+              </Text>
+              <CarrierLogo carriers={[{ code, name, type }]} />
+              <Chevrones>
+                {shown ? (
+                  <ShowLess size="large" color="secondary" />
+                ) : (
+                  <ShowMore size="large" color="secondary" />
+                )}
+              </Chevrones>
+            </WrapperCarrier>
           </WrapperInner>
-          <ChildrenWrapper shown={shown}>{children}</ChildrenWrapper>
+          <ChildrenWrapper
+            contentHeight={contentHeight}
+            shown={shown}
+            innerRef={node => {
+              this.node = node;
+            }}
+          >
+            {children}
+          </ChildrenWrapper>
         </StyledSegment>
       </Wrapper>
     );

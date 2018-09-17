@@ -9,14 +9,10 @@ import ShowMore from "../icons/ShowMore";
 import ShowLess from "../icons/ShowLess";
 import Bus from "../icons/Bus";
 import Train from "../icons/Train";
-import Text from "../Text";
+import Text, { StyledText } from "../Text";
 import { Item } from "../List/ListItem";
 
-import type { Props } from "./index";
-
-type State = {|
-  shown: boolean,
-|};
+import type { Props, State } from "./index";
 
 const ToggleUp = contentHeight => keyframes`
   0% { max-height: ${contentHeight}px; opacity: 1 }
@@ -30,14 +26,15 @@ const ToggleDown = contentHeight => keyframes`
 
 const Milestone = styled.div`
   display: flex;
-  height: 55px;
-  width: 27px;
+  max-width: 26px;
+  width: 100%;
+  height: 50px;
   align-items: center;
 `;
 
 const ArrowDecor = styled.div`
   position: relative;
-  right: -10px;
+  right: -11px;
   z-index: 1;
   &:before {
     position: absolute;
@@ -82,7 +79,8 @@ export const StyledSegment = styled(({ className, children }) => (
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  padding: ${({ theme }) => theme.orbit.spaceXSmall};
+  padding: ${({ theme }) => theme.orbit.spaceXSmall} ${({ theme }) => theme.orbit.spaceSmall}
+    ${({ theme }) => theme.orbit.spaceXSmall} ${({ theme }) => theme.orbit.spaceXSmall};
   background: ${({ theme }) => theme.orbit.backgroundCard};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   border-width: ${({ theme }) => theme.orbit.borderWidthCard};
@@ -101,11 +99,15 @@ StyledSegment.defaultProps = {
 const Flights = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
 `;
 
 const Wrapper = styled.div`
   display: flex;
+`;
+
+const WrapperCarrier = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const WrapperInner = styled.div`
@@ -113,9 +115,14 @@ const WrapperInner = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: ${({ shown }) =>
+    shown &&
+    css`
+      ${({ theme }) => theme.orbit.spaceXSmall};
+    `};
   ${StyledCarrierLogo} {
     padding-left: ${({ theme }) => theme.orbit.spaceXSmall};
-    padding-right: ${({ theme }) => theme.orbit.spaceXXSmall};
+  }
 `;
 
 WrapperInner.defaultProps = {
@@ -124,6 +131,9 @@ WrapperInner.defaultProps = {
 
 const FlightPart = styled.div`
   display: flex;
+  ${StyledText} {
+    line-height: 1.2;
+  }
 `;
 
 const Time = styled.div`
@@ -134,13 +144,12 @@ Time.defaultProps = {
   theme: defaultTokens,
 };
 
-export const Chevrones = styled.div`
+const Chevrones = styled.div`
   display: flex;
   flex-direction: column;
   background: ${({ theme }) => theme.orbit.paletteWhite};
   position: absolute;
-  top: 15px;
-  right: -8.4px;
+  right: -6.4px;
   svg {
     height: 11px;
     width: 11px;
@@ -190,6 +199,19 @@ ChildrenWrapper.defaultProps = {
   theme: defaultTokens,
 };
 
+const Icon = type => {
+  switch (type) {
+    case "airline":
+      return <Airplane size="small" color="secondary" />;
+    case "train":
+      return <Train size="small" color="secondary" />;
+    case "bus":
+      return <Bus size="small" color="secondary" />;
+    default:
+      return <Airplane size="small" color="secondary" />;
+  }
+};
+
 class TripSegment extends React.PureComponent<Props, State> {
   state = {
     shown: false,
@@ -228,19 +250,7 @@ class TripSegment extends React.PureComponent<Props, State> {
   node = {};
 
   render() {
-    const {
-      children,
-      departureCity,
-      arrivalCity,
-      departureTime,
-      arrivalTime,
-      departureCode,
-      arrivalCode,
-      duration,
-      code,
-      name,
-      type,
-    } = this.props;
+    const { children, departure, arrival, duration, code, name, type } = this.props;
     const { shown } = this.state;
     const { contentHeight } = this;
 
@@ -251,30 +261,28 @@ class TripSegment extends React.PureComponent<Props, State> {
           <ArrowDecor />
         </Milestone>
         <StyledSegment>
-          <WrapperInner onClick={this.handleToggle}>
+          <WrapperInner shown={shown} onClick={this.handleToggle}>
             <Flights>
               <FlightPart>
                 <Time>
-                  <Text type="attention">{arrivalTime}</Text>
+                  <Text type="attention">{arrival.time}</Text>
                 </Time>
                 <Text type="primary">
-                  {arrivalCity} {arrivalCode}
+                  {arrival.city} {arrival.code}
                 </Text>
               </FlightPart>
               <FlightPart>
                 <Time>
-                  <Text type="attention">{departureTime}</Text>
+                  <Text type="attention">{departure.time}</Text>
                 </Time>
                 <Text type="primary">
-                  {departureCity} {departureCode}
+                  {departure.city} {departure.code}
                 </Text>
               </FlightPart>
             </Flights>
             <WrapperCarrier>
-              <Text size="small" type="secondary">
-                {`~${duration}`}
-              </Text>
-              <CarrierLogo carriers={[{ code, name, type }]} />
+              <Text type="secondary">{`~${duration}`}</Text>
+              <CarrierLogo size="medium" carriers={[{ code, name, type }]} />
               <Chevrones>
                 {shown ? (
                   <ShowLess size="large" color="secondary" />

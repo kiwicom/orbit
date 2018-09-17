@@ -28,16 +28,22 @@ storiesOf("TripSegment", module)
     }),
   )
   .addWithChapters("Playground", () => {
-    const arrivalCity = text("arrivalCity", "Moscow");
-    const departureCity = text("departureCity", "Berlin");
     const duration = text("duration", "2h");
     const code = text("code", "FR");
     const type = text("type", "airline");
     const name = text("name", "Ryanair");
-    const departureTime = text("departureTime", "11:20");
-    const arrivalTime = text("arrivalTime", "14:20");
-    const departureCode = text("departureCode", "VKO");
-    const arrivalCode = text("arrivalCode", "TXL");
+
+    const departure = {
+      city: text("departureCity", "Berlin"),
+      time: text("departureTime", "11:20"),
+      code: text("departureCode", "VKO"),
+    };
+
+    const arrival = {
+      city: text("arrivalCity", "Moscow"),
+      time: text("arrivalTime", "14:20"),
+      code: text("arrivalCode", "TXL"),
+    };
 
     const size = select("Size", Object.values(SIZES), SIZES.SMALL);
     const typeList = select("Type", Object.values(TYPES), TYPES.SECONDARY);
@@ -54,16 +60,12 @@ storiesOf("TripSegment", module)
             {
               sectionFn: () => (
                 <TripSegment
-                  arrivalCity={arrivalCity}
-                  departureCity={departureCity}
-                  departureCode={departureCode}
-                  arrivalCode={arrivalCode}
                   duration={duration}
                   code={code}
                   type={type}
                   name={name}
-                  departureTime={departureTime}
-                  arrivalTime={arrivalTime}
+                  departure={departure}
+                  arrival={arrival}
                   onClick={action("clicked")}
                 >
                   <List size={size} type={typeList}>

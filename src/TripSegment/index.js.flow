@@ -3,16 +3,22 @@ import List from "../List";
 
 export type TripType = "airline" | "bus" | "train";
 
+export type State = {|
+  shown: boolean,
+|};
+
+type TripInfo = {|
+  code: string,
+  time: string,
+  city: string,
+|};
+
 export type Props = {|
   +children: React$Element<typeof List>,
   +code: string,
   +name: string,
-  +arrivalTime: string,
-  +arrivalCity: string,
-  +arrivalCode: string,
-  +departureTime: string,
-  +departureCity: string,
-  +departureCode: string,
+  +departure: TripInfo,
+  +arrival: TripInfo,
   +duration: string | number,
   +type: TripType,
   +onClick?: () => void,

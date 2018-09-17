@@ -3,23 +3,82 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
-import { TYPES, SIZES } from "./consts";
+import { TYPES, SIZES, TOKENS } from "./consts";
 import { ICON_SIZES } from "../Icon/consts";
 
 import type { Props } from "./index";
 
-const IconContainer = styled(({ theme, tokens, sizeIcon, type, onlyIcon, ...props }) => (
-  <div {...props} />
-))`
+const getSizeToken = name => ({ theme, size }) => {
+  const tokens = {
+    [TOKENS.heightButton]: {
+      [SIZES.LARGE]: theme.orbit.heightButtonLarge,
+      [SIZES.NORMAL]: theme.orbit.heightButtonNormal,
+      [SIZES.SMALL]: theme.orbit.heightButtonSmall,
+    },
+    [TOKENS.fontSizeButton]: {
+      [SIZES.LARGE]: theme.orbit.fontSizeButtonLarge,
+      [SIZES.NORMAL]: theme.orbit.fontSizeButtonNormal,
+      [SIZES.SMALL]: theme.orbit.fontSizeButtonSmall,
+    },
+    [TOKENS.paddingButton]: {
+      [SIZES.LARGE]: theme.orbit.paddingButtonLarge,
+      [SIZES.NORMAL]: theme.orbit.paddingButtonNormal,
+      [SIZES.SMALL]: theme.orbit.paddingButtonSmall,
+    },
+    [TOKENS.paddingButtonWithIcon]: {
+      [SIZES.LARGE]: theme.orbit.paddingButtonLargeWithIcon,
+      [SIZES.NORMAL]: theme.orbit.paddingButtonNormalWithIcon,
+      [SIZES.SMALL]: theme.orbit.paddingButtonSmallWithIcon,
+    },
+    [TOKENS.marginRightIcon]: {
+      [SIZES.LARGE]: theme.orbit.marginButtonIconLarge,
+      [SIZES.NORMAL]: theme.orbit.marginButtonIconNormal,
+      [SIZES.SMALL]: theme.orbit.marginButtonIconSmall,
+    },
+  };
+  return tokens[name][size];
+};
+const getTypeToken = name => ({ theme, type }) => {
+  const tokens = {
+    [TOKENS.backgroundButton]: {
+      [TYPES.PRIMARY]: theme.orbit.backgroundButtonLinkPrimary,
+      [TYPES.SECONDARY]: theme.orbit.backgroundButtonLinkSecondary,
+    },
+    [TOKENS.backgroundButtonHover]: {
+      [TYPES.PRIMARY]: theme.orbit.backgroundButtonLinkPrimaryHover,
+      [TYPES.SECONDARY]: theme.orbit.backgroundButtonLinkSecondaryHover,
+    },
+    [TOKENS.backgroundButtonActive]: {
+      [TYPES.PRIMARY]: theme.orbit.backgroundButtonLinkPrimaryHover,
+      [TYPES.SECONDARY]: theme.orbit.backgroundButtonLinkSecondaryHover,
+    },
+    [TOKENS.colorTextButton]: {
+      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimary,
+      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondary,
+    },
+    [TOKENS.colorTextButtonHover]: {
+      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryHover,
+      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryHover,
+    },
+    [TOKENS.colorTextButtonActive]: {
+      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryActive,
+      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryActive,
+    },
+  };
+
+  return tokens[name][type];
+};
+
+const IconContainer = styled(({ theme, sizeIcon, type, onlyIcon, ...props }) => <div {...props} />)`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-right: ${props => (props.onlyIcon ? "0" : props.tokens.marginRightIcon[props.size])};
+  margin-right: ${({ onlyIcon }) => (onlyIcon ? "0" : getSizeToken(TOKENS.marginRightIcon))};
 
   > * {
-    width: ${props => ICON_SIZES[props.sizeIcon]};
-    height: ${props => ICON_SIZES[props.sizeIcon]};
+    width: ${({ sizeIcon }) => ICON_SIZES[sizeIcon]};
+    height: ${({ sizeIcon }) => ICON_SIZES[sizeIcon]};
   }
 `;
 
@@ -29,7 +88,7 @@ IconContainer.defaultProps = {
 
 const IconContainerRight = styled(IconContainer)`
   margin-right: 0;
-  margin-left: ${({ onlyIcon, tokens, size }) => (onlyIcon ? "0" : tokens.marginRightIcon[size])};
+  margin-left: ${({ onlyIcon }) => (onlyIcon ? "0" : getSizeToken(TOKENS.marginRightIcon))};
 `;
 
 IconContainerRight.defaultProps = {
@@ -38,7 +97,6 @@ IconContainerRight.defaultProps = {
 
 export const StyledButtonLink = styled(
   ({
-    tokens,
     onlyIcon,
     component,
     external,
@@ -70,24 +128,26 @@ export const StyledButtonLink = styled(
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: ${({ block, width, onlyIcon, tokens, size }) =>
+  width: ${({ block, width, onlyIcon }) =>
     block
       ? "100%"
-      : (width && `${width}px`) || (onlyIcon && `${tokens.heightButton[size]}`) || "auto"};
-  height: ${({ tokens, size }) => tokens.heightButton[size]};
-  background: ${({ tokens, type }) => tokens.backgroundButton[type]};
-  color: ${({ tokens, type }) => tokens.colorTextButton[type]}!important;
+      : (width && `${width}px`) || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
+  height: ${getSizeToken(TOKENS.heightButton)};
+  background: ${getTypeToken(TOKENS.backgroundButton)};
+  color: ${getTypeToken(TOKENS.colorTextButton)}!important;
   border: 0;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   padding: 0;
-  padding-right: ${({ onlyIcon, iconRight, tokens, size }) =>
+  padding-right: ${({ onlyIcon, iconRight }) =>
     (onlyIcon && "0") ||
-    (iconRight ? tokens.paddingButtonWithIcon[size] : tokens.paddingButton[size])};
-  padding-left: ${({ onlyIcon, icon, iconLeft, tokens, size }) =>
+    (iconRight ? getSizeToken(TOKENS.paddingButtonWithIcon) : getSizeToken(TOKENS.paddingButton))};
+  padding-left: ${({ onlyIcon, icon, iconLeft }) =>
     (onlyIcon && "0") ||
-    (iconLeft || icon ? tokens.paddingButtonWithIcon[size] : tokens.paddingButton[size])};
+    (iconLeft || icon
+      ? getSizeToken(TOKENS.paddingButtonWithIcon)
+      : getSizeToken(TOKENS.paddingButton))};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
-  font-size: ${({ tokens, size }) => tokens.fontSizeButton[size]};
+  font-size: ${getSizeToken(TOKENS.fontSizeButton)};
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
   opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityButtonDisabled : "1")};
   transition: all 0.15s ease-in-out !important;
@@ -95,20 +155,22 @@ export const StyledButtonLink = styled(
   text-decoration: none;
 
   &:enabled:hover {
-    background: ${({ transparent, type, tokens }) =>
-      !transparent && tokens.backgroundButtonHover[type]};
-    color: ${props => props.tokens.colorTextButtonHover[props.type]}!important;
+    background: ${({ transparent }) => !transparent && getTypeToken(TOKENS.backgroundButtonHover)};
+    color: ${getTypeToken(TOKENS.colorTextButtonHover)}!important;
   }
 
   &:enabled:active {
     transform: scale(${({ theme }) => theme.orbit.modifierScaleButtonActive});
-    background: ${({ transparent, tokens, type }) =>
-      !transparent && tokens.backgroundButtonActive[type]};
-    color: ${({ tokens, type }) => tokens.colorTextButtonActive[type]}!important;
+    background: ${({ transparent }) => !transparent && getTypeToken(TOKENS.backgroundButtonActive)};
+    color: ${getTypeToken(TOKENS.colorTextButtonActive)}!important;
   }
 
   &:enabled:focus {
-    box-shadow: ${({ theme }) => theme.orbit.boxShadowButtonFocus};
+    box-shadow: ${({ transparent, theme }) => !transparent && theme.orbit.boxShadowButtonFocus};
+
+    &:active {
+      box-shadow: none;
+    }
   }
 `;
 
@@ -125,7 +187,6 @@ const ButtonLink = (props: Props) => {
     icon,
     iconRight,
     type = TYPES.PRIMARY,
-    theme = defaultTokens,
     onClick,
   } = props;
 
@@ -133,57 +194,6 @@ const ButtonLink = (props: Props) => {
   const sizeIcon = size === SIZES.SMALL ? "small" : "medium";
 
   const onlyIcon = iconLeft && !children;
-  const tokens = {
-    heightButton: {
-      [SIZES.LARGE]: theme.orbit.heightButtonLarge,
-      [SIZES.NORMAL]: theme.orbit.heightButtonNormal,
-      [SIZES.SMALL]: theme.orbit.heightButtonSmall,
-    },
-    fontSizeButton: {
-      [SIZES.LARGE]: theme.orbit.fontSizeButtonLarge,
-      [SIZES.NORMAL]: theme.orbit.fontSizeButtonNormal,
-      [SIZES.SMALL]: theme.orbit.fontSizeButtonSmall,
-    },
-    paddingButton: {
-      [SIZES.LARGE]: theme.orbit.paddingButtonLarge,
-      [SIZES.NORMAL]: theme.orbit.paddingButtonNormal,
-      [SIZES.SMALL]: theme.orbit.paddingButtonSmall,
-    },
-    paddingButtonWithIcon: {
-      [SIZES.LARGE]: theme.orbit.paddingButtonLargeWithIcon,
-      [SIZES.NORMAL]: theme.orbit.paddingButtonNormalWithIcon,
-      [SIZES.SMALL]: theme.orbit.paddingButtonSmallWithIcon,
-    },
-    marginRightIcon: {
-      [SIZES.LARGE]: theme.orbit.marginButtonIconLarge,
-      [SIZES.NORMAL]: theme.orbit.marginButtonIconNormal,
-      [SIZES.SMALL]: theme.orbit.marginButtonIconSmall,
-    },
-    backgroundButton: {
-      [TYPES.PRIMARY]: theme.orbit.backgroundButtonLinkPrimary,
-      [TYPES.SECONDARY]: theme.orbit.backgroundButtonLinkSecondary,
-    },
-    backgroundButtonHover: {
-      [TYPES.PRIMARY]: theme.orbit.backgroundButtonLinkPrimaryHover,
-      [TYPES.SECONDARY]: theme.orbit.backgroundButtonLinkSecondaryHover,
-    },
-    backgroundButtonActive: {
-      [TYPES.PRIMARY]: theme.orbit.backgroundButtonLinkPrimaryHover,
-      [TYPES.SECONDARY]: theme.orbit.backgroundButtonLinkSecondaryHover,
-    },
-    colorTextButton: {
-      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimary,
-      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondary,
-    },
-    colorTextButtonHover: {
-      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryHover,
-      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryHover,
-    },
-    colorTextButtonActive: {
-      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryActive,
-      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryActive,
-    },
-  };
 
   return (
     <StyledButtonLink
@@ -191,31 +201,18 @@ const ButtonLink = (props: Props) => {
       component={component}
       onlyIcon={onlyIcon}
       sizeIcon={sizeIcon}
-      tokens={tokens}
       type={type}
       target={external ? "_blank" : undefined}
       {...props}
     >
       {iconLeft && (
-        <IconContainer
-          size={size}
-          type={type}
-          onlyIcon={onlyIcon}
-          sizeIcon={sizeIcon}
-          tokens={tokens}
-        >
+        <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon}>
           {iconLeft}
         </IconContainer>
       )}
       {children}
       {iconRight && (
-        <IconContainerRight
-          size={size}
-          type={type}
-          onlyIcon={onlyIcon}
-          sizeIcon={sizeIcon}
-          tokens={tokens}
-        >
+        <IconContainerRight size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon}>
           {iconRight}
         </IconContainerRight>
       )}

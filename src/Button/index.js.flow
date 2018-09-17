@@ -1,5 +1,4 @@
 // @flow
-import defaultTokens from "../defaultTokens";
 
 export type Type =
   | "primary"
@@ -29,7 +28,6 @@ export type Props = {|
   +icon?: React$Node,
   +iconLeft?: React$Node,
   +iconRight?: React$Node,
-  +theme?: typeof defaultTokens,
 |};
 
 declare export var StyledButton: React$ComponentType<Props>;

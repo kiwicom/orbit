@@ -9,8 +9,10 @@ import { withKnobs, text, boolean, select, number } from "@storybook/addon-knobs
 
 import * as Icons from "../icons";
 import { SIZE_OPTIONS, TYPE_OPTIONS } from "./consts";
+import { NAME_OPTIONS } from "../ServiceLogo/consts";
 import ButtonLink from "../ButtonLink";
 import TextLink from "../TextLink";
+import ServiceLogo from "../ServiceLogo";
 
 import InputField from "./index";
 
@@ -300,6 +302,34 @@ storiesOf("InputField", module)
                       <ButtonLink transparent icon={<Suffix />} onClick={action("clicked")} />
                     )
                   }
+                  onChange={action("change")}
+                />
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("With ServiceLogo prefix", () => {
+    const label = text("Label", "Label");
+    const value = text("Value", "");
+    const placeholder = text("Placeholder", "Placeholder");
+    const name = select("Type", Object.values(NAME_OPTIONS), NAME_OPTIONS.AIRHELP);
+    const grayScale = boolean("GrayScale", false);
+
+    return {
+      info: "Some description about this type of InputField in general.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <InputField
+                  label={label}
+                  value={value}
+                  placeholder={placeholder}
+                  suffix={<ServiceLogo name={name} grayScale={grayScale} />}
                   onChange={action("change")}
                 />
               ),

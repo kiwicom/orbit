@@ -1,0 +1,11 @@
+// @flow
+
+export type Props = {|
+  +children: React$Node,
+  +icon?: React$Node,
+  +title?: string,
+  +subTitle?: string,
+  +suffix?: React$Node,
+|};
+
+declare export default React$ComponentType<Props>;

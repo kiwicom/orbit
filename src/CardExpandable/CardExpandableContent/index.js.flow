@@ -1,0 +1,10 @@
+// @flow
+import CardExpandableSection from "../CardExpandableSection";
+
+type Children = React$Element<typeof CardExpandableSection>;
+
+export type Props = {|
+  +children: Children,
+|};
+
+declare export default React$ComponentType<Props>;

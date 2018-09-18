@@ -1,0 +1,13 @@
+// @flow
+import CardExpandableContent from "./CardExpandableContent";
+import CardExpandableHeader from "./CardExpandableHeader";
+
+type Children =
+  | React$Element<typeof CardExpandableHeader>
+  | React$Element<typeof CardExpandableContent>;
+
+export type Props = {|
+  +children: Array<Children> | Children,
+|};
+
+declare export default React$ComponentType<Props>;

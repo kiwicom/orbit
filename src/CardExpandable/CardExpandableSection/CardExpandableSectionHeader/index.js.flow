@@ -1,0 +1,14 @@
+// @flow
+type onClick = (ev: SyntheticEvent<HTMLButtonElement> | MouseEvent) => void | Promise<any>;
+
+export type Props = {|
+  +children?: React$Node,
+  +icon?: React$Node,
+  +title?: string,
+  +onClick?: onClick,
+  +toggle?: boolean,
+|};
+
+declare export var StyledCardExpandableSectionHeader: React$ComponentType<Props>;
+
+declare export default React$ComponentType<Props>;

@@ -1,0 +1,18 @@
+// @flow
+import CardExpandableSectionHeader from "./CardExpandableSectionHeader";
+import CardExpandableSectionContent from "./CardExpandableSectionContent";
+
+export type State = {|
+  toggle: boolean,
+|};
+
+type Children =
+  | React$Element<typeof CardExpandableSectionHeader>
+  | React$Element<typeof CardExpandableSectionContent>;
+
+export type Props = {|
+  +children: Array<Children> | Children,
+  +shown?: boolean,
+|};
+
+declare export default React$ComponentType<Props>;

@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-components",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook",
     "build": "yarn clean && yarn build:icons && yarn build:lib && yarn build:module",

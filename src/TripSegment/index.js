@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled, { keyframes, css } from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import CarrierLogo, { StyledCarrierLogo } from "../CarrierLogo";
@@ -11,18 +11,10 @@ import Bus from "../icons/Bus";
 import Train from "../icons/Train";
 import Text, { StyledText } from "../Text";
 import { Item } from "../List/ListItem";
+import ToggleUp from "../utils/toggleUp";
+import ToggleDown from "../utils/toggleDown";
 
 import type { Props, State } from "./index";
-
-const ToggleUp = contentHeight => keyframes`
-  0% { max-height: ${contentHeight}px; opacity: 1 }
-  100% { max-height: 0; opacity: 0 }
-`;
-
-const ToggleDown = contentHeight => keyframes`
-  0% { max-height: 0; opacity: 0; overflow: hidden }
-  100% { max-height: ${contentHeight}px; opacity: 1; overflow: visible }
-`;
 
 const Milestone = styled.div`
   display: flex;
@@ -199,7 +191,7 @@ ChildrenWrapper.defaultProps = {
   theme: defaultTokens,
 };
 
-const Icon = type => {
+const Icon = ({ type }) => {
   switch (type) {
     case "airline":
       return <Airplane size="small" color="secondary" />;
@@ -250,14 +242,23 @@ class TripSegment extends React.PureComponent<Props, State> {
   node = {};
 
   render() {
-    const { children, departure, arrival, duration, code, name, type } = this.props;
+    const {
+      children,
+      departure,
+      departureTime,
+      arrival,
+      type,
+      arrivalTime,
+      duration,
+      carrier,
+    } = this.props;
     const { shown } = this.state;
     const { contentHeight } = this;
 
     return (
       <Wrapper>
         <Milestone>
-          <Icon />
+          <Icon type={type} />
           <ArrowDecor />
         </Milestone>
         <StyledSegment>
@@ -265,24 +266,26 @@ class TripSegment extends React.PureComponent<Props, State> {
             <Flights>
               <FlightPart>
                 <Time>
-                  <Text type="attention">{arrival.time}</Text>
+                  <Text type="attention">{arrivalTime}</Text>
                 </Time>
                 <Text type="primary">
-                  {arrival.city} {arrival.code}
+                  {arrival.city}
+                  {arrival.code}
                 </Text>
               </FlightPart>
               <FlightPart>
                 <Time>
-                  <Text type="attention">{departure.time}</Text>
+                  <Text type="attention">{departureTime}</Text>
                 </Time>
                 <Text type="primary">
-                  {departure.city} {departure.code}
+                  {departure.city}
+                  {departure.code}
                 </Text>
               </FlightPart>
             </Flights>
             <WrapperCarrier>
               <Text type="secondary">{`~${duration}`}</Text>
-              <CarrierLogo size="medium" carriers={[{ code, name, type }]} />
+              <CarrierLogo size="medium" carriers={carrier} />
               <Chevrones>
                 {shown ? (
                   <ShowLess size="large" color="secondary" />

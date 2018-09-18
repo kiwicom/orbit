@@ -22,7 +22,7 @@ Item.defaultProps = {
   theme: defaultTokens,
 };
 
-export const IconContainer = styled.div`
+const IconContainer = styled.div`
   display: flex;
   margin-right: ${({ theme }) => theme.orbit.spaceXSmall};
 `;

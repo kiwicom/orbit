@@ -1,5 +1,5 @@
 // @flow
-import List from "../List";
+import type { Carrier } from "../CarrierLogo";
 
 export type TripType = "airline" | "bus" | "train";
 
@@ -7,18 +7,18 @@ export type State = {|
   shown: boolean,
 |};
 
-type TripInfo = {|
+type Airport = {|
   code: string,
-  time: string,
   city: string,
 |};
 
 export type Props = {|
-  +children: React$Element<typeof List>,
-  +code: string,
-  +name: string,
-  +departure: TripInfo,
-  +arrival: TripInfo,
+  +children: React$Node,
+  +carrier: Carrier,
+  +departure: Airport,
+  +departureTime: string,
+  +arrival: Airport,
+  +arrivalTime: string,
   +duration: string | number,
   +type: TripType,
   +onClick?: () => void,

@@ -102,7 +102,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
             className="TripSegment__Wrapper-kYxYpR gPqYRh"
           >
             <div
-              className="TripSegment__Milestone-iUmhsN hgHKdg"
+              className="TripSegment__Milestone-iUmhsN cMyGAO"
             >
               <svg
                 className={undefined}
@@ -122,19 +122,22 @@ exports[`Storyshots TripSegment Playground 1`] = `
                   d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
                 />
               </svg>
+              <div
+                className="TripSegment__ArrowDecor-cgshzY wbVNi"
+              />
             </div>
             <div
-              className="TripSegment__StyledSegment-iXnqYi pgoLP"
+              className="TripSegment__StyledSegment-iXnqYi ibzVsL"
             >
               <div
-                className="TripSegment__WrapperInner-dJGFAt bQtoBK"
+                className="TripSegment__WrapperInner-dJGFAt eOKJIY"
                 onClick={[Function]}
               >
                 <div
-                  className="TripSegment__Flights-kdcxEq uKEGx"
+                  className="TripSegment__Flights-kdcxEq fwtvMp"
                 >
                   <div
-                    className="TripSegment__FlightPart-hCijsc dIQrBJ"
+                    className="TripSegment__FlightPart-hCijsc XemId"
                   >
                     <div
                       className="TripSegment__Time-ftYvIB dNMQiU"
@@ -149,12 +152,11 @@ exports[`Storyshots TripSegment Playground 1`] = `
                       className="Text__StyledText-guhEiE kLuVzx"
                     >
                       Moscow
-                       
-                      TXL
+                      VKO
                     </p>
                   </div>
                   <div
-                    className="TripSegment__FlightPart-hCijsc dIQrBJ"
+                    className="TripSegment__FlightPart-hCijsc XemId"
                   >
                     <div
                       className="TripSegment__Time-ftYvIB dNMQiU"
@@ -169,72 +171,56 @@ exports[`Storyshots TripSegment Playground 1`] = `
                       className="Text__StyledText-guhEiE kLuVzx"
                     >
                       Berlin
-                       
-                      VKO
+                      TXL
                     </p>
                   </div>
                 </div>
-                <p
-                  className="Text__StyledText-guhEiE efJArq"
-                >
-                  2h
-                </p>
                 <div
-                  className="CarrierLogo__StyledCarrierLogo-ieqjqT kvJfMi"
-                  size="large"
+                  className="TripSegment__WrapperCarrier-ioGuFq bwzTgR"
                 >
-                  <img
-                    alt="Ryanair"
-                    className="CarrierLogo__StyledImage-fRYacf fmMSeK"
-                    src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
-                    srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
-                    title="Ryanair"
-                  />
-                </div>
-                <div
-                  className="TripSegment__Chevrones-hCfRcS dWKjuK"
-                  rotate="0deg"
-                >
-                  <svg
-                    className={undefined}
-                    fill="currentColor"
-                    height="16px"
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": "#7f91a8",
-                        "verticalAlign": "middle",
-                      }
-                    }
-                    viewBox="0 0 24 24"
-                    width="16px"
+                  <p
+                    className="Text__StyledText-guhEiE eGYiLp"
                   >
-                    <path
-                      d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"
-                    />
-                  </svg>
-                  <svg
-                    className={undefined}
-                    fill="currentColor"
-                    height="16px"
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": "#7f91a8",
-                        "verticalAlign": "middle",
-                      }
-                    }
-                    viewBox="0 0 24 24"
-                    width="16px"
+                    ~2h
+                  </p>
+                  <div
+                    className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"
+                    size="medium"
                   >
-                    <path
-                      d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                    <img
+                      alt="Ryanair"
+                      className="CarrierLogo__StyledImage-fRYacf gptvtt"
+                      src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
+                      srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
+                      title="Ryanair"
                     />
-                  </svg>
+                  </div>
+                  <div
+                    className="TripSegment__Chevrones-hCfRcS bArNX"
+                  >
+                    <svg
+                      className={undefined}
+                      fill="currentColor"
+                      height="32px"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "color": "#7f91a8",
+                          "verticalAlign": "middle",
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                      width="32px"
+                    >
+                      <path
+                        d="M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
               <div
-                className="TripSegment__ChildrenWrapper-fICQOn dgEEls"
+                className="TripSegment__ChildrenWrapper-fICQOn hstYwT"
               >
                 <div
                   className="List__StyledList-fzpiIm jUUXxU"
@@ -251,7 +237,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                       >
                         <img
                           alt="Ryanair"
-                          className="CarrierLogo__StyledImage-fRYacf fmMSeK"
+                          className="CarrierLogo__StyledImage-fRYacf hVCEgl"
                           src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
                           srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
                           title="Ryanair"
@@ -355,126 +341,6 @@ exports[`Storyshots TripSegment Playground 1`] = `
                           <span
                             style={Object {}}
                           >
-                            arrivalCity
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                Moscow
-                                "
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            departureCity
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                Berlin
-                                "
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            departureCode
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                VKO
-                                "
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            arrivalCode
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                TXL
-                                "
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
                             duration
                           </span>
                           <span>
@@ -505,24 +371,94 @@ exports[`Storyshots TripSegment Playground 1`] = `
                           <span
                             style={Object {}}
                           >
-                            code
+                            carrier
                           </span>
                           <span>
                             =
                             <span
                               style={Object {}}
                             >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
                                   }
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    code
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    "
+                                    FR
+                                    "
+                                  </span>
+                                  , 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    type
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    "
+                                    airline
+                                    "
+                                  </span>
+                                  , 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    name
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    "
+                                    Ryanair
+                                    "
+                                  </span>
+                                  }
+                                </span>
                                 }
-                              >
-                                "
-                                FR
-                                "
                               </span>
                             </span>
                           </span>
@@ -535,54 +471,71 @@ exports[`Storyshots TripSegment Playground 1`] = `
                           <span
                             style={Object {}}
                           >
-                            type
+                            departure
                           </span>
                           <span>
                             =
                             <span
                               style={Object {}}
                             >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
                                   }
-                                }
-                              >
-                                "
-                                airline
-                                "
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            name
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    city
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    "
+                                    Berlin
+                                    "
+                                  </span>
+                                  , 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    code
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    "
+                                    TXL
+                                    "
+                                  </span>
                                   }
+                                </span>
                                 }
-                              >
-                                "
-                                Ryanair
-                                "
                               </span>
                             </span>
                           </span>
@@ -612,6 +565,113 @@ exports[`Storyshots TripSegment Playground 1`] = `
                               >
                                 "
                                 11:20
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            arrival
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    city
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    "
+                                    Moscow
+                                    "
+                                  </span>
+                                  , 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    code
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    "
+                                    VKO
+                                    "
+                                  </span>
+                                  }
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                airline
                                 "
                               </span>
                             </span>

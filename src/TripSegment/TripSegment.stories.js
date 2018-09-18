@@ -66,7 +66,7 @@ storiesOf("TripSegment", module)
               sectionFn: () => (
                 <TripSegment
                   duration={duration}
-                  carrier={[carrier]}
+                  carrier={carrier}
                   departure={departure}
                   departureTime={departureTime}
                   arrival={arrival}

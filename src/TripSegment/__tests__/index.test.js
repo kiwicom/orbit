@@ -11,33 +11,36 @@ import ListItem from "../../List/ListItem";
 describe(`TripSegment with List as children`, () => {
   const duration = "2h";
   const type: TripType = "airline";
-  const code = "FR";
-  const name = "Rayanair";
   const content = "Some string";
   const shown = false;
   const onClick = jest.fn();
+  const arrivalTime = "11:20";
+  const departureTime = "5:30";
+  const carrier = {
+    code: "FR",
+    name: "Rayanair",
+  };
 
   const departure = {
     city: "Berlin",
     code: "VKO",
-    time: "11:20",
   };
 
   const arrival = {
     city: "Moscow",
     code: "TKL",
-    time: "14:20",
   };
 
   const component = shallow(
     <TripSegment
       arrival={arrival}
+      arrivalTime={arrivalTime}
       departure={departure}
-      code={code}
+      departureTime={departureTime}
       duration={duration}
       onClick={onClick}
+      carrier={carrier}
       type={type}
-      name={name}
     >
       <List>
         <ListItem icon={<Airplane color="secondary" />}>{content}</ListItem>

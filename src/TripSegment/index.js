@@ -285,7 +285,7 @@ class TripSegment extends React.PureComponent<Props, State> {
             </Flights>
             <WrapperCarrier>
               <Text type="secondary">{`~${duration}`}</Text>
-              <CarrierLogo size="medium" carriers={carrier} />
+              <CarrierLogo size="medium" carriers={[carrier]} />
               <Chevrones>
                 {shown ? (
                   <ShowLess size="large" color="secondary" />

@@ -9,3 +9,17 @@ export const SIZES = {
   NORMAL: "normal",
   LARGE: "large",
 };
+
+export const TOKENS = {
+  backgroundButton: "backgroundButton",
+  backgroundButtonHover: "backgroundButtonHover",
+  backgroundButtonActive: "backgroundButtonActive",
+  colorTextButton: "colorTextButton",
+  colorTextButtonHover: "colorTextButtonHover",
+  colorTextButtonActive: "colorTextButtonActive",
+  heightButton: "heightButton",
+  fontSizeButton: "fontSizeButton",
+  paddingButton: "paddingButton",
+  paddingButtonWithIcon: "paddingButtonWithIcon",
+  marginRightIcon: "marginRightIcon",
+};

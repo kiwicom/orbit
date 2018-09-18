@@ -160,7 +160,7 @@ storiesOf("Alert", module)
                   onClose={action("Close")}
                 >
                   <div style={{ marginBottom: "12px" }}>{message}</div>
-                  <Button type={type} href="#">
+                  <Button type={type} size="small" href="#">
                     {button}
                   </Button>
                 </Alert>

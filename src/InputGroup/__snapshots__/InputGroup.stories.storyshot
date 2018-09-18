@@ -119,7 +119,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp iTwiGO"
+                      className="InputField__Input-iRjCvp kpkyBu"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -270,7 +270,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp iTwiGO"
+                      className="InputField__Input-iRjCvp kpkyBu"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -1245,7 +1245,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp iTwiGO"
+                      className="InputField__Input-iRjCvp kpkyBu"
                       disabled={undefined}
                       max={undefined}
                       maxLength={11}
@@ -2135,7 +2135,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp iTwiGO"
+                      className="InputField__Input-iRjCvp kpkyBu"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -2218,7 +2218,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp iTwiGO"
+                      className="InputField__Input-iRjCvp kpkyBu"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}

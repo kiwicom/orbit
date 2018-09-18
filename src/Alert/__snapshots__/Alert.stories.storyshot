@@ -972,10 +972,10 @@ exports[`Storyshots Alert Playground 1`] = `
                   Also you can change the message by changing the Message knob
                 </div>
                 <a
-                  className="Button__StyledButton-jJDkJK hsaYEL"
+                  className="Button__StyledButton-jJDkJK iHyYAZ"
                   disabled={undefined}
                   href="#"
-                  size="normal"
+                  size="small"
                   target={undefined}
                 >
                   <div
@@ -1372,6 +1372,33 @@ exports[`Storyshots Alert Playground 1`] = `
                                 >
                                   "
                                   info
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              size
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  small
                                   "
                                 </span>
                               </span>

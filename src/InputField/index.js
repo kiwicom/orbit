@@ -6,6 +6,7 @@ import defaultTokens from "../defaultTokens";
 import { SIZE_OPTIONS, TYPE_OPTIONS } from "./consts";
 import FormFeedback from "../FormFeedback";
 import DefaultFormLabel from "../FormLabel";
+import { StyledServiceLogo } from "../ServiceLogo";
 
 import type { Props } from "./index";
 
@@ -118,11 +119,14 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   pointer-events: ${({ disabled }) => disabled && "none"};
 
   & svg {
     color: ${({ theme }) => theme.orbit.colorIconSecondary};
+  }
+  ${StyledServiceLogo} {
+    height: 16px;
+    padding-right: ${({ theme }) => theme.orbit.spaceSmall};
   }
 `;
 
@@ -142,6 +146,7 @@ export const Input = styled(({ theme, tokens, size, suffix, error, help, ...prop
   background-color: inherit;
   cursor: inherit;
   flex: 1 auto;
+  width: 100%;
   height: 100%;
   line-height: ${({ tokens, size }) => tokens.heightInput[size]};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};

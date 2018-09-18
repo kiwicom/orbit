@@ -8,6 +8,8 @@ import { object, select, text, boolean, withKnobs } from "@storybook/addon-knobs
 
 import Airplane from "../icons/Airplane";
 import SIZE_OPTIONS from "./consts";
+import CountryFlag from "../CountryFlag";
+import { CODES } from "../CountryFlag/consts";
 
 import Select from "./index";
 
@@ -59,6 +61,29 @@ storiesOf("Select", module)
       },
     ],
   }))
+  .addWithChapters("With CountryFlag prefix", () => {
+    const code = select("Code", Object.values(CODES), CODES.ANYWHERE);
+    return {
+      info:
+        "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Select
+                  label="Select box (with prefix)"
+                  options={objectOptions}
+                  onChange={action("onChange")}
+                  prefix={<CountryFlag code={code} />}
+                />
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("With placeholder", () => {
     const placeholder = text("Placeholder", "Select value from list");
     return {

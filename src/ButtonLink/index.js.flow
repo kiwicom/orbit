@@ -1,5 +1,4 @@
 // @flow
-import defaultTokens from "../defaultTokens";
 
 type Type = "primary" | "secondary";
 type Size = "small" | "normal" | "large";
@@ -20,7 +19,6 @@ export type Props = {|
   +icon?: React$Node,
   +iconLeft?: React$Node,
   +iconRight?: React$Node,
-  +theme?: typeof defaultTokens,
   +transparent?: boolean,
 |};
 

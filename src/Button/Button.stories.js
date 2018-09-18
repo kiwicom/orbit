@@ -66,7 +66,7 @@ storiesOf("Button", module)
       ],
     };
   })
-  .addWithChapters("Button with icon", () => {
+  .addWithChapters("Button with icons", () => {
     const title = text("Title", "Button");
     const block = boolean("Block", false);
     const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
@@ -88,6 +88,7 @@ storiesOf("Button", module)
                   type={type}
                   size={size}
                   iconLeft={IconLeft && <IconLeft />}
+                  iconRight={IconRight && <IconRight />}
                 >
                   {title}
                 </Button>

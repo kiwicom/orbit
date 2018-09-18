@@ -398,65 +398,12 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
         },
       }
     }
-    tokens={
-      Object {
-        "backgroundButton": Object {
-          "primary": "transparent",
-          "secondary": "transparent",
-        },
-        "backgroundButtonActive": Object {
-          "primary": "#e5eaef",
-          "secondary": "#e5eaef",
-        },
-        "backgroundButtonHover": Object {
-          "primary": "#e5eaef",
-          "secondary": "#e5eaef",
-        },
-        "colorTextButton": Object {
-          "primary": "#00a991",
-          "secondary": "#46515e",
-        },
-        "colorTextButtonActive": Object {
-          "primary": "#008f7b",
-          "secondary": "#38404b",
-        },
-        "colorTextButtonHover": Object {
-          "primary": "#009882",
-          "secondary": "#3f4854",
-        },
-        "fontSizeButton": Object {
-          "large": "16px",
-          "normal": "14px",
-          "small": "12px",
-        },
-        "heightButton": Object {
-          "large": "52px",
-          "normal": "44px",
-          "small": "32px",
-        },
-        "marginRightIcon": Object {
-          "large": "16px",
-          "normal": "12px",
-          "small": "8px",
-        },
-        "paddingButton": Object {
-          "large": "28px",
-          "normal": "16px",
-          "small": "12px",
-        },
-        "paddingButtonWithIcon": Object {
-          "large": "12px",
-          "normal": "8px",
-          "small": "8px",
-        },
-      }
-    }
     transparent={false}
     type="primary"
     width={0}
   >
     <Component
-      className="ButtonLink__StyledButtonLink-eyUiPe fZDCnp"
+      className="ButtonLink__StyledButtonLink-eyUiPe iJEYXn"
       component="button"
       external={true}
       href="https://kiwi.com"
@@ -844,65 +791,12 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           },
         }
       }
-      tokens={
-        Object {
-          "backgroundButton": Object {
-            "primary": "transparent",
-            "secondary": "transparent",
-          },
-          "backgroundButtonActive": Object {
-            "primary": "#e5eaef",
-            "secondary": "#e5eaef",
-          },
-          "backgroundButtonHover": Object {
-            "primary": "#e5eaef",
-            "secondary": "#e5eaef",
-          },
-          "colorTextButton": Object {
-            "primary": "#00a991",
-            "secondary": "#46515e",
-          },
-          "colorTextButtonActive": Object {
-            "primary": "#008f7b",
-            "secondary": "#38404b",
-          },
-          "colorTextButtonHover": Object {
-            "primary": "#009882",
-            "secondary": "#3f4854",
-          },
-          "fontSizeButton": Object {
-            "large": "16px",
-            "normal": "14px",
-            "small": "12px",
-          },
-          "heightButton": Object {
-            "large": "52px",
-            "normal": "44px",
-            "small": "32px",
-          },
-          "marginRightIcon": Object {
-            "large": "16px",
-            "normal": "12px",
-            "small": "8px",
-          },
-          "paddingButton": Object {
-            "large": "28px",
-            "normal": "16px",
-            "small": "12px",
-          },
-          "paddingButtonWithIcon": Object {
-            "large": "12px",
-            "normal": "8px",
-            "small": "8px",
-          },
-        }
-      }
       transparent={false}
       type="primary"
       width={0}
     >
       <a
-        className="ButtonLink__StyledButtonLink-eyUiPe fZDCnp"
+        className="ButtonLink__StyledButtonLink-eyUiPe iJEYXn"
         href="https://kiwi.com"
         size="normal"
         target="_blank"
@@ -1316,65 +1210,12 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
         },
       }
     }
-    tokens={
-      Object {
-        "backgroundButton": Object {
-          "primary": "transparent",
-          "secondary": "transparent",
-        },
-        "backgroundButtonActive": Object {
-          "primary": "#e5eaef",
-          "secondary": "#e5eaef",
-        },
-        "backgroundButtonHover": Object {
-          "primary": "#e5eaef",
-          "secondary": "#e5eaef",
-        },
-        "colorTextButton": Object {
-          "primary": "#00a991",
-          "secondary": "#46515e",
-        },
-        "colorTextButtonActive": Object {
-          "primary": "#008f7b",
-          "secondary": "#38404b",
-        },
-        "colorTextButtonHover": Object {
-          "primary": "#009882",
-          "secondary": "#3f4854",
-        },
-        "fontSizeButton": Object {
-          "large": "16px",
-          "normal": "14px",
-          "small": "12px",
-        },
-        "heightButton": Object {
-          "large": "52px",
-          "normal": "44px",
-          "small": "32px",
-        },
-        "marginRightIcon": Object {
-          "large": "16px",
-          "normal": "12px",
-          "small": "8px",
-        },
-        "paddingButton": Object {
-          "large": "28px",
-          "normal": "16px",
-          "small": "12px",
-        },
-        "paddingButtonWithIcon": Object {
-          "large": "12px",
-          "normal": "8px",
-          "small": "8px",
-        },
-      }
-    }
     transparent={false}
     type="primary"
     width={0}
   >
     <Component
-      className="ButtonLink__StyledButtonLink-eyUiPe gvburQ"
+      className="ButtonLink__StyledButtonLink-eyUiPe bpEJMi"
       component="button"
       external={false}
       href="https://kiwi.com"
@@ -1764,65 +1605,12 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
           },
         }
       }
-      tokens={
-        Object {
-          "backgroundButton": Object {
-            "primary": "transparent",
-            "secondary": "transparent",
-          },
-          "backgroundButtonActive": Object {
-            "primary": "#e5eaef",
-            "secondary": "#e5eaef",
-          },
-          "backgroundButtonHover": Object {
-            "primary": "#e5eaef",
-            "secondary": "#e5eaef",
-          },
-          "colorTextButton": Object {
-            "primary": "#00a991",
-            "secondary": "#46515e",
-          },
-          "colorTextButtonActive": Object {
-            "primary": "#008f7b",
-            "secondary": "#38404b",
-          },
-          "colorTextButtonHover": Object {
-            "primary": "#009882",
-            "secondary": "#3f4854",
-          },
-          "fontSizeButton": Object {
-            "large": "16px",
-            "normal": "14px",
-            "small": "12px",
-          },
-          "heightButton": Object {
-            "large": "52px",
-            "normal": "44px",
-            "small": "32px",
-          },
-          "marginRightIcon": Object {
-            "large": "16px",
-            "normal": "12px",
-            "small": "8px",
-          },
-          "paddingButton": Object {
-            "large": "28px",
-            "normal": "16px",
-            "small": "12px",
-          },
-          "paddingButtonWithIcon": Object {
-            "large": "12px",
-            "normal": "8px",
-            "small": "8px",
-          },
-        }
-      }
       transparent={false}
       type="primary"
       width={0}
     >
       <a
-        className="ButtonLink__StyledButtonLink-eyUiPe gvburQ"
+        className="ButtonLink__StyledButtonLink-eyUiPe bpEJMi"
         href="https://kiwi.com"
         size="normal"
       >
@@ -2211,59 +1999,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
               },
             }
           }
-          tokens={
-            Object {
-              "backgroundButton": Object {
-                "primary": "transparent",
-                "secondary": "transparent",
-              },
-              "backgroundButtonActive": Object {
-                "primary": "#e5eaef",
-                "secondary": "#e5eaef",
-              },
-              "backgroundButtonHover": Object {
-                "primary": "#e5eaef",
-                "secondary": "#e5eaef",
-              },
-              "colorTextButton": Object {
-                "primary": "#00a991",
-                "secondary": "#46515e",
-              },
-              "colorTextButtonActive": Object {
-                "primary": "#008f7b",
-                "secondary": "#38404b",
-              },
-              "colorTextButtonHover": Object {
-                "primary": "#009882",
-                "secondary": "#3f4854",
-              },
-              "fontSizeButton": Object {
-                "large": "16px",
-                "normal": "14px",
-                "small": "12px",
-              },
-              "heightButton": Object {
-                "large": "52px",
-                "normal": "44px",
-                "small": "32px",
-              },
-              "marginRightIcon": Object {
-                "large": "16px",
-                "normal": "12px",
-                "small": "8px",
-              },
-              "paddingButton": Object {
-                "large": "28px",
-                "normal": "16px",
-                "small": "12px",
-              },
-              "paddingButtonWithIcon": Object {
-                "large": "12px",
-                "normal": "8px",
-                "small": "8px",
-              },
-            }
-          }
           type="primary"
         >
           <Component
@@ -2649,59 +2384,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "zIndexModalOverlay": "800",
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
-                },
-              }
-            }
-            tokens={
-              Object {
-                "backgroundButton": Object {
-                  "primary": "transparent",
-                  "secondary": "transparent",
-                },
-                "backgroundButtonActive": Object {
-                  "primary": "#e5eaef",
-                  "secondary": "#e5eaef",
-                },
-                "backgroundButtonHover": Object {
-                  "primary": "#e5eaef",
-                  "secondary": "#e5eaef",
-                },
-                "colorTextButton": Object {
-                  "primary": "#00a991",
-                  "secondary": "#46515e",
-                },
-                "colorTextButtonActive": Object {
-                  "primary": "#008f7b",
-                  "secondary": "#38404b",
-                },
-                "colorTextButtonHover": Object {
-                  "primary": "#009882",
-                  "secondary": "#3f4854",
-                },
-                "fontSizeButton": Object {
-                  "large": "16px",
-                  "normal": "14px",
-                  "small": "12px",
-                },
-                "heightButton": Object {
-                  "large": "52px",
-                  "normal": "44px",
-                  "small": "32px",
-                },
-                "marginRightIcon": Object {
-                  "large": "16px",
-                  "normal": "12px",
-                  "small": "8px",
-                },
-                "paddingButton": Object {
-                  "large": "28px",
-                  "normal": "16px",
-                  "small": "12px",
-                },
-                "paddingButtonWithIcon": Object {
-                  "large": "12px",
-                  "normal": "8px",
-                  "small": "8px",
                 },
               }
             }
@@ -3129,59 +2811,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
               },
             }
           }
-          tokens={
-            Object {
-              "backgroundButton": Object {
-                "primary": "transparent",
-                "secondary": "transparent",
-              },
-              "backgroundButtonActive": Object {
-                "primary": "#e5eaef",
-                "secondary": "#e5eaef",
-              },
-              "backgroundButtonHover": Object {
-                "primary": "#e5eaef",
-                "secondary": "#e5eaef",
-              },
-              "colorTextButton": Object {
-                "primary": "#00a991",
-                "secondary": "#46515e",
-              },
-              "colorTextButtonActive": Object {
-                "primary": "#008f7b",
-                "secondary": "#38404b",
-              },
-              "colorTextButtonHover": Object {
-                "primary": "#009882",
-                "secondary": "#3f4854",
-              },
-              "fontSizeButton": Object {
-                "large": "16px",
-                "normal": "14px",
-                "small": "12px",
-              },
-              "heightButton": Object {
-                "large": "52px",
-                "normal": "44px",
-                "small": "32px",
-              },
-              "marginRightIcon": Object {
-                "large": "16px",
-                "normal": "12px",
-                "small": "8px",
-              },
-              "paddingButton": Object {
-                "large": "28px",
-                "normal": "16px",
-                "small": "12px",
-              },
-              "paddingButtonWithIcon": Object {
-                "large": "12px",
-                "normal": "8px",
-                "small": "8px",
-              },
-            }
-          }
           type="primary"
         >
           <ButtonLink__IconContainer
@@ -3570,59 +3199,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                 },
               }
             }
-            tokens={
-              Object {
-                "backgroundButton": Object {
-                  "primary": "transparent",
-                  "secondary": "transparent",
-                },
-                "backgroundButtonActive": Object {
-                  "primary": "#e5eaef",
-                  "secondary": "#e5eaef",
-                },
-                "backgroundButtonHover": Object {
-                  "primary": "#e5eaef",
-                  "secondary": "#e5eaef",
-                },
-                "colorTextButton": Object {
-                  "primary": "#00a991",
-                  "secondary": "#46515e",
-                },
-                "colorTextButtonActive": Object {
-                  "primary": "#008f7b",
-                  "secondary": "#38404b",
-                },
-                "colorTextButtonHover": Object {
-                  "primary": "#009882",
-                  "secondary": "#3f4854",
-                },
-                "fontSizeButton": Object {
-                  "large": "16px",
-                  "normal": "14px",
-                  "small": "12px",
-                },
-                "heightButton": Object {
-                  "large": "52px",
-                  "normal": "44px",
-                  "small": "32px",
-                },
-                "marginRightIcon": Object {
-                  "large": "16px",
-                  "normal": "12px",
-                  "small": "8px",
-                },
-                "paddingButton": Object {
-                  "large": "28px",
-                  "normal": "16px",
-                  "small": "12px",
-                },
-                "paddingButtonWithIcon": Object {
-                  "large": "12px",
-                  "normal": "8px",
-                  "small": "8px",
-                },
-              }
-            }
             type="primary"
           >
             <Component
@@ -4008,59 +3584,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                     "zIndexModalOverlay": "800",
                     "zIndexOnTheTop": "900",
                     "zIndexSticky": "100",
-                  },
-                }
-              }
-              tokens={
-                Object {
-                  "backgroundButton": Object {
-                    "primary": "transparent",
-                    "secondary": "transparent",
-                  },
-                  "backgroundButtonActive": Object {
-                    "primary": "#e5eaef",
-                    "secondary": "#e5eaef",
-                  },
-                  "backgroundButtonHover": Object {
-                    "primary": "#e5eaef",
-                    "secondary": "#e5eaef",
-                  },
-                  "colorTextButton": Object {
-                    "primary": "#00a991",
-                    "secondary": "#46515e",
-                  },
-                  "colorTextButtonActive": Object {
-                    "primary": "#008f7b",
-                    "secondary": "#38404b",
-                  },
-                  "colorTextButtonHover": Object {
-                    "primary": "#009882",
-                    "secondary": "#3f4854",
-                  },
-                  "fontSizeButton": Object {
-                    "large": "16px",
-                    "normal": "14px",
-                    "small": "12px",
-                  },
-                  "heightButton": Object {
-                    "large": "52px",
-                    "normal": "44px",
-                    "small": "32px",
-                  },
-                  "marginRightIcon": Object {
-                    "large": "16px",
-                    "normal": "12px",
-                    "small": "8px",
-                  },
-                  "paddingButton": Object {
-                    "large": "28px",
-                    "normal": "16px",
-                    "small": "12px",
-                  },
-                  "paddingButtonWithIcon": Object {
-                    "large": "12px",
-                    "normal": "8px",
-                    "small": "8px",
                   },
                 }
               }

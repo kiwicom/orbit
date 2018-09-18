@@ -15,3 +15,27 @@ export const SIZE_OPTIONS = {
   NORMAL: "normal",
   LARGE: "large",
 };
+
+export const TOKENS = {
+  // Size tokens
+  heightButton: "heightButton",
+  loadingWidth: "loadingWidth",
+  loadingHeight: "loadingHeight",
+  fontSizeButton: "fontSizeButton",
+  paddingButton: "paddingButton",
+  paddingButtonWithIcon: "paddingButtonWithIcon",
+  marginRightIcon: "marginRightIcon",
+  // Type tokens
+  backgroundButton: "backgroundButton",
+  backgroundButtonHover: "backgroundButtonHover",
+  backgroundButtonActive: "backgroundButtonActive",
+  colorTextButton: "colorTextButton",
+  colorTextButtonBordered: "colorTextButtonBordered",
+  colorTextButtonHover: "colorTextButtonHover",
+  colorTextButtonBorderedHover: "colorTextButtonBorderedHover",
+  colorTextButtonActive: "colorTextButtonActive",
+  colorTextButtonBorderedActive: "colorTextButtonBorderedActive",
+  borderColorButton: "borderColorButton",
+  borderColorButtonHover: "borderColorButtonHover",
+  borderColorButtonActive: "borderColorButtonActive",
+};

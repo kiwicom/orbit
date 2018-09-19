@@ -327,10 +327,6 @@ export const StyledButton = styled(
     box-shadow: ${({ bordered, theme, type }) =>
         bordered && `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)({ theme, type })},`}
       ${({ theme }) => theme.orbit.boxShadowButtonFocus};
-
-    &:active {
-      box-shadow: none;
-    }
   }
 
   ${StyledSpinner} {

@@ -59,7 +59,6 @@ const StyledModalHeader = styled.div`
         : `${theme.orbit.spaceXXLarge} ${theme.orbit.spaceXXLarge} ${
             suppressed ? theme.orbit.spaceXXLarge : "0"
           } ${theme.orbit.spaceXXLarge}`};
-    height: 100%;
   `};
 `;
 
@@ -71,7 +70,7 @@ export const MobileHeader = styled.div`
   display: inline-block;
   position: fixed;
   // TODO use token for 52px
-  top: -23px;
+  top: 16px;
   left: 0;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightHeadingDisplay};

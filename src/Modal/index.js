@@ -44,7 +44,7 @@ const ModalBody = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontfamily};
 
   ${media.desktop`
-    overflow-y: scroll;
+    overflow-y: auto;
  `};
 `;
 
@@ -59,7 +59,6 @@ const ModalWrapper = styled.div`
   align-items: flex-start;
   margin: 0 auto;
 
-  overflow-y: scroll;
   position: fixed;
   width: 100%;
   border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
@@ -69,7 +68,6 @@ const ModalWrapper = styled.div`
 
   ${media.desktop`
     padding: ${({ theme }) => theme.orbit.spaceXXLarge};
-    overflow-y: auto;
     position: relative;
     top: 0;
     max-width: ${({ theme, size }) => getToken(theme, size, "modalWidth")};
@@ -138,7 +136,7 @@ const ModalWrapperContent = styled.div`
       ${({ fixedFooter }) => (fixedFooter ? "76px" : "0px")}
   );
   box-shadow: ${({ theme }) => theme.orbit.boxShadowModal};
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 
   ${StyledModalSection}:last-of-type {

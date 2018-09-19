@@ -374,7 +374,7 @@ export type Tokens = {|
   paddingLeftInputFile: string,
   paddingLeftSelectPrefix: string,
   marginRightBadgeIcon: string,
-  spaceXXXSmall: "2px",
+  spaceXXXSmall: string,
   spaceXXSmall: string,
   spaceXSmall: string,
   spaceSmall: string,

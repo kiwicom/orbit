@@ -27,7 +27,7 @@ export const StyledTextLink = styled(({ tokens, theme, type, ...props }) => (
   <a {...props}>{props.children}</a>
 ))`
       color: ${({ tokens, type }) => tokens.colorTextLink[type]};
-      font-weight: ${({ theme }) => theme.orbit.fontWeightLinks}; 
+      font-weight: ${({ theme }) => theme.orbit.fontWeightLinks};
       text-decoration: ${({ theme, type }) =>
         type === [TYPE_OPTIONS.SECONDARY]
           ? theme.orbit.textDecorationTextLinkSecondary
@@ -37,7 +37,6 @@ export const StyledTextLink = styled(({ tokens, theme, type, ...props }) => (
       align-items: center;
       transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
     }
-    
     &:hover {
       text-decoration: ${({ theme, type }) =>
         type === [TYPE_OPTIONS.SECONDARY]
@@ -47,7 +46,7 @@ export const StyledTextLink = styled(({ tokens, theme, type, ...props }) => (
         type === [TYPE_OPTIONS.SECONDARY]
           ? theme.orbit.colorTextLinkSecondaryHover
           : theme.orbit.colorTextLinkPrimaryHover};
-      
+
       ${IconContainer} {
         color: ${({ theme, type }) =>
           type === [TYPE_OPTIONS.SECONDARY]
@@ -57,7 +56,7 @@ export const StyledTextLink = styled(({ tokens, theme, type, ...props }) => (
     }
     &:focus {
       outline-width: 3px;
-    }        
+    }
   `;
 
 StyledTextLink.defaultProps = {

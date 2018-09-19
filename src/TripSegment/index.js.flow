@@ -1,0 +1,28 @@
+// @flow
+import type { Carrier } from "../CarrierLogo";
+
+export type TripType = "airline" | "bus" | "train";
+
+export type State = {|
+  shown: boolean,
+|};
+
+type Airport = {|
+  code: string,
+  city: string,
+|};
+
+export type Props = {|
+  +children: React$Node,
+  +carrier: Carrier,
+  +departure: Airport,
+  +departureTime: string,
+  +arrival: Airport,
+  +arrivalTime: string,
+  +duration: string | number,
+  +type: TripType,
+  +onClick?: () => void,
+|};
+
+declare export default React$ComponentType<Props>;
+declare export var Milestone: React$ComponentType<Props>;

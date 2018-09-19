@@ -585,7 +585,7 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
             className="ButtonGroup__StyledButtonGroup-dnkEba epdACx"
           >
             <button
-              className="Button__StyledButton-jJDkJK cCxgax"
+              className="Button__StyledButton-jJDkJK iWVYZS"
               disabled={undefined}
               size="normal"
               target={undefined}
@@ -619,7 +619,7 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
               </div>
             </button>
             <button
-              className="Button__StyledButton-jJDkJK jgIVO"
+              className="Button__StyledButton-jJDkJK dAdFFT"
               disabled={undefined}
               size="normal"
               target={undefined}

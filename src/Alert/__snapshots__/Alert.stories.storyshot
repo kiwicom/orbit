@@ -972,7 +972,7 @@ exports[`Storyshots Alert Playground 1`] = `
                   Also you can change the message by changing the Message knob
                 </div>
                 <a
-                  className="Button__StyledButton-jJDkJK iHyYAZ"
+                  className="Button__StyledButton-jJDkJK koSMkK"
                   disabled={undefined}
                   href="#"
                   size="small"

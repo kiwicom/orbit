@@ -14,7 +14,7 @@ import type { Props, State } from "./index";
 const FakeGroup = styled(({ children, className }) => <div className={className}>{children}</div>)`
   width: 100%;
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   box-sizing: border-box;
   height: ${({ tokens, size }) => tokens.height[size]};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
@@ -74,7 +74,8 @@ const StyledInputGroup = styled(({ children, className }) => (
 
   ${StyledChild} {
     ${FakeInput} {
-      border: 0;
+      box-shadow: none;
+      background-color: transparent;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -101,6 +102,8 @@ const StyledInputGroup = styled(({ children, className }) => (
         error && !active ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput};
       transition: background-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
       display: block;
+      z-index: 2;
+      
     }
 
     &:last-child {

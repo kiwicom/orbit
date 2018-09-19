@@ -99,20 +99,20 @@ exports[`Storyshots Modal Full preview 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-jsvBud kztgyo"
+            className="Modal__ModalBody-jsvBud hzGqsV"
             onKeyDown={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-ioqsnS hfxOQz"
+              className="Modal__ModalWrapper-ioqsnS FaaEz"
               onScroll={[Function]}
               size="normal"
             >
               <div
-                className="ClickOutside__Inner-kPyeco gpqzZD"
+                className="ClickOutside__Inner-kPyeco bbSdlx"
               >
                 <div
-                  className="Modal__ModalWrapperContent-dXDxzA dtGCze"
+                  className="Modal__ModalWrapperContent-dXDxzA knMpbO"
                   size="normal"
                 >
                   <div
@@ -150,7 +150,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     </button>
                   </div>
                   <div
-                    className="ModalHeader__StyledModalHeader-hOPket etuxfJ"
+                    className="ModalHeader__StyledModalHeader-hOPket gAJYCS"
                   >
                     <img
                       alt="Accommodation"
@@ -178,7 +178,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       </div>
                     </div>
                     <div
-                      className="ModalHeader__MobileHeader-hyztNg cGevSD"
+                      className="ModalHeader__MobileHeader-hyztNg htMJkr"
                     >
                       Orbit design system
                     </div>
@@ -1489,20 +1489,20 @@ exports[`Storyshots Modal Sizes 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-jsvBud kztgyo"
+            className="Modal__ModalBody-jsvBud hzGqsV"
             onKeyDown={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-ioqsnS hfxOQz"
+              className="Modal__ModalWrapper-ioqsnS FaaEz"
               onScroll={[Function]}
               size="normal"
             >
               <div
-                className="ClickOutside__Inner-kPyeco gpqzZD"
+                className="ClickOutside__Inner-kPyeco bbSdlx"
               >
                 <div
-                  className="Modal__ModalWrapperContent-dXDxzA dtGCze"
+                  className="Modal__ModalWrapperContent-dXDxzA knMpbO"
                   size="normal"
                 >
                   <div
@@ -1540,7 +1540,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                     </button>
                   </div>
                   <div
-                    className="ModalHeader__StyledModalHeader-hOPket hLDNUj"
+                    className="ModalHeader__StyledModalHeader-hOPket dJFTgo"
                   >
                     <div
                       className="ModalHeader__ModalTitle-deoNop iOkEWH"
@@ -1557,7 +1557,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                       I'm lovely description
                     </div>
                     <div
-                      className="ModalHeader__MobileHeader-hyztNg cGevSD"
+                      className="ModalHeader__MobileHeader-hyztNg htMJkr"
                     >
                       Orbit design system
                     </div>

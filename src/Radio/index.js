@@ -144,13 +144,7 @@ const Radio = (props: Props) => {
 
   return (
     <Label disabled={disabled} tokens={tokens}>
-      <Input
-        value={value}
-        type="checkbox"
-        disabled={disabled}
-        checked={checked}
-        onChange={onChange}
-      />
+      <Input value={value} type="radio" disabled={disabled} checked={checked} onChange={onChange} />
       <IconContainer tokens={tokens}>
         <Glyph disabled={disabled} />
       </IconContainer>

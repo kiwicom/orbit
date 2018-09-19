@@ -6,7 +6,6 @@ import type { Props } from "./index";
 
 const Inner = styled.div`
   width: 100%;
-  height: 100%;
 `;
 
 class ClickOutside extends React.PureComponent<Props> {

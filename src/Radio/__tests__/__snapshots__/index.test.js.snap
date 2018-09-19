@@ -787,7 +787,7 @@ exports[`Default CheckBox should match snapshot 1`] = `
         },
       }
     }
-    type="checkbox"
+    type="radio"
     value="option"
   />
   <Radio__IconContainer

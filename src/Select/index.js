@@ -112,6 +112,7 @@ const SelectPrefix = styled(({ className, children }) => (
   position: absolute;
   padding: ${({ theme }) => `0 ${theme.orbit.spaceSmall}`};
   pointer-events: none;
+  z-index: 3;
 `;
 
 SelectPrefix.defaultProps = {
@@ -126,7 +127,7 @@ const SelectSuffix = styled(({ children, className }) => (
   color: ${({ theme, disabled }) =>
     disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 
   & > * {
     width: ${({ theme, size }) => size === SIZE_OPTIONS.SMALL && theme.orbit.widthIconSmall};

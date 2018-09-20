@@ -130,7 +130,7 @@ exports[`Storyshots Select Default 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH kVNaRO"
+                className="Select__SelectSuffix-klejCH daGaXL"
               >
                 <svg
                   className={undefined}
@@ -608,7 +608,7 @@ exports[`Storyshots Select Playground 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH kVNaRO"
+                className="Select__SelectSuffix-klejCH daGaXL"
               >
                 <svg
                   className={undefined}
@@ -1215,7 +1215,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <div
-                className="Select__SelectPrefix-kcaQEZ HdxHv"
+                className="Select__SelectPrefix-kcaQEZ fmvalp"
               >
                 <img
                   alt="Anywhere"
@@ -1253,7 +1253,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH kVNaRO"
+                className="Select__SelectSuffix-klejCH daGaXL"
               >
                 <svg
                   className={undefined}
@@ -1795,7 +1795,7 @@ exports[`Storyshots Select With error message 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH kVNaRO"
+                className="Select__SelectSuffix-klejCH daGaXL"
               >
                 <svg
                   className={undefined}
@@ -2344,7 +2344,7 @@ exports[`Storyshots Select With help message 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH kVNaRO"
+                className="Select__SelectSuffix-klejCH daGaXL"
               >
                 <svg
                   className={undefined}
@@ -2904,7 +2904,7 @@ exports[`Storyshots Select With placeholder 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH kVNaRO"
+                className="Select__SelectSuffix-klejCH daGaXL"
               >
                 <svg
                   className={undefined}
@@ -3418,7 +3418,7 @@ exports[`Storyshots Select With prefix 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <div
-                className="Select__SelectPrefix-kcaQEZ HdxHv"
+                className="Select__SelectPrefix-kcaQEZ fmvalp"
               >
                 <svg
                   className={undefined}
@@ -3467,7 +3467,7 @@ exports[`Storyshots Select With prefix 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH kVNaRO"
+                className="Select__SelectSuffix-klejCH daGaXL"
               >
                 <svg
                   className={undefined}
@@ -4009,7 +4009,7 @@ exports[`Storyshots Select With small size 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH dWlRIr"
+                className="Select__SelectSuffix-klejCH cenyKf"
               >
                 <svg
                   className={undefined}

@@ -1209,7 +1209,9 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Select box (with prefix)
+              <span>
+                Select box (with prefix)
+              </span>
             </span>
             <div
               className="Select__SelectContainer-hisSov erDdbv"
@@ -1762,7 +1764,9 @@ exports[`Storyshots Select With error message 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Select box (with error text)
+              <span>
+                Select box (with error text)
+              </span>
             </span>
             <div
               className="Select__SelectContainer-hisSov erDdbv"
@@ -2311,7 +2315,9 @@ exports[`Storyshots Select With help message 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Select box (with help text)
+              <span>
+                Select box (with help text)
+              </span>
             </span>
             <div
               className="Select__SelectContainer-hisSov erDdbv"
@@ -2863,7 +2869,9 @@ exports[`Storyshots Select With placeholder 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Select box (with placeholder)
+              <span>
+                Select box (with placeholder)
+              </span>
             </span>
             <div
               className="Select__SelectContainer-hisSov erDdbv"
@@ -3412,7 +3420,9 @@ exports[`Storyshots Select With prefix 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Select box (with prefix)
+              <span>
+                Select box (with prefix)
+              </span>
             </span>
             <div
               className="Select__SelectContainer-hisSov erDdbv"
@@ -3976,7 +3986,9 @@ exports[`Storyshots Select With small size 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Select box (small size)
+              <span>
+                Select box (small size)
+              </span>
             </span>
             <div
               className="Select__SelectContainer-hisSov erDdbv"

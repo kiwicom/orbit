@@ -104,7 +104,9 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Date of birth
+              <span>
+                Date of birth
+              </span>
             </span>
             <div
               className="InputGroup__StyledChildren-kSeqtV igoYWh"
@@ -1166,7 +1168,9 @@ exports[`Storyshots InputGroup Phone number 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Phone number
+              <span>
+                Phone number
+              </span>
             </span>
             <div
               className="InputGroup__StyledChildren-kSeqtV igoYWh"
@@ -2067,7 +2071,9 @@ exports[`Storyshots InputGroup Playground 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Phone number
+              <span>
+                Phone number
+              </span>
             </span>
             <div
               className="InputGroup__StyledChildren-kSeqtV igoYWh"

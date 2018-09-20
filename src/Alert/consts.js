@@ -1,9 +1,13 @@
 // @flow
-const TYPE_OPTIONS = {
+export const TYPE_OPTIONS = {
   INFO: "info",
   SUCCESS: "success",
   WARNING: "warning",
   CRITICAL: "critical",
 };
 
-export default TYPE_OPTIONS;
+export const TOKENS = {
+  backgroundAlert: "backgroundAlert",
+  colorIconAlert: "colorIconAlert",
+  colorTextAlert: "colorTextAlert",
+};

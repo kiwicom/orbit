@@ -8,7 +8,7 @@ import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
 import Button from "../Button";
-import TYPE_OPTIONS from "./consts";
+import { TYPE_OPTIONS } from "./consts";
 
 import Alert from "./index";
 

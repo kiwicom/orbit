@@ -15,10 +15,12 @@ const LoaderAnimation = keyframes`
   0% {opacity: .3; transform:translateY(0px);}
   20% {opacity: 1; transform: translateY(-3px);}
   40%  {opacity: .3; transform:translateY(0px);}
-  100%  {opacity: .3; transform:translateY(0px);} 
+  100%  {opacity: .3; transform:translateY(0px);}
 `;
 
-const StyledLoading = styled.div`
+const StyledLoading = styled(({ children, className }) => (
+  <div className={className}>{children}</div>
+))`
   position: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "absolute"};
   left: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
   width: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "100%"};

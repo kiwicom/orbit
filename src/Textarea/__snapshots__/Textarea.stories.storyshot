@@ -378,7 +378,9 @@ exports[`Storyshots Textarea Playground 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Label
+              <span>
+                Label
+              </span>
             </span>
             <textarea
               className="Textarea__StyledTextArea-iLqCZR hcwkQS"
@@ -1875,7 +1877,9 @@ exports[`Storyshots Textarea With label 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Label
+              <span>
+                Label
+              </span>
             </span>
             <textarea
               className="Textarea__StyledTextArea-iLqCZR kfzwzn"

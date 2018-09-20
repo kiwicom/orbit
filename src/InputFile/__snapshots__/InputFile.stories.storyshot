@@ -113,7 +113,9 @@ exports[`Storyshots InputFile Default 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Label
+              <span>
+                Label
+              </span>
             </span>
             <div
               className="InputFile__FakeInput-djykOY ciTDoB"
@@ -504,7 +506,9 @@ exports[`Storyshots InputFile Filled with file 1`] = `
             <span
               className="FormLabel-kJFBRQ irIxpQ"
             >
-              Label
+              <span>
+                Label
+              </span>
             </span>
             <div
               className="InputFile__FakeInput-djykOY ciTDoB"
@@ -960,7 +964,9 @@ exports[`Storyshots InputFile Playground 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Label
+              <span>
+                Label
+              </span>
             </span>
             <div
               className="InputFile__FakeInput-djykOY dilRac"
@@ -1595,7 +1601,9 @@ exports[`Storyshots InputFile With error 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Label
+              <span>
+                Label
+              </span>
             </span>
             <div
               className="InputFile__FakeInput-djykOY dilRac"
@@ -2021,7 +2029,9 @@ exports[`Storyshots InputFile With help 1`] = `
             <span
               className="FormLabel-kJFBRQ fuYBgg"
             >
-              Label
+              <span>
+                Label
+              </span>
             </span>
             <div
               className="InputFile__FakeInput-djykOY ciTDoB"

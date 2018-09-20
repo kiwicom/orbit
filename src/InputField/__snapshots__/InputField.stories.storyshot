@@ -105,7 +105,7 @@ exports[`Storyshots InputField Compact input 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <div
-                className="InputField__StyledInlineLabel-eVtavk bgzWFK"
+                className="InputField__StyledInlineLabel-eVtavk ffaSyh"
                 size="normal"
               >
                 <span
@@ -2029,7 +2029,7 @@ exports[`Storyshots InputField Playground 1`] = `
               className="InputField__InputContainer-evnRDD cirwSX"
             >
               <div
-                className="InputField__Prefix-jLQUQe fhHGYS"
+                className="InputField__Prefix-jLQUQe bsehFo"
               >
                 <svg
                   className={undefined}
@@ -2066,7 +2066,7 @@ exports[`Storyshots InputField Playground 1`] = `
                 value=""
               />
               <div
-                className="InputField__Suffix-csEOAt fekEEr"
+                className="InputField__Suffix-csEOAt fQSwTX"
               >
                 <button
                   className="ButtonLink__StyledButtonLink-eyUiPe kdbeEm"
@@ -3624,7 +3624,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                 value=""
               />
               <div
-                className="InputField__Suffix-csEOAt bGvNJE"
+                className="InputField__Suffix-csEOAt jWXkdw"
               >
                 <button
                   className="ButtonLink__StyledButtonLink-eyUiPe DORaW"
@@ -4002,7 +4002,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <div
-                className="InputField__Prefix-jLQUQe QdQQH"
+                className="InputField__Prefix-jLQUQe kptaFf"
               >
                 <svg
                   className={undefined}
@@ -4398,7 +4398,7 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
                 value=""
               />
               <div
-                className="InputField__Suffix-csEOAt bGvNJE"
+                className="InputField__Suffix-csEOAt jWXkdw"
               >
                 <img
                   alt="AirHelp"
@@ -4752,7 +4752,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <div
-                className="InputField__Prefix-jLQUQe QdQQH"
+                className="InputField__Prefix-jLQUQe kptaFf"
               >
                 $
               </div>

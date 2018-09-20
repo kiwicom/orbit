@@ -87,6 +87,7 @@ const StyledInlineLabel = styled.div`
     margin-bottom: 0;
     font-size: ${({ size, tokens }) => tokens.fontSizeInput[size]};
     line-height: normal;
+    z-index: 3;
   }
 `;
 
@@ -102,7 +103,7 @@ const Prefix = styled(({ children, className }) => <div className={className}>{c
   pointer-events: none;
   justify-content: center;
   padding-left: ${({ theme }) => theme.orbit.spaceSmall};
-  z-index: 2;
+  z-index: 3;
 
   & > svg {
     width: ${({ tokens, size }) => tokens.iconSize[size]};
@@ -122,7 +123,7 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
   align-items: center;
   justify-content: center;
   pointer-events: ${({ disabled }) => disabled && "none"};
-  z-index: 2;
+  z-index: 3;
 
   & svg {
     color: ${({ theme }) => theme.orbit.colorIconSecondary};

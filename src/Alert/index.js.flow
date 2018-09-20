@@ -1,5 +1,4 @@
 // @flow
-import defaultTokens from "../defaultTokens";
 
 type Type = "info" | "success" | "warning" | "critical";
 
@@ -10,7 +9,6 @@ export type Props = {|
   +icon?: React$Element<any> | boolean,
   +closable?: boolean,
   +onClose?: () => void,
-  +theme?: typeof defaultTokens,
 |};
 
 declare export default React$ComponentType<Props>;

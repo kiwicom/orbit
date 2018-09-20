@@ -88,6 +88,7 @@ const StyledInlineLabel = styled.div`
     font-size: ${({ size, tokens }) => tokens.fontSizeInput[size]};
     line-height: normal;
     z-index: 3;
+    white-space: nowrap;
   }
 `;
 

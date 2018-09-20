@@ -8,7 +8,7 @@ const StyledAsterisk = styled.span`
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
   color: ${({ theme, filled }) =>
     !filled ? theme.orbit.colorTextError : theme.orbit.colorFormLabelFilled};
-  font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel}
+  font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
   vertical-align: top;
 `;
 
@@ -19,7 +19,7 @@ StyledAsterisk.defaultProps = {
 const FormLabel = styled(({ className, children, required, filled }) => (
   <span className={className}>
     {required && <StyledAsterisk filled={filled}>* </StyledAsterisk>}
-    {children}
+    <span>{children}</span>
   </span>
 ))`
   display: block;

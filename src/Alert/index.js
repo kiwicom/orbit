@@ -10,13 +10,38 @@ import AlertCircle from "../icons/AlertCircle";
 import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
 import { StyledTextLink } from "../TextLink";
-import TYPE_OPTIONS from "./consts";
+import { TYPE_OPTIONS, TOKENS } from "./consts";
 
 import type { Props } from "./index";
 
 type IconProps = {
   icon: React.Node,
   type: string,
+};
+
+const getTypeToken = name => ({ theme, type }) => {
+  const tokens = {
+    [TOKENS.colorIconAlert]: {
+      [TYPE_OPTIONS.INFO]: theme.orbit.colorAlertIconInfo,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorAlertIconSuccess,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.colorAlertIconWarning,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorAlertIconCritical,
+    },
+    [TOKENS.backgroundAlert]: {
+      [TYPE_OPTIONS.INFO]: theme.orbit.backgroundAlertInfo,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.backgroundAlertSuccess,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.backgroundAlertWarning,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.backgroundAlertCritical,
+    },
+    [TOKENS.colorTextAlert]: {
+      [TYPE_OPTIONS.INFO]: theme.orbit.colorTextAlertInfo,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorTextAlertSuccess,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextAlertWarning,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextAlertCritical,
+    },
+  };
+
+  return tokens[name][type];
 };
 
 const Icon = ({ icon, type }: IconProps) => {
@@ -52,8 +77,8 @@ const StyledAlert = styled(StyledDiv)`
       : theme.orbit.paddingAlert};
   padding-right: ${({ theme, closable }) => closable && theme.orbit.spaceXXLarge};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  background: ${({ tokens, type }) => tokens.backgroundAlert[type]};
-  color: ${({ tokens, type }) => tokens.colorTextAlert[type]};
+  background: ${getTypeToken(TOKENS.backgroundAlert)};
+  color: ${getTypeToken(TOKENS.colorTextAlert)};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   box-sizing: border-box;
@@ -66,7 +91,7 @@ StyledAlert.defaultProps = {
 const IconContainer = styled(StyledDiv)`
   flex-shrink: 0;
   margin-right: ${({ theme }) => theme.orbit.spaceSmall};
-  color: ${({ tokens, type }) => tokens.colorIconAlert[type]};
+  color: ${getTypeToken(TOKENS.colorIconAlert)};
 `;
 
 IconContainer.defaultProps = {
@@ -100,7 +125,7 @@ const Content = styled(StyledDiv)`
 
   & a,
   & ${StyledTextLink} {
-    color: ${({ tokens, type }) => tokens.colorTextAlert[type]};
+    color: ${getTypeToken(TOKENS.colorTextAlert)};
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
     transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
     text-decoration: none;
@@ -127,46 +152,18 @@ CloseContainer.defaultProps = {
 };
 
 const Alert = (props: Props) => {
-  const {
-    type = TYPE_OPTIONS.INFO,
-    title,
-    theme = defaultTokens,
-    closable,
-    icon,
-    onClose = () => {},
-    children,
-  } = props;
-  const tokens = {
-    colorIconAlert: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.colorAlertIconInfo,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorAlertIconSuccess,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.colorAlertIconWarning,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorAlertIconCritical,
-    },
-    backgroundAlert: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.backgroundAlertInfo,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.backgroundAlertSuccess,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.backgroundAlertWarning,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.backgroundAlertCritical,
-    },
-    colorTextAlert: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.colorTextAlertInfo,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorTextAlertSuccess,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextAlertWarning,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextAlertCritical,
-    },
-  };
+  const { type = TYPE_OPTIONS.INFO, title, closable, icon, onClose = () => {}, children } = props;
   return (
-    <StyledAlert tokens={tokens} type={type} closable={closable}>
+    <StyledAlert type={type} closable={closable}>
       {icon && (
-        <IconContainer tokens={tokens} type={type}>
+        <IconContainer type={type}>
           <Icon type={type} icon={icon} />
         </IconContainer>
       )}
       <ContentWrapper title={title}>
         {title && <Title hasChildren={children}>{title}</Title>}
         {children && (
-          <Content title={title} tokens={tokens} type={type}>
+          <Content title={title} type={type}>
             {children}
           </Content>
         )}
@@ -176,7 +173,7 @@ const Alert = (props: Props) => {
           <ButtonLink
             onClick={onClose}
             size="small"
-            icon={<Close size="small" customColor={tokens.colorIconAlert[type]} />}
+            icon={<Close size="small" color={type} />}
             transparent
           />
         </CloseContainer>

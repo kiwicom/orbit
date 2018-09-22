@@ -4212,6 +4212,60 @@ exports[`Storyshots Icon List of all icons 1`] = `
                 width="32px"
               >
                 <path
+                  d="M3 2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3zm1.912 2h14.176a1.5 1.5 0 0 0 .912.912v6.176a1.5 1.5 0 0 0-.912.912H4.912A1.5 1.5 0 0 0 4 11.088V4.912A1.5 1.5 0 0 0 4.912 4zM12 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM7 7a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm10 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-6 9v2H7.951l4 4 4-4H13v-2h-2z"
+                />
+              </svg>
+              <div
+                className="IconList__IconImport-oZwZP jDaZTJ"
+              >
+                import MoneyTransferIn from "@kiwicom/orbit-components/lib/icons/MoneyTransferIn
+              </div>
+            </div>
+            <div
+              className="IconList__Container-hTbGgF fGplQy"
+            >
+              <svg
+                className="IconList__Icon-iybRdw hcdenc"
+                fill="currentColor"
+                height="32px"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "color": "#46515e",
+                    "verticalAlign": "middle",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="32px"
+              >
+                <path
+                  d="M11.951 2l-4 4H11v2h2V6h2.951l-4-4zM3 10a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V11a1 1 0 0 0-1-1H3zm1.912 2h14.176a1.5 1.5 0 0 0 .912.912v6.176a1.5 1.5 0 0 0-.912.912H4.912A1.5 1.5 0 0 0 4 19.088v-6.176A1.5 1.5 0 0 0 4.912 12zM12 13a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm-5 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm10 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+                />
+              </svg>
+              <div
+                className="IconList__IconImport-oZwZP jDaZTJ"
+              >
+                import MoneyTransferOut from "@kiwicom/orbit-components/lib/icons/MoneyTransferOut
+              </div>
+            </div>
+            <div
+              className="IconList__Container-hTbGgF fGplQy"
+            >
+              <svg
+                className="IconList__Icon-iybRdw hcdenc"
+                fill="currentColor"
+                height="32px"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "color": "#46515e",
+                    "verticalAlign": "middle",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="32px"
+              >
+                <path
                   d="M8 16l-5-5V6h11l5 5v5H8zm14-8h2v13H5v-2h17V8zM11 8a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm10-4H1v14h20V4z"
                 />
               </svg>
@@ -4516,6 +4570,33 @@ exports[`Storyshots Icon List of all icons 1`] = `
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
                 import Parking from "@kiwicom/orbit-components/lib/icons/Parking
+              </div>
+            </div>
+            <div
+              className="IconList__Container-hTbGgF fGplQy"
+            >
+              <svg
+                className="IconList__Icon-iybRdw hcdenc"
+                fill="currentColor"
+                height="32px"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "color": "#46515e",
+                    "verticalAlign": "middle",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="32px"
+              >
+                <path
+                  d="M21.362 7.379h-1.755a1.771 1.771 0 0 0-.766.18.213.213 0 0 1-.17.006l-3.66-1.4a2.829 2.829 0 0 0-2.19.121l-1.807.877a.214.214 0 0 1-.205-.008 2.534 2.534 0 0 0-2.248-.17L6.014 8.071a.212.212 0 0 1-.245-.057 1.807 1.807 0 0 0-1.376-.635H2.638A.638.638 0 0 0 2 8.017v8.085c0 .353.286.639.638.639h1.755c.585 0 1.134-.285 1.473-.762a.215.215 0 0 1 .17-.09h.792c.048 0 .094.017.132.046l2.378 1.872.019.016c.6.6 1.558.645 2.212.105l2.602-2.135a.216.216 0 0 1 .094-.044l3.315-.663a.214.214 0 0 1 .25.172 1.8 1.8 0 0 0 1.775 1.484h1.757a.638.638 0 0 0 .638-.639V8.018a.638.638 0 0 0-.638-.639zm-6.993 6.054l-.964.806-.02.014a.8.8 0 0 0-.104.085l-.008.007-2.585 2.163a.187.187 0 0 1-.235 0l-2.724-2.146a.851.851 0 0 0-.526-.181h-.788a.212.212 0 0 1-.212-.213V9.98c0-.085.05-.162.129-.195L9.207 8.56h.005a.191.191 0 0 1 .255.227 2.266 2.266 0 0 0 1.29 2.643c.281.122.585.184.892.184.29 0 .576-.055.845-.161l.135-.055a.213.213 0 0 1 .238.054l1.522 1.677a.212.212 0 0 1-.02.307v-.004zm3.428-.3a.213.213 0 0 1-.17.208l-1.116.223a.213.213 0 0 1-.254-.216 1.728 1.728 0 0 0-.376-1.112l-.011-.014-2.244-2.468a.911.911 0 0 0-.953-.216l-.815.335a.553.553 0 0 1-.463-1.003l2.175-1.06c.263-.126.566-.145.843-.053l3.268 1.25a.17.17 0 0 1 .11.163l.006 3.962z"
+                />
+              </svg>
+              <div
+                className="IconList__IconImport-oZwZP jDaZTJ"
+              >
+                import Partners from "@kiwicom/orbit-components/lib/icons/Partners
               </div>
             </div>
             <div
@@ -4941,6 +5022,33 @@ exports[`Storyshots Icon List of all icons 1`] = `
                 width="32px"
               >
                 <path
+                  d="M22 3l-5.3.8 1.542 1.544-3.064 3.064-1.61-1.508-4.076 4.178-1.484-1.484-4.705 4.61 1.4 1.427 3.29-3.225 1.515 1.516 4.123-4.223 1.592 1.492 4.433-4.433L21.2 8.3 22 3zm-3 8v11h2V11h-2zm-4 2v9h2v-9h-2zm-4 2v7h2v-7h-2zm-4 2v5h2v-5H7zm-4 2v3h2v-3H3z"
+                />
+              </svg>
+              <div
+                className="IconList__IconImport-oZwZP jDaZTJ"
+              >
+                import Profit from "@kiwicom/orbit-components/lib/icons/Profit
+              </div>
+            </div>
+            <div
+              className="IconList__Container-hTbGgF fGplQy"
+            >
+              <svg
+                className="IconList__Icon-iybRdw hcdenc"
+                fill="currentColor"
+                height="32px"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "color": "#46515e",
+                    "verticalAlign": "middle",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="32px"
+              >
+                <path
                   d="M18 7h-2V5h2v2zm0 4h-2V9h2v2zm0 4h-2v-2h2v2zm0 4h-2v-2h2v2zm-5-2a2 2 0 1 1-.001-3.999A2 2 0 0 1 13 17zm-8.707-1.707l9-9 1.414 1.414-9 9-1.414-1.414zM6 6a2 2 0 1 1-.001 4.001A2 2 0 0 1 6 6zm17 4h1V3H0v7h1c1.103 0 2 .898 2 2 0 1.103-.897 2-2 2H0v7h24v-7h-1c-1.103 0-2-.897-2-2 0-1.102.897-2 2-2z"
                 />
               </svg>
@@ -5002,6 +5110,33 @@ exports[`Storyshots Icon List of all icons 1`] = `
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
                 import RadiusSearch from "@kiwicom/orbit-components/lib/icons/RadiusSearch
+              </div>
+            </div>
+            <div
+              className="IconList__Container-hTbGgF fGplQy"
+            >
+              <svg
+                className="IconList__Icon-iybRdw hcdenc"
+                fill="currentColor"
+                height="32px"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "color": "#46515e",
+                    "verticalAlign": "middle",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="32px"
+              >
+                <path
+                  d="M13 3a9 9 0 0 1 0 18c-2.5 0-4.73-1-6.36-2.64l1.42-1.42A6.944 6.944 0 0 0 13 19a7 7 0 1 0-7-7h3l-4.04 4.03L1 12h3a9 9 0 0 1 9-9zm3 7h-3.5a.5.5 0 0 0 0 1h1c1.378 0 2.5 1.122 2.5 2.5 0 1.207-.86 2.217-2 2.449V17h-2v-1h-2v-2h3.5a.5.5 0 0 0 0-1h-1a2.503 2.503 0 0 1-2.5-2.5c0-1.207.86-2.217 2-2.449V7h2v1h2v2z"
+                />
+              </svg>
+              <div
+                className="IconList__IconImport-oZwZP jDaZTJ"
+              >
+                import Refund from "@kiwicom/orbit-components/lib/icons/Refund
               </div>
             </div>
             <div
@@ -5428,6 +5563,33 @@ exports[`Storyshots Icon List of all icons 1`] = `
               >
                 <path
                   d="M11 5.828L8.707 8.121 7.293 6.707 12 2l4.707 4.707-1.414 1.414L13 5.828v9.586h-2V5.828zm6 3.586a2 2 0 0 1 2 2v8c0 1.102-.896 2-2 2H7c-1.104 0-2-.898-2-2v-8a2 2 0 0 1 2-2h1v2H7v8h10v-8h-1v-2h1z"
+                />
+              </svg>
+              <div
+                className="IconList__IconImport-oZwZP jDaZTJ"
+              >
+                import ShareIos from "@kiwicom/orbit-components/lib/icons/ShareIos
+              </div>
+            </div>
+            <div
+              className="IconList__Container-hTbGgF fGplQy"
+            >
+              <svg
+                className="IconList__Icon-iybRdw hcdenc"
+                fill="currentColor"
+                height="32px"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "color": "#46515e",
+                    "verticalAlign": "middle",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="32px"
+              >
+                <path
+                  d="M2.476 21h-.02A.489.489 0 0 1 2 20.496c.002-.123.275-12.155 11.429-12.487V4.5c0-.193.106-.369.271-.45a.456.456 0 0 1 .504.062l7.62 6.5a.517.517 0 0 1 .002.777l-7.62 6.501a.462.462 0 0 1-.506.063.501.501 0 0 1-.271-.451v-3.497c-9.924.19-10.46 6.268-10.478 6.53a.485.485 0 0 1-.475.465z"
                 />
               </svg>
               <div

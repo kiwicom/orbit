@@ -2,7 +2,7 @@
 
 exports[`Badge should match snapshot 1`] = `
 <Badge__StyledBadge
-  icon={<Sightseeing />}
+  circled={true}
   theme={
     Object {
       "orbit": Object {
@@ -381,26 +381,6 @@ exports[`Badge should match snapshot 1`] = `
         "zIndexModalOverlay": "800",
         "zIndexOnTheTop": "900",
         "zIndexSticky": "100",
-      },
-    }
-  }
-  tokens={
-    Object {
-      "background": Object {
-        "critical": "#fae8e8",
-        "dark": "#46515e",
-        "info": "#e0f6ff",
-        "neutral": "#f5f7f9",
-        "success": "#e7f3e8",
-        "warning": "#fcf1cd",
-      },
-      "color": Object {
-        "critical": "#d21c1c",
-        "dark": "#fff",
-        "info": "#0176D2",
-        "neutral": "#171b1e",
-        "success": "#46B655",
-        "warning": "#f9971e",
       },
     }
   }
@@ -785,26 +765,6 @@ exports[`Badge should match snapshot 1`] = `
           "zIndexModalOverlay": "800",
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
-        },
-      }
-    }
-    tokens={
-      Object {
-        "background": Object {
-          "critical": "#fae8e8",
-          "dark": "#46515e",
-          "info": "#e0f6ff",
-          "neutral": "#f5f7f9",
-          "success": "#e7f3e8",
-          "warning": "#fcf1cd",
-        },
-        "color": Object {
-          "critical": "#d21c1c",
-          "dark": "#fff",
-          "info": "#0176D2",
-          "neutral": "#171b1e",
-          "success": "#46B655",
-          "warning": "#f9971e",
         },
       }
     }

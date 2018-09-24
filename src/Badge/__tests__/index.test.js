@@ -9,16 +9,17 @@ import Sightseeing from "../../icons/Sightseeing";
 describe("Badge", () => {
   const content = "badge";
   const type = "info";
+  const circled = true;
   const icon = <Sightseeing />;
 
   const component = shallow(
-    <Badge type={type} icon={icon}>
+    <Badge type={type} icon={icon} circled={circled}>
       {content}
     </Badge>,
   );
   it("should have passed props", () => {
     expect(component.prop("type")).toBe(type);
-    expect(component.prop("icon")).toBe(icon);
+    expect(component.prop("circled")).toBe(true);
   });
   it("should contain a content", () => {
     expect(component.render().text()).toBe(content);

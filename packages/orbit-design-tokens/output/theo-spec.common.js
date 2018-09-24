@@ -324,7 +324,7 @@ module.exports = {
   colorTextButtonInfoBordered: "rgb(1, 118, 210)",
   heightCountryFlag: "auto",
   heightIconLarge: "32px",
-  boxShadowButtonFocus: "0 0 4px 1px rgba(1,118,210,0.3)",
+  boxShadowButtonFocus: "0 0 4px 1px rgba(1, 118, 210, 0.3)",
   paletteBlueLightHover: "rgb(200, 239, 254)",
   borderColorCheckboxRadioHover: "rgb(127, 145, 168)",
   colorTextButtonCriticalHover: "rgb(255, 255, 255)",

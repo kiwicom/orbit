@@ -322,7 +322,7 @@
   <property name="COLORTEXTBUTTONINFOBORDERED" category="Colors" value="#ff0176d2"/>
   <property name="HEIGHTCOUNTRYFLAG" category="Size (width, height)" value="auto"/>
   <property name="HEIGHTICONLARGE" category="Size (width, height)" value="32px"/>
-  <property name="BOXSHADOWBUTTONFOCUS" category="Box shadow" value="0 0 4px 1px rgba(1,118,210,0.3)"/>
+  <property name="BOXSHADOWBUTTONFOCUS" category="Box shadow" value="0 0 4px 1px rgba(1, 118, 210, 0.3)"/>
   <property name="PALETTEBLUELIGHTHOVER" category="Color palette" value="#ffc8effe"/>
   <property name="BORDERCOLORCHECKBOXRADIOHOVER" category="Border color" value="#ff7f91a8"/>
   <property name="COLORTEXTBUTTONCRITICALHOVER" category="Colors" value="#ffffffff"/>

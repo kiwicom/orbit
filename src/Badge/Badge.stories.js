@@ -90,6 +90,15 @@ storiesOf("Badge", module)
                 </Badge>
               ),
             },
+            {
+              sectionFn: () => (
+                <div style={{ backgroundColor: "#46515e", padding: "10px" }}>
+                  <Badge type={TYPE_OPTIONS.WHITE} icon={<Icons.Sightseeing />}>
+                    {content}
+                  </Badge>
+                </div>
+              ),
+            },
           ],
         },
       ],

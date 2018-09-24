@@ -1,5 +1,5 @@
 // @flow
-export type Type = "neutral" | "dark" | "info" | "success" | "warning" | "critical";
+export type Type = "neutral" | "dark" | "info" | "success" | "warning" | "critical" | "white";
 
 export type Props = {|
   +children: React$Node,

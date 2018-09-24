@@ -1,7 +1,7 @@
 {
   "name": "@kiwicom/orbit-design-tokens",
-  "version": "0.1.4",
-  "description": "Design tokens for kiwi!",
+  "version": "0.2.0",
+  "description": "Design tokens for Kiwi.com.",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
@@ -12,18 +12,20 @@
     "package.json",
     "README.md",
     "output/*",
-    "theo/*",
     "pages/*"
   ],
   "scripts": {
-    "prepare": "node generate-theo && npm run build",
-    "flow": "flow check",
-    "build-html": "theo --setup ./theo/setup.js ./theo-spec.json --format kiwi.html --dest ./pages",
-    "build-web": "theo ./theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",
-    "build-ios": "theo ./theo-spec.json --transform ios --format ios.json --dest ./output",
-    "build-android": "theo ./theo-spec.json --transform android --format android.xml --dest ./output",
-    "build": "npm run build-html && npm run build-web && npm run build-ios && npm run build-android",
-    "ci-publish": "ci-publish"
+    "prepare": "node ./src/theo/generate-theo && yarn build",
+    "flow:check": "flow check",
+    "build-html": "theo --setup ./src/theo/setup.js ./src/theo/theo-spec.json --format kiwi.html --dest ./pages",
+    "build-web": "theo ./src/theo/theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",
+    "build-ios": "theo ./src/theo/theo-spec.json --transform ios --format ios.json --dest ./output",
+    "build-android": "theo ./src/theo/theo-spec.json --transform android --format android.xml --dest ./output",
+    "build": "yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android",
+    "ci-publish": "ci-publish",
+    "test": "jest",
+    "eslint": "eslint .",
+    "test-ci": "yarn flow:check && yarn eslint && yarn test --ci"
   },
   "author": "kiwi.com",
   "license": "MIT",
@@ -34,9 +36,21 @@
   ],
   "devDependencies": {
     "babylon": "^6.18.0",
+    "babel-eslint": "^8.2.5",
     "ci-publish": "^1.3.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
     "flow-bin": "^0.74.0",
+    "jest": "^23.6.0",
     "lodash": "^4.17.10",
+    "prettier": "^1.13.7",
     "theo": "^7.0.1"
   }
 }

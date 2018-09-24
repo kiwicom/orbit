@@ -1,79 +1,5 @@
 // @flow
-export type Colors = {|
-  product?: {|
-    light?: string,
-    lightHover?: string,
-    lightActive?: string,
-    normal?: string,
-    normalHover?: string,
-    normalActive?: string,
-    dark?: string,
-  |},
-  white?: {|
-    normal: string,
-  |},
-  cloud?: {|
-    light?: string,
-    lightHover?: string,
-    lightActive?: string,
-    normal?: string,
-    normalHover?: string,
-    normalActive?: string,
-  |},
-  ink?: {|
-    lighter?: string,
-    lighterHover?: string,
-    lighterActive?: string,
-    light?: string,
-    lightHover?: string,
-    lightActive?: string,
-    normal?: string,
-    normalHover?: string,
-    normalActive?: string,
-    dark?: string,
-  |},
-  orange?: {|
-    light?: string,
-    lightHover?: string,
-    lightActive?: string,
-    normal?: string,
-    normalHover?: string,
-    normalActive?: string,
-    dark?: string,
-  |},
-  red?: {|
-    light?: string,
-    lightHover?: string,
-    lightActive?: string,
-    normal?: string,
-    normalHover?: string,
-    normalActive?: string,
-    dark?: string,
-  |},
-  green?: {|
-    light?: string,
-    lightHover?: string,
-    lightActive?: string,
-    normal?: string,
-    normalHover?: string,
-    normalActive?: string,
-    dark?: string,
-  |},
-  blue?: {|
-    light?: string,
-    lightHover?: string,
-    lightActive?: string,
-    normal?: string,
-    normalHover?: string,
-    normalActive?: string,
-    dark?: string,
-  |},
-  social?: {|
-    facebook?: string,
-    facebookHover?: string,
-    facebookActive?: string,
-  |}
-|};
+import type { Foundation } from "./foundation";
 
 export type Tokens = {|
   colorTextPrimary: string,
@@ -374,7 +300,7 @@ export type Tokens = {|
   paddingLeftInputFile: string,
   paddingLeftSelectPrefix: string,
   marginRightBadgeIcon: string,
-  spaceXXXSmall: "2px",
+  spaceXXXSmall: string,
   spaceXXSmall: string,
   spaceXSmall: string,
   spaceSmall: string,
@@ -456,21 +382,21 @@ export type Tokens = {|
   paletteBlueDark: string,
   paletteSocialFacebook: string,
   paletteSocialFacebookHover: string,
-  paletteSocialFacebookActive: string
-|}
+  paletteSocialFacebookActive: string,
+|};
 
-export type themePaletteColors = {|
+export type ThemePaletteColors = {|
   productLight: string,
   productLightHover: string,
   productLightActive: string,
   productNormal: string,
   productNormalHover: string,
   productNormalActive: string,
-  productDark: string
+  productDark: string,
 |};
 
-declare export function getTokens(colors?: Colors): Tokens;
+declare export function getTokens(customFoundation?: $Shape<Foundation>): Tokens;
 
-declare export function fromPlainObject(themePaletteColors: themePaletteColors): Tokens;
+declare export function fromPlainObject(themePaletteColors: ThemePaletteColors): Tokens;
 
 declare export var defaultTokens: Tokens;

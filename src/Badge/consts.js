@@ -1,5 +1,5 @@
 // @flow
-const TYPE_OPTIONS = {
+export const TYPE_OPTIONS = {
   NEUTRAL: "neutral",
   INFO: "info",
   SUCCESS: "success",
@@ -8,4 +8,7 @@ const TYPE_OPTIONS = {
   DARK: "dark",
 };
 
-export default TYPE_OPTIONS;
+export const TOKENS = {
+  background: "background",
+  color: "color",
+};

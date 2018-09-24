@@ -16,6 +16,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.WARNING]: theme.orbit.backgroundBadgeWarning,
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.backgroundBadgeCritical,
       [TYPE_OPTIONS.DARK]: theme.orbit.backgroundBadgeDark,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite,
     },
     [TOKENS.color]: {
       [TYPE_OPTIONS.NEUTRAL]: theme.orbit.colorTextBadgeNeutral,
@@ -24,6 +25,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextBadgeWarning,
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextBadgeCritical,
       [TYPE_OPTIONS.DARK]: theme.orbit.colorTextBadgeDark,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.colorInkDark,
     },
   };
 

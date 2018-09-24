@@ -6,6 +6,7 @@ export const TYPE_OPTIONS = {
   WARNING: "warning",
   CRITICAL: "critical",
   DARK: "dark",
+  WHITE: "white",
 };
 
 export const TOKENS = {

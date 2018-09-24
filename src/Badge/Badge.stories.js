@@ -7,7 +7,7 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
-import TYPE_OPTIONS from "./consts";
+import { TYPE_OPTIONS } from "./consts";
 
 import Badge from "./index";
 

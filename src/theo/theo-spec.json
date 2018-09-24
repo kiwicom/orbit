@@ -209,7 +209,7 @@
       }
     },
     "colorTextAlertInfo": {
-      "value": "#07405c",
+      "value": "#003A69",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -2973,7 +2973,7 @@
       }
     },
     "paletteBlueDark": {
-      "value": "#07405c",
+      "value": "#003A69",
       "type": "color",
       "category": "Color palette",
       "meta": {

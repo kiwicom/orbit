@@ -849,7 +849,7 @@
       "name": "fontSizeHeadingTitle1"
     },
     {
-      "value": "rgb(7, 64, 92)",
+      "value": "rgb(0, 58, 105)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteBlueDark"
@@ -1888,7 +1888,7 @@
       "name": "colorTextButtonWarning"
     },
     {
-      "value": "rgb(7, 64, 92)",
+      "value": "rgb(0, 58, 105)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextAlertInfo"

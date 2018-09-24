@@ -10,7 +10,7 @@ jobs:
           command: npm i
       - run:
           name: Flow
-          command: npm run flow
+          command: npm run flow:check
       - run:
           name: Publish to NPM
           command: npm run ci-publish || true

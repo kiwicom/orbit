@@ -51,7 +51,7 @@ const IconList = () => (
         <Container key={icon}>
           <Icon size="large" color="primary" />
           <IconImport>
-            {`import ${iconName} from "@kiwicom/orbit-components/lib/icons/${iconName}`}
+            {`import ${iconName} from "@kiwicom/orbit-components/lib/icons/${iconName}"`}
           </IconImport>
         </Container>
       );

@@ -776,7 +776,9 @@ exports[`Large Modal should match snapshot 1`] = `
     }
   >
     <Modal__ModalWrapperContent
+      fixedClose={false}
       fixedFooter={true}
+      fullyScrolled={false}
       innerRef={[Function]}
       scrolled={false}
       size="large"
@@ -1163,6 +1165,7 @@ exports[`Large Modal should match snapshot 1`] = `
       }
     >
       <CloseElement
+        closable={true}
         onClose={[MockFunction]}
       />
       <ModalHeader

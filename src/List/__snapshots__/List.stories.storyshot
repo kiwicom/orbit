@@ -102,7 +102,7 @@ exports[`Storyshots List Default 1`] = `
             className="List__StyledList-fzpiIm cUVSEu"
           >
             <div
-              className="ListItem__Item-bhWwBk dblock"
+              className="ListItem__Item-bhWwBk cirUQp"
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
@@ -129,7 +129,7 @@ exports[`Storyshots List Default 1`] = `
               24,000 locations around the globe
             </div>
             <div
-              className="ListItem__Item-bhWwBk dblock"
+              className="ListItem__Item-bhWwBk cirUQp"
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
@@ -159,7 +159,7 @@ exports[`Storyshots List Default 1`] = `
               </strong>
             </div>
             <div
-              className="ListItem__Item-bhWwBk dblock"
+              className="ListItem__Item-bhWwBk cirUQp"
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
@@ -662,7 +662,7 @@ exports[`Storyshots List Different type and size 1`] = `
             className="List__StyledList-fzpiIm jUUXxU"
           >
             <div
-              className="ListItem__Item-bhWwBk dblock"
+              className="ListItem__Item-bhWwBk cirUQp"
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
@@ -689,7 +689,7 @@ exports[`Storyshots List Different type and size 1`] = `
               24,000 locations around the globe
             </div>
             <div
-              className="ListItem__Item-bhWwBk dblock"
+              className="ListItem__Item-bhWwBk cirUQp"
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
@@ -719,7 +719,7 @@ exports[`Storyshots List Different type and size 1`] = `
               </strong>
             </div>
             <div
-              className="ListItem__Item-bhWwBk dblock"
+              className="ListItem__Item-bhWwBk cirUQp"
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
@@ -1278,7 +1278,7 @@ exports[`Storyshots List Playground 1`] = `
             className="List__StyledList-fzpiIm cUVSEu"
           >
             <div
-              className="ListItem__Item-bhWwBk dblock"
+              className="ListItem__Item-bhWwBk cirUQp"
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
@@ -1305,7 +1305,7 @@ exports[`Storyshots List Playground 1`] = `
               24,000 locations around the globe
             </div>
             <div
-              className="ListItem__Item-bhWwBk dblock"
+              className="ListItem__Item-bhWwBk cirUQp"
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
@@ -1332,7 +1332,7 @@ exports[`Storyshots List Playground 1`] = `
               24,000 locations around the globe
             </div>
             <div
-              className="ListItem__Item-bhWwBk dblock"
+              className="ListItem__Item-bhWwBk cirUQp"
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
@@ -1912,7 +1912,7 @@ exports[`Storyshots List With carrier 1`] = `
             className="List__StyledList-fzpiIm jUUXxU"
           >
             <div
-              className="ListItem__Item-bhWwBk dblock"
+              className="ListItem__Item-bhWwBk cirUQp"
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
@@ -1933,7 +1933,7 @@ exports[`Storyshots List With carrier 1`] = `
               Airline: Ryanair
             </div>
             <div
-              className="ListItem__Item-bhWwBk dblock"
+              className="ListItem__Item-bhWwBk cirUQp"
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
@@ -1960,7 +1960,7 @@ exports[`Storyshots List With carrier 1`] = `
               Flight no: FR 1337
             </div>
             <div
-              className="ListItem__Item-bhWwBk dblock"
+              className="ListItem__Item-bhWwBk cirUQp"
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
@@ -1987,7 +1987,7 @@ exports[`Storyshots List With carrier 1`] = `
               PNR: TEST0X0
             </div>
             <div
-              className="ListItem__Item-bhWwBk dblock"
+              className="ListItem__Item-bhWwBk cirUQp"
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"

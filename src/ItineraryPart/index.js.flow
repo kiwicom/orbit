@@ -1,0 +1,11 @@
+// @flow
+import * as React from "react";
+
+export type ItineraryDate = Date | string;
+
+export type Props = {|
+  +children: React.Node,
+  +date: ItineraryDate,
+|};
+
+declare export default React$ComponentType<Props>;

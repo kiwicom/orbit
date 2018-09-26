@@ -1,0 +1,1170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ItineraryPart Playground 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Playground
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div
+            className="ItineraryPart__Wrapper-liJScA kDssFL"
+          >
+            <div
+              className="ItineraryPart__ItineraryDate-cUZJuD fMNBDr"
+            >
+              <svg
+                className={undefined}
+                fill="currentColor"
+                height="16px"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "color": undefined,
+                    "verticalAlign": "middle",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="16px"
+              >
+                <path
+                  d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h5v5H7v-5z"
+                />
+              </svg>
+              Wed, Sep 19
+            </div>
+            <div
+              className="ItineraryPart__Timeline-kvfSYg sGNaI"
+            >
+              <div
+                className="TripSegment__Wrapper-kYxYpR gPqYRh"
+              >
+                <div
+                  className="TripSegment__Milestone-iUmhsN bOhxXy"
+                >
+                  <svg
+                    className={undefined}
+                    fill="currentColor"
+                    height="16px"
+                    preserveAspectRatio="xMidYMid meet"
+                    style={
+                      Object {
+                        "color": "#7f91a8",
+                        "verticalAlign": "middle",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="16px"
+                  >
+                    <path
+                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                    />
+                  </svg>
+                  <div
+                    className="TripSegment__ArrowDecor-cgshzY wbVNi"
+                  />
+                </div>
+                <div
+                  className="TripSegment__StyledSegment-iXnqYi ibzVsL"
+                >
+                  <div
+                    className="TripSegment__WrapperInner-dJGFAt eOKJIY"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="TripSegment__Wrapper-kYxYpR gPqYRh"
+                    >
+                      <div
+                        className="TripSegment__Dates-bScgup cdRWnD"
+                      >
+                        <div
+                          className="TripSegment__Time-ftYvIB dNMQiU"
+                        >
+                          <p
+                            className="Text__StyledText-guhEiE ixdYMZ"
+                          >
+                            11:20
+                          </p>
+                        </div>
+                        <div
+                          className="TripSegment__Time-ftYvIB dNMQiU"
+                        >
+                          <p
+                            className="Text__StyledText-guhEiE ixdYMZ"
+                          >
+                            5:45
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        className="TripSegment__FlightParts-hPySPO klFzGi"
+                      >
+                        <p
+                          className="Text__StyledText-guhEiE kLuVzx"
+                        >
+                          Moscow
+                           
+                          VKO
+                        </p>
+                        <p
+                          className="Text__StyledText-guhEiE kLuVzx"
+                        >
+                          Berlin
+                           
+                          TXL
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="TripSegment__WrapperCarrier-ioGuFq bwzTgR"
+                    >
+                      <p
+                        className="Text__StyledText-guhEiE eGYiLp"
+                      >
+                        ~5:40
+                      </p>
+                      <div
+                        className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"
+                        size="medium"
+                      >
+                        <img
+                          alt="Ryanair"
+                          className="CarrierLogo__StyledImage-fRYacf gptvtt"
+                          src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
+                          srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
+                          title="Ryanair"
+                        />
+                      </div>
+                      <div
+                        className="TripSegment__Chevrones-hCfRcS bArNX"
+                      >
+                        <svg
+                          className={undefined}
+                          fill="currentColor"
+                          height="32px"
+                          preserveAspectRatio="xMidYMid meet"
+                          style={
+                            Object {
+                              "color": "#7f91a8",
+                              "verticalAlign": "middle",
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                          width="32px"
+                        >
+                          <path
+                            d="M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="TripSegment__ChildrenWrapper-fICQOn hstYwT"
+                  >
+                    <div
+                      className="List__StyledList-fzpiIm jUUXxU"
+                    >
+                      <div
+                        className="ListItem__Item-bhWwBk dblock"
+                      >
+                        <div
+                          className="ListItem__IconContainer-cWSXoS dEkgXq"
+                        >
+                          <div
+                            className="CarrierLogo__StyledCarrierLogo-ieqjqT kvJfMi"
+                            size="large"
+                          >
+                            <img
+                              alt="Ryanair"
+                              className="CarrierLogo__StyledImage-fRYacf hVCEgl"
+                              src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
+                              srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
+                              title="Ryanair"
+                            />
+                          </div>
+                        </div>
+                        Airline: Ryanair
+                      </div>
+                      <div
+                        className="ListItem__Item-bhWwBk dblock"
+                      >
+                        <div
+                          className="ListItem__IconContainer-cWSXoS dEkgXq"
+                        >
+                          <svg
+                            className={undefined}
+                            fill="currentColor"
+                            height="24px"
+                            preserveAspectRatio="xMidYMid meet"
+                            style={
+                              Object {
+                                "color": "#7f91a8",
+                                "verticalAlign": "middle",
+                              }
+                            }
+                            viewBox="0 0 24 24"
+                            width="24px"
+                          >
+                            <path
+                              d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
+                            />
+                          </svg>
+                        </div>
+                        Flight no: D8 1762
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Itinerary
+                      </span>
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            date
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                Wed, Sep 19
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          TripSegment
+                        </span>
+                        <span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              carrier
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span>
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      code
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      FR
+                                      "
+                                    </span>
+                                    , 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      type
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      airline
+                                      "
+                                    </span>
+                                    , 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      name
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      Ryanair
+                                      "
+                                    </span>
+                                    }
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              duration
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  5:40
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              type
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  airline
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              departure
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span>
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      city
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      Berlin
+                                      "
+                                    </span>
+                                    , 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      code
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      TXL
+                                      "
+                                    </span>
+                                    }
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              departureTime
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  5:45
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              arrival
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span>
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      city
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      Moscow
+                                      "
+                                    </span>
+                                    , 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      code
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      VKO
+                                      "
+                                    </span>
+                                    }
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              arrivalTime
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  11:20
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <br />
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            List
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                size
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    "
+                                    small
+                                    "
+                                  </span>
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                type
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    "
+                                    secondary
+                                    "
+                                  </span>
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              ListItem
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  icon
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span>
+                                      {
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        &lt;CarrierLogo /&gt;
+                                      </span>
+                                      }
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 78,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              Airline: Ryanair
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              ListItem
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              ListItem
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  icon
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span>
+                                      {
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        &lt;InformationCircle /&gt;
+                                      </span>
+                                      }
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 78,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              Flight no: D8 1762
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              ListItem
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            List
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          TripSegment
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        Itinerary
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

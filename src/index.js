@@ -46,3 +46,5 @@ export { default as Separator } from "./Separator";
 export { default as Textarea } from "./Textarea";
 export { default as Tile } from "./Tile";
 export { defaultTokens as defaultTheme, getTokens } from "@kiwicom/orbit-design-tokens";
+export { default as ItineraryPart } from "./ItineraryPart";
+export { default as TripSegment } from "./TripSegment";

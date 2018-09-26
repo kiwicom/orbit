@@ -13,7 +13,7 @@ import {
 
 import type { Props } from "./index";
 
-const StyledText = styled(({ element, children, className }) => {
+export const StyledText = styled(({ element, children, className }) => {
   const TextElement = element;
   return <TextElement className={className}>{children}</TextElement>;
 })`

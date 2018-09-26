@@ -1,5 +1,4 @@
 // @flow
-import defaultTokens from "../defaultTokens";
 import ListItem from "./ListItem";
 
 export type Size = "small" | "normal" | "large";
@@ -10,7 +9,6 @@ export type Props = {|
   +children: Array<React$Element<typeof ListItem>> | React$Element<typeof ListItem>,
   +size?: Size,
   +type?: Type,
-  +theme?: typeof defaultTokens,
 |};
 
 declare export default React$ComponentType<Props>;

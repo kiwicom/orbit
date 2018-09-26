@@ -1,10 +1,8 @@
 // @flow
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 export type Props = {|
   +children: React$Node,
   +icon?: React$Element<any>,
-  +theme?: typeof defaultTokens,
 |};
 
 declare export default React$ComponentType<Props>;

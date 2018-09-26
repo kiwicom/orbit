@@ -99,7 +99,7 @@ exports[`Storyshots Button Basic buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK gPVtSP"
+            className="Button__StyledButton-jJDkJK cUoyoc"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -450,7 +450,7 @@ exports[`Storyshots Button Button as a link 1`] = `
           }
         >
           <a
-            className="Button__StyledButton-jJDkJK dmnpWy"
+            className="Button__StyledButton-jJDkJK gPjmYR"
             disabled={false}
             href="https://kiwi.com"
             onClick={[Function]}
@@ -897,7 +897,7 @@ exports[`Storyshots Button Button with icons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK iHrwnu"
+            className="Button__StyledButton-jJDkJK gmdAjy"
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -1279,7 +1279,7 @@ exports[`Storyshots Button Button with icons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK fjPYUt"
+            className="Button__StyledButton-jJDkJK fJgbYr"
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -1683,7 +1683,7 @@ exports[`Storyshots Button Default 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK gPVtSP"
+            className="Button__StyledButton-jJDkJK cUoyoc"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -1940,7 +1940,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK idyYSw"
+            className="Button__StyledButton-jJDkJK kbgEaX"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -2344,7 +2344,7 @@ exports[`Storyshots Button Playground 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK jRZvvx"
+            className="Button__StyledButton-jJDkJK fjwApn"
             disabled={false}
             href={undefined}
             onClick={[Function]}
@@ -3018,7 +3018,7 @@ exports[`Storyshots Button Social buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK fYPCwM"
+            className="Button__StyledButton-jJDkJK bvheFT"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -3297,7 +3297,7 @@ exports[`Storyshots Button Social buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK cKVhsR"
+            className="Button__StyledButton-jJDkJK iigxVA"
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -3668,7 +3668,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK hxCLJB"
+            className="Button__StyledButton-jJDkJK dtGfi"
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -3966,7 +3966,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK jKJsWg"
+            className="Button__StyledButton-jJDkJK jFCQwL"
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -4264,7 +4264,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK dOdvTx"
+            className="Button__StyledButton-jJDkJK dFKcra"
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -4562,7 +4562,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK tjRpe"
+            className="Button__StyledButton-jJDkJK iPrRjr"
             disabled={undefined}
             onClick={[Function]}
             size="small"

@@ -123,7 +123,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "borderWidthInput": "1px",
           "borderWidthInputFocus": "2px",
           "boxShadowActionable": "0 2px 4px 0 rgba(23, 27, 30, 0.1)",
-          "boxShadowButtonFocus": "0 0 4px 1px rgba(1,118,210,0.3)",
+          "boxShadowButtonFocus": "0 0 4px 1px rgba(1, 118, 210, 0.3)",
           "boxShadowElevatedLevel1": "0 4px 12px 0 rgba(23, 27, 30, 0.15)",
           "boxShadowModal": "0 20px 60px 0 rgba(23, 27, 30, 0.4)",
           "colorAlertIconCritical": "#d21c1c",
@@ -403,7 +403,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
     width={0}
   >
     <Component
-      className="ButtonLink__StyledButtonLink-eyUiPe iJEYXn"
+      className="ButtonLink__StyledButtonLink-eyUiPe czlUus"
       component="button"
       external={true}
       href="https://kiwi.com"
@@ -516,7 +516,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
             "borderWidthInput": "1px",
             "borderWidthInputFocus": "2px",
             "boxShadowActionable": "0 2px 4px 0 rgba(23, 27, 30, 0.1)",
-            "boxShadowButtonFocus": "0 0 4px 1px rgba(1,118,210,0.3)",
+            "boxShadowButtonFocus": "0 0 4px 1px rgba(1, 118, 210, 0.3)",
             "boxShadowElevatedLevel1": "0 4px 12px 0 rgba(23, 27, 30, 0.15)",
             "boxShadowModal": "0 20px 60px 0 rgba(23, 27, 30, 0.4)",
             "colorAlertIconCritical": "#d21c1c",
@@ -796,7 +796,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
       width={0}
     >
       <a
-        className="ButtonLink__StyledButtonLink-eyUiPe iJEYXn"
+        className="ButtonLink__StyledButtonLink-eyUiPe czlUus"
         href="https://kiwi.com"
         size="normal"
         target="_blank"
@@ -935,7 +935,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
           "borderWidthInput": "1px",
           "borderWidthInputFocus": "2px",
           "boxShadowActionable": "0 2px 4px 0 rgba(23, 27, 30, 0.1)",
-          "boxShadowButtonFocus": "0 0 4px 1px rgba(1,118,210,0.3)",
+          "boxShadowButtonFocus": "0 0 4px 1px rgba(1, 118, 210, 0.3)",
           "boxShadowElevatedLevel1": "0 4px 12px 0 rgba(23, 27, 30, 0.15)",
           "boxShadowModal": "0 20px 60px 0 rgba(23, 27, 30, 0.4)",
           "colorAlertIconCritical": "#d21c1c",
@@ -1215,7 +1215,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
     width={0}
   >
     <Component
-      className="ButtonLink__StyledButtonLink-eyUiPe bpEJMi"
+      className="ButtonLink__StyledButtonLink-eyUiPe bgQSN"
       component="button"
       external={false}
       href="https://kiwi.com"
@@ -1330,7 +1330,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
             "borderWidthInput": "1px",
             "borderWidthInputFocus": "2px",
             "boxShadowActionable": "0 2px 4px 0 rgba(23, 27, 30, 0.1)",
-            "boxShadowButtonFocus": "0 0 4px 1px rgba(1,118,210,0.3)",
+            "boxShadowButtonFocus": "0 0 4px 1px rgba(1, 118, 210, 0.3)",
             "boxShadowElevatedLevel1": "0 4px 12px 0 rgba(23, 27, 30, 0.15)",
             "boxShadowModal": "0 20px 60px 0 rgba(23, 27, 30, 0.4)",
             "colorAlertIconCritical": "#d21c1c",
@@ -1610,7 +1610,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
       width={0}
     >
       <a
-        className="ButtonLink__StyledButtonLink-eyUiPe bpEJMi"
+        className="ButtonLink__StyledButtonLink-eyUiPe bgQSN"
         href="https://kiwi.com"
         size="normal"
       >
@@ -1724,7 +1724,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                 "borderWidthInput": "1px",
                 "borderWidthInputFocus": "2px",
                 "boxShadowActionable": "0 2px 4px 0 rgba(23, 27, 30, 0.1)",
-                "boxShadowButtonFocus": "0 0 4px 1px rgba(1,118,210,0.3)",
+                "boxShadowButtonFocus": "0 0 4px 1px rgba(1, 118, 210, 0.3)",
                 "boxShadowElevatedLevel1": "0 4px 12px 0 rgba(23, 27, 30, 0.15)",
                 "boxShadowModal": "0 20px 60px 0 rgba(23, 27, 30, 0.4)",
                 "colorAlertIconCritical": "#d21c1c",
@@ -2112,7 +2112,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "borderWidthInput": "1px",
                   "borderWidthInputFocus": "2px",
                   "boxShadowActionable": "0 2px 4px 0 rgba(23, 27, 30, 0.1)",
-                  "boxShadowButtonFocus": "0 0 4px 1px rgba(1,118,210,0.3)",
+                  "boxShadowButtonFocus": "0 0 4px 1px rgba(1, 118, 210, 0.3)",
                   "boxShadowElevatedLevel1": "0 4px 12px 0 rgba(23, 27, 30, 0.15)",
                   "boxShadowModal": "0 20px 60px 0 rgba(23, 27, 30, 0.4)",
                   "colorAlertIconCritical": "#d21c1c",
@@ -2536,7 +2536,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                 "borderWidthInput": "1px",
                 "borderWidthInputFocus": "2px",
                 "boxShadowActionable": "0 2px 4px 0 rgba(23, 27, 30, 0.1)",
-                "boxShadowButtonFocus": "0 0 4px 1px rgba(1,118,210,0.3)",
+                "boxShadowButtonFocus": "0 0 4px 1px rgba(1, 118, 210, 0.3)",
                 "boxShadowElevatedLevel1": "0 4px 12px 0 rgba(23, 27, 30, 0.15)",
                 "boxShadowModal": "0 20px 60px 0 rgba(23, 27, 30, 0.4)",
                 "colorAlertIconCritical": "#d21c1c",
@@ -2924,7 +2924,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "borderWidthInput": "1px",
                   "borderWidthInputFocus": "2px",
                   "boxShadowActionable": "0 2px 4px 0 rgba(23, 27, 30, 0.1)",
-                  "boxShadowButtonFocus": "0 0 4px 1px rgba(1,118,210,0.3)",
+                  "boxShadowButtonFocus": "0 0 4px 1px rgba(1, 118, 210, 0.3)",
                   "boxShadowElevatedLevel1": "0 4px 12px 0 rgba(23, 27, 30, 0.15)",
                   "boxShadowModal": "0 20px 60px 0 rgba(23, 27, 30, 0.4)",
                   "colorAlertIconCritical": "#d21c1c",
@@ -3312,7 +3312,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                     "borderWidthInput": "1px",
                     "borderWidthInputFocus": "2px",
                     "boxShadowActionable": "0 2px 4px 0 rgba(23, 27, 30, 0.1)",
-                    "boxShadowButtonFocus": "0 0 4px 1px rgba(1,118,210,0.3)",
+                    "boxShadowButtonFocus": "0 0 4px 1px rgba(1, 118, 210, 0.3)",
                     "boxShadowElevatedLevel1": "0 4px 12px 0 rgba(23, 27, 30, 0.15)",
                     "boxShadowModal": "0 20px 60px 0 rgba(23, 27, 30, 0.4)",
                     "colorAlertIconCritical": "#d21c1c",

@@ -6,6 +6,11 @@ import defaultTokens from "../defaultTokens";
 
 import type { Props } from "./index";
 
+const getBorderColor = () => ({ theme, hasError, disabled, checked }) =>
+  hasError && !disabled && !checked
+    ? theme.orbit.borderColorCheckboxRadioError
+    : theme.orbit.borderColorCheckboxRadio;
+
 const Glyph = styled.span`
   visibility: hidden;
   width: 12px;
@@ -29,7 +34,6 @@ const IconContainer = styled.div`
   height: ${({ theme }) => theme.orbit.heightCheckbox};
   width: ${({ theme }) => theme.orbit.widthCheckbox};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusCircle};
-  border: 1px solid ${({ tokens }) => tokens.borderColor};
   transform: scale(1);
   transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   }
@@ -99,14 +103,18 @@ const Label = styled(({ tokens, disabled, theme, type, ...props }) => (
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
   position: relative;
 
+  ${IconContainer} {
+    border: 1px solid ${getBorderColor()};
+  }
+
   &:hover ${IconContainer} {
     border-color: ${({ disabled, theme }) =>
       !disabled && theme.orbit.borderColorCheckboxRadioHover};
   }
 
   &:active ${IconContainer} {
-    border-color: ${({ disabled, theme, tokens }) =>
-      disabled ? tokens.borderColor : theme.orbit.borderColorCheckboxRadioActive};
+    border-color: ${({ disabled, theme }) =>
+      disabled ? getBorderColor() : theme.orbit.borderColorCheckboxRadioActive};
     transform: ${({ disabled, theme }) =>
       !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
   }
@@ -123,37 +131,25 @@ Label.defaultProps = {
   theme: defaultTokens,
 };
 
-const Radio = (props: Props) => {
-  const {
-    label,
-    value,
-    hasError = false,
-    disabled = false,
-    checked = false,
-    onChange,
-    theme = defaultTokens,
-    info,
-  } = props;
-
-  const tokens = {
-    borderColor:
-      hasError && !disabled && !checked
-        ? theme.orbit.borderColorCheckboxRadioError
-        : theme.orbit.borderColorCheckboxRadio,
-  };
-
-  return (
-    <Label disabled={disabled} tokens={tokens}>
-      <Input value={value} type="radio" disabled={disabled} checked={checked} onChange={onChange} />
-      <IconContainer tokens={tokens}>
-        <Glyph disabled={disabled} />
-      </IconContainer>
-      <TextContainer>
-        {label && <LabelText>{label}</LabelText>}
-        {info && <Info>{info}</Info>}
-      </TextContainer>
-    </Label>
-  );
-};
+const Radio = ({
+  label,
+  value,
+  hasError = false,
+  disabled = false,
+  checked = false,
+  onChange,
+  info,
+}: Props) => (
+  <Label disabled={disabled} hasError={hasError} checked={checked}>
+    <Input value={value} type="radio" disabled={disabled} checked={checked} onChange={onChange} />
+    <IconContainer>
+      <Glyph disabled={disabled} />
+    </IconContainer>
+    <TextContainer>
+      {label && <LabelText>{label}</LabelText>}
+      {info && <Info>{info}</Info>}
+    </TextContainer>
+  </Label>
+);
 
 export default Radio;

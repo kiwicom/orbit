@@ -19,6 +19,7 @@ export type Props = {|
   +href?: string,
   +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
   +external?: boolean,
+  +circled?: boolean,
   +bordered?: boolean,
   +disabled?: boolean,
   +block?: boolean,

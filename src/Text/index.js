@@ -13,14 +13,45 @@ import {
 
 import type { Props } from "./index";
 
+const getTypeToken = () => ({ theme, type }) => {
+  const typeTokens = {
+    [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextPrimary,
+    [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextSecondary,
+    [TYPE_OPTIONS.ATTENTION]: theme.orbit.colorTextAttention,
+    [TYPE_OPTIONS.INFO]: theme.orbit.colorTextInfo,
+    [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorTextSuccess,
+    [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextWarning,
+    [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextCritical,
+    [TYPE_OPTIONS.WHITE]: theme.orbit.colorTextWhite,
+  };
+  return typeTokens[type];
+};
+
+const getWeightToken = () => ({ theme, weight }) => {
+  const weightTokens = {
+    [WEIGHT_OPTIONS.NORMAL]: theme.orbit.fontWeightNormal,
+    [WEIGHT_OPTIONS.BOLD]: theme.orbit.fontWeightBold,
+  };
+  return weightTokens[weight];
+};
+
+const getSizeToken = () => ({ theme, size }) => {
+  const sizeTokens = {
+    [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeTextNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeTextSmall,
+  };
+  return sizeTokens[size];
+};
+
 const StyledText = styled(({ element, children, className }) => {
   const TextElement = element;
   return <TextElement className={className}>{children}</TextElement>;
 })`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ tokens, size }) => tokens.sizeText[size]};
-  font-weight: ${({ tokens, weight }) => tokens.weightText[weight]};
-  color: ${({ tokens, type }) => tokens.colorText[type]};
+  font-size: ${getSizeToken()};
+  font-weight: ${getWeightToken()};
+  color: ${getTypeToken()};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   text-align: ${({ align }) => align};
   text-transform: ${({ uppercase }) => uppercase && `uppercase`};
@@ -40,44 +71,19 @@ const Text = ({
   element = ELEMENT_OPTIONS.P,
   uppercase = false,
   italic = false,
-  theme = defaultTokens,
   children,
-}: Props) => {
-  const tokens = {
-    colorText: {
-      [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextPrimary,
-      [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextSecondary,
-      [TYPE_OPTIONS.ATTENTION]: theme.orbit.colorTextAttention,
-      [TYPE_OPTIONS.INFO]: theme.orbit.colorTextInfo,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorTextSuccess,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextWarning,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextCritical,
-      [TYPE_OPTIONS.WHITE]: theme.orbit.colorTextWhite,
-    },
-    weightText: {
-      [WEIGHT_OPTIONS.NORMAL]: theme.orbit.fontWeightNormal,
-      [WEIGHT_OPTIONS.BOLD]: theme.orbit.fontWeightBold,
-    },
-    sizeText: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeTextNormal,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeTextSmall,
-    },
-  };
-  return (
-    <StyledText
-      tokens={tokens}
-      type={type}
-      size={size}
-      weight={weight}
-      align={align}
-      element={element}
-      uppercase={uppercase}
-      italic={italic}
-    >
-      {children}
-    </StyledText>
-  );
-};
+}: Props) => (
+  <StyledText
+    type={type}
+    size={size}
+    weight={weight}
+    align={align}
+    element={element}
+    uppercase={uppercase}
+    italic={italic}
+  >
+    {children}
+  </StyledText>
+);
 
 export default Text;

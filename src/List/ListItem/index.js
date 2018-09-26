@@ -11,9 +11,9 @@ export const Item = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: ${({ theme }) => theme.orbit.spaceXSmall};
+  margin-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
 
-  &:only-child {
+  &:last-child {
     margin: 0;
   }
 `;

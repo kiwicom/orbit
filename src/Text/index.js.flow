@@ -1,5 +1,4 @@
 // @flow
-import defaultTokens from "../defaultTokens";
 
 type Align = "left" | "center" | "right";
 type Element = "p" | "span" | "div";
@@ -24,7 +23,6 @@ export type Props = {|
   +uppercase?: boolean,
   +element?: Element,
   +children: React$Node,
-  +theme?: typeof defaultTokens,
 |};
 
 declare export default React$ComponentType<Props>;

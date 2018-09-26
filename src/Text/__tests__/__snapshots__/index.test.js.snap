@@ -387,29 +387,6 @@ exports[`Text should match snapshot 1`] = `
       },
     }
   }
-  tokens={
-    Object {
-      "colorText": Object {
-        "attention": "#171b1e",
-        "critical": "#d21c1c",
-        "info": "#0176D2",
-        "primary": "#46515e",
-        "secondary": "#7f91a8",
-        "success": "#46B655",
-        "warning": "#f9971e",
-        "white": "#fff",
-      },
-      "sizeText": Object {
-        "large": "16px",
-        "normal": "14px",
-        "small": "12px",
-      },
-      "weightText": Object {
-        "bold": "700",
-        "normal": "400",
-      },
-    }
-  }
   type="primary"
   uppercase={false}
   weight="normal"

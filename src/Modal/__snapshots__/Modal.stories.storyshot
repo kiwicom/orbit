@@ -217,7 +217,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       className="ModalFooter__StyledChild-bPOqEy jRvsYD"
                     >
                       <button
-                        className="Button__StyledButton-jJDkJK eIDYPh"
+                        className="Button__StyledButton-jJDkJK lmUjYq"
                         disabled={undefined}
                         size="normal"
                         target={undefined}
@@ -255,7 +255,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       className="ModalFooter__StyledChild-bPOqEy xynvR"
                     >
                       <button
-                        className="Button__StyledButton-jJDkJK jeAcNX"
+                        className="Button__StyledButton-jJDkJK iyNAeV"
                         disabled={undefined}
                         size="normal"
                         target={undefined}

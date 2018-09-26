@@ -29,7 +29,10 @@ describe("Icon with color", () => {
   });
 });
 describe("Icon with props", () => {
-  const component = mount(<Accommodation size={size} customColor={customColor} />);
+  const dataTest = "test";
+  const component = mount(
+    <Accommodation size={size} customColor={customColor} dataTest={dataTest} />,
+  );
   it("Renders SVG", () => {
     expect(component.find("svg").exists()).toBe(true);
   });
@@ -37,6 +40,7 @@ describe("Icon with props", () => {
     const svg = component.find("svg");
     expect(svg.prop("height")).toBe(ICON_SIZES[size]);
     expect(svg.prop("width")).toBe(ICON_SIZES[size]);
+    expect(svg.render().prop("data-test")).toBe(dataTest);
   });
   it("SVG contains default color", () => {
     const svg = component.find("svg");

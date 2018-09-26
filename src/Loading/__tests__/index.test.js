@@ -6,6 +6,7 @@ import Loading from "../index";
 import TYPE_OPTIONS from "../consts";
 
 describe("Loading", () => {
+  const dataTest = "test";
   it("should match snapshot", () => {
     const component = shallow(<Loading />);
     expect(component).toMatchSnapshot();
@@ -35,6 +36,12 @@ describe("Loading", () => {
     ).toEqual(loader);
     expect(loadingText.text()).toBe(text);
   });
+
+  it("should have data-test", () => {
+    const component = shallow(<Loading dataTest={dataTest} />);
+    expect(component.render().prop("data-test")).toBe(dataTest);
+  });
+
   it("should render text", () => {
     const text = "Test test";
     const component = shallow(<Loading text={text} />);

@@ -100,6 +100,7 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
         >
           <div
             className="CarrierLogo__StyledCarrierLogo-ieqjqT joVRnn"
+            data-test={undefined}
             size="large"
           >
             <img
@@ -519,6 +520,7 @@ exports[`Storyshots CarrierLogo Non-existing carrier 1`] = `
         >
           <div
             className="CarrierLogo__StyledCarrierLogo-ieqjqT kvJfMi"
+            data-test={undefined}
             size="large"
           >
             <img
@@ -845,6 +847,7 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
         >
           <div
             className="CarrierLogo__StyledCarrierLogo-ieqjqT joVRnn"
+            data-test={undefined}
             size="large"
           >
             <img
@@ -1324,6 +1327,7 @@ exports[`Storyshots CarrierLogo One carrier 1`] = `
         >
           <div
             className="CarrierLogo__StyledCarrierLogo-ieqjqT kvJfMi"
+            data-test="test"
             size="large"
           >
             <img
@@ -1503,6 +1507,33 @@ exports[`Storyshots CarrierLogo One carrier 1`] = `
                             </span>
                           </span>
                         </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          dataTest
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              test
+                              "
+                            </span>
+                          </span>
+                        </span>
                          
                       </span>
                     </span>
@@ -1627,6 +1658,7 @@ exports[`Storyshots CarrierLogo Two carriers 1`] = `
         >
           <div
             className="CarrierLogo__StyledCarrierLogo-ieqjqT joVRnn"
+            data-test={undefined}
             size="large"
           >
             <img

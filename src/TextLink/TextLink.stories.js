@@ -112,6 +112,7 @@ storiesOf("TextLink", module)
     const title = text("Text", "Custom link");
     const rel = text("Rel", undefined);
     const Icon = getIcon(getIcons("ChevronRight"));
+    const dataTest = text("dataTest", "test");
 
     return {
       info:
@@ -128,6 +129,7 @@ storiesOf("TextLink", module)
                   type={type}
                   rel={validate(rel)}
                   icon={Icon && <Icon />}
+                  dataTest={dataTest}
                 >
                   {title}
                 </TextLink>

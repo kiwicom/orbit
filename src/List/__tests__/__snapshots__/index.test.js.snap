@@ -2,6 +2,7 @@
 
 exports[`List with custom colored icons should match snapshot 1`] = `
 <List__StyledList
+  dataTest="test"
   size="small"
   theme={
     Object {
@@ -387,6 +388,7 @@ exports[`List with custom colored icons should match snapshot 1`] = `
   type="secondary"
 >
   <ListItem
+    dataTest="test"
     icon={
       <Check
         color="success"
@@ -396,6 +398,7 @@ exports[`List with custom colored icons should match snapshot 1`] = `
     This contains a nice sentence
   </ListItem>
   <ListItem
+    dataTest="test"
     icon={
       <Check
         color="success"
@@ -405,6 +408,7 @@ exports[`List with custom colored icons should match snapshot 1`] = `
     This contains a nice sentence
   </ListItem>
   <ListItem
+    dataTest="test"
     icon={
       <Check
         color="success"

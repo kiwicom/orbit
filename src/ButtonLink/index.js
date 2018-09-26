@@ -111,6 +111,7 @@ export const StyledButtonLink = styled(
     transparent,
     style,
     theme,
+    dataTest,
     ...props
   }) => {
     let Component = component;
@@ -119,7 +120,11 @@ export const StyledButtonLink = styled(
       Component = "a";
     }
 
-    return <Component {...props}>{children}</Component>;
+    return (
+      <Component data-test={dataTest} {...props}>
+        {children}
+      </Component>
+    );
   },
 )`
   font-family: ${({ theme }) => theme.orbit.fontFamily};

@@ -100,6 +100,7 @@ exports[`Storyshots TextLink Link with icon 1`] = `
         >
           <a
             className="TextLink__StyledTextLink-cKDOFV ebltjr"
+            data-test={undefined}
             href="https://kiwi.com"
             onClick={[Function]}
             rel={undefined}
@@ -111,6 +112,7 @@ exports[`Storyshots TextLink Link with icon 1`] = `
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -430,6 +432,7 @@ exports[`Storyshots TextLink Playground 1`] = `
         >
           <a
             className="TextLink__StyledTextLink-cKDOFV cElmdJ"
+            data-test="test"
             href="https://kiwi.com"
             onClick={[Function]}
             rel={undefined}
@@ -441,6 +444,7 @@ exports[`Storyshots TextLink Playground 1`] = `
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -678,6 +682,36 @@ exports[`Storyshots TextLink Playground 1`] = `
                               </span>
                             </span>
                           </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                test
+                                "
+                              </span>
+                            </span>
+                          </span>
                           <br />
                         </span>
                       </span>
@@ -841,6 +875,7 @@ exports[`Storyshots TextLink Primary link 1`] = `
         >
           <a
             className="TextLink__StyledTextLink-cKDOFV ebltjr"
+            data-test={undefined}
             href="https://kiwi.com"
             onClick={[Function]}
             rel={undefined}
@@ -1188,6 +1223,7 @@ exports[`Storyshots TextLink Secondary link 1`] = `
         >
           <a
             className="TextLink__StyledTextLink-cKDOFV cElmdJ"
+            data-test={undefined}
             href="https://kiwi.com"
             onClick={[Function]}
             rel={undefined}

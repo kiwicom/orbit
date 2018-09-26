@@ -22,6 +22,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
       },
     ]
   }
+  dataTest="test"
 >
   <CarrierLogo__StyledCarrierLogo
     carriers={
@@ -44,6 +45,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
         },
       ]
     }
+    data-test="test"
     size="large"
     theme={
       Object {
@@ -448,6 +450,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
   >
     <div
       className="CarrierLogo__StyledCarrierLogo-ieqjqT joVRnn"
+      data-test="test"
       size="large"
     >
       <CarrierLogo__StyledImage

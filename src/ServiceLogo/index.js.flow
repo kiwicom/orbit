@@ -1,4 +1,5 @@
 // @flow
+import type { Globals } from "../common/common.js.flow";
 
 export type Name =
   | "AirHelp"
@@ -22,6 +23,7 @@ export type Props = {|
   +name: Name,
   +size?: Size,
   +grayScale?: boolean,
+  ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;

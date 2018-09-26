@@ -1,5 +1,5 @@
 // @flow
-
+import type { Globals } from "../../common/common.js.flow";
 import Illustration from "../../Illustration";
 
 export type Props = {|
@@ -8,6 +8,7 @@ export type Props = {|
   +title?: React$Node,
   +description?: React$Node,
   +suppressed?: boolean,
+  ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;

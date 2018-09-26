@@ -152,11 +152,12 @@ const Select = ({
   onBlur,
   onFocus,
   options,
+  dataTest,
   prefix,
 }: Props) => {
   const filled = !!value;
   return (
-    <label>
+    <label data-test={dataTest}>
       {label && (
         <FormLabel filled={filled} disabled={disabled}>
           {label}

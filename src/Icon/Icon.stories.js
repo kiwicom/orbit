@@ -23,6 +23,7 @@ storiesOf("Icon", module)
     const size = select("Size", Object.keys(ICON_SIZES), "medium");
     const color = select("Color", Object.keys(ICON_COLORS), "primary");
     const source = select("Icon", Object.keys(Icons), "Airplane");
+    const dataTest = text("dataTest", "test");
     const Icon = Icons[source];
     return {
       info:
@@ -31,7 +32,7 @@ storiesOf("Icon", module)
         {
           sections: [
             {
-              sectionFn: () => <Icon size={size} color={color} />,
+              sectionFn: () => <Icon size={size} color={color} dataTest={dataTest} />,
             },
           ],
         },

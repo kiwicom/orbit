@@ -10,7 +10,10 @@ const onChange = jest.fn();
 const value = "option";
 
 describe(`Default CheckBox`, () => {
-  const component = shallow(<Radio label={label} onChange={onChange} value={value} />);
+  const dataTest = "test";
+  const component = shallow(
+    <Radio label={label} onChange={onChange} value={value} dataTest={dataTest} />,
+  );
   it("should contain a label", () => {
     expect(
       component
@@ -18,6 +21,9 @@ describe(`Default CheckBox`, () => {
         .render()
         .text(),
     ).toBe(label);
+  });
+  it("should have data-test", () => {
+    expect(component.render().prop("data-test")).toBe(dataTest);
   });
   it("input value should match", () => {
     expect(component.find("Radio__Input").prop("value")).toBe(value);

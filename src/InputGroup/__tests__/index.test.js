@@ -10,6 +10,7 @@ import { CODES } from "../../CountryFlag/consts";
 
 describe(`InputGroup - Phone number`, () => {
   const label = "Phone number";
+  const dataTest = "test";
   const flex = ["0 0 130px", "1 1 100%"];
   const onChange = jest.fn();
   const onFocus = jest.fn();
@@ -33,6 +34,7 @@ describe(`InputGroup - Phone number`, () => {
         </div>
       }
       onChange={onChange}
+      dataTest={dataTest}
       onFocus={onFocus}
       onBlur={onBlur}
     >
@@ -60,6 +62,9 @@ describe(`InputGroup - Phone number`, () => {
   });
   it("should contain a select", () => {
     expect(select.exists()).toBe(true);
+  });
+  it("should contain a select", () => {
+    expect(component.render().prop("data-test")).toBe(dataTest);
   });
   it("should contain a fake div with styling", () => {
     expect(component.find("InputGroup__FakeGroup").exists()).toBe(true);

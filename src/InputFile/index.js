@@ -103,10 +103,10 @@ CloseButton.defaultProps = {
 };
 
 const InputFile = (props: Props) => {
-  const { placeholder = "No file selected", title = "Select file" } = props;
+  const { placeholder = "No file selected", title = "Select file", dataTest } = props;
 
   return (
-    <Field>
+    <Field data-test={dataTest}>
       <Input
         type="file"
         name={props.name}

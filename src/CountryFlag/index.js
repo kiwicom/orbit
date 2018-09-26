@@ -19,7 +19,7 @@ StyledCountryFlag.defaultProps = {
 };
 
 const CountryFlag = (props: Props) => {
-  const { code = CODES.ANYWHERE, name = "Anywhere" } = props;
+  const { code = CODES.ANYWHERE, name = "Anywhere", dataTest } = props;
   return (
     <StyledCountryFlag
       key={code}
@@ -27,6 +27,7 @@ const CountryFlag = (props: Props) => {
       srcSet={`${baseURL}/flags/48x0/flag-${code}.jpg 2x`}
       alt={name}
       title={name}
+      data-test={dataTest}
     />
   );
 };

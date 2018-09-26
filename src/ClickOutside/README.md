@@ -17,4 +17,5 @@ Table below contains all types of the props available in the ClickOutside compon
 | Name            | Type                                        | Default         | Description                      |
 | :-------------- | :------------------------------------------ | :-------------- | :------------------------------- |
 | children        | `React.Node`                                |                 | The content of the ClickOutside to render.
+| dataTest        | `string`                                    |                 | Optional prop for testing purposes.
 | onClickOutside  | `(ev: MouseEvent) => void \| Promise<any>`  |                 | Function for handling onClickOutside event.

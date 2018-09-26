@@ -100,9 +100,9 @@ const StyledModalHeaderContent = styled.div`
 `;
 
 const ModalHeader = (props: Props) => {
-  const { title, illustration, description, children, suppressed } = props;
+  const { title, illustration, description, children, suppressed, dataTest } = props;
   return (
-    <StyledModalHeader illustration={!!illustration} suppressed={suppressed}>
+    <StyledModalHeader illustration={!!illustration} suppressed={suppressed} data-test={dataTest}>
       {illustration}
       <ModalTitle illustration={!!illustration}>
         <Heading type="title1">{title}</Heading>

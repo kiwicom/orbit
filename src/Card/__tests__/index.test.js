@@ -12,7 +12,7 @@ const text = "Text for testing";
 describe("Card", () => {
   it("should contain CardSection", () => {
     const component = shallow(
-      <Card>
+      <Card dataTest="test">
         <CardSection>
           <Heading type="title3" element="h3">
             {text}
@@ -29,6 +29,11 @@ describe("Card", () => {
       });
   });
 
+  it("should have data-test", () => {
+    const dataTest = "test";
+    const component = shallow(<Card dataTest={dataTest} />);
+    expect(component.render().prop("data-test")).toBe(dataTest);
+  });
   it("should be closable", () => {
     const onClose = jest.fn();
     const component = shallow(<Card onClose={onClose} closable />);

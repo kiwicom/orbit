@@ -121,8 +121,13 @@ StyledChevron.defaultProps = {
 
 const Icon = ({ icon }: Props) => <StyledIcon>{icon}</StyledIcon>;
 
-const Tile = ({ children, external = false, href, icon, title, onClick }: Props) => (
-  <StyledTile target={href && external ? "_blank" : undefined} href={href} onClick={onClick}>
+const Tile = ({ children, external = false, href, icon, title, onClick, dataTest }: Props) => (
+  <StyledTile
+    target={href && external ? "_blank" : undefined}
+    href={href}
+    onClick={onClick}
+    data-test={dataTest}
+  >
     <StyledTileContent>
       {title && (
         <StyledTileHeadingWrapper>

@@ -46,6 +46,8 @@ storiesOf("Tile", module)
       "Children",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
     );
+    const dataTest = text("dataTest", "test");
+
     return {
       info: "This is the default configuration of this component.",
       chapters: [
@@ -59,6 +61,7 @@ storiesOf("Tile", module)
                   icon={Icon && <Icon />}
                   title={title}
                   external={external}
+                  dataTest={dataTest}
                 >
                   {children}
                 </Tile>

@@ -100,6 +100,7 @@ exports[`Storyshots Heading Default 1`] = `
         >
           <h1
             className="Heading__StyledHeading-gucmUp fTGtTr"
+            data-test={undefined}
           >
             Orbit design system
           </h1>
@@ -327,6 +328,7 @@ exports[`Storyshots Heading Inverted heading 1`] = `
           >
             <h1
               className="Heading__StyledHeading-gucmUp TszPm"
+              data-test={undefined}
             >
               Orbit design system
             </h1>
@@ -739,6 +741,7 @@ exports[`Storyshots Heading Playground 1`] = `
         >
           <h2
             className="Heading__StyledHeading-gucmUp bpBGQT"
+            data-test="test"
           >
             Orbit design system
           </h2>
@@ -847,6 +850,33 @@ exports[`Storyshots Heading Playground 1`] = `
                               >
                                 "
                                 display
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                test
                                 "
                               </span>
                             </span>
@@ -1014,6 +1044,7 @@ exports[`Storyshots Heading Title 1 1`] = `
         >
           <h1
             className="Heading__StyledHeading-gucmUp fTGtTr"
+            data-test={undefined}
           >
             Orbit design system
           </h1>
@@ -1289,6 +1320,7 @@ exports[`Storyshots Heading Title 2 1`] = `
         >
           <h2
             className="Heading__StyledHeading-gucmUp iMNCfy"
+            data-test={undefined}
           >
             Orbit design system
           </h2>
@@ -1564,6 +1596,7 @@ exports[`Storyshots Heading Title 3 1`] = `
         >
           <h3
             className="Heading__StyledHeading-gucmUp iPRwMQ"
+            data-test={undefined}
           >
             Orbit design system
           </h3>
@@ -1839,6 +1872,7 @@ exports[`Storyshots Heading Title Display 1`] = `
         >
           <h1
             className="Heading__StyledHeading-gucmUp bpBGQT"
+            data-test={undefined}
           >
             Orbit design system
           </h1>

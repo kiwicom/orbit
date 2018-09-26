@@ -16,8 +16,8 @@ StyledAsterisk.defaultProps = {
   theme: defaultTokens,
 };
 
-const FormLabel = styled(({ className, children, required, filled }) => (
-  <span className={className}>
+const FormLabel = styled(({ className, children, required, filled, dataTest }) => (
+  <span className={className} data-test={dataTest}>
     {required && <StyledAsterisk filled={filled}>* </StyledAsterisk>}
     <span>{children}</span>
   </span>

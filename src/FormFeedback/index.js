@@ -37,8 +37,12 @@ StyledFormFeedback.defaultProps = {
 };
 
 const FormFeedback = (props: Props) => {
-  const { children, type = TYPE_OPTIONS.HELP } = props;
-  return <StyledFormFeedback type={type}>{children}</StyledFormFeedback>;
+  const { children, type = TYPE_OPTIONS.HELP, dataTest } = props;
+  return (
+    <StyledFormFeedback type={type} data-test={dataTest}>
+      {children}
+    </StyledFormFeedback>
+  );
 };
 
 export default FormFeedback;

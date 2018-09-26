@@ -44,9 +44,13 @@ const getSizeToken = () => ({ theme, size }) => {
   return sizeTokens[size];
 };
 
-const StyledText = styled(({ element, children, className }) => {
+const StyledText = styled(({ element, children, className, dataTest }) => {
   const TextElement = element;
-  return <TextElement className={className}>{children}</TextElement>;
+  return (
+    <TextElement className={className} data-test={dataTest}>
+      {children}
+    </TextElement>
+  );
 })`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${getSizeToken()};
@@ -71,6 +75,7 @@ const Text = ({
   element = ELEMENT_OPTIONS.P,
   uppercase = false,
   italic = false,
+  dataTest,
   children,
 }: Props) => (
   <StyledText
@@ -81,6 +86,7 @@ const Text = ({
     element={element}
     uppercase={uppercase}
     italic={italic}
+    dataTest={dataTest}
   >
     {children}
   </StyledText>

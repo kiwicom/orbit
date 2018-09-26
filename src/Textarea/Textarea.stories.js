@@ -148,6 +148,7 @@ storiesOf("Textarea", module)
     const disabled = boolean("Disabled", true);
     const resize = select("resize", Object.values(RESIZE_OPTIONS), RESIZE_OPTIONS.VERTICAL);
     const maxLength = number("maxLength", undefined);
+    const dataTest = text("dataTest", "test");
 
     return {
       info: "Some description about this type of textarea in general.",
@@ -169,6 +170,7 @@ storiesOf("Textarea", module)
                   onChange={action("change")}
                   onFocus={action("focus")}
                   onBlur={action("blur")}
+                  dataTest={dataTest}
                 />
               ),
             },

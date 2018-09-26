@@ -3,7 +3,7 @@
 import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, object, select } from "@storybook/addon-knobs/react";
+import { withKnobs, object, select, text } from "@storybook/addon-knobs/react";
 import styles from "@sambego/storybook-styles/dist/index";
 
 import { SIZE_OPTIONS, CARRIER_TYPE_OPTIONS } from "./consts";
@@ -28,6 +28,7 @@ storiesOf("CarrierLogo", module)
   )
   .addWithChapters("One carrier", () => {
     const size = select("Size", Object.values(SIZE_OPTIONS), "large");
+    const dataTest = text("dataTest", "test");
 
     const carrier = [{ code: "FR", name: "Ryanair" }];
 
@@ -40,7 +41,9 @@ storiesOf("CarrierLogo", module)
         {
           sections: [
             {
-              sectionFn: () => <CarrierLogo size={size} carriers={carriersObject} />,
+              sectionFn: () => (
+                <CarrierLogo size={size} carriers={carriersObject} dataTest={dataTest} />
+              ),
               options,
             },
           ],

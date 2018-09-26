@@ -26,11 +26,21 @@ describe("Button", () => {
   });
 });
 describe("Button with icon", () => {
+  const dataTest = "test";
   const component = shallow(
-    <Button size="normal" iconLeft={<Airplane />} iconRight={<ChevronDown />} onClick={onClick}>
+    <Button
+      size="normal"
+      iconLeft={<Airplane />}
+      iconRight={<ChevronDown />}
+      onClick={onClick}
+      dataTest={dataTest}
+    >
       {children}
     </Button>,
   );
+  it("should have data-test", () => {
+    expect(component.render().prop("data-test")).toBe(dataTest);
+  });
   it("should contain icons", () => {
     const button = component.find("Button__StyledButton");
     expect(button.find("Airplane").exists()).toBe(true);

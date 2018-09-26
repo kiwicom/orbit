@@ -105,6 +105,7 @@ storiesOf("List", module)
     const Icon = getIcon(getIcons("Check"));
     const iconColor = select("iconColor", Object.keys(ICON_COLORS), "success");
     const content = text("Content", "24,000 locations around the globe");
+    const dataTest = text("dataTest", "test");
 
     return {
       info:
@@ -114,7 +115,7 @@ storiesOf("List", module)
           sections: [
             {
               sectionFn: () => (
-                <List size={size} type={type}>
+                <List size={size} type={type} dataTest={dataTest}>
                   <ListItem icon={Icon && <Icon color={iconColor} />}>{content}</ListItem>
                   <ListItem icon={Icon && <Icon color={iconColor} />}>{content}</ListItem>
                   <ListItem icon={Icon && <Icon color={iconColor} />}>{content}</ListItem>

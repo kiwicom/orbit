@@ -1,10 +1,12 @@
 // @flow
+import type { Globals } from "../common/common.js.flow";
 
 export type Props = {
   children: React$Node,
   filled?: boolean,
   disabled?: boolean,
   required?: boolean,
+  ...Globals,
 };
 
 declare export default React$ComponentType<Props>;

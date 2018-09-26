@@ -1,7 +1,9 @@
 // @flow
+import type { Globals } from "../../common/common.js.flow";
 
 export type Props = {|
   +children: React$Node,
+  ...Globals,
 |};
 
 declare export var StyledCardSection: React$ComponentType<>;

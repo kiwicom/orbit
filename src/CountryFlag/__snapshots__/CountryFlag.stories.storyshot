@@ -101,6 +101,7 @@ exports[`Storyshots CountryFlag Default 1`] = `
           <img
             alt="Anywhere"
             className="CountryFlag__StyledCountryFlag-cuUbfd jNdwdI"
+            data-test={undefined}
             src="//images.kiwi.com/flags/24x0/flag-anywhere.jpg"
             srcSet="//images.kiwi.com/flags/48x0/flag-anywhere.jpg 2x"
             title="Anywhere"
@@ -311,6 +312,7 @@ exports[`Storyshots CountryFlag Playground 1`] = `
           <img
             alt="Country"
             className="CountryFlag__StyledCountryFlag-cuUbfd jNdwdI"
+            data-test="test"
             src="//images.kiwi.com/flags/24x0/flag-anywhere.jpg"
             srcSet="//images.kiwi.com/flags/48x0/flag-anywhere.jpg 2x"
             title="Country"
@@ -419,6 +421,33 @@ exports[`Storyshots CountryFlag Playground 1`] = `
                             >
                               "
                               Country
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          dataTest
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              test
                               "
                             </span>
                           </span>

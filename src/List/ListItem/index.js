@@ -31,8 +31,8 @@ IconContainer.defaultProps = {
   theme: defaultTokens,
 };
 
-const ListItem = ({ children, icon = <CircleSmall /> }: Props) => (
-  <Item>
+const ListItem = ({ children, icon = <CircleSmall />, dataTest }: Props) => (
+  <Item data-test={dataTest}>
     <IconContainer>{icon}</IconContainer>
     {children}
   </Item>

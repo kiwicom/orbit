@@ -1,10 +1,12 @@
 // @flow
+import type { Globals } from "../common/common.js.flow";
 import ButtonLink from "../ButtonLink";
 import Button from "../Button";
 
 export type Props = {|
   +children: Array<React$Element<typeof Button> | React$Element<typeof ButtonLink>>,
   +connected?: boolean,
+  ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;

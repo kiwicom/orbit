@@ -1,5 +1,6 @@
 // @flow
 import defaultTokens from "../defaultTokens";
+import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
   +label: string,
@@ -9,6 +10,7 @@ export type Props = {|
   +checked?: boolean,
   +info?: React$Node,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  ...Globals,
   +theme?: typeof defaultTokens,
 |};
 

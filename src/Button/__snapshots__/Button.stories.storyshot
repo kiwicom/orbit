@@ -100,6 +100,7 @@ exports[`Storyshots Button Basic buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK cUoyoc"
+            data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -451,6 +452,7 @@ exports[`Storyshots Button Button as a link 1`] = `
         >
           <a
             className="Button__StyledButton-jJDkJK gPjmYR"
+            data-test={undefined}
             disabled={false}
             href="https://kiwi.com"
             onClick={[Function]}
@@ -465,6 +467,7 @@ exports[`Storyshots Button Button as a link 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -898,6 +901,7 @@ exports[`Storyshots Button Button with icons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK gmdAjy"
+            data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -911,6 +915,7 @@ exports[`Storyshots Button Button with icons 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -934,6 +939,7 @@ exports[`Storyshots Button Button with icons 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -1280,6 +1286,7 @@ exports[`Storyshots Button Button with icons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK fJgbYr"
+            data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -1294,6 +1301,7 @@ exports[`Storyshots Button Button with icons 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -1684,6 +1692,7 @@ exports[`Storyshots Button Default 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK cUoyoc"
+            data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -1941,6 +1950,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK kbgEaX"
+            data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -1954,6 +1964,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -2345,6 +2356,7 @@ exports[`Storyshots Button Playground 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK fjwApn"
+            data-test="test"
             disabled={false}
             href={undefined}
             onClick={[Function]}
@@ -2359,6 +2371,7 @@ exports[`Storyshots Button Playground 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -2382,6 +2395,7 @@ exports[`Storyshots Button Playground 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -2712,6 +2726,36 @@ exports[`Storyshots Button Playground 1`] = `
                           <span
                             style={Object {}}
                           >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                test
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
                             type
                           </span>
                           <span>
@@ -3019,6 +3063,7 @@ exports[`Storyshots Button Social buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK bvheFT"
+            data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -3032,6 +3077,7 @@ exports[`Storyshots Button Social buttons 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -3298,6 +3344,7 @@ exports[`Storyshots Button Social buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK iigxVA"
+            data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
             size="normal"
@@ -3311,6 +3358,7 @@ exports[`Storyshots Button Social buttons 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -3669,6 +3717,7 @@ exports[`Storyshots Button Status buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK dtGfi"
+            data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -3682,6 +3731,7 @@ exports[`Storyshots Button Status buttons 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -3967,6 +4017,7 @@ exports[`Storyshots Button Status buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK jFCQwL"
+            data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -3980,6 +4031,7 @@ exports[`Storyshots Button Status buttons 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -4265,6 +4317,7 @@ exports[`Storyshots Button Status buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK dFKcra"
+            data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -4278,6 +4331,7 @@ exports[`Storyshots Button Status buttons 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -4563,6 +4617,7 @@ exports[`Storyshots Button Status buttons 1`] = `
         >
           <button
             className="Button__StyledButton-jJDkJK iPrRjr"
+            data-test={undefined}
             disabled={undefined}
             onClick={[Function]}
             size="small"
@@ -4576,6 +4631,7 @@ exports[`Storyshots Button Status buttons 1`] = `
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"

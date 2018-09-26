@@ -13,6 +13,7 @@ exports[`ServiceLogo: AirHelp should match snapshot 2`] = `
 <img
   alt="AirHelp"
   className="ServiceLogo__StyledServiceLogo-gXFeKU ivlfMy"
+  data-test="test"
   src="//images.kiwi.com/logos-grayscale/0x48/AirHelp.png"
   srcSet="//images.kiwi.com/logos-grayscale/0x96/AirHelp.png 2x"
 />

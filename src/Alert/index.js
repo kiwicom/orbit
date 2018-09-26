@@ -63,8 +63,18 @@ const Icon = ({ icon, type }: IconProps) => {
   return icon;
 };
 
-const StyledDiv = ({ className, children }: { className: string, children: React.Node }) => (
-  <div className={className}>{children}</div>
+const StyledDiv = ({
+  className,
+  children,
+  dataTest,
+}: {
+  className: string,
+  children: React.Node,
+  dataTest: string,
+}) => (
+  <div className={className} data-test={dataTest}>
+    {children}
+  </div>
 );
 
 const StyledAlert = styled(StyledDiv)`
@@ -152,9 +162,17 @@ CloseContainer.defaultProps = {
 };
 
 const Alert = (props: Props) => {
-  const { type = TYPE_OPTIONS.INFO, title, closable, icon, onClose = () => {}, children } = props;
+  const {
+    type = TYPE_OPTIONS.INFO,
+    title,
+    closable,
+    icon,
+    onClose = () => {},
+    children,
+    dataTest,
+  } = props;
   return (
-    <StyledAlert type={type} closable={closable}>
+    <StyledAlert type={type} closable={closable} dataTest={dataTest}>
       {icon && (
         <IconContainer type={type}>
           <Icon type={type} icon={icon} />

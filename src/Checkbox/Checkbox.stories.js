@@ -62,6 +62,7 @@ storiesOf("CheckBox", module)
     const disabled = boolean("Disabled", true);
     const hasError = boolean("hasError", false);
     const info = text("Info", "Additional information for this choice");
+    const dataTest = text("dataTest", "test");
     return {
       info: "Playground of Checkbox",
       chapters: [
@@ -75,6 +76,7 @@ storiesOf("CheckBox", module)
                   checked={checked}
                   disabled={disabled}
                   hasError={hasError}
+                  dataTest={dataTest}
                   info={info}
                   onChange={action("changed")}
                 />

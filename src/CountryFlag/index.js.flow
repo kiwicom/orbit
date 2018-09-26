@@ -1,5 +1,5 @@
 // @flow
-import defaultTokens from "../defaultTokens";
+import type { Globals } from "../common/common.js.flow";
 
 type Code =
   | "ad"
@@ -263,6 +263,7 @@ type Code =
 export type Props = {|
   +code: Code,
   +name?: string,
+  ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;

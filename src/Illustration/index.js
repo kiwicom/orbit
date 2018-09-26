@@ -17,7 +17,12 @@ StyledImage.defaultProps = {
   theme: defaultTokens,
 };
 
-const Illustration = ({ name, size = SIZE_OPTIONS.MEDIUM, theme = defaultTokens }: Props) => {
+const Illustration = ({
+  name,
+  size = SIZE_OPTIONS.MEDIUM,
+  theme = defaultTokens,
+  dataTest,
+}: Props) => {
   const tokens = {
     height: {
       [SIZE_OPTIONS.SMALL]: theme.orbit.heightIllustrationSmall,
@@ -32,6 +37,7 @@ const Illustration = ({ name, size = SIZE_OPTIONS.MEDIUM, theme = defaultTokens 
       alt={name}
       size={size}
       tokens={tokens}
+      data-test={dataTest}
     />
   );
 };

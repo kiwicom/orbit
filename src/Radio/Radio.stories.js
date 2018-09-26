@@ -61,6 +61,8 @@ storiesOf("Radio", module)
     const disabled = boolean("Disabled", true);
     const hasError = boolean("hasError", false);
     const info = text("Info", "Additional information for this choice");
+    const dataTest = text("dataTest", "test");
+
     return {
       info: "Playground of Radio",
       chapters: [
@@ -75,6 +77,7 @@ storiesOf("Radio", module)
                   disabled={disabled}
                   hasError={hasError}
                   info={info}
+                  dataTest={dataTest}
                   onChange={action("changed")}
                 />
               ),

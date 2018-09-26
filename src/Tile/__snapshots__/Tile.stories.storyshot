@@ -100,6 +100,7 @@ exports[`Storyshots Tile Default 1`] = `
         >
           <div
             className="Tile__StyledTile-fWcXRb iCTOvS"
+            data-test={undefined}
             href={undefined}
             onClick={[Function]}
             target={undefined}
@@ -112,6 +113,7 @@ exports[`Storyshots Tile Default 1`] = `
               >
                 <h3
                   className="Heading__StyledHeading-gucmUp iPRwMQ"
+                  data-test={undefined}
                 >
                   Urgent information
                 </h3>
@@ -122,6 +124,7 @@ exports[`Storyshots Tile Default 1`] = `
             >
               <svg
                 className="Tile__StyledChevron-cBWRcA pJAil"
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -373,6 +376,7 @@ exports[`Storyshots Tile Playground 1`] = `
         >
           <a
             className="Tile__StyledTile-fWcXRb iCTOvS"
+            data-test="test"
             href="https://www.kiwi.com/"
             onClick={[Function]}
             target={undefined}
@@ -388,6 +392,7 @@ exports[`Storyshots Tile Playground 1`] = `
                 >
                   <svg
                     className={undefined}
+                    data-test={undefined}
                     fill="currentColor"
                     height="24px"
                     preserveAspectRatio="xMidYMid meet"
@@ -407,6 +412,7 @@ exports[`Storyshots Tile Playground 1`] = `
                 </div>
                 <h3
                   className="Heading__StyledHeading-gucmUp iPRwMQ"
+                  data-test={undefined}
                 >
                   Tile with title
                 </h3>
@@ -424,6 +430,7 @@ exports[`Storyshots Tile Playground 1`] = `
             >
               <svg
                 className="Tile__StyledChevron-cBWRcA pJAil"
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -647,6 +654,36 @@ exports[`Storyshots Tile Playground 1`] = `
                                   false
                                 </span>
                                 }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                test
+                                "
                               </span>
                             </span>
                           </span>

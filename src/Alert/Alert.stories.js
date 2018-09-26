@@ -141,6 +141,7 @@ storiesOf("Alert", module)
     const type = select("Type", Object.values(TYPE_OPTIONS), "info");
     const title = text("Title", "You can change the title by changing the Title knob");
     const message = text("Message", "Also you can change the message by changing the Message knob");
+    const dataTest = text("dataTest", "test");
     const button = text("Button", "I am a link");
     const closable = boolean("Closable", false);
     const Icon = getIcon(getIcons("Airplane"));
@@ -158,6 +159,7 @@ storiesOf("Alert", module)
                   title={title}
                   closable={closable}
                   onClose={action("Close")}
+                  dataTest={dataTest}
                 >
                   <div style={{ marginBottom: "12px" }}>{message}</div>
                   <Button type={type} size="small" href="#">

@@ -135,6 +135,7 @@ storiesOf("InputGroup", module)
 
     const placeholder = text("Input Placeholder", "Placeholder");
     const inputValue = text("Input Value", undefined);
+    const dataTest = text("dataTest", "test");
 
     return {
       info: "Some description about this type of InputGroup in general.",
@@ -152,6 +153,7 @@ storiesOf("InputGroup", module)
                   onChange={action("onChange")}
                   onFocus={action("onFocus")}
                   onBlur={action("onBlur")}
+                  dataTest={dataTest}
                 >
                   <Select options={selectOptions} value={selectValue} />
                   <InputField placeholder={placeholder} value={inputValue} />

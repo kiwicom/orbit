@@ -101,7 +101,7 @@ exports[`Storyshots Radio Default 1`] = `
           <label
             checked={false}
             className="Radio__Label-bpjkjl iJHPXt"
-            hasError={false}
+            data-test={undefined}
           >
             <input
               checked={false}
@@ -391,7 +391,7 @@ exports[`Storyshots Radio Playground 1`] = `
           <label
             checked={true}
             className="Radio__Label-bpjkjl rQIqE"
-            hasError={false}
+            data-test="test"
           >
             <input
               checked={true}
@@ -630,6 +630,36 @@ exports[`Storyshots Radio Playground 1`] = `
                         <span
                           style={Object {}}
                         >
+                          dataTest
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              test
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
                           onChange
                         </span>
                         <span>
@@ -777,7 +807,7 @@ exports[`Storyshots Radio With help 1`] = `
           <label
             checked={false}
             className="Radio__Label-bpjkjl iJHPXt"
-            hasError={false}
+            data-test={undefined}
           >
             <input
               checked={false}

@@ -1,4 +1,5 @@
 // @flow
+import type { Globals } from "../common/common.js.flow";
 
 type Type = "primary" | "secondary";
 type Size = "small" | "normal" | "large";
@@ -20,6 +21,7 @@ export type Props = {|
   +iconLeft?: React$Node,
   +iconRight?: React$Node,
   +transparent?: boolean,
+  ...Globals,
 |};
 
 declare export var StyledButtonLink: React$ComponentType<Props>;

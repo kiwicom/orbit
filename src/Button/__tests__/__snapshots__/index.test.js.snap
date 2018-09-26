@@ -3,6 +3,7 @@
 exports[`Button with icon should match snapshot 1`] = `
 <Button__StyledButton
   component="button"
+  dataTest="test"
   iconLeft={<Airplane />}
   iconRight={<ChevronDown />}
   loading={false}

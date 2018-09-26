@@ -100,12 +100,14 @@ exports[`Storyshots Badge Default 1`] = `
         >
           <div
             className="Badge__StyledBadge-xfvXv iDaeDo"
+            data-test={undefined}
           >
             <div
               className="Badge__IconContainer-keuekM edgSqO"
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -371,6 +373,7 @@ exports[`Storyshots Badge Notification badge 1`] = `
         >
           <div
             className="Badge__StyledBadge-xfvXv cpYHls"
+            data-test={undefined}
           >
             3
           </div>
@@ -627,12 +630,14 @@ exports[`Storyshots Badge Playground 1`] = `
         >
           <div
             className="Badge__StyledBadge-xfvXv llBUbY"
+            data-test="test"
           >
             <div
               className="Badge__IconContainer-keuekM WIGBY"
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -709,7 +714,10 @@ exports[`Storyshots Badge Playground 1`] = `
                       </span>
                       <span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -736,7 +744,10 @@ exports[`Storyshots Badge Playground 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -764,7 +775,40 @@ exports[`Storyshots Badge Playground 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                test
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -790,7 +834,7 @@ exports[`Storyshots Badge Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                          
+                          <br />
                         </span>
                       </span>
                       <span
@@ -953,12 +997,14 @@ exports[`Storyshots Badge Types 1`] = `
         >
           <div
             className="Badge__StyledBadge-xfvXv iDaeDo"
+            data-test={undefined}
           >
             <div
               className="Badge__IconContainer-keuekM edgSqO"
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -1176,12 +1222,14 @@ exports[`Storyshots Badge Types 1`] = `
         >
           <div
             className="Badge__StyledBadge-xfvXv llBUbY"
+            data-test={undefined}
           >
             <div
               className="Badge__IconContainer-keuekM WIGBY"
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -1399,12 +1447,14 @@ exports[`Storyshots Badge Types 1`] = `
         >
           <div
             className="Badge__StyledBadge-xfvXv eCGvMP"
+            data-test={undefined}
           >
             <div
               className="Badge__IconContainer-keuekM gkWzyK"
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -1622,12 +1672,14 @@ exports[`Storyshots Badge Types 1`] = `
         >
           <div
             className="Badge__StyledBadge-xfvXv cVARkQ"
+            data-test={undefined}
           >
             <div
               className="Badge__IconContainer-keuekM gdfYto"
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -1845,12 +1897,14 @@ exports[`Storyshots Badge Types 1`] = `
         >
           <div
             className="Badge__StyledBadge-xfvXv gsBZwF"
+            data-test={undefined}
           >
             <div
               className="Badge__IconContainer-keuekM NioJv"
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -2068,12 +2122,14 @@ exports[`Storyshots Badge Types 1`] = `
         >
           <div
             className="Badge__StyledBadge-xfvXv eqVSil"
+            data-test={undefined}
           >
             <div
               className="Badge__IconContainer-keuekM gBnvnn"
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -2299,12 +2355,14 @@ exports[`Storyshots Badge Types 1`] = `
           >
             <div
               className="Badge__StyledBadge-xfvXv klUbSg"
+              data-test={undefined}
             >
               <div
                 className="Badge__IconContainer-keuekM hPbMZk"
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"

@@ -29,9 +29,10 @@ describe(`ServiceLogo: ${name}`, () => {
 });
 
 describe(`ServiceLogo: ${name}`, () => {
-  const component = mount(<ServiceLogo name={name} size={size} grayScale={grayScale} />).find(
-    "img",
-  );
+  const dataTest = "test";
+  const component = mount(
+    <ServiceLogo name={name} size={size} grayScale={grayScale} dataTest={dataTest} />,
+  ).find("img");
 
   const IMAGE_PATH = `${baseURL}/logos-grayscale/0x${parseInt(SIZE, 10)}/${name}.png`;
   const IMAGE_PATH_RETINA = `${baseURL}/logos-grayscale/0x${parseInt(SIZE, 10) * 2}/${name}.png`;
@@ -40,6 +41,7 @@ describe(`ServiceLogo: ${name}`, () => {
     expect(component.prop("src")).toBe(IMAGE_PATH);
     expect(component.prop("srcSet")).toBe(`${IMAGE_PATH_RETINA} 2x`);
     expect(component.prop("alt")).toBe(name);
+    expect(component.render().prop("data-test")).toBe(dataTest);
   });
 
   it("should match snapshot", () => {

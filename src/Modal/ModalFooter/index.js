@@ -56,9 +56,9 @@ StyledModalFooter.defaultProps = {
 };
 
 const ModalFooter = (props: Props) => {
-  const { flex = "0 1 auto", children } = props;
+  const { flex = "0 1 auto", children, dataTest } = props;
   return (
-    <StyledModalFooter>
+    <StyledModalFooter data-test={dataTest}>
       {React.Children.map(children, (item, key) => {
         const childFlex = Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
         return <StyledChild flex={childFlex}>{<item.type {...item.props} />}</StyledChild>;

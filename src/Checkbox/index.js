@@ -128,6 +128,7 @@ const Checkbox = (props: Props) => {
     checked = false,
     onChange,
     theme = defaultTokens,
+    dataTest,
     info,
   } = props;
 
@@ -142,7 +143,7 @@ const Checkbox = (props: Props) => {
   };
 
   return (
-    <Label disabled={disabled} tokens={tokens}>
+    <Label disabled={disabled} tokens={tokens} data-test={dataTest}>
       <Input
         value={value}
         type="checkbox"

@@ -16,6 +16,7 @@ Table below contains all types of the props available in ButtonLink component.
 | children      | `React.Node`          |                 | The content of the ButtonLink. [See Functional specs](#functional-specs)
 | **component** | `string \| React.Node`| `"button"`      | The component used for the root node. Either a string to use a DOM element or a component.
 | disabled      | `boolean`             | `false`         | If `true`, the ButtonLink will be disabled.
+| dataTest      | `string`              |                 | Optional prop for testing purposes.
 | external      | `boolean`             | `false`         | If `true`, the ButtonLink opens link in a new tab.
 | href          | `string`              |                 | The URL of link to open when ButtonLink is clicked. [See Functional specs](#functional-specs)
 | icon          | `React.Node`          |                 | The displayed icon on the left (will be removed in the future, use iconLeft instead).

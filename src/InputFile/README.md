@@ -13,6 +13,7 @@ Table below contains all types of the props available in the InputFile component
 | Name                | Type                  | Default              | Description                      |
 | :------------------ | :-------------------- | :------------------- | :------------------------------- |
 | allowedFileTypes    | `string` | `string[]` |                      | You can specify allow file types. [See W3S](#functional-specs)
+| dataTest            | `string`              |                      | Optional prop for testing purposes.
 | error               | `React.Node`          |                      | The error message for the Select. [See Functional specs](#functional-specs)
 | fileName            | `string`              |                      | The name of selected file.
 | help                | `React.Node`          |                      | The help message for the InputFile.

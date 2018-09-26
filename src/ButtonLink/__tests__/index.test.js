@@ -11,12 +11,16 @@ const children = "ButtonLink";
 const href = "https://kiwi.com";
 
 describe("ButtonLink with Icon", () => {
+  const dataTest = "test";
   const component = mount(
-    <ButtonLink href={href} external>
+    <ButtonLink href={href} external dataTest={dataTest}>
       {children}
     </ButtonLink>,
   );
   const button = component.find("ButtonLink__StyledButtonLink");
+  it("should have data-test", () => {
+    expect(button.render().prop("data-test")).toBe(dataTest);
+  });
   it("should contain a title ", () => {
     expect(button.render().text()).toBe(children);
   });

@@ -2,6 +2,7 @@
 
 exports[`TextLink should match snapshot 1`] = `
 <TextLink__StyledTextLink
+  data-test="test"
   href="https://kiwi.com"
   onClick={
     [MockFunction] {

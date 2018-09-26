@@ -12,6 +12,7 @@ Table below contains all types of the props available in Textarea component.
 
 | Name          | Type              | Default      | Description                      |
 | :------------ | :---------------- | :----------- | :------------------------------- |
+| dataTest      | `string`          |              | Optional prop for testing purposes.
 | disabled      | `boolean`         |              | If `true`, the Textarea will be disabled.
 | error         | `React.Node`      |              | The error to display beneath the Textarea. [See Functional specs](#functional-specs)
 | help          | `React.Node`      |              | The help to display beneath the Textarea.

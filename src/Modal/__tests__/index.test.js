@@ -22,18 +22,20 @@ describe(`Large Modal`, () => {
   const suppressed = true;
   const content = "My content";
   const onClose = jest.fn();
+  const dataTest = "test";
 
   const sectionSuppressed = true;
   const fixedFooter = true;
   const flex = ["0 0 auto", "1 1 100%"];
 
   const component = shallow(
-    <Modal size={size} onClose={onClose} fixedFooter={fixedFooter}>
+    <Modal size={size} onClose={onClose} fixedFooter={fixedFooter} dataTest={dataTest}>
       <ModalHeader
         title={title}
         illustration={illustration}
         description={description}
         suppressed={suppressed}
+        dataTest={dataTest}
       >
         <List>
           <ListItem icon={<Wallet />}>
@@ -41,8 +43,10 @@ describe(`Large Modal`, () => {
           </ListItem>
         </List>
       </ModalHeader>
-      <ModalSection suppressed={sectionSuppressed}>{content}</ModalSection>
-      <ModalFooter flex={flex}>
+      <ModalSection suppressed={sectionSuppressed} dataTest={dataTest}>
+        {content}
+      </ModalSection>
+      <ModalFooter flex={flex} dataTest={dataTest}>
         <Button icon={<ChevronLeft />} type="secondary">
           Back
         </Button>
@@ -57,6 +61,7 @@ describe(`Large Modal`, () => {
   const modalFooter = component.find("ModalFooter");
 
   it("should have passed props", () => {
+    expect(component.render().prop("data-test")).toBe(dataTest);
     expect(modalWrapper.prop("size")).toBe(size);
     expect(modalHeader.prop("title")).toBe(title);
     expect(modalHeader.prop("illustration")).toBe(illustration);
@@ -66,6 +71,9 @@ describe(`Large Modal`, () => {
     expect(modalSection.prop("children")).toBe(content);
     expect(modalWrapper.prop("fixedFooter")).toBe(fixedFooter);
     expect(modalFooter.prop("flex")).toBe(flex);
+    expect(modalFooter.render().prop("data-test")).toBe(dataTest);
+    expect(modalHeader.render().prop("data-test")).toBe(dataTest);
+    expect(modalSection.render().prop("data-test")).toBe(dataTest);
   });
 
   it("should match snapshot", () => {

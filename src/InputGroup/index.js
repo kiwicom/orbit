@@ -65,8 +65,10 @@ StyledChild.defaultProps = {
   theme: defaultTokens,
 };
 
-const StyledInputGroup = styled(({ children, className }) => (
-  <div className={className}>{children}</div>
+const StyledInputGroup = styled(({ children, className, dataTest }) => (
+  <div className={className} data-test={dataTest}>
+    {children}
+  </div>
 ))`
   display: flex;
   flex-direction: column;
@@ -185,6 +187,7 @@ class InputGroup extends React.PureComponent<Props, State> {
       help,
       error,
       theme = defaultTokens,
+      dataTest,
     } = this.props;
     const { active, filled } = this.state;
 
@@ -200,7 +203,14 @@ class InputGroup extends React.PureComponent<Props, State> {
     };
 
     return (
-      <StyledInputGroup label={label} error={error} active={active} tokens={tokens} size={size}>
+      <StyledInputGroup
+        label={label}
+        error={error}
+        active={active}
+        tokens={tokens}
+        size={size}
+        dataTest={dataTest}
+      >
         {label && <FormLabel filled={filled}>{label}</FormLabel>}
         <StyledChildren>
           {React.Children.map(children, (item, key) => {

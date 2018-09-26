@@ -35,8 +35,10 @@ StyledButtonGroup.defaultProps = {
   theme: defaultTokens,
 };
 
-const ButtonGroup = ({ children, connected }: Props) => (
-  <StyledButtonGroup connected={connected}>{children}</StyledButtonGroup>
+const ButtonGroup = ({ children, connected, dataTest }: Props) => (
+  <StyledButtonGroup connected={connected} data-test={dataTest}>
+    {children}
+  </StyledButtonGroup>
 );
 
 export default ButtonGroup;

@@ -134,6 +134,7 @@ storiesOf("InputFile", module)
     const error = text("Error", "No file has been selected yet");
     const help = text("Help", undefined);
     const allowedFileTypes = array("allowedFileTypes", ["media/*", "image/*"]);
+    const dataTest = text("dataTest", "test");
 
     return {
       info:
@@ -151,6 +152,7 @@ storiesOf("InputFile", module)
                   fileName={fileName}
                   error={error}
                   help={help}
+                  dataTest={dataTest}
                   allowedFileTypes={allowedFileTypes}
                   onChange={action("onChange")}
                   onFocus={action("onFocus")}

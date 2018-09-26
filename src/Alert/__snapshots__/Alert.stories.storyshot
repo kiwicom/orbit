@@ -100,12 +100,15 @@ exports[`Storyshots Alert Critical alert 1`] = `
         >
           <div
             className="Alert__StyledAlert-dqYNhl edSqTu"
+            data-test={undefined}
           >
             <div
               className="Alert__IconContainer-haMrUK gUzVST"
+              data-test={undefined}
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -125,9 +128,11 @@ exports[`Storyshots Alert Critical alert 1`] = `
             </div>
             <div
               className="Alert__ContentWrapper-jyINpB jgcPgw"
+              data-test={undefined}
             >
               <div
                 className="Alert__Content-icgAru esmlI"
+                data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>
@@ -414,12 +419,15 @@ exports[`Storyshots Alert Default 1`] = `
         >
           <div
             className="Alert__StyledAlert-dqYNhl fUtCMj"
+            data-test={undefined}
           >
             <div
               className="Alert__ContentWrapper-jyINpB jgcPgw"
+              data-test={undefined}
             >
               <div
                 className="Alert__Content-icgAru delXhj"
+                data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>
@@ -641,12 +649,15 @@ exports[`Storyshots Alert Info alert 1`] = `
         >
           <div
             className="Alert__StyledAlert-dqYNhl fUtCMj"
+            data-test={undefined}
           >
             <div
               className="Alert__IconContainer-haMrUK jvDZTe"
+              data-test={undefined}
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -666,9 +677,11 @@ exports[`Storyshots Alert Info alert 1`] = `
             </div>
             <div
               className="Alert__ContentWrapper-jyINpB jgcPgw"
+              data-test={undefined}
             >
               <div
                 className="Alert__Content-icgAru delXhj"
+                data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>
@@ -928,12 +941,15 @@ exports[`Storyshots Alert Playground 1`] = `
         >
           <div
             className="Alert__StyledAlert-dqYNhl fUtCMj"
+            data-test="test"
           >
             <div
               className="Alert__IconContainer-haMrUK jvDZTe"
+              data-test={undefined}
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -953,14 +969,17 @@ exports[`Storyshots Alert Playground 1`] = `
             </div>
             <div
               className="Alert__ContentWrapper-jyINpB bMOMtO"
+              data-test={undefined}
             >
               <div
                 className="Alert__Title-duZNvF fOOBbl"
+                data-test={undefined}
               >
                 You can change the title by changing the Title knob
               </div>
               <div
                 className="Alert__Content-icgAru eInYTs"
+                data-test={undefined}
               >
                 <div
                   style={
@@ -973,6 +992,7 @@ exports[`Storyshots Alert Playground 1`] = `
                 </div>
                 <a
                   className="Button__StyledButton-jJDkJK jVAmZf"
+                  data-test={undefined}
                   disabled={undefined}
                   href="#"
                   size="small"
@@ -1192,6 +1212,36 @@ exports[`Storyshots Alert Playground 1`] = `
                                   Close()
                                 </span>
                                 }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                test
+                                "
                               </span>
                             </span>
                           </span>
@@ -1615,12 +1665,15 @@ Avoid using success banner if there is any follow-up action, for example, in cas
         >
           <div
             className="Alert__StyledAlert-dqYNhl kchFYJ"
+            data-test={undefined}
           >
             <div
               className="Alert__IconContainer-haMrUK kMFpuN"
+              data-test={undefined}
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -1640,9 +1693,11 @@ Avoid using success banner if there is any follow-up action, for example, in cas
             </div>
             <div
               className="Alert__ContentWrapper-jyINpB jgcPgw"
+              data-test={undefined}
             >
               <div
                 className="Alert__Content-icgAru dIqawJ"
+                data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>
@@ -1929,12 +1984,15 @@ exports[`Storyshots Alert Warning alert 1`] = `
         >
           <div
             className="Alert__StyledAlert-dqYNhl eMMGtz"
+            data-test={undefined}
           >
             <div
               className="Alert__IconContainer-haMrUK iInTvA"
+              data-test={undefined}
             >
               <svg
                 className={undefined}
+                data-test={undefined}
                 fill="currentColor"
                 height="24px"
                 preserveAspectRatio="xMidYMid meet"
@@ -1954,9 +2012,11 @@ exports[`Storyshots Alert Warning alert 1`] = `
             </div>
             <div
               className="Alert__ContentWrapper-jyINpB jgcPgw"
+              data-test={undefined}
             >
               <div
                 className="Alert__Content-icgAru iqkKFA"
+                data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
               </div>

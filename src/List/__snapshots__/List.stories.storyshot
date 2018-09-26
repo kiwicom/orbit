@@ -100,15 +100,18 @@ exports[`Storyshots List Default 1`] = `
         >
           <div
             className="List__StyledList-fzpiIm cUVSEu"
+            data-test={undefined}
           >
             <div
               className="ListItem__Item-bhWwBk cirUQp"
+              data-test={undefined}
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -130,12 +133,14 @@ exports[`Storyshots List Default 1`] = `
             </div>
             <div
               className="ListItem__Item-bhWwBk cirUQp"
+              data-test={undefined}
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -160,12 +165,14 @@ exports[`Storyshots List Default 1`] = `
             </div>
             <div
               className="ListItem__Item-bhWwBk cirUQp"
+              data-test={undefined}
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -660,15 +667,18 @@ exports[`Storyshots List Different type and size 1`] = `
         >
           <div
             className="List__StyledList-fzpiIm jUUXxU"
+            data-test={undefined}
           >
             <div
               className="ListItem__Item-bhWwBk cirUQp"
+              data-test={undefined}
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -690,12 +700,14 @@ exports[`Storyshots List Different type and size 1`] = `
             </div>
             <div
               className="ListItem__Item-bhWwBk cirUQp"
+              data-test={undefined}
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -720,12 +732,14 @@ exports[`Storyshots List Different type and size 1`] = `
             </div>
             <div
               className="ListItem__Item-bhWwBk cirUQp"
+              data-test={undefined}
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -1276,15 +1290,18 @@ exports[`Storyshots List Playground 1`] = `
         >
           <div
             className="List__StyledList-fzpiIm cUVSEu"
+            data-test="test"
           >
             <div
               className="ListItem__Item-bhWwBk cirUQp"
+              data-test={undefined}
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -1306,12 +1323,14 @@ exports[`Storyshots List Playground 1`] = `
             </div>
             <div
               className="ListItem__Item-bhWwBk cirUQp"
+              data-test={undefined}
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -1333,12 +1352,14 @@ exports[`Storyshots List Playground 1`] = `
             </div>
             <div
               className="ListItem__Item-bhWwBk cirUQp"
+              data-test={undefined}
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -1464,6 +1485,33 @@ exports[`Storyshots List Playground 1`] = `
                               >
                                 "
                                 primary
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                test
                                 "
                               </span>
                             </span>
@@ -1910,15 +1958,18 @@ exports[`Storyshots List With carrier 1`] = `
         >
           <div
             className="List__StyledList-fzpiIm jUUXxU"
+            data-test={undefined}
           >
             <div
               className="ListItem__Item-bhWwBk cirUQp"
+              data-test={undefined}
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <div
                   className="CarrierLogo__StyledCarrierLogo-ieqjqT kvJfMi"
+                  data-test={undefined}
                   size="large"
                 >
                   <img
@@ -1934,12 +1985,14 @@ exports[`Storyshots List With carrier 1`] = `
             </div>
             <div
               className="ListItem__Item-bhWwBk cirUQp"
+              data-test={undefined}
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -1961,12 +2014,14 @@ exports[`Storyshots List With carrier 1`] = `
             </div>
             <div
               className="ListItem__Item-bhWwBk cirUQp"
+              data-test={undefined}
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"
@@ -1988,12 +2043,14 @@ exports[`Storyshots List With carrier 1`] = `
             </div>
             <div
               className="ListItem__Item-bhWwBk cirUQp"
+              data-test={undefined}
             >
               <div
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
                   className={undefined}
+                  data-test={undefined}
                   fill="currentColor"
                   height="24px"
                   preserveAspectRatio="xMidYMid meet"

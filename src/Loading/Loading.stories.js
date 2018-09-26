@@ -82,6 +82,8 @@ storiesOf("Loading", module)
     const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PAGE_LOADER);
     const loadingText = text("Text", "Please wait, content of the page is loading...");
     const loading = boolean("Loading", true);
+    const dataTest = text("dataTest", "test");
+
     return {
       info:
         "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
@@ -89,7 +91,9 @@ storiesOf("Loading", module)
         {
           sections: [
             {
-              sectionFn: () => <Loading loading={loading} type={type} text={loadingText} />,
+              sectionFn: () => (
+                <Loading loading={loading} type={type} text={loadingText} dataTest={dataTest} />
+              ),
             },
           ],
         },

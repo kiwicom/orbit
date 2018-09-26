@@ -100,9 +100,11 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
         >
           <div
             className="InputGroup__StyledInputGroup-boKjnP gqqbYV"
+            data-test={undefined}
           >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Date of birth
@@ -116,6 +118,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
               >
                 <label
                   className="InputField__Field-hAVqzR cFiTgo"
+                  data-test={undefined}
                 >
                   <div
                     className="InputField__InputContainer-evnRDD bHPfak"
@@ -144,7 +147,9 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
               <div
                 className="InputGroup__StyledChild-bpaCT jLivMh"
               >
-                <label>
+                <label
+                  data-test={undefined}
+                >
                   <div
                     className="Select__SelectContainer-hisSov erDdbv"
                   >
@@ -242,6 +247,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     >
                       <svg
                         className={undefined}
+                        data-test={undefined}
                         fill="currentColor"
                         height="24px"
                         preserveAspectRatio="xMidYMid meet"
@@ -267,6 +273,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
               >
                 <label
                   className="InputField__Field-hAVqzR cFiTgo"
+                  data-test={undefined}
                 >
                   <div
                     className="InputField__InputContainer-evnRDD bHPfak"
@@ -1164,9 +1171,11 @@ exports[`Storyshots InputGroup Phone number 1`] = `
         >
           <div
             className="InputGroup__StyledInputGroup-boKjnP gqqbYV"
+            data-test={undefined}
           >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Phone number
@@ -1178,7 +1187,9 @@ exports[`Storyshots InputGroup Phone number 1`] = `
               <div
                 className="InputGroup__StyledChild-bpaCT iMHnHh"
               >
-                <label>
+                <label
+                  data-test={undefined}
+                >
                   <div
                     className="Select__SelectContainer-hisSov erDdbv"
                   >
@@ -1188,6 +1199,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                       <img
                         alt="Anywhere"
                         className="CountryFlag__StyledCountryFlag-cuUbfd jNdwdI"
+                        data-test={undefined}
                         src="//images.kiwi.com/flags/24x0/flag-cz.jpg"
                         srcSet="//images.kiwi.com/flags/48x0/flag-cz.jpg 2x"
                         title="Anywhere"
@@ -1219,6 +1231,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                     >
                       <svg
                         className={undefined}
+                        data-test={undefined}
                         fill="currentColor"
                         height="24px"
                         preserveAspectRatio="xMidYMid meet"
@@ -1244,6 +1257,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
               >
                 <label
                   className="InputField__Field-hAVqzR cFiTgo"
+                  data-test={undefined}
                 >
                   <div
                     className="InputField__InputContainer-evnRDD bHPfak"
@@ -2067,9 +2081,11 @@ exports[`Storyshots InputGroup Playground 1`] = `
         >
           <div
             className="InputGroup__StyledInputGroup-boKjnP gqqbYV"
+            data-test="test"
           >
             <span
               className="FormLabel-kJFBRQ fuYBgg"
+              data-test={undefined}
             >
               <span>
                 Phone number
@@ -2081,7 +2097,9 @@ exports[`Storyshots InputGroup Playground 1`] = `
               <div
                 className="InputGroup__StyledChild-bpaCT daJJeL"
               >
-                <label>
+                <label
+                  data-test={undefined}
+                >
                   <div
                     className="Select__SelectContainer-hisSov erDdbv"
                   >
@@ -2111,6 +2129,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     >
                       <svg
                         className={undefined}
+                        data-test={undefined}
                         fill="currentColor"
                         height="24px"
                         preserveAspectRatio="xMidYMid meet"
@@ -2136,6 +2155,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
               >
                 <label
                   className="InputField__Field-hAVqzR cFiTgo"
+                  data-test={undefined}
                 >
                   <div
                     className="InputField__InputContainer-evnRDD bHPfak"
@@ -2164,7 +2184,9 @@ exports[`Storyshots InputGroup Playground 1`] = `
               <div
                 className="InputGroup__StyledChild-bpaCT frCGBA"
               >
-                <label>
+                <label
+                  data-test={undefined}
+                >
                   <div
                     className="Select__SelectContainer-hisSov erDdbv"
                   >
@@ -2194,6 +2216,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     >
                       <svg
                         className={undefined}
+                        data-test={undefined}
                         fill="currentColor"
                         height="24px"
                         preserveAspectRatio="xMidYMid meet"
@@ -2219,6 +2242,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
               >
                 <label
                   className="InputField__Field-hAVqzR cFiTgo"
+                  data-test={undefined}
                 >
                   <div
                     className="InputField__InputContainer-evnRDD bHPfak"
@@ -2588,6 +2612,36 @@ exports[`Storyshots InputGroup Playground 1`] = `
                                   onBlur()
                                 </span>
                                 }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                test
+                                "
                               </span>
                             </span>
                           </span>

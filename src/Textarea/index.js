@@ -72,6 +72,7 @@ const Textarea = (props: Props) => {
     theme = defaultTokens,
     disabled,
     resize = RESIZE_OPTIONS.VERTICAL,
+    dataTest,
   } = props;
 
   const tokens = {
@@ -85,7 +86,7 @@ const Textarea = (props: Props) => {
     },
   };
   return (
-    <Field>
+    <Field data-test={dataTest}>
       {props.label && (
         <FormLabel filled={!!props.value} disabled={disabled}>
           {props.label}

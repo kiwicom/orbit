@@ -26,7 +26,11 @@ const getTypeToken = () => ({ theme, type }) => {
   return typeTokens[type];
 };
 
-const StyledList = styled(({ className, children }) => <div className={className}>{children}</div>)`
+const StyledList = styled(({ className, children, dataTest }) => (
+  <div className={className} data-test={dataTest}>
+    {children}
+  </div>
+))`
   display: flex;
   flex-direction: column;
   font-family: ${({ theme }) => theme.orbit.fontfamily};
@@ -55,8 +59,8 @@ StyledList.defaultProps = {
   theme: defaultTokens,
 };
 
-const List = ({ children, size = SIZES.NORMAL, type = TYPES.PRIMARY }: Props) => (
-  <StyledList type={type} size={size}>
+const List = ({ children, size = SIZES.NORMAL, type = TYPES.PRIMARY, dataTest }: Props) => (
+  <StyledList type={type} size={size} dataTest={dataTest}>
     {children}
   </StyledList>
 );

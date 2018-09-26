@@ -19,6 +19,7 @@ Table below contains all types of the props available in ButtonLink component.
 | :------------ | :---------------------| :-------------- | :------------------------------- |
 | children      | `React.Node`          |                 | The content of the Card. [See Subcomponents](#sub-components)
 | closable      | `boolean`             | `false`         | If `true`, the Close icon will be displayed. [See Functional specs](#functional-specs)
+| dataTest      | `string`              |                 | Optional prop for testing purposes.
 | onClose       | `func`                |                 | Function for handling onClick event.
 
 ## Functional specs
@@ -44,6 +45,7 @@ Table below contains all types of the props in CardHeader component.
 
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :---------------------| :-------------- | :------------------------------- |
+| dataTest      | `string`              |                 | Optional prop for testing purposes.
 | icon          | `React.Node`          |                 | Displayed icon.
 | **title**     | `string `             |                 | The title of the CardHeader.
 | subTitle      | `string`              |                 | The description of the CardHeader.
@@ -68,6 +70,7 @@ Table below contains all types of the props in CardContent component.
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :---------------------| :-------------- | :------------------------------- |
 | **children**  | `React.Node`          |                 | The content of the CardContent.
+| dataTest      | `string`              |                 | Optional prop for testing purposes.
 
 ### CardSection
 ```jsx
@@ -89,3 +92,4 @@ Table below contains all types of the props in CardContent component.
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :---------------------| :-------------- | :------------------------------- |
 | **children**  | `React.Node`          |                 | The content of the CardSection.
+| dataTest      | `string`              |                 | Optional prop for testing purposes.

@@ -1,4 +1,5 @@
 // @flow
+import type { Globals } from "../common/common.js.flow";
 
 type Type = "buttonLoader" | "boxLoader" | "searchLoader" | "pageLoader";
 
@@ -7,6 +8,7 @@ export type Props = {|
   +loading?: boolean,
   +type?: Type,
   +text?: string,
+  ...Globals,
 |};
 
 declare export var StyledSpinner: React$ComponentType<>;

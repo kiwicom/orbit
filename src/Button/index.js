@@ -253,7 +253,8 @@ export const StyledButton = styled(
       ? getTypeToken(TOKENS.colorTextButtonBordered)
       : getTypeToken(TOKENS.colorTextButton)} !important;
   border: 0;
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  border-radius: ${({ theme, circled }) =>
+    circled ? getSizeToken(TOKENS.heightButton) : theme.orbit.borderRadiusNormal};
   padding: 0;
   padding-right: ${({ onlyIcon, iconRight }) =>
     (onlyIcon && "0") ||

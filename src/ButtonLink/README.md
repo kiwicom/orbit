@@ -13,6 +13,7 @@ Table below contains all types of the props available in ButtonLink component.
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :---------------------| :-------------- | :------------------------------- |
 | block         | `boolean`             | `false`         | If `true`, the ButtonLink will grow up to the full width of its container.
+| circled       | `boolean`             | `false`         | If `true`, the ButtonLink will have circular shape.
 | children      | `React.Node`          |                 | The content of the ButtonLink. [See Functional specs](#functional-specs)
 | **component** | `string \| React.Node`| `"button"`      | The component used for the root node. Either a string to use a DOM element or a component.
 | disabled      | `boolean`             | `false`         | If `true`, the ButtonLink will be disabled.

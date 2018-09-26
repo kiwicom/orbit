@@ -14,6 +14,7 @@ Table below contains all types of the props available in Button component.
 | :------------ | :---------------------| :-------------- | :------------------------------- |
 | block         | `boolean`             | `false`         | If `true`, the Button will grow up to the full width of its container.
 | bordered      | `boolean`             | `false`         | If `true`, the Button will have a lighter version, with border and light background.
+| circled       | `boolean`             | `false`         | If `true`, the Button will have circular shape.
 | children      | `React.Node`          |                 | The content of the Button. [See Functional specs](#functional-specs)
 | **component** | `string \| React.Node`| `"button"`      | The component used for the root node. Either a string to use a DOM element or a component.
 | dataTest      | `string`              |                 | Optional prop for testing purposes.

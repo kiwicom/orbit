@@ -208,6 +208,37 @@ storiesOf("Button", module)
       ],
     };
   })
+  .addWithChapters("Circled button", () => {
+    const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
+    const type = select(
+      "Type",
+      [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY],
+      TYPE_OPTIONS.PRIMARY,
+    );
+    const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
+
+    return {
+      info:
+        "Button can be also rendered in circled shape, but only when it does have iconLeft and not have children.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Button
+                  onClick={action("clicked")}
+                  size={size}
+                  type={type}
+                  iconLeft={IconLeft && <IconLeft />}
+                  circled
+                />
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Destructive buttons", () => {
     const title = text("Title", "Destructive button");
     const bordered = boolean("Bordered", false);
@@ -281,6 +312,7 @@ storiesOf("Button", module)
     const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
     const width = number("Width", 0);
     const bordered = boolean("Bordered", false);
+    const circled = boolean("Circled", false);
     const loading = boolean("Loading", false);
     const dataTest = text("dataTest", "test");
     const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
@@ -300,6 +332,7 @@ storiesOf("Button", module)
                   href={href}
                   external={external}
                   disabled={disabled}
+                  circled={circled}
                   block={block}
                   bordered={bordered}
                   loading={loading}

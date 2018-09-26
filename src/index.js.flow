@@ -20,6 +20,7 @@ import typeof LoadingType from "./Loading";
 import typeof TextType from "./Text";
 import typeof TextLinkType from "./TextLink";
 import typeof TileType from "./Tile";
+import typeof TripSegmentType from "./TripSegment";
 import typeof RadioType from "./Radio";
 import typeof SelectType from "./Select";
 import typeof SeparatorType from "./Separator";
@@ -86,6 +87,7 @@ declare export var Separator: SeparatorType;
 declare export var ServiceLogo: ServiceLogoType;
 declare export var Textarea: TextareaType;
 declare export var Tile: TileType;
+declare export var TripSegment: TripSegmentType;
 
 declare export var defaultTheme: any;
 

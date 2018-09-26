@@ -5,4 +5,5 @@ export type Props = {|
   +icon?: React$Element<any>,
 |};
 
+declare export var Item: React$ComponentType<>;
 declare export default React$ComponentType<Props>;

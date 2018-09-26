@@ -1,0 +1,21 @@
+// @flow
+import type { Carrier } from "../CarrierLogo";
+
+export type State = {|
+  toggle: boolean,
+  visible: boolean,
+|};
+
+export type Props = {|
+  +children: React$Node,
+  +carrier: Carrier,
+  +departure: string,
+  +departureTime: string,
+  +arrival: string,
+  +arrivalTime: string,
+  +duration: string | number,
+  +shown?: boolean,
+  +onClick?: () => void,
+|};
+
+declare export default React$ComponentType<Props>;

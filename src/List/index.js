@@ -8,13 +8,31 @@ import { StyledCarrierLogo } from "../CarrierLogo";
 
 import type { Props } from "./index";
 
+const getSizeToken = () => ({ theme, size }) => {
+  const sizeTokens = {
+    [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
+    [SIZES.NORMAL]: theme.orbit.fontSizeTextNormal,
+    [SIZES.LARGE]: theme.orbit.fontSizeTextLarge,
+  };
+  return sizeTokens[size];
+};
+
+const getTypeToken = () => ({ theme, type }) => {
+  const typeTokens = {
+    [TYPES.PRIMARY]: theme.orbit.colorTextPrimary,
+    [TYPES.SECONDARY]: theme.orbit.colorTextSecondary,
+  };
+
+  return typeTokens[type];
+};
+
 const StyledList = styled(({ className, children }) => <div className={className}>{children}</div>)`
   display: flex;
   flex-direction: column;
   font-family: ${({ theme }) => theme.orbit.fontfamily};
-  font-size: ${({ tokens, size }) => tokens.fontSizes[size]};
+  font-size: ${getSizeToken()};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
-  color: ${({ tokens, type }) => tokens.colors[type]};
+  color: ${getTypeToken()};
 
   // CarrierLogo images
   ${StyledCarrierLogo} {
@@ -37,29 +55,10 @@ StyledList.defaultProps = {
   theme: defaultTokens,
 };
 
-const List = ({
-  children,
-  size = SIZES.NORMAL,
-  type = TYPES.PRIMARY,
-  theme = defaultTokens,
-}: Props) => {
-  const tokens = {
-    fontSizes: {
-      [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
-      [SIZES.NORMAL]: theme.orbit.fontSizeTextNormal,
-      [SIZES.LARGE]: theme.orbit.fontSizeTextLarge,
-    },
-    colors: {
-      [TYPES.PRIMARY]: theme.orbit.colorTextPrimary,
-      [TYPES.SECONDARY]: theme.orbit.colorTextSecondary,
-    },
-  };
-
-  return (
-    <StyledList tokens={tokens} type={type} size={size}>
-      {children}
-    </StyledList>
-  );
-};
+const List = ({ children, size = SIZES.NORMAL, type = TYPES.PRIMARY }: Props) => (
+  <StyledList type={type} size={size}>
+    {children}
+  </StyledList>
+);
 
 export default List;

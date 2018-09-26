@@ -183,6 +183,7 @@ const ButtonLink = (props: Props) => {
     external,
     children,
     component,
+    href,
     size = SIZES.NORMAL,
     icon,
     iconRight,
@@ -202,7 +203,7 @@ const ButtonLink = (props: Props) => {
       onlyIcon={onlyIcon}
       sizeIcon={sizeIcon}
       type={type}
-      target={external ? "_blank" : undefined}
+      target={href && external ? "_blank" : undefined}
       {...props}
     >
       {iconLeft && (

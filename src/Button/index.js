@@ -357,6 +357,7 @@ const Button = (props: Props) => {
     children,
     bordered,
     disabled,
+    href,
     size = SIZE_OPTIONS.NORMAL,
     icon,
     iconRight,
@@ -381,7 +382,7 @@ const Button = (props: Props) => {
       onlyIcon={onlyIcon}
       size={size}
       sizeIcon={sizeIcon}
-      target={external ? "_blank" : undefined}
+      target={href && external ? "_blank" : undefined}
       type={type}
       width={width}
       {...props}

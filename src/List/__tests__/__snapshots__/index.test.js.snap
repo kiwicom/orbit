@@ -384,19 +384,6 @@ exports[`List with custom colored icons should match snapshot 1`] = `
       },
     }
   }
-  tokens={
-    Object {
-      "colors": Object {
-        "primary": "#46515e",
-        "secondary": "#7f91a8",
-      },
-      "fontSizes": Object {
-        "large": "16px",
-        "normal": "14px",
-        "small": "12px",
-      },
-    }
-  }
   type="secondary"
 >
   <ListItem

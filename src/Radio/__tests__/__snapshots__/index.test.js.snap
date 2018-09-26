@@ -2,7 +2,9 @@
 
 exports[`Default CheckBox should match snapshot 1`] = `
 <Radio__Label
+  checked={false}
   disabled={false}
+  hasError={false}
   theme={
     Object {
       "orbit": Object {
@@ -382,11 +384,6 @@ exports[`Default CheckBox should match snapshot 1`] = `
         "zIndexOnTheTop": "900",
         "zIndexSticky": "100",
       },
-    }
-  }
-  tokens={
-    Object {
-      "borderColor": "#bac7d5",
     }
   }
 >
@@ -1170,11 +1167,6 @@ exports[`Default CheckBox should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
-      }
-    }
-    tokens={
-      Object {
-        "borderColor": "#bac7d5",
       }
     }
   >

@@ -121,7 +121,7 @@ exports[`Storyshots InputFile Default 1`] = `
               className="InputFile__FakeInput-djykOY ciTDoB"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK guyeQf"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
                 disabled={undefined}
                 size="small"
                 target={undefined}
@@ -514,7 +514,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
               className="InputFile__FakeInput-djykOY ciTDoB"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK guyeQf"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
                 disabled={undefined}
                 size="small"
                 target={undefined}
@@ -972,7 +972,7 @@ exports[`Storyshots InputFile Playground 1`] = `
               className="InputFile__FakeInput-djykOY dilRac"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK guyeQf"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
                 disabled={undefined}
                 size="small"
                 target={undefined}
@@ -1609,7 +1609,7 @@ exports[`Storyshots InputFile With error 1`] = `
               className="InputFile__FakeInput-djykOY dilRac"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK guyeQf"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
                 disabled={undefined}
                 size="small"
                 target={undefined}
@@ -2037,7 +2037,7 @@ exports[`Storyshots InputFile With help 1`] = `
               className="InputFile__FakeInput-djykOY ciTDoB"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK guyeQf"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
                 disabled={undefined}
                 size="small"
                 target={undefined}

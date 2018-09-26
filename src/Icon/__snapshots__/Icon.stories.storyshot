@@ -621,7 +621,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Accommodation from "@kiwicom/orbit-components/lib/icons/Accommodation
+                import Accommodation from "@kiwicom/orbit-components/lib/icons/Accommodation"
               </div>
             </div>
             <div
@@ -648,7 +648,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import AccountCircle from "@kiwicom/orbit-components/lib/icons/AccountCircle
+                import AccountCircle from "@kiwicom/orbit-components/lib/icons/AccountCircle"
               </div>
             </div>
             <div
@@ -675,7 +675,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import AirplaneDown from "@kiwicom/orbit-components/lib/icons/AirplaneDown
+                import AirplaneDown from "@kiwicom/orbit-components/lib/icons/AirplaneDown"
               </div>
             </div>
             <div
@@ -702,7 +702,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import AirplaneLanding from "@kiwicom/orbit-components/lib/icons/AirplaneLanding
+                import AirplaneLanding from "@kiwicom/orbit-components/lib/icons/AirplaneLanding"
               </div>
             </div>
             <div
@@ -729,7 +729,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import AirplaneOff from "@kiwicom/orbit-components/lib/icons/AirplaneOff
+                import AirplaneOff from "@kiwicom/orbit-components/lib/icons/AirplaneOff"
               </div>
             </div>
             <div
@@ -756,7 +756,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import AirplaneReturn from "@kiwicom/orbit-components/lib/icons/AirplaneReturn
+                import AirplaneReturn from "@kiwicom/orbit-components/lib/icons/AirplaneReturn"
               </div>
             </div>
             <div
@@ -783,7 +783,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import AirplaneRight from "@kiwicom/orbit-components/lib/icons/AirplaneRight
+                import AirplaneRight from "@kiwicom/orbit-components/lib/icons/AirplaneRight"
               </div>
             </div>
             <div
@@ -810,7 +810,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import AirplaneTakeoff from "@kiwicom/orbit-components/lib/icons/AirplaneTakeoff
+                import AirplaneTakeoff from "@kiwicom/orbit-components/lib/icons/AirplaneTakeoff"
               </div>
             </div>
             <div
@@ -837,7 +837,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import AirplaneUp from "@kiwicom/orbit-components/lib/icons/AirplaneUp
+                import AirplaneUp from "@kiwicom/orbit-components/lib/icons/AirplaneUp"
               </div>
             </div>
             <div
@@ -864,7 +864,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Airplane from "@kiwicom/orbit-components/lib/icons/Airplane
+                import Airplane from "@kiwicom/orbit-components/lib/icons/Airplane"
               </div>
             </div>
             <div
@@ -891,7 +891,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import AirportSecurity from "@kiwicom/orbit-components/lib/icons/AirportSecurity
+                import AirportSecurity from "@kiwicom/orbit-components/lib/icons/AirportSecurity"
               </div>
             </div>
             <div
@@ -918,7 +918,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import AlertCircle from "@kiwicom/orbit-components/lib/icons/AlertCircle
+                import AlertCircle from "@kiwicom/orbit-components/lib/icons/AlertCircle"
               </div>
             </div>
             <div
@@ -945,7 +945,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Alert from "@kiwicom/orbit-components/lib/icons/Alert
+                import Alert from "@kiwicom/orbit-components/lib/icons/Alert"
               </div>
             </div>
             <div
@@ -972,7 +972,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import All from "@kiwicom/orbit-components/lib/icons/All
+                import All from "@kiwicom/orbit-components/lib/icons/All"
               </div>
             </div>
             <div
@@ -999,7 +999,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Anywhere from "@kiwicom/orbit-components/lib/icons/Anywhere
+                import Anywhere from "@kiwicom/orbit-components/lib/icons/Anywhere"
               </div>
             </div>
             <div
@@ -1026,7 +1026,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ArrowDown from "@kiwicom/orbit-components/lib/icons/ArrowDown
+                import ArrowDown from "@kiwicom/orbit-components/lib/icons/ArrowDown"
               </div>
             </div>
             <div
@@ -1053,7 +1053,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ArrowUp from "@kiwicom/orbit-components/lib/icons/ArrowUp
+                import ArrowUp from "@kiwicom/orbit-components/lib/icons/ArrowUp"
               </div>
             </div>
             <div
@@ -1080,7 +1080,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Atm from "@kiwicom/orbit-components/lib/icons/Atm
+                import Atm from "@kiwicom/orbit-components/lib/icons/Atm"
               </div>
             </div>
             <div
@@ -1107,7 +1107,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Attachment from "@kiwicom/orbit-components/lib/icons/Attachment
+                import Attachment from "@kiwicom/orbit-components/lib/icons/Attachment"
               </div>
             </div>
             <div
@@ -1134,7 +1134,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import BaggageCabin from "@kiwicom/orbit-components/lib/icons/BaggageCabin
+                import BaggageCabin from "@kiwicom/orbit-components/lib/icons/BaggageCabin"
               </div>
             </div>
             <div
@@ -1161,7 +1161,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import BaggageChecked from "@kiwicom/orbit-components/lib/icons/BaggageChecked
+                import BaggageChecked from "@kiwicom/orbit-components/lib/icons/BaggageChecked"
               </div>
             </div>
             <div
@@ -1188,7 +1188,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import BaggageNone from "@kiwicom/orbit-components/lib/icons/BaggageNone
+                import BaggageNone from "@kiwicom/orbit-components/lib/icons/BaggageNone"
               </div>
             </div>
             <div
@@ -1215,7 +1215,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import BaggagePersonalItem from "@kiwicom/orbit-components/lib/icons/BaggagePersonalItem
+                import BaggagePersonalItem from "@kiwicom/orbit-components/lib/icons/BaggagePersonalItem"
               </div>
             </div>
             <div
@@ -1242,7 +1242,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import BaggageRecheck from "@kiwicom/orbit-components/lib/icons/BaggageRecheck
+                import BaggageRecheck from "@kiwicom/orbit-components/lib/icons/BaggageRecheck"
               </div>
             </div>
             <div
@@ -1269,7 +1269,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import BaggageSet from "@kiwicom/orbit-components/lib/icons/BaggageSet
+                import BaggageSet from "@kiwicom/orbit-components/lib/icons/BaggageSet"
               </div>
             </div>
             <div
@@ -1296,7 +1296,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import BaggageStorage from "@kiwicom/orbit-components/lib/icons/BaggageStorage
+                import BaggageStorage from "@kiwicom/orbit-components/lib/icons/BaggageStorage"
               </div>
             </div>
             <div
@@ -1323,7 +1323,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import BillingDetails from "@kiwicom/orbit-components/lib/icons/BillingDetails
+                import BillingDetails from "@kiwicom/orbit-components/lib/icons/BillingDetails"
               </div>
             </div>
             <div
@@ -1350,7 +1350,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import BoardingGate from "@kiwicom/orbit-components/lib/icons/BoardingGate
+                import BoardingGate from "@kiwicom/orbit-components/lib/icons/BoardingGate"
               </div>
             </div>
             <div
@@ -1377,7 +1377,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Boat from "@kiwicom/orbit-components/lib/icons/Boat
+                import Boat from "@kiwicom/orbit-components/lib/icons/Boat"
               </div>
             </div>
             <div
@@ -1404,7 +1404,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Bug from "@kiwicom/orbit-components/lib/icons/Bug
+                import Bug from "@kiwicom/orbit-components/lib/icons/Bug"
               </div>
             </div>
             <div
@@ -1431,7 +1431,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Bus from "@kiwicom/orbit-components/lib/icons/Bus
+                import Bus from "@kiwicom/orbit-components/lib/icons/Bus"
               </div>
             </div>
             <div
@@ -1458,7 +1458,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import CalendarAnytime from "@kiwicom/orbit-components/lib/icons/CalendarAnytime
+                import CalendarAnytime from "@kiwicom/orbit-components/lib/icons/CalendarAnytime"
               </div>
             </div>
             <div
@@ -1485,7 +1485,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import CalendarRange from "@kiwicom/orbit-components/lib/icons/CalendarRange
+                import CalendarRange from "@kiwicom/orbit-components/lib/icons/CalendarRange"
               </div>
             </div>
             <div
@@ -1512,7 +1512,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import CalendarTripLength from "@kiwicom/orbit-components/lib/icons/CalendarTripLength
+                import CalendarTripLength from "@kiwicom/orbit-components/lib/icons/CalendarTripLength"
               </div>
             </div>
             <div
@@ -1539,7 +1539,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Calendar from "@kiwicom/orbit-components/lib/icons/Calendar
+                import Calendar from "@kiwicom/orbit-components/lib/icons/Calendar"
               </div>
             </div>
             <div
@@ -1566,7 +1566,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Camera from "@kiwicom/orbit-components/lib/icons/Camera
+                import Camera from "@kiwicom/orbit-components/lib/icons/Camera"
               </div>
             </div>
             <div
@@ -1593,7 +1593,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import CarRental from "@kiwicom/orbit-components/lib/icons/CarRental
+                import CarRental from "@kiwicom/orbit-components/lib/icons/CarRental"
               </div>
             </div>
             <div
@@ -1620,7 +1620,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Car from "@kiwicom/orbit-components/lib/icons/Car
+                import Car from "@kiwicom/orbit-components/lib/icons/Car"
               </div>
             </div>
             <div
@@ -1647,7 +1647,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Chat from "@kiwicom/orbit-components/lib/icons/Chat
+                import Chat from "@kiwicom/orbit-components/lib/icons/Chat"
               </div>
             </div>
             <div
@@ -1674,7 +1674,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import CheckCircle from "@kiwicom/orbit-components/lib/icons/CheckCircle
+                import CheckCircle from "@kiwicom/orbit-components/lib/icons/CheckCircle"
               </div>
             </div>
             <div
@@ -1701,7 +1701,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Check from "@kiwicom/orbit-components/lib/icons/Check
+                import Check from "@kiwicom/orbit-components/lib/icons/Check"
               </div>
             </div>
             <div
@@ -1728,7 +1728,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ChevronDown from "@kiwicom/orbit-components/lib/icons/ChevronDown
+                import ChevronDown from "@kiwicom/orbit-components/lib/icons/ChevronDown"
               </div>
             </div>
             <div
@@ -1755,7 +1755,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ChevronLeft from "@kiwicom/orbit-components/lib/icons/ChevronLeft
+                import ChevronLeft from "@kiwicom/orbit-components/lib/icons/ChevronLeft"
               </div>
             </div>
             <div
@@ -1782,7 +1782,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ChevronRight from "@kiwicom/orbit-components/lib/icons/ChevronRight
+                import ChevronRight from "@kiwicom/orbit-components/lib/icons/ChevronRight"
               </div>
             </div>
             <div
@@ -1809,7 +1809,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ChevronUp from "@kiwicom/orbit-components/lib/icons/ChevronUp
+                import ChevronUp from "@kiwicom/orbit-components/lib/icons/ChevronUp"
               </div>
             </div>
             <div
@@ -1836,7 +1836,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ChildFriendly from "@kiwicom/orbit-components/lib/icons/ChildFriendly
+                import ChildFriendly from "@kiwicom/orbit-components/lib/icons/ChildFriendly"
               </div>
             </div>
             <div
@@ -1863,7 +1863,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Child from "@kiwicom/orbit-components/lib/icons/Child
+                import Child from "@kiwicom/orbit-components/lib/icons/Child"
               </div>
             </div>
             <div
@@ -1890,7 +1890,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import CircleSmall from "@kiwicom/orbit-components/lib/icons/CircleSmall
+                import CircleSmall from "@kiwicom/orbit-components/lib/icons/CircleSmall"
               </div>
             </div>
             <div
@@ -1917,7 +1917,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Circle from "@kiwicom/orbit-components/lib/icons/Circle
+                import Circle from "@kiwicom/orbit-components/lib/icons/Circle"
               </div>
             </div>
             <div
@@ -1944,7 +1944,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import City from "@kiwicom/orbit-components/lib/icons/City
+                import City from "@kiwicom/orbit-components/lib/icons/City"
               </div>
             </div>
             <div
@@ -1971,7 +1971,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Clock from "@kiwicom/orbit-components/lib/icons/Clock
+                import Clock from "@kiwicom/orbit-components/lib/icons/Clock"
               </div>
             </div>
             <div
@@ -1998,7 +1998,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import CloseCircle from "@kiwicom/orbit-components/lib/icons/CloseCircle
+                import CloseCircle from "@kiwicom/orbit-components/lib/icons/CloseCircle"
               </div>
             </div>
             <div
@@ -2025,7 +2025,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Close from "@kiwicom/orbit-components/lib/icons/Close
+                import Close from "@kiwicom/orbit-components/lib/icons/Close"
               </div>
             </div>
             <div
@@ -2052,7 +2052,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Cocktail from "@kiwicom/orbit-components/lib/icons/Cocktail
+                import Cocktail from "@kiwicom/orbit-components/lib/icons/Cocktail"
               </div>
             </div>
             <div
@@ -2079,7 +2079,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Code from "@kiwicom/orbit-components/lib/icons/Code
+                import Code from "@kiwicom/orbit-components/lib/icons/Code"
               </div>
             </div>
             <div
@@ -2106,7 +2106,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Coffee from "@kiwicom/orbit-components/lib/icons/Coffee
+                import Coffee from "@kiwicom/orbit-components/lib/icons/Coffee"
               </div>
             </div>
             <div
@@ -2133,7 +2133,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Compare from "@kiwicom/orbit-components/lib/icons/Compare
+                import Compare from "@kiwicom/orbit-components/lib/icons/Compare"
               </div>
             </div>
             <div
@@ -2160,7 +2160,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Compass from "@kiwicom/orbit-components/lib/icons/Compass
+                import Compass from "@kiwicom/orbit-components/lib/icons/Compass"
               </div>
             </div>
             <div
@@ -2187,7 +2187,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ContactEmail from "@kiwicom/orbit-components/lib/icons/ContactEmail
+                import ContactEmail from "@kiwicom/orbit-components/lib/icons/ContactEmail"
               </div>
             </div>
             <div
@@ -2214,7 +2214,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import CreditCard from "@kiwicom/orbit-components/lib/icons/CreditCard
+                import CreditCard from "@kiwicom/orbit-components/lib/icons/CreditCard"
               </div>
             </div>
             <div
@@ -2241,7 +2241,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Deals from "@kiwicom/orbit-components/lib/icons/Deals
+                import Deals from "@kiwicom/orbit-components/lib/icons/Deals"
               </div>
             </div>
             <div
@@ -2268,7 +2268,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import DeviceDesktop from "@kiwicom/orbit-components/lib/icons/DeviceDesktop
+                import DeviceDesktop from "@kiwicom/orbit-components/lib/icons/DeviceDesktop"
               </div>
             </div>
             <div
@@ -2295,7 +2295,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import DeviceMobile from "@kiwicom/orbit-components/lib/icons/DeviceMobile
+                import DeviceMobile from "@kiwicom/orbit-components/lib/icons/DeviceMobile"
               </div>
             </div>
             <div
@@ -2322,7 +2322,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Document from "@kiwicom/orbit-components/lib/icons/Document
+                import Document from "@kiwicom/orbit-components/lib/icons/Document"
               </div>
             </div>
             <div
@@ -2349,7 +2349,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Download from "@kiwicom/orbit-components/lib/icons/Download
+                import Download from "@kiwicom/orbit-components/lib/icons/Download"
               </div>
             </div>
             <div
@@ -2376,7 +2376,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Duplicate from "@kiwicom/orbit-components/lib/icons/Duplicate
+                import Duplicate from "@kiwicom/orbit-components/lib/icons/Duplicate"
               </div>
             </div>
             <div
@@ -2403,7 +2403,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import EditOff from "@kiwicom/orbit-components/lib/icons/EditOff
+                import EditOff from "@kiwicom/orbit-components/lib/icons/EditOff"
               </div>
             </div>
             <div
@@ -2430,7 +2430,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Edit from "@kiwicom/orbit-components/lib/icons/Edit
+                import Edit from "@kiwicom/orbit-components/lib/icons/Edit"
               </div>
             </div>
             <div
@@ -2457,7 +2457,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Email from "@kiwicom/orbit-components/lib/icons/Email
+                import Email from "@kiwicom/orbit-components/lib/icons/Email"
               </div>
             </div>
             <div
@@ -2484,7 +2484,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Entertainment from "@kiwicom/orbit-components/lib/icons/Entertainment
+                import Entertainment from "@kiwicom/orbit-components/lib/icons/Entertainment"
               </div>
             </div>
             <div
@@ -2511,7 +2511,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Exchange from "@kiwicom/orbit-components/lib/icons/Exchange
+                import Exchange from "@kiwicom/orbit-components/lib/icons/Exchange"
               </div>
             </div>
             <div
@@ -2538,7 +2538,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Facebook from "@kiwicom/orbit-components/lib/icons/Facebook
+                import Facebook from "@kiwicom/orbit-components/lib/icons/Facebook"
               </div>
             </div>
             <div
@@ -2565,7 +2565,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Feedback from "@kiwicom/orbit-components/lib/icons/Feedback
+                import Feedback from "@kiwicom/orbit-components/lib/icons/Feedback"
               </div>
             </div>
             <div
@@ -2592,7 +2592,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Filters from "@kiwicom/orbit-components/lib/icons/Filters
+                import Filters from "@kiwicom/orbit-components/lib/icons/Filters"
               </div>
             </div>
             <div
@@ -2619,7 +2619,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import FlightDirect from "@kiwicom/orbit-components/lib/icons/FlightDirect
+                import FlightDirect from "@kiwicom/orbit-components/lib/icons/FlightDirect"
               </div>
             </div>
             <div
@@ -2646,7 +2646,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import FlightMulticity from "@kiwicom/orbit-components/lib/icons/FlightMulticity
+                import FlightMulticity from "@kiwicom/orbit-components/lib/icons/FlightMulticity"
               </div>
             </div>
             <div
@@ -2673,7 +2673,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import FlightNomad from "@kiwicom/orbit-components/lib/icons/FlightNomad
+                import FlightNomad from "@kiwicom/orbit-components/lib/icons/FlightNomad"
               </div>
             </div>
             <div
@@ -2700,7 +2700,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import FlightReturn from "@kiwicom/orbit-components/lib/icons/FlightReturn
+                import FlightReturn from "@kiwicom/orbit-components/lib/icons/FlightReturn"
               </div>
             </div>
             <div
@@ -2727,7 +2727,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import FlightServices from "@kiwicom/orbit-components/lib/icons/FlightServices
+                import FlightServices from "@kiwicom/orbit-components/lib/icons/FlightServices"
               </div>
             </div>
             <div
@@ -2754,7 +2754,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import FullScreenOff from "@kiwicom/orbit-components/lib/icons/FullScreenOff
+                import FullScreenOff from "@kiwicom/orbit-components/lib/icons/FullScreenOff"
               </div>
             </div>
             <div
@@ -2781,7 +2781,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import FullScreen from "@kiwicom/orbit-components/lib/icons/FullScreen
+                import FullScreen from "@kiwicom/orbit-components/lib/icons/FullScreen"
               </div>
             </div>
             <div
@@ -2808,7 +2808,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Gallery from "@kiwicom/orbit-components/lib/icons/Gallery
+                import Gallery from "@kiwicom/orbit-components/lib/icons/Gallery"
               </div>
             </div>
             <div
@@ -2835,7 +2835,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import GenderMan from "@kiwicom/orbit-components/lib/icons/GenderMan
+                import GenderMan from "@kiwicom/orbit-components/lib/icons/GenderMan"
               </div>
             </div>
             <div
@@ -2862,7 +2862,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import GenderWoman from "@kiwicom/orbit-components/lib/icons/GenderWoman
+                import GenderWoman from "@kiwicom/orbit-components/lib/icons/GenderWoman"
               </div>
             </div>
             <div
@@ -2906,7 +2906,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Google from "@kiwicom/orbit-components/lib/icons/Google
+                import Google from "@kiwicom/orbit-components/lib/icons/Google"
               </div>
             </div>
             <div
@@ -2933,7 +2933,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import GpsIos from "@kiwicom/orbit-components/lib/icons/GpsIos
+                import GpsIos from "@kiwicom/orbit-components/lib/icons/GpsIos"
               </div>
             </div>
             <div
@@ -2960,7 +2960,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import GpsOff from "@kiwicom/orbit-components/lib/icons/GpsOff
+                import GpsOff from "@kiwicom/orbit-components/lib/icons/GpsOff"
               </div>
             </div>
             <div
@@ -2987,7 +2987,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Gps from "@kiwicom/orbit-components/lib/icons/Gps
+                import Gps from "@kiwicom/orbit-components/lib/icons/Gps"
               </div>
             </div>
             <div
@@ -3014,7 +3014,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Grid from "@kiwicom/orbit-components/lib/icons/Grid
+                import Grid from "@kiwicom/orbit-components/lib/icons/Grid"
               </div>
             </div>
             <div
@@ -3041,7 +3041,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Gym from "@kiwicom/orbit-components/lib/icons/Gym
+                import Gym from "@kiwicom/orbit-components/lib/icons/Gym"
               </div>
             </div>
             <div
@@ -3068,7 +3068,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import History from "@kiwicom/orbit-components/lib/icons/History
+                import History from "@kiwicom/orbit-components/lib/icons/History"
               </div>
             </div>
             <div
@@ -3095,7 +3095,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import InformationCircle from "@kiwicom/orbit-components/lib/icons/InformationCircle
+                import InformationCircle from "@kiwicom/orbit-components/lib/icons/InformationCircle"
               </div>
             </div>
             <div
@@ -3122,7 +3122,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Instagram from "@kiwicom/orbit-components/lib/icons/Instagram
+                import Instagram from "@kiwicom/orbit-components/lib/icons/Instagram"
               </div>
             </div>
             <div
@@ -3149,7 +3149,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import InsuranceConfirmed from "@kiwicom/orbit-components/lib/icons/InsuranceConfirmed
+                import InsuranceConfirmed from "@kiwicom/orbit-components/lib/icons/InsuranceConfirmed"
               </div>
             </div>
             <div
@@ -3176,7 +3176,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import InsuranceOff from "@kiwicom/orbit-components/lib/icons/InsuranceOff
+                import InsuranceOff from "@kiwicom/orbit-components/lib/icons/InsuranceOff"
               </div>
             </div>
             <div
@@ -3203,7 +3203,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Insurance from "@kiwicom/orbit-components/lib/icons/Insurance
+                import Insurance from "@kiwicom/orbit-components/lib/icons/Insurance"
               </div>
             </div>
             <div
@@ -3230,7 +3230,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Invoice from "@kiwicom/orbit-components/lib/icons/Invoice
+                import Invoice from "@kiwicom/orbit-components/lib/icons/Invoice"
               </div>
             </div>
             <div
@@ -3257,7 +3257,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ItemCompleted from "@kiwicom/orbit-components/lib/icons/ItemCompleted
+                import ItemCompleted from "@kiwicom/orbit-components/lib/icons/ItemCompleted"
               </div>
             </div>
             <div
@@ -3284,7 +3284,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import KiwicomCare from "@kiwicom/orbit-components/lib/icons/KiwicomCare
+                import KiwicomCare from "@kiwicom/orbit-components/lib/icons/KiwicomCare"
               </div>
             </div>
             <div
@@ -3311,7 +3311,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import KiwicomGuarantee from "@kiwicom/orbit-components/lib/icons/KiwicomGuarantee
+                import KiwicomGuarantee from "@kiwicom/orbit-components/lib/icons/KiwicomGuarantee"
               </div>
             </div>
             <div
@@ -3338,7 +3338,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Kiwicom from "@kiwicom/orbit-components/lib/icons/Kiwicom
+                import Kiwicom from "@kiwicom/orbit-components/lib/icons/Kiwicom"
               </div>
             </div>
             <div
@@ -3365,7 +3365,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Link from "@kiwicom/orbit-components/lib/icons/Link
+                import Link from "@kiwicom/orbit-components/lib/icons/Link"
               </div>
             </div>
             <div
@@ -3392,7 +3392,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Linkedin from "@kiwicom/orbit-components/lib/icons/Linkedin
+                import Linkedin from "@kiwicom/orbit-components/lib/icons/Linkedin"
               </div>
             </div>
             <div
@@ -3419,7 +3419,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import List from "@kiwicom/orbit-components/lib/icons/List
+                import List from "@kiwicom/orbit-components/lib/icons/List"
               </div>
             </div>
             <div
@@ -3570,7 +3570,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Loading from "@kiwicom/orbit-components/lib/icons/Loading
+                import Loading from "@kiwicom/orbit-components/lib/icons/Loading"
               </div>
             </div>
             <div
@@ -3597,7 +3597,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import LocationA from "@kiwicom/orbit-components/lib/icons/LocationA
+                import LocationA from "@kiwicom/orbit-components/lib/icons/LocationA"
               </div>
             </div>
             <div
@@ -3624,7 +3624,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import LocationAdd from "@kiwicom/orbit-components/lib/icons/LocationAdd
+                import LocationAdd from "@kiwicom/orbit-components/lib/icons/LocationAdd"
               </div>
             </div>
             <div
@@ -3651,7 +3651,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import LocationB from "@kiwicom/orbit-components/lib/icons/LocationB
+                import LocationB from "@kiwicom/orbit-components/lib/icons/LocationB"
               </div>
             </div>
             <div
@@ -3678,7 +3678,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import LocationC from "@kiwicom/orbit-components/lib/icons/LocationC
+                import LocationC from "@kiwicom/orbit-components/lib/icons/LocationC"
               </div>
             </div>
             <div
@@ -3705,7 +3705,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import LocationD from "@kiwicom/orbit-components/lib/icons/LocationD
+                import LocationD from "@kiwicom/orbit-components/lib/icons/LocationD"
               </div>
             </div>
             <div
@@ -3732,7 +3732,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import LocationE from "@kiwicom/orbit-components/lib/icons/LocationE
+                import LocationE from "@kiwicom/orbit-components/lib/icons/LocationE"
               </div>
             </div>
             <div
@@ -3759,7 +3759,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import LocationF from "@kiwicom/orbit-components/lib/icons/LocationF
+                import LocationF from "@kiwicom/orbit-components/lib/icons/LocationF"
               </div>
             </div>
             <div
@@ -3786,7 +3786,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import LocationG from "@kiwicom/orbit-components/lib/icons/LocationG
+                import LocationG from "@kiwicom/orbit-components/lib/icons/LocationG"
               </div>
             </div>
             <div
@@ -3813,7 +3813,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import LocationH from "@kiwicom/orbit-components/lib/icons/LocationH
+                import LocationH from "@kiwicom/orbit-components/lib/icons/LocationH"
               </div>
             </div>
             <div
@@ -3840,7 +3840,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import LocationI from "@kiwicom/orbit-components/lib/icons/LocationI
+                import LocationI from "@kiwicom/orbit-components/lib/icons/LocationI"
               </div>
             </div>
             <div
@@ -3867,7 +3867,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import LocationJ from "@kiwicom/orbit-components/lib/icons/LocationJ
+                import LocationJ from "@kiwicom/orbit-components/lib/icons/LocationJ"
               </div>
             </div>
             <div
@@ -3894,7 +3894,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Location from "@kiwicom/orbit-components/lib/icons/Location
+                import Location from "@kiwicom/orbit-components/lib/icons/Location"
               </div>
             </div>
             <div
@@ -3921,7 +3921,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Logout from "@kiwicom/orbit-components/lib/icons/Logout
+                import Logout from "@kiwicom/orbit-components/lib/icons/Logout"
               </div>
             </div>
             <div
@@ -3948,7 +3948,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Lounge from "@kiwicom/orbit-components/lib/icons/Lounge
+                import Lounge from "@kiwicom/orbit-components/lib/icons/Lounge"
               </div>
             </div>
             <div
@@ -3975,7 +3975,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Map from "@kiwicom/orbit-components/lib/icons/Map
+                import Map from "@kiwicom/orbit-components/lib/icons/Map"
               </div>
             </div>
             <div
@@ -4002,7 +4002,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Meal from "@kiwicom/orbit-components/lib/icons/Meal
+                import Meal from "@kiwicom/orbit-components/lib/icons/Meal"
               </div>
             </div>
             <div
@@ -4029,7 +4029,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import MenuHamburger from "@kiwicom/orbit-components/lib/icons/MenuHamburger
+                import MenuHamburger from "@kiwicom/orbit-components/lib/icons/MenuHamburger"
               </div>
             </div>
             <div
@@ -4056,7 +4056,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import MenuKebab from "@kiwicom/orbit-components/lib/icons/MenuKebab
+                import MenuKebab from "@kiwicom/orbit-components/lib/icons/MenuKebab"
               </div>
             </div>
             <div
@@ -4083,7 +4083,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import MenuMeatballs from "@kiwicom/orbit-components/lib/icons/MenuMeatballs
+                import MenuMeatballs from "@kiwicom/orbit-components/lib/icons/MenuMeatballs"
               </div>
             </div>
             <div
@@ -4110,7 +4110,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import MessagesOutline from "@kiwicom/orbit-components/lib/icons/MessagesOutline
+                import MessagesOutline from "@kiwicom/orbit-components/lib/icons/MessagesOutline"
               </div>
             </div>
             <div
@@ -4137,7 +4137,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Messages from "@kiwicom/orbit-components/lib/icons/Messages
+                import Messages from "@kiwicom/orbit-components/lib/icons/Messages"
               </div>
             </div>
             <div
@@ -4164,7 +4164,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import MinusCircle from "@kiwicom/orbit-components/lib/icons/MinusCircle
+                import MinusCircle from "@kiwicom/orbit-components/lib/icons/MinusCircle"
               </div>
             </div>
             <div
@@ -4191,7 +4191,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Minus from "@kiwicom/orbit-components/lib/icons/Minus
+                import Minus from "@kiwicom/orbit-components/lib/icons/Minus"
               </div>
             </div>
             <div
@@ -4218,7 +4218,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import MoneyTransferIn from "@kiwicom/orbit-components/lib/icons/MoneyTransferIn
+                import MoneyTransferIn from "@kiwicom/orbit-components/lib/icons/MoneyTransferIn"
               </div>
             </div>
             <div
@@ -4245,7 +4245,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import MoneyTransferOut from "@kiwicom/orbit-components/lib/icons/MoneyTransferOut
+                import MoneyTransferOut from "@kiwicom/orbit-components/lib/icons/MoneyTransferOut"
               </div>
             </div>
             <div
@@ -4272,7 +4272,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Money from "@kiwicom/orbit-components/lib/icons/Money
+                import Money from "@kiwicom/orbit-components/lib/icons/Money"
               </div>
             </div>
             <div
@@ -4299,7 +4299,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Moon from "@kiwicom/orbit-components/lib/icons/Moon
+                import Moon from "@kiwicom/orbit-components/lib/icons/Moon"
               </div>
             </div>
             <div
@@ -4326,7 +4326,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import MusicalInstruments from "@kiwicom/orbit-components/lib/icons/MusicalInstruments
+                import MusicalInstruments from "@kiwicom/orbit-components/lib/icons/MusicalInstruments"
               </div>
             </div>
             <div
@@ -4353,7 +4353,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import NewWindow from "@kiwicom/orbit-components/lib/icons/NewWindow
+                import NewWindow from "@kiwicom/orbit-components/lib/icons/NewWindow"
               </div>
             </div>
             <div
@@ -4380,7 +4380,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Nonstop from "@kiwicom/orbit-components/lib/icons/Nonstop
+                import Nonstop from "@kiwicom/orbit-components/lib/icons/Nonstop"
               </div>
             </div>
             <div
@@ -4407,7 +4407,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import NotificationOff from "@kiwicom/orbit-components/lib/icons/NotificationOff
+                import NotificationOff from "@kiwicom/orbit-components/lib/icons/NotificationOff"
               </div>
             </div>
             <div
@@ -4434,7 +4434,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import NotificationOn from "@kiwicom/orbit-components/lib/icons/NotificationOn
+                import NotificationOn from "@kiwicom/orbit-components/lib/icons/NotificationOn"
               </div>
             </div>
             <div
@@ -4461,7 +4461,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Notification from "@kiwicom/orbit-components/lib/icons/Notification
+                import Notification from "@kiwicom/orbit-components/lib/icons/Notification"
               </div>
             </div>
             <div
@@ -4488,7 +4488,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import OnlineCheckinOff from "@kiwicom/orbit-components/lib/icons/OnlineCheckinOff
+                import OnlineCheckinOff from "@kiwicom/orbit-components/lib/icons/OnlineCheckinOff"
               </div>
             </div>
             <div
@@ -4515,7 +4515,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import OnlineCheckin from "@kiwicom/orbit-components/lib/icons/OnlineCheckin
+                import OnlineCheckin from "@kiwicom/orbit-components/lib/icons/OnlineCheckin"
               </div>
             </div>
             <div
@@ -4542,7 +4542,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Paid from "@kiwicom/orbit-components/lib/icons/Paid
+                import Paid from "@kiwicom/orbit-components/lib/icons/Paid"
               </div>
             </div>
             <div
@@ -4569,7 +4569,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Parking from "@kiwicom/orbit-components/lib/icons/Parking
+                import Parking from "@kiwicom/orbit-components/lib/icons/Parking"
               </div>
             </div>
             <div
@@ -4596,7 +4596,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Partners from "@kiwicom/orbit-components/lib/icons/Partners
+                import Partners from "@kiwicom/orbit-components/lib/icons/Partners"
               </div>
             </div>
             <div
@@ -4623,7 +4623,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import PassengerAdd from "@kiwicom/orbit-components/lib/icons/PassengerAdd
+                import PassengerAdd from "@kiwicom/orbit-components/lib/icons/PassengerAdd"
               </div>
             </div>
             <div
@@ -4650,7 +4650,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import PassengerOutline from "@kiwicom/orbit-components/lib/icons/PassengerOutline
+                import PassengerOutline from "@kiwicom/orbit-components/lib/icons/PassengerOutline"
               </div>
             </div>
             <div
@@ -4677,7 +4677,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Passenger from "@kiwicom/orbit-components/lib/icons/Passenger
+                import Passenger from "@kiwicom/orbit-components/lib/icons/Passenger"
               </div>
             </div>
             <div
@@ -4704,7 +4704,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Passengers from "@kiwicom/orbit-components/lib/icons/Passengers
+                import Passengers from "@kiwicom/orbit-components/lib/icons/Passengers"
               </div>
             </div>
             <div
@@ -4731,7 +4731,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Passport from "@kiwicom/orbit-components/lib/icons/Passport
+                import Passport from "@kiwicom/orbit-components/lib/icons/Passport"
               </div>
             </div>
             <div
@@ -4758,7 +4758,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Pet from "@kiwicom/orbit-components/lib/icons/Pet
+                import Pet from "@kiwicom/orbit-components/lib/icons/Pet"
               </div>
             </div>
             <div
@@ -4785,7 +4785,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Pharmacy from "@kiwicom/orbit-components/lib/icons/Pharmacy
+                import Pharmacy from "@kiwicom/orbit-components/lib/icons/Pharmacy"
               </div>
             </div>
             <div
@@ -4812,7 +4812,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Phone from "@kiwicom/orbit-components/lib/icons/Phone
+                import Phone from "@kiwicom/orbit-components/lib/icons/Phone"
               </div>
             </div>
             <div
@@ -4839,7 +4839,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Playground from "@kiwicom/orbit-components/lib/icons/Playground
+                import Playground from "@kiwicom/orbit-components/lib/icons/Playground"
               </div>
             </div>
             <div
@@ -4866,7 +4866,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import PlusCircle from "@kiwicom/orbit-components/lib/icons/PlusCircle
+                import PlusCircle from "@kiwicom/orbit-components/lib/icons/PlusCircle"
               </div>
             </div>
             <div
@@ -4893,7 +4893,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Plus from "@kiwicom/orbit-components/lib/icons/Plus
+                import Plus from "@kiwicom/orbit-components/lib/icons/Plus"
               </div>
             </div>
             <div
@@ -4920,7 +4920,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Pool from "@kiwicom/orbit-components/lib/icons/Pool
+                import Pool from "@kiwicom/orbit-components/lib/icons/Pool"
               </div>
             </div>
             <div
@@ -4947,7 +4947,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import PowerPlugOff from "@kiwicom/orbit-components/lib/icons/PowerPlugOff
+                import PowerPlugOff from "@kiwicom/orbit-components/lib/icons/PowerPlugOff"
               </div>
             </div>
             <div
@@ -4974,7 +4974,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import PowerPlug from "@kiwicom/orbit-components/lib/icons/PowerPlug
+                import PowerPlug from "@kiwicom/orbit-components/lib/icons/PowerPlug"
               </div>
             </div>
             <div
@@ -5001,7 +5001,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import PriorityBoarding from "@kiwicom/orbit-components/lib/icons/PriorityBoarding
+                import PriorityBoarding from "@kiwicom/orbit-components/lib/icons/PriorityBoarding"
               </div>
             </div>
             <div
@@ -5028,7 +5028,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Profit from "@kiwicom/orbit-components/lib/icons/Profit
+                import Profit from "@kiwicom/orbit-components/lib/icons/Profit"
               </div>
             </div>
             <div
@@ -5055,7 +5055,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import PromoCode from "@kiwicom/orbit-components/lib/icons/PromoCode
+                import PromoCode from "@kiwicom/orbit-components/lib/icons/PromoCode"
               </div>
             </div>
             <div
@@ -5082,7 +5082,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import QuestionCircle from "@kiwicom/orbit-components/lib/icons/QuestionCircle
+                import QuestionCircle from "@kiwicom/orbit-components/lib/icons/QuestionCircle"
               </div>
             </div>
             <div
@@ -5109,7 +5109,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import RadiusSearch from "@kiwicom/orbit-components/lib/icons/RadiusSearch
+                import RadiusSearch from "@kiwicom/orbit-components/lib/icons/RadiusSearch"
               </div>
             </div>
             <div
@@ -5136,7 +5136,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Refund from "@kiwicom/orbit-components/lib/icons/Refund
+                import Refund from "@kiwicom/orbit-components/lib/icons/Refund"
               </div>
             </div>
             <div
@@ -5163,7 +5163,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Relax from "@kiwicom/orbit-components/lib/icons/Relax
+                import Relax from "@kiwicom/orbit-components/lib/icons/Relax"
               </div>
             </div>
             <div
@@ -5190,7 +5190,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Reload from "@kiwicom/orbit-components/lib/icons/Reload
+                import Reload from "@kiwicom/orbit-components/lib/icons/Reload"
               </div>
             </div>
             <div
@@ -5217,7 +5217,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Remove from "@kiwicom/orbit-components/lib/icons/Remove
+                import Remove from "@kiwicom/orbit-components/lib/icons/Remove"
               </div>
             </div>
             <div
@@ -5244,7 +5244,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Replace from "@kiwicom/orbit-components/lib/icons/Replace
+                import Replace from "@kiwicom/orbit-components/lib/icons/Replace"
               </div>
             </div>
             <div
@@ -5271,7 +5271,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Restaurant from "@kiwicom/orbit-components/lib/icons/Restaurant
+                import Restaurant from "@kiwicom/orbit-components/lib/icons/Restaurant"
               </div>
             </div>
             <div
@@ -5298,7 +5298,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import RouteNoStops from "@kiwicom/orbit-components/lib/icons/RouteNoStops
+                import RouteNoStops from "@kiwicom/orbit-components/lib/icons/RouteNoStops"
               </div>
             </div>
             <div
@@ -5325,7 +5325,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import RouteOneStop from "@kiwicom/orbit-components/lib/icons/RouteOneStop
+                import RouteOneStop from "@kiwicom/orbit-components/lib/icons/RouteOneStop"
               </div>
             </div>
             <div
@@ -5352,7 +5352,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import RouteTwoStops from "@kiwicom/orbit-components/lib/icons/RouteTwoStops
+                import RouteTwoStops from "@kiwicom/orbit-components/lib/icons/RouteTwoStops"
               </div>
             </div>
             <div
@@ -5379,7 +5379,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Search from "@kiwicom/orbit-components/lib/icons/Search
+                import Search from "@kiwicom/orbit-components/lib/icons/Search"
               </div>
             </div>
             <div
@@ -5406,7 +5406,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Seat from "@kiwicom/orbit-components/lib/icons/Seat
+                import Seat from "@kiwicom/orbit-components/lib/icons/Seat"
               </div>
             </div>
             <div
@@ -5433,7 +5433,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Security from "@kiwicom/orbit-components/lib/icons/Security
+                import Security from "@kiwicom/orbit-components/lib/icons/Security"
               </div>
             </div>
             <div
@@ -5460,7 +5460,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import SelfTransfer from "@kiwicom/orbit-components/lib/icons/SelfTransfer
+                import SelfTransfer from "@kiwicom/orbit-components/lib/icons/SelfTransfer"
               </div>
             </div>
             <div
@@ -5487,7 +5487,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Send from "@kiwicom/orbit-components/lib/icons/Send
+                import Send from "@kiwicom/orbit-components/lib/icons/Send"
               </div>
             </div>
             <div
@@ -5514,7 +5514,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Settings from "@kiwicom/orbit-components/lib/icons/Settings
+                import Settings from "@kiwicom/orbit-components/lib/icons/Settings"
               </div>
             </div>
             <div
@@ -5541,7 +5541,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ShareAndroid from "@kiwicom/orbit-components/lib/icons/ShareAndroid
+                import ShareAndroid from "@kiwicom/orbit-components/lib/icons/ShareAndroid"
               </div>
             </div>
             <div
@@ -5568,7 +5568,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ShareIos from "@kiwicom/orbit-components/lib/icons/ShareIos
+                import ShareIos from "@kiwicom/orbit-components/lib/icons/ShareIos"
               </div>
             </div>
             <div
@@ -5595,7 +5595,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Share from "@kiwicom/orbit-components/lib/icons/Share
+                import Share from "@kiwicom/orbit-components/lib/icons/Share"
               </div>
             </div>
             <div
@@ -5622,7 +5622,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Shopping from "@kiwicom/orbit-components/lib/icons/Shopping
+                import Shopping from "@kiwicom/orbit-components/lib/icons/Shopping"
               </div>
             </div>
             <div
@@ -5649,7 +5649,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ShowLess from "@kiwicom/orbit-components/lib/icons/ShowLess
+                import ShowLess from "@kiwicom/orbit-components/lib/icons/ShowLess"
               </div>
             </div>
             <div
@@ -5676,7 +5676,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ShowMore from "@kiwicom/orbit-components/lib/icons/ShowMore
+                import ShowMore from "@kiwicom/orbit-components/lib/icons/ShowMore"
               </div>
             </div>
             <div
@@ -5703,7 +5703,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Sightseeing from "@kiwicom/orbit-components/lib/icons/Sightseeing
+                import Sightseeing from "@kiwicom/orbit-components/lib/icons/Sightseeing"
               </div>
             </div>
             <div
@@ -5730,7 +5730,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import SmokingOff from "@kiwicom/orbit-components/lib/icons/SmokingOff
+                import SmokingOff from "@kiwicom/orbit-components/lib/icons/SmokingOff"
               </div>
             </div>
             <div
@@ -5757,7 +5757,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Smoking from "@kiwicom/orbit-components/lib/icons/Smoking
+                import Smoking from "@kiwicom/orbit-components/lib/icons/Smoking"
               </div>
             </div>
             <div
@@ -5784,7 +5784,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Spa from "@kiwicom/orbit-components/lib/icons/Spa
+                import Spa from "@kiwicom/orbit-components/lib/icons/Spa"
               </div>
             </div>
             <div
@@ -5811,7 +5811,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import SportEquipment from "@kiwicom/orbit-components/lib/icons/SportEquipment
+                import SportEquipment from "@kiwicom/orbit-components/lib/icons/SportEquipment"
               </div>
             </div>
             <div
@@ -5838,7 +5838,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Sports from "@kiwicom/orbit-components/lib/icons/Sports
+                import Sports from "@kiwicom/orbit-components/lib/icons/Sports"
               </div>
             </div>
             <div
@@ -5865,7 +5865,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import StarEmpty from "@kiwicom/orbit-components/lib/icons/StarEmpty
+                import StarEmpty from "@kiwicom/orbit-components/lib/icons/StarEmpty"
               </div>
             </div>
             <div
@@ -5892,7 +5892,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import StarFull from "@kiwicom/orbit-components/lib/icons/StarFull
+                import StarFull from "@kiwicom/orbit-components/lib/icons/StarFull"
               </div>
             </div>
             <div
@@ -5919,7 +5919,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Subway from "@kiwicom/orbit-components/lib/icons/Subway
+                import Subway from "@kiwicom/orbit-components/lib/icons/Subway"
               </div>
             </div>
             <div
@@ -5946,7 +5946,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Suitcase from "@kiwicom/orbit-components/lib/icons/Suitcase
+                import Suitcase from "@kiwicom/orbit-components/lib/icons/Suitcase"
               </div>
             </div>
             <div
@@ -5973,7 +5973,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Sun from "@kiwicom/orbit-components/lib/icons/Sun
+                import Sun from "@kiwicom/orbit-components/lib/icons/Sun"
               </div>
             </div>
             <div
@@ -6000,7 +6000,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Sunrise from "@kiwicom/orbit-components/lib/icons/Sunrise
+                import Sunrise from "@kiwicom/orbit-components/lib/icons/Sunrise"
               </div>
             </div>
             <div
@@ -6027,7 +6027,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Taxi from "@kiwicom/orbit-components/lib/icons/Taxi
+                import Taxi from "@kiwicom/orbit-components/lib/icons/Taxi"
               </div>
             </div>
             <div
@@ -6054,7 +6054,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import TermsAndConditions from "@kiwicom/orbit-components/lib/icons/TermsAndConditions
+                import TermsAndConditions from "@kiwicom/orbit-components/lib/icons/TermsAndConditions"
               </div>
             </div>
             <div
@@ -6081,7 +6081,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ThumbDown from "@kiwicom/orbit-components/lib/icons/ThumbDown
+                import ThumbDown from "@kiwicom/orbit-components/lib/icons/ThumbDown"
               </div>
             </div>
             <div
@@ -6108,7 +6108,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import ThumbUp from "@kiwicom/orbit-components/lib/icons/ThumbUp
+                import ThumbUp from "@kiwicom/orbit-components/lib/icons/ThumbUp"
               </div>
             </div>
             <div
@@ -6135,7 +6135,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import TicketFlight from "@kiwicom/orbit-components/lib/icons/TicketFlight
+                import TicketFlight from "@kiwicom/orbit-components/lib/icons/TicketFlight"
               </div>
             </div>
             <div
@@ -6162,7 +6162,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import TicketOutline from "@kiwicom/orbit-components/lib/icons/TicketOutline
+                import TicketOutline from "@kiwicom/orbit-components/lib/icons/TicketOutline"
               </div>
             </div>
             <div
@@ -6189,7 +6189,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import TicketTrain from "@kiwicom/orbit-components/lib/icons/TicketTrain
+                import TicketTrain from "@kiwicom/orbit-components/lib/icons/TicketTrain"
               </div>
             </div>
             <div
@@ -6216,7 +6216,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Ticket from "@kiwicom/orbit-components/lib/icons/Ticket
+                import Ticket from "@kiwicom/orbit-components/lib/icons/Ticket"
               </div>
             </div>
             <div
@@ -6243,7 +6243,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Timelapse from "@kiwicom/orbit-components/lib/icons/Timelapse
+                import Timelapse from "@kiwicom/orbit-components/lib/icons/Timelapse"
               </div>
             </div>
             <div
@@ -6270,7 +6270,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Tips from "@kiwicom/orbit-components/lib/icons/Tips
+                import Tips from "@kiwicom/orbit-components/lib/icons/Tips"
               </div>
             </div>
             <div
@@ -6297,7 +6297,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Toilets from "@kiwicom/orbit-components/lib/icons/Toilets
+                import Toilets from "@kiwicom/orbit-components/lib/icons/Toilets"
               </div>
             </div>
             <div
@@ -6324,7 +6324,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Train from "@kiwicom/orbit-components/lib/icons/Train
+                import Train from "@kiwicom/orbit-components/lib/icons/Train"
               </div>
             </div>
             <div
@@ -6351,7 +6351,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Trip from "@kiwicom/orbit-components/lib/icons/Trip
+                import Trip from "@kiwicom/orbit-components/lib/icons/Trip"
               </div>
             </div>
             <div
@@ -6378,7 +6378,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Twitter from "@kiwicom/orbit-components/lib/icons/Twitter
+                import Twitter from "@kiwicom/orbit-components/lib/icons/Twitter"
               </div>
             </div>
             <div
@@ -6405,7 +6405,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Visa from "@kiwicom/orbit-components/lib/icons/Visa
+                import Visa from "@kiwicom/orbit-components/lib/icons/Visa"
               </div>
             </div>
             <div
@@ -6432,7 +6432,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import VisibilityOff from "@kiwicom/orbit-components/lib/icons/VisibilityOff
+                import VisibilityOff from "@kiwicom/orbit-components/lib/icons/VisibilityOff"
               </div>
             </div>
             <div
@@ -6459,7 +6459,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Visibility from "@kiwicom/orbit-components/lib/icons/Visibility
+                import Visibility from "@kiwicom/orbit-components/lib/icons/Visibility"
               </div>
             </div>
             <div
@@ -6486,7 +6486,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Walk from "@kiwicom/orbit-components/lib/icons/Walk
+                import Walk from "@kiwicom/orbit-components/lib/icons/Walk"
               </div>
             </div>
             <div
@@ -6513,7 +6513,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Wallet from "@kiwicom/orbit-components/lib/icons/Wallet
+                import Wallet from "@kiwicom/orbit-components/lib/icons/Wallet"
               </div>
             </div>
             <div
@@ -6540,7 +6540,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Wheelchair from "@kiwicom/orbit-components/lib/icons/Wheelchair
+                import Wheelchair from "@kiwicom/orbit-components/lib/icons/Wheelchair"
               </div>
             </div>
             <div
@@ -6567,7 +6567,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import WifiOff from "@kiwicom/orbit-components/lib/icons/WifiOff
+                import WifiOff from "@kiwicom/orbit-components/lib/icons/WifiOff"
               </div>
             </div>
             <div
@@ -6594,7 +6594,7 @@ exports[`Storyshots Icon List of all icons 1`] = `
               <div
                 className="IconList__IconImport-oZwZP jDaZTJ"
               >
-                import Wifi from "@kiwicom/orbit-components/lib/icons/Wifi
+                import Wifi from "@kiwicom/orbit-components/lib/icons/Wifi"
               </div>
             </div>
           </div>

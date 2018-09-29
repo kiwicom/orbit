@@ -110,23 +110,14 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
               target={undefined}
             >
               <div
-                className="ButtonLink__IconContainer-flENJD jrcjib"
+                className="ButtonLink__IconContainer-flENJD dcUnuY"
                 size="normal"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
@@ -143,23 +134,14 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
               target={undefined}
             >
               <div
-                className="ButtonLink__IconContainer-flENJD hNEbcs"
+                className="ButtonLink__IconContainer-flENJD ffwkCW"
                 size="normal"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
@@ -628,22 +610,13 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
                 className="Button__StyledButtonContent-gvDciI pDqSF"
               >
                 <div
-                  className="Button__IconContainer-bZYzaL dikZaB"
+                  className="Button__IconContainer-bZYzaL bfomLI"
                 >
                   <svg
-                    className={undefined}
+                    className="Icon__StyledIcon-ckyxIP fvqkFf"
                     data-test={undefined}
-                    fill="currentColor"
-                    height="24px"
                     preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
-                    }
                     viewBox="0 0 24 24"
-                    width="24px"
                   >
                     <path
                       d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
@@ -664,22 +637,13 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
                 className="Button__StyledButtonContent-gvDciI pDqSF"
               >
                 <div
-                  className="Button__IconContainer-bZYzaL hAoIdO"
+                  className="Button__IconContainer-bZYzaL eZaDpj"
                 >
                   <svg
-                    className={undefined}
+                    className="Icon__StyledIcon-ckyxIP fvqkFf"
                     data-test={undefined}
-                    fill="currentColor"
-                    height="24px"
                     preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
-                    }
                     viewBox="0 0 24 24"
-                    width="24px"
                   >
                     <path
                       d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"

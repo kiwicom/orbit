@@ -3,5 +3,6 @@
     "raf/polyfill",
     "./config/enzymeConfig"
   ],
+  "setupTestFrameworkScriptFile": "./config/jestSetupFramework",
   "snapshotSerializers": ["enzyme-to-json/serializer"]
 }

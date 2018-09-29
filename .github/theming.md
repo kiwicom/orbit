@@ -9,7 +9,7 @@ import { getTokens } from "@kiwicom/orbit-design-tokens";
 import { ThemeProvider } from "styled-components";
 
 const customTokens = getTokens({
-  colors: {
+  palette: {
     product: {
       light: "#9ae5da",
       lightHover: "#7fded0",

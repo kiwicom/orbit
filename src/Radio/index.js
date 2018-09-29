@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import { StyledText } from "../Text";
+import type { Ref } from "../common/common.js.flow";
 
 import type { Props } from "./index";
 
@@ -143,34 +144,41 @@ Label.defaultProps = {
   theme: defaultTokens,
 };
 
-const Radio = ({
-  label,
-  value,
-  hasError = false,
-  disabled = false,
-  checked = false,
-  onChange,
-  name,
-  info,
-  dataTest,
-}: Props) => (
-  <Label disabled={disabled} hasError={hasError} checked={checked} data-test={dataTest}>
-    <Input
-      value={value}
-      type="radio"
-      disabled={disabled}
-      name={name}
-      checked={checked}
-      onChange={onChange}
-    />
-    <IconContainer>
-      <Glyph disabled={disabled} />
-    </IconContainer>
-    <TextContainer>
-      {label && <LabelText>{label}</LabelText>}
-      {info && <Info>{info}</Info>}
-    </TextContainer>
-  </Label>
-);
+// $FlowExpected
+const Radio = React.forwardRef((props: Props, ref: Ref) => {
+  const {
+    label,
+    value,
+    hasError = false,
+    disabled = false,
+    checked = false,
+    onChange,
+    name,
+    info,
+    dataTest,
+  } = props;
+  return (
+    <Label disabled={disabled} hasError={hasError} checked={checked} data-test={dataTest}>
+      <Input
+        value={value}
+        type="radio"
+        disabled={disabled}
+        checked={checked}
+        onChange={onChange}
+        name={name}
+        innerRef={ref}
+      />
+      <IconContainer>
+        <Glyph disabled={disabled} />
+      </IconContainer>
+      <TextContainer>
+        {label && <LabelText>{label}</LabelText>}
+        {info && <Info>{info}</Info>}
+      </TextContainer>
+    </Label>
+  );
+});
+
+Radio.displayName = "Radio";
 
 export default Radio;

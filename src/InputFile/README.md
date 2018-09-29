@@ -22,8 +22,9 @@ Table below contains all types of the props available in the InputFile component
 | onBlur              | `func`                |                      | Function for handling onBlur event.
 | onChange            | `func`                |                      | Function for handling onChange event.
 | onFocus             | `func`                |                      | Function for handling onFocus event.
-| placeholder         | `string`              | `"No file selected"` | The placeholder for the InputFile. [See Functional specs](#functional-specs)
 | onRemoveFile        | `func`                |                      | Function for handling file name removing.
+| placeholder         | `string`              | `"No file selected"` | The placeholder for the InputFile. [See Functional specs](#functional-specs)
+| ref                 | `func`                |                      | Prop for forwarded ref of the InputFile. [See Functional specs](#functional-specs)
 | title               | `string`              | `"Select file"`      | The title for the InputFile. [See Functional specs](#functional-specs)
 
 ## Functional specs
@@ -33,3 +34,25 @@ Table below contains all types of the props available in the InputFile component
 
 * If you pass some `string` into **title** it will be used for button content.
 
+* `ref` can be used for example auto-focus the elements immediately after render.
+```jsx
+class Component extends React.PureComponent<Props> {
+
+  constructor() {
+    super()
+    this.ref = React.createRef();
+  }
+  
+  componentDidMount() {
+    this.ref.current && this.ref.current.focus();
+  }
+
+  ref: { current: React$ElementRef<*> | null };
+
+  render() {
+    return (
+      <InputFile ref={this.ref} />
+    )
+  }
+}
+```

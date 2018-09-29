@@ -7,6 +7,7 @@ import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
 import FormFeedback from "../FormFeedback";
 import DefaultFormLabel from "../FormLabel";
 import { StyledServiceLogo } from "../ServiceLogo";
+import type { Ref } from "../common/common.js.flow";
 
 import type { Props } from "./index";
 
@@ -167,9 +168,7 @@ Suffix.defaultProps = {
   theme: defaultTokens,
 };
 
-export const Input = styled(({ theme, size, suffix, error, help, ...props }) => (
-  <input {...props} />
-))`
+export const Input = styled.input`
   appearance: none;
   font-family: inherit;
   border: none;
@@ -233,64 +232,71 @@ const FormLabel = ({
   </DefaultFormLabel>
 );
 
-const InputField = ({
-  disabled,
-  size = SIZE_OPTIONS.NORMAL,
-  type = TYPE_OPTIONS.TEXT,
-  label,
-  inlineLabel,
-  dataTest,
-  required,
-  error,
-  name,
-  prefix,
-  onChange,
-  onFocus,
-  onBlur,
-  onKeyUp,
-  onKeyDown,
-  placeholder,
-  minValue,
-  maxValue,
-  minLength,
-  maxLength,
-  suffix,
-  help,
-  value,
-}: Props) => (
-  <Field data-test={dataTest}>
-    {label && !inlineLabel && <FormLabel label={label} isFilled={!!value} required={required} />}
-    <InputContainer size={size} disabled={disabled} error={error}>
-      {prefix && <Prefix size={size}>{prefix}</Prefix>}
-      {inlineLabel && (
-        <StyledInlineLabel size={size}>
-          <FormLabel label={label} isFilled={!!value} required={required} />
-        </StyledInlineLabel>
-      )}
-      <Input
-        onChange={onChange}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        onKeyUp={onKeyUp}
-        onKeyDown={onKeyDown}
-        name={name}
-        type={type}
-        value={value}
-        placeholder={placeholder}
-        disabled={disabled}
-        min={minValue}
-        max={maxValue}
-        minLength={minLength}
-        maxLength={maxLength}
-        size={size}
-        error={error}
-      />
-      {suffix && <Suffix size={size}>{suffix}</Suffix>}
-      <FakeInput size={size} disabled={disabled} error={error} />
-    </InputContainer>
-    {help && !error && <FormFeedback type="help">{help}</FormFeedback>}
-    {error && <FormFeedback type="error">{error}</FormFeedback>}
-  </Field>
-);
+// $FlowExpected
+const InputField = React.forwardRef((props: Props, ref: Ref) => {
+  const {
+    disabled,
+    size = SIZE_OPTIONS.NORMAL,
+    type = TYPE_OPTIONS.TEXT,
+    label,
+    inlineLabel,
+    dataTest,
+    required,
+    error,
+    name,
+    prefix,
+    onChange,
+    onFocus,
+    onBlur,
+    onKeyUp,
+    onKeyDown,
+    placeholder,
+    minValue,
+    maxValue,
+    minLength,
+    maxLength,
+    suffix,
+    help,
+    value,
+  } = props;
+  return (
+    <Field data-test={dataTest}>
+      {label && !inlineLabel && <FormLabel label={label} isFilled={!!value} required={required} />}
+      <InputContainer size={size} disabled={disabled} error={error}>
+        {prefix && <Prefix size={size}>{prefix}</Prefix>}
+        {inlineLabel && (
+          <StyledInlineLabel size={size}>
+            <FormLabel label={label} isFilled={!!value} required={required} />
+          </StyledInlineLabel>
+        )}
+        <Input
+          onChange={onChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          onKeyUp={onKeyUp}
+          onKeyDown={onKeyDown}
+          name={name}
+          type={type}
+          value={value}
+          placeholder={placeholder}
+          disabled={disabled}
+          min={minValue}
+          max={maxValue}
+          minLength={minLength}
+          maxLength={maxLength}
+          size={size}
+          error={error}
+          innerRef={ref}
+        />
+        {suffix && <Suffix size={size}>{suffix}</Suffix>}
+        <FakeInput size={size} disabled={disabled} error={error} />
+      </InputContainer>
+      {help && !error && <FormFeedback type="help">{help}</FormFeedback>}
+      {error && <FormFeedback type="error">{error}</FormFeedback>}
+    </Field>
+  );
+});
+
+InputField.displayName = "InputField";
 
 export default InputField;

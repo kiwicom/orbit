@@ -779,6 +779,7 @@ exports[`InputField number with error and help should match snapshot 1`] = `
           Something went wrong.
         </div>
       }
+      innerRef={null}
       max={5}
       min={1}
       size="normal"
@@ -2725,6 +2726,7 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
       <Search />
     </InputField__Prefix>
     <InputField__Input
+      innerRef={null}
       maxLength={10}
       minLength={1}
       name="name"

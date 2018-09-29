@@ -4,9 +4,9 @@ exports[`Table should match snapshot 1`] = `
 <Table__StyledTableOuter
   data-test="test"
   innerRef={[Function]}
-  showLeft={false}
-  showRight={false}
-  showShadows={false}
+  showLeft={true}
+  showRight={true}
+  showShadows={true}
   theme={
     Object {
       "orbit": Object {
@@ -392,7 +392,7 @@ exports[`Table should match snapshot 1`] = `
   <Table__StyledTableInner
     innerRef={[Function]}
     onScroll={[Function]}
-    showShadows={false}
+    showShadows={true}
   >
     <Table__StyledTable
       compact={true}

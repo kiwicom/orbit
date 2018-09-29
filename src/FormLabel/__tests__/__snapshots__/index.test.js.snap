@@ -1,8 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FormLabel should match snapshot 1`] = `
+.c0 {
+  display: block;
+  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-size: 14px;
+  color: #46515e;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
 <Component
-  className="FormLabel-kJFBRQ fuYBgg"
+  className="c0"
   dataTest="test"
   filled={false}
   theme={

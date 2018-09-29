@@ -1,18 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ServiceLogo: AirHelp should match snapshot 1`] = `
+.c0 {
+  height: 48px;
+  width: auto;
+  background-color: transparent;
+}
+
 <img
   alt="AirHelp"
-  className="ServiceLogo__StyledServiceLogo-gXFeKU ivlfMy"
+  className="c0"
   src="//images.kiwi.com/logos/0x48/AirHelp.png"
   srcSet="//images.kiwi.com/logos/0x96/AirHelp.png 2x"
 />
 `;
 
 exports[`ServiceLogo: AirHelp should match snapshot 2`] = `
+.c0 {
+  height: 48px;
+  width: auto;
+  background-color: transparent;
+}
+
 <img
   alt="AirHelp"
-  className="ServiceLogo__StyledServiceLogo-gXFeKU ivlfMy"
+  className="c0"
   data-test="test"
   src="//images.kiwi.com/logos-grayscale/0x48/AirHelp.png"
   srcSet="//images.kiwi.com/logos-grayscale/0x96/AirHelp.png 2x"

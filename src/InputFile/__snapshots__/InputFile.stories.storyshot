@@ -133,22 +133,13 @@ exports[`Storyshots InputFile Default 1`] = `
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL jNewdH"
+                    className="Button__IconContainer-bZYzaL exCvLT"
                   >
                     <svg
-                      className={undefined}
+                      className="Icon__StyledIcon-ckyxIP fvqkFf"
                       data-test={undefined}
-                      fill="currentColor"
-                      height="24px"
                       preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "color": undefined,
-                          "verticalAlign": "middle",
-                        }
-                      }
                       viewBox="0 0 24 24"
-                      width="24px"
                     >
                       <path
                         d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
@@ -530,22 +521,13 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL jNewdH"
+                    className="Button__IconContainer-bZYzaL exCvLT"
                   >
                     <svg
-                      className={undefined}
+                      className="Icon__StyledIcon-ckyxIP fvqkFf"
                       data-test={undefined}
-                      fill="currentColor"
-                      height="24px"
                       preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "color": undefined,
-                          "verticalAlign": "middle",
-                        }
-                      }
                       viewBox="0 0 24 24"
-                      width="24px"
                     >
                       <path
                         d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
@@ -568,23 +550,14 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                 target={undefined}
               >
                 <div
-                  className="ButtonLink__IconContainer-flENJD hNEbcs"
+                  className="ButtonLink__IconContainer-flENJD ffwkCW"
                   size="normal"
                 >
                   <svg
-                    className={undefined}
+                    className="Icon__StyledIcon-ckyxIP fvqkFf"
                     data-test={undefined}
-                    fill="currentColor"
-                    height="24px"
                     preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
-                    }
                     viewBox="0 0 24 24"
-                    width="24px"
                   >
                     <path
                       d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
@@ -994,22 +967,13 @@ exports[`Storyshots InputFile Playground 1`] = `
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL jNewdH"
+                    className="Button__IconContainer-bZYzaL exCvLT"
                   >
                     <svg
-                      className={undefined}
+                      className="Icon__StyledIcon-ckyxIP fvqkFf"
                       data-test={undefined}
-                      fill="currentColor"
-                      height="24px"
                       preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "color": undefined,
-                          "verticalAlign": "middle",
-                        }
-                      }
                       viewBox="0 0 24 24"
-                      width="24px"
                     >
                       <path
                         d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
@@ -1666,22 +1630,13 @@ exports[`Storyshots InputFile With error 1`] = `
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL jNewdH"
+                    className="Button__IconContainer-bZYzaL exCvLT"
                   >
                     <svg
-                      className={undefined}
+                      className="Icon__StyledIcon-ckyxIP fvqkFf"
                       data-test={undefined}
-                      fill="currentColor"
-                      height="24px"
                       preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "color": undefined,
-                          "verticalAlign": "middle",
-                        }
-                      }
                       viewBox="0 0 24 24"
-                      width="24px"
                     >
                       <path
                         d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
@@ -2099,22 +2054,13 @@ exports[`Storyshots InputFile With help 1`] = `
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL jNewdH"
+                    className="Button__IconContainer-bZYzaL exCvLT"
                   >
                     <svg
-                      className={undefined}
+                      className="Icon__StyledIcon-ckyxIP fvqkFf"
                       data-test={undefined}
-                      fill="currentColor"
-                      height="24px"
                       preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "color": undefined,
-                          "verticalAlign": "middle",
-                        }
-                      }
                       viewBox="0 0 24 24"
-                      width="24px"
                     >
                       <path
                         d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"

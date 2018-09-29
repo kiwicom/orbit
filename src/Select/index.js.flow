@@ -1,5 +1,5 @@
 // @flow
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Ref } from "../common/common.js.flow";
 
 type Option = {|
   +value: string | number,
@@ -24,6 +24,7 @@ export type Props = {|
   +options: Option[],
   +prefix?: React$Node,
   ...Globals,
+  ...Ref,
 |};
 
 declare export var SelectContainer: React$ComponentType<>;

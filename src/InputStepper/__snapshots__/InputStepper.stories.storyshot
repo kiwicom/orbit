@@ -150,6 +150,7 @@ exports[`Storyshots InputStepper Default 1`] = `
                   onKeyDown={[Function]}
                   onKeyUp={undefined}
                   placeholder={undefined}
+                  size="normal"
                   type="number"
                   value={0}
                 />
@@ -451,6 +452,7 @@ exports[`Storyshots InputStepper Playground 1`] = `
                   onKeyDown={[Function]}
                   onKeyUp={undefined}
                   placeholder={undefined}
+                  size="normal"
                   type="number"
                   value={4}
                 />
@@ -1190,6 +1192,7 @@ exports[`Storyshots InputStepper With different size 1`] = `
                   onKeyDown={[Function]}
                   onKeyUp={undefined}
                   placeholder={undefined}
+                  size="normal"
                   type="number"
                   value={0}
                 />
@@ -1616,6 +1619,7 @@ exports[`Storyshots InputStepper With help 1`] = `
                   onKeyDown={[Function]}
                   onKeyUp={undefined}
                   placeholder={undefined}
+                  size="normal"
                   type="number"
                   value={0}
                 />

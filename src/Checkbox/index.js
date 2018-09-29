@@ -6,6 +6,7 @@ import defaultTokens from "../defaultTokens";
 import TOKENS from "./consts";
 import Check from "../icons/Check";
 import { StyledText } from "../Text";
+import type { Ref } from "../common/common.js.flow";
 
 import type { Props } from "./index";
 
@@ -151,7 +152,8 @@ Label.defaultProps = {
   theme: defaultTokens,
 };
 
-const Checkbox = (props: Props) => {
+// $FlowExpected
+const Checkbox = React.forwardRef((props: Props, ref: Ref) => {
   const {
     label,
     value,
@@ -173,6 +175,7 @@ const Checkbox = (props: Props) => {
         name={name}
         checked={checked}
         onChange={onChange}
+        innerRef={ref}
       />
       <IconContainer>
         <Check />
@@ -183,6 +186,8 @@ const Checkbox = (props: Props) => {
       </TextContainer>
     </Label>
   );
-};
+});
+
+Checkbox.displayName = "Checkbox";
 
 export default Checkbox;

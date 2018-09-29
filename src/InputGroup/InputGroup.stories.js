@@ -11,6 +11,7 @@ import InputField from "../InputField";
 import Select from "../Select";
 import { SIZE_OPTIONS } from "./consts";
 import CountryFlag from "../CountryFlag";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import InputGroup from "./index";
 
@@ -158,6 +159,53 @@ storiesOf("InputGroup", module)
                   <Select options={selectOptions} value={selectValue} />
                   <InputField placeholder={placeholder} value={inputValue} />
                 </InputGroup>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("RTL", () => {
+    const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);
+    const selectOptions = [
+      { value: "January", label: "January" },
+      { value: "February", label: "February" },
+      { value: "March", label: "March" },
+      { value: "April", label: "April" },
+      { value: "May", label: "May" },
+      { value: "June", label: "June" },
+      { value: "July", label: "July" },
+      { value: "August", label: "August" },
+      { value: "September", label: "September" },
+      { value: "October", label: "October" },
+      { value: "November", label: "November" },
+      { value: "December", label: "December" },
+    ];
+    const selectValue = select(
+      "Select Value",
+      [undefined].concat(...selectOptions.map(opt => opt.value)),
+    );
+    return {
+      info: "This is a preview of this component in RTL setup.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <RenderInRtl>
+                  <InputGroup
+                    flex={flex}
+                    label="My label"
+                    onChange={action("onChange")}
+                    onFocus={action("onFocus")}
+                    onBlur={action("onBlur")}
+                  >
+                    <InputField placeholder="DD" />
+                    <Select options={selectOptions} value={selectValue} placeholder="Month" />
+                    <InputField placeholder="YYYY" />
+                  </InputGroup>
+                </RenderInRtl>
               ),
             },
           ],

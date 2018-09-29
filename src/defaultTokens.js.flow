@@ -1,7 +1,13 @@
 // @flow
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
+import type { Tokens } from "@kiwicom/orbit-design-tokens";
 
-declare export default {
-  +orbit: typeof defaultTokens,
-};
+export type Theme = {|
+  +orbit: Tokens,
+  +rtl: boolean,
+|};
 
+export type ThemeProps = {|
+  theme: Theme,
+|};
+
+declare export default Theme;

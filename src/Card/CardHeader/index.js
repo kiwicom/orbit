@@ -5,6 +5,7 @@ import styled from "styled-components";
 import defaultTokens from "../../defaultTokens";
 import Heading from "../../Heading";
 import Text from "../../Text";
+import { rtlSpacing } from "../../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -25,7 +26,7 @@ const StyledHeadingWrapper = styled.div`
 `;
 
 const StyledSubTitle = styled.div`
-  text-align: center;
+  display: flex;
   margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 
@@ -37,7 +38,7 @@ const StyledIcon = styled.div`
   color: ${({ theme }) => theme.orbit.colorHeading};
   display: flex;
   align-items: center;
-  margin-right: ${({ theme }) => theme.orbit.spaceXSmall};
+  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
 `;
 
 StyledIcon.defaultProps = {

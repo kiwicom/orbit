@@ -25,9 +25,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   color: #00a991!important;
   border: 0;
   border-radius: 3px;
-  padding: 0;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding: 0 16px;
   font-weight: 700!important;
   font-size: 14px;
   cursor: pointer;
@@ -461,6 +459,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
     transparent={false}
@@ -476,9 +475,9 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "$$typeof": Symbol(react.forward_ref),
           "attrs": undefined,
           "componentStyle": ComponentStyle {
-            "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-2",
+            "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
             "isStatic": false,
-            "lastClassName": "gZCzGr",
+            "lastClassName": "fQEuZU",
             "rules": Array [
               "font-family:",
               [Function],
@@ -492,9 +491,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
               [Function],
               "!important;border:0;border-radius:",
               [Function],
-              ";padding:0;padding-right:",
-              [Function],
-              ";padding-left:",
+              ";padding:",
               [Function],
               ";font-weight:",
               [Function],
@@ -900,11 +897,12 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
                 "zIndexOnTheTop": "900",
                 "zIndexSticky": "100",
               },
+              "rtl": false,
             },
           },
           "displayName": "ButtonLink__StyledButtonLink",
           "render": [Function],
-          "styledComponentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-2",
+          "styledComponentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
           "target": [Function],
           "toString": [Function],
           "warnTooManyClasses": [Function],
@@ -1299,6 +1297,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
       transparent={false}
@@ -1696,6 +1695,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
               "zIndexOnTheTop": "900",
               "zIndexSticky": "100",
             },
+            "rtl": false,
           }
         }
         transparent={false}
@@ -1741,7 +1741,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-right: 8px;
+  margin: 0 8px 0 0;
 }
 
 .c1 > * {
@@ -1765,9 +1765,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-right: 8px;
-  margin-right: 0;
-  margin-left: 8px;
+  margin: 0 0 0 8px;
 }
 
 .c3 > * {
@@ -1799,9 +1797,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   color: #00a991!important;
   border: 0;
   border-radius: 3px;
-  padding: 0;
-  padding-right: 12px;
-  padding-left: 12px;
+  padding: 0 12px;
   font-weight: 700!important;
   font-size: 14px;
   cursor: pointer;
@@ -2235,6 +2231,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
     transparent={false}
@@ -2249,7 +2246,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
           "$$typeof": Symbol(react.forward_ref),
           "attrs": undefined,
           "componentStyle": ComponentStyle {
-            "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-2",
+            "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
             "isStatic": false,
             "lastClassName": "c0",
             "rules": Array [
@@ -2265,9 +2262,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
               [Function],
               "!important;border:0;border-radius:",
               [Function],
-              ";padding:0;padding-right:",
-              [Function],
-              ";padding-left:",
+              ";padding:",
               [Function],
               ";font-weight:",
               [Function],
@@ -2673,11 +2668,12 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                 "zIndexOnTheTop": "900",
                 "zIndexSticky": "100",
               },
+              "rtl": false,
             },
           },
           "displayName": "ButtonLink__StyledButtonLink",
           "render": [Function],
-          "styledComponentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-2",
+          "styledComponentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
           "target": [Function],
           "toString": [Function],
           "warnTooManyClasses": [Function],
@@ -3073,6 +3069,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
       transparent={false}
@@ -3470,6 +3467,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
               "zIndexOnTheTop": "900",
               "zIndexSticky": "100",
             },
+            "rtl": false,
           }
         }
         transparent={false}
@@ -3866,6 +3864,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
                 },
+                "rtl": false,
               }
             }
             type="primary"
@@ -3878,9 +3877,9 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "componentStyle": ComponentStyle {
                     "componentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
                     "isStatic": false,
-                    "lastClassName": "c1",
+                    "lastClassName": "c3",
                     "rules": Array [
-                      "display:flex;flex-direction:row;align-items:center;justify-content:center;margin-right:",
+                      "display:flex;flex-direction:row;align-items:center;justify-content:center;margin:",
                       [Function],
                       ";> *{width:",
                       [Function],
@@ -4270,6 +4269,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                         "zIndexOnTheTop": "900",
                         "zIndexSticky": "100",
                       },
+                      "rtl": false,
                     },
                   },
                   "displayName": "ButtonLink__IconContainer",
@@ -4667,6 +4667,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                     "zIndexOnTheTop": "900",
                     "zIndexSticky": "100",
                   },
+                  "rtl": false,
                 }
               }
               type="primary"
@@ -5057,13 +5058,13 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                       "zIndexOnTheTop": "900",
                       "zIndexSticky": "100",
                     },
+                    "rtl": false,
                   }
                 }
                 type="primary"
               >
                 <div
                   className="c1"
-                  size="normal"
                 >
                   <Airplane>
                     <OrbitIcon
@@ -5453,6 +5454,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           }
                         }
                         viewBox="0 0 24 24"
@@ -5857,6 +5859,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                     "zIndexOnTheTop": "900",
                                     "zIndexSticky": "100",
                                   },
+                                  "rtl": false,
                                 },
                               },
                               "displayName": "Icon__StyledIcon",
@@ -6252,6 +6255,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             }
                           }
                           viewBox="0 0 24 24"
@@ -6640,6 +6644,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               }
                             }
                             viewBox="0 0 24 24"
@@ -6663,8 +6668,9 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
             </StyledComponent>
           </ButtonLink__IconContainer>
           ButtonLink
-          <ButtonLink__IconContainerRight
+          <ButtonLink__IconContainer
             onlyIcon={false}
+            right={true}
             size="normal"
             sizeIcon="medium"
             theme={
@@ -7048,6 +7054,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
                 },
+                "rtl": false,
               }
             }
             type="primary"
@@ -7058,20 +7065,17 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": undefined,
                   "componentStyle": ComponentStyle {
-                    "componentId": "ButtonLink__IconContainerRight-sc-14jv5cl-1",
+                    "componentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
                     "isStatic": false,
                     "lastClassName": "c3",
                     "rules": Array [
-                      "display:flex;flex-direction:row;align-items:center;justify-content:center;margin-right:",
+                      "display:flex;flex-direction:row;align-items:center;justify-content:center;margin:",
                       [Function],
                       ";> *{width:",
                       [Function],
                       ";height:",
                       [Function],
                       ";}",
-                      "margin-right:0;margin-left:",
-                      [Function],
-                      ";",
                     ],
                   },
                   "defaultProps": Object {
@@ -7455,11 +7459,12 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                         "zIndexOnTheTop": "900",
                         "zIndexSticky": "100",
                       },
+                      "rtl": false,
                     },
                   },
-                  "displayName": "ButtonLink__IconContainerRight",
+                  "displayName": "ButtonLink__IconContainer",
                   "render": [Function],
-                  "styledComponentId": "ButtonLink__IconContainerRight-sc-14jv5cl-1",
+                  "styledComponentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
                   "target": [Function],
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
@@ -7469,6 +7474,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
               }
               forwardedRef={null}
               onlyIcon={false}
+              right={true}
               size="normal"
               sizeIcon="medium"
               theme={
@@ -7852,6 +7858,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                     "zIndexOnTheTop": "900",
                     "zIndexSticky": "100",
                   },
+                  "rtl": false,
                 }
               }
               type="primary"
@@ -7859,6 +7866,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
               <Component
                 className="c3"
                 onlyIcon={false}
+                right={true}
                 size="normal"
                 sizeIcon="medium"
                 theme={
@@ -8242,13 +8250,13 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                       "zIndexOnTheTop": "900",
                       "zIndexSticky": "100",
                     },
+                    "rtl": false,
                   }
                 }
                 type="primary"
               >
                 <div
                   className="c3"
-                  size="normal"
                 >
                   <ChevronDown>
                     <OrbitIcon
@@ -8638,6 +8646,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           }
                         }
                         viewBox="0 0 24 24"
@@ -9042,6 +9051,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                     "zIndexOnTheTop": "900",
                                     "zIndexSticky": "100",
                                   },
+                                  "rtl": false,
                                 },
                               },
                               "displayName": "Icon__StyledIcon",
@@ -9437,6 +9447,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             }
                           }
                           viewBox="0 0 24 24"
@@ -9825,6 +9836,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               }
                             }
                             viewBox="0 0 24 24"
@@ -9846,7 +9858,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                 </div>
               </Component>
             </StyledComponent>
-          </ButtonLink__IconContainerRight>
+          </ButtonLink__IconContainer>
         </a>
       </Component>
     </StyledComponent>

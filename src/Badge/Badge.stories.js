@@ -8,6 +8,7 @@ import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { TYPE_OPTIONS } from "./consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Badge from "./index";
 
@@ -149,4 +150,22 @@ storiesOf("Badge", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <Badge type="info" icon={<Icons.Airplane />}>
+                  Badge
+                </Badge>
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

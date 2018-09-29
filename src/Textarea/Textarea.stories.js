@@ -8,6 +8,7 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select, number } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Textarea from "./index";
 
@@ -180,4 +181,20 @@ storiesOf("Textarea", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <Textarea placeholder="My placeholder" value="Content of the Textarea" />
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

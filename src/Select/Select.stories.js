@@ -10,6 +10,7 @@ import Airplane from "../icons/Airplane";
 import SIZE_OPTIONS from "./consts";
 import CountryFlag from "../CountryFlag";
 import { CODES } from "../CountryFlag/consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Select from "./index";
 
@@ -203,4 +204,20 @@ storiesOf("Select", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <Select placeholder="My placeholder" options={objectOptions} label="My label" />
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

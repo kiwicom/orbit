@@ -7,6 +7,7 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, number, select, boolean } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS } from "../InputField/consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import InputStepper from "./index";
 
@@ -128,4 +129,20 @@ storiesOf("InputStepper", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <InputStepper label="My label" />
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

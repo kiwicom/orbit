@@ -9,6 +9,7 @@ import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 import * as Icons from "../icons";
 import Button from "../Button";
 import { TYPE_OPTIONS } from "./consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import List from "../List";
 import ListItem from "../List/ListItem";
@@ -175,4 +176,39 @@ storiesOf("Alert", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <Alert
+                  type="info"
+                  icon={<Icons.Airplane />}
+                  title="The title of the Alert"
+                  closable
+                  onClose={action("Close")}
+                >
+                  <Stack spacing="compact">
+                    <div>Message of the Alert</div>
+                    <List>
+                      <ListItem>
+                        <Text type="info">623 Kč will be refunded by your payment card</Text>
+                      </ListItem>
+                      <ListItem>623 Kč will be refunded by your payment card</ListItem>
+                    </List>
+                    <Button type="info" size="small" href="#">
+                      Click on me
+                    </Button>
+                  </Stack>
+                </Alert>
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

@@ -117,7 +117,7 @@ exports[`Storyshots Radio Default 1`] = `
               />
             </div>
             <div
-              className="Radio__TextContainer-sc-5lanou-2 bXQCsj"
+              className="Radio__TextContainer-sc-5lanou-2 fngmbH"
             >
               <span
                 className="Radio__LabelText-sc-5lanou-4 kvtYjE"
@@ -411,7 +411,7 @@ exports[`Storyshots Radio Playground 1`] = `
               />
             </div>
             <div
-              className="Radio__TextContainer-sc-5lanou-2 bXQCsj"
+              className="Radio__TextContainer-sc-5lanou-2 fngmbH"
             >
               <span
                 className="Radio__LabelText-sc-5lanou-4 kvtYjE"
@@ -741,6 +741,379 @@ exports[`Storyshots Radio Playground 1`] = `
 </div>
 `;
 
+exports[`Storyshots Radio RTL 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="story"
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      className="story-header"
+      style={
+        Object {
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      <div>
+        <h1
+          className="story-title"
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          RTL
+        </h1>
+        
+        <span
+          className="story-subtitle"
+          style={Object {}}
+        >
+          <div>
+            <p>
+              This is a preview of this component in RTL setup.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        className="chapter-header"
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="section-container"
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          className="section-header"
+          style={Object {}}
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="section-component-container"
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            checked={true}
+            className="Radio__Label-sc-5lanou-6 jZYznP"
+          >
+            <input
+              checked={true}
+              className="Radio__Input-sc-5lanou-5 juylbO"
+              disabled={false}
+              onChange={[Function]}
+              type="radio"
+              value="value"
+            />
+            <div
+              className="Radio__IconContainer-sc-5lanou-1 hRhfzi"
+            >
+              <span
+                className="Radio__Glyph-sc-5lanou-0 kbnJYl"
+                disabled={false}
+              />
+            </div>
+            <div
+              className="Radio__TextContainer-sc-5lanou-2 lmqToe"
+            >
+              <span
+                className="Radio__LabelText-sc-5lanou-4 kvtYjE"
+              >
+                <p
+                  className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                >
+                  Lorem ipsum dolor sit 
+                  <a
+                    className="TextLink__StyledTextLink-sc-1bvlje4-1 dFiGVo"
+                  >
+                    amet
+                  </a>
+                  .
+                </p>
+              </span>
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                className="section-subsection"
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  className="section-subsection-title"
+                >
+                  Source
+                </h4>
+                <pre
+                  className="css-4akams"
+                >
+                  <div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          RenderInRtl
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          Radio
+                        </span>
+                        <span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              label
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;Text /&gt;
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              checked
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              value
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  value
+                                </span>
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              onChange
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#170",
+                                    }
+                                  }
+                                >
+                                  changed
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            <br />
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          /&gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          RenderInRtl
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Radio With TextLink in label 1`] = `
 <div
   style={
@@ -859,7 +1232,7 @@ exports[`Storyshots Radio With TextLink in label 1`] = `
               />
             </div>
             <div
-              className="Radio__TextContainer-sc-5lanou-2 bXQCsj"
+              className="Radio__TextContainer-sc-5lanou-2 fngmbH"
             >
               <span
                 className="Radio__LabelText-sc-5lanou-4 kvtYjE"
@@ -1181,7 +1554,7 @@ exports[`Storyshots Radio With help 1`] = `
               />
             </div>
             <div
-              className="Radio__TextContainer-sc-5lanou-2 bXQCsj"
+              className="Radio__TextContainer-sc-5lanou-2 fngmbH"
             >
               <span
                 className="Radio__LabelText-sc-5lanou-4 kvtYjE"

@@ -107,17 +107,16 @@ exports[`Storyshots InputStepper Default 1`] = `
                 className="InputField__InputContainer-sc-4opay-2 ksKWcl"
               >
                 <div
-                  className="InputField__Prefix-sc-4opay-4 kZvirV"
+                  className="InputField__Prefix-sc-4opay-4 iNucwo"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
                   >
                     <div
-                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
-                      size="normal"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
@@ -140,17 +139,16 @@ exports[`Storyshots InputStepper Default 1`] = `
                   value={0}
                 />
                 <div
-                  className="InputField__Suffix-sc-4opay-5 jXQtRs"
+                  className="InputField__Suffix-sc-4opay-5 kCvrXk"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
                   >
                     <div
-                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
-                      size="normal"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
@@ -396,17 +394,16 @@ exports[`Storyshots InputStepper Playground 1`] = `
                 className="InputField__InputContainer-sc-4opay-2 bnDMxw"
               >
                 <div
-                  className="InputField__Prefix-sc-4opay-4 kZvirV"
+                  className="InputField__Prefix-sc-4opay-4 iNucwo"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
                   >
                     <div
-                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
-                      size="normal"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
@@ -435,17 +432,16 @@ exports[`Storyshots InputStepper Playground 1`] = `
                   value={4}
                 />
                 <div
-                  className="InputField__Suffix-sc-4opay-5 jXQtRs"
+                  className="InputField__Suffix-sc-4opay-5 kCvrXk"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
                   >
                     <div
-                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
-                      size="normal"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
@@ -996,6 +992,345 @@ exports[`Storyshots InputStepper Playground 1`] = `
 </div>
 `;
 
+exports[`Storyshots InputStepper RTL 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="story"
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      className="story-header"
+      style={
+        Object {
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      <div>
+        <h1
+          className="story-title"
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          RTL
+        </h1>
+        
+        <span
+          className="story-subtitle"
+          style={Object {}}
+        >
+          <div>
+            <p>
+              This is a preview of this component in RTL setup.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        className="chapter-header"
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="section-container"
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          className="section-header"
+          style={Object {}}
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="section-component-container"
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div
+            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 dpErlr"
+          >
+            <label
+              className="InputField__Field-sc-4opay-0 kCAFyx"
+            >
+              <span
+                className="FormLabel-sc-1927civ-1 iTEGJS"
+              >
+                <span>
+                  My label
+                </span>
+              </span>
+              <div
+                className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+              >
+                <div
+                  className="InputField__Prefix-sc-4opay-4 gBJmTs"
+                >
+                  <div
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
+                    disabled={false}
+                    onClick={[Function]}
+                    size="normal"
+                  >
+                    <div
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
+                    >
+                      <svg
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11H7v-2h10v2z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <input
+                  className="InputField__Input-sc-4opay-6 fqqXrq"
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  size="normal"
+                  type="number"
+                  value={0}
+                />
+                <div
+                  className="InputField__Suffix-sc-4opay-5 gxwjvO"
+                >
+                  <div
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
+                    disabled={false}
+                    onClick={[Function]}
+                    size="normal"
+                  >
+                    <div
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
+                    >
+                      <svg
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+                />
+              </div>
+            </label>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                className="section-subsection"
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  className="section-subsection-title"
+                >
+                  Source
+                </h4>
+                <pre
+                  className="css-4akams"
+                >
+                  <div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          RenderInRtl
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          InputStepper
+                        </span>
+                        <span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              label
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  My label
+                                </span>
+                                "
+                              </span>
+                            </span>
+                             
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          /&gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          RenderInRtl
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots InputStepper With different size 1`] = `
 <div
   style={
@@ -1110,17 +1445,16 @@ exports[`Storyshots InputStepper With different size 1`] = `
                 className="InputField__InputContainer-sc-4opay-2 ksKWcl"
               >
                 <div
-                  className="InputField__Prefix-sc-4opay-4 kZvirV"
+                  className="InputField__Prefix-sc-4opay-4 iNucwo"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
                   >
                     <div
-                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
-                      size="normal"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
@@ -1145,17 +1479,16 @@ exports[`Storyshots InputStepper With different size 1`] = `
                   value={0}
                 />
                 <div
-                  className="InputField__Suffix-sc-4opay-5 jXQtRs"
+                  className="InputField__Suffix-sc-4opay-5 kCvrXk"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
                   >
                     <div
-                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
-                      size="normal"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
@@ -1522,17 +1855,16 @@ exports[`Storyshots InputStepper With help 1`] = `
                 className="InputField__InputContainer-sc-4opay-2 ksKWcl"
               >
                 <div
-                  className="InputField__Prefix-sc-4opay-4 kZvirV"
+                  className="InputField__Prefix-sc-4opay-4 iNucwo"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
                   >
                     <div
-                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
-                      size="normal"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
@@ -1557,17 +1889,16 @@ exports[`Storyshots InputStepper With help 1`] = `
                   value={0}
                 />
                 <div
-                  className="InputField__Suffix-sc-4opay-5 jXQtRs"
+                  className="InputField__Suffix-sc-4opay-5 kCvrXk"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
                   >
                     <div
-                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
-                      size="normal"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"

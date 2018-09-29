@@ -11,6 +11,7 @@ import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
 import { StyledTextLink } from "../TextLink";
 import { TYPE_OPTIONS, TOKENS } from "./consts";
+import { rtlSpacing, right } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import { Item } from "../List/ListItem";
 import { StyledText } from "../Text";
@@ -84,11 +85,22 @@ const StyledAlert = styled(StyledDiv)`
   position: relative;
   display: flex;
   width: 100%;
-  padding: ${({ theme, icon }) =>
-    icon
-      ? `${theme.orbit.paddingAlert} ${theme.orbit.paddingAlertWithIcon}`
-      : theme.orbit.paddingAlert};
-  padding-right: ${({ theme, closable }) => closable && theme.orbit.spaceXXLarge};
+  padding: ${({ theme, icon, closable }) =>
+    rtlSpacing(
+      closable
+        ? (icon &&
+            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${
+              theme.orbit.paddingAlert
+            }`) ||
+            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${
+              theme.orbit.paddingAlert
+            }`
+        : (icon &&
+            `${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert} ${
+              theme.orbit.paddingAlert
+            }`) ||
+            `${theme.orbit.paddingAlert}`,
+    )};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   background: ${getTypeToken(TOKENS.backgroundAlert)};
   color: ${getTypeToken(TOKENS.colorTextAlert)};
@@ -104,7 +116,7 @@ StyledAlert.defaultProps = {
 
 const IconContainer = styled(StyledDiv)`
   flex-shrink: 0;
-  margin-right: ${({ theme }) => theme.orbit.spaceSmall};
+  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
   color: ${getTypeToken(TOKENS.colorIconAlert)};
 `;
 
@@ -160,8 +172,9 @@ const CloseContainer = styled(StyledDiv)`
   position: absolute;
   top: ${({ hasChildren }) => (hasChildren ? 0 : "50%")};
   margin-top: ${({ hasChildren, theme }) => !hasChildren && `-${theme.orbit.widthIconSmall}`};
-  right: 0;
-  margin-right: ${({ hasChildren, theme }) => !hasChildren && theme.orbit.spaceXSmall};
+  ${right}: 0;
+  margin: ${({ hasChildren, theme }) =>
+    !hasChildren && rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
 `;
 
 CloseContainer.defaultProps = {
@@ -180,7 +193,13 @@ const Alert = (props: Props) => {
     spaceAfter,
   } = props;
   return (
-    <StyledAlert type={type} closable={closable} dataTest={dataTest} spaceAfter={spaceAfter}>
+    <StyledAlert
+      type={type}
+      icon={icon}
+      closable={closable}
+      dataTest={dataTest}
+      spaceAfter={spaceAfter}
+    >
       {icon && (
         <IconContainer type={type}>
           <Icon type={type} icon={icon} />

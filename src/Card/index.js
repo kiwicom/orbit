@@ -9,6 +9,7 @@ import CardSection, { StyledCardSection } from "./CardSection";
 import CardHeader, { StyledCardHeader } from "./CardHeader";
 import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
+import { right } from "../utils/rtl";
 
 import type { Props, State } from "./index";
 
@@ -49,7 +50,7 @@ const StyledCard = styled.div`
   margin-bottom: ${getSpacingToken};
 
   ${StyledCardHeader} {
-    padding-right: ${({ theme, closable }) => closable && theme.orbit.spaceLarge};
+    padding-${right}: ${({ theme, closable }) => closable && theme.orbit.spaceLarge};
     border-bottom: ${({ hasAdjustedHeader }) => hasAdjustedHeader && 0};
   }
 
@@ -82,7 +83,7 @@ StyledCard.defaultProps = {
 const CloseContainer = styled.div`
   position: absolute;
   top: 0;
-  right: 0;
+  ${right}: 0;
   z-index: 1;
 `;
 

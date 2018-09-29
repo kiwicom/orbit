@@ -4550,3 +4550,2505 @@ exports[`Storyshots Table Playground 1`] = `
   </div>
 </div>
 `;
+
+exports[`Storyshots Table RTL 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="story"
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      className="story-header"
+      style={
+        Object {
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      <div>
+        <h1
+          className="story-title"
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          RTL
+        </h1>
+        
+        <span
+          className="story-subtitle"
+          style={Object {}}
+        >
+          <div>
+            <p>
+              This is a preview of this component in RTL setup.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        className="chapter-header"
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="section-container"
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          className="section-header"
+          style={Object {}}
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="section-component-container"
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div
+            className="Table__StyledTableOuter-sc-156ovmd-0 eoNpTU"
+          >
+            <div
+              className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
+              onScroll={[Function]}
+            >
+              <table
+                className="Table__StyledTable-sc-156ovmd-2 jcaKFE"
+              >
+                <thead
+                  className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
+                >
+                  <tr
+                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                  >
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      First column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Second column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Third column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Fourth column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Fifth column
+                    </td>
+                  </tr>
+                </thead>
+                <tbody
+                  className="TableBody__StyledTableBody-sc-1uovf8k-0 kqMaSS"
+                >
+                  <tr
+                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                  >
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      First column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Second column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Third column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Fourth column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Fifth column
+                    </td>
+                  </tr>
+                  <tr
+                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                  >
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      First column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Second column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Third column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Fourth column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Fifth column
+                    </td>
+                  </tr>
+                  <tr
+                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                  >
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      First column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Second column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Third column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Fourth column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Fifth column
+                    </td>
+                  </tr>
+                  <tr
+                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                  >
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      First column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Second column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Third column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Fourth column
+                    </td>
+                    <td
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                    >
+                      Fifth column
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                className="section-subsection"
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  className="section-subsection-title"
+                >
+                  Source
+                </h4>
+                <pre
+                  className="css-4akams"
+                >
+                  <div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          RenderInRtl
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Table
+                          </span>
+                          <span />
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              TableHead
+                            </span>
+                            <span />
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;
+                                TableRow
+                              </span>
+                              <span />
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &gt;
+                              </span>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  First column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Second column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Third column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Fourth column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Fifth column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;/
+                                TableRow
+                                &gt;
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              TableHead
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              TableBody
+                            </span>
+                            <span />
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;
+                                TableRow
+                              </span>
+                              <span />
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &gt;
+                              </span>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  First column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Second column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Third column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Fourth column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Fifth column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;/
+                                TableRow
+                                &gt;
+                              </span>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;
+                                TableRow
+                              </span>
+                              <span />
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &gt;
+                              </span>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  First column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Second column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Third column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Fourth column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Fifth column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;/
+                                TableRow
+                                &gt;
+                              </span>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;
+                                TableRow
+                              </span>
+                              <span />
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &gt;
+                              </span>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  First column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Second column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Third column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Fourth column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Fifth column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;/
+                                TableRow
+                                &gt;
+                              </span>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;
+                                TableRow
+                              </span>
+                              <span />
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &gt;
+                              </span>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  First column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Second column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Third column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Fourth column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  TableCell
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Fifth column
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  TableCell
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;/
+                                TableRow
+                                &gt;
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              TableBody
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Table
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          RenderInRtl
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

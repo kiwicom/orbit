@@ -10,6 +10,7 @@ import List from "../List";
 import ListItem from "../List/ListItem";
 import CarrierLogo from "../CarrierLogo";
 import InformationCircle from "../icons/InformationCircle";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import TripSegment from "./index";
 
@@ -164,4 +165,40 @@ storiesOf("TripSegment", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <TripSegment
+                  carrier={{
+                    code: "FR",
+                    type: "airline",
+                    name: "Ryanair",
+                  }}
+                  duration="2h"
+                  departure="Barcelona BCN"
+                  departureTime="6:30"
+                  arrival="Paris BVA"
+                  arrivalTime="8:30"
+                >
+                  <List size="small" type="secondary">
+                    <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
+                      Airline: Ryanair
+                    </ListItem>
+                    <ListItem icon={<InformationCircle color="secondary" />}>
+                      Flight no: D8 1762
+                    </ListItem>
+                  </List>
+                </TripSegment>
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

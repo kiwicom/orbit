@@ -12,6 +12,7 @@ import Text from "../Text";
 import CardHeader from "./CardHeader";
 import CardSection from "./CardSection";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Card from "./index";
 
@@ -230,4 +231,38 @@ storiesOf("Card", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <Card closable onClose={action("Close")}>
+                  <CardHeader
+                    icon={<Icons.Airplane />}
+                    title="Title of the CardHeader"
+                    subTitle="Description of the CardHeader"
+                  />
+                  <CardSection>
+                    <Heading type="title3" element="h3">
+                      Content with Heading and text
+                    </Heading>
+                    <Text>Text in content</Text>
+                  </CardSection>
+                  <CardSection>
+                    <Heading type="title3" element="h3">
+                      Section with Heading and text
+                    </Heading>
+                    <Text>Text in section</Text>
+                  </CardSection>
+                </Card>
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

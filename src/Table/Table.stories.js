@@ -10,6 +10,7 @@ import TableBody from "./TableBody";
 import TableRow from "./TableRow";
 import TableCell from "./TableCell";
 import ALIGN_OPTIONS from "./TableCell/consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Table from "./";
 
@@ -141,4 +142,60 @@ storiesOf("Table", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <Table>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>First column</TableCell>
+                      <TableCell>Second column</TableCell>
+                      <TableCell>Third column</TableCell>
+                      <TableCell>Fourth column</TableCell>
+                      <TableCell>Fifth column</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell>First column</TableCell>
+                      <TableCell>Second column</TableCell>
+                      <TableCell>Third column</TableCell>
+                      <TableCell>Fourth column</TableCell>
+                      <TableCell>Fifth column</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>First column</TableCell>
+                      <TableCell>Second column</TableCell>
+                      <TableCell>Third column</TableCell>
+                      <TableCell>Fourth column</TableCell>
+                      <TableCell>Fifth column</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>First column</TableCell>
+                      <TableCell>Second column</TableCell>
+                      <TableCell>Third column</TableCell>
+                      <TableCell>Fourth column</TableCell>
+                      <TableCell>Fifth column</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>First column</TableCell>
+                      <TableCell>Second column</TableCell>
+                      <TableCell>Third column</TableCell>
+                      <TableCell>Fourth column</TableCell>
+                      <TableCell>Fifth column</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

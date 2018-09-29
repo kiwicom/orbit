@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import defaultTokens from "../../defaultTokens";
 import ALIGN_OPTIONS from "./consts";
+import { textAlign } from "../../utils/rtl";
 
 import type { Props } from "./";
 
@@ -15,7 +16,7 @@ export const StyledTableCell = styled(({ children, className }) => (
   color: ${({ theme }) => theme.orbit.paletteInkLight};
   // TODO: create token
   // colorTable
-  text-align: ${({ align }) => align};
+  text-align: ${({ align }) => textAlign(align)};
 `;
 
 StyledTableCell.defaultProps = {

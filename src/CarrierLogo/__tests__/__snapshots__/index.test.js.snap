@@ -464,6 +464,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
   >
@@ -890,6 +891,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                 "zIndexOnTheTop": "900",
                 "zIndexSticky": "100",
               },
+              "rtl": false,
             },
           },
           "displayName": "CarrierLogo__StyledCarrierLogo",
@@ -1284,6 +1286,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
     >
@@ -1679,6 +1682,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                 "zIndexOnTheTop": "900",
                 "zIndexSticky": "100",
               },
+              "rtl": false,
             }
           }
           title="Ryanair"
@@ -2091,6 +2095,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                       "zIndexOnTheTop": "900",
                       "zIndexSticky": "100",
                     },
+                    "rtl": false,
                   },
                 },
                 "displayName": "CarrierLogo__StyledImage",
@@ -2485,6 +2490,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
                 },
+                "rtl": false,
               }
             }
             title="Ryanair"
@@ -2886,6 +2892,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                 "zIndexOnTheTop": "900",
                 "zIndexSticky": "100",
               },
+              "rtl": false,
             }
           }
           title="Transavia France"
@@ -3298,6 +3305,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                       "zIndexOnTheTop": "900",
                       "zIndexSticky": "100",
                     },
+                    "rtl": false,
                   },
                 },
                 "displayName": "CarrierLogo__StyledImage",
@@ -3692,6 +3700,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
                 },
+                "rtl": false,
               }
             }
             title="Transavia France"
@@ -4093,6 +4102,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                 "zIndexOnTheTop": "900",
                 "zIndexSticky": "100",
               },
+              "rtl": false,
             }
           }
           title="Vueling"
@@ -4505,6 +4515,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                       "zIndexOnTheTop": "900",
                       "zIndexSticky": "100",
                     },
+                    "rtl": false,
                   },
                 },
                 "displayName": "CarrierLogo__StyledImage",
@@ -4899,6 +4910,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
                 },
+                "rtl": false,
               }
             }
             title="Vueling"
@@ -5300,6 +5312,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                 "zIndexOnTheTop": "900",
                 "zIndexSticky": "100",
               },
+              "rtl": false,
             }
           }
           title="Czech Airlines"
@@ -5712,6 +5725,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                       "zIndexOnTheTop": "900",
                       "zIndexSticky": "100",
                     },
+                    "rtl": false,
                   },
                 },
                 "displayName": "CarrierLogo__StyledImage",
@@ -6106,6 +6120,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
                 },
+                "rtl": false,
               }
             }
             title="Czech Airlines"

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import media from "../../utils/media";
 import defaultTokens from "../../defaultTokens";
 import { StyledButton } from "../../Button";
+import { rtlSpacing } from "../../utils/rtl";
 import { StyledButtonLink } from "../../ButtonLink";
 
 import type { Props } from "./index";
@@ -12,7 +13,7 @@ import type { Props } from "./index";
 const StyledChild = styled.div`
   flex: ${({ flex }) => flex};
   box-sizing: border-box;
-  padding-right: ${({ theme }) => theme.orbit.spaceMedium};
+  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceMedium} 0 0`)};
 
   ${media.desktop`
     flex: none;
@@ -29,7 +30,7 @@ export const StyledModalFooter = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.orbit.paletteWhite};
   // TODO: create token paddingModalFooter
-  padding: ${({ theme }) => `0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
+  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`)};
   box-sizing: border-box;
   // TODO: create token boxShadowActionableInverted
 
@@ -48,7 +49,7 @@ export const StyledModalFooter = styled.div`
   `};
 
   ${StyledChild}:last-of-type {
-    padding-right: 0;
+    padding: 0;
   }
 `;
 

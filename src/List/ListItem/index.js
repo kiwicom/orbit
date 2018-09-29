@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import defaultTokens from "../../defaultTokens";
 import CircleSmall from "../../icons/CircleSmall";
+import { rtlSpacing } from "../../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -26,7 +27,7 @@ Item.defaultProps = {
 export const IconContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-right: ${({ theme }) => theme.orbit.spaceXSmall};
+  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
 `;
 
 IconContainer.defaultProps = {

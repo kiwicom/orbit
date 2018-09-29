@@ -7,6 +7,7 @@ import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
 
 import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Heading from "./index";
 
@@ -192,4 +193,20 @@ storiesOf("Heading", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <Heading type="display">Orbit design system</Heading>
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

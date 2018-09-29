@@ -5,6 +5,7 @@ import styled from "styled-components";
 import defaultTokens from "../defaultTokens";
 import { StyledButtonLink } from "../ButtonLink";
 import { StyledButton } from "../Button";
+import { borderRadius, rtlSpacing } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -13,20 +14,24 @@ const StyledButtonGroup = styled.div`
 
   & ${StyledButtonLink}, & ${StyledButton} {
     border-radius: ${({ connected }) => connected && "0"};
-    margin-right: ${({ theme, connected }) =>
-      connected ? theme.orbit.marginRightButtonGroup : theme.orbit.spaceXSmall};
+    margin: ${({ theme, connected }) =>
+      rtlSpacing(
+        connected
+          ? `0 ${theme.orbit.marginRightButtonGroup} 0 0`
+          : `0 ${theme.orbit.spaceXSmall} 0 0`,
+      )};
 
     &:first-child {
       border-radius: ${({ connected, theme }) =>
         connected &&
-        `${theme.orbit.borderRadiusNormal} 0 0
-          ${theme.orbit.borderRadiusNormal}`};
+        borderRadius(`${theme.orbit.borderRadiusNormal} 0 0 ${theme.orbit.borderRadiusNormal}`)};
     }
 
     &:last-child {
       border-radius: ${({ connected, theme }) =>
-        connected && `0 ${theme.orbit.borderRadiusNormal} ${theme.orbit.borderRadiusNormal} 0`};
-      margin-right: 0;
+        connected &&
+        borderRadius(`0 ${theme.orbit.borderRadiusNormal} ${theme.orbit.borderRadiusNormal} 0`)};
+      margin: 0;
     }
   }
 `;

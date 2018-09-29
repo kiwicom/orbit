@@ -7,6 +7,7 @@ import { withKnobs, number, text, select } from "@storybook/addon-knobs";
 
 import MAX_STARS from "./consts";
 import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import RatingStars from "./";
 
@@ -44,4 +45,20 @@ storiesOf("RatingStars", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <RatingStars rating={3.3} />
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

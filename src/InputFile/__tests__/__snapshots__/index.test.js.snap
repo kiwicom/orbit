@@ -383,6 +383,7 @@ exports[`InputFiInputFile with error should match snapshot 1`] = `
         "zIndexOnTheTop": "900",
         "zIndexSticky": "100",
       },
+      "rtl": false,
     }
   }
 >
@@ -773,6 +774,7 @@ exports[`InputFiInputFile with error should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
     type="file"
@@ -1164,6 +1166,7 @@ exports[`InputFiInputFile with error should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
   >
@@ -1562,6 +1565,7 @@ exports[`InputFiInputFile with error should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
     >
@@ -1962,6 +1966,7 @@ exports[`InputFile with help should match snapshot 1`] = `
         "zIndexOnTheTop": "900",
         "zIndexSticky": "100",
       },
+      "rtl": false,
     }
   }
 >
@@ -2394,6 +2399,7 @@ exports[`InputFile with help should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
     type="file"
@@ -2781,6 +2787,7 @@ exports[`InputFile with help should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
   >
@@ -3168,6 +3175,7 @@ exports[`InputFile with help should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
   >
@@ -3562,6 +3570,7 @@ exports[`InputFile with help should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
     >
@@ -3951,6 +3960,7 @@ exports[`InputFile with help should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
       transparent={true}

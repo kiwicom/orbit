@@ -12,6 +12,7 @@ import { SIZES, TYPES } from "./consts";
 import { ICON_COLORS } from "../Icon/consts";
 import CarrierLogo from "../CarrierLogo";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import List from "./index";
 
@@ -130,4 +131,27 @@ storiesOf("List", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <List size="small" type="secondary">
+                  <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
+                    Airline: Ryanair
+                  </ListItem>
+                  <ListItem icon={<Icons.InformationCircle />}>Flight no: FR 1337</ListItem>
+                  <ListItem icon={<Icons.Trip />}>PNR: TEST0X0</ListItem>
+                  <ListItem icon={<Icons.Airplane />}>Airbus A320 (320)</ListItem>
+                </List>
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

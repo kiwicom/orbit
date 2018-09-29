@@ -9,6 +9,7 @@ import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 
 import Text from "../Text";
 import TextLink from "../TextLink";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Checkbox from "./index";
 
@@ -119,4 +120,31 @@ storiesOf("CheckBox", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <Checkbox
+                  label={
+                    <Text>
+                      I instruct Kiwi.com to cancel this booking under the herein specified
+                      conditions and to process a refund in accordance with Kiwi.com&rsquo;&nbsp;
+                      <TextLink>Terms and Conditions</TextLink>.
+                    </Text>
+                  }
+                  checked
+                  value="value"
+                  onChange={action("changed")}
+                />
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

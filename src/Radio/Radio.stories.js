@@ -8,6 +8,7 @@ import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 
 import Text from "../Text";
 import TextLink from "../TextLink";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Radio from "./index";
 
@@ -118,4 +119,30 @@ storiesOf("Radio", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <Radio
+                  label={
+                    <Text>
+                      Lorem ipsum dolor sit&nbsp;
+                      <TextLink>amet</TextLink>.
+                    </Text>
+                  }
+                  checked
+                  value="value"
+                  onChange={action("changed")}
+                />
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

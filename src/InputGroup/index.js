@@ -8,6 +8,7 @@ import { FakeInput, Input, InputContainer } from "../InputField";
 import { SelectContainer } from "../Select";
 import FormFeedback from "../FormFeedback";
 import { SIZE_OPTIONS, TOKENS } from "./consts";
+import { right, rtlSpacing } from "../utils/rtl";
 
 import type { Props, State } from "./index";
 
@@ -73,9 +74,9 @@ const StyledChildren = styled.div`
 
 const StyledChild = styled.div`
   flex: ${({ flex }) => flex};
-  padding-right: ${({ theme }) => theme.orbit.spaceXSmall};
+  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
   :last-child {
-    padding-right: 0;
+    padding: 0;
   }
 `;
 StyledChild.defaultProps = {
@@ -115,9 +116,9 @@ const StyledInputGroup = styled(({ children, className, dataTest }) => (
     ${InputContainer}:after, ${SelectContainer}:after {
       content: " ";
       position: absolute;
-      right: 0;
       top: 50%;
       transform: translateY(-50%);
+      ${right}: 0;
       height: ${getToken(TOKENS.heightLine)};
       width: 1px;
       background-color: ${({ theme, error, active }) =>

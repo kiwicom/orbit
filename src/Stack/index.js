@@ -6,6 +6,7 @@ import media from "../utils/media";
 import defaultTokens from "../defaultTokens";
 import { ALIGNS, JUSTIFY, DIRECTIONS, SPACINGS } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
+import { rtlSpacing } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -56,7 +57,7 @@ const getDesktopSpacing = ({ spacing, direction, desktop }) => {
       : `0 ${tokens[finalSpacing]} 0 0`;
   return css`
     & > * {
-      margin: ${margin}!important;
+      margin: ${rtlSpacing(margin)}!important;
     }
   `;
 };

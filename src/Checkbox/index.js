@@ -6,6 +6,7 @@ import defaultTokens from "../defaultTokens";
 import TOKENS from "./consts";
 import Check from "../icons/Check";
 import { StyledText } from "../Text";
+import { rtlSpacing } from "../utils/rtl";
 import type { Ref } from "../common/common.js.flow";
 
 import type { Props } from "./index";
@@ -55,7 +56,7 @@ IconContainer.defaultProps = {
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: ${({ theme }) => theme.orbit.spaceXSmall};
+  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
 `;
 
 TextContainer.defaultProps = {

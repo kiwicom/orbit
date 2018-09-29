@@ -7,6 +7,7 @@ import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
 import FormFeedback from "../FormFeedback";
 import DefaultFormLabel from "../FormLabel";
 import { StyledServiceLogo } from "../ServiceLogo";
+import { rtlSpacing } from "../utils/rtl";
 import type { Ref } from "../common/common.js.flow";
 
 import type { Props } from "./index";
@@ -21,10 +22,6 @@ const getToken = name => ({ theme, size }) => {
       [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
     },
-    [TOKENS.paddingInput]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingInputNormal,
-    },
     [TOKENS.iconSize]: {
       [SIZE_OPTIONS.SMALL]: theme.orbit.widthIconSmall,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.widthIconMedium,
@@ -32,6 +29,14 @@ const getToken = name => ({ theme, size }) => {
   };
 
   return tokens[name][size];
+};
+
+const getPadding = () => ({ theme, size }) => {
+  const tokens = {
+    [SIZE_OPTIONS.SMALL]: theme.orbit.paddingInputSmall,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingInputNormal,
+  };
+  return rtlSpacing(tokens[size]);
 };
 
 const Field = styled.label`
@@ -109,7 +114,7 @@ const StyledInlineLabel = styled.div`
   align-items: center;
   pointer-events: none;
   justify-content: center;
-  padding-left: ${({ theme }) => theme.orbit.spaceSmall};
+  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
 
   ${DefaultFormLabel} {
     margin-bottom: 0;
@@ -133,7 +138,7 @@ export const Prefix = styled(({ children, className }) => (
   align-items: center;
   pointer-events: none;
   justify-content: center;
-  padding-left: ${({ theme }) => theme.orbit.spaceSmall};
+  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
   z-index: 3;
 
   & > svg {
@@ -161,7 +166,7 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
   }
   ${StyledServiceLogo} {
     height: 16px;
-    padding-right: ${({ theme }) => theme.orbit.spaceSmall};
+    padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
   }
 `;
 
@@ -173,7 +178,7 @@ export const Input = styled.input`
   appearance: none;
   font-family: inherit;
   border: none;
-  padding: ${getToken(TOKENS.paddingInput)};
+  padding: ${getPadding()};
   font-size: inherit;
   color: inherit;
   background-color: transparent;

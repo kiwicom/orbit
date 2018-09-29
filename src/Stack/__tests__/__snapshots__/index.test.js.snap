@@ -194,9 +194,7 @@ exports[`Default Stack should match snapshot 1`] = `
   color: #fff !important;
   border: 0;
   border-radius: 3px;
-  padding: 0;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding: 0 16px;
   font-weight: 700!important;
   font-size: 14px;
   cursor: pointer;
@@ -648,6 +646,7 @@ exports[`Default Stack should match snapshot 1`] = `
         "zIndexOnTheTop": "900",
         "zIndexSticky": "100",
       },
+      "rtl": false,
     }
   }
   wrap={false}
@@ -1078,6 +1077,7 @@ exports[`Default Stack should match snapshot 1`] = `
               "zIndexOnTheTop": "900",
               "zIndexSticky": "100",
             },
+            "rtl": false,
           },
         },
         "displayName": "Stack__StyledStack",
@@ -1478,6 +1478,7 @@ exports[`Default Stack should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
     wrap={false}
@@ -1874,6 +1875,7 @@ exports[`Default Stack should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
       wrap={false}
@@ -2268,6 +2270,7 @@ exports[`Default Stack should match snapshot 1`] = `
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
                 },
+                "rtl": false,
               }
             }
           >
@@ -2667,6 +2670,7 @@ exports[`Default Stack should match snapshot 1`] = `
                         "zIndexOnTheTop": "900",
                         "zIndexSticky": "100",
                       },
+                      "rtl": false,
                     },
                   },
                   "displayName": "InputField__Field",
@@ -3060,6 +3064,7 @@ exports[`Default Stack should match snapshot 1`] = `
                     "zIndexOnTheTop": "900",
                     "zIndexSticky": "100",
                   },
+                  "rtl": false,
                 }
               }
             >
@@ -3453,6 +3458,7 @@ exports[`Default Stack should match snapshot 1`] = `
                           "zIndexOnTheTop": "900",
                           "zIndexSticky": "100",
                         },
+                        "rtl": false,
                       }
                     }
                   >
@@ -3861,6 +3867,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             },
                           },
                           "displayName": "FormLabel",
@@ -4255,6 +4262,7 @@ exports[`Default Stack should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                     >
@@ -4642,6 +4650,7 @@ exports[`Default Stack should match snapshot 1`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           }
                         }
                       >
@@ -5039,6 +5048,7 @@ exports[`Default Stack should match snapshot 1`] = `
                         "zIndexOnTheTop": "900",
                         "zIndexSticky": "100",
                       },
+                      "rtl": false,
                     }
                   }
                 >
@@ -5450,6 +5460,7 @@ exports[`Default Stack should match snapshot 1`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           },
                         },
                         "displayName": "InputField__InputContainer",
@@ -5845,6 +5856,7 @@ exports[`Default Stack should match snapshot 1`] = `
                           "zIndexOnTheTop": "900",
                           "zIndexSticky": "100",
                         },
+                        "rtl": false,
                       }
                     }
                   >
@@ -6232,6 +6244,7 @@ exports[`Default Stack should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                     >
@@ -6621,6 +6634,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             }
                           }
                           type="password"
@@ -7035,6 +7049,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                       "zIndexOnTheTop": "900",
                                       "zIndexSticky": "100",
                                     },
+                                    "rtl": false,
                                   },
                                 },
                                 "displayName": "InputField__Input",
@@ -7429,6 +7444,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               }
                             }
                             type="password"
@@ -7823,6 +7839,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             }
                           }
                         >
@@ -8232,6 +8249,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                       "zIndexOnTheTop": "900",
                                       "zIndexSticky": "100",
                                     },
+                                    "rtl": false,
                                   },
                                 },
                                 "displayName": "InputField__FakeInput",
@@ -8627,6 +8645,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               }
                             }
                           >
@@ -9014,6 +9033,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                     "zIndexOnTheTop": "900",
                                     "zIndexSticky": "100",
                                   },
+                                  "rtl": false,
                                 }
                               }
                             >
@@ -9412,6 +9432,7 @@ exports[`Default Stack should match snapshot 1`] = `
                           "zIndexOnTheTop": "900",
                           "zIndexSticky": "100",
                         },
+                        "rtl": false,
                       }
                     }
                     type="help"
@@ -9830,6 +9851,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             },
                           },
                           "displayName": "FormFeedback__StyledFormFeedback",
@@ -10224,6 +10246,7 @@ exports[`Default Stack should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                       type="help"
@@ -10611,6 +10634,7 @@ exports[`Default Stack should match snapshot 1`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           }
                         }
                         type="help"
@@ -11015,6 +11039,7 @@ exports[`Default Stack should match snapshot 1`] = `
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
                 },
+                "rtl": false,
               }
             }
             type="primary"
@@ -11027,7 +11052,7 @@ exports[`Default Stack should match snapshot 1`] = `
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": undefined,
                   "componentStyle": ComponentStyle {
-                    "componentId": "Button__StyledButton-sc-1brqp3f-2",
+                    "componentId": "Button__StyledButton-sc-1brqp3f-1",
                     "isStatic": false,
                     "lastClassName": "c8",
                     "rules": Array [
@@ -11045,9 +11070,7 @@ exports[`Default Stack should match snapshot 1`] = `
                       [Function],
                       " !important;border:0;border-radius:",
                       [Function],
-                      ";padding:0;padding-right:",
-                      [Function],
-                      ";padding-left:",
+                      ";padding:",
                       [Function],
                       ";font-weight:",
                       [Function],
@@ -11477,11 +11500,12 @@ exports[`Default Stack should match snapshot 1`] = `
                         "zIndexOnTheTop": "900",
                         "zIndexSticky": "100",
                       },
+                      "rtl": false,
                     },
                   },
                   "displayName": "Button__StyledButton",
                   "render": [Function],
-                  "styledComponentId": "Button__StyledButton-sc-1brqp3f-2",
+                  "styledComponentId": "Button__StyledButton-sc-1brqp3f-1",
                   "target": [Function],
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
@@ -11874,6 +11898,7 @@ exports[`Default Stack should match snapshot 1`] = `
                     "zIndexOnTheTop": "900",
                     "zIndexSticky": "100",
                   },
+                  "rtl": false,
                 }
               }
               type="primary"
@@ -12266,6 +12291,7 @@ exports[`Default Stack should match snapshot 1`] = `
                       "zIndexOnTheTop": "900",
                       "zIndexSticky": "100",
                     },
+                    "rtl": false,
                   }
                 }
                 type="primary"
@@ -12659,6 +12685,7 @@ exports[`Default Stack should match snapshot 1`] = `
                           "zIndexOnTheTop": "900",
                           "zIndexSticky": "100",
                         },
+                        "rtl": false,
                       }
                     }
                   >
@@ -12668,7 +12695,7 @@ exports[`Default Stack should match snapshot 1`] = `
                           "$$typeof": Symbol(react.forward_ref),
                           "attrs": undefined,
                           "componentStyle": ComponentStyle {
-                            "componentId": "Button__StyledButtonContent-sc-1brqp3f-3",
+                            "componentId": "Button__StyledButtonContent-sc-1brqp3f-2",
                             "isStatic": false,
                             "lastClassName": "c9",
                             "rules": Array [
@@ -13058,11 +13085,12 @@ exports[`Default Stack should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             },
                           },
                           "displayName": "Button__StyledButtonContent",
                           "render": [Function],
-                          "styledComponentId": "Button__StyledButtonContent-sc-1brqp3f-3",
+                          "styledComponentId": "Button__StyledButtonContent-sc-1brqp3f-2",
                           "target": "div",
                           "toString": [Function],
                           "warnTooManyClasses": [Function],
@@ -13452,6 +13480,7 @@ exports[`Default Stack should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                     >
@@ -13698,9 +13727,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   color: #fff !important;
   border: 0;
   border-radius: 3px;
-  padding: 0;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding: 0 16px;
   font-weight: 700!important;
   font-size: 14px;
   cursor: pointer;
@@ -14228,6 +14255,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
     wrap={false}
@@ -14673,6 +14701,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                 "zIndexOnTheTop": "900",
                 "zIndexSticky": "100",
               },
+              "rtl": false,
             },
           },
           "displayName": "Stack__StyledStack",
@@ -15073,6 +15102,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
       wrap={false}
@@ -15484,6 +15514,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
               "zIndexOnTheTop": "900",
               "zIndexSticky": "100",
             },
+            "rtl": false,
           }
         }
         wrap={false}
@@ -15878,6 +15909,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                     "zIndexOnTheTop": "900",
                     "zIndexSticky": "100",
                   },
+                  "rtl": false,
                 }
               }
             >
@@ -16277,6 +16309,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                           "zIndexOnTheTop": "900",
                           "zIndexSticky": "100",
                         },
+                        "rtl": false,
                       },
                     },
                     "displayName": "InputField__Field",
@@ -16670,6 +16703,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                       "zIndexOnTheTop": "900",
                       "zIndexSticky": "100",
                     },
+                    "rtl": false,
                   }
                 }
               >
@@ -17063,6 +17097,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                     >
@@ -17471,6 +17506,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               },
                             },
                             "displayName": "FormLabel",
@@ -17865,6 +17901,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           }
                         }
                       >
@@ -18252,6 +18289,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             }
                           }
                         >
@@ -18649,6 +18687,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                           "zIndexOnTheTop": "900",
                           "zIndexSticky": "100",
                         },
+                        "rtl": false,
                       }
                     }
                   >
@@ -19060,6 +19099,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             },
                           },
                           "displayName": "InputField__InputContainer",
@@ -19455,6 +19495,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                     >
@@ -19842,6 +19883,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           }
                         }
                       >
@@ -20231,6 +20273,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               }
                             }
                             type="password"
@@ -20645,6 +20688,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                         "zIndexOnTheTop": "900",
                                         "zIndexSticky": "100",
                                       },
+                                      "rtl": false,
                                     },
                                   },
                                   "displayName": "InputField__Input",
@@ -21039,6 +21083,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                     "zIndexOnTheTop": "900",
                                     "zIndexSticky": "100",
                                   },
+                                  "rtl": false,
                                 }
                               }
                               type="password"
@@ -21433,6 +21478,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               }
                             }
                           >
@@ -21842,6 +21888,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                         "zIndexOnTheTop": "900",
                                         "zIndexSticky": "100",
                                       },
+                                      "rtl": false,
                                     },
                                   },
                                   "displayName": "InputField__FakeInput",
@@ -22237,6 +22284,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                     "zIndexOnTheTop": "900",
                                     "zIndexSticky": "100",
                                   },
+                                  "rtl": false,
                                 }
                               }
                             >
@@ -22624,6 +22672,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                       "zIndexOnTheTop": "900",
                                       "zIndexSticky": "100",
                                     },
+                                    "rtl": false,
                                   }
                                 }
                               >
@@ -23022,6 +23071,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                       type="help"
@@ -23440,6 +23490,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               },
                             },
                             "displayName": "FormFeedback__StyledFormFeedback",
@@ -23834,6 +23885,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           }
                         }
                         type="help"
@@ -24221,6 +24273,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             }
                           }
                           type="help"
@@ -24625,6 +24678,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                     "zIndexOnTheTop": "900",
                     "zIndexSticky": "100",
                   },
+                  "rtl": false,
                 }
               }
               type="primary"
@@ -24637,7 +24691,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": undefined,
                     "componentStyle": ComponentStyle {
-                      "componentId": "Button__StyledButton-sc-1brqp3f-2",
+                      "componentId": "Button__StyledButton-sc-1brqp3f-1",
                       "isStatic": false,
                       "lastClassName": "c8",
                       "rules": Array [
@@ -24655,9 +24709,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                         [Function],
                         " !important;border:0;border-radius:",
                         [Function],
-                        ";padding:0;padding-right:",
-                        [Function],
-                        ";padding-left:",
+                        ";padding:",
                         [Function],
                         ";font-weight:",
                         [Function],
@@ -25087,11 +25139,12 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                           "zIndexOnTheTop": "900",
                           "zIndexSticky": "100",
                         },
+                        "rtl": false,
                       },
                     },
                     "displayName": "Button__StyledButton",
                     "render": [Function],
-                    "styledComponentId": "Button__StyledButton-sc-1brqp3f-2",
+                    "styledComponentId": "Button__StyledButton-sc-1brqp3f-1",
                     "target": [Function],
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -25484,6 +25537,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                       "zIndexOnTheTop": "900",
                       "zIndexSticky": "100",
                     },
+                    "rtl": false,
                   }
                 }
                 type="primary"
@@ -25876,6 +25930,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                         "zIndexOnTheTop": "900",
                         "zIndexSticky": "100",
                       },
+                      "rtl": false,
                     }
                   }
                   type="primary"
@@ -26269,6 +26324,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                     >
@@ -26278,7 +26334,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             "$$typeof": Symbol(react.forward_ref),
                             "attrs": undefined,
                             "componentStyle": ComponentStyle {
-                              "componentId": "Button__StyledButtonContent-sc-1brqp3f-3",
+                              "componentId": "Button__StyledButtonContent-sc-1brqp3f-2",
                               "isStatic": false,
                               "lastClassName": "c9",
                               "rules": Array [
@@ -26668,11 +26724,12 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               },
                             },
                             "displayName": "Button__StyledButtonContent",
                             "render": [Function],
-                            "styledComponentId": "Button__StyledButtonContent-sc-1brqp3f-3",
+                            "styledComponentId": "Button__StyledButtonContent-sc-1brqp3f-2",
                             "target": "div",
                             "toString": [Function],
                             "warnTooManyClasses": [Function],
@@ -27062,6 +27119,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           }
                         }
                       >
@@ -27305,9 +27363,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   color: #fff !important;
   border: 0;
   border-radius: 3px;
-  padding: 0;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding: 0 16px;
   font-weight: 700!important;
   font-size: 14px;
   cursor: pointer;
@@ -27758,6 +27814,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
         "zIndexOnTheTop": "900",
         "zIndexSticky": "100",
       },
+      "rtl": false,
     }
   }
   wrap={false}
@@ -28188,6 +28245,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
               "zIndexOnTheTop": "900",
               "zIndexSticky": "100",
             },
+            "rtl": false,
           },
         },
         "displayName": "Stack__StyledStack",
@@ -28587,6 +28645,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
     wrap={false}
@@ -28982,6 +29041,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
       wrap={false}
@@ -29376,6 +29436,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
                 },
+                "rtl": false,
               }
             }
           >
@@ -29775,6 +29836,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                         "zIndexOnTheTop": "900",
                         "zIndexSticky": "100",
                       },
+                      "rtl": false,
                     },
                   },
                   "displayName": "InputField__Field",
@@ -30168,6 +30230,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                     "zIndexOnTheTop": "900",
                     "zIndexSticky": "100",
                   },
+                  "rtl": false,
                 }
               }
             >
@@ -30561,6 +30624,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           "zIndexOnTheTop": "900",
                           "zIndexSticky": "100",
                         },
+                        "rtl": false,
                       }
                     }
                   >
@@ -30969,6 +31033,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             },
                           },
                           "displayName": "FormLabel",
@@ -31363,6 +31428,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                     >
@@ -31750,6 +31816,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           }
                         }
                       >
@@ -32147,6 +32214,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                         "zIndexOnTheTop": "900",
                         "zIndexSticky": "100",
                       },
+                      "rtl": false,
                     }
                   }
                 >
@@ -32558,6 +32626,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           },
                         },
                         "displayName": "InputField__InputContainer",
@@ -32953,6 +33022,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           "zIndexOnTheTop": "900",
                           "zIndexSticky": "100",
                         },
+                        "rtl": false,
                       }
                     }
                   >
@@ -33340,6 +33410,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                     >
@@ -33729,6 +33800,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             }
                           }
                           type="password"
@@ -34143,6 +34215,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                       "zIndexOnTheTop": "900",
                                       "zIndexSticky": "100",
                                     },
+                                    "rtl": false,
                                   },
                                 },
                                 "displayName": "InputField__Input",
@@ -34537,6 +34610,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               }
                             }
                             type="password"
@@ -34931,6 +35005,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             }
                           }
                         >
@@ -35340,6 +35415,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                       "zIndexOnTheTop": "900",
                                       "zIndexSticky": "100",
                                     },
+                                    "rtl": false,
                                   },
                                 },
                                 "displayName": "InputField__FakeInput",
@@ -35735,6 +35811,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               }
                             }
                           >
@@ -36122,6 +36199,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                     "zIndexOnTheTop": "900",
                                     "zIndexSticky": "100",
                                   },
+                                  "rtl": false,
                                 }
                               }
                             >
@@ -36520,6 +36598,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           "zIndexOnTheTop": "900",
                           "zIndexSticky": "100",
                         },
+                        "rtl": false,
                       }
                     }
                     type="help"
@@ -36938,6 +37017,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             },
                           },
                           "displayName": "FormFeedback__StyledFormFeedback",
@@ -37332,6 +37412,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                       type="help"
@@ -37719,6 +37800,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           }
                         }
                         type="help"
@@ -38123,6 +38205,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
                 },
+                "rtl": false,
               }
             }
             type="primary"
@@ -38135,7 +38218,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": undefined,
                   "componentStyle": ComponentStyle {
-                    "componentId": "Button__StyledButton-sc-1brqp3f-2",
+                    "componentId": "Button__StyledButton-sc-1brqp3f-1",
                     "isStatic": false,
                     "lastClassName": "c8",
                     "rules": Array [
@@ -38153,9 +38236,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                       [Function],
                       " !important;border:0;border-radius:",
                       [Function],
-                      ";padding:0;padding-right:",
-                      [Function],
-                      ";padding-left:",
+                      ";padding:",
                       [Function],
                       ";font-weight:",
                       [Function],
@@ -38585,11 +38666,12 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                         "zIndexOnTheTop": "900",
                         "zIndexSticky": "100",
                       },
+                      "rtl": false,
                     },
                   },
                   "displayName": "Button__StyledButton",
                   "render": [Function],
-                  "styledComponentId": "Button__StyledButton-sc-1brqp3f-2",
+                  "styledComponentId": "Button__StyledButton-sc-1brqp3f-1",
                   "target": [Function],
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
@@ -38982,6 +39064,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                     "zIndexOnTheTop": "900",
                     "zIndexSticky": "100",
                   },
+                  "rtl": false,
                 }
               }
               type="primary"
@@ -39374,6 +39457,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                       "zIndexOnTheTop": "900",
                       "zIndexSticky": "100",
                     },
+                    "rtl": false,
                   }
                 }
                 type="primary"
@@ -39767,6 +39851,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           "zIndexOnTheTop": "900",
                           "zIndexSticky": "100",
                         },
+                        "rtl": false,
                       }
                     }
                   >
@@ -39776,7 +39861,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           "$$typeof": Symbol(react.forward_ref),
                           "attrs": undefined,
                           "componentStyle": ComponentStyle {
-                            "componentId": "Button__StyledButtonContent-sc-1brqp3f-3",
+                            "componentId": "Button__StyledButtonContent-sc-1brqp3f-2",
                             "isStatic": false,
                             "lastClassName": "c9",
                             "rules": Array [
@@ -40166,11 +40251,12 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             },
                           },
                           "displayName": "Button__StyledButtonContent",
                           "render": [Function],
-                          "styledComponentId": "Button__StyledButtonContent-sc-1brqp3f-3",
+                          "styledComponentId": "Button__StyledButtonContent-sc-1brqp3f-2",
                           "target": "div",
                           "toString": [Function],
                           "warnTooManyClasses": [Function],
@@ -40560,6 +40646,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                     >

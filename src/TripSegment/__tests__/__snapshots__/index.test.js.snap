@@ -385,6 +385,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
   >
@@ -773,6 +774,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
     />
@@ -1159,6 +1161,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
   >
@@ -1545,6 +1548,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
     >
@@ -1930,6 +1934,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
               "zIndexOnTheTop": "900",
               "zIndexSticky": "100",
             },
+            "rtl": false,
           }
         }
       >
@@ -2316,6 +2321,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
                 },
+                "rtl": false,
               }
             }
           >
@@ -2708,6 +2714,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
                 },
+                "rtl": false,
               }
             }
           >
@@ -3114,6 +3121,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
               "zIndexOnTheTop": "900",
               "zIndexSticky": "100",
             },
+            "rtl": false,
           }
         }
       >
@@ -3525,6 +3533,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
     >

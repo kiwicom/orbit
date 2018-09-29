@@ -8,6 +8,7 @@ import Heading from "../../Heading/index";
 import Text from "../../Text/index";
 import { getSize } from "../../Icon";
 import { ICON_SIZES } from "../../Icon/consts";
+import { right } from "../../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -85,7 +86,7 @@ StyledCardSectionHeader.defaultProps = {
 
 const StyledTitleAndSubtitle = styled.div`
   flex: 1;
-  padding-right: ${({ theme }) => theme.orbit.spaceMedium};
+  padding-${right}: ${({ theme }) => theme.orbit.spaceMedium};
 `;
 
 StyledTitleAndSubtitle.defaultProps = {

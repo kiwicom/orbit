@@ -5,7 +5,7 @@ import styled from "styled-components";
 import defaultTokens from "../defaultTokens";
 import FormFeedback from "../FormFeedback";
 import FormLabel from "../FormLabel";
-import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
+import { SIZE_OPTIONS, RESIZE_OPTIONS, TOKENS } from "./consts";
 
 import type { Props } from "./index";
 
@@ -17,14 +17,27 @@ Field.defaultProps = {
   theme: defaultTokens,
 };
 
-const StyledTextArea = styled(({ theme, tokens, size, error, help, ...props }) => (
-  <textarea {...props} />
-))`
+const getTokens = name => ({ theme, size }) => {
+  const tokens = {
+    [TOKENS.fontSizeInput]: {
+      [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
+    },
+    [TOKENS.paddingInput]: {
+      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingTextareaSmall,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingTextareaNormal,
+    },
+  };
+
+  return tokens[name][size];
+};
+
+const StyledTextArea = styled(({ theme, size, error, help, ...props }) => <textarea {...props} />)`
   appearance: none;
   box-sizing: border-box;
   display: block;
   width: 100%;
-  padding: ${({ tokens, size }) => tokens.paddingInput[size]};
+  padding: ${getTokens(TOKENS.paddingInput)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   border: 0;
   box-shadow: inset 0 0 0
@@ -36,7 +49,7 @@ const StyledTextArea = styled(({ theme, tokens, size, error, help, ...props }) =
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   color: ${({ disabled, theme }) =>
     disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
-  font-size: ${({ size, tokens }) => tokens.fontSizeInput[size]};
+  font-size: ${getTokens(TOKENS.fontSizeInput)};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
   font-family: inherit;
@@ -69,22 +82,11 @@ StyledTextArea.defaultProps = {
 const Textarea = (props: Props) => {
   const {
     size = SIZE_OPTIONS.NORMAL,
-    theme = defaultTokens,
     disabled,
     resize = RESIZE_OPTIONS.VERTICAL,
     dataTest,
   } = props;
 
-  const tokens = {
-    fontSizeInput: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
-    },
-    paddingInput: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingTextareaSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingTextareaNormal,
-    },
-  };
   return (
     <Field data-test={dataTest}>
       {props.label && (
@@ -93,7 +95,6 @@ const Textarea = (props: Props) => {
         </FormLabel>
       )}
       <StyledTextArea
-        tokens={tokens}
         name={props.name}
         value={props.value}
         size={size}

@@ -386,22 +386,6 @@ exports[`Heading in H2, type Title1, not inverted should match snapshot 1`] = `
       },
     }
   }
-  tokens={
-    Object {
-      "sizeHeading": Object {
-        "display": "40px",
-        "title1": "28px",
-        "title2": "22px",
-        "title3": "16px",
-      },
-      "weightHeading": Object {
-        "display": "700",
-        "title1": "700",
-        "title2": "500",
-        "title3": "500",
-      },
-    }
-  }
   type="title1"
 >
   My lovely heading

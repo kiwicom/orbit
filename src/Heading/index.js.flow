@@ -2,7 +2,6 @@
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
-import defaultTokens from "../defaultTokens";
 
 type Element = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 type Type = "display" | "title1" | "title2" | "title3";
@@ -13,7 +12,6 @@ export type Props = {|
   +children: React$Node,
   +inverted?: boolean,
   ...Globals,
-  +theme?: typeof defaultTokens,
 |};
 
 declare export default React$ComponentType<Props>;

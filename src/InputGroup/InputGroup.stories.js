@@ -9,7 +9,7 @@ import { withKnobs, text, array, select } from "@storybook/addon-knobs/react";
 
 import InputField from "../InputField";
 import Select from "../Select";
-import SIZES from "./consts";
+import { SIZE_OPTIONS } from "./consts";
 import CountryFlag from "../CountryFlag";
 
 import InputGroup from "./index";
@@ -123,7 +123,7 @@ storiesOf("InputGroup", module)
   .addWithChapters("Playground", () => {
     const label = text("Label", "Phone number");
     const flex = array("Flex", ["1 0 200px", "1 1 100%", "1 0 150px", "0 1 50%"]);
-    const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
+    const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
     const error = text("Error", undefined);
     const help = text("Help", undefined);
 

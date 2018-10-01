@@ -7,16 +7,31 @@ import FormLabel from "../FormLabel";
 import { FakeInput, Input, InputContainer } from "../InputField";
 import { SelectContainer } from "../Select";
 import FormFeedback from "../FormFeedback";
-import SIZES from "./consts";
+import { SIZE_OPTIONS, TOKENS } from "./consts";
 
 import type { Props, State } from "./index";
+
+const getToken = name => ({ theme, size }) => {
+  const tokens = {
+    [TOKENS.height]: {
+      [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
+    },
+    [TOKENS.heightLine]: {
+      [SIZE_OPTIONS.SMALL]: "16px",
+      [SIZE_OPTIONS.NORMAL]: "24px",
+    },
+  };
+
+  return tokens[name][size];
+};
 
 const FakeGroup = styled(({ children, className }) => <div className={className}>{children}</div>)`
   width: 100%;
   position: absolute;
   z-index: 1;
   box-sizing: border-box;
-  height: ${({ tokens, size }) => tokens.height[size]};
+  height: ${getToken(TOKENS.height)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: ${({ theme }) =>
     `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInput}`}; // Normal state
@@ -98,7 +113,7 @@ const StyledInputGroup = styled(({ children, className, dataTest }) => (
       content: " ";
       position: absolute;
       right: 0;
-      height: ${({ tokens, size }) => tokens.heightLine[size]};
+      height: ${getToken(TOKENS.heightLine)};
       width: 1px;
       background-color: ${({ theme, error, active }) =>
         error && !active ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput};
@@ -183,34 +198,15 @@ class InputGroup extends React.PureComponent<Props, State> {
       children,
       label,
       flex = "0 1 auto",
-      size = SIZES.NORMAL,
+      size = SIZE_OPTIONS.NORMAL,
       help,
       error,
-      theme = defaultTokens,
       dataTest,
     } = this.props;
     const { active, filled } = this.state;
 
-    const tokens = {
-      height: {
-        [SIZES.SMALL]: theme.orbit.heightInputSmall,
-        [SIZES.NORMAL]: theme.orbit.heightInputNormal,
-      },
-      heightLine: {
-        [SIZES.SMALL]: "16px",
-        [SIZES.NORMAL]: "24px",
-      },
-    };
-
     return (
-      <StyledInputGroup
-        label={label}
-        error={error}
-        active={active}
-        tokens={tokens}
-        size={size}
-        dataTest={dataTest}
-      >
+      <StyledInputGroup label={label} error={error} active={active} size={size} dataTest={dataTest}>
         {label && <FormLabel filled={filled}>{label}</FormLabel>}
         <StyledChildren>
           {React.Children.map(children, (item, key) => {
@@ -236,7 +232,7 @@ class InputGroup extends React.PureComponent<Props, State> {
             );
           })}
         </StyledChildren>
-        <FakeGroup label={label} error={error} active={active} tokens={tokens} size={size} />
+        <FakeGroup label={label} error={error} active={active} size={size} />
         {!error && help && <FormFeedback type="help">{help}</FormFeedback>}
         {error && <FormFeedback type="error">{error}</FormFeedback>}
       </StyledInputGroup>

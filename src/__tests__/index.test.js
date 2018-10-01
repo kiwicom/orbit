@@ -1,9 +1,9 @@
 // @flow
-const tokens = require("../../lib/index");
+var tokens = require("../../lib/index");
 
-const defaultTokens = tokens.defaultTokens;
-const getTokens = tokens.getTokens;
-const fromPlainObject = tokens.fromPlainObject;
+var defaultTokens = tokens.defaultTokens;
+var getTokens = tokens.getTokens;
+var fromPlainObject = tokens.fromPlainObject;
 
 describe("defaultTokens", () => {
   it("should match snapshot", () => {
@@ -12,7 +12,7 @@ describe("defaultTokens", () => {
 });
 
 describe("getTokens should accept some palette", () => {
-  const brand = {
+  var brand = {
     palette: {
       product: {
         light: "#111",
@@ -25,7 +25,7 @@ describe("getTokens should accept some palette", () => {
       },
     },
   };
-  const theme = getTokens(brand);
+  var theme = getTokens(brand);
   it("should match snapshot", () => {
     expect(theme).toMatchSnapshot();
   });
@@ -39,7 +39,7 @@ describe("getTokens should accept some palette", () => {
 });
 
 describe("getTokens should accept some base", () => {
-  const brand = {
+  var brand = {
     base: {
       sizeSm: "1px",
       sizeMd: "2px",
@@ -48,7 +48,7 @@ describe("getTokens should accept some base", () => {
       size2xl: "5px",
     },
   };
-  const theme = getTokens(brand);
+  var theme = getTokens(brand);
   it("should match snapshot", () => {
     expect(theme).toMatchSnapshot();
   });
@@ -69,7 +69,7 @@ describe("getTokens should accept some base", () => {
 });
 
 describe("fromPlainObject should create full theme", () => {
-  const palette = {
+  var palette = {
     productLight: "#ff9999",
     productLightHover: "#ff7f7f",
     productLightActive: "#ff6666",
@@ -78,7 +78,7 @@ describe("fromPlainObject should create full theme", () => {
     productNormalActive: "#cc0000",
     productDark: "#990000",
   };
-  const theme = fromPlainObject(palette);
+  var theme = fromPlainObject(palette);
   it("should match snapshot", () => {
     expect(theme).toMatchSnapshot();
   });

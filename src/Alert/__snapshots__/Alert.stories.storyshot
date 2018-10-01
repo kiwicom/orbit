@@ -970,6 +970,7 @@ exports[`Storyshots Alert Playground 1`] = `
                   href="#"
                   size="small"
                   target={undefined}
+                  type={undefined}
                 >
                   <div
                     className="Button__StyledButtonContent-gvDciI pDqSF"

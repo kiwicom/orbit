@@ -314,6 +314,7 @@ storiesOf("Button", module)
     const bordered = boolean("Bordered", false);
     const circled = boolean("Circled", false);
     const loading = boolean("Loading", false);
+    const submit = boolean("Submit", false);
     const dataTest = text("dataTest", "test");
     const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
     const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
@@ -341,6 +342,7 @@ storiesOf("Button", module)
                   size={size}
                   iconLeft={IconLeft && <IconLeft />}
                   iconRight={IconRight && <IconRight />}
+                  submit={submit}
                   width={width}
                 >
                   {title}

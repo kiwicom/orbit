@@ -21,6 +21,7 @@ export type Props = {|
   +iconLeft?: React$Node,
   +iconRight?: React$Node,
   +circled?: boolean,
+  +submit?: boolean,
   +transparent?: boolean,
   ...Globals,
 |};

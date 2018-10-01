@@ -98,8 +98,10 @@ Input.defaultProps = {
   theme: defaultTokens,
 };
 
-const Label = styled(({ disabled, theme, type, ...props }) => (
-  <label {...props}>{props.children}</label>
+const Label = styled(({ className, children, dataTest }) => (
+  <label className={className} data-test={dataTest}>
+    {children}
+  </label>
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   display: flex;
@@ -151,7 +153,7 @@ const Checkbox = (props: Props) => {
   } = props;
 
   return (
-    <Label disabled={disabled} hasError={hasError} checked={checked} data-test={dataTest}>
+    <Label disabled={disabled} hasError={hasError} checked={checked} dataTest={dataTest}>
       <Input
         value={value}
         type="checkbox"

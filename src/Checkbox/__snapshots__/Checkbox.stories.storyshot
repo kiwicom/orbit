@@ -99,10 +99,8 @@ exports[`Storyshots CheckBox Default 1`] = `
           }
         >
           <label
-            checked={false}
             className="Checkbox__Label-gCTMrH bPokpO"
             data-test={undefined}
-            hasError={false}
           >
             <input
               checked={false}
@@ -396,10 +394,8 @@ exports[`Storyshots CheckBox Playground 1`] = `
           }
         >
           <label
-            checked={true}
             className="Checkbox__Label-gCTMrH cOjsRL"
             data-test="test"
-            hasError={false}
           >
             <input
               checked={true}
@@ -819,10 +815,8 @@ exports[`Storyshots CheckBox With help 1`] = `
           }
         >
           <label
-            checked={false}
             className="Checkbox__Label-gCTMrH bPokpO"
             data-test={undefined}
-            hasError={false}
           >
             <input
               checked={false}

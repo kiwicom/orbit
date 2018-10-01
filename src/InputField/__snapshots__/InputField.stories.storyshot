@@ -881,7 +881,7 @@ exports[`Storyshots InputField Email input 1`] = `
               <div>
                 Did you mean 
                 <a
-                  className="TextLink__StyledTextLink-cKDOFV ebltjr"
+                  className="TextLink__StyledTextLink-cKDOFV kwCwSq"
                   data-test={undefined}
                   href={undefined}
                   onClick={[Function]}

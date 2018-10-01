@@ -1,5 +1,4 @@
 // @flow
-import defaultTokens from "../defaultTokens";
 import type { Globals } from "../common/common.js.flow";
 
 type Carrier = { code: string, name: string, type?: "airline" | "bus" | "train" };
@@ -10,14 +9,11 @@ export type Props = {|
   +size?: Size,
   +carriers: Carrier[],
   ...Globals,
-  +theme?: typeof defaultTokens,
 |};
 
 type styledCarrierLogo = {
-  tokens?: { [key: string]: string | number },
-  size?: Size,
-  carriers?: Carrier,
-  theme?: typeof defaultTokens,
+  size: Size,
+  carriers: Carrier,
 };
 
 declare export var StyledCarrierLogo: React$ComponentType<styledCarrierLogo>;

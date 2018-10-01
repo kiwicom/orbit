@@ -13,3 +13,8 @@ export const TYPE_OPTIONS = {
   TITLE2: "title2",
   TITLE3: "title3",
 };
+
+export const TOKENS = {
+  weightHeading: "weightHeading",
+  sizeHeading: "sizeHeading",
+};

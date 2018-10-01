@@ -463,22 +463,13 @@ exports[`Storyshots Button Button as a link 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL fBpOoA"
+                className="Button__IconContainer-bZYzaL grbnAf"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
@@ -911,22 +902,13 @@ exports[`Storyshots Button Button with icons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL hnmhXM"
+                className="Button__IconContainer-bZYzaL fxeibz"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
@@ -935,22 +917,13 @@ exports[`Storyshots Button Button with icons 1`] = `
               </div>
               Button
               <div
-                className="Button__IconContainerRight-fadTMO bJWYgf Button__IconContainer-bZYzaL hnmhXM"
+                className="Button__IconContainerRight-fadTMO bJWYgf Button__IconContainer-bZYzaL fxeibz"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
@@ -1297,22 +1270,13 @@ exports[`Storyshots Button Button with icons 1`] = `
             >
               Button
               <div
-                className="Button__IconContainerRight-fadTMO bJWYgf Button__IconContainer-bZYzaL hnmhXM"
+                className="Button__IconContainerRight-fadTMO bJWYgf Button__IconContainer-bZYzaL fxeibz"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
@@ -1703,22 +1667,13 @@ exports[`Storyshots Button Circled button 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL hAoIdO"
+                className="Button__IconContainer-bZYzaL eZaDpj"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
@@ -2306,22 +2261,13 @@ exports[`Storyshots Button Destructive buttons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL dikZaB"
+                className="Button__IconContainer-bZYzaL bfomLI"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M5 6h14v12c0 1.103-.897 2-2 2H7c-1.103 0-2-.897-2-2V6zm10 10v-6h-2v6h2zm-4 0v-6H9v6h2zm4-13h6v2H3V3h6V1h6v2z"
@@ -2714,22 +2660,13 @@ exports[`Storyshots Button Playground 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL dikZaB"
+                className="Button__IconContainer-bZYzaL bfomLI"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
@@ -2738,22 +2675,13 @@ exports[`Storyshots Button Playground 1`] = `
               </div>
               Button
               <div
-                className="Button__IconContainerRight-fadTMO hFXLWZ Button__IconContainer-bZYzaL dikZaB"
+                className="Button__IconContainerRight-fadTMO hFXLWZ Button__IconContainer-bZYzaL bfomLI"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
@@ -3451,22 +3379,13 @@ exports[`Storyshots Button Social buttons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL iheFrP"
+                className="Button__IconContainer-bZYzaL dCVVBC"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"
@@ -3732,22 +3651,13 @@ exports[`Storyshots Button Social buttons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL lmwnCT"
+                className="Button__IconContainer-bZYzaL eEFbcU"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <g
                     fill="none"
@@ -4105,22 +4015,13 @@ exports[`Storyshots Button Status buttons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL hnmhXM"
+                className="Button__IconContainer-bZYzaL fxeibz"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
@@ -4405,22 +4306,13 @@ exports[`Storyshots Button Status buttons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL hnmhXM"
+                className="Button__IconContainer-bZYzaL fxeibz"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
@@ -4705,22 +4597,13 @@ exports[`Storyshots Button Status buttons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL hnmhXM"
+                className="Button__IconContainer-bZYzaL fxeibz"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
@@ -5005,22 +4888,13 @@ exports[`Storyshots Button Status buttons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL hnmhXM"
+                className="Button__IconContainer-bZYzaL fxeibz"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"

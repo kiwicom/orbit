@@ -111,19 +111,10 @@ exports[`Storyshots TextLink Link with icon 1`] = `
               className="TextLink__IconContainer-hjOTaw eWbhZJ"
             >
               <svg
-                className={undefined}
+                className="Icon__StyledIcon-ckyxIP fvqkFf"
                 data-test={undefined}
-                fill="currentColor"
-                height="24px"
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "color": undefined,
-                    "verticalAlign": "middle",
-                  }
-                }
                 viewBox="0 0 24 24"
-                width="24px"
               >
                 <path
                   d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
@@ -443,19 +434,10 @@ exports[`Storyshots TextLink Playground 1`] = `
               className="TextLink__IconContainer-hjOTaw ePXFbw"
             >
               <svg
-                className={undefined}
+                className="Icon__StyledIcon-ckyxIP fvqkFf"
                 data-test={undefined}
-                fill="currentColor"
-                height="24px"
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "color": undefined,
-                    "verticalAlign": "middle",
-                  }
-                }
                 viewBox="0 0 24 24"
-                width="24px"
               >
                 <path
                   d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"

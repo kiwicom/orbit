@@ -4,49 +4,53 @@ import { mount } from "enzyme";
 
 import Accommodation from "../../icons/Accommodation";
 import { ICON_SIZES, ICON_COLORS } from "../consts";
+import defaultTokens from "../../defaultTokens";
 
-const size = "large";
-const defaultSize = ICON_SIZES.medium;
-const color = "attention";
-const customColor = "#FF0000";
-
-describe("Icon with color", () => {
+describe("Icon", () => {
+  const color = ICON_COLORS.ATTENTION;
   const component = mount(<Accommodation color={color} />);
-  it("Renders SVG", () => {
+  const svg = component.find("svg");
+  it("should render SVG", () => {
     expect(component.find("svg").exists()).toBe(true);
   });
-  it("SVG contains default sizing", () => {
-    const svg = component.find("svg");
-    expect(svg.prop("height")).toBe(defaultSize);
-    expect(svg.prop("width")).toBe(defaultSize);
+  it("should have default sizing", () => {
+    expect(svg).toHaveStyleRule("height", defaultTokens.orbit.widthIconMedium);
+    expect(svg).toHaveStyleRule("width", defaultTokens.orbit.widthIconMedium);
   });
-  it("SVG contains a color", () => {
-    const svg = component.find("svg");
-    expect(svg.prop("style")).toEqual({ color: ICON_COLORS[color], verticalAlign: "middle" });
+  it("should have selected color", () => {
+    expect(svg).toHaveStyleRule("color", defaultTokens.orbit.colorIconAttention);
   });
-  it("Should match snapshot", () => {
+  it("should have CSS properties", () => {
+    expect(svg).toHaveStyleRule("vertical-align", "middle");
+    expect(svg).toHaveStyleRule("fill", "currentColor");
+  });
+  it("should match snapshot", () => {
     expect(component).toMatchSnapshot();
   });
 });
-describe("Icon with props", () => {
+
+describe("Icon with custom props", () => {
   const dataTest = "test";
+  const size = ICON_SIZES.LARGE;
+  const customColor = "#FF0000";
   const component = mount(
     <Accommodation size={size} customColor={customColor} dataTest={dataTest} />,
   );
-  it("Renders SVG", () => {
+  const svg = component.find("svg");
+  it("should render SVG", () => {
     expect(component.find("svg").exists()).toBe(true);
   });
-  it("SVG contains default sizing", () => {
-    const svg = component.find("svg");
-    expect(svg.prop("height")).toBe(ICON_SIZES[size]);
-    expect(svg.prop("width")).toBe(ICON_SIZES[size]);
+  it("should render data-test", () => {
     expect(svg.render().prop("data-test")).toBe(dataTest);
   });
-  it("SVG contains default color", () => {
-    const svg = component.find("svg");
-    expect(svg.prop("style")).toEqual({ color: customColor, verticalAlign: "middle" });
+  it("should have default sizing", () => {
+    expect(svg).toHaveStyleRule("height", defaultTokens.orbit.widthIconLarge);
+    expect(svg).toHaveStyleRule("width", defaultTokens.orbit.widthIconLarge);
   });
-  it("Should match snapshot", () => {
+  it("should have selected color", () => {
+    expect(svg).toHaveStyleRule("color", customColor);
+  });
+  it("should match snapshot", () => {
     expect(component).toMatchSnapshot();
   });
 });

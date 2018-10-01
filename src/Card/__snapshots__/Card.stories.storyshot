@@ -113,19 +113,10 @@ exports[`Storyshots Card Card with description 1`] = `
                   className="CardHeader__StyledIcon-doXBgu isldQW"
                 >
                   <svg
-                    className={undefined}
+                    className="Icon__StyledIcon-ckyxIP fvqkFf"
                     data-test={undefined}
-                    fill="currentColor"
-                    height="24px"
                     preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
-                    }
                     viewBox="0 0 24 24"
-                    width="24px"
                   >
                     <path
                       d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
@@ -1904,19 +1895,10 @@ exports[`Storyshots Card Default 1`] = `
                   className="CardHeader__StyledIcon-doXBgu isldQW"
                 >
                   <svg
-                    className={undefined}
+                    className="Icon__StyledIcon-ckyxIP fvqkFf"
                     data-test={undefined}
-                    fill="currentColor"
-                    height="24px"
                     preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
-                    }
                     viewBox="0 0 24 24"
-                    width="24px"
                   >
                     <path
                       d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
@@ -2257,19 +2239,10 @@ exports[`Storyshots Card Playground 1`] = `
                   className="CardHeader__StyledIcon-doXBgu isldQW"
                 >
                   <svg
-                    className={undefined}
+                    className="Icon__StyledIcon-ckyxIP fvqkFf"
                     data-test={undefined}
-                    fill="currentColor"
-                    height="24px"
                     preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
-                    }
                     viewBox="0 0 24 24"
-                    width="24px"
                   >
                     <path
                       d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"

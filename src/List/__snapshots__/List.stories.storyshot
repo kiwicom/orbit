@@ -110,19 +110,10 @@ exports[`Storyshots List Default 1`] = `
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
@@ -139,19 +130,10 @@ exports[`Storyshots List Default 1`] = `
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
@@ -171,19 +153,10 @@ exports[`Storyshots List Default 1`] = `
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
@@ -677,19 +650,10 @@ exports[`Storyshots List Different type and size 1`] = `
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
@@ -706,19 +670,10 @@ exports[`Storyshots List Different type and size 1`] = `
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
@@ -738,19 +693,10 @@ exports[`Storyshots List Different type and size 1`] = `
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
@@ -1300,19 +1246,10 @@ exports[`Storyshots List Playground 1`] = `
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP wffHr"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": "#46B655",
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
@@ -1329,19 +1266,10 @@ exports[`Storyshots List Playground 1`] = `
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP wffHr"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": "#46B655",
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
@@ -1358,19 +1286,10 @@ exports[`Storyshots List Playground 1`] = `
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP wffHr"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": "#46B655",
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
@@ -1991,19 +1910,10 @@ exports[`Storyshots List With carrier 1`] = `
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
@@ -2020,19 +1930,10 @@ exports[`Storyshots List With carrier 1`] = `
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
@@ -2049,19 +1950,10 @@ exports[`Storyshots List With carrier 1`] = `
                 className="ListItem__IconContainer-cWSXoS dEkgXq"
               >
                 <svg
-                  className={undefined}
+                  className="Icon__StyledIcon-ckyxIP fvqkFf"
                   data-test={undefined}
-                  fill="currentColor"
-                  height="24px"
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
                   viewBox="0 0 24 24"
-                  width="24px"
                 >
                   <path
                     d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"

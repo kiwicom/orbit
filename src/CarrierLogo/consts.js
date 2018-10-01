@@ -12,4 +12,4 @@ export const CARRIER_TYPE_OPTIONS = {
   TRAIN: "train",
 };
 
-export const baseURL = "//images.kiwi.com";
+export const BASE_URL = "//images.kiwi.com";

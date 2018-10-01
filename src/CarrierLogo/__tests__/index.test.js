@@ -1,8 +1,9 @@
 // @flow
 import * as React from "react";
-import { mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 
 import CarrierLogo from "../index";
+import { SIZE_OPTIONS } from "../consts";
 
 const carriers = [
   { code: "FR", name: "Ryanair" },
@@ -10,6 +11,68 @@ const carriers = [
   { code: "VY", name: "Vueling" },
   { code: "OK", name: "Czech Airlines" },
 ];
+
+describe("CarrierLogo images", () => {
+  it("should contains correct image", () => {
+    const component = shallow(
+      <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size={SIZE_OPTIONS.LARGE} />,
+    );
+    expect(
+      component
+        .render()
+        .children()
+        .attr("src"),
+    ).toContain("//images.kiwi.com/airlines/32/FR.png?default=airline.png");
+
+    expect(
+      component
+        .render()
+        .children()
+        .attr("srcset"),
+    ).toContain("//images.kiwi.com/airlines/64/FR.png?default=airline.png");
+  });
+});
+
+describe("CarrierLogo fallback", () => {
+  it("should have proper fallback: airline", () => {
+    const component = shallow(
+      <CarrierLogo carriers={[{ code: "LOL", name: "LOL", type: "airline" }]} />,
+    );
+
+    expect(
+      component
+        .render()
+        .children()
+        .attr("src"),
+    ).toContain("//images.kiwi.com/airlines/32/LOL.png?default=airline.png");
+  });
+
+  it("should have proper fallback: bus", () => {
+    const component = shallow(
+      <CarrierLogo carriers={[{ code: "LOL", name: "LOL", type: "bus" }]} />,
+    );
+
+    expect(
+      component
+        .render()
+        .children()
+        .attr("src"),
+    ).toContain("//images.kiwi.com/airlines/32/LOL.png?default=bus.png");
+  });
+
+  it("should have proper fallback: train", () => {
+    const component = shallow(
+      <CarrierLogo carriers={[{ code: "LOL", name: "LOL", type: "train" }]} />,
+    );
+
+    expect(
+      component
+        .render()
+        .children()
+        .attr("src"),
+    ).toContain("//images.kiwi.com/airlines/32/LOL.png?default=train.png");
+  });
+});
 
 describe("Multiple CarrierLogo with DefaultProp", () => {
   const dataTest = "test";

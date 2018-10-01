@@ -3,9 +3,24 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
+import TOKENS from "./consts";
 import Check from "../icons/Check";
 
 import type { Props } from "./index";
+
+const getToken = name => ({ theme, hasError, disabled, checked }) => {
+  const tokens = {
+    [TOKENS.borderColor]:
+      hasError && !disabled && !checked
+        ? theme.orbit.borderColorCheckboxRadioError
+        : theme.orbit.borderColorCheckboxRadio,
+    [TOKENS.iconColor]: disabled
+      ? theme.orbit.colorIconCheckboxRadioDisabled
+      : theme.orbit.colorIconCheckboxRadio,
+  };
+
+  return tokens[name];
+};
 
 const IconContainer = styled.div`
   position: relative;
@@ -17,7 +32,6 @@ const IconContainer = styled.div`
   height: ${({ theme }) => theme.orbit.heightCheckbox};
   width: ${({ theme }) => theme.orbit.widthCheckbox};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  border: 1px solid ${({ tokens }) => tokens.borderColor};
   transform: scale(1);
   transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
@@ -84,7 +98,7 @@ Input.defaultProps = {
   theme: defaultTokens,
 };
 
-const Label = styled(({ tokens, disabled, theme, type, ...props }) => (
+const Label = styled(({ disabled, theme, type, ...props }) => (
   <label {...props}>{props.children}</label>
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -95,14 +109,19 @@ const Label = styled(({ tokens, disabled, theme, type, ...props }) => (
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
   position: relative;
 
+  ${IconContainer} {
+    color: ${getToken(TOKENS.iconColor)};
+    border: 1px solid ${getToken(TOKENS.borderColor)};
+  }
+
   &:hover ${IconContainer} {
     border-color: ${({ disabled, theme }) =>
       !disabled && theme.orbit.borderColorCheckboxRadioHover};
   }
 
   &:active ${IconContainer} {
-    border-color: ${({ disabled, theme, tokens }) =>
-      disabled ? tokens.borderColor : theme.orbit.borderColorCheckboxRadioActive};
+    border-color: ${({ disabled, theme }) =>
+      disabled ? getToken(TOKENS.borderColor) : theme.orbit.borderColorCheckboxRadioActive};
     transform: ${({ disabled, theme }) =>
       !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
   }
@@ -127,23 +146,12 @@ const Checkbox = (props: Props) => {
     disabled = false,
     checked = false,
     onChange,
-    theme = defaultTokens,
     dataTest,
     info,
   } = props;
 
-  const tokens = {
-    borderColor:
-      hasError && !disabled && !checked
-        ? theme.orbit.borderColorCheckboxRadioError
-        : theme.orbit.borderColorCheckboxRadio,
-    iconColor: disabled
-      ? theme.orbit.colorIconCheckboxRadioDisabled
-      : theme.orbit.colorIconCheckboxRadio,
-  };
-
   return (
-    <Label disabled={disabled} tokens={tokens} data-test={dataTest}>
+    <Label disabled={disabled} hasError={hasError} checked={checked} data-test={dataTest}>
       <Input
         value={value}
         type="checkbox"
@@ -151,8 +159,8 @@ const Checkbox = (props: Props) => {
         checked={checked}
         onChange={onChange}
       />
-      <IconContainer tokens={tokens}>
-        <Check customColor={tokens.iconColor} />
+      <IconContainer>
+        <Check />
       </IconContainer>
       <TextContainer>
         {label && <LabelText>{label}</LabelText>}

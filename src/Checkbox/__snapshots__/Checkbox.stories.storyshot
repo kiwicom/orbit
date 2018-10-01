@@ -99,8 +99,10 @@ exports[`Storyshots CheckBox Default 1`] = `
           }
         >
           <label
-            className="Checkbox__Label-gCTMrH eIjWcw"
+            checked={false}
+            className="Checkbox__Label-gCTMrH bPokpO"
             data-test={undefined}
+            hasError={false}
           >
             <input
               checked={false}
@@ -111,10 +113,10 @@ exports[`Storyshots CheckBox Default 1`] = `
               value={undefined}
             />
             <div
-              className="Checkbox__IconContainer-jYfkbc jbTozU"
+              className="Checkbox__IconContainer-jYfkbc dWIaQi"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP jFrCit"
+                className="Icon__StyledIcon-ckyxIP fvqkFf"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -394,8 +396,10 @@ exports[`Storyshots CheckBox Playground 1`] = `
           }
         >
           <label
-            className="Checkbox__Label-gCTMrH bnAQKb"
+            checked={true}
+            className="Checkbox__Label-gCTMrH cOjsRL"
             data-test="test"
+            hasError={false}
           >
             <input
               checked={true}
@@ -406,10 +410,10 @@ exports[`Storyshots CheckBox Playground 1`] = `
               value="value"
             />
             <div
-              className="Checkbox__IconContainer-jYfkbc jbTozU"
+              className="Checkbox__IconContainer-jYfkbc dWIaQi"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP ADrUC"
+                className="Icon__StyledIcon-ckyxIP fvqkFf"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -815,8 +819,10 @@ exports[`Storyshots CheckBox With help 1`] = `
           }
         >
           <label
-            className="Checkbox__Label-gCTMrH eIjWcw"
+            checked={false}
+            className="Checkbox__Label-gCTMrH bPokpO"
             data-test={undefined}
+            hasError={false}
           >
             <input
               checked={false}
@@ -827,10 +833,10 @@ exports[`Storyshots CheckBox With help 1`] = `
               value="value"
             />
             <div
-              className="Checkbox__IconContainer-jYfkbc jbTozU"
+              className="Checkbox__IconContainer-jYfkbc dWIaQi"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP jFrCit"
+                className="Icon__StyledIcon-ckyxIP fvqkFf"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"

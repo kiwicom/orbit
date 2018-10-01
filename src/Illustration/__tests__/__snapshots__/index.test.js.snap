@@ -4,9 +4,8 @@ exports[`Illustration of Accommodation should match snapshot 1`] = `
 <Illustration__StyledImage
   alt="Accommodation"
   data-test="test"
+  illustrationName="Accommodation"
   size="small"
-  src="//images.kiwi.com/illustrations/0x90/Accommodation.png"
-  srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x"
   theme={
     Object {
       "orbit": Object {
@@ -385,14 +384,6 @@ exports[`Illustration of Accommodation should match snapshot 1`] = `
         "zIndexModalOverlay": "800",
         "zIndexOnTheTop": "900",
         "zIndexSticky": "100",
-      },
-    }
-  }
-  tokens={
-    Object {
-      "height": Object {
-        "medium": "200px",
-        "small": "90px",
       },
     }
   }

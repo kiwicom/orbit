@@ -10,3 +10,10 @@ export const SIZE_OPTIONS = {
   SMALL: "small",
   NORMAL: "normal",
 };
+
+export const TOKENS = {
+  heightInput: "heightInput",
+  fontSizeInput: "fontSizeInput",
+  paddingInput: "paddingInput",
+  iconSize: "iconSize",
+};

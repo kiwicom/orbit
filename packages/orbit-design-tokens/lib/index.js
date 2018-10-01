@@ -1,10 +1,10 @@
-const foundation = require("./foundation");
+var foundation = require("./foundation");
 
-const palette = foundation.palette;
-const base = foundation.base;
+var palette = foundation.palette;
+var base = foundation.base;
 
 function getTokens(customFoundation) {
-  const theme = {
+  var theme = {
     palette: Object.assign({}, palette, customFoundation && customFoundation.palette),
     base: Object.assign({}, base, customFoundation && customFoundation.base),
   };
@@ -315,10 +315,10 @@ function getTokens(customFoundation) {
     paddingButtonSmall: theme.base.spaceSm,
     paddingButtonNormal: theme.base.spaceMd,
     paddingButtonLarge: "28px",
-    paddingTextareaSmall: `${theme.base.spaceXs} ${theme.base.spaceSm}`,
+    paddingTextareaSmall: theme.base.spaceXs + " " + theme.base.spaceSm,
     paddingTextareaNormal: theme.base.spaceSm,
-    paddingInputSmall: `0 ${theme.base.spaceSm}`,
-    paddingInputNormal: `0 ${theme.base.spaceSm}`,
+    paddingInputSmall: "0 " + theme.base.spaceSm,
+    paddingInputNormal: "0 " + theme.base.spaceSm,
     paddingButtonSmallWithIcon: theme.base.spaceXs,
     paddingButtonNormalWithIcon: theme.base.spaceXs,
     paddingButtonLargeWithIcon: theme.base.spaceSm,
@@ -361,10 +361,10 @@ function getTokens(customFoundation) {
     textDecorationTextLinkSecondaryHover: "underline",
     // category:Box shadow
     // description:
-    boxShadowButtonFocus: `0 0 4px 1px ${theme.base.boxShadowColorStatic}`,
-    boxShadowActionable: `${theme.base.boxShadowActionable} ${theme.base.boxShadowColorActionable}`,
-    boxShadowElevatedLevel1: `${theme.base.boxShadowElevated} ${theme.base.boxShadowColorElevated}`,
-    boxShadowModal: `${theme.base.boxShadowModal} ${theme.base.boxShadowColorModal}`,
+    boxShadowButtonFocus: "0 0 4px 1px " + theme.base.boxShadowColorStatic,
+    boxShadowActionable: theme.base.boxShadowActionable + " " + theme.base.boxShadowColorActionable,
+    boxShadowElevatedLevel1: theme.base.boxShadowElevated + " " + theme.base.boxShadowColorElevated,
+    boxShadowModal: theme.base.boxShadowModal + " " + theme.base.boxShadowColorModal,
     // category:Color palette
     // description: Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette.
     paletteProductLight: theme.palette.product.light,
@@ -428,7 +428,7 @@ function getTokens(customFoundation) {
 }
 
 function fromPlainObject(themePaletteColors) {
-  const theme = {
+  var theme = {
     palette: {
       product: {
         light: themePaletteColors.productLight,
@@ -445,7 +445,7 @@ function fromPlainObject(themePaletteColors) {
   return getTokens(theme);
 }
 
-const defaultTokens = getTokens();
+var defaultTokens = getTokens();
 
 module.exports = {
   defaultTokens: defaultTokens,

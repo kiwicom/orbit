@@ -127,23 +127,14 @@ exports[`Storyshots Modal Full preview 1`] = `
                       target={undefined}
                     >
                       <div
-                        className="ButtonLink__IconContainer-flENJD hNEbcs"
+                        className="ButtonLink__IconContainer-flENJD ffwkCW"
                         size="normal"
                       >
                         <svg
-                          className={undefined}
+                          className="Icon__StyledIcon-ckyxIP fvqkFf"
                           data-test={undefined}
-                          fill="currentColor"
-                          height="24px"
                           preserveAspectRatio="xMidYMid meet"
-                          style={
-                            Object {
-                              "color": undefined,
-                              "verticalAlign": "middle",
-                            }
-                          }
                           viewBox="0 0 24 24"
-                          width="24px"
                         >
                           <path
                             d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
@@ -241,22 +232,13 @@ exports[`Storyshots Modal Full preview 1`] = `
                           className="Button__StyledButtonContent-gvDciI pDqSF"
                         >
                           <div
-                            className="Button__IconContainer-bZYzaL lmwnCT"
+                            className="Button__IconContainer-bZYzaL eEFbcU"
                           >
                             <svg
-                              className={undefined}
+                              className="Icon__StyledIcon-ckyxIP fvqkFf"
                               data-test={undefined}
-                              fill="currentColor"
-                              height="24px"
                               preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "color": undefined,
-                                  "verticalAlign": "middle",
-                                }
-                              }
                               viewBox="0 0 24 24"
-                              width="24px"
                             >
                               <path
                                 d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
@@ -1564,23 +1546,14 @@ exports[`Storyshots Modal Sizes 1`] = `
                       target={undefined}
                     >
                       <div
-                        className="ButtonLink__IconContainer-flENJD hNEbcs"
+                        className="ButtonLink__IconContainer-flENJD ffwkCW"
                         size="normal"
                       >
                         <svg
-                          className={undefined}
+                          className="Icon__StyledIcon-ckyxIP fvqkFf"
                           data-test={undefined}
-                          fill="currentColor"
-                          height="24px"
                           preserveAspectRatio="xMidYMid meet"
-                          style={
-                            Object {
-                              "color": undefined,
-                              "verticalAlign": "middle",
-                            }
-                          }
                           viewBox="0 0 24 24"
-                          width="24px"
                         >
                           <path
                             d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"

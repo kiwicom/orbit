@@ -114,19 +114,10 @@ exports[`Storyshots CheckBox Default 1`] = `
               className="Checkbox__IconContainer-jYfkbc jbTozU"
             >
               <svg
-                className={undefined}
+                className="Icon__StyledIcon-ckyxIP jFrCit"
                 data-test={undefined}
-                fill="currentColor"
-                height="24px"
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "color": "#00a991",
-                    "verticalAlign": "middle",
-                  }
-                }
                 viewBox="0 0 24 24"
-                width="24px"
               >
                 <path
                   d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
@@ -418,19 +409,10 @@ exports[`Storyshots CheckBox Playground 1`] = `
               className="Checkbox__IconContainer-jYfkbc jbTozU"
             >
               <svg
-                className={undefined}
+                className="Icon__StyledIcon-ckyxIP ADrUC"
                 data-test={undefined}
-                fill="currentColor"
-                height="24px"
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "color": "#bac7d5",
-                    "verticalAlign": "middle",
-                  }
-                }
                 viewBox="0 0 24 24"
-                width="24px"
               >
                 <path
                   d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
@@ -848,19 +830,10 @@ exports[`Storyshots CheckBox With help 1`] = `
               className="Checkbox__IconContainer-jYfkbc jbTozU"
             >
               <svg
-                className={undefined}
+                className="Icon__StyledIcon-ckyxIP jFrCit"
                 data-test={undefined}
-                fill="currentColor"
-                height="24px"
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "color": "#00a991",
-                    "verticalAlign": "middle",
-                  }
-                }
                 viewBox="0 0 24 24"
-                width="24px"
               >
                 <path
                   d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"

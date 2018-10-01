@@ -92,7 +92,7 @@ Input.defaultProps = {
   theme: defaultTokens,
 };
 
-const Label = styled(({ tokens, disabled, theme, type, hasError, ...props }) => (
+const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
   <label {...props}>{props.children}</label>
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};

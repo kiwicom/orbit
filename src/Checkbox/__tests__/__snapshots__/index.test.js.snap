@@ -2,8 +2,10 @@
 
 exports[`Default CheckBox should match snapshot 1`] = `
 <Checkbox__Label
+  checked={false}
   data-test="test"
   disabled={false}
+  hasError={false}
   theme={
     Object {
       "orbit": Object {
@@ -383,12 +385,6 @@ exports[`Default CheckBox should match snapshot 1`] = `
         "zIndexOnTheTop": "900",
         "zIndexSticky": "100",
       },
-    }
-  }
-  tokens={
-    Object {
-      "borderColor": "#bac7d5",
-      "iconColor": "#00a991",
     }
   }
 >
@@ -1174,16 +1170,8 @@ exports[`Default CheckBox should match snapshot 1`] = `
         },
       }
     }
-    tokens={
-      Object {
-        "borderColor": "#bac7d5",
-        "iconColor": "#00a991",
-      }
-    }
   >
-    <Check
-      customColor="#00a991"
-    />
+    <Check />
   </Checkbox__IconContainer>
   <Checkbox__TextContainer
     theme={

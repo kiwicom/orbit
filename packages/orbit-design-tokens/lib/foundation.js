@@ -1,6 +1,6 @@
 // @flow
 
-const palette = {
+var palette = {
   product: {
     light: "#9ae5da",
     lightHover: "#7fded0",
@@ -76,7 +76,7 @@ const palette = {
   },
 };
 
-const base = {
+var base = {
   fontFamily:
     '"Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
   fontSizeSm: "12px",

@@ -1,5 +1,4 @@
 // @flow
-import defaultTokens from "../defaultTokens";
 import type { Globals } from "../common/common.js.flow";
 
 type Type = "primary" | "secondary";
@@ -13,13 +12,11 @@ export type Props = {|
   +type?: Type,
   +rel?: string,
   ...Globals,
-  +theme?: typeof defaultTokens,
 |};
 
 type styledTextLink = {
   tokens?: { [key: string]: string | number },
   type?: Type,
-  theme?: typeof defaultTokens,
 };
 
 declare export var StyledTextLink: React$ComponentType<styledTextLink>;

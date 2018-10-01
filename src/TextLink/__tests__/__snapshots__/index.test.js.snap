@@ -399,14 +399,6 @@ exports[`TextLink should match snapshot 1`] = `
       },
     }
   }
-  tokens={
-    Object {
-      "colorTextLink": Object {
-        "primary": "#00a991",
-        "secondary": "#171b1e",
-      },
-    }
-  }
   type="primary"
 >
   My text link
@@ -789,14 +781,6 @@ exports[`TextLink should match snapshot 1`] = `
           "zIndexModalOverlay": "800",
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
-        },
-      }
-    }
-    tokens={
-      Object {
-        "colorTextLink": Object {
-          "primary": "#00a991",
-          "secondary": "#171b1e",
         },
       }
     }

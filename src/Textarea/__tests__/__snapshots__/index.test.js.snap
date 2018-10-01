@@ -773,18 +773,6 @@ exports[`Textarea number with error and help should match snapshot 1`] = `
         },
       }
     }
-    tokens={
-      Object {
-        "fontSizeInput": Object {
-          "normal": "16px",
-          "small": "14px",
-        },
-        "paddingInput": Object {
-          "normal": "12px",
-          "small": "8px 12px",
-        },
-      }
-    }
   />
   <FormFeedback
     type="error"
@@ -1995,18 +1983,6 @@ exports[`Textarea with help should match snapshot 1`] = `
           "zIndexModalOverlay": "800",
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
-        },
-      }
-    }
-    tokens={
-      Object {
-        "fontSizeInput": Object {
-          "normal": "16px",
-          "small": "14px",
-        },
-        "paddingInput": Object {
-          "normal": "12px",
-          "small": "8px 12px",
         },
       }
     }

@@ -1,5 +1,4 @@
 // @flow
-import defaultTokens from "../defaultTokens";
 import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
@@ -17,7 +16,6 @@ export type Props = {|
   +onFocus?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
   ...Globals,
-  +theme?: typeof defaultTokens,
 |};
 
 declare export default React$ComponentType<Props>;

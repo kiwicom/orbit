@@ -772,26 +772,6 @@ exports[`InputField number with error and help should match snapshot 1`] = `
         },
       }
     }
-    tokens={
-      Object {
-        "fontSizeInput": Object {
-          "normal": "16px",
-          "small": "14px",
-        },
-        "heightInput": Object {
-          "normal": "44px",
-          "small": "32px",
-        },
-        "iconSize": Object {
-          "normal": "24px",
-          "small": "16px",
-        },
-        "paddingInput": Object {
-          "normal": "0 12px",
-          "small": "0 12px",
-        },
-      }
-    }
   >
     <InputField__Input
       error={
@@ -1183,26 +1163,6 @@ exports[`InputField number with error and help should match snapshot 1`] = `
           },
         }
       }
-      tokens={
-        Object {
-          "fontSizeInput": Object {
-            "normal": "16px",
-            "small": "14px",
-          },
-          "heightInput": Object {
-            "normal": "44px",
-            "small": "32px",
-          },
-          "iconSize": Object {
-            "normal": "24px",
-            "small": "16px",
-          },
-          "paddingInput": Object {
-            "normal": "0 12px",
-            "small": "0 12px",
-          },
-        }
-      }
       type="number"
     />
     <InputField__FakeInput
@@ -1590,26 +1550,6 @@ exports[`InputField number with error and help should match snapshot 1`] = `
             "zIndexModalOverlay": "800",
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
-          },
-        }
-      }
-      tokens={
-        Object {
-          "fontSizeInput": Object {
-            "normal": "16px",
-            "small": "14px",
-          },
-          "heightInput": Object {
-            "normal": "44px",
-            "small": "32px",
-          },
-          "iconSize": Object {
-            "normal": "24px",
-            "small": "16px",
-          },
-          "paddingInput": Object {
-            "normal": "0 12px",
-            "small": "0 12px",
           },
         }
       }
@@ -2397,26 +2337,6 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
         },
       }
     }
-    tokens={
-      Object {
-        "fontSizeInput": Object {
-          "normal": "16px",
-          "small": "14px",
-        },
-        "heightInput": Object {
-          "normal": "44px",
-          "small": "32px",
-        },
-        "iconSize": Object {
-          "normal": "24px",
-          "small": "16px",
-        },
-        "paddingInput": Object {
-          "normal": "0 12px",
-          "small": "0 12px",
-        },
-      }
-    }
   >
     <InputField__Prefix
       size="normal"
@@ -2798,26 +2718,6 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
             "zIndexModalOverlay": "800",
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
-          },
-        }
-      }
-      tokens={
-        Object {
-          "fontSizeInput": Object {
-            "normal": "16px",
-            "small": "14px",
-          },
-          "heightInput": Object {
-            "normal": "44px",
-            "small": "32px",
-          },
-          "iconSize": Object {
-            "normal": "24px",
-            "small": "16px",
-          },
-          "paddingInput": Object {
-            "normal": "0 12px",
-            "small": "0 12px",
           },
         }
       }
@@ -3255,26 +3155,6 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
           },
         }
       }
-      tokens={
-        Object {
-          "fontSizeInput": Object {
-            "normal": "16px",
-            "small": "14px",
-          },
-          "heightInput": Object {
-            "normal": "44px",
-            "small": "32px",
-          },
-          "iconSize": Object {
-            "normal": "24px",
-            "small": "16px",
-          },
-          "paddingInput": Object {
-            "normal": "0 12px",
-            "small": "0 12px",
-          },
-        }
-      }
       type="text"
       value="value"
     />
@@ -3658,26 +3538,6 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
             "zIndexModalOverlay": "800",
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
-          },
-        }
-      }
-      tokens={
-        Object {
-          "fontSizeInput": Object {
-            "normal": "16px",
-            "small": "14px",
-          },
-          "heightInput": Object {
-            "normal": "44px",
-            "small": "32px",
-          },
-          "iconSize": Object {
-            "normal": "24px",
-            "small": "16px",
-          },
-          "paddingInput": Object {
-            "normal": "0 12px",
-            "small": "0 12px",
           },
         }
       }
@@ -4072,26 +3932,6 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
             "zIndexModalOverlay": "800",
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
-          },
-        }
-      }
-      tokens={
-        Object {
-          "fontSizeInput": Object {
-            "normal": "16px",
-            "small": "14px",
-          },
-          "heightInput": Object {
-            "normal": "44px",
-            "small": "32px",
-          },
-          "iconSize": Object {
-            "normal": "24px",
-            "small": "16px",
-          },
-          "paddingInput": Object {
-            "normal": "0 12px",
-            "small": "0 12px",
           },
         }
       }

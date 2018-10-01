@@ -128,6 +128,7 @@ exports[`Storyshots InputFile Default 1`] = `
                 disabled={undefined}
                 size="small"
                 target={undefined}
+                type="button"
               >
                 <div
                   className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -516,6 +517,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                 disabled={undefined}
                 size="small"
                 target={undefined}
+                type="button"
               >
                 <div
                   className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -548,6 +550,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                 onClick={[Function]}
                 size="normal"
                 target={undefined}
+                type="button"
               >
                 <div
                   className="ButtonLink__IconContainer-flENJD ffwkCW"
@@ -962,6 +965,7 @@ exports[`Storyshots InputFile Playground 1`] = `
                 disabled={undefined}
                 size="small"
                 target={undefined}
+                type="button"
               >
                 <div
                   className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -1625,6 +1629,7 @@ exports[`Storyshots InputFile With error 1`] = `
                 disabled={undefined}
                 size="small"
                 target={undefined}
+                type="button"
               >
                 <div
                   className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -2049,6 +2054,7 @@ exports[`Storyshots InputFile With help 1`] = `
                 disabled={undefined}
                 size="small"
                 target={undefined}
+                type="button"
               >
                 <div
                   className="Button__StyledButtonContent-gvDciI pDqSF"

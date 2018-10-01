@@ -66,6 +66,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   external={true}
   href="https://kiwi.com"
   size="normal"
+  submit={true}
   transparent={false}
   type="primary"
   width={0}
@@ -77,6 +78,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
     href="https://kiwi.com"
     size="normal"
     sizeIcon="medium"
+    submit={true}
     target="_blank"
     theme={
       Object {
@@ -471,6 +473,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
       href="https://kiwi.com"
       size="normal"
       sizeIcon="medium"
+      submit={true}
       target="_blank"
       theme={
         Object {

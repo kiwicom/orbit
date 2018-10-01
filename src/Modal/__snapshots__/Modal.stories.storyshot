@@ -125,6 +125,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       onClick={[Function]}
                       size="normal"
                       target={undefined}
+                      type="button"
                     >
                       <div
                         className="ButtonLink__IconContainer-flENJD ffwkCW"
@@ -227,6 +228,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                         disabled={undefined}
                         size="normal"
                         target={undefined}
+                        type="button"
                       >
                         <div
                           className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -258,6 +260,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                         disabled={undefined}
                         size="normal"
                         target={undefined}
+                        type="button"
                       >
                         <div
                           className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -1544,6 +1547,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                       onClick={[Function]}
                       size="normal"
                       target={undefined}
+                      type="button"
                     >
                       <div
                         className="ButtonLink__IconContainer-flENJD ffwkCW"

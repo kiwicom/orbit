@@ -2093,6 +2093,7 @@ exports[`Storyshots InputField Playground 1`] = `
                   onClick={[Function]}
                   size="small"
                   target={undefined}
+                  type="button"
                 >
                   <div
                     className="ButtonLink__IconContainer-flENJD ffwkCW"
@@ -3685,6 +3686,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                   onClick={[Function]}
                   size="normal"
                   target={undefined}
+                  type="button"
                 >
                   <div
                     className="ButtonLink__IconContainer-flENJD ffwkCW"

@@ -104,6 +104,7 @@ exports[`Storyshots ButtonLink Circled 1`] = `
             onClick={[Function]}
             size="large"
             target={undefined}
+            type="button"
           >
             <div
               className="ButtonLink__IconContainer-flENJD ffwkCW"
@@ -437,6 +438,7 @@ exports[`Storyshots ButtonLink Default 1`] = `
             onClick={undefined}
             size="normal"
             target={undefined}
+            type={undefined}
           >
             ButtonLink
           </a>
@@ -691,6 +693,7 @@ exports[`Storyshots ButtonLink Playground 1`] = `
             onClick={[Function]}
             size="large"
             target={undefined}
+            type="button"
           >
             <div
               className="ButtonLink__IconContainer-flENJD glsLuO"
@@ -1054,6 +1057,37 @@ exports[`Storyshots ButtonLink Playground 1`] = `
                               </span>
                             </span>
                           </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            submit
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
                           <br />
                         </span>
                       </span>
@@ -1222,6 +1256,7 @@ exports[`Storyshots ButtonLink Secondary 1`] = `
             onClick={undefined}
             size="normal"
             target={undefined}
+            type={undefined}
           >
             ButtonLink
           </a>

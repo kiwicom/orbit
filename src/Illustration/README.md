@@ -1,7 +1,7 @@
 # Illustration
 To implement Illustration component into your project you'll need to add the import:
 ```jsx
-import Illustration from "@kiwicom/orbit-components/lib/CarrierLogo";
+import Illustration from "@kiwicom/orbit-components/lib/Illustration";
 ```
 After adding import into your project you can use it simply like:
 ```jsx

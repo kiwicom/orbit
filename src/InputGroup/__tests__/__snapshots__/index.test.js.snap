@@ -387,18 +387,6 @@ exports[`InputGroup - Phone number should match snapshot 1`] = `
       },
     }
   }
-  tokens={
-    Object {
-      "height": Object {
-        "normal": "44px",
-        "small": "32px",
-      },
-      "heightLine": Object {
-        "normal": "24px",
-        "small": "16px",
-      },
-    }
-  }
 >
   <FormLabel
     filled={true}
@@ -1975,18 +1963,6 @@ exports[`InputGroup - Phone number should match snapshot 1`] = `
           "zIndexModalOverlay": "800",
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
-        },
-      }
-    }
-    tokens={
-      Object {
-        "height": Object {
-          "normal": "44px",
-          "small": "32px",
-        },
-        "heightLine": Object {
-          "normal": "24px",
-          "small": "16px",
         },
       }
     }

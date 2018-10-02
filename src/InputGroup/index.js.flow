@@ -1,6 +1,5 @@
 // @flow
 import type { Globals } from "../common/common.js.flow";
-import defaultTokens from "../defaultTokens";
 import InputField from "../InputField";
 import Select from "../Select";
 
@@ -21,7 +20,6 @@ export type Props = {|
     ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
   ) => void | Promise<any>,
   ...Globals,
-  +theme?: typeof defaultTokens,
 |};
 
 export type State = {|

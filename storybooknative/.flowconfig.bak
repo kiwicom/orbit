@@ -1,65 +1,33 @@
 [ignore]
-<PROJECT_ROOT>/es/.*
-<PROJECT_ROOT>/etc/.*
-<PROJECT_ROOT>/lib/.*
-
-.*/node_modules/immutable/.*
-.*/node_modules/radium/.*
-.*/node_modules/styled-components/.*
-.*/node_modules/devtools-timeline-model/.*
-.*/node_modules/chrome-devtools-frontend/.*
-
-;------------------------
-;
-; /storybooknative
-;
-;------------------------
+; We fork some components by platform
+.*/*[.]android.js
 
 ; Ignore "BUCK" generated dirs
-<PROJECT_ROOT>/storybooknative/\.buckd/
+<PROJECT_ROOT>/\.buckd/
 
 ; Ignore unexpected extra "@providesModule"
-.*/storybooknative/node_modules/.*/node_modules/fbjs/.*
+.*/node_modules/.*/node_modules/fbjs/.*
 
 ; Ignore duplicate module providers
 ; For RN Apps installed via npm, "Libraries" folder is inside
 ; "node_modules/react-native" but in the source repo it is in the root
-.*/storybooknative/.*/Libraries/react-native/React.js
+.*/Libraries/react-native/React.js
 
 ; Ignore polyfills
-.*/storybooknative/.*/Libraries/polyfills/.*
+.*/Libraries/polyfills/.*
 
 ; Ignore metro
-.*/storybooknative/.*/node_modules/metro/.*
+.*/node_modules/metro/.*
 
 [include]
 
 [libs]
-flow-typed/
-
-;------------------------
-;
-; /storybooknative
-;
-;------------------------
-
-storybooknative/node_modules/react-native/Libraries/react-native/react-native-interface.js
-storybooknative/node_modules/react-native/flow/Promise.js
-storybooknative/node_modules/react-native/flow/Stringish.js
-
-[lints]
+node_modules/react-native/Libraries/react-native/react-native-interface.js
+node_modules/react-native/flow/
+node_modules/react-native/flow-github/
 
 [options]
 emoji=true
-suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
-suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
-suppress_comment=\\(.\\|\n\\)*\\$FlowExpected
-
-;------------------------
-;
-; /storybooknative
-;
-;------------------------
 
 esproposal.optional_chaining=enable
 esproposal.nullish_coalescing=enable
@@ -76,16 +44,14 @@ module.system.haste.name_reducers='^\(.*\)\.android$' -> '\1'
 module.system.haste.name_reducers='^\(.*\)\.native$' -> '\1'
 module.system.haste.paths.blacklist=.*/__tests__/.*
 module.system.haste.paths.blacklist=.*/__mocks__/.*
-module.system.haste.paths.blacklist=<PROJECT_ROOT>/storybooknative/node_modules/react-native/Libraries/Animated/src/polyfills/.*
-module.system.haste.paths.blacklist=<PROJECT_ROOT>/storybooknative/node_modules/react-native/Libraries/.*/*.android.js
-module.system.haste.paths.whitelist=<PROJECT_ROOT>/storybooknative/node_modules/react-native/Libraries/.*
+module.system.haste.paths.blacklist=<PROJECT_ROOT>/node_modules/react-native/Libraries/Animated/src/polyfills/.*
+module.system.haste.paths.whitelist=<PROJECT_ROOT>/node_modules/react-native/Libraries/.*
+
 munge_underscores=true
 
 module.name_mapper='^[./a-zA-Z0-9$_-]+\.\(bmp\|gif\|jpg\|jpeg\|png\|psd\|svg\|webp\|m4v\|mov\|mp4\|mpeg\|mpg\|webm\|aac\|aiff\|caf\|m4a\|mp3\|wav\|html\|pdf\)$' -> 'RelativeImageStub'
 
 module.file_ext=.js
-module.file_ext=.android.js
-module.file_ext=.ios.js
 module.file_ext=.jsx
 module.file_ext=.json
 module.file_ext=.native.js
@@ -99,3 +65,6 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe\\($\\|[^(]\\|(\\(<VERSION>\\)? *\\(si
 suppress_comment=\\(.\\|\n\\)*\\$FlowIssue\\((\\(<VERSION>\\)? *\\(site=[a-z,_]*react_native[a-z,_]*\\)?)\\)?:? #[0-9]+
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
+
+[version]
+^0.78.0

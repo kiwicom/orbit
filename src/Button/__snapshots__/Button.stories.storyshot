@@ -1655,7 +1655,6 @@ exports[`Storyshots Button Circled button 1`] = `
           }
         >
           <button
-            circled={true}
             className="Button__StyledButton-jJDkJK jAOrwt"
             data-test={undefined}
             disabled={undefined}
@@ -2647,7 +2646,6 @@ exports[`Storyshots Button Playground 1`] = `
           }
         >
           <button
-            circled={false}
             className="Button__StyledButton-jJDkJK fjwApn"
             data-test="test"
             disabled={false}

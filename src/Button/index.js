@@ -211,6 +211,7 @@ export const StyledButton = styled(
   ({
     theme,
     component,
+    circled,
     external,
     type,
     icon,

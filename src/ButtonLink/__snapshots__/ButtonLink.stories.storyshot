@@ -99,7 +99,6 @@ exports[`Storyshots ButtonLink Circled 1`] = `
           }
         >
           <button
-            circled={true}
             className="ButtonLink__StyledButtonLink-eyUiPe fpNoit"
             data-test={undefined}
             onClick={[Function]}

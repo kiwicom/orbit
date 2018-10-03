@@ -107,8 +107,8 @@ exports[`Storyshots TextLink Link with icon 1`] = `
             target={undefined}
           >
             TextLink with icon
-            <div
-              className="TextLink__IconContainer-hjOTaw eWbhZJ"
+            <span
+              className="TextLink__IconContainer-hjOTaw djdVUW"
             >
               <svg
                 className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -120,7 +120,7 @@ exports[`Storyshots TextLink Link with icon 1`] = `
                   d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
                 />
               </svg>
-            </div>
+            </span>
           </a>
         </div>
         <div>
@@ -430,8 +430,8 @@ exports[`Storyshots TextLink Playground 1`] = `
             target="_blank"
           >
             Custom link
-            <div
-              className="TextLink__IconContainer-hjOTaw ePXFbw"
+            <span
+              className="TextLink__IconContainer-hjOTaw jDQGeD"
             >
               <svg
                 className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -443,7 +443,7 @@ exports[`Storyshots TextLink Playground 1`] = `
                   d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
                 />
               </svg>
-            </div>
+            </span>
           </a>
         </div>
         <div>

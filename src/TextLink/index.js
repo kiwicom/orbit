@@ -17,14 +17,15 @@ const getColor = ({ theme, type }) => {
 };
 
 const IconContainer = styled(({ children, className }) => (
-  <div className={className}>{children}</div>
+  <span className={className}>{children}</span>
 ))`
+  display: block;
   color: ${getColor};
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   & svg {
-    height: 16px;
-    width: 16px;
+    width: ${({ theme }) => theme.orbit.widthIconSmall};
+    height: ${({ theme }) => theme.orbit.heightIconSmall};
   }
 `;
 

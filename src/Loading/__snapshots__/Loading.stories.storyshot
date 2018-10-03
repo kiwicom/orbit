@@ -104,6 +104,7 @@ exports[`Storyshots Loading Button loading 1`] = `
             disabled={true}
             size="normal"
             target={undefined}
+            type="button"
           >
             <div
               className="Loading__StyledLoading-jmajcg eCYjyt"

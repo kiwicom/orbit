@@ -108,6 +108,7 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
               onClick={undefined}
               size="normal"
               target={undefined}
+              type="button"
             >
               <div
                 className="ButtonLink__IconContainer-flENJD dcUnuY"
@@ -132,6 +133,7 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
               onClick={undefined}
               size="normal"
               target={undefined}
+              type="button"
             >
               <div
                 className="ButtonLink__IconContainer-flENJD ffwkCW"
@@ -605,6 +607,7 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
               disabled={undefined}
               size="normal"
               target={undefined}
+              type="button"
             >
               <div
                 className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -632,6 +635,7 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
               disabled={undefined}
               size="normal"
               target={undefined}
+              type="button"
             >
               <div
                 className="Button__StyledButtonContent-gvDciI pDqSF"

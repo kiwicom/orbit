@@ -105,6 +105,7 @@ exports[`Storyshots Button Basic buttons 1`] = `
             onClick={[Function]}
             size="normal"
             target={undefined}
+            type="button"
           >
             <div
               className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -458,6 +459,7 @@ exports[`Storyshots Button Button as a link 1`] = `
             onClick={[Function]}
             size="normal"
             target={undefined}
+            type={undefined}
           >
             <div
               className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -897,6 +899,7 @@ exports[`Storyshots Button Button with icons 1`] = `
             onClick={[Function]}
             size="small"
             target={undefined}
+            type="button"
           >
             <div
               className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -1264,6 +1267,7 @@ exports[`Storyshots Button Button with icons 1`] = `
             onClick={[Function]}
             size="small"
             target={undefined}
+            type="button"
           >
             <div
               className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -1661,6 +1665,7 @@ exports[`Storyshots Button Circled button 1`] = `
             onClick={[Function]}
             size="normal"
             target={undefined}
+            type="button"
           >
             <div
               className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -1997,6 +2002,7 @@ exports[`Storyshots Button Default 1`] = `
             onClick={[Function]}
             size="normal"
             target={undefined}
+            type="button"
           >
             <div
               className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -2255,6 +2261,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
             onClick={[Function]}
             size="normal"
             target={undefined}
+            type="button"
           >
             <div
               className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -2653,6 +2660,7 @@ exports[`Storyshots Button Playground 1`] = `
             onClick={[Function]}
             size="normal"
             target={undefined}
+            type="button"
           >
             <div
               className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -3182,6 +3190,37 @@ exports[`Storyshots Button Playground 1`] = `
                           <span
                             style={Object {}}
                           >
+                            submit
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
                             width
                           </span>
                           <span>
@@ -3372,6 +3411,7 @@ exports[`Storyshots Button Social buttons 1`] = `
             onClick={[Function]}
             size="normal"
             target={undefined}
+            type="button"
           >
             <div
               className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -3644,6 +3684,7 @@ exports[`Storyshots Button Social buttons 1`] = `
             onClick={[Function]}
             size="normal"
             target={undefined}
+            type="button"
           >
             <div
               className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -4008,6 +4049,7 @@ exports[`Storyshots Button Status buttons 1`] = `
             onClick={[Function]}
             size="small"
             target={undefined}
+            type="button"
           >
             <div
               className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -4299,6 +4341,7 @@ exports[`Storyshots Button Status buttons 1`] = `
             onClick={[Function]}
             size="small"
             target={undefined}
+            type="button"
           >
             <div
               className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -4590,6 +4633,7 @@ exports[`Storyshots Button Status buttons 1`] = `
             onClick={[Function]}
             size="small"
             target={undefined}
+            type="button"
           >
             <div
               className="Button__StyledButtonContent-gvDciI pDqSF"
@@ -4881,6 +4925,7 @@ exports[`Storyshots Button Status buttons 1`] = `
             onClick={[Function]}
             size="small"
             target={undefined}
+            type="button"
           >
             <div
               className="Button__StyledButtonContent-gvDciI pDqSF"

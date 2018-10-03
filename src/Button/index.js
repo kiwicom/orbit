@@ -225,11 +225,14 @@ export const StyledButton = styled(
     block,
     style,
     dataTest,
+    submit,
     ...props
   }) => {
-    const Component = component === "button" && props.href ? "a" : component;
+    const isButtonWithHref = component === "button" && props.href;
+    const Component = isButtonWithHref ? "a" : component;
+    const buttonType = submit ? "submit" : "button";
     return (
-      <Component data-test={dataTest} {...props}>
+      <Component data-test={dataTest} type={!isButtonWithHref ? buttonType : undefined} {...props}>
         {props.children}
       </Component>
     );

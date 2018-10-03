@@ -99,6 +99,7 @@ export const StyledButtonLink = styled(
   ({
     onlyIcon,
     component,
+    circled,
     external,
     block,
     type,

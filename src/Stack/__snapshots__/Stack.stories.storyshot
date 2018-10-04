@@ -113,7 +113,7 @@ exports[`Storyshots Stack Default 1`] = `
                 className="Button__StyledButtonContent-gvDciI pDqSF"
               >
                 <div
-                  className="Button__IconContainer-bZYzaL bfomLI"
+                  className="Button__IconContainer-bZYzaL dikZaB"
                 >
                   <svg
                     className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1119,7 +1119,7 @@ exports[`Storyshots Stack Mobile properties 1`] = `
                 className="Button__StyledButtonContent-gvDciI pDqSF"
               >
                 <div
-                  className="Button__IconContainer-bZYzaL bfomLI"
+                  className="Button__IconContainer-bZYzaL dikZaB"
                 >
                   <svg
                     className="Icon__StyledIcon-ckyxIP fvqkFf"

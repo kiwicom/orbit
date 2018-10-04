@@ -5,6 +5,7 @@ import styled from "styled-components";
 import defaultTokens from "../defaultTokens";
 import { TYPES, SIZES, TOKENS } from "./consts";
 import { ICON_SIZES } from "../Icon/consts";
+import { getSize } from "../Icon";
 
 import type { Props } from "./index";
 
@@ -77,8 +78,8 @@ const IconContainer = styled(({ theme, sizeIcon, type, onlyIcon, ...props }) => 
   margin-right: ${({ onlyIcon }) => (onlyIcon ? "0" : getSizeToken(TOKENS.marginRightIcon))};
 
   > * {
-    width: ${({ sizeIcon }) => ICON_SIZES[sizeIcon]};
-    height: ${({ sizeIcon }) => ICON_SIZES[sizeIcon]};
+    width: ${getSize()};
+    height: ${getSize()};
   }
 `;
 
@@ -197,7 +198,7 @@ const ButtonLink = (props: Props) => {
   } = props;
 
   const iconLeft = props.iconLeft || icon;
-  const sizeIcon = size === SIZES.SMALL ? "small" : "medium";
+  const sizeIcon = size === ICON_SIZES.SMALL ? ICON_SIZES.SMALL : ICON_SIZES.MEDIUM;
 
   const onlyIcon = iconLeft && !children;
 

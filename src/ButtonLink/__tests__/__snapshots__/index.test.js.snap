@@ -875,6 +875,13 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
 `;
 
 exports[`ButtonLink with Icon should match snapshot 2`] = `
+.c2 {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -892,6 +899,11 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin-right: 12px;
+}
+
+.c1 > * {
+  width: 24px;
+  height: 24px;
 }
 
 .c3 {
@@ -956,13 +968,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
 
 .c0:enabled:focus:active {
   box-shadow: none;
-}
-
-.c2 {
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-  fill: currentColor;
 }
 
 <ButtonLink

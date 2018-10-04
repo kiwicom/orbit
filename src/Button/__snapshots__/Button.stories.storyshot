@@ -465,7 +465,7 @@ exports[`Storyshots Button Button as a link 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL grbnAf"
+                className="Button__IconContainer-bZYzaL fBpOoA"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -905,7 +905,7 @@ exports[`Storyshots Button Button with icons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL fxeibz"
+                className="Button__IconContainer-bZYzaL hnmhXM"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -920,7 +920,7 @@ exports[`Storyshots Button Button with icons 1`] = `
               </div>
               Button
               <div
-                className="Button__IconContainerRight-fadTMO bJWYgf Button__IconContainer-bZYzaL fxeibz"
+                className="Button__IconContainerRight-fadTMO bJWYgf Button__IconContainer-bZYzaL hnmhXM"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1274,7 +1274,7 @@ exports[`Storyshots Button Button with icons 1`] = `
             >
               Button
               <div
-                className="Button__IconContainerRight-fadTMO bJWYgf Button__IconContainer-bZYzaL fxeibz"
+                className="Button__IconContainerRight-fadTMO bJWYgf Button__IconContainer-bZYzaL hnmhXM"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1671,7 +1671,7 @@ exports[`Storyshots Button Circled button 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL eZaDpj"
+                className="Button__IconContainer-bZYzaL hAoIdO"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -2267,7 +2267,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL bfomLI"
+                className="Button__IconContainer-bZYzaL dikZaB"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -2666,7 +2666,7 @@ exports[`Storyshots Button Playground 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL bfomLI"
+                className="Button__IconContainer-bZYzaL dikZaB"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -2681,7 +2681,7 @@ exports[`Storyshots Button Playground 1`] = `
               </div>
               Button
               <div
-                className="Button__IconContainerRight-fadTMO hFXLWZ Button__IconContainer-bZYzaL bfomLI"
+                className="Button__IconContainerRight-fadTMO hFXLWZ Button__IconContainer-bZYzaL dikZaB"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -3417,7 +3417,7 @@ exports[`Storyshots Button Social buttons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL dCVVBC"
+                className="Button__IconContainer-bZYzaL iheFrP"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -3690,7 +3690,7 @@ exports[`Storyshots Button Social buttons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL eEFbcU"
+                className="Button__IconContainer-bZYzaL lmwnCT"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -4055,7 +4055,7 @@ exports[`Storyshots Button Status buttons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL fxeibz"
+                className="Button__IconContainer-bZYzaL hnmhXM"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -4347,7 +4347,7 @@ exports[`Storyshots Button Status buttons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL fxeibz"
+                className="Button__IconContainer-bZYzaL hnmhXM"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -4639,7 +4639,7 @@ exports[`Storyshots Button Status buttons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL fxeibz"
+                className="Button__IconContainer-bZYzaL hnmhXM"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -4931,7 +4931,7 @@ exports[`Storyshots Button Status buttons 1`] = `
               className="Button__StyledButtonContent-gvDciI pDqSF"
             >
               <div
-                className="Button__IconContainer-bZYzaL fxeibz"
+                className="Button__IconContainer-bZYzaL hnmhXM"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"

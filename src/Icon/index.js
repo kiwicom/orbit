@@ -5,14 +5,17 @@ import styled from "styled-components";
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 import defaultTokens from "../defaultTokens";
 
-import type { Props } from "./index";
+import type { GetSize, Props } from "./index";
 
-const getSize = () => ({ theme, size }) => {
+export const getSize = () => ({ theme, size, sizeIcon }: GetSize) => {
   const tokens = {
     [ICON_SIZES.SMALL]: theme.orbit.widthIconSmall,
     [ICON_SIZES.MEDIUM]: theme.orbit.widthIconMedium,
     [ICON_SIZES.LARGE]: theme.orbit.widthIconLarge,
   };
+  if (sizeIcon) {
+    return tokens[sizeIcon];
+  }
   return tokens[size];
 };
 

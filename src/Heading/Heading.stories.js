@@ -6,6 +6,7 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, select, boolean } from "@storybook/addon-knobs/react";
 
 import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./consts";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import Heading from "./index";
 
@@ -152,6 +153,7 @@ storiesOf("Heading", module)
     const dataTest = text("dataTest", "test");
 
     const customTitle = text("Title", "Orbit design system");
+    const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -160,7 +162,7 @@ storiesOf("Heading", module)
           sections: [
             {
               sectionFn: () => (
-                <Heading element={element} type={type} dataTest={dataTest}>
+                <Heading element={element} type={type} dataTest={dataTest} spaceAfter={spaceAfter}>
                   {customTitle}
                 </Heading>
               ),

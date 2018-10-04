@@ -11,6 +11,10 @@ import SIZE_OPTIONS from "./consts";
 
 import type { Props } from "./index";
 
+const Label = styled.label`
+  width: 100%;
+`;
+
 const StyledSelect = styled(
   ({ className, children, value, disabled, onChange, onFocus, onBlur }) => (
     <select
@@ -157,7 +161,7 @@ const Select = ({
 }: Props) => {
   const filled = !!value;
   return (
-    <label data-test={dataTest}>
+    <Label data-test={dataTest}>
       {label && (
         <FormLabel filled={filled} disabled={disabled}>
           {label}
@@ -194,7 +198,7 @@ const Select = ({
       </SelectContainer>
       {help && !error && <FormFeedback type={TYPE_OPTIONS.HELP}>{help}</FormFeedback>}
       {error && <FormFeedback type={TYPE_OPTIONS.ERROR}>{error}</FormFeedback>}
-    </label>
+    </Label>
   );
 };
 

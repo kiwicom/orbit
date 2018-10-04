@@ -99,7 +99,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl edSqTu"
+            className="Alert__StyledAlert-dqYNhl eIeInu"
             data-test={undefined}
           >
             <div
@@ -409,7 +409,7 @@ exports[`Storyshots Alert Default 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl fUtCMj"
+            className="Alert__StyledAlert-dqYNhl gHGEra"
             data-test={undefined}
           >
             <div
@@ -639,7 +639,7 @@ exports[`Storyshots Alert Info alert 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl fUtCMj"
+            className="Alert__StyledAlert-dqYNhl gHGEra"
             data-test={undefined}
           >
             <div
@@ -922,7 +922,7 @@ exports[`Storyshots Alert Playground 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl fUtCMj"
+            className="Alert__StyledAlert-dqYNhl gHGEra"
             data-test="test"
           >
             <div
@@ -964,7 +964,7 @@ exports[`Storyshots Alert Playground 1`] = `
                   Also you can change the message by changing the Message knob
                 </div>
                 <a
-                  className="Button__StyledButton-jJDkJK jVAmZf"
+                  className="Button__StyledButton-jJDkJK kwbftt"
                   data-test={undefined}
                   disabled={undefined}
                   href="#"
@@ -1216,6 +1216,37 @@ exports[`Storyshots Alert Playground 1`] = `
                                 "
                                 test
                                 "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            spaceAfter
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
                               </span>
                             </span>
                           </span>
@@ -1638,7 +1669,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl kchFYJ"
+            className="Alert__StyledAlert-dqYNhl kgJWcz"
             data-test={undefined}
           >
             <div
@@ -1948,7 +1979,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl eMMGtz"
+            className="Alert__StyledAlert-dqYNhl leZzlw"
             data-test={undefined}
           >
             <div

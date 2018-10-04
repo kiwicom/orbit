@@ -99,11 +99,11 @@ exports[`Storyshots List Default 1`] = `
           }
         >
           <div
-            className="List__StyledList-fzpiIm cUVSEu"
+            className="List__StyledList-fzpiIm jHCbqW"
             data-test={undefined}
           >
             <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              className="ListItem__Item-bhWwBk dXqnir"
               data-test={undefined}
             >
               <div
@@ -123,7 +123,7 @@ exports[`Storyshots List Default 1`] = `
               24,000 locations around the globe
             </div>
             <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              className="ListItem__Item-bhWwBk dXqnir"
               data-test={undefined}
             >
               <div
@@ -146,7 +146,7 @@ exports[`Storyshots List Default 1`] = `
               </strong>
             </div>
             <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              className="ListItem__Item-bhWwBk dXqnir"
               data-test={undefined}
             >
               <div
@@ -639,11 +639,11 @@ exports[`Storyshots List Different type and size 1`] = `
           }
         >
           <div
-            className="List__StyledList-fzpiIm jUUXxU"
+            className="List__StyledList-fzpiIm cViMSu"
             data-test={undefined}
           >
             <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              className="ListItem__Item-bhWwBk dXqnir"
               data-test={undefined}
             >
               <div
@@ -663,7 +663,7 @@ exports[`Storyshots List Different type and size 1`] = `
               24,000 locations around the globe
             </div>
             <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              className="ListItem__Item-bhWwBk dXqnir"
               data-test={undefined}
             >
               <div
@@ -686,7 +686,7 @@ exports[`Storyshots List Different type and size 1`] = `
               </strong>
             </div>
             <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              className="ListItem__Item-bhWwBk dXqnir"
               data-test={undefined}
             >
               <div
@@ -1235,11 +1235,11 @@ exports[`Storyshots List Playground 1`] = `
           }
         >
           <div
-            className="List__StyledList-fzpiIm cUVSEu"
+            className="List__StyledList-fzpiIm jHCbqW"
             data-test="test"
           >
             <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              className="ListItem__Item-bhWwBk dXqnir"
               data-test={undefined}
             >
               <div
@@ -1259,7 +1259,7 @@ exports[`Storyshots List Playground 1`] = `
               24,000 locations around the globe
             </div>
             <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              className="ListItem__Item-bhWwBk dXqnir"
               data-test={undefined}
             >
               <div
@@ -1279,7 +1279,7 @@ exports[`Storyshots List Playground 1`] = `
               24,000 locations around the globe
             </div>
             <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              className="ListItem__Item-bhWwBk dXqnir"
               data-test={undefined}
             >
               <div
@@ -1356,7 +1356,10 @@ exports[`Storyshots List Playground 1`] = `
                       </span>
                       <span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -1383,7 +1386,10 @@ exports[`Storyshots List Playground 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -1410,7 +1416,10 @@ exports[`Storyshots List Playground 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -1435,7 +1444,38 @@ exports[`Storyshots List Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                          
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            spaceAfter
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <br />
                         </span>
                       </span>
                       <span
@@ -1876,11 +1916,11 @@ exports[`Storyshots List With carrier 1`] = `
           }
         >
           <div
-            className="List__StyledList-fzpiIm jUUXxU"
+            className="List__StyledList-fzpiIm cViMSu"
             data-test={undefined}
           >
             <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              className="ListItem__Item-bhWwBk dXqnir"
               data-test={undefined}
             >
               <div
@@ -1904,7 +1944,7 @@ exports[`Storyshots List With carrier 1`] = `
               Airline: Ryanair
             </div>
             <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              className="ListItem__Item-bhWwBk dXqnir"
               data-test={undefined}
             >
               <div
@@ -1924,7 +1964,7 @@ exports[`Storyshots List With carrier 1`] = `
               Flight no: FR 1337
             </div>
             <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              className="ListItem__Item-bhWwBk dXqnir"
               data-test={undefined}
             >
               <div
@@ -1944,7 +1984,7 @@ exports[`Storyshots List With carrier 1`] = `
               PNR: TEST0X0
             </div>
             <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              className="ListItem__Item-bhWwBk dXqnir"
               data-test={undefined}
             >
               <div

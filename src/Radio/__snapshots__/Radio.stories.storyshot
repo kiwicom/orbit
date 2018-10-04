@@ -112,10 +112,10 @@ exports[`Storyshots Radio Default 1`] = `
               value={undefined}
             />
             <div
-              className="Radio__IconContainer-fQtsRf eLCDpa"
+              className="Radio__IconContainer-fQtsRf iUWTcU"
             >
               <span
-                className="Radio__Glyph-kyhivX jdVanu"
+                className="Radio__Glyph-kyhivX cwaJth"
                 disabled={false}
               />
             </div>
@@ -402,10 +402,10 @@ exports[`Storyshots Radio Playground 1`] = `
               value="value"
             />
             <div
-              className="Radio__IconContainer-fQtsRf eLCDpa"
+              className="Radio__IconContainer-fQtsRf iUWTcU"
             >
               <span
-                className="Radio__Glyph-kyhivX hVJQvf"
+                className="Radio__Glyph-kyhivX jdXifV"
                 disabled={true}
               />
             </div>
@@ -818,10 +818,10 @@ exports[`Storyshots Radio With help 1`] = `
               value="value"
             />
             <div
-              className="Radio__IconContainer-fQtsRf eLCDpa"
+              className="Radio__IconContainer-fQtsRf iUWTcU"
             >
               <span
-                className="Radio__Glyph-kyhivX jdVanu"
+                className="Radio__Glyph-kyhivX cwaJth"
                 disabled={false}
               />
             </div>

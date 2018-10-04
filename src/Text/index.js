@@ -10,6 +10,7 @@ import {
   ALIGN_OPTIONS,
   SIZE_OPTIONS,
 } from "./consts";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
 
@@ -61,6 +62,7 @@ const StyledText = styled(({ element, children, className, dataTest }) => {
   text-transform: ${({ uppercase }) => uppercase && `uppercase`};
   font-style: ${({ italic }) => italic && `italic`};
   margin: 0;
+  margin-bottom: ${getSpacingToken};
 `;
 
 StyledText.defaultProps = {
@@ -76,6 +78,7 @@ const Text = ({
   uppercase = false,
   italic = false,
   dataTest,
+  spaceAfter,
   children,
 }: Props) => (
   <StyledText
@@ -87,6 +90,7 @@ const Text = ({
     uppercase={uppercase}
     italic={italic}
     dataTest={dataTest}
+    spaceAfter={spaceAfter}
   >
     {children}
   </StyledText>

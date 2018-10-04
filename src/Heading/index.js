@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
 
@@ -38,6 +39,7 @@ export const StyledHeading = styled(({ element: Component, className, children, 
     inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
   line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
   margin: 0;
+  margin-bottom: ${getSpacingToken};
 `;
 
 StyledHeading.defaultProps = {
@@ -50,8 +52,15 @@ const Heading = ({
   element = ELEMENT_OPTIONS.H1,
   dataTest,
   inverted = false,
+  spaceAfter,
 }: Props) => (
-  <StyledHeading type={type} element={element} inverted={inverted} dataTest={dataTest}>
+  <StyledHeading
+    type={type}
+    element={element}
+    inverted={inverted}
+    dataTest={dataTest}
+    spaceAfter={spaceAfter}
+  >
     {children}
   </StyledHeading>
 );

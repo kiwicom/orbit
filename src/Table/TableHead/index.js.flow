@@ -1,7 +1,8 @@
 // @flow
+import TableRow from "../TableRow/index";
 
 export type Props = {|
-  +children: React$Node,
+  +children: Array<React$Element<typeof TableRow>> | React$Element<typeof TableRow>,
 |};
 
 declare export default React$ComponentType<Props>;

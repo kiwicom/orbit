@@ -128,7 +128,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       type="button"
                     >
                       <div
-                        className="ButtonLink__IconContainer-flENJD ffwkCW"
+                        className="ButtonLink__IconContainer-flENJD hNEbcs"
                         size="normal"
                       >
                         <svg
@@ -234,7 +234,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                           className="Button__StyledButtonContent-gvDciI pDqSF"
                         >
                           <div
-                            className="Button__IconContainer-bZYzaL eEFbcU"
+                            className="Button__IconContainer-bZYzaL lmwnCT"
                           >
                             <svg
                               className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1550,7 +1550,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                       type="button"
                     >
                       <div
-                        className="ButtonLink__IconContainer-flENJD ffwkCW"
+                        className="ButtonLink__IconContainer-flENJD hNEbcs"
                         size="normal"
                       >
                         <svg

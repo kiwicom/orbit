@@ -2096,7 +2096,7 @@ exports[`Storyshots InputField Playground 1`] = `
                   type="button"
                 >
                   <div
-                    className="ButtonLink__IconContainer-flENJD ffwkCW"
+                    className="ButtonLink__IconContainer-flENJD SXYtt"
                     size="small"
                   >
                     <svg
@@ -3689,7 +3689,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                   type="button"
                 >
                   <div
-                    className="ButtonLink__IconContainer-flENJD ffwkCW"
+                    className="ButtonLink__IconContainer-flENJD hNEbcs"
                     size="normal"
                   >
                     <svg

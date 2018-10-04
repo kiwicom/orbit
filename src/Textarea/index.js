@@ -11,6 +11,10 @@ import type { Props } from "./index";
 
 const Field = styled.label`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
 `;
 
 Field.defaultProps = {

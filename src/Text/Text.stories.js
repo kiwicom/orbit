@@ -12,6 +12,7 @@ import {
   ALIGN_OPTIONS,
   ELEMENT_OPTIONS,
 } from "./consts";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import Text from "./index";
 
@@ -134,6 +135,7 @@ storiesOf("Text", module)
     const uppercase = boolean("Uppercase", false);
     const italic = boolean("Italic", false);
     const children = text("Text", customText);
+    const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
     const dataTest = text("dataTest", "test");
 
     return {
@@ -153,6 +155,7 @@ storiesOf("Text", module)
                   uppercase={uppercase}
                   italic={italic}
                   dataTest={dataTest}
+                  spaceAfter={spaceAfter}
                 >
                   {children}
                 </Text>

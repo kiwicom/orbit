@@ -4,6 +4,7 @@ exports[`List with custom colored icons should match snapshot 1`] = `
 <List__StyledList
   dataTest="test"
   size="small"
+  spaceAfter="normal"
   theme={
     Object {
       "orbit": Object {

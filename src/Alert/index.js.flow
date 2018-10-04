@@ -1,5 +1,5 @@
 // @flow
-
+import type { spaceAfter } from "../common/getSpacingToken/index";
 import type { Globals } from "../common/common.js.flow";
 
 type Type = "info" | "success" | "warning" | "critical";
@@ -12,6 +12,7 @@ export type Props = {|
   +closable?: boolean,
   +onClose?: () => void,
   ...Globals,
+  ...spaceAfter,
 |};
 
 declare export default React$ComponentType<Props>;

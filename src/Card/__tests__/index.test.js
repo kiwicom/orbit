@@ -6,6 +6,8 @@ import Card from "../index";
 import CardSection from "../CardSection";
 import Heading from "../../Heading";
 import Text from "../../Text";
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import defaultTokens from "../../defaultTokens";
 
 const text = "Text for testing";
 
@@ -28,7 +30,10 @@ describe("Card", () => {
         expect(node.type()).toBe(CardSection);
       });
   });
-
+  it("should have margin-bottom", () => {
+    const component = shallow(<Card spaceAfter={SPACINGS_AFTER.NORMAL} />);
+    expect(component).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
+  });
   it("should have data-test", () => {
     const dataTest = "test";
     const component = shallow(<Card dataTest={dataTest} />);

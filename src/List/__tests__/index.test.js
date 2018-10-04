@@ -1,10 +1,12 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import List from "../index";
 import ListItem from "../ListItem";
 import Check from "../../icons/Check";
+import defaultTokens from "../../defaultTokens";
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe(`List with custom colored icons`, () => {
   const size = "small";
@@ -13,7 +15,7 @@ describe(`List with custom colored icons`, () => {
   const content = "This contains a nice sentence";
 
   const component = shallow(
-    <List size={size} type={type} dataTest={dataTest}>
+    <List size={size} type={type} dataTest={dataTest} spaceAfter={SPACINGS_AFTER.NORMAL}>
       <ListItem icon={<Check color="success" />} dataTest={dataTest}>
         {content}
       </ListItem>
@@ -34,6 +36,18 @@ describe(`List with custom colored icons`, () => {
     expect(component.prop("type")).toBe(type);
     expect(styledList.render().prop("data-test")).toBe(dataTest);
   });
+
+  it("should have margin-bottom", () => {
+    const mounted = mount(
+      <List spaceAfter={SPACINGS_AFTER.NORMAL}>
+        <ListItem icon={<Check color="success" />} dataTest={dataTest}>
+          {content}
+        </ListItem>
+      </List>,
+    );
+    expect(mounted).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
+  });
+
   it("should have children", () => {
     children.forEach(node => {
       expect(node.type()).toBe(ListItem);

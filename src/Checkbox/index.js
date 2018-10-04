@@ -25,6 +25,7 @@ const getToken = name => ({ theme, hasError, disabled, checked }) => {
 const IconContainer = styled.div`
   position: relative;
   box-sizing: border-box;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;

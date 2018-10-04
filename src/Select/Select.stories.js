@@ -190,6 +190,8 @@ storiesOf("Select", module)
                   disabled={disabled}
                   label={text("Label")}
                   onChange={action("onChange")}
+                  onBlur={action("onBlur")}
+                  onFocus={action("onFocus")}
                   dataTest={dataTest}
                   value={value}
                 />

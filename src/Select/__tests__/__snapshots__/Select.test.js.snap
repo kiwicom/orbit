@@ -777,9 +777,7 @@ exports[`Select should match snapshot 1`] = `
       value="1"
     >
       <option
-        disabled={true}
         label="Default placeholder"
-        selected={true}
         value=""
       >
         Default placeholder

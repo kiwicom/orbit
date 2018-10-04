@@ -160,12 +160,10 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
-                      value={undefined}
+                      value=""
                     >
                       <option
-                        disabled={true}
                         label="Month"
-                        selected={true}
                         value=""
                       >
                         Month
@@ -1196,7 +1194,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
-                      value={undefined}
+                      value=""
                     >
                       <option
                         disabled={undefined}
@@ -2061,7 +2059,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
-                      value={undefined}
+                      value=""
                     >
                       <option
                         disabled={undefined}
@@ -2140,7 +2138,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
-                      value={undefined}
+                      value=""
                     >
                       <option
                         disabled={undefined}

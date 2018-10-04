@@ -1,0 +1,8 @@
+// @flow
+type isAlign = (a: string) => boolean;
+
+declare export var isAlignCenter: isAlign;
+
+declare export var isAlignStart: isAlign;
+
+declare export var isAlignEnd: isAlign;

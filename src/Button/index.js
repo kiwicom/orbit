@@ -6,6 +6,7 @@ import defaultTokens from "../defaultTokens";
 import { ICON_SIZES } from "../Icon/consts";
 import { TYPE_OPTIONS, SIZE_OPTIONS, TOKENS } from "./consts";
 import Loading, { StyledSpinner } from "../Loading";
+import { getSize } from "../Icon";
 
 import type { Props } from "./index";
 
@@ -189,8 +190,8 @@ const IconContainer = styled(({ className, children }) => (
     box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   > * {
-    width: ${({ sizeIcon }) => ICON_SIZES[sizeIcon]};
-    height: ${({ sizeIcon }) => ICON_SIZES[sizeIcon]};
+    width: ${getSize()};
+    height: ${getSize()};
   }
 `;
 
@@ -379,7 +380,7 @@ const Button = (props: Props) => {
     width = 0,
   } = props;
   const iconLeft = props.iconLeft || icon;
-  const sizeIcon = size === "small" ? "small" : "medium";
+  const sizeIcon = size === ICON_SIZES.SMALL ? ICON_SIZES.SMALL : ICON_SIZES.MEDIUM;
   const onlyIcon = iconLeft && !children;
   const isDisabled = loading || disabled;
 

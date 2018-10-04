@@ -107,7 +107,7 @@ exports[`Storyshots ButtonLink Circled 1`] = `
             type="button"
           >
             <div
-              className="ButtonLink__IconContainer-flENJD ffwkCW"
+              className="ButtonLink__IconContainer-flENJD hNEbcs"
               size="large"
             >
               <svg
@@ -696,7 +696,7 @@ exports[`Storyshots ButtonLink Playground 1`] = `
             type="button"
           >
             <div
-              className="ButtonLink__IconContainer-flENJD glsLuO"
+              className="ButtonLink__IconContainer-flENJD fktYwF"
               size="large"
             >
               <svg
@@ -712,7 +712,7 @@ exports[`Storyshots ButtonLink Playground 1`] = `
             </div>
             ButtonLink
             <div
-              className="ButtonLink__IconContainerRight-hJSKvX bsHWVt ButtonLink__IconContainer-flENJD glsLuO"
+              className="ButtonLink__IconContainerRight-hJSKvX bsHWVt ButtonLink__IconContainer-flENJD fktYwF"
               size="large"
             >
               <svg

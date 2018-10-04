@@ -134,7 +134,7 @@ exports[`Storyshots InputFile Default 1`] = `
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL exCvLT"
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
                     <svg
                       className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -523,7 +523,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL exCvLT"
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
                     <svg
                       className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -553,7 +553,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                 type="button"
               >
                 <div
-                  className="ButtonLink__IconContainer-flENJD ffwkCW"
+                  className="ButtonLink__IconContainer-flENJD hNEbcs"
                   size="normal"
                 >
                   <svg
@@ -971,7 +971,7 @@ exports[`Storyshots InputFile Playground 1`] = `
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL exCvLT"
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
                     <svg
                       className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1635,7 +1635,7 @@ exports[`Storyshots InputFile With error 1`] = `
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL exCvLT"
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
                     <svg
                       className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -2060,7 +2060,7 @@ exports[`Storyshots InputFile With help 1`] = `
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL exCvLT"
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
                     <svg
                       className="Icon__StyledIcon-ckyxIP fvqkFf"

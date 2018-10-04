@@ -1,0 +1,14 @@
+// @flow
+import type { Interpolation } from "styled-components";
+
+import type { Position } from "../index";
+import type { ThemeProps } from "../../defaultTokens";
+
+export type Props = {
+  ...Position,
+  ...ThemeProps,
+};
+
+type TooltipArrowStyle = Props => Interpolation[];
+
+declare export default TooltipArrowStyle;

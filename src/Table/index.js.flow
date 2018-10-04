@@ -1,9 +1,11 @@
 // @flow
 import type { Globals } from "../common/common.js.flow";
+import TableBody from "./TableBody/index";
+import TableHead from "./TableHead/index";
 
 export type Props = {|
   +compact?: boolean,
-  +children: React$Node,
+  +children: Array<React$Element<typeof TableHead> | React$Element<typeof TableBody>>,
   ...Globals,
 |};
 

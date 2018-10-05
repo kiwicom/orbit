@@ -4,10 +4,10 @@
 
 import React from "react";
 import { Text } from "react-native";
-import { storiesOf } from "@storybook/react-native";
 import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
 
+import { storiesOf } from "../../helpers/storiesOf";
 import Button from "../../src/Button";
 import CenterView from "../../src/CenterView";
 import Welcome from "../../src/Welcome";

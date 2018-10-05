@@ -7,32 +7,42 @@
     "test": "jest",
     "storybook": "storybook start -p 7007 --skip-packager | react-native start --projectRoot storybook",
     "ios": "react-native run-ios",
-    "android": "react-native run-android"
+    "android": "react-native run-android",
+    "storybook-web": "start-storybook -p 9009 -s public",
+    "build-storybook-web": "build-storybook -s public"
   },
   "peerDependencies": {
-    "react": "^16.5.0",
-    "react-dom": "^16.5.0",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
     "styled-components": "^3.4.9"
   },
   "dependencies": {
-    "react": "16.5.0",
-    "react-native": "0.57.1"
+    "react": "16.5.1",
+    "react-art": "^16.5.2",
+    "react-native": "0.57.1",
+    "react-native-web": "^0.9.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "@babel/runtime": "^7.1.2",
-    "@storybook/addon-actions": "^3.4.11",
-    "@storybook/addon-links": "^3.4.11",
-    "@storybook/addons": "^3.4.11",
-    "@storybook/react-native": "^3.4.11",
-    "babel-core": "^7.0.0-bridge.0",
+    "@storybook/addon-actions": "4.0.0-alpha.24",
+    "@storybook/addon-links": "4.0.0-alpha.24",
+    "@storybook/addons": "4.0.0-alpha.24",
+    "@storybook/react": "4.0.0-alpha.24",
+    "@storybook/react-native": "4.0.0-alpha.24",
+    "babel-core": "^6.26.3",
     "babel-jest": "23.6.0",
+    "babel-loader": "^8.0.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-preset-react-app": "^5.0.3",
     "babel-runtime": "^6.26.0",
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.47.0",
     "prop-types": "^15.6.2",
-    "react-dom": "16.5.0",
+    "react-dom": "16.5.1",
     "react-test-renderer": "16.5.0",
-    "styled-components": "^3.4.9"
+    "styled-components": "^3.4.9",
+    "webpack": "^4.20.2"
   },
   "jest": {
     "preset": "react-native"

@@ -1,0 +1,1 @@
+Default storybook config directory for react web project

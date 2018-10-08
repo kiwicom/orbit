@@ -44,6 +44,7 @@ export { default as Icon } from "./Icon";
 export { default as InputField } from "./InputField";
 export { default as InputGroup } from "./InputGroup";
 export { default as InputFile } from "./InputFile";
+export { default as InputStepper } from "./InputStepper";
 export { default as Illustration } from "./Illustration";
 export { default as TextLink } from "./TextLink";
 export { default as Radio } from "./Radio";

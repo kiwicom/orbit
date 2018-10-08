@@ -206,7 +206,7 @@ exports[`Default Stack should match snapshot 1`] = `
   appearance: none;
   font-family: inherit;
   border: none;
-  padding: 0 0 0 12px;
+  padding: 0 12px;
   font-size: inherit;
   color: inherit;
   background-color: transparent;
@@ -6770,7 +6770,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   appearance: none;
   font-family: inherit;
   border: none;
-  padding: 0 0 0 12px;
+  padding: 0 12px;
   font-size: inherit;
   color: inherit;
   background-color: transparent;

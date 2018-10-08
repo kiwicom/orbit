@@ -122,7 +122,9 @@ StyledInlineLabel.defaultProps = {
   theme: defaultTokens,
 };
 
-const Prefix = styled(({ children, className }) => <div className={className}>{children}</div>)`
+export const Prefix = styled(({ children, className }) => (
+  <div className={className}>{children}</div>
+))`
   height: 100%;
   color: ${({ theme }) => theme.orbit.colorTextInputPrefix};
   display: flex;
@@ -171,7 +173,7 @@ export const Input = styled(({ theme, size, suffix, error, help, ...props }) => 
   appearance: none;
   font-family: inherit;
   border: none;
-  padding: 0 0 ${getToken(TOKENS.paddingInput)};
+  padding: ${getToken(TOKENS.paddingInput)};
   font-size: inherit;
   color: inherit;
   background-color: transparent;
@@ -245,6 +247,8 @@ const InputField = ({
   onChange,
   onFocus,
   onBlur,
+  onKeyUp,
+  onKeyDown,
   placeholder,
   minValue,
   maxValue,
@@ -267,6 +271,8 @@ const InputField = ({
         onChange={onChange}
         onFocus={onFocus}
         onBlur={onBlur}
+        onKeyUp={onKeyUp}
+        onKeyDown={onKeyDown}
         name={name}
         type={type}
         value={value}

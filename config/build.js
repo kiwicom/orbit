@@ -40,7 +40,7 @@ const template = (code, config, state) => `
     import * as React from "react";
     import OrbitIcon from "../Icon";
     import type { Props } from "./${state.componentName}.js.flow";
-    
+
     export default function ${state.componentName}(props: Props) {
       const { color, size, customColor, className, dataTest } = props;
       return (

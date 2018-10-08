@@ -1,0 +1,30 @@
+// @flow
+import { Text } from "react-native";
+import * as React from "react";
+
+type Align = "left" | "center" | "right";
+type Type =
+  | "primary"
+  | "secondary"
+  | "attention"
+  | "info"
+  | "success"
+  | "warning"
+  | "critical"
+  | "white";
+type Size = "large" | "normal" | "small";
+type Weight = "regular" | "bold";
+
+type ChildrenType = React.Element<Text>;
+
+export type Props = {|
+  +type?: Type,
+  +size?: Size,
+  +weight?: Weight,
+  +align?: Align,
+  +italic?: boolean,
+  +uppercase?: boolean,
+  +children: string | ChildrenType | React.ChildrenArray<ChildrenType>,
+|};
+
+declare export default React$ComponentType<Props>;

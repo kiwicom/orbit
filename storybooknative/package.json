@@ -30,7 +30,7 @@
     "@storybook/addons": "4.0.0-alpha.24",
     "@storybook/react": "4.0.0-alpha.24",
     "@storybook/react-native": "4.0.0-alpha.24",
-    "babel-core": "^6.26.3",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "23.6.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-module-resolver": "^3.1.1",

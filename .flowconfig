@@ -30,6 +30,9 @@
 ; Ignore metro
 .*/storybooknative/.*/node_modules/metro/.*
 
+; Ignore findup tests
+.*/storybooknative/node_modules/findup/test/.*\.json$
+
 [include]
 
 [libs]

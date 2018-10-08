@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
+    "prestorybook": "rnstl",
     "storybook": "storybook start -p 7007 --skip-packager | react-native start --projectRoot storybook",
     "ios": "react-native run-ios",
     "android": "react-native run-android",
@@ -30,7 +31,7 @@
     "@storybook/addons": "4.0.0-alpha.24",
     "@storybook/react": "4.0.0-alpha.24",
     "@storybook/react-native": "4.0.0-alpha.24",
-    "babel-core": "^6.26.3",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "23.6.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-module-resolver": "^3.1.1",
@@ -40,11 +41,19 @@
     "metro-react-native-babel-preset": "0.47.0",
     "prop-types": "^15.6.2",
     "react-dom": "16.5.1",
+    "react-native-storybook-loader": "^1.8.0",
     "react-test-renderer": "16.5.0",
     "styled-components": "^3.4.9",
     "webpack": "^4.20.2"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": ["./src"],
+      "pattern": "**/*.stories.js",
+      "outputFile": "./storybook/story-loader.js"
+    }
   }
 }

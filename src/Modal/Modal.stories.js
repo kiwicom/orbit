@@ -86,6 +86,7 @@ storiesOf("Modal", module)
     );
     const flex = array("Flex", ["0 0 auto", "1 1 100%"]);
     const dataTest = text("dataTest", "test");
+    const showBack = boolean("showBackButton", true);
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -117,9 +118,11 @@ storiesOf("Modal", module)
                     <Text>{content}</Text>
                   </ModalSection>
                   <ModalFooter flex={flex}>
-                    <Button type="secondary" iconLeft={<ChevronLeft />}>
-                      Back
-                    </Button>
+                    {showBack && (
+                      <Button type="secondary" iconLeft={<ChevronLeft />}>
+                        Back
+                      </Button>
+                    )}
                     <Button block>Continue to Payment</Button>
                   </ModalFooter>
                 </Modal>

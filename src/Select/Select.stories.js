@@ -118,11 +118,7 @@ storiesOf("Select", module)
               <Select
                 label="Select box (with help text)"
                 options={objectOptions}
-                help={
-                  <div>
-                    Most common choice is <b>Booking cancellation</b>
-                  </div>
-                }
+                help="Most common choice is Booking cancellation"
                 onChange={action("onChange")}
               />
             ),

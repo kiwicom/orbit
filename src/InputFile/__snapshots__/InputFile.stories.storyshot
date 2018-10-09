@@ -99,7 +99,7 @@ exports[`Storyshots InputFile Default 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE dAafTj"
+            className="InputFile__Field-jAueAE erafpp"
             data-test={undefined}
           >
             <input
@@ -488,7 +488,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE dAafTj"
+            className="InputFile__Field-jAueAE erafpp"
             data-test={undefined}
           >
             <input
@@ -931,7 +931,7 @@ exports[`Storyshots InputFile Playground 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE dAafTj"
+            className="InputFile__Field-jAueAE erafpp"
             data-test="test"
           >
             <input
@@ -1600,7 +1600,7 @@ exports[`Storyshots InputFile With error 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE dAafTj"
+            className="InputFile__Field-jAueAE erafpp"
             data-test={undefined}
           >
             <input
@@ -2025,7 +2025,7 @@ exports[`Storyshots InputFile With help 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE dAafTj"
+            className="InputFile__Field-jAueAE erafpp"
             data-test={undefined}
           >
             <input

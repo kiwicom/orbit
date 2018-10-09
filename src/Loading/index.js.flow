@@ -1,7 +1,7 @@
 // @flow
 import type { ReactComponentStyled } from "styled-components";
 
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Translation } from "../common/common.js.flow";
 
 type Type = "buttonLoader" | "boxLoader" | "searchLoader" | "pageLoader" | "inlineLoader";
 
@@ -9,7 +9,7 @@ export type Props = {|
   +children?: React$Node,
   +loading?: boolean,
   +type?: Type,
-  +text?: string,
+  +text?: Translation,
   ...Globals,
 |};
 

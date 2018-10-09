@@ -4,7 +4,7 @@ import type { ReactComponentStyled } from "styled-components";
 
 export type Props = {
   +icon?: React$Node,
-  +title?: string,
+  +title?: React$Node,
   +description?: React$Node,
   +external?: boolean,
   +onClick?: (ev: SyntheticEvent<HTMLDivElement>) => void,

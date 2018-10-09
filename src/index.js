@@ -47,6 +47,7 @@ export { default as InputFile } from "./InputFile";
 export { default as Illustration } from "./Illustration";
 export { default as TextLink } from "./TextLink";
 export { default as Radio } from "./Radio";
+export { default as RatingStars } from "./RatingStars";
 export { default as Select } from "./Select";
 export { default as Stack } from "./Stack";
 export { default as ServiceLogo } from "./ServiceLogo";

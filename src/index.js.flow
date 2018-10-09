@@ -21,6 +21,7 @@ import typeof TextType from "./Text";
 import typeof TextLinkType from "./TextLink";
 import typeof TileType from "./Tile";
 import typeof RadioType from "./Radio";
+import typeof RatingStarsType from "./RatingStars";
 import typeof SelectType from "./Select";
 import typeof StackType from "./Stack";
 import typeof SeparatorType from "./Separator";
@@ -93,6 +94,7 @@ declare export var TextLink: TextLinkType;
 declare export var Loading: LoadingType;
 
 declare export var Radio: RadioType;
+declare export var RatingStars: RatingStarsType;
 declare export var Select: SelectType;
 declare export var Stack: StackType;
 declare export var Separator: SeparatorType;

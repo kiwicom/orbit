@@ -60,8 +60,11 @@ const ModalFooter = (props: Props) => {
   return (
     <StyledModalFooter data-test={dataTest}>
       {React.Children.map(children, (item, key) => {
-        const childFlex = Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
-        return <StyledChild flex={childFlex}>{<item.type {...item.props} />}</StyledChild>;
+        if (item) {
+          const childFlex = Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
+          return <StyledChild flex={childFlex}>{<item.type {...item.props} />}</StyledChild>;
+        }
+        return null;
       })}
     </StyledModalFooter>
   );

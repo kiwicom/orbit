@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import { configure, setAddon } from "@storybook/react";
+import 'loki/configure-react';
 import chaptersAddon, { setDefaults } from 'react-storybook-addon-chapters';
 
 setDefaults({

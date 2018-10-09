@@ -1,7 +1,7 @@
 // @flow
 import type { ReactComponentStyled } from "styled-components";
 
-import type { Globals, Ref } from "../common/common.js.flow";
+import type { Globals, Ref, Translation } from "../common/common.js.flow";
 
 type Option = {|
   +value: string | number,
@@ -13,8 +13,8 @@ type Size = "small" | "normal";
 
 export type Props = {|
   +size?: Size,
-  +label?: string,
-  +placeholder?: string,
+  +label?: Translation,
+  +placeholder?: Translation,
   +value?: string | number,
   +disabled?: boolean,
   +name?: string,

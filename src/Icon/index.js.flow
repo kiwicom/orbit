@@ -27,6 +27,6 @@ export type Props = {|
 
 declare export default React$ComponentType<Props>;
 
-export type GetSize = { theme: typeof defaultTokens, size: Size, sizeIcon?: Size };
+export type GetSize = (size: Size) => ({ theme: typeof defaultTokens }) => string;
 
-declare export var getSize: () => GetSize => string;
+declare export var getSize: GetSize;

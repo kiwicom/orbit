@@ -339,7 +339,7 @@ exports[`Storyshots Icon Default 1`] = `
           }
         >
           <svg
-            className="Icon__StyledIcon-ckyxIP jVjTrT"
+            className="Icon__StyledIcon-ckyxIP fvqkFf"
             data-test="test"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
@@ -415,17 +415,18 @@ exports[`Storyshots Icon Default 1`] = `
                           <span
                             style={Object {}}
                           >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
                                 }
+                              >
+                                null
+                              </span>
                               }
-                            >
-                              "
-                              medium
-                              "
                             </span>
                           </span>
                         </span>
@@ -442,17 +443,18 @@ exports[`Storyshots Icon Default 1`] = `
                           <span
                             style={Object {}}
                           >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
                                 }
+                              >
+                                null
+                              </span>
                               }
-                            >
-                              "
-                              primary
-                              "
                             </span>
                           </span>
                         </span>

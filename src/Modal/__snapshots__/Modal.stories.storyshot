@@ -101,6 +101,7 @@ exports[`Storyshots Modal Full preview 1`] = `
           <div
             className="Modal__ModalBody-jsvBud hzGqsV"
             data-test="test"
+            onClick={[Function]}
             onKeyDown={[Function]}
             tabIndex="0"
           >
@@ -110,165 +111,161 @@ exports[`Storyshots Modal Full preview 1`] = `
               size="normal"
             >
               <div
-                className="ClickOutside__Inner-kPyeco bbSdlx"
+                className="Modal__ModalWrapperContent-dXDxzA knMpbO"
+                size="normal"
               >
                 <div
-                  className="Modal__ModalWrapperContent-dXDxzA knMpbO"
-                  size="normal"
+                  className="Modal__CloseContainer-ehEpyW cuWRmR"
+                >
+                  <button
+                    className="ButtonLink__StyledButtonLink-eyUiPe DORaW"
+                    data-test={undefined}
+                    onClick={[Function]}
+                    size="normal"
+                    target={undefined}
+                    type="button"
+                  >
+                    <div
+                      className="ButtonLink__IconContainer-flENJD hNEbcs"
+                      size="normal"
+                    >
+                      <svg
+                        className="Icon__StyledIcon-ckyxIP fvqkFf"
+                        data-test={undefined}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+                <div
+                  className="ModalHeader__StyledModalHeader-hOPket gAJYCS"
+                  data-test={undefined}
+                >
+                  <img
+                    alt="Accommodation"
+                    className="Illustration__StyledImage-dmuJKG jLclvk"
+                    data-test={undefined}
+                    size="small"
+                    src="//images.kiwi.com/illustrations/0x90/Accommodation.png"
+                    srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x"
+                  />
+                  <div
+                    className="ModalHeader__ModalTitle-deoNop cFDEl"
+                  >
+                    <h1
+                      className="Heading__StyledHeading-gucmUp dqcIYA"
+                      data-test={undefined}
+                    >
+                      Orbit design system
+                    </h1>
+                    <div
+                      className="ModalHeader__ModalDescription-lepRjY gLQpOL"
+                    >
+                      <div
+                        className="Text__StyledText-guhEiE giPtaX"
+                        data-test={undefined}
+                      >
+                        Lorem ispum dolor sit amet
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="ModalHeader__MobileHeader-hyztNg htMJkr"
+                  >
+                    Orbit design system
+                  </div>
+                </div>
+                <section
+                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  data-test={undefined}
+                >
+                  <p
+                    className="Text__StyledText-guhEiE hYZMSR"
+                    data-test={undefined}
+                  >
+                    You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                  </p>
+                </section>
+                <section
+                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  data-test={undefined}
+                >
+                  <p
+                    className="Text__StyledText-guhEiE hYZMSR"
+                    data-test={undefined}
+                  >
+                    You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                  </p>
+                </section>
+                <section
+                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  data-test={undefined}
+                >
+                  <p
+                    className="Text__StyledText-guhEiE hYZMSR"
+                    data-test={undefined}
+                  >
+                    You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                  </p>
+                </section>
+                <div
+                  className="ModalFooter__StyledModalFooter-heDwTy kuRjye"
+                  data-test={undefined}
                 >
                   <div
-                    className="Modal__CloseContainer-ehEpyW cuWRmR"
+                    className="ModalFooter__StyledChild-bPOqEy jRvsYD"
                   >
                     <button
-                      className="ButtonLink__StyledButtonLink-eyUiPe DORaW"
+                      className="Button__StyledButton-jJDkJK jzykRp"
                       data-test={undefined}
-                      onClick={[Function]}
+                      disabled={undefined}
                       size="normal"
                       target={undefined}
                       type="button"
                     >
                       <div
-                        className="ButtonLink__IconContainer-flENJD hNEbcs"
-                        size="normal"
+                        className="Button__StyledButtonContent-gvDciI pDqSF"
                       >
-                        <svg
-                          className="Icon__StyledIcon-ckyxIP fvqkFf"
-                          data-test={undefined}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 24 24"
+                        <div
+                          className="Button__IconContainer-bZYzaL lmwnCT"
                         >
-                          <path
-                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                          />
-                        </svg>
+                          <svg
+                            className="Icon__StyledIcon-ckyxIP fvqkFf"
+                            data-test={undefined}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                            />
+                          </svg>
+                        </div>
+                        Back
                       </div>
                     </button>
                   </div>
                   <div
-                    className="ModalHeader__StyledModalHeader-hOPket gAJYCS"
-                    data-test={undefined}
+                    className="ModalFooter__StyledChild-bPOqEy xynvR"
                   >
-                    <img
-                      alt="Accommodation"
-                      className="Illustration__StyledImage-dmuJKG jLclvk"
+                    <button
+                      className="Button__StyledButton-jJDkJK jXpokS"
                       data-test={undefined}
-                      size="small"
-                      src="//images.kiwi.com/illustrations/0x90/Accommodation.png"
-                      srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x"
-                    />
-                    <div
-                      className="ModalHeader__ModalTitle-deoNop cFDEl"
+                      disabled={undefined}
+                      size="normal"
+                      target={undefined}
+                      type="button"
                     >
-                      <h1
-                        className="Heading__StyledHeading-gucmUp dqcIYA"
-                        data-test={undefined}
-                      >
-                        Orbit design system
-                      </h1>
                       <div
-                        className="ModalHeader__ModalDescription-lepRjY gLQpOL"
+                        className="Button__StyledButtonContent-gvDciI pDqSF"
                       >
-                        <div
-                          className="Text__StyledText-guhEiE giPtaX"
-                          data-test={undefined}
-                        >
-                          Lorem ispum dolor sit amet
-                        </div>
+                        Continue to Payment
                       </div>
-                    </div>
-                    <div
-                      className="ModalHeader__MobileHeader-hyztNg htMJkr"
-                    >
-                      Orbit design system
-                    </div>
-                  </div>
-                  <section
-                    className="ModalSection__StyledModalSection-bVxlGf kILnUb"
-                    data-test={undefined}
-                  >
-                    <p
-                      className="Text__StyledText-guhEiE hYZMSR"
-                      data-test={undefined}
-                    >
-                      You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-                    </p>
-                  </section>
-                  <section
-                    className="ModalSection__StyledModalSection-bVxlGf kILnUb"
-                    data-test={undefined}
-                  >
-                    <p
-                      className="Text__StyledText-guhEiE hYZMSR"
-                      data-test={undefined}
-                    >
-                      You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-                    </p>
-                  </section>
-                  <section
-                    className="ModalSection__StyledModalSection-bVxlGf kILnUb"
-                    data-test={undefined}
-                  >
-                    <p
-                      className="Text__StyledText-guhEiE hYZMSR"
-                      data-test={undefined}
-                    >
-                      You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-                    </p>
-                  </section>
-                  <div
-                    className="ModalFooter__StyledModalFooter-heDwTy kuRjye"
-                    data-test={undefined}
-                  >
-                    <div
-                      className="ModalFooter__StyledChild-bPOqEy jRvsYD"
-                    >
-                      <button
-                        className="Button__StyledButton-jJDkJK jzykRp"
-                        data-test={undefined}
-                        disabled={undefined}
-                        size="normal"
-                        target={undefined}
-                        type="button"
-                      >
-                        <div
-                          className="Button__StyledButtonContent-gvDciI pDqSF"
-                        >
-                          <div
-                            className="Button__IconContainer-bZYzaL lmwnCT"
-                          >
-                            <svg
-                              className="Icon__StyledIcon-ckyxIP fvqkFf"
-                              data-test={undefined}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
-                              />
-                            </svg>
-                          </div>
-                          Back
-                        </div>
-                      </button>
-                    </div>
-                    <div
-                      className="ModalFooter__StyledChild-bPOqEy xynvR"
-                    >
-                      <button
-                        className="Button__StyledButton-jJDkJK jXpokS"
-                        data-test={undefined}
-                        disabled={undefined}
-                        size="normal"
-                        target={undefined}
-                        type="button"
-                      >
-                        <div
-                          className="Button__StyledButtonContent-gvDciI pDqSF"
-                        >
-                          Continue to Payment
-                        </div>
-                      </button>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1523,6 +1520,7 @@ exports[`Storyshots Modal Sizes 1`] = `
           <div
             className="Modal__ModalBody-jsvBud hzGqsV"
             data-test={undefined}
+            onClick={[Function]}
             onKeyDown={[Function]}
             tabIndex="0"
           >
@@ -1532,110 +1530,106 @@ exports[`Storyshots Modal Sizes 1`] = `
               size="normal"
             >
               <div
-                className="ClickOutside__Inner-kPyeco bbSdlx"
+                className="Modal__ModalWrapperContent-dXDxzA knMpbO"
+                size="normal"
               >
                 <div
-                  className="Modal__ModalWrapperContent-dXDxzA knMpbO"
-                  size="normal"
+                  className="Modal__CloseContainer-ehEpyW cuWRmR"
+                >
+                  <button
+                    className="ButtonLink__StyledButtonLink-eyUiPe DORaW"
+                    data-test={undefined}
+                    onClick={[Function]}
+                    size="normal"
+                    target={undefined}
+                    type="button"
+                  >
+                    <div
+                      className="ButtonLink__IconContainer-flENJD hNEbcs"
+                      size="normal"
+                    >
+                      <svg
+                        className="Icon__StyledIcon-ckyxIP fvqkFf"
+                        data-test={undefined}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+                <div
+                  className="ModalHeader__StyledModalHeader-hOPket dJFTgo"
+                  data-test={undefined}
                 >
                   <div
-                    className="Modal__CloseContainer-ehEpyW cuWRmR"
+                    className="ModalHeader__ModalTitle-deoNop iOkEWH"
                   >
-                    <button
-                      className="ButtonLink__StyledButtonLink-eyUiPe DORaW"
+                    <h1
+                      className="Heading__StyledHeading-gucmUp dqcIYA"
                       data-test={undefined}
-                      onClick={[Function]}
-                      size="normal"
-                      target={undefined}
-                      type="button"
-                    >
-                      <div
-                        className="ButtonLink__IconContainer-flENJD hNEbcs"
-                        size="normal"
-                      >
-                        <svg
-                          className="Icon__StyledIcon-ckyxIP fvqkFf"
-                          data-test={undefined}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                          />
-                        </svg>
-                      </div>
-                    </button>
-                  </div>
-                  <div
-                    className="ModalHeader__StyledModalHeader-hOPket dJFTgo"
-                    data-test={undefined}
-                  >
-                    <div
-                      className="ModalHeader__ModalTitle-deoNop iOkEWH"
-                    >
-                      <h1
-                        className="Heading__StyledHeading-gucmUp dqcIYA"
-                        data-test={undefined}
-                      >
-                        Orbit design system
-                      </h1>
-                    </div>
-                    <div
-                      className="ModalHeader__StyledModalHeaderContent-ehrWSV eJcPbR"
-                    >
-                      I'm lovely description
-                    </div>
-                    <div
-                      className="ModalHeader__MobileHeader-hyztNg htMJkr"
                     >
                       Orbit design system
-                    </div>
+                    </h1>
                   </div>
-                  <section
-                    className="ModalSection__StyledModalSection-bVxlGf kILnUb"
-                    data-test={undefined}
+                  <div
+                    className="ModalHeader__StyledModalHeaderContent-ehrWSV eJcPbR"
                   >
-                    <p
-                      className="Text__StyledText-guhEiE hYZMSR"
-                      data-test={undefined}
-                    >
-                      You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-                    </p>
-                  </section>
-                  <section
-                    className="ModalSection__StyledModalSection-bVxlGf kILnUb"
-                    data-test={undefined}
+                    I'm lovely description
+                  </div>
+                  <div
+                    className="ModalHeader__MobileHeader-hyztNg htMJkr"
                   >
-                    <p
-                      className="Text__StyledText-guhEiE hYZMSR"
-                      data-test={undefined}
-                    >
-                      You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-                    </p>
-                  </section>
-                  <section
-                    className="ModalSection__StyledModalSection-bVxlGf kILnUb"
-                    data-test={undefined}
-                  >
-                    <p
-                      className="Text__StyledText-guhEiE hYZMSR"
-                      data-test={undefined}
-                    >
-                      You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-                    </p>
-                  </section>
-                  <section
-                    className="ModalSection__StyledModalSection-bVxlGf kILnUb"
-                    data-test={undefined}
-                  >
-                    <p
-                      className="Text__StyledText-guhEiE hYZMSR"
-                      data-test={undefined}
-                    >
-                      You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-                    </p>
-                  </section>
+                    Orbit design system
+                  </div>
                 </div>
+                <section
+                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  data-test={undefined}
+                >
+                  <p
+                    className="Text__StyledText-guhEiE hYZMSR"
+                    data-test={undefined}
+                  >
+                    You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                  </p>
+                </section>
+                <section
+                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  data-test={undefined}
+                >
+                  <p
+                    className="Text__StyledText-guhEiE hYZMSR"
+                    data-test={undefined}
+                  >
+                    You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                  </p>
+                </section>
+                <section
+                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  data-test={undefined}
+                >
+                  <p
+                    className="Text__StyledText-guhEiE hYZMSR"
+                    data-test={undefined}
+                  >
+                    You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                  </p>
+                </section>
+                <section
+                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  data-test={undefined}
+                >
+                  <p
+                    className="Text__StyledText-guhEiE hYZMSR"
+                    data-test={undefined}
+                  >
+                    You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                  </p>
+                </section>
               </div>
             </div>
           </div>

@@ -12,7 +12,8 @@ import SIZE_OPTIONS from "./consts";
 import type { Props } from "./index";
 
 const Label = styled.label`
-  width: 100%;
+  position: relative;
+  display: block;
 `;
 
 const StyledSelect = styled(

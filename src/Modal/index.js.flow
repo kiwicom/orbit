@@ -33,6 +33,4 @@ export type Props = {|
   ...Globals,
 |};
 
-export type ContentType = { scrolled: boolean, ...Props };
-
 declare export default React$ComponentType<Props>;

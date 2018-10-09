@@ -9,11 +9,10 @@ import SIZES from "./consts";
 import media from "../utils/media";
 import { StyledModalFooter } from "./ModalFooter";
 import { MobileHeader } from "./ModalHeader";
-import ClickOutside from "../ClickOutside";
 import { StyledModalSection } from "./ModalSection";
 import { StyledHeading } from "../Heading";
 
-import type { Props, State, ContentType, CloseElementType } from "./index";
+import type { Props, State, CloseElementType } from "./index";
 
 const getToken = (theme, type, name) => {
   const tokens = {
@@ -195,20 +194,6 @@ const CloseElement = ({ onClose }: CloseElementType) => (
   </CloseContainer>
 );
 
-const Content = ({ closable, onClose, size, children, scrolled, fixedFooter }: ContentType) =>
-  closable ? (
-    <ClickOutside onClickOutside={onClose}>
-      <ModalWrapperContent size={size} fixedFooter={fixedFooter} scrolled={scrolled}>
-        <CloseElement onClose={onClose} />
-        {children}
-      </ModalWrapperContent>
-    </ClickOutside>
-  ) : (
-    <ModalWrapperContent size={size} fixedFooter={fixedFooter} scrolled={scrolled}>
-      {children}
-    </ModalWrapperContent>
-  );
-
 class Modal extends React.PureComponent<Props, State> {
   constructor() {
     super();
@@ -267,6 +252,15 @@ class Modal extends React.PureComponent<Props, State> {
     }
   };
 
+  handleClickOutside = (ev: MouseEvent) => {
+    const { onClose } = this.props;
+
+    if (onClose && this.node && ev.target instanceof Node && !this.node.contains(ev.target)) {
+      // If is clicked outside of modal
+      onClose(ev);
+    }
+  };
+
   node: ?HTMLElement;
   offset = 40;
 
@@ -286,25 +280,25 @@ class Modal extends React.PureComponent<Props, State> {
         tabIndex="0"
         onKeyDown={closable ? this.handleKeyDown : undefined}
         data-test={dataTest}
+        onClick={this.handleClickOutside}
       >
         <ModalWrapper
           size={size}
           loaded={loaded}
           onScroll={this.handleScroll}
-          innerRef={node => {
-            this.node = node;
-          }}
           fixedFooter={fixedFooter}
         >
-          <Content
-            closable={closable}
-            onClose={onClose}
+          <ModalWrapperContent
             size={size}
-            scrolled={scrolled}
             fixedFooter={fixedFooter}
+            scrolled={scrolled}
+            innerRef={node => {
+              this.node = node;
+            }}
           >
+            {closable && <CloseElement onClose={onClose} />}
             {children}
-          </Content>
+          </ModalWrapperContent>
         </ModalWrapper>
       </ModalBody>
     );

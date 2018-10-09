@@ -72,10 +72,12 @@ const StyledStack = styled(({ className, children }) => (
   flex-basis: ${({ basis, flex }) => flex && basis};
   justify-content: ${({ flex, align, direction }) =>
     flex && (direction === DIRECTIONS.ROW || align) && getAlign(align)};
-  align-items: ${({ flex }) => flex && "stretch"};
   align-content: ${({ align, direction, flex }) =>
     flex && (direction === DIRECTIONS.COLUMN || align) && getAlign(align)};
+  align-items: ${({ align, direction, flex }) =>
+    flex && (direction === DIRECTIONS.COLUMN || align) && getAlign(align)};
   margin-bottom: ${getSpacingToken};
+  align-self: ${({ inline, flex }) => flex && !inline && "stretch"};
 
   & > * {
     margin: ${({ align }) => align !== ALIGNS.EVEN && getSpacing()};
@@ -109,36 +111,18 @@ const StyledStack = styled(({ className, children }) => (
             isDefined(desktop.inline) &&
             inline !== desktop.inline &&
             (desktop.inline ? "inline-flex" : "flex")};
-          flex-direction: ${({ direction, flex }) =>
-            flex &&
-            desktop &&
-            typeof desktop.direction !== "undefined" &&
+          flex-direction: ${({ direction }) =>
+            isDefined(desktop.direction) &&
             direction !== desktop.direction &&
             (desktop.direction === DIRECTIONS.ROW ? "row" : "column")};
-          flex-wrap: ${({ wrap, flex }) =>
-            flex &&
-            desktop &&
-            typeof desktop.wrap !== "undefined" &&
-            wrap !== desktop.wrap &&
-            (desktop.wrap ? "wrap" : "nowrap")};
-          flex-grow: ${({ grow, flex }) =>
-            flex &&
-            desktop &&
-            typeof desktop.grow !== "undefined" &&
-            grow !== desktop.grow &&
-            (desktop.grow ? "1" : "0")};
-          flex-shrink: ${({ shrink, flex }) =>
-            flex &&
-            desktop &&
-            typeof desktop.shrink !== "undefined" &&
-            shrink !== desktop.shrink &&
-            (desktop.shrink ? "1" : "0")};
-          flex-basis: ${({ basis, flex }) =>
-            flex &&
-            desktop &&
-            typeof desktop.basis !== "undefined" &&
-            basis !== desktop.basis &&
-            desktop.basis};
+          flex-wrap: ${({ wrap }) =>
+            isDefined(desktop.wrap) && wrap !== desktop.wrap && (desktop.wrap ? "wrap" : "nowrap")};
+          flex-grow: ${({ grow }) =>
+            isDefined(desktop.grow) && grow !== desktop.grow && (desktop.grow ? "1" : "0")};
+          flex-shrink: ${({ shrink }) =>
+            isDefined(desktop.shrink) && shrink !== desktop.shrink && (desktop.shrink ? "1" : "0")};
+          flex-basis: ${({ basis }) =>
+            isDefined(desktop.basis) && basis !== desktop.basis && desktop.basis};
           justify-content: ${({ flex, align, direction }) =>
             flex &&
             desktop &&
@@ -147,6 +131,13 @@ const StyledStack = styled(({ className, children }) => (
             desktop.direction === DIRECTIONS.ROW &&
             getAlign(desktop.align || align)};
           align-content: ${({ align, direction, flex }) =>
+            flex &&
+            desktop &&
+            desktop.direction &&
+            (direction !== desktop.direction || align !== desktop.align) &&
+            desktop.direction === DIRECTIONS.COLUMN &&
+            getAlign(desktop.align || align)};
+          align-items: ${({ align, direction, flex }) =>
             flex &&
             desktop &&
             desktop.direction &&

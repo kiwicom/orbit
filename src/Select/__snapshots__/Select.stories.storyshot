@@ -99,7 +99,7 @@ exports[`Storyshots Select Default 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw iujhLZ"
+            className="Select__Label-hzoCkw fshYAU"
             data-test={undefined}
           >
             <div
@@ -564,7 +564,7 @@ exports[`Storyshots Select Playground 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw iujhLZ"
+            className="Select__Label-hzoCkw fshYAU"
             data-test="test"
           >
             <div
@@ -1226,7 +1226,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw iujhLZ"
+            className="Select__Label-hzoCkw fshYAU"
             data-test={undefined}
           >
             <span
@@ -1778,7 +1778,7 @@ exports[`Storyshots Select With error message 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw iujhLZ"
+            className="Select__Label-hzoCkw fshYAU"
             data-test={undefined}
           >
             <span
@@ -2326,7 +2326,7 @@ exports[`Storyshots Select With help message 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw iujhLZ"
+            className="Select__Label-hzoCkw fshYAU"
             data-test={undefined}
           >
             <span
@@ -2386,12 +2386,7 @@ exports[`Storyshots Select With help message 1`] = `
               className="FormFeedback__StyledFormFeedback-cuFyWp jhMnDG"
               data-test={undefined}
             >
-              <div>
-                Most common choice is 
-                <b>
-                  Booking cancellation
-                </b>
-              </div>
+              Most common choice is Booking cancellation
             </div>
           </label>
         </div>
@@ -2708,18 +2703,17 @@ exports[`Storyshots Select With help message 1`] = `
                           <span
                             style={Object {}}
                           >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
                                 }
-                              >
-                                &lt;div /&gt;
-                              </span>
                               }
+                            >
+                              "
+                              Most common choice is Booking cancellation
+                              "
                             </span>
                           </span>
                         </span>
@@ -2877,7 +2871,7 @@ exports[`Storyshots Select With placeholder 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw iujhLZ"
+            className="Select__Label-hzoCkw fshYAU"
             data-test={undefined}
           >
             <span
@@ -3424,7 +3418,7 @@ exports[`Storyshots Select With prefix 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw iujhLZ"
+            className="Select__Label-hzoCkw fshYAU"
             data-test={undefined}
           >
             <span
@@ -3978,7 +3972,7 @@ exports[`Storyshots Select With small size 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw iujhLZ"
+            className="Select__Label-hzoCkw fshYAU"
             data-test={undefined}
           >
             <span

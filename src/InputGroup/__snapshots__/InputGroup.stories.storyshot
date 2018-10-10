@@ -124,7 +124,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp gvOITt"
+                      className="InputField__Input-iRjCvp lilXhY"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -139,7 +139,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc dxPio"
+                      className="InputField__FakeInput-eneioc jmDeFv"
                     />
                   </div>
                 </label>
@@ -271,7 +271,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp gvOITt"
+                      className="InputField__Input-iRjCvp lilXhY"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -286,7 +286,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc dxPio"
+                      className="InputField__FakeInput-eneioc jmDeFv"
                     />
                   </div>
                 </label>
@@ -1247,7 +1247,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp gvOITt"
+                      className="InputField__Input-iRjCvp lilXhY"
                       disabled={undefined}
                       max={undefined}
                       maxLength={11}
@@ -1262,7 +1262,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc dxPio"
+                      className="InputField__FakeInput-eneioc jmDeFv"
                     />
                   </div>
                 </label>
@@ -2137,7 +2137,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp gvOITt"
+                      className="InputField__Input-iRjCvp lilXhY"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -2152,7 +2152,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc dxPio"
+                      className="InputField__FakeInput-eneioc jmDeFv"
                     />
                   </div>
                 </label>
@@ -2216,7 +2216,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp gvOITt"
+                      className="InputField__Input-iRjCvp lilXhY"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -2231,7 +2231,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc dxPio"
+                      className="InputField__FakeInput-eneioc jmDeFv"
                     />
                   </div>
                 </label>

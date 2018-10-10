@@ -154,6 +154,8 @@ exports[`Default Stack should match snapshot 1`] = `
   width: 100%;
   position: absolute;
   z-index: 1;
+  top: 0;
+  left: 0;
   box-sizing: border-box;
   height: 44px;
   border-radius: 3px;
@@ -203,7 +205,7 @@ exports[`Default Stack should match snapshot 1`] = `
   padding: 0 0 0 12px;
   font-size: inherit;
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
   cursor: inherit;
   -webkit-flex: 1 auto;
   -ms-flex: 1 auto;
@@ -249,6 +251,10 @@ exports[`Default Stack should match snapshot 1`] = `
 
 .c4::-ms-input-placeholder {
   color: #bac7d5;
+}
+
+.c4::-ms-clear {
+  display: none;
 }
 
 @media (min-width:600px) {
@@ -6705,6 +6711,8 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   width: 100%;
   position: absolute;
   z-index: 1;
+  top: 0;
+  left: 0;
   box-sizing: border-box;
   height: 44px;
   border-radius: 3px;
@@ -6754,7 +6762,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   padding: 0 0 0 12px;
   font-size: inherit;
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
   cursor: inherit;
   -webkit-flex: 1 auto;
   -ms-flex: 1 auto;
@@ -6800,6 +6808,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
 
 .c4::-ms-input-placeholder {
   color: #bac7d5;
+}
+
+.c4::-ms-clear {
+  display: none;
 }
 
 @media (min-width:600px) {

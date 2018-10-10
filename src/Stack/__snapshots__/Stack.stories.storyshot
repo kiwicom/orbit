@@ -583,7 +583,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                 className="InputField__InputContainer-evnRDD bHPfak"
               >
                 <input
-                  className="InputField__Input-iRjCvp gvOITt"
+                  className="InputField__Input-iRjCvp lilXhY"
                   disabled={undefined}
                   max={undefined}
                   maxLength={undefined}
@@ -598,7 +598,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                   value={undefined}
                 />
                 <div
-                  className="InputField__FakeInput-eneioc dxPio"
+                  className="InputField__FakeInput-eneioc jmDeFv"
                 />
               </div>
               <div
@@ -1872,7 +1872,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                   className="InputField__InputContainer-evnRDD kmFqfB"
                 >
                   <input
-                    className="InputField__Input-iRjCvp gvOITt"
+                    className="InputField__Input-iRjCvp lilXhY"
                     disabled={undefined}
                     max={undefined}
                     maxLength={undefined}
@@ -1887,7 +1887,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                     value={undefined}
                   />
                   <div
-                    className="InputField__FakeInput-eneioc dbTOpU"
+                    className="InputField__FakeInput-eneioc ePWTWp"
                   />
                 </div>
                 <div

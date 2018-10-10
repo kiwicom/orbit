@@ -51,6 +51,8 @@ export const FakeInput = styled(({ children, className }) => (
   width: 100%;
   position: absolute;
   z-index: 1;
+  top: 0;
+  left: 0;
   box-sizing: border-box;
   height: ${getToken(TOKENS.heightInput)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
@@ -172,7 +174,7 @@ export const Input = styled(({ theme, size, suffix, error, help, ...props }) => 
   padding: 0 0 ${getToken(TOKENS.paddingInput)};
   font-size: inherit;
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
   cursor: inherit;
   flex: 1 auto;
   width: 100%;
@@ -204,6 +206,10 @@ export const Input = styled(({ theme, size, suffix, error, help, ...props }) => 
   /* Microsoft Edge */
   &::-ms-input-placeholder {
     color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
+  }
+
+  &::-ms-clear {
+    display: none;
   }
 `;
 

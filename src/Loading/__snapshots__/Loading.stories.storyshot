@@ -107,7 +107,7 @@ exports[`Storyshots Loading Button loading 1`] = `
             type="button"
           >
             <div
-              className="Loading__StyledLoading-jmajcg eCYjyt"
+              className="Loading__StyledLoading-jmajcg dGZGBJ"
               data-test={undefined}
             >
               <svg
@@ -358,7 +358,7 @@ exports[`Storyshots Loading Card loading 1`] = `
             data-test={undefined}
           >
             <div
-              className="Loading__StyledLoading-jmajcg hELIeX"
+              className="Loading__StyledLoading-jmajcg knLSuA"
               data-test={undefined}
             >
               <div
@@ -944,7 +944,7 @@ exports[`Storyshots Loading Default 1`] = `
           }
         >
           <div
-            className="Loading__StyledLoading-jmajcg eISPmr"
+            className="Loading__StyledLoading-jmajcg kokoYQ"
             data-test={undefined}
           >
             <svg
@@ -1139,7 +1139,7 @@ exports[`Storyshots Loading Playground 1`] = `
           }
         >
           <div
-            className="Loading__StyledLoading-jmajcg eISPmr"
+            className="Loading__StyledLoading-jmajcg kokoYQ"
             data-test="test"
           >
             <svg

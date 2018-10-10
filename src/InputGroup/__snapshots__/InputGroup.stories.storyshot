@@ -244,7 +244,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                       </option>
                     </select>
                     <div
-                      className="Select__SelectSuffix-klejCH daGaXL"
+                      className="Select__SelectSuffix-klejCH cWjNSF"
                     >
                       <svg
                         className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1187,7 +1187,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                     className="Select__SelectContainer-hisSov erDdbv"
                   >
                     <div
-                      className="Select__SelectPrefix-kcaQEZ fmvalp"
+                      className="Select__SelectPrefix-kcaQEZ Jyvcd"
                     >
                       <img
                         alt="Anywhere"
@@ -1220,7 +1220,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                       </option>
                     </select>
                     <div
-                      className="Select__SelectSuffix-klejCH daGaXL"
+                      className="Select__SelectSuffix-klejCH cWjNSF"
                     >
                       <svg
                         className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -2110,7 +2110,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       </option>
                     </select>
                     <div
-                      className="Select__SelectSuffix-klejCH daGaXL"
+                      className="Select__SelectSuffix-klejCH cWjNSF"
                     >
                       <svg
                         className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -2189,7 +2189,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       </option>
                     </select>
                     <div
-                      className="Select__SelectSuffix-klejCH daGaXL"
+                      className="Select__SelectSuffix-klejCH cWjNSF"
                     >
                       <svg
                         className="Icon__StyledIcon-ckyxIP fvqkFf"

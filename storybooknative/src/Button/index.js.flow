@@ -1,0 +1,29 @@
+// @flow
+
+import { TOKENS } from "./consts";
+
+export type Type =
+  | "primary"
+  | "secondary"
+  | "info"
+  | "success"
+  | "warning"
+  | "critical"
+  | "facebook"
+  | "google";
+
+export type Size = "small" | "normal" | "large";
+
+export type Tokens = $Keys<typeof TOKENS>;
+
+export type Props = {|
+  +children?: React$Node,
+  +onPress?: () => void,
+  +circled?: boolean,
+  +bordered?: boolean,
+  +disabled?: boolean,
+  +block?: boolean,
+  +type?: Type,
+  +size?: Size,
+  +width?: number,
+|};

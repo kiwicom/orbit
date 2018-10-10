@@ -1835,7 +1835,7 @@ exports[`Storyshots Select With error message 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp ebyAhw"
+              className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
               data-test={undefined}
             >
               <div>
@@ -2383,7 +2383,7 @@ exports[`Storyshots Select With help message 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp jhMnDG"
+              className="FormFeedback__StyledFormFeedback-cuFyWp hVyVwg"
               data-test={undefined}
             >
               Most common choice is Booking cancellation

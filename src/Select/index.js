@@ -11,6 +11,14 @@ import SIZE_OPTIONS from "./consts";
 
 import type { Props } from "./index";
 
+const getSelectSize = ({ theme, size }) => {
+  const tokens = {
+    [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
+  };
+  return tokens[size];
+};
+
 const Label = styled.label`
   position: relative;
   display: block;
@@ -39,8 +47,7 @@ const StyledSelect = styled(
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme, size }) =>
     size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
-  height: ${({ theme, size }) =>
-    size === SIZE_OPTIONS.SMALL ? theme.orbit.heightInputSmall : theme.orbit.heightInputNormal};
+  height: ${getSelectSize};
   padding: ${({ theme, size }) =>
     size === SIZE_OPTIONS.SMALL
       ? `0 ${theme.orbit.spaceXLarge} 0 ${theme.orbit.spaceSmall}`
@@ -118,6 +125,8 @@ const SelectPrefix = styled(({ className, children }) => (
   padding: ${({ theme }) => `0 ${theme.orbit.spaceSmall}`};
   pointer-events: none;
   z-index: 3;
+  top: 0;
+  height: ${getSelectSize};
 `;
 
 SelectPrefix.defaultProps = {
@@ -128,11 +137,16 @@ const SelectSuffix = styled(({ children, className }) => (
   <div className={className}>{children}</div>
 ))`
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
   right: ${({ theme }) => theme.orbit.spaceXSmall};
   color: ${({ theme, disabled }) =>
     disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
   pointer-events: none;
   z-index: 3;
+  height: 100%;
 
   & > * {
     width: ${({ theme, size }) => size === SIZE_OPTIONS.SMALL && theme.orbit.widthIconSmall};
@@ -169,7 +183,11 @@ const Select = ({
         </FormLabel>
       )}
       <SelectContainer disabled={disabled}>
-        {prefix && <SelectPrefix prefix={prefix}>{prefix}</SelectPrefix>}
+        {prefix && (
+          <SelectPrefix prefix={prefix} size={size}>
+            {prefix}
+          </SelectPrefix>
+        )}
         <StyledSelect
           size={size}
           disabled={disabled}
@@ -192,7 +210,6 @@ const Select = ({
             </option>
           ))}
         </StyledSelect>
-
         <SelectSuffix size={size} disabled={disabled}>
           <ChevronDown />
         </SelectSuffix>

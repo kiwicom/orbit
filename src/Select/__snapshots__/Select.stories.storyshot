@@ -133,7 +133,7 @@ exports[`Storyshots Select Default 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH daGaXL"
+                className="Select__SelectSuffix-klejCH cWjNSF"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -606,7 +606,7 @@ exports[`Storyshots Select Playground 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH daGaXL"
+                className="Select__SelectSuffix-klejCH cWjNSF"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1241,7 +1241,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <div
-                className="Select__SelectPrefix-kcaQEZ fmvalp"
+                className="Select__SelectPrefix-kcaQEZ Jyvcd"
               >
                 <img
                   alt="Anywhere"
@@ -1280,7 +1280,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH daGaXL"
+                className="Select__SelectSuffix-klejCH cWjNSF"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1820,7 +1820,7 @@ exports[`Storyshots Select With error message 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH daGaXL"
+                className="Select__SelectSuffix-klejCH cWjNSF"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -2368,7 +2368,7 @@ exports[`Storyshots Select With help message 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH daGaXL"
+                className="Select__SelectSuffix-klejCH cWjNSF"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -2921,7 +2921,7 @@ exports[`Storyshots Select With placeholder 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH daGaXL"
+                className="Select__SelectSuffix-klejCH cWjNSF"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -3433,7 +3433,7 @@ exports[`Storyshots Select With prefix 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <div
-                className="Select__SelectPrefix-kcaQEZ fmvalp"
+                className="Select__SelectPrefix-kcaQEZ Jyvcd"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fSokFV"
@@ -3474,7 +3474,7 @@ exports[`Storyshots Select With prefix 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH daGaXL"
+                className="Select__SelectSuffix-klejCH cWjNSF"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -4014,7 +4014,7 @@ exports[`Storyshots Select With small size 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH cenyKf"
+                className="Select__SelectSuffix-klejCH cRzbp"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"

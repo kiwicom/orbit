@@ -1,0 +1,34 @@
+// @flow
+
+export type Type =
+  | "primary"
+  | "secondary"
+  | "info"
+  | "success"
+  | "warning"
+  | "critical"
+  | "facebook"
+  | "google";
+
+export type Size = "small" | "normal" | "large";
+
+export type Props = {|
+  +children?: React$Node,
+  +component?: string | React$Node,
+  +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  +circled?: boolean,
+  +bordered?: boolean,
+  +disabled?: boolean,
+  +block?: boolean,
+  +loading?: boolean,
+  +type?: Type,
+  +size?: Size,
+  +width?: number,
+  +icon?: React$Node,
+  +iconLeft?: React$Node,
+  +iconRight?: React$Node,
+|};
+
+declare export var StyledButton: React$ComponentType<Props>;
+
+declare export default React$ComponentType<Props>;

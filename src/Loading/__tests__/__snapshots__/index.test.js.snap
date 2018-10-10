@@ -383,22 +383,6 @@ exports[`Loading should match snapshot 1`] = `
       },
     }
   }
-  tokens={
-    Object {
-      "alignLoadingContainer": Object {
-        "boxLoader": "center",
-        "buttonLoader": "center",
-        "pageLoader": "center",
-        "searchLoader": "start",
-      },
-      "heightLoadingContainer": Object {
-        "boxLoader": "80px",
-        "buttonLoader": "100%",
-        "pageLoader": "120px",
-        "searchLoader": "40px",
-      },
-    }
-  }
   type="pageLoader"
 >
   <Loading__StyledSpinner

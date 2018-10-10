@@ -5,7 +5,7 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, select, boolean } from "@storybook/addon-knobs/react";
 
-import TYPE_OPTIONS from "./consts";
+import { TYPE_OPTIONS } from "./consts";
 import * as Icons from "../icons";
 import CardHeader from "../Card/CardHeader";
 import CardContent from "../Card/CardContent";

@@ -1,25 +1,57 @@
 /* eslint-disable vars-on-top, no-param-reassign */
+var Modal = "Modal";
+var Card = "Card";
+var Table = "Table";
+
+var NEST_RESOLVES = {
+  ModalHeader: Modal,
+  ModalSection: Modal,
+  ModalFooter: Modal,
+  CardHeader: Card,
+  CardContent: Card,
+  CardSection: Card,
+  TableHead: Table,
+  TableBody: Table,
+  TableRow: Table,
+  TableCell: Table
+};
+
+var parsedImportPaths = [
+  "@kiwicom/orbit-components",
+  "@kiwicom/orbit-components/lib/icons"
+];
+
 module.exports = function orbitComponents(babel) {
   var t = babel.types;
 
   return {
     visitor: {
       ImportDeclaration: function ImportDeclaration(path) {
-        if (path.node.source.value !== "@kiwicom/orbit-components") {
+        if (parsedImportPaths.indexOf(path.node.source.value) === -1) {
           return;
         }
 
         if (path.node.specifiers.filter(t.isImportSpecifier).length === 0) {
           return;
         }
-
         path.node.specifiers.forEach(function specFn(spec) {
-          var importedPath = "@kiwicom/orbit-components";
+          var importedPath = path.node.source.value;
+
           if (t.isImportSpecifier(spec)) {
             var importedName = spec.imported.name;
             spec = t.importDefaultSpecifier(t.identifier(spec.local.name));
 
-            importedPath = "@kiwicom/orbit-components/lib/" + importedName;
+            // icons will already have /lib in the name, this adds the /lib to normal components
+            if (importedPath.indexOf("/lib") === -1) {
+              importedPath += "/lib";
+            }
+
+            if (NEST_RESOLVES[importedName]) {
+              importedPath +=
+                "/" + NEST_RESOLVES[importedName] + "/" + importedName;
+            } else {
+              importedPath += "/" + importedName;
+            }
           }
 
           path.insertAfter(

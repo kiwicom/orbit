@@ -10,7 +10,8 @@ Transforms destructured imports of `@kiwicom/orbit-components` to granular ones!
 ## Setup
 
 Install:
-* `yarn add -D @kiwicom/babel-plugin-orbit-components`
+
+- `yarn add -D @kiwicom/babel-plugin-orbit-components`
 
 Then just add `@kiwicom/orbit-components` to the list of babel plugins, e.g. to `.babelrc`:
 
@@ -20,7 +21,7 @@ Then just add `@kiwicom/orbit-components` to the list of babel plugins, e.g. to 
 }
 ```
 
-### Example
+### Examples
 
 ```js
 // Input:
@@ -28,6 +29,14 @@ import { Alert } from "@kiwicom/orbit-components";
 
 // Output:
 import Alert from "@kiwicom/orbit-components/lib/Alert";
+```
+
+```js
+// Input
+import { Passengers } from "@kiwicom/orbit-components/lib/icons";
+
+// Output
+import Passengers from "@kiwicom/orbit-components/lib/icons/Passengers";
 ```
 
 ## License

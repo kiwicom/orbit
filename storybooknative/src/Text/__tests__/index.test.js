@@ -6,15 +6,28 @@ import Text from "../index";
 
 describe("Text", () => {
   const text = "Children text";
-  const component = renderer
+
+  const test1 = renderer
     .create(
-      <Text type="primary" size="small">
+      <Text type="primary" size="small" italic weight="bold" align="center">
         {text}
       </Text>,
     )
     .toJSON();
 
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
+  it("test1 should match snapshot", () => {
+    expect(test1).toMatchSnapshot();
+  });
+
+  const test2 = renderer
+    .create(
+      <Text type="critical" size="large" weight="normal" uppercase align="right">
+        {text}
+      </Text>,
+    )
+    .toJSON();
+
+  it("test2 should match snapshot", () => {
+    expect(test2).toMatchSnapshot();
   });
 });

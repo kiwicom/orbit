@@ -17,7 +17,7 @@
     "test": "jest --config=jest.json",
     "test-ci": "yarn flow:check && yarn eslint && yarn test --ci",
     "deploy:storybook": "storybook-to-ghpages",
-    "deploy:surge": "yarn surge ./out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD).surge.sh"
+    "deploy:surge": "yarn surge .out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD).surge.sh"
   },
   "storybook-deployer": {
     "gitUsername": "GH Pages Bot",

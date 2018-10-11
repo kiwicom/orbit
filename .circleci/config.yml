@@ -21,14 +21,32 @@ jobs:
           command: yarn
       - run:
           name: Build and deploy
-          command: yarn deploy-storybook --ci --host-token-env-variable=GITHUB_TOKEN
+          command: yarn deploy:storybook --ci --host-token-env-variable=GITHUB_TOKEN
 
+  deploy-surge:
+    docker:
+      - image: circleci/node:8.11
+    steps:
+      -checkout
+      - run:
+          name: Install dependencies
+          command: yarn
+      - run:
+          name: Build storybook
+          command: yarn build:storybook
+      - run:
+          name: Deploy storybook
+          command: yarn deploy:storybook
+      # - run:
+      #     name: Update url
+      #     command: yarn deploy:updateURL
 
 workflows:
   version: 2
   test_and_deploy:
     jobs:
       - test
+      - deploy-surge
       - deploy:
           requires:
             - test

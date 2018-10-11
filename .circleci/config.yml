@@ -5,27 +5,77 @@ jobs:
       - image: circleci/node:8.11
     steps:
       - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "yarn.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run: yarn
+
+      - save_cache:
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+
       - run:
           name: Install dependencies
           command: yarn
+
       - run:
           name: Run all tests
           command: yarn test-ci
+
   deploy:
     docker:
       - image: circleci/node:8.11
     steps:
       - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "yarn.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
       - run:
           name: Install dependencies
           command: yarn
       - run:
           name: Build and deploy
-          command: yarn deploy-storybook --ci --host-token-env-variable=GITHUB_TOKEN
+          command: yarn deploy:storybook --ci --host-token-env-variable=GITHUB_TOKEN
 
+  deploy-surge:
+    docker:
+      - image: circleci/node:8.11
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "yarn.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run:
+          name: Install dependencies
+          command: yarn
+      - run:
+          name: Build storybook
+          command: yarn build:storybook
+      - run:
+          name: Deploy storybook to surge
+          command: yarn deploy:surge
+      - run:
+          name: Update url
+          command: yarn deploy:updateURL ${CIRCLE_BRANCH} https://orbit-components-$(git rev-parse --abbrev-ref HEAD).surge.sh
 
 workflows:
   version: 2
+  test_and_deploy_branch:
+    jobs:
+      - test
+      - deploy-surge:
+          requires:
+            - test
   test_and_deploy:
     jobs:
       - test

@@ -398,7 +398,7 @@ exports[`Storyshots Textarea Playground 1`] = `
               value=""
             />
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp ebyAhw"
+              className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
               data-test={undefined}
             >
               Something went wrong.
@@ -1287,7 +1287,7 @@ exports[`Storyshots Textarea With error 1`] = `
               value="Something"
             />
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp ebyAhw"
+              className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
               data-test={undefined}
             >
               Something went wrong.
@@ -1607,7 +1607,7 @@ exports[`Storyshots Textarea With help 1`] = `
               value="Something"
             />
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp jhMnDG"
+              className="FormFeedback__StyledFormFeedback-cuFyWp hVyVwg"
               data-test={undefined}
             >
               Everything is fine.

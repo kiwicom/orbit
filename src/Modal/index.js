@@ -165,6 +165,7 @@ const ModalWrapperContent = styled.div`
     position: relative;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
     padding-bottom: 0;
+    height: auto;
     ${StyledModalSection}:last-of-type {
       padding-bottom: ${({ theme }) => theme.orbit.spaceXXLarge};
       margin-bottom: 0;

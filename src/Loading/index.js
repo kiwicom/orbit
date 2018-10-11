@@ -3,8 +3,27 @@ import * as React from "react";
 import styled, { keyframes } from "styled-components";
 
 import defaultTokens from "../defaultTokens";
-import TYPE_OPTIONS from "./consts";
+import { TYPE_OPTIONS, TOKENS } from "./consts";
 import type { Props } from "../Loading/index";
+
+const getToken = name => ({ type }) => {
+  const tokens = {
+    [TOKENS.ALIGN]: {
+      [TYPE_OPTIONS.BUTTON_LOADER]: "center",
+      [TYPE_OPTIONS.SEARCH_LOADER]: "start",
+      [TYPE_OPTIONS.BOX_LOADER]: "center",
+      [TYPE_OPTIONS.PAGE_LOADER]: "center",
+    },
+    [TOKENS.HEIGHT]: {
+      [TYPE_OPTIONS.BUTTON_LOADER]: "100%",
+      [TYPE_OPTIONS.SEARCH_LOADER]: "40px",
+      [TYPE_OPTIONS.BOX_LOADER]: "80px",
+      [TYPE_OPTIONS.PAGE_LOADER]: "120px",
+    },
+  };
+
+  return tokens[name][type];
+};
 
 // Animations
 const SpinnerAnimation = keyframes`
@@ -25,12 +44,13 @@ const StyledLoading = styled(({ children, className, dataTest }) => (
 ))`
   position: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "absolute"};
   left: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
+  top: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
   width: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "100%"};
-  height: ${({ tokens, type }) => tokens.heightLoadingContainer[type]};
+  height: ${getToken(TOKENS.HEIGHT)};
   padding: 0 ${({ theme }) => theme.orbit.spaceSmall}; // TODO: create token paddingLoading
   display: flex;
   flex-direction: ${({ type }) => (type === TYPE_OPTIONS.PAGE_LOADER ? "column" : "row")};
-  justify-content: ${({ tokens, type }) => tokens.alignLoadingContainer[type]};
+  justify-content: ${getToken(TOKENS.ALIGN)};
   align-items: center;
   overflow: hidden;
   box-sizing: border-box;
@@ -101,25 +121,11 @@ StyledLoaderCircle.defaultProps = {
 
 const Loading = (props: Props) => {
   const { loading = false, type = TYPE_OPTIONS.PAGE_LOADER, text, children, dataTest } = props;
-  const tokens = {
-    alignLoadingContainer: {
-      [TYPE_OPTIONS.BUTTON_LOADER]: "center",
-      [TYPE_OPTIONS.SEARCH_LOADER]: "start",
-      [TYPE_OPTIONS.BOX_LOADER]: "center",
-      [TYPE_OPTIONS.PAGE_LOADER]: "center",
-    },
-    heightLoadingContainer: {
-      [TYPE_OPTIONS.BUTTON_LOADER]: "100%",
-      [TYPE_OPTIONS.SEARCH_LOADER]: "40px",
-      [TYPE_OPTIONS.BOX_LOADER]: "80px",
-      [TYPE_OPTIONS.PAGE_LOADER]: "120px",
-    },
-  };
 
   return children && !loading ? (
     children
   ) : (
-    <StyledLoading tokens={tokens} type={type} dataTest={dataTest}>
+    <StyledLoading type={type} dataTest={dataTest}>
       {type === TYPE_OPTIONS.BOX_LOADER || type === TYPE_OPTIONS.SEARCH_LOADER ? (
         <StyledLoader>
           <StyledLoaderCircle />

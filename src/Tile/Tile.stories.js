@@ -37,13 +37,43 @@ storiesOf("Tile", module)
       ],
     };
   })
+
+  .addWithChapters("Expandable", () => {
+    const title = text("Title", "Expandable");
+    const description = text(
+      "Description",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+    );
+    const Icon = getIcon(getIcons("Airplane"));
+    return {
+      info: "This is the default configuration of this component.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Tile
+                  onClick={action("clicked")}
+                  icon={Icon && <Icon />}
+                  title={title}
+                  description={description}
+                >
+                  This is example of expanded content
+                </Tile>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Playground", () => {
     const href = text("Href", "https://www.kiwi.com/");
     const title = text("Title", "Tile with title");
     const external = boolean("External", false);
     const Icon = getIcon(getIcons("Airplane"));
-    const children = text(
-      "Children",
+    const description = text(
+      "Description",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
     );
     const dataTest = text("dataTest", "test");
@@ -60,11 +90,10 @@ storiesOf("Tile", module)
                   onClick={action("clicked")}
                   icon={Icon && <Icon />}
                   title={title}
+                  description={description}
                   external={external}
                   dataTest={dataTest}
-                >
-                  {children}
-                </Tile>
+                />
               ),
             },
           ],

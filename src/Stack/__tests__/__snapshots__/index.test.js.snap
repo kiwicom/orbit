@@ -120,7 +120,11 @@ exports[`Default Stack should match snapshot 1`] = `
   width: 100%;
   margin-top: 2px;
   position: absolute;
-  bottom: -18px;
+  top: 100%;
+  max-height: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .c7 a {
@@ -6638,14 +6642,17 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
   -webkit-align-content: center;
   -ms-flex-line-pack: center;
   align-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-bottom: 24px;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
 }
 
 .c0 > * {
@@ -6671,7 +6678,11 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   width: 100%;
   margin-top: 2px;
   position: absolute;
-  bottom: -18px;
+  top: 100%;
+  max-height: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .c7 a {
@@ -6827,6 +6838,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
     -webkit-align-content: flex-start;
     -ms-flex-line-pack: start;
     align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -webkit-box-align: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
   }
 
   .c0 > * {

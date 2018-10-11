@@ -119,8 +119,9 @@ describe("Stack with enabled flex", () => {
     expect(component).toHaveStyleRule("flex-grow", "0");
     expect(component).toHaveStyleRule("flex-basis", "550px");
     expect(component).toHaveStyleRule("justify-content", "center");
-    expect(component).toHaveStyleRule("align-items", "stretch");
+    expect(component).toHaveStyleRule("align-items", "center");
     expect(component).toHaveStyleRule("align-content", "center");
+    expect(component).toHaveStyleRule("align-self", "stretch");
     expect(component).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceLarge);
     expect(component).toHaveStyleRule("margin", "0 16px 0 0", {
       modifier: "& > *",
@@ -146,6 +147,9 @@ describe("Stack with enabled flex", () => {
       media: "(min-width:600px)",
     });
     expect(component).toHaveStyleRule("align-content", "flex-start", {
+      media: "(min-width:600px)",
+    });
+    expect(component).toHaveStyleRule("align-items", "flex-start", {
       media: "(min-width:600px)",
     });
     expect(component).toHaveStyleRule("margin", "0 0 12px 0", {

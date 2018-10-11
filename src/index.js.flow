@@ -22,6 +22,7 @@ import typeof TextLinkType from "./TextLink";
 import typeof TileType from "./Tile";
 import typeof RadioType from "./Radio";
 import typeof SelectType from "./Select";
+import typeof StackType from "./Stack";
 import typeof SeparatorType from "./Separator";
 import typeof ServiceLogoType from "./ServiceLogo";
 import typeof TextareaType from "./Textarea";
@@ -93,6 +94,7 @@ declare export var Loading: LoadingType;
 
 declare export var Radio: RadioType;
 declare export var Select: SelectType;
+declare export var Stack: StackType;
 declare export var Separator: SeparatorType;
 declare export var ServiceLogo: ServiceLogoType;
 declare export var Textarea: TextareaType;

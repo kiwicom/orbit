@@ -95,7 +95,7 @@ storiesOf("Stack", module)
     const shrink = boolean("Shrink", false);
     const basis = text("Basis", "auto");
     const align = select("Align", [undefined, ...Object.values(ALIGNS)]);
-    const spacing = select("Spacing", [undefined, ...Object.values(SPACINGS)]);
+    const spacing = select("Spacing", [undefined, ...Object.values(SPACINGS)], SPACINGS.COMFY);
     const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
     const desktop = {
       inline,
@@ -136,8 +136,8 @@ storiesOf("Stack", module)
         sections: [
           {
             sectionFn: () => (
-              <Stack spacing="condensed" direction="column" align="start">
-                <Stack spacing="condensed" direction="row">
+              <Stack spacing="comfy" direction="column" align="start">
+                <Stack spacing="condensed" direction="row" inline>
                   <Text weight="bold">email@gmail.com</Text>
                   <Edit size="small" color="success" />
                 </Stack>

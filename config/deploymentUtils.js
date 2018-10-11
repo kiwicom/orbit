@@ -18,7 +18,7 @@ export const updateLiveURL = async (branchName: string, lastUrl: string) => {
   const pr = await getPr(branchName);
   octokit.authenticate({
     type: "integration",
-    token: process.env.GH_ACCESS_TOKEN,
+    token: process.env.GITHUB_TOKEN,
   });
   const res = await octokit.pullRequests.get({
     owner: "kiwicom",

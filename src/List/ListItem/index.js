@@ -23,8 +23,9 @@ Item.defaultProps = {
   theme: defaultTokens,
 };
 
-const IconContainer = styled.div`
-  line-height: 20px; // TODO: fix token
+export const IconContainer = styled.div`
+  display: flex;
+  align-items: center;
   margin-right: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 

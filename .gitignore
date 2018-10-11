@@ -65,3 +65,4 @@ typings/
 .vscode
 lib
 es
+.out

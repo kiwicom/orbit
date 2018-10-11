@@ -17,7 +17,8 @@
     "test": "jest --config=jest.json",
     "test-ci": "yarn flow:check && yarn eslint && yarn test --ci",
     "deploy:storybook": "storybook-to-ghpages",
-    "deploy:surge": "yarn surge .out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD).surge.sh"
+    "deploy:surge": "yarn surge .out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD).surge.sh",
+    "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL"
   },
   "storybook-deployer": {
     "gitUsername": "GH Pages Bot",
@@ -49,6 +50,7 @@
     "react-icon-base": "^2.1.2"
   },
   "devDependencies": {
+    "@octokit/rest": "^15.13.1",
     "@sambego/storybook-styles": "^1.0.0",
     "@storybook/addon-actions": "^3.4.3",
     "@storybook/addon-knobs": "^3.4.3",
@@ -85,6 +87,7 @@
     "jest": "^23.3.0",
     "jest-styled-components": "^6.2.1",
     "jsdom": "^12.0.0",
+    "make-runnable": "^1.3.6",
     "mkdirp": "^0.5.1",
     "prettier": "^1.12.1",
     "react": "^16.3.2",

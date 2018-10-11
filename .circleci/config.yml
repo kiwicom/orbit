@@ -46,7 +46,7 @@ workflows:
   test_and_deploy_branch:
     jobs:
       - test
-      - deploy-surge
+      - deploy-surge:
           requires:
             - test
   test_and_deploy:

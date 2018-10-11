@@ -78,8 +78,8 @@ const IconContainer = styled(({ theme, sizeIcon, type, onlyIcon, ...props }) => 
   margin-right: ${({ onlyIcon }) => (onlyIcon ? "0" : getSizeToken(TOKENS.marginRightIcon))};
 
   > * {
-    width: ${getSize()};
-    height: ${getSize()};
+    width: ${({ sizeIcon }) => getSize(sizeIcon)};
+    height: ${({ sizeIcon }) => getSize(sizeIcon)};
   }
 `;
 

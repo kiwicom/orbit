@@ -602,7 +602,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                 />
               </div>
               <div
-                className="FormFeedback__StyledFormFeedback-cuFyWp jhMnDG"
+                className="FormFeedback__StyledFormFeedback-cuFyWp hVyVwg"
                 data-test={undefined}
               >
                 You need some help!
@@ -1891,7 +1891,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                   />
                 </div>
                 <div
-                  className="FormFeedback__StyledFormFeedback-cuFyWp ebyAhw"
+                  className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
                   data-test={undefined}
                 >
                   You need some help!

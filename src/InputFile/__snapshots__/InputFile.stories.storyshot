@@ -994,7 +994,7 @@ exports[`Storyshots InputFile Playground 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp ebyAhw"
+              className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
               data-test={undefined}
             >
               No file has been selected yet
@@ -1658,7 +1658,7 @@ exports[`Storyshots InputFile With error 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp ebyAhw"
+              className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
               data-test={undefined}
             >
               Error message (explain how to solve it)
@@ -2083,7 +2083,7 @@ exports[`Storyshots InputFile With help 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp jhMnDG"
+              className="FormFeedback__StyledFormFeedback-cuFyWp hVyVwg"
               data-test={undefined}
             >
               <div>

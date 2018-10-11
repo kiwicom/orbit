@@ -1,0 +1,25 @@
+// @flow
+
+export type Props = {
+  +icon?: React$Node,
+  +title?: string,
+  +description?: string,
+  +external?: boolean,
+  +onClick?: Function,
+  +isExpandable?: boolean,
+  +isExpanded?: boolean,
+};
+
+export type IconProps = {
+  icon: React$Node,
+};
+
+export type IconRightProps = {
+  external?: boolean,
+  isExpandable?: boolean,
+  isExpanded?: boolean,
+};
+
+declare export var StyledIconRight: React$ComponentType<IconRightProps>;
+
+declare export default React$ComponentType<Props>;

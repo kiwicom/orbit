@@ -3,36 +3,33 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
-import Heading from "../Heading";
-import ChevronRight from "../icons/ChevronRight";
-import NewWindow from "../icons/NewWindow";
+import TileHeader, { StyledIconRight } from "./TileHeader";
+import TileExpandable from "./TileExpandable";
 
-import type { Props } from "./index";
+import type { Props, State } from "./index";
 
-const StyledTile = styled(({ theme, icon, title, external, ...props }) => {
+export const StyledTile = styled(({ theme, icon, title, external, ...props }) => {
   const Component = props.href ? "a" : "div";
   return <Component {...props}>{props.children}</Component>;
 })`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: ${({ theme }) => theme.orbit.spaceMedium}; //TODO Create token paddingTile
+  display: block;
+  box-sizing: border-box;
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
+  text-decoration: none;
   background: ${({ theme }) => theme.orbit.paletteWhite}; //TODO Create token backgroundColorTile
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   border: solid 1px ${({ theme }) => theme.orbit.paletteCloudNormal}; //TODO Create token borderWidthTile, borderColorTile
   box-shadow: 0 2px 4px 0 rgba(23, 27, 30, 0.1); //TODO Create token boxShadowTile
-  box-sizing: border-box;
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  text-decoration: none;
-  overflow: hidden;
-  cursor: pointer;
 
   &:hover,
   &:focus {
     outline: 0;
     box-shadow: 0 4px 12px 0 rgba(23, 27, 30, 0.1); //TODO Create token boxShadowTileHover
+  }
+
+  &:hover ${StyledIconRight} {
+    color: ${({ theme }) => theme.orbit.paletteInkLightHover};
   }
 `;
 
@@ -40,117 +37,63 @@ StyledTile.defaultProps = {
   theme: defaultTokens,
 };
 
-const StyledTileContent = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+class Tile extends React.PureComponent<Props, State> {
+  state = {
+    expanded: false,
+    initialExpanded: false,
+  };
 
-const StyledTileHeadingWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin: ${({ theme }) => `0 0 ${theme.orbit.spaceXXSmall} 0`};
-  &:last-child {
-    margin: 0;
+  componentDidMount() {
+    const { expanded } = this.props;
+    this.setExpanded({ expanded, initialExpanded: expanded });
   }
-`;
-StyledTileHeadingWrapper.defaultProps = {
-  theme: defaultTokens,
-};
 
-const StyledTileChildren = styled.div`
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
-  margin: ${({ theme, icon, title }) => icon && title && `0 0 0 ${theme.orbit.spaceXLarge}`};
-`;
+  setExpanded = ({ expanded, initialExpanded }: State) => {
+    this.setState({ expanded, initialExpanded });
+  };
 
-StyledTileChildren.defaultProps = {
-  theme: defaultTokens,
-};
+  isExpandable = () => {
+    const { href, children } = this.props;
+    return !!(!href && children); // Tile is expandable if - not href && children are passed
+  };
 
-const StyledIcon = styled.div`
-  color: ${({ theme }) => theme.orbit.colorHeading};
-  display: flex;
-  align-items: center;
-  margin: ${({ theme }) => `0 ${theme.orbit.spaceXSmall} 0 0`};
-`;
+  handleClick = (ev: SyntheticEvent<HTMLDivElement>) => {
+    const { onClick } = this.props;
 
-StyledIcon.defaultProps = {
-  theme: defaultTokens,
-};
+    if (this.isExpandable()) {
+      this.setExpanded({ expanded: !this.state.expanded, initialExpanded: false });
+    } else if (onClick) {
+      onClick(ev);
+    }
+  };
 
-const StyledIconRight = styled.div`
-  display: flex;
-  flex-shrink: 0;
-  padding: ${({ theme }) => `0 0 0 ${theme.orbit.spaceMedium}`};
-`;
-
-StyledIconRight.defaultProps = {
-  theme: defaultTokens,
-};
-
-const StyledNewWindow = styled(NewWindow)`
-  display: flex;
-  align-items: center;
-  color: ${({ theme }) => theme.orbit.paletteInkLight};
-  transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-
-  &:hover {
-    color: ${({ theme }) => theme.orbit.paletteInkLightHover};
+  render() {
+    const { href, external, icon, title, description, children, dataTest } = this.props;
+    const isExpandable = this.isExpandable();
+    const isExpanded = this.state.expanded;
+    return (
+      <StyledTile
+        target={!isExpandable && external ? "_blank" : undefined}
+        href={!isExpandable ? href : undefined}
+        data-test={dataTest}
+      >
+        <TileHeader
+          icon={icon}
+          title={title}
+          description={description}
+          external={external}
+          onClick={this.handleClick}
+          isExpandable={isExpandable}
+          isExpanded={isExpanded}
+        />
+        {isExpandable && (
+          <TileExpandable expanded={isExpanded} initialExpanded={this.state.initialExpanded}>
+            {children}
+          </TileExpandable>
+        )}
+      </StyledTile>
+    );
   }
-`;
-
-StyledNewWindow.defaultProps = {
-  theme: defaultTokens,
-};
-
-const StyledChevron = styled(ChevronRight)`
-  display: flex;
-  align-items: center;
-  color: ${({ theme }) => theme.orbit.paletteInkLight};
-  transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-
-  &:hover {
-    color: ${({ theme }) => theme.orbit.paletteInkLightHover};
-  }
-`;
-
-StyledChevron.defaultProps = {
-  theme: defaultTokens,
-};
-
-const Icon = ({ icon }: Props) => <StyledIcon>{icon}</StyledIcon>;
-
-const Tile = ({ children, external = false, href, icon, title, onClick, dataTest }: Props) => (
-  <StyledTile
-    target={href && external ? "_blank" : undefined}
-    href={href}
-    onClick={onClick}
-    data-test={dataTest}
-  >
-    <StyledTileContent>
-      {title && (
-        <StyledTileHeadingWrapper>
-          {icon && <Icon icon={icon} />}
-          <Heading type="title3" element="h3">
-            {title}
-          </Heading>
-        </StyledTileHeadingWrapper>
-      )}
-      {children && (
-        <StyledTileChildren title={title} icon={icon}>
-          {children}
-        </StyledTileChildren>
-      )}
-    </StyledTileContent>
-    <StyledIconRight>
-      {external ? (
-        <StyledNewWindow size="medium" color="secondary" />
-      ) : (
-        <StyledChevron size="medium" color="secondary" />
-      )}
-    </StyledIconRight>
-  </StyledTile>
-);
+}
 
 export default Tile;

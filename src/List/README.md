@@ -18,7 +18,7 @@ Table below contains all types of the props available in List component.
 | children      | `Array<ListItem>`  |             | The content of the List.
 | dataTest      | `string`           |             | Optional prop for testing purposes.
 | size          | [`enum`](#enum)    | `"normal"`  | The size of the List.
-| spaceAfter    | `enum`             |             | Additional `margin-bottom` after component. [See this docs](../common/getSpacingToken)
+| spaceAfter    | `enum`             |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | type          | [`enum`](#enum)    | `"primary"` | The color type of the List.
 
 ### ListItem Props

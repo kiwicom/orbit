@@ -27,7 +27,7 @@ jobs:
     docker:
       - image: circleci/node:8.11
     steps:
-      -checkout
+      - checkout
       - run:
           name: Install dependencies
           command: yarn
@@ -35,8 +35,8 @@ jobs:
           name: Build storybook
           command: yarn build:storybook
       - run:
-          name: Deploy storybook
-          command: yarn deploy:storybook
+          name: Deploy storybook to surge
+          command: yarn deploy:surge
       # - run:
       #     name: Update url
       #     command: yarn deploy:updateURL

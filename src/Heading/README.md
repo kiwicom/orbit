@@ -16,7 +16,7 @@ Table below contains all types of the props available in Heading component.
 | dataTest      | `string`              |            | Optional prop for testing purposes.
 | **element**   | [`enum`](#enum)       | `"h1"`     | The element used for the root node.
 | inverted      | `boolean`             |            | The `true`, the Heading color will be white.
-| spaceAfter    | `enum`                |            | Additional `margin-bottom` after component. [See this docs](../common/getSpacingToken)
+| spaceAfter    | `enum`                |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | **type**      | [`enum`](#enum)       | `"title1"` | The size type of Heading.
 
 ### enum

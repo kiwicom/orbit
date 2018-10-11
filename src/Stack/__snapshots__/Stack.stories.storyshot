@@ -99,7 +99,7 @@ exports[`Storyshots Stack Default 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG idsLyO"
+            className="Stack__StyledStack-cGIpQG cpXwZe"
           >
             <button
               className="Button__StyledButton-jJDkJK ckskmt"
@@ -565,7 +565,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG ARcfU"
+            className="Stack__StyledStack-cGIpQG iqlxPl"
           >
             <label
               className="InputField__Field-hAVqzR gZONT"
@@ -1105,7 +1105,7 @@ exports[`Storyshots Stack Mobile properties 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG dosCTd"
+            className="Stack__StyledStack-cGIpQG gBQeWO"
           >
             <button
               className="Button__StyledButton-jJDkJK ckskmt"
@@ -1831,10 +1831,10 @@ exports[`Storyshots Stack Nested example 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG cgZqFd"
+            className="Stack__StyledStack-cGIpQG gfgean"
           >
             <div
-              className="Stack__StyledStack-cGIpQG cpvLDt"
+              className="Stack__StyledStack-cGIpQG fMLDaT"
             >
               <p
                 className="Text__StyledText-guhEiE bIsGZK"
@@ -1854,7 +1854,7 @@ exports[`Storyshots Stack Nested example 1`] = `
               </svg>
             </div>
             <div
-              className="Stack__StyledStack-cGIpQG NBMku"
+              className="Stack__StyledStack-cGIpQG cYrzuI"
             >
               <label
                 className="InputField__Field-hAVqzR gZONT"
@@ -2005,7 +2005,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                                 }
                               >
                                 "
-                                condensed
+                                comfy
                                 "
                               </span>
                             </span>
@@ -2149,6 +2149,14 @@ exports[`Storyshots Stack Nested example 1`] = `
                                   "
                                 </span>
                               </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              inline
                             </span>
                             
                           </span>
@@ -2991,7 +2999,7 @@ exports[`Storyshots Stack Playground 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG dmWdFH"
+            className="Stack__StyledStack-cGIpQG koLRFm"
           >
             <button
               className="Button__StyledButton-jJDkJK kMRFdd"

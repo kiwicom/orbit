@@ -104,7 +104,7 @@ storiesOf("List", module)
     const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
     const type = select("Type", Object.values(TYPES), TYPES.PRIMARY);
     const Icon = getIcon(getIcons("Check"));
-    const iconColor = select("iconColor", Object.keys(ICON_COLORS), "success");
+    const iconColor = select("iconColor", Object.values(ICON_COLORS), ICON_COLORS.SUCCESS);
     const content = text("Content", "24,000 locations around the globe");
     const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
     const dataTest = text("dataTest", "test");

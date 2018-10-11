@@ -55,7 +55,6 @@ export type Props = {|
   +size?: "small" | "medium",
   +name: Name,
   ...Globals,
-  +theme?: typeof defaultTokens,
   ...spaceAfter,
 |};
 

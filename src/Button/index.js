@@ -190,8 +190,8 @@ const IconContainer = styled(({ className, children }) => (
     box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   > * {
-    width: ${getSize()};
-    height: ${getSize()};
+    width: ${({ sizeIcon }) => getSize(sizeIcon)};
+    height: ${({ sizeIcon }) => getSize(sizeIcon)};
   }
 `;
 

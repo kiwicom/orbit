@@ -20,8 +20,8 @@ storiesOf("Icon", module)
     }),
   )
   .addWithChapters("Default", () => {
-    const size = select("Size", [undefined, ...Object.values(ICON_SIZES)], ICON_SIZES.MEDIUM);
-    const color = select("Color", [undefined, ...Object.values(ICON_COLORS)], ICON_COLORS.PRIMARY);
+    const size = select("Size", [undefined, ...Object.values(ICON_SIZES)]);
+    const color = select("Color", [undefined, ...Object.values(ICON_COLORS)]);
     const source = select("Icon", Object.keys(Icons), "Airplane");
     const dataTest = text("dataTest", "test");
     const Icon = Icons[source];
@@ -40,7 +40,7 @@ storiesOf("Icon", module)
     };
   })
   .addWithChapters("Custom color", () => {
-    const size = select("Size", [undefined, ...Object.keys(ICON_SIZES)], ICON_SIZES.MEDIUM);
+    const size = select("Size", [undefined, ...Object.values(ICON_SIZES)], ICON_SIZES.MEDIUM);
     const customColor = text("Custom color", "#ABCDEF");
     const source = select("Icon", Object.keys(Icons), "Airplane");
     const Icon = Icons[source];

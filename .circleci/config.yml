@@ -37,9 +37,9 @@ jobs:
       - run:
           name: Deploy storybook to surge
           command: yarn deploy:surge
-      # - run:
-      #     name: Update url
-      #     command: yarn deploy:updateURL
+      - run:
+          name: Update url
+          command: yarn deploy:updateURL
 
 workflows:
   version: 2

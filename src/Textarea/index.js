@@ -43,7 +43,6 @@ const StyledTextArea = styled(({ theme, size, error, help, ...props }) => <texta
   width: 100%;
   padding: ${getTokens(TOKENS.paddingInput)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  border: 0;
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
       `${theme.orbit.borderWidthInput} ${
@@ -59,6 +58,12 @@ const StyledTextArea = styled(({ theme, size, error, help, ...props }) => <texta
   font-family: inherit;
   resize: ${({ resize }) => resize};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+
+  // IE 11 bug fix, border: 0 won't work - the box-shadow will be hidden
+  border: 1px solid transparent;
+
+  // IE 11 bug fix, hide scrollbar by default (shown only when scrollable)
+  overflow: auto;
 
   &::placeholder {
     color: ${({ theme }) => theme.orbit.colorPlaceholderInput};

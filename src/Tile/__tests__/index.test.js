@@ -1,53 +1,106 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import Tile from "../index";
+import Airplane from "../../icons/Airplane";
 
-describe("Tile", () => {
-  const title = "Tile title";
-  const href = "https://www.kiwi.com/";
-  const external = true;
-  const onClick = jest.fn();
-  const dataTest = "test";
-  const component = shallow(
-    <Tile title={title} href={href} external={external} onClick={onClick} dataTest={dataTest} />,
+const title = "Tile title";
+const description = "Description";
+const href = "https://www.kiwi.com/";
+const external = true;
+const onClick = jest.fn();
+const dataTest = "test";
+
+describe("Tile Default", () => {
+  const component = (
+    <Tile
+      icon={<Airplane />}
+      title={title}
+      description={description}
+      href={href}
+      external={external}
+      onClick={onClick}
+      dataTest={dataTest}
+    />
   );
-
-  const tile = component;
-  const tileHeading = component
-    .find("Tile__StyledTileHeadingWrapper")
-    .children()
-    .render()
-    .text();
+  const shallowedComponent = shallow(component);
+  const mountedComponent = mount(component);
 
   it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
+    expect(shallowedComponent).toMatchSnapshot();
+  });
+
+  it("should contain icon, title and description", () => {
+    const tileHeader = mountedComponent.find("TileHeader");
+    expect(tileHeader.find("TileHeader__StyledTileTitle").exists()).toBe(true);
+    expect(tileHeader.find("TileHeader__StyledTileDescription").exists()).toBe(true);
+    expect(
+      tileHeader
+        .find("Icon__StyledIcon")
+        .find("svg")
+        .exists(),
+    ).toBe(true);
+  });
+
+  it("should render proper element", () => {
+    expect(shallowedComponent.render().prop("name")).toBe("a");
   });
 
   it("should execute onClick method", () => {
-    tile.simulate("click");
+    shallowedComponent.find("TileHeader").simulate("click");
     expect(onClick).toHaveBeenCalled();
   });
+});
 
-  it("should render a tag when href prop is passed", () => {
-    expect(component.find("Tile__StyledTile").html()).toContain('<a class="Tile__StyledTile');
+describe("Tile Expandable", () => {
+  const children = "This is sample content of expandable tile";
+
+  const notDefaultExpandedTile = (
+    <Tile
+      icon={<Airplane />}
+      title={title}
+      href={undefined}
+      description={description}
+      onClick={onClick}
+      dataTest={dataTest}
+    >
+      {children}
+    </Tile>
+  );
+
+  const shallowednotDefaultExpandedTile = shallow(notDefaultExpandedTile);
+
+  const defaultExpandedTile = (
+    <Tile
+      icon={<Airplane />}
+      title={title}
+      description={description}
+      onClick={onClick}
+      dataTest={dataTest}
+      expanded
+    >
+      {children}
+    </Tile>
+  );
+
+  it("should render proper element", () => {
+    expect(shallowednotDefaultExpandedTile.render().prop("name")).toBe("div");
   });
 
-  it("should render NewWindow icon when external prop is passed", () => {
-    expect(
-      component
-        .find("Tile__StyledIconRight")
-        .children()
-        .name(),
-    ).toBe("Tile__StyledNewWindow");
+  it("should contain children", () => {
+    expect(shallowednotDefaultExpandedTile.find("TileExpandable").exists()).toBe(true);
   });
 
-  it("should have passed props", () => {
-    expect(tileHeading).toBe(title);
-    expect(tile.prop("onClick")).toBe(onClick);
-    expect(tile.prop("href")).toBe(href);
-    expect(tile.prop("target")).toBe("_blank");
-    expect(tile.render().prop("data-test")).toBe(dataTest);
+  it("is default expanded children visible", () => {
+    const shallowedDefaultExpandedTile = mount(defaultExpandedTile);
+    expect(shallowedDefaultExpandedTile.find("TileExpandable")).toHaveStyleRule(
+      "max-height",
+      undefined,
+    );
+    expect(shallowedDefaultExpandedTile.find("TileExpandable")).toHaveStyleRule(
+      "animation",
+      undefined,
+    );
   });
 });

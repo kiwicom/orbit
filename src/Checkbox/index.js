@@ -117,6 +117,7 @@ const Label = styled(({ className, children, dataTest }) => (
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   display: flex;
+  width: 100%;
   flex-direction: row;
   align-items: self-start;
   opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityCheckboxDisabled : "1")};

@@ -953,7 +953,7 @@ exports[`Storyshots Alert Playground 1`] = `
                 className="Alert__Content-svgppc-4 gHGFTr"
               >
                 <div
-                  className="Stack__StyledStack-sc-1t576ow-0 jDBMrE"
+                  className="Stack__StyledStack-sc-1t576ow-0 iwIxs"
                 >
                   <div>
                     Also you can change the message by changing the Message knob

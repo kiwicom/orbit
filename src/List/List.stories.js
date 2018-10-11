@@ -60,11 +60,13 @@ storiesOf("List", module)
             {
               sectionFn: () => (
                 <List size={size} type={type}>
-                  <ListItem>24,000 locations around the globe</ListItem>
                   <ListItem>
-                    Lowest price car rental in <strong>&nbsp;Warsaw</strong>
+                    Gain peace of mind before you travel. No stress about what could go wrong.
                   </ListItem>
-                  <ListItem>From 3 star budget to 5 star luxury</ListItem>
+                  <ListItem>Customise your coverage to suit your needs and your budget.</ListItem>
+                  <ListItem>
+                    Feel safe in the hands of AXA Assistance, the travel insurance experts.
+                  </ListItem>
                 </List>
               ),
             },

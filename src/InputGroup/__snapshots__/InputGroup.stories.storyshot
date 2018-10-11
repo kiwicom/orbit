@@ -99,7 +99,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
           }
         >
           <div
-            className="InputGroup__StyledInputGroup-boKjnP gqqbYV"
+            className="InputGroup__StyledInputGroup-boKjnP dJzbyy"
             data-test={undefined}
           >
             <span
@@ -124,7 +124,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp gvOITt"
+                      className="InputField__Input-iRjCvp lilXhY"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -139,7 +139,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc dxPio"
+                      className="InputField__FakeInput-eneioc jmDeFv"
                     />
                   </div>
                 </label>
@@ -155,7 +155,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     className="Select__SelectContainer-hisSov erDdbv"
                   >
                     <select
-                      className="Select__StyledSelect-eyhbyk ffkcBr"
+                      className="Select__StyledSelect-eyhbyk ghRKpg"
                       disabled={false}
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -244,7 +244,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                       </option>
                     </select>
                     <div
-                      className="Select__SelectSuffix-klejCH daGaXL"
+                      className="Select__SelectSuffix-klejCH cWjNSF"
                     >
                       <svg
                         className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -271,7 +271,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp gvOITt"
+                      className="InputField__Input-iRjCvp lilXhY"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -286,14 +286,14 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc dxPio"
+                      className="InputField__FakeInput-eneioc jmDeFv"
                     />
                   </div>
                 </label>
               </div>
             </div>
             <div
-              className="InputGroup__FakeGroup-hRQJuE fOyeYy"
+              className="InputGroup__FakeGroup-hRQJuE fmVOho"
             />
           </div>
         </div>
@@ -1162,7 +1162,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
           }
         >
           <div
-            className="InputGroup__StyledInputGroup-boKjnP gqqbYV"
+            className="InputGroup__StyledInputGroup-boKjnP KiYdr"
             data-test={undefined}
           >
             <span
@@ -1187,7 +1187,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                     className="Select__SelectContainer-hisSov erDdbv"
                   >
                     <div
-                      className="Select__SelectPrefix-kcaQEZ fmvalp"
+                      className="Select__SelectPrefix-kcaQEZ Jyvcd"
                     >
                       <img
                         alt="Anywhere"
@@ -1199,7 +1199,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                       />
                     </div>
                     <select
-                      className="Select__StyledSelect-eyhbyk fRnKOl"
+                      className="Select__StyledSelect-eyhbyk jEOzuv"
                       disabled={false}
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -1220,7 +1220,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                       </option>
                     </select>
                     <div
-                      className="Select__SelectSuffix-klejCH daGaXL"
+                      className="Select__SelectSuffix-klejCH cWjNSF"
                     >
                       <svg
                         className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1247,7 +1247,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp gvOITt"
+                      className="InputField__Input-iRjCvp lilXhY"
                       disabled={undefined}
                       max={undefined}
                       maxLength={11}
@@ -1262,15 +1262,21 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc dxPio"
+                      className="InputField__FakeInput-eneioc jmDeFv"
                     />
                   </div>
                 </label>
               </div>
             </div>
             <div
-              className="InputGroup__FakeGroup-hRQJuE fOyeYy"
+              className="InputGroup__FakeGroup-hRQJuE iJJDhz"
             />
+            <div
+              className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
+              data-test={undefined}
+            >
+              error
+            </div>
           </div>
         </div>
         <div>
@@ -1430,18 +1436,17 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                             <span
                               style={Object {}}
                             >
-                              <span>
-                                {
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#777",
-                                    }
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
                                   }
-                                >
-                                  null
-                                </span>
                                 }
+                              >
+                                "
+                                error
+                                "
                               </span>
                             </span>
                           </span>
@@ -2064,7 +2069,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
           }
         >
           <div
-            className="InputGroup__StyledInputGroup-boKjnP gqqbYV"
+            className="InputGroup__StyledInputGroup-boKjnP dJzbyy"
             data-test="test"
           >
             <span
@@ -2089,7 +2094,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="Select__SelectContainer-hisSov erDdbv"
                   >
                     <select
-                      className="Select__StyledSelect-eyhbyk ffkcBr"
+                      className="Select__StyledSelect-eyhbyk ghRKpg"
                       disabled={false}
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -2110,7 +2115,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       </option>
                     </select>
                     <div
-                      className="Select__SelectSuffix-klejCH daGaXL"
+                      className="Select__SelectSuffix-klejCH cWjNSF"
                     >
                       <svg
                         className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -2137,7 +2142,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp gvOITt"
+                      className="InputField__Input-iRjCvp lilXhY"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -2152,7 +2157,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc dxPio"
+                      className="InputField__FakeInput-eneioc jmDeFv"
                     />
                   </div>
                 </label>
@@ -2168,7 +2173,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="Select__SelectContainer-hisSov erDdbv"
                   >
                     <select
-                      className="Select__StyledSelect-eyhbyk ffkcBr"
+                      className="Select__StyledSelect-eyhbyk ghRKpg"
                       disabled={false}
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -2189,7 +2194,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       </option>
                     </select>
                     <div
-                      className="Select__SelectSuffix-klejCH daGaXL"
+                      className="Select__SelectSuffix-klejCH cWjNSF"
                     >
                       <svg
                         className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -2216,7 +2221,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="InputField__InputContainer-evnRDD bHPfak"
                   >
                     <input
-                      className="InputField__Input-iRjCvp gvOITt"
+                      className="InputField__Input-iRjCvp lilXhY"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -2231,14 +2236,14 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc dxPio"
+                      className="InputField__FakeInput-eneioc jmDeFv"
                     />
                   </div>
                 </label>
               </div>
             </div>
             <div
-              className="InputGroup__FakeGroup-hRQJuE fOyeYy"
+              className="InputGroup__FakeGroup-hRQJuE fmVOho"
             />
           </div>
         </div>

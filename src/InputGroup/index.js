@@ -29,6 +29,8 @@ const getToken = name => ({ theme, size }) => {
 const FakeGroup = styled(({ children, className }) => <div className={className}>{children}</div>)`
   width: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
   box-sizing: border-box;
   height: ${getToken(TOKENS.height)};
@@ -93,7 +95,7 @@ const StyledInputGroup = styled(({ children, className, dataTest }) => (
     ${FakeInput} {
       box-shadow: none;
       background-color: transparent;
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: flex-end;
     }
@@ -113,6 +115,8 @@ const StyledInputGroup = styled(({ children, className, dataTest }) => (
       content: " ";
       position: absolute;
       right: 0;
+      top: 50%;
+      transform: translateY(-50%);
       height: ${getToken(TOKENS.heightLine)};
       width: 1px;
       background-color: ${({ theme, error, active }) =>
@@ -120,7 +124,6 @@ const StyledInputGroup = styled(({ children, className, dataTest }) => (
       transition: background-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
       display: block;
       z-index: 2;
-      
     }
 
     &:last-child {

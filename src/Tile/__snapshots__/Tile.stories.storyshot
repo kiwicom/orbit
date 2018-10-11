@@ -99,7 +99,7 @@ exports[`Storyshots Tile Default 1`] = `
           }
         >
           <div
-            className="Tile__StyledTile-fWcXRb cHIzZh"
+            className="Tile__StyledTile-fWcXRb gNdKHB"
             data-test={undefined}
             href={undefined}
             target={undefined}
@@ -366,7 +366,7 @@ exports[`Storyshots Tile Expandable 1`] = `
           }
         >
           <div
-            className="Tile__StyledTile-fWcXRb cHIzZh"
+            className="Tile__StyledTile-fWcXRb gNdKHB"
             data-test={undefined}
             href={undefined}
             target={undefined}
@@ -766,7 +766,7 @@ exports[`Storyshots Tile Playground 1`] = `
           }
         >
           <a
-            className="Tile__StyledTile-fWcXRb cHIzZh"
+            className="Tile__StyledTile-fWcXRb gNdKHB"
             data-test="test"
             href="https://www.kiwi.com/"
             target={undefined}

@@ -10,4 +10,4 @@ export type Props = {|
   ...spaceAfter,
 |};
 
-declare export default function getSpacingToken(): string;
+declare export default function getSpacingToken(?Props): string;

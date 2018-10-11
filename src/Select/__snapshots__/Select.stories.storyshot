@@ -99,7 +99,7 @@ exports[`Storyshots Select Default 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw inFCSO"
             data-test={undefined}
           >
             <div
@@ -564,7 +564,7 @@ exports[`Storyshots Select Playground 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw inFCSO"
             data-test="test"
           >
             <div
@@ -1286,7 +1286,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw inFCSO"
             data-test={undefined}
           >
             <span
@@ -1838,7 +1838,7 @@ exports[`Storyshots Select With error message 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw inFCSO"
             data-test={undefined}
           >
             <span
@@ -2386,7 +2386,7 @@ exports[`Storyshots Select With help message 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw inFCSO"
             data-test={undefined}
           >
             <span
@@ -2931,7 +2931,7 @@ exports[`Storyshots Select With placeholder 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw inFCSO"
             data-test={undefined}
           >
             <span
@@ -3476,7 +3476,7 @@ exports[`Storyshots Select With prefix 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw inFCSO"
             data-test={undefined}
           >
             <span
@@ -4030,7 +4030,7 @@ exports[`Storyshots Select With small size 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw inFCSO"
             data-test={undefined}
           >
             <span

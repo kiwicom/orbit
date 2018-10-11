@@ -99,7 +99,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
           }
         >
           <div
-            className="InputGroup__StyledInputGroup-boKjnP dJzbyy"
+            className="InputGroup__StyledInputGroup-boKjnP hAugXU"
             data-test={undefined}
           >
             <span
@@ -117,7 +117,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                 className="InputGroup__StyledChild-bpaCT eKlxAZ"
               >
                 <label
-                  className="InputField__Field-hAVqzR gZONT"
+                  className="InputField__Field-hAVqzR ffRkrY"
                   data-test={undefined}
                 >
                   <div
@@ -148,7 +148,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                 className="InputGroup__StyledChild-bpaCT jLivMh"
               >
                 <label
-                  className="Select__Label-hzoCkw fshYAU"
+                  className="Select__Label-hzoCkw inFCSO"
                   data-test={undefined}
                 >
                   <div
@@ -262,7 +262,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                 className="InputGroup__StyledChild-bpaCT dHAcLQ"
               >
                 <label
-                  className="InputField__Field-hAVqzR gZONT"
+                  className="InputField__Field-hAVqzR ffRkrY"
                   data-test={undefined}
                 >
                   <div
@@ -1160,7 +1160,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
           }
         >
           <div
-            className="InputGroup__StyledInputGroup-boKjnP jgBxYZ"
+            className="InputGroup__StyledInputGroup-boKjnP BDSot"
             data-test={undefined}
           >
             <div
@@ -1170,7 +1170,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                 className="InputGroup__StyledChild-bpaCT iMHnHh"
               >
                 <label
-                  className="Select__Label-hzoCkw fshYAU"
+                  className="Select__Label-hzoCkw inFCSO"
                   data-test={undefined}
                 >
                   <div
@@ -1230,7 +1230,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                 className="InputGroup__StyledChild-bpaCT jLivMh"
               >
                 <label
-                  className="InputField__Field-hAVqzR gZONT"
+                  className="InputField__Field-hAVqzR ffRkrY"
                   data-test={undefined}
                 >
                   <div
@@ -2029,7 +2029,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
           }
         >
           <div
-            className="InputGroup__StyledInputGroup-boKjnP dJzbyy"
+            className="InputGroup__StyledInputGroup-boKjnP hAugXU"
             data-test="test"
           >
             <span
@@ -2047,7 +2047,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 className="InputGroup__StyledChild-bpaCT daJJeL"
               >
                 <label
-                  className="Select__Label-hzoCkw fshYAU"
+                  className="Select__Label-hzoCkw inFCSO"
                   data-test={undefined}
                 >
                   <div
@@ -2095,7 +2095,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 className="InputGroup__StyledChild-bpaCT jLivMh"
               >
                 <label
-                  className="InputField__Field-hAVqzR gZONT"
+                  className="InputField__Field-hAVqzR ffRkrY"
                   data-test={undefined}
                 >
                   <div
@@ -2126,7 +2126,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 className="InputGroup__StyledChild-bpaCT frCGBA"
               >
                 <label
-                  className="Select__Label-hzoCkw fshYAU"
+                  className="Select__Label-hzoCkw inFCSO"
                   data-test={undefined}
                 >
                   <div
@@ -2174,7 +2174,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 className="InputGroup__StyledChild-bpaCT ifkQYU"
               >
                 <label
-                  className="InputField__Field-hAVqzR gZONT"
+                  className="InputField__Field-hAVqzR ffRkrY"
                   data-test={undefined}
                 >
                   <div

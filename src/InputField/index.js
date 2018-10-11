@@ -39,6 +39,7 @@ const Field = styled.label`
   display: block;
   z-index: 2;
   flex: 1 1 100%;
+  width: 100%;
 `;
 
 Field.defaultProps = {

@@ -4,8 +4,7 @@ import styled, { css } from "styled-components";
 
 import media from "../utils/media";
 import defaultTokens from "../defaultTokens";
-import { ALIGNS, DIRECTIONS, SPACINGS, TOKENS } from "./consts";
-import { StyledButton } from "../Button";
+import { ALIGNS, JUSTIFY, DIRECTIONS, SPACINGS, TOKENS } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
@@ -38,114 +37,128 @@ const getSpacing = (isDesktop = false) => ({ spacing, direction, desktop }) => (
       [SPACINGS.EXTRALOOSE]: "36px",
     },
   };
-
-  // TODO: rtl here
-  return finalDirection === DIRECTIONS.COLUMN
-    ? `0 0 ${tokens[finalType][finalSpacing]} 0`
-    : `0 ${tokens[finalType][finalSpacing]} 0 0`;
+  const margin =
+    finalDirection === DIRECTIONS.COLUMN
+      ? `0 0 ${tokens[finalType][finalSpacing]} 0`
+      : `0 ${tokens[finalType][finalSpacing]} 0 0`;
+  return css`
+    & > * {
+      margin: ${margin};
+      ${!isDesktop &&
+        css`
+          &:last-child {
+            margin: 0;
+          }
+        `};
+    }
+  `;
 };
 
-const getAlign = (name = ALIGNS.START, self = false) => {
-  const align = self && name === ALIGNS.EVEN ? ALIGNS.START : name;
+// getAlign is used for align-items and align-center
+// you can't specify the height for the Stack, so it's a safe approach
+const getAlign = align => {
   const tokens = {
     [ALIGNS.START]: "flex-start",
     [ALIGNS.END]: "flex-end",
     [ALIGNS.CENTER]: "center",
-    [ALIGNS.EVEN]: "space-between",
+    [ALIGNS.STRETCH]: "stretch",
   };
-
-  return tokens[align];
+  return align && tokens[align];
 };
 
-const isDefined = property => ({ flex, desktop }) =>
-  flex && desktop && typeof property !== "undefined";
+const getJustify = justify => {
+  const tokens = {
+    [JUSTIFY.START]: "flex-start",
+    [JUSTIFY.END]: "flex-end",
+    [JUSTIFY.CENTER]: "center",
+    [JUSTIFY.BETWEEN]: "space-between",
+    [JUSTIFY.AROUND]: "space-around",
+  };
+  return justify && tokens[justify];
+};
+
+const isDefined = prop => typeof prop !== "undefined";
+
+const getDisplay = inline => isDefined(inline) && (inline ? "inline-flex" : "flex");
+
+const getDirection = direction =>
+  direction && (direction === DIRECTIONS.ROW ? DIRECTIONS.ROW : DIRECTIONS.COLUMN);
+
+const getWrap = wrap => isDefined(wrap) && (wrap ? "wrap" : "nowrap");
+
+const getGrow = grow => isDefined(grow) && (grow ? "1" : "0");
+
+const getShrink = shrink => isDefined(shrink) && (shrink ? "1" : "0");
+
+const flexAttributes = ({ inline, direction, wrap, grow, shrink, basis, justify, align }) => css`
+  display: ${getDisplay(inline)};
+  flex-direction: ${getDirection(direction)};
+  flex-wrap: ${getWrap(wrap)};
+  flex-grow: ${getGrow(grow)};
+  flex-shrink: ${getShrink(shrink)};
+  flex-basis: ${basis};
+  justify-content: ${getJustify(justify)};
+  align-content: ${getAlign(align)};
+  align-items: ${getAlign(align)};
+`;
+
+const flexAttributesDesktop = ({
+  desktop,
+  inline,
+  direction,
+  wrap,
+  grow,
+  shrink,
+  basis,
+  justify,
+  align,
+}) => css`
+  display: ${inline !== desktop.inline && getDisplay(desktop.inline)};
+  flex-direction: ${getDirection(direction !== desktop.direction && desktop.direction)};
+  flex-wrap: ${wrap !== desktop.wrap && getWrap(desktop.wrap)};
+  flex-grow: ${grow !== desktop.grow && getGrow(desktop.grow)};
+  flex-shrink: ${shrink !== desktop.shrink && getShrink(desktop.shrink)};
+  flex-basis: ${basis !== desktop.basis && desktop.basis};
+  justify-content: ${getJustify(justify !== desktop.justify && desktop.justify)};
+  align-content: ${getAlign(align !== desktop.align && desktop.align)};
+  align-items: ${getAlign(align !== desktop.align && desktop.align)};
+`;
 
 const StyledStack = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
-  display: ${({ inline, flex }) => flex && (inline ? "inline-flex" : "flex")};
-  flex-direction: ${({ direction, flex }) =>
-    flex && (direction === DIRECTIONS.ROW ? "row" : "column")};
-  flex-wrap: ${({ wrap, flex }) => flex && (wrap ? "wrap" : "nowrap")};
-  flex-grow: ${({ grow, flex }) => flex && (grow ? "1" : "0")};
-  flex-shrink: ${({ shrink, flex }) => flex && (shrink ? "1" : "0")};
-  flex-basis: ${({ basis, flex }) => flex && basis};
-  justify-content: ${({ flex, align, direction }) =>
-    flex && (direction === DIRECTIONS.ROW || align) && getAlign(align)};
-  align-content: ${({ align, direction, flex }) =>
-    flex && (direction === DIRECTIONS.COLUMN || align) && getAlign(align)};
-  align-items: ${({ align, direction, flex }) =>
-    flex && (direction === DIRECTIONS.COLUMN || align) && getAlign(align)};
+  // if not inline 100 %
+  width: ${({ inline }) => !inline && "100%"};
+  // all flex styles
+  ${({ flex }) => flex && flexAttributes};
+  // spacing between children
+  ${getSpacing()};
+  // spaceAfter for Stack
   margin-bottom: ${getSpacingToken};
-  align-self: ${({ inline, flex }) => flex && !inline && "stretch"};
-
-  & > * {
-    margin: ${({ align }) => align !== ALIGNS.EVEN && getSpacing()};
-    &:last-child {
-      margin: 0;
-    }
-  }
-
-  // TODO other block components
-  & > ${StyledButton} {
-    align-self: ${({ align }) => getAlign(align, true)};
-  }
 
   ${media.desktop`
-      & > * {
-        margin: ${getSpacing(true)};
+    // spacing between children needs to set again - different spacings for desktop
+    ${getSpacing(true)};
+    // spaceAfter can be different for desktop
+    ${({ desktop, theme, spaceAfter }) => {
+      if (desktop) {
+        const { spaceAfter: desktopSpaceAfter } = desktop;
+        return (
+          isDefined(desktopSpaceAfter) &&
+          spaceAfter !== desktopSpaceAfter &&
+          css`
+            margin-bottom: ${getSpacingToken({ spaceAfter: desktopSpaceAfter, theme })};
+          `
+        );
       }
-      
-      // TODO other block components
-      & > ${StyledButton} {
-        align-self: ${({ desktop, align }) =>
-          desktop &&
-          desktop.align !== align &&
-          getAlign(desktop.align === ALIGNS.EVEN ? ALIGNS.START : desktop.align)};
-      }
-      
-      ${({ desktop }) =>
-        desktop &&
-        css`
-          display: ${({ inline }) =>
-            isDefined(desktop.inline) &&
-            inline !== desktop.inline &&
-            (desktop.inline ? "inline-flex" : "flex")};
-          flex-direction: ${({ direction }) =>
-            isDefined(desktop.direction) &&
-            direction !== desktop.direction &&
-            (desktop.direction === DIRECTIONS.ROW ? "row" : "column")};
-          flex-wrap: ${({ wrap }) =>
-            isDefined(desktop.wrap) && wrap !== desktop.wrap && (desktop.wrap ? "wrap" : "nowrap")};
-          flex-grow: ${({ grow }) =>
-            isDefined(desktop.grow) && grow !== desktop.grow && (desktop.grow ? "1" : "0")};
-          flex-shrink: ${({ shrink }) =>
-            isDefined(desktop.shrink) && shrink !== desktop.shrink && (desktop.shrink ? "1" : "0")};
-          flex-basis: ${({ basis }) =>
-            isDefined(desktop.basis) && basis !== desktop.basis && desktop.basis};
-          justify-content: ${({ flex, align, direction }) =>
-            flex &&
-            desktop &&
-            desktop.direction &&
-            (direction !== desktop.direction || align !== desktop.align) &&
-            desktop.direction === DIRECTIONS.ROW &&
-            getAlign(desktop.align || align)};
-          align-content: ${({ align, direction, flex }) =>
-            flex &&
-            desktop &&
-            desktop.direction &&
-            (direction !== desktop.direction || align !== desktop.align) &&
-            desktop.direction === DIRECTIONS.COLUMN &&
-            getAlign(desktop.align || align)};
-          align-items: ${({ align, direction, flex }) =>
-            flex &&
-            desktop &&
-            desktop.direction &&
-            (direction !== desktop.direction || align !== desktop.align) &&
-            desktop.direction === DIRECTIONS.COLUMN &&
-            getAlign(desktop.align || align)};
-        `}
-    `};
+      return null;
+    }};
+    // if not inline 100 %
+    width: ${({ inline, desktop }) =>
+      desktop && inline !== desktop.inline && !desktop.inline && "100%"};
+    // all other styles
+    ${({ desktop, flex }) => desktop && flex && flexAttributesDesktop};
+  `};
 `;
 
 StyledStack.defaultProps = {
@@ -158,6 +171,7 @@ const Stack = (props: Props) => {
     direction = DIRECTIONS.COLUMN,
     spacing = SPACINGS.NATURAL,
     align = ALIGNS.START,
+    justify = JUSTIFY.START,
     grow = true,
     wrap = false,
     shrink = false,
@@ -167,15 +181,19 @@ const Stack = (props: Props) => {
     children,
   } = props;
 
-  const flex = Object.keys(props)
-    .map(item => !(item === "children" || item === "spaceAfter" || item === "spacing"))
-    .includes(true);
+  // turn on FLEX automatically or manually with prop flex
+  const flex =
+    props.flex ||
+    Object.keys(props)
+      .map(item => !(item === "children" || item === "spaceAfter" || item === "spacing"))
+      .includes(true);
 
   return (
     <StyledStack
       flex={flex}
       direction={direction}
       align={align}
+      justify={justify}
       wrap={wrap}
       grow={grow}
       basis={basis}

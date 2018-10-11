@@ -11,6 +11,7 @@ import type { Props, State } from "./index";
 
 const StyledTableOuter = styled.div`
   max-width: 100%;
+  width: 100%;
   position: relative;
   overflow: hidden;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};

@@ -13,6 +13,7 @@ export const StyledTile = styled(({ theme, icon, title, external, ...props }) =>
   return <Component {...props}>{props.children}</Component>;
 })`
   display: block;
+  width: 100%;
   box-sizing: border-box;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   text-decoration: none;

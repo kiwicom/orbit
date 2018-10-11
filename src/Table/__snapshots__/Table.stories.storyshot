@@ -99,7 +99,7 @@ exports[`Storyshots Table Compact Table 1`] = `
           }
         >
           <div
-            className="Table__StyledTableOuter-bLFsIj goSPCV"
+            className="Table__StyledTableOuter-bLFsIj jEVUxo"
             data-test={undefined}
           >
             <div
@@ -1482,7 +1482,7 @@ exports[`Storyshots Table Default Table 1`] = `
           }
         >
           <div
-            className="Table__StyledTableOuter-bLFsIj goSPCV"
+            className="Table__StyledTableOuter-bLFsIj jEVUxo"
             data-test={undefined}
           >
             <div
@@ -2855,7 +2855,7 @@ exports[`Storyshots Table Playground 1`] = `
           }
         >
           <div
-            className="Table__StyledTableOuter-bLFsIj goSPCV"
+            className="Table__StyledTableOuter-bLFsIj jEVUxo"
             data-test="test"
           >
             <div

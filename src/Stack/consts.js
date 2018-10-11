@@ -9,7 +9,15 @@ export const ALIGNS = {
   START: "start",
   END: "end",
   CENTER: "center",
-  EVEN: "even",
+  STRETCH: "stretch",
+};
+
+export const JUSTIFY = {
+  START: "start",
+  END: "end",
+  CENTER: "center",
+  BETWEEN: "between",
+  AROUND: "around",
 };
 
 export const SPACINGS = {

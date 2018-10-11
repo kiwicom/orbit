@@ -88,6 +88,7 @@ const StyledInputGroup = styled(({ children, className, dataTest }) => (
   </div>
 ))`
   display: flex;
+  width: 100%;
   flex-direction: column;
   position: relative;
 

@@ -955,7 +955,7 @@ exports[`Storyshots Alert Playground 1`] = `
                 data-test={undefined}
               >
                 <div
-                  className="Stack__StyledStack-cGIpQG iukPUF"
+                  className="Stack__StyledStack-cGIpQG fGTogO"
                 >
                   <div>
                     Also you can change the message by changing the Message knob

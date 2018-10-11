@@ -16,6 +16,7 @@ const Field = styled.label`
   font-family: ${({ theme }) => theme.orbit.fontfamily};
   display: block;
   position: relative;
+  width: 100%;
 `;
 
 Field.defaultProps = {

@@ -17,6 +17,7 @@ const PrefixSuffix = styled(({ type, ...props }) => <div {...props} />)`
 `;
 
 const StyledInputStepper = styled.div`
+  width: 100%;
   ${Input} {
     text-align: center;
 

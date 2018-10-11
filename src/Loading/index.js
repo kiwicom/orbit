@@ -44,6 +44,7 @@ const StyledLoading = styled(({ children, className, dataTest }) => (
 ))`
   position: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "absolute"};
   left: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
+  top: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
   width: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "100%"};
   height: ${getToken(TOKENS.HEIGHT)};
   padding: 0 ${({ theme }) => theme.orbit.spaceSmall}; // TODO: create token paddingLoading

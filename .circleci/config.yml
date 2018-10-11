@@ -66,7 +66,7 @@ jobs:
           command: yarn deploy:surge
       - run:
           name: Update url
-          command: yarn deploy:updateURL
+          command: yarn deploy:updateURL ${CIRCLE_BRANCH} https://orbit-components-$(git rev-parse --abbrev-ref HEAD).surge.sh
 
 workflows:
   version: 2

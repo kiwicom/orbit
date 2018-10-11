@@ -15,6 +15,7 @@ export const getPr = async (branchName: string) => {
 };
 
 export const updateLiveURL = async (branchName: string, lastUrl: string) => {
+  if (!branchName) throw new Error("Missing branch parameter");
   const pr = await getPr(branchName);
   octokit.authenticate({
     type: "integration",

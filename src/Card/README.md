@@ -21,7 +21,7 @@ Table below contains all types of the props available in ButtonLink component.
 | closable      | `boolean`             | `false`         | If `true`, the Close icon will be displayed. [See Functional specs](#functional-specs)
 | dataTest      | `string`              |                 | Optional prop for testing purposes.
 | onClose       | `func`                |                 | Function for handling onClick event.
-| spaceAfter    | `enum`                |                 | Additional `margin-bottom` after component. [See this docs](../common/getSpacingToken)
+| spaceAfter    | `enum`                |                 | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 
 ## Functional specs
 * By passing the `closable` prop into Card, you will be able to handle `onClose` function and Close icon will be displayed.

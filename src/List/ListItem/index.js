@@ -10,7 +10,7 @@ import type { Props } from "./index";
 export const Item = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
 
   &:last-child,
@@ -24,7 +24,7 @@ Item.defaultProps = {
 };
 
 const IconContainer = styled.div`
-  display: flex;
+  line-height: 20px; // TODO: fix token
   margin-right: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 

@@ -103,11 +103,11 @@ exports[`Storyshots List Default 1`] = `
             data-test={undefined}
           >
             <div
-              className="ListItem__Item-bhWwBk dXqnir"
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS dvQtrR"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -123,11 +123,11 @@ exports[`Storyshots List Default 1`] = `
               24,000 locations around the globe
             </div>
             <div
-              className="ListItem__Item-bhWwBk dXqnir"
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS dvQtrR"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -146,11 +146,11 @@ exports[`Storyshots List Default 1`] = `
               </strong>
             </div>
             <div
-              className="ListItem__Item-bhWwBk dXqnir"
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS dvQtrR"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -643,11 +643,11 @@ exports[`Storyshots List Different type and size 1`] = `
             data-test={undefined}
           >
             <div
-              className="ListItem__Item-bhWwBk dXqnir"
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS dvQtrR"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -663,11 +663,11 @@ exports[`Storyshots List Different type and size 1`] = `
               24,000 locations around the globe
             </div>
             <div
-              className="ListItem__Item-bhWwBk dXqnir"
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS dvQtrR"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -686,11 +686,11 @@ exports[`Storyshots List Different type and size 1`] = `
               </strong>
             </div>
             <div
-              className="ListItem__Item-bhWwBk dXqnir"
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS dvQtrR"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1239,11 +1239,11 @@ exports[`Storyshots List Playground 1`] = `
             data-test="test"
           >
             <div
-              className="ListItem__Item-bhWwBk dXqnir"
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS dvQtrR"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP wffHr"
@@ -1259,11 +1259,11 @@ exports[`Storyshots List Playground 1`] = `
               24,000 locations around the globe
             </div>
             <div
-              className="ListItem__Item-bhWwBk dXqnir"
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS dvQtrR"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP wffHr"
@@ -1279,11 +1279,11 @@ exports[`Storyshots List Playground 1`] = `
               24,000 locations around the globe
             </div>
             <div
-              className="ListItem__Item-bhWwBk dXqnir"
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS dvQtrR"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP wffHr"
@@ -1920,11 +1920,11 @@ exports[`Storyshots List With carrier 1`] = `
             data-test={undefined}
           >
             <div
-              className="ListItem__Item-bhWwBk dXqnir"
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS dvQtrR"
               >
                 <div
                   className="CarrierLogo__StyledCarrierLogo-ieqjqT fhmgrR"
@@ -1944,11 +1944,11 @@ exports[`Storyshots List With carrier 1`] = `
               Airline: Ryanair
             </div>
             <div
-              className="ListItem__Item-bhWwBk dXqnir"
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS dvQtrR"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1964,11 +1964,11 @@ exports[`Storyshots List With carrier 1`] = `
               Flight no: FR 1337
             </div>
             <div
-              className="ListItem__Item-bhWwBk dXqnir"
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS dvQtrR"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1984,11 +1984,11 @@ exports[`Storyshots List With carrier 1`] = `
               PNR: TEST0X0
             </div>
             <div
-              className="ListItem__Item-bhWwBk dXqnir"
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS dvQtrR"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"

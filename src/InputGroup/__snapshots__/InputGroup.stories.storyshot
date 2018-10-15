@@ -1162,17 +1162,9 @@ exports[`Storyshots InputGroup Phone number 1`] = `
           }
         >
           <div
-            className="InputGroup__StyledInputGroup-boKjnP KiYdr"
+            className="InputGroup__StyledInputGroup-boKjnP jgBxYZ"
             data-test={undefined}
           >
-            <span
-              className="FormLabel-kJFBRQ fuYBgg"
-              data-test={undefined}
-            >
-              <span>
-                Phone number
-              </span>
-            </span>
             <div
               className="InputGroup__StyledChildren-kSeqtV igoYWh"
             >
@@ -1269,7 +1261,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
               </div>
             </div>
             <div
-              className="InputGroup__FakeGroup-hRQJuE iJJDhz"
+              className="InputGroup__FakeGroup-hRQJuE iQoHSD"
             />
             <div
               className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
@@ -1334,36 +1326,6 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                         InputGroup
                       </span>
                       <span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            label
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                Phone number
-                                "
-                              </span>
-                            </span>
-                          </span>
-                        </span>
                         <span>
                           <span>
                             <br />

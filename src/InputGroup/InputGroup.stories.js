@@ -76,7 +76,6 @@ storiesOf("InputGroup", module)
     };
   })
   .addWithChapters("Phone number", () => {
-    const label = text("Label", "Phone number");
     const flex = array("Flex", ["0 0 130px", "1 1 100%"]);
     const error = text("Error", "error");
     const help = text("Help", undefined);
@@ -98,7 +97,6 @@ storiesOf("InputGroup", module)
             {
               sectionFn: () => (
                 <InputGroup
-                  label={label}
                   flex={flex}
                   error={error}
                   help={help}

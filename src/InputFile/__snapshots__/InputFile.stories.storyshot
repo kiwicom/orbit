@@ -123,7 +123,7 @@ exports[`Storyshots InputFile Default 1`] = `
               className="InputFile__FakeInput-djykOY ciTDoB"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK ghMtjc"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"
@@ -512,7 +512,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
               className="InputFile__FakeInput-djykOY ciTDoB"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK ghMtjc"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"
@@ -545,7 +545,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                 file.png
               </div>
               <button
-                className="InputFile__CloseButton-izWrBg gSjPGz ButtonLink__StyledButtonLink-eyUiPe izGXzt"
+                className="InputFile__CloseButton-izWrBg gSjPGz ButtonLink__StyledButtonLink-eyUiPe cDbMJG"
                 data-test={undefined}
                 onClick={[Function]}
                 size="normal"
@@ -960,7 +960,7 @@ exports[`Storyshots InputFile Playground 1`] = `
               className="InputFile__FakeInput-djykOY dilRac"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK ghMtjc"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"
@@ -1624,7 +1624,7 @@ exports[`Storyshots InputFile With error 1`] = `
               className="InputFile__FakeInput-djykOY dilRac"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK ghMtjc"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"
@@ -2049,7 +2049,7 @@ exports[`Storyshots InputFile With help 1`] = `
               className="InputFile__FakeInput-djykOY ciTDoB"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK ghMtjc"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"

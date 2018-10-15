@@ -1,12 +1,14 @@
 {
   "name": "@kiwicom/orbit-components",
   "version": "0.15.2",
-  "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
+  "description":
+    "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook",
     "build": "yarn clean && yarn build:icons && yarn build:lib && yarn build:module",
     "build:lib": "babel --out-dir lib --ignore *.stories.js,*.test.js,*.storyshot src --copy-files",
-    "build:module": "babel --presets react --plugins babel-plugin-styled-components,transform-class-properties,transform-object-rest-spread --no-babelrc --out-dir es --ignore *.stories.js,*.test.js,*.storyshot src --copy-files",
+    "build:module":
+      "babel --presets react --plugins babel-plugin-styled-components,transform-class-properties,transform-object-rest-spread --no-babelrc --out-dir es --ignore *.stories.js,*.test.js,*.storyshot src --copy-files",
     "build:icons": "node config/build.js",
     "build:storybook": "build-storybook -c .storybook -o .out",
     "clean": "rimraf lib es src/icons/*.js src/icons/*.js.flow",
@@ -17,7 +19,8 @@
     "test": "jest --config=jest.json",
     "test-ci": "yarn flow:check && yarn eslint && yarn test --ci",
     "deploy:storybook": "storybook-to-ghpages",
-    "deploy:surge": "yarn surge .out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD | sed -e 's/[^a-zA-Z0-9]/-/g').surge.sh",
+    "deploy:surge":
+      "yarn surge .out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD | sed -e 's/[^a-zA-Z0-9]/-/g').surge.sh",
     "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL"
   },
   "storybook-deployer": {
@@ -29,13 +32,7 @@
     "type": "git",
     "url": "https://github.com/kiwicom/orbit-components.git"
   },
-  "keywords": [
-    "orbit",
-    "components",
-    "ui",
-    "library",
-    "component"
-  ],
+  "keywords": ["orbit", "components", "ui", "library", "component"],
   "files": [
     "es",
     "lib",

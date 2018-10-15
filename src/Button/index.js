@@ -335,10 +335,11 @@ export const StyledButton = styled(
     }
   }
 
-  &:enabled:focus {
-    box-shadow: ${({ bordered, theme, type }) =>
-        bordered && `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)({ theme, type })},`}
-      ${({ theme }) => theme.orbit.boxShadowButtonFocus};
+  &:focus {
+    box-shadow: ${({ bordered, theme, type, disabled }) =>
+      !disabled &&
+      (bordered && `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)({ theme, type })},`)}
+      ${({ theme }) => theme.orbit.boxShadowButtonFocus});
   }
 
   ${StyledSpinner} {

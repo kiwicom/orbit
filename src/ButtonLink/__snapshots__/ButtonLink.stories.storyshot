@@ -99,7 +99,7 @@ exports[`Storyshots ButtonLink Circled 1`] = `
           }
         >
           <button
-            className="ButtonLink__StyledButtonLink-eyUiPe fpNoit"
+            className="ButtonLink__StyledButtonLink-eyUiPe epkZhn"
             data-test={undefined}
             onClick={[Function]}
             size="large"
@@ -432,7 +432,7 @@ exports[`Storyshots ButtonLink Default 1`] = `
           }
         >
           <a
-            className="ButtonLink__StyledButtonLink-eyUiPe czlUus"
+            className="ButtonLink__StyledButtonLink-eyUiPe AxDOU"
             data-test={undefined}
             href="https://kiwi.com"
             onClick={undefined}
@@ -686,7 +686,7 @@ exports[`Storyshots ButtonLink Playground 1`] = `
           }
         >
           <button
-            className="ButtonLink__StyledButtonLink-eyUiPe fnzjmn"
+            className="ButtonLink__StyledButtonLink-eyUiPe jaPOSO"
             data-test="test"
             disabled={false}
             href=""
@@ -1250,7 +1250,7 @@ exports[`Storyshots ButtonLink Secondary 1`] = `
           }
         >
           <a
-            className="ButtonLink__StyledButtonLink-eyUiPe klwrPH"
+            className="ButtonLink__StyledButtonLink-eyUiPe kmgWuH"
             data-test={undefined}
             href="https://kiwi.com"
             onClick={undefined}

@@ -43,7 +43,7 @@ const StyledText = styled(RNText, props => ({
   fontSize: getSizeToken(props),
   fontWeight: getWeightToken(props),
   color: getTypeToken(props),
-  // lineHeight: props.theme.orbit.lineHeightText, // TODO value is in relative format, should be fixed soon to be absolute
+  lineHeight: props.theme.orbit.lineHeightText,
   textAlign: props.align,
   textTransform: props.uppercase ? `uppercase` : `none`,
   fontStyle: props.italic ? `italic` : `normal`,
@@ -66,6 +66,7 @@ StyledText.defaultProps = {
       fontSizeTextLarge: defaultTokens.orbit.fontSizeTextLarge,
       fontSizeTextNormal: defaultTokens.orbit.fontSizeTextNormal,
       fontSizeTextSmall: defaultTokens.orbit.fontSizeTextSmall,
+      lineHeightText: defaultTokens.orbit.lineHeightText,
     },
   },
 };

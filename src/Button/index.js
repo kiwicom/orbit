@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import { ICON_SIZES } from "../Icon/consts";
@@ -285,60 +285,59 @@ export const StyledButton = styled(
     })}`}; // Cannot resolve with 0 0 0 1px getTypeToken(TOKENS.borderColorButton)
 
   &:hover {
-    background: ${({ disabled, bordered, theme }) =>
+    ${({ disabled, bordered, theme, type }) =>
       !disabled &&
-      (bordered
-        ? theme.orbit.backgroundButtonBorderedHover
-        : getTypeToken(TOKENS.backgroundButtonHover))};
-    box-shadow: ${({ disabled, bordered, theme, type }) =>
-      !disabled &&
-      bordered &&
-      `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonHover)({ theme, type })}`};
-    color: ${({ disabled, bordered }) =>
-      !disabled &&
-      (bordered
-        ? getTypeToken(TOKENS.colorTextButtonBorderedHover)
-        : getTypeToken(TOKENS.colorTextButtonHover))}!important;
-
-    ${IconContainer} {
-      color: ${({ disabled, bordered }) =>
-        !disabled &&
-        (bordered
+      css`
+        background: ${bordered
+          ? theme.orbit.backgroundButtonBorderedHover
+          : getTypeToken(TOKENS.backgroundButtonHover)};
+        box-shadow: ${bordered &&
+          `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonHover)({ theme, type })}`};
+        color: ${bordered
           ? getTypeToken(TOKENS.colorTextButtonBorderedHover)
-          : getTypeToken(TOKENS.colorTextButtonHover))};
-    }
+          : getTypeToken(TOKENS.colorTextButtonHover)}!important;
+
+        ${IconContainer} {
+          color: ${bordered
+            ? getTypeToken(TOKENS.colorTextButtonBorderedHover)
+            : getTypeToken(TOKENS.colorTextButtonHover)};
+        }
+      `};
   }
 
   &:active {
-    ${({ disabled, theme }) =>
-      !disabled && `transform: scale(${theme.orbit.modifierScaleButtonActive})`};
-    background: ${({ disabled, bordered, theme }) =>
+    ${({ disabled, theme, bordered, type }) =>
       !disabled &&
-      (bordered
-        ? theme.orbit.backgroundButtonBorderedActive
-        : getTypeToken(TOKENS.backgroundButtonActive))};
-    box-shadow: ${({ disabled, bordered, theme, type }) =>
-      !disabled &&
-      (bordered &&
-        `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonActive)({ theme, type })}`)};
-    color: ${({ disabled, bordered }) =>
-      !disabled &&
-      (bordered
-        ? getTypeToken(TOKENS.colorTextButtonBorderedActive)
-        : getTypeToken(TOKENS.colorTextButtonActive))}!important;
-    & ${IconContainer} {
-      color: ${({ disabled, bordered }) =>
-        !disabled &&
-        (bordered
+      css`
+        transform: scale(${theme.orbit.modifierScaleButtonActive});
+        background: ${bordered
+          ? theme.orbit.backgroundButtonBorderedActive
+          : getTypeToken(TOKENS.backgroundButtonActive)};
+        box-shadow: ${bordered &&
+          `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonActive)({ theme, type })}`};
+        color: ${bordered
           ? getTypeToken(TOKENS.colorTextButtonBorderedActive)
-          : getTypeToken(TOKENS.colorTextButtonActive))};
-    }
+          : getTypeToken(TOKENS.colorTextButtonActive)}!important;
+        & ${IconContainer} {
+          color: ${bordered
+            ? getTypeToken(TOKENS.colorTextButtonBorderedActive)
+            : getTypeToken(TOKENS.colorTextButtonActive)};
+        }
+      `};
   }
 
-  &:enabled:focus {
-    box-shadow: ${({ bordered, theme, type }) =>
-        bordered && `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)({ theme, type })},`}
-      ${({ theme }) => theme.orbit.boxShadowButtonFocus};
+  &:focus {
+    ${({ disabled, theme, bordered, type }) =>
+      !disabled &&
+      css`
+        box-shadow: ${bordered &&
+            `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)({ theme, type })},`}
+          ${theme.orbit.boxShadowButtonFocus};
+        &:active {
+          box-shadow: ${bordered &&
+            `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)({ theme, type })}`};
+        }
+      `};
   }
 
   ${StyledSpinner} {

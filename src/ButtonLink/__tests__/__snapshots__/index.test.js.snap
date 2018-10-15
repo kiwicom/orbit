@@ -39,12 +39,12 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   text-decoration: none;
 }
 
-.c0:enabled:hover {
+.c0:hover {
   background: #e5eaef;
   color: #009882!important;
 }
 
-.c0:enabled:active {
+.c0:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
@@ -52,11 +52,11 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   color: #008f7b!important;
 }
 
-.c0:enabled:focus {
+.c0:focus {
   box-shadow: 0 0 4px 1px rgba(1,118,210,0.3);
 }
 
-.c0:enabled:focus:active {
+.c0:focus:active {
   box-shadow: none;
 }
 
@@ -949,12 +949,12 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   text-decoration: none;
 }
 
-.c0:enabled:hover {
+.c0:hover {
   background: #e5eaef;
   color: #009882!important;
 }
 
-.c0:enabled:active {
+.c0:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
@@ -962,11 +962,11 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   color: #008f7b!important;
 }
 
-.c0:enabled:focus {
+.c0:focus {
   box-shadow: 0 0 4px 1px rgba(1,118,210,0.3);
 }
 
-.c0:enabled:focus:active {
+.c0:focus:active {
   box-shadow: none;
 }
 

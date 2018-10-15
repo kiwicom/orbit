@@ -62,7 +62,7 @@ exports[`Default Stack should match snapshot 1`] = `
   color: #fff;
 }
 
-.c9:enabled:focus {
+.c9:focus {
   box-shadow: 0 0 4px 1px rgba(1,118,210,0.3);
 }
 
@@ -6592,7 +6592,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   color: #fff;
 }
 
-.c9:enabled:focus {
+.c9:focus {
   box-shadow: 0 0 4px 1px rgba(1,118,210,0.3);
 }
 

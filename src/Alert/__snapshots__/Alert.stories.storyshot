@@ -1011,7 +1011,7 @@ exports[`Storyshots Alert Playground 1`] = `
                     </div>
                   </div>
                   <a
-                    className="Button__StyledButton-jJDkJK kwbftt"
+                    className="Button__StyledButton-jJDkJK gOXqLF"
                     data-test={undefined}
                     disabled={undefined}
                     href="#"

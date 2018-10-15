@@ -102,7 +102,7 @@ exports[`Storyshots Stack Default 1`] = `
             className="Stack__StyledStack-cGIpQG cpXwZe"
           >
             <button
-              className="Button__StyledButton-jJDkJK ckskmt"
+              className="Button__StyledButton-jJDkJK iwzvll"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -130,7 +130,7 @@ exports[`Storyshots Stack Default 1`] = `
               </div>
             </button>
             <button
-              className="Button__StyledButton-jJDkJK gWGvWo"
+              className="Button__StyledButton-jJDkJK gZGNfU"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -609,7 +609,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
               </div>
             </label>
             <button
-              className="Button__StyledButton-jJDkJK cJCXhJ"
+              className="Button__StyledButton-jJDkJK hKyxYN"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -1108,7 +1108,7 @@ exports[`Storyshots Stack Mobile properties 1`] = `
             className="Stack__StyledStack-cGIpQG gBQeWO"
           >
             <button
-              className="Button__StyledButton-jJDkJK ckskmt"
+              className="Button__StyledButton-jJDkJK iwzvll"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -1136,7 +1136,7 @@ exports[`Storyshots Stack Mobile properties 1`] = `
               </div>
             </button>
             <button
-              className="Button__StyledButton-jJDkJK gWGvWo"
+              className="Button__StyledButton-jJDkJK gZGNfU"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -1898,7 +1898,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                 </div>
               </label>
               <button
-                className="Button__StyledButton-jJDkJK cJCXhJ"
+                className="Button__StyledButton-jJDkJK hKyxYN"
                 data-test={undefined}
                 disabled={undefined}
                 size="normal"
@@ -3002,7 +3002,7 @@ exports[`Storyshots Stack Playground 1`] = `
             className="Stack__StyledStack-cGIpQG koLRFm"
           >
             <button
-              className="Button__StyledButton-jJDkJK kMRFdd"
+              className="Button__StyledButton-jJDkJK hGsPWB"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -3016,7 +3016,7 @@ exports[`Storyshots Stack Playground 1`] = `
               </div>
             </button>
             <button
-              className="Button__StyledButton-jJDkJK lfXYKc"
+              className="Button__StyledButton-jJDkJK ijsNSY"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -3030,7 +3030,7 @@ exports[`Storyshots Stack Playground 1`] = `
               </div>
             </button>
             <button
-              className="Button__StyledButton-jJDkJK cJCXhJ"
+              className="Button__StyledButton-jJDkJK hKyxYN"
               data-test={undefined}
               disabled={undefined}
               size="normal"

@@ -4,6 +4,8 @@ import * as React from "react";
 // eslint-disable-next-line no-restricted-imports
 import { Platform, TouchableNativeFeedback, TouchableOpacity } from "react-native";
 
+import type { AccessibilityProps } from "./Accessibility";
+
 type Props = {|
   +children: React.Node,
   +onPress: () => void,
@@ -16,6 +18,7 @@ type Props = {|
   // Should the ripple render outside of the view bounds?
   +borderlessRipple?: boolean,
   +rippleColor?: string,
+  ...AccessibilityProps,
 |};
 
 /**
@@ -31,6 +34,7 @@ export default class Touchable extends React.Component<Props> {
     disabled: false,
     accessibilityTraits: "button",
     accessibilityComponentType: "button",
+    accessibilityRole: "button",
   };
 
   /**

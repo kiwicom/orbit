@@ -3551,19 +3551,7 @@ exports[`InputFile with help should match snapshot 1`] = `
     </InputFile__StyledFileInput>
     <InputFile__CloseButton
       icon={<CloseCircle />}
-      onClick={
-        [MockFunction] {
-          "calls": Array [
-            Array [],
-          ],
-          "results": Array [
-            Object {
-              "isThrow": false,
-              "value": undefined,
-            },
-          ],
-        }
-      }
+      onClick={[Function]}
       theme={
         Object {
           "orbit": Object {

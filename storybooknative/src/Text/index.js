@@ -51,24 +51,7 @@ const StyledText = styled(RNText, props => ({
 }));
 
 StyledText.defaultProps = {
-  theme: {
-    orbit: {
-      colorTextPrimary: defaultTokens.orbit.colorTextPrimary,
-      colorTextSecondary: defaultTokens.orbit.colorTextSecondary,
-      colorTextAttention: defaultTokens.orbit.colorTextAttention,
-      colorTextInfo: defaultTokens.orbit.colorTextInfo,
-      colorTextSuccess: defaultTokens.orbit.colorTextSuccess,
-      colorTextWarning: defaultTokens.orbit.colorTextWarning,
-      colorTextCritical: defaultTokens.orbit.colorTextCritical,
-      colorTextWhite: defaultTokens.orbit.colorTextWhite,
-      fontWeightNormal: defaultTokens.orbit.fontWeightNormal,
-      fontWeightBold: defaultTokens.orbit.fontWeightBold,
-      fontSizeTextLarge: defaultTokens.orbit.fontSizeTextLarge,
-      fontSizeTextNormal: defaultTokens.orbit.fontSizeTextNormal,
-      fontSizeTextSmall: defaultTokens.orbit.fontSizeTextSmall,
-      lineHeightText: defaultTokens.orbit.lineHeightText,
-    },
-  },
+  theme: defaultTokens,
 };
 
 const Text = ({

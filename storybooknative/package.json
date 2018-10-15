@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test-hack-setup": "mv .babelrc .babelrc.bak; mv babel.config.js.bak babel.config.js;",
-    "test-hack-teardown": "mv .babelrc.bak .babelrc; mv babel.config.js babel.config.js.bak;",
-    "test": "yarn test-hack-setup; jest; yarn test-hack-teardown",
-    "test-update": "yarn test-hack-setup; jest -u; yarn test-hack-teardown",
+    "test": "./scripts/test.sh",
+    "test-update": "./scripts/test.sh -u",
+    "test-watch": "./scripts/test.sh -w",
     "prestorybook": "rnstl",
     "storybook": "storybook start -p 7007 --skip-packager | react-native start --projectRoot storybook",
     "ios": "react-native run-ios",

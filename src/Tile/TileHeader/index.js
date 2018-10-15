@@ -33,6 +33,7 @@ StyledTileTitle.defaultProps = {
 const StyledTileIcon = styled.div`
   color: ${({ theme }) => theme.orbit.colorHeading};
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   margin: ${({ theme }) => `0 ${theme.orbit.spaceXSmall} 0 0`};
 `;

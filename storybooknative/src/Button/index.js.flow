@@ -1,6 +1,7 @@
 // @flow
 
 import { Text } from "react-native";
+import * as React from "react";
 
 export type Type =
   | "primary"

@@ -117,13 +117,19 @@ StyledText.defaultProps = {
 };
 
 const Button = (props: Props) => {
-  const { onPress, children, size = SIZE_OPTIONS.NORMAL, type = TYPE_OPTIONS.PRIMARY } = props;
+  const {
+    onPress,
+    children,
+    size = SIZE_OPTIONS.NORMAL,
+    type = TYPE_OPTIONS.PRIMARY,
+    ...rest
+  } = props;
   const onPressHandler = onPress || (() => {});
 
   return (
-    <Touchable disabled={!props.onPress || props.disabled} onPress={onPressHandler}>
-      <StyledButton size={size} type={type} {...props}>
-        <StyledText size={size} type={type} {...props}>
+    <Touchable disabled={props.disabled || !props.onPress} onPress={onPressHandler}>
+      <StyledButton size={size} type={type} {...rest}>
+        <StyledText size={size} type={type} {...rest}>
           {children}
         </StyledText>
       </StyledButton>

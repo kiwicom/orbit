@@ -76,7 +76,11 @@ export default class Touchable extends React.Component<Props> {
     }
 
     return (
-      <TouchableOpacity activeOpacity={0.5} accessibilityRole="button">
+      <TouchableOpacity
+        activeOpacity={0.5}
+        disabled={this.props.disabled}
+        accessibilityRole="button"
+      >
         {children}
       </TouchableOpacity>
     );

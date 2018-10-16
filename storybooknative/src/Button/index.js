@@ -9,7 +9,7 @@ import { TYPE_OPTIONS, SIZE_OPTIONS, TOKENS } from "./consts";
 
 import type { Props } from "./index";
 
-const getSizeToken = (name, { theme, size }) => {
+export const getSizeToken = (name, { theme, size }) => {
   const tokens = {
     [TOKENS.heightButton]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.heightButtonLarge,
@@ -133,7 +133,12 @@ const Button = (props: Props) => {
   }
 
   return (
-    <Touchable disabled={props.disabled || !props.onPress} onPress={onPressHandler} width={width}>
+    <Touchable
+      disabled={props.disabled || !props.onPress}
+      onPress={onPressHandler}
+      circled={props.circled}
+      width={width}
+    >
       <StyledButton size={size} type={type} {...rest}>
         <StyledText size={size} type={type} {...rest}>
           {children}

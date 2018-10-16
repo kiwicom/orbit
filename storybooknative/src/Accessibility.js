@@ -1,33 +1,30 @@
 // @flow strict
 
-type AccessibilityTraitsValues =
+type AccessibilityRoleValues =
   | "none"
   | "button"
   | "link"
-  | "header"
   | "search"
   | "image"
-  | "selected"
-  | "plays"
-  | "key"
+  | "keyboardkey"
   | "text"
-  | "summary"
-  | "disabled"
-  | "frequentUpdates"
-  | "startsMedia"
   | "adjustable"
-  | "allowsDirectInteraction"
-  | "pageTurn";
+  | "imagebutton"
+  | "header"
+  | "summary";
 
 // See: https://facebook.github.io/react-native/docs/accessibility.html
 export type AccessibilityProps = {|
   accessible?: boolean,
   accessibilityLabel?: string,
-  accessibilityTraits?: AccessibilityTraitsValues | $ReadOnlyArray<AccessibilityTraitsValues>, // iOS only
+  accessibilityHint?: string,
+  accessibilityRole?: AccessibilityRoleValues | $ReadOnlyArray<AccessibilityRoleValues>,
+  accessibilityState?: "selected" | "disabled",
   accessibilityViewIsModal?: boolean, // iOS only
+  accessibilityIgnoresInvertColors?: boolean, // iOS only
+  accessibilityElementsHidden?: boolean, // iOS only
   onAccessibilityTap?: () => void, // iOS only
   onMagicTap?: () => void, // iOS only
-  accessibilityComponentType?: "none" | "button" | "radiobutton_checked" | "radiobutton_unchecked", // Android only
   accessibilityLiveRegion?: "none" | "polite" | "assertive", // Android only
   importantForAccessibility?: "auto" | "yes" | "no" | "no-hide-descendants", // Android only
 |};

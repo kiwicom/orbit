@@ -32,8 +32,6 @@ export default class Touchable extends React.Component<Props> {
     borderlessRipple: false,
     rippleColor: "rgba(0, 0, 0, .32)",
     disabled: false,
-    accessibilityTraits: "button",
-    accessibilityComponentType: "button",
     accessibilityRole: "button",
   };
 
@@ -78,7 +76,7 @@ export default class Touchable extends React.Component<Props> {
     }
 
     return (
-      <TouchableOpacity activeOpacity={0.5} {...this.props}>
+      <TouchableOpacity activeOpacity={0.5} accessibilityRole="button">
         {children}
       </TouchableOpacity>
     );

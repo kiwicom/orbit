@@ -125,7 +125,12 @@ const Button = (props: Props) => {
     ...rest
   } = props;
   const onPressHandler = onPress || (() => {});
-  const width = props.block ? "100%" : props.width || "auto";
+  let width;
+  if (props.block) {
+    width = "100%";
+  } else {
+    width = props.width || "auto";
+  }
 
   return (
     <Touchable disabled={props.disabled || !props.onPress} onPress={onPressHandler} width={width}>

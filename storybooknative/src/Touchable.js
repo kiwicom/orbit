@@ -2,7 +2,7 @@
 
 import * as React from "react";
 // eslint-disable-next-line no-restricted-imports
-import { Platform, TouchableNativeFeedback, TouchableOpacity } from "react-native";
+import { Platform, TouchableNativeFeedback, TouchableOpacity, StyleSheet } from "react-native";
 
 import type { AccessibilityProps } from "./Accessibility";
 
@@ -53,6 +53,11 @@ export default class Touchable extends React.Component<Props> {
     // but since we are building for both platforms it is here as well
     // to discover this mistake as soon as possible
     const children = React.Children.only(this.props.children);
+    const styles = StyleSheet.create({
+      customWidth: {
+        width: this.props.width,
+      },
+    });
 
     // All touchables on Android should have the ripple effect according to
     // platform design guidelines.
@@ -65,7 +70,7 @@ export default class Touchable extends React.Component<Props> {
       return (
         <TouchableNativeFeedback
           {...this.props}
-          style={{ width: this.props.width }}
+          style={styles.customWidth}
           useForeground={useForeground}
           background={TouchableNativeFeedback.Ripple(
             this.props.rippleColor,
@@ -81,7 +86,7 @@ export default class Touchable extends React.Component<Props> {
       <TouchableOpacity
         activeOpacity={0.5}
         disabled={this.props.disabled}
-        style={{ width: this.props.width }}
+        style={styles.customWidth}
         accessibilityRole="button"
       >
         {children}

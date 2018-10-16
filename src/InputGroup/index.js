@@ -51,7 +51,7 @@ const FakeGroup = styled(({ children, className }) => <div className={className}
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  margin-top: 23px;
+  margin-top: ${({ label }) => label && "23px"};
 
   &:hover {
     box-shadow: inset 0 0 0

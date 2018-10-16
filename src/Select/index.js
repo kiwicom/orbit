@@ -199,7 +199,7 @@ const Select = ({
           size={size}
           disabled={disabled}
           error={error}
-          value={value}
+          value={value || ""}
           prefix={prefix}
           onFocus={onFocus}
           onBlur={onBlur}
@@ -207,7 +207,7 @@ const Select = ({
           filled={filled}
         >
           {placeholder && (
-            <option label={placeholder} value="" selected disabled>
+            <option label={placeholder} value="">
               {placeholder}
             </option>
           )}

@@ -104,7 +104,7 @@ CloseButton.defaultProps = {
 };
 
 const InputFile = (props: Props) => {
-  const { placeholder = "No file selected", title = "Select file", dataTest } = props;
+  const { placeholder = "No file selected", title = "Select file", onRemoveFile, dataTest } = props;
 
   return (
     <Field data-test={dataTest}>
@@ -130,7 +130,12 @@ const InputFile = (props: Props) => {
             type="secondary"
             transparent
             icon={<CloseCircle />}
-            onClick={props.onRemoveFile}
+            onClick={ev => {
+              ev.preventDefault();
+              if (onRemoveFile) {
+                onRemoveFile();
+              }
+            }}
           />
         )}
       </FakeInput>

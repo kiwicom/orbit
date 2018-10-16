@@ -83,7 +83,7 @@ describe(`InputFile with help`, () => {
     expect(onBlur).toHaveBeenCalled();
   });
   it("should have onRemoveFile method", () => {
-    closeButton.simulate("click");
+    closeButton.simulate("click", { preventDefault() {} });
     expect(onRemoveFile).toHaveBeenCalled();
   });
   it("should match snapshot", () => {

@@ -125,9 +125,10 @@ const Button = (props: Props) => {
     ...rest
   } = props;
   const onPressHandler = onPress || (() => {});
+  const width = props.block ? "100%" : props.width || "auto";
 
   return (
-    <Touchable disabled={props.disabled || !props.onPress} onPress={onPressHandler}>
+    <Touchable disabled={props.disabled || !props.onPress} onPress={onPressHandler} width={width}>
       <StyledButton size={size} type={type} {...rest}>
         <StyledText size={size} type={type} {...rest}>
           {children}

@@ -18,6 +18,7 @@ type Props = {|
   // Should the ripple render outside of the view bounds?
   +borderlessRipple?: boolean,
   +rippleColor?: string,
+  +width?: string | number,
   ...AccessibilityProps,
 |};
 
@@ -33,6 +34,7 @@ export default class Touchable extends React.Component<Props> {
     rippleColor: "rgba(0, 0, 0, .32)",
     disabled: false,
     accessibilityRole: "button",
+    width: "auto",
   };
 
   /**
@@ -63,7 +65,7 @@ export default class Touchable extends React.Component<Props> {
       return (
         <TouchableNativeFeedback
           {...this.props}
-          style={null}
+          style={{ width: this.props.width }}
           useForeground={useForeground}
           background={TouchableNativeFeedback.Ripple(
             this.props.rippleColor,
@@ -79,6 +81,7 @@ export default class Touchable extends React.Component<Props> {
       <TouchableOpacity
         activeOpacity={0.5}
         disabled={this.props.disabled}
+        style={{ width: this.props.width }}
         accessibilityRole="button"
       >
         {children}

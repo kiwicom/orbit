@@ -16,7 +16,7 @@ export type Type =
 export type Size = "small" | "normal" | "large";
 
 export type Props = {|
-  +children?: React.Element<Text> | "string",
+  +children?: React.Element<Text> | string,
   +onPress?: () => void,
   +circled?: boolean,
   +bordered?: boolean,

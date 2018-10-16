@@ -2,9 +2,10 @@
 
 import * as React from "react";
 // eslint-disable-next-line no-restricted-imports
-import { Platform, TouchableNativeFeedback, TouchableOpacity, StyleSheet } from "react-native";
+import { Platform, TouchableNativeFeedback, TouchableOpacity } from "react-native";
 
 import type { AccessibilityProps } from "./Accessibility";
+import styled from "./styled";
 
 type Props = {|
   +children: React.Node,
@@ -21,6 +22,14 @@ type Props = {|
   +width?: string | number,
   ...AccessibilityProps,
 |};
+
+const StyledTouchableOpacity = styled(TouchableOpacity, props => ({
+  width: props.width,
+}));
+
+const StyledTouchableNativeFeedback = styled(TouchableNativeFeedback, props => ({
+  width: props.width,
+}));
 
 /**
  * Touchable renders a touchable that looks native on both iOS and Android.
@@ -53,11 +62,6 @@ export default class Touchable extends React.Component<Props> {
     // but since we are building for both platforms it is here as well
     // to discover this mistake as soon as possible
     const children = React.Children.only(this.props.children);
-    const styles = StyleSheet.create({
-      customWidth: {
-        width: this.props.width,
-      },
-    });
 
     // All touchables on Android should have the ripple effect according to
     // platform design guidelines.
@@ -68,9 +72,8 @@ export default class Touchable extends React.Component<Props> {
       }
 
       return (
-        <TouchableNativeFeedback
+        <StyledTouchableNativeFeedback
           {...this.props}
-          style={styles.customWidth}
           useForeground={useForeground}
           background={TouchableNativeFeedback.Ripple(
             this.props.rippleColor,
@@ -78,19 +81,18 @@ export default class Touchable extends React.Component<Props> {
           )}
         >
           {children}
-        </TouchableNativeFeedback>
+        </StyledTouchableNativeFeedback>
       );
     }
 
     return (
-      <TouchableOpacity
+      <StyledTouchableOpacity
         activeOpacity={0.5}
         disabled={this.props.disabled}
-        style={styles.customWidth}
         accessibilityRole="button"
       >
         {children}
-      </TouchableOpacity>
+      </StyledTouchableOpacity>
     );
   };
 }

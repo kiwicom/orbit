@@ -138,6 +138,7 @@ const Button = (props: Props) => {
       onPress={onPressHandler}
       circled={props.circled}
       width={width}
+      size={size}
     >
       <StyledButton size={size} type={type} {...rest}>
         <StyledText size={size} type={type} {...rest}>

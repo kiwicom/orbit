@@ -39,7 +39,7 @@
   <property name="COLORTEXTBUTTONWARNINGHOVER" category="Colors" value="#ffffffff"/>
   <property name="BOXSHADOWMODAL" category="Box shadow" value="0 20px 60px 0 rgba(23, 27, 30, 0.4)"/>
   <property name="PALETTECLOUDLIGHTACTIVE" category="Color palette" value="#ffd6dee6"/>
-  <property name="PALETTEPRODUCTLIGHT" category="Color palette" value="#ff9ae5da"/>
+  <property name="PALETTEPRODUCTLIGHT" category="Color palette" value="#ffe1f5f2"/>
   <property name="HEIGHTBUTTONLARGE" category="Size (width, height)" value="52px"/>
   <property name="BACKGROUNDBUTTONWARNINGACTIVE" category="Background colors" value="#ffe68206"/>
   <property name="MARGINBUTTONICONLARGE" category="Spacing" value="16px"/>
@@ -99,7 +99,7 @@
   <property name="FONTWEIGHTHEADINGDISPLAY" category="Font weight" value="700"/>
   <property name="BORDERCOLORINPUTERRORHOVER" category="Border color" value="#ffbd1919"/>
   <property name="WIDTHICONSMALL" category="Size (width, height)" value="16px"/>
-  <property name="PALETTEPRODUCTLIGHTACTIVE" category="Color palette" value="#ff64d7c6"/>
+  <property name="PALETTEPRODUCTLIGHTACTIVE" category="Color palette" value="#ff9addd3"/>
   <property name="BORDERCOLORBUTTONINFOBORDEREDACTIVE" category="Border color" value="#ff0064b2"/>
   <property name="BACKGROUNDBUTTONPRIMARYACTIVE" category="Background colors" value="#ff008f7b"/>
   <property name="LINEHEIGHTTEXT" category="Line height" value="1.4"/>
@@ -134,14 +134,14 @@
   <property name="PADDINGALERTWITHICON" category="Spacing" value="12px"/>
   <property name="COLORTEXTBUTTONSECONDARYHOVER" category="Colors" value="#ff3f4854"/>
   <property name="COLORALERTICONWARNING" category="Colors" value="#fff9971e"/>
-  <property name="PALETTEPRODUCTDARK" category="Color palette" value="#ff005448"/>
+  <property name="PALETTEPRODUCTDARK" category="Color palette" value="#ff00826f"/>
   <property name="BACKGROUNDBADGEDARK" category="Background colors" value="#ff46515e"/>
   <property name="PALETTEINKLIGHT" category="Color palette" value="#ff7f91a8"/>
   <property name="MODIFIERSCALEBUTTONACTIVE" category="Modifier" value="0.95"/>
   <property name="COLORTEXTBUTTONWARNINGBORDEREDACTIVE" category="Colors" value="#ffe68206"/>
   <property name="BORDERCOLORBUTTONSUCCESSBORDEREDACTIVE" category="Border color" value="#ff3fa34c"/>
   <property name="FONTSIZEHEADINGTITLE1" category="Font size" value="28px"/>
-  <property name="PALETTEBLUEDARK" category="Color palette" value="#ff07405c"/>
+  <property name="PALETTEBLUEDARK" category="Color palette" value="#ff003a69"/>
   <property name="COLORTEXTBUTTONPRIMARYBORDERED" category="Colors" value="#ff00a991"/>
   <property name="MODIFIERSCALECHECKBOXRADIOACTIVE" category="Modifier" value="0.95"/>
   <property name="COLORTEXTALERTCRITICAL" category="Colors" value="#ff650808"/>
@@ -314,8 +314,8 @@
   <property name="COLORTEXTINPUT" category="Colors" value="#ff46515e"/>
   <property name="BORDERCOLORBUTTONINFOBORDEREDHOVER" category="Border color" value="#ff006abd"/>
   <property name="COLORTEXTBUTTONWARNING" category="Colors" value="#ffffffff"/>
-  <property name="COLORTEXTALERTINFO" category="Colors" value="#ff07405c"/>
-  <property name="PALETTEPRODUCTLIGHTHOVER" category="Color palette" value="#ff7fded0"/>
+  <property name="COLORTEXTALERTINFO" category="Colors" value="#ff003a69"/>
+  <property name="PALETTEPRODUCTLIGHTHOVER" category="Color palette" value="#ffbde9e2"/>
   <property name="BACKGROUNDBUTTONSECONDARYACTIVE" category="Background colors" value="#ffcad5df"/>
   <property name="COLORPLACEHOLDERINPUT" category="Colors" value="#ffbac7d5"/>
   <property name="SPACEMEDIUM" category="Spacing" value="16px"/>

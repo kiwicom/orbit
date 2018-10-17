@@ -1,5 +1,16 @@
 version: 2
 jobs:
+  test:
+    docker:
+      - image: circleci/node:8.9
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm i
+      - run:
+          name: Run all tests
+          command: npm run test-ci
   release:
     docker:
       - image: circleci/node:8.9
@@ -9,8 +20,8 @@ jobs:
           name: Install dependencies
           command: npm i
       - run:
-          name: Flow
-          command: npm run flow:check
+          name: Run all tests
+          command: npm run test-ci
       - run:
           name: Publish to NPM
           command: npm run ci-publish || true
@@ -18,6 +29,9 @@ jobs:
 
 workflows:
   version: 2
+  test_branch:
+    jobs:
+      - test
   release:
     jobs:
       - release:

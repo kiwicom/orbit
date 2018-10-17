@@ -7,7 +7,9 @@ import styled from "../styled";
 import defaultTokens from "../defaultTokens";
 import { TYPE_OPTIONS, SIZE_OPTIONS, TOKENS } from "./consts";
 
-import type { Props, Tokens } from "./index";
+import type { Props } from "./index";
+
+type Tokens = $Keys<typeof TOKENS>;
 
 const getSizeToken = (name: Tokens, { theme, size }) => {
   const tokens = {

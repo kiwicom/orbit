@@ -18,7 +18,7 @@ export type AccessibilityProps = {|
   accessible?: boolean,
   accessibilityLabel?: string,
   accessibilityHint?: string,
-  accessibilityRole?: AccessibilityRoleValues,
+  accessibilityRole?: AccessibilityRoleValues | $ReadOnlyArray<AccessibilityRoleValues>,
   accessibilityState?: "selected" | "disabled",
   accessibilityViewIsModal?: boolean, // iOS only
   accessibilityIgnoresInvertColors?: boolean, // iOS only

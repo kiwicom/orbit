@@ -2,13 +2,13 @@
 
 var palette = {
   product: {
-    light: "#9ae5da",
-    lightHover: "#7fded0",
-    lightActive: "#64d7c6",
+    light: "#E1F5F2",
+    lightHover: "#bde9e2",
+    lightActive: "#9addd3",
     normal: "#00a991",
     normalHover: "#009882",
     normalActive: "#008f7b",
-    dark: "#005448",
+    dark: "#00826f",
   },
   white: {
     normal: "#fff",
@@ -67,7 +67,7 @@ var palette = {
     normal: "#0176D2",
     normalHover: "#006abd",
     normalActive: "#0064b2",
-    dark: "#07405c",
+    dark: "#003A69",
   },
   social: {
     facebook: "#3b5998",

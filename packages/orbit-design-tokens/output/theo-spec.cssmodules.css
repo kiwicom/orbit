@@ -38,7 +38,7 @@
 @value color-text-button-warning-hover: rgb(255, 255, 255);
 @value box-shadow-modal: 0 20px 60px 0 rgba(23, 27, 30, 0.4);
 @value palette-cloud-light-active: rgb(214, 222, 230);
-@value palette-product-light: rgb(154, 229, 218);
+@value palette-product-light: rgb(225, 245, 242);
 @value height-button-large: 52px;
 @value background-button-warning-active: rgb(230, 130, 6);
 @value margin-button-icon-large: 16px;
@@ -99,7 +99,7 @@
 @value font-weight-heading-display: "700";
 @value border-color-input-error-hover: rgb(189, 25, 25);
 @value width-icon-small: 16px;
-@value palette-product-light-active: rgb(100, 215, 198);
+@value palette-product-light-active: rgb(154, 221, 211);
 @value border-color-button-info-bordered-active: rgb(0, 100, 178);
 @value background-button-primary-active: rgb(0, 143, 123);
 @value line-height-text: "1.4";
@@ -135,14 +135,14 @@
 @value padding-alert-with-icon: 12px;
 @value color-text-button-secondary-hover: rgb(63, 72, 84);
 @value color-alert-icon-warning: rgb(249, 151, 30);
-@value palette-product-dark: rgb(0, 84, 72);
+@value palette-product-dark: rgb(0, 130, 111);
 @value background-badge-dark: rgb(70, 81, 94);
 @value palette-ink-light: rgb(127, 145, 168);
 @value modifier-scale-button-active: 0.95;
 @value color-text-button-warning-bordered-active: rgb(230, 130, 6);
 @value border-color-button-success-bordered-active: rgb(63, 163, 76);
 @value font-size-heading-title1: 28px;
-@value palette-blue-dark: rgb(7, 64, 92);
+@value palette-blue-dark: rgb(0, 58, 105);
 @value color-text-button-primary-bordered: rgb(0, 169, 145);
 @value modifier-scale-checkbox-radio-active: 0.95;
 @value color-text-alert-critical: rgb(101, 8, 8);
@@ -316,8 +316,8 @@
 @value color-text-input: rgb(70, 81, 94);
 @value border-color-button-info-bordered-hover: rgb(0, 106, 189);
 @value color-text-button-warning: rgb(255, 255, 255);
-@value color-text-alert-info: rgb(7, 64, 92);
-@value palette-product-light-hover: rgb(127, 222, 208);
+@value color-text-alert-info: rgb(0, 58, 105);
+@value palette-product-light-hover: rgb(189, 233, 226);
 @value background-button-secondary-active: rgb(202, 213, 223);
 @value color-placeholder-input: rgb(186, 199, 213);
 @value space-medium: 16px;

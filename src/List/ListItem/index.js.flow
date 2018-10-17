@@ -12,3 +12,5 @@ export type Props = {|
 declare export default React$ComponentType<Props>;
 
 declare export var IconContainer: ReactComponentStyled<>;
+
+declare export var Item: ReactComponentStyled<>;

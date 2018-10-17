@@ -6,6 +6,7 @@ export type Props = {|
   +name?: string,
   +label?: string,
   +value?: string,
+  +fullHeight?: boolean,
   +placeholder?: string,
   +help?: React$Node,
   +error?: React$Node,

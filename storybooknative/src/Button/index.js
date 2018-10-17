@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Platform } from "react-native";
 
 import Touchable from "../Touchable";
 import styled from "../styled";
@@ -9,7 +9,7 @@ import { TYPE_OPTIONS, SIZE_OPTIONS, TOKENS } from "./consts";
 
 import type { Props } from "./index";
 
-export const getSizeToken = (name, { theme, size }) => {
+export const getSizeToken = (name: string, { theme, size }) => {
   const tokens = {
     [TOKENS.heightButton]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.heightButtonLarge,
@@ -29,7 +29,7 @@ export const getSizeToken = (name, { theme, size }) => {
   };
   return tokens[name][size];
 };
-const getTypeToken = (name, { theme, type }) => {
+const getTypeToken = (name: string, { theme, type }) => {
   const tokens = {
     [TOKENS.backgroundButton]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonPrimary,
@@ -116,6 +116,18 @@ StyledText.defaultProps = {
   theme: defaultTokens,
 };
 
+const StyledTouchableWrapper = styled(View, props => ({
+  overflow: "hidden",
+  width: props.block ? "100%" : props.width || "auto",
+  borderRadius: props.circled
+    ? getSizeToken(TOKENS.heightButton, props)
+    : props.theme.orbit.borderRadiusNormal,
+}));
+
+StyledTouchableWrapper.defaultProps = {
+  theme: defaultTokens,
+};
+
 const Button = (props: Props) => {
   const {
     onPress,
@@ -132,14 +144,26 @@ const Button = (props: Props) => {
     width = props.width || "auto";
   }
 
+  if (Platform.OS === "android") {
+    return (
+      <StyledTouchableWrapper size={size} type={type} {...rest}>
+        <Touchable
+          disabled={props.disabled || !props.onPress}
+          onPress={onPressHandler}
+          width={width}
+        >
+          <StyledButton size={size} type={type} {...rest}>
+            <StyledText size={size} type={type} {...rest}>
+              {children}
+            </StyledText>
+          </StyledButton>
+        </Touchable>
+      </StyledTouchableWrapper>
+    );
+  }
+
   return (
-    <Touchable
-      disabled={props.disabled || !props.onPress}
-      onPress={onPressHandler}
-      circled={props.circled}
-      width={width}
-      size={size}
-    >
+    <Touchable disabled={props.disabled || !props.onPress} onPress={onPressHandler} width={width}>
       <StyledButton size={size} type={type} {...rest}>
         <StyledText size={size} type={type} {...rest}>
           {children}

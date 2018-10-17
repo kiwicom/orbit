@@ -2,13 +2,10 @@
 
 import * as React from "react";
 // eslint-disable-next-line no-restricted-imports
-import { Platform, TouchableNativeFeedback, TouchableOpacity, View } from "react-native";
+import { Platform, TouchableNativeFeedback, TouchableOpacity } from "react-native";
 
 import type { AccessibilityProps } from "./Accessibility";
 import styled from "./styled";
-import { TOKENS } from "./Button/consts";
-import defaultTokens from "./defaultTokens";
-import { getSizeToken } from "./Button";
 
 type Props = {|
   +children: React.Node,
@@ -23,7 +20,6 @@ type Props = {|
   +borderlessRipple?: boolean,
   +rippleColor?: string,
   +width?: string | number,
-  +circled?: boolean,
   ...AccessibilityProps,
 |};
 
@@ -34,21 +30,6 @@ const StyledTouchableOpacity = styled(TouchableOpacity, props => ({
 const StyledTouchableNativeFeedback = styled(TouchableNativeFeedback, props => ({
   width: props.width,
 }));
-
-const StyledTouchableWrapper = styled(View, props => {
-  const { circled, theme } = props;
-  return {
-    overflow: "hidden",
-    width: props.width,
-    borderRadius: circled
-      ? getSizeToken(TOKENS.heightButton, props)
-      : theme.orbit.borderRadiusNormal,
-  };
-});
-
-StyledTouchableWrapper.defaultProps = {
-  theme: defaultTokens,
-};
 
 /**
  * Touchable renders a touchable that looks native on both iOS and Android.
@@ -91,18 +72,16 @@ export default class Touchable extends React.Component<Props> {
       }
 
       return (
-        <StyledTouchableWrapper {...this.props}>
-          <StyledTouchableNativeFeedback
-            {...this.props}
-            useForeground={useForeground}
-            background={TouchableNativeFeedback.Ripple(
-              this.props.rippleColor,
-              this.props.borderlessRipple,
-            )}
-          >
-            {children}
-          </StyledTouchableNativeFeedback>
-        </StyledTouchableWrapper>
+        <StyledTouchableNativeFeedback
+          {...this.props}
+          useForeground={useForeground}
+          background={TouchableNativeFeedback.Ripple(
+            this.props.rippleColor,
+            this.props.borderlessRipple,
+          )}
+        >
+          {children}
+        </StyledTouchableNativeFeedback>
       );
     }
 

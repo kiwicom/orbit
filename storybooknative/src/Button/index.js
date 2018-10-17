@@ -170,7 +170,7 @@ const Button = (props: Props) => {
   return (
     <Touchable disabled={props.disabled || !props.onPress} onPress={onPressHandler} width={width}>
       <StyledButton size={size} type={type} {...rest}>
-        <StyledText size={size} type={type} {...rest}>
+        <StyledText size={size} type={type} bordered={props.bordered}>
           {children}
         </StyledText>
       </StyledButton>

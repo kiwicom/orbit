@@ -7,9 +7,9 @@ import styled from "../styled";
 import defaultTokens from "../defaultTokens";
 import { TYPE_OPTIONS, SIZE_OPTIONS, TOKENS } from "./consts";
 
-import type { Props } from "./index";
+import type { Props, Tokens } from "./index";
 
-export const getSizeToken = (name: string, { theme, size }) => {
+const getSizeToken = (name: Tokens, { theme, size }) => {
   const tokens = {
     [TOKENS.heightButton]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.heightButtonLarge,
@@ -29,7 +29,7 @@ export const getSizeToken = (name: string, { theme, size }) => {
   };
   return tokens[name][size];
 };
-const getTypeToken = (name: string, { theme, type }) => {
+const getTypeToken = (name: Tokens, { theme, type }) => {
   const tokens = {
     [TOKENS.backgroundButton]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonPrimary,
@@ -146,14 +146,19 @@ const Button = (props: Props) => {
 
   if (Platform.OS === "android") {
     return (
-      <StyledTouchableWrapper size={size} type={type} {...rest}>
+      <StyledTouchableWrapper
+        size={size}
+        block={props.block}
+        width={props.width}
+        circled={props.circled}
+      >
         <Touchable
           disabled={props.disabled || !props.onPress}
           onPress={onPressHandler}
           width={width}
         >
           <StyledButton size={size} type={type} {...rest}>
-            <StyledText size={size} type={type} {...rest}>
+            <StyledText size={size} type={type} bordered={props.bordered}>
               {children}
             </StyledText>
           </StyledButton>

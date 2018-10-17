@@ -409,7 +409,7 @@ exports[`Storyshots Alert Default 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl gHGEra"
+            className="Alert__StyledAlert-dqYNhl cerVel"
             data-test={undefined}
           >
             <div
@@ -417,7 +417,7 @@ exports[`Storyshots Alert Default 1`] = `
               data-test={undefined}
             >
               <div
-                className="Alert__Content-icgAru kxrxjb"
+                className="Alert__Content-icgAru gJypIv"
                 data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
@@ -639,7 +639,7 @@ exports[`Storyshots Alert Info alert 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl gHGEra"
+            className="Alert__StyledAlert-dqYNhl cerVel"
             data-test={undefined}
           >
             <div
@@ -662,7 +662,7 @@ exports[`Storyshots Alert Info alert 1`] = `
               data-test={undefined}
             >
               <div
-                className="Alert__Content-icgAru kxrxjb"
+                className="Alert__Content-icgAru gJypIv"
                 data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
@@ -922,7 +922,7 @@ exports[`Storyshots Alert Playground 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl gHGEra"
+            className="Alert__StyledAlert-dqYNhl cerVel"
             data-test="test"
           >
             <div
@@ -951,7 +951,7 @@ exports[`Storyshots Alert Playground 1`] = `
                 You can change the title by changing the Title knob
               </div>
               <div
-                className="Alert__Content-icgAru qonSl"
+                className="Alert__Content-icgAru ihKXoW"
                 data-test={undefined}
               >
                 <div

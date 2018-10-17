@@ -16,7 +16,6 @@ export { default as CountryFlag } from "./CountryFlag";
 // Card
 export { default as Card } from "./Card";
 export { default as CardHeader } from "./Card/CardHeader";
-export { default as CardContent } from "./Card/CardContent";
 export { default as CardSection } from "./Card/CardSection";
 
 // Modal

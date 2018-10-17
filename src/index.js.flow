@@ -30,7 +30,6 @@ import typeof ServiceLogoType from "./ServiceLogo";
 import typeof TextareaType from "./Textarea";
 import typeof CardType from "./Card";
 import typeof CardHeaderType from "./Card/CardHeader";
-import typeof CardContentType from "./Card/CardContent";
 import typeof CardSectionType from "./Card/CardSection";
 import typeof mediaType from "./utils/media";
 import typeof PortalType from "./Portal";
@@ -67,7 +66,6 @@ declare export var ListItem: ListItemType;
 
 declare export var Card: CardType;
 declare export var CardHeader: CardHeaderType;
-declare export var CardContent: CardContentType;
 declare export var CardSection: CardSectionType;
 
 declare export var Portal: PortalType;

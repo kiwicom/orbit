@@ -354,31 +354,35 @@ exports[`Storyshots Loading Card loading 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH kTWZug"
+            className="Card__StyledCard-fdVXSH htEHAk"
             data-test={undefined}
           >
             <div
-              className="Loading__StyledLoading-jmajcg knLSuA"
-              data-test={undefined}
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
             >
               <div
-                className="Loading__StyledLoader-lecZdo krYAYh"
+                className="Loading__StyledLoading-jmajcg knLSuA"
+                data-test={undefined}
               >
                 <div
-                  className="Loading__StyledLoaderCircle-kaWqJR iAPYVz"
-                />
+                  className="Loading__StyledLoader-lecZdo krYAYh"
+                >
+                  <div
+                    className="Loading__StyledLoaderCircle-kaWqJR iAPYVz"
+                  />
+                  <div
+                    className="Loading__StyledLoaderCircle-kaWqJR iAPYVz"
+                  />
+                  <div
+                    className="Loading__StyledLoaderCircle-kaWqJR iAPYVz"
+                  />
+                </div>
                 <div
-                  className="Loading__StyledLoaderCircle-kaWqJR iAPYVz"
-                />
-                <div
-                  className="Loading__StyledLoaderCircle-kaWqJR iAPYVz"
-                />
-              </div>
-              <div
-                className="Loading__StyledLoadingText-jIePdr bQbnwR"
-                type="boxLoader"
-              >
-                Please wait, Card content is loading...
+                  className="Loading__StyledLoadingText-jIePdr bQbnwR"
+                  type="boxLoader"
+                >
+                  Please wait, Card content is loading...
+                </div>
               </div>
             </div>
           </div>
@@ -673,7 +677,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                             }
                           >
                             &lt;
-                            CardContent
+                            CardSection
                           </span>
                           <span />
                           <span
@@ -787,7 +791,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                             }
                           >
                             &lt;/
-                            CardContent
+                            CardSection
                             &gt;
                           </span>
                         </div>

@@ -235,7 +235,7 @@
       "name": "paletteCloudLightActive"
     },
     {
-      "value": "rgb(154, 229, 218)",
+      "value": "rgb(225, 245, 242)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteProductLight"
@@ -596,7 +596,7 @@
       "name": "widthIconSmall"
     },
     {
-      "value": "rgb(100, 215, 198)",
+      "value": "rgb(154, 221, 211)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteProductLightActive"
@@ -807,7 +807,7 @@
       "name": "colorAlertIconWarning"
     },
     {
-      "value": "rgb(0, 84, 72)",
+      "value": "rgb(0, 130, 111)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteProductDark"
@@ -849,7 +849,7 @@
       "name": "fontSizeHeadingTitle1"
     },
     {
-      "value": "rgb(7, 64, 92)",
+      "value": "rgb(0, 58, 105)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteBlueDark"
@@ -1888,13 +1888,13 @@
       "name": "colorTextButtonWarning"
     },
     {
-      "value": "rgb(7, 64, 92)",
+      "value": "rgb(0, 58, 105)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextAlertInfo"
     },
     {
-      "value": "rgb(127, 222, 208)",
+      "value": "rgb(189, 233, 226)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteProductLightHover"

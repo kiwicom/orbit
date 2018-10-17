@@ -209,7 +209,7 @@
       }
     },
     "colorTextAlertInfo": {
-      "value": "#07405c",
+      "value": "#003A69",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -2549,7 +2549,7 @@
       }
     },
     "paletteProductLight": {
-      "value": "#9ae5da",
+      "value": "#E1F5F2",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -2557,7 +2557,7 @@
       }
     },
     "paletteProductLightHover": {
-      "value": "#7fded0",
+      "value": "#bde9e2",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -2565,7 +2565,7 @@
       }
     },
     "paletteProductLightActive": {
-      "value": "#64d7c6",
+      "value": "#9addd3",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -2597,7 +2597,7 @@
       }
     },
     "paletteProductDark": {
-      "value": "#005448",
+      "value": "#00826f",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -2973,7 +2973,7 @@
       }
     },
     "paletteBlueDark": {
-      "value": "#07405c",
+      "value": "#003A69",
       "type": "color",
       "category": "Color palette",
       "meta": {

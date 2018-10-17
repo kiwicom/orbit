@@ -122,7 +122,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
               data-test={undefined}
             >
               <div
-                className="Alert__Content-icgAru esmlI"
+                className="Alert__Content-icgAru eaQhJq"
                 data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
@@ -417,7 +417,7 @@ exports[`Storyshots Alert Default 1`] = `
               data-test={undefined}
             >
               <div
-                className="Alert__Content-icgAru delXhj"
+                className="Alert__Content-icgAru kxrxjb"
                 data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
@@ -662,7 +662,7 @@ exports[`Storyshots Alert Info alert 1`] = `
               data-test={undefined}
             >
               <div
-                className="Alert__Content-icgAru delXhj"
+                className="Alert__Content-icgAru kxrxjb"
                 data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
@@ -951,33 +951,81 @@ exports[`Storyshots Alert Playground 1`] = `
                 You can change the title by changing the Title knob
               </div>
               <div
-                className="Alert__Content-icgAru eInYTs"
+                className="Alert__Content-icgAru qonSl"
                 data-test={undefined}
               >
                 <div
-                  style={
-                    Object {
-                      "marginBottom": "12px",
-                    }
-                  }
+                  className="Stack__StyledStack-cGIpQG iukPUF"
                 >
-                  Also you can change the message by changing the Message knob
-                </div>
-                <a
-                  className="Button__StyledButton-jJDkJK kwbftt"
-                  data-test={undefined}
-                  disabled={undefined}
-                  href="#"
-                  size="small"
-                  target={undefined}
-                  type={undefined}
-                >
-                  <div
-                    className="Button__StyledButtonContent-gvDciI pDqSF"
-                  >
-                    I am a link
+                  <div>
+                    Also you can change the message by changing the Message knob
                   </div>
-                </a>
+                  <div
+                    className="List__StyledList-fzpiIm fuxvjT"
+                    data-test={undefined}
+                  >
+                    <div
+                      className="ListItem__Item-bhWwBk eRQaxy"
+                      data-test={undefined}
+                    >
+                      <div
+                        className="ListItem__IconContainer-cWSXoS czCkQe"
+                      >
+                        <svg
+                          className="Icon__StyledIcon-ckyxIP fvqkFf"
+                          data-test={undefined}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
+                          />
+                        </svg>
+                      </div>
+                      <p
+                        className="Text__StyledText-guhEiE kfhEHZ"
+                        data-test={undefined}
+                      >
+                        623 Kč will be refunded by your payment card
+                      </p>
+                    </div>
+                    <div
+                      className="ListItem__Item-bhWwBk eRQaxy"
+                      data-test={undefined}
+                    >
+                      <div
+                        className="ListItem__IconContainer-cWSXoS czCkQe"
+                      >
+                        <svg
+                          className="Icon__StyledIcon-ckyxIP fvqkFf"
+                          data-test={undefined}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
+                          />
+                        </svg>
+                      </div>
+                      623 Kč will be refunded by your payment card
+                    </div>
+                  </div>
+                  <a
+                    className="Button__StyledButton-jJDkJK kwbftt"
+                    data-test={undefined}
+                    disabled={undefined}
+                    href="#"
+                    size="small"
+                    target={undefined}
+                    type={undefined}
+                  >
+                    <div
+                      className="Button__StyledButtonContent-gvDciI pDqSF"
+                    >
+                      I am a link
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -1280,7 +1328,7 @@ exports[`Storyshots Alert Playground 1`] = `
                           }
                         >
                           &lt;
-                          div
+                          Stack
                         </span>
                         <span>
                           <span>
@@ -1288,81 +1336,529 @@ exports[`Storyshots Alert Playground 1`] = `
                             <span
                               style={Object {}}
                             >
-                              style
+                              spacing
                             </span>
                             <span>
                               =
                               <span
                                 style={Object {}}
                               >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  compact
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            div
+                          </span>
+                          <span />
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 63,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Also you can change the message by changing the Message knob
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            div
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            List
+                          </span>
+                          <span />
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              ListItem
+                            </span>
+                            <span />
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 78,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;
+                                Text
+                              </span>
+                              <span>
                                 <span>
-                                  {
+                                   
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    type
+                                  </span>
+                                  <span>
+                                    =
+                                    <span
+                                      style={Object {}}
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        "
+                                        info
+                                        "
+                                      </span>
+                                    </span>
+                                  </span>
+                                  
+                                </span>
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &gt;
+                              </span>
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 93,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                623 Kč will be refunded by your payment card
+                              </span>
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 78,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;/
+                                Text
+                                &gt;
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              ListItem
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              ListItem
+                            </span>
+                            <span />
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 78,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              623 Kč will be refunded by your payment card
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              ListItem
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            List
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Button
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                type
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
                                   <span
                                     style={
                                       Object {
-                                        "color": "#666",
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
                                       }
                                     }
                                   >
-                                    {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      marginBottom
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      "
-                                      12px
-                                      "
-                                    </span>
-                                    }
+                                    "
+                                    info
+                                    "
                                   </span>
-                                  }
                                 </span>
                               </span>
                             </span>
-                            
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                size
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    "
+                                    small
+                                    "
+                                  </span>
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                href
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    "
+                                    #
+                                    "
+                                  </span>
+                                </span>
+                              </span>
+                              
+                            </span>
                           </span>
-                        </span>
-                        <span
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 63,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          &gt;
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            I am a link
+                          </span>
+                        </div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          Also you can change the message by changing the Message knob
-                        </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Button
+                            &gt;
+                          </span>
+                        </div>
                       </div>
                       <div
                         style={
@@ -1380,159 +1876,7 @@ exports[`Storyshots Alert Playground 1`] = `
                           }
                         >
                           &lt;/
-                          div
-                          &gt;
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Button
-                        </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  info
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              size
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  small
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              href
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  #
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                            
-                          </span>
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          I am a link
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          Button
+                          Stack
                           &gt;
                         </span>
                       </div>
@@ -1692,7 +2036,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
               data-test={undefined}
             >
               <div
-                className="Alert__Content-icgAru dIqawJ"
+                className="Alert__Content-icgAru kNgoPG"
                 data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
@@ -2002,7 +2346,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
               data-test={undefined}
             >
               <div
-                className="Alert__Content-icgAru iqkKFA"
+                className="Alert__Content-icgAru gFCHnU"
                 data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.

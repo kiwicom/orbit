@@ -1,11 +1,12 @@
 // @flow
 
 import * as React from "react";
-import { TextInput, View } from "react-native";
+import { TextInput, View, Text } from "react-native";
 
 import styled from "../styled";
 import defaultTokens from "../defaultTokens";
 import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
+import FormLabel, { StyledAsterisk } from "../FormLabel";
 
 import type { Props } from "./index";
 
@@ -62,6 +63,26 @@ StyledFakeInput.defaultProps = {
   theme: defaultTokens,
 };
 
+const StyledInlineLabel = styled(Text, props => {
+  const { theme, filled, disabled } = props;
+  return {
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    display: "flex", // react native web
+    paddingLeft: theme.orbit.spaceSmall,
+    marginBottom: 0,
+    fontSize: getToken(TOKENS.fontSizeInput, props),
+    color: !filled || disabled ? theme.orbit.colorFormLabel : theme.orbit.colorFormLabelFilled,
+    lineHeight: theme.orbit.lineHeightText,
+    zIndex: 3,
+  };
+});
+
+StyledInlineLabel.defaultProps = {
+  theme: defaultTokens,
+};
+
 const StyledTextInput = styled(TextInput, props => {
   const { theme, disabled } = props;
   return {
@@ -70,7 +91,7 @@ const StyledTextInput = styled(TextInput, props => {
     color: disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput,
     fontSize: getToken(TOKENS.fontSizeInput, props),
     width: "100%",
-    height: "100%",
+    height: getToken(TOKENS.heightInput, props),
     lineHeight: getToken(TOKENS.heightInput, props),
     zIndex: 2,
   };
@@ -94,14 +115,24 @@ const InputField = (props: Props) => {
     required,
     ...rest
   } = props;
+  const isFilled = !!props.value;
   return (
     <React.Fragment>
-      {label !== undefined && label}
+      {label !== undefined &&
+        !inlineLabel && <FormLabel label={label} isFilled={isFilled} required={required} />}
       <StyledInputContainer size={size} disabled={disabled} error={error}>
+        {label !== undefined &&
+          inlineLabel && (
+            <StyledInlineLabel size={size} filled={isFilled} disabled={disabled}>
+              {required && <StyledAsterisk filled={isFilled} />}
+              {label}
+            </StyledInlineLabel>
+          )}
         <StyledTextInput
           underlineColorAndroid="transparent"
           autoCorrect={false}
           placeholderTextColor={defaultTokens.orbit.colorPlaceholderInput}
+          editable={!disabled}
           size={size}
           type={type}
           {...rest}

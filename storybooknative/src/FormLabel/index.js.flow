@@ -1,0 +1,12 @@
+// @flow
+
+export type Props = {
+  +children: React$Element,
+  +filled?: boolean,
+  +disabled?: boolean,
+  +required?: boolean,
+};
+
+export type AsteriskProps = {
+  +filled: boolean,
+};

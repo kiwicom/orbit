@@ -13,8 +13,11 @@ const Field = styled.label`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   display: flex;
   width: 100%;
+  height: ${({ fullHeight }) => fullHeight && "100%"};
   flex-direction: column;
   position: relative;
+  // for usage with Stack
+  flex: ${({ fullHeight }) => fullHeight && "1"};
 `;
 
 Field.defaultProps = {
@@ -36,11 +39,12 @@ const getTokens = name => ({ theme, size }) => {
   return tokens[name][size];
 };
 
-const StyledTextArea = styled(({ theme, size, error, help, ...props }) => <textarea {...props} />)`
+const StyledTextArea = styled.textarea`
   appearance: none;
   box-sizing: border-box;
   display: block;
   width: 100%;
+  height: ${({ fullHeight }) => fullHeight && "100%"};
   padding: ${getTokens(TOKENS.paddingInput)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: inset 0 0 0
@@ -58,6 +62,9 @@ const StyledTextArea = styled(({ theme, size, error, help, ...props }) => <texta
   font-family: inherit;
   resize: ${({ resize }) => resize};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+
+  // for usage with Stack
+  flex: ${({ fullHeight }) => fullHeight && "1"};
 
   // IE 11 bug fix, border: 0 won't work - the box-shadow will be hidden
   border: 1px solid transparent;
@@ -97,7 +104,7 @@ const Textarea = (props: Props) => {
   } = props;
 
   return (
-    <Field data-test={dataTest}>
+    <Field data-test={dataTest} fullHeight={props.fullHeight}>
       {props.label && (
         <FormLabel filled={!!props.value} disabled={disabled}>
           {props.label}
@@ -107,6 +114,7 @@ const Textarea = (props: Props) => {
         name={props.name}
         value={props.value}
         size={size}
+        fullHeight={props.fullHeight}
         disabled={disabled}
         error={props.error}
         placeholder={props.placeholder}

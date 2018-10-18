@@ -23,7 +23,7 @@ const InputField = (props: Props) => {
   const { label, ...rest } = props;
   return (
     <React.Fragment>
-      {label != null && <Text>{label}</Text>}
+      {label && <Text>{label}</Text>}
       <StyledTextInput underlineColorAndroid="transparent" autoCorrect={false} {...rest} />
     </React.Fragment>
   );

@@ -128,7 +128,7 @@ exports[`Storyshots CheckBox Default 1`] = `
               className="Checkbox__TextContainer-gQuMca dfYmDF"
             >
               <span
-                className="Checkbox__LabelText-fjjJOg gmQGgR"
+                className="Checkbox__LabelText-fjjJOg ilatth"
               >
                 Label
               </span>
@@ -423,7 +423,7 @@ exports[`Storyshots CheckBox Playground 1`] = `
               className="Checkbox__TextContainer-gQuMca dfYmDF"
             >
               <span
-                className="Checkbox__LabelText-fjjJOg gmQGgR"
+                className="Checkbox__LabelText-fjjJOg ilatth"
               >
                 Label
               </span>
@@ -844,7 +844,7 @@ exports[`Storyshots CheckBox With help 1`] = `
               className="Checkbox__TextContainer-gQuMca dfYmDF"
             >
               <span
-                className="Checkbox__LabelText-fjjJOg gmQGgR"
+                className="Checkbox__LabelText-fjjJOg ilatth"
               >
                 Label
               </span>

@@ -74,7 +74,6 @@ const LabelText = styled.span`
   font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
   font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
   color: ${({ theme }) => theme.orbit.colorFormLabel};
-  height: ${({ theme }) => theme.orbit.heightCheckbox};
   line-height: ${({ theme }) => theme.orbit.heightCheckbox};
 `;
 

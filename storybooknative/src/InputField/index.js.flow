@@ -1,0 +1,28 @@
+// @flow
+
+import * as React from "react";
+
+import Text from "../Text";
+
+export type Props = {|
+  +size?: "small" | "normal",
+  +type?: "text" | "number" | "email" | "password",
+  +defaultValue?: string,
+  +autoFocus?: boolean,
+  +keyboardType?: "email-address" | "numeric" | "number-pad",
+  +secureTextEntry?: boolean,
+  +label?: React.Element<typeof Text>,
+  +inlineLabel?: boolean,
+  +value?: string,
+  +placeholder?: string,
+  +prefix?: React$Element,
+  +suffix?: React$Element,
+  +help?: React$Element,
+  +error?: React$Element,
+  +disabled?: boolean,
+  +maxLength?: number,
+  +required?: boolean,
+  +onChangeText?: (text: string) => void,
+  +onFocus?: () => {},
+  +onBlur?: () => {},
+|};

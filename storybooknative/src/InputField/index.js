@@ -8,7 +8,7 @@ import styled from "../styled";
 
 type Props = {|
   +placeholder?: string,
-  +label?: string,
+  +label?: React.Element<typeof Text>,
   +defaultValue?: string,
   +autoFocus?: boolean,
   +onChangeText?: (text: string) => void,

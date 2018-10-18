@@ -5,26 +5,33 @@ import ReactDOM from "react-dom";
 import type { Props } from "./index";
 
 export default class Portal extends React.Component<Props> {
-  // eslint-disable-next-line react/sort-comp
-  node = document.getElementById(this.props.element || "modal");
-
-  el = document.createElement("div");
+  constructor(props: Props) {
+    super(props);
+    if (typeof window !== "undefined") {
+      this.node = document.getElementById(this.props.element || "modal") || document.body;
+      this.el = document.createElement("div");
+    }
+  }
 
   componentDidMount() {
-    if (this.node) {
+    if (this.node && this.el) {
       this.node.appendChild(this.el);
     }
   }
 
   componentWillUnmount() {
-    if (this.node) {
+    if (this.node && this.el) {
       this.node.removeChild(this.el);
     }
   }
 
+  node: ?HTMLElement;
+  el: ?HTMLElement;
   render() {
     const { children } = this.props;
-
-    return ReactDOM.createPortal(children, this.el);
+    if (typeof window !== "undefined" && this.el) {
+      return ReactDOM.createPortal(children, this.el);
+    }
+    return null;
   }
 }

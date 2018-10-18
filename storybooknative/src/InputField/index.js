@@ -10,7 +10,7 @@ type Props = {|
   +label?: React.Element<typeof Text>,
   +defaultValue?: string,
   +autoFocus?: boolean,
-  +onChange?: (text: string) => void,
+  +onChangeText?: (text: string) => void,
   +keyboardType?: "email-address" | "numeric" | "number-pad",
   +secureTextEntry?: boolean,
   +maxLength?: number,
@@ -19,17 +19,14 @@ type Props = {|
 const StyledLabel = styled(Text, props => {});
 const StyledTextInput = styled(TextInput, props => {});
 
-const InputField = (props: Props) => (
-  <React.Fragment>
-    {this.props.label != null && <StyledLabel>{this.props.label}</StyledLabel>}
-    <StyledTextInput
-      underlineColorAndroid="transparent"
-      autoCorrect={false}
-      {...this.props}
-      placeholder={null}
-      onChangeText={props.onChange}
-    />
-  </React.Fragment>
-);
+const InputField = (props: Props) => {
+  const { label, ...rest } = props;
+  return (
+    <React.Fragment>
+      {label != null && <StyledLabel>{label}</StyledLabel>}
+      <StyledTextInput underlineColorAndroid="transparent" autoCorrect={false} {...rest} />
+    </React.Fragment>
+  );
+};
 
 export default InputField;

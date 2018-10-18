@@ -379,7 +379,7 @@ exports[`Storyshots Tile Expandable 1`] = `
                 className="TileHeader__StyledTileTitle-xOuee gOhPdy"
               >
                 <div
-                  className="TileHeader__StyledTileIcon-hVIutj jXWBrJ"
+                  className="TileHeader__StyledTileIcon-hVIutj hbqFEr"
                 >
                   <svg
                     className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -779,7 +779,7 @@ exports[`Storyshots Tile Playground 1`] = `
                 className="TileHeader__StyledTileTitle-xOuee gOhPdy"
               >
                 <div
-                  className="TileHeader__StyledTileIcon-hVIutj jXWBrJ"
+                  className="TileHeader__StyledTileIcon-hVIutj hbqFEr"
                 >
                   <svg
                     className="Icon__StyledIcon-ckyxIP fvqkFf"

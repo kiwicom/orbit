@@ -1,8 +1,9 @@
 // @flow strict
 
 import * as React from "react";
-import { TextInput, Text } from "react-native"; // eslint-disable-line no-restricted-imports
+import { TextInput } from "react-native"; // eslint-disable-line no-restricted-imports
 
+import Text from "../Text";
 import styled from "../styled";
 
 type Props = {|
@@ -16,14 +17,13 @@ type Props = {|
   +maxLength?: number,
 |};
 
-const StyledLabel = styled(Text, props => {});
 const StyledTextInput = styled(TextInput, props => {});
 
 const InputField = (props: Props) => {
   const { label, ...rest } = props;
   return (
     <React.Fragment>
-      {label != null && <StyledLabel>{label}</StyledLabel>}
+      {label != null && <Text>{label}</Text>}
       <StyledTextInput underlineColorAndroid="transparent" autoCorrect={false} {...rest} />
     </React.Fragment>
   );

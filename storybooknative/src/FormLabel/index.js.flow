@@ -1,0 +1,17 @@
+// @flow
+
+export type Props = {
+  +filled?: boolean,
+  +disabled?: boolean,
+  +required?: boolean,
+  +label: React$Node,
+};
+
+export type AsteriskProps = {
+  +filled?: boolean,
+};
+
+declare export var StyledLabel: React$ComponentType<Props>;
+declare export var StyledAsterisk: React$ComponentType<AsteriskProps>;
+
+declare export default React$ComponentType<Props>;

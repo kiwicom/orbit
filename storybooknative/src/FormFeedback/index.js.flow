@@ -1,0 +1,12 @@
+// @flow
+
+type Type = "help" | "error";
+
+export type Props = {
+  +children: React$Node,
+  +type?: Type,
+};
+
+declare export var StyledFormFeedback: React$ComponentType<Props>;
+
+declare export default React$ComponentType<Props>;

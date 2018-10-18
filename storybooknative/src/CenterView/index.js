@@ -4,20 +4,20 @@ import * as React from "react";
 import { View } from "react-native";
 
 import styled from "../styled";
+import { type AlignItems } from "../Types";
 
-const style = {
+const Main = styled(View, props => ({
   flexGrow: 1,
   justifyContent: "center",
-  alignItems: "center",
+  alignItems: props.align || "center",
   backgroundColor: "#f5fcff",
-};
-
-const Main = styled(View, style);
+}));
 
 type Props = {|
-  children: React.ChildrenArray<React.Node> | null,
+  +children: React.ChildrenArray<React.Node> | null,
+  +align?: AlignItems,
 |};
 
 export default function CenterView(props: Props) {
-  return <Main>{props.children}</Main>;
+  return <Main {...props}>{props.children}</Main>;
 }

@@ -1,0 +1,26 @@
+// @flow
+
+export type Props = {|
+  +size?: "small" | "normal",
+  +type?: "text" | "number" | "email" | "password",
+  +defaultValue?: string,
+  +autoFocus?: boolean,
+  +keyboardType?: "email-address" | "numeric" | "number-pad",
+  +secureTextEntry?: boolean,
+  +label?: React$Node,
+  +inlineLabel?: boolean,
+  +value?: string,
+  +placeholder?: React$Node,
+  +prefix?: React$Node,
+  +suffix?: React$Node,
+  +help?: React$Node,
+  +error?: React$Node,
+  +disabled?: boolean,
+  +maxLength?: number,
+  +required?: boolean,
+  +onChangeText?: (text: string) => void,
+  +onFocus?: () => {},
+  +onBlur?: () => {},
+|};
+
+declare export default React$ComponentType<Props>;

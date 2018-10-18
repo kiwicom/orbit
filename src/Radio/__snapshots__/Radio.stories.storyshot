@@ -123,7 +123,7 @@ exports[`Storyshots Radio Default 1`] = `
               className="Radio__TextContainer-gTKRvD buEioY"
             >
               <span
-                className="Radio__LabelText-hQDDIn jwQGON"
+                className="Radio__LabelText-hQDDIn hdeiSK"
               >
                 Label
               </span>
@@ -413,7 +413,7 @@ exports[`Storyshots Radio Playground 1`] = `
               className="Radio__TextContainer-gTKRvD buEioY"
             >
               <span
-                className="Radio__LabelText-hQDDIn jwQGON"
+                className="Radio__LabelText-hQDDIn hdeiSK"
               >
                 Label
               </span>
@@ -829,7 +829,7 @@ exports[`Storyshots Radio With help 1`] = `
               className="Radio__TextContainer-gTKRvD buEioY"
             >
               <span
-                className="Radio__LabelText-hQDDIn jwQGON"
+                className="Radio__LabelText-hQDDIn hdeiSK"
               >
                 Label
               </span>

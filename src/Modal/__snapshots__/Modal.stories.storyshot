@@ -111,7 +111,7 @@ exports[`Storyshots Modal Full preview 1`] = `
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-dXDxzA gTyJWw"
+                className="Modal__ModalWrapperContent-dXDxzA gfJkay"
                 size="normal"
               >
                 <div
@@ -1530,7 +1530,7 @@ exports[`Storyshots Modal Sizes 1`] = `
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-dXDxzA gTyJWw"
+                className="Modal__ModalWrapperContent-dXDxzA gfJkay"
                 size="normal"
               >
                 <div

@@ -45,7 +45,7 @@ const getSizeToken = () => ({ theme, size }) => {
   return sizeTokens[size];
 };
 
-const StyledText = styled(({ element, children, className, dataTest }) => {
+export const StyledText = styled(({ element, children, className, dataTest }) => {
   const TextElement = element;
   return (
     <TextElement className={className} data-test={dataTest}>

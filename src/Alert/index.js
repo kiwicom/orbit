@@ -12,6 +12,8 @@ import ButtonLink from "../ButtonLink";
 import { StyledTextLink } from "../TextLink";
 import { TYPE_OPTIONS, TOKENS } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
+import { Item } from "../List/ListItem";
+import { StyledText } from "../Text";
 
 import type { Props } from "./index";
 
@@ -144,6 +146,9 @@ const Content = styled(StyledDiv)`
     &:hover {
       color: ${({ theme }) => theme.orbit.colorTextAlertLink};
     }
+  }
+  & ${Item}, ${StyledText} {
+    color: ${getTypeToken(TOKENS.colorTextAlert)};
   }
 `;
 

@@ -10,6 +10,10 @@ import * as Icons from "../icons";
 import Button from "../Button";
 import { TYPE_OPTIONS } from "./consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import List from "../List";
+import ListItem from "../List/ListItem";
+import Text from "../Text";
+import Stack from "../Stack";
 
 import Alert from "./index";
 
@@ -152,10 +156,18 @@ storiesOf("Alert", module)
                   dataTest={dataTest}
                   spaceAfter={spaceAfter}
                 >
-                  <div style={{ marginBottom: "12px" }}>{message}</div>
-                  <Button type={type} size="small" href="#">
-                    {button}
-                  </Button>
+                  <Stack spacing="compact">
+                    <div>{message}</div>
+                    <List>
+                      <ListItem>
+                        <Text type={type}>623 Kč will be refunded by your payment card</Text>
+                      </ListItem>
+                      <ListItem>623 Kč will be refunded by your payment card</ListItem>
+                    </List>
+                    <Button type={type} size="small" href="#">
+                      {button}
+                    </Button>
+                  </Stack>
                 </Alert>
               ),
             },

@@ -7,8 +7,8 @@ import Text from "../Text";
 import styled from "../styled";
 
 type Props = {|
-  +placeholder?: React.Element<typeof Text>,
-  +label?: React.Element<typeof Text>,
+  +placeholder?: string,
+  +label?: string,
   +defaultValue?: string,
   +autoFocus?: boolean,
   +onChangeText?: (text: string) => void,

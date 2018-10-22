@@ -9,7 +9,8 @@ export type Type =
   | "warning"
   | "critical"
   | "facebook"
-  | "google";
+  | "google"
+  | "white";
 
 export type Size = "small" | "normal" | "large";
 

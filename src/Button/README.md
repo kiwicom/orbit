@@ -42,6 +42,7 @@ Table below contains all types of the props available in Button component.
 | `"critical"`  |            |
 | `"facebook"`  |            |
 | `"google"`    |            |
+| `"white"`     |            |
 
 ## Functional specs
 * By passing the `href` prop into Button, it will render into `a` element. If you pass `component` prop it will override this logic.

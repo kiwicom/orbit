@@ -2269,7 +2269,7 @@
       }
     },
     "paddingButtonNormalWithIcon": {
-      "value": "8px",
+      "value": "12px",
       "type": "size",
       "category": "Spacing",
       "meta": {
@@ -2277,7 +2277,7 @@
       }
     },
     "paddingButtonLargeWithIcon": {
-      "value": "12px",
+      "value": "16px",
       "type": "size",
       "category": "Spacing",
       "meta": {
@@ -2293,7 +2293,7 @@
       }
     },
     "marginButtonIconNormal": {
-      "value": "12px",
+      "value": "8px",
       "type": "size",
       "category": "Spacing",
       "meta": {
@@ -2301,7 +2301,7 @@
       }
     },
     "marginButtonIconLarge": {
-      "value": "16px",
+      "value": "12px",
       "type": "size",
       "category": "Spacing",
       "meta": {

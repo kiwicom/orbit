@@ -2944,54 +2944,6 @@ exports[`Storyshots Table Playground 1`] = `
                       Lorem ipsum dolor sit amet
                     </td>
                   </tr>
-                  <tr
-                    className="TableRow__StyledTableRow-kibSyN efYxGr"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableRow__StyledTableRow-kibSyN efYxGr"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -3198,7 +3150,36 @@ exports[`Storyshots Table Playground 1`] = `
                               &lt;
                               TableCell
                             </span>
-                            <span />
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  align
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      center
+                                      "
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
                             <span
                               style={
                                 Object {
@@ -3267,7 +3248,36 @@ exports[`Storyshots Table Playground 1`] = `
                               &lt;
                               TableCell
                             </span>
-                            <span />
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  align
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      center
+                                      "
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
                             <span
                               style={
                                 Object {
@@ -3336,7 +3346,36 @@ exports[`Storyshots Table Playground 1`] = `
                               &lt;
                               TableCell
                             </span>
-                            <span />
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  align
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      center
+                                      "
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
                             <span
                               style={
                                 Object {
@@ -3405,7 +3444,36 @@ exports[`Storyshots Table Playground 1`] = `
                               &lt;
                               TableCell
                             </span>
-                            <span />
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  align
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      center
+                                      "
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
                             <span
                               style={
                                 Object {
@@ -3576,7 +3644,36 @@ exports[`Storyshots Table Playground 1`] = `
                               &lt;
                               TableCell
                             </span>
-                            <span />
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  align
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      center
+                                      "
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
                             <span
                               style={
                                 Object {
@@ -3645,7 +3742,36 @@ exports[`Storyshots Table Playground 1`] = `
                               &lt;
                               TableCell
                             </span>
-                            <span />
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  align
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      center
+                                      "
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
                             <span
                               style={
                                 Object {
@@ -3714,7 +3840,36 @@ exports[`Storyshots Table Playground 1`] = `
                               &lt;
                               TableCell
                             </span>
-                            <span />
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  align
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      center
+                                      "
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
                             <span
                               style={
                                 Object {
@@ -3783,334 +3938,36 @@ exports[`Storyshots Table Playground 1`] = `
                               &lt;
                               TableCell
                             </span>
-                            <span />
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &gt;
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  align
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      center
+                                      "
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
                             </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 78,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              Lorem ipsum dolor sit amet
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;/
-                              TableCell
-                              &gt;
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;/
-                            TableRow
-                            &gt;
-                          </span>
-                        </div>
-                      </div>
-                      <div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;
-                            TableRow
-                          </span>
-                          <span />
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &gt;
-                          </span>
-                        </div>
-                        <div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;
-                              TableCell
-                            </span>
-                            <span />
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &gt;
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 78,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              Lorem ipsum dolor sit amet
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;/
-                              TableCell
-                              &gt;
-                            </span>
-                          </div>
-                        </div>
-                        <div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;
-                              TableCell
-                            </span>
-                            <span />
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &gt;
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 78,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              Lorem ipsum dolor sit amet
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;/
-                              TableCell
-                              &gt;
-                            </span>
-                          </div>
-                        </div>
-                        <div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;
-                              TableCell
-                            </span>
-                            <span />
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &gt;
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 78,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              Lorem ipsum dolor sit amet
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;/
-                              TableCell
-                              &gt;
-                            </span>
-                          </div>
-                        </div>
-                        <div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;
-                              TableCell
-                            </span>
-                            <span />
                             <span
                               style={
                                 Object {
@@ -4230,7 +4087,36 @@ exports[`Storyshots Table Playground 1`] = `
                               &lt;
                               TableCell
                             </span>
-                            <span />
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  align
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      center
+                                      "
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
                             <span
                               style={
                                 Object {
@@ -4299,7 +4185,36 @@ exports[`Storyshots Table Playground 1`] = `
                               &lt;
                               TableCell
                             </span>
-                            <span />
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  align
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      center
+                                      "
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
                             <span
                               style={
                                 Object {
@@ -4368,7 +4283,36 @@ exports[`Storyshots Table Playground 1`] = `
                               &lt;
                               TableCell
                             </span>
-                            <span />
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  align
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      center
+                                      "
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
                             <span
                               style={
                                 Object {
@@ -4437,334 +4381,36 @@ exports[`Storyshots Table Playground 1`] = `
                               &lt;
                               TableCell
                             </span>
-                            <span />
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &gt;
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  align
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      center
+                                      "
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
                             </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 78,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              Lorem ipsum dolor sit amet
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;/
-                              TableCell
-                              &gt;
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;/
-                            TableRow
-                            &gt;
-                          </span>
-                        </div>
-                      </div>
-                      <div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;
-                            TableRow
-                          </span>
-                          <span />
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &gt;
-                          </span>
-                        </div>
-                        <div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;
-                              TableCell
-                            </span>
-                            <span />
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &gt;
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 78,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              Lorem ipsum dolor sit amet
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;/
-                              TableCell
-                              &gt;
-                            </span>
-                          </div>
-                        </div>
-                        <div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;
-                              TableCell
-                            </span>
-                            <span />
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &gt;
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 78,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              Lorem ipsum dolor sit amet
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;/
-                              TableCell
-                              &gt;
-                            </span>
-                          </div>
-                        </div>
-                        <div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;
-                              TableCell
-                            </span>
-                            <span />
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &gt;
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 78,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              Lorem ipsum dolor sit amet
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;/
-                              TableCell
-                              &gt;
-                            </span>
-                          </div>
-                        </div>
-                        <div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;
-                              TableCell
-                            </span>
-                            <span />
                             <span
                               style={
                                 Object {

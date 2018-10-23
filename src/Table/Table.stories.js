@@ -3,12 +3,13 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { boolean, text, withKnobs } from "@storybook/addon-knobs/react";
+import { boolean, text, withKnobs, select } from "@storybook/addon-knobs/react";
 
 import TableHead from "./TableHead";
 import TableBody from "./TableBody";
 import TableRow from "./TableRow";
 import TableCell from "./TableCell";
+import ALIGN_OPTIONS from "./TableCell/consts";
 
 import Table from "./";
 
@@ -101,7 +102,7 @@ storiesOf("Table", module)
     const compact = boolean("compact", false);
     const children = text("children", "Lorem ipsum dolor sit amet");
     const dataTest = text("dataTest", "test");
-
+    const align = select("align", Object.values(ALIGN_OPTIONS), ALIGN_OPTIONS.CENTER);
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -113,36 +114,24 @@ storiesOf("Table", module)
                 <Table compact={compact} dataTest={dataTest}>
                   <TableHead>
                     <TableRow>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
+                      <TableCell align={align}>{children}</TableCell>
+                      <TableCell align={align}>{children}</TableCell>
+                      <TableCell align={align}>{children}</TableCell>
+                      <TableCell align={align}>{children}</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     <TableRow>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
+                      <TableCell align={align}>{children}</TableCell>
+                      <TableCell align={align}>{children}</TableCell>
+                      <TableCell align={align}>{children}</TableCell>
+                      <TableCell align={align}>{children}</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
-                      <TableCell>{children}</TableCell>
+                      <TableCell align={align}>{children}</TableCell>
+                      <TableCell align={align}>{children}</TableCell>
+                      <TableCell align={align}>{children}</TableCell>
+                      <TableCell align={align}>{children}</TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>

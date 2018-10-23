@@ -523,7 +523,7 @@ exports[`Storyshots CarrierLogo Non-existing carrier 1`] = `
           }
         >
           <div
-            className="CarrierLogo__StyledCarrierLogo-ieqjqT fhmgrR"
+            className="CarrierLogo__StyledCarrierLogo-ieqjqT kvJfMi"
             data-test={undefined}
             size="large"
           >
@@ -1334,7 +1334,7 @@ exports[`Storyshots CarrierLogo One carrier 1`] = `
           }
         >
           <div
-            className="CarrierLogo__StyledCarrierLogo-ieqjqT fhmgrR"
+            className="CarrierLogo__StyledCarrierLogo-ieqjqT kvJfMi"
             data-test="test"
             size="large"
           >

@@ -72,10 +72,10 @@ StyledImage.defaultProps = {
 
 export const StyledCarrierLogo = styled.div`
   background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};
-  height: ${({ theme, carriers }) =>
-    carriers.length > 1 ? `${theme.orbit.heightIconLarge}` : getRenderSize};
-  width: ${({ theme, carriers }) =>
-    carriers.length > 1 ? `${theme.orbit.widthIconLarge}` : getRenderSize};
+  height: ${({ theme, carriers, size }) =>
+    carriers.length > 1 ? theme.orbit.heightIconLarge : `${getRenderSize({ theme, size })}px`};
+  width: ${({ theme, carriers, size }) =>
+    carriers.length > 1 ? theme.orbit.widthIconLarge : `${getRenderSize({ theme, size })}px`};
   display: flex;
   flex-direction: ${({ carriers }) => (carriers.length > 1 ? "column" : "row")};
   flex-wrap: wrap;

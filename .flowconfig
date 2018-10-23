@@ -6,6 +6,8 @@
 .*/node_modules/immutable/.*
 .*/node_modules/radium/.*
 .*/node_modules/styled-components/.*
+.*/node_modules/devtools-timeline-model/.*
+.*/node_modules/chrome-devtools-frontend/.*
 
 [include]
 

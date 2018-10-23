@@ -1855,7 +1855,7 @@ exports[`Storyshots List With carrier 1`] = `
                 className="ListItem__IconContainer-cWSXoS czCkQe"
               >
                 <div
-                  className="CarrierLogo__StyledCarrierLogo-ieqjqT fhmgrR"
+                  className="CarrierLogo__StyledCarrierLogo-ieqjqT kvJfMi"
                   data-test={undefined}
                   size="large"
                 >

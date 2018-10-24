@@ -99,14 +99,14 @@ exports[`Storyshots Modal Full preview 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-jsvBud hzGqsV"
+            className="Modal__ModalBody-jsvBud dfMCLs"
             data-test="test"
             onClick={[Function]}
             onKeyDown={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-ioqsnS FaaEz"
+              className="Modal__ModalWrapper-ioqsnS gSESjZ"
               onScroll={[Function]}
               size="normal"
             >
@@ -1518,14 +1518,14 @@ exports[`Storyshots Modal Sizes 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-jsvBud hzGqsV"
+            className="Modal__ModalBody-jsvBud dfMCLs"
             data-test={undefined}
             onClick={[Function]}
             onKeyDown={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-ioqsnS FaaEz"
+              className="Modal__ModalWrapper-ioqsnS gSESjZ"
               onScroll={[Function]}
               size="normal"
             >

@@ -47,7 +47,13 @@ StyledInputContainer.defaultProps = {
 };
 
 const StyledFakeInput = styled(View, props => {
-  const { theme, error, disabled } = props;
+  const { theme, error, disabled, focused } = props;
+  let borderColor;
+  if (focused) {
+    borderColor = theme.orbit.borderColorInputFocus;
+  } else {
+    borderColor = error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput;
+  }
   return {
     width: "100%",
     position: "absolute",
@@ -55,7 +61,7 @@ const StyledFakeInput = styled(View, props => {
     height: getToken(TOKENS.heightInput, props),
     borderRadius: theme.orbit.borderRadiusNormal,
     borderWidth: "1px",
-    borderColor: error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput,
+    borderColor,
     backgroundColor: disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput,
   };
 });
@@ -102,48 +108,86 @@ StyledTextInput.defaultProps = {
   theme: defaultTokens,
 };
 
-const InputField = (props: Props) => {
-  const {
-    size = SIZE_OPTIONS.NORMAL,
-    type = TYPE_OPTIONS.TEXT,
-    label,
-    help,
-    error,
-    inlineLabel,
-    prefix,
-    suffix,
-    disabled,
-    required,
-    ...rest
-  } = props;
-  const isFilled = !!props.value;
-  return (
-    <React.Fragment>
-      {label !== undefined &&
-        !inlineLabel && <FormLabel label={label} isFilled={isFilled} required={required} />}
-      <StyledInputContainer size={size} disabled={disabled} error={error}>
-        {label !== undefined &&
-          inlineLabel && (
-            <StyledInlineLabel size={size} filled={isFilled} disabled={disabled}>
-              {required && <StyledAsterisk filled={isFilled} />}
-              {label}
-            </StyledInlineLabel>
-          )}
-        <StyledTextInput
-          underlineColorAndroid="transparent"
-          autoCorrect={false}
-          placeholderTextColor={defaultTokens.orbit.colorPlaceholderInput}
-          editable={!disabled}
-          size={size}
-          type={type}
-          {...rest}
-        />
-        <StyledFakeInput size={size} disabled={disabled} error={error} />
-      </StyledInputContainer>
-      {!!help && !error && <FormFeedback type="help">{help}</FormFeedback>}
-      {!!error && <FormFeedback type="error">{error}</FormFeedback>}
-    </React.Fragment>
-  );
+type State = {
+  focused: boolean,
 };
+
+class InputField extends React.Component<Props, State> {
+  static defaultProps = {
+    onBlur: () => {},
+    onFocus: () => {},
+  };
+
+  constructor() {
+    super();
+
+    this.state = {
+      focused: false,
+    };
+  }
+
+  onBlur = () => {
+    this.setState({ focused: false });
+    this.props.onBlur();
+  };
+
+  onFocus = () => {
+    if (!this.props.disabled) {
+      this.setState({ focused: true });
+    }
+    this.props.onFocus();
+  };
+
+  render() {
+    const {
+      size = SIZE_OPTIONS.NORMAL,
+      type = TYPE_OPTIONS.TEXT,
+      label,
+      help,
+      error,
+      inlineLabel,
+      prefix,
+      suffix,
+      disabled,
+      required,
+      ...rest
+    } = this.props;
+    const isFilled = !!this.props.value;
+    return (
+      <React.Fragment>
+        {label !== undefined &&
+          !inlineLabel && <FormLabel label={label} isFilled={isFilled} required={required} />}
+        <StyledInputContainer size={size} disabled={disabled} error={error}>
+          {label !== undefined &&
+            inlineLabel && (
+              <StyledInlineLabel size={size} filled={isFilled} disabled={disabled}>
+                {required && <StyledAsterisk filled={isFilled} />}
+                {label}
+              </StyledInlineLabel>
+            )}
+          <StyledTextInput
+            underlineColorAndroid="transparent"
+            autoCorrect={false}
+            placeholderTextColor={defaultTokens.orbit.colorPlaceholderInput}
+            editable={!disabled}
+            size={size}
+            type={type}
+            {...rest}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+          />
+          <StyledFakeInput
+            size={size}
+            focused={this.state.focused}
+            disabled={disabled}
+            error={error}
+          />
+        </StyledInputContainer>
+        {!!help && !error && <FormFeedback type="help">{help}</FormFeedback>}
+        {!!error && <FormFeedback type="error">{error}</FormFeedback>}
+      </React.Fragment>
+    );
+  }
+}
 
 export default InputField;

@@ -35,6 +35,8 @@ storiesOf("InputField", module)
         inlineLabel={inlineLabel}
         help={help}
         error={error}
+        onFocus={action("focused")}
+        onBlur={action("blurred")}
       />
     );
   });

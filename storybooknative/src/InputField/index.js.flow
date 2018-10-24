@@ -10,7 +10,7 @@ export type Props = {|
   +label?: React$Node,
   +inlineLabel?: boolean,
   +value?: string,
-  +placeholder?: string,
+  +placeholder?: React$Node,
   +prefix?: React$Node,
   +suffix?: React$Node,
   +help?: React$Node,

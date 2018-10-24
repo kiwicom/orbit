@@ -70,6 +70,20 @@ StyledFakeInput.defaultProps = {
   theme: defaultTokens,
 };
 
+const StyledPlaceholder = styled(Text, props => {
+  const { theme } = props;
+  return {
+    color: theme.orbit.colorPlaceholderInput,
+    fontSize: getToken(TOKENS.fontSizeInput, props),
+    padding: getToken(TOKENS.paddingInput, props),
+    position: "absolute",
+  };
+});
+
+StyledPlaceholder.defaultProps = {
+  theme: defaultTokens,
+};
+
 const StyledInlineLabel = styled(Text, props => {
   const { theme, filled, disabled } = props;
   return {
@@ -89,6 +103,12 @@ const StyledInlineLabel = styled(Text, props => {
 StyledInlineLabel.defaultProps = {
   theme: defaultTokens,
 };
+
+const StyledInputWrapper = styled(View, () => ({
+  width: "100%",
+  zIndex: 2,
+  justifyContent: "center",
+}));
 
 const StyledTextInput = styled(TextInput, props => {
   const { theme, disabled } = props;
@@ -110,6 +130,7 @@ StyledTextInput.defaultProps = {
 
 type State = {
   focused: boolean,
+  displayPlaceholder: boolean,
 };
 
 class InputField extends React.Component<Props, State> {
@@ -118,11 +139,14 @@ class InputField extends React.Component<Props, State> {
     onFocus: () => {},
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    const { defaultValue, value } = props;
 
     this.state = {
       focused: false,
+      displayPlaceholder:
+        (defaultValue == null || defaultValue === "") && (value == null || value === ""),
     };
   }
 
@@ -138,6 +162,19 @@ class InputField extends React.Component<Props, State> {
     this.props.onFocus();
   };
 
+  handlePlaceholder = (text: string) => {
+    this.setState(
+      {
+        displayPlaceholder: text === "",
+      },
+      () => {
+        if (this.props.onChangeText) {
+          this.props.onChangeText(text);
+        }
+      },
+    );
+  };
+
   render() {
     const {
       size = SIZE_OPTIONS.NORMAL,
@@ -150,6 +187,7 @@ class InputField extends React.Component<Props, State> {
       suffix,
       disabled,
       required,
+      placeholder,
       ...rest
     } = this.props;
     const isFilled = !!this.props.value;
@@ -165,17 +203,24 @@ class InputField extends React.Component<Props, State> {
                 {label}
               </StyledInlineLabel>
             )}
-          <StyledTextInput
-            underlineColorAndroid="transparent"
-            autoCorrect={false}
-            placeholderTextColor={defaultTokens.orbit.colorPlaceholderInput}
-            editable={!disabled}
-            size={size}
-            type={type}
-            {...rest}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-          />
+          <StyledInputWrapper>
+            {this.props.placeholder != null &&
+              this.state.displayPlaceholder && (
+                <StyledPlaceholder size={size}>{placeholder}</StyledPlaceholder>
+              )}
+            <StyledTextInput
+              underlineColorAndroid="transparent"
+              autoCorrect={false}
+              editable={!disabled}
+              size={size}
+              type={type}
+              placeholder={null}
+              {...rest}
+              onChangeText={this.handlePlaceholder}
+              onFocus={this.onFocus}
+              onBlur={this.onBlur}
+            />
+          </StyledInputWrapper>
           <StyledFakeInput
             size={size}
             focused={this.state.focused}

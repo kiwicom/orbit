@@ -43,6 +43,7 @@ import typeof TableBodyType from "./Table/TableBody";
 import typeof TableCellType from "./Table/TableCell";
 import typeof TableHeadType from "./Table/TableHead";
 import typeof TableRowType from "./Table/TableRow";
+import typeof StopoverArrowType from "./StopoverArrow";
 
 declare export var InputText: any;
 declare export var InputTextarea: any;
@@ -99,6 +100,7 @@ declare export var Select: SelectType;
 declare export var Stack: StackType;
 declare export var Separator: SeparatorType;
 declare export var ServiceLogo: ServiceLogoType;
+declare export var StopoverArrow: StopoverArrowType;
 declare export var Textarea: TextareaType;
 declare export var Tile: TileType;
 

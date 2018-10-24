@@ -8,6 +8,7 @@ export const TYPE_OPTIONS = {
   CRITICAL: "critical",
   FACEBOOK: "facebook",
   GOOGLE: "google",
+  WHITE: "white",
 };
 
 export const SIZE_OPTIONS = {
@@ -29,6 +30,9 @@ export const TOKENS = {
   backgroundButton: "backgroundButton",
   backgroundButtonHover: "backgroundButtonHover",
   backgroundButtonActive: "backgroundButtonActive",
+  backgroundButtonBordered: "backgroundButtonBordered",
+  backgroundButtonBorderedHover: "backgroundButtonBorderedHover",
+  backgroundButtonBorderedActive: "backgroundButtonBorderedActive",
   colorTextButton: "colorTextButton",
   colorTextButtonBordered: "colorTextButtonBordered",
   colorTextButtonHover: "colorTextButtonHover",

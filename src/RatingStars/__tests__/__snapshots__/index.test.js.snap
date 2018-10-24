@@ -3,7 +3,7 @@
 exports[`RatingStars should match snapshot 1`] = `
 <RatingStars__StyledRatingStars
   data-test="test"
-  size="small"
+  size="large"
   theme={
     Object {
       "orbit": Object {
@@ -387,24 +387,29 @@ exports[`RatingStars should match snapshot 1`] = `
   }
 >
   <StarFull
+    color="attention"
     key="star-0"
-    size="small"
+    size="large"
   />
   <StarFull
+    color="attention"
     key="star-1"
-    size="small"
+    size="large"
   />
   <StarEmpty
+    color="attention"
     key="star-2"
-    size="small"
+    size="large"
   />
   <StarEmpty
+    color="attention"
     key="star-3"
-    size="small"
+    size="large"
   />
   <StarEmpty
+    color="attention"
     key="star-4"
-    size="small"
+    size="large"
   />
 </RatingStars__StyledRatingStars>
 `;

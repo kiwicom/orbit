@@ -6,7 +6,7 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, number, text, select } from "@storybook/addon-knobs/react";
 
 import MAX_STARS from "./consts";
-import { ICON_SIZES } from "../Icon/consts";
+import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
 
 import RatingStars from "./";
 
@@ -21,7 +21,13 @@ storiesOf("RatingStars", module)
   )
   .addWithChapters("Playground", () => {
     const rating = number("rating", 4.4, { min: 0, max: MAX_STARS });
-    const size = select("Size", [undefined, ...Object.values(ICON_SIZES)]);
+    const size = select("size", [undefined, ...Object.values(ICON_SIZES)]);
+    const color = select("color", [
+      undefined,
+      ICON_COLORS.PRIMARY,
+      ICON_COLORS.SECONDARY,
+      ICON_COLORS.ATTENTION,
+    ]);
     const dataTest = text("dataTest", "test");
 
     return {
@@ -30,7 +36,9 @@ storiesOf("RatingStars", module)
         {
           sections: [
             {
-              sectionFn: () => <RatingStars rating={rating} size={size} dataTest={dataTest} />,
+              sectionFn: () => (
+                <RatingStars rating={rating} size={size} color={color} dataTest={dataTest} />
+              ),
             },
           ],
         },

@@ -1,0 +1,8 @@
+// @flow
+
+type Type = "help" | "error";
+
+export type Props = {
+  +children: string,
+  +type?: Type,
+};

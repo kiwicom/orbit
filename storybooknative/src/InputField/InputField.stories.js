@@ -21,6 +21,8 @@ storiesOf("InputField", module)
     const inlineLabel = boolean("Inline label", false);
     const disabled = boolean("Disabled", false);
     const size = select("Size", SIZE_OPTIONS, "normal");
+    const help = text("Help", "");
+    const error = text("Error", "");
     return (
       <InputField
         size={size}
@@ -31,6 +33,8 @@ storiesOf("InputField", module)
         disabled={disabled}
         required={required}
         inlineLabel={inlineLabel}
+        help={help}
+        error={error}
       />
     );
   });

@@ -1,9 +1,5 @@
 // @flow
 
-import * as React from "react";
-
-import Text from "../Text";
-
 export type Props = {|
   +size?: "small" | "normal",
   +type?: "text" | "number" | "email" | "password",
@@ -11,14 +7,14 @@ export type Props = {|
   +autoFocus?: boolean,
   +keyboardType?: "email-address" | "numeric" | "number-pad",
   +secureTextEntry?: boolean,
-  +label?: React.Element<typeof Text>,
+  +label?: React$Node,
   +inlineLabel?: boolean,
   +value?: string,
   +placeholder?: string,
-  +prefix?: React$Element,
-  +suffix?: React$Element,
-  +help?: React$Element,
-  +error?: React$Element,
+  +prefix?: React$Node,
+  +suffix?: React$Node,
+  +help?: React$Node,
+  +error?: React$Node,
   +disabled?: boolean,
   +maxLength?: number,
   +required?: boolean,

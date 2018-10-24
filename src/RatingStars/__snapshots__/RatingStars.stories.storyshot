@@ -99,12 +99,12 @@ exports[`Storyshots RatingStars Playground 1`] = `
           }
         >
           <div
-            className="RatingStars__StyledRatingStars-bdpFtX ewRCKO"
+            className="RatingStars__StyledRatingStars-bdpFtX jCnzxZ"
             data-test="test"
             size="small"
           >
             <svg
-              className="Icon__StyledIcon-ckyxIP ifOFla"
+              className="Icon__StyledIcon-ckyxIP gvkqdc"
               data-test={undefined}
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 24 24"
@@ -114,7 +114,7 @@ exports[`Storyshots RatingStars Playground 1`] = `
               />
             </svg>
             <svg
-              className="Icon__StyledIcon-ckyxIP ifOFla"
+              className="Icon__StyledIcon-ckyxIP gvkqdc"
               data-test={undefined}
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 24 24"
@@ -124,7 +124,7 @@ exports[`Storyshots RatingStars Playground 1`] = `
               />
             </svg>
             <svg
-              className="Icon__StyledIcon-ckyxIP ifOFla"
+              className="Icon__StyledIcon-ckyxIP gvkqdc"
               data-test={undefined}
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 24 24"
@@ -134,7 +134,7 @@ exports[`Storyshots RatingStars Playground 1`] = `
               />
             </svg>
             <svg
-              className="Icon__StyledIcon-ckyxIP ifOFla"
+              className="Icon__StyledIcon-ckyxIP gvkqdc"
               data-test={undefined}
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 24 24"
@@ -144,7 +144,7 @@ exports[`Storyshots RatingStars Playground 1`] = `
               />
             </svg>
             <svg
-              className="Icon__StyledIcon-ckyxIP ifOFla"
+              className="Icon__StyledIcon-ckyxIP gvkqdc"
               data-test={undefined}
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 24 24"
@@ -210,7 +210,10 @@ exports[`Storyshots RatingStars Playground 1`] = `
                     </span>
                     <span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -238,7 +241,10 @@ exports[`Storyshots RatingStars Playground 1`] = `
                         </span>
                       </span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -266,7 +272,41 @@ exports[`Storyshots RatingStars Playground 1`] = `
                         </span>
                       </span>
                       <span>
-                         
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          color
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                null
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
                         <span
                           style={Object {}}
                         >
@@ -291,7 +331,7 @@ exports[`Storyshots RatingStars Playground 1`] = `
                             </span>
                           </span>
                         </span>
-                         
+                        <br />
                       </span>
                     </span>
                     <span

@@ -7,6 +7,7 @@ import styled from "../styled";
 import defaultTokens from "../defaultTokens";
 import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
 import FormLabel, { StyledAsterisk } from "../FormLabel";
+import FormFeedback from "../FormFeedback";
 
 import type { Props } from "./index";
 
@@ -139,6 +140,8 @@ const InputField = (props: Props) => {
         />
         <StyledFakeInput size={size} disabled={disabled} error={error} />
       </StyledInputContainer>
+      {!!help && !error && <FormFeedback type="help">{help}</FormFeedback>}
+      {!!error && <FormFeedback type="error">{error}</FormFeedback>}
     </React.Fragment>
   );
 };

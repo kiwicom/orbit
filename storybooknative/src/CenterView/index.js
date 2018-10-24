@@ -15,7 +15,7 @@ const Main = styled(View, props => ({
 
 type Props = {|
   +children: React.ChildrenArray<React.Node> | null,
-  +align: AlignItems,
+  +align?: AlignItems,
 |};
 
 export default function CenterView(props: Props) {

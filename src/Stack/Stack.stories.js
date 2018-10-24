@@ -174,7 +174,7 @@ storiesOf("Stack", module)
       basis: "auto",
       align: ALIGNS.END,
       spacing: SPACINGS.CONDENSED,
-      spaceAfter: SPACINGS.COMFY,
+      spaceAfter: SPACINGS_AFTER.LARGEST,
     });
 
     return {

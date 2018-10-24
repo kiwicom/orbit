@@ -1,7 +1,10 @@
 // @flow
 
+type Align = "left" | "center" | "right";
+
 export type Props = {|
-  +children: React$Node,
+  +children?: React$Node,
+  +align?: Align,
 |};
 
 declare export default React$ComponentType<Props>;

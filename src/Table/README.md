@@ -81,4 +81,13 @@ Table below contains all types of the props in TableCell component.
 
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :---------------------| :-------------- | :------------------------------- |
-| **children**  | `React.Node`          |                 | The content of the TableRow.
+| align         | [`enum`](#enum)       | `"left"`        | The align of text in the TableCell.
+| children      | `React.Node`          |                 | The content of the TableCell.
+
+#### enum
+
+| align      |
+| :--------- |
+| `"left"`   |
+| `"center"` |
+| `"right"`  |

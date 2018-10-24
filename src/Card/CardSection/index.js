@@ -138,7 +138,7 @@ class CardSection extends React.Component<any, Props> {
                 {title}
               </Heading>
             )}
-            {subTitle && <Text>Insert your content here...</Text>}
+            {subTitle && <Text>{subTitle}</Text>}
           </StyledTitleAndSubtitle>
           {expandable && <StyledCardSectionIconRight size="medium" color="secondary" />}
         </StyledCardSectionHeader>

@@ -515,7 +515,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                         className="Text__StyledText-guhEiE hYZMSR"
                         data-test={undefined}
                       >
-                        Insert your content here...
+                        subtitle
                       </p>
                     </div>
                     <svg
@@ -566,7 +566,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                         className="Text__StyledText-guhEiE hYZMSR"
                         data-test={undefined}
                       >
-                        Insert your content here...
+                        subtitle
                       </p>
                     </div>
                     <svg
@@ -617,7 +617,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                         className="Text__StyledText-guhEiE hYZMSR"
                         data-test={undefined}
                       >
-                        Insert your content here...
+                        subtitle
                       </p>
                     </div>
                     <svg
@@ -1379,7 +1379,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                       className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
-                      Insert your content here...
+                      subtitle
                     </p>
                   </div>
                 </div>
@@ -1417,7 +1417,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                         className="Text__StyledText-guhEiE hYZMSR"
                         data-test={undefined}
                       >
-                        Insert your content here...
+                        subtitle
                       </p>
                     </div>
                     <svg
@@ -1465,7 +1465,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                       className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
-                      Insert your content here...
+                      subtitle
                     </p>
                   </div>
                 </div>

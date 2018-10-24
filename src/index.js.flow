@@ -12,6 +12,7 @@ import typeof CarrierLogoType from "./CarrierLogo";
 import typeof HeadingType from "./Heading";
 import typeof InputFieldType from "./InputField";
 import typeof InputGroupType from "./InputGroup";
+import typeof InputStepperType from "./InputStepper";
 import typeof IllustrationType from "./Illustration";
 import typeof ListType from "./List";
 import typeof ListItemType from "./List/ListItem";
@@ -90,6 +91,7 @@ declare export var InputField: InputFieldType;
 declare export var Illustration: IllustrationType;
 declare export var InputGroup: InputGroupType;
 declare export var InputFile: InputFileType;
+declare export var InputStepper: InputStepperType;
 declare export var TextLink: TextLinkType;
 declare export var Loading: LoadingType;
 

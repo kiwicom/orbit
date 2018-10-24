@@ -583,7 +583,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                 className="InputField__InputContainer-evnRDD bHPfak"
               >
                 <input
-                  className="InputField__Input-iRjCvp lilXhY"
+                  className="InputField__Input-iRjCvp jIplxp"
                   disabled={undefined}
                   max={undefined}
                   maxLength={undefined}
@@ -593,6 +593,8 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                   onBlur={undefined}
                   onChange={undefined}
                   onFocus={undefined}
+                  onKeyDown={undefined}
+                  onKeyUp={undefined}
                   placeholder={undefined}
                   type="password"
                   value={undefined}
@@ -1872,7 +1874,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                   className="InputField__InputContainer-evnRDD kmFqfB"
                 >
                   <input
-                    className="InputField__Input-iRjCvp lilXhY"
+                    className="InputField__Input-iRjCvp jIplxp"
                     disabled={undefined}
                     max={undefined}
                     maxLength={undefined}
@@ -1882,6 +1884,8 @@ exports[`Storyshots Stack Nested example 1`] = `
                     onBlur={undefined}
                     onChange={undefined}
                     onFocus={undefined}
+                    onKeyDown={undefined}
+                    onKeyUp={undefined}
                     placeholder={undefined}
                     type="password"
                     value={undefined}

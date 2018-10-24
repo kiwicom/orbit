@@ -37,7 +37,7 @@ const LoaderAnimation = keyframes`
   100%  {opacity: .3; transform:translateY(0px);}
 `;
 
-const StyledLoading = styled(({ children, className, dataTest }) => (
+export const StyledLoading = styled(({ children, className, dataTest }) => (
   <div className={className} data-test={dataTest}>
     {children}
   </div>

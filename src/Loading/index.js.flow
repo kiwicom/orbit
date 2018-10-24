@@ -12,5 +12,6 @@ export type Props = {|
 |};
 
 declare export var StyledSpinner: React$ComponentType<>;
+declare export var StyledLoading: React$ComponentType<>;
 
 declare export default React$ComponentType<Props>;

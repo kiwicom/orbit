@@ -99,46 +99,50 @@ exports[`Storyshots Card Card with description 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH kTWZug"
+            className="Card__StyledCard-fdVXSH htEHAk"
             data-test={undefined}
           >
             <div
-              className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
-              data-test={undefined}
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
             >
               <div
-                className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
+                className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
+                data-test={undefined}
               >
                 <div
-                  className="CardHeader__StyledIcon-doXBgu isldQW"
+                  className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
                 >
-                  <svg
-                    className="Icon__StyledIcon-ckyxIP fvqkFf"
-                    data-test={undefined}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24"
+                  <div
+                    className="CardHeader__StyledIcon-doXBgu isldQW"
                   >
-                    <path
-                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                    />
-                  </svg>
+                    <svg
+                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      data-test={undefined}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                      />
+                    </svg>
+                  </div>
+                  <h2
+                    className="Heading__StyledHeading-gucmUp eKGySM"
+                    data-test={undefined}
+                  >
+                    Card with title & description
+                  </h2>
                 </div>
-                <h2
-                  className="Heading__StyledHeading-gucmUp eKGySM"
-                  data-test={undefined}
+                <div
+                  className="CardHeader__StyledSubTitle-gOpdhi itEmg"
                 >
-                  Card with title & description
-                </h2>
-              </div>
-              <div
-                className="CardHeader__StyledSubTitle-gOpdhi itEmg"
-              >
-                <p
-                  className="Text__StyledText-guhEiE hYZMSR"
-                  data-test={undefined}
-                >
-                  This is a description of the card.
-                </p>
+                  <p
+                    className="Text__StyledText-guhEiE hYZMSR"
+                    data-test={undefined}
+                  >
+                    This is a description of the card.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -353,7 +357,7 @@ exports[`Storyshots Card Card with description 1`] = `
 </div>
 `;
 
-exports[`Storyshots Card Card with only content 1`] = `
+exports[`Storyshots Card Card with expandable sections 1`] = `
 <div
   style={
     Object {
@@ -387,7 +391,1613 @@ exports[`Storyshots Card Card with only content 1`] = `
             }
           }
         >
-          Card with only content
+          Card with expandable sections
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div
+            className="Card__StyledCard-fdVXSH htEHAk"
+            data-test={undefined}
+          >
+            <div
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+            >
+              <div
+                className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
+                data-test={undefined}
+              >
+                <div
+                  className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
+                >
+                  <h2
+                    className="Heading__StyledHeading-gucmUp eKGySM"
+                    data-test={undefined}
+                  >
+                    Card with sections
+                  </h2>
+                </div>
+                <div
+                  className="CardHeader__StyledSubTitle-gOpdhi itEmg"
+                >
+                  <p
+                    className="Text__StyledText-guhEiE hYZMSR"
+                    data-test={undefined}
+                  >
+                    This is a description of the card.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+            >
+              <div
+                className="Card__StyledExpandableSectionWrapper-bwYRgE fhGfxK"
+              >
+                <div
+                  className="CardSection__StyledCardSection-jTZsPt bzDxhR"
+                  data-test={undefined}
+                >
+                  <div
+                    className="CardSection__StyledCardSectionHeader-glQZki hafKS"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                    >
+                      <h3
+                        className="Heading__StyledHeading-gucmUp hgjEuM"
+                        data-test={undefined}
+                      >
+                        Insert your title here...
+                      </h3>
+                      <p
+                        className="Text__StyledText-guhEiE hYZMSR"
+                        data-test={undefined}
+                      >
+                        Insert your content here...
+                      </p>
+                    </div>
+                    <svg
+                      className="CardSection__StyledCardSectionIconRight-bDXJH jNnZJf Icon__StyledIcon-ckyxIP fSokFV"
+                      data-test={undefined}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                  >
+                    <div>
+                      This is hidden content
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+            >
+              <div
+                className="Card__StyledExpandableSectionWrapper-bwYRgE fhGfxK"
+              >
+                <div
+                  className="CardSection__StyledCardSection-jTZsPt bzDxhR"
+                  data-test={undefined}
+                >
+                  <div
+                    className="CardSection__StyledCardSectionHeader-glQZki hafKS"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                    >
+                      <h3
+                        className="Heading__StyledHeading-gucmUp hgjEuM"
+                        data-test={undefined}
+                      >
+                        Insert your title here...
+                      </h3>
+                      <p
+                        className="Text__StyledText-guhEiE hYZMSR"
+                        data-test={undefined}
+                      >
+                        Insert your content here...
+                      </p>
+                    </div>
+                    <svg
+                      className="CardSection__StyledCardSectionIconRight-bDXJH jNnZJf Icon__StyledIcon-ckyxIP fSokFV"
+                      data-test={undefined}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                  >
+                    <div>
+                      This is hidden content
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+            >
+              <div
+                className="Card__StyledExpandableSectionWrapper-bwYRgE fhGfxK"
+              >
+                <div
+                  className="CardSection__StyledCardSection-jTZsPt bzDxhR"
+                  data-test={undefined}
+                >
+                  <div
+                    className="CardSection__StyledCardSectionHeader-glQZki hafKS"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                    >
+                      <h3
+                        className="Heading__StyledHeading-gucmUp hgjEuM"
+                        data-test={undefined}
+                      >
+                        Insert your title here...
+                      </h3>
+                      <p
+                        className="Text__StyledText-guhEiE hYZMSR"
+                        data-test={undefined}
+                      >
+                        Insert your content here...
+                      </p>
+                    </div>
+                    <svg
+                      className="CardSection__StyledCardSectionIconRight-bDXJH jNnZJf Icon__StyledIcon-ckyxIP fSokFV"
+                      data-test={undefined}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                  >
+                    <div>
+                      This is hidden content
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Card
+                      </span>
+                      <span />
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        CardHeader
+                      </span>
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            title
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                Card with sections
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            subTitle
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                This is a description of the card.
+                                "
+                              </span>
+                            </span>
+                          </span>
+                           
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        /&gt;
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          CardSection
+                        </span>
+                        <span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              title
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  Insert your title here...
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              subTitle
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  subtitle
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              expandable
+                            </span>
+                            
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          This is hidden content
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          CardSection
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          CardSection
+                        </span>
+                        <span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              title
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  Insert your title here...
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              subTitle
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  subtitle
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              expandable
+                            </span>
+                            
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          This is hidden content
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          CardSection
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          CardSection
+                        </span>
+                        <span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              title
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  Insert your title here...
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              subTitle
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  subtitle
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              expandable
+                            </span>
+                            
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          This is hidden content
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          CardSection
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        Card
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Card Card with mixed sections 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Card with mixed sections
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div
+            className="Card__StyledCard-fdVXSH bRaHAv"
+            data-test={undefined}
+          >
+            <div
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+            >
+              <div
+                className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
+                data-test={undefined}
+              >
+                <div
+                  className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
+                >
+                  <h2
+                    className="Heading__StyledHeading-gucmUp eKGySM"
+                    data-test={undefined}
+                  >
+                    Card with sections
+                  </h2>
+                </div>
+                <div
+                  className="CardHeader__StyledSubTitle-gOpdhi itEmg"
+                >
+                  <p
+                    className="Text__StyledText-guhEiE hYZMSR"
+                    data-test={undefined}
+                  >
+                    This is a description of the card.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+            >
+              <div
+                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
+                data-test={undefined}
+              >
+                <div
+                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  onClick={undefined}
+                >
+                  <div
+                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                  >
+                    <h3
+                      className="Heading__StyledHeading-gucmUp hgjEuM"
+                      data-test={undefined}
+                    >
+                      Insert your title here...
+                    </h3>
+                    <p
+                      className="Text__StyledText-guhEiE hYZMSR"
+                      data-test={undefined}
+                    >
+                      Insert your content here...
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                >
+                  <div />
+                </div>
+              </div>
+            </div>
+            <div
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+            >
+              <div
+                className="Card__StyledExpandableSectionWrapper-bwYRgE fhGfxK"
+              >
+                <div
+                  className="CardSection__StyledCardSection-jTZsPt bzDxhR"
+                  data-test={undefined}
+                >
+                  <div
+                    className="CardSection__StyledCardSectionHeader-glQZki hafKS"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                    >
+                      <h3
+                        className="Heading__StyledHeading-gucmUp hgjEuM"
+                        data-test={undefined}
+                      >
+                        Insert your title here...
+                      </h3>
+                      <p
+                        className="Text__StyledText-guhEiE hYZMSR"
+                        data-test={undefined}
+                      >
+                        Insert your content here...
+                      </p>
+                    </div>
+                    <svg
+                      className="CardSection__StyledCardSectionIconRight-bDXJH jNnZJf Icon__StyledIcon-ckyxIP fSokFV"
+                      data-test={undefined}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                  >
+                    <div>
+                      This is hidden content
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+            >
+              <div
+                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
+                data-test={undefined}
+              >
+                <div
+                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  onClick={undefined}
+                >
+                  <div
+                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                  >
+                    <h3
+                      className="Heading__StyledHeading-gucmUp hgjEuM"
+                      data-test={undefined}
+                    >
+                      Insert your title here...
+                    </h3>
+                    <p
+                      className="Text__StyledText-guhEiE hYZMSR"
+                      data-test={undefined}
+                    >
+                      Insert your content here...
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                >
+                  <div />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Card
+                      </span>
+                      <span />
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        CardHeader
+                      </span>
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            title
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                Card with sections
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            subTitle
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                This is a description of the card.
+                                "
+                              </span>
+                            </span>
+                          </span>
+                           
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        /&gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        CardSection
+                      </span>
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            title
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                Insert your title here...
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            subTitle
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                subtitle
+                                "
+                              </span>
+                            </span>
+                          </span>
+                           
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        /&gt;
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          CardSection
+                        </span>
+                        <span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              title
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  Insert your title here...
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              subTitle
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  "
+                                  subtitle
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              expandable
+                            </span>
+                            
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 48,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          This is hidden content
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          CardSection
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        CardSection
+                      </span>
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            title
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                Insert your title here...
+                                "
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            subTitle
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                "
+                                subtitle
+                                "
+                              </span>
+                            </span>
+                          </span>
+                           
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        /&gt;
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;/
+                        Card
+                        &gt;
+                      </span>
+                    </div>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Card Card with only section 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Card with only section
         </h1>
         
         <span
@@ -452,19 +2062,37 @@ exports[`Storyshots Card Card with only content 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH kTWZug"
+            className="Card__StyledCard-fdVXSH htEHAk"
             data-test={undefined}
           >
             <div
-              className="CardContent__StyledCardContent-iBaOYi iGSbob"
-              data-test={undefined}
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
             >
-              <p
-                className="Text__StyledText-guhEiE hYZMSR"
+              <div
+                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
                 data-test={undefined}
               >
-                This is a content of the card.
-              </p>
+                <div
+                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  onClick={undefined}
+                >
+                  <div
+                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                  />
+                </div>
+                <div
+                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                >
+                  <div>
+                    <p
+                      className="Text__StyledText-guhEiE hYZMSR"
+                      data-test={undefined}
+                    >
+                      This is a content of the card.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -550,7 +2178,7 @@ exports[`Storyshots Card Card with only content 1`] = `
                           }
                         >
                           &lt;
-                          CardContent
+                          CardSection
                         </span>
                         <span />
                         <span
@@ -648,7 +2276,7 @@ exports[`Storyshots Card Card with only content 1`] = `
                           }
                         >
                           &lt;/
-                          CardContent
+                          CardSection
                           &gt;
                         </span>
                       </div>
@@ -784,84 +2412,142 @@ exports[`Storyshots Card Card with sections 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH kTWZug"
+            className="Card__StyledCard-fdVXSH bRaHAv"
             data-test={undefined}
           >
             <div
-              className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
-              data-test={undefined}
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
             >
               <div
-                className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
+                className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
+                data-test={undefined}
               >
-                <h2
-                  className="Heading__StyledHeading-gucmUp eKGySM"
-                  data-test={undefined}
+                <div
+                  className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
                 >
-                  Card with sections
-                </h2>
+                  <h2
+                    className="Heading__StyledHeading-gucmUp eKGySM"
+                    data-test={undefined}
+                  >
+                    Card with sections
+                  </h2>
+                </div>
+                <div
+                  className="CardHeader__StyledSubTitle-gOpdhi itEmg"
+                >
+                  <p
+                    className="Text__StyledText-guhEiE hYZMSR"
+                    data-test={undefined}
+                  >
+                    This is a description of the card.
+                  </p>
+                </div>
               </div>
+            </div>
+            <div
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+            >
               <div
-                className="CardHeader__StyledSubTitle-gOpdhi itEmg"
+                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
+                data-test={undefined}
               >
-                <p
-                  className="Text__StyledText-guhEiE hYZMSR"
-                  data-test={undefined}
+                <div
+                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  onClick={undefined}
                 >
-                  This is a description of the card.
-                </p>
+                  <div
+                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                  />
+                </div>
+                <div
+                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                >
+                  <div>
+                    <h3
+                      className="Heading__StyledHeading-gucmUp hgjEuM"
+                      data-test={undefined}
+                    >
+                      Insert your title here...
+                    </h3>
+                    <p
+                      className="Text__StyledText-guhEiE hYZMSR"
+                      data-test={undefined}
+                    >
+                      Insert your content here...
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
             <div
-              className="CardSection__StyledCardSection-jTZsPt inFSdU"
-              data-test={undefined}
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
             >
-              <h3
-                className="Heading__StyledHeading-gucmUp hgjEuM"
+              <div
+                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
                 data-test={undefined}
               >
-                Insert your title here...
-              </h3>
-              <p
-                className="Text__StyledText-guhEiE hYZMSR"
-                data-test={undefined}
-              >
-                Insert your content here...
-              </p>
+                <div
+                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  onClick={undefined}
+                >
+                  <div
+                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                  />
+                </div>
+                <div
+                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                >
+                  <div>
+                    <h3
+                      className="Heading__StyledHeading-gucmUp hgjEuM"
+                      data-test={undefined}
+                    >
+                      Insert your title here...
+                    </h3>
+                    <p
+                      className="Text__StyledText-guhEiE hYZMSR"
+                      data-test={undefined}
+                    >
+                      Insert your content here...
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
-              className="CardSection__StyledCardSection-jTZsPt inFSdU"
-              data-test={undefined}
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
             >
-              <h3
-                className="Heading__StyledHeading-gucmUp hgjEuM"
+              <div
+                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
                 data-test={undefined}
               >
-                Insert your title here...
-              </h3>
-              <p
-                className="Text__StyledText-guhEiE hYZMSR"
-                data-test={undefined}
-              >
-                Insert your content here...
-              </p>
-            </div>
-            <div
-              className="CardSection__StyledCardSection-jTZsPt inFSdU"
-              data-test={undefined}
-            >
-              <h3
-                className="Heading__StyledHeading-gucmUp hgjEuM"
-                data-test={undefined}
-              >
-                Insert your title here...
-              </h3>
-              <p
-                className="Text__StyledText-guhEiE hYZMSR"
-                data-test={undefined}
-              >
-                Insert your content here...
-              </p>
+                <div
+                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  onClick={undefined}
+                >
+                  <div
+                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                  />
+                </div>
+                <div
+                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                >
+                  <div>
+                    <h3
+                      className="Heading__StyledHeading-gucmUp hgjEuM"
+                      data-test={undefined}
+                    >
+                      Insert your title here...
+                    </h3>
+                    <p
+                      className="Text__StyledText-guhEiE hYZMSR"
+                      data-test={undefined}
+                    >
+                      Insert your content here...
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1881,36 +3567,40 @@ exports[`Storyshots Card Default 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH kTWZug"
+            className="Card__StyledCard-fdVXSH htEHAk"
             data-test={undefined}
           >
             <div
-              className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
-              data-test={undefined}
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
             >
               <div
-                className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
+                className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
+                data-test={undefined}
               >
                 <div
-                  className="CardHeader__StyledIcon-doXBgu isldQW"
+                  className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
                 >
-                  <svg
-                    className="Icon__StyledIcon-ckyxIP fvqkFf"
-                    data-test={undefined}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24"
+                  <div
+                    className="CardHeader__StyledIcon-doXBgu isldQW"
                   >
-                    <path
-                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                    />
-                  </svg>
+                    <svg
+                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      data-test={undefined}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                      />
+                    </svg>
+                  </div>
+                  <h2
+                    className="Heading__StyledHeading-gucmUp eKGySM"
+                    data-test={undefined}
+                  >
+                    Card with title
+                  </h2>
                 </div>
-                <h2
-                  className="Heading__StyledHeading-gucmUp eKGySM"
-                  data-test={undefined}
-                >
-                  Card with title
-                </h2>
               </div>
             </div>
           </div>
@@ -2225,81 +3915,121 @@ exports[`Storyshots Card Playground 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH kTWZug"
+            className="Card__StyledCard-fdVXSH bRaHAv"
             data-test="test"
           >
             <div
-              className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
-              data-test="test"
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
             >
               <div
-                className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
+                className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
+                data-test="test"
               >
                 <div
-                  className="CardHeader__StyledIcon-doXBgu isldQW"
+                  className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
                 >
-                  <svg
-                    className="Icon__StyledIcon-ckyxIP fvqkFf"
-                    data-test={undefined}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24"
+                  <div
+                    className="CardHeader__StyledIcon-doXBgu isldQW"
                   >
-                    <path
-                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                    />
-                  </svg>
+                    <svg
+                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      data-test={undefined}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                      />
+                    </svg>
+                  </div>
+                  <h2
+                    className="Heading__StyledHeading-gucmUp eKGySM"
+                    data-test={undefined}
+                  >
+                    Customisable card title
+                  </h2>
                 </div>
-                <h2
-                  className="Heading__StyledHeading-gucmUp eKGySM"
-                  data-test={undefined}
+                <div
+                  className="CardHeader__StyledSubTitle-gOpdhi itEmg"
                 >
-                  Customisable card title
-                </h2>
+                  <p
+                    className="Text__StyledText-guhEiE hYZMSR"
+                    data-test={undefined}
+                  >
+                    This is a customisable description of the card.
+                  </p>
+                </div>
               </div>
+            </div>
+            <div
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+            >
               <div
-                className="CardHeader__StyledSubTitle-gOpdhi itEmg"
+                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
+                data-test="test"
               >
-                <p
-                  className="Text__StyledText-guhEiE hYZMSR"
-                  data-test={undefined}
+                <div
+                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  onClick={undefined}
                 >
-                  This is a customisable description of the card.
-                </p>
+                  <div
+                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                  />
+                </div>
+                <div
+                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                >
+                  <div>
+                    <h3
+                      className="Heading__StyledHeading-gucmUp hgjEuM"
+                      data-test={undefined}
+                    >
+                      Content with Heading and text
+                    </h3>
+                    <p
+                      className="Text__StyledText-guhEiE hYZMSR"
+                      data-test={undefined}
+                    >
+                      Text in content
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
             <div
-              className="CardContent__StyledCardContent-iBaOYi iGSbob"
-              data-test="test"
+              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
             >
-              <h3
-                className="Heading__StyledHeading-gucmUp hgjEuM"
-                data-test={undefined}
+              <div
+                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
+                data-test="test"
               >
-                Content with Heading and text
-              </h3>
-              <p
-                className="Text__StyledText-guhEiE hYZMSR"
-                data-test={undefined}
-              >
-                Text in content
-              </p>
-            </div>
-            <div
-              className="CardSection__StyledCardSection-jTZsPt inFSdU"
-              data-test="test"
-            >
-              <h3
-                className="Heading__StyledHeading-gucmUp hgjEuM"
-                data-test={undefined}
-              >
-                Section with Heading and text
-              </h3>
-              <p
-                className="Text__StyledText-guhEiE hYZMSR"
-                data-test={undefined}
-              >
-                Text in section
-              </p>
+                <div
+                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  onClick={undefined}
+                >
+                  <div
+                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                  />
+                </div>
+                <div
+                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                >
+                  <div>
+                    <h3
+                      className="Heading__StyledHeading-gucmUp hgjEuM"
+                      data-test={undefined}
+                    >
+                      Section with Heading and text
+                    </h3>
+                    <p
+                      className="Text__StyledText-guhEiE hYZMSR"
+                      data-test={undefined}
+                    >
+                      Text in section
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2662,7 +4392,7 @@ exports[`Storyshots Card Playground 1`] = `
                           }
                         >
                           &lt;
-                          CardContent
+                          CardSection
                         </span>
                         <span>
                           <span>
@@ -2914,7 +4644,7 @@ exports[`Storyshots Card Playground 1`] = `
                           }
                         >
                           &lt;/
-                          CardContent
+                          CardSection
                           &gt;
                         </span>
                       </div>

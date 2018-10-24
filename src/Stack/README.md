@@ -24,7 +24,7 @@ Table below contains all types of the props available in Stack component.
 | inline        | `boolean`                   | `false`      | If `true`, the Stack will have `display` set to `inline-flex`, otherwise it will be `flex`.
 | shrink        | `boolean`                   | `true`       | If `false`, the Stack will have `flex-shrink` set to `0`.
 | spacing       | [`enum`](#enum)             | `"natural"`  | The spacing between its children.
-| spaceAfter    | [`enum`](#enum)             |              | Additional `padding` to bottom of the Stack.
+| spaceAfter    | `enum`                      |              | Additional `padding` to bottom of the Stack. [See this doc](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | wrap          | `boolean`                   | `false`      | If `true`, the Stack will have `flex-wrap` set to `wrap`, otherwise it will be `nowrap`.
 
 ### Desktop
@@ -40,7 +40,7 @@ This props have the same usage, but applies only when viewport is bigger than `4
 | inline        | `boolean`                   | `false`      | If `true`, the Stack will have `display` set to `inline-flex`, otherwise it will be `flex`.
 | shrink        | `boolean`                   | `true`       | If `false`, the Stack will have `flex-shrink` set to `0`.
 | spacing       | [`enum`](#enum)             | `"natural"`  | The spacing between its children.
-| spaceAfter    | [`enum`](#enum)             |              | Additional `padding` to bottom of the Stack.
+| spaceAfter    | `enum`                      |              | Additional `padding` to bottom of the Stack. [See this doc](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | wrap          | `boolean`                   | `false`      | If `true`, the Stack will have `flex-wrap` set to `wrap`, otherwise it will be `nowrap`.
 
 ### enum

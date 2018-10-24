@@ -23,13 +23,10 @@ describe("Card", () => {
         </CardSection>
       </Card>,
     );
-    component
-      .find("Card__StyledCard")
-      .children()
-      .forEach(node => {
-        expect(node.type()).toBe(CardSection);
-      });
+
+    expect(component.find("CardSection").exists()).toBe(true);
   });
+
   it("should have margin-bottom", () => {
     const component = shallow(<Card spaceAfter={SPACINGS_AFTER.NORMAL} />);
     expect(component).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);

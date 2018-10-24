@@ -10,4 +10,8 @@ export type Props = {|
   ...spaceAfter,
 |};
 
+export type State = {|
+  expandedSections: Array<number>,
+|};
+
 declare export default React$ComponentType<Props>;

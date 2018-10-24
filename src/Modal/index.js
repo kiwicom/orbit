@@ -14,17 +14,15 @@ import { StyledHeading } from "../Heading";
 
 import type { Props, State, CloseElementType } from "./index";
 
-const getToken = (theme, type, name) => {
+const getSize = ({ size }) => {
   const tokens = {
     // TODO: create tokens widthModalSmall,...
-    modalWidth: {
-      [SIZES.SMALL]: "540px",
-      [SIZES.NORMAL]: "740px",
-      [SIZES.LARGE]: "1280px",
-    },
+    [SIZES.SMALL]: "540px",
+    [SIZES.NORMAL]: "740px",
+    [SIZES.LARGE]: "1280px",
   };
 
-  return tokens[name][type];
+  return tokens[size];
 };
 
 const ModalBody = styled.div`
@@ -44,6 +42,7 @@ const ModalBody = styled.div`
 
   ${media.desktop`
     overflow-y: auto;
+    padding: ${({ theme }) => theme.orbit.spaceXXLarge};
  `};
 `;
 
@@ -66,10 +65,9 @@ const ModalWrapper = styled.div`
   top: ${({ loaded }) => (loaded ? "32px" : "100%")};
 
   ${media.desktop`
-    padding: ${({ theme }) => theme.orbit.spaceXXLarge};
     position: relative;
     top: 0;
-    max-width: ${({ theme, size }) => getToken(theme, size, "modalWidth")};
+    max-width: ${getSize};
     align-items: center;
   `};
 `;

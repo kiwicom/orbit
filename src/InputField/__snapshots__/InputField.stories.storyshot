@@ -119,7 +119,7 @@ exports[`Storyshots InputField Compact input 1`] = `
                 </span>
               </div>
               <input
-                className="InputField__Input-iRjCvp lilXhY"
+                className="InputField__Input-iRjCvp jIplxp"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -129,6 +129,8 @@ exports[`Storyshots InputField Compact input 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
+                onKeyDown={undefined}
+                onKeyUp={undefined}
                 placeholder="Placeholder"
                 type="text"
                 value=""
@@ -524,7 +526,7 @@ exports[`Storyshots InputField Default input 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <input
-                className="InputField__Input-iRjCvp lilXhY"
+                className="InputField__Input-iRjCvp jIplxp"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -534,6 +536,8 @@ exports[`Storyshots InputField Default input 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
+                onKeyDown={undefined}
+                onKeyUp={undefined}
                 placeholder="Placeholder"
                 type="text"
                 value=""
@@ -856,7 +860,7 @@ exports[`Storyshots InputField Email input 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <input
-                className="InputField__Input-iRjCvp lilXhY"
+                className="InputField__Input-iRjCvp jIplxp"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -866,6 +870,8 @@ exports[`Storyshots InputField Email input 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
+                onKeyDown={undefined}
+                onKeyUp={undefined}
                 placeholder="Email"
                 type="email"
                 value="name@example.co"
@@ -1268,7 +1274,7 @@ exports[`Storyshots InputField Number input 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <input
-                className="InputField__Input-iRjCvp lilXhY"
+                className="InputField__Input-iRjCvp jIplxp"
                 disabled={undefined}
                 max={3}
                 maxLength={undefined}
@@ -1278,6 +1284,8 @@ exports[`Storyshots InputField Number input 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
+                onKeyDown={undefined}
+                onKeyUp={undefined}
                 placeholder="Number"
                 type="number"
                 value={2}
@@ -1693,7 +1701,7 @@ exports[`Storyshots InputField Password input 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <input
-                className="InputField__Input-iRjCvp lilXhY"
+                className="InputField__Input-iRjCvp jIplxp"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -1703,6 +1711,8 @@ exports[`Storyshots InputField Password input 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
+                onKeyDown={undefined}
+                onKeyUp={undefined}
                 placeholder="Password"
                 type="password"
                 value="p422W0rd"
@@ -2069,7 +2079,7 @@ exports[`Storyshots InputField Playground 1`] = `
                 </svg>
               </div>
               <input
-                className="InputField__Input-iRjCvp jqecau"
+                className="InputField__Input-iRjCvp cEKJBX"
                 disabled={false}
                 max={undefined}
                 maxLength={undefined}
@@ -2079,6 +2089,8 @@ exports[`Storyshots InputField Playground 1`] = `
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
+                onKeyDown={undefined}
+                onKeyUp={undefined}
                 placeholder="Placeholder"
                 type="text"
                 value=""
@@ -2958,7 +2970,7 @@ exports[`Storyshots InputField Required field 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <input
-                className="InputField__Input-iRjCvp lilXhY"
+                className="InputField__Input-iRjCvp jIplxp"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -2968,6 +2980,8 @@ exports[`Storyshots InputField Required field 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
+                onKeyDown={undefined}
+                onKeyUp={undefined}
                 placeholder="Placeholder"
                 type="text"
                 value=""
@@ -3301,7 +3315,7 @@ exports[`Storyshots InputField Small input 1`] = `
               className="InputField__InputContainer-evnRDD cirwSX"
             >
               <input
-                className="InputField__Input-iRjCvp jqecau"
+                className="InputField__Input-iRjCvp cEKJBX"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -3311,6 +3325,8 @@ exports[`Storyshots InputField Small input 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
+                onKeyDown={undefined}
+                onKeyUp={undefined}
                 placeholder="Placeholder"
                 type="text"
                 value=""
@@ -3663,7 +3679,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <input
-                className="InputField__Input-iRjCvp lilXhY"
+                className="InputField__Input-iRjCvp jIplxp"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -3673,6 +3689,8 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
+                onKeyDown={undefined}
+                onKeyUp={undefined}
                 placeholder="Placeholder"
                 type="text"
                 value=""
@@ -4068,7 +4086,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
                 </svg>
               </div>
               <input
-                className="InputField__Input-iRjCvp lilXhY"
+                className="InputField__Input-iRjCvp jIplxp"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -4078,6 +4096,8 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
+                onKeyDown={undefined}
+                onKeyUp={undefined}
                 placeholder="Placeholder"
                 type="text"
                 value=""
@@ -4431,7 +4451,7 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
               className="InputField__InputContainer-evnRDD bHPfak"
             >
               <input
-                className="InputField__Input-iRjCvp lilXhY"
+                className="InputField__Input-iRjCvp jIplxp"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -4441,6 +4461,8 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
+                onKeyDown={undefined}
+                onKeyUp={undefined}
                 placeholder="Placeholder"
                 type="text"
                 value=""
@@ -4810,7 +4832,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
                 $
               </div>
               <input
-                className="InputField__Input-iRjCvp lilXhY"
+                className="InputField__Input-iRjCvp jIplxp"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -4820,6 +4842,8 @@ exports[`Storyshots InputField With text prefix 1`] = `
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
+                onKeyDown={undefined}
+                onKeyUp={undefined}
                 placeholder="Placeholder"
                 type="text"
                 value=""

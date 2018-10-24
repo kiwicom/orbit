@@ -6854,6 +6854,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
     -webkit-box-align: flex-start;
     -ms-flex-align: flex-start;
     align-items: flex-start;
+    margin-bottom: 8px;
   }
 
   .c0 > * {

@@ -95,7 +95,7 @@ const StyledStack = styled(({ className, children }) => (
       & > * {
         margin: ${getSpacing(true)};
       }
-      
+
       // TODO other block components
       & > ${StyledButton} {
         align-self: ${({ desktop, align }) =>
@@ -103,7 +103,7 @@ const StyledStack = styled(({ className, children }) => (
           desktop.align !== align &&
           getAlign(desktop.align === ALIGNS.EVEN ? ALIGNS.START : desktop.align)};
       }
-      
+
       ${({ desktop }) =>
         desktop &&
         css`
@@ -144,6 +144,10 @@ const StyledStack = styled(({ className, children }) => (
             (direction !== desktop.direction || align !== desktop.align) &&
             desktop.direction === DIRECTIONS.COLUMN &&
             getAlign(desktop.align || align)};
+          margin-bottom: ${({ theme, spaceAfter }) =>
+            isDefined(desktop.spaceAfter) &&
+            spaceAfter !== desktop.spaceAfter &&
+            getSpacingToken({ spaceAfter: desktop.spaceAfter, theme })};
         `}
     `};
 `;

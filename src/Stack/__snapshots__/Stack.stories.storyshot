@@ -102,7 +102,7 @@ exports[`Storyshots Stack Default 1`] = `
             className="Stack__StyledStack-cGIpQG fQiMEb"
           >
             <button
-              className="Button__StyledButton-jJDkJK ckskmt"
+              className="Button__StyledButton-jJDkJK gvzoAw"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -113,7 +113,7 @@ exports[`Storyshots Stack Default 1`] = `
                 className="Button__StyledButtonContent-gvDciI pDqSF"
               >
                 <div
-                  className="Button__IconContainer-bZYzaL dikZaB"
+                  className="Button__IconContainer-bZYzaL jeCRLt"
                 >
                   <svg
                     className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -580,7 +580,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                 </span>
               </span>
               <div
-                className="InputField__InputContainer-evnRDD bHPfak"
+                className="InputField__InputContainer-evnRDD eKUgDu"
               >
                 <input
                   className="InputField__Input-iRjCvp jIplxp"
@@ -601,7 +601,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                   value={undefined}
                 />
                 <div
-                  className="InputField__FakeInput-eneioc jmDeFv"
+                  className="InputField__FakeInput-eneioc bIppVr"
                 />
               </div>
               <div
@@ -1111,7 +1111,7 @@ exports[`Storyshots Stack Mobile properties 1`] = `
             className="Stack__StyledStack-cGIpQG fpFbKt"
           >
             <button
-              className="Button__StyledButton-jJDkJK ckskmt"
+              className="Button__StyledButton-jJDkJK gvzoAw"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -1122,7 +1122,7 @@ exports[`Storyshots Stack Mobile properties 1`] = `
                 className="Button__StyledButtonContent-gvDciI pDqSF"
               >
                 <div
-                  className="Button__IconContainer-bZYzaL dikZaB"
+                  className="Button__IconContainer-bZYzaL jeCRLt"
                 >
                   <svg
                     className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1872,7 +1872,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                   </span>
                 </span>
                 <div
-                  className="InputField__InputContainer-evnRDD kmFqfB"
+                  className="InputField__InputContainer-evnRDD khvnuZ"
                 >
                   <input
                     className="InputField__Input-iRjCvp jIplxp"
@@ -1893,7 +1893,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                     value={undefined}
                   />
                   <div
-                    className="InputField__FakeInput-eneioc ePWTWp"
+                    className="InputField__FakeInput-eneioc bAwLDi"
                   />
                 </div>
                 <div

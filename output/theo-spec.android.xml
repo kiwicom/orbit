@@ -25,7 +25,7 @@
   <property name="PALETTEPRODUCTNORMALHOVER" category="Color palette" value="#ff009882"/>
   <property name="SPACEXXSMALL" category="Spacing" value="4px"/>
   <property name="COLORTEXTBUTTONGOOGLEACTIVE" category="Colors" value="#ff38404b"/>
-  <property name="FONTSIZEINPUTNORMAL" category="Font size" value="16px"/>
+  <property name="FONTSIZEINPUTNORMAL" category="Font size" value="14px"/>
   <property name="COLORTEXTBUTTONGOOGLEHOVER" category="Colors" value="#ff3f4854"/>
   <property name="PALETTEPRODUCTNORMALACTIVE" category="Color palette" value="#ff008f7b"/>
   <property name="COLORTEXTBUTTONINFOBORDEREDACTIVE" category="Colors" value="#ff0064b2"/>

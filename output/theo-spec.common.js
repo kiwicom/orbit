@@ -24,7 +24,7 @@ module.exports = {
   paletteProductNormalHover: "rgb(0, 152, 130)",
   spaceXxSmall: "4px",
   colorTextButtonGoogleActive: "rgb(56, 64, 75)",
-  fontSizeInputNormal: "16px",
+  fontSizeInputNormal: "14px",
   colorTextButtonGoogleHover: "rgb(63, 72, 84)",
   paletteProductNormalActive: "rgb(0, 143, 123)",
   colorTextButtonInfoBorderedActive: "rgb(0, 100, 178)",

@@ -23,7 +23,7 @@ Table below contains all types of the props available in Stack component.
 | grow          | `boolean`                   | `false`      | If `true`, the Stack will have `flex-grow` set to `1`, otherwise it will be `0`.
 | inline        | `boolean`                   | `false`      | If `true`, the Stack will have `display` set to `inline-flex`, otherwise it will be `flex`.
 | shrink        | `boolean`                   | `true`       | If `false`, the Stack will have `flex-shrink` set to `0`.
-| spacing       | [`enum`](#enum)             | `"natural"`  | The spacing between its children.
+| spacing       | [`spacing`](#spacing)       | `"natural"`  | The spacing between its children.
 | spaceAfter    | `enum`                      |              | Additional `padding` to bottom of the Stack. [See this doc](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | wrap          | `boolean`                   | `false`      | If `true`, the Stack will have `flex-wrap` set to `wrap`, otherwise it will be `nowrap`.
 
@@ -39,19 +39,28 @@ This props have the same usage, but applies only when viewport is bigger than `4
 | grow          | `boolean`                   | `false`      | If `true`, the Stack will have `flex-grow` set to `1`, otherwise it will be `0`.
 | inline        | `boolean`                   | `false`      | If `true`, the Stack will have `display` set to `inline-flex`, otherwise it will be `flex`.
 | shrink        | `boolean`                   | `true`       | If `false`, the Stack will have `flex-shrink` set to `0`.
-| spacing       | [`enum`](#enum)             | `"natural"`  | The spacing between its children.
+| spacing       | [`spacing`](#spacing)       | `"natural"`  | The spacing between its children.
 | spaceAfter    | `enum`                      |              | Additional `padding` to bottom of the Stack. [See this doc](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | wrap          | `boolean`                   | `false`      | If `true`, the Stack will have `flex-wrap` set to `wrap`, otherwise it will be `nowrap`.
 
 ### enum
 
-| spacing         | align       | direction   |
-| :-------------- | :---------- | :---------- |
-| `"extraTight"`  | `"start"`   | `"row"`     |
-| `"tight"`       | `"end"`     | `"column"`  |
-| `"condensed"`   | `"center"`  |
-| `"compact"`     | `"even"`
-| `"natural"`     |
-| `"comfy"`       |
-| `"loose"`       |
-| `"extraLoose"`  |
+| align       | direction   |
+| :---------- | :---------- |
+| `"start"`   | `"row"`     |
+| `"end"`     | `"column"`  |
+| `"center"`  |
+| `"even"`
+
+### spacing
+
+| name              | mobile          | desktop     |
+| :---------------- | :-------------- | :---------- |
+| `"extraTight"`    | `2px`           | `2px`       |
+| `"tight"`         | `4px`           | `4px`       |
+| `"condensed"`     | `8px`           | `8px`       |
+| `"compact"`       | `12px`          | `12px`      |
+| `"natural"`       | `16px`          | `16px`      |
+| `"comfy"`         | `20px`          | `24px`      |
+| `"loose"`         | `28px`          | `32px`      |
+| `"extraLoose"`    | `36px`          | `40px`      |

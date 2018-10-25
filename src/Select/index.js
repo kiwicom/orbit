@@ -9,7 +9,7 @@ import FormFeedback from "../FormFeedback";
 import TYPE_OPTIONS from "../FormFeedback/consts";
 import SIZE_OPTIONS from "./consts";
 
-import type { Props } from "./index";
+import type { Group, Option, Props } from "./index";
 
 const getSelectSize = ({ theme, size }) => {
   const tokens = {
@@ -166,6 +166,72 @@ SelectSuffix.defaultProps = {
   theme: defaultTokens,
 };
 
+const SelectOption = ({ value, disabled, label }: Option) => (
+  <option value={value} disabled={disabled}>
+    {label}
+  </option>
+);
+
+const SelectGroup = ({ label, options }: Group) => (
+  <optgroup label={label}>
+    {options.map(option => {
+      // if name of group and option's group are the same
+      if (option.group === label) {
+        return (
+          <SelectOption
+            value={option.value}
+            disabled={option.disabled}
+            label={option.label}
+            key={`option-${option.value}`}
+          />
+        );
+      }
+      return null;
+    })}
+  </optgroup>
+);
+
+const SelectOptions = ({ options }) => {
+  // get all groups and remove duplicates
+  const groups = options.map(option => option.group);
+  const filteredGroups = groups.filter(
+    (group, key) => groups.indexOf(group) === key && group !== undefined,
+  );
+
+  // get all options without group
+  const unGrouped = options.filter(option => !option.group);
+
+  // render options into groups
+  if (filteredGroups.length > 0) {
+    return (
+      <React.Fragment>
+        {filteredGroups.map((label, key) => {
+          const index = `group-${key}`;
+          return <SelectGroup label={label} options={options} key={index} />;
+        })}
+        {unGrouped.map(option => (
+          <SelectOption
+            value={option.value}
+            disabled={option.disabled}
+            label={option.label}
+            key={`option-${option.value}`}
+          />
+        ))}
+      </React.Fragment>
+    );
+  }
+
+  // render only options
+  return options.map(option => (
+    <SelectOption
+      value={option.value}
+      disabled={option.disabled}
+      label={option.label}
+      key={`option-${option.value}`}
+    />
+  ));
+};
+
 const Select = ({
   size = SIZE_OPTIONS.NORMAL,
   label,
@@ -211,11 +277,7 @@ const Select = ({
               {placeholder}
             </option>
           )}
-          {options.map(option => (
-            <option key={`option-${option.value}`} value={option.value} disabled={option.disabled}>
-              {option.label}
-            </option>
-          ))}
+          <SelectOptions options={options} />
         </StyledSelect>
         <SelectSuffix size={size} disabled={disabled}>
           <ChevronDown />

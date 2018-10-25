@@ -782,43 +782,37 @@ exports[`Select should match snapshot 1`] = `
       >
         Default placeholder
       </option>
-      <option
-        key="option-1"
-        value="1"
-      >
-        One
-      </option>
-      <option
-        key="option-2"
-        value="2"
-      >
-        Two
-      </option>
-      <option
-        key="option-3"
-        value="3"
-      >
-        Three
-      </option>
-      <option
-        key="option-4"
-        value="4"
-      >
-        Four
-      </option>
-      <option
-        key="option-hidden-five"
-        value="hidden-five"
-      >
-        Hidden Five
-      </option>
-      <option
-        disabled={true}
-        key="option-disabled-six"
-        value="disabled-six"
-      >
-        Disabled Six
-      </option>
+      <SelectOptions
+        options={
+          Array [
+            Object {
+              "label": "One",
+              "value": "1",
+            },
+            Object {
+              "label": "Two",
+              "value": "2",
+            },
+            Object {
+              "label": "Three",
+              "value": "3",
+            },
+            Object {
+              "label": "Four",
+              "value": "4",
+            },
+            Object {
+              "label": "Hidden Five",
+              "value": "hidden-five",
+            },
+            Object {
+              "disabled": true,
+              "label": "Disabled Six",
+              "value": "disabled-six",
+            },
+          ]
+        }
+      />
     </Select__StyledSelect>
     <Select__SelectSuffix
       disabled={false}

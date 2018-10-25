@@ -21,6 +21,18 @@ const objectOptions = [
   { value: 3, label: "Third item" },
 ];
 
+const groupOptions = [
+  { value: 1, label: "First item", group: "Group One" },
+  { value: 2, label: "Second item", group: "Group One" },
+  { value: 3, label: "Third item", group: "Group Two" },
+];
+
+const mixedOptions = [
+  { value: 1, label: "First item", group: "Group One" },
+  { value: 2, label: "Second item" },
+  { value: 3, label: "Third item", group: "Group Two" },
+];
+
 storiesOf("Select", module)
   .addDecorator(withKnobs)
   .addDecorator(
@@ -167,6 +179,38 @@ storiesOf("Select", module)
       },
     ],
   }))
+  .addWithChapters("With groups", () => {
+    const options = object("Options", groupOptions);
+    return {
+      info:
+        "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => <Select options={options} onChange={action("onChange")} />,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("With mixed options", () => {
+    const options = object("Options", mixedOptions);
+    return {
+      info:
+        "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => <Select options={options} onChange={action("onChange")} />,
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Playground", () => {
     const placeholder = text("Placeholder", "Select value from list");
     const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);

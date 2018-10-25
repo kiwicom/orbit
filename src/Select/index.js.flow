@@ -1,10 +1,16 @@
 // @flow
 import type { Globals } from "../common/common.js.flow";
 
-type Option = {|
+export type Option = {|
   +value: string | number,
   +label?: string,
   +disabled?: boolean,
+  +group?: string,
+|};
+
+export type Group = {|
+  +label?: string,
+  +options: Option[],
 |};
 
 type Size = "small" | "normal";

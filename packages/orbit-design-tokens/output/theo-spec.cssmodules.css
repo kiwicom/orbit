@@ -4,7 +4,7 @@
 @value background-button-warning-hover: rgb(244, 138, 6);
 @value color-text-button-primary: rgb(255, 255, 255);
 @value border-color-button-facebook-bordered-active: rgb(53, 79, 136);
-@value margin-button-icon-normal: 12px;
+@value margin-button-icon-normal: 8px;
 @value height-button-normal: 44px;
 @value color-icon-warning: rgb(249, 151, 30);
 @value font-size-form-label: 14px;
@@ -41,7 +41,7 @@
 @value palette-product-light: rgb(225, 245, 242);
 @value height-button-large: 52px;
 @value background-button-warning-active: rgb(230, 130, 6);
-@value margin-button-icon-large: 16px;
+@value margin-button-icon-large: 12px;
 @value border-color-button-info-bordered: rgb(1, 118, 210);
 @value background-button-primary: rgb(0, 169, 145);
 @value border-color-button-facebook-bordered-hover: rgb(56, 84, 144);
@@ -110,7 +110,7 @@
 @value color-text-badge-dark: rgb(255, 255, 255);
 @value border-color-input-hover: rgb(166, 182, 200);
 @value color-text-badge-warning: rgb(249, 151, 30);
-@value padding-button-normal-with-icon: 8px;
+@value padding-button-normal-with-icon: 12px;
 @value space-x-large: 32px;
 @value z-index-default: "1";
 @value background-button-success-active: rgb(63, 163, 76);
@@ -280,7 +280,7 @@
 @value color-text-input-disabled: rgb(186, 199, 213);
 @value background-button-facebook-hover: rgb(56, 84, 144);
 @value border-color-checkbox-radio-focus: rgb(1, 118, 210);
-@value padding-button-large-with-icon: 12px;
+@value padding-button-large-with-icon: 16px;
 @value font-size-message: 14px;
 @value border-color-button-success-bordered-hover: rgb(66, 172, 80);
 @value width-badge-circled: 24px;

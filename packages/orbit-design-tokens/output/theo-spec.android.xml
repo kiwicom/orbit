@@ -5,7 +5,7 @@
   <property name="BACKGROUNDBUTTONWARNINGHOVER" category="Background colors" value="#fff48a06"/>
   <property name="COLORTEXTBUTTONPRIMARY" category="Colors" value="#ffffffff"/>
   <property name="BORDERCOLORBUTTONFACEBOOKBORDEREDACTIVE" category="Border color" value="#ff354f88"/>
-  <property name="MARGINBUTTONICONNORMAL" category="Spacing" value="12px"/>
+  <property name="MARGINBUTTONICONNORMAL" category="Spacing" value="8px"/>
   <property name="HEIGHTBUTTONNORMAL" category="Size (width, height)" value="44px"/>
   <property name="COLORICONWARNING" category="Colors" value="#fff9971e"/>
   <property name="FONTSIZEFORMLABEL" category="Font size" value="14px"/>
@@ -42,7 +42,7 @@
   <property name="PALETTEPRODUCTLIGHT" category="Color palette" value="#ffe1f5f2"/>
   <property name="HEIGHTBUTTONLARGE" category="Size (width, height)" value="52px"/>
   <property name="BACKGROUNDBUTTONWARNINGACTIVE" category="Background colors" value="#ffe68206"/>
-  <property name="MARGINBUTTONICONLARGE" category="Spacing" value="16px"/>
+  <property name="MARGINBUTTONICONLARGE" category="Spacing" value="12px"/>
   <property name="BORDERCOLORBUTTONINFOBORDERED" category="Border color" value="#ff0176d2"/>
   <property name="BACKGROUNDBUTTONPRIMARY" category="Background colors" value="#ff00a991"/>
   <property name="BORDERCOLORBUTTONFACEBOOKBORDEREDHOVER" category="Border color" value="#ff385490"/>
@@ -110,7 +110,7 @@
   <property name="COLORTEXTBADGEDARK" category="Colors" value="#ffffffff"/>
   <property name="BORDERCOLORINPUTHOVER" category="Border color" value="#ffa6b6c8"/>
   <property name="COLORTEXTBADGEWARNING" category="Colors" value="#fff9971e"/>
-  <property name="PADDINGBUTTONNORMALWITHICON" category="Spacing" value="8px"/>
+  <property name="PADDINGBUTTONNORMALWITHICON" category="Spacing" value="12px"/>
   <property name="SPACEXLARGE" category="Spacing" value="32px"/>
   <property name="ZINDEXDEFAULT" category="Z Index" value="1"/>
   <property name="BACKGROUNDBUTTONSUCCESSACTIVE" category="Background colors" value="#ff3fa34c"/>
@@ -278,7 +278,7 @@
   <property name="COLORTEXTINPUTDISABLED" category="Colors" value="#ffbac7d5"/>
   <property name="BACKGROUNDBUTTONFACEBOOKHOVER" category="Background colors" value="#ff385490"/>
   <property name="BORDERCOLORCHECKBOXRADIOFOCUS" category="Border color" value="#ff0176d2"/>
-  <property name="PADDINGBUTTONLARGEWITHICON" category="Spacing" value="12px"/>
+  <property name="PADDINGBUTTONLARGEWITHICON" category="Spacing" value="16px"/>
   <property name="FONTSIZEMESSAGE" category="Font size" value="14px"/>
   <property name="BORDERCOLORBUTTONSUCCESSBORDEREDHOVER" category="Border color" value="#ff42ac50"/>
   <property name="WIDTHBADGECIRCLED" category="Size (width, height)" value="24px"/>

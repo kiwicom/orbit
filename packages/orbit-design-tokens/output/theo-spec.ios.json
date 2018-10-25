@@ -31,7 +31,7 @@
       "name": "borderColorButtonFacebookBorderedActive"
     },
     {
-      "value": "12px",
+      "value": "8px",
       "type": "size",
       "category": "Spacing",
       "name": "marginButtonIconNormal"
@@ -253,7 +253,7 @@
       "name": "backgroundButtonWarningActive"
     },
     {
-      "value": "16px",
+      "value": "12px",
       "type": "size",
       "category": "Spacing",
       "name": "marginButtonIconLarge"
@@ -662,7 +662,7 @@
       "name": "colorTextBadgeWarning"
     },
     {
-      "value": "8px",
+      "value": "12px",
       "type": "size",
       "category": "Spacing",
       "name": "paddingButtonNormalWithIcon"
@@ -1672,7 +1672,7 @@
       "name": "borderColorCheckboxRadioFocus"
     },
     {
-      "value": "12px",
+      "value": "16px",
       "type": "size",
       "category": "Spacing",
       "name": "paddingButtonLargeWithIcon"

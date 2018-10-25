@@ -98,11 +98,11 @@ exports[`Storyshots List Default 1`] = `
             }
           }
         >
-          <div
-            className="List__StyledList-fzpiIm fuxvjT"
+          <ul
+            className="List__StyledList-fzpiIm detkQV"
             data-test={undefined}
           >
-            <div
+            <li
               className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
@@ -121,8 +121,8 @@ exports[`Storyshots List Default 1`] = `
                 </svg>
               </div>
               24,000 locations around the globe
-            </div>
-            <div
+            </li>
+            <li
               className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
@@ -144,8 +144,8 @@ exports[`Storyshots List Default 1`] = `
               <strong>
                  Warsaw
               </strong>
-            </div>
-            <div
+            </li>
+            <li
               className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
@@ -164,8 +164,8 @@ exports[`Storyshots List Default 1`] = `
                 </svg>
               </div>
               From 3 star budget to 5 star luxury
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
         <div>
           <div>
@@ -638,11 +638,11 @@ exports[`Storyshots List Different type and size 1`] = `
             }
           }
         >
-          <div
-            className="List__StyledList-fzpiIm erBMIU"
+          <ul
+            className="List__StyledList-fzpiIm kEBOsw"
             data-test={undefined}
           >
-            <div
+            <li
               className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
@@ -661,8 +661,8 @@ exports[`Storyshots List Different type and size 1`] = `
                 </svg>
               </div>
               Gain peace of mind before you travel. No stress about what could go wrong.
-            </div>
-            <div
+            </li>
+            <li
               className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
@@ -681,8 +681,8 @@ exports[`Storyshots List Different type and size 1`] = `
                 </svg>
               </div>
               Customise your coverage to suit your needs and your budget.
-            </div>
-            <div
+            </li>
+            <li
               className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
@@ -701,8 +701,8 @@ exports[`Storyshots List Different type and size 1`] = `
                 </svg>
               </div>
               Feel safe in the hands of AXA Assistance, the travel insurance experts.
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
         <div>
           <div>
@@ -1162,11 +1162,11 @@ exports[`Storyshots List Playground 1`] = `
             }
           }
         >
-          <div
-            className="List__StyledList-fzpiIm fuxvjT"
+          <ul
+            className="List__StyledList-fzpiIm detkQV"
             data-test="test"
           >
-            <div
+            <li
               className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
@@ -1185,8 +1185,8 @@ exports[`Storyshots List Playground 1`] = `
                 </svg>
               </div>
               24,000 locations around the globe
-            </div>
-            <div
+            </li>
+            <li
               className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
@@ -1205,8 +1205,8 @@ exports[`Storyshots List Playground 1`] = `
                 </svg>
               </div>
               24,000 locations around the globe
-            </div>
-            <div
+            </li>
+            <li
               className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
@@ -1225,8 +1225,8 @@ exports[`Storyshots List Playground 1`] = `
                 </svg>
               </div>
               24,000 locations around the globe
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
         <div>
           <div>
@@ -1843,11 +1843,11 @@ exports[`Storyshots List With carrier 1`] = `
             }
           }
         >
-          <div
-            className="List__StyledList-fzpiIm erBMIU"
+          <ul
+            className="List__StyledList-fzpiIm kEBOsw"
             data-test={undefined}
           >
-            <div
+            <li
               className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
@@ -1870,8 +1870,8 @@ exports[`Storyshots List With carrier 1`] = `
                 </div>
               </div>
               Airline: Ryanair
-            </div>
-            <div
+            </li>
+            <li
               className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
@@ -1890,8 +1890,8 @@ exports[`Storyshots List With carrier 1`] = `
                 </svg>
               </div>
               Flight no: FR 1337
-            </div>
-            <div
+            </li>
+            <li
               className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
@@ -1910,8 +1910,8 @@ exports[`Storyshots List With carrier 1`] = `
                 </svg>
               </div>
               PNR: TEST0X0
-            </div>
-            <div
+            </li>
+            <li
               className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
@@ -1930,8 +1930,8 @@ exports[`Storyshots List With carrier 1`] = `
                 </svg>
               </div>
               Airbus A320 (320)
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
         <div>
           <div>

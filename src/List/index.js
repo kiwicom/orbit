@@ -32,9 +32,9 @@ const getIconHeight = ({ theme, size }) =>
   `${Math.floor(parseInt(getSizeToken({ theme, size }), 10) * theme.orbit.lineHeightText)}px`;
 
 const StyledList = styled(({ className, children, dataTest }) => (
-  <div className={className} data-test={dataTest}>
+  <ul className={className} data-test={dataTest}>
     {children}
-  </div>
+  </ul>
 ))`
   display: flex;
   width: 100%;
@@ -43,6 +43,9 @@ const StyledList = styled(({ className, children, dataTest }) => (
   font-size: ${getSizeToken};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   color: ${getTypeToken};
+  list-style: none;
+  padding: 0;
+  margin: 0;
   margin-bottom: ${getSpacingToken};
 
   ${IconContainer} {

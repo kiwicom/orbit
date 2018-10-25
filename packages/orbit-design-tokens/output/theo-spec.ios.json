@@ -151,7 +151,7 @@
       "name": "colorTextButtonGoogleActive"
     },
     {
-      "value": "16px",
+      "value": "14px",
       "type": "size",
       "category": "Font size",
       "name": "fontSizeInputNormal"

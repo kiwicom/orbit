@@ -192,7 +192,7 @@ function getTokens(customFoundation) {
     fontSizeButtonLarge: theme.base.fontSizeLg,
     fontSizeButtonNormal: theme.base.fontSizeMd,
     fontSizeButtonSmall: theme.base.fontSizeSm,
-    fontSizeInputNormal: theme.base.fontSizeLg,
+    fontSizeInputNormal: theme.base.fontSizeMd,
     fontSizeInputSmall: theme.base.fontSizeMd,
     fontSizeFormLabel: theme.base.fontSizeMd,
     fontSizeFormFeedback: theme.base.fontSizeSm,

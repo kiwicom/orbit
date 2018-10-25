@@ -1401,7 +1401,7 @@
       }
     },
     "fontSizeInputNormal": {
-      "value": "16px",
+      "value": "14px",
       "type": "size",
       "category": "Font size",
       "meta": {

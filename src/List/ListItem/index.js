@@ -7,7 +7,7 @@ import CircleSmall from "../../icons/CircleSmall";
 
 import type { Props } from "./index";
 
-export const Item = styled.div`
+export const Item = styled.li`
   display: flex;
   flex-direction: row;
   align-items: flex-start;

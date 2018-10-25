@@ -246,16 +246,22 @@ class Modal extends React.PureComponent<Props, State> {
   }
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
-    const { onClose } = this.props;
-    if (ev.key === "Escape" && onClose) {
+    const { onClose, closable } = this.props;
+    if (closable && ev.key === "Escape" && onClose) {
       onClose(ev);
     }
   };
 
   handleClickOutside = (ev: MouseEvent) => {
-    const { onClose } = this.props;
+    const { onClose, closable } = this.props;
 
-    if (onClose && this.node && ev.target instanceof Node && !this.node.contains(ev.target)) {
+    if (
+      closable &&
+      onClose &&
+      this.node &&
+      ev.target instanceof Node &&
+      !this.node.contains(ev.target)
+    ) {
       // If is clicked outside of modal
       onClose(ev);
     }
@@ -278,9 +284,9 @@ class Modal extends React.PureComponent<Props, State> {
     return (
       <ModalBody
         tabIndex="0"
-        onKeyDown={closable ? this.handleKeyDown : undefined}
-        data-test={dataTest}
+        onKeyDown={this.handleKeyDown}
         onClick={this.handleClickOutside}
+        data-test={dataTest}
       >
         <ModalWrapper
           size={size}

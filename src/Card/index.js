@@ -152,9 +152,11 @@ class Card extends React.Component<Props, State> {
   hasAdjustedHeader = () => {
     const children = this.getChildren();
 
-    if (children[0] === undefined && children[1] !== CardHeader.name) {
+    // Check if first element is Header
+    if (children[0] !== undefined && children[0].type.name !== CardHeader.name) {
       return false;
     }
+
     // Check if first section exists
     if (children[1] === undefined) {
       return false;

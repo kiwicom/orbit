@@ -7,6 +7,9 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean } from "@storybook/addon-knobs/react";
 
+import Text from "../Text";
+import TextLink from "../TextLink";
+
 import Checkbox from "./index";
 
 setAddon(chaptersAddon);
@@ -48,6 +51,34 @@ storiesOf("CheckBox", module)
             {
               sectionFn: () => (
                 <Checkbox label={label} value={value} info={info} onChange={action("changed")} />
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("With TextLink in label", () => {
+    const checked = boolean("checked", true);
+    return {
+      info: "Additionally you can add info to this component.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Checkbox
+                  label={
+                    <Text>
+                      I instruct Kiwi.com to cancel this booking under the herein specified
+                      conditions and to process a refund in accordance with Kiwi.com&rsquo;&nbsp;
+                      <TextLink>Terms and Conditions</TextLink>.
+                    </Text>
+                  }
+                  checked={checked}
+                  value="value"
+                  onChange={action("changed")}
+                />
               ),
             },
           ],

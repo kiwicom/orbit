@@ -93,6 +93,11 @@ const CloseContainer = styled.div`
   border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
 
+  ${media.desktop`
+    box-shadow: none!important;
+    background: transparent!important;
+  `}
+  
   & + ${StyledModalSection}:first-of-type {
     padding-top: 52px;
     border-top: 0;
@@ -246,7 +251,7 @@ class Modal extends React.PureComponent<Props, State> {
   }
 
   handleScroll(ev: Event) {
-    if (ev.target instanceof HTMLDivElement) {
+    if (ev.target instanceof HTMLDivElement && ev.target === this.node) {
       this.setState({
         scrolled: ev.target.scrollTop >= this.offset,
         fixedClose: ev.target.scrollTop >= 1,

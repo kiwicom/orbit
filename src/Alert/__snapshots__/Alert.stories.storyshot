@@ -960,11 +960,11 @@ exports[`Storyshots Alert Playground 1`] = `
                   <div>
                     Also you can change the message by changing the Message knob
                   </div>
-                  <div
-                    className="List__StyledList-fzpiIm fuxvjT"
+                  <ul
+                    className="List__StyledList-fzpiIm detkQV"
                     data-test={undefined}
                   >
-                    <div
+                    <li
                       className="ListItem__Item-bhWwBk eRQaxy"
                       data-test={undefined}
                     >
@@ -988,8 +988,8 @@ exports[`Storyshots Alert Playground 1`] = `
                       >
                         623 Kč will be refunded by your payment card
                       </p>
-                    </div>
-                    <div
+                    </li>
+                    <li
                       className="ListItem__Item-bhWwBk eRQaxy"
                       data-test={undefined}
                     >
@@ -1008,8 +1008,8 @@ exports[`Storyshots Alert Playground 1`] = `
                         </svg>
                       </div>
                       623 Kč will be refunded by your payment card
-                    </div>
-                  </div>
+                    </li>
+                  </ul>
                   <a
                     className="Button__StyledButton-jJDkJK kwbftt"
                     data-test={undefined}

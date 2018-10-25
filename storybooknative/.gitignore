@@ -41,6 +41,9 @@ buck-out/
 \.buckd/
 *.keystore
 
+# Storybook build/
+storybook-static
+
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the

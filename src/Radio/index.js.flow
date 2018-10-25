@@ -2,7 +2,7 @@
 import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
-  +label?: string,
+  +label?: React$Node,
   +value?: string,
   +hasError?: boolean,
   +disabled?: boolean,

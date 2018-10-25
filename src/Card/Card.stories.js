@@ -102,24 +102,23 @@ storiesOf("Card", module)
             {
               sectionFn: () => (
                 <Card>
-                  <CardHeader title={title} subTitle={description} />
                   <CardSection>
                     <Heading type="title3" element="h3">
-                      Insert your title here...
+                      {title}
                     </Heading>
-                    <Text>Insert your content here...</Text>
+                    <Text>{description}</Text>
                   </CardSection>
                   <CardSection>
                     <Heading type="title3" element="h3">
-                      Insert your title here...
+                      {title}
                     </Heading>
-                    <Text>Insert your content here...</Text>
+                    <Text>{description}</Text>
                   </CardSection>
                   <CardSection>
                     <Heading type="title3" element="h3">
-                      Insert your title here...
+                      {title}
                     </Heading>
-                    <Text>Insert your content here...</Text>
+                    <Text>{description}</Text>
                   </CardSection>
                 </Card>
               ),

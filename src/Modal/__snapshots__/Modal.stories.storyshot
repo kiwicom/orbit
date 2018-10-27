@@ -214,40 +214,54 @@ exports[`Storyshots Modal Full preview 1`] = `
                   </p>
                 </section>
                 <div
-                  className="ModalFooter__StyledModalFooter-heDwTy kuRjye"
+                  className="ModalFooter__StyledModalFooter-heDwTy haSUnk"
                   data-test={undefined}
                 >
                   <div
                     className="ModalFooter__StyledChild-bPOqEy jRvsYD"
                   >
-                    <button
-                      className="Button__StyledButton-jJDkJK jzykRp"
-                      data-test={undefined}
-                      disabled={undefined}
-                      size="normal"
-                      target={undefined}
-                      type="button"
+                    <div
+                      className="Stack__StyledStack-cGIpQG kPNFXL"
                     >
-                      <div
-                        className="Button__StyledButtonContent-gvDciI pDqSF"
+                      <button
+                        className="Button__StyledButton-jJDkJK jzykRp"
+                        data-test={undefined}
+                        disabled={undefined}
+                        size="normal"
+                        target={undefined}
+                        type="button"
                       >
                         <div
-                          className="Button__IconContainer-bZYzaL lmwnCT"
+                          className="Button__StyledButtonContent-gvDciI pDqSF"
                         >
-                          <svg
-                            className="Icon__StyledIcon-ckyxIP fvqkFf"
-                            data-test={undefined}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 24 24"
+                          <div
+                            className="Button__IconContainer-bZYzaL lmwnCT"
                           >
-                            <path
-                              d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
-                            />
-                          </svg>
+                            <svg
+                              className="Icon__StyledIcon-ckyxIP fvqkFf"
+                              data-test={undefined}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                              />
+                            </svg>
+                          </div>
+                          Back
                         </div>
-                        Back
-                      </div>
-                    </button>
+                      </button>
+                      <button
+                        className="ButtonLink__StyledButtonLink-eyUiPe klwrPH"
+                        data-test={undefined}
+                        onClick={undefined}
+                        size="normal"
+                        target={undefined}
+                        type="button"
+                      >
+                        Button
+                      </button>
+                    </div>
                   </div>
                   <div
                     className="ModalFooter__StyledChild-bPOqEy xynvR"
@@ -1178,7 +1192,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                             }
                           >
                             &lt;
-                            Button
+                            Stack
                           </span>
                           <span>
                             <span>
@@ -1186,7 +1200,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                               <span
                                 style={Object {}}
                               >
-                                type
+                                direction
                               </span>
                               <span>
                                 =
@@ -1202,36 +1216,8 @@ exports[`Storyshots Modal Full preview 1`] = `
                                     }
                                   >
                                     "
-                                    secondary
+                                    row
                                     "
-                                  </span>
-                                </span>
-                              </span>
-                            </span>
-                            <span>
-                               
-                              <span
-                                style={Object {}}
-                              >
-                                iconLeft
-                              </span>
-                              <span>
-                                =
-                                <span
-                                  style={Object {}}
-                                >
-                                  <span>
-                                    {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      &lt;ChevronLeft /&gt;
-                                    </span>
-                                    }
                                   </span>
                                 </span>
                               </span>
@@ -1248,23 +1234,229 @@ exports[`Storyshots Modal Full preview 1`] = `
                             &gt;
                           </span>
                         </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 63,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
+                        <div>
+                          <div
                             style={
                               Object {
-                                "color": "#777",
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
                               }
                             }
                           >
-                            Back
-                          </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Button
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  type
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      secondary
+                                      "
+                                    </span>
+                                  </span>
+                                </span>
+                              </span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  iconLeft
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span>
+                                      {
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        &lt;ChevronLeft /&gt;
+                                      </span>
+                                      }
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 78,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              Back
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Button
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              ButtonLink
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  type
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      "
+                                      secondary
+                                      "
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 78,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              Button
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              ButtonLink
+                              &gt;
+                            </span>
+                          </div>
                         </div>
                         <div
                           style={
@@ -1282,7 +1474,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                             }
                           >
                             &lt;/
-                            Button
+                            Stack
                             &gt;
                           </span>
                         </div>

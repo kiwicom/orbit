@@ -15,6 +15,8 @@ import Text from "../Text";
 import { NAMES } from "../Illustration/consts";
 import ModalFooter from "./ModalFooter";
 import ChevronLeft from "../icons/ChevronLeft";
+import Stack from "../Stack";
+import ButtonLink from "../ButtonLink";
 
 import Modal from "./index";
 
@@ -119,9 +121,12 @@ storiesOf("Modal", module)
                   </ModalSection>
                   <ModalFooter flex={flex}>
                     {showBack && (
-                      <Button type="secondary" iconLeft={<ChevronLeft />}>
-                        Back
-                      </Button>
+                      <Stack direction="row">
+                        <Button type="secondary" iconLeft={<ChevronLeft />}>
+                          Back
+                        </Button>
+                        <ButtonLink type="secondary">Button</ButtonLink>
+                      </Stack>
                     )}
                     <Button block>Continue to Payment</Button>
                   </ModalFooter>

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import media from "../../utils/media";
 import defaultTokens from "../../defaultTokens";
 import { StyledButton } from "../../Button";
+import { StyledButtonLink } from "../../ButtonLink";
 
 import type { Props } from "./index";
 
@@ -33,7 +34,7 @@ export const StyledModalFooter = styled.div`
   // TODO: create token boxShadowActionableInverted
 
   @media (max-width: 599px) {
-    ${StyledButton} {
+    ${StyledButton}, ${StyledButtonLink} {
       font-size: ${({ theme }) => theme.orbit.fontSizeButtonNormal};
       height: ${({ theme }) => theme.orbit.heightButtonNormal};
     }

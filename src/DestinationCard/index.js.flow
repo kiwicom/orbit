@@ -1,0 +1,32 @@
+// @flow
+
+import type { Globals } from "../common/common.js.flow";
+
+export type State = {|
+  shown: boolean,
+|};
+
+export type Props = {|
+  ...Globals,
+  +departureCity: string,
+  +destinationCity: string,
+  +destinationCountry: string,
+  +image: string,
+  +price: string,
+  +timeOfStay?: string,
+  +height?: number,
+  +outbound: {|
+    +text?: string,
+    +date?: string,
+    +type: string,
+    +duration: string,
+  |},
+  +inbound?: {|
+    +date: string,
+    +type: string,
+    +duration: string,
+  |},
+  +onClick?: () => void,
+|};
+
+declare export default React$ComponentType<Props>;

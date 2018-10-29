@@ -17,6 +17,7 @@ Table below contains all types of the props available in the Select component.
 | error       | `React.Node`                      |            | The error message for the Select. [See Functional specs](#functional-specs)
 | help        | `React.Node`                      |            | The help message for the Select.
 | label       | `string`                          |            | The label for the Select.
+| name        | `string`                          |            | The name for the Select.
 | onBlur      | `func`                            |            | Function for handling onBlur event.
 | onChange    | `func`                            |            | Function for handling onChange event.
 | onFocus     | `func`                            |            | Function for handling onFocus event.

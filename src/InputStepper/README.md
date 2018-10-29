@@ -25,6 +25,7 @@ Table below contains all types of the props available in InputStepper component.
 | label           | `string`         |             | The label for the InputStepper. [See Functional specs](#functional-specs)
 | maxValue        | `number`         | `∞`         | Specifies the maximum value for the InputStepper.
 | minValue        | `number`         | `-∞`        | Specifies the minimum value for the InputStepper.
+| name            | `string`         |             | The name for the InputStepper.
 | required        | `boolean`        | `false`     | If `true`, the label is displayed as required.
 | onChange        | `func`           |             | Function for handling onClick event.
 | onFocus         | `func`           |             | Function for handling onFocus event.

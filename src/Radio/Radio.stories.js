@@ -61,6 +61,7 @@ storiesOf("Radio", module)
     const disabled = boolean("Disabled", true);
     const hasError = boolean("hasError", false);
     const info = text("Info", "Additional information for this choice");
+    const name = text("Name", "name");
     const dataTest = text("dataTest", "test");
 
     return {
@@ -76,6 +77,7 @@ storiesOf("Radio", module)
                   checked={checked}
                   disabled={disabled}
                   hasError={hasError}
+                  name={name}
                   info={info}
                   dataTest={dataTest}
                   onChange={action("changed")}

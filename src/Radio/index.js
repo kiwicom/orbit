@@ -139,11 +139,19 @@ const Radio = ({
   disabled = false,
   checked = false,
   onChange,
+  name,
   info,
   dataTest,
 }: Props) => (
   <Label disabled={disabled} hasError={hasError} checked={checked} data-test={dataTest}>
-    <Input value={value} type="radio" disabled={disabled} checked={checked} onChange={onChange} />
+    <Input
+      value={value}
+      type="radio"
+      disabled={disabled}
+      name={name}
+      checked={checked}
+      onChange={onChange}
+    />
     <IconContainer>
       <Glyph disabled={disabled} />
     </IconContainer>

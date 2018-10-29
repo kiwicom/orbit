@@ -57,6 +57,12 @@ describe(`Textarea with help`, () => {
     expect(area.prop("maxLength")).toBe(maxLength);
     expect(area.prop("fullHeight")).toBe(fullHeight);
     expect(labelField.render().prop("data-test")).toBe(dataTest);
+    expect(
+      component
+        .find("Textarea__StyledTextArea")
+        .render()
+        .prop("attribs").name,
+    ).toBe(name);
   });
   it("should contain FeedBack help", () => {
     expect(component.find(`FormFeedback[type="help"]`).exists()).toBe(true);

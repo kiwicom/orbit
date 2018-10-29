@@ -3,7 +3,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import type { StylePropType } from "../types/StylesPropType";
+import type { Style as _Style } from "../types/Style";
 
 /**
  * Now we can use styled like:
@@ -16,7 +16,7 @@ import type { StylePropType } from "../types/StylesPropType";
  * and we get flow validating our styles
  */
 
-export default (
-  Component: React.ElementType,
-  styles: StylePropType | ((props: Object) => StylePropType),
-) => styled(Component)([], styles);
+export default (Component: React.ElementType, styles: _Style | ((props: Object) => _Style)) =>
+  styled(Component)([], styles);
+
+export type Style = _Style;

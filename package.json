@@ -13,7 +13,7 @@
     "eslint": "eslint .",
     "flow:check": "flow check",
     "test": "jest --config=jest.json",
-    "test-ci": "cd storybooknative; yarn install; cd ..; yarn flow:check && yarn eslint && yarn test --ci; cd storybooknative; yarn test",
+    "test-ci": "cd storybooknative; yarn install; cd ..; (yarn flow:check && yarn eslint && yarn test --ci) || exit $?; cd storybooknative; yarn test",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "storybook-deployer": {

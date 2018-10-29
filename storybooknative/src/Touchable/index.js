@@ -4,30 +4,15 @@ import * as React from "react";
 // eslint-disable-next-line no-restricted-imports
 import { Platform, TouchableNativeFeedback, TouchableOpacity } from "react-native";
 
-import type { AccessibilityProps } from "./accessibility";
-import styled from "./styled";
+import styled, { type Style } from "../styled";
 
-type Props = {|
-  +children: React.Node,
-  +onPress: () => void,
-  +disabled: boolean,
-  +onLongPress?: () => void,
-  +delayPressIn?: number,
-  // This will disable ripple effect completely and it will fallback to the
-  // opacity behavior.
-  +noRipple?: boolean,
-  // Should the ripple render outside of the view bounds?
-  +borderlessRipple?: boolean,
-  +rippleColor?: string,
-  +width?: string | number,
-  ...AccessibilityProps,
-|};
+import type { Props } from "./index";
 
-const StyledTouchableOpacity = styled(TouchableOpacity, props => ({
+const StyledTouchableOpacity = styled(TouchableOpacity, (props: Props): Style => ({
   width: props.width,
 }));
 
-const StyledTouchableNativeFeedback = styled(TouchableNativeFeedback, props => ({
+const StyledTouchableNativeFeedback = styled(TouchableNativeFeedback, (props: Props): Style => ({
   width: props.width,
 }));
 

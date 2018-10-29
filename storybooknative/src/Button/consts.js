@@ -16,14 +16,15 @@ export const SIZE_OPTIONS = {
   LARGE: "large",
 };
 
-export const TOKENS = {
-  // Size tokens
-  heightButton: "heightButton",
-  fontSizeButton: "fontSizeButton",
-  paddingButton: "paddingButton",
-  // Type tokens
+export const TYPE_TOKENS = {
   backgroundButton: "backgroundButton",
   colorTextButton: "colorTextButton",
   colorTextButtonBordered: "colorTextButtonBordered",
   borderColorButton: "borderColorButton",
+};
+
+export const SIZE_TOKENS = {
+  heightButton: "heightButton",
+  fontSizeButton: "fontSizeButton",
+  paddingButton: "paddingButton",
 };

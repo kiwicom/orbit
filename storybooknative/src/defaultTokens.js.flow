@@ -1,0 +1,6 @@
+// @flow
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
+
+export type Theme = {|
+  +orbit: typeof defaultTokens,
+|};

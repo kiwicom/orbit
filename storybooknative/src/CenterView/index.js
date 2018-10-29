@@ -3,14 +3,16 @@
 import * as React from "react";
 import { View } from "react-native";
 
-import styled from "../styled";
+import styled, { type Style } from "../styled";
 
-const Main = styled(View, {
+const style: Style = {
   flexGrow: 1,
   justifyContent: "center",
   alignItems: "center",
   backgroundColor: "#f5fcff",
-});
+};
+
+const Main = styled(View, style);
 
 type Props = {|
   children: React.ChildrenArray<React.Node> | null,

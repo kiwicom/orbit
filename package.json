@@ -15,7 +15,7 @@
     "eslint": "eslint .",
     "flow:check": "flow check",
     "test": "jest --config=jest.json",
-    "test-ci": "cd storybooknative; yarn install; cd ..; yarn flow:check && yarn eslint && yarn test --ci; cd storybooknative; yarn test",
+    "test-ci": "cd storybooknative; yarn install; cd ..; (yarn flow:check && yarn eslint && yarn test --ci) || exit $?; cd storybooknative; yarn test",
     "deploy:storybook": "storybook-to-ghpages",
     "deploy:surge": "yarn surge .out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD | sed -e 's/[^a-zA-Z0-9]/-/g').surge.sh",
     "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL"

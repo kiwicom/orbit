@@ -47,6 +47,7 @@ export { default as InputStepper } from "./InputStepper";
 export { default as Illustration } from "./Illustration";
 export { default as TextLink } from "./TextLink";
 export { default as Radio } from "./Radio";
+export { default as RadioGroup } from "./RadioGroup";
 export { default as RatingStars } from "./RatingStars";
 export { default as Select } from "./Select";
 export { default as Stack } from "./Stack";

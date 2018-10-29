@@ -1,0 +1,19 @@
+// @flow
+import type { Globals } from "../common/common.js.flow";
+import Radio from "../Radio";
+
+export type State = {|
+  value: string | boolean,
+|};
+
+export type Props = {|
+  ...Globals,
+  +label?: string,
+  +defaultValue?: string,
+  +hasError?: boolean,
+  +disabled?: boolean,
+  +onChange?: string => void | Promise<any>,
+  +children: React$Element<typeof Radio> | Array<React$Element<typeof Radio>>,
+|};
+
+declare export default React$ComponentType<Props>;

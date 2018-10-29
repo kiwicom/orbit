@@ -147,6 +147,7 @@ const Checkbox = (props: Props) => {
     hasError = false,
     disabled = false,
     checked = false,
+    name,
     onChange,
     dataTest,
     info,
@@ -158,6 +159,7 @@ const Checkbox = (props: Props) => {
         value={value}
         type="checkbox"
         disabled={disabled}
+        name={name}
         checked={checked}
         onChange={onChange}
       />

@@ -107,6 +107,7 @@ exports[`Storyshots Radio Default 1`] = `
               checked={false}
               className="Radio__Input-fvWuwA ftXShs"
               disabled={false}
+              name={undefined}
               onChange={[Function]}
               type="radio"
               value={undefined}
@@ -397,6 +398,7 @@ exports[`Storyshots Radio Playground 1`] = `
               checked={true}
               className="Radio__Input-fvWuwA ftXShs"
               disabled={true}
+              name="name"
               onChange={[Function]}
               type="radio"
               value="value"
@@ -588,6 +590,36 @@ exports[`Storyshots Radio Playground 1`] = `
                                 false
                               </span>
                               }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          name
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              name
+                              "
                             </span>
                           </span>
                         </span>
@@ -813,6 +845,7 @@ exports[`Storyshots Radio With help 1`] = `
               checked={false}
               className="Radio__Input-fvWuwA ftXShs"
               disabled={false}
+              name={undefined}
               onChange={[Function]}
               type="radio"
               value="value"

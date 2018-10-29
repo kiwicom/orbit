@@ -10,6 +10,7 @@ export type Props = {|
   +step?: number,
   +help?: React$Node,
   +error?: React$Node,
+  +name?: string,
   +disabled?: boolean,
   +maxValue?: number,
   +minValue?: number,

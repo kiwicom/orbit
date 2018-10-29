@@ -93,6 +93,7 @@ storiesOf("InputStepper", module)
     const label = text("Label", "Label");
     const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
     const help = text("Help", undefined);
+    const name = text("Name", "name");
     const error = text("Error", "Error message (explain how to solve it)");
     const disabled = boolean("disabled", false);
     const required = boolean("required", false);
@@ -111,6 +112,7 @@ storiesOf("InputStepper", module)
                   step={step}
                   error={error}
                   help={help}
+                  name={name}
                   maxValue={max}
                   minValue={min}
                   disabled={disabled}

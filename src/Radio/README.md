@@ -18,6 +18,7 @@ Table below contains all types of the props available in Radio component.
 | hasError     | `boolean`    | `false` | If `true`, the border of the Radio will turn red. [See Functional specs](#functional-specs)
 | info         | `React.Node` |         | The additional info about the Radio.
 | label        | `string`     |         | The label of the Radio.
+| name         | `string`     |         | The name for the Radio.
 | onChange     | `func`       |         | Function for handling onChange event.
 | value        | `string`     |         | The value of the Radio.
 

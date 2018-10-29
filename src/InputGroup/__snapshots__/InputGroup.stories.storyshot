@@ -159,6 +159,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     <select
                       className="Select__StyledSelect-eyhbyk ghRKpg"
                       disabled={false}
+                      name={undefined}
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -1195,6 +1196,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                     <select
                       className="Select__StyledSelect-eyhbyk jEOzuv"
                       disabled={false}
+                      name={undefined}
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -2062,6 +2064,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     <select
                       className="Select__StyledSelect-eyhbyk ghRKpg"
                       disabled={false}
+                      name={undefined}
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -2143,6 +2146,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     <select
                       className="Select__StyledSelect-eyhbyk ghRKpg"
                       disabled={false}
+                      name={undefined}
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}

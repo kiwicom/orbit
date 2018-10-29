@@ -12,6 +12,7 @@ export const TYPE_OPTIONS = {
   TITLE1: "title1",
   TITLE2: "title2",
   TITLE3: "title3",
+  TITLE4: "title4",
 };
 
 export const TOKENS = {

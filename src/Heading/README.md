@@ -27,5 +27,5 @@ Table below contains all types of the props available in Heading component.
 | `"h2"`  | `"title1"`  |
 | `"h3"`  | `"title2"`  |
 | `"h4"`  | `"title3"`  |
-| `"h5"`  |             |
+| `"h5"`  | `"title4"`  |
 | `"h6"`  |             |

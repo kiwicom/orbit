@@ -15,12 +15,14 @@ const getToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.TITLE1]: theme.orbit.fontWeightHeadingTitle1,
       [TYPE_OPTIONS.TITLE2]: theme.orbit.fontWeightHeadingTitle2,
       [TYPE_OPTIONS.TITLE3]: theme.orbit.fontWeightHeadingTitle3,
+      [TYPE_OPTIONS.TITLE4]: theme.orbit.fontWeightMedium, // TODO: create token fontWeightHeadingTitle4
     },
     [TOKENS.sizeHeading]: {
       [TYPE_OPTIONS.DISPLAY]: theme.orbit.fontSizeHeadingDisplay,
       [TYPE_OPTIONS.TITLE1]: theme.orbit.fontSizeHeadingTitle1,
       [TYPE_OPTIONS.TITLE2]: theme.orbit.fontSizeHeadingTitle2,
       [TYPE_OPTIONS.TITLE3]: theme.orbit.fontSizeHeadingTitle3,
+      [TYPE_OPTIONS.TITLE4]: theme.orbit.fontSizeTextNormal, // TODO: create token fontSizeHeadingTitle4
     },
   };
 

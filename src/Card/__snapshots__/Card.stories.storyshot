@@ -2412,42 +2412,13 @@ exports[`Storyshots Card Card with sections 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH bRaHAv"
+            className="Card__StyledCard-fdVXSH htEHAk"
             data-test={undefined}
           >
             <div
               className="Card__StyledChildWrapper-jBHqcs dNZyaB"
             >
               <div
-                className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
-                data-test={undefined}
-              >
-                <div
-                  className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
-                >
-                  <h2
-                    className="Heading__StyledHeading-gucmUp eKGySM"
-                    data-test={undefined}
-                  >
-                    Card with sections
-                  </h2>
-                </div>
-                <div
-                  className="CardHeader__StyledSubTitle-gOpdhi itEmg"
-                >
-                  <p
-                    className="Text__StyledText-guhEiE hYZMSR"
-                    data-test={undefined}
-                  >
-                    This is a description of the card.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
-            >
-              <div
                 className="CardSection__StyledCardSection-jTZsPt fLYNgo"
                 data-test={undefined}
               >
@@ -2467,13 +2438,13 @@ exports[`Storyshots Card Card with sections 1`] = `
                       className="Heading__StyledHeading-gucmUp hgjEuM"
                       data-test={undefined}
                     >
-                      Insert your title here...
+                      Card with sections
                     </h3>
                     <p
                       className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
-                      Insert your content here...
+                      This is a description of the card.
                     </p>
                   </div>
                 </div>
@@ -2502,13 +2473,13 @@ exports[`Storyshots Card Card with sections 1`] = `
                       className="Heading__StyledHeading-gucmUp hgjEuM"
                       data-test={undefined}
                     >
-                      Insert your title here...
+                      Card with sections
                     </h3>
                     <p
                       className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
-                      Insert your content here...
+                      This is a description of the card.
                     </p>
                   </div>
                 </div>
@@ -2537,13 +2508,13 @@ exports[`Storyshots Card Card with sections 1`] = `
                       className="Heading__StyledHeading-gucmUp hgjEuM"
                       data-test={undefined}
                     >
-                      Insert your title here...
+                      Card with sections
                     </h3>
                     <p
                       className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
-                      Insert your content here...
+                      This is a description of the card.
                     </p>
                   </div>
                 </div>
@@ -2616,91 +2587,6 @@ exports[`Storyshots Card Card with sections 1`] = `
                         &gt;
                       </span>
                     </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 33,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        CardHeader
-                      </span>
-                      <span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            title
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                Card with sections
-                                "
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            subTitle
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                This is a description of the card.
-                                "
-                              </span>
-                            </span>
-                          </span>
-                           
-                        </span>
-                      </span>
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        /&gt;
-                      </span>
-                    </div>
                     <div>
                       <div
                         style={
@@ -2832,7 +2718,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                               }
                             }
                           >
-                            Insert your title here...
+                            Card with sections
                           </span>
                         </div>
                         <div
@@ -2901,7 +2787,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                               }
                             }
                           >
-                            Insert your content here...
+                            This is a description of the card.
                           </span>
                         </div>
                         <div
@@ -3077,7 +2963,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                               }
                             }
                           >
-                            Insert your title here...
+                            Card with sections
                           </span>
                         </div>
                         <div
@@ -3146,7 +3032,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                               }
                             }
                           >
-                            Insert your content here...
+                            This is a description of the card.
                           </span>
                         </div>
                         <div
@@ -3322,7 +3208,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                               }
                             }
                           >
-                            Insert your title here...
+                            Card with sections
                           </span>
                         </div>
                         <div
@@ -3391,7 +3277,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                               }
                             }
                           >
-                            Insert your content here...
+                            This is a description of the card.
                           </span>
                         </div>
                         <div

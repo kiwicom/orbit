@@ -18,7 +18,7 @@ exports[`Button should match the snapshot 1`] = `
   }
 >
   <View
-    className="sc-htpNat ginFYI"
+    className="sc-htpNat bEPnve"
     size="normal"
     theme={
       Object {
@@ -402,6 +402,7 @@ exports[`Button should match the snapshot 1`] = `
       }
     }
     type="primary"
+    width="auto"
   >
     <Text
       className="sc-bxivhb gTYUIP"

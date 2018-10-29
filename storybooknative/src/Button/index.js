@@ -3,25 +3,24 @@ import * as React from "react";
 import { View, Text, Platform } from "react-native";
 
 import Touchable from "../Touchable";
-import styled from "../styled";
+import styled, { type Style } from "../styled";
 import defaultTokens from "../defaultTokens";
-import { TYPE_OPTIONS, SIZE_OPTIONS, TOKENS } from "./consts";
+import { TYPE_OPTIONS, SIZE_OPTIONS, TYPE_TOKENS, SIZE_TOKENS } from "./consts";
+import type { Props, SizeTokens, TypeTokens } from "./index.js.flow";
 
-import type { Props, Tokens } from "./index";
-
-const getSizeToken = (name: Tokens, { theme, size }) => {
+const getSizeToken = (name: SizeTokens, { theme, size }) => {
   const tokens = {
-    [TOKENS.heightButton]: {
+    [SIZE_TOKENS.heightButton]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.heightButtonLarge,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.heightButtonNormal,
       [SIZE_OPTIONS.SMALL]: theme.orbit.heightButtonSmall,
     },
-    [TOKENS.paddingButton]: {
+    [SIZE_TOKENS.paddingButton]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLarge,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormal,
       [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmall,
     },
-    [TOKENS.fontSizeButton]: {
+    [SIZE_TOKENS.fontSizeButton]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeButtonLarge,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeButtonNormal,
       [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeButtonSmall,
@@ -29,9 +28,9 @@ const getSizeToken = (name: Tokens, { theme, size }) => {
   };
   return tokens[name][size];
 };
-const getTypeToken = (name: Tokens, { theme, type }) => {
+const getTypeToken = (name: TypeTokens, { theme, type }) => {
   const tokens = {
-    [TOKENS.backgroundButton]: {
+    [TYPE_TOKENS.backgroundButton]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonPrimary,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.backgroundButtonSecondary,
       [TYPE_OPTIONS.INFO]: theme.orbit.backgroundButtonInfo,
@@ -41,7 +40,7 @@ const getTypeToken = (name: Tokens, { theme, type }) => {
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.backgroundButtonFacebook,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonGoogle,
     },
-    [TOKENS.borderColorButton]: {
+    [TYPE_TOKENS.borderColorButton]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.borderColorButtonPrimaryBordered,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.borderColorButtonSecondaryBordered,
       [TYPE_OPTIONS.INFO]: theme.orbit.borderColorButtonInfoBordered,
@@ -51,7 +50,7 @@ const getTypeToken = (name: Tokens, { theme, type }) => {
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.borderColorButtonFacebookBordered,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.borderColorButtonGoogleBordered,
     },
-    [TOKENS.colorTextButton]: {
+    [TYPE_TOKENS.colorTextButton]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimary,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextButtonSecondary,
       [TYPE_OPTIONS.INFO]: theme.orbit.colorTextButtonInfo,
@@ -61,7 +60,7 @@ const getTypeToken = (name: Tokens, { theme, type }) => {
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.colorTextButtonFacebook,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.colorTextButtonGoogle,
     },
-    [TOKENS.colorTextButtonBordered]: {
+    [TYPE_TOKENS.colorTextButtonBordered]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimaryBordered,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextButtonSecondaryBordered,
       [TYPE_OPTIONS.INFO]: theme.orbit.colorTextButtonInfoBordered,
@@ -75,24 +74,24 @@ const getTypeToken = (name: Tokens, { theme, type }) => {
   return tokens[name][type];
 };
 
-export const StyledButton = styled(View, props => {
+export const StyledButton = styled(View, (props): Style => {
   const { bordered, theme, width, circled, disabled } = props;
   return {
     width,
     justifyContent: "center",
     alignItems: "center",
-    height: getSizeToken(TOKENS.heightButton, props),
+    height: getSizeToken(SIZE_TOKENS.heightButton, props),
     backgroundColor: bordered
       ? theme.orbit.backgroundButtonBordered
-      : getTypeToken(TOKENS.backgroundButton, props),
+      : getTypeToken(TYPE_TOKENS.backgroundButton, props),
     borderWidth: bordered ? "1px" : "0px",
-    borderColor: getTypeToken(TOKENS.borderColorButton, props),
+    borderColor: getTypeToken(TYPE_TOKENS.borderColorButton, props),
     borderRadius: circled
-      ? getSizeToken(TOKENS.heightButton, props)
+      ? getSizeToken(SIZE_TOKENS.heightButton, props)
       : theme.orbit.borderRadiusNormal,
     padding: 0,
-    paddingLeft: getSizeToken(TOKENS.paddingButton, props),
-    paddingRight: getSizeToken(TOKENS.paddingButton, props),
+    paddingLeft: getSizeToken(SIZE_TOKENS.paddingButton, props),
+    paddingRight: getSizeToken(SIZE_TOKENS.paddingButton, props),
     opacity: disabled && theme.orbit.opacityButtonDisabled,
   };
 });
@@ -101,14 +100,14 @@ StyledButton.defaultProps = {
   theme: defaultTokens,
 };
 
-const StyledText = styled(Text, props => {
+const StyledText = styled(Text, (props): Style => {
   const { bordered, theme } = props;
   return {
     color: bordered
-      ? getTypeToken(TOKENS.colorTextButtonBordered, props)
-      : getTypeToken(TOKENS.colorTextButton, props),
+      ? getTypeToken(TYPE_TOKENS.colorTextButtonBordered, props)
+      : getTypeToken(TYPE_TOKENS.colorTextButton, props),
     fontWeight: theme.orbit.fontWeightBold,
-    fontSize: getSizeToken(TOKENS.fontSizeButton, props),
+    fontSize: getSizeToken(SIZE_TOKENS.fontSizeButton, props),
   };
 });
 
@@ -116,11 +115,11 @@ StyledText.defaultProps = {
   theme: defaultTokens,
 };
 
-const StyledTouchableWrapper = styled(View, props => ({
+const StyledTouchableWrapper = styled(View, (props): Style => ({
   overflow: "hidden",
   width: props.width,
   borderRadius: props.circled
-    ? getSizeToken(TOKENS.heightButton, props)
+    ? getSizeToken(SIZE_TOKENS.heightButton, props)
     : props.theme.orbit.borderRadiusNormal,
 }));
 

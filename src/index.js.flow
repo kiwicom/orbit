@@ -8,6 +8,7 @@ import typeof ButtonType from "./Button";
 import typeof ButtonLinkType from "./ButtonLink";
 import typeof ButtonGroupType from "./ButtonGroup";
 import typeof CheckboxType from "./Checkbox";
+import typeof ChoiceGroupType from "./ChoiceGroup";
 import typeof CountryFlagType from "./CountryFlag";
 import typeof CarrierLogoType from "./CarrierLogo";
 import typeof HeadingType from "./Heading";
@@ -72,6 +73,7 @@ declare export var ButtonLink: ButtonLinkType;
 declare export var ButtonGroup: ButtonGroupType;
 declare export var CarrierLogo: CarrierLogoType;
 declare export var Checkbox: CheckboxType;
+declare export var ChoiceGroup: ChoiceGroupType;
 declare export var CountryFlag: CountryFlagType;
 
 declare export var List: ListType;

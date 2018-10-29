@@ -12,6 +12,7 @@ export { default as ButtonGroup } from "./ButtonGroup";
 export { default as ButtonLink } from "./ButtonLink";
 export { default as CarrierLogo } from "./CarrierLogo";
 export { default as Checkbox } from "./Checkbox";
+export { default as ChoiceGroup } from "./ChoiceGroup";
 export { default as CountryFlag } from "./CountryFlag";
 
 // Deprecated Card

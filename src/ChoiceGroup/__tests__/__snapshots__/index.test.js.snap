@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioGroup should match snapshot 1`] = `
+<ChoiceGroup__StyledChoiceGroup
+  data-test="test"
+>
+  <Heading
+    element="h5"
+    spaceAfter="small"
+    type="title2"
+  >
+    Label
+  </Heading>
+  <Stack
+    direction="column"
+    spacing="condensed"
+  >
+    <Radio
+      key=".0"
+      label="Reason one"
+      onChange={[Function]}
+      value="one"
+    />
+    <Radio
+      key=".1"
+      label="Reason two"
+      onChange={[Function]}
+      value="two"
+    />
+    <Radio
+      key=".2"
+      label="Reason three"
+      onChange={[Function]}
+      value="three"
+    />
+  </Stack>
+</ChoiceGroup__StyledChoiceGroup>
+`;

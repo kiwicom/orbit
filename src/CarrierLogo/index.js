@@ -3,16 +3,79 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
-import { SIZE_OPTIONS, baseURL } from "./consts";
+import { SIZE_OPTIONS, BASE_URL } from "./consts";
 
 import type { Props } from "./index";
 
+const getRenderSize = ({ theme, size }) => {
+  const renderSizes = {
+    [SIZE_OPTIONS.SMALL]: parseInt(theme.orbit.heightIconSmall, 10),
+    [SIZE_OPTIONS.MEDIUM]: parseInt(theme.orbit.heightIconMedium, 10),
+    [SIZE_OPTIONS.LARGE]: parseInt(theme.orbit.heightIconLarge, 10),
+  };
+  return renderSizes[size];
+};
+
+const getCarrierLogoSize = ({ theme, carriersLength, size }) => {
+  const defaultSizes =
+    carriersLength > 1
+      ? getRenderSize({ theme, size: SIZE_OPTIONS.SMALL })
+      : getRenderSize({ theme, size });
+
+  return `${defaultSizes - (carriersLength > 2 ? 1 : 0)}px`;
+};
+
+const getURLSizes = ({ size }) => {
+  const urlSizes = {
+    base: {
+      [SIZE_OPTIONS.SMALL]: 16,
+      [SIZE_OPTIONS.MEDIUM]: 32,
+      [SIZE_OPTIONS.LARGE]: 32,
+    },
+    retina: {
+      [SIZE_OPTIONS.SMALL]: 32,
+      [SIZE_OPTIONS.MEDIUM]: 64,
+      [SIZE_OPTIONS.LARGE]: 64,
+    },
+  };
+  return {
+    base: urlSizes.base[size],
+    retina: urlSizes.retina[size],
+  };
+};
+
+const getURL = (retina = false) => ({ code, carrierType, carriersLength, size }) => {
+  const type = carrierType === undefined ? "airline" : carrierType;
+  const urlSizes =
+    carriersLength > 1 ? getURLSizes({ size: SIZE_OPTIONS.SMALL }) : getURLSizes({ size });
+  return retina
+    ? `${BASE_URL}/airlines/${urlSizes.retina}/${code}.png?default=${type}.png 2x`
+    : `${BASE_URL}/airlines/${urlSizes.base}/${code}.png?default=${type}.png`;
+};
+
+const StyledImage = styled.img.attrs({
+  src: getURL(),
+  srcSet: getURL(true),
+})`
+  background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  height: ${getCarrierLogoSize};
+  width: ${getCarrierLogoSize};
+  &:last-child {
+    align-self: flex-end;
+  }
+`;
+
+StyledImage.defaultProps = {
+  theme: defaultTokens,
+};
+
 export const StyledCarrierLogo = styled.div`
   background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};
-  height: ${({ theme, tokens, size, carriers }) =>
-    carriers.length > 1 ? `${theme.orbit.heightIconLarge}` : `${tokens.renderSizes[size]}px`};
-  width: ${({ tokens, theme, size, carriers }) =>
-    carriers.length > 1 ? `${theme.orbit.widthIconLarge}` : `${tokens.renderSizes[size]}px`};
+  height: ${({ theme, carriers, size }) =>
+    carriers.length > 1 ? theme.orbit.heightIconLarge : `${getRenderSize({ theme, size })}px`};
+  width: ${({ theme, carriers, size }) =>
+    carriers.length > 1 ? theme.orbit.widthIconLarge : `${getRenderSize({ theme, size })}px`};
   display: flex;
   flex-direction: ${({ carriers }) => (carriers.length > 1 ? "column" : "row")};
   flex-wrap: wrap;
@@ -24,66 +87,21 @@ StyledCarrierLogo.defaultProps = {
   theme: defaultTokens,
 };
 
-const StyledImage = styled.img`
-  height: ${({ imageSize }) => imageSize}px;
-  width: ${({ imageSize }) => imageSize}px;
-  background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  &:last-child {
-    align-self: flex-end;
-  }
-`;
-
-StyledImage.defaultProps = {
-  theme: defaultTokens,
-};
-
-const CarrierLogo = (props: Props) => {
-  const { size = SIZE_OPTIONS.LARGE, carriers, theme = defaultTokens, dataTest } = props;
-  const tokens = {
-    directorySizes: {
-      [SIZE_OPTIONS.SMALL]: 16,
-      [SIZE_OPTIONS.MEDIUM]: 32,
-      [SIZE_OPTIONS.LARGE]: 32,
-    },
-    retinaSizes: {
-      [SIZE_OPTIONS.SMALL]: 32,
-      [SIZE_OPTIONS.MEDIUM]: 64,
-      [SIZE_OPTIONS.LARGE]: 64,
-    },
-    renderSizes: {
-      [SIZE_OPTIONS.SMALL]: parseInt(theme.orbit.heightIconSmall, 10),
-      [SIZE_OPTIONS.MEDIUM]: parseInt(theme.orbit.heightIconMedium, 10),
-      [SIZE_OPTIONS.LARGE]: parseInt(theme.orbit.heightIconLarge, 10),
-    },
-  };
-  const sourceSize =
-    carriers.length > 1 ? tokens.directorySizes[SIZE_OPTIONS.SMALL] : tokens.directorySizes[size];
-  const imageSize =
-    carriers.length > 1 ? tokens.renderSizes[SIZE_OPTIONS.SMALL] : tokens.renderSizes[size];
-  const srcSetSize =
-    carriers.length > 1 ? tokens.retinaSizes[SIZE_OPTIONS.SMALL] : tokens.retinaSizes[size];
-
-  return (
-    <StyledCarrierLogo carriers={carriers} tokens={tokens} size={size} data-test={dataTest}>
-      {carriers.slice(0, 4).map(carrierImage => {
-        const type = carrierImage.type === undefined ? "airline" : carrierImage.type;
-        return (
-          <StyledImage
-            key={carrierImage.code}
-            src={`${baseURL}/airlines/${sourceSize}/${carrierImage.code}.png?default=${type}.png`}
-            srcSet={`${baseURL}/airlines/${srcSetSize}/${
-              carrierImage.code
-            }.png?default=${type}.png 2x`}
-            alt={carrierImage.name}
-            title={carrierImage.name}
-            imageSize={imageSize - (carriers.length > 2 ? 1 : 0)}
-            tokens={tokens}
-          />
-        );
-      })}
-    </StyledCarrierLogo>
-  );
-};
-
+const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest }: Props) => (
+  <StyledCarrierLogo carriers={carriers} size={size} data-test={dataTest}>
+    {carriers
+      .slice(0, 4)
+      .map(carrierImage => (
+        <StyledImage
+          key={carrierImage.code}
+          carrierType={carrierImage.type}
+          carriersLength={carriers.length}
+          code={carrierImage.code}
+          size={size}
+          alt={carrierImage.name}
+          title={carrierImage.name}
+        />
+      ))}
+  </StyledCarrierLogo>
+);
 export default CarrierLogo;

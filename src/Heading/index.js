@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
 
@@ -14,12 +15,14 @@ const getToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.TITLE1]: theme.orbit.fontWeightHeadingTitle1,
       [TYPE_OPTIONS.TITLE2]: theme.orbit.fontWeightHeadingTitle2,
       [TYPE_OPTIONS.TITLE3]: theme.orbit.fontWeightHeadingTitle3,
+      [TYPE_OPTIONS.TITLE4]: theme.orbit.fontWeightMedium, // TODO: create token fontWeightHeadingTitle4
     },
     [TOKENS.sizeHeading]: {
       [TYPE_OPTIONS.DISPLAY]: theme.orbit.fontSizeHeadingDisplay,
       [TYPE_OPTIONS.TITLE1]: theme.orbit.fontSizeHeadingTitle1,
       [TYPE_OPTIONS.TITLE2]: theme.orbit.fontSizeHeadingTitle2,
       [TYPE_OPTIONS.TITLE3]: theme.orbit.fontSizeHeadingTitle3,
+      [TYPE_OPTIONS.TITLE4]: theme.orbit.fontSizeTextNormal, // TODO: create token fontSizeHeadingTitle4
     },
   };
 
@@ -38,6 +41,7 @@ export const StyledHeading = styled(({ element: Component, className, children, 
     inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
   line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
   margin: 0;
+  margin-bottom: ${getSpacingToken};
 `;
 
 StyledHeading.defaultProps = {
@@ -50,8 +54,15 @@ const Heading = ({
   element = ELEMENT_OPTIONS.H1,
   dataTest,
   inverted = false,
+  spaceAfter,
 }: Props) => (
-  <StyledHeading type={type} element={element} inverted={inverted} dataTest={dataTest}>
+  <StyledHeading
+    type={type}
+    element={element}
+    inverted={inverted}
+    dataTest={dataTest}
+    spaceAfter={spaceAfter}
+  >
     {children}
   </StyledHeading>
 );

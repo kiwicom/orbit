@@ -14,10 +14,11 @@ Table below contains all types of the props available in Checkbox component.
 | :-------     | :----------- | :------ | :------------------------------- |
 | checked      | `boolean`    | `false` | If `true`, the Checkbox will be checked.
 | disabled     | `boolean`    | `false` | If `true`, the Checkbox will be set up as disabled.
-| dataTest     | `string`    |         | Optional prop for testing purposes.
+| dataTest     | `string`     |         | Optional prop for testing purposes.
 | hasError     | `boolean`    | `false` | If `true`, the border of the Checkbox will turn red. [See Functional specs](#functional-specs)
 | info         | `React.Node` |         | The additional info about the Checkbox.
-| **label**    | `string`     |         | The label of the Checkbox.
+| label        | `string`     |         | The label of the Checkbox.
+| name         | `string`     |         | The name for the Checkbox.
 | onChange     | `func`       |         | Function for handling onChange event.
 | value        | `string`     |         | The value of the Checkbox.
 

@@ -9,23 +9,20 @@ import SIZES from "./consts";
 import media from "../utils/media";
 import { StyledModalFooter } from "./ModalFooter";
 import { MobileHeader } from "./ModalHeader";
-import ClickOutside from "../ClickOutside";
 import { StyledModalSection } from "./ModalSection";
 import { StyledHeading } from "../Heading";
 
-import type { Props, State, ContentType, CloseElementType } from "./index";
+import type { Props, State, CloseElementType } from "./index";
 
-const getToken = (theme, type, name) => {
+const getSize = ({ size }) => {
   const tokens = {
     // TODO: create tokens widthModalSmall,...
-    modalWidth: {
-      [SIZES.SMALL]: "540px",
-      [SIZES.NORMAL]: "740px",
-      [SIZES.LARGE]: "1280px",
-    },
+    [SIZES.SMALL]: "540px",
+    [SIZES.NORMAL]: "740px",
+    [SIZES.LARGE]: "1280px",
   };
 
-  return tokens[name][type];
+  return tokens[size];
 };
 
 const ModalBody = styled.div`
@@ -45,6 +42,7 @@ const ModalBody = styled.div`
 
   ${media.desktop`
     overflow-y: auto;
+    padding: ${({ theme }) => theme.orbit.spaceXXLarge};
  `};
 `;
 
@@ -67,10 +65,9 @@ const ModalWrapper = styled.div`
   top: ${({ loaded }) => (loaded ? "32px" : "100%")};
 
   ${media.desktop`
-    padding: ${({ theme }) => theme.orbit.spaceXXLarge};
     position: relative;
     top: 0;
-    max-width: ${({ theme, size }) => getToken(theme, size, "modalWidth")};
+    max-width: ${getSize};
     align-items: center;
   `};
 `;
@@ -166,6 +163,8 @@ const ModalWrapperContent = styled.div`
     position: relative;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
     padding-bottom: 0;
+    height: auto;
+    overflow: visible;
     ${StyledModalSection}:last-of-type {
       padding-bottom: ${({ theme }) => theme.orbit.spaceXXLarge};
       margin-bottom: 0;
@@ -194,20 +193,6 @@ const CloseElement = ({ onClose }: CloseElementType) => (
     <ButtonLink onClick={onClose} size="normal" icon={<Close />} transparent />
   </CloseContainer>
 );
-
-const Content = ({ closable, onClose, size, children, scrolled, fixedFooter }: ContentType) =>
-  closable ? (
-    <ClickOutside onClickOutside={onClose}>
-      <ModalWrapperContent size={size} fixedFooter={fixedFooter} scrolled={scrolled}>
-        <CloseElement onClose={onClose} />
-        {children}
-      </ModalWrapperContent>
-    </ClickOutside>
-  ) : (
-    <ModalWrapperContent size={size} fixedFooter={fixedFooter} scrolled={scrolled}>
-      {children}
-    </ModalWrapperContent>
-  );
 
 class Modal extends React.PureComponent<Props, State> {
   constructor() {
@@ -261,8 +246,23 @@ class Modal extends React.PureComponent<Props, State> {
   }
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
-    const { onClose } = this.props;
-    if (ev.key === "Escape" && onClose) {
+    const { onClose, closable } = this.props;
+    if (closable && ev.key === "Escape" && onClose) {
+      onClose(ev);
+    }
+  };
+
+  handleClickOutside = (ev: MouseEvent) => {
+    const { onClose, closable } = this.props;
+
+    if (
+      closable &&
+      onClose &&
+      this.node &&
+      ev.target instanceof Node &&
+      !this.node.contains(ev.target)
+    ) {
+      // If is clicked outside of modal
       onClose(ev);
     }
   };
@@ -284,27 +284,27 @@ class Modal extends React.PureComponent<Props, State> {
     return (
       <ModalBody
         tabIndex="0"
-        onKeyDown={closable ? this.handleKeyDown : undefined}
+        onKeyDown={this.handleKeyDown}
+        onClick={this.handleClickOutside}
         data-test={dataTest}
       >
         <ModalWrapper
           size={size}
           loaded={loaded}
           onScroll={this.handleScroll}
-          innerRef={node => {
-            this.node = node;
-          }}
           fixedFooter={fixedFooter}
         >
-          <Content
-            closable={closable}
-            onClose={onClose}
+          <ModalWrapperContent
             size={size}
-            scrolled={scrolled}
             fixedFooter={fixedFooter}
+            scrolled={scrolled}
+            innerRef={node => {
+              this.node = node;
+            }}
           >
+            {closable && <CloseElement onClose={onClose} />}
             {children}
-          </Content>
+          </ModalWrapperContent>
         </ModalWrapper>
       </ModalBody>
     );

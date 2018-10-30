@@ -98,16 +98,16 @@ exports[`Storyshots List Default 1`] = `
             }
           }
         >
-          <div
-            className="List__StyledList-fzpiIm cUVSEu"
+          <ul
+            className="List__StyledList-fzpiIm detkQV"
             data-test={undefined}
           >
-            <div
-              className="ListItem__Item-bhWwBk cirUQp"
+            <li
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS czCkQe"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -121,13 +121,13 @@ exports[`Storyshots List Default 1`] = `
                 </svg>
               </div>
               24,000 locations around the globe
-            </div>
-            <div
-              className="ListItem__Item-bhWwBk cirUQp"
+            </li>
+            <li
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS czCkQe"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -144,13 +144,13 @@ exports[`Storyshots List Default 1`] = `
               <strong>
                  Warsaw
               </strong>
-            </div>
-            <div
-              className="ListItem__Item-bhWwBk cirUQp"
+            </li>
+            <li
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS czCkQe"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -164,8 +164,8 @@ exports[`Storyshots List Default 1`] = `
                 </svg>
               </div>
               From 3 star budget to 5 star luxury
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
         <div>
           <div>
@@ -638,16 +638,16 @@ exports[`Storyshots List Different type and size 1`] = `
             }
           }
         >
-          <div
-            className="List__StyledList-fzpiIm jUUXxU"
+          <ul
+            className="List__StyledList-fzpiIm kEBOsw"
             data-test={undefined}
           >
-            <div
-              className="ListItem__Item-bhWwBk cirUQp"
+            <li
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS czCkQe"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -660,14 +660,14 @@ exports[`Storyshots List Different type and size 1`] = `
                   />
                 </svg>
               </div>
-              24,000 locations around the globe
-            </div>
-            <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              Gain peace of mind before you travel. No stress about what could go wrong.
+            </li>
+            <li
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS czCkQe"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -680,17 +680,14 @@ exports[`Storyshots List Different type and size 1`] = `
                   />
                 </svg>
               </div>
-              Lowest price car rental in 
-              <strong>
-                 Warsaw
-              </strong>
-            </div>
-            <div
-              className="ListItem__Item-bhWwBk cirUQp"
+              Customise your coverage to suit your needs and your budget.
+            </li>
+            <li
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS czCkQe"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -703,9 +700,9 @@ exports[`Storyshots List Different type and size 1`] = `
                   />
                 </svg>
               </div>
-              From 3 star budget to 5 star luxury
-            </div>
-          </div>
+              Feel safe in the hands of AXA Assistance, the travel insurance experts.
+            </li>
+          </ul>
         </div>
         <div>
           <div>
@@ -873,7 +870,7 @@ exports[`Storyshots List Different type and size 1`] = `
                             }
                           }
                         >
-                          24,000 locations around the globe
+                          Gain peace of mind before you travel. No stress about what could go wrong.
                         </span>
                       </div>
                       <div
@@ -942,77 +939,8 @@ exports[`Storyshots List Different type and size 1`] = `
                             }
                           }
                         >
-                          Lowest price car rental in 
+                          Customise your coverage to suit your needs and your budget.
                         </span>
-                      </div>
-                      <div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;
-                            strong
-                          </span>
-                          <span />
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &gt;
-                          </span>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 63,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                             Warsaw
-                          </span>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;/
-                            strong
-                            &gt;
-                          </span>
-                        </div>
                       </div>
                       <div
                         style={
@@ -1080,7 +1008,7 @@ exports[`Storyshots List Different type and size 1`] = `
                             }
                           }
                         >
-                          From 3 star budget to 5 star luxury
+                          Feel safe in the hands of AXA Assistance, the travel insurance experts.
                         </span>
                       </div>
                       <div
@@ -1234,16 +1162,16 @@ exports[`Storyshots List Playground 1`] = `
             }
           }
         >
-          <div
-            className="List__StyledList-fzpiIm cUVSEu"
+          <ul
+            className="List__StyledList-fzpiIm detkQV"
             data-test="test"
           >
-            <div
-              className="ListItem__Item-bhWwBk cirUQp"
+            <li
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS czCkQe"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP wffHr"
@@ -1257,13 +1185,13 @@ exports[`Storyshots List Playground 1`] = `
                 </svg>
               </div>
               24,000 locations around the globe
-            </div>
-            <div
-              className="ListItem__Item-bhWwBk cirUQp"
+            </li>
+            <li
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS czCkQe"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP wffHr"
@@ -1277,13 +1205,13 @@ exports[`Storyshots List Playground 1`] = `
                 </svg>
               </div>
               24,000 locations around the globe
-            </div>
-            <div
-              className="ListItem__Item-bhWwBk cirUQp"
+            </li>
+            <li
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS czCkQe"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP wffHr"
@@ -1297,8 +1225,8 @@ exports[`Storyshots List Playground 1`] = `
                 </svg>
               </div>
               24,000 locations around the globe
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
         <div>
           <div>
@@ -1356,7 +1284,10 @@ exports[`Storyshots List Playground 1`] = `
                       </span>
                       <span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -1383,7 +1314,10 @@ exports[`Storyshots List Playground 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -1410,7 +1344,10 @@ exports[`Storyshots List Playground 1`] = `
                           </span>
                         </span>
                         <span>
-                           
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
@@ -1435,7 +1372,38 @@ exports[`Storyshots List Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                          
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            spaceAfter
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <br />
                         </span>
                       </span>
                       <span
@@ -1875,16 +1843,16 @@ exports[`Storyshots List With carrier 1`] = `
             }
           }
         >
-          <div
-            className="List__StyledList-fzpiIm jUUXxU"
+          <ul
+            className="List__StyledList-fzpiIm kEBOsw"
             data-test={undefined}
           >
-            <div
-              className="ListItem__Item-bhWwBk cirUQp"
+            <li
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS czCkQe"
               >
                 <div
                   className="CarrierLogo__StyledCarrierLogo-ieqjqT kvJfMi"
@@ -1893,7 +1861,8 @@ exports[`Storyshots List With carrier 1`] = `
                 >
                   <img
                     alt="Ryanair"
-                    className="CarrierLogo__StyledImage-fRYacf hVCEgl"
+                    className="CarrierLogo__StyledImage-fRYacf MYsmm"
+                    size="large"
                     src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
                     srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
                     title="Ryanair"
@@ -1901,13 +1870,13 @@ exports[`Storyshots List With carrier 1`] = `
                 </div>
               </div>
               Airline: Ryanair
-            </div>
-            <div
-              className="ListItem__Item-bhWwBk cirUQp"
+            </li>
+            <li
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS czCkQe"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1921,13 +1890,13 @@ exports[`Storyshots List With carrier 1`] = `
                 </svg>
               </div>
               Flight no: FR 1337
-            </div>
-            <div
-              className="ListItem__Item-bhWwBk cirUQp"
+            </li>
+            <li
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS czCkQe"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1941,13 +1910,13 @@ exports[`Storyshots List With carrier 1`] = `
                 </svg>
               </div>
               PNR: TEST0X0
-            </div>
-            <div
-              className="ListItem__Item-bhWwBk cirUQp"
+            </li>
+            <li
+              className="ListItem__Item-bhWwBk eRQaxy"
               data-test={undefined}
             >
               <div
-                className="ListItem__IconContainer-cWSXoS dEkgXq"
+                className="ListItem__IconContainer-cWSXoS czCkQe"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1961,8 +1930,8 @@ exports[`Storyshots List With carrier 1`] = `
                 </svg>
               </div>
               Airbus A320 (320)
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
         <div>
           <div>

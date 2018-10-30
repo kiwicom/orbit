@@ -16,7 +16,6 @@ export { default as CountryFlag } from "./CountryFlag";
 // Card
 export { default as Card } from "./Card";
 export { default as CardHeader } from "./Card/CardHeader";
-export { default as CardContent } from "./Card/CardContent";
 export { default as CardSection } from "./Card/CardSection";
 
 // Modal
@@ -28,6 +27,13 @@ export { default as ModalHeader } from "./Modal/ModalHeader";
 export { default as ModalSection } from "./Modal/ModalSection";
 export { default as ModalFooter } from "./Modal/ModalFooter";
 
+// Table
+export { default as Table } from "./Table";
+export { default as TableBody } from "./Table/TableBody";
+export { default as TableCell } from "./Table/TableCell";
+export { default as TableRow } from "./Table/TableRow";
+export { default as TableHead } from "./Table/TableHead";
+
 export { default as Heading } from "./Heading";
 export { default as Text } from "./Text";
 export { default as List } from "./List";
@@ -37,12 +43,21 @@ export { default as Icon } from "./Icon";
 export { default as InputField } from "./InputField";
 export { default as InputGroup } from "./InputGroup";
 export { default as InputFile } from "./InputFile";
+export { default as InputStepper } from "./InputStepper";
 export { default as Illustration } from "./Illustration";
 export { default as TextLink } from "./TextLink";
 export { default as Radio } from "./Radio";
+export { default as RatingStars } from "./RatingStars";
 export { default as Select } from "./Select";
+export { default as Stack } from "./Stack";
 export { default as ServiceLogo } from "./ServiceLogo";
 export { default as Separator } from "./Separator";
+export { default as StopoverArrow } from "./StopoverArrow";
 export { default as Textarea } from "./Textarea";
 export { default as Tile } from "./Tile";
+
+// tokens
 export { defaultTokens as defaultTheme, getTokens } from "@kiwicom/orbit-design-tokens";
+
+// utilities
+export { default as media } from "./utils/media";

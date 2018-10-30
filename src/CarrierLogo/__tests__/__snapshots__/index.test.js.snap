@@ -1,6 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
+.c1 {
+  background-color: transparent;
+  border-radius: 3px;
+  height: 15px;
+  width: 15px;
+}
+
+.c1:last-child {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
 .c0 {
   background-color: transparent;
   height: 32px;
@@ -22,19 +35,6 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c1 {
-  height: 15px;
-  width: 15px;
-  background-color: transparent;
-  border-radius: 3px;
-}
-
-.c1:last-child {
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
 }
 
 <CarrierLogo
@@ -219,7 +219,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
           "colorPlaceholderInputFile": "#7f91a8",
           "colorPlaceholderInputFileError": "#d21c1c",
           "colorTextAlertCritical": "#650808",
-          "colorTextAlertInfo": "#07405c",
+          "colorTextAlertInfo": "#003A69",
           "colorTextAlertLink": "#171b1e",
           "colorTextAlertSuccess": "#065d12",
           "colorTextAlertWarning": "#a93610",
@@ -379,7 +379,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
           "paddingLeftSelectPrefix": "48px",
           "paddingTextareaNormal": "12px",
           "paddingTextareaSmall": "8px 12px",
-          "paletteBlueDark": "#07405c",
+          "paletteBlueDark": "#003A69",
           "paletteBlueLight": "#e0f6ff",
           "paletteBlueLightActive": "#b0e8fe",
           "paletteBlueLightHover": "#c8effe",
@@ -416,10 +416,10 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
           "paletteOrangeNormal": "#f9971e",
           "paletteOrangeNormalActive": "#e68206",
           "paletteOrangeNormalHover": "#f48a06",
-          "paletteProductDark": "#005448",
-          "paletteProductLight": "#9ae5da",
-          "paletteProductLightActive": "#64d7c6",
-          "paletteProductLightHover": "#7fded0",
+          "paletteProductDark": "#00826f",
+          "paletteProductLight": "#E1F5F2",
+          "paletteProductLightActive": "#9addd3",
+          "paletteProductLightHover": "#bde9e2",
           "paletteProductNormal": "#00a991",
           "paletteProductNormalActive": "#008f7b",
           "paletteProductNormalHover": "#009882",
@@ -464,25 +464,6 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
         },
       }
     }
-    tokens={
-      Object {
-        "directorySizes": Object {
-          "large": 32,
-          "medium": 32,
-          "small": 16,
-        },
-        "renderSizes": Object {
-          "large": 32,
-          "medium": 24,
-          "small": 16,
-        },
-        "retinaSizes": Object {
-          "large": 64,
-          "medium": 64,
-          "small": 32,
-        },
-      }
-    }
   >
     <div
       className="c0"
@@ -491,10 +472,10 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
     >
       <CarrierLogo__StyledImage
         alt="Ryanair"
-        imageSize={15}
+        carriersLength={4}
+        code="FR"
         key="FR"
-        src="//images.kiwi.com/airlines/16/FR.png?default=airline.png"
-        srcSet="//images.kiwi.com/airlines/32/FR.png?default=airline.png 2x"
+        size="large"
         theme={
           Object {
             "orbit": Object {
@@ -631,7 +612,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               "colorPlaceholderInputFile": "#7f91a8",
               "colorPlaceholderInputFileError": "#d21c1c",
               "colorTextAlertCritical": "#650808",
-              "colorTextAlertInfo": "#07405c",
+              "colorTextAlertInfo": "#003A69",
               "colorTextAlertLink": "#171b1e",
               "colorTextAlertSuccess": "#065d12",
               "colorTextAlertWarning": "#a93610",
@@ -791,7 +772,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               "paddingLeftSelectPrefix": "48px",
               "paddingTextareaNormal": "12px",
               "paddingTextareaSmall": "8px 12px",
-              "paletteBlueDark": "#07405c",
+              "paletteBlueDark": "#003A69",
               "paletteBlueLight": "#e0f6ff",
               "paletteBlueLightActive": "#b0e8fe",
               "paletteBlueLightHover": "#c8effe",
@@ -828,10 +809,10 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               "paletteOrangeNormal": "#f9971e",
               "paletteOrangeNormalActive": "#e68206",
               "paletteOrangeNormalHover": "#f48a06",
-              "paletteProductDark": "#005448",
-              "paletteProductLight": "#9ae5da",
-              "paletteProductLightActive": "#64d7c6",
-              "paletteProductLightHover": "#7fded0",
+              "paletteProductDark": "#00826f",
+              "paletteProductLight": "#E1F5F2",
+              "paletteProductLightActive": "#9addd3",
+              "paletteProductLightHover": "#bde9e2",
               "paletteProductNormal": "#00a991",
               "paletteProductNormalActive": "#008f7b",
               "paletteProductNormalHover": "#009882",
@@ -877,29 +858,11 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
           }
         }
         title="Ryanair"
-        tokens={
-          Object {
-            "directorySizes": Object {
-              "large": 32,
-              "medium": 32,
-              "small": 16,
-            },
-            "renderSizes": Object {
-              "large": 32,
-              "medium": 24,
-              "small": 16,
-            },
-            "retinaSizes": Object {
-              "large": 64,
-              "medium": 64,
-              "small": 32,
-            },
-          }
-        }
       >
         <img
           alt="Ryanair"
           className="c1"
+          size="large"
           src="//images.kiwi.com/airlines/16/FR.png?default=airline.png"
           srcSet="//images.kiwi.com/airlines/32/FR.png?default=airline.png 2x"
           title="Ryanair"
@@ -907,10 +870,10 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
       </CarrierLogo__StyledImage>
       <CarrierLogo__StyledImage
         alt="Transavia France"
-        imageSize={15}
+        carriersLength={4}
+        code="TO"
         key="TO"
-        src="//images.kiwi.com/airlines/16/TO.png?default=airline.png"
-        srcSet="//images.kiwi.com/airlines/32/TO.png?default=airline.png 2x"
+        size="large"
         theme={
           Object {
             "orbit": Object {
@@ -1047,7 +1010,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               "colorPlaceholderInputFile": "#7f91a8",
               "colorPlaceholderInputFileError": "#d21c1c",
               "colorTextAlertCritical": "#650808",
-              "colorTextAlertInfo": "#07405c",
+              "colorTextAlertInfo": "#003A69",
               "colorTextAlertLink": "#171b1e",
               "colorTextAlertSuccess": "#065d12",
               "colorTextAlertWarning": "#a93610",
@@ -1207,7 +1170,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               "paddingLeftSelectPrefix": "48px",
               "paddingTextareaNormal": "12px",
               "paddingTextareaSmall": "8px 12px",
-              "paletteBlueDark": "#07405c",
+              "paletteBlueDark": "#003A69",
               "paletteBlueLight": "#e0f6ff",
               "paletteBlueLightActive": "#b0e8fe",
               "paletteBlueLightHover": "#c8effe",
@@ -1244,10 +1207,10 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               "paletteOrangeNormal": "#f9971e",
               "paletteOrangeNormalActive": "#e68206",
               "paletteOrangeNormalHover": "#f48a06",
-              "paletteProductDark": "#005448",
-              "paletteProductLight": "#9ae5da",
-              "paletteProductLightActive": "#64d7c6",
-              "paletteProductLightHover": "#7fded0",
+              "paletteProductDark": "#00826f",
+              "paletteProductLight": "#E1F5F2",
+              "paletteProductLightActive": "#9addd3",
+              "paletteProductLightHover": "#bde9e2",
               "paletteProductNormal": "#00a991",
               "paletteProductNormalActive": "#008f7b",
               "paletteProductNormalHover": "#009882",
@@ -1293,29 +1256,11 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
           }
         }
         title="Transavia France"
-        tokens={
-          Object {
-            "directorySizes": Object {
-              "large": 32,
-              "medium": 32,
-              "small": 16,
-            },
-            "renderSizes": Object {
-              "large": 32,
-              "medium": 24,
-              "small": 16,
-            },
-            "retinaSizes": Object {
-              "large": 64,
-              "medium": 64,
-              "small": 32,
-            },
-          }
-        }
       >
         <img
           alt="Transavia France"
           className="c1"
+          size="large"
           src="//images.kiwi.com/airlines/16/TO.png?default=airline.png"
           srcSet="//images.kiwi.com/airlines/32/TO.png?default=airline.png 2x"
           title="Transavia France"
@@ -1323,10 +1268,10 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
       </CarrierLogo__StyledImage>
       <CarrierLogo__StyledImage
         alt="Vueling"
-        imageSize={15}
+        carriersLength={4}
+        code="VY"
         key="VY"
-        src="//images.kiwi.com/airlines/16/VY.png?default=airline.png"
-        srcSet="//images.kiwi.com/airlines/32/VY.png?default=airline.png 2x"
+        size="large"
         theme={
           Object {
             "orbit": Object {
@@ -1463,7 +1408,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               "colorPlaceholderInputFile": "#7f91a8",
               "colorPlaceholderInputFileError": "#d21c1c",
               "colorTextAlertCritical": "#650808",
-              "colorTextAlertInfo": "#07405c",
+              "colorTextAlertInfo": "#003A69",
               "colorTextAlertLink": "#171b1e",
               "colorTextAlertSuccess": "#065d12",
               "colorTextAlertWarning": "#a93610",
@@ -1623,7 +1568,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               "paddingLeftSelectPrefix": "48px",
               "paddingTextareaNormal": "12px",
               "paddingTextareaSmall": "8px 12px",
-              "paletteBlueDark": "#07405c",
+              "paletteBlueDark": "#003A69",
               "paletteBlueLight": "#e0f6ff",
               "paletteBlueLightActive": "#b0e8fe",
               "paletteBlueLightHover": "#c8effe",
@@ -1660,10 +1605,10 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               "paletteOrangeNormal": "#f9971e",
               "paletteOrangeNormalActive": "#e68206",
               "paletteOrangeNormalHover": "#f48a06",
-              "paletteProductDark": "#005448",
-              "paletteProductLight": "#9ae5da",
-              "paletteProductLightActive": "#64d7c6",
-              "paletteProductLightHover": "#7fded0",
+              "paletteProductDark": "#00826f",
+              "paletteProductLight": "#E1F5F2",
+              "paletteProductLightActive": "#9addd3",
+              "paletteProductLightHover": "#bde9e2",
               "paletteProductNormal": "#00a991",
               "paletteProductNormalActive": "#008f7b",
               "paletteProductNormalHover": "#009882",
@@ -1709,29 +1654,11 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
           }
         }
         title="Vueling"
-        tokens={
-          Object {
-            "directorySizes": Object {
-              "large": 32,
-              "medium": 32,
-              "small": 16,
-            },
-            "renderSizes": Object {
-              "large": 32,
-              "medium": 24,
-              "small": 16,
-            },
-            "retinaSizes": Object {
-              "large": 64,
-              "medium": 64,
-              "small": 32,
-            },
-          }
-        }
       >
         <img
           alt="Vueling"
           className="c1"
+          size="large"
           src="//images.kiwi.com/airlines/16/VY.png?default=airline.png"
           srcSet="//images.kiwi.com/airlines/32/VY.png?default=airline.png 2x"
           title="Vueling"
@@ -1739,10 +1666,10 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
       </CarrierLogo__StyledImage>
       <CarrierLogo__StyledImage
         alt="Czech Airlines"
-        imageSize={15}
+        carriersLength={4}
+        code="OK"
         key="OK"
-        src="//images.kiwi.com/airlines/16/OK.png?default=airline.png"
-        srcSet="//images.kiwi.com/airlines/32/OK.png?default=airline.png 2x"
+        size="large"
         theme={
           Object {
             "orbit": Object {
@@ -1879,7 +1806,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               "colorPlaceholderInputFile": "#7f91a8",
               "colorPlaceholderInputFileError": "#d21c1c",
               "colorTextAlertCritical": "#650808",
-              "colorTextAlertInfo": "#07405c",
+              "colorTextAlertInfo": "#003A69",
               "colorTextAlertLink": "#171b1e",
               "colorTextAlertSuccess": "#065d12",
               "colorTextAlertWarning": "#a93610",
@@ -2039,7 +1966,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               "paddingLeftSelectPrefix": "48px",
               "paddingTextareaNormal": "12px",
               "paddingTextareaSmall": "8px 12px",
-              "paletteBlueDark": "#07405c",
+              "paletteBlueDark": "#003A69",
               "paletteBlueLight": "#e0f6ff",
               "paletteBlueLightActive": "#b0e8fe",
               "paletteBlueLightHover": "#c8effe",
@@ -2076,10 +2003,10 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               "paletteOrangeNormal": "#f9971e",
               "paletteOrangeNormalActive": "#e68206",
               "paletteOrangeNormalHover": "#f48a06",
-              "paletteProductDark": "#005448",
-              "paletteProductLight": "#9ae5da",
-              "paletteProductLightActive": "#64d7c6",
-              "paletteProductLightHover": "#7fded0",
+              "paletteProductDark": "#00826f",
+              "paletteProductLight": "#E1F5F2",
+              "paletteProductLightActive": "#9addd3",
+              "paletteProductLightHover": "#bde9e2",
               "paletteProductNormal": "#00a991",
               "paletteProductNormalActive": "#008f7b",
               "paletteProductNormalHover": "#009882",
@@ -2125,29 +2052,11 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
           }
         }
         title="Czech Airlines"
-        tokens={
-          Object {
-            "directorySizes": Object {
-              "large": 32,
-              "medium": 32,
-              "small": 16,
-            },
-            "renderSizes": Object {
-              "large": 32,
-              "medium": 24,
-              "small": 16,
-            },
-            "retinaSizes": Object {
-              "large": 64,
-              "medium": 64,
-              "small": 32,
-            },
-          }
-        }
       >
         <img
           alt="Czech Airlines"
           className="c1"
+          size="large"
           src="//images.kiwi.com/airlines/16/OK.png?default=airline.png"
           srcSet="//images.kiwi.com/airlines/32/OK.png?default=airline.png 2x"
           title="Czech Airlines"

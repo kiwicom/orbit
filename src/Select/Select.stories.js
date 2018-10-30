@@ -118,11 +118,7 @@ storiesOf("Select", module)
               <Select
                 label="Select box (with help text)"
                 options={objectOptions}
-                help={
-                  <div>
-                    Most common choice is <b>Booking cancellation</b>
-                  </div>
-                }
+                help="Most common choice is Booking cancellation"
                 onChange={action("onChange")}
               />
             ),
@@ -175,6 +171,7 @@ storiesOf("Select", module)
     const placeholder = text("Placeholder", "Select value from list");
     const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
     const disabled = boolean("Disabled", false);
+    const name = text("Name", "name");
     const option = object("Options", objectOptions);
     const value = select("Value", [undefined].concat(...objectOptions.map(opt => opt.value)));
     const dataTest = text("dataTest", "test");
@@ -192,8 +189,11 @@ storiesOf("Select", module)
                   size={size}
                   options={option}
                   disabled={disabled}
+                  name={name}
                   label={text("Label")}
                   onChange={action("onChange")}
+                  onBlur={action("onBlur")}
+                  onFocus={action("onFocus")}
                   dataTest={dataTest}
                   value={value}
                 />

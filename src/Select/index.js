@@ -11,8 +11,21 @@ import SIZE_OPTIONS from "./consts";
 
 import type { Props } from "./index";
 
+const getSelectSize = ({ theme, size }) => {
+  const tokens = {
+    [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
+  };
+  return tokens[size];
+};
+
+const Label = styled.label`
+  position: relative;
+  display: block;
+`;
+
 const StyledSelect = styled(
-  ({ className, children, value, disabled, onChange, onFocus, onBlur }) => (
+  ({ className, children, value, disabled, onChange, onFocus, onBlur, name }) => (
     <select
       value={value}
       className={className}
@@ -20,6 +33,7 @@ const StyledSelect = styled(
       onFocus={onFocus}
       onBlur={onBlur}
       disabled={disabled}
+      name={name}
     >
       {children}
     </select>
@@ -34,8 +48,7 @@ const StyledSelect = styled(
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme, size }) =>
     size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
-  height: ${({ theme, size }) =>
-    size === SIZE_OPTIONS.SMALL ? theme.orbit.heightInputSmall : theme.orbit.heightInputNormal};
+  height: ${getSelectSize};
   padding: ${({ theme, size }) =>
     size === SIZE_OPTIONS.SMALL
       ? `0 ${theme.orbit.spaceXLarge} 0 ${theme.orbit.spaceSmall}`
@@ -47,6 +60,13 @@ const StyledSelect = styled(
 
   &::-ms-expand {
     display: none;
+  }
+
+  // IE Bug fix: highlighted background color and color of text
+  &::-ms-value {
+    background: transparent;
+    color: ${({ theme, filled }) =>
+      filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
   }
 
   /* With prefix */
@@ -113,6 +133,8 @@ const SelectPrefix = styled(({ className, children }) => (
   padding: ${({ theme }) => `0 ${theme.orbit.spaceSmall}`};
   pointer-events: none;
   z-index: 3;
+  top: 0;
+  height: ${getSelectSize};
 `;
 
 SelectPrefix.defaultProps = {
@@ -123,11 +145,16 @@ const SelectSuffix = styled(({ children, className }) => (
   <div className={className}>{children}</div>
 ))`
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
   right: ${({ theme }) => theme.orbit.spaceXSmall};
   color: ${({ theme, disabled }) =>
     disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
   pointer-events: none;
   z-index: 3;
+  height: 100%;
 
   & > * {
     width: ${({ theme, size }) => size === SIZE_OPTIONS.SMALL && theme.orbit.widthIconSmall};
@@ -148,6 +175,7 @@ const Select = ({
   disabled = false,
   error,
   help,
+  name,
   onChange,
   onBlur,
   onFocus,
@@ -157,27 +185,32 @@ const Select = ({
 }: Props) => {
   const filled = !!value;
   return (
-    <label data-test={dataTest}>
+    <Label data-test={dataTest}>
       {label && (
         <FormLabel filled={filled} disabled={disabled}>
           {label}
         </FormLabel>
       )}
       <SelectContainer disabled={disabled}>
-        {prefix && <SelectPrefix prefix={prefix}>{prefix}</SelectPrefix>}
+        {prefix && (
+          <SelectPrefix prefix={prefix} size={size}>
+            {prefix}
+          </SelectPrefix>
+        )}
         <StyledSelect
           size={size}
           disabled={disabled}
           error={error}
-          value={value}
+          value={value || ""}
           prefix={prefix}
+          name={name}
           onFocus={onFocus}
           onBlur={onBlur}
           onChange={onChange}
           filled={filled}
         >
           {placeholder && (
-            <option label={placeholder} value="" selected disabled>
+            <option label={placeholder} value="">
               {placeholder}
             </option>
           )}
@@ -187,14 +220,13 @@ const Select = ({
             </option>
           ))}
         </StyledSelect>
-
         <SelectSuffix size={size} disabled={disabled}>
           <ChevronDown />
         </SelectSuffix>
       </SelectContainer>
       {help && !error && <FormFeedback type={TYPE_OPTIONS.HELP}>{help}</FormFeedback>}
       {error && <FormFeedback type={TYPE_OPTIONS.ERROR}>{error}</FormFeedback>}
-    </label>
+    </Label>
   );
 };
 

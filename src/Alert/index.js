@@ -11,6 +11,9 @@ import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
 import { StyledTextLink } from "../TextLink";
 import { TYPE_OPTIONS, TOKENS } from "./consts";
+import getSpacingToken from "../common/getSpacingToken";
+import { Item } from "../List/ListItem";
+import { StyledText } from "../Text";
 
 import type { Props } from "./index";
 
@@ -92,6 +95,7 @@ const StyledAlert = styled(StyledDiv)`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   box-sizing: border-box;
+  margin-bottom: ${getSpacingToken};
 `;
 
 StyledAlert.defaultProps = {
@@ -143,6 +147,9 @@ const Content = styled(StyledDiv)`
       color: ${({ theme }) => theme.orbit.colorTextAlertLink};
     }
   }
+  & ${Item}, ${StyledText} {
+    color: ${getTypeToken(TOKENS.colorTextAlert)};
+  }
 `;
 
 Content.defaultProps = {
@@ -170,9 +177,10 @@ const Alert = (props: Props) => {
     onClose = () => {},
     children,
     dataTest,
+    spaceAfter,
   } = props;
   return (
-    <StyledAlert type={type} closable={closable} dataTest={dataTest}>
+    <StyledAlert type={type} closable={closable} dataTest={dataTest} spaceAfter={spaceAfter}>
       {icon && (
         <IconContainer type={type}>
           <Icon type={type} icon={icon} />

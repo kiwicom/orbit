@@ -14,8 +14,16 @@ const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {...props}
   font-size: ${({ theme }) => theme.orbit.fontSizeFormFeedback};
   font-weight: ${({ theme, type }) =>
     type === TYPE_OPTIONS.ERROR ? theme.orbit.fontWeightMedium : theme.orbit.fontWeightNormal};
-  margin-top: ${({ theme }) => theme.orbit.marginTopFormFeedback};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
+  width: 100%;
+  margin-top: 2px;
+  position: absolute;
+  top: 100%;
+  max-height: ${({ theme }) =>
+    Math.floor(theme.orbit.lineHeightText * parseInt(theme.orbit.fontSizeFormFeedback, 10))}px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 
   & a {
     color: ${({ theme, type }) =>

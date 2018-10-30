@@ -1,13 +1,15 @@
 // @flow
 import type { Globals } from "../common/common.js.flow";
 
+export type Size = "small" | "normal";
+
 export type Props = {|
-  +size?: "small" | "normal",
+  +size?: Size,
   +type?: "text" | "number" | "email" | "password",
   +name?: string,
   +label?: string,
   +inlineLabel?: boolean,
-  +value?: string,
+  +value?: string | number,
   +placeholder?: string,
   +prefix?: React$Node,
   +suffix?: React$Node,
@@ -22,12 +24,16 @@ export type Props = {|
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onKeyDown?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
+  +onKeyUp?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
   ...Globals,
 |};
 
 declare export var FakeInput: React$ComponentType<>;
 
 declare export var Input: React$ComponentType<>;
+
+declare export var Prefix: React$ComponentType<>;
 
 declare export var InputContainer: React$ComponentType<>;
 

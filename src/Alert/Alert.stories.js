@@ -9,6 +9,11 @@ import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 import * as Icons from "../icons";
 import Button from "../Button";
 import { TYPE_OPTIONS } from "./consts";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import List from "../List";
+import ListItem from "../List/ListItem";
+import Text from "../Text";
+import Stack from "../Stack";
 
 import Alert from "./index";
 
@@ -16,13 +21,6 @@ setAddon(chaptersAddon);
 
 const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
-
-const options = {
-  showSource: true,
-  allowSourceToggling: false,
-  showPropTables: false,
-  allowPropTablesToggling: false,
-};
 
 storiesOf("Alert", module)
   .addDecorator(withKnobs)
@@ -41,7 +39,6 @@ storiesOf("Alert", module)
           sections: [
             {
               sectionFn: () => <Alert>{message}</Alert>,
-              options,
             },
           ],
         },
@@ -63,7 +60,6 @@ storiesOf("Alert", module)
                   {message}
                 </Alert>
               ),
-              options,
             },
           ],
         },
@@ -86,7 +82,6 @@ storiesOf("Alert", module)
                   {message}
                 </Alert>
               ),
-              options,
             },
           ],
         },
@@ -108,7 +103,6 @@ storiesOf("Alert", module)
                   {message}
                 </Alert>
               ),
-              options,
             },
           ],
         },
@@ -130,7 +124,6 @@ storiesOf("Alert", module)
                   {message}
                 </Alert>
               ),
-              options,
             },
           ],
         },
@@ -145,6 +138,7 @@ storiesOf("Alert", module)
     const button = text("Button", "I am a link");
     const closable = boolean("Closable", false);
     const Icon = getIcon(getIcons("Airplane"));
+    const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -160,14 +154,22 @@ storiesOf("Alert", module)
                   closable={closable}
                   onClose={action("Close")}
                   dataTest={dataTest}
+                  spaceAfter={spaceAfter}
                 >
-                  <div style={{ marginBottom: "12px" }}>{message}</div>
-                  <Button type={type} size="small" href="#">
-                    {button}
-                  </Button>
+                  <Stack spacing="compact">
+                    <div>{message}</div>
+                    <List>
+                      <ListItem>
+                        <Text type={type}>623 Kč will be refunded by your payment card</Text>
+                      </ListItem>
+                      <ListItem>623 Kč will be refunded by your payment card</ListItem>
+                    </List>
+                    <Button type={type} size="small" href="#">
+                      {button}
+                    </Button>
+                  </Stack>
                 </Alert>
               ),
-              options,
             },
           ],
         },

@@ -9,7 +9,8 @@ export type Type =
   | "warning"
   | "critical"
   | "facebook"
-  | "google";
+  | "google"
+  | "white";
 
 export type Size = "small" | "normal" | "large";
 
@@ -27,6 +28,7 @@ export type Props = {|
   +type?: Type,
   +size?: Size,
   +width?: number,
+  +submit?: boolean,
   +icon?: React$Node,
   +iconLeft?: React$Node,
   +iconRight?: React$Node,

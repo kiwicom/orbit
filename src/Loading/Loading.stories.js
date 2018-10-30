@@ -5,10 +5,10 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, select, boolean } from "@storybook/addon-knobs/react";
 
-import TYPE_OPTIONS from "./consts";
+import { TYPE_OPTIONS } from "./consts";
 import * as Icons from "../icons";
 import CardHeader from "../Card/CardHeader";
-import CardContent from "../Card/CardContent";
+import CardSection from "../Card/CardSection";
 import Card from "../Card";
 import Illustration from "../Illustration";
 import Button from "../Button";
@@ -66,9 +66,9 @@ storiesOf("Loading", module)
                 <Card>
                   <Loading loading={loading} type="boxLoader" text={loadingText}>
                     <CardHeader icon={<Icons.Airplane />} title={title} subTitle={description} />
-                    <CardContent>
+                    <CardSection>
                       <Illustration name="EnjoyApp" size="medium" />
-                    </CardContent>
+                    </CardSection>
                   </Loading>
                 </Card>
               ),

@@ -108,9 +108,10 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
               onClick={undefined}
               size="normal"
               target={undefined}
+              type="button"
             >
               <div
-                className="ButtonLink__IconContainer-flENJD dcUnuY"
+                className="ButtonLink__IconContainer-flENJD jrcjib"
                 size="normal"
               >
                 <svg
@@ -132,9 +133,10 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
               onClick={undefined}
               size="normal"
               target={undefined}
+              type="button"
             >
               <div
-                className="ButtonLink__IconContainer-flENJD ffwkCW"
+                className="ButtonLink__IconContainer-flENJD hNEbcs"
                 size="normal"
               >
                 <svg
@@ -600,17 +602,18 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
             data-test="test"
           >
             <button
-              className="Button__StyledButton-jJDkJK efFTfw"
+              className="Button__StyledButton-jJDkJK fVudQN"
               data-test={undefined}
               disabled={undefined}
               size="normal"
               target={undefined}
+              type="button"
             >
               <div
                 className="Button__StyledButtonContent-gvDciI pDqSF"
               >
                 <div
-                  className="Button__IconContainer-bZYzaL bfomLI"
+                  className="Button__IconContainer-bZYzaL dikZaB"
                 >
                   <svg
                     className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -627,17 +630,18 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
               </div>
             </button>
             <button
-              className="Button__StyledButton-jJDkJK FFkqo"
+              className="Button__StyledButton-jJDkJK jQMTRY"
               data-test={undefined}
               disabled={undefined}
               size="normal"
               target={undefined}
+              type="button"
             >
               <div
                 className="Button__StyledButtonContent-gvDciI pDqSF"
               >
                 <div
-                  className="Button__IconContainer-bZYzaL eZaDpj"
+                  className="Button__IconContainer-bZYzaL hAoIdO"
                 >
                   <svg
                     className="Icon__StyledIcon-ckyxIP fvqkFf"

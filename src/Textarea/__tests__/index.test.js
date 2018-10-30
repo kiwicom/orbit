@@ -13,6 +13,7 @@ describe(`Textarea with help`, () => {
   const placeholder = "placeholder";
   const dataTest = "test";
   const maxLength = 200;
+  const fullHeight = true;
   const onChange = jest.fn();
   const onFocus = jest.fn();
   const onBlur = jest.fn();
@@ -23,6 +24,7 @@ describe(`Textarea with help`, () => {
       name={name}
       label={label}
       value={value}
+      fullHeight={fullHeight}
       placeholder={placeholder}
       maxLength={maxLength}
       help={<div>Something useful.</div>}
@@ -53,7 +55,14 @@ describe(`Textarea with help`, () => {
     expect(area.prop("value")).toBe(value);
     expect(area.prop("placeholder")).toBe(placeholder);
     expect(area.prop("maxLength")).toBe(maxLength);
+    expect(area.prop("fullHeight")).toBe(fullHeight);
     expect(labelField.render().prop("data-test")).toBe(dataTest);
+    expect(
+      component
+        .find("Textarea__StyledTextArea")
+        .render()
+        .prop("attribs").name,
+    ).toBe(name);
   });
   it("should contain FeedBack help", () => {
     expect(component.find(`FormFeedback[type="help"]`).exists()).toBe(true);

@@ -2,11 +2,12 @@
 import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
-  +label: string,
+  +label?: string,
   +value?: string,
   +hasError?: boolean,
   +disabled?: boolean,
   +checked?: boolean,
+  +name?: string,
   +info?: React$Node,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   ...Globals,

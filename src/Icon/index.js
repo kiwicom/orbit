@@ -5,15 +5,15 @@ import styled from "styled-components";
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 import defaultTokens from "../defaultTokens";
 
-import type { Props } from "./index";
+import type { GetSize, Props } from "./index";
 
-const getSize = () => ({ theme, size }) => {
+export const getSize: GetSize = size => ({ theme }) => {
   const tokens = {
     [ICON_SIZES.SMALL]: theme.orbit.widthIconSmall,
     [ICON_SIZES.MEDIUM]: theme.orbit.widthIconMedium,
     [ICON_SIZES.LARGE]: theme.orbit.widthIconLarge,
   };
-  return tokens[size];
+  return tokens[size] || tokens[ICON_SIZES.MEDIUM];
 };
 
 const getColor = () => ({ theme, color }) => {
@@ -40,8 +40,8 @@ const StyledIcon = styled(({ className, viewBox, dataTest, children }) => (
     {children}
   </svg>
 ))`
-  width: ${getSize()};
-  height: ${getSize()};
+  width: ${({ size }) => getSize(size)};
+  height: ${({ size }) => getSize(size)};
   vertical-align: middle;
   fill: currentColor;
   color: ${({ color, customColor }) => customColor || (color && getColor())};
@@ -69,7 +69,7 @@ const OrbitIcon = (props: Props) => {
 };
 
 OrbitIcon.defaultProps = {
-  size: "medium",
+  size: ICON_SIZES.MEDIUM,
 };
 
 export default OrbitIcon;

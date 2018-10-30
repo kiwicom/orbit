@@ -6,6 +6,7 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, select, boolean } from "@storybook/addon-knobs/react";
 
 import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./consts";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import Heading from "./index";
 
@@ -120,6 +121,27 @@ storiesOf("Heading", module)
       ],
     };
   })
+  .addWithChapters("Title 4", () => {
+    const customTitle = text("Title", "Orbit design system");
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H4);
+    return {
+      info:
+        "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Heading type="title4" element={element}>
+                  {customTitle}
+                </Heading>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Inverted heading", () => {
     const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
     const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DISPLAY);
@@ -152,6 +174,7 @@ storiesOf("Heading", module)
     const dataTest = text("dataTest", "test");
 
     const customTitle = text("Title", "Orbit design system");
+    const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -160,7 +183,7 @@ storiesOf("Heading", module)
           sections: [
             {
               sectionFn: () => (
-                <Heading element={element} type={type} dataTest={dataTest}>
+                <Heading element={element} type={type} dataTest={dataTest} spaceAfter={spaceAfter}>
                   {customTitle}
                 </Heading>
               ),

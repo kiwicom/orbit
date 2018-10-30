@@ -11,6 +11,7 @@ import ListItem from "./ListItem";
 import { SIZES, TYPES } from "./consts";
 import { ICON_COLORS } from "../Icon/consts";
 import CarrierLogo from "../CarrierLogo";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import List from "./index";
 
@@ -59,11 +60,13 @@ storiesOf("List", module)
             {
               sectionFn: () => (
                 <List size={size} type={type}>
-                  <ListItem>24,000 locations around the globe</ListItem>
                   <ListItem>
-                    Lowest price car rental in <strong>&nbsp;Warsaw</strong>
+                    Gain peace of mind before you travel. No stress about what could go wrong.
                   </ListItem>
-                  <ListItem>From 3 star budget to 5 star luxury</ListItem>
+                  <ListItem>Customise your coverage to suit your needs and your budget.</ListItem>
+                  <ListItem>
+                    Feel safe in the hands of AXA Assistance, the travel insurance experts.
+                  </ListItem>
                 </List>
               ),
             },
@@ -103,8 +106,9 @@ storiesOf("List", module)
     const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
     const type = select("Type", Object.values(TYPES), TYPES.PRIMARY);
     const Icon = getIcon(getIcons("Check"));
-    const iconColor = select("iconColor", Object.keys(ICON_COLORS), "success");
+    const iconColor = select("iconColor", Object.values(ICON_COLORS), ICON_COLORS.SUCCESS);
     const content = text("Content", "24,000 locations around the globe");
+    const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
     const dataTest = text("dataTest", "test");
 
     return {
@@ -115,7 +119,7 @@ storiesOf("List", module)
           sections: [
             {
               sectionFn: () => (
-                <List size={size} type={type} dataTest={dataTest}>
+                <List size={size} type={type} dataTest={dataTest} spaceAfter={spaceAfter}>
                   <ListItem icon={Icon && <Icon color={iconColor} />}>{content}</ListItem>
                   <ListItem icon={Icon && <Icon color={iconColor} />}>{content}</ListItem>
                   <ListItem icon={Icon && <Icon color={iconColor} />}>{content}</ListItem>

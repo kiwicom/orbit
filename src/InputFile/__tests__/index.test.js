@@ -53,7 +53,12 @@ describe(`InputFile with help`, () => {
     expect(input.exists()).toBe(true);
   });
   it("should have passed props", () => {
-    expect(input.prop("name")).toBe(name);
+    expect(
+      component
+        .find("InputFile__Input")
+        .render()
+        .prop("attribs").name,
+    ).toBe(name);
     expect(input.prop("accept")).toBe(allowedFileTypes);
     expect(labelComponent.render().prop("data-test")).toBe(dataTest);
   });
@@ -83,7 +88,7 @@ describe(`InputFile with help`, () => {
     expect(onBlur).toHaveBeenCalled();
   });
   it("should have onRemoveFile method", () => {
-    closeButton.simulate("click");
+    closeButton.simulate("click", { preventDefault() {} });
     expect(onRemoveFile).toHaveBeenCalled();
   });
   it("should match snapshot", () => {

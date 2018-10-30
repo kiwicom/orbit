@@ -99,18 +99,20 @@ exports[`Storyshots Select Default 1`] = `
           }
         >
           <label
+            className="Select__Label-hzoCkw fshYAU"
             data-test={undefined}
           >
             <div
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk ffkcBr"
+                className="Select__StyledSelect-eyhbyk ghRKpg"
                 disabled={false}
+                name={undefined}
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                value={undefined}
+                value=""
               >
                 <option
                   disabled={undefined}
@@ -132,7 +134,7 @@ exports[`Storyshots Select Default 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH daGaXL"
+                className="Select__SelectSuffix-klejCH cWjNSF"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -563,23 +565,23 @@ exports[`Storyshots Select Playground 1`] = `
           }
         >
           <label
+            className="Select__Label-hzoCkw fshYAU"
             data-test="test"
           >
             <div
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk ffkcBr"
+                className="Select__StyledSelect-eyhbyk ghRKpg"
                 disabled={false}
-                onBlur={undefined}
+                name="name"
+                onBlur={[Function]}
                 onChange={[Function]}
-                onFocus={undefined}
-                value={undefined}
+                onFocus={[Function]}
+                value=""
               >
                 <option
-                  disabled={true}
                   label="Select value from list"
-                  selected={true}
                   value=""
                 >
                   Select value from list
@@ -604,7 +606,7 @@ exports[`Storyshots Select Playground 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH daGaXL"
+                className="Select__SelectSuffix-klejCH cWjNSF"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -987,6 +989,36 @@ exports[`Storyshots Select Playground 1`] = `
                         <span
                           style={Object {}}
                         >
+                          name
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              name
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
                           label
                         </span>
                         <span>
@@ -1035,6 +1067,68 @@ exports[`Storyshots Select Playground 1`] = `
                                 }
                               >
                                 onChange()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onBlur
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onBlur()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onFocus
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onFocus()
                               </span>
                               }
                             </span>
@@ -1224,6 +1318,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
           }
         >
           <label
+            className="Select__Label-hzoCkw fshYAU"
             data-test={undefined}
           >
             <span
@@ -1238,7 +1333,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <div
-                className="Select__SelectPrefix-kcaQEZ fmvalp"
+                className="Select__SelectPrefix-kcaQEZ Jyvcd"
               >
                 <img
                   alt="Anywhere"
@@ -1250,12 +1345,13 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                 />
               </div>
               <select
-                className="Select__StyledSelect-eyhbyk fRnKOl"
+                className="Select__StyledSelect-eyhbyk jEOzuv"
                 disabled={false}
+                name={undefined}
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                value={undefined}
+                value=""
               >
                 <option
                   disabled={undefined}
@@ -1277,7 +1373,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH daGaXL"
+                className="Select__SelectSuffix-klejCH cWjNSF"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1775,6 +1871,7 @@ exports[`Storyshots Select With error message 1`] = `
           }
         >
           <label
+            className="Select__Label-hzoCkw fshYAU"
             data-test={undefined}
           >
             <span
@@ -1789,12 +1886,13 @@ exports[`Storyshots Select With error message 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk kMhsIu"
+                className="Select__StyledSelect-eyhbyk gAsCec"
                 disabled={false}
+                name={undefined}
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                value={undefined}
+                value=""
               >
                 <option
                   disabled={undefined}
@@ -1816,7 +1914,7 @@ exports[`Storyshots Select With error message 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH daGaXL"
+                className="Select__SelectSuffix-klejCH cWjNSF"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1831,7 +1929,7 @@ exports[`Storyshots Select With error message 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp kBuQBJ"
+              className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
               data-test={undefined}
             >
               <div>
@@ -2322,6 +2420,7 @@ exports[`Storyshots Select With help message 1`] = `
           }
         >
           <label
+            className="Select__Label-hzoCkw fshYAU"
             data-test={undefined}
           >
             <span
@@ -2336,12 +2435,13 @@ exports[`Storyshots Select With help message 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk ffkcBr"
+                className="Select__StyledSelect-eyhbyk ghRKpg"
                 disabled={false}
+                name={undefined}
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                value={undefined}
+                value=""
               >
                 <option
                   disabled={undefined}
@@ -2363,7 +2463,7 @@ exports[`Storyshots Select With help message 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH daGaXL"
+                className="Select__SelectSuffix-klejCH cWjNSF"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -2378,15 +2478,10 @@ exports[`Storyshots Select With help message 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp dAUFLG"
+              className="FormFeedback__StyledFormFeedback-cuFyWp hVyVwg"
               data-test={undefined}
             >
-              <div>
-                Most common choice is 
-                <b>
-                  Booking cancellation
-                </b>
-              </div>
+              Most common choice is Booking cancellation
             </div>
           </label>
         </div>
@@ -2703,18 +2798,17 @@ exports[`Storyshots Select With help message 1`] = `
                           <span
                             style={Object {}}
                           >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
                                 }
-                              >
-                                &lt;div /&gt;
-                              </span>
                               }
+                            >
+                              "
+                              Most common choice is Booking cancellation
+                              "
                             </span>
                           </span>
                         </span>
@@ -2872,6 +2966,7 @@ exports[`Storyshots Select With placeholder 1`] = `
           }
         >
           <label
+            className="Select__Label-hzoCkw fshYAU"
             data-test={undefined}
           >
             <span
@@ -2886,17 +2981,16 @@ exports[`Storyshots Select With placeholder 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk ffkcBr"
+                className="Select__StyledSelect-eyhbyk ghRKpg"
                 disabled={false}
+                name={undefined}
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                value={undefined}
+                value=""
               >
                 <option
-                  disabled={true}
                   label="Select value from list"
-                  selected={true}
                   value=""
                 >
                   Select value from list
@@ -2921,7 +3015,7 @@ exports[`Storyshots Select With placeholder 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH daGaXL"
+                className="Select__SelectSuffix-klejCH cWjNSF"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -3418,6 +3512,7 @@ exports[`Storyshots Select With prefix 1`] = `
           }
         >
           <label
+            className="Select__Label-hzoCkw fshYAU"
             data-test={undefined}
           >
             <span
@@ -3432,7 +3527,7 @@ exports[`Storyshots Select With prefix 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <div
-                className="Select__SelectPrefix-kcaQEZ fmvalp"
+                className="Select__SelectPrefix-kcaQEZ Jyvcd"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fSokFV"
@@ -3446,12 +3541,13 @@ exports[`Storyshots Select With prefix 1`] = `
                 </svg>
               </div>
               <select
-                className="Select__StyledSelect-eyhbyk fRnKOl"
+                className="Select__StyledSelect-eyhbyk jEOzuv"
                 disabled={false}
+                name={undefined}
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                value={undefined}
+                value=""
               >
                 <option
                   disabled={undefined}
@@ -3473,7 +3569,7 @@ exports[`Storyshots Select With prefix 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH daGaXL"
+                className="Select__SelectSuffix-klejCH cWjNSF"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -3971,6 +4067,7 @@ exports[`Storyshots Select With small size 1`] = `
           }
         >
           <label
+            className="Select__Label-hzoCkw fshYAU"
             data-test={undefined}
           >
             <span
@@ -3985,12 +4082,13 @@ exports[`Storyshots Select With small size 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk llsYGa"
+                className="Select__StyledSelect-eyhbyk kiDnBK"
                 disabled={false}
+                name={undefined}
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                value={undefined}
+                value=""
               >
                 <option
                   disabled={undefined}
@@ -4012,7 +4110,7 @@ exports[`Storyshots Select With small size 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH cenyKf"
+                className="Select__SelectSuffix-klejCH cRzbp"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"

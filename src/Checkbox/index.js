@@ -25,6 +25,7 @@ const getToken = name => ({ theme, hasError, disabled, checked }) => {
 const IconContainer = styled.div`
   position: relative;
   box-sizing: border-box;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,7 +74,6 @@ const LabelText = styled.span`
   font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
   font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
   color: ${({ theme }) => theme.orbit.colorFormLabel};
-  height: ${({ theme }) => theme.orbit.heightCheckbox};
   line-height: ${({ theme }) => theme.orbit.heightCheckbox};
 `;
 
@@ -147,6 +147,7 @@ const Checkbox = (props: Props) => {
     hasError = false,
     disabled = false,
     checked = false,
+    name,
     onChange,
     dataTest,
     info,
@@ -158,6 +159,7 @@ const Checkbox = (props: Props) => {
         value={value}
         type="checkbox"
         disabled={disabled}
+        name={name}
         checked={checked}
         onChange={onChange}
       />

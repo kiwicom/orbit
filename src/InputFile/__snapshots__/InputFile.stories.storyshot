@@ -99,7 +99,7 @@ exports[`Storyshots InputFile Default 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE dAafTj"
+            className="InputFile__Field-jAueAE erafpp"
             data-test={undefined}
           >
             <input
@@ -123,17 +123,18 @@ exports[`Storyshots InputFile Default 1`] = `
               className="InputFile__FakeInput-djykOY ciTDoB"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"
                 target={undefined}
+                type="button"
               >
                 <div
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL exCvLT"
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
                     <svg
                       className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -487,7 +488,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE dAafTj"
+            className="InputFile__Field-jAueAE erafpp"
             data-test={undefined}
           >
             <input
@@ -511,17 +512,18 @@ exports[`Storyshots InputFile Filled with file 1`] = `
               className="InputFile__FakeInput-djykOY ciTDoB"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"
                 target={undefined}
+                type="button"
               >
                 <div
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL exCvLT"
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
                     <svg
                       className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -548,9 +550,10 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                 onClick={[Function]}
                 size="normal"
                 target={undefined}
+                type="button"
               >
                 <div
-                  className="ButtonLink__IconContainer-flENJD ffwkCW"
+                  className="ButtonLink__IconContainer-flENJD hNEbcs"
                   size="normal"
                 >
                   <svg
@@ -928,7 +931,7 @@ exports[`Storyshots InputFile Playground 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE dAafTj"
+            className="InputFile__Field-jAueAE erafpp"
             data-test="test"
           >
             <input
@@ -957,17 +960,18 @@ exports[`Storyshots InputFile Playground 1`] = `
               className="InputFile__FakeInput-djykOY dilRac"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"
                 target={undefined}
+                type="button"
               >
                 <div
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL exCvLT"
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
                     <svg
                       className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -990,7 +994,7 @@ exports[`Storyshots InputFile Playground 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp kBuQBJ"
+              className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
               data-test={undefined}
             >
               No file has been selected yet
@@ -1596,7 +1600,7 @@ exports[`Storyshots InputFile With error 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE dAafTj"
+            className="InputFile__Field-jAueAE erafpp"
             data-test={undefined}
           >
             <input
@@ -1620,17 +1624,18 @@ exports[`Storyshots InputFile With error 1`] = `
               className="InputFile__FakeInput-djykOY dilRac"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"
                 target={undefined}
+                type="button"
               >
                 <div
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL exCvLT"
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
                     <svg
                       className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1653,7 +1658,7 @@ exports[`Storyshots InputFile With error 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp kBuQBJ"
+              className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
               data-test={undefined}
             >
               Error message (explain how to solve it)
@@ -2020,7 +2025,7 @@ exports[`Storyshots InputFile With help 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE dAafTj"
+            className="InputFile__Field-jAueAE erafpp"
             data-test={undefined}
           >
             <input
@@ -2044,17 +2049,18 @@ exports[`Storyshots InputFile With help 1`] = `
               className="InputFile__FakeInput-djykOY ciTDoB"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK hGHMoK"
+                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"
                 target={undefined}
+                type="button"
               >
                 <div
                   className="Button__StyledButtonContent-gvDciI pDqSF"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL exCvLT"
+                    className="Button__IconContainer-bZYzaL jNewdH"
                   >
                     <svg
                       className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -2077,7 +2083,7 @@ exports[`Storyshots InputFile With help 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp dAUFLG"
+              className="FormFeedback__StyledFormFeedback-cuFyWp hVyVwg"
               data-test={undefined}
             >
               <div>

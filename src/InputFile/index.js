@@ -15,6 +15,7 @@ import type { Props } from "./index";
 const Field = styled.label`
   font-family: ${({ theme }) => theme.orbit.fontfamily};
   display: block;
+  position: relative;
 `;
 
 Field.defaultProps = {
@@ -103,7 +104,7 @@ CloseButton.defaultProps = {
 };
 
 const InputFile = (props: Props) => {
-  const { placeholder = "No file selected", title = "Select file", dataTest } = props;
+  const { placeholder = "No file selected", title = "Select file", onRemoveFile, dataTest } = props;
 
   return (
     <Field data-test={dataTest}>
@@ -129,7 +130,12 @@ const InputFile = (props: Props) => {
             type="secondary"
             transparent
             icon={<CloseCircle />}
-            onClick={props.onRemoveFile}
+            onClick={ev => {
+              ev.preventDefault();
+              if (onRemoveFile) {
+                onRemoveFile();
+              }
+            }}
           />
         )}
       </FakeInput>

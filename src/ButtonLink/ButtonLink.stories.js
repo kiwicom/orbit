@@ -96,6 +96,7 @@ storiesOf("ButtonLink", module)
     const dataTest = text("dataTest", "test");
     const external = boolean("External", false);
     const transparent = boolean("Transparent", false);
+    const submit = boolean("Submit", false);
 
     return {
       info:
@@ -118,6 +119,7 @@ storiesOf("ButtonLink", module)
                   external={external}
                   onClick={action("clicked")}
                   transparent={transparent}
+                  submit={submit}
                 >
                   {title}
                 </ButtonLink>

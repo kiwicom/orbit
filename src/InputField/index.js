@@ -38,6 +38,7 @@ const Field = styled.label`
   position: relative;
   display: block;
   z-index: 2;
+  flex: 1 1 100%;
 `;
 
 Field.defaultProps = {
@@ -50,6 +51,8 @@ export const FakeInput = styled(({ children, className }) => (
   width: 100%;
   position: absolute;
   z-index: 1;
+  top: 0;
+  left: 0;
   box-sizing: border-box;
   height: ${getToken(TOKENS.heightInput)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
@@ -119,7 +122,9 @@ StyledInlineLabel.defaultProps = {
   theme: defaultTokens,
 };
 
-const Prefix = styled(({ children, className }) => <div className={className}>{children}</div>)`
+export const Prefix = styled(({ children, className }) => (
+  <div className={className}>{children}</div>
+))`
   height: 100%;
   color: ${({ theme }) => theme.orbit.colorTextInputPrefix};
   display: flex;
@@ -168,10 +173,10 @@ export const Input = styled(({ theme, size, suffix, error, help, ...props }) => 
   appearance: none;
   font-family: inherit;
   border: none;
-  padding: 0 0 ${getToken(TOKENS.paddingInput)};
+  padding: ${getToken(TOKENS.paddingInput)};
   font-size: inherit;
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
   cursor: inherit;
   flex: 1 auto;
   width: 100%;
@@ -203,6 +208,10 @@ export const Input = styled(({ theme, size, suffix, error, help, ...props }) => 
   /* Microsoft Edge */
   &::-ms-input-placeholder {
     color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
+  }
+
+  &::-ms-clear {
+    display: none;
   }
 `;
 
@@ -238,6 +247,8 @@ const InputField = ({
   onChange,
   onFocus,
   onBlur,
+  onKeyUp,
+  onKeyDown,
   placeholder,
   minValue,
   maxValue,
@@ -260,6 +271,8 @@ const InputField = ({
         onChange={onChange}
         onFocus={onFocus}
         onBlur={onBlur}
+        onKeyUp={onKeyUp}
+        onKeyDown={onKeyDown}
         name={name}
         type={type}
         value={value}

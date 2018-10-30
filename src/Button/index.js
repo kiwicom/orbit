@@ -6,6 +6,7 @@ import defaultTokens from "../defaultTokens";
 import { ICON_SIZES } from "../Icon/consts";
 import { TYPE_OPTIONS, SIZE_OPTIONS, TOKENS } from "./consts";
 import Loading, { StyledSpinner } from "../Loading";
+import { getSize } from "../Icon";
 
 import type { Props } from "./index";
 
@@ -60,6 +61,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.backgroundButtonCritical,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.backgroundButtonFacebook,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonGoogle,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite, // TODO: token backgroundButtonWhite
     },
     [TOKENS.backgroundButtonHover]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonPrimaryHover,
@@ -70,6 +72,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.backgroundButtonCriticalHover,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.backgroundButtonFacebookHover,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonGoogleHover,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhiteHover, // TODO: token backgroundButtonWhiteHover
     },
     [TOKENS.backgroundButtonActive]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonPrimaryActive,
@@ -80,6 +83,40 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.backgroundButtonCriticalActive,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.backgroundButtonFacebookActive,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonGoogleActive,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhiteActive, // TODO: token backgroundButtonWhiteActive
+    },
+    [TOKENS.backgroundButtonBordered]: {
+      [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonBordered,
+      [TYPE_OPTIONS.SECONDARY]: theme.orbit.backgroundButtonBordered,
+      [TYPE_OPTIONS.INFO]: theme.orbit.backgroundButtonBordered,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.backgroundButtonBordered,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.backgroundButtonBordered,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.backgroundButtonBordered,
+      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.backgroundButtonBordered,
+      [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonBordered,
+      [TYPE_OPTIONS.WHITE]: "transparent", // TODO: token backgroundButtonWhiteBordered
+    },
+    [TOKENS.backgroundButtonBorderedHover]: {
+      [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonBorderedHover,
+      [TYPE_OPTIONS.SECONDARY]: theme.orbit.backgroundButtonBorderedHover,
+      [TYPE_OPTIONS.INFO]: theme.orbit.backgroundButtonBorderedHover,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.backgroundButtonBorderedHover,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.backgroundButtonBorderedHover,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.backgroundButtonBorderedHover,
+      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.backgroundButtonBorderedHover,
+      [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonBorderedHover,
+      [TYPE_OPTIONS.WHITE]: "rgba(255, 255, 255, 0.2)", // TODO: token backgroundButtonWhiteBorderedHover
+    },
+    [TOKENS.backgroundButtonBorderedActive]: {
+      [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonBorderedActive,
+      [TYPE_OPTIONS.SECONDARY]: theme.orbit.backgroundButtonBorderedActive,
+      [TYPE_OPTIONS.INFO]: theme.orbit.backgroundButtonBorderedActive,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.backgroundButtonBorderedActive,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.backgroundButtonBorderedActive,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.backgroundButtonBorderedActive,
+      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.backgroundButtonBorderedActive,
+      [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonBorderedActive,
+      [TYPE_OPTIONS.WHITE]: "rgba(255, 255, 255, 0.25)", // TODO: token backgroundButtonWhiteBorderedActive
     },
     [TOKENS.colorTextButton]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimary,
@@ -90,6 +127,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextButtonCritical,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.colorTextButtonFacebook,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.colorTextButtonGoogle,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteInkNormal, // TODO: token colorTextButtonWhite
     },
     [TOKENS.colorTextButtonBordered]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimaryBordered,
@@ -100,6 +138,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextButtonCriticalBordered,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.colorTextButtonFacebookBordered,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.colorTextButtonGoogleBordered,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite, // TODO: token colorTextButtonWhiteBordered
     },
     [TOKENS.colorTextButtonHover]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimaryHover,
@@ -110,6 +149,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextButtonCriticalHover,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.colorTextButtonFacebookHover,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.colorTextButtonGoogleHover,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteInkNormalHover, // TODO: token colorTextButtonWhiteHover
     },
     [TOKENS.colorTextButtonBorderedHover]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimaryBorderedHover,
@@ -120,6 +160,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextButtonCriticalBorderedHover,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.colorTextButtonFacebookBorderedHover,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.colorTextButtonGoogleBorderedHover,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite, // TODO: token colorTextButtonWhiteBorderedHover
     },
     [TOKENS.colorTextButtonActive]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimaryActive,
@@ -130,6 +171,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextButtonCriticalActive,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.colorTextButtonFacebookActive,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.colorTextButtonGoogleActive,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteInkNormalActive, // TODO: token colorTextButtonWhiteActive
     },
     [TOKENS.colorTextButtonBorderedActive]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextButtonPrimaryBorderedActive,
@@ -140,6 +182,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextButtonCriticalBorderedActive,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.colorTextButtonFacebookBorderedActive,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.colorTextButtonGoogleBorderedActive,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite, // TODO: token colorTextButtonWhiteBorderedActive
     },
     [TOKENS.borderColorButton]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.borderColorButtonPrimaryBordered,
@@ -150,6 +193,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.borderColorButtonCriticalBordered,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.borderColorButtonFacebookBordered,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.borderColorButtonGoogleBordered,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite, // TODO: token borderColorButtonWhiteBordered
     },
     [TOKENS.borderColorButtonHover]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.borderColorButtonPrimaryBorderedHover,
@@ -160,6 +204,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.borderColorButtonCriticalBorderedHover,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.borderColorButtonFacebookBorderedHover,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.borderColorButtonGoogleBorderedHover,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite, // TODO: token borderColorButtonWhiteBorderedHover
     },
     [TOKENS.borderColorButtonActive]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.borderColorButtonPrimaryBorderedActive,
@@ -170,6 +215,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.borderColorButtonCriticalBorderedActive,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.borderColorButtonFacebookBorderedActive,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.borderColorButtonGoogleBorderedActive,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite, // TODO: token borderColorButtonWhiteBorderedActive
     },
   };
   return tokens[name][type];
@@ -189,8 +235,8 @@ const IconContainer = styled(({ className, children }) => (
     box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   > * {
-    width: ${({ sizeIcon }) => ICON_SIZES[sizeIcon]};
-    height: ${({ sizeIcon }) => ICON_SIZES[sizeIcon]};
+    width: ${({ sizeIcon }) => getSize(sizeIcon)};
+    height: ${({ sizeIcon }) => getSize(sizeIcon)};
   }
 `;
 
@@ -211,6 +257,7 @@ export const StyledButton = styled(
   ({
     theme,
     component,
+    circled,
     external,
     type,
     icon,
@@ -224,11 +271,14 @@ export const StyledButton = styled(
     block,
     style,
     dataTest,
+    submit,
     ...props
   }) => {
-    const Component = component === "button" && props.href ? "a" : component;
+    const isButtonWithHref = component === "button" && props.href;
+    const Component = isButtonWithHref ? "a" : component;
+    const buttonType = submit ? "submit" : "button";
     return (
-      <Component data-test={dataTest} {...props}>
+      <Component data-test={dataTest} type={!isButtonWithHref ? buttonType : undefined} {...props}>
         {props.children}
       </Component>
     );
@@ -245,9 +295,12 @@ export const StyledButton = styled(
     block
       ? "100%"
       : (width && `${width}px`) || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
+  flex: ${({ block }) => (block ? "1 1 100%" : "0 0 auto")};
   height: ${getSizeToken(TOKENS.heightButton)};
-  background: ${({ bordered, theme }) =>
-    bordered ? theme.orbit.backgroundButtonBordered : getTypeToken(TOKENS.backgroundButton)};
+  background: ${({ bordered }) =>
+    bordered
+      ? getTypeToken(TOKENS.backgroundButtonBordered)
+      : getTypeToken(TOKENS.backgroundButton)};
   color: ${({ bordered }) =>
     bordered
       ? getTypeToken(TOKENS.colorTextButtonBordered)
@@ -279,10 +332,10 @@ export const StyledButton = styled(
     })}`}; // Cannot resolve with 0 0 0 1px getTypeToken(TOKENS.borderColorButton)
 
   &:hover {
-    background: ${({ disabled, bordered, theme }) =>
+    background: ${({ disabled, bordered }) =>
       !disabled &&
       (bordered
-        ? theme.orbit.backgroundButtonBorderedHover
+        ? getTypeToken(TOKENS.backgroundButtonBorderedHover)
         : getTypeToken(TOKENS.backgroundButtonHover))};
     box-shadow: ${({ disabled, bordered, theme, type }) =>
       !disabled &&
@@ -306,10 +359,10 @@ export const StyledButton = styled(
   &:active {
     ${({ disabled, theme }) =>
       !disabled && `transform: scale(${theme.orbit.modifierScaleButtonActive})`};
-    background: ${({ disabled, bordered, theme }) =>
+    background: ${({ disabled, bordered }) =>
       !disabled &&
       (bordered
-        ? theme.orbit.backgroundButtonBorderedActive
+        ? getTypeToken(TOKENS.backgroundButtonBorderedActive)
         : getTypeToken(TOKENS.backgroundButtonActive))};
     box-shadow: ${({ disabled, bordered, theme, type }) =>
       !disabled &&
@@ -374,7 +427,7 @@ const Button = (props: Props) => {
     width = 0,
   } = props;
   const iconLeft = props.iconLeft || icon;
-  const sizeIcon = size === "small" ? "small" : "medium";
+  const sizeIcon = size === ICON_SIZES.SMALL ? ICON_SIZES.SMALL : ICON_SIZES.MEDIUM;
   const onlyIcon = iconLeft && !children;
   const isDisabled = loading || disabled;
 

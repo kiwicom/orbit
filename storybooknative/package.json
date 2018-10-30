@@ -58,9 +58,7 @@
   },
   "config": {
     "react-native-storybook-loader": {
-      "searchDir": [
-        "./src"
-      ],
+      "searchDir": ["./src"],
       "pattern": "**/*.stories.js",
       "outputFile": "./storybook/story-loader.js"
     }

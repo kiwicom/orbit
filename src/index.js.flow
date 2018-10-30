@@ -12,6 +12,7 @@ import typeof CarrierLogoType from "./CarrierLogo";
 import typeof HeadingType from "./Heading";
 import typeof InputFieldType from "./InputField";
 import typeof InputGroupType from "./InputGroup";
+import typeof InputStepperType from "./InputStepper";
 import typeof IllustrationType from "./Illustration";
 import typeof ListType from "./List";
 import typeof ListItemType from "./List/ListItem";
@@ -21,13 +22,14 @@ import typeof TextType from "./Text";
 import typeof TextLinkType from "./TextLink";
 import typeof TileType from "./Tile";
 import typeof RadioType from "./Radio";
+import typeof RatingStarsType from "./RatingStars";
 import typeof SelectType from "./Select";
+import typeof StackType from "./Stack";
 import typeof SeparatorType from "./Separator";
 import typeof ServiceLogoType from "./ServiceLogo";
 import typeof TextareaType from "./Textarea";
 import typeof CardType from "./Card";
 import typeof CardHeaderType from "./Card/CardHeader";
-import typeof CardContentType from "./Card/CardContent";
 import typeof CardSectionType from "./Card/CardSection";
 import typeof mediaType from "./utils/media";
 import typeof PortalType from "./Portal";
@@ -36,6 +38,12 @@ import typeof ModalHeaderType from "./Modal/ModalHeader";
 import typeof ModalSectionType from "./Modal/ModalSection";
 import typeof ModalFooterType from "./Modal/ModalFooter";
 import typeof ClickOutsideType from "./ClickOutside";
+import typeof TableType from "./Table";
+import typeof TableBodyType from "./Table/TableBody";
+import typeof TableCellType from "./Table/TableCell";
+import typeof TableHeadType from "./Table/TableHead";
+import typeof TableRowType from "./Table/TableRow";
+import typeof StopoverArrowType from "./StopoverArrow";
 
 declare export var InputText: any;
 declare export var InputTextarea: any;
@@ -59,7 +67,6 @@ declare export var ListItem: ListItemType;
 
 declare export var Card: CardType;
 declare export var CardHeader: CardHeaderType;
-declare export var CardContent: CardContentType;
 declare export var CardSection: CardSectionType;
 
 declare export var Portal: PortalType;
@@ -69,6 +76,12 @@ declare export var ModalHeader: ModalHeaderType;
 declare export var ModalSection: ModalSectionType;
 declare export var ModalFooter: ModalFooterType;
 
+declare export var Table: TableType;
+declare export var TableBody: TableBodyType;
+declare export var TableCell: TableCellType;
+declare export var TableHead: TableHeadType;
+declare export var TableRow: TableRowType;
+
 declare export var Heading: HeadingType;
 declare export var Text: TextType;
 declare export var Icons: any;
@@ -77,13 +90,17 @@ declare export var InputField: InputFieldType;
 declare export var Illustration: IllustrationType;
 declare export var InputGroup: InputGroupType;
 declare export var InputFile: InputFileType;
+declare export var InputStepper: InputStepperType;
 declare export var TextLink: TextLinkType;
 declare export var Loading: LoadingType;
 
 declare export var Radio: RadioType;
+declare export var RatingStars: RatingStarsType;
 declare export var Select: SelectType;
+declare export var Stack: StackType;
 declare export var Separator: SeparatorType;
 declare export var ServiceLogo: ServiceLogoType;
+declare export var StopoverArrow: StopoverArrowType;
 declare export var Textarea: TextareaType;
 declare export var Tile: TileType;
 

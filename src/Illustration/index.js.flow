@@ -1,6 +1,7 @@
 // @flow
 import type { Globals } from "../common/common.js.flow";
 import defaultTokens from "../defaultTokens";
+import type { spaceAfter } from "../common/getSpacingToken/index";
 
 type Name =
   | "Accommodation"
@@ -54,7 +55,7 @@ export type Props = {|
   +size?: "small" | "medium",
   +name: Name,
   ...Globals,
-  +theme?: typeof defaultTokens,
+  ...spaceAfter,
 |};
 
 declare export default React$ComponentType<Props>;

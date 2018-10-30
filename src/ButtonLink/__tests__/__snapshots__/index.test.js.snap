@@ -66,6 +66,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   external={true}
   href="https://kiwi.com"
   size="normal"
+  submit={true}
   transparent={false}
   type="primary"
   width={0}
@@ -77,6 +78,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
     href="https://kiwi.com"
     size="normal"
     sizeIcon="medium"
+    submit={true}
     target="_blank"
     theme={
       Object {
@@ -214,7 +216,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "colorPlaceholderInputFile": "#7f91a8",
           "colorPlaceholderInputFileError": "#d21c1c",
           "colorTextAlertCritical": "#650808",
-          "colorTextAlertInfo": "#07405c",
+          "colorTextAlertInfo": "#003A69",
           "colorTextAlertLink": "#171b1e",
           "colorTextAlertSuccess": "#065d12",
           "colorTextAlertWarning": "#a93610",
@@ -374,7 +376,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "paddingLeftSelectPrefix": "48px",
           "paddingTextareaNormal": "12px",
           "paddingTextareaSmall": "8px 12px",
-          "paletteBlueDark": "#07405c",
+          "paletteBlueDark": "#003A69",
           "paletteBlueLight": "#e0f6ff",
           "paletteBlueLightActive": "#b0e8fe",
           "paletteBlueLightHover": "#c8effe",
@@ -411,10 +413,10 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "paletteOrangeNormal": "#f9971e",
           "paletteOrangeNormalActive": "#e68206",
           "paletteOrangeNormalHover": "#f48a06",
-          "paletteProductDark": "#005448",
-          "paletteProductLight": "#9ae5da",
-          "paletteProductLightActive": "#64d7c6",
-          "paletteProductLightHover": "#7fded0",
+          "paletteProductDark": "#00826f",
+          "paletteProductLight": "#E1F5F2",
+          "paletteProductLightActive": "#9addd3",
+          "paletteProductLightHover": "#bde9e2",
           "paletteProductNormal": "#00a991",
           "paletteProductNormalActive": "#008f7b",
           "paletteProductNormalHover": "#009882",
@@ -471,6 +473,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
       href="https://kiwi.com"
       size="normal"
       sizeIcon="medium"
+      submit={true}
       target="_blank"
       theme={
         Object {
@@ -608,7 +611,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
             "colorPlaceholderInputFile": "#7f91a8",
             "colorPlaceholderInputFileError": "#d21c1c",
             "colorTextAlertCritical": "#650808",
-            "colorTextAlertInfo": "#07405c",
+            "colorTextAlertInfo": "#003A69",
             "colorTextAlertLink": "#171b1e",
             "colorTextAlertSuccess": "#065d12",
             "colorTextAlertWarning": "#a93610",
@@ -768,7 +771,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
             "paddingLeftSelectPrefix": "48px",
             "paddingTextareaNormal": "12px",
             "paddingTextareaSmall": "8px 12px",
-            "paletteBlueDark": "#07405c",
+            "paletteBlueDark": "#003A69",
             "paletteBlueLight": "#e0f6ff",
             "paletteBlueLightActive": "#b0e8fe",
             "paletteBlueLightHover": "#c8effe",
@@ -805,10 +808,10 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
             "paletteOrangeNormal": "#f9971e",
             "paletteOrangeNormalActive": "#e68206",
             "paletteOrangeNormalHover": "#f48a06",
-            "paletteProductDark": "#005448",
-            "paletteProductLight": "#9ae5da",
-            "paletteProductLightActive": "#64d7c6",
-            "paletteProductLightHover": "#7fded0",
+            "paletteProductDark": "#00826f",
+            "paletteProductLight": "#E1F5F2",
+            "paletteProductLightActive": "#9addd3",
+            "paletteProductLightHover": "#bde9e2",
             "paletteProductNormal": "#00a991",
             "paletteProductNormalActive": "#008f7b",
             "paletteProductNormalHover": "#009882",
@@ -872,6 +875,13 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
 `;
 
 exports[`ButtonLink with Icon should match snapshot 2`] = `
+.c2 {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -889,6 +899,11 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin-right: 12px;
+}
+
+.c1 > * {
+  width: 24px;
+  height: 24px;
 }
 
 .c3 {
@@ -953,13 +968,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
 
 .c0:enabled:focus:active {
   box-shadow: none;
-}
-
-.c2 {
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-  fill: currentColor;
 }
 
 <ButtonLink
@@ -1118,7 +1126,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
           "colorPlaceholderInputFile": "#7f91a8",
           "colorPlaceholderInputFileError": "#d21c1c",
           "colorTextAlertCritical": "#650808",
-          "colorTextAlertInfo": "#07405c",
+          "colorTextAlertInfo": "#003A69",
           "colorTextAlertLink": "#171b1e",
           "colorTextAlertSuccess": "#065d12",
           "colorTextAlertWarning": "#a93610",
@@ -1278,7 +1286,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
           "paddingLeftSelectPrefix": "48px",
           "paddingTextareaNormal": "12px",
           "paddingTextareaSmall": "8px 12px",
-          "paletteBlueDark": "#07405c",
+          "paletteBlueDark": "#003A69",
           "paletteBlueLight": "#e0f6ff",
           "paletteBlueLightActive": "#b0e8fe",
           "paletteBlueLightHover": "#c8effe",
@@ -1315,10 +1323,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
           "paletteOrangeNormal": "#f9971e",
           "paletteOrangeNormalActive": "#e68206",
           "paletteOrangeNormalHover": "#f48a06",
-          "paletteProductDark": "#005448",
-          "paletteProductLight": "#9ae5da",
-          "paletteProductLightActive": "#64d7c6",
-          "paletteProductLightHover": "#7fded0",
+          "paletteProductDark": "#00826f",
+          "paletteProductLight": "#E1F5F2",
+          "paletteProductLightActive": "#9addd3",
+          "paletteProductLightHover": "#bde9e2",
           "paletteProductNormal": "#00a991",
           "paletteProductNormalActive": "#008f7b",
           "paletteProductNormalHover": "#009882",
@@ -1513,7 +1521,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
             "colorPlaceholderInputFile": "#7f91a8",
             "colorPlaceholderInputFileError": "#d21c1c",
             "colorTextAlertCritical": "#650808",
-            "colorTextAlertInfo": "#07405c",
+            "colorTextAlertInfo": "#003A69",
             "colorTextAlertLink": "#171b1e",
             "colorTextAlertSuccess": "#065d12",
             "colorTextAlertWarning": "#a93610",
@@ -1673,7 +1681,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
             "paddingLeftSelectPrefix": "48px",
             "paddingTextareaNormal": "12px",
             "paddingTextareaSmall": "8px 12px",
-            "paletteBlueDark": "#07405c",
+            "paletteBlueDark": "#003A69",
             "paletteBlueLight": "#e0f6ff",
             "paletteBlueLightActive": "#b0e8fe",
             "paletteBlueLightHover": "#c8effe",
@@ -1710,10 +1718,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
             "paletteOrangeNormal": "#f9971e",
             "paletteOrangeNormalActive": "#e68206",
             "paletteOrangeNormalHover": "#f48a06",
-            "paletteProductDark": "#005448",
-            "paletteProductLight": "#9ae5da",
-            "paletteProductLightActive": "#64d7c6",
-            "paletteProductLightHover": "#7fded0",
+            "paletteProductDark": "#00826f",
+            "paletteProductLight": "#E1F5F2",
+            "paletteProductLightActive": "#9addd3",
+            "paletteProductLightHover": "#bde9e2",
             "paletteProductNormal": "#00a991",
             "paletteProductNormalActive": "#008f7b",
             "paletteProductNormalHover": "#009882",
@@ -1907,7 +1915,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                 "colorPlaceholderInputFile": "#7f91a8",
                 "colorPlaceholderInputFileError": "#d21c1c",
                 "colorTextAlertCritical": "#650808",
-                "colorTextAlertInfo": "#07405c",
+                "colorTextAlertInfo": "#003A69",
                 "colorTextAlertLink": "#171b1e",
                 "colorTextAlertSuccess": "#065d12",
                 "colorTextAlertWarning": "#a93610",
@@ -2067,7 +2075,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                 "paddingLeftSelectPrefix": "48px",
                 "paddingTextareaNormal": "12px",
                 "paddingTextareaSmall": "8px 12px",
-                "paletteBlueDark": "#07405c",
+                "paletteBlueDark": "#003A69",
                 "paletteBlueLight": "#e0f6ff",
                 "paletteBlueLightActive": "#b0e8fe",
                 "paletteBlueLightHover": "#c8effe",
@@ -2104,10 +2112,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                 "paletteOrangeNormal": "#f9971e",
                 "paletteOrangeNormalActive": "#e68206",
                 "paletteOrangeNormalHover": "#f48a06",
-                "paletteProductDark": "#005448",
-                "paletteProductLight": "#9ae5da",
-                "paletteProductLightActive": "#64d7c6",
-                "paletteProductLightHover": "#7fded0",
+                "paletteProductDark": "#00826f",
+                "paletteProductLight": "#E1F5F2",
+                "paletteProductLightActive": "#9addd3",
+                "paletteProductLightHover": "#bde9e2",
                 "paletteProductNormal": "#00a991",
                 "paletteProductNormalActive": "#008f7b",
                 "paletteProductNormalHover": "#009882",
@@ -2295,7 +2303,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "colorPlaceholderInputFile": "#7f91a8",
                   "colorPlaceholderInputFileError": "#d21c1c",
                   "colorTextAlertCritical": "#650808",
-                  "colorTextAlertInfo": "#07405c",
+                  "colorTextAlertInfo": "#003A69",
                   "colorTextAlertLink": "#171b1e",
                   "colorTextAlertSuccess": "#065d12",
                   "colorTextAlertWarning": "#a93610",
@@ -2455,7 +2463,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "paddingLeftSelectPrefix": "48px",
                   "paddingTextareaNormal": "12px",
                   "paddingTextareaSmall": "8px 12px",
-                  "paletteBlueDark": "#07405c",
+                  "paletteBlueDark": "#003A69",
                   "paletteBlueLight": "#e0f6ff",
                   "paletteBlueLightActive": "#b0e8fe",
                   "paletteBlueLightHover": "#c8effe",
@@ -2492,10 +2500,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "paletteOrangeNormal": "#f9971e",
                   "paletteOrangeNormalActive": "#e68206",
                   "paletteOrangeNormalHover": "#f48a06",
-                  "paletteProductDark": "#005448",
-                  "paletteProductLight": "#9ae5da",
-                  "paletteProductLightActive": "#64d7c6",
-                  "paletteProductLightHover": "#7fded0",
+                  "paletteProductDark": "#00826f",
+                  "paletteProductLight": "#E1F5F2",
+                  "paletteProductLightActive": "#9addd3",
+                  "paletteProductLightHover": "#bde9e2",
                   "paletteProductNormal": "#00a991",
                   "paletteProductNormalActive": "#008f7b",
                   "paletteProductNormalHover": "#009882",
@@ -2689,7 +2697,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                           "colorPlaceholderInputFile": "#7f91a8",
                           "colorPlaceholderInputFileError": "#d21c1c",
                           "colorTextAlertCritical": "#650808",
-                          "colorTextAlertInfo": "#07405c",
+                          "colorTextAlertInfo": "#003A69",
                           "colorTextAlertLink": "#171b1e",
                           "colorTextAlertSuccess": "#065d12",
                           "colorTextAlertWarning": "#a93610",
@@ -2849,7 +2857,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                           "paddingLeftSelectPrefix": "48px",
                           "paddingTextareaNormal": "12px",
                           "paddingTextareaSmall": "8px 12px",
-                          "paletteBlueDark": "#07405c",
+                          "paletteBlueDark": "#003A69",
                           "paletteBlueLight": "#e0f6ff",
                           "paletteBlueLightActive": "#b0e8fe",
                           "paletteBlueLightHover": "#c8effe",
@@ -2886,10 +2894,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                           "paletteOrangeNormal": "#f9971e",
                           "paletteOrangeNormalActive": "#e68206",
                           "paletteOrangeNormalHover": "#f48a06",
-                          "paletteProductDark": "#005448",
-                          "paletteProductLight": "#9ae5da",
-                          "paletteProductLightActive": "#64d7c6",
-                          "paletteProductLightHover": "#7fded0",
+                          "paletteProductDark": "#00826f",
+                          "paletteProductLight": "#E1F5F2",
+                          "paletteProductLightActive": "#9addd3",
+                          "paletteProductLightHover": "#bde9e2",
                           "paletteProductNormal": "#00a991",
                           "paletteProductNormalActive": "#008f7b",
                           "paletteProductNormalHover": "#009882",
@@ -3075,7 +3083,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                             "colorPlaceholderInputFile": "#7f91a8",
                             "colorPlaceholderInputFileError": "#d21c1c",
                             "colorTextAlertCritical": "#650808",
-                            "colorTextAlertInfo": "#07405c",
+                            "colorTextAlertInfo": "#003A69",
                             "colorTextAlertLink": "#171b1e",
                             "colorTextAlertSuccess": "#065d12",
                             "colorTextAlertWarning": "#a93610",
@@ -3235,7 +3243,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                             "paddingLeftSelectPrefix": "48px",
                             "paddingTextareaNormal": "12px",
                             "paddingTextareaSmall": "8px 12px",
-                            "paletteBlueDark": "#07405c",
+                            "paletteBlueDark": "#003A69",
                             "paletteBlueLight": "#e0f6ff",
                             "paletteBlueLightActive": "#b0e8fe",
                             "paletteBlueLightHover": "#c8effe",
@@ -3272,10 +3280,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                             "paletteOrangeNormal": "#f9971e",
                             "paletteOrangeNormalActive": "#e68206",
                             "paletteOrangeNormalHover": "#f48a06",
-                            "paletteProductDark": "#005448",
-                            "paletteProductLight": "#9ae5da",
-                            "paletteProductLightActive": "#64d7c6",
-                            "paletteProductLightHover": "#7fded0",
+                            "paletteProductDark": "#00826f",
+                            "paletteProductLight": "#E1F5F2",
+                            "paletteProductLightActive": "#9addd3",
+                            "paletteProductLightHover": "#bde9e2",
                             "paletteProductNormal": "#00a991",
                             "paletteProductNormalActive": "#008f7b",
                             "paletteProductNormalHover": "#009882",
@@ -3479,7 +3487,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                 "colorPlaceholderInputFile": "#7f91a8",
                 "colorPlaceholderInputFileError": "#d21c1c",
                 "colorTextAlertCritical": "#650808",
-                "colorTextAlertInfo": "#07405c",
+                "colorTextAlertInfo": "#003A69",
                 "colorTextAlertLink": "#171b1e",
                 "colorTextAlertSuccess": "#065d12",
                 "colorTextAlertWarning": "#a93610",
@@ -3639,7 +3647,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                 "paddingLeftSelectPrefix": "48px",
                 "paddingTextareaNormal": "12px",
                 "paddingTextareaSmall": "8px 12px",
-                "paletteBlueDark": "#07405c",
+                "paletteBlueDark": "#003A69",
                 "paletteBlueLight": "#e0f6ff",
                 "paletteBlueLightActive": "#b0e8fe",
                 "paletteBlueLightHover": "#c8effe",
@@ -3676,10 +3684,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                 "paletteOrangeNormal": "#f9971e",
                 "paletteOrangeNormalActive": "#e68206",
                 "paletteOrangeNormalHover": "#f48a06",
-                "paletteProductDark": "#005448",
-                "paletteProductLight": "#9ae5da",
-                "paletteProductLightActive": "#64d7c6",
-                "paletteProductLightHover": "#7fded0",
+                "paletteProductDark": "#00826f",
+                "paletteProductLight": "#E1F5F2",
+                "paletteProductLightActive": "#9addd3",
+                "paletteProductLightHover": "#bde9e2",
                 "paletteProductNormal": "#00a991",
                 "paletteProductNormalActive": "#008f7b",
                 "paletteProductNormalHover": "#009882",
@@ -3867,7 +3875,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "colorPlaceholderInputFile": "#7f91a8",
                   "colorPlaceholderInputFileError": "#d21c1c",
                   "colorTextAlertCritical": "#650808",
-                  "colorTextAlertInfo": "#07405c",
+                  "colorTextAlertInfo": "#003A69",
                   "colorTextAlertLink": "#171b1e",
                   "colorTextAlertSuccess": "#065d12",
                   "colorTextAlertWarning": "#a93610",
@@ -4027,7 +4035,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "paddingLeftSelectPrefix": "48px",
                   "paddingTextareaNormal": "12px",
                   "paddingTextareaSmall": "8px 12px",
-                  "paletteBlueDark": "#07405c",
+                  "paletteBlueDark": "#003A69",
                   "paletteBlueLight": "#e0f6ff",
                   "paletteBlueLightActive": "#b0e8fe",
                   "paletteBlueLightHover": "#c8effe",
@@ -4064,10 +4072,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "paletteOrangeNormal": "#f9971e",
                   "paletteOrangeNormalActive": "#e68206",
                   "paletteOrangeNormalHover": "#f48a06",
-                  "paletteProductDark": "#005448",
-                  "paletteProductLight": "#9ae5da",
-                  "paletteProductLightActive": "#64d7c6",
-                  "paletteProductLightHover": "#7fded0",
+                  "paletteProductDark": "#00826f",
+                  "paletteProductLight": "#E1F5F2",
+                  "paletteProductLightActive": "#9addd3",
+                  "paletteProductLightHover": "#bde9e2",
                   "paletteProductNormal": "#00a991",
                   "paletteProductNormalActive": "#008f7b",
                   "paletteProductNormalHover": "#009882",
@@ -4255,7 +4263,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                     "colorPlaceholderInputFile": "#7f91a8",
                     "colorPlaceholderInputFileError": "#d21c1c",
                     "colorTextAlertCritical": "#650808",
-                    "colorTextAlertInfo": "#07405c",
+                    "colorTextAlertInfo": "#003A69",
                     "colorTextAlertLink": "#171b1e",
                     "colorTextAlertSuccess": "#065d12",
                     "colorTextAlertWarning": "#a93610",
@@ -4415,7 +4423,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                     "paddingLeftSelectPrefix": "48px",
                     "paddingTextareaNormal": "12px",
                     "paddingTextareaSmall": "8px 12px",
-                    "paletteBlueDark": "#07405c",
+                    "paletteBlueDark": "#003A69",
                     "paletteBlueLight": "#e0f6ff",
                     "paletteBlueLightActive": "#b0e8fe",
                     "paletteBlueLightHover": "#c8effe",
@@ -4452,10 +4460,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                     "paletteOrangeNormal": "#f9971e",
                     "paletteOrangeNormalActive": "#e68206",
                     "paletteOrangeNormalHover": "#f48a06",
-                    "paletteProductDark": "#005448",
-                    "paletteProductLight": "#9ae5da",
-                    "paletteProductLightActive": "#64d7c6",
-                    "paletteProductLightHover": "#7fded0",
+                    "paletteProductDark": "#00826f",
+                    "paletteProductLight": "#E1F5F2",
+                    "paletteProductLightActive": "#9addd3",
+                    "paletteProductLightHover": "#bde9e2",
                     "paletteProductNormal": "#00a991",
                     "paletteProductNormalActive": "#008f7b",
                     "paletteProductNormalHover": "#009882",
@@ -4649,7 +4657,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                             "colorPlaceholderInputFile": "#7f91a8",
                             "colorPlaceholderInputFileError": "#d21c1c",
                             "colorTextAlertCritical": "#650808",
-                            "colorTextAlertInfo": "#07405c",
+                            "colorTextAlertInfo": "#003A69",
                             "colorTextAlertLink": "#171b1e",
                             "colorTextAlertSuccess": "#065d12",
                             "colorTextAlertWarning": "#a93610",
@@ -4809,7 +4817,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                             "paddingLeftSelectPrefix": "48px",
                             "paddingTextareaNormal": "12px",
                             "paddingTextareaSmall": "8px 12px",
-                            "paletteBlueDark": "#07405c",
+                            "paletteBlueDark": "#003A69",
                             "paletteBlueLight": "#e0f6ff",
                             "paletteBlueLightActive": "#b0e8fe",
                             "paletteBlueLightHover": "#c8effe",
@@ -4846,10 +4854,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                             "paletteOrangeNormal": "#f9971e",
                             "paletteOrangeNormalActive": "#e68206",
                             "paletteOrangeNormalHover": "#f48a06",
-                            "paletteProductDark": "#005448",
-                            "paletteProductLight": "#9ae5da",
-                            "paletteProductLightActive": "#64d7c6",
-                            "paletteProductLightHover": "#7fded0",
+                            "paletteProductDark": "#00826f",
+                            "paletteProductLight": "#E1F5F2",
+                            "paletteProductLightActive": "#9addd3",
+                            "paletteProductLightHover": "#bde9e2",
                             "paletteProductNormal": "#00a991",
                             "paletteProductNormalActive": "#008f7b",
                             "paletteProductNormalHover": "#009882",
@@ -5035,7 +5043,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                               "colorPlaceholderInputFile": "#7f91a8",
                               "colorPlaceholderInputFileError": "#d21c1c",
                               "colorTextAlertCritical": "#650808",
-                              "colorTextAlertInfo": "#07405c",
+                              "colorTextAlertInfo": "#003A69",
                               "colorTextAlertLink": "#171b1e",
                               "colorTextAlertSuccess": "#065d12",
                               "colorTextAlertWarning": "#a93610",
@@ -5195,7 +5203,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                               "paddingLeftSelectPrefix": "48px",
                               "paddingTextareaNormal": "12px",
                               "paddingTextareaSmall": "8px 12px",
-                              "paletteBlueDark": "#07405c",
+                              "paletteBlueDark": "#003A69",
                               "paletteBlueLight": "#e0f6ff",
                               "paletteBlueLightActive": "#b0e8fe",
                               "paletteBlueLightHover": "#c8effe",
@@ -5232,10 +5240,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                               "paletteOrangeNormal": "#f9971e",
                               "paletteOrangeNormalActive": "#e68206",
                               "paletteOrangeNormalHover": "#f48a06",
-                              "paletteProductDark": "#005448",
-                              "paletteProductLight": "#9ae5da",
-                              "paletteProductLightActive": "#64d7c6",
-                              "paletteProductLightHover": "#7fded0",
+                              "paletteProductDark": "#00826f",
+                              "paletteProductLight": "#E1F5F2",
+                              "paletteProductLightActive": "#9addd3",
+                              "paletteProductLightHover": "#bde9e2",
                               "paletteProductNormal": "#00a991",
                               "paletteProductNormalActive": "#008f7b",
                               "paletteProductNormalHover": "#009882",

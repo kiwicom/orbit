@@ -1,0 +1,27 @@
+// @flow
+import type { Globals } from "../common/common.js.flow";
+import type { Size } from "../InputField/index";
+
+export type Props = {|
+  ...Globals,
+  +size?: Size,
+  +label?: string,
+  +defaultValue?: number,
+  +step?: number,
+  +help?: React$Node,
+  +error?: React$Node,
+  +name?: string,
+  +disabled?: boolean,
+  +maxValue?: number,
+  +minValue?: number,
+  +required?: boolean,
+  +onChange?: number => void | Promise<any>,
+  +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+|};
+
+export type State = {|
+  value: number,
+|};
+
+declare export default React$ComponentType<Props>;

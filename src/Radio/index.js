@@ -18,6 +18,7 @@ const Glyph = styled.span`
   background-color: ${({ theme, disabled }) =>
     disabled ? theme.orbit.colorIconCheckboxRadioDisabled : theme.orbit.colorIconCheckboxRadio};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusCircle};
+  flex-shrink: 0;
 `;
 
 Glyph.defaultProps = {
@@ -27,6 +28,7 @@ Glyph.defaultProps = {
 const IconContainer = styled.div`
   position: relative;
   box-sizing: border-box;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +69,6 @@ const LabelText = styled.span`
   font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
   font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
   color: ${({ theme }) => theme.orbit.colorFormLabel};
-  height: ${({ theme }) => theme.orbit.heightCheckbox};
   line-height: ${({ theme }) => theme.orbit.heightCheckbox};
 `;
 
@@ -138,11 +139,19 @@ const Radio = ({
   disabled = false,
   checked = false,
   onChange,
+  name,
   info,
   dataTest,
 }: Props) => (
   <Label disabled={disabled} hasError={hasError} checked={checked} data-test={dataTest}>
-    <Input value={value} type="radio" disabled={disabled} checked={checked} onChange={onChange} />
+    <Input
+      value={value}
+      type="radio"
+      disabled={disabled}
+      name={name}
+      checked={checked}
+      onChange={onChange}
+    />
     <IconContainer>
       <Glyph disabled={disabled} />
     </IconContainer>

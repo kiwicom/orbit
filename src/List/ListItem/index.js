@@ -7,13 +7,14 @@ import CircleSmall from "../../icons/CircleSmall";
 
 import type { Props } from "./index";
 
-export const Item = styled.div`
+export const Item = styled.li`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
 
-  &:last-child {
+  &:last-child,
+  &:last-of-type {
     margin: 0;
   }
 `;
@@ -22,8 +23,9 @@ Item.defaultProps = {
   theme: defaultTokens,
 };
 
-const IconContainer = styled.div`
+export const IconContainer = styled.div`
   display: flex;
+  align-items: center;
   margin-right: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 

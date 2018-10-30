@@ -10,8 +10,8 @@ import * as Icons from "../icons";
 import Heading from "../Heading";
 import Text from "../Text";
 import CardHeader from "./CardHeader";
-import CardContent from "./CardContent";
 import CardSection from "./CardSection";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import Card from "./index";
 
@@ -68,6 +68,28 @@ storiesOf("Card", module)
       ],
     };
   })
+  .addWithChapters("Card with only section", () => {
+    const content = text("Content", "This is a content of the card.");
+    return {
+      info:
+        "Card component is a simple container for grouping some relevant information. You can add a content to Card. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Card>
+                  <CardSection>
+                    <Text>{content}</Text>
+                  </CardSection>
+                </Card>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Card with sections", () => {
     const title = text("Title", "Card with sections");
     const description = text("Description", "This is a description of the card.");
@@ -80,24 +102,23 @@ storiesOf("Card", module)
             {
               sectionFn: () => (
                 <Card>
-                  <CardHeader title={title} subTitle={description} />
                   <CardSection>
                     <Heading type="title3" element="h3">
-                      Insert your title here...
+                      {title}
                     </Heading>
-                    <Text>Insert your content here...</Text>
+                    <Text>{description}</Text>
                   </CardSection>
                   <CardSection>
                     <Heading type="title3" element="h3">
-                      Insert your title here...
+                      {title}
                     </Heading>
-                    <Text>Insert your content here...</Text>
+                    <Text>{description}</Text>
                   </CardSection>
                   <CardSection>
                     <Heading type="title3" element="h3">
-                      Insert your title here...
+                      {title}
                     </Heading>
-                    <Text>Insert your content here...</Text>
+                    <Text>{description}</Text>
                   </CardSection>
                 </Card>
               ),
@@ -107,20 +128,54 @@ storiesOf("Card", module)
       ],
     };
   })
-  .addWithChapters("Card with only content", () => {
-    const content = text("Content", "This is a content of the card.");
+  .addWithChapters("Card with expandable sections", () => {
+    const title = text("Title", "Card with sections");
+    const description = text("Description", "This is a description of the card.");
     return {
       info:
-        "Card component is a simple container for grouping some relevant information. You can add a content to Card. Visit Orbit.Kiwi for more detailed guidelines.",
+        "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
         {
           sections: [
             {
               sectionFn: () => (
                 <Card>
-                  <CardContent>
-                    <Text>{content}</Text>
-                  </CardContent>
+                  <CardHeader title={title} subTitle={description} />
+                  <CardSection title="Insert your title here..." subTitle="subtitle" expandable>
+                    This is hidden content
+                  </CardSection>
+                  <CardSection title="Insert your title here..." subTitle="subtitle" expandable>
+                    This is hidden content
+                  </CardSection>
+                  <CardSection title="Insert your title here..." subTitle="subtitle" expandable>
+                    This is hidden content
+                  </CardSection>
+                </Card>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Card with mixed sections", () => {
+    const title = text("Title", "Card with sections");
+    const description = text("Description", "This is a description of the card.");
+    return {
+      info:
+        "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Card>
+                  <CardHeader title={title} subTitle={description} />
+                  <CardSection title="Insert your title here..." subTitle="subtitle" />
+                  <CardSection title="Insert your title here..." subTitle="subtitle" expandable>
+                    This is hidden content
+                  </CardSection>
+                  <CardSection title="Insert your title here..." subTitle="subtitle" />
                 </Card>
               ),
             },
@@ -135,6 +190,7 @@ storiesOf("Card", module)
     const Icon = getIcon(getIcons("Airplane"));
     const closable = boolean("Closable", false);
     const dataTest = text("dataTest", "test");
+    const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -143,19 +199,24 @@ storiesOf("Card", module)
           sections: [
             {
               sectionFn: () => (
-                <Card closable={closable} onClose={action("Close")} dataTest={dataTest}>
+                <Card
+                  closable={closable}
+                  onClose={action("Close")}
+                  dataTest={dataTest}
+                  spaceAfter={spaceAfter}
+                >
                   <CardHeader
                     icon={<Icon />}
                     title={title}
                     subTitle={description}
                     dataTest={dataTest}
                   />
-                  <CardContent dataTest={dataTest}>
+                  <CardSection dataTest={dataTest}>
                     <Heading type="title3" element="h3">
                       Content with Heading and text
                     </Heading>
                     <Text>Text in content</Text>
-                  </CardContent>
+                  </CardSection>
                   <CardSection dataTest={dataTest}>
                     <Heading type="title3" element="h3">
                       Section with Heading and text

@@ -142,6 +142,7 @@ storiesOf("Textarea", module)
     const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
     const label = text("Label", "Label");
     const value = text("Value", "");
+    const fullHeight = boolean("fullHeight", true);
     const placeholder = text("Placeholder", "Placeholder");
     const help = text("Help", undefined);
     const error = text("Error", "Something went wrong.");
@@ -161,6 +162,7 @@ storiesOf("Textarea", module)
                   size={size}
                   label={label}
                   value={value}
+                  fullHeight={fullHeight}
                   placeholder={placeholder}
                   help={help}
                   error={error}

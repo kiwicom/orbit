@@ -1,7 +1,9 @@
 // @flow
-import type { Globals } from "../common/common.js.flow";
 
-type Size = "small" | "medium" | "large";
+import type { Globals } from "../common/common.js.flow";
+import defaultTokens from "../defaultTokens";
+
+export type Size = "small" | "medium" | "large";
 
 type Color =
   | "attention"
@@ -24,3 +26,7 @@ export type Props = {|
 |};
 
 declare export default React$ComponentType<Props>;
+
+export type GetSize = (size: Size) => ({ theme: typeof defaultTokens }) => string;
+
+declare export var getSize: GetSize;

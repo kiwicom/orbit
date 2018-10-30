@@ -99,15 +99,15 @@ exports[`Storyshots ButtonLink Circled 1`] = `
           }
         >
           <button
-            circled={true}
             className="ButtonLink__StyledButtonLink-eyUiPe fpNoit"
             data-test={undefined}
             onClick={[Function]}
             size="large"
             target={undefined}
+            type="button"
           >
             <div
-              className="ButtonLink__IconContainer-flENJD ffwkCW"
+              className="ButtonLink__IconContainer-flENJD hNEbcs"
               size="large"
             >
               <svg
@@ -438,6 +438,7 @@ exports[`Storyshots ButtonLink Default 1`] = `
             onClick={undefined}
             size="normal"
             target={undefined}
+            type={undefined}
           >
             ButtonLink
           </a>
@@ -692,9 +693,10 @@ exports[`Storyshots ButtonLink Playground 1`] = `
             onClick={[Function]}
             size="large"
             target={undefined}
+            type="button"
           >
             <div
-              className="ButtonLink__IconContainer-flENJD glsLuO"
+              className="ButtonLink__IconContainer-flENJD fktYwF"
               size="large"
             >
               <svg
@@ -710,7 +712,7 @@ exports[`Storyshots ButtonLink Playground 1`] = `
             </div>
             ButtonLink
             <div
-              className="ButtonLink__IconContainerRight-hJSKvX bsHWVt ButtonLink__IconContainer-flENJD glsLuO"
+              className="ButtonLink__IconContainerRight-hJSKvX bsHWVt ButtonLink__IconContainer-flENJD fktYwF"
               size="large"
             >
               <svg
@@ -1055,6 +1057,37 @@ exports[`Storyshots ButtonLink Playground 1`] = `
                               </span>
                             </span>
                           </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            submit
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
                           <br />
                         </span>
                       </span>
@@ -1223,6 +1256,7 @@ exports[`Storyshots ButtonLink Secondary 1`] = `
             onClick={undefined}
             size="normal"
             target={undefined}
+            type={undefined}
           >
             ButtonLink
           </a>

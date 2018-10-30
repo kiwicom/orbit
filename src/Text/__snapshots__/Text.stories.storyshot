@@ -99,7 +99,7 @@ exports[`Storyshots Text Attention text 1`] = `
           }
         >
           <p
-            className="Text__StyledText-guhEiE ixdYMZ"
+            className="Text__StyledText-guhEiE eltpBo"
             data-test={undefined}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
@@ -348,7 +348,7 @@ exports[`Storyshots Text Playground 1`] = `
           }
         >
           <p
-            className="Text__StyledText-guhEiE kLuVzx"
+            className="Text__StyledText-guhEiE hYZMSR"
             data-test="test"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
@@ -650,6 +650,37 @@ exports[`Storyshots Text Playground 1`] = `
                               </span>
                             </span>
                           </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            spaceAfter
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
                           <br />
                         </span>
                       </span>
@@ -812,7 +843,7 @@ exports[`Storyshots Text Primary text 1`] = `
           }
         >
           <p
-            className="Text__StyledText-guhEiE kLuVzx"
+            className="Text__StyledText-guhEiE hYZMSR"
             data-test={undefined}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
@@ -1032,7 +1063,7 @@ exports[`Storyshots Text Secondary text 1`] = `
           }
         >
           <p
-            className="Text__StyledText-guhEiE eGYiLp"
+            className="Text__StyledText-guhEiE cJORfO"
             data-test={undefined}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
@@ -1281,7 +1312,7 @@ exports[`Storyshots Text Status text 1`] = `
           }
         >
           <p
-            className="Text__StyledText-guhEiE frWsEa"
+            className="Text__StyledText-guhEiE kfhEHZ"
             data-test={undefined}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
@@ -1455,7 +1486,7 @@ exports[`Storyshots Text Status text 1`] = `
           }
         >
           <p
-            className="Text__StyledText-guhEiE hvFaEn"
+            className="Text__StyledText-guhEiE fRIFvF"
             data-test={undefined}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
@@ -1629,7 +1660,7 @@ exports[`Storyshots Text Status text 1`] = `
           }
         >
           <p
-            className="Text__StyledText-guhEiE cFNyeB"
+            className="Text__StyledText-guhEiE gsNGBE"
             data-test={undefined}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
@@ -1803,7 +1834,7 @@ exports[`Storyshots Text Status text 1`] = `
           }
         >
           <p
-            className="Text__StyledText-guhEiE dVOnAm"
+            className="Text__StyledText-guhEiE gBuPvL"
             data-test={undefined}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
@@ -2060,7 +2091,7 @@ exports[`Storyshots Text White text 1`] = `
             }
           >
             <p
-              className="Text__StyledText-guhEiE drQQL"
+              className="Text__StyledText-guhEiE gumEMX"
               data-test={undefined}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.

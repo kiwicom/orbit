@@ -13,7 +13,7 @@ export type Props = {|
   onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
-  onRemoveFile?: () => void,
+  onRemoveFile?: () => void | Promise<any>,
   ...Globals,
 |};
 

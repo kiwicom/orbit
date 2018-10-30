@@ -13,12 +13,13 @@ After adding import into your project you can use it simply like:
 ## Props
 Table below contains all types of the props available in List component.
 
-| Name         | Type               | Default     | Description                      |
-| :-------     | :----------------- | :---------- | :------------------------------- |
-| children     | `Array<ListItem>`  |             | The content of the List.
-| dataTest     | `string`           |             | Optional prop for testing purposes.
-| size         | [`enum`](#enum)    | `"normal"`  | The size of the List.
-| type         | [`enum`](#enum)    | `"primary"` | The color type of the List.
+| Name          | Type               | Default     | Description                      |
+| :------------ | :----------------- | :---------- | :------------------------------- |
+| children      | `Array<ListItem>`  |             | The content of the List.
+| dataTest      | `string`           |             | Optional prop for testing purposes.
+| size          | [`enum`](#enum)    | `"normal"`  | The size of the List.
+| spaceAfter    | `enum`             |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
+| type          | [`enum`](#enum)    | `"primary"` | The color type of the List.
 
 ### ListItem Props
 Table below contains all types of the props in ListItem component.

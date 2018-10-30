@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots StopoverArrow Playground 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Playground
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <svg
+            className="StopoverArrow__StyledArrow-hmcoXe icaLRa"
+            data-test="test"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 50 7"
+          >
+            <path
+              d="M49.293 4.2L50 3.5l-.706-.7L46.467 0l-.707.7 2.327 2.305H0v.99h48.087L45.76 6.3l.707.7z"
+            />
+          </svg>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      StopoverArrow
+                    </span>
+                    <span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          stops
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              0
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                         
+                        <span
+                          style={Object {}}
+                        >
+                          dataTest
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              test
+                              "
+                            </span>
+                          </span>
+                        </span>
+                         
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,12 +1,14 @@
 {
   "name": "@kiwicom/orbit-components",
-  "version": "0.12.1",
+  "version": "0.16.1",
+  "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook",
     "build": "yarn clean && yarn build:icons && yarn build:lib && yarn build:module",
     "build:lib": "babel --out-dir lib --ignore *.stories.js,*.test.js,*.storyshot src --copy-files",
     "build:module": "babel --presets react --plugins babel-plugin-styled-components,transform-class-properties,transform-object-rest-spread --no-babelrc --out-dir es --ignore *.stories.js,*.test.js,*.storyshot src --copy-files",
     "build:icons": "node config/build.js",
+    "build:storybook": "build-storybook -c .storybook -o .out",
     "clean": "rimraf lib es src/icons/*.js src/icons/*.js.flow",
     "prepare": "npm run build",
     "watch": "concurrently \"npm run build:lib -- --watch\" \"npm run build:module -- --watch\"",
@@ -14,7 +16,9 @@
     "flow:check": "flow check",
     "test": "jest --config=jest.json",
     "test-ci": "cd storybooknative; yarn install; cd ..; (yarn flow:check && yarn eslint && yarn test --ci) || exit $?; cd storybooknative; yarn test",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy:storybook": "storybook-to-ghpages",
+    "deploy:surge": "yarn surge .out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD | sed -e 's/[^a-zA-Z0-9]/-/g').surge.sh",
+    "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL"
   },
   "storybook-deployer": {
     "gitUsername": "GH Pages Bot",
@@ -32,6 +36,29 @@
     "library",
     "component"
   ],
+  "files": [
+    "es",
+    "lib",
+    ".babelrc",
+    ".eslintrc",
+    ".flowconfig",
+    "package.json",
+    "readme.md",
+    "yarn.lock"
+  ],
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768
+      },
+      "chrome.iphone7": {
+        "target": "chrome.docker",
+        "preset": "iPhone 7"
+      }
+    }
+  },
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": "kiwi.com",
@@ -42,10 +69,11 @@
     "styled-components": "^3.2.6"
   },
   "dependencies": {
-    "@kiwicom/orbit-design-tokens": "^0.2.0",
+    "@kiwicom/orbit-design-tokens": "^0.2.2",
     "react-icon-base": "^2.1.2"
   },
   "devDependencies": {
+    "@octokit/rest": "^15.13.1",
     "@sambego/storybook-styles": "^1.0.0",
     "@storybook/addon-actions": "^3.4.3",
     "@storybook/addon-knobs": "^3.4.3",
@@ -82,6 +110,8 @@
     "jest": "^23.3.0",
     "jest-styled-components": "^6.2.1",
     "jsdom": "^12.0.0",
+    "loki": "^0.13.0",
+    "make-runnable": "^1.3.6",
     "mkdirp": "^0.5.1",
     "prettier": "^1.12.1",
     "react": "^16.3.2",
@@ -89,7 +119,8 @@
     "react-storybook-addon-chapters": "2.1.3",
     "react-test-renderer": "^16.3.2",
     "rimraf": "^2.6.2",
-    "styled-components": "^3.2.6"
+    "styled-components": "^3.2.6",
+    "surge": "^0.20.1"
   },
   "resolutions": {
     "@storybook/addons": "3.4.3"

@@ -1,0 +1,10 @@
+// @flow
+import TableCell from "../TableCell/index";
+
+export type Props = {|
+  +children: Array<React$Element<typeof TableCell>> | React$Element<typeof TableCell>,
+|};
+
+declare export default React$ComponentType<Props>;
+
+declare export var StyledTableRow: React$ComponentType<Props>;

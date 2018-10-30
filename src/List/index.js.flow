@@ -1,6 +1,7 @@
 // @flow
 import ListItem from "./ListItem";
 import type { Globals } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Size = "small" | "normal" | "large";
 
@@ -11,6 +12,7 @@ export type Props = {|
   +size?: Size,
   +type?: Type,
   ...Globals,
+  ...spaceAfter,
 |};
 
 declare export default React$ComponentType<Props>;

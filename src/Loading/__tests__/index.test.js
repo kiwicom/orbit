@@ -3,7 +3,7 @@ import * as React from "react";
 import { shallow } from "enzyme";
 
 import Loading from "../index";
-import TYPE_OPTIONS from "../consts";
+import { TYPE_OPTIONS } from "../consts";
 
 describe("Loading", () => {
   const dataTest = "test";

@@ -21,6 +21,7 @@ Table below contains all types of the props available in ButtonLink component.
 | closable      | `boolean`             | `false`         | If `true`, the Close icon will be displayed. [See Functional specs](#functional-specs)
 | dataTest      | `string`              |                 | Optional prop for testing purposes.
 | onClose       | `func`                |                 | Function for handling onClick event.
+| spaceAfter    | `enum`                |                 | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 
 ## Functional specs
 * By passing the `closable` prop into Card, you will be able to handle `onClose` function and Close icon will be displayed.
@@ -50,27 +51,6 @@ Table below contains all types of the props in CardHeader component.
 | **title**     | `string `             |                 | The title of the CardHeader.
 | subTitle      | `string`              |                 | The description of the CardHeader.
 
-### CardContent
-```jsx
-import Card from "@kiwicom/orbit-components/lib/Card";
-import CardContent from "@kiwicom/orbit-components/lib/Card/CardContent";
-```
-#### Usage:
-```jsx
-<Card>
-  <CardContent>
-    Hello World!
-  </CardContent>
-</Card>
-```
-
-#### Props
-Table below contains all types of the props in CardContent component.
-
-| Name          | Type                  | Default         | Description                      |
-| :------------ | :---------------------| :-------------- | :------------------------------- |
-| **children**  | `React.Node`          |                 | The content of the CardContent.
-| dataTest      | `string`              |                 | Optional prop for testing purposes.
 
 ### CardSection
 ```jsx
@@ -91,5 +71,8 @@ Table below contains all types of the props in CardContent component.
 
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :---------------------| :-------------- | :------------------------------- |
-| **children**  | `React.Node`          |                 | The content of the CardSection.
+| children      | `React.Node`          |                 | The content of the CardSection.
+| title         | `React.Node`          |                 | The title of the CardSection
+| subTitle      | `React.Node`          |                 | The description of the CardSection.
+| expandable    | `boolean`             |                 | CardSection may be expandable
 | dataTest      | `string`              |                 | Optional prop for testing purposes.

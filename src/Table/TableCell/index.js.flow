@@ -1,0 +1,12 @@
+// @flow
+
+type Align = "left" | "center" | "right";
+
+export type Props = {|
+  +children?: React$Node,
+  +align?: Align,
+|};
+
+declare export default React$ComponentType<Props>;
+
+declare export var StyledTableCell: React$ComponentType<Props>;

@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
+<InputStepper__StyledInputStepper>
+  <InputField
+    disabled={false}
+    error="Error message"
+    help="Help message"
+    label="Label"
+    maxValue={100}
+    minValue={1}
+    name="name"
+    onBlur={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    onChange={[Function]}
+    onFocus={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    onKeyDown={[Function]}
+    prefix={
+      <ButtonLink
+        component={[Function]}
+        disabled={true}
+        external={false}
+        iconLeft={
+          <MinusCircle
+            color="secondary"
+          />
+        }
+        onClick={[Function]}
+        size="normal"
+        transparent={true}
+        type="primary"
+        width={0}
+      />
+    }
+    required={false}
+    size="normal"
+    suffix={
+      <ButtonLink
+        component={[Function]}
+        disabled={false}
+        external={false}
+        iconLeft={
+          <PlusCircle
+            color="secondary"
+          />
+        }
+        onClick={[Function]}
+        size="normal"
+        transparent={true}
+        type="primary"
+        width={0}
+      />
+    }
+    type="number"
+    value={0}
+  />
+</InputStepper__StyledInputStepper>
+`;

@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import media from "../utils/media";
+import media from "../utils/mediaQuery";
 import defaultTokens from "../defaultTokens";
 import { ALIGNS, JUSTIFY, DIRECTIONS, SPACINGS } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
@@ -143,7 +143,7 @@ const StyledStack = styled(({ className, children, dataTest }) => (
   // spaceAfter for Stack
   margin-bottom: ${getSpacingToken};
 
-  ${media.desktop`
+  ${media.desktop(css`
     // spacing between children needs to set again - different spacings for desktop
     ${getDesktopSpacing};
     // spaceAfter can be different for desktop
@@ -165,7 +165,7 @@ const StyledStack = styled(({ className, children, dataTest }) => (
       desktop && inline !== desktop.inline && getWidth(desktop.inline)};
     // all other styles
     ${({ desktop, flex }) => desktop && flex && flexAttributesDesktop};
-  `};
+  `)};
 `;
 
 StyledStack.defaultProps = {

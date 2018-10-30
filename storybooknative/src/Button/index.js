@@ -3,7 +3,7 @@ import * as React from "react";
 import { View, Text, Platform } from "react-native";
 
 import Touchable from "../Touchable";
-import styled, { type Style } from "../styled";
+import styled from "../styled";
 import defaultTokens from "../defaultTokens";
 import { TYPE_OPTIONS, SIZE_OPTIONS, TYPE_TOKENS, SIZE_TOKENS } from "./consts";
 import type { Props, SizeTokens, TypeTokens } from "./index.js.flow";
@@ -74,7 +74,7 @@ const getTypeToken = (name: TypeTokens, { theme, type }) => {
   return tokens[name][type];
 };
 
-export const StyledButton = styled(View, (props): Style => {
+export const StyledButton = styled(View, props => {
   const { bordered, theme, width, circled, disabled } = props;
   return {
     width,
@@ -100,7 +100,7 @@ StyledButton.defaultProps = {
   theme: defaultTokens,
 };
 
-const StyledText = styled(Text, (props): Style => {
+const StyledText = styled(Text, props => {
   const { bordered, theme } = props;
   return {
     color: bordered
@@ -115,7 +115,7 @@ StyledText.defaultProps = {
   theme: defaultTokens,
 };
 
-const StyledTouchableWrapper = styled(View, (props): Style => ({
+const StyledTouchableWrapper = styled(View, props => ({
   overflow: "hidden",
   width: props.width,
   borderRadius: props.circled

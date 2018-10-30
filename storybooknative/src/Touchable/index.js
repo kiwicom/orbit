@@ -4,15 +4,15 @@ import * as React from "react";
 // eslint-disable-next-line no-restricted-imports
 import { Platform, TouchableNativeFeedback, TouchableOpacity } from "react-native";
 
-import styled, { type Style } from "../styled";
+import styled from "../styled";
 
 import type { Props } from "./index";
 
-const StyledTouchableOpacity = styled(TouchableOpacity, (props: Props): Style => ({
+const StyledTouchableOpacity = styled(TouchableOpacity, (props: Props) => ({
   width: props.width,
 }));
 
-const StyledTouchableNativeFeedback = styled(TouchableNativeFeedback, (props: Props): Style => ({
+const StyledTouchableNativeFeedback = styled(TouchableNativeFeedback, (props: Props) => ({
   width: props.width,
 }));
 

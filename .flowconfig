@@ -35,6 +35,32 @@
 ; Ignore findup tests
 .*/storybooknative/node_modules/findup/test/.*\.json$
 
+;------------------------
+;
+; /storybooknative
+;
+;------------------------
+
+; Ignore "BUCK" generated dirs
+<PROJECT_ROOT>/storybooknative/\.buckd/
+
+; Ignore unexpected extra "@providesModule"
+.*/storybooknative/node_modules/.*/node_modules/fbjs/.*
+
+; Ignore duplicate module providers
+; For RN Apps installed via npm, "Libraries" folder is inside
+; "node_modules/react-native" but in the source repo it is in the root
+.*/storybooknative/.*/Libraries/react-native/React.js
+
+; Ignore polyfills
+.*/storybooknative/.*/Libraries/polyfills/.*
+
+; Ignore metro
+.*/storybooknative/.*/node_modules/metro/.*
+
+; Ignore findup tests
+.*/storybooknative/node_modules/findup/test/.*\.json$
+
 [include]
 
 [libs]

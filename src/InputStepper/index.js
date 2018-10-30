@@ -91,6 +91,7 @@ class InputStepper extends React.Component<Props, State> {
       onFocus,
       help,
       disabled,
+      name,
       dataTest,
       size = SIZE_OPTIONS.NORMAL,
       maxValue,
@@ -105,6 +106,7 @@ class InputStepper extends React.Component<Props, State> {
           label={label}
           disabled={disabled}
           required={required}
+          name={name}
           error={error}
           help={help}
           type="number"

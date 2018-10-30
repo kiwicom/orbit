@@ -6,6 +6,7 @@ export type Props = {|
   +value?: string,
   +hasError?: boolean,
   +disabled?: boolean,
+  +name?: string,
   +checked?: boolean,
   +info?: React$Node,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,

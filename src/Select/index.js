@@ -25,7 +25,7 @@ const Label = styled.label`
 `;
 
 const StyledSelect = styled(
-  ({ className, children, value, disabled, onChange, onFocus, onBlur }) => (
+  ({ className, children, value, disabled, onChange, onFocus, onBlur, name }) => (
     <select
       value={value}
       className={className}
@@ -33,6 +33,7 @@ const StyledSelect = styled(
       onFocus={onFocus}
       onBlur={onBlur}
       disabled={disabled}
+      name={name}
     >
       {children}
     </select>
@@ -174,6 +175,7 @@ const Select = ({
   disabled = false,
   error,
   help,
+  name,
   onChange,
   onBlur,
   onFocus,
@@ -201,6 +203,7 @@ const Select = ({
           error={error}
           value={value || ""}
           prefix={prefix}
+          name={name}
           onFocus={onFocus}
           onBlur={onBlur}
           onChange={onChange}

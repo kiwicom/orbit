@@ -106,6 +106,7 @@ exports[`Storyshots CheckBox Default 1`] = `
               checked={false}
               className="Checkbox__Input-dtRIkE eevIXv"
               disabled={false}
+              name={undefined}
               onChange={[Function]}
               type="checkbox"
               value={undefined}
@@ -401,6 +402,7 @@ exports[`Storyshots CheckBox Playground 1`] = `
               checked={true}
               className="Checkbox__Input-dtRIkE eevIXv"
               disabled={true}
+              name="name"
               onChange={[Function]}
               type="checkbox"
               value="value"
@@ -569,6 +571,36 @@ exports[`Storyshots CheckBox Playground 1`] = `
                           style={Object {}}
                         >
                           disabled
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          name
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              name
+                              "
+                            </span>
+                          </span>
                         </span>
                       </span>
                       <span>
@@ -822,6 +854,7 @@ exports[`Storyshots CheckBox With help 1`] = `
               checked={false}
               className="Checkbox__Input-dtRIkE eevIXv"
               disabled={false}
+              name={undefined}
               onChange={[Function]}
               type="checkbox"
               value="value"

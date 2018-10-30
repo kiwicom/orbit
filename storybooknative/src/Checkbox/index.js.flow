@@ -1,0 +1,9 @@
+// @flow
+
+export type Props = {|
+  +onPress: () => void,
+  +children: React$Node,
+  +isChecked?: boolean,
+|};
+
+declare export default React$ComponentType<Props>;

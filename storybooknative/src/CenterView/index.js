@@ -3,9 +3,9 @@
 import * as React from "react";
 import { View } from "react-native";
 
-import styled, { type Style } from "../styled";
+import styled from "../styled";
 
-const style: Style = {
+const style = {
   flexGrow: 1,
   justifyContent: "center",
   alignItems: "center",

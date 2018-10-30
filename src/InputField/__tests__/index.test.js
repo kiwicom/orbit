@@ -67,7 +67,12 @@ describe(`InputField with help, prefix and suffix`, () => {
   it("should have passed props", () => {
     expect(input.prop("size")).toBe(size);
     expect(input.prop("type")).toBe(type);
-    expect(input.prop("name")).toBe(name);
+    expect(
+      component
+        .find("InputField__Input")
+        .render()
+        .prop("attribs").name,
+    ).toBe(name);
     expect(input.prop("value")).toBe(value);
     expect(input.prop("placeholder")).toBe(placeholder);
     expect(input.prop("maxLength")).toBe(maxLength);

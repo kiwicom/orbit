@@ -444,7 +444,7 @@ exports[`Storyshots InputStepper Playground 1`] = `
                   maxLength={undefined}
                   min={1}
                   minLength={undefined}
-                  name={undefined}
+                  name="name"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -728,6 +728,36 @@ exports[`Storyshots InputStepper Playground 1`] = `
                                 null
                               </span>
                               }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          name
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              name
+                              "
                             </span>
                           </span>
                         </span>

@@ -391,6 +391,7 @@ exports[`Select should match snapshot 1`] = `
     <Select__StyledSelect
       disabled={false}
       filled={true}
+      name="name"
       onChange={[MockFunction]}
       size="normal"
       theme={

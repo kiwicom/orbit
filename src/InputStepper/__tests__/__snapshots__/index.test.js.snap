@@ -9,6 +9,7 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
     label="Label"
     maxValue={100}
     minValue={1}
+    name="name"
     onBlur={
       [MockFunction] {
         "calls": Array [

@@ -152,6 +152,9 @@ describe("Stack with enabled flex", () => {
     expect(component).toHaveStyleRule("align-items", "flex-start", {
       media: "(min-width:600px)",
     });
+    expect(component).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceXSmall, {
+      media: "(min-width:600px)",
+    });
     expect(component).toHaveStyleRule("margin", "0 0 12px 0", {
       media: "(min-width:600px)",
       modifier: "& > *",

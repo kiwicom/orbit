@@ -1,0 +1,29 @@
+// @flow
+import type { Interpolation } from "styled-components";
+
+export type Devices =
+  | "largeDesktop"
+  | "desktop"
+  | "tablet"
+  | "largeMobile"
+  | "mediumMobile"
+  | "smallMobile";
+
+type QueryFunction = (style: Interpolation[]) => Interpolation[];
+
+type Query = {|
+  min?: number,
+  max?: number,
+|};
+
+type Queries = {|
+  [key: string]: Query,
+|};
+
+type Breakpoints = $ObjMap<Queries, () => string>;
+
+export type MediaQueries = $ObjMap<Breakpoints, () => QueryFunction>;
+
+declare export default MediaQueries;
+
+declare export var breakpoints: Breakpoints;

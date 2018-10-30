@@ -1,9 +1,9 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTokens from "../../defaultTokens";
-import media from "../../utils/media";
+import media from "../../utils/mediaQuery";
 import { StyledModalFooter } from "../ModalFooter";
 import { withModalContext } from "../ModalContext";
 
@@ -38,9 +38,9 @@ export const StyledModalSection = styled.section`
     }
   }
 
-  ${media.desktop`
+  ${media.largeMobile(css`
     padding: ${({ theme }) => theme.orbit.spaceXXLarge};
-    
+
     &:first-of-type {
       margin-top: ${({ suppressed, theme }) => suppressed && theme.orbit.spaceXXLarge};
     }
@@ -50,7 +50,7 @@ export const StyledModalSection = styled.section`
         margin-top: 0;
       }
     }
-  `};
+  `)};
 `;
 
 StyledModalSection.defaultProps = {

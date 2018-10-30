@@ -8,6 +8,7 @@ import Button from "../../Button";
 import { ALIGNS, DIRECTIONS, JUSTIFY, SPACINGS } from "../consts";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import defaultTokens from "../../defaultTokens";
+import { breakpoints } from "../../utils/mediaQuery";
 
 describe("Default Stack", () => {
   const spacing = SPACINGS.EXTRALOOSE;
@@ -48,7 +49,7 @@ describe("Default Stack", () => {
       modifier: "& > *",
     });
     expect(stack).toHaveStyleRule("margin", "0 0 40px 0!important", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
       modifier: "& > *",
     });
   });
@@ -162,40 +163,40 @@ describe("Stack with enabled flex", () => {
   });
   it("should contain desktop styles", () => {
     expect(stack).toHaveStyleRule("display", "inline-flex", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).not.toHaveStyleRule("width", expect.any(String), {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("flex-direction", "column", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("flex-wrap", "wrap", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("flex-shrink", "0", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("flex-grow", "1", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("flex-basis", "auto", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("align-content", "flex-start", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("justify-content", "flex-end", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("align-items", "flex-start", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(component).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceXSmall, {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("margin", "0 0 12px 0!important", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
       modifier: "& > *",
     });
   });
@@ -243,28 +244,28 @@ describe("Stack with only desktop properties", () => {
   });
   it("should contain desktop styles", () => {
     expect(stack).toHaveStyleRule("display", "inline-flex", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("flex-wrap", "wrap", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("flex-shrink", "1", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("flex-grow", "0", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("flex-basis", "auto", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("justify-content", "flex-end", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceXSmall, {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("margin", "0 0 12px 0!important", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
       modifier: "& > *",
     });
   });
@@ -333,42 +334,42 @@ describe("Stack with same mobile and desktop properties", () => {
   });
   it("should not contain desktop styles", () => {
     expect(stack).not.toHaveStyleRule("display", expect.any(String), {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).not.toHaveStyleRule("width", expect.any(String), {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).not.toHaveStyleRule("flex-direction", expect.any(String), {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).not.toHaveStyleRule("flex-wrap", expect.any(String), {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).not.toHaveStyleRule("flex-shrink", expect.any(String), {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).not.toHaveStyleRule("flex-grow", expect.any(String), {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).not.toHaveStyleRule("flex-basis", expect.any(String), {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).not.toHaveStyleRule("justify-content", expect.any(String), {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).not.toHaveStyleRule("align-items", expect.any(String), {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).not.toHaveStyleRule("align-content", expect.any(String), {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
     expect(stack).not.toHaveStyleRule("margin-bottom", expect.any(String), {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
     });
   });
   it("should contain desktop styles - only for spacing", () => {
     expect(stack).toHaveStyleRule("margin", "0 40px 0 0!important", {
-      media: "(min-width:600px)",
+      media: breakpoints.desktop,
       modifier: "& > *",
     });
   });

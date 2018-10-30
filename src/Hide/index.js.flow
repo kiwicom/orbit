@@ -1,0 +1,10 @@
+// @flow
+
+import type { Devices } from "../utils/mediaQuery/index";
+
+export type Props = {|
+  +children: React$Node,
+  +on: Devices[],
+|};
+
+declare export default React$ComponentType<Props>;

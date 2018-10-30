@@ -98,7 +98,7 @@ exports[`Storyshots Modal Full preview 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
+            className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
             data-test="test"
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -106,16 +106,16 @@ exports[`Storyshots Modal Full preview 1`] = `
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-sc-1f0srsl-1 ismJct"
+              className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
               onScroll={[Function]}
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 bmgkiO"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 jnycQk"
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-sc-1f0srsl-2 bsErpU"
+                  className="Modal__CloseContainer-sc-1f0srsl-2 bIOaxA"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
@@ -140,7 +140,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                   </button>
                 </div>
                 <div
-                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 gYfBDl"
+                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 hcLwIF"
                 >
                   <img
                     alt="Accommodation"
@@ -150,7 +150,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x"
                   />
                   <div
-                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 hfgMqg"
+                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 fsixYs"
                   >
                     <h1
                       className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
@@ -168,13 +168,13 @@ exports[`Storyshots Modal Full preview 1`] = `
                     </div>
                   </div>
                   <div
-                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 cRHUqx"
+                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 jWCUfS"
                   >
                     Orbit design system
                   </div>
                 </div>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 bftbpX"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -183,7 +183,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 bftbpX"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -192,7 +192,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 bftbpX"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -201,13 +201,13 @@ exports[`Storyshots Modal Full preview 1`] = `
                   </p>
                 </section>
                 <div
-                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 hnhBGU"
+                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 brcocJ"
                 >
                   <div
-                    className="ModalFooter__StyledChild-sc-17ld6v4-0 eHFSqa"
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 hFCwHC"
                   >
                     <div
-                      className="Stack__StyledStack-sc-1t576ow-0 jOHKrp"
+                      className="Stack__StyledStack-sc-1t576ow-0 fJMDdH"
                     >
                       <button
                         className="Button__StyledButton-sc-1brqp3f-1 bwmbUD"
@@ -243,7 +243,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     </div>
                   </div>
                   <div
-                    className="ModalFooter__StyledChild-sc-17ld6v4-0 ZHtLp"
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 jFkdft"
                   >
                     <button
                       className="Button__StyledButton-sc-1brqp3f-1 bwWmAt"
@@ -1664,23 +1664,23 @@ exports[`Storyshots Modal RTL 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
+            className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
             onClick={[Function]}
             onKeyDown={[Function]}
             onScroll={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-sc-1f0srsl-1 ismJct"
+              className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
               onScroll={[Function]}
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 gabuig"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 erowRe"
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-sc-1f0srsl-2 jNGuzD"
+                  className="Modal__CloseContainer-sc-1f0srsl-2 cmrbDw"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
@@ -1705,7 +1705,7 @@ exports[`Storyshots Modal RTL 1`] = `
                   </button>
                 </div>
                 <div
-                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 bRRTJp"
+                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 iOtJMu"
                 >
                   <img
                     alt="Accommodation"
@@ -1715,7 +1715,7 @@ exports[`Storyshots Modal RTL 1`] = `
                     srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x"
                   />
                   <div
-                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 jnLBYq"
+                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 houuhE"
                   >
                     <h1
                       className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
@@ -1733,13 +1733,13 @@ exports[`Storyshots Modal RTL 1`] = `
                     </div>
                   </div>
                   <div
-                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 fYEZxN"
+                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 cAtvVy"
                   >
                     The title of the ModalHeader
                   </div>
                 </div>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 bftbpX"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 huZevl"
@@ -1748,7 +1748,7 @@ exports[`Storyshots Modal RTL 1`] = `
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 kbaBdH"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 fnhIwH"
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 huZevl"
@@ -1757,10 +1757,10 @@ exports[`Storyshots Modal RTL 1`] = `
                   </p>
                 </section>
                 <div
-                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 hnhBGU"
+                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 brcocJ"
                 >
                   <div
-                    className="ModalFooter__StyledChild-sc-17ld6v4-0 hswcsR"
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 hahHfK"
                   >
                     <button
                       className="Button__StyledButton-sc-1brqp3f-1 jOtiqI"
@@ -1788,7 +1788,7 @@ exports[`Storyshots Modal RTL 1`] = `
                     </button>
                   </div>
                   <div
-                    className="ModalFooter__StyledChild-sc-17ld6v4-0 jYpTMd"
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 fKUbYT"
                   >
                     <button
                       className="Button__StyledButton-sc-1brqp3f-1 bwWmAt"
@@ -2786,23 +2786,23 @@ exports[`Storyshots Modal Removable sections 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
+            className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
             onClick={[Function]}
             onKeyDown={[Function]}
             onScroll={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-sc-1f0srsl-1 ismJct"
+              className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
               onScroll={[Function]}
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 gabuig"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 erowRe"
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-sc-1f0srsl-2 bsErpU"
+                  className="Modal__CloseContainer-sc-1f0srsl-2 bIOaxA"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
@@ -2827,7 +2827,7 @@ exports[`Storyshots Modal Removable sections 1`] = `
                   </button>
                 </div>
                 <div
-                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 gYfBDl"
+                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 hcLwIF"
                 >
                   <img
                     alt="Meal"
@@ -2837,7 +2837,7 @@ exports[`Storyshots Modal Removable sections 1`] = `
                     srcSet="//images.kiwi.com/illustrations/0x180/Meal.png 2x"
                   />
                   <div
-                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 hfgMqg"
+                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 fsixYs"
                   >
                     <h1
                       className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
@@ -2855,13 +2855,13 @@ exports[`Storyshots Modal Removable sections 1`] = `
                     </div>
                   </div>
                   <div
-                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 cRHUqx"
+                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 jWCUfS"
                   >
                     Enjoy something to eat while you fly
                   </div>
                 </div>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 bftbpX"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -2870,7 +2870,7 @@ exports[`Storyshots Modal Removable sections 1`] = `
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 kbaBdH"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 fnhIwH"
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -2879,10 +2879,10 @@ exports[`Storyshots Modal Removable sections 1`] = `
                   </p>
                 </section>
                 <div
-                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 hnhBGU"
+                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 brcocJ"
                 >
                   <div
-                    className="ModalFooter__StyledChild-sc-17ld6v4-0 eHFSqa"
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 hFCwHC"
                   >
                     <button
                       className="Button__StyledButton-sc-1brqp3f-1 bwmbUD"
@@ -2910,7 +2910,7 @@ exports[`Storyshots Modal Removable sections 1`] = `
                     </button>
                   </div>
                   <div
-                    className="ModalFooter__StyledChild-sc-17ld6v4-0 ZHtLp"
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 jFkdft"
                   >
                     <button
                       className="Button__StyledButton-sc-1brqp3f-1 bwWmAt"
@@ -3837,23 +3837,23 @@ exports[`Storyshots Modal Short Modal 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
+            className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
             onClick={[Function]}
             onKeyDown={[Function]}
             onScroll={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-sc-1f0srsl-1 ismJct"
+              className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
               onScroll={[Function]}
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 gabuig"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 erowRe"
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-sc-1f0srsl-2 bsErpU"
+                  className="Modal__CloseContainer-sc-1f0srsl-2 bIOaxA"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
@@ -3878,10 +3878,10 @@ exports[`Storyshots Modal Short Modal 1`] = `
                   </button>
                 </div>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 bftbpX"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                 >
                   <div
-                    className="Stack__StyledStack-sc-1t576ow-0 cmtuGW"
+                    className="Stack__StyledStack-sc-1t576ow-0 ktahqs"
                   >
                     <p
                       className="Text__StyledText-sc-19qtt4y-0 fuDZxU"
@@ -3905,7 +3905,7 @@ exports[`Storyshots Modal Short Modal 1`] = `
                               className="CardSectionHeader__StyledCardSectionHeaderContent-sc-1gmw3sa-3 lcnsxe"
                             >
                               <div
-                                className="Stack__StyledStack-sc-1t576ow-0 buXwHC"
+                                className="Stack__StyledStack-sc-1t576ow-0 egNBuZ"
                               >
                                 <div
                                   className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
@@ -3921,7 +3921,7 @@ exports[`Storyshots Modal Short Modal 1`] = `
                                   />
                                 </div>
                                 <div
-                                  className="Stack__StyledStack-sc-1t576ow-0 kdnAvY"
+                                  className="Stack__StyledStack-sc-1t576ow-0 fzhveZ"
                                 >
                                   <p
                                     className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
@@ -3929,7 +3929,7 @@ exports[`Storyshots Modal Short Modal 1`] = `
                                     Sat, Mar 31 Trip length: 1h55m
                                   </p>
                                   <div
-                                    className="Stack__StyledStack-sc-1t576ow-0 hFKyqx"
+                                    className="Stack__StyledStack-sc-1t576ow-0 efBuLN"
                                   >
                                     <p
                                       className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
@@ -5609,23 +5609,23 @@ exports[`Storyshots Modal Sizes 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
+            className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
             onClick={[Function]}
             onKeyDown={[Function]}
             onScroll={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-sc-1f0srsl-1 ismJct"
+              className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
               onScroll={[Function]}
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 bmgkiO"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 jnycQk"
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-sc-1f0srsl-2 bsErpU"
+                  className="Modal__CloseContainer-sc-1f0srsl-2 bIOaxA"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
@@ -5650,10 +5650,10 @@ exports[`Storyshots Modal Sizes 1`] = `
                   </button>
                 </div>
                 <div
-                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 jbjMwa"
+                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 jHObmC"
                 >
                   <div
-                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 hHjamY"
+                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 kvhVET"
                   >
                     <h1
                       className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
@@ -5667,13 +5667,13 @@ exports[`Storyshots Modal Sizes 1`] = `
                     I&#39;m lovely description
                   </div>
                   <div
-                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 cRHUqx"
+                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 jWCUfS"
                   >
                     Orbit design system
                   </div>
                 </div>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 bftbpX"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -5682,7 +5682,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 bftbpX"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -5691,7 +5691,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 bftbpX"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -5700,7 +5700,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 bftbpX"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -6548,23 +6548,23 @@ exports[`Storyshots Modal With Form 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
+            className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
             onClick={[Function]}
             onKeyDown={[Function]}
             onScroll={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-sc-1f0srsl-1 ismJct"
+              className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
               onScroll={[Function]}
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 gabuig"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 erowRe"
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-sc-1f0srsl-2 bsErpU"
+                  className="Modal__CloseContainer-sc-1f0srsl-2 bIOaxA"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
@@ -6589,10 +6589,10 @@ exports[`Storyshots Modal With Form 1`] = `
                   </button>
                 </div>
                 <div
-                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 jbjMwa"
+                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 jHObmC"
                 >
                   <div
-                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 hHjamY"
+                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 kvhVET"
                   >
                     <h1
                       className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
@@ -6610,16 +6610,16 @@ exports[`Storyshots Modal With Form 1`] = `
                     </div>
                   </div>
                   <div
-                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 cRHUqx"
+                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 jWCUfS"
                   >
                     Refund
                   </div>
                 </div>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 bftbpX"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                 >
                   <div
-                    className="Stack__StyledStack-sc-1t576ow-0 cmtuGW"
+                    className="Stack__StyledStack-sc-1t576ow-0 ktahqs"
                   >
                     <div
                       className="Card__StyledCard-ff0z2v-1 irRylt"
@@ -6782,10 +6782,10 @@ exports[`Storyshots Modal With Form 1`] = `
                   </div>
                 </section>
                 <div
-                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 hnhBGU"
+                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 brcocJ"
                 >
                   <div
-                    className="ModalFooter__StyledChild-sc-17ld6v4-0 eHFSqa"
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 hFCwHC"
                   >
                     <button
                       className="Button__StyledButton-sc-1brqp3f-1 bwmbUD"
@@ -6813,7 +6813,7 @@ exports[`Storyshots Modal With Form 1`] = `
                     </button>
                   </div>
                   <div
-                    className="ModalFooter__StyledChild-sc-17ld6v4-0 ZHtLp"
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 jFkdft"
                   >
                     <button
                       className="Button__StyledButton-sc-1brqp3f-1 bwWmAt"
@@ -8366,23 +8366,23 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
+            className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
             onClick={[Function]}
             onKeyDown={[Function]}
             onScroll={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-sc-1f0srsl-1 ismJct"
+              className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
               onScroll={[Function]}
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 gabuig"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 erowRe"
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-sc-1f0srsl-2 bsErpU"
+                  className="Modal__CloseContainer-sc-1f0srsl-2 bIOaxA"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
@@ -8407,7 +8407,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                   </button>
                 </div>
                 <div
-                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 gYfBDl"
+                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 hcLwIF"
                 >
                   <img
                     alt="Meal"
@@ -8417,7 +8417,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                     srcSet="//images.kiwi.com/illustrations/0x180/Meal.png 2x"
                   />
                   <div
-                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 hfgMqg"
+                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 fsixYs"
                   >
                     <h1
                       className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
@@ -8435,16 +8435,16 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                     </div>
                   </div>
                   <div
-                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 cRHUqx"
+                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 jWCUfS"
                   >
                     Enjoy something to eat while you fly
                   </div>
                 </div>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 kbaBdH"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 fnhIwH"
                 >
                   <div
-                    className="Stack__StyledStack-sc-1t576ow-0 cmtuGW"
+                    className="Stack__StyledStack-sc-1t576ow-0 ktahqs"
                   >
                     <p
                       className="Text__StyledText-sc-19qtt4y-0 fuDZxU"
@@ -8468,7 +8468,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                               className="CardSectionHeader__StyledCardSectionHeaderContent-sc-1gmw3sa-3 lcnsxe"
                             >
                               <div
-                                className="Stack__StyledStack-sc-1t576ow-0 buXwHC"
+                                className="Stack__StyledStack-sc-1t576ow-0 egNBuZ"
                               >
                                 <div
                                   className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
@@ -8484,7 +8484,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                   />
                                 </div>
                                 <div
-                                  className="Stack__StyledStack-sc-1t576ow-0 kdnAvY"
+                                  className="Stack__StyledStack-sc-1t576ow-0 fzhveZ"
                                 >
                                   <p
                                     className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
@@ -8492,7 +8492,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                     Sat, Mar 31 Trip length: 1h55m
                                   </p>
                                   <div
-                                    className="Stack__StyledStack-sc-1t576ow-0 hFKyqx"
+                                    className="Stack__StyledStack-sc-1t576ow-0 efBuLN"
                                   >
                                     <p
                                       className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
@@ -8549,7 +8549,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                               className="CardSectionHeader__StyledCardSectionHeaderContent-sc-1gmw3sa-3 lcnsxe"
                             >
                               <div
-                                className="Stack__StyledStack-sc-1t576ow-0 buXwHC"
+                                className="Stack__StyledStack-sc-1t576ow-0 egNBuZ"
                               >
                                 <div
                                   className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
@@ -8565,7 +8565,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                   />
                                 </div>
                                 <div
-                                  className="Stack__StyledStack-sc-1t576ow-0 kdnAvY"
+                                  className="Stack__StyledStack-sc-1t576ow-0 fzhveZ"
                                 >
                                   <p
                                     className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
@@ -8573,7 +8573,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                     Sat, Mar 31 Trip length: 1h55m
                                   </p>
                                   <div
-                                    className="Stack__StyledStack-sc-1t576ow-0 hFKyqx"
+                                    className="Stack__StyledStack-sc-1t576ow-0 efBuLN"
                                   >
                                     <p
                                       className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
@@ -8630,7 +8630,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                               className="CardSectionHeader__StyledCardSectionHeaderContent-sc-1gmw3sa-3 lcnsxe"
                             >
                               <div
-                                className="Stack__StyledStack-sc-1t576ow-0 buXwHC"
+                                className="Stack__StyledStack-sc-1t576ow-0 egNBuZ"
                               >
                                 <div
                                   className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
@@ -8646,7 +8646,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                   />
                                 </div>
                                 <div
-                                  className="Stack__StyledStack-sc-1t576ow-0 kdnAvY"
+                                  className="Stack__StyledStack-sc-1t576ow-0 fzhveZ"
                                 >
                                   <p
                                     className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
@@ -8654,7 +8654,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                     Sat, Mar 31 Trip length: 1h55m
                                   </p>
                                   <div
-                                    className="Stack__StyledStack-sc-1t576ow-0 hFKyqx"
+                                    className="Stack__StyledStack-sc-1t576ow-0 efBuLN"
                                   >
                                     <p
                                       className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
@@ -8701,10 +8701,10 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                   </div>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 bftbpX"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                 >
                   <div
-                    className="Stack__StyledStack-sc-1t576ow-0 cmtuGW"
+                    className="Stack__StyledStack-sc-1t576ow-0 ktahqs"
                   >
                     <p
                       className="Text__StyledText-sc-19qtt4y-0 fuDZxU"
@@ -8728,7 +8728,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                               className="CardSectionHeader__StyledCardSectionHeaderContent-sc-1gmw3sa-3 lcnsxe"
                             >
                               <div
-                                className="Stack__StyledStack-sc-1t576ow-0 buXwHC"
+                                className="Stack__StyledStack-sc-1t576ow-0 egNBuZ"
                               >
                                 <div
                                   className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
@@ -8744,7 +8744,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                   />
                                 </div>
                                 <div
-                                  className="Stack__StyledStack-sc-1t576ow-0 kdnAvY"
+                                  className="Stack__StyledStack-sc-1t576ow-0 fzhveZ"
                                 >
                                   <p
                                     className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
@@ -8752,7 +8752,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                     Sat, Mar 31 Trip length: 1h55m
                                   </p>
                                   <div
-                                    className="Stack__StyledStack-sc-1t576ow-0 hFKyqx"
+                                    className="Stack__StyledStack-sc-1t576ow-0 efBuLN"
                                   >
                                     <p
                                       className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
@@ -8809,7 +8809,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                               className="CardSectionHeader__StyledCardSectionHeaderContent-sc-1gmw3sa-3 lcnsxe"
                             >
                               <div
-                                className="Stack__StyledStack-sc-1t576ow-0 buXwHC"
+                                className="Stack__StyledStack-sc-1t576ow-0 egNBuZ"
                               >
                                 <div
                                   className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
@@ -8825,7 +8825,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                   />
                                 </div>
                                 <div
-                                  className="Stack__StyledStack-sc-1t576ow-0 kdnAvY"
+                                  className="Stack__StyledStack-sc-1t576ow-0 fzhveZ"
                                 >
                                   <p
                                     className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
@@ -8833,7 +8833,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                     Sat, Mar 31 Trip length: 1h55m
                                   </p>
                                   <div
-                                    className="Stack__StyledStack-sc-1t576ow-0 hFKyqx"
+                                    className="Stack__StyledStack-sc-1t576ow-0 efBuLN"
                                   >
                                     <p
                                       className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
@@ -8890,7 +8890,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                               className="CardSectionHeader__StyledCardSectionHeaderContent-sc-1gmw3sa-3 lcnsxe"
                             >
                               <div
-                                className="Stack__StyledStack-sc-1t576ow-0 buXwHC"
+                                className="Stack__StyledStack-sc-1t576ow-0 egNBuZ"
                               >
                                 <div
                                   className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
@@ -8906,7 +8906,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                   />
                                 </div>
                                 <div
-                                  className="Stack__StyledStack-sc-1t576ow-0 kdnAvY"
+                                  className="Stack__StyledStack-sc-1t576ow-0 fzhveZ"
                                 >
                                   <p
                                     className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
@@ -8914,7 +8914,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                     Sat, Mar 31 Trip length: 1h55m
                                   </p>
                                   <div
-                                    className="Stack__StyledStack-sc-1t576ow-0 hFKyqx"
+                                    className="Stack__StyledStack-sc-1t576ow-0 efBuLN"
                                   >
                                     <p
                                       className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
@@ -8961,10 +8961,10 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                   </div>
                 </section>
                 <div
-                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 hnhBGU"
+                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 brcocJ"
                 >
                   <div
-                    className="ModalFooter__StyledChild-sc-17ld6v4-0 eHFSqa"
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 hFCwHC"
                   >
                     <button
                       className="Button__StyledButton-sc-1brqp3f-1 bwmbUD"
@@ -8992,7 +8992,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                     </button>
                   </div>
                   <div
-                    className="ModalFooter__StyledChild-sc-17ld6v4-0 ZHtLp"
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 jFkdft"
                   >
                     <button
                       className="Button__StyledButton-sc-1brqp3f-1 bwWmAt"
@@ -16485,23 +16485,23 @@ exports[`Storyshots Modal Without section 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
+            className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
             onClick={[Function]}
             onKeyDown={[Function]}
             onScroll={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-sc-1f0srsl-1 ismJct"
+              className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
               onScroll={[Function]}
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 vpYvx"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 etYHmv"
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-sc-1f0srsl-2 bsErpU"
+                  className="Modal__CloseContainer-sc-1f0srsl-2 bIOaxA"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
@@ -16526,7 +16526,7 @@ exports[`Storyshots Modal Without section 1`] = `
                   </button>
                 </div>
                 <div
-                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 gYfBDl"
+                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 hcLwIF"
                 >
                   <img
                     alt="Meal"
@@ -16536,7 +16536,7 @@ exports[`Storyshots Modal Without section 1`] = `
                     srcSet="//images.kiwi.com/illustrations/0x180/Meal.png 2x"
                   />
                   <div
-                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 hfgMqg"
+                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 fsixYs"
                   >
                     <h1
                       className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
@@ -16554,16 +16554,16 @@ exports[`Storyshots Modal Without section 1`] = `
                     </div>
                   </div>
                   <div
-                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 cRHUqx"
+                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 jWCUfS"
                   >
                     Enjoy something to eat while you fly
                   </div>
                 </div>
                 <div
-                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 hnhBGU"
+                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 brcocJ"
                 >
                   <div
-                    className="ModalFooter__StyledChild-sc-17ld6v4-0 eHFSqa"
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 hFCwHC"
                   >
                     <button
                       className="Button__StyledButton-sc-1brqp3f-1 bwmbUD"
@@ -16591,7 +16591,7 @@ exports[`Storyshots Modal Without section 1`] = `
                     </button>
                   </div>
                   <div
-                    className="ModalFooter__StyledChild-sc-17ld6v4-0 ZHtLp"
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 jFkdft"
                   >
                     <button
                       className="Button__StyledButton-sc-1brqp3f-1 bwWmAt"

@@ -6,7 +6,7 @@ import defaultTokens from "../defaultTokens";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import Close from "../icons/Close";
 import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
-import media from "../utils/media";
+import media from "../utils/mediaQuery";
 import { StyledModalFooter } from "./ModalFooter";
 import { MobileHeader, StyledModalHeader } from "./ModalHeader";
 import { StyledModalSection } from "./ModalSection";
@@ -43,10 +43,10 @@ const ModalBody = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   font-family: ${({ theme }) => theme.orbit.fontfamily};
 
-  ${media.desktop`
+  ${media.largeMobile(css`
     overflow-y: auto;
     padding: ${({ theme }) => theme.orbit.spaceXXLarge};
- `};
+  `)};
 `;
 
 ModalBody.defaultProps = {
@@ -67,12 +67,12 @@ const ModalWrapper = styled.div`
   transition: ${transition(["top"], "normal", "ease-in-out")};
   top: ${({ loaded }) => (loaded ? "32px" : "100%")};
 
-  ${media.desktop`
+  ${media.largeMobile(css`
     position: relative;
     top: 0;
     max-width: ${getSizeToken};
     align-items: center;
-  `};
+  `)};
 `;
 
 ModalWrapper.defaultProps = {
@@ -98,10 +98,10 @@ const CloseContainer = styled.div`
   border-top-right-radius: 9px; // TODO: create token
   transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
   
-  ${media.desktop`
+  ${media.largeMobile(css`
     top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "0"};
     right: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "initial"};
-  `};
+  `)};
   
   & + ${StyledModalSection}:first-of-type {
     padding-top: 52px;
@@ -181,7 +181,7 @@ const ModalWrapperContent = styled.div`
     margin-bottom: ${({ hasModalSection, theme }) => !hasModalSection && theme.orbit.spaceXLarge};
   }
 
-  ${media.desktop`
+  ${media.largeMobile(css`
     position: relative;
     bottom: initial;
     border-radius: 9px;
@@ -214,7 +214,7 @@ const ModalWrapperContent = styled.div`
       width: ${({ modalWidth, theme }) =>
         `calc(${modalWidth}px - 48px - ${theme.orbit.spaceXXLarge})`};
     }
-  `};
+  `)};
 `;
 
 ModalWrapperContent.defaultProps = {

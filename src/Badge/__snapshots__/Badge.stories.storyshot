@@ -2282,11 +2282,11 @@ exports[`Storyshots Badge Types 1`] = `
             }
           >
             <div
-              className="Badge__StyledBadge-xfvXv klUbSg"
+              className="Badge__StyledBadge-xfvXv zmWqm"
               data-test={undefined}
             >
               <div
-                className="Badge__IconContainer-keuekM hPbMZk"
+                className="Badge__IconContainer-keuekM edgSqO"
               >
                 <svg
                   className="Icon__StyledIcon-ckyxIP fvqkFf"

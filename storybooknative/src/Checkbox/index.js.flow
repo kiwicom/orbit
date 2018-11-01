@@ -1,9 +1,14 @@
 // @flow
 
 export type Props = {|
-  +onPress: () => void,
-  +children: React$Node,
-  +isChecked?: boolean,
+  +label: React$Node,
+  +hasError?: boolean,
+  +disabled?: boolean,
+  +checked?: boolean,
+  +info?: React$Node,
+  +onChange: () => void,
 |};
+
+declare export var Touchable: React$ComponentType<Props>;
 
 declare export default React$ComponentType<Props>;

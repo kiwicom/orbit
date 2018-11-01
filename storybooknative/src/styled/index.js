@@ -5,6 +5,8 @@ import styled from "styled-components";
 
 import type { Style as _Style } from "../types/Style";
 
+export { default as lineHeight } from "./lineheight";
+
 /**
  * Now we can use styled like:
  * const Pinky = styled(View, {

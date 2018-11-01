@@ -3,7 +3,7 @@
 exports[`Text should match the snapshot 1`] = `
 <Text
   align="left"
-  className="sc-bdVaJa iCYImV"
+  className="sc-bdVaJa jFDbnE"
   italic={false}
   size="normal"
   theme={

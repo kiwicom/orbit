@@ -7,7 +7,7 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select, array } from "@storybook/addon-knobs";
 
 import Button from "../Button";
-import SIZES from "./consts";
+import { SIZES } from "./consts";
 import ModalHeader from "./ModalHeader";
 import ModalSection from "./ModalSection";
 import Illustration from "../Illustration";

@@ -10,7 +10,7 @@ import AlertCircle from "../icons/AlertCircle";
 import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
 import { StyledTextLink } from "../TextLink";
-import { TYPE_OPTIONS, TOKENS } from "./consts";
+import { TYPE_OPTIONS, TOKENS, CLOSE_BUTTON_DATA_TEST } from "./consts";
 import { rtlSpacing, right } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import { Item } from "../List/ListItem";
@@ -216,6 +216,7 @@ const Alert = (props: Props) => {
       {closable && (
         <CloseContainer hasChildren={children}>
           <ButtonLink
+            dataTest={CLOSE_BUTTON_DATA_TEST}
             onClick={onClose}
             size="small"
             icon={<Close size="small" color={type} />}

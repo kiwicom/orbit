@@ -2094,6 +2094,7 @@ exports[`Storyshots Alert RTL 1`] = `
             >
               <button
                 className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 ilpdWM"
+                data-test="AlertCloseButton"
                 onClick={[Function]}
                 size="small"
                 type="button"

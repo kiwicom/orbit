@@ -24,7 +24,7 @@ Table below contains all types of the props available in the Modal component.
 | dataTest      | `string`                |                 | Optional prop for testing purposes.
 | fixedFooter   | `boolean`               | `false`         | If `true` the ModalFooter will be fixed to the bottom of window.
 | size          | [`enum`](#modalenum)    | `"medium"`      | The maximum width of the Modal on desktop viewport.
-| onClose       | `func \| Promise<any>`  |                 | Function for handling onClose event. If you don't pass any function the Close button will not be displayed and it will not be possible to close the Modal.
+| onClose       | `func \| Promise<any>`  |                 | Function for handling onClose event. If you don't pass any function the Close button will not be displayed and it will not be possible to close the Modal. [See Functional specs](#functional-specs)
 
 ### Modal enum
 
@@ -33,6 +33,10 @@ Table below contains all types of the props available in the Modal component.
 | `"small"`     |
 | `"normal"`    |
 | `"large`      |
+
+### Functional specs
+* Also, if you want to select the Close Button element for testing purposes, use [data-test="ModalCloseButton"] selector.
+
 
 ---
 
@@ -116,5 +120,5 @@ Table below contains all types of the props in the ModalFooter component.
 | dataTest      | `string`                    |                 | Optional prop for testing purposes.
 | flex          | `string` or `Array<string>` | `"0 1 auto`     | The flex attribute(s) for children of the ModalFooter. [See Functional specs](#functional-specs)
 
-#### Functional specs
+#### ModalFooter Functional specs
 * You can set up different `flex` attribute for every children, or use one for all. See [flex property docs](https://www.w3schools.com/cssref/css3_pr_flex.asp) for more information.

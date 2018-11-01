@@ -9,6 +9,7 @@ import FormLabel from "../FormLabel";
 import FormFeedback from "../FormFeedback";
 import Attachment from "../icons/Attachment";
 import CloseCircle from "../icons/CloseCircle";
+import type { Ref } from "../common/common.js.flow";
 
 import type { Props } from "./index";
 
@@ -103,7 +104,8 @@ CloseButton.defaultProps = {
   theme: defaultTokens,
 };
 
-const InputFile = (props: Props) => {
+// $FlowExpected
+const InputFile = React.forwardRef((props: Props, ref: Ref) => {
   const { placeholder = "No file selected", title = "Select file", onRemoveFile, dataTest } = props;
 
   return (
@@ -116,6 +118,7 @@ const InputFile = (props: Props) => {
         onFocus={props.onChange}
         onBlur={props.onBlur}
         accept={props.allowedFileTypes}
+        innerRef={ref}
       />
       {props.label && <FormLabel filled={!!props.fileName}>{props.label}</FormLabel>}
       <FakeInput error={props.error}>
@@ -143,6 +146,8 @@ const InputFile = (props: Props) => {
       {props.error && <FormFeedback type="error">{props.error}</FormFeedback>}
     </Field>
   );
-};
+});
+
+InputFile.displayName = "InputFile";
 
 export default InputFile;

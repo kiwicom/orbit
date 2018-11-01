@@ -137,6 +137,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                       onKeyDown={undefined}
                       onKeyUp={undefined}
                       placeholder="DD"
+                      size="normal"
                       type="text"
                       value={undefined}
                     />
@@ -285,6 +286,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                       onKeyDown={undefined}
                       onKeyUp={undefined}
                       placeholder="YYYY"
+                      size="normal"
                       type="text"
                       value={undefined}
                     />
@@ -1256,6 +1258,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                       onKeyDown={undefined}
                       onKeyUp={undefined}
                       placeholder="e.g. 123 456 789"
+                      size="normal"
                       type="text"
                       value={undefined}
                     />
@@ -2124,6 +2127,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       onKeyDown={undefined}
                       onKeyUp={undefined}
                       placeholder="Placeholder"
+                      size="normal"
                       type="text"
                       value={undefined}
                     />
@@ -2206,6 +2210,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       onKeyDown={undefined}
                       onKeyUp={undefined}
                       placeholder="Placeholder"
+                      size="normal"
                       type="text"
                       value={undefined}
                     />

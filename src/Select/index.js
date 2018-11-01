@@ -8,6 +8,7 @@ import ChevronDown from "../icons/ChevronDown";
 import FormFeedback from "../FormFeedback";
 import TYPE_OPTIONS from "../FormFeedback/consts";
 import SIZE_OPTIONS from "./consts";
+import type { Ref } from "../common/common.js.flow";
 
 import type { Props } from "./index";
 
@@ -25,18 +26,22 @@ const Label = styled.label`
 `;
 
 const StyledSelect = styled(
-  ({ className, children, value, disabled, onChange, onFocus, onBlur, name }) => (
-    <select
-      value={value}
-      className={className}
-      onChange={onChange}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      disabled={disabled}
-      name={name}
-    >
-      {children}
-    </select>
+  // $FlowExpected
+  React.forwardRef(
+    ({ className, children, value, disabled, name, onChange, onFocus, onBlur }, ref) => (
+      <select
+        value={value}
+        className={className}
+        onChange={onChange}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        disabled={disabled}
+        name={name}
+        ref={ref}
+      >
+        {children}
+      </select>
+    ),
   ),
 )`
   appearance: none;
@@ -167,22 +172,24 @@ SelectSuffix.defaultProps = {
   theme: defaultTokens,
 };
 
-const Select = ({
-  size = SIZE_OPTIONS.NORMAL,
-  label,
-  placeholder,
-  value,
-  disabled = false,
-  error,
-  help,
-  name,
-  onChange,
-  onBlur,
-  onFocus,
-  options,
-  dataTest,
-  prefix,
-}: Props) => {
+// $FlowExpected
+const Select = React.forwardRef((props: Props, ref: Ref) => {
+  const {
+    size = SIZE_OPTIONS.NORMAL,
+    label,
+    placeholder,
+    value,
+    disabled = false,
+    error,
+    help,
+    name,
+    onChange,
+    onBlur,
+    onFocus,
+    options,
+    dataTest,
+    prefix,
+  } = props;
   const filled = !!value;
   return (
     <Label data-test={dataTest}>
@@ -208,6 +215,7 @@ const Select = ({
           onBlur={onBlur}
           onChange={onChange}
           filled={filled}
+          innerRef={ref}
         >
           {placeholder && (
             <option label={placeholder} value="">
@@ -228,6 +236,9 @@ const Select = ({
       {error && <FormFeedback type={TYPE_OPTIONS.ERROR}>{error}</FormFeedback>}
     </Label>
   );
-};
+});
+
+// otherwise Unknown in storybook
+Select.displayName = "Select";
 
 export default Select;

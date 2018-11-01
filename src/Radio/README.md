@@ -20,7 +20,31 @@ Table below contains all types of the props available in Radio component.
 | label        | `string`     |         | The label of the Radio.
 | name         | `string`     |         | The name for the Radio.
 | onChange     | `func`       |         | Function for handling onChange event.
+| ref          | `func`       |         | Prop for forwarded ref of the Radio. [See Functional specs](#functional-specs)
 | value        | `string`     |         | The value of the Radio.
 
 ## Functional specs
 * The`hasError` prop will be visible only when the Radio has `checked` or `disabled` prop set on false.
+
+* `ref` can be used for example auto-focus the elements immediately after render.
+```jsx
+class Component extends React.PureComponent<Props> {
+
+  constructor() {
+    super()
+    this.ref = React.createRef();
+  }
+  
+  componentDidMount() {
+    this.ref.current && this.ref.current.focus();
+  }
+
+  ref: { current: React$ElementRef<*> | null };
+
+  render() {
+    return (
+      <Radio ref={this.ref} />
+    )
+  }
+}
+```

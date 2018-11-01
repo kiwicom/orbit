@@ -56,6 +56,11 @@ export { default as StopoverArrow } from "./StopoverArrow";
 export { default as Textarea } from "./Textarea";
 export { default as Tile } from "./Tile";
 
+export { default as TripSegment } from "./TripSegment";
+export { default as TripSector } from "./TripSector";
+export { default as TripDate } from "./TripSector/TripDate";
+export { default as TripLayover } from "./TripSector/TripLayover";
+
 // tokens
 export { defaultTokens as defaultTheme, getTokens } from "@kiwicom/orbit-design-tokens";
 

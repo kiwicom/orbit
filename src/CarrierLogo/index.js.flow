@@ -1,7 +1,7 @@
 // @flow
 import type { Globals } from "../common/common.js.flow";
 
-type Carrier = { code: string, name: string, type?: "airline" | "bus" | "train" };
+export type Carrier = { code: string, name: string, type?: "airline" | "bus" | "train" };
 
 type Size = "small" | "medium" | "large";
 

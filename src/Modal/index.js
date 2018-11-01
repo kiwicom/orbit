@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
@@ -14,7 +14,7 @@ import { StyledHeading } from "../Heading";
 
 import type { Props, State, CloseElementType } from "./index";
 
-const getSize = ({ size }) => {
+const getSizeToken = () => ({ size }) => {
   const tokens = {
     // TODO: create tokens widthModalSmall,...
     [SIZES.SMALL]: "540px",
@@ -67,7 +67,7 @@ const ModalWrapper = styled.div`
   ${media.desktop`
     position: relative;
     top: 0;
-    max-width: ${getSize};
+    max-width: ${getSizeToken};
     align-items: center;
   `};
 `;
@@ -78,8 +78,8 @@ ModalWrapper.defaultProps = {
 
 const CloseContainer = styled.div`
   display: flex;
-  position: fixed;
-  top: 32px;
+  position: absolute;
+  top: 0;
   right: 0;
   z-index: 1;
   justify-content: flex-end;
@@ -88,10 +88,10 @@ const CloseContainer = styled.div`
   // TODO create tokens
   height: 52px;
   width: 100%;
-  transition: all ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
+  transition: box-shadow ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
+    background-color ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
   border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  opacity: 1;
 
   & + ${StyledModalSection}:first-of-type {
     padding-top: 52px;
@@ -140,23 +140,29 @@ const ModalWrapperContent = styled.div`
     padding-bottom: ${({ theme, fixedFooter }) => fixedFooter && theme.orbit.spaceLarge};
     margin-bottom: ${({ fixedFooter }) => fixedFooter && "0"};
   }
-
-  ${StyledModalFooter} {
-    padding: ${({ theme, fixedFooter }) => fixedFooter && theme.orbit.spaceMedium};
-    box-shadow: ${({ fixedFooter }) => fixedFooter && `0 -2px 4px 0 rgba(23, 27, 30, 0.1)`};
-    position: ${({ fixedFooter }) => fixedFooter && "fixed"};
-  }
+  ${({ fixedFooter, theme }) =>
+    fixedFooter &&
+    css`
+      ${StyledModalFooter} {
+        padding: ${theme.orbit.spaceMedium};
+        box-shadow: ${({ fullyScrolled }) =>
+          fullyScrolled
+            ? `0 0 1px 0 ${theme.orbit.paletteCloudNormal}`
+            : "0 -2px 4px 0 rgba(23, 27, 30, 0.1)"};
+        position: fixed;
+        transition: box-shadow ${theme.orbit.durationFast} ease-in-out;
+      }
+    `};
 
   ${MobileHeader} {
     top: ${({ scrolled, theme }) => scrolled && theme.orbit.spaceXLarge};
     opacity: ${({ scrolled }) => scrolled && "1"};
   }
   ${CloseContainer} {
-    top: ${({ scrolled }) => scrolled && "32px"};
-    position: ${({ scrolled }) => scrolled && "fixed"};
+    top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "32px"};
+    position: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "fixed"};
     box-shadow: ${({ scrolled }) => scrolled && `0 2px 4px 0 rgba(23, 27, 30, 0.1)`};
     background-color: ${({ theme, scrolled }) => scrolled && theme.orbit.paletteWhite};
-    opacity: ${({ scrolled }) => scrolled && "1"};
   }
 
   ${media.desktop`
@@ -188,9 +194,9 @@ ModalWrapperContent.defaultProps = {
   theme: defaultTokens,
 };
 
-const CloseElement = ({ onClose }: CloseElementType) => (
+const CloseElement = ({ onClose, closable }: CloseElementType) => (
   <CloseContainer>
-    <ButtonLink onClick={onClose} size="normal" icon={<Close />} transparent />
+    {closable && <ButtonLink onClick={onClose} size="normal" icon={<Close />} transparent />}
   </CloseContainer>
 );
 
@@ -204,6 +210,8 @@ class Modal extends React.PureComponent<Props, State> {
   state = {
     scrolled: false,
     loaded: false,
+    fixedClose: false,
+    fullyScrolled: false,
   };
 
   componentDidMount() {
@@ -241,6 +249,11 @@ class Modal extends React.PureComponent<Props, State> {
     if (ev.target instanceof HTMLDivElement) {
       this.setState({
         scrolled: ev.target.scrollTop >= this.offset,
+        fixedClose: ev.target.scrollTop >= 1,
+        fullyScrolled:
+          this.props.fixedFooter &&
+          // set this state sooner than the exact end of the scroll (with 10 value)
+          ev.target.scrollTop >= ev.target.scrollHeight - ev.target.clientHeight - 10,
       });
     }
   }
@@ -279,8 +292,7 @@ class Modal extends React.PureComponent<Props, State> {
       fixedFooter = false,
       dataTest,
     } = this.props;
-    const { scrolled, loaded } = this.state;
-
+    const { scrolled, loaded, fixedClose, fullyScrolled } = this.state;
     return (
       <ModalBody
         tabIndex="0"
@@ -301,8 +313,10 @@ class Modal extends React.PureComponent<Props, State> {
             innerRef={node => {
               this.node = node;
             }}
+            fixedClose={fixedClose}
+            fullyScrolled={fullyScrolled}
           >
-            {closable && <CloseElement onClose={onClose} />}
+            <CloseElement onClose={onClose} closable={closable} />
             {children}
           </ModalWrapperContent>
         </ModalWrapper>

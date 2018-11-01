@@ -7,6 +7,8 @@ import ModalFooter from "./ModalFooter";
 export type State = {|
   scrolled: boolean,
   loaded: boolean,
+  fixedClose: boolean,
+  fullyScrolled: boolean,
 |};
 
 type Size = "small" | "normal" | "large";
@@ -22,6 +24,7 @@ type onClose = (
 
 export type CloseElementType = {
   +onClose?: onClose,
+  +closable?: boolean,
 };
 
 export type Props = {|

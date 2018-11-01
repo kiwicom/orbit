@@ -24,6 +24,7 @@ Table below contains all types of the props available in Textarea component.
 | onFocus       | `func`            |              | Function for handling onFocus event.
 | onBlur        | `func`            |              | Function for handling onBlur event.
 | placeholder   | `string`          |              | The placeholder of the Textarea.
+| ref           | `func`            |              | Prop for forwarded ref of the Textarea. [See Functional specs](#functional-specs)
 | resize        | [`enum`](#enum)   | `"vertical"` | The resize option for Textarea.
 | size          | [`enum`](#enum)   | `"normal"`   | The size of the Textarea.
 | value         | `string`          |              | Specifies the value of the Textarea.
@@ -40,3 +41,26 @@ Table below contains all types of the props available in Textarea component.
 * The `error` prop overwrites the `help` prop, due to higher priority.
 
 * The color of the label will turn into cloud shade when the Textarea has some filled value.
+
+* `ref` can be used for example auto-focus the elements immediately after render.
+```jsx
+class Component extends React.PureComponent<Props> {
+
+  constructor() {
+    super()
+    this.ref = React.createRef();
+  }
+  
+  componentDidMount() {
+    this.ref.current && this.ref.current.focus();
+  }
+
+  ref: { current: React$ElementRef<*> | null };
+
+  render() {
+    return (
+      <Textarea ref={this.ref} />
+    )
+  }
+}
+```

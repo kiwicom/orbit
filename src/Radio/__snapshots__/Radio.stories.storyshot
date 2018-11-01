@@ -105,7 +105,7 @@ exports[`Storyshots Radio Default 1`] = `
           >
             <input
               checked={false}
-              className="Radio__Input-fvWuwA ftXShs"
+              className="Radio__Input-fvWuwA cXMcJm"
               disabled={false}
               name={undefined}
               onChange={[Function]}
@@ -124,7 +124,7 @@ exports[`Storyshots Radio Default 1`] = `
               className="Radio__TextContainer-gTKRvD buEioY"
             >
               <span
-                className="Radio__LabelText-hQDDIn hdeiSK"
+                className="Radio__LabelText-hQDDIn eGnJck"
               >
                 Label
               </span>
@@ -396,7 +396,7 @@ exports[`Storyshots Radio Playground 1`] = `
           >
             <input
               checked={true}
-              className="Radio__Input-fvWuwA ftXShs"
+              className="Radio__Input-fvWuwA cXMcJm"
               disabled={true}
               name="name"
               onChange={[Function]}
@@ -415,7 +415,7 @@ exports[`Storyshots Radio Playground 1`] = `
               className="Radio__TextContainer-gTKRvD buEioY"
             >
               <span
-                className="Radio__LabelText-hQDDIn hdeiSK"
+                className="Radio__LabelText-hQDDIn eGnJck"
               >
                 Label
               </span>
@@ -738,6 +738,333 @@ exports[`Storyshots Radio Playground 1`] = `
 </div>
 `;
 
+exports[`Storyshots Radio With TextLink in label 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          With TextLink in label
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Additionally you can add info to this component.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            checked={true}
+            className="Radio__Label-bpjkjl iJHPXt"
+            data-test={undefined}
+          >
+            <input
+              checked={true}
+              className="Radio__Input-fvWuwA cXMcJm"
+              disabled={false}
+              name={undefined}
+              onChange={[Function]}
+              type="radio"
+              value="value"
+            />
+            <div
+              className="Radio__IconContainer-fQtsRf iUWTcU"
+            >
+              <span
+                className="Radio__Glyph-kyhivX cwaJth"
+                disabled={false}
+              />
+            </div>
+            <div
+              className="Radio__TextContainer-gTKRvD buEioY"
+            >
+              <span
+                className="Radio__LabelText-hQDDIn eGnJck"
+              >
+                <p
+                  className="Text__StyledText-guhEiE hYZMSR"
+                  data-test={undefined}
+                >
+                  Lorem ipsum dolor sit 
+                  <a
+                    className="TextLink__StyledTextLink-cKDOFV kwCwSq"
+                    data-test={undefined}
+                    href={undefined}
+                    onClick={undefined}
+                    rel={undefined}
+                    target={undefined}
+                  >
+                    amet
+                  </a>
+                  .
+                </p>
+              </span>
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      Radio
+                    </span>
+                    <span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                &lt;Text /&gt;
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          checked
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          value
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              value
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onChange
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                changed()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Radio With help 1`] = `
 <div
   style={
@@ -843,7 +1170,7 @@ exports[`Storyshots Radio With help 1`] = `
           >
             <input
               checked={false}
-              className="Radio__Input-fvWuwA ftXShs"
+              className="Radio__Input-fvWuwA cXMcJm"
               disabled={false}
               name={undefined}
               onChange={[Function]}
@@ -862,7 +1189,7 @@ exports[`Storyshots Radio With help 1`] = `
               className="Radio__TextContainer-gTKRvD buEioY"
             >
               <span
-                className="Radio__LabelText-hQDDIn hdeiSK"
+                className="Radio__LabelText-hQDDIn eGnJck"
               >
                 Label
               </span>

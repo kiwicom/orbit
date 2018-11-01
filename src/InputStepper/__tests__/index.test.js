@@ -1,11 +1,11 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { mount } from "enzyme";
 
 import InputStepper from "../index";
 import { SIZE_OPTIONS } from "../../InputField/consts";
 
-describe(`InputField with help, prefix and suffix`, () => {
+describe(`InputStepper with help, prefix and suffix`, () => {
   const size = SIZE_OPTIONS.NORMAL;
   const label = "Label";
   const defaultValue = 1;
@@ -21,7 +21,7 @@ describe(`InputField with help, prefix and suffix`, () => {
   const onFocus = jest.fn();
   const onBlur = jest.fn();
 
-  const component = shallow(
+  const component = mount(
     <InputStepper
       size={size}
       label={label}
@@ -40,12 +40,6 @@ describe(`InputField with help, prefix and suffix`, () => {
     />,
   );
   const input = component.find("InputField");
-  const InitialState = { value: 0 };
-
-  it("Initialize with the state", () => {
-    component.setState(InitialState);
-    expect(component.state()).toEqual(InitialState);
-  });
 
   it("should contain an input", () => {
     expect(input.exists()).toBe(true);
@@ -61,22 +55,6 @@ describe(`InputField with help, prefix and suffix`, () => {
     expect(input.prop("maxValue")).toBe(maxValue);
     expect(input.prop("minValue")).toBe(minValue);
     expect(input.prop("required")).toBe(required);
-  });
-
-  it("should execute onChange method", () => {
-    input.simulate("change");
-    expect(onChange).toHaveBeenCalled();
-  });
-
-  it("should execute onFocus method", () => {
-    input.simulate("focus");
-    expect(onFocus).toHaveBeenCalled();
-  });
-
-  it("should execute onBlur method", () => {
-    input.simulate("focus");
-    input.simulate("blur");
-    expect(onBlur).toHaveBeenCalled();
   });
 
   it("should match snapshot", () => {

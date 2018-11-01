@@ -8,7 +8,7 @@ import MinusCircle from "../icons/MinusCircle";
 import ButtonLink from "../ButtonLink";
 import InputField, { Input, Prefix } from "../InputField";
 
-import type { Props, State } from "./index";
+import type { Props, State, ForwardedRef } from "./index";
 
 const PrefixSuffix = styled(({ type, ...props }) => <div {...props} />)`
   flex-shrink: 0;
@@ -32,7 +32,7 @@ const StyledInputStepper = styled.div`
   }
 `;
 
-class InputStepper extends React.Component<Props, State> {
+class InputStepper extends React.Component<Props & ForwardedRef, State> {
   state = {
     value: this.props.defaultValue || 0,
   };
@@ -97,6 +97,7 @@ class InputStepper extends React.Component<Props, State> {
       maxValue,
       minValue,
       required,
+      forwardedRef,
     } = this.props;
     const { value } = this.state;
     return (
@@ -117,6 +118,7 @@ class InputStepper extends React.Component<Props, State> {
           value={value || 0}
           minValue={minValue}
           maxValue={maxValue}
+          ref={forwardedRef}
           prefix={
             <ButtonLink
               disabled={disabled || (!!minValue && value <= minValue)}
@@ -143,4 +145,11 @@ class InputStepper extends React.Component<Props, State> {
   }
 }
 
-export default InputStepper;
+// $FlowExpected
+const ForwardedInputStepper = React.forwardRef((props, ref) => (
+  <InputStepper forwardedRef={ref} {...props} />
+));
+
+ForwardedInputStepper.displayName = "InputStepper";
+
+export default ForwardedInputStepper;

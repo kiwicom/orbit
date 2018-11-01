@@ -1,8 +1,8 @@
 // @flow
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Ref } from "../common/common.js.flow";
 
 export type Props = {|
-  +label?: string,
+  +label?: React$Node,
   +value?: string,
   +hasError?: boolean,
   +disabled?: boolean,
@@ -11,6 +11,7 @@ export type Props = {|
   +info?: React$Node,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   ...Globals,
+  ...Ref,
 |};
 
 declare export default React$ComponentType<Props>;

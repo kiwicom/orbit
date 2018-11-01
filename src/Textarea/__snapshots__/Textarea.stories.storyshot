@@ -167,7 +167,7 @@ exports[`Storyshots Textarea Default 1`] = `
                       }
                     >
                       &lt;
-                      Textarea
+                      Unknown
                     </span>
                     <span>
                       <span>
@@ -456,7 +456,7 @@ exports[`Storyshots Textarea Playground 1`] = `
                       }
                     >
                       &lt;
-                      Textarea
+                      Unknown
                     </span>
                     <span>
                       <span>
@@ -1036,7 +1036,7 @@ exports[`Storyshots Textarea Small size 1`] = `
                       }
                     >
                       &lt;
-                      Textarea
+                      Unknown
                     </span>
                     <span>
                       <span>
@@ -1356,7 +1356,7 @@ exports[`Storyshots Textarea With error 1`] = `
                       }
                     >
                       &lt;
-                      Textarea
+                      Unknown
                     </span>
                     <span>
                       <span>
@@ -1676,7 +1676,7 @@ exports[`Storyshots Textarea With help 1`] = `
                       }
                     >
                       &lt;
-                      Textarea
+                      Unknown
                     </span>
                     <span>
                       <span>
@@ -1998,7 +1998,7 @@ exports[`Storyshots Textarea With label 1`] = `
                       }
                     >
                       &lt;
-                      Textarea
+                      Unknown
                     </span>
                     <span>
                       <span>

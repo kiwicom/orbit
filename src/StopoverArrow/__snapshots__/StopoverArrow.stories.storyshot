@@ -99,7 +99,7 @@ exports[`Storyshots StopoverArrow Playground 1`] = `
           }
         >
           <svg
-            className="StopoverArrow__StyledArrow-hmcoXe icaLRa"
+            className="StopoverArrow__StyledArrow-sc-19ccrmh-0 fERVLz"
             data-test="test"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 50 7"

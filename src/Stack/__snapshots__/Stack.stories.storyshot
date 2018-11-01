@@ -99,10 +99,10 @@ exports[`Storyshots Stack Default 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG fQiMEb"
+            className="Stack__StyledStack-sc-1t576ow-0 ePrho"
           >
             <button
-              className="Button__StyledButton-jJDkJK gvzoAw"
+              className="Button__StyledButton-sc-1brqp3f-2 eRjFPw"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -110,13 +110,13 @@ exports[`Storyshots Stack Default 1`] = `
               type="button"
             >
               <div
-                className="Button__StyledButtonContent-gvDciI pDqSF"
+                className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
               >
                 <div
-                  className="Button__IconContainer-bZYzaL jeCRLt"
+                  className="Button__IconContainer-sc-1brqp3f-0 equHRy"
                 >
                   <svg
-                    className="Icon__StyledIcon-ckyxIP fvqkFf"
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                     data-test={undefined}
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
@@ -130,7 +130,7 @@ exports[`Storyshots Stack Default 1`] = `
               </div>
             </button>
             <button
-              className="Button__StyledButton-jJDkJK gWGvWo"
+              className="Button__StyledButton-sc-1brqp3f-2 dXanGU"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -138,7 +138,7 @@ exports[`Storyshots Stack Default 1`] = `
               type="button"
             >
               <div
-                className="Button__StyledButtonContent-gvDciI pDqSF"
+                className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
               >
                 Button
               </div>
@@ -565,14 +565,14 @@ exports[`Storyshots Stack Desktop properties 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG eDhDqW"
+            className="Stack__StyledStack-sc-1t576ow-0 exulrx"
           >
             <label
-              className="InputField__Field-hAVqzR gZONT"
+              className="InputField__Field-sc-4opay-0 iedcUZ"
               data-test={undefined}
             >
               <span
-                className="FormLabel-kJFBRQ fuYBgg"
+                className="FormLabel-sc-1927civ-1 iTEGJS"
                 data-test={undefined}
               >
                 <span>
@@ -580,10 +580,10 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                 </span>
               </span>
               <div
-                className="InputField__InputContainer-evnRDD eKUgDu"
+                className="InputField__InputContainer-sc-4opay-2 ksKWcl"
               >
                 <input
-                  className="InputField__Input-iRjCvp jIplxp"
+                  className="InputField__Input-sc-4opay-6 fqqXrq"
                   disabled={undefined}
                   max={undefined}
                   maxLength={undefined}
@@ -601,18 +601,18 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                   value={undefined}
                 />
                 <div
-                  className="InputField__FakeInput-eneioc bIppVr"
+                  className="InputField__FakeInput-sc-4opay-1 ipxhgc"
                 />
               </div>
               <div
-                className="FormFeedback__StyledFormFeedback-cuFyWp hVyVwg"
+                className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
                 data-test={undefined}
               >
                 You need some help!
               </div>
             </label>
             <button
-              className="Button__StyledButton-jJDkJK cJCXhJ"
+              className="Button__StyledButton-sc-1brqp3f-2 cvEbYV"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -620,7 +620,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
               type="button"
             >
               <div
-                className="Button__StyledButtonContent-gvDciI pDqSF"
+                className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
               >
                 Sign In
               </div>
@@ -1108,10 +1108,10 @@ exports[`Storyshots Stack Mobile properties 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG fpFbKt"
+            className="Stack__StyledStack-sc-1t576ow-0 eBHfJg"
           >
             <button
-              className="Button__StyledButton-jJDkJK gvzoAw"
+              className="Button__StyledButton-sc-1brqp3f-2 eRjFPw"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -1119,13 +1119,13 @@ exports[`Storyshots Stack Mobile properties 1`] = `
               type="button"
             >
               <div
-                className="Button__StyledButtonContent-gvDciI pDqSF"
+                className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
               >
                 <div
-                  className="Button__IconContainer-bZYzaL jeCRLt"
+                  className="Button__IconContainer-sc-1brqp3f-0 equHRy"
                 >
                   <svg
-                    className="Icon__StyledIcon-ckyxIP fvqkFf"
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                     data-test={undefined}
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
@@ -1139,7 +1139,7 @@ exports[`Storyshots Stack Mobile properties 1`] = `
               </div>
             </button>
             <button
-              className="Button__StyledButton-jJDkJK gWGvWo"
+              className="Button__StyledButton-sc-1brqp3f-2 dXanGU"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -1147,7 +1147,7 @@ exports[`Storyshots Stack Mobile properties 1`] = `
               type="button"
             >
               <div
-                className="Button__StyledButtonContent-gvDciI pDqSF"
+                className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
               >
                 Button
               </div>
@@ -1834,19 +1834,19 @@ exports[`Storyshots Stack Nested example 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG bzieZt"
+            className="Stack__StyledStack-sc-1t576ow-0 dzjtdl"
           >
             <div
-              className="Stack__StyledStack-cGIpQG jANIke"
+              className="Stack__StyledStack-sc-1t576ow-0 fhwXZh"
             >
               <p
-                className="Text__StyledText-guhEiE bIsGZK"
+                className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
                 data-test={undefined}
               >
                 email@gmail.com
               </p>
               <svg
-                className="Icon__StyledIcon-ckyxIP jgdJUR"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 YpDIw"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -1857,14 +1857,14 @@ exports[`Storyshots Stack Nested example 1`] = `
               </svg>
             </div>
             <div
-              className="Stack__StyledStack-cGIpQG iQsLAl"
+              className="Stack__StyledStack-sc-1t576ow-0 itYfkg"
             >
               <label
-                className="InputField__Field-hAVqzR gZONT"
+                className="InputField__Field-sc-4opay-0 iedcUZ"
                 data-test={undefined}
               >
                 <span
-                  className="FormLabel-kJFBRQ fuYBgg"
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                   data-test={undefined}
                 >
                   <span>
@@ -1872,10 +1872,10 @@ exports[`Storyshots Stack Nested example 1`] = `
                   </span>
                 </span>
                 <div
-                  className="InputField__InputContainer-evnRDD khvnuZ"
+                  className="InputField__InputContainer-sc-4opay-2 bnDMxw"
                 >
                   <input
-                    className="InputField__Input-iRjCvp jIplxp"
+                    className="InputField__Input-sc-4opay-6 fqqXrq"
                     disabled={undefined}
                     max={undefined}
                     maxLength={undefined}
@@ -1893,18 +1893,18 @@ exports[`Storyshots Stack Nested example 1`] = `
                     value={undefined}
                   />
                   <div
-                    className="InputField__FakeInput-eneioc bAwLDi"
+                    className="InputField__FakeInput-sc-4opay-1 czVugR"
                   />
                 </div>
                 <div
-                  className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
+                  className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
                   data-test={undefined}
                 >
                   You need some help!
                 </div>
               </label>
               <button
-                className="Button__StyledButton-jJDkJK cJCXhJ"
+                className="Button__StyledButton-sc-1brqp3f-2 cvEbYV"
                 data-test={undefined}
                 disabled={undefined}
                 size="normal"
@@ -1912,18 +1912,18 @@ exports[`Storyshots Stack Nested example 1`] = `
                 type="button"
               >
                 <div
-                  className="Button__StyledButtonContent-gvDciI pDqSF"
+                  className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
                 >
                   Sign In
                 </div>
               </button>
             </div>
             <p
-              className="Text__StyledText-guhEiE ciBlqE"
+              className="Text__StyledText-sc-19qtt4y-0 efCYLv"
               data-test={undefined}
             >
               <a
-                className="TextLink__StyledTextLink-cKDOFV gmwCBw"
+                className="TextLink__StyledTextLink-sc-1bvlje4-1 lfTmsb"
                 data-test={undefined}
                 href={undefined}
                 onClick={undefined}
@@ -3005,10 +3005,10 @@ exports[`Storyshots Stack Playground 1`] = `
           }
         >
           <div
-            className="Stack__StyledStack-cGIpQG kqNAjL"
+            className="Stack__StyledStack-sc-1t576ow-0 kOaVAa"
           >
             <button
-              className="Button__StyledButton-jJDkJK kMRFdd"
+              className="Button__StyledButton-sc-1brqp3f-2 bLbnqm"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -3016,13 +3016,13 @@ exports[`Storyshots Stack Playground 1`] = `
               type="button"
             >
               <div
-                className="Button__StyledButtonContent-gvDciI pDqSF"
+                className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
               >
                 Sign In
               </div>
             </button>
             <button
-              className="Button__StyledButton-jJDkJK lfXYKc"
+              className="Button__StyledButton-sc-1brqp3f-2 jZEytI"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -3030,13 +3030,13 @@ exports[`Storyshots Stack Playground 1`] = `
               type="button"
             >
               <div
-                className="Button__StyledButtonContent-gvDciI pDqSF"
+                className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
               >
                 Sign In
               </div>
             </button>
             <button
-              className="Button__StyledButton-jJDkJK cJCXhJ"
+              className="Button__StyledButton-sc-1brqp3f-2 cvEbYV"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -3044,7 +3044,7 @@ exports[`Storyshots Stack Playground 1`] = `
               type="button"
             >
               <div
-                className="Button__StyledButtonContent-gvDciI pDqSF"
+                className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
               >
                 Sign In
               </div>

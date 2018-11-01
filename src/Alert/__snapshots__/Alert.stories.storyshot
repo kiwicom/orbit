@@ -99,15 +99,15 @@ exports[`Storyshots Alert Critical alert 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl eIeInu"
+            className="Alert__StyledAlert-svgppc-0 IuVUE"
             data-test={undefined}
           >
             <div
-              className="Alert__IconContainer-haMrUK gUzVST"
+              className="Alert__IconContainer-svgppc-1 hvtahT"
               data-test={undefined}
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -118,11 +118,11 @@ exports[`Storyshots Alert Critical alert 1`] = `
               </svg>
             </div>
             <div
-              className="Alert__ContentWrapper-jyINpB jgcPgw"
+              className="Alert__ContentWrapper-svgppc-2 gGclWN"
               data-test={undefined}
             >
               <div
-                className="Alert__Content-icgAru eaQhJq"
+                className="Alert__Content-svgppc-4 ldxfOm"
                 data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
@@ -409,15 +409,15 @@ exports[`Storyshots Alert Default 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl cerVel"
+            className="Alert__StyledAlert-svgppc-0 zpDId"
             data-test={undefined}
           >
             <div
-              className="Alert__ContentWrapper-jyINpB jgcPgw"
+              className="Alert__ContentWrapper-svgppc-2 gGclWN"
               data-test={undefined}
             >
               <div
-                className="Alert__Content-icgAru gJypIv"
+                className="Alert__Content-svgppc-4 eSbjeQ"
                 data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
@@ -639,15 +639,15 @@ exports[`Storyshots Alert Info alert 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl cerVel"
+            className="Alert__StyledAlert-svgppc-0 zpDId"
             data-test={undefined}
           >
             <div
-              className="Alert__IconContainer-haMrUK jvDZTe"
+              className="Alert__IconContainer-svgppc-1 KseVF"
               data-test={undefined}
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -658,11 +658,11 @@ exports[`Storyshots Alert Info alert 1`] = `
               </svg>
             </div>
             <div
-              className="Alert__ContentWrapper-jyINpB jgcPgw"
+              className="Alert__ContentWrapper-svgppc-2 gGclWN"
               data-test={undefined}
             >
               <div
-                className="Alert__Content-icgAru gJypIv"
+                className="Alert__Content-svgppc-4 eSbjeQ"
                 data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
@@ -922,15 +922,15 @@ exports[`Storyshots Alert Playground 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl cerVel"
+            className="Alert__StyledAlert-svgppc-0 zpDId"
             data-test="test"
           >
             <div
-              className="Alert__IconContainer-haMrUK jvDZTe"
+              className="Alert__IconContainer-svgppc-1 KseVF"
               data-test={undefined}
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -941,38 +941,38 @@ exports[`Storyshots Alert Playground 1`] = `
               </svg>
             </div>
             <div
-              className="Alert__ContentWrapper-jyINpB bMOMtO"
+              className="Alert__ContentWrapper-svgppc-2 iDwGVm"
               data-test={undefined}
             >
               <div
-                className="Alert__Title-duZNvF fOOBbl"
+                className="Alert__Title-svgppc-3 caZUNU"
                 data-test={undefined}
               >
                 You can change the title by changing the Title knob
               </div>
               <div
-                className="Alert__Content-icgAru ihKXoW"
+                className="Alert__Content-svgppc-4 gHGFTr"
                 data-test={undefined}
               >
                 <div
-                  className="Stack__StyledStack-cGIpQG jItTya"
+                  className="Stack__StyledStack-sc-1t576ow-0 jDBMrE"
                 >
                   <div>
                     Also you can change the message by changing the Message knob
                   </div>
                   <ul
-                    className="List__StyledList-fzpiIm detkQV"
+                    className="List__StyledList-iwilat-0 hOMCgN"
                     data-test={undefined}
                   >
                     <li
-                      className="ListItem__Item-bhWwBk eRQaxy"
+                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                       data-test={undefined}
                     >
                       <div
-                        className="ListItem__IconContainer-cWSXoS czCkQe"
+                        className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                       >
                         <svg
-                          className="Icon__StyledIcon-ckyxIP fvqkFf"
+                          className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                           data-test={undefined}
                           preserveAspectRatio="xMidYMid meet"
                           viewBox="0 0 24 24"
@@ -983,21 +983,21 @@ exports[`Storyshots Alert Playground 1`] = `
                         </svg>
                       </div>
                       <p
-                        className="Text__StyledText-guhEiE kfhEHZ"
+                        className="Text__StyledText-sc-19qtt4y-0 fTObxL"
                         data-test={undefined}
                       >
                         623 Kč will be refunded by your payment card
                       </p>
                     </li>
                     <li
-                      className="ListItem__Item-bhWwBk eRQaxy"
+                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                       data-test={undefined}
                     >
                       <div
-                        className="ListItem__IconContainer-cWSXoS czCkQe"
+                        className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                       >
                         <svg
-                          className="Icon__StyledIcon-ckyxIP fvqkFf"
+                          className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                           data-test={undefined}
                           preserveAspectRatio="xMidYMid meet"
                           viewBox="0 0 24 24"
@@ -1011,7 +1011,7 @@ exports[`Storyshots Alert Playground 1`] = `
                     </li>
                   </ul>
                   <a
-                    className="Button__StyledButton-jJDkJK kwbftt"
+                    className="Button__StyledButton-sc-1brqp3f-2 iOgXOA"
                     data-test={undefined}
                     disabled={undefined}
                     href="#"
@@ -1020,7 +1020,7 @@ exports[`Storyshots Alert Playground 1`] = `
                     type={undefined}
                   >
                     <div
-                      className="Button__StyledButtonContent-gvDciI pDqSF"
+                      className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
                     >
                       I am a link
                     </div>
@@ -2013,15 +2013,15 @@ Avoid using success banner if there is any follow-up action, for example, in cas
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl kgJWcz"
+            className="Alert__StyledAlert-svgppc-0 bDwccE"
             data-test={undefined}
           >
             <div
-              className="Alert__IconContainer-haMrUK kMFpuN"
+              className="Alert__IconContainer-svgppc-1 bMLsWh"
               data-test={undefined}
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -2032,11 +2032,11 @@ Avoid using success banner if there is any follow-up action, for example, in cas
               </svg>
             </div>
             <div
-              className="Alert__ContentWrapper-jyINpB jgcPgw"
+              className="Alert__ContentWrapper-svgppc-2 gGclWN"
               data-test={undefined}
             >
               <div
-                className="Alert__Content-icgAru kNgoPG"
+                className="Alert__Content-svgppc-4 QvZM"
                 data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.
@@ -2323,15 +2323,15 @@ exports[`Storyshots Alert Warning alert 1`] = `
           }
         >
           <div
-            className="Alert__StyledAlert-dqYNhl leZzlw"
+            className="Alert__StyledAlert-svgppc-0 huJVuL"
             data-test={undefined}
           >
             <div
-              className="Alert__IconContainer-haMrUK iInTvA"
+              className="Alert__IconContainer-svgppc-1 kwoCmP"
               data-test={undefined}
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -2342,11 +2342,11 @@ exports[`Storyshots Alert Warning alert 1`] = `
               </svg>
             </div>
             <div
-              className="Alert__ContentWrapper-jyINpB jgcPgw"
+              className="Alert__ContentWrapper-svgppc-2 gGclWN"
               data-test={undefined}
             >
               <div
-                className="Alert__Content-icgAru gFCHnU"
+                className="Alert__Content-svgppc-4 lgBeCK"
                 data-test={undefined}
               >
                 The quick, brown fox jumps over a lazy dog.

@@ -99,11 +99,11 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
           }
         >
           <div
-            className="ButtonGroup__StyledButtonGroup-dnkEba epdACx"
+            className="ButtonGroup__StyledButtonGroup-sc-82hrp5-0 juxKGv"
             data-test="test"
           >
             <button
-              className="ButtonLink__StyledButtonLink-eyUiPe jjxsUo"
+              className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 jaeMLb"
               data-test={undefined}
               onClick={undefined}
               size="normal"
@@ -111,11 +111,11 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
               type="button"
             >
               <div
-                className="ButtonLink__IconContainer-flENJD bpJpFt"
+                className="ButtonLink__IconContainer-sc-14jv5cl-0 dUgJth"
                 size="normal"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -128,7 +128,7 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
               Button
             </button>
             <button
-              className="ButtonLink__StyledButtonLink-eyUiPe kfKTsA"
+              className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 hDAgzm"
               data-test={undefined}
               onClick={undefined}
               size="normal"
@@ -136,11 +136,11 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
               type="button"
             >
               <div
-                className="ButtonLink__IconContainer-flENJD hNEbcs"
+                className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
                 size="normal"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -598,11 +598,11 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
           }
         >
           <div
-            className="ButtonGroup__StyledButtonGroup-dnkEba epdACx"
+            className="ButtonGroup__StyledButtonGroup-sc-82hrp5-0 juxKGv"
             data-test="test"
           >
             <button
-              className="Button__StyledButton-jJDkJK kLUGMC"
+              className="Button__StyledButton-sc-1brqp3f-2 iEUThJ"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -610,13 +610,13 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
               type="button"
             >
               <div
-                className="Button__StyledButtonContent-gvDciI pDqSF"
+                className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
               >
                 <div
-                  className="Button__IconContainer-bZYzaL jeCRLt"
+                  className="Button__IconContainer-sc-1brqp3f-0 equHRy"
                 >
                   <svg
-                    className="Icon__StyledIcon-ckyxIP fvqkFf"
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                     data-test={undefined}
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
@@ -630,7 +630,7 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
               </div>
             </button>
             <button
-              className="Button__StyledButton-jJDkJK jQMTRY"
+              className="Button__StyledButton-sc-1brqp3f-2 iXwGEP"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -638,13 +638,13 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
               type="button"
             >
               <div
-                className="Button__StyledButtonContent-gvDciI pDqSF"
+                className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
               >
                 <div
-                  className="Button__IconContainer-bZYzaL hAoIdO"
+                  className="Button__IconContainer-sc-1brqp3f-0 bmEqfX"
                 >
                   <svg
-                    className="Icon__StyledIcon-ckyxIP fvqkFf"
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                     data-test={undefined}
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"

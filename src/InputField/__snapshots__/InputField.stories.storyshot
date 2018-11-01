@@ -99,18 +99,18 @@ exports[`Storyshots InputField Compact input 1`] = `
           }
         >
           <label
-            className="InputField__Field-hAVqzR gZONT"
+            className="InputField__Field-sc-4opay-0 iedcUZ"
             data-test={undefined}
           >
             <div
-              className="InputField__InputContainer-evnRDD eKUgDu"
+              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <div
-                className="InputField__StyledInlineLabel-eVtavk fyqwml"
+                className="InputField__StyledInlineLabel-sc-4opay-3 ioszgv"
                 size="normal"
               >
                 <span
-                  className="FormLabel-kJFBRQ fuYBgg"
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                   data-test={undefined}
                 >
                   <span>
@@ -119,7 +119,7 @@ exports[`Storyshots InputField Compact input 1`] = `
                 </span>
               </div>
               <input
-                className="InputField__Input-iRjCvp jIplxp"
+                className="InputField__Input-sc-4opay-6 fqqXrq"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -137,7 +137,7 @@ exports[`Storyshots InputField Compact input 1`] = `
                 value=""
               />
               <div
-                className="InputField__FakeInput-eneioc bIppVr"
+                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
               />
             </div>
           </label>
@@ -512,11 +512,11 @@ exports[`Storyshots InputField Default input 1`] = `
           }
         >
           <label
-            className="InputField__Field-hAVqzR gZONT"
+            className="InputField__Field-sc-4opay-0 iedcUZ"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -524,10 +524,10 @@ exports[`Storyshots InputField Default input 1`] = `
               </span>
             </span>
             <div
-              className="InputField__InputContainer-evnRDD eKUgDu"
+              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-iRjCvp jIplxp"
+                className="InputField__Input-sc-4opay-6 fqqXrq"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -545,7 +545,7 @@ exports[`Storyshots InputField Default input 1`] = `
                 value=""
               />
               <div
-                className="InputField__FakeInput-eneioc bIppVr"
+                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
               />
             </div>
           </label>
@@ -847,11 +847,11 @@ exports[`Storyshots InputField Email input 1`] = `
           }
         >
           <label
-            className="InputField__Field-hAVqzR gZONT"
+            className="InputField__Field-sc-4opay-0 iedcUZ"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ irIxpQ"
+              className="FormLabel-sc-1927civ-1 bSnaNp"
               data-test={undefined}
             >
               <span>
@@ -859,10 +859,10 @@ exports[`Storyshots InputField Email input 1`] = `
               </span>
             </span>
             <div
-              className="InputField__InputContainer-evnRDD eKUgDu"
+              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-iRjCvp jIplxp"
+                className="InputField__Input-sc-4opay-6 fqqXrq"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -880,17 +880,17 @@ exports[`Storyshots InputField Email input 1`] = `
                 value="name@example.co"
               />
               <div
-                className="InputField__FakeInput-eneioc bIppVr"
+                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
               />
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp hVyVwg"
+              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
               data-test={undefined}
             >
               <div>
                 Did you mean 
                 <a
-                  className="TextLink__StyledTextLink-cKDOFV kwCwSq"
+                  className="TextLink__StyledTextLink-sc-1bvlje4-1 dFiGVo"
                   data-test={undefined}
                   href={undefined}
                   onClick={[Function]}
@@ -1262,11 +1262,11 @@ exports[`Storyshots InputField Number input 1`] = `
           }
         >
           <label
-            className="InputField__Field-hAVqzR gZONT"
+            className="InputField__Field-sc-4opay-0 iedcUZ"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ irIxpQ"
+              className="FormLabel-sc-1927civ-1 bSnaNp"
               data-test={undefined}
             >
               <span>
@@ -1274,10 +1274,10 @@ exports[`Storyshots InputField Number input 1`] = `
               </span>
             </span>
             <div
-              className="InputField__InputContainer-evnRDD eKUgDu"
+              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-iRjCvp jIplxp"
+                className="InputField__Input-sc-4opay-6 fqqXrq"
                 disabled={undefined}
                 max={3}
                 maxLength={undefined}
@@ -1295,7 +1295,7 @@ exports[`Storyshots InputField Number input 1`] = `
                 value={2}
               />
               <div
-                className="InputField__FakeInput-eneioc bIppVr"
+                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
               />
             </div>
           </label>
@@ -1690,11 +1690,11 @@ exports[`Storyshots InputField Password input 1`] = `
           }
         >
           <label
-            className="InputField__Field-hAVqzR gZONT"
+            className="InputField__Field-sc-4opay-0 iedcUZ"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ irIxpQ"
+              className="FormLabel-sc-1927civ-1 bSnaNp"
               data-test={undefined}
             >
               <span>
@@ -1702,10 +1702,10 @@ exports[`Storyshots InputField Password input 1`] = `
               </span>
             </span>
             <div
-              className="InputField__InputContainer-evnRDD eKUgDu"
+              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-iRjCvp jIplxp"
+                className="InputField__Input-sc-4opay-6 fqqXrq"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -1723,7 +1723,7 @@ exports[`Storyshots InputField Password input 1`] = `
                 value="p422W0rd"
               />
               <div
-                className="InputField__FakeInput-eneioc bIppVr"
+                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
               />
             </div>
           </label>
@@ -2055,11 +2055,11 @@ exports[`Storyshots InputField Playground 1`] = `
           }
         >
           <label
-            className="InputField__Field-hAVqzR gZONT"
+            className="InputField__Field-sc-4opay-0 iedcUZ"
             data-test="test"
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -2067,13 +2067,13 @@ exports[`Storyshots InputField Playground 1`] = `
               </span>
             </span>
             <div
-              className="InputField__InputContainer-evnRDD cirwSX"
+              className="InputField__InputContainer-sc-4opay-2 kXcsVj"
             >
               <div
-                className="InputField__Prefix-jLQUQe bsehFo"
+                className="InputField__Prefix-sc-4opay-4 cXHKcz"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -2084,7 +2084,7 @@ exports[`Storyshots InputField Playground 1`] = `
                 </svg>
               </div>
               <input
-                className="InputField__Input-iRjCvp cEKJBX"
+                className="InputField__Input-sc-4opay-6 gbyirn"
                 disabled={false}
                 max={undefined}
                 maxLength={undefined}
@@ -2102,10 +2102,10 @@ exports[`Storyshots InputField Playground 1`] = `
                 value=""
               />
               <div
-                className="InputField__Suffix-csEOAt fQSwTX"
+                className="InputField__Suffix-sc-4opay-5 jbPRBB"
               >
                 <button
-                  className="ButtonLink__StyledButtonLink-eyUiPe kdbeEm"
+                  className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 kUmrif"
                   data-test={undefined}
                   disabled={false}
                   onClick={[Function]}
@@ -2114,11 +2114,11 @@ exports[`Storyshots InputField Playground 1`] = `
                   type="button"
                 >
                   <div
-                    className="ButtonLink__IconContainer-flENJD SXYtt"
+                    className="ButtonLink__IconContainer-sc-14jv5cl-0 wiVgN"
                     size="small"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -2131,7 +2131,7 @@ exports[`Storyshots InputField Playground 1`] = `
                 </button>
               </div>
               <div
-                className="InputField__FakeInput-eneioc dlSlqu"
+                className="InputField__FakeInput-sc-4opay-1 iZbYiQ"
               />
             </div>
           </label>
@@ -2956,15 +2956,15 @@ exports[`Storyshots InputField Required field 1`] = `
           }
         >
           <label
-            className="InputField__Field-hAVqzR gZONT"
+            className="InputField__Field-sc-4opay-0 iedcUZ"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span
-                className="FormLabel__StyledAsterisk-hDiwkZ fQiOJe"
+                className="FormLabel__StyledAsterisk-sc-1927civ-0 jCXsSw"
               >
                 * 
               </span>
@@ -2973,10 +2973,10 @@ exports[`Storyshots InputField Required field 1`] = `
               </span>
             </span>
             <div
-              className="InputField__InputContainer-evnRDD eKUgDu"
+              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-iRjCvp jIplxp"
+                className="InputField__Input-sc-4opay-6 fqqXrq"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -2994,7 +2994,7 @@ exports[`Storyshots InputField Required field 1`] = `
                 value=""
               />
               <div
-                className="InputField__FakeInput-eneioc bIppVr"
+                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
               />
             </div>
           </label>
@@ -3307,11 +3307,11 @@ exports[`Storyshots InputField Small input 1`] = `
           }
         >
           <label
-            className="InputField__Field-hAVqzR gZONT"
+            className="InputField__Field-sc-4opay-0 iedcUZ"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -3319,10 +3319,10 @@ exports[`Storyshots InputField Small input 1`] = `
               </span>
             </span>
             <div
-              className="InputField__InputContainer-evnRDD cirwSX"
+              className="InputField__InputContainer-sc-4opay-2 kXcsVj"
             >
               <input
-                className="InputField__Input-iRjCvp cEKJBX"
+                className="InputField__Input-sc-4opay-6 gbyirn"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -3340,7 +3340,7 @@ exports[`Storyshots InputField Small input 1`] = `
                 value=""
               />
               <div
-                className="InputField__FakeInput-eneioc dlSlqu"
+                className="InputField__FakeInput-sc-4opay-1 iZbYiQ"
               />
             </div>
           </label>
@@ -3672,11 +3672,11 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
           }
         >
           <label
-            className="InputField__Field-hAVqzR gZONT"
+            className="InputField__Field-sc-4opay-0 iedcUZ"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -3684,10 +3684,10 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
               </span>
             </span>
             <div
-              className="InputField__InputContainer-evnRDD eKUgDu"
+              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-iRjCvp jIplxp"
+                className="InputField__Input-sc-4opay-6 fqqXrq"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -3705,10 +3705,10 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                 value=""
               />
               <div
-                className="InputField__Suffix-csEOAt jWXkdw"
+                className="InputField__Suffix-sc-4opay-5 jXQtRs"
               >
                 <button
-                  className="ButtonLink__StyledButtonLink-eyUiPe DORaW"
+                  className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE"
                   data-test={undefined}
                   onClick={[Function]}
                   size="normal"
@@ -3716,11 +3716,11 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                   type="button"
                 >
                   <div
-                    className="ButtonLink__IconContainer-flENJD hNEbcs"
+                    className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
                     size="normal"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -3733,7 +3733,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                 </button>
               </div>
               <div
-                className="InputField__FakeInput-eneioc bIppVr"
+                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
               />
             </div>
           </label>
@@ -4066,11 +4066,11 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
           }
         >
           <label
-            className="InputField__Field-hAVqzR gZONT"
+            className="InputField__Field-sc-4opay-0 iedcUZ"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -4078,13 +4078,13 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
               </span>
             </span>
             <div
-              className="InputField__InputContainer-evnRDD eKUgDu"
+              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <div
-                className="InputField__Prefix-jLQUQe kptaFf"
+                className="InputField__Prefix-sc-4opay-4 kZvirV"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -4095,7 +4095,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
                 </svg>
               </div>
               <input
-                className="InputField__Input-iRjCvp jIplxp"
+                className="InputField__Input-sc-4opay-6 fqqXrq"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -4113,7 +4113,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
                 value=""
               />
               <div
-                className="InputField__FakeInput-eneioc bIppVr"
+                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
               />
             </div>
           </label>
@@ -4446,11 +4446,11 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
           }
         >
           <label
-            className="InputField__Field-hAVqzR gZONT"
+            className="InputField__Field-sc-4opay-0 iedcUZ"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -4458,10 +4458,10 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
               </span>
             </span>
             <div
-              className="InputField__InputContainer-evnRDD eKUgDu"
+              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-iRjCvp jIplxp"
+                className="InputField__Input-sc-4opay-6 fqqXrq"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -4479,18 +4479,18 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
                 value=""
               />
               <div
-                className="InputField__Suffix-csEOAt jWXkdw"
+                className="InputField__Suffix-sc-4opay-5 jXQtRs"
               >
                 <img
                   alt="AirHelp"
-                  className="ServiceLogo__StyledServiceLogo-gXFeKU kHpmkD"
+                  className="ServiceLogo__StyledServiceLogo-sc-1ujs7cw-0 halGWp"
                   data-test={undefined}
                   src="//images.kiwi.com/logos/0x24/AirHelp.png"
                   srcSet="//images.kiwi.com/logos/0x48/AirHelp.png 2x"
                 />
               </div>
               <div
-                className="InputField__FakeInput-eneioc bIppVr"
+                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
               />
             </div>
           </label>
@@ -4823,11 +4823,11 @@ exports[`Storyshots InputField With text prefix 1`] = `
           }
         >
           <label
-            className="InputField__Field-hAVqzR gZONT"
+            className="InputField__Field-sc-4opay-0 iedcUZ"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -4835,15 +4835,15 @@ exports[`Storyshots InputField With text prefix 1`] = `
               </span>
             </span>
             <div
-              className="InputField__InputContainer-evnRDD eKUgDu"
+              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <div
-                className="InputField__Prefix-jLQUQe kptaFf"
+                className="InputField__Prefix-sc-4opay-4 kZvirV"
               >
                 $
               </div>
               <input
-                className="InputField__Input-iRjCvp jIplxp"
+                className="InputField__Input-sc-4opay-6 fqqXrq"
                 disabled={undefined}
                 max={undefined}
                 maxLength={undefined}
@@ -4861,7 +4861,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
                 value=""
               />
               <div
-                className="InputField__FakeInput-eneioc bIppVr"
+                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
               />
             </div>
           </label>

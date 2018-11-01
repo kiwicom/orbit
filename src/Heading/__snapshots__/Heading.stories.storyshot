@@ -99,7 +99,7 @@ exports[`Storyshots Heading Default 1`] = `
           }
         >
           <h1
-            className="Heading__StyledHeading-gucmUp dqcIYA"
+            className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
             data-test={undefined}
           >
             Orbit design system
@@ -327,7 +327,7 @@ exports[`Storyshots Heading Inverted heading 1`] = `
             }
           >
             <h1
-              className="Heading__StyledHeading-gucmUp jmAEds"
+              className="Heading__StyledHeading-sc-1b8cso5-0 wtWUZ"
               data-test={undefined}
             >
               Orbit design system
@@ -740,7 +740,7 @@ exports[`Storyshots Heading Playground 1`] = `
           }
         >
           <h2
-            className="Heading__StyledHeading-gucmUp jpPdrx"
+            className="Heading__StyledHeading-sc-1b8cso5-0 jWTWgE"
             data-test="test"
           >
             Orbit design system
@@ -1083,7 +1083,7 @@ exports[`Storyshots Heading Title 1 1`] = `
           }
         >
           <h1
-            className="Heading__StyledHeading-gucmUp dqcIYA"
+            className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
             data-test={undefined}
           >
             Orbit design system
@@ -1359,7 +1359,7 @@ exports[`Storyshots Heading Title 2 1`] = `
           }
         >
           <h2
-            className="Heading__StyledHeading-gucmUp eKGySM"
+            className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
             data-test={undefined}
           >
             Orbit design system
@@ -1635,7 +1635,7 @@ exports[`Storyshots Heading Title 3 1`] = `
           }
         >
           <h3
-            className="Heading__StyledHeading-gucmUp hgjEuM"
+            className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
             data-test={undefined}
           >
             Orbit design system
@@ -1911,7 +1911,7 @@ exports[`Storyshots Heading Title 4 1`] = `
           }
         >
           <h4
-            className="Heading__StyledHeading-gucmUp jNzjuq"
+            className="Heading__StyledHeading-sc-1b8cso5-0 kChVuk"
             data-test={undefined}
           >
             Orbit design system
@@ -2187,7 +2187,7 @@ exports[`Storyshots Heading Title Display 1`] = `
           }
         >
           <h1
-            className="Heading__StyledHeading-gucmUp jpPdrx"
+            className="Heading__StyledHeading-sc-1b8cso5-0 jWTWgE"
             data-test={undefined}
           >
             Orbit design system

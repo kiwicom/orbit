@@ -99,11 +99,11 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
           }
         >
           <div
-            className="InputGroup__StyledInputGroup-boKjnP dJzbyy"
+            className="InputGroup__StyledInputGroup-cyuwoi-3 fwEWQN"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -111,20 +111,20 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
               </span>
             </span>
             <div
-              className="InputGroup__StyledChildren-kSeqtV igoYWh"
+              className="InputGroup__StyledChildren-cyuwoi-1 dFOuKS"
             >
               <div
-                className="InputGroup__StyledChild-bpaCT eKlxAZ"
+                className="InputGroup__StyledChild-cyuwoi-2 dDOQUJ"
               >
                 <label
-                  className="InputField__Field-hAVqzR gZONT"
+                  className="InputField__Field-sc-4opay-0 iedcUZ"
                   data-test={undefined}
                 >
                   <div
-                    className="InputField__InputContainer-evnRDD eKUgDu"
+                    className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-iRjCvp jIplxp"
+                      className="InputField__Input-sc-4opay-6 fqqXrq"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -142,23 +142,23 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc bIppVr"
+                      className="InputField__FakeInput-sc-4opay-1 ipxhgc"
                     />
                   </div>
                 </label>
               </div>
               <div
-                className="InputGroup__StyledChild-bpaCT jLivMh"
+                className="InputGroup__StyledChild-cyuwoi-2 evMQAw"
               >
                 <label
-                  className="Select__Label-hzoCkw jhqIax"
+                  className="Select__Label-sc-6agypz-0 daIoOD"
                   data-test={undefined}
                 >
                   <div
-                    className="Select__SelectContainer-hisSov erDdbv"
+                    className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                   >
                     <select
-                      className="Select__StyledSelect-eyhbyk gWsPtR"
+                      className="Select__StyledSelect-sc-6agypz-1 opAdU"
                       disabled={false}
                       name={undefined}
                       onBlur={[Function]}
@@ -246,10 +246,10 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                       </option>
                     </select>
                     <div
-                      className="Select__SelectSuffix-klejCH cWjNSF"
+                      className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP fvqkFf"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -263,17 +263,17 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                 </label>
               </div>
               <div
-                className="InputGroup__StyledChild-bpaCT dHAcLQ"
+                className="InputGroup__StyledChild-cyuwoi-2 fDMlGe"
               >
                 <label
-                  className="InputField__Field-hAVqzR gZONT"
+                  className="InputField__Field-sc-4opay-0 iedcUZ"
                   data-test={undefined}
                 >
                   <div
-                    className="InputField__InputContainer-evnRDD eKUgDu"
+                    className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-iRjCvp jIplxp"
+                      className="InputField__Input-sc-4opay-6 fqqXrq"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -291,14 +291,14 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc bIppVr"
+                      className="InputField__FakeInput-sc-4opay-1 ipxhgc"
                     />
                   </div>
                 </label>
               </div>
             </div>
             <div
-              className="InputGroup__FakeGroup-hRQJuE gpPksd"
+              className="InputGroup__FakeGroup-cyuwoi-0 cIIoCJ"
             />
           </div>
         </div>
@@ -1167,28 +1167,28 @@ exports[`Storyshots InputGroup Phone number 1`] = `
           }
         >
           <div
-            className="InputGroup__StyledInputGroup-boKjnP jgBxYZ"
+            className="InputGroup__StyledInputGroup-cyuwoi-3 fxqIBW"
             data-test={undefined}
           >
             <div
-              className="InputGroup__StyledChildren-kSeqtV igoYWh"
+              className="InputGroup__StyledChildren-cyuwoi-1 dFOuKS"
             >
               <div
-                className="InputGroup__StyledChild-bpaCT iMHnHh"
+                className="InputGroup__StyledChild-cyuwoi-2 cpbNdl"
               >
                 <label
-                  className="Select__Label-hzoCkw jhqIax"
+                  className="Select__Label-sc-6agypz-0 daIoOD"
                   data-test={undefined}
                 >
                   <div
-                    className="Select__SelectContainer-hisSov erDdbv"
+                    className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                   >
                     <div
-                      className="Select__SelectPrefix-kcaQEZ Jyvcd"
+                      className="Select__SelectPrefix-sc-6agypz-3 gQduFD"
                     >
                       <img
                         alt="Anywhere"
-                        className="CountryFlag__StyledCountryFlag-cuUbfd jNdwdI"
+                        className="CountryFlag__StyledCountryFlag-h98fwe-0 gMcwUa"
                         data-test={undefined}
                         src="//images.kiwi.com/flags/24x0/flag-cz.jpg"
                         srcSet="//images.kiwi.com/flags/48x0/flag-cz.jpg 2x"
@@ -1196,7 +1196,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                       />
                     </div>
                     <select
-                      className="Select__StyledSelect-eyhbyk eqfQfw"
+                      className="Select__StyledSelect-sc-6agypz-1 cQXTBT"
                       disabled={false}
                       name={undefined}
                       onBlur={[Function]}
@@ -1218,10 +1218,10 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                       </option>
                     </select>
                     <div
-                      className="Select__SelectSuffix-klejCH cWjNSF"
+                      className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP fvqkFf"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -1235,17 +1235,17 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                 </label>
               </div>
               <div
-                className="InputGroup__StyledChild-bpaCT jLivMh"
+                className="InputGroup__StyledChild-cyuwoi-2 evMQAw"
               >
                 <label
-                  className="InputField__Field-hAVqzR gZONT"
+                  className="InputField__Field-sc-4opay-0 iedcUZ"
                   data-test={undefined}
                 >
                   <div
-                    className="InputField__InputContainer-evnRDD eKUgDu"
+                    className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-iRjCvp jIplxp"
+                      className="InputField__Input-sc-4opay-6 fqqXrq"
                       disabled={undefined}
                       max={undefined}
                       maxLength={11}
@@ -1263,17 +1263,17 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc bIppVr"
+                      className="InputField__FakeInput-sc-4opay-1 ipxhgc"
                     />
                   </div>
                 </label>
               </div>
             </div>
             <div
-              className="InputGroup__FakeGroup-hRQJuE cmbjzy"
+              className="InputGroup__FakeGroup-cyuwoi-0 iDDzCF"
             />
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
+              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
               data-test={undefined}
             >
               error
@@ -2040,11 +2040,11 @@ exports[`Storyshots InputGroup Playground 1`] = `
           }
         >
           <div
-            className="InputGroup__StyledInputGroup-boKjnP dJzbyy"
+            className="InputGroup__StyledInputGroup-cyuwoi-3 fwEWQN"
             data-test="test"
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -2052,20 +2052,20 @@ exports[`Storyshots InputGroup Playground 1`] = `
               </span>
             </span>
             <div
-              className="InputGroup__StyledChildren-kSeqtV igoYWh"
+              className="InputGroup__StyledChildren-cyuwoi-1 dFOuKS"
             >
               <div
-                className="InputGroup__StyledChild-bpaCT daJJeL"
+                className="InputGroup__StyledChild-cyuwoi-2 bgNOTt"
               >
                 <label
-                  className="Select__Label-hzoCkw jhqIax"
+                  className="Select__Label-sc-6agypz-0 daIoOD"
                   data-test={undefined}
                 >
                   <div
-                    className="Select__SelectContainer-hisSov erDdbv"
+                    className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                   >
                     <select
-                      className="Select__StyledSelect-eyhbyk gWsPtR"
+                      className="Select__StyledSelect-sc-6agypz-1 opAdU"
                       disabled={false}
                       name={undefined}
                       onBlur={[Function]}
@@ -2087,10 +2087,10 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       </option>
                     </select>
                     <div
-                      className="Select__SelectSuffix-klejCH cWjNSF"
+                      className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP fvqkFf"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -2104,17 +2104,17 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 </label>
               </div>
               <div
-                className="InputGroup__StyledChild-bpaCT jLivMh"
+                className="InputGroup__StyledChild-cyuwoi-2 evMQAw"
               >
                 <label
-                  className="InputField__Field-hAVqzR gZONT"
+                  className="InputField__Field-sc-4opay-0 iedcUZ"
                   data-test={undefined}
                 >
                   <div
-                    className="InputField__InputContainer-evnRDD eKUgDu"
+                    className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-iRjCvp jIplxp"
+                      className="InputField__Input-sc-4opay-6 fqqXrq"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -2132,23 +2132,23 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc bIppVr"
+                      className="InputField__FakeInput-sc-4opay-1 ipxhgc"
                     />
                   </div>
                 </label>
               </div>
               <div
-                className="InputGroup__StyledChild-bpaCT frCGBA"
+                className="InputGroup__StyledChild-cyuwoi-2 jkIxV"
               >
                 <label
-                  className="Select__Label-hzoCkw jhqIax"
+                  className="Select__Label-sc-6agypz-0 daIoOD"
                   data-test={undefined}
                 >
                   <div
-                    className="Select__SelectContainer-hisSov erDdbv"
+                    className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                   >
                     <select
-                      className="Select__StyledSelect-eyhbyk gWsPtR"
+                      className="Select__StyledSelect-sc-6agypz-1 opAdU"
                       disabled={false}
                       name={undefined}
                       onBlur={[Function]}
@@ -2170,10 +2170,10 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       </option>
                     </select>
                     <div
-                      className="Select__SelectSuffix-klejCH cWjNSF"
+                      className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP fvqkFf"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -2187,17 +2187,17 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 </label>
               </div>
               <div
-                className="InputGroup__StyledChild-bpaCT ifkQYU"
+                className="InputGroup__StyledChild-cyuwoi-2 fCErSP"
               >
                 <label
-                  className="InputField__Field-hAVqzR gZONT"
+                  className="InputField__Field-sc-4opay-0 iedcUZ"
                   data-test={undefined}
                 >
                   <div
-                    className="InputField__InputContainer-evnRDD eKUgDu"
+                    className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-iRjCvp jIplxp"
+                      className="InputField__Input-sc-4opay-6 fqqXrq"
                       disabled={undefined}
                       max={undefined}
                       maxLength={undefined}
@@ -2215,14 +2215,14 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       value={undefined}
                     />
                     <div
-                      className="InputField__FakeInput-eneioc bIppVr"
+                      className="InputField__FakeInput-sc-4opay-1 ipxhgc"
                     />
                   </div>
                 </label>
               </div>
             </div>
             <div
-              className="InputGroup__FakeGroup-hRQJuE gpPksd"
+              className="InputGroup__FakeGroup-cyuwoi-0 cIIoCJ"
             />
           </div>
         </div>

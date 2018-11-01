@@ -99,12 +99,12 @@ exports[`Storyshots InputFile Default 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE erafpp"
+            className="InputFile__Field-sc-12oq9bq-0 fshpwe"
             data-test={undefined}
           >
             <input
               accept={undefined}
-              className="InputFile__Input-kmcYZq bAMqeX"
+              className="InputFile__Input-sc-12oq9bq-2 jotmqH"
               name={undefined}
               onBlur={[Function]}
               onChange={[Function]}
@@ -112,7 +112,7 @@ exports[`Storyshots InputFile Default 1`] = `
               type="file"
             />
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -120,10 +120,10 @@ exports[`Storyshots InputFile Default 1`] = `
               </span>
             </span>
             <div
-              className="InputFile__FakeInput-djykOY ciTDoB"
+              className="InputFile__FakeInput-sc-12oq9bq-1 gWZvnQ"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-2 eGVtPn"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"
@@ -131,13 +131,13 @@ exports[`Storyshots InputFile Default 1`] = `
                 type="button"
               >
                 <div
-                  className="Button__StyledButtonContent-gvDciI pDqSF"
+                  className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL jNewdH"
+                    className="Button__IconContainer-sc-1brqp3f-0 biYVFt"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -151,7 +151,7 @@ exports[`Storyshots InputFile Default 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-emwhFr gYVKT"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 pKPWD"
               >
                 No file selected
               </div>
@@ -488,12 +488,12 @@ exports[`Storyshots InputFile Filled with file 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE erafpp"
+            className="InputFile__Field-sc-12oq9bq-0 fshpwe"
             data-test={undefined}
           >
             <input
               accept={undefined}
-              className="InputFile__Input-kmcYZq bAMqeX"
+              className="InputFile__Input-sc-12oq9bq-2 jotmqH"
               name={undefined}
               onBlur={[Function]}
               onChange={[Function]}
@@ -501,7 +501,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
               type="file"
             />
             <span
-              className="FormLabel-kJFBRQ irIxpQ"
+              className="FormLabel-sc-1927civ-1 bSnaNp"
               data-test={undefined}
             >
               <span>
@@ -509,10 +509,10 @@ exports[`Storyshots InputFile Filled with file 1`] = `
               </span>
             </span>
             <div
-              className="InputFile__FakeInput-djykOY ciTDoB"
+              className="InputFile__FakeInput-sc-12oq9bq-1 gWZvnQ"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-2 eGVtPn"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"
@@ -520,13 +520,13 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                 type="button"
               >
                 <div
-                  className="Button__StyledButtonContent-gvDciI pDqSF"
+                  className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL jNewdH"
+                    className="Button__IconContainer-sc-1brqp3f-0 biYVFt"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -540,12 +540,12 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-emwhFr ivsTxQ"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 fYyhxF"
               >
                 file.png
               </div>
               <button
-                className="InputFile__CloseButton-izWrBg gSjPGz ButtonLink__StyledButtonLink-eyUiPe izGXzt"
+                className="InputFile__CloseButton-sc-12oq9bq-5 gjeIqY ButtonLink__StyledButtonLink-sc-14jv5cl-2 cPWzYm"
                 data-test={undefined}
                 onClick={[Function]}
                 size="normal"
@@ -553,11 +553,11 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                 type="button"
               >
                 <div
-                  className="ButtonLink__IconContainer-flENJD hNEbcs"
+                  className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
                   size="normal"
                 >
                   <svg
-                    className="Icon__StyledIcon-ckyxIP fvqkFf"
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                     data-test={undefined}
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
@@ -931,7 +931,7 @@ exports[`Storyshots InputFile Playground 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE erafpp"
+            className="InputFile__Field-sc-12oq9bq-0 fshpwe"
             data-test="test"
           >
             <input
@@ -941,7 +941,7 @@ exports[`Storyshots InputFile Playground 1`] = `
                   "image/*",
                 ]
               }
-              className="InputFile__Input-kmcYZq bAMqeX"
+              className="InputFile__Input-sc-12oq9bq-2 jotmqH"
               name="fileInput"
               onBlur={[Function]}
               onChange={[Function]}
@@ -949,7 +949,7 @@ exports[`Storyshots InputFile Playground 1`] = `
               type="file"
             />
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -957,10 +957,10 @@ exports[`Storyshots InputFile Playground 1`] = `
               </span>
             </span>
             <div
-              className="InputFile__FakeInput-djykOY dilRac"
+              className="InputFile__FakeInput-sc-12oq9bq-1 hshmn"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-2 eGVtPn"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"
@@ -968,13 +968,13 @@ exports[`Storyshots InputFile Playground 1`] = `
                 type="button"
               >
                 <div
-                  className="Button__StyledButtonContent-gvDciI pDqSF"
+                  className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL jNewdH"
+                    className="Button__IconContainer-sc-1brqp3f-0 biYVFt"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -988,13 +988,13 @@ exports[`Storyshots InputFile Playground 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-emwhFr fWBHbH"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 iFFyDx"
               >
                 No file has been selected yet
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
+              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
               data-test={undefined}
             >
               No file has been selected yet
@@ -1600,12 +1600,12 @@ exports[`Storyshots InputFile With error 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE erafpp"
+            className="InputFile__Field-sc-12oq9bq-0 fshpwe"
             data-test={undefined}
           >
             <input
               accept={undefined}
-              className="InputFile__Input-kmcYZq bAMqeX"
+              className="InputFile__Input-sc-12oq9bq-2 jotmqH"
               name={undefined}
               onBlur={[Function]}
               onChange={[Function]}
@@ -1613,7 +1613,7 @@ exports[`Storyshots InputFile With error 1`] = `
               type="file"
             />
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -1621,10 +1621,10 @@ exports[`Storyshots InputFile With error 1`] = `
               </span>
             </span>
             <div
-              className="InputFile__FakeInput-djykOY dilRac"
+              className="InputFile__FakeInput-sc-12oq9bq-1 hshmn"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-2 eGVtPn"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"
@@ -1632,13 +1632,13 @@ exports[`Storyshots InputFile With error 1`] = `
                 type="button"
               >
                 <div
-                  className="Button__StyledButtonContent-gvDciI pDqSF"
+                  className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL jNewdH"
+                    className="Button__IconContainer-sc-1brqp3f-0 biYVFt"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -1652,13 +1652,13 @@ exports[`Storyshots InputFile With error 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-emwhFr fWBHbH"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 iFFyDx"
               >
                 No file selected
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
+              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
               data-test={undefined}
             >
               Error message (explain how to solve it)
@@ -2025,12 +2025,12 @@ exports[`Storyshots InputFile With help 1`] = `
           }
         >
           <label
-            className="InputFile__Field-jAueAE erafpp"
+            className="InputFile__Field-sc-12oq9bq-0 fshpwe"
             data-test={undefined}
           >
             <input
               accept={undefined}
-              className="InputFile__Input-kmcYZq bAMqeX"
+              className="InputFile__Input-sc-12oq9bq-2 jotmqH"
               name={undefined}
               onBlur={[Function]}
               onChange={[Function]}
@@ -2038,7 +2038,7 @@ exports[`Storyshots InputFile With help 1`] = `
               type="file"
             />
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -2046,10 +2046,10 @@ exports[`Storyshots InputFile With help 1`] = `
               </span>
             </span>
             <div
-              className="InputFile__FakeInput-djykOY ciTDoB"
+              className="InputFile__FakeInput-sc-12oq9bq-1 gWZvnQ"
             >
               <div
-                className="InputFile__InputButton-bqfftf dHqZwO Button__StyledButton-jJDkJK kzVbPD"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-2 eGVtPn"
                 data-test={undefined}
                 disabled={undefined}
                 size="small"
@@ -2057,13 +2057,13 @@ exports[`Storyshots InputFile With help 1`] = `
                 type="button"
               >
                 <div
-                  className="Button__StyledButtonContent-gvDciI pDqSF"
+                  className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
                 >
                   <div
-                    className="Button__IconContainer-bZYzaL jNewdH"
+                    className="Button__IconContainer-sc-1brqp3f-0 biYVFt"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -2077,13 +2077,13 @@ exports[`Storyshots InputFile With help 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-emwhFr gYVKT"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 pKPWD"
               >
                 No file selected
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp hVyVwg"
+              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
               data-test={undefined}
             >
               <div>

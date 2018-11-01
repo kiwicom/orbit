@@ -99,7 +99,7 @@ exports[`Storyshots ButtonLink Circled 1`] = `
           }
         >
           <button
-            className="ButtonLink__StyledButtonLink-eyUiPe fpNoit"
+            className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 dJrjPy"
             data-test={undefined}
             onClick={[Function]}
             size="large"
@@ -107,11 +107,11 @@ exports[`Storyshots ButtonLink Circled 1`] = `
             type="button"
           >
             <div
-              className="ButtonLink__IconContainer-flENJD hNEbcs"
+              className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
               size="large"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -432,7 +432,7 @@ exports[`Storyshots ButtonLink Default 1`] = `
           }
         >
           <a
-            className="ButtonLink__StyledButtonLink-eyUiPe czlUus"
+            className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 mSknQ"
             data-test={undefined}
             href="https://kiwi.com"
             onClick={undefined}
@@ -686,7 +686,7 @@ exports[`Storyshots ButtonLink Playground 1`] = `
           }
         >
           <button
-            className="ButtonLink__StyledButtonLink-eyUiPe cqwhBD"
+            className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 eLlCgZ"
             data-test="test"
             disabled={false}
             href=""
@@ -696,11 +696,11 @@ exports[`Storyshots ButtonLink Playground 1`] = `
             type="button"
           >
             <div
-              className="ButtonLink__IconContainer-flENJD jrcjib"
+              className="ButtonLink__IconContainer-sc-14jv5cl-0 WxqtO"
               size="large"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -712,11 +712,11 @@ exports[`Storyshots ButtonLink Playground 1`] = `
             </div>
             ButtonLink
             <div
-              className="ButtonLink__IconContainerRight-hJSKvX ftbQzY ButtonLink__IconContainer-flENJD jrcjib"
+              className="ButtonLink__IconContainerRight-sc-14jv5cl-1 UDEGj ButtonLink__IconContainer-sc-14jv5cl-0 WxqtO"
               size="large"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -1250,7 +1250,7 @@ exports[`Storyshots ButtonLink Secondary 1`] = `
           }
         >
           <a
-            className="ButtonLink__StyledButtonLink-eyUiPe klwrPH"
+            className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 biTQRn"
             data-test={undefined}
             href="https://kiwi.com"
             onClick={undefined}

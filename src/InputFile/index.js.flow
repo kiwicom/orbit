@@ -1,20 +1,21 @@
 // @flow
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Ref } from "../common/common.js.flow";
 
 export type Props = {|
-  label?: string,
-  title?: string,
-  name?: string,
-  placeholder?: string,
-  fileName?: string,
-  allowedFileTypes?: string | string[],
-  help?: React$Node,
-  error?: React$Node,
-  onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
-  onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
-  onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
-  onRemoveFile?: () => void | Promise<any>,
   ...Globals,
+  +label?: string,
+  +title?: string,
+  +name?: string,
+  +placeholder?: string,
+  +fileName?: string,
+  +allowedFileTypes?: string | string[],
+  +help?: React$Node,
+  +error?: React$Node,
+  +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onRemoveFile?: () => void | Promise<any>,
+  ref?: Ref,
 |};
 
 declare export default React$ComponentType<Props>;

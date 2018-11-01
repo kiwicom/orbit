@@ -2,3 +2,9 @@
 export type Globals = {|
   +dataTest?: string,
 |};
+
+export type RefType = () => { current: ?HTMLElement };
+
+export type Ref = {|
+  +ref?: RefType,
+|};

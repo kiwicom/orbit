@@ -1,5 +1,5 @@
 // @flow
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Ref } from "../common/common.js.flow";
 
 export type Size = "small" | "normal";
 
@@ -27,6 +27,7 @@ export type Props = {|
   +onKeyDown?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
   +onKeyUp?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
   ...Globals,
+  ...Ref,
 |};
 
 declare export var FakeInput: React$ComponentType<>;

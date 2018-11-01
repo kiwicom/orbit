@@ -945,10 +945,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.1.3.tgz#b700d97385fa91affed60c71dfd51c67e9dad762"
   integrity sha512-QsYGKdhhuDFNq7bjm2r44y0mp5xW3uO3csuTPDWZc0OIiMQv+AIY5Cqwd4mJiC5N8estVl7qlvOx1hbtOuUWbw==
 
-"@kiwicom/orbit-design-tokens@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.2.1.tgz#dd9020a2ab0321ac75c62f3ba061f2628268e2d0"
-  integrity sha512-qNeWeqQUIzUP7vIOzoF4oF+XLmIV4MQNduGN97ctP7ie+e3NpC1qrEqGevvA2DSVsZ3WpKbkvlrJivy2cFKhKg==
+"@kiwicom/orbit-design-tokens@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.2.3.tgz#6908444e380101c64ea9eab42e3b81f6d53e143e"
+  integrity sha512-QLyBoljlPdUDkp/jaG7cIFLinXsMF0vjZGdjVGMxAVlFd/Gl/upd0qDHnfJK/opybo1hkavb14fNZ0b6t8TTaw==
 
 "@storybook/addon-actions@4.0.0-alpha.24":
   version "4.0.0-alpha.24"

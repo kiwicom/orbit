@@ -3,7 +3,7 @@ import * as React from "react";
 import { shallow } from "enzyme";
 
 import Modal from "../index";
-import SIZES from "../consts";
+import { SIZES, CLOSE_BUTTON_DATA_TEST } from "../consts";
 import ModalHeader from "../ModalHeader";
 import ModalSection from "../ModalSection";
 import ModalFooter from "../ModalFooter";
@@ -54,11 +54,11 @@ describe(`Large Modal`, () => {
       </ModalFooter>
     </Modal>,
   );
-
   const modalWrapper = component.find("Modal__ModalWrapper");
   const modalHeader = component.find("ModalHeader");
   const modalSection = component.find("ModalSection");
   const modalFooter = component.find("ModalFooter");
+  const closeButton = component.find("Modal__CloseContainer").find("ButtonLink");
 
   it("should have passed props", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
@@ -74,6 +74,12 @@ describe(`Large Modal`, () => {
     expect(modalFooter.render().prop("data-test")).toBe(dataTest);
     expect(modalHeader.render().prop("data-test")).toBe(dataTest);
     expect(modalSection.render().prop("data-test")).toBe(dataTest);
+  });
+
+  it("close button should have dataTest", () => {
+    expect(closeButton.prop("dataTest")).toBe(CLOSE_BUTTON_DATA_TEST);
+    closeButton.simulate("click");
+    expect(onClose).toHaveBeenCalled();
   });
 
   it("should match snapshot", () => {

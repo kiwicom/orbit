@@ -8961,6 +8961,7 @@ exports[`Storyshots Card RTL 1`] = `
             >
               <button
                 className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 dUmcHu"
+                data-test="CardCloseButton"
                 onClick={[Function]}
                 size="small"
                 type="button"

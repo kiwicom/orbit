@@ -151,7 +151,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                 className="InputGroup__StyledChild-bpaCT jLivMh"
               >
                 <label
-                  className="Select__Label-hzoCkw fshYAU"
+                  className="Select__Label-hzoCkw jhqIax"
                   data-test={undefined}
                 >
                   <div
@@ -1177,7 +1177,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                 className="InputGroup__StyledChild-bpaCT iMHnHh"
               >
                 <label
-                  className="Select__Label-hzoCkw fshYAU"
+                  className="Select__Label-hzoCkw jhqIax"
                   data-test={undefined}
                 >
                   <div
@@ -2058,7 +2058,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 className="InputGroup__StyledChild-bpaCT daJJeL"
               >
                 <label
-                  className="Select__Label-hzoCkw fshYAU"
+                  className="Select__Label-hzoCkw jhqIax"
                   data-test={undefined}
                 >
                   <div
@@ -2141,7 +2141,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 className="InputGroup__StyledChild-bpaCT frCGBA"
               >
                 <label
-                  className="Select__Label-hzoCkw fshYAU"
+                  className="Select__Label-hzoCkw jhqIax"
                   data-test={undefined}
                 >
                   <div

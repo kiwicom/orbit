@@ -16,9 +16,19 @@ exports[`Portal with element should match snapshot 2`] = `
 <Portal
   element="portal"
 >
-  <p>
-    Content
-  </p>
+  <Portal
+    containerInfo={
+      <div>
+        <p>
+          Content
+        </p>
+      </div>
+    }
+  >
+    <p>
+      Content
+    </p>
+  </Portal>
 </Portal>
 `;
 
@@ -28,18 +38,28 @@ exports[`Portal with element unmouted, should match snapshot 1`] = `
 />
 `;
 
-exports[`Portal with element unmouted, should match snapshot 2`] = `""`;
+exports[`Portal with element unmouted, should match snapshot 2`] = `null`;
 
 exports[`Portal without element should match snapshot 1`] = `null`;
 
 exports[`Portal without element should match snapshot 2`] = `
 <Portal>
-  <p>
-    Content
-  </p>
+  <Portal
+    containerInfo={
+      <div>
+        <p>
+          Content
+        </p>
+      </div>
+    }
+  >
+    <p>
+      Content
+    </p>
+  </Portal>
 </Portal>
 `;
 
 exports[`Portal without element unmouted, should match snapshot 1`] = `null`;
 
-exports[`Portal without element unmouted, should match snapshot 2`] = `""`;
+exports[`Portal without element unmouted, should match snapshot 2`] = `null`;

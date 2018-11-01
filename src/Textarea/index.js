@@ -6,6 +6,7 @@ import defaultTokens from "../defaultTokens";
 import FormFeedback from "../FormFeedback";
 import FormLabel from "../FormLabel";
 import { SIZE_OPTIONS, RESIZE_OPTIONS, TOKENS } from "./consts";
+import type { Ref } from "../common/common.js.flow";
 
 import type { Props } from "./index";
 
@@ -95,7 +96,8 @@ StyledTextArea.defaultProps = {
   theme: defaultTokens,
 };
 
-const Textarea = (props: Props) => {
+// $FlowExpected
+const Textarea = React.forwardRef((props: Props, ref: Ref) => {
   const {
     size = SIZE_OPTIONS.NORMAL,
     disabled,
@@ -123,11 +125,14 @@ const Textarea = (props: Props) => {
         onFocus={props.onFocus}
         onBlur={props.onBlur}
         resize={resize}
+        innerRef={ref}
       />
       {props.help && !props.error && <FormFeedback type="help">{props.help}</FormFeedback>}
       {props.error && <FormFeedback type="error">{props.error}</FormFeedback>}
     </Field>
   );
-};
+});
+
+Textarea.display = "Textarea";
 
 export default Textarea;

@@ -1,9 +1,10 @@
 // @flow
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Ref, RefType } from "../common/common.js.flow";
 import type { Size } from "../InputField/index";
 
 export type Props = {|
   ...Globals,
+  ...Ref,
   +size?: Size,
   +label?: string,
   +defaultValue?: number,
@@ -23,5 +24,9 @@ export type Props = {|
 export type State = {|
   value: number,
 |};
+
+export type ForwardedRef = {
+  +forwardedRef: RefType,
+};
 
 declare export default React$ComponentType<Props>;

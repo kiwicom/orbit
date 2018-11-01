@@ -596,6 +596,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                   onKeyDown={undefined}
                   onKeyUp={undefined}
                   placeholder={undefined}
+                  size="normal"
                   type="password"
                   value={undefined}
                 />
@@ -1887,6 +1888,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                     onKeyDown={undefined}
                     onKeyUp={undefined}
                     placeholder={undefined}
+                    size="normal"
                     type="password"
                     value={undefined}
                   />

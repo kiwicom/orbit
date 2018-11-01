@@ -16,4 +16,5 @@ type ShapedStyles = $Shape<ExactStyles>;
 export type Style = {|
   ...ShapedStyles,
   +borderWidth?: number | AnimatedNode | string,
+  +lineHeight?: number | string,
 |};

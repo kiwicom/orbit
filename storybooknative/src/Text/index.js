@@ -2,7 +2,7 @@
 import * as React from "react";
 import { Text as RNText } from "react-native";
 
-import styled from "../styled";
+import styled, { lineHeight } from "../styled";
 import defaultTokens from "../defaultTokens";
 import { TYPE_OPTIONS, WEIGHT_OPTIONS, ALIGN_OPTIONS, SIZE_OPTIONS } from "./consts";
 
@@ -43,7 +43,7 @@ const StyledText = styled(RNText, props => ({
   fontSize: getSizeToken(props),
   fontWeight: getWeightToken(props),
   color: getTypeToken(props),
-  lineHeight: props.theme.orbit.lineHeightText,
+  lineHeight: lineHeight(getSizeToken(props), props.theme.orbit.lineHeightText),
   textAlign: props.align,
   textTransform: props.uppercase ? `uppercase` : `none`,
   fontStyle: props.italic ? `italic` : `normal`,

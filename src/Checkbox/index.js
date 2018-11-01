@@ -5,6 +5,7 @@ import styled from "styled-components";
 import defaultTokens from "../defaultTokens";
 import TOKENS from "./consts";
 import Check from "../icons/Check";
+import { StyledText } from "../Text";
 
 import type { Props } from "./index";
 
@@ -75,6 +76,13 @@ const LabelText = styled.span`
   font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
   color: ${({ theme }) => theme.orbit.colorFormLabel};
   line-height: ${({ theme }) => theme.orbit.heightCheckbox};
+
+  ${StyledText} {
+    font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
+    font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
+    color: ${({ theme }) => theme.orbit.colorFormLabel};
+    line-height: ${({ theme }) => theme.orbit.heightCheckbox};
+  }
 `;
 
 LabelText.defaultProps = {
@@ -87,6 +95,9 @@ const Input = styled.input`
 
   &:checked ~ ${TextContainer} > ${LabelText} {
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
+    & > ${StyledText} {
+      font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
+    }
   }
 
   &:checked + ${IconContainer} > svg {

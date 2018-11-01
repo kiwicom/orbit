@@ -6,6 +6,9 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean } from "@storybook/addon-knobs/react";
 
+import Text from "../Text";
+import TextLink from "../TextLink";
+
 import Radio from "./index";
 
 setAddon(chaptersAddon);
@@ -47,6 +50,33 @@ storiesOf("Radio", module)
             {
               sectionFn: () => (
                 <Radio label={label} value={value} info={info} onChange={action("changed")} />
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("With TextLink in label", () => {
+    const checked = boolean("checked", true);
+    return {
+      info: "Additionally you can add info to this component.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Radio
+                  label={
+                    <Text>
+                      Lorem ipsum dolor sit&nbsp;
+                      <TextLink>amet</TextLink>.
+                    </Text>
+                  }
+                  checked={checked}
+                  value="value"
+                  onChange={action("changed")}
+                />
               ),
             },
           ],

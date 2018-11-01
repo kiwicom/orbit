@@ -104,7 +104,7 @@ exports[`Storyshots CheckBox Default 1`] = `
           >
             <input
               checked={false}
-              className="Checkbox__Input-dtRIkE eevIXv"
+              className="Checkbox__Input-dtRIkE gKfoaX"
               disabled={false}
               name={undefined}
               onChange={[Function]}
@@ -129,7 +129,7 @@ exports[`Storyshots CheckBox Default 1`] = `
               className="Checkbox__TextContainer-gQuMca dfYmDF"
             >
               <span
-                className="Checkbox__LabelText-fjjJOg ilatth"
+                className="Checkbox__LabelText-fjjJOg cjemNn"
               >
                 Label
               </span>
@@ -400,7 +400,7 @@ exports[`Storyshots CheckBox Playground 1`] = `
           >
             <input
               checked={true}
-              className="Checkbox__Input-dtRIkE eevIXv"
+              className="Checkbox__Input-dtRIkE gKfoaX"
               disabled={true}
               name="name"
               onChange={[Function]}
@@ -425,7 +425,7 @@ exports[`Storyshots CheckBox Playground 1`] = `
               className="Checkbox__TextContainer-gQuMca dfYmDF"
             >
               <span
-                className="Checkbox__LabelText-fjjJOg ilatth"
+                className="Checkbox__LabelText-fjjJOg cjemNn"
               >
                 Label
               </span>
@@ -748,6 +748,338 @@ exports[`Storyshots CheckBox Playground 1`] = `
 </div>
 `;
 
+exports[`Storyshots CheckBox With TextLink in label 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          With TextLink in label
+        </h1>
+        
+        <span
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
+        >
+          <div>
+            <p>
+              Additionally you can add info to this component.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            className="Checkbox__Label-gCTMrH bPokpO"
+            data-test={undefined}
+          >
+            <input
+              checked={true}
+              className="Checkbox__Input-dtRIkE gKfoaX"
+              disabled={false}
+              name={undefined}
+              onChange={[Function]}
+              type="checkbox"
+              value="value"
+            />
+            <div
+              className="Checkbox__IconContainer-jYfkbc jgKsXe"
+            >
+              <svg
+                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                data-test={undefined}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
+                />
+              </svg>
+            </div>
+            <div
+              className="Checkbox__TextContainer-gQuMca dfYmDF"
+            >
+              <span
+                className="Checkbox__LabelText-fjjJOg cjemNn"
+              >
+                <p
+                  className="Text__StyledText-guhEiE hYZMSR"
+                  data-test={undefined}
+                >
+                  I instruct Kiwi.com to cancel this booking under the herein specified conditions and to process a refund in accordance with Kiwi.com’ 
+                  <a
+                    className="TextLink__StyledTextLink-cKDOFV kwCwSq"
+                    data-test={undefined}
+                    href={undefined}
+                    onClick={undefined}
+                    rel={undefined}
+                    target={undefined}
+                  >
+                    Terms and Conditions
+                  </a>
+                  .
+                </p>
+              </span>
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  style={
+                    Object {
+                      "color": "#898d97",
+                      "fontSize": 12,
+                      "letterSpacing": 2,
+                      "textTransform": "uppercase",
+                    }
+                  }
+                >
+                  Source
+                </h4>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "paddingLeft": 18,
+                        "paddingRight": 3,
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      &lt;
+                      Checkbox
+                    </span>
+                    <span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          label
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                &lt;Text /&gt;
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          checked
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          value
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              "
+                              value
+                              "
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                      <span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        <span
+                          style={Object {}}
+                        >
+                          onChange
+                        </span>
+                        <span>
+                          =
+                          <span
+                            style={Object {}}
+                          >
+                            <span>
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                changed()
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <br />
+                      </span>
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots CheckBox With help 1`] = `
 <div
   style={
@@ -852,7 +1184,7 @@ exports[`Storyshots CheckBox With help 1`] = `
           >
             <input
               checked={false}
-              className="Checkbox__Input-dtRIkE eevIXv"
+              className="Checkbox__Input-dtRIkE gKfoaX"
               disabled={false}
               name={undefined}
               onChange={[Function]}
@@ -877,7 +1209,7 @@ exports[`Storyshots CheckBox With help 1`] = `
               className="Checkbox__TextContainer-gQuMca dfYmDF"
             >
               <span
-                className="Checkbox__LabelText-fjjJOg ilatth"
+                className="Checkbox__LabelText-fjjJOg cjemNn"
               >
                 Label
               </span>

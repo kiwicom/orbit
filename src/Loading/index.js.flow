@@ -1,4 +1,6 @@
 // @flow
+import type { ReactComponentStyled } from "styled-components";
+
 import type { Globals } from "../common/common.js.flow";
 
 type Type = "buttonLoader" | "boxLoader" | "searchLoader" | "pageLoader";
@@ -11,7 +13,7 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export var StyledSpinner: React$ComponentType<>;
-declare export var StyledLoading: React$ComponentType<>;
+declare export var StyledSpinner: ReactComponentStyled<any>;
+declare export var StyledLoading: ReactComponentStyled<any>;
 
 declare export default React$ComponentType<Props>;

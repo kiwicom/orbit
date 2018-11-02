@@ -9,9 +9,8 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export var Item: React$ComponentType<>;
 declare export default React$ComponentType<Props>;
 
-declare export var IconContainer: ReactComponentStyled<>;
+declare export var IconContainer: ReactComponentStyled<any>;
 
-declare export var Item: ReactComponentStyled<>;
+declare export var Item: ReactComponentStyled<any>;

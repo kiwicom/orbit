@@ -1,4 +1,6 @@
 // @flow
+import type { ReactComponentStyled } from "styled-components";
+
 import type { Globals, Ref } from "../common/common.js.flow";
 
 type Option = {|
@@ -27,6 +29,6 @@ export type Props = {|
   ...Ref,
 |};
 
-declare export var SelectContainer: React$ComponentType<>;
+declare export var SelectContainer: ReactComponentStyled<any>;
 
 declare export default React$ComponentType<Props>;

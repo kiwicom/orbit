@@ -41,8 +41,9 @@ buck-out/
 \.buckd/
 *.keystore
 
-# Storybook build/
+# Storybook
 storybook-static
+.cache/
 
 # fastlane
 #

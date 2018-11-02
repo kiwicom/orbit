@@ -33,7 +33,7 @@
 @value height-service-logo-large: 48px;
 @value background-button-link-secondary-hover: rgb(229, 234, 239);
 @value palette-blue-normal-active: rgb(0, 100, 178);
-@value box-shadow-elevated-level1: 0 4px 12px 0 rgba(23, 27, 30, 0.15);
+@value box-shadow-elevated-level1: 0 4px 12px 0 rgba(23, 27, 30, 0.3);
 @value color-icon-attention: rgb(23, 27, 30);
 @value color-text-button-warning-hover: rgb(255, 255, 255);
 @value box-shadow-modal: 0 20px 60px 0 rgba(23, 27, 30, 0.4);

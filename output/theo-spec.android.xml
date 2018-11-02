@@ -34,7 +34,7 @@
   <dimen name="HEIGHTSERVICELOGOLARGE" category="Size (width, height)">48dp</dimen>
   <color name="BACKGROUNDBUTTONLINKSECONDARYHOVER" category="Background colors">#ffe5eaef</color>
   <color name="PALETTEBLUENORMALACTIVE" category="Color palette">#ff0064b2</color>
-  <dimen name="BOXSHADOWELEVATEDLEVEL1" category="Box shadow">0 4px 12px 0 rgba(23, 27, 30, 0.15)</dimen>
+  <dimen name="BOXSHADOWELEVATEDLEVEL1" category="Box shadow">0 4px 12px 0 rgba(23, 27, 30, 0.3)</dimen>
   <color name="COLORICONATTENTION" category="Colors">#ff171b1e</color>
   <color name="COLORTEXTBUTTONWARNINGHOVER" category="Colors">#ffffffff</color>
   <dimen name="BOXSHADOWMODAL" category="Box shadow">0 20px 60px 0 rgba(23, 27, 30, 0.4)</dimen>

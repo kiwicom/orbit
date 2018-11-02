@@ -8,7 +8,7 @@ export default class Portal extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
     if (typeof window !== "undefined") {
-      this.node = document.getElementById(this.props.element || "modal") || document.body;
+      this.node = this.props.element ? document.getElementById(this.props.element) : document.body;
       this.el = document.createElement("div");
     }
   }

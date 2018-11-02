@@ -17,6 +17,7 @@ import typeof InputStepperType from "./InputStepper";
 import typeof IllustrationType from "./Illustration";
 import typeof ListType from "./List";
 import typeof ListItemType from "./List/ListItem";
+import typeof ListChoiceType from "./ListChoice";
 import typeof InputFileType from "./InputFile";
 import typeof LoadingType from "./Loading";
 import typeof TextType from "./Text";
@@ -74,6 +75,7 @@ declare export var CountryFlag: CountryFlagType;
 
 declare export var List: ListType;
 declare export var ListItem: ListItemType;
+declare export var ListChoice: ListChoiceType;
 
 declare export var Card: CardType;
 declare export var CardHeader: CardHeaderType;

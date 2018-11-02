@@ -25,7 +25,7 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextBadgeWarning,
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextBadgeCritical,
       [TYPE_OPTIONS.DARK]: theme.orbit.colorTextBadgeDark,
-      [TYPE_OPTIONS.WHITE]: theme.orbit.colorInkDark,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteInkDark,
     },
   };
 

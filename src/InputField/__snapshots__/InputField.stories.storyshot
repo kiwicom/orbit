@@ -132,6 +132,7 @@ exports[`Storyshots InputField Compact input 1`] = `
                 onKeyDown={undefined}
                 onKeyUp={undefined}
                 placeholder="Placeholder"
+                size="normal"
                 type="text"
                 value=""
               />
@@ -539,6 +540,7 @@ exports[`Storyshots InputField Default input 1`] = `
                 onKeyDown={undefined}
                 onKeyUp={undefined}
                 placeholder="Placeholder"
+                size="normal"
                 type="text"
                 value=""
               />
@@ -873,6 +875,7 @@ exports[`Storyshots InputField Email input 1`] = `
                 onKeyDown={undefined}
                 onKeyUp={undefined}
                 placeholder="Email"
+                size="normal"
                 type="email"
                 value="name@example.co"
               />
@@ -1287,6 +1290,7 @@ exports[`Storyshots InputField Number input 1`] = `
                 onKeyDown={undefined}
                 onKeyUp={undefined}
                 placeholder="Number"
+                size="normal"
                 type="number"
                 value={2}
               />
@@ -1714,6 +1718,7 @@ exports[`Storyshots InputField Password input 1`] = `
                 onKeyDown={undefined}
                 onKeyUp={undefined}
                 placeholder="Password"
+                size="normal"
                 type="password"
                 value="p422W0rd"
               />
@@ -2092,6 +2097,7 @@ exports[`Storyshots InputField Playground 1`] = `
                 onKeyDown={undefined}
                 onKeyUp={undefined}
                 placeholder="Placeholder"
+                size="small"
                 type="text"
                 value=""
               />
@@ -2983,6 +2989,7 @@ exports[`Storyshots InputField Required field 1`] = `
                 onKeyDown={undefined}
                 onKeyUp={undefined}
                 placeholder="Placeholder"
+                size="normal"
                 type="text"
                 value=""
               />
@@ -3328,6 +3335,7 @@ exports[`Storyshots InputField Small input 1`] = `
                 onKeyDown={undefined}
                 onKeyUp={undefined}
                 placeholder="Placeholder"
+                size="small"
                 type="text"
                 value=""
               />
@@ -3692,6 +3700,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                 onKeyDown={undefined}
                 onKeyUp={undefined}
                 placeholder="Placeholder"
+                size="normal"
                 type="text"
                 value=""
               />
@@ -4099,6 +4108,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
                 onKeyDown={undefined}
                 onKeyUp={undefined}
                 placeholder="Placeholder"
+                size="normal"
                 type="text"
                 value=""
               />
@@ -4464,6 +4474,7 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
                 onKeyDown={undefined}
                 onKeyUp={undefined}
                 placeholder="Placeholder"
+                size="normal"
                 type="text"
                 value=""
               />
@@ -4845,6 +4856,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
                 onKeyDown={undefined}
                 onKeyUp={undefined}
                 placeholder="Placeholder"
+                size="normal"
                 type="text"
                 value=""
               />

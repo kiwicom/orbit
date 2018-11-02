@@ -8,7 +8,7 @@
     "test-update": "./scripts/test.sh -u",
     "test-watch": "./scripts/test.sh -w",
     "prestorybook": "rnstl",
-    "storybook": "storybook start -p 7007 --skip-packager | react-native start --projectRoot storybook",
+    "storybook": "storybook start -p 7007 | react-native start --projectRoot storybook",
     "ios": "react-native run-ios",
     "android": "react-native run-android",
     "storybook-web": "start-storybook -p 9009 -s public",
@@ -20,7 +20,7 @@
     "styled-components": "^3.4.9"
   },
   "dependencies": {
-    "@kiwicom/orbit-design-tokens": "^0.2.1",
+    "@kiwicom/orbit-design-tokens": "^0.2.3",
     "react": "16.5.1",
     "react-art": "^16.5.2",
     "react-native": "0.57.1",
@@ -31,12 +31,12 @@
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-transform-flow-strip-types": "^7.0.0",
     "@babel/runtime": "^7.1.2",
-    "@storybook/addon-actions": "4.0.0-alpha.24",
-    "@storybook/addon-knobs": "4.0.0-alpha.24",
-    "@storybook/addon-links": "4.0.0-alpha.24",
-    "@storybook/addons": "4.0.0-alpha.24",
-    "@storybook/react": "4.0.0-alpha.24",
-    "@storybook/react-native": "4.0.0-alpha.24",
+    "@storybook/addon-actions": "4.0.2",
+    "@storybook/addon-knobs": "4.0.2",
+    "@storybook/addon-links": "4.0.2",
+    "@storybook/addons": "4.0.2",
+    "@storybook/react": "4.0.2",
+    "@storybook/react-native": "4.0.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "23.6.0",
     "babel-loader": "^8.0.0",
@@ -58,7 +58,9 @@
   },
   "config": {
     "react-native-storybook-loader": {
-      "searchDir": ["./src"],
+      "searchDir": [
+        "./src"
+      ],
       "pattern": "**/*.stories.js",
       "outputFile": "./storybook/story-loader.js"
     }

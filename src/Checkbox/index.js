@@ -5,6 +5,8 @@ import styled from "styled-components";
 import defaultTokens from "../defaultTokens";
 import TOKENS from "./consts";
 import Check from "../icons/Check";
+import { StyledText } from "../Text";
+import type { Ref } from "../common/common.js.flow";
 
 import type { Props } from "./index";
 
@@ -75,6 +77,13 @@ const LabelText = styled.span`
   font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
   color: ${({ theme }) => theme.orbit.colorFormLabel};
   line-height: ${({ theme }) => theme.orbit.heightCheckbox};
+
+  ${StyledText} {
+    font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
+    font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
+    color: ${({ theme }) => theme.orbit.colorFormLabel};
+    line-height: ${({ theme }) => theme.orbit.heightCheckbox};
+  }
 `;
 
 LabelText.defaultProps = {
@@ -87,6 +96,9 @@ const Input = styled.input`
 
   &:checked ~ ${TextContainer} > ${LabelText} {
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
+    & > ${StyledText} {
+      font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
+    }
   }
 
   &:checked + ${IconContainer} > svg {
@@ -140,7 +152,8 @@ Label.defaultProps = {
   theme: defaultTokens,
 };
 
-const Checkbox = (props: Props) => {
+// $FlowExpected
+const Checkbox = React.forwardRef((props: Props, ref: Ref) => {
   const {
     label,
     value,
@@ -162,6 +175,7 @@ const Checkbox = (props: Props) => {
         name={name}
         checked={checked}
         onChange={onChange}
+        innerRef={ref}
       />
       <IconContainer>
         <Check />
@@ -172,6 +186,8 @@ const Checkbox = (props: Props) => {
       </TextContainer>
     </Label>
   );
-};
+});
+
+Checkbox.displayName = "Checkbox";
 
 export default Checkbox;

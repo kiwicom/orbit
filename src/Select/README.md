@@ -24,6 +24,7 @@ Table below contains all types of the props available in the Select component.
 | **options** | [`Option[]`](#option)             |            | The content of the Select, passed as array of objects.
 | placeholder | `string`                          |            | The placeholder for the Select. 
 | prefix      | `React.Node`                      |            | The prefix component for the Select. [See Functional specs](#functional-specs)
+| ref         | `func`                            |            | Prop for forwarded ref of the Select. [See Functional specs](#functional-specs)
 | size        | [`enum`](#enum)                   | `"normal"` | The size of the Select.
 | value       | `string`                          | `""`       | The value of the Select.
 
@@ -45,4 +46,28 @@ Table below contains all types of the props available for object in Option array
 
 ## Functional specs
 * The `error` prop overwrites the `help` prop, due to higher priority.
+
+* `ref` can be used for example auto-focus the elements immediately after render.
+```jsx
+class Component extends React.PureComponent<Props> {
+
+  constructor() {
+    super()
+    this.ref = React.createRef();
+  }
+  
+  componentDidMount() {
+    this.ref.current && this.ref.current.focus();
+  }
+
+  ref: { current: React$ElementRef<*> | null };
+
+  render() {
+    return (
+      <Select ref={this.ref} />
+    )
+  }
+}
+```
+
 

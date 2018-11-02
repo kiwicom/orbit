@@ -156,8 +156,10 @@ class InputGroup extends React.PureComponent<Props, State> {
     this.isFilled();
   }
 
-  componentDidUpdate() {
-    this.isFilled();
+  componentDidUpdate(prevProps: Props) {
+    if (this.props.children !== prevProps.children) {
+      this.isFilled();
+    }
   }
 
   isFilled = () =>

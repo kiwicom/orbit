@@ -30,6 +30,8 @@ export const createPlatformStyles = (styles: PlatformStyles) => {
   return (props: Object) => reduceStyles(fn(props));
 };
 
+export { default as lineHeight } from "./lineheight";
+
 /**
  * Now we can use styled like:
  * const Pinky = styled(View, {
@@ -44,7 +46,7 @@ export const createPlatformStyles = (styles: PlatformStyles) => {
  *
  *  const Component = styled(View, {
  *     fontSize: "23px",
- *     iso: {
+ *     ios: {
  *      backgroundColor: "red",
  *     },
  *     android: {

@@ -11,18 +11,20 @@ import { type ____DangerouslyImpreciseStyle_Internal } from "react-native/Librar
 import AnimatedNode from "react-native/Libraries/Animated/src/nodes/AnimatedNode";
 
 // The fontSize style property should be a string for the react-native-web
-type ExactStyles = $Exact<{ ...____DangerouslyImpreciseStyle_Internal, fontSize?: string }>;
-type ShapedStyles = $Shape<ExactStyles>;
+type ExactStyles = $Exact<{
+  ...____DangerouslyImpreciseStyle_Internal,
+  +fontSize?: string,
+  +borderWidth?: number | AnimatedNode | string,
+  +lineHeight?: number | string,
+}>;
 
 export type Style = {|
-  ...ShapedStyles,
-  +borderWidth?: number | AnimatedNode | string,
-  ios?: ExactStyles,
-  android?: ExactStyles,
-  web?: ExactStyles,
+  ...ExactStyles,
+  +ios?: ExactStyles,
+  +android?: ExactStyles,
+  +web?: ExactStyles,
 |};
 
 export type OutputStyle = {|
   ...ExactStyles,
-  +borderWidth?: number | AnimatedNode | string,
 |};

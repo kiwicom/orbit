@@ -3,7 +3,7 @@
 exports[`Text should match the snapshot 1`] = `
 <Text
   align="left"
-  className="sc-bdVaJa iCYImV"
+  className="sc-bdVaJa jFDbnE"
   italic={false}
   size="normal"
   theme={
@@ -142,7 +142,7 @@ exports[`Text should match the snapshot 1`] = `
         "colorPlaceholderInputFile": "#7f91a8",
         "colorPlaceholderInputFileError": "#d21c1c",
         "colorTextAlertCritical": "#650808",
-        "colorTextAlertInfo": "#07405c",
+        "colorTextAlertInfo": "#003A69",
         "colorTextAlertLink": "#171b1e",
         "colorTextAlertSuccess": "#065d12",
         "colorTextAlertWarning": "#a93610",
@@ -238,7 +238,7 @@ exports[`Text should match the snapshot 1`] = `
         "fontSizeHeadingTitle1": "28px",
         "fontSizeHeadingTitle2": "22px",
         "fontSizeHeadingTitle3": "16px",
-        "fontSizeInputNormal": "16px",
+        "fontSizeInputNormal": "14px",
         "fontSizeInputSmall": "14px",
         "fontSizeMessage": "14px",
         "fontSizeTextLarge": "16px",
@@ -276,8 +276,8 @@ exports[`Text should match the snapshot 1`] = `
         "lineHeightHeading": "1.2",
         "lineHeightText": "1.4",
         "marginBottomSelectSuffix": "2px",
-        "marginButtonIconLarge": "16px",
-        "marginButtonIconNormal": "12px",
+        "marginButtonIconLarge": "12px",
+        "marginButtonIconNormal": "8px",
         "marginButtonIconSmall": "8px",
         "marginRightBadgeIcon": "4px",
         "marginRightButtonGroup": "1px",
@@ -291,9 +291,9 @@ exports[`Text should match the snapshot 1`] = `
         "paddingAlert": "16px",
         "paddingAlertWithIcon": "12px",
         "paddingButtonLarge": "28px",
-        "paddingButtonLargeWithIcon": "12px",
+        "paddingButtonLargeWithIcon": "16px",
         "paddingButtonNormal": "16px",
-        "paddingButtonNormalWithIcon": "8px",
+        "paddingButtonNormalWithIcon": "12px",
         "paddingButtonSmall": "12px",
         "paddingButtonSmallWithIcon": "8px",
         "paddingInputNormal": "0 12px",
@@ -302,7 +302,7 @@ exports[`Text should match the snapshot 1`] = `
         "paddingLeftSelectPrefix": "48px",
         "paddingTextareaNormal": "12px",
         "paddingTextareaSmall": "8px 12px",
-        "paletteBlueDark": "#07405c",
+        "paletteBlueDark": "#003A69",
         "paletteBlueLight": "#e0f6ff",
         "paletteBlueLightActive": "#b0e8fe",
         "paletteBlueLightHover": "#c8effe",
@@ -339,10 +339,10 @@ exports[`Text should match the snapshot 1`] = `
         "paletteOrangeNormal": "#f9971e",
         "paletteOrangeNormalActive": "#e68206",
         "paletteOrangeNormalHover": "#f48a06",
-        "paletteProductDark": "#005448",
-        "paletteProductLight": "#9ae5da",
-        "paletteProductLightActive": "#64d7c6",
-        "paletteProductLightHover": "#7fded0",
+        "paletteProductDark": "#00826f",
+        "paletteProductLight": "#E1F5F2",
+        "paletteProductLightActive": "#9addd3",
+        "paletteProductLightHover": "#bde9e2",
         "paletteProductNormal": "#00a991",
         "paletteProductNormalActive": "#008f7b",
         "paletteProductNormalHover": "#009882",

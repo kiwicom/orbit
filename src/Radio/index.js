@@ -157,6 +157,7 @@ const Radio = React.forwardRef((props: Props, ref: Ref) => {
     onChange,
     name,
     info,
+    readOnly,
     tabIndex,
     dataTest,
   } = props;
@@ -171,14 +172,17 @@ const Radio = React.forwardRef((props: Props, ref: Ref) => {
         name={name}
         tabIndex={tabIndex}
         ref={ref}
+        readOnly={readOnly}
       />
       <IconContainer>
         <Glyph disabled={disabled} />
       </IconContainer>
-      <TextContainer>
-        {label && <LabelText>{label}</LabelText>}
-        {info && <Info>{info}</Info>}
-      </TextContainer>
+      {(label || info) && (
+        <TextContainer>
+          {label && <LabelText>{label}</LabelText>}
+          {info && <Info>{info}</Info>}
+        </TextContainer>
+      )}
     </Label>
   );
 });

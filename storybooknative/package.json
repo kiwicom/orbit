@@ -4,7 +4,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "yarn storybook",
     "test": "./scripts/test.sh",
     "test-update": "./scripts/test.sh -u",
     "test-watch": "./scripts/test.sh -w",
@@ -13,7 +13,8 @@
     "ios": "react-native run-ios",
     "android": "react-native run-android",
     "storybook-web": "start-storybook -p 9009 -s public",
-    "build-storybook-web": "build-storybook -s public"
+    "build-storybook-web": "build-storybook -s public",
+    "create-new-component": "node ./scripts/create-new-component.js"
   },
   "peerDependencies": {
     "react": "^16.5.1",

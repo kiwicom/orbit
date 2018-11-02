@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "yarn storybook",
     "test": "./scripts/test.sh",
     "test-update": "./scripts/test.sh -u",
     "test-watch": "./scripts/test.sh -w",

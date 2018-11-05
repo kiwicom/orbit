@@ -22,6 +22,7 @@ export type Props = {|
   +customColor: string,
   +children: React$Node,
   +viewBox: string,
+  +ariaHidden?: boolean,
   ...Globals,
 |};
 

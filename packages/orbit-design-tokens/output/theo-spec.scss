@@ -67,7 +67,7 @@ $background-button-critical-active: rgb(178, 23, 23);
 $opacity-overlay: "0.8";
 $border-style-input: "solid";
 $font-size-button-small: 12px;
-// use for all basic elements like buttons, inputs, content containers
+/* use for all basic elements like buttons, inputs, content containers */
 $border-radius-normal: 3px;
 $border-radius-badge: 12px;
 $color-text-button-warning-bordered: rgb(249, 151, 30);
@@ -119,7 +119,7 @@ $color-text-button-facebook-bordered-hover: rgb(56, 84, 144);
 $border-color-button-critical-bordered-hover: rgb(189, 25, 25);
 $space-xxx-large: 52px;
 $font-size-button-normal: 14px;
-// use for smaller elements like tags
+/* use for smaller elements like tags */
 $border-radius-small: 2px;
 $palette-ink-normal-hover: rgb(63, 72, 84);
 $font-size-text-small: 12px;
@@ -180,7 +180,7 @@ $height-button-small: 32px;
 $margin-button-icon-small: 8px;
 $height-service-logo-small: 12px;
 $padding-input-small: 0 12px;
-// use only for square
+/* use only for square */
 $border-radius-circle: 50%;
 $palette-white: rgb(255, 255, 255);
 $color-placeholder-input-error: rgb(210, 28, 28);
@@ -353,7 +353,7 @@ $background-input: rgb(255, 255, 255);
 $color-text-button-primary-hover: rgb(255, 255, 255);
 $palette-red-normal: rgb(210, 28, 28);
 $color-text-button-secondary-bordered: rgb(70, 81, 94);
-// use for big elements like modal and large buttons
+/* use for big elements like modal and large buttons */
 $border-radius-large: 6px;
 $background-button-critical-hover: rgb(189, 25, 25);
 $color-text-button-link-secondary-active: rgb(56, 64, 75);

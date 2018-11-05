@@ -1,13 +1,11 @@
 var foundation = require("./foundation");
-
-var palette = foundation.palette;
-var base = foundation.base;
+var merge = require("deepmerge");
 
 function getTokens(customFoundation) {
-  var theme = {
-    palette: Object.assign({}, palette, customFoundation && customFoundation.palette),
-    base: Object.assign({}, base, customFoundation && customFoundation.base),
-  };
+  // By default it takes base foundation config
+
+  var theme = customFoundation ? merge(foundation, customFoundation) : foundation;
+
   return {
     // category:Colors
     // description:Use these tokens for text or icon colors. Don't use these for borders and background colors.

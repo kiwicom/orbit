@@ -1,5 +1,6 @@
 // @flow
 var tokens = require("../../lib/index");
+var foundation = require("../../lib/foundation");
 
 var defaultTokens = tokens.defaultTokens;
 var getTokens = tokens.getTokens;
@@ -11,11 +12,10 @@ describe("defaultTokens", () => {
   });
 });
 
-describe("getTokens should accept some palette", () => {
+describe("getTokens should accept some palette and base foundation", () => {
   var brand = {
     palette: {
       product: {
-        light: "#111",
         lightHover: "#222",
         lightActive: "#333",
         normal: "#444",
@@ -23,6 +23,9 @@ describe("getTokens should accept some palette", () => {
         normalActive: "#666",
         dark: "#777",
       },
+    },
+    base: {
+      fontSizeSm: "16px",
     },
   };
   var theme = getTokens(brand);
@@ -35,6 +38,10 @@ describe("getTokens should accept some palette", () => {
     expect(theme.colorTextButtonPrimaryBordered).toBe(brand.palette.product.normal);
     expect(theme.colorTextButtonPrimaryBorderedHover).toBe(brand.palette.product.normalHover);
     expect(theme.colorTextButtonPrimaryBorderedActive).toBe(brand.palette.product.normalActive);
+  });
+  it("should deep merge", () => {
+    expect(theme.paletteProductLight).toBe(foundation.palette.product.light);
+    expect(theme.fontSizeTextNormal).toBe(foundation.base.fontSizeMd);
   });
 });
 

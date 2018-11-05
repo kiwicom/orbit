@@ -115,7 +115,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-ehEpyW erqRLf"
+                  className="Modal__CloseContainer-ehEpyW evLwJi"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-eyUiPe DORaW"
@@ -1726,7 +1726,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-ehEpyW erqRLf"
+                  className="Modal__CloseContainer-ehEpyW evLwJi"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-eyUiPe DORaW"

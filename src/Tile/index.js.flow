@@ -9,7 +9,7 @@ export type State = {
 
 export type Props = {|
   +title?: string,
-  +description?: string,
+  +description?: React$Node,
   +icon?: React$Node,
   +children?: React$Node,
   +external?: boolean,

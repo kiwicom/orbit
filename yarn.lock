@@ -106,9 +106,11 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@kiwicom/orbit-design-tokens@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.2.3.tgz#6908444e380101c64ea9eab42e3b81f6d53e143e"
+"@kiwicom/orbit-design-tokens@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.2.4.tgz#61ce4930b8f28f8b25424d1f043913587d11b310"
+  dependencies:
+    deepmerge "^2.2.1"
 
 "@octokit/rest@^15.13.1":
   version "15.13.1"
@@ -3514,6 +3516,10 @@ deep-extend@~0.4.0:
 deep-is@~0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
+
+deepmerge@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-2.2.1.tgz#5d3ff22a01c00f645405a2fbc17d0778a1801170"
 
 default-require-extensions@^2.0.0:
   version "2.0.0"

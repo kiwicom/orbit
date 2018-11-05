@@ -1,0 +1,12 @@
+// @flow
+import type { Globals } from "../common/common.js.flow";
+import BreadcrumbsItem from "./BreadcrumbsItem";
+
+type Children = React$Element<typeof BreadcrumbsItem>;
+
+export type Props = {|
+  ...Globals,
+  children: Children | Children[],
+|};
+
+declare export default React$ComponentType<Props>;

@@ -139,7 +139,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                         className="Text__StyledText-guhEiE eltpBo"
                         data-test={undefined}
                       >
-                        4:20
+                        11:20
                       </p>
                     </div>
                     <div
@@ -149,7 +149,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                         className="Text__StyledText-guhEiE eltpBo"
                         data-test={undefined}
                       >
-                        11:20
+                        4:20
                       </p>
                     </div>
                   </div>
@@ -160,13 +160,13 @@ exports[`Storyshots TripSegment Default 1`] = `
                       className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
-                      Moscow VKO
+                      Berlin TXL
                     </p>
                     <p
                       className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
-                      Berlin TXL
+                      Moscow VKO
                     </p>
                   </div>
                 </div>
@@ -177,7 +177,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                     className="Text__StyledText-guhEiE fsgURl"
                     data-test={undefined}
                   >
-                    ~3h
+                    3h
                   </p>
                   <div
                     className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"
@@ -1091,7 +1091,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                         className="Text__StyledText-guhEiE eltpBo"
                         data-test={undefined}
                       >
-                        14:20
+                        11:20
                       </p>
                     </div>
                     <div
@@ -1101,7 +1101,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                         className="Text__StyledText-guhEiE eltpBo"
                         data-test={undefined}
                       >
-                        11:20
+                        14:20
                       </p>
                     </div>
                   </div>
@@ -1112,13 +1112,13 @@ exports[`Storyshots TripSegment Playground 1`] = `
                       className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
-                      Moscow VKO
+                      Berlin TXL
                     </p>
                     <p
                       className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
-                      Berlin TXL
+                      Moscow VKO
                     </p>
                   </div>
                 </div>
@@ -1129,7 +1129,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                     className="Text__StyledText-guhEiE fsgURl"
                     data-test={undefined}
                   >
-                    ~3h
+                    3h
                   </p>
                   <div
                     className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"
@@ -2123,7 +2123,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                         className="Text__StyledText-guhEiE eltpBo"
                         data-test={undefined}
                       >
-                        4:20
+                        11:20
                       </p>
                     </div>
                     <div
@@ -2133,7 +2133,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                         className="Text__StyledText-guhEiE eltpBo"
                         data-test={undefined}
                       >
-                        11:20
+                        4:20
                       </p>
                     </div>
                   </div>
@@ -2144,13 +2144,13 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                       className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
-                      Moscow VKO
+                      Berlin TXL
                     </p>
                     <p
                       className="Text__StyledText-guhEiE hYZMSR"
                       data-test={undefined}
                     >
-                      Berlin TXL
+                      Moscow VKO
                     </p>
                   </div>
                 </div>
@@ -2161,7 +2161,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                     className="Text__StyledText-guhEiE fsgURl"
                     data-test={undefined}
                   >
-                    ~3h
+                    3h
                   </p>
                   <div
                     className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"

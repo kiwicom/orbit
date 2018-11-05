@@ -2310,7 +2310,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
             <Text
               type="attention"
             >
-              11:20
+              5:30
             </Text>
           </TripSegment__StyledTripSegmentOverviewTime>
           <TripSegment__StyledTripSegmentOverviewTime
@@ -2699,7 +2699,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
             <Text
               type="attention"
             >
-              5:30
+              11:20
             </Text>
           </TripSegment__StyledTripSegmentOverviewTime>
         </TripSegment__StyledTripSegmentOverviewColumn>
@@ -2707,12 +2707,12 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
           <Text
             type="primary"
           >
-            Moscow VKO
+            Berlin TXL
           </Text>
           <Text
             type="primary"
           >
-            Berlin TXL
+            Moscow VKO
           </Text>
         </TripSegment__StyledTripSegmentOverviewColumn>
       </TripSegment__StyledTripSegmentOverview>
@@ -3103,7 +3103,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
           size="small"
           type="secondary"
         >
-          ~2h
+          2h
         </Text>
         <CarrierLogo
           carriers={

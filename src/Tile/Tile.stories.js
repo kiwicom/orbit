@@ -7,6 +7,8 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, select, boolean } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
+import Stack from "../Stack";
+import Text from "../Text";
 
 import Tile from "./index";
 
@@ -67,6 +69,30 @@ storiesOf("Tile", module)
       ],
     };
   })
+  .addWithChapters("Expandable with custom description", () => ({
+    info: "This is the playground configuration of this component.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <Tile
+                onClick={action("clicked")}
+                description={
+                  <Stack align="even" direction="row">
+                    <Text>Mr. John Smith</Text>
+                    <Text>20 kg</Text>
+                  </Stack>
+                }
+              >
+                This is example of expanded content
+              </Tile>
+            ),
+          },
+        ],
+      },
+    ],
+  }))
   .addWithChapters("Playground", () => {
     const href = text("Href", "https://www.kiwi.com/");
     const title = text("Title", "Tile with title");

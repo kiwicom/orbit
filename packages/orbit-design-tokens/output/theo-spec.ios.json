@@ -205,7 +205,7 @@
       "name": "paletteBlueNormalActive"
     },
     {
-      "value": "0 4px 12px 0 rgba(23, 27, 30, 0.15)",
+      "value": "0 4px 12px 0 rgba(23, 27, 30, 0.3)",
       "type": "size",
       "category": "Box shadow",
       "name": "boxShadowElevatedLevel1"

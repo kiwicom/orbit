@@ -23,6 +23,7 @@ const getSelectSize = ({ theme, size }) => {
 const Label = styled.label`
   position: relative;
   display: block;
+  flex: 1 1 100%;
 `;
 
 const StyledSelect = styled(

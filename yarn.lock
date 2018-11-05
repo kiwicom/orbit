@@ -119,10 +119,12 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@kiwicom/orbit-design-tokens@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.2.2.tgz#22771ed15dc3be3e53b21437e3c921e24426287a"
-  integrity sha512-S8jBgAk8n9XR63PnjknfCthy6jF6v0Z6SXfHXtIPhT5Z+uLK6ueMKvsEjoEgb8+WbLX3eYzysi2rbKc67lfTpg==
+"@kiwicom/orbit-design-tokens@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.2.4.tgz#61ce4930b8f28f8b25424d1f043913587d11b310"
+  integrity sha512-Czrm94bQ+JuJdLx1pGkW29lImy0EGf7+sZBucRXnBmzB8V2dOvZwa2bHRJDkz/ljzTu4eO7n7z5djTFLGivuYQ==
+  dependencies:
+    deepmerge "^2.2.1"
 
 "@octokit/rest@^15.13.1":
   version "15.13.1"
@@ -4031,6 +4033,11 @@ deep-is@~0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
   integrity sha1-s2nW+128E+7PUk+RsHD+7cNXzzQ=
+
+deepmerge@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-2.2.1.tgz#5d3ff22a01c00f645405a2fbc17d0778a1801170"
+  integrity sha512-R9hc1Xa/NOBi9WRVUWg19rl1UB7Tt4kuPd+thNJgFZoxXsTz7ncaPaeIm+40oSGuP33DfMb4sZt1QIGiJzC4EA==
 
 default-require-extensions@^2.0.0:
   version "2.0.0"

@@ -51,6 +51,9 @@
     "jest": "^23.6.0",
     "lodash": "^4.17.10",
     "prettier": "^1.13.7",
-    "theo": "^7.0.1"
+    "theo": "^8.0.0"
+  },
+  "dependencies": {
+    "deepmerge": "^2.2.1"
   }
 }

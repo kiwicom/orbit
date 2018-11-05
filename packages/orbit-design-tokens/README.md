@@ -35,7 +35,7 @@ Now define your foundations that will be used to generated design tokens.
 
 ```jsx
 const foundation = {
-  colors: {
+  palette: {
     product: {
       light: "#ff9999",
       lightHover: "#ff7f7f",
@@ -56,10 +56,9 @@ const foundation = {
 };
 
 // generate your custom theme
-const theme = getTokens(colors);
+const theme = getTokens(foundation);
 ```
-
-> IF you are unsure what foundation you can define, check this [docs](https://github.com/kiwicom/orbit-design-tokens/.github/foundation.md).
+> If you are unsure what foundation you can define, check this [docs](https://github.com/kiwicom/orbit-design-tokens/blob/master/.github/foundation.md).
 
 For usage with NEST, which contains a plain object with palette colors, you can use `fromPlainObject` function.
 
@@ -80,7 +79,7 @@ const palette = {
 const theme = fromPlainObject(theme);
 ```
 
-> With the usage of `fromPlainObject` function, you can change only color palette, not anything more.
+> With the usage of `fromPlainObject` function, you can change only the product colors, not anything more.
 
 ## Full list of design tokens
 If you are unsure which tokens are in this package included, see (https://orbit.kiwi/design-tokens/).

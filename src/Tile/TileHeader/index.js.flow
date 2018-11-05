@@ -3,7 +3,7 @@
 export type Props = {
   +icon?: React$Node,
   +title?: string,
-  +description?: string,
+  +description?: React$Node,
   +external?: boolean,
   +onClick?: Function,
   +isExpandable?: boolean,

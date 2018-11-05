@@ -33,7 +33,7 @@
   "heightServiceLogoLarge": "48px",
   "backgroundButtonLinkSecondaryHover": "rgb(229, 234, 239)",
   "paletteBlueNormalActive": "rgb(0, 100, 178)",
-  "boxShadowElevatedLevel1": "0 4px 12px 0 rgba(23, 27, 30, 0.15)",
+  "boxShadowElevatedLevel1": "0 4px 12px 0 rgba(23, 27, 30, 0.3)",
   "colorIconAttention": "rgb(23, 27, 30)",
   "colorTextButtonWarningHover": "rgb(255, 255, 255)",
   "boxShadowModal": "0 20px 60px 0 rgba(23, 27, 30, 0.4)",

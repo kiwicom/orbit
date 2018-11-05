@@ -1140,7 +1140,7 @@ Object {
 }
 `;
 
-exports[`getTokens should accept some palette should match snapshot 1`] = `
+exports[`getTokens should accept some palette and base foundation should match snapshot 1`] = `
 Object {
   "backgroundAlertCritical": "#fae8e8",
   "backgroundAlertInfo": "#e0f6ff",
@@ -1364,8 +1364,8 @@ Object {
   "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
   "fontSizeButtonLarge": "16px",
   "fontSizeButtonNormal": "14px",
-  "fontSizeButtonSmall": "12px",
-  "fontSizeFormFeedback": "12px",
+  "fontSizeButtonSmall": "16px",
+  "fontSizeFormFeedback": "16px",
   "fontSizeFormLabel": "14px",
   "fontSizeHeadingDisplay": "40px",
   "fontSizeHeadingTitle1": "28px",
@@ -1376,7 +1376,7 @@ Object {
   "fontSizeMessage": "14px",
   "fontSizeTextLarge": "16px",
   "fontSizeTextNormal": "14px",
-  "fontSizeTextSmall": "12px",
+  "fontSizeTextSmall": "16px",
   "fontWeightBold": "700",
   "fontWeightHeadingDisplay": "700",
   "fontWeightHeadingTitle1": "700",
@@ -1473,7 +1473,7 @@ Object {
   "paletteOrangeNormalActive": "#e68206",
   "paletteOrangeNormalHover": "#f48a06",
   "paletteProductDark": "#777",
-  "paletteProductLight": "#111",
+  "paletteProductLight": "#E1F5F2",
   "paletteProductLightActive": "#333",
   "paletteProductLightHover": "#222",
   "paletteProductNormal": "#444",

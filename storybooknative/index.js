@@ -1,8 +1,6 @@
 /** @format @flow */
 
-import { AppRegistry } from "react-native";
-
-import App from "./App";
-import { name as appName } from "./app.json";
-
-AppRegistry.registerComponent(appName, () => App);
+export { default as Button } from "./src/Button";
+export { default as Text } from "./src/Text";
+export { default as Touchable } from "./src/Touchable";
+export { default as CenterView } from "./src/CenterView";

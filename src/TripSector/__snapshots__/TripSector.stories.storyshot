@@ -164,7 +164,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                           className="Text__StyledText-guhEiE eltpBo"
                           data-test={undefined}
                         >
-                          8:30
+                          6:30
                         </p>
                       </div>
                       <div
@@ -174,7 +174,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                           className="Text__StyledText-guhEiE eltpBo"
                           data-test={undefined}
                         >
-                          6:30
+                          8:30
                         </p>
                       </div>
                     </div>
@@ -185,13 +185,13 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="Text__StyledText-guhEiE hYZMSR"
                         data-test={undefined}
                       >
-                        Paris BVA
+                        Barcelona BCN
                       </p>
                       <p
                         className="Text__StyledText-guhEiE hYZMSR"
                         data-test={undefined}
                       >
-                        Barcelona BCN
+                        Paris BVA
                       </p>
                     </div>
                   </div>
@@ -202,7 +202,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       className="Text__StyledText-guhEiE fsgURl"
                       data-test={undefined}
                     >
-                      ~2h
+                      2h
                     </p>
                     <div
                       className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"
@@ -412,7 +412,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                           className="Text__StyledText-guhEiE eltpBo"
                           data-test={undefined}
                         >
-                          16:20
+                          13:20
                         </p>
                       </div>
                       <div
@@ -422,7 +422,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                           className="Text__StyledText-guhEiE eltpBo"
                           data-test={undefined}
                         >
-                          13:20
+                          16:20
                         </p>
                       </div>
                     </div>
@@ -433,13 +433,13 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="Text__StyledText-guhEiE hYZMSR"
                         data-test={undefined}
                       >
-                        Lille XDB
+                        Paris CDG
                       </p>
                       <p
                         className="Text__StyledText-guhEiE hYZMSR"
                         data-test={undefined}
                       >
-                        Paris CDG
+                        Lille XDB
                       </p>
                     </div>
                   </div>
@@ -450,7 +450,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       className="Text__StyledText-guhEiE fsgURl"
                       data-test={undefined}
                     >
-                      ~3h
+                      3h
                     </p>
                     <div
                       className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"
@@ -616,7 +616,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                           className="Text__StyledText-guhEiE eltpBo"
                           data-test={undefined}
                         >
-                          20:15
+                          18:45
                         </p>
                       </div>
                       <div
@@ -626,7 +626,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                           className="Text__StyledText-guhEiE eltpBo"
                           data-test={undefined}
                         >
-                          18:45
+                          20:15
                         </p>
                       </div>
                     </div>
@@ -637,13 +637,13 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="Text__StyledText-guhEiE hYZMSR"
                         data-test={undefined}
                       >
-                        City of Brussels CRL
+                        Lille XDB
                       </p>
                       <p
                         className="Text__StyledText-guhEiE hYZMSR"
                         data-test={undefined}
                       >
-                        Lille XDB
+                        City of Brussels CRL
                       </p>
                     </div>
                   </div>
@@ -654,7 +654,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       className="Text__StyledText-guhEiE fsgURl"
                       data-test={undefined}
                     >
-                      ~1h 30m
+                      1h 30m
                     </p>
                     <div
                       className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"
@@ -861,7 +861,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                           className="Text__StyledText-guhEiE eltpBo"
                           data-test={undefined}
                         >
-                          14:15
+                          09:20
                         </p>
                       </div>
                       <div
@@ -871,7 +871,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                           className="Text__StyledText-guhEiE eltpBo"
                           data-test={undefined}
                         >
-                          09:20
+                          14:15
                         </p>
                       </div>
                     </div>
@@ -882,13 +882,13 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="Text__StyledText-guhEiE hYZMSR"
                         data-test={undefined}
                       >
-                        Miami MIA
+                        City of Brussels BRU
                       </p>
                       <p
                         className="Text__StyledText-guhEiE hYZMSR"
                         data-test={undefined}
                       >
-                        City of Brussels BRU
+                        Miami MIA
                       </p>
                     </div>
                   </div>
@@ -899,7 +899,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       className="Text__StyledText-guhEiE fsgURl"
                       data-test={undefined}
                     >
-                      ~10h 55m
+                      10h 55m
                     </p>
                     <div
                       className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"
@@ -5060,7 +5060,7 @@ exports[`Storyshots TripSector Playground 1`] = `
                           className="Text__StyledText-guhEiE eltpBo"
                           data-test={undefined}
                         >
-                          8:30
+                          6:30
                         </p>
                       </div>
                       <div
@@ -5070,7 +5070,7 @@ exports[`Storyshots TripSector Playground 1`] = `
                           className="Text__StyledText-guhEiE eltpBo"
                           data-test={undefined}
                         >
-                          6:30
+                          8:30
                         </p>
                       </div>
                     </div>
@@ -5081,13 +5081,13 @@ exports[`Storyshots TripSector Playground 1`] = `
                         className="Text__StyledText-guhEiE hYZMSR"
                         data-test={undefined}
                       >
-                        Paris BVA
+                        Barcelona BCN
                       </p>
                       <p
                         className="Text__StyledText-guhEiE hYZMSR"
                         data-test={undefined}
                       >
-                        Barcelona BCN
+                        Paris BVA
                       </p>
                     </div>
                   </div>
@@ -5098,7 +5098,7 @@ exports[`Storyshots TripSector Playground 1`] = `
                       className="Text__StyledText-guhEiE fsgURl"
                       data-test={undefined}
                     >
-                      ~2h
+                      2h
                     </p>
                     <div
                       className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"

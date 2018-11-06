@@ -99,14 +99,14 @@ exports[`Storyshots Select Default 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw jhqIax"
             data-test={undefined}
           >
             <div
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk ghRKpg"
+                className="Select__StyledSelect-eyhbyk gWsPtR"
                 disabled={false}
                 name={undefined}
                 onBlur={undefined}
@@ -565,14 +565,14 @@ exports[`Storyshots Select Playground 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw jhqIax"
             data-test="test"
           >
             <div
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk ghRKpg"
+                className="Select__StyledSelect-eyhbyk gWsPtR"
                 disabled={false}
                 name="name"
                 onBlur={[Function]}
@@ -1318,7 +1318,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw jhqIax"
             data-test={undefined}
           >
             <span
@@ -1345,7 +1345,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                 />
               </div>
               <select
-                className="Select__StyledSelect-eyhbyk jEOzuv"
+                className="Select__StyledSelect-eyhbyk eqfQfw"
                 disabled={false}
                 name={undefined}
                 onBlur={undefined}
@@ -1871,7 +1871,7 @@ exports[`Storyshots Select With error message 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw jhqIax"
             data-test={undefined}
           >
             <span
@@ -1886,7 +1886,7 @@ exports[`Storyshots Select With error message 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk gAsCec"
+                className="Select__StyledSelect-eyhbyk hSWeQE"
                 disabled={false}
                 name={undefined}
                 onBlur={undefined}
@@ -2420,7 +2420,7 @@ exports[`Storyshots Select With help message 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw jhqIax"
             data-test={undefined}
           >
             <span
@@ -2435,7 +2435,7 @@ exports[`Storyshots Select With help message 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk ghRKpg"
+                className="Select__StyledSelect-eyhbyk gWsPtR"
                 disabled={false}
                 name={undefined}
                 onBlur={undefined}
@@ -2966,7 +2966,7 @@ exports[`Storyshots Select With placeholder 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw jhqIax"
             data-test={undefined}
           >
             <span
@@ -2981,7 +2981,7 @@ exports[`Storyshots Select With placeholder 1`] = `
               className="Select__SelectContainer-hisSov erDdbv"
             >
               <select
-                className="Select__StyledSelect-eyhbyk ghRKpg"
+                className="Select__StyledSelect-eyhbyk gWsPtR"
                 disabled={false}
                 name={undefined}
                 onBlur={undefined}
@@ -3512,7 +3512,7 @@ exports[`Storyshots Select With prefix 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw jhqIax"
             data-test={undefined}
           >
             <span
@@ -3541,7 +3541,7 @@ exports[`Storyshots Select With prefix 1`] = `
                 </svg>
               </div>
               <select
-                className="Select__StyledSelect-eyhbyk jEOzuv"
+                className="Select__StyledSelect-eyhbyk eqfQfw"
                 disabled={false}
                 name={undefined}
                 onBlur={undefined}
@@ -4067,7 +4067,7 @@ exports[`Storyshots Select With small size 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw fshYAU"
+            className="Select__Label-hzoCkw jhqIax"
             data-test={undefined}
           >
             <span

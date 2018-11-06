@@ -115,7 +115,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-ehEpyW erqRLf"
+                  className="Modal__CloseContainer-ehEpyW evLwJi"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-eyUiPe DORaW"
@@ -224,7 +224,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       className="Stack__StyledStack-cGIpQG kPNFXL"
                     >
                       <button
-                        className="Button__StyledButton-jJDkJK jzykRp"
+                        className="Button__StyledButton-jJDkJK tpWhP"
                         data-test={undefined}
                         disabled={undefined}
                         size="normal"
@@ -235,7 +235,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                           className="Button__StyledButtonContent-gvDciI pDqSF"
                         >
                           <div
-                            className="Button__IconContainer-bZYzaL lmwnCT"
+                            className="Button__IconContainer-bZYzaL gFFnfX"
                           >
                             <svg
                               className="Icon__StyledIcon-ckyxIP fvqkFf"
@@ -1726,7 +1726,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-ehEpyW erqRLf"
+                  className="Modal__CloseContainer-ehEpyW evLwJi"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-eyUiPe DORaW"

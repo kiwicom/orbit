@@ -103,7 +103,7 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
             data-test="test"
           >
             <button
-              className="ButtonLink__StyledButtonLink-eyUiPe dFYrvl"
+              className="ButtonLink__StyledButtonLink-eyUiPe jjxsUo"
               data-test={undefined}
               onClick={undefined}
               size="normal"
@@ -111,7 +111,7 @@ exports[`Storyshots ButtonGroup With ButtonLinks 1`] = `
               type="button"
             >
               <div
-                className="ButtonLink__IconContainer-flENJD jrcjib"
+                className="ButtonLink__IconContainer-flENJD bpJpFt"
                 size="normal"
               >
                 <svg
@@ -602,7 +602,7 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
             data-test="test"
           >
             <button
-              className="Button__StyledButton-jJDkJK fVudQN"
+              className="Button__StyledButton-jJDkJK kLUGMC"
               data-test={undefined}
               disabled={undefined}
               size="normal"
@@ -613,7 +613,7 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
                 className="Button__StyledButtonContent-gvDciI pDqSF"
               >
                 <div
-                  className="Button__IconContainer-bZYzaL dikZaB"
+                  className="Button__IconContainer-bZYzaL jeCRLt"
                 >
                   <svg
                     className="Icon__StyledIcon-ckyxIP fvqkFf"

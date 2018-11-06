@@ -152,14 +152,18 @@ class InputField extends React.Component<Props, State> {
 
   onBlur = () => {
     this.setState({ focused: false });
-    this.props.onBlur && this.props.onBlur();
+    if (this.props.onBlur) {
+      this.props.onBlur();
+    }
   };
 
   onFocus = () => {
     if (!this.props.disabled) {
       this.setState({ focused: true });
     }
-    this.props.onFocus && this.props.onFocus();
+    if (this.props.onFocus) {
+      this.props.onFocus();
+    }
   };
 
   handlePlaceholder = (text: string) => {

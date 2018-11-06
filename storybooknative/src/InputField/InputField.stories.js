@@ -10,33 +10,36 @@ import { SIZE_OPTIONS } from "./consts";
 
 import InputField from "./index";
 
-storiesOf("InputField", module)
-  .addDecorator(getStory => <CenterView align="flex-start">{getStory()}</CenterView>)
-  .addDecorator(withKnobs)
-  .add("Playground", () => {
-    const label = text("Label", "Label");
-    const value = text("Value", "");
-    const placeholder = text("Placeholder", "Placeholder");
-    const required = boolean("Required", false);
-    const inlineLabel = boolean("Inline label", false);
-    const disabled = boolean("Disabled", false);
-    const size = select("Size", SIZE_OPTIONS, "normal");
-    const help = text("Help", "");
-    const error = text("Error", "");
+class InputFiledWithState extends React.Component<{}, { text: string }> {
+  state = {
+    text: "",
+  };
+
+  onChange = value => {
+    this.setState({ text: value });
+    action("change")(value);
+  };
+  render() {
     return (
       <InputField
-        size={size}
-        label={label}
-        value={value}
-        placeholder={placeholder}
-        onChangeText={action("change")}
-        disabled={disabled}
-        required={required}
-        inlineLabel={inlineLabel}
-        help={help}
-        error={error}
+        size={select("Size", SIZE_OPTIONS, "normal")}
+        label={text("Label", "Label")}
+        value={this.state.text}
+        placeholder={text("Placeholder", "Placeholder")}
+        onChangeText={this.onChange}
+        disabled={boolean("Disabled", false)}
+        required={boolean("Required", false)}
+        inlineLabel={boolean("Inline label", false)}
+        help={text("Help", "")}
+        error={text("Error", "")}
         onFocus={action("focused")}
         onBlur={action("blurred")}
       />
     );
-  });
+  }
+}
+
+storiesOf("InputField", module)
+  .addDecorator(getStory => <CenterView align="flex-start">{getStory()}</CenterView>)
+  .addDecorator(withKnobs)
+  .add("Playground", () => <InputFiledWithState />);

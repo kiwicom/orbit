@@ -136,7 +136,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                       className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                     >
                       <p
-                        className="Text__StyledText-guhEiE eltpBo"
+                        className="Text__StyledText-guhEiE dxjJug"
                         data-test={undefined}
                       >
                         11:20
@@ -146,7 +146,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                       className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                     >
                       <p
-                        className="Text__StyledText-guhEiE eltpBo"
+                        className="Text__StyledText-guhEiE dxjJug"
                         data-test={undefined}
                       >
                         4:20
@@ -1088,7 +1088,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                       className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                     >
                       <p
-                        className="Text__StyledText-guhEiE eltpBo"
+                        className="Text__StyledText-guhEiE dxjJug"
                         data-test={undefined}
                       >
                         11:20
@@ -1098,7 +1098,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                       className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                     >
                       <p
-                        className="Text__StyledText-guhEiE eltpBo"
+                        className="Text__StyledText-guhEiE dxjJug"
                         data-test={undefined}
                       >
                         14:20
@@ -2120,7 +2120,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                       className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                     >
                       <p
-                        className="Text__StyledText-guhEiE eltpBo"
+                        className="Text__StyledText-guhEiE dxjJug"
                         data-test={undefined}
                       >
                         11:20
@@ -2130,7 +2130,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                       className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                     >
                       <p
-                        className="Text__StyledText-guhEiE eltpBo"
+                        className="Text__StyledText-guhEiE dxjJug"
                         data-test={undefined}
                       >
                         4:20

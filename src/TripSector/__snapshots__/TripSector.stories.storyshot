@@ -161,7 +161,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                       >
                         <p
-                          className="Text__StyledText-guhEiE eltpBo"
+                          className="Text__StyledText-guhEiE dxjJug"
                           data-test={undefined}
                         >
                           6:30
@@ -171,7 +171,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                       >
                         <p
-                          className="Text__StyledText-guhEiE eltpBo"
+                          className="Text__StyledText-guhEiE dxjJug"
                           data-test={undefined}
                         >
                           8:30
@@ -409,7 +409,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                       >
                         <p
-                          className="Text__StyledText-guhEiE eltpBo"
+                          className="Text__StyledText-guhEiE dxjJug"
                           data-test={undefined}
                         >
                           13:20
@@ -419,7 +419,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                       >
                         <p
-                          className="Text__StyledText-guhEiE eltpBo"
+                          className="Text__StyledText-guhEiE dxjJug"
                           data-test={undefined}
                         >
                           16:20
@@ -613,7 +613,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                       >
                         <p
-                          className="Text__StyledText-guhEiE eltpBo"
+                          className="Text__StyledText-guhEiE dxjJug"
                           data-test={undefined}
                         >
                           18:45
@@ -623,7 +623,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                       >
                         <p
-                          className="Text__StyledText-guhEiE eltpBo"
+                          className="Text__StyledText-guhEiE dxjJug"
                           data-test={undefined}
                         >
                           20:15
@@ -858,7 +858,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                       >
                         <p
-                          className="Text__StyledText-guhEiE eltpBo"
+                          className="Text__StyledText-guhEiE dxjJug"
                           data-test={undefined}
                         >
                           09:20
@@ -868,7 +868,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                       >
                         <p
-                          className="Text__StyledText-guhEiE eltpBo"
+                          className="Text__StyledText-guhEiE dxjJug"
                           data-test={undefined}
                         >
                           14:15
@@ -5057,7 +5057,7 @@ exports[`Storyshots TripSector Playground 1`] = `
                         className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                       >
                         <p
-                          className="Text__StyledText-guhEiE eltpBo"
+                          className="Text__StyledText-guhEiE dxjJug"
                           data-test={undefined}
                         >
                           6:30
@@ -5067,7 +5067,7 @@ exports[`Storyshots TripSector Playground 1`] = `
                         className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
                       >
                         <p
-                          className="Text__StyledText-guhEiE eltpBo"
+                          className="Text__StyledText-guhEiE dxjJug"
                           data-test={undefined}
                         >
                           8:30

@@ -100,7 +100,6 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
         >
           <div
             className="CarrierLogo__StyledCarrierLogo-d4doc9-1 imXoUt"
-            data-test={undefined}
             size="large"
           >
             <img
@@ -161,49 +160,40 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      CarrierLogo
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        CarrierLogo
+                      </span>
                       <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          carriers
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            carriers
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -214,7 +204,11 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
                               >
                                 [
                                 <span>
-                                  {
+                                  <span>
+                                    <br />
+                                      
+                                      
+                                  </span>
                                   <span
                                     style={
                                       Object {
@@ -223,14 +217,16 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      code
+                                      >
+                                        code
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -241,19 +237,19 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      FR
-                                      "
+                                      'FR'
                                     </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      name
+                                      >
+                                        name
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -264,17 +260,18 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Ryanair
-                                      "
+                                      'Ryanair'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
+                                  <span>
+                                    <br />
+                                      
+                                      
+                                  </span>
                                   <span
                                     style={
                                       Object {
@@ -283,14 +280,16 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      code
+                                      >
+                                        code
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -301,19 +300,19 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      TO
-                                      "
+                                      'TO'
                                     </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      name
+                                      >
+                                        name
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -324,17 +323,18 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Transavia France
-                                      "
+                                      'Transavia France'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
+                                  <span>
+                                    <br />
+                                      
+                                      
+                                  </span>
                                   <span
                                     style={
                                       Object {
@@ -343,14 +343,16 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      code
+                                      >
+                                        code
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -361,19 +363,19 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      VY
-                                      "
+                                      'VY'
                                     </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      name
+                                      >
+                                        name
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -384,35 +386,64 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Vueling
-                                      "
+                                      'Vueling'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
-                                …
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                      
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                    
+                                </span>
                                 ]
                               </span>
                               }
                             </span>
                           </span>
+                           
                         </span>
-                         
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -524,7 +555,6 @@ exports[`Storyshots CarrierLogo Non-existing carrier 1`] = `
         >
           <div
             className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
-            data-test={undefined}
             size="large"
           >
             <img
@@ -561,76 +591,67 @@ exports[`Storyshots CarrierLogo Non-existing carrier 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      CarrierLogo
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        CarrierLogo
+                      </span>
                       <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          size
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
+                            size
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              large
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                large
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          carriers
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            carriers
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -641,7 +662,6 @@ exports[`Storyshots CarrierLogo Non-existing carrier 1`] = `
                               >
                                 [
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -650,14 +670,16 @@ exports[`Storyshots CarrierLogo Non-existing carrier 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      code
+                                      >
+                                        code
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -668,42 +690,19 @@ exports[`Storyshots CarrierLogo Non-existing carrier 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      LAL
-                                      "
+                                      'LAL'
                                     </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      name
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      "
-                                      Lorem ipsum
-                                      "
-                                    </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      type
+                                      >
+                                        name
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -714,33 +713,74 @@ exports[`Storyshots CarrierLogo Non-existing carrier 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      airline
-                                      "
+                                      'Lorem ipsum'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        type
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'airline'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
                                 ]
                               </span>
                               }
                             </span>
                           </span>
+                           
                         </span>
-                         
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -852,7 +892,6 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
         >
           <div
             className="CarrierLogo__StyledCarrierLogo-d4doc9-1 imXoUt"
-            data-test={undefined}
             size="large"
           >
             <img
@@ -905,49 +944,40 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      CarrierLogo
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        CarrierLogo
+                      </span>
                       <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          carriers
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            carriers
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -958,7 +988,6 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
                               >
                                 [
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -967,14 +996,16 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      code
+                                      >
+                                        code
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -985,42 +1016,19 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      LOL
-                                      "
+                                      'LOL'
                                     </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      name
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      "
-                                      Lorem ipsum
-                                      "
-                                    </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      type
+                                      >
+                                        name
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -1031,17 +1039,36 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      airline
-                                      "
+                                      'Lorem ipsum'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        type
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'airline'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -1050,14 +1077,16 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      code
+                                      >
+                                        code
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -1068,42 +1097,19 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      KEK
-                                      "
+                                      'KEK'
                                     </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      name
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      "
-                                      Lorem ipsum
-                                      "
-                                    </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      type
+                                      >
+                                        name
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -1114,17 +1120,36 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      bus
-                                      "
+                                      'Lorem ipsum'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        type
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'bus'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -1133,14 +1158,16 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      code
+                                      >
+                                        code
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -1151,42 +1178,19 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      BUR
-                                      "
+                                      'BUR'
                                     </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      name
-                                    </span>
-                                    : 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      "
-                                      Lorem ipsum
-                                      "
-                                    </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      type
+                                      >
+                                        name
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -1197,33 +1201,74 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      train
-                                      "
+                                      'Lorem ipsum'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        type
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'train'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
                                 ]
                               </span>
                               }
                             </span>
                           </span>
+                           
                         </span>
-                         
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -1372,76 +1417,67 @@ exports[`Storyshots CarrierLogo One carrier 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      CarrierLogo
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        CarrierLogo
+                      </span>
                       <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          size
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
+                            size
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              large
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                large
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          carriers
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            carriers
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -1452,7 +1488,6 @@ exports[`Storyshots CarrierLogo One carrier 1`] = `
                               >
                                 [
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -1461,14 +1496,16 @@ exports[`Storyshots CarrierLogo One carrier 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      code
+                                      >
+                                        code
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -1479,19 +1516,19 @@ exports[`Storyshots CarrierLogo One carrier 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      FR
-                                      "
+                                      'FR'
                                     </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      name
+                                      >
+                                        name
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -1502,13 +1539,10 @@ exports[`Storyshots CarrierLogo One carrier 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Ryanair
-                                      "
+                                      'Ryanair'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
                                 ]
                               </span>
@@ -1516,46 +1550,67 @@ exports[`Storyshots CarrierLogo One carrier 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          dataTest
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
+                            dataTest
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              test
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                test
+                              </span>
                               "
                             </span>
                           </span>
+                           
                         </span>
-                         
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -1667,7 +1722,6 @@ exports[`Storyshots CarrierLogo Two carriers 1`] = `
         >
           <div
             className="CarrierLogo__StyledCarrierLogo-d4doc9-1 imXoUt"
-            data-test={undefined}
             size="large"
           >
             <img
@@ -1712,49 +1766,40 @@ exports[`Storyshots CarrierLogo Two carriers 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      CarrierLogo
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        CarrierLogo
+                      </span>
                       <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          carriers
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            carriers
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -1765,7 +1810,6 @@ exports[`Storyshots CarrierLogo Two carriers 1`] = `
                               >
                                 [
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -1774,14 +1818,16 @@ exports[`Storyshots CarrierLogo Two carriers 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      code
+                                      >
+                                        code
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -1792,19 +1838,19 @@ exports[`Storyshots CarrierLogo Two carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      FR
-                                      "
+                                      'FR'
                                     </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      name
+                                      >
+                                        name
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -1815,17 +1861,13 @@ exports[`Storyshots CarrierLogo Two carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Ryanair
-                                      "
+                                      'Ryanair'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -1834,14 +1876,16 @@ exports[`Storyshots CarrierLogo Two carriers 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      code
+                                      >
+                                        code
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -1852,19 +1896,19 @@ exports[`Storyshots CarrierLogo Two carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      TO
-                                      "
+                                      'TO'
                                     </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
                                         }
-                                      }
-                                    >
-                                      name
+                                      >
+                                        name
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -1875,33 +1919,51 @@ exports[`Storyshots CarrierLogo Two carriers 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Transavia France
-                                      "
+                                      'Transavia France'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
                                 ]
                               </span>
                               }
                             </span>
                           </span>
+                           
                         </span>
-                         
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>

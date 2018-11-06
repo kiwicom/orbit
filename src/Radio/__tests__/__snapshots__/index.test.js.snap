@@ -393,7 +393,6 @@ exports[`Default CheckBox should match snapshot 1`] = `
   <Radio__Input
     checked={false}
     disabled={false}
-    innerRef={null}
     name="name"
     onChange={
       [MockFunction] {

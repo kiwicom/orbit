@@ -265,12 +265,11 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
       {label && !inlineLabel && <FormLabel label={label} isFilled={!!value} required={required} />}
       <InputContainer size={size} disabled={disabled} error={error}>
         {prefix && <Prefix size={size}>{prefix}</Prefix>}
-        {label &&
-          inlineLabel && (
-            <StyledInlineLabel size={size}>
-              <FormLabel label={label} isFilled={!!value} required={required} />
-            </StyledInlineLabel>
-          )}
+        {label && inlineLabel && (
+          <StyledInlineLabel size={size}>
+            <FormLabel label={label} isFilled={!!value} required={required} />
+          </StyledInlineLabel>
+        )}
         <Input
           onChange={onChange}
           onFocus={onFocus}
@@ -288,7 +287,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           maxLength={maxLength}
           size={size}
           error={error}
-          innerRef={ref}
+          ref={ref}
         />
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />

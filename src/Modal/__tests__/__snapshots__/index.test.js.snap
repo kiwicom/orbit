@@ -783,7 +783,6 @@ exports[`Large Modal should match snapshot 1`] = `
       fixedClose={false}
       fixedFooter={true}
       fullyScrolled={false}
-      innerRef={[Function]}
       scrolled={false}
       size="large"
       theme={

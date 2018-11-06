@@ -238,7 +238,7 @@ class TripSegment extends React.PureComponent<Props, State> {
   }
 
   setHeight() {
-    this.contentHeight = this.node.current.clientHeight;
+    this.contentHeight = this.node?.current.clientHeight;
   }
 
   handleToggle = () => {

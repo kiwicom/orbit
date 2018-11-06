@@ -1,0 +1,10 @@
+// @flow strict
+
+import { Style } from "../types/Style";
+
+export type Props = {|
+  +name: string,
+  style: Style,
+|};
+
+declare export default React$ComponentType<Props>;

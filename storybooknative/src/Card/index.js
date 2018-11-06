@@ -36,7 +36,7 @@ StyledTouchable.defaultProps = {
   theme: defaultTokens,
 };
 
-export default function SimpleCard(props: Props) {
+export default function Card(props: Props) {
   if (props.onPress) {
     return (
       <StyledTouchable onPress={props.onPress} delayPressIn={props.delayPressIn}>

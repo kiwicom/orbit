@@ -8,18 +8,18 @@ import { storiesOf } from "../../helpers/storiesOf";
 import CenterView from "../../src/CenterView";
 import Text from "../Text/index";
 
-import SimpleCard from "./index";
+import Card from "./index";
 
-storiesOf("SimpleCard", module)
+storiesOf("Card", module)
   .addDecorator(withKnobs)
   .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
   .add("Default", () => (
-    <SimpleCard>
-      <Text>Simple Card</Text>
-    </SimpleCard>
+    <Card>
+      <Text>Card</Text>
+    </Card>
   ))
   .add("Clickable card", () => (
-    <SimpleCard onPress={action("clicked")}>
-      <Text>Simple Card</Text>
-    </SimpleCard>
+    <Card onPress={action("clicked")}>
+      <Text>Card</Text>
+    </Card>
   ));

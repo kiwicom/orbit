@@ -86,11 +86,12 @@ class Tile extends React.PureComponent<Props, State> {
           isExpandable={isExpandable}
           isExpanded={isExpanded}
         />
-        {isExpandable && (
-          <TileExpandable expanded={isExpanded} initialExpanded={this.state.initialExpanded}>
-            {children}
-          </TileExpandable>
-        )}
+        {isExpandable &&
+          children && (
+            <TileExpandable expanded={isExpanded} initialExpanded={this.state.initialExpanded}>
+              {children}
+            </TileExpandable>
+          )}
       </StyledTile>
     );
   }

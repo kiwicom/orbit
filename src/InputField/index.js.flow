@@ -1,4 +1,6 @@
 // @flow
+import type { ReactComponentStyled } from "styled-components";
+
 import type { Globals, Ref } from "../common/common.js.flow";
 
 export type Size = "small" | "normal";
@@ -30,12 +32,12 @@ export type Props = {|
   ...Ref,
 |};
 
-declare export var FakeInput: React$ComponentType<>;
+declare export var FakeInput: ReactComponentStyled<any>;
 
-declare export var Input: React$ComponentType<>;
+declare export var Input: ReactComponentStyled<any>;
 
-declare export var Prefix: React$ComponentType<>;
+declare export var Prefix: ReactComponentStyled<any>;
 
-declare export var InputContainer: React$ComponentType<>;
+declare export var InputContainer: ReactComponentStyled<any>;
 
 declare export default React$ComponentType<Props>;

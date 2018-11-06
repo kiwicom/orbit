@@ -1,5 +1,7 @@
 // @flow
 
+import type { ReactComponentStyled } from "styled-components";
+
 type Align = "left" | "center" | "right";
 
 export type Props = {|
@@ -9,4 +11,4 @@ export type Props = {|
 
 declare export default React$ComponentType<Props>;
 
-declare export var StyledTableCell: React$ComponentType<Props>;
+declare export var StyledTableCell: ReactComponentStyled<Props>;

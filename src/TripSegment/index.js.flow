@@ -1,4 +1,6 @@
 // @flow
+import type { ReactComponentStyled } from "styled-components";
+
 import type { Carrier } from "../CarrierLogo";
 import type { Globals } from "../common/common.js.flow";
 
@@ -25,5 +27,5 @@ export type Props = {|
 |};
 
 declare export default React$ComponentType<Props>;
-declare export var StyledTripSegment: React$ComponentType<>;
-declare export var StyledTripSegmentMilestone: React$ComponentType<>;
+declare export var StyledTripSegment: ReactComponentStyled<any>;
+declare export var StyledTripSegmentMilestone: ReactComponentStyled<any>;

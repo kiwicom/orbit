@@ -1,4 +1,6 @@
 // @flow
+import type { ReactComponentStyled } from "styled-components";
+
 import type { Globals } from "../../common/common.js.flow";
 import Illustration from "../../Illustration";
 
@@ -13,4 +15,4 @@ export type Props = {|
 
 declare export default React$ComponentType<Props>;
 
-declare export var MobileHeader: React$ComponentType<>;
+declare export var MobileHeader: ReactComponentStyled<any>;

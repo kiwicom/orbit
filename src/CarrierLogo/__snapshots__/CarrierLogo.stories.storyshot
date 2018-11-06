@@ -99,13 +99,13 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
           }
         >
           <div
-            className="CarrierLogo__StyledCarrierLogo-ieqjqT joVRnn"
+            className="CarrierLogo__StyledCarrierLogo-d4doc9-1 imXoUt"
             data-test={undefined}
             size="large"
           >
             <img
               alt="Ryanair"
-              className="CarrierLogo__StyledImage-fRYacf jJJlwg"
+              className="CarrierLogo__StyledImage-d4doc9-0 eBhasD"
               size="large"
               src="//images.kiwi.com/airlines/16/FR.png?default=airline.png"
               srcSet="//images.kiwi.com/airlines/32/FR.png?default=airline.png 2x"
@@ -113,7 +113,7 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
             />
             <img
               alt="Transavia France"
-              className="CarrierLogo__StyledImage-fRYacf jJJlwg"
+              className="CarrierLogo__StyledImage-d4doc9-0 eBhasD"
               size="large"
               src="//images.kiwi.com/airlines/16/TO.png?default=airline.png"
               srcSet="//images.kiwi.com/airlines/32/TO.png?default=airline.png 2x"
@@ -121,7 +121,7 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
             />
             <img
               alt="Vueling"
-              className="CarrierLogo__StyledImage-fRYacf jJJlwg"
+              className="CarrierLogo__StyledImage-d4doc9-0 eBhasD"
               size="large"
               src="//images.kiwi.com/airlines/16/VY.png?default=airline.png"
               srcSet="//images.kiwi.com/airlines/32/VY.png?default=airline.png 2x"
@@ -129,7 +129,7 @@ exports[`Storyshots CarrierLogo Four carriers 1`] = `
             />
             <img
               alt="Czech Airlines"
-              className="CarrierLogo__StyledImage-fRYacf jJJlwg"
+              className="CarrierLogo__StyledImage-d4doc9-0 eBhasD"
               size="large"
               src="//images.kiwi.com/airlines/16/OK.png?default=airline.png"
               srcSet="//images.kiwi.com/airlines/32/OK.png?default=airline.png 2x"
@@ -523,13 +523,13 @@ exports[`Storyshots CarrierLogo Non-existing carrier 1`] = `
           }
         >
           <div
-            className="CarrierLogo__StyledCarrierLogo-ieqjqT kvJfMi"
+            className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
             data-test={undefined}
             size="large"
           >
             <img
               alt="Lorem ipsum"
-              className="CarrierLogo__StyledImage-fRYacf MYsmm"
+              className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
               size="large"
               src="//images.kiwi.com/airlines/32/LAL.png?default=airline.png"
               srcSet="//images.kiwi.com/airlines/64/LAL.png?default=airline.png 2x"
@@ -851,13 +851,13 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
           }
         >
           <div
-            className="CarrierLogo__StyledCarrierLogo-ieqjqT joVRnn"
+            className="CarrierLogo__StyledCarrierLogo-d4doc9-1 imXoUt"
             data-test={undefined}
             size="large"
           >
             <img
               alt="Lorem ipsum"
-              className="CarrierLogo__StyledImage-fRYacf jJJlwg"
+              className="CarrierLogo__StyledImage-d4doc9-0 eBhasD"
               size="large"
               src="//images.kiwi.com/airlines/16/LOL.png?default=airline.png"
               srcSet="//images.kiwi.com/airlines/32/LOL.png?default=airline.png 2x"
@@ -865,7 +865,7 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
             />
             <img
               alt="Lorem ipsum"
-              className="CarrierLogo__StyledImage-fRYacf jJJlwg"
+              className="CarrierLogo__StyledImage-d4doc9-0 eBhasD"
               size="large"
               src="//images.kiwi.com/airlines/16/KEK.png?default=bus.png"
               srcSet="//images.kiwi.com/airlines/32/KEK.png?default=bus.png 2x"
@@ -873,7 +873,7 @@ exports[`Storyshots CarrierLogo Non-existing carriers 1`] = `
             />
             <img
               alt="Lorem ipsum"
-              className="CarrierLogo__StyledImage-fRYacf jJJlwg"
+              className="CarrierLogo__StyledImage-d4doc9-0 eBhasD"
               size="large"
               src="//images.kiwi.com/airlines/16/BUR.png?default=train.png"
               srcSet="//images.kiwi.com/airlines/32/BUR.png?default=train.png 2x"
@@ -1334,13 +1334,13 @@ exports[`Storyshots CarrierLogo One carrier 1`] = `
           }
         >
           <div
-            className="CarrierLogo__StyledCarrierLogo-ieqjqT kvJfMi"
+            className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
             data-test="test"
             size="large"
           >
             <img
               alt="Ryanair"
-              className="CarrierLogo__StyledImage-fRYacf MYsmm"
+              className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
               size="large"
               src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
               srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
@@ -1666,13 +1666,13 @@ exports[`Storyshots CarrierLogo Two carriers 1`] = `
           }
         >
           <div
-            className="CarrierLogo__StyledCarrierLogo-ieqjqT joVRnn"
+            className="CarrierLogo__StyledCarrierLogo-d4doc9-1 imXoUt"
             data-test={undefined}
             size="large"
           >
             <img
               alt="Ryanair"
-              className="CarrierLogo__StyledImage-fRYacf iQxAir"
+              className="CarrierLogo__StyledImage-d4doc9-0 ZHhxz"
               size="large"
               src="//images.kiwi.com/airlines/16/FR.png?default=airline.png"
               srcSet="//images.kiwi.com/airlines/32/FR.png?default=airline.png 2x"
@@ -1680,7 +1680,7 @@ exports[`Storyshots CarrierLogo Two carriers 1`] = `
             />
             <img
               alt="Transavia France"
-              className="CarrierLogo__StyledImage-fRYacf iQxAir"
+              className="CarrierLogo__StyledImage-d4doc9-0 ZHhxz"
               size="large"
               src="//images.kiwi.com/airlines/16/TO.png?default=airline.png"
               srcSet="//images.kiwi.com/airlines/32/TO.png?default=airline.png 2x"

@@ -99,30 +99,30 @@ exports[`Storyshots Tile Default 1`] = `
           }
         >
           <div
-            className="Tile__StyledTile-fWcXRb cHIzZh"
+            className="Tile__StyledTile-sc-15i01z6-0 iiSZtx"
             data-test={undefined}
             href={undefined}
             target={undefined}
           >
             <div
-              className="TileHeader__StyledTileHeader-gAXYPe eIMfof"
+              className="TileHeader__StyledTileHeader-sc-1k1u3lr-0 dbRrBh"
               onClick={[Function]}
             >
               <div
-                className="TileHeader__StyledTileTitle-xOuee gOhPdy"
+                className="TileHeader__StyledTileTitle-sc-1k1u3lr-1 huhbMr"
               >
                 <h3
-                  className="Heading__StyledHeading-gucmUp hgjEuM"
+                  className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
                   data-test={undefined}
                 >
                   Urgent information
                 </h3>
               </div>
               <div
-                className="TileHeader__StyledIconRight-dAtgWN ioxYvx"
+                className="TileHeader__StyledIconRight-sc-1k1u3lr-4 gXAQYb"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -366,23 +366,23 @@ exports[`Storyshots Tile Expandable 1`] = `
           }
         >
           <div
-            className="Tile__StyledTile-fWcXRb cHIzZh"
+            className="Tile__StyledTile-sc-15i01z6-0 iiSZtx"
             data-test={undefined}
             href={undefined}
             target={undefined}
           >
             <div
-              className="TileHeader__StyledTileHeader-gAXYPe eIMfof"
+              className="TileHeader__StyledTileHeader-sc-1k1u3lr-0 dbRrBh"
               onClick={[Function]}
             >
               <div
-                className="TileHeader__StyledTileTitle-xOuee gOhPdy"
+                className="TileHeader__StyledTileTitle-sc-1k1u3lr-1 huhbMr"
               >
                 <div
-                  className="TileHeader__StyledTileIcon-hVIutj hbqFEr"
+                  className="TileHeader__StyledTileIcon-sc-1k1u3lr-2 cyphAm"
                 >
                   <svg
-                    className="Icon__StyledIcon-ckyxIP fvqkFf"
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                     data-test={undefined}
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
@@ -393,22 +393,22 @@ exports[`Storyshots Tile Expandable 1`] = `
                   </svg>
                 </div>
                 <h3
-                  className="Heading__StyledHeading-gucmUp hgjEuM"
+                  className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
                   data-test={undefined}
                 >
                   Expandable
                 </h3>
               </div>
               <div
-                className="TileHeader__StyledTileDescription-bWsQxd epXwBZ"
+                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 dLmwCT"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
               </div>
               <div
-                className="TileHeader__StyledIconRight-dAtgWN ioxYvx"
+                className="TileHeader__StyledIconRight-sc-1k1u3lr-4 gXAQYb"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -420,7 +420,7 @@ exports[`Storyshots Tile Expandable 1`] = `
               </div>
             </div>
             <div
-              className="TileExpandable__StyledTileExpandable-dOqjwA kPnxZn"
+              className="TileExpandable__StyledTileExpandable-notqy1-0 cunqTi"
             >
               <div>
                 This is example of expanded content
@@ -766,29 +766,29 @@ exports[`Storyshots Tile Expandable with custom description 1`] = `
           }
         >
           <div
-            className="Tile__StyledTile-fWcXRb cHIzZh"
+            className="Tile__StyledTile-sc-15i01z6-0 iiSZtx"
             data-test={undefined}
             href={undefined}
             target={undefined}
           >
             <div
-              className="TileHeader__StyledTileHeader-gAXYPe eIMfof"
+              className="TileHeader__StyledTileHeader-sc-1k1u3lr-0 dbRrBh"
               onClick={[Function]}
             >
               <div
-                className="TileHeader__StyledTileDescription-bWsQxd bXKGqk"
+                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 eVXcAk"
               >
                 <div
-                  className="Stack__StyledStack-cGIpQG fiYcII"
+                  className="Stack__StyledStack-sc-1t576ow-0 dBbhzD"
                 >
                   <p
-                    className="Text__StyledText-guhEiE hYZMSR"
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                     data-test={undefined}
                   >
                     Mr. John Smith
                   </p>
                   <p
-                    className="Text__StyledText-guhEiE hYZMSR"
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                     data-test={undefined}
                   >
                     20 kg
@@ -796,10 +796,10 @@ exports[`Storyshots Tile Expandable with custom description 1`] = `
                 </div>
               </div>
               <div
-                className="TileHeader__StyledIconRight-dAtgWN ioxYvx"
+                className="TileHeader__StyledIconRight-sc-1k1u3lr-4 gXAQYb"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -811,7 +811,7 @@ exports[`Storyshots Tile Expandable with custom description 1`] = `
               </div>
             </div>
             <div
-              className="TileExpandable__StyledTileExpandable-dOqjwA kPnxZn"
+              className="TileExpandable__StyledTileExpandable-notqy1-0 cunqTi"
             >
               <div>
                 This is example of expanded content
@@ -1091,23 +1091,23 @@ exports[`Storyshots Tile Playground 1`] = `
           }
         >
           <a
-            className="Tile__StyledTile-fWcXRb cHIzZh"
+            className="Tile__StyledTile-sc-15i01z6-0 iiSZtx"
             data-test="test"
             href="https://www.kiwi.com/"
             target={undefined}
           >
             <div
-              className="TileHeader__StyledTileHeader-gAXYPe eIMfof"
+              className="TileHeader__StyledTileHeader-sc-1k1u3lr-0 dbRrBh"
               onClick={[Function]}
             >
               <div
-                className="TileHeader__StyledTileTitle-xOuee gOhPdy"
+                className="TileHeader__StyledTileTitle-sc-1k1u3lr-1 huhbMr"
               >
                 <div
-                  className="TileHeader__StyledTileIcon-hVIutj hbqFEr"
+                  className="TileHeader__StyledTileIcon-sc-1k1u3lr-2 cyphAm"
                 >
                   <svg
-                    className="Icon__StyledIcon-ckyxIP fvqkFf"
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                     data-test={undefined}
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
@@ -1118,22 +1118,22 @@ exports[`Storyshots Tile Playground 1`] = `
                   </svg>
                 </div>
                 <h3
-                  className="Heading__StyledHeading-gucmUp hgjEuM"
+                  className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
                   data-test={undefined}
                 >
                   Tile with title
                 </h3>
               </div>
               <div
-                className="TileHeader__StyledTileDescription-bWsQxd epXwBZ"
+                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 dLmwCT"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
               </div>
               <div
-                className="TileHeader__StyledIconRight-dAtgWN ioxYvx"
+                className="TileHeader__StyledIconRight-sc-1k1u3lr-4 gXAQYb"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"

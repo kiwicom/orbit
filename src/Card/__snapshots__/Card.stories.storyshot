@@ -99,24 +99,24 @@ exports[`Storyshots Card Card with description 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH htEHAk"
+            className="Card__StyledCard-ff0z2v-1 ivlOUx"
             data-test={undefined}
           >
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
+                className="CardHeader__StyledCardHeader-lvjkay-0 bZeHlk"
                 data-test={undefined}
               >
                 <div
-                  className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
+                  className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
                 >
                   <div
-                    className="CardHeader__StyledIcon-doXBgu isldQW"
+                    className="CardHeader__StyledIcon-lvjkay-3 iZWBAS"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -127,17 +127,17 @@ exports[`Storyshots Card Card with description 1`] = `
                     </svg>
                   </div>
                   <h2
-                    className="Heading__StyledHeading-gucmUp eKGySM"
+                    className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
                     data-test={undefined}
                   >
                     Card with title & description
                   </h2>
                 </div>
                 <div
-                  className="CardHeader__StyledSubTitle-gOpdhi itEmg"
+                  className="CardHeader__StyledSubTitle-lvjkay-2 bAlmQl"
                 >
                   <p
-                    className="Text__StyledText-guhEiE hYZMSR"
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                     data-test={undefined}
                   >
                     This is a description of the card.
@@ -456,31 +456,31 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH htEHAk"
+            className="Card__StyledCard-ff0z2v-1 ivlOUx"
             data-test={undefined}
           >
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
+                className="CardHeader__StyledCardHeader-lvjkay-0 bZeHlk"
                 data-test={undefined}
               >
                 <div
-                  className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
+                  className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
                 >
                   <h2
-                    className="Heading__StyledHeading-gucmUp eKGySM"
+                    className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
                     data-test={undefined}
                   >
                     Card with sections
                   </h2>
                 </div>
                 <div
-                  className="CardHeader__StyledSubTitle-gOpdhi itEmg"
+                  className="CardHeader__StyledSubTitle-lvjkay-2 bAlmQl"
                 >
                   <p
-                    className="Text__StyledText-guhEiE hYZMSR"
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                     data-test={undefined}
                   >
                     This is a description of the card.
@@ -489,37 +489,37 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
               </div>
             </div>
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="Card__StyledExpandableSectionWrapper-bwYRgE fhGfxK"
+                className="Card__StyledExpandableSectionWrapper-ff0z2v-3 eVeAaM"
               >
                 <div
-                  className="CardSection__StyledCardSection-jTZsPt bzDxhR"
+                  className="CardSection__StyledCardSection-o8zdxr-2 vpPwA"
                   data-test={undefined}
                 >
                   <div
-                    className="CardSection__StyledCardSectionHeader-glQZki hafKS"
+                    className="CardSection__StyledCardSectionHeader-o8zdxr-3 cGvEeq"
                     onClick={[Function]}
                   >
                     <div
-                      className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                      className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                     >
                       <h3
-                        className="Heading__StyledHeading-gucmUp hgjEuM"
+                        className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
                         data-test={undefined}
                       >
                         Insert your title here...
                       </h3>
                       <p
-                        className="Text__StyledText-guhEiE hYZMSR"
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         data-test={undefined}
                       >
                         subtitle
                       </p>
                     </div>
                     <svg
-                      className="CardSection__StyledCardSectionIconRight-bDXJH jNnZJf Icon__StyledIcon-ckyxIP fSokFV"
+                      className="CardSection__StyledCardSectionIconRight-o8zdxr-0 eKryal Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -530,7 +530,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                     </svg>
                   </div>
                   <div
-                    className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                    className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
                   >
                     <div>
                       This is hidden content
@@ -540,37 +540,37 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
               </div>
             </div>
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="Card__StyledExpandableSectionWrapper-bwYRgE fhGfxK"
+                className="Card__StyledExpandableSectionWrapper-ff0z2v-3 eVeAaM"
               >
                 <div
-                  className="CardSection__StyledCardSection-jTZsPt bzDxhR"
+                  className="CardSection__StyledCardSection-o8zdxr-2 vpPwA"
                   data-test={undefined}
                 >
                   <div
-                    className="CardSection__StyledCardSectionHeader-glQZki hafKS"
+                    className="CardSection__StyledCardSectionHeader-o8zdxr-3 cGvEeq"
                     onClick={[Function]}
                   >
                     <div
-                      className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                      className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                     >
                       <h3
-                        className="Heading__StyledHeading-gucmUp hgjEuM"
+                        className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
                         data-test={undefined}
                       >
                         Insert your title here...
                       </h3>
                       <p
-                        className="Text__StyledText-guhEiE hYZMSR"
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         data-test={undefined}
                       >
                         subtitle
                       </p>
                     </div>
                     <svg
-                      className="CardSection__StyledCardSectionIconRight-bDXJH jNnZJf Icon__StyledIcon-ckyxIP fSokFV"
+                      className="CardSection__StyledCardSectionIconRight-o8zdxr-0 eKryal Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -581,7 +581,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                     </svg>
                   </div>
                   <div
-                    className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                    className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
                   >
                     <div>
                       This is hidden content
@@ -591,37 +591,37 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
               </div>
             </div>
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="Card__StyledExpandableSectionWrapper-bwYRgE fhGfxK"
+                className="Card__StyledExpandableSectionWrapper-ff0z2v-3 eVeAaM"
               >
                 <div
-                  className="CardSection__StyledCardSection-jTZsPt bzDxhR"
+                  className="CardSection__StyledCardSection-o8zdxr-2 vpPwA"
                   data-test={undefined}
                 >
                   <div
-                    className="CardSection__StyledCardSectionHeader-glQZki hafKS"
+                    className="CardSection__StyledCardSectionHeader-o8zdxr-3 cGvEeq"
                     onClick={[Function]}
                   >
                     <div
-                      className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                      className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                     >
                       <h3
-                        className="Heading__StyledHeading-gucmUp hgjEuM"
+                        className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
                         data-test={undefined}
                       >
                         Insert your title here...
                       </h3>
                       <p
-                        className="Text__StyledText-guhEiE hYZMSR"
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         data-test={undefined}
                       >
                         subtitle
                       </p>
                     </div>
                     <svg
-                      className="CardSection__StyledCardSectionIconRight-bDXJH jNnZJf Icon__StyledIcon-ckyxIP fSokFV"
+                      className="CardSection__StyledCardSectionIconRight-o8zdxr-0 eKryal Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -632,7 +632,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                     </svg>
                   </div>
                   <div
-                    className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                    className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
                   >
                     <div>
                       This is hidden content
@@ -1323,31 +1323,31 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH bRaHAv"
+            className="Card__StyledCard-ff0z2v-1 iuQByM"
             data-test={undefined}
           >
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
+                className="CardHeader__StyledCardHeader-lvjkay-0 bZeHlk"
                 data-test={undefined}
               >
                 <div
-                  className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
+                  className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
                 >
                   <h2
-                    className="Heading__StyledHeading-gucmUp eKGySM"
+                    className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
                     data-test={undefined}
                   >
                     Card with sections
                   </h2>
                 </div>
                 <div
-                  className="CardHeader__StyledSubTitle-gOpdhi itEmg"
+                  className="CardHeader__StyledSubTitle-lvjkay-2 bAlmQl"
                 >
                   <p
-                    className="Text__StyledText-guhEiE hYZMSR"
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                     data-test={undefined}
                   >
                     This is a description of the card.
@@ -1356,27 +1356,27 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
               </div>
             </div>
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
+                className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
                 data-test={undefined}
               >
                 <div
-                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
                   onClick={undefined}
                 >
                   <div
-                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                    className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                   >
                     <h3
-                      className="Heading__StyledHeading-gucmUp hgjEuM"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
                       data-test={undefined}
                     >
                       Insert your title here...
                     </h3>
                     <p
-                      className="Text__StyledText-guhEiE hYZMSR"
+                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                       data-test={undefined}
                     >
                       subtitle
@@ -1384,44 +1384,44 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                   </div>
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
                 >
                   <div />
                 </div>
               </div>
             </div>
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="Card__StyledExpandableSectionWrapper-bwYRgE fhGfxK"
+                className="Card__StyledExpandableSectionWrapper-ff0z2v-3 eVeAaM"
               >
                 <div
-                  className="CardSection__StyledCardSection-jTZsPt bzDxhR"
+                  className="CardSection__StyledCardSection-o8zdxr-2 vpPwA"
                   data-test={undefined}
                 >
                   <div
-                    className="CardSection__StyledCardSectionHeader-glQZki hafKS"
+                    className="CardSection__StyledCardSectionHeader-o8zdxr-3 cGvEeq"
                     onClick={[Function]}
                   >
                     <div
-                      className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                      className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                     >
                       <h3
-                        className="Heading__StyledHeading-gucmUp hgjEuM"
+                        className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
                         data-test={undefined}
                       >
                         Insert your title here...
                       </h3>
                       <p
-                        className="Text__StyledText-guhEiE hYZMSR"
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         data-test={undefined}
                       >
                         subtitle
                       </p>
                     </div>
                     <svg
-                      className="CardSection__StyledCardSectionIconRight-bDXJH jNnZJf Icon__StyledIcon-ckyxIP fSokFV"
+                      className="CardSection__StyledCardSectionIconRight-o8zdxr-0 eKryal Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -1432,7 +1432,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                     </svg>
                   </div>
                   <div
-                    className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                    className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
                   >
                     <div>
                       This is hidden content
@@ -1442,27 +1442,27 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
               </div>
             </div>
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
+                className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
                 data-test={undefined}
               >
                 <div
-                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
                   onClick={undefined}
                 >
                   <div
-                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                    className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                   >
                     <h3
-                      className="Heading__StyledHeading-gucmUp hgjEuM"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
                       data-test={undefined}
                     >
                       Insert your title here...
                     </h3>
                     <p
-                      className="Text__StyledText-guhEiE hYZMSR"
+                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                       data-test={undefined}
                     >
                       subtitle
@@ -1470,7 +1470,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                   </div>
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
                 >
                   <div />
                 </div>
@@ -2062,30 +2062,30 @@ exports[`Storyshots Card Card with only section 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH htEHAk"
+            className="Card__StyledCard-ff0z2v-1 ivlOUx"
             data-test={undefined}
           >
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
+                className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
                 data-test={undefined}
               >
                 <div
-                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
                   onClick={undefined}
                 >
                   <div
-                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                    className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                   />
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
                 >
                   <div>
                     <p
-                      className="Text__StyledText-guhEiE hYZMSR"
+                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                       data-test={undefined}
                     >
                       This is a content of the card.
@@ -2412,36 +2412,36 @@ exports[`Storyshots Card Card with sections 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH htEHAk"
+            className="Card__StyledCard-ff0z2v-1 ivlOUx"
             data-test={undefined}
           >
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
+                className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
                 data-test={undefined}
               >
                 <div
-                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
                   onClick={undefined}
                 >
                   <div
-                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                    className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                   />
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
                 >
                   <div>
                     <h3
-                      className="Heading__StyledHeading-gucmUp hgjEuM"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
                       data-test={undefined}
                     >
                       Card with sections
                     </h3>
                     <p
-                      className="Text__StyledText-guhEiE hYZMSR"
+                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                       data-test={undefined}
                     >
                       This is a description of the card.
@@ -2451,32 +2451,32 @@ exports[`Storyshots Card Card with sections 1`] = `
               </div>
             </div>
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
+                className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
                 data-test={undefined}
               >
                 <div
-                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
                   onClick={undefined}
                 >
                   <div
-                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                    className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                   />
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
                 >
                   <div>
                     <h3
-                      className="Heading__StyledHeading-gucmUp hgjEuM"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
                       data-test={undefined}
                     >
                       Card with sections
                     </h3>
                     <p
-                      className="Text__StyledText-guhEiE hYZMSR"
+                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                       data-test={undefined}
                     >
                       This is a description of the card.
@@ -2486,32 +2486,32 @@ exports[`Storyshots Card Card with sections 1`] = `
               </div>
             </div>
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
+                className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
                 data-test={undefined}
               >
                 <div
-                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
                   onClick={undefined}
                 >
                   <div
-                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                    className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                   />
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
                 >
                   <div>
                     <h3
-                      className="Heading__StyledHeading-gucmUp hgjEuM"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
                       data-test={undefined}
                     >
                       Card with sections
                     </h3>
                     <p
-                      className="Text__StyledText-guhEiE hYZMSR"
+                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                       data-test={undefined}
                     >
                       This is a description of the card.
@@ -3453,24 +3453,24 @@ exports[`Storyshots Card Default 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH htEHAk"
+            className="Card__StyledCard-ff0z2v-1 ivlOUx"
             data-test={undefined}
           >
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
+                className="CardHeader__StyledCardHeader-lvjkay-0 bZeHlk"
                 data-test={undefined}
               >
                 <div
-                  className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
+                  className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
                 >
                   <div
-                    className="CardHeader__StyledIcon-doXBgu isldQW"
+                    className="CardHeader__StyledIcon-lvjkay-3 iZWBAS"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -3481,7 +3481,7 @@ exports[`Storyshots Card Default 1`] = `
                     </svg>
                   </div>
                   <h2
-                    className="Heading__StyledHeading-gucmUp eKGySM"
+                    className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
                     data-test={undefined}
                   >
                     Card with title
@@ -3801,24 +3801,24 @@ exports[`Storyshots Card Playground 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH bRaHAv"
+            className="Card__StyledCard-ff0z2v-1 iuQByM"
             data-test="test"
           >
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="CardHeader__StyledCardHeader-czUPbL dvLhpY"
+                className="CardHeader__StyledCardHeader-lvjkay-0 bZeHlk"
                 data-test="test"
               >
                 <div
-                  className="CardHeader__StyledHeadingWrapper-fYKzSi kjzQIl"
+                  className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
                 >
                   <div
-                    className="CardHeader__StyledIcon-doXBgu isldQW"
+                    className="CardHeader__StyledIcon-lvjkay-3 iZWBAS"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -3829,17 +3829,17 @@ exports[`Storyshots Card Playground 1`] = `
                     </svg>
                   </div>
                   <h2
-                    className="Heading__StyledHeading-gucmUp eKGySM"
+                    className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
                     data-test={undefined}
                   >
                     Customisable card title
                   </h2>
                 </div>
                 <div
-                  className="CardHeader__StyledSubTitle-gOpdhi itEmg"
+                  className="CardHeader__StyledSubTitle-lvjkay-2 bAlmQl"
                 >
                   <p
-                    className="Text__StyledText-guhEiE hYZMSR"
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                     data-test={undefined}
                   >
                     This is a customisable description of the card.
@@ -3848,32 +3848,32 @@ exports[`Storyshots Card Playground 1`] = `
               </div>
             </div>
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
+                className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
                 data-test="test"
               >
                 <div
-                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
                   onClick={undefined}
                 >
                   <div
-                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                    className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                   />
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
                 >
                   <div>
                     <h3
-                      className="Heading__StyledHeading-gucmUp hgjEuM"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
                       data-test={undefined}
                     >
                       Content with Heading and text
                     </h3>
                     <p
-                      className="Text__StyledText-guhEiE hYZMSR"
+                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                       data-test={undefined}
                     >
                       Text in content
@@ -3883,32 +3883,32 @@ exports[`Storyshots Card Playground 1`] = `
               </div>
             </div>
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="CardSection__StyledCardSection-jTZsPt fLYNgo"
+                className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
                 data-test="test"
               >
                 <div
-                  className="CardSection__StyledCardSectionHeader-glQZki oHDuW"
+                  className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
                   onClick={undefined}
                 >
                   <div
-                    className="CardSection__StyledTitleAndSubtitle-dunkpr MAzuj"
+                    className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                   />
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-ipoHuU kWAuIn"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
                 >
                   <div>
                     <h3
-                      className="Heading__StyledHeading-gucmUp hgjEuM"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
                       data-test={undefined}
                     >
                       Section with Heading and text
                     </h3>
                     <p
-                      className="Text__StyledText-guhEiE hYZMSR"
+                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                       data-test={undefined}
                     >
                       Text in section

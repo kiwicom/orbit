@@ -99,20 +99,20 @@ exports[`Storyshots InputStepper Default 1`] = `
           }
         >
           <div
-            className="InputStepper__StyledInputStepper-ivJAV hFzPsM"
+            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 jisWFq"
           >
             <label
-              className="InputField__Field-hAVqzR gZONT"
+              className="InputField__Field-sc-4opay-0 iedcUZ"
               data-test={undefined}
             >
               <div
-                className="InputField__InputContainer-evnRDD eKUgDu"
+                className="InputField__InputContainer-sc-4opay-2 ksKWcl"
               >
                 <div
-                  className="InputField__Prefix-jLQUQe kptaFf"
+                  className="InputField__Prefix-sc-4opay-4 kZvirV"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-eyUiPe DORaW InputStepper__PrefixSuffix-gHmTGb hrfOwJ"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
@@ -120,11 +120,11 @@ exports[`Storyshots InputStepper Default 1`] = `
                     target={undefined}
                   >
                     <div
-                      className="ButtonLink__IconContainer-flENJD hNEbcs"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
                       size="normal"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP fSokFV"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -137,7 +137,7 @@ exports[`Storyshots InputStepper Default 1`] = `
                   </div>
                 </div>
                 <input
-                  className="InputField__Input-iRjCvp jIplxp"
+                  className="InputField__Input-sc-4opay-6 fqqXrq"
                   disabled={undefined}
                   max={undefined}
                   maxLength={undefined}
@@ -155,10 +155,10 @@ exports[`Storyshots InputStepper Default 1`] = `
                   value={0}
                 />
                 <div
-                  className="InputField__Suffix-csEOAt jWXkdw"
+                  className="InputField__Suffix-sc-4opay-5 jXQtRs"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-eyUiPe DORaW InputStepper__PrefixSuffix-gHmTGb hrfOwJ"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
@@ -166,11 +166,11 @@ exports[`Storyshots InputStepper Default 1`] = `
                     target={undefined}
                   >
                     <div
-                      className="ButtonLink__IconContainer-flENJD hNEbcs"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
                       size="normal"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP fSokFV"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -183,7 +183,7 @@ exports[`Storyshots InputStepper Default 1`] = `
                   </div>
                 </div>
                 <div
-                  className="InputField__FakeInput-eneioc bIppVr"
+                  className="InputField__FakeInput-sc-4opay-1 ipxhgc"
                 />
               </div>
             </label>
@@ -393,14 +393,14 @@ exports[`Storyshots InputStepper Playground 1`] = `
           }
         >
           <div
-            className="InputStepper__StyledInputStepper-ivJAV hFzPsM"
+            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 jisWFq"
           >
             <label
-              className="InputField__Field-hAVqzR gZONT"
+              className="InputField__Field-sc-4opay-0 iedcUZ"
               data-test={undefined}
             >
               <span
-                className="FormLabel-kJFBRQ irIxpQ"
+                className="FormLabel-sc-1927civ-1 bSnaNp"
                 data-test={undefined}
               >
                 <span>
@@ -408,13 +408,13 @@ exports[`Storyshots InputStepper Playground 1`] = `
                 </span>
               </span>
               <div
-                className="InputField__InputContainer-evnRDD khvnuZ"
+                className="InputField__InputContainer-sc-4opay-2 bnDMxw"
               >
                 <div
-                  className="InputField__Prefix-jLQUQe kptaFf"
+                  className="InputField__Prefix-sc-4opay-4 kZvirV"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-eyUiPe DORaW InputStepper__PrefixSuffix-gHmTGb hrfOwJ"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
@@ -422,11 +422,11 @@ exports[`Storyshots InputStepper Playground 1`] = `
                     target={undefined}
                   >
                     <div
-                      className="ButtonLink__IconContainer-flENJD hNEbcs"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
                       size="normal"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP fSokFV"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -439,7 +439,7 @@ exports[`Storyshots InputStepper Playground 1`] = `
                   </div>
                 </div>
                 <input
-                  className="InputField__Input-iRjCvp jIplxp"
+                  className="InputField__Input-sc-4opay-6 fqqXrq"
                   disabled={false}
                   max={10}
                   maxLength={undefined}
@@ -457,10 +457,10 @@ exports[`Storyshots InputStepper Playground 1`] = `
                   value={4}
                 />
                 <div
-                  className="InputField__Suffix-csEOAt jWXkdw"
+                  className="InputField__Suffix-sc-4opay-5 jXQtRs"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-eyUiPe DORaW InputStepper__PrefixSuffix-gHmTGb hrfOwJ"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
@@ -468,11 +468,11 @@ exports[`Storyshots InputStepper Playground 1`] = `
                     target={undefined}
                   >
                     <div
-                      className="ButtonLink__IconContainer-flENJD hNEbcs"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
                       size="normal"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP fSokFV"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -485,11 +485,11 @@ exports[`Storyshots InputStepper Playground 1`] = `
                   </div>
                 </div>
                 <div
-                  className="InputField__FakeInput-eneioc bAwLDi"
+                  className="InputField__FakeInput-sc-4opay-1 czVugR"
                 />
               </div>
               <div
-                className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
+                className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
                 data-test={undefined}
               >
                 Error message (explain how to solve it)
@@ -1133,14 +1133,14 @@ exports[`Storyshots InputStepper With different size 1`] = `
           }
         >
           <div
-            className="InputStepper__StyledInputStepper-ivJAV hFzPsM"
+            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 jisWFq"
           >
             <label
-              className="InputField__Field-hAVqzR gZONT"
+              className="InputField__Field-sc-4opay-0 iedcUZ"
               data-test={undefined}
             >
               <span
-                className="FormLabel-kJFBRQ fuYBgg"
+                className="FormLabel-sc-1927civ-1 iTEGJS"
                 data-test={undefined}
               >
                 <span>
@@ -1148,13 +1148,13 @@ exports[`Storyshots InputStepper With different size 1`] = `
                 </span>
               </span>
               <div
-                className="InputField__InputContainer-evnRDD eKUgDu"
+                className="InputField__InputContainer-sc-4opay-2 ksKWcl"
               >
                 <div
-                  className="InputField__Prefix-jLQUQe kptaFf"
+                  className="InputField__Prefix-sc-4opay-4 kZvirV"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-eyUiPe DORaW InputStepper__PrefixSuffix-gHmTGb hrfOwJ"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
@@ -1162,11 +1162,11 @@ exports[`Storyshots InputStepper With different size 1`] = `
                     target={undefined}
                   >
                     <div
-                      className="ButtonLink__IconContainer-flENJD hNEbcs"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
                       size="normal"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP fSokFV"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -1179,7 +1179,7 @@ exports[`Storyshots InputStepper With different size 1`] = `
                   </div>
                 </div>
                 <input
-                  className="InputField__Input-iRjCvp jIplxp"
+                  className="InputField__Input-sc-4opay-6 fqqXrq"
                   disabled={undefined}
                   max={undefined}
                   maxLength={undefined}
@@ -1197,10 +1197,10 @@ exports[`Storyshots InputStepper With different size 1`] = `
                   value={0}
                 />
                 <div
-                  className="InputField__Suffix-csEOAt jWXkdw"
+                  className="InputField__Suffix-sc-4opay-5 jXQtRs"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-eyUiPe DORaW InputStepper__PrefixSuffix-gHmTGb hrfOwJ"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
@@ -1208,11 +1208,11 @@ exports[`Storyshots InputStepper With different size 1`] = `
                     target={undefined}
                   >
                     <div
-                      className="ButtonLink__IconContainer-flENJD hNEbcs"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
                       size="normal"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP fSokFV"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -1225,7 +1225,7 @@ exports[`Storyshots InputStepper With different size 1`] = `
                   </div>
                 </div>
                 <div
-                  className="InputField__FakeInput-eneioc bIppVr"
+                  className="InputField__FakeInput-sc-4opay-1 ipxhgc"
                 />
               </div>
             </label>
@@ -1560,14 +1560,14 @@ exports[`Storyshots InputStepper With help 1`] = `
           }
         >
           <div
-            className="InputStepper__StyledInputStepper-ivJAV hFzPsM"
+            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 jisWFq"
           >
             <label
-              className="InputField__Field-hAVqzR gZONT"
+              className="InputField__Field-sc-4opay-0 iedcUZ"
               data-test={undefined}
             >
               <span
-                className="FormLabel-kJFBRQ fuYBgg"
+                className="FormLabel-sc-1927civ-1 iTEGJS"
                 data-test={undefined}
               >
                 <span>
@@ -1575,13 +1575,13 @@ exports[`Storyshots InputStepper With help 1`] = `
                 </span>
               </span>
               <div
-                className="InputField__InputContainer-evnRDD eKUgDu"
+                className="InputField__InputContainer-sc-4opay-2 ksKWcl"
               >
                 <div
-                  className="InputField__Prefix-jLQUQe kptaFf"
+                  className="InputField__Prefix-sc-4opay-4 kZvirV"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-eyUiPe DORaW InputStepper__PrefixSuffix-gHmTGb hrfOwJ"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
@@ -1589,11 +1589,11 @@ exports[`Storyshots InputStepper With help 1`] = `
                     target={undefined}
                   >
                     <div
-                      className="ButtonLink__IconContainer-flENJD hNEbcs"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
                       size="normal"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP fSokFV"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -1606,7 +1606,7 @@ exports[`Storyshots InputStepper With help 1`] = `
                   </div>
                 </div>
                 <input
-                  className="InputField__Input-iRjCvp jIplxp"
+                  className="InputField__Input-sc-4opay-6 fqqXrq"
                   disabled={undefined}
                   max={undefined}
                   maxLength={undefined}
@@ -1624,10 +1624,10 @@ exports[`Storyshots InputStepper With help 1`] = `
                   value={0}
                 />
                 <div
-                  className="InputField__Suffix-csEOAt jWXkdw"
+                  className="InputField__Suffix-sc-4opay-5 jXQtRs"
                 >
                   <div
-                    className="ButtonLink__StyledButtonLink-eyUiPe DORaW InputStepper__PrefixSuffix-gHmTGb hrfOwJ"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
                     data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
@@ -1635,11 +1635,11 @@ exports[`Storyshots InputStepper With help 1`] = `
                     target={undefined}
                   >
                     <div
-                      className="ButtonLink__IconContainer-flENJD hNEbcs"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
                       size="normal"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP fSokFV"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -1652,11 +1652,11 @@ exports[`Storyshots InputStepper With help 1`] = `
                   </div>
                 </div>
                 <div
-                  className="InputField__FakeInput-eneioc bIppVr"
+                  className="InputField__FakeInput-sc-4opay-1 ipxhgc"
                 />
               </div>
               <div
-                className="FormFeedback__StyledFormFeedback-cuFyWp hVyVwg"
+                className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
                 data-test={undefined}
               >
                 You need to enter count of adults

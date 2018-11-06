@@ -99,7 +99,7 @@ exports[`Storyshots TextLink Link with icon 1`] = `
           }
         >
           <a
-            className="TextLink__StyledTextLink-cKDOFV kwCwSq"
+            className="TextLink__StyledTextLink-sc-1bvlje4-1 dFiGVo"
             data-test={undefined}
             href="https://kiwi.com"
             onClick={[Function]}
@@ -108,10 +108,10 @@ exports[`Storyshots TextLink Link with icon 1`] = `
           >
             TextLink with icon
             <span
-              className="TextLink__IconContainer-hjOTaw djdVUW"
+              className="TextLink__IconContainer-sc-1bvlje4-0 evHoym"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -422,7 +422,7 @@ exports[`Storyshots TextLink Playground 1`] = `
           }
         >
           <a
-            className="TextLink__StyledTextLink-cKDOFV gmwCBw"
+            className="TextLink__StyledTextLink-sc-1bvlje4-1 lfTmsb"
             data-test="test"
             href="https://kiwi.com"
             onClick={[Function]}
@@ -431,10 +431,10 @@ exports[`Storyshots TextLink Playground 1`] = `
           >
             Custom link
             <span
-              className="TextLink__IconContainer-hjOTaw jDQGeD"
+              className="TextLink__IconContainer-sc-1bvlje4-0 iaiTzP"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -856,7 +856,7 @@ exports[`Storyshots TextLink Primary link 1`] = `
           }
         >
           <a
-            className="TextLink__StyledTextLink-cKDOFV kwCwSq"
+            className="TextLink__StyledTextLink-sc-1bvlje4-1 dFiGVo"
             data-test={undefined}
             href="https://kiwi.com"
             onClick={[Function]}
@@ -1204,7 +1204,7 @@ exports[`Storyshots TextLink Secondary link 1`] = `
           }
         >
           <a
-            className="TextLink__StyledTextLink-cKDOFV gmwCBw"
+            className="TextLink__StyledTextLink-sc-1bvlje4-1 lfTmsb"
             data-test={undefined}
             href="https://kiwi.com"
             onClick={[Function]}

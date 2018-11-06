@@ -99,14 +99,14 @@ exports[`Storyshots Select Default 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw jhqIax"
+            className="Select__Label-sc-6agypz-0 daIoOD"
             data-test={undefined}
           >
             <div
-              className="Select__SelectContainer-hisSov erDdbv"
+              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <select
-                className="Select__StyledSelect-eyhbyk gWsPtR"
+                className="Select__StyledSelect-sc-6agypz-1 opAdU"
                 disabled={false}
                 name={undefined}
                 onBlur={undefined}
@@ -134,10 +134,10 @@ exports[`Storyshots Select Default 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH cWjNSF"
+                className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -565,14 +565,14 @@ exports[`Storyshots Select Playground 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw jhqIax"
+            className="Select__Label-sc-6agypz-0 daIoOD"
             data-test="test"
           >
             <div
-              className="Select__SelectContainer-hisSov erDdbv"
+              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <select
-                className="Select__StyledSelect-eyhbyk gWsPtR"
+                className="Select__StyledSelect-sc-6agypz-1 opAdU"
                 disabled={false}
                 name="name"
                 onBlur={[Function]}
@@ -606,10 +606,10 @@ exports[`Storyshots Select Playground 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH cWjNSF"
+                className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -1318,11 +1318,11 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw jhqIax"
+            className="Select__Label-sc-6agypz-0 daIoOD"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -1330,14 +1330,14 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
               </span>
             </span>
             <div
-              className="Select__SelectContainer-hisSov erDdbv"
+              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <div
-                className="Select__SelectPrefix-kcaQEZ Jyvcd"
+                className="Select__SelectPrefix-sc-6agypz-3 gQduFD"
               >
                 <img
                   alt="Anywhere"
-                  className="CountryFlag__StyledCountryFlag-cuUbfd jNdwdI"
+                  className="CountryFlag__StyledCountryFlag-h98fwe-0 gMcwUa"
                   data-test={undefined}
                   src="//images.kiwi.com/flags/24x0/flag-anywhere.jpg"
                   srcSet="//images.kiwi.com/flags/48x0/flag-anywhere.jpg 2x"
@@ -1345,7 +1345,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                 />
               </div>
               <select
-                className="Select__StyledSelect-eyhbyk eqfQfw"
+                className="Select__StyledSelect-sc-6agypz-1 cQXTBT"
                 disabled={false}
                 name={undefined}
                 onBlur={undefined}
@@ -1373,10 +1373,10 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH cWjNSF"
+                className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -1871,11 +1871,11 @@ exports[`Storyshots Select With error message 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw jhqIax"
+            className="Select__Label-sc-6agypz-0 daIoOD"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -1883,10 +1883,10 @@ exports[`Storyshots Select With error message 1`] = `
               </span>
             </span>
             <div
-              className="Select__SelectContainer-hisSov erDdbv"
+              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <select
-                className="Select__StyledSelect-eyhbyk hSWeQE"
+                className="Select__StyledSelect-sc-6agypz-1 hhbclm"
                 disabled={false}
                 name={undefined}
                 onBlur={undefined}
@@ -1914,10 +1914,10 @@ exports[`Storyshots Select With error message 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH cWjNSF"
+                className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -1929,7 +1929,7 @@ exports[`Storyshots Select With error message 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp cFaoou"
+              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
               data-test={undefined}
             >
               <div>
@@ -2420,11 +2420,11 @@ exports[`Storyshots Select With help message 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw jhqIax"
+            className="Select__Label-sc-6agypz-0 daIoOD"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -2432,10 +2432,10 @@ exports[`Storyshots Select With help message 1`] = `
               </span>
             </span>
             <div
-              className="Select__SelectContainer-hisSov erDdbv"
+              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <select
-                className="Select__StyledSelect-eyhbyk gWsPtR"
+                className="Select__StyledSelect-sc-6agypz-1 opAdU"
                 disabled={false}
                 name={undefined}
                 onBlur={undefined}
@@ -2463,10 +2463,10 @@ exports[`Storyshots Select With help message 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH cWjNSF"
+                className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -2478,7 +2478,7 @@ exports[`Storyshots Select With help message 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-cuFyWp hVyVwg"
+              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
               data-test={undefined}
             >
               Most common choice is Booking cancellation
@@ -2966,11 +2966,11 @@ exports[`Storyshots Select With placeholder 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw jhqIax"
+            className="Select__Label-sc-6agypz-0 daIoOD"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -2978,10 +2978,10 @@ exports[`Storyshots Select With placeholder 1`] = `
               </span>
             </span>
             <div
-              className="Select__SelectContainer-hisSov erDdbv"
+              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <select
-                className="Select__StyledSelect-eyhbyk gWsPtR"
+                className="Select__StyledSelect-sc-6agypz-1 opAdU"
                 disabled={false}
                 name={undefined}
                 onBlur={undefined}
@@ -3015,10 +3015,10 @@ exports[`Storyshots Select With placeholder 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH cWjNSF"
+                className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -3512,11 +3512,11 @@ exports[`Storyshots Select With prefix 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw jhqIax"
+            className="Select__Label-sc-6agypz-0 daIoOD"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -3524,13 +3524,13 @@ exports[`Storyshots Select With prefix 1`] = `
               </span>
             </span>
             <div
-              className="Select__SelectContainer-hisSov erDdbv"
+              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <div
-                className="Select__SelectPrefix-kcaQEZ Jyvcd"
+                className="Select__SelectPrefix-sc-6agypz-3 gQduFD"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fSokFV"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -3541,7 +3541,7 @@ exports[`Storyshots Select With prefix 1`] = `
                 </svg>
               </div>
               <select
-                className="Select__StyledSelect-eyhbyk eqfQfw"
+                className="Select__StyledSelect-sc-6agypz-1 cQXTBT"
                 disabled={false}
                 name={undefined}
                 onBlur={undefined}
@@ -3569,10 +3569,10 @@ exports[`Storyshots Select With prefix 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH cWjNSF"
+                className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -4067,11 +4067,11 @@ exports[`Storyshots Select With small size 1`] = `
           }
         >
           <label
-            className="Select__Label-hzoCkw jhqIax"
+            className="Select__Label-sc-6agypz-0 daIoOD"
             data-test={undefined}
           >
             <span
-              className="FormLabel-kJFBRQ fuYBgg"
+              className="FormLabel-sc-1927civ-1 iTEGJS"
               data-test={undefined}
             >
               <span>
@@ -4079,10 +4079,10 @@ exports[`Storyshots Select With small size 1`] = `
               </span>
             </span>
             <div
-              className="Select__SelectContainer-hisSov erDdbv"
+              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <select
-                className="Select__StyledSelect-eyhbyk kiDnBK"
+                className="Select__StyledSelect-sc-6agypz-1 hHCjZX"
                 disabled={false}
                 name={undefined}
                 onBlur={undefined}
@@ -4110,10 +4110,10 @@ exports[`Storyshots Select With small size 1`] = `
                 </option>
               </select>
               <div
-                className="Select__SelectSuffix-klejCH cRzbp"
+                className="Select__SelectSuffix-sc-6agypz-4 jEDQBY"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"

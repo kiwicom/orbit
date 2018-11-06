@@ -99,91 +99,91 @@ exports[`Storyshots Table Compact Table 1`] = `
           }
         >
           <div
-            className="Table__StyledTableOuter-bLFsIj goSPCV"
+            className="Table__StyledTableOuter-sc-156ovmd-0 kgBaZC"
             data-test={undefined}
           >
             <div
-              className="Table__StyledTableInner-dirGJJ gkvgIt"
+              className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
               onScroll={[Function]}
             >
               <table
-                className="Table__StyledTable-dFcNrr cjESjO"
+                className="Table__StyledTable-sc-156ovmd-2 cWcSXF"
               >
                 <thead
-                  className="TableHead__StyledTableHead-ezQgxO fnUwIq"
+                  className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
                 >
                   <tr
-                    className="TableRow__StyledTableRow-kibSyN efYxGr"
+                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                   >
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                   </tr>
                 </thead>
                 <tbody
-                  className="TableBody__StyledTableBody-hgiItS bWtUbr"
+                  className="TableBody__StyledTableBody-sc-1uovf8k-0 kqMaSS"
                 >
                   <tr
-                    className="TableRow__StyledTableRow-kibSyN efYxGr"
+                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                   >
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                   </tr>
                   <tr
-                    className="TableRow__StyledTableRow-kibSyN efYxGr"
+                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                   >
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
@@ -1482,91 +1482,91 @@ exports[`Storyshots Table Default Table 1`] = `
           }
         >
           <div
-            className="Table__StyledTableOuter-bLFsIj goSPCV"
+            className="Table__StyledTableOuter-sc-156ovmd-0 kgBaZC"
             data-test={undefined}
           >
             <div
-              className="Table__StyledTableInner-dirGJJ gkvgIt"
+              className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
               onScroll={[Function]}
             >
               <table
-                className="Table__StyledTable-dFcNrr kCBElI"
+                className="Table__StyledTable-sc-156ovmd-2 jcaKFE"
               >
                 <thead
-                  className="TableHead__StyledTableHead-ezQgxO fnUwIq"
+                  className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
                 >
                   <tr
-                    className="TableRow__StyledTableRow-kibSyN efYxGr"
+                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                   >
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                   </tr>
                 </thead>
                 <tbody
-                  className="TableBody__StyledTableBody-hgiItS bWtUbr"
+                  className="TableBody__StyledTableBody-sc-1uovf8k-0 kqMaSS"
                 >
                   <tr
-                    className="TableRow__StyledTableRow-kibSyN efYxGr"
+                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                   >
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                   </tr>
                   <tr
-                    className="TableRow__StyledTableRow-kibSyN efYxGr"
+                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                   >
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
@@ -2855,91 +2855,91 @@ exports[`Storyshots Table Playground 1`] = `
           }
         >
           <div
-            className="Table__StyledTableOuter-bLFsIj goSPCV"
+            className="Table__StyledTableOuter-sc-156ovmd-0 kgBaZC"
             data-test="test"
           >
             <div
-              className="Table__StyledTableInner-dirGJJ gkvgIt"
+              className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
               onScroll={[Function]}
             >
               <table
-                className="Table__StyledTable-dFcNrr kCBElI"
+                className="Table__StyledTable-sc-156ovmd-2 jcaKFE"
               >
                 <thead
-                  className="TableHead__StyledTableHead-ezQgxO fnUwIq"
+                  className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
                 >
                   <tr
-                    className="TableRow__StyledTableRow-kibSyN efYxGr"
+                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                   >
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                   </tr>
                 </thead>
                 <tbody
-                  className="TableBody__StyledTableBody-hgiItS bWtUbr"
+                  className="TableBody__StyledTableBody-sc-1uovf8k-0 kqMaSS"
                 >
                   <tr
-                    className="TableRow__StyledTableRow-kibSyN efYxGr"
+                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                   >
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                   </tr>
                   <tr
-                    className="TableRow__StyledTableRow-kibSyN efYxGr"
+                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                   >
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>
                     <td
-                      className="TableCell__StyledTableCell-cnvFDg kEoaTo"
+                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
                     >
                       Lorem ipsum dolor sit amet
                     </td>

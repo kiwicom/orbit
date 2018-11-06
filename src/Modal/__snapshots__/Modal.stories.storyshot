@@ -99,26 +99,26 @@ exports[`Storyshots Modal Full preview 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-jsvBud dfMCLs"
+            className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
             data-test="test"
             onClick={[Function]}
             onKeyDown={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-ioqsnS gSESjZ"
+              className="Modal__ModalWrapper-sc-1f0srsl-1 gBLsar"
               onScroll={[Function]}
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-dXDxzA iSZxZW"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 dxbjJL"
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-ehEpyW evLwJi"
+                  className="Modal__CloseContainer-sc-1f0srsl-2 jzZbgi"
                 >
                   <button
-                    className="ButtonLink__StyledButtonLink-eyUiPe DORaW"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE"
                     data-test={undefined}
                     onClick={[Function]}
                     size="normal"
@@ -126,11 +126,11 @@ exports[`Storyshots Modal Full preview 1`] = `
                     type="button"
                   >
                     <div
-                      className="ButtonLink__IconContainer-flENJD hNEbcs"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
                       size="normal"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP fvqkFf"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -143,31 +143,31 @@ exports[`Storyshots Modal Full preview 1`] = `
                   </button>
                 </div>
                 <div
-                  className="ModalHeader__StyledModalHeader-hOPket gAJYCS"
+                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 rdsPY"
                   data-test={undefined}
                 >
                   <img
                     alt="Accommodation"
-                    className="Illustration__StyledImage-dmuJKG jLclvk"
+                    className="Illustration__StyledImage-uskdow-0 brJZdH"
                     data-test={undefined}
                     size="small"
                     src="//images.kiwi.com/illustrations/0x90/Accommodation.png"
                     srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x"
                   />
                   <div
-                    className="ModalHeader__ModalTitle-deoNop cFDEl"
+                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 glWXnc"
                   >
                     <h1
-                      className="Heading__StyledHeading-gucmUp dqcIYA"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
                       data-test={undefined}
                     >
                       Orbit design system
                     </h1>
                     <div
-                      className="ModalHeader__ModalDescription-lepRjY gLQpOL"
+                      className="ModalHeader__ModalDescription-sc-13vyf6i-1 cNSxjN"
                     >
                       <div
-                        className="Text__StyledText-guhEiE giPtaX"
+                        className="Text__StyledText-sc-19qtt4y-0 lKAms"
                         data-test={undefined}
                       >
                         Lorem ispum dolor sit amet
@@ -175,56 +175,56 @@ exports[`Storyshots Modal Full preview 1`] = `
                     </div>
                   </div>
                   <div
-                    className="ModalHeader__MobileHeader-hyztNg htMJkr"
+                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 ccBrNj"
                   >
                     Orbit design system
                   </div>
                 </div>
                 <section
-                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 jleUCC"
                   data-test={undefined}
                 >
                   <p
-                    className="Text__StyledText-guhEiE hYZMSR"
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                     data-test={undefined}
                   >
                     You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 jleUCC"
                   data-test={undefined}
                 >
                   <p
-                    className="Text__StyledText-guhEiE hYZMSR"
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                     data-test={undefined}
                   >
                     You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 jleUCC"
                   data-test={undefined}
                 >
                   <p
-                    className="Text__StyledText-guhEiE hYZMSR"
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                     data-test={undefined}
                   >
                     You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                   </p>
                 </section>
                 <div
-                  className="ModalFooter__StyledModalFooter-heDwTy haSUnk"
+                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 KbNcr"
                   data-test={undefined}
                 >
                   <div
-                    className="ModalFooter__StyledChild-bPOqEy jRvsYD"
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 bwFtzF"
                   >
                     <div
-                      className="Stack__StyledStack-cGIpQG kPNFXL"
+                      className="Stack__StyledStack-sc-1t576ow-0 fGCjfg"
                     >
                       <button
-                        className="Button__StyledButton-jJDkJK tpWhP"
+                        className="Button__StyledButton-sc-1brqp3f-2 gicbG"
                         data-test={undefined}
                         disabled={undefined}
                         size="normal"
@@ -232,13 +232,13 @@ exports[`Storyshots Modal Full preview 1`] = `
                         type="button"
                       >
                         <div
-                          className="Button__StyledButtonContent-gvDciI pDqSF"
+                          className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
                         >
                           <div
-                            className="Button__IconContainer-bZYzaL gFFnfX"
+                            className="Button__IconContainer-sc-1brqp3f-0 dssZlb"
                           >
                             <svg
-                              className="Icon__StyledIcon-ckyxIP fvqkFf"
+                              className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                               data-test={undefined}
                               preserveAspectRatio="xMidYMid meet"
                               viewBox="0 0 24 24"
@@ -252,7 +252,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                         </div>
                       </button>
                       <button
-                        className="ButtonLink__StyledButtonLink-eyUiPe klwrPH"
+                        className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 biTQRn"
                         data-test={undefined}
                         onClick={undefined}
                         size="normal"
@@ -264,10 +264,10 @@ exports[`Storyshots Modal Full preview 1`] = `
                     </div>
                   </div>
                   <div
-                    className="ModalFooter__StyledChild-bPOqEy xynvR"
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 gGWcCx"
                   >
                     <button
-                      className="Button__StyledButton-jJDkJK jXpokS"
+                      className="Button__StyledButton-sc-1brqp3f-2 bXyURL"
                       data-test={undefined}
                       disabled={undefined}
                       size="normal"
@@ -275,7 +275,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       type="button"
                     >
                       <div
-                        className="Button__StyledButtonContent-gvDciI pDqSF"
+                        className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
                       >
                         Continue to Payment
                       </div>
@@ -1710,26 +1710,26 @@ exports[`Storyshots Modal Sizes 1`] = `
           }
         >
           <div
-            className="Modal__ModalBody-jsvBud dfMCLs"
+            className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
             data-test={undefined}
             onClick={[Function]}
             onKeyDown={[Function]}
             tabIndex="0"
           >
             <div
-              className="Modal__ModalWrapper-ioqsnS gSESjZ"
+              className="Modal__ModalWrapper-sc-1f0srsl-1 gBLsar"
               onScroll={[Function]}
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-dXDxzA iSZxZW"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 dxbjJL"
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-ehEpyW evLwJi"
+                  className="Modal__CloseContainer-sc-1f0srsl-2 jzZbgi"
                 >
                   <button
-                    className="ButtonLink__StyledButtonLink-eyUiPe DORaW"
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE"
                     data-test={undefined}
                     onClick={[Function]}
                     size="normal"
@@ -1737,11 +1737,11 @@ exports[`Storyshots Modal Sizes 1`] = `
                     type="button"
                   >
                     <div
-                      className="ButtonLink__IconContainer-flENJD hNEbcs"
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
                       size="normal"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP fvqkFf"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -1754,69 +1754,69 @@ exports[`Storyshots Modal Sizes 1`] = `
                   </button>
                 </div>
                 <div
-                  className="ModalHeader__StyledModalHeader-hOPket dJFTgo"
+                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 kCzuax"
                   data-test={undefined}
                 >
                   <div
-                    className="ModalHeader__ModalTitle-deoNop iOkEWH"
+                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 kCHUSx"
                   >
                     <h1
-                      className="Heading__StyledHeading-gucmUp dqcIYA"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
                       data-test={undefined}
                     >
                       Orbit design system
                     </h1>
                   </div>
                   <div
-                    className="ModalHeader__StyledModalHeaderContent-ehrWSV eJcPbR"
+                    className="ModalHeader__StyledModalHeaderContent-sc-13vyf6i-4 fmCXxY"
                   >
                     I'm lovely description
                   </div>
                   <div
-                    className="ModalHeader__MobileHeader-hyztNg htMJkr"
+                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 ccBrNj"
                   >
                     Orbit design system
                   </div>
                 </div>
                 <section
-                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 jleUCC"
                   data-test={undefined}
                 >
                   <p
-                    className="Text__StyledText-guhEiE hYZMSR"
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                     data-test={undefined}
                   >
                     You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 jleUCC"
                   data-test={undefined}
                 >
                   <p
-                    className="Text__StyledText-guhEiE hYZMSR"
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                     data-test={undefined}
                   >
                     You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 jleUCC"
                   data-test={undefined}
                 >
                   <p
-                    className="Text__StyledText-guhEiE hYZMSR"
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                     data-test={undefined}
                   >
                     You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                   </p>
                 </section>
                 <section
-                  className="ModalSection__StyledModalSection-bVxlGf kILnUb"
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 jleUCC"
                   data-test={undefined}
                 >
                   <p
-                    className="Text__StyledText-guhEiE hYZMSR"
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                     data-test={undefined}
                   >
                     You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.

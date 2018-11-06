@@ -99,12 +99,12 @@ exports[`Storyshots CheckBox Default 1`] = `
           }
         >
           <label
-            className="Checkbox__Label-gCTMrH bPokpO"
+            className="Checkbox__Label-sc-1x6twh3-5 hPIPOh"
             data-test={undefined}
           >
             <input
               checked={false}
-              className="Checkbox__Input-dtRIkE gKfoaX"
+              className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
               disabled={false}
               name={undefined}
               onChange={[Function]}
@@ -112,10 +112,10 @@ exports[`Storyshots CheckBox Default 1`] = `
               value={undefined}
             />
             <div
-              className="Checkbox__IconContainer-jYfkbc jgKsXe"
+              className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -126,10 +126,10 @@ exports[`Storyshots CheckBox Default 1`] = `
               </svg>
             </div>
             <div
-              className="Checkbox__TextContainer-gQuMca dfYmDF"
+              className="Checkbox__TextContainer-sc-1x6twh3-1 bRtYDV"
             >
               <span
-                className="Checkbox__LabelText-fjjJOg cjemNn"
+                className="Checkbox__LabelText-sc-1x6twh3-3 iJscfQ"
               >
                 Label
               </span>
@@ -395,12 +395,12 @@ exports[`Storyshots CheckBox Playground 1`] = `
           }
         >
           <label
-            className="Checkbox__Label-gCTMrH cOjsRL"
+            className="Checkbox__Label-sc-1x6twh3-5 eXtSiF"
             data-test="test"
           >
             <input
               checked={true}
-              className="Checkbox__Input-dtRIkE gKfoaX"
+              className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
               disabled={true}
               name="name"
               onChange={[Function]}
@@ -408,10 +408,10 @@ exports[`Storyshots CheckBox Playground 1`] = `
               value="value"
             />
             <div
-              className="Checkbox__IconContainer-jYfkbc jgKsXe"
+              className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -422,15 +422,15 @@ exports[`Storyshots CheckBox Playground 1`] = `
               </svg>
             </div>
             <div
-              className="Checkbox__TextContainer-gQuMca dfYmDF"
+              className="Checkbox__TextContainer-sc-1x6twh3-1 bRtYDV"
             >
               <span
-                className="Checkbox__LabelText-fjjJOg cjemNn"
+                className="Checkbox__LabelText-sc-1x6twh3-3 iJscfQ"
               >
                 Label
               </span>
               <span
-                className="Checkbox__Info-gAbcbg cBOwDz"
+                className="Checkbox__Info-sc-1x6twh3-2 EKDFf"
               >
                 Additional information for this choice
               </span>
@@ -847,12 +847,12 @@ exports[`Storyshots CheckBox With TextLink in label 1`] = `
           }
         >
           <label
-            className="Checkbox__Label-gCTMrH bPokpO"
+            className="Checkbox__Label-sc-1x6twh3-5 hPIPOh"
             data-test={undefined}
           >
             <input
               checked={true}
-              className="Checkbox__Input-dtRIkE gKfoaX"
+              className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
               disabled={false}
               name={undefined}
               onChange={[Function]}
@@ -860,10 +860,10 @@ exports[`Storyshots CheckBox With TextLink in label 1`] = `
               value="value"
             />
             <div
-              className="Checkbox__IconContainer-jYfkbc jgKsXe"
+              className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -874,18 +874,18 @@ exports[`Storyshots CheckBox With TextLink in label 1`] = `
               </svg>
             </div>
             <div
-              className="Checkbox__TextContainer-gQuMca dfYmDF"
+              className="Checkbox__TextContainer-sc-1x6twh3-1 bRtYDV"
             >
               <span
-                className="Checkbox__LabelText-fjjJOg cjemNn"
+                className="Checkbox__LabelText-sc-1x6twh3-3 iJscfQ"
               >
                 <p
-                  className="Text__StyledText-guhEiE hYZMSR"
+                  className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                   data-test={undefined}
                 >
                   I instruct Kiwi.com to cancel this booking under the herein specified conditions and to process a refund in accordance with Kiwi.com’ 
                   <a
-                    className="TextLink__StyledTextLink-cKDOFV kwCwSq"
+                    className="TextLink__StyledTextLink-sc-1bvlje4-1 dFiGVo"
                     data-test={undefined}
                     href={undefined}
                     onClick={undefined}
@@ -1179,12 +1179,12 @@ exports[`Storyshots CheckBox With help 1`] = `
           }
         >
           <label
-            className="Checkbox__Label-gCTMrH bPokpO"
+            className="Checkbox__Label-sc-1x6twh3-5 hPIPOh"
             data-test={undefined}
           >
             <input
               checked={false}
-              className="Checkbox__Input-dtRIkE gKfoaX"
+              className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
               disabled={false}
               name={undefined}
               onChange={[Function]}
@@ -1192,10 +1192,10 @@ exports[`Storyshots CheckBox With help 1`] = `
               value="value"
             />
             <div
-              className="Checkbox__IconContainer-jYfkbc jgKsXe"
+              className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -1206,15 +1206,15 @@ exports[`Storyshots CheckBox With help 1`] = `
               </svg>
             </div>
             <div
-              className="Checkbox__TextContainer-gQuMca dfYmDF"
+              className="Checkbox__TextContainer-sc-1x6twh3-1 bRtYDV"
             >
               <span
-                className="Checkbox__LabelText-fjjJOg cjemNn"
+                className="Checkbox__LabelText-sc-1x6twh3-3 iJscfQ"
               >
                 Label
               </span>
               <span
-                className="Checkbox__Info-gAbcbg cBOwDz"
+                className="Checkbox__Info-sc-1x6twh3-2 EKDFf"
               >
                 Additional information to this choice
               </span>

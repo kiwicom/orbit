@@ -99,7 +99,7 @@ exports[`Storyshots Loading Button loading 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-jJDkJK eLCrNm"
+            className="Button__StyledButton-sc-1brqp3f-2 fFsqgl"
             data-test={undefined}
             disabled={true}
             size="normal"
@@ -107,15 +107,15 @@ exports[`Storyshots Loading Button loading 1`] = `
             type="button"
           >
             <div
-              className="Loading__StyledLoading-jmajcg dGZGBJ"
+              className="Loading__StyledLoading-sc-1psg3na-0 iEGRLU"
               data-test={undefined}
             >
               <svg
-                className="Loading__StyledSpinner-zlSqZ fZiZGB"
+                className="Loading__StyledSpinner-sc-1psg3na-2 dCPhrt"
                 viewBox="0 0 40 40"
               >
                 <circle
-                  className="Loading__StyledSpinnerCircle-hgepma oXDDD"
+                  className="Loading__StyledSpinnerCircle-sc-1psg3na-3 lldmFp"
                   cx="50%"
                   cy="50%"
                   r="18"
@@ -124,7 +124,7 @@ exports[`Storyshots Loading Button loading 1`] = `
               </svg>
             </div>
             <div
-              className="Button__StyledButtonContent-gvDciI gcbgOV"
+              className="Button__StyledButtonContent-sc-1brqp3f-3 bmjdUU"
             >
               Default button
             </div>
@@ -354,31 +354,31 @@ exports[`Storyshots Loading Card loading 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-fdVXSH htEHAk"
+            className="Card__StyledCard-ff0z2v-1 ivlOUx"
             data-test={undefined}
           >
             <div
-              className="Card__StyledChildWrapper-jBHqcs dNZyaB"
+              className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
             >
               <div
-                className="Loading__StyledLoading-jmajcg knLSuA"
+                className="Loading__StyledLoading-sc-1psg3na-0 ghxXya"
                 data-test={undefined}
               >
                 <div
-                  className="Loading__StyledLoader-lecZdo krYAYh"
+                  className="Loading__StyledLoader-sc-1psg3na-4 ggWVnQ"
                 >
                   <div
-                    className="Loading__StyledLoaderCircle-kaWqJR iAPYVz"
+                    className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
                   />
                   <div
-                    className="Loading__StyledLoaderCircle-kaWqJR iAPYVz"
+                    className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
                   />
                   <div
-                    className="Loading__StyledLoaderCircle-kaWqJR iAPYVz"
+                    className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
                   />
                 </div>
                 <div
-                  className="Loading__StyledLoadingText-jIePdr bQbnwR"
+                  className="Loading__StyledLoadingText-sc-1psg3na-1 fMroPq"
                   type="boxLoader"
                 >
                   Please wait, Card content is loading...
@@ -948,15 +948,15 @@ exports[`Storyshots Loading Default 1`] = `
           }
         >
           <div
-            className="Loading__StyledLoading-jmajcg kokoYQ"
+            className="Loading__StyledLoading-sc-1psg3na-0 OfFiO"
             data-test={undefined}
           >
             <svg
-              className="Loading__StyledSpinner-zlSqZ fZiZGB"
+              className="Loading__StyledSpinner-sc-1psg3na-2 dCPhrt"
               viewBox="0 0 40 40"
             >
               <circle
-                className="Loading__StyledSpinnerCircle-hgepma jtweWa"
+                className="Loading__StyledSpinnerCircle-sc-1psg3na-3 eaNPVb"
                 cx="50%"
                 cy="50%"
                 r="18"
@@ -964,7 +964,7 @@ exports[`Storyshots Loading Default 1`] = `
               />
             </svg>
             <div
-              className="Loading__StyledLoadingText-jIePdr fDilv"
+              className="Loading__StyledLoadingText-sc-1psg3na-1 Ufzgk"
               type="pageLoader"
             />
           </div>
@@ -1143,15 +1143,15 @@ exports[`Storyshots Loading Playground 1`] = `
           }
         >
           <div
-            className="Loading__StyledLoading-jmajcg kokoYQ"
+            className="Loading__StyledLoading-sc-1psg3na-0 OfFiO"
             data-test="test"
           >
             <svg
-              className="Loading__StyledSpinner-zlSqZ fZiZGB"
+              className="Loading__StyledSpinner-sc-1psg3na-2 dCPhrt"
               viewBox="0 0 40 40"
             >
               <circle
-                className="Loading__StyledSpinnerCircle-hgepma jtweWa"
+                className="Loading__StyledSpinnerCircle-sc-1psg3na-3 eaNPVb"
                 cx="50%"
                 cy="50%"
                 r="18"
@@ -1159,7 +1159,7 @@ exports[`Storyshots Loading Playground 1`] = `
               />
             </svg>
             <div
-              className="Loading__StyledLoadingText-jIePdr fDilv"
+              className="Loading__StyledLoadingText-sc-1psg3na-1 Ufzgk"
               type="pageLoader"
             >
               Please wait, content of the page is loading...

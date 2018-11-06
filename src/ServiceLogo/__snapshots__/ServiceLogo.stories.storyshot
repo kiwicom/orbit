@@ -100,7 +100,7 @@ exports[`Storyshots ServiceLogo Playground 1`] = `
         >
           <img
             alt="AirHelp"
-            className="ServiceLogo__StyledServiceLogo-gXFeKU kHpmkD"
+            className="ServiceLogo__StyledServiceLogo-sc-1ujs7cw-0 halGWp"
             data-test="test"
             src="//images.kiwi.com/logos/0x24/AirHelp.png"
             srcSet="//images.kiwi.com/logos/0x48/AirHelp.png 2x"

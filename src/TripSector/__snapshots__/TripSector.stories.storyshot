@@ -99,15 +99,15 @@ exports[`Storyshots TripSector Multiple days 1`] = `
           }
         >
           <div
-            className="TripSector__StyledTripSector-bOECVY jyVmXs"
+            className="TripSector__StyledTripSector-v14xkf-0 jbYUNi"
             data-test={undefined}
           >
             <div
-              className="TripDate__StyledTripDate-bCYwKp icJasP"
+              className="TripDate__StyledTripDate-sc-1t2zo5b-0 kmrFNu"
               data-test={undefined}
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP ifOFla"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 jWhQVI"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -117,21 +117,21 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                 />
               </svg>
               <p
-                className="Text__StyledText-guhEiE eltpBo"
+                className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
                 data-test={undefined}
               >
                 Mon 22 Oct
               </p>
             </div>
             <div
-              className="TripSegment__StyledTripSegment-eqdKGJ hISoIZ"
+              className="TripSegment__StyledTripSegment-sc-1pmcslk-0 fgsDhJ"
             >
               <div
-                className="TripSegment__StyledTripSegmentMilestone-FSMNT iNDFmV"
+                className="TripSegment__StyledTripSegmentMilestone-sc-1pmcslk-1 emIWQn"
                 onClick={[Function]}
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP hNUIZF"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -141,37 +141,37 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   />
                 </svg>
                 <div
-                  className="TripSegment__StyledTripSegmentMilestoneArrow-JzVGV djAnyK"
+                  className="TripSegment__StyledTripSegmentMilestoneArrow-sc-1pmcslk-2 lpfzbn"
                 />
               </div>
               <div
-                className="TripSegment__StyledTripSegmentContent-koHGte dAHlmr"
+                className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-jGYFDm fdEuVy"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
                   onClick={[Function]}
                 >
                   <div
-                    className="TripSegment__StyledTripSegmentOverview-huMwz gJzCpa"
+                    className="TripSegment__StyledTripSegmentOverview-sc-1pmcslk-5 cPzgqf"
                   >
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewColumn-kpJkiU faYHwn"
+                      className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                     >
                       <div
-                        className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
+                        className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                       >
                         <p
-                          className="Text__StyledText-guhEiE dxjJug"
+                          className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
                           data-test={undefined}
                         >
                           6:30
                         </p>
                       </div>
                       <div
-                        className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
+                        className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                       >
                         <p
-                          className="Text__StyledText-guhEiE dxjJug"
+                          className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
                           data-test={undefined}
                         >
                           8:30
@@ -179,16 +179,16 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       </div>
                     </div>
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewColumn-kpJkiU faYHwn"
+                      className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                     >
                       <p
-                        className="Text__StyledText-guhEiE hYZMSR"
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         data-test={undefined}
                       >
                         Barcelona BCN
                       </p>
                       <p
-                        className="Text__StyledText-guhEiE hYZMSR"
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         data-test={undefined}
                       >
                         Paris BVA
@@ -196,22 +196,22 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                     </div>
                   </div>
                   <div
-                    className="TripSegment__StyledTripSegmentCarrier-gnBYEk jhnCfa"
+                    className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                   >
                     <p
-                      className="Text__StyledText-guhEiE fsgURl"
+                      className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
                       data-test={undefined}
                     >
                       2h
                     </p>
                     <div
-                      className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"
+                      className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
                       data-test={undefined}
                       size="medium"
                     >
                       <img
                         alt="Ryanair"
-                        className="CarrierLogo__StyledImage-fRYacf yKLUA"
+                        className="CarrierLogo__StyledImage-d4doc9-0 gMgxxa"
                         size="medium"
                         src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
                         srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
@@ -219,10 +219,10 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       />
                     </div>
                     <div
-                      className="TripSegment__StyledChevrons-cjfUoB MXsw"
+                      className="TripSegment__StyledChevrons-sc-1pmcslk-4 bQNEky"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP hNUIZF"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -235,28 +235,28 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   </div>
                 </div>
                 <div
-                  className="TripSegment__StyledTripSegmentChildren-jumudi dYDUMT"
+                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
                 >
                   <div>
                     <ul
-                      className="List__StyledList-fzpiIm kEBOsw"
+                      className="List__StyledList-iwilat-0 hcKuvi"
                       data-test={undefined}
                     >
                       <li
-                        className="ListItem__Item-bhWwBk eRQaxy"
+                        className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                         data-test={undefined}
                       >
                         <div
-                          className="ListItem__IconContainer-cWSXoS czCkQe"
+                          className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                         >
                           <div
-                            className="CarrierLogo__StyledCarrierLogo-ieqjqT kvJfMi"
+                            className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
                             data-test={undefined}
                             size="large"
                           >
                             <img
                               alt="Ryanair"
-                              className="CarrierLogo__StyledImage-fRYacf MYsmm"
+                              className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
                               size="large"
                               src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
                               srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
@@ -267,14 +267,14 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         Airline: Ryanair
                       </li>
                       <li
-                        className="ListItem__Item-bhWwBk eRQaxy"
+                        className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                         data-test={undefined}
                       >
                         <div
-                          className="ListItem__IconContainer-cWSXoS czCkQe"
+                          className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                         >
                           <svg
-                            className="Icon__StyledIcon-ckyxIP fSokFV"
+                            className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                             data-test={undefined}
                             preserveAspectRatio="xMidYMid meet"
                             viewBox="0 0 24 24"
@@ -292,22 +292,22 @@ exports[`Storyshots TripSector Multiple days 1`] = `
               </div>
             </div>
             <div
-              className="TripLayover__StyledTripLayover-cYeJDq dfpGdH"
+              className="TripLayover__StyledTripLayover-sc-1uzfgjz-0 XGQgN"
               data-test={undefined}
             >
               <ul
-                className="List__StyledList-fzpiIm kEBOsw"
+                className="List__StyledList-iwilat-0 hcKuvi"
                 data-test={undefined}
               >
                 <li
-                  className="ListItem__Item-bhWwBk eRQaxy"
+                  className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                   data-test={undefined}
                 >
                   <div
-                    className="ListItem__IconContainer-cWSXoS czCkQe"
+                    className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -320,14 +320,14 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   4h 50m layover
                 </li>
                 <li
-                  className="ListItem__Item-bhWwBk eRQaxy"
+                  className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                   data-test={undefined}
                 >
                   <div
-                    className="ListItem__IconContainer-cWSXoS czCkQe"
+                    className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -339,7 +339,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   </div>
                   Transfer protected by the 
                   <a
-                    className="TextLink__StyledTextLink-cKDOFV gmwCBw"
+                    className="TextLink__StyledTextLink-sc-1bvlje4-1 lfTmsb"
                     data-test={undefined}
                     href={undefined}
                     onClick={undefined}
@@ -350,14 +350,14 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   </a>
                 </li>
                 <li
-                  className="ListItem__Item-bhWwBk eRQaxy"
+                  className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                   data-test={undefined}
                 >
                   <div
-                    className="ListItem__IconContainer-cWSXoS czCkQe"
+                    className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -372,14 +372,14 @@ exports[`Storyshots TripSector Multiple days 1`] = `
               </ul>
             </div>
             <div
-              className="TripSegment__StyledTripSegment-eqdKGJ hISoIZ"
+              className="TripSegment__StyledTripSegment-sc-1pmcslk-0 fgsDhJ"
             >
               <div
-                className="TripSegment__StyledTripSegmentMilestone-FSMNT iNDFmV"
+                className="TripSegment__StyledTripSegmentMilestone-sc-1pmcslk-1 emIWQn"
                 onClick={[Function]}
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP hNUIZF"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -389,37 +389,37 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   />
                 </svg>
                 <div
-                  className="TripSegment__StyledTripSegmentMilestoneArrow-JzVGV djAnyK"
+                  className="TripSegment__StyledTripSegmentMilestoneArrow-sc-1pmcslk-2 lpfzbn"
                 />
               </div>
               <div
-                className="TripSegment__StyledTripSegmentContent-koHGte dAHlmr"
+                className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-jGYFDm fdEuVy"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
                   onClick={[Function]}
                 >
                   <div
-                    className="TripSegment__StyledTripSegmentOverview-huMwz gJzCpa"
+                    className="TripSegment__StyledTripSegmentOverview-sc-1pmcslk-5 cPzgqf"
                   >
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewColumn-kpJkiU faYHwn"
+                      className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                     >
                       <div
-                        className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
+                        className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                       >
                         <p
-                          className="Text__StyledText-guhEiE dxjJug"
+                          className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
                           data-test={undefined}
                         >
                           13:20
                         </p>
                       </div>
                       <div
-                        className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
+                        className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                       >
                         <p
-                          className="Text__StyledText-guhEiE dxjJug"
+                          className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
                           data-test={undefined}
                         >
                           16:20
@@ -427,16 +427,16 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       </div>
                     </div>
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewColumn-kpJkiU faYHwn"
+                      className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                     >
                       <p
-                        className="Text__StyledText-guhEiE hYZMSR"
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         data-test={undefined}
                       >
                         Paris CDG
                       </p>
                       <p
-                        className="Text__StyledText-guhEiE hYZMSR"
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         data-test={undefined}
                       >
                         Lille XDB
@@ -444,22 +444,22 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                     </div>
                   </div>
                   <div
-                    className="TripSegment__StyledTripSegmentCarrier-gnBYEk jhnCfa"
+                    className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                   >
                     <p
-                      className="Text__StyledText-guhEiE fsgURl"
+                      className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
                       data-test={undefined}
                     >
                       3h
                     </p>
                     <div
-                      className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"
+                      className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
                       data-test={undefined}
                       size="medium"
                     >
                       <img
                         alt="RegioJet"
-                        className="CarrierLogo__StyledImage-fRYacf yKLUA"
+                        className="CarrierLogo__StyledImage-d4doc9-0 gMgxxa"
                         size="medium"
                         src="//images.kiwi.com/airlines/32/REGIOJETT.png?default=bus.png"
                         srcSet="//images.kiwi.com/airlines/64/REGIOJETT.png?default=bus.png 2x"
@@ -467,10 +467,10 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       />
                     </div>
                     <div
-                      className="TripSegment__StyledChevrons-cjfUoB MXsw"
+                      className="TripSegment__StyledChevrons-sc-1pmcslk-4 bQNEky"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP hNUIZF"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -483,22 +483,22 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   </div>
                 </div>
                 <div
-                  className="TripSegment__StyledTripSegmentChildren-jumudi dYDUMT"
+                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
                 >
                   <div>
                     <ul
-                      className="List__StyledList-fzpiIm kEBOsw"
+                      className="List__StyledList-iwilat-0 hcKuvi"
                       data-test={undefined}
                     >
                       <li
-                        className="ListItem__Item-bhWwBk eRQaxy"
+                        className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                         data-test={undefined}
                       >
                         <div
-                          className="ListItem__IconContainer-cWSXoS czCkQe"
+                          className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                         >
                           <svg
-                            className="Icon__StyledIcon-ckyxIP fSokFV"
+                            className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                             data-test={undefined}
                             preserveAspectRatio="xMidYMid meet"
                             viewBox="0 0 24 24"
@@ -516,22 +516,22 @@ exports[`Storyshots TripSector Multiple days 1`] = `
               </div>
             </div>
             <div
-              className="TripLayover__StyledTripLayover-cYeJDq dfpGdH"
+              className="TripLayover__StyledTripLayover-sc-1uzfgjz-0 XGQgN"
               data-test={undefined}
             >
               <ul
-                className="List__StyledList-fzpiIm kEBOsw"
+                className="List__StyledList-iwilat-0 hcKuvi"
                 data-test={undefined}
               >
                 <li
-                  className="ListItem__Item-bhWwBk eRQaxy"
+                  className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                   data-test={undefined}
                 >
                   <div
-                    className="ListItem__IconContainer-cWSXoS czCkQe"
+                    className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -544,14 +544,14 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   2h 25m layover
                 </li>
                 <li
-                  className="ListItem__Item-bhWwBk eRQaxy"
+                  className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                   data-test={undefined}
                 >
                   <div
-                    className="ListItem__IconContainer-cWSXoS czCkQe"
+                    className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -563,7 +563,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   </div>
                   Transfer protected by the 
                   <a
-                    className="TextLink__StyledTextLink-cKDOFV gmwCBw"
+                    className="TextLink__StyledTextLink-sc-1bvlje4-1 lfTmsb"
                     data-test={undefined}
                     href={undefined}
                     onClick={undefined}
@@ -576,14 +576,14 @@ exports[`Storyshots TripSector Multiple days 1`] = `
               </ul>
             </div>
             <div
-              className="TripSegment__StyledTripSegment-eqdKGJ hISoIZ"
+              className="TripSegment__StyledTripSegment-sc-1pmcslk-0 fgsDhJ"
             >
               <div
-                className="TripSegment__StyledTripSegmentMilestone-FSMNT iNDFmV"
+                className="TripSegment__StyledTripSegmentMilestone-sc-1pmcslk-1 emIWQn"
                 onClick={[Function]}
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP hNUIZF"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -593,37 +593,37 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   />
                 </svg>
                 <div
-                  className="TripSegment__StyledTripSegmentMilestoneArrow-JzVGV djAnyK"
+                  className="TripSegment__StyledTripSegmentMilestoneArrow-sc-1pmcslk-2 lpfzbn"
                 />
               </div>
               <div
-                className="TripSegment__StyledTripSegmentContent-koHGte dAHlmr"
+                className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-jGYFDm fdEuVy"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
                   onClick={[Function]}
                 >
                   <div
-                    className="TripSegment__StyledTripSegmentOverview-huMwz gJzCpa"
+                    className="TripSegment__StyledTripSegmentOverview-sc-1pmcslk-5 cPzgqf"
                   >
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewColumn-kpJkiU faYHwn"
+                      className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                     >
                       <div
-                        className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
+                        className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                       >
                         <p
-                          className="Text__StyledText-guhEiE dxjJug"
+                          className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
                           data-test={undefined}
                         >
                           18:45
                         </p>
                       </div>
                       <div
-                        className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
+                        className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                       >
                         <p
-                          className="Text__StyledText-guhEiE dxjJug"
+                          className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
                           data-test={undefined}
                         >
                           20:15
@@ -631,16 +631,16 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       </div>
                     </div>
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewColumn-kpJkiU faYHwn"
+                      className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                     >
                       <p
-                        className="Text__StyledText-guhEiE hYZMSR"
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         data-test={undefined}
                       >
                         Lille XDB
                       </p>
                       <p
-                        className="Text__StyledText-guhEiE hYZMSR"
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         data-test={undefined}
                       >
                         City of Brussels CRL
@@ -648,22 +648,22 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                     </div>
                   </div>
                   <div
-                    className="TripSegment__StyledTripSegmentCarrier-gnBYEk jhnCfa"
+                    className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                   >
                     <p
-                      className="Text__StyledText-guhEiE fsgURl"
+                      className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
                       data-test={undefined}
                     >
                       1h 30m
                     </p>
                     <div
-                      className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"
+                      className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
                       data-test={undefined}
                       size="medium"
                     >
                       <img
                         alt="FLIXBUS"
-                        className="CarrierLogo__StyledImage-fRYacf yKLUA"
+                        className="CarrierLogo__StyledImage-d4doc9-0 gMgxxa"
                         size="medium"
                         src="//images.kiwi.com/airlines/32/FLIXBUS.png?default=bus.png"
                         srcSet="//images.kiwi.com/airlines/64/FLIXBUS.png?default=bus.png 2x"
@@ -671,10 +671,10 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       />
                     </div>
                     <div
-                      className="TripSegment__StyledChevrons-cjfUoB MXsw"
+                      className="TripSegment__StyledChevrons-sc-1pmcslk-4 bQNEky"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP hNUIZF"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -687,22 +687,22 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   </div>
                 </div>
                 <div
-                  className="TripSegment__StyledTripSegmentChildren-jumudi dYDUMT"
+                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
                 >
                   <div>
                     <ul
-                      className="List__StyledList-fzpiIm kEBOsw"
+                      className="List__StyledList-iwilat-0 hcKuvi"
                       data-test={undefined}
                     >
                       <li
-                        className="ListItem__Item-bhWwBk eRQaxy"
+                        className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                         data-test={undefined}
                       >
                         <div
-                          className="ListItem__IconContainer-cWSXoS czCkQe"
+                          className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                         >
                           <svg
-                            className="Icon__StyledIcon-ckyxIP fSokFV"
+                            className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                             data-test={undefined}
                             preserveAspectRatio="xMidYMid meet"
                             viewBox="0 0 24 24"
@@ -720,22 +720,22 @@ exports[`Storyshots TripSector Multiple days 1`] = `
               </div>
             </div>
             <div
-              className="TripLayover__StyledTripLayover-cYeJDq dfpGdH"
+              className="TripLayover__StyledTripLayover-sc-1uzfgjz-0 XGQgN"
               data-test={undefined}
             >
               <ul
-                className="List__StyledList-fzpiIm kEBOsw"
+                className="List__StyledList-iwilat-0 hcKuvi"
                 data-test={undefined}
               >
                 <li
-                  className="ListItem__Item-bhWwBk eRQaxy"
+                  className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                   data-test={undefined}
                 >
                   <div
-                    className="ListItem__IconContainer-cWSXoS czCkQe"
+                    className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -748,14 +748,14 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   13h 05m layover
                 </li>
                 <li
-                  className="ListItem__Item-bhWwBk eRQaxy"
+                  className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                   data-test={undefined}
                 >
                   <div
-                    className="ListItem__IconContainer-cWSXoS czCkQe"
+                    className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -767,7 +767,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   </div>
                   Transfer protected by the 
                   <a
-                    className="TextLink__StyledTextLink-cKDOFV gmwCBw"
+                    className="TextLink__StyledTextLink-sc-1bvlje4-1 lfTmsb"
                     data-test={undefined}
                     href={undefined}
                     onClick={undefined}
@@ -778,14 +778,14 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   </a>
                 </li>
                 <li
-                  className="ListItem__Item-bhWwBk eRQaxy"
+                  className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                   data-test={undefined}
                 >
                   <div
-                    className="ListItem__IconContainer-cWSXoS czCkQe"
+                    className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                   >
                     <svg
-                      className="Icon__StyledIcon-ckyxIP fvqkFf"
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                       data-test={undefined}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
@@ -800,11 +800,11 @@ exports[`Storyshots TripSector Multiple days 1`] = `
               </ul>
             </div>
             <div
-              className="TripDate__StyledTripDate-bCYwKp icJasP"
+              className="TripDate__StyledTripDate-sc-1t2zo5b-0 kmrFNu"
               data-test={undefined}
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP ifOFla"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 jWhQVI"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -814,21 +814,21 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                 />
               </svg>
               <p
-                className="Text__StyledText-guhEiE eltpBo"
+                className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
                 data-test={undefined}
               >
                 Tue 23 Oct
               </p>
             </div>
             <div
-              className="TripSegment__StyledTripSegment-eqdKGJ hISoIZ"
+              className="TripSegment__StyledTripSegment-sc-1pmcslk-0 fgsDhJ"
             >
               <div
-                className="TripSegment__StyledTripSegmentMilestone-FSMNT iNDFmV"
+                className="TripSegment__StyledTripSegmentMilestone-sc-1pmcslk-1 emIWQn"
                 onClick={[Function]}
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP hNUIZF"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -838,37 +838,37 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   />
                 </svg>
                 <div
-                  className="TripSegment__StyledTripSegmentMilestoneArrow-JzVGV djAnyK"
+                  className="TripSegment__StyledTripSegmentMilestoneArrow-sc-1pmcslk-2 lpfzbn"
                 />
               </div>
               <div
-                className="TripSegment__StyledTripSegmentContent-koHGte dAHlmr"
+                className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-jGYFDm fdEuVy"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
                   onClick={[Function]}
                 >
                   <div
-                    className="TripSegment__StyledTripSegmentOverview-huMwz gJzCpa"
+                    className="TripSegment__StyledTripSegmentOverview-sc-1pmcslk-5 cPzgqf"
                   >
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewColumn-kpJkiU faYHwn"
+                      className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                     >
                       <div
-                        className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
+                        className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                       >
                         <p
-                          className="Text__StyledText-guhEiE dxjJug"
+                          className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
                           data-test={undefined}
                         >
                           09:20
                         </p>
                       </div>
                       <div
-                        className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
+                        className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                       >
                         <p
-                          className="Text__StyledText-guhEiE dxjJug"
+                          className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
                           data-test={undefined}
                         >
                           14:15
@@ -876,16 +876,16 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       </div>
                     </div>
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewColumn-kpJkiU faYHwn"
+                      className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                     >
                       <p
-                        className="Text__StyledText-guhEiE hYZMSR"
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         data-test={undefined}
                       >
                         City of Brussels BRU
                       </p>
                       <p
-                        className="Text__StyledText-guhEiE hYZMSR"
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         data-test={undefined}
                       >
                         Miami MIA
@@ -893,22 +893,22 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                     </div>
                   </div>
                   <div
-                    className="TripSegment__StyledTripSegmentCarrier-gnBYEk jhnCfa"
+                    className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                   >
                     <p
-                      className="Text__StyledText-guhEiE fsgURl"
+                      className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
                       data-test={undefined}
                     >
                       10h 55m
                     </p>
                     <div
-                      className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"
+                      className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
                       data-test={undefined}
                       size="medium"
                     >
                       <img
                         alt="United Airlines"
-                        className="CarrierLogo__StyledImage-fRYacf yKLUA"
+                        className="CarrierLogo__StyledImage-d4doc9-0 gMgxxa"
                         size="medium"
                         src="//images.kiwi.com/airlines/32/UA.png?default=airline.png"
                         srcSet="//images.kiwi.com/airlines/64/UA.png?default=airline.png 2x"
@@ -916,10 +916,10 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       />
                     </div>
                     <div
-                      className="TripSegment__StyledChevrons-cjfUoB MXsw"
+                      className="TripSegment__StyledChevrons-sc-1pmcslk-4 bQNEky"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP hNUIZF"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -932,22 +932,22 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   </div>
                 </div>
                 <div
-                  className="TripSegment__StyledTripSegmentChildren-jumudi dYDUMT"
+                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
                 >
                   <div>
                     <ul
-                      className="List__StyledList-fzpiIm kEBOsw"
+                      className="List__StyledList-iwilat-0 hcKuvi"
                       data-test={undefined}
                     >
                       <li
-                        className="ListItem__Item-bhWwBk eRQaxy"
+                        className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                         data-test={undefined}
                       >
                         <div
-                          className="ListItem__IconContainer-cWSXoS czCkQe"
+                          className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                         >
                           <svg
-                            className="Icon__StyledIcon-ckyxIP fSokFV"
+                            className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                             data-test={undefined}
                             preserveAspectRatio="xMidYMid meet"
                             viewBox="0 0 24 24"
@@ -4995,15 +4995,15 @@ exports[`Storyshots TripSector Playground 1`] = `
           }
         >
           <div
-            className="TripSector__StyledTripSector-bOECVY jyVmXs"
+            className="TripSector__StyledTripSector-v14xkf-0 jbYUNi"
             data-test="test"
           >
             <div
-              className="TripDate__StyledTripDate-bCYwKp icJasP"
+              className="TripDate__StyledTripDate-sc-1t2zo5b-0 kmrFNu"
               data-test={undefined}
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP ifOFla"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 jWhQVI"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -5013,21 +5013,21 @@ exports[`Storyshots TripSector Playground 1`] = `
                 />
               </svg>
               <p
-                className="Text__StyledText-guhEiE eltpBo"
+                className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
                 data-test={undefined}
               >
                 Mon 22 Oct
               </p>
             </div>
             <div
-              className="TripSegment__StyledTripSegment-eqdKGJ hISoIZ"
+              className="TripSegment__StyledTripSegment-sc-1pmcslk-0 fgsDhJ"
             >
               <div
-                className="TripSegment__StyledTripSegmentMilestone-FSMNT iNDFmV"
+                className="TripSegment__StyledTripSegmentMilestone-sc-1pmcslk-1 emIWQn"
                 onClick={[Function]}
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP hNUIZF"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
@@ -5037,37 +5037,37 @@ exports[`Storyshots TripSector Playground 1`] = `
                   />
                 </svg>
                 <div
-                  className="TripSegment__StyledTripSegmentMilestoneArrow-JzVGV djAnyK"
+                  className="TripSegment__StyledTripSegmentMilestoneArrow-sc-1pmcslk-2 lpfzbn"
                 />
               </div>
               <div
-                className="TripSegment__StyledTripSegmentContent-koHGte dAHlmr"
+                className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-jGYFDm fdEuVy"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
                   onClick={[Function]}
                 >
                   <div
-                    className="TripSegment__StyledTripSegmentOverview-huMwz gJzCpa"
+                    className="TripSegment__StyledTripSegmentOverview-sc-1pmcslk-5 cPzgqf"
                   >
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewColumn-kpJkiU faYHwn"
+                      className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                     >
                       <div
-                        className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
+                        className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                       >
                         <p
-                          className="Text__StyledText-guhEiE dxjJug"
+                          className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
                           data-test={undefined}
                         >
                           6:30
                         </p>
                       </div>
                       <div
-                        className="TripSegment__StyledTripSegmentOverviewTime-cZGYhG hzKGyQ"
+                        className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                       >
                         <p
-                          className="Text__StyledText-guhEiE dxjJug"
+                          className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
                           data-test={undefined}
                         >
                           8:30
@@ -5075,16 +5075,16 @@ exports[`Storyshots TripSector Playground 1`] = `
                       </div>
                     </div>
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewColumn-kpJkiU faYHwn"
+                      className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                     >
                       <p
-                        className="Text__StyledText-guhEiE hYZMSR"
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         data-test={undefined}
                       >
                         Barcelona BCN
                       </p>
                       <p
-                        className="Text__StyledText-guhEiE hYZMSR"
+                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         data-test={undefined}
                       >
                         Paris BVA
@@ -5092,22 +5092,22 @@ exports[`Storyshots TripSector Playground 1`] = `
                     </div>
                   </div>
                   <div
-                    className="TripSegment__StyledTripSegmentCarrier-gnBYEk jhnCfa"
+                    className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                   >
                     <p
-                      className="Text__StyledText-guhEiE fsgURl"
+                      className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
                       data-test={undefined}
                     >
                       2h
                     </p>
                     <div
-                      className="CarrierLogo__StyledCarrierLogo-ieqjqT jfqEFT"
+                      className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
                       data-test={undefined}
                       size="medium"
                     >
                       <img
                         alt="Ryanair"
-                        className="CarrierLogo__StyledImage-fRYacf yKLUA"
+                        className="CarrierLogo__StyledImage-d4doc9-0 gMgxxa"
                         size="medium"
                         src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
                         srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
@@ -5115,10 +5115,10 @@ exports[`Storyshots TripSector Playground 1`] = `
                       />
                     </div>
                     <div
-                      className="TripSegment__StyledChevrons-cjfUoB MXsw"
+                      className="TripSegment__StyledChevrons-sc-1pmcslk-4 bQNEky"
                     >
                       <svg
-                        className="Icon__StyledIcon-ckyxIP hNUIZF"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
                         data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
@@ -5131,28 +5131,28 @@ exports[`Storyshots TripSector Playground 1`] = `
                   </div>
                 </div>
                 <div
-                  className="TripSegment__StyledTripSegmentChildren-jumudi dYDUMT"
+                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
                 >
                   <div>
                     <ul
-                      className="List__StyledList-fzpiIm kEBOsw"
+                      className="List__StyledList-iwilat-0 hcKuvi"
                       data-test={undefined}
                     >
                       <li
-                        className="ListItem__Item-bhWwBk eRQaxy"
+                        className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                         data-test={undefined}
                       >
                         <div
-                          className="ListItem__IconContainer-cWSXoS czCkQe"
+                          className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                         >
                           <div
-                            className="CarrierLogo__StyledCarrierLogo-ieqjqT kvJfMi"
+                            className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
                             data-test={undefined}
                             size="large"
                           >
                             <img
                               alt="Ryanair"
-                              className="CarrierLogo__StyledImage-fRYacf MYsmm"
+                              className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
                               size="large"
                               src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
                               srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
@@ -5163,14 +5163,14 @@ exports[`Storyshots TripSector Playground 1`] = `
                         Airline: Ryanair
                       </li>
                       <li
-                        className="ListItem__Item-bhWwBk eRQaxy"
+                        className="ListItem__Item-sc-1vswvev-0 gOoBnf"
                         data-test={undefined}
                       >
                         <div
-                          className="ListItem__IconContainer-cWSXoS czCkQe"
+                          className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
                         >
                           <svg
-                            className="Icon__StyledIcon-ckyxIP fSokFV"
+                            className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
                             data-test={undefined}
                             preserveAspectRatio="xMidYMid meet"
                             viewBox="0 0 24 24"

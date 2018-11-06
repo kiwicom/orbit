@@ -99,14 +99,14 @@ exports[`Storyshots Badge Default 1`] = `
           }
         >
           <div
-            className="Badge__StyledBadge-xfvXv iDaeDo"
+            className="Badge__StyledBadge-sc-1y6i8f0-0 iQkwdQ"
             data-test={undefined}
           >
             <div
-              className="Badge__IconContainer-keuekM edgSqO"
+              className="Badge__IconContainer-sc-1y6i8f0-1 jYRMQw"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -363,7 +363,7 @@ exports[`Storyshots Badge Notification badge 1`] = `
           }
         >
           <div
-            className="Badge__StyledBadge-xfvXv cpYHls"
+            className="Badge__StyledBadge-sc-1y6i8f0-0 iFXaxY"
             data-test={undefined}
           >
             3
@@ -620,14 +620,14 @@ exports[`Storyshots Badge Playground 1`] = `
           }
         >
           <div
-            className="Badge__StyledBadge-xfvXv llBUbY"
+            className="Badge__StyledBadge-sc-1y6i8f0-0 bxpgmY"
             data-test="test"
           >
             <div
-              className="Badge__IconContainer-keuekM WIGBY"
+              className="Badge__IconContainer-sc-1y6i8f0-1 jaKact"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -978,14 +978,14 @@ exports[`Storyshots Badge Types 1`] = `
           }
         >
           <div
-            className="Badge__StyledBadge-xfvXv iDaeDo"
+            className="Badge__StyledBadge-sc-1y6i8f0-0 iQkwdQ"
             data-test={undefined}
           >
             <div
-              className="Badge__IconContainer-keuekM edgSqO"
+              className="Badge__IconContainer-sc-1y6i8f0-1 jYRMQw"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -1194,14 +1194,14 @@ exports[`Storyshots Badge Types 1`] = `
           }
         >
           <div
-            className="Badge__StyledBadge-xfvXv llBUbY"
+            className="Badge__StyledBadge-sc-1y6i8f0-0 bxpgmY"
             data-test={undefined}
           >
             <div
-              className="Badge__IconContainer-keuekM WIGBY"
+              className="Badge__IconContainer-sc-1y6i8f0-1 jaKact"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -1410,14 +1410,14 @@ exports[`Storyshots Badge Types 1`] = `
           }
         >
           <div
-            className="Badge__StyledBadge-xfvXv eCGvMP"
+            className="Badge__StyledBadge-sc-1y6i8f0-0 eINXZg"
             data-test={undefined}
           >
             <div
-              className="Badge__IconContainer-keuekM gkWzyK"
+              className="Badge__IconContainer-sc-1y6i8f0-1 hVZuda"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -1626,14 +1626,14 @@ exports[`Storyshots Badge Types 1`] = `
           }
         >
           <div
-            className="Badge__StyledBadge-xfvXv cVARkQ"
+            className="Badge__StyledBadge-sc-1y6i8f0-0 qdIcr"
             data-test={undefined}
           >
             <div
-              className="Badge__IconContainer-keuekM gdfYto"
+              className="Badge__IconContainer-sc-1y6i8f0-1 kEteyZ"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -1842,14 +1842,14 @@ exports[`Storyshots Badge Types 1`] = `
           }
         >
           <div
-            className="Badge__StyledBadge-xfvXv gsBZwF"
+            className="Badge__StyledBadge-sc-1y6i8f0-0 iHgMEy"
             data-test={undefined}
           >
             <div
-              className="Badge__IconContainer-keuekM NioJv"
+              className="Badge__IconContainer-sc-1y6i8f0-1 ldnUpd"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -2058,14 +2058,14 @@ exports[`Storyshots Badge Types 1`] = `
           }
         >
           <div
-            className="Badge__StyledBadge-xfvXv eqVSil"
+            className="Badge__StyledBadge-sc-1y6i8f0-0 eBqsVH"
             data-test={undefined}
           >
             <div
-              className="Badge__IconContainer-keuekM gBnvnn"
+              className="Badge__IconContainer-sc-1y6i8f0-1 fnHzAS"
             >
               <svg
-                className="Icon__StyledIcon-ckyxIP fvqkFf"
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                 data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
@@ -2282,14 +2282,14 @@ exports[`Storyshots Badge Types 1`] = `
             }
           >
             <div
-              className="Badge__StyledBadge-xfvXv zmWqm"
+              className="Badge__StyledBadge-sc-1y6i8f0-0 cGXnVY"
               data-test={undefined}
             >
               <div
-                className="Badge__IconContainer-keuekM edgSqO"
+                className="Badge__IconContainer-sc-1y6i8f0-1 jYRMQw"
               >
                 <svg
-                  className="Icon__StyledIcon-ckyxIP fvqkFf"
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                   data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"

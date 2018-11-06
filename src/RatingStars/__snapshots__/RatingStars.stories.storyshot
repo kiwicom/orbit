@@ -99,12 +99,12 @@ exports[`Storyshots RatingStars Playground 1`] = `
           }
         >
           <div
-            className="RatingStars__StyledRatingStars-bdpFtX jCnzxZ"
+            className="RatingStars__StyledRatingStars-vyfznx-0 dIuBne"
             data-test="test"
             size="small"
           >
             <svg
-              className="Icon__StyledIcon-ckyxIP gvkqdc"
+              className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
               data-test={undefined}
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 24 24"
@@ -114,7 +114,7 @@ exports[`Storyshots RatingStars Playground 1`] = `
               />
             </svg>
             <svg
-              className="Icon__StyledIcon-ckyxIP gvkqdc"
+              className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
               data-test={undefined}
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 24 24"
@@ -124,7 +124,7 @@ exports[`Storyshots RatingStars Playground 1`] = `
               />
             </svg>
             <svg
-              className="Icon__StyledIcon-ckyxIP gvkqdc"
+              className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
               data-test={undefined}
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 24 24"
@@ -134,7 +134,7 @@ exports[`Storyshots RatingStars Playground 1`] = `
               />
             </svg>
             <svg
-              className="Icon__StyledIcon-ckyxIP gvkqdc"
+              className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
               data-test={undefined}
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 24 24"
@@ -144,7 +144,7 @@ exports[`Storyshots RatingStars Playground 1`] = `
               />
             </svg>
             <svg
-              className="Icon__StyledIcon-ckyxIP gvkqdc"
+              className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
               data-test={undefined}
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 24 24"

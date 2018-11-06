@@ -2320,6 +2320,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
             }
           >
             <Text
+              align="right"
               type="attention"
             >
               5:30
@@ -2711,6 +2712,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
             }
           >
             <Text
+              align="right"
               type="attention"
             >
               11:20

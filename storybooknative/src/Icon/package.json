@@ -1,0 +1,11 @@
+{
+  "name": "@kiwicom/react-native-orbit-icons",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.js",
+  "rnpm": {
+    "assets": [
+      "fonts"
+    ]
+  }
+}

@@ -103,10 +103,7 @@ exports[`Storyshots Stack Default 1`] = `
           >
             <button
               className="Button__StyledButton-sc-1brqp3f-2 eRjFPw"
-              data-test={undefined}
-              disabled={undefined}
               size="normal"
-              target={undefined}
               type="button"
             >
               <div
@@ -117,7 +114,6 @@ exports[`Storyshots Stack Default 1`] = `
                 >
                   <svg
                     className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                    data-test={undefined}
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
                   >
@@ -131,10 +127,7 @@ exports[`Storyshots Stack Default 1`] = `
             </button>
             <button
               className="Button__StyledButton-sc-1brqp3f-2 dXanGU"
-              data-test={undefined}
-              disabled={undefined}
               size="normal"
-              target={undefined}
               type="button"
             >
               <div
@@ -169,52 +162,14 @@ exports[`Storyshots Stack Default 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        Stack
-                      </span>
-                      <span />
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
                     <div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -227,49 +182,78 @@ exports[`Storyshots Stack Default 1`] = `
                           }
                         >
                           &lt;
-                          Button
+                          Stack
                         </span>
-                        <span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Button
+                          </span>
                           <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
                             <span>
-                              =
+                               
                               <span
                                 style={Object {}}
                               >
+                                type
+                              </span>
+                              <span>
+                                =
                                 <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
+                                  style={Object {}}
                                 >
                                   "
-                                  success
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    success
+                                  </span>
                                   "
                                 </span>
                               </span>
                             </span>
-                          </span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              iconLeft
-                            </span>
                             <span>
-                              =
+                               
                               <span
                                 style={Object {}}
                               >
-                                <span>
+                                iconLeft
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
                                   {
                                   <span
                                     style={
@@ -283,140 +267,160 @@ exports[`Storyshots Stack Default 1`] = `
                                   }
                                 </span>
                               </span>
+                              
                             </span>
-                            
                           </span>
-                        </span>
-                        <span
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          &gt;
-                        </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Button
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Button
+                            &gt;
+                          </span>
+                        </div>
                       </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
+                      <div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          Button
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
                             }
-                          }
-                        >
-                          &lt;/
-                          Button
-                          &gt;
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Button
-                        </span>
-                        <span>
+                          >
+                            &lt;
+                            Button
+                          </span>
                           <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
                             <span>
-                              =
+                               
                               <span
                                 style={Object {}}
                               >
+                                type
+                              </span>
+                              <span>
+                                =
                                 <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
+                                  style={Object {}}
                                 >
                                   "
-                                  warning
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    warning
+                                  </span>
                                   "
                                 </span>
                               </span>
+                              
                             </span>
-                            
                           </span>
-                        </span>
-                        <span
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          &gt;
-                        </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Button
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Button
+                            &gt;
+                          </span>
+                        </div>
                       </div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Button
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -429,32 +433,33 @@ exports[`Storyshots Stack Default 1`] = `
                           }
                         >
                           &lt;/
-                          Button
+                          Stack
                           &gt;
                         </span>
                       </div>
                     </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
                     <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
+                      className="css-kv47nt"
                     >
-                      <span
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "marginBottom": 6,
                           }
                         }
                       >
-                        &lt;/
-                        Stack
-                        &gt;
-                      </span>
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
                     </div>
-                  </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -569,11 +574,9 @@ exports[`Storyshots Stack Desktop properties 1`] = `
           >
             <label
               className="InputField__Field-sc-4opay-0 iedcUZ"
-              data-test={undefined}
             >
               <span
                 className="FormLabel-sc-1927civ-1 iTEGJS"
-                data-test={undefined}
               >
                 <span>
                   Password
@@ -584,21 +587,8 @@ exports[`Storyshots Stack Desktop properties 1`] = `
               >
                 <input
                   className="InputField__Input-sc-4opay-6 fqqXrq"
-                  disabled={undefined}
-                  max={undefined}
-                  maxLength={undefined}
-                  min={undefined}
-                  minLength={undefined}
-                  name={undefined}
-                  onBlur={undefined}
-                  onChange={undefined}
-                  onFocus={undefined}
-                  onKeyDown={undefined}
-                  onKeyUp={undefined}
-                  placeholder={undefined}
                   size="normal"
                   type="password"
-                  value={undefined}
                 />
                 <div
                   className="InputField__FakeInput-sc-4opay-1 ipxhgc"
@@ -606,17 +596,13 @@ exports[`Storyshots Stack Desktop properties 1`] = `
               </div>
               <div
                 className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
-                data-test={undefined}
               >
                 You need some help!
               </div>
             </label>
             <button
               className="Button__StyledButton-sc-1brqp3f-2 cvEbYV"
-              data-test={undefined}
-              disabled={undefined}
               size="normal"
-              target={undefined}
               type="button"
             >
               <div
@@ -651,50 +637,41 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                    <div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &lt;
-                        Stack
-                      </span>
-                      <span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          Stack
+                        </span>
                         <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            desktop
-                          </span>
                           <span>
-                            =
+                             
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              desktop
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -704,211 +681,117 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                                   }
                                 >
                                   {
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    inline
-                                  </span>
-                                  : 
                                   <span>
-                                    {
+                                    <span>
+                                      <br />
+                                        
+                                        
+                                    </span>
                                     <span
                                       style={
                                         Object {
-                                          "color": "#a11",
+                                          "color": "#666",
                                         }
                                       }
                                     >
-                                      false
+                                      inline
                                     </span>
-                                    }
                                   </span>
-                                  , 
+                                  : 
                                   <span
                                     style={
                                       Object {
-                                        "color": "#666",
+                                        "color": "#a11",
                                       }
                                     }
                                   >
-                                    direction
+                                    false
                                   </span>
-                                  : 
+                                  ,
                                   <span>
-                                    {
+                                    <span>
+                                      <br />
+                                        
+                                        
+                                    </span>
                                     <span
                                       style={
                                         Object {
-                                          "color": "#777",
+                                          "color": "#666",
                                         }
                                       }
                                     >
-                                      null
+                                      direction
                                     </span>
-                                    }
                                   </span>
-                                  , 
+                                  : 
                                   <span
                                     style={
                                       Object {
-                                        "color": "#666",
+                                        "color": "#777",
                                       }
                                     }
                                   >
-                                    wrap
+                                    null
                                   </span>
-                                  : 
+                                  ,
                                   <span>
-                                    {
+                                    <span>
+                                      <br />
+                                        
+                                        
+                                    </span>
                                     <span
                                       style={
                                         Object {
-                                          "color": "#a11",
+                                          "color": "#666",
                                         }
                                       }
                                     >
-                                      false
+                                      wrap
                                     </span>
-                                    }
                                   </span>
-                                  , 
-                                  …
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#a11",
+                                      }
+                                    }
+                                  >
+                                    false
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span>
+                                      <br />
+                                        
+                                        
+                                    </span>
+                                    …
+                                  </span>
+                                  <span>
+                                    <br />
+                                      
+                                  </span>
                                   }
                                 </span>
                                 }
                               </span>
                             </span>
+                            
                           </span>
-                          
                         </span>
-                      </span>
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
                           }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 33,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        InputField
-                      </span>
-                      <span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            type
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                password
-                                "
-                              </span>
-                            </span>
-                          </span>
+                        >
+                          &gt;
                         </span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            label
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                Password
-                                "
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            help
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                You need some help!
-                                "
-                              </span>
-                            </span>
-                          </span>
-                           
-                        </span>
-                      </span>
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        /&gt;
-                      </span>
-                    </div>
-                    <div>
+                      </div>
                       <div
                         style={
                           Object {
@@ -925,9 +808,92 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                           }
                         >
                           &lt;
-                          Button
+                          InputField
                         </span>
-                        <span />
+                        <span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              type
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  password
+                                </span>
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              label
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  Password
+                                </span>
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              help
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  You need some help!
+                                </span>
+                                "
+                              </span>
+                            </span>
+                             
+                          </span>
+                        </span>
                         <span
                           style={
                             Object {
@@ -935,31 +901,82 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                             }
                           }
                         >
-                          &gt;
+                          /&gt;
                         </span>
                       </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
+                      <div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          Sign In
-                        </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Button
+                          </span>
+                          <span />
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Sign In
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Button
+                            &gt;
+                          </span>
+                        </div>
                       </div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -972,32 +989,33 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                           }
                         >
                           &lt;/
-                          Button
+                          Stack
                           &gt;
                         </span>
                       </div>
                     </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
                     <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
+                      className="css-kv47nt"
                     >
-                      <span
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "marginBottom": 6,
                           }
                         }
                       >
-                        &lt;/
-                        Stack
-                        &gt;
-                      </span>
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
                     </div>
-                  </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -1112,10 +1130,7 @@ exports[`Storyshots Stack Mobile properties 1`] = `
           >
             <button
               className="Button__StyledButton-sc-1brqp3f-2 eRjFPw"
-              data-test={undefined}
-              disabled={undefined}
               size="normal"
-              target={undefined}
               type="button"
             >
               <div
@@ -1126,7 +1141,6 @@ exports[`Storyshots Stack Mobile properties 1`] = `
                 >
                   <svg
                     className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                    data-test={undefined}
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
                   >
@@ -1140,10 +1154,7 @@ exports[`Storyshots Stack Mobile properties 1`] = `
             </button>
             <button
               className="Button__StyledButton-sc-1brqp3f-2 dXanGU"
-              data-test={undefined}
-              disabled={undefined}
               size="normal"
-              target={undefined}
               type="button"
             >
               <div
@@ -1178,312 +1189,14 @@ exports[`Storyshots Stack Mobile properties 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        Stack
-                      </span>
-                      <span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            inline
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span>
-                                {
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#a11",
-                                    }
-                                  }
-                                >
-                                  false
-                                </span>
-                                }
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            direction
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span>
-                                {
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#777",
-                                    }
-                                  }
-                                >
-                                  null
-                                </span>
-                                }
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            wrap
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span>
-                                {
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#a11",
-                                    }
-                                  }
-                                >
-                                  false
-                                </span>
-                                }
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            shrink
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span>
-                                {
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#a11",
-                                    }
-                                  }
-                                >
-                                  false
-                                </span>
-                                }
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            grow
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            basis
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                auto
-                                "
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            align
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span>
-                                {
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#777",
-                                    }
-                                  }
-                                >
-                                  null
-                                </span>
-                                }
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            spacing
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span>
-                                {
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#777",
-                                    }
-                                  }
-                                >
-                                  null
-                                </span>
-                                }
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            spaceAfter
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span>
-                                {
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#777",
-                                    }
-                                  }
-                                >
-                                  null
-                                </span>
-                                }
-                              </span>
-                            </span>
-                          </span>
-                          <br />
-                        </span>
-                      </span>
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
                     <div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -1496,21 +1209,152 @@ exports[`Storyshots Stack Mobile properties 1`] = `
                           }
                         >
                           &lt;
-                          Button
+                          Stack
                         </span>
                         <span>
                           <span>
-                             
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
-                              type
+                              inline
                             </span>
                             <span>
                               =
                               <span
                                 style={Object {}}
                               >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              direction
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              wrap
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              shrink
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  false
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              grow
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              basis
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
                                 <span
                                   style={
                                     Object {
@@ -1519,26 +1363,170 @@ exports[`Storyshots Stack Mobile properties 1`] = `
                                     }
                                   }
                                 >
-                                  "
-                                  success
-                                  "
+                                  auto
                                 </span>
+                                "
                               </span>
                             </span>
                           </span>
                           <span>
-                             
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
-                              iconLeft
+                              align
                             </span>
                             <span>
                               =
                               <span
                                 style={Object {}}
                               >
-                                <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              spacing
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              spaceAfter
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  null
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            <br />
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Button
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                type
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    success
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                iconLeft
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
                                   {
                                   <span
                                     style={
@@ -1552,140 +1540,160 @@ exports[`Storyshots Stack Mobile properties 1`] = `
                                   }
                                 </span>
                               </span>
+                              
                             </span>
-                            
                           </span>
-                        </span>
-                        <span
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          &gt;
-                        </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Button
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Button
+                            &gt;
+                          </span>
+                        </div>
                       </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
+                      <div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          Button
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
                             }
-                          }
-                        >
-                          &lt;/
-                          Button
-                          &gt;
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Button
-                        </span>
-                        <span>
+                          >
+                            &lt;
+                            Button
+                          </span>
                           <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
                             <span>
-                              =
+                               
                               <span
                                 style={Object {}}
                               >
+                                type
+                              </span>
+                              <span>
+                                =
                                 <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
+                                  style={Object {}}
                                 >
                                   "
-                                  warning
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    warning
+                                  </span>
                                   "
                                 </span>
                               </span>
+                              
                             </span>
-                            
                           </span>
-                        </span>
-                        <span
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          &gt;
-                        </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Button
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Button
+                            &gt;
+                          </span>
+                        </div>
                       </div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Button
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -1698,32 +1706,33 @@ exports[`Storyshots Stack Mobile properties 1`] = `
                           }
                         >
                           &lt;/
-                          Button
+                          Stack
                           &gt;
                         </span>
                       </div>
                     </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
                     <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
+                      className="css-kv47nt"
                     >
-                      <span
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "marginBottom": 6,
                           }
                         }
                       >
-                        &lt;/
-                        Stack
-                        &gt;
-                      </span>
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
                     </div>
-                  </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -1841,13 +1850,11 @@ exports[`Storyshots Stack Nested example 1`] = `
             >
               <p
                 className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
-                data-test={undefined}
               >
                 email@gmail.com
               </p>
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 YpDIw"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1861,11 +1868,9 @@ exports[`Storyshots Stack Nested example 1`] = `
             >
               <label
                 className="InputField__Field-sc-4opay-0 iedcUZ"
-                data-test={undefined}
               >
                 <span
                   className="FormLabel-sc-1927civ-1 iTEGJS"
-                  data-test={undefined}
                 >
                   <span>
                     Password
@@ -1876,21 +1881,8 @@ exports[`Storyshots Stack Nested example 1`] = `
                 >
                   <input
                     className="InputField__Input-sc-4opay-6 fqqXrq"
-                    disabled={undefined}
-                    max={undefined}
-                    maxLength={undefined}
-                    min={undefined}
-                    minLength={undefined}
-                    name={undefined}
-                    onBlur={undefined}
-                    onChange={undefined}
-                    onFocus={undefined}
-                    onKeyDown={undefined}
-                    onKeyUp={undefined}
-                    placeholder={undefined}
                     size="normal"
                     type="password"
-                    value={undefined}
                   />
                   <div
                     className="InputField__FakeInput-sc-4opay-1 czVugR"
@@ -1898,17 +1890,13 @@ exports[`Storyshots Stack Nested example 1`] = `
                 </div>
                 <div
                   className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
-                  data-test={undefined}
                 >
                   You need some help!
                 </div>
               </label>
               <button
                 className="Button__StyledButton-sc-1brqp3f-2 cvEbYV"
-                data-test={undefined}
-                disabled={undefined}
                 size="normal"
-                target={undefined}
                 type="button"
               >
                 <div
@@ -1920,15 +1908,9 @@ exports[`Storyshots Stack Nested example 1`] = `
             </div>
             <p
               className="Text__StyledText-sc-19qtt4y-0 efCYLv"
-              data-test={undefined}
             >
               <a
                 className="TextLink__StyledTextLink-sc-1bvlje4-1 lfTmsb"
-                data-test={undefined}
-                href={undefined}
-                onClick={undefined}
-                rel={undefined}
-                target={undefined}
               >
                 Forgot password?
               </a>
@@ -1959,135 +1941,14 @@ exports[`Storyshots Stack Nested example 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        Stack
-                      </span>
-                      <span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            spacing
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                comfy
-                                "
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            direction
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                column
-                                "
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            align
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                start
-                                "
-                              </span>
-                            </span>
-                          </span>
-                          
-                        </span>
-                      </span>
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
                     <div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -2115,6 +1976,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                               <span
                                 style={Object {}}
                               >
+                                "
                                 <span
                                   style={
                                     Object {
@@ -2123,10 +1985,9 @@ exports[`Storyshots Stack Nested example 1`] = `
                                     }
                                   }
                                 >
-                                  "
-                                  condensed
-                                  "
+                                  comfy
                                 </span>
+                                "
                               </span>
                             </span>
                           </span>
@@ -2142,6 +2003,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                               <span
                                 style={Object {}}
                               >
+                                "
                                 <span
                                   style={
                                     Object {
@@ -2150,308 +2012,9 @@ exports[`Storyshots Stack Nested example 1`] = `
                                     }
                                   }
                                 >
-                                  "
-                                  row
-                                  "
+                                  column
                                 </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              inline
-                            </span>
-                            
-                          </span>
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;
-                            Text
-                          </span>
-                          <span>
-                            <span>
-                               
-                              <span
-                                style={Object {}}
-                              >
-                                weight
-                              </span>
-                              <span>
-                                =
-                                <span
-                                  style={Object {}}
-                                >
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    "
-                                    bold
-                                    "
-                                  </span>
-                                </span>
-                              </span>
-                              
-                            </span>
-                          </span>
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &gt;
-                          </span>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 63,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            email@gmail.com
-                          </span>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;/
-                            Text
-                            &gt;
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Edit
-                        </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              size
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  small
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              color
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  success
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                             
-                          </span>
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          /&gt;
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          Stack
-                          &gt;
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Stack
-                        </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              direction
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  row
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              spaceAfter
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  large
-                                  "
-                                </span>
+                                "
                               </span>
                             </span>
                           </span>
@@ -2467,6 +2030,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                               <span
                                 style={Object {}}
                               >
+                                "
                                 <span
                                   style={
                                     Object {
@@ -2475,10 +2039,9 @@ exports[`Storyshots Stack Nested example 1`] = `
                                     }
                                   }
                                 >
-                                  "
-                                  end
-                                  "
+                                  start
                                 </span>
+                                "
                               </span>
                             </span>
                             
@@ -2494,119 +2057,198 @@ exports[`Storyshots Stack Nested example 1`] = `
                           &gt;
                         </span>
                       </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          InputField
-                        </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  password
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              label
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  Password
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                          </span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              error
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  You need some help!
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                             
-                          </span>
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          /&gt;
-                        </span>
-                      </div>
                       <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Stack
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                spacing
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    condensed
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                direction
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    row
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                inline
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Text
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  weight
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    "
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      bold
+                                    </span>
+                                    "
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              email@gmail.com
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Text
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
                         <div
                           style={
                             Object {
@@ -2623,9 +2265,65 @@ exports[`Storyshots Stack Nested example 1`] = `
                             }
                           >
                             &lt;
-                            Button
+                            Edit
                           </span>
-                          <span />
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                size
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    small
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                color
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    success
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                               
+                            </span>
+                          </span>
                           <span
                             style={
                               Object {
@@ -2633,31 +2331,13 @@ exports[`Storyshots Stack Nested example 1`] = `
                               }
                             }
                           >
-                            &gt;
+                            /&gt;
                           </span>
                         </div>
                         <div
                           style={
                             Object {
-                              "paddingLeft": 63,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            Sign In
-                          </span>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
+                              "paddingLeft": 33,
                               "paddingRight": 3,
                             }
                           }
@@ -2670,96 +2350,16 @@ exports[`Storyshots Stack Nested example 1`] = `
                             }
                           >
                             &lt;/
-                            Button
+                            Stack
                             &gt;
                           </span>
                         </div>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          Stack
-                          &gt;
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Text
-                        </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              size
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  "
-                                  small
-                                  "
-                                </span>
-                              </span>
-                            </span>
-                            
-                          </span>
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
                       </div>
                       <div>
                         <div
                           style={
                             Object {
-                              "paddingLeft": 48,
+                              "paddingLeft": 33,
                               "paddingRight": 3,
                             }
                           }
@@ -2772,7 +2372,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                             }
                           >
                             &lt;
-                            TextLink
+                            Stack
                           </span>
                           <span>
                             <span>
@@ -2780,13 +2380,14 @@ exports[`Storyshots Stack Nested example 1`] = `
                               <span
                                 style={Object {}}
                               >
-                                type
+                                direction
                               </span>
                               <span>
                                 =
                                 <span
                                   style={Object {}}
                                 >
+                                  "
                                   <span
                                     style={
                                       Object {
@@ -2795,10 +2396,63 @@ exports[`Storyshots Stack Nested example 1`] = `
                                       }
                                     }
                                   >
-                                    "
-                                    secondary
-                                    "
+                                    row
                                   </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                spaceAfter
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    large
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                align
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    end
+                                  </span>
+                                  "
                                 </span>
                               </span>
                               
@@ -2817,24 +2471,6 @@ exports[`Storyshots Stack Nested example 1`] = `
                         <div
                           style={
                             Object {
-                              "paddingLeft": 63,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            Forgot password?
-                          </span>
-                        </div>
-                        <div
-                          style={
-                            Object {
                               "paddingLeft": 48,
                               "paddingRight": 3,
                             }
@@ -2847,8 +2483,367 @@ exports[`Storyshots Stack Nested example 1`] = `
                               }
                             }
                           >
+                            &lt;
+                            InputField
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                type
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    password
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                label
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    Password
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                error
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    You need some help!
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                               
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            /&gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Button
+                            </span>
+                            <span />
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              Sign In
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Button
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
                             &lt;/
-                            TextLink
+                            Stack
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Text
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                size
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    small
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              TextLink
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  type
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    "
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      secondary
+                                    </span>
+                                    "
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              Forgot password?
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              TextLink
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Text
                             &gt;
                           </span>
                         </div>
@@ -2856,7 +2851,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -2869,32 +2864,33 @@ exports[`Storyshots Stack Nested example 1`] = `
                           }
                         >
                           &lt;/
-                          Text
+                          Stack
                           &gt;
                         </span>
                       </div>
                     </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
                     <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
+                      className="css-kv47nt"
                     >
-                      <span
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "marginBottom": 6,
                           }
                         }
                       >
-                        &lt;/
-                        Stack
-                        &gt;
-                      </span>
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
                     </div>
-                  </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -3009,10 +3005,7 @@ exports[`Storyshots Stack Playground 1`] = `
           >
             <button
               className="Button__StyledButton-sc-1brqp3f-2 bLbnqm"
-              data-test={undefined}
-              disabled={undefined}
               size="normal"
-              target={undefined}
               type="button"
             >
               <div
@@ -3023,10 +3016,7 @@ exports[`Storyshots Stack Playground 1`] = `
             </button>
             <button
               className="Button__StyledButton-sc-1brqp3f-2 jZEytI"
-              data-test={undefined}
-              disabled={undefined}
               size="normal"
-              target={undefined}
               type="button"
             >
               <div
@@ -3037,10 +3027,7 @@ exports[`Storyshots Stack Playground 1`] = `
             </button>
             <button
               className="Button__StyledButton-sc-1brqp3f-2 cvEbYV"
-              data-test={undefined}
-              disabled={undefined}
               size="normal"
-              target={undefined}
               type="button"
             >
               <div
@@ -3075,53 +3062,44 @@ exports[`Storyshots Stack Playground 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                    <div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &lt;
-                        Stack
-                      </span>
-                      <span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          Stack
+                        </span>
                         <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            direction
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              direction
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -3136,23 +3114,21 @@ exports[`Storyshots Stack Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            align
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              align
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -3167,23 +3143,21 @@ exports[`Storyshots Stack Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            wrap
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              wrap
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -3198,64 +3172,62 @@ exports[`Storyshots Stack Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            grow
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            basis
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
+                              grow
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              basis
+                            </span>
+                            <span>
+                              =
                               <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
+                                style={Object {}}
                               >
                                 "
-                                auto
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  auto
+                                </span>
                                 "
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            inline
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              inline
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -3270,23 +3242,21 @@ exports[`Storyshots Stack Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            shrink
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              shrink
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -3301,23 +3271,21 @@ exports[`Storyshots Stack Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            spacing
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              spacing
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -3332,23 +3300,21 @@ exports[`Storyshots Stack Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            spaceAfter
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              spaceAfter
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -3363,23 +3329,21 @@ exports[`Storyshots Stack Playground 1`] = `
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            desktop
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              desktop
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -3389,38 +3353,48 @@ exports[`Storyshots Stack Playground 1`] = `
                                   }
                                 >
                                   {
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    inline
-                                  </span>
-                                  : 
                                   <span>
-                                    {
+                                    <span>
+                                      <br />
+                                        
+                                        
+                                    </span>
                                     <span
                                       style={
                                         Object {
-                                          "color": "#a11",
+                                          "color": "#666",
                                         }
                                       }
                                     >
-                                      false
+                                      inline
                                     </span>
-                                    }
                                   </span>
-                                  , 
+                                  : 
                                   <span
                                     style={
                                       Object {
-                                        "color": "#666",
+                                        "color": "#a11",
                                       }
                                     }
                                   >
-                                    direction
+                                    false
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span>
+                                      <br />
+                                        
+                                        
+                                    </span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      direction
+                                    </span>
                                   </span>
                                   : 
                                   <span
@@ -3431,64 +3405,56 @@ exports[`Storyshots Stack Playground 1`] = `
                                       }
                                     }
                                   >
-                                    "
-                                    row
-                                    "
+                                    'row'
                                   </span>
-                                  , 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    wrap
-                                  </span>
-                                  : 
+                                  ,
                                   <span>
-                                    {
+                                    <span>
+                                      <br />
+                                        
+                                        
+                                    </span>
                                     <span
                                       style={
                                         Object {
-                                          "color": "#a11",
+                                          "color": "#666",
                                         }
                                       }
                                     >
-                                      false
+                                      wrap
                                     </span>
-                                    }
                                   </span>
-                                  , 
-                                  …
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#a11",
+                                      }
+                                    }
+                                  >
+                                    false
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span>
+                                      <br />
+                                        
+                                        
+                                    </span>
+                                    …
+                                  </span>
+                                  <span>
+                                    <br />
+                                      
+                                  </span>
                                   }
                                 </span>
                                 }
                               </span>
                             </span>
+                            <br />
                           </span>
-                          <br />
                         </span>
-                      </span>
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
                         <span
                           style={
                             Object {
@@ -3496,169 +3462,278 @@ exports[`Storyshots Stack Playground 1`] = `
                             }
                           }
                         >
-                          &lt;
-                          Button
+                          &gt;
                         </span>
-                        <span>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Button
+                          </span>
                           <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
                             <span>
-                              =
+                               
                               <span
                                 style={Object {}}
                               >
+                                type
+                              </span>
+                              <span>
+                                =
                                 <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
+                                  style={Object {}}
                                 >
                                   "
-                                  secondary
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    secondary
+                                  </span>
                                   "
                                 </span>
                               </span>
+                              
                             </span>
-                            
                           </span>
-                        </span>
-                        <span
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          &gt;
-                        </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Sign In
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Button
+                            &gt;
+                          </span>
+                        </div>
                       </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
+                      <div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          Sign In
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
                             }
-                          }
-                        >
-                          &lt;/
-                          Button
-                          &gt;
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Button
-                        </span>
-                        <span>
+                          >
+                            &lt;
+                            Button
+                          </span>
                           <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              type
-                            </span>
                             <span>
-                              =
+                               
                               <span
                                 style={Object {}}
                               >
+                                type
+                              </span>
+                              <span>
+                                =
                                 <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
+                                  style={Object {}}
                                 >
                                   "
-                                  facebook
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    facebook
+                                  </span>
                                   "
                                 </span>
                               </span>
+                              
                             </span>
-                            
                           </span>
-                        </span>
-                        <span
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
                           style={
                             Object {
-                              "color": "#777",
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
                             }
                           }
                         >
-                          &gt;
-                        </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Sign In
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Button
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Button
+                          </span>
+                          <span />
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Sign In
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Button
+                            &gt;
+                          </span>
+                        </div>
                       </div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Sign In
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -3671,101 +3746,33 @@ exports[`Storyshots Stack Playground 1`] = `
                           }
                         >
                           &lt;/
-                          Button
+                          Stack
                           &gt;
                         </span>
                       </div>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          Button
-                        </span>
-                        <span />
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          Sign In
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          Button
-                          &gt;
-                        </span>
-                      </div>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;/
-                        Stack
-                        &gt;
-                      </span>
                     </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>

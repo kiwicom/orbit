@@ -119,10 +119,8 @@ exports[`Storyshots Modal Full preview 1`] = `
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE"
-                    data-test={undefined}
                     onClick={[Function]}
                     size="normal"
-                    target={undefined}
                     type="button"
                   >
                     <div
@@ -131,7 +129,6 @@ exports[`Storyshots Modal Full preview 1`] = `
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                        data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >
@@ -144,12 +141,10 @@ exports[`Storyshots Modal Full preview 1`] = `
                 </div>
                 <div
                   className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 rdsPY"
-                  data-test={undefined}
                 >
                   <img
                     alt="Accommodation"
                     className="Illustration__StyledImage-uskdow-0 brJZdH"
-                    data-test={undefined}
                     size="small"
                     src="//images.kiwi.com/illustrations/0x90/Accommodation.png"
                     srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x"
@@ -159,7 +154,6 @@ exports[`Storyshots Modal Full preview 1`] = `
                   >
                     <h1
                       className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
-                      data-test={undefined}
                     >
                       Orbit design system
                     </h1>
@@ -168,7 +162,6 @@ exports[`Storyshots Modal Full preview 1`] = `
                     >
                       <div
                         className="Text__StyledText-sc-19qtt4y-0 lKAms"
-                        data-test={undefined}
                       >
                         Lorem ispum dolor sit amet
                       </div>
@@ -182,40 +175,33 @@ exports[`Storyshots Modal Full preview 1`] = `
                 </div>
                 <section
                   className="ModalSection__StyledModalSection-sc-1ayrdn8-0 jleUCC"
-                  data-test={undefined}
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                    data-test={undefined}
                   >
                     You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                   </p>
                 </section>
                 <section
                   className="ModalSection__StyledModalSection-sc-1ayrdn8-0 jleUCC"
-                  data-test={undefined}
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                    data-test={undefined}
                   >
                     You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                   </p>
                 </section>
                 <section
                   className="ModalSection__StyledModalSection-sc-1ayrdn8-0 jleUCC"
-                  data-test={undefined}
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                    data-test={undefined}
                   >
                     You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                   </p>
                 </section>
                 <div
                   className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 KbNcr"
-                  data-test={undefined}
                 >
                   <div
                     className="ModalFooter__StyledChild-sc-17ld6v4-0 bwFtzF"
@@ -225,10 +211,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     >
                       <button
                         className="Button__StyledButton-sc-1brqp3f-2 gicbG"
-                        data-test={undefined}
-                        disabled={undefined}
                         size="normal"
-                        target={undefined}
                         type="button"
                       >
                         <div
@@ -239,7 +222,6 @@ exports[`Storyshots Modal Full preview 1`] = `
                           >
                             <svg
                               className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                              data-test={undefined}
                               preserveAspectRatio="xMidYMid meet"
                               viewBox="0 0 24 24"
                             >
@@ -253,10 +235,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       </button>
                       <button
                         className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 biTQRn"
-                        data-test={undefined}
-                        onClick={undefined}
                         size="normal"
-                        target={undefined}
                         type="button"
                       >
                         Button
@@ -268,10 +247,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                   >
                     <button
                       className="Button__StyledButton-sc-1brqp3f-2 bXyURL"
-                      data-test={undefined}
-                      disabled={undefined}
                       size="normal"
-                      target={undefined}
                       type="button"
                     >
                       <div
@@ -310,53 +286,44 @@ exports[`Storyshots Modal Full preview 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
+                    <div>
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
                           }
                         }
                       >
-                        &lt;
-                        Modal
-                      </span>
-                      <span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          Modal
+                        </span>
                         <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            onClose
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              onClose
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -365,70 +332,68 @@ exports[`Storyshots Modal Full preview 1`] = `
                                     }
                                   }
                                 >
-                                  onClose()
+                                  onClose
                                 </span>
                                 }
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            size
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
+                              size
+                            </span>
+                            <span>
+                              =
                               <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
+                                style={Object {}}
                               >
                                 "
-                                normal
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  normal
+                                </span>
                                 "
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            closable
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            fixedFooter
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              closable
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              fixedFooter
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -443,114 +408,112 @@ exports[`Storyshots Modal Full preview 1`] = `
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            dataTest
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
+                              dataTest
+                            </span>
+                            <span>
+                              =
                               <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
+                                style={Object {}}
                               >
                                 "
-                                test
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  test
+                                </span>
+                                "
+                              </span>
+                            </span>
+                            <br />
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          ModalHeader
+                        </span>
+                        <span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              title
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  Orbit design system
+                                </span>
                                 "
                               </span>
                             </span>
                           </span>
-                          <br />
-                        </span>
-                      </span>
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 33,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        ModalHeader
-                      </span>
-                      <span>
-                        <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            title
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                Orbit design system
-                                "
-                              </span>
+                            <span>
+                              <br />
+                                
                             </span>
-                          </span>
-                        </span>
-                        <span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            illustration
-                          </span>
-                          <span>
-                            =
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              illustration
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -565,53 +528,51 @@ exports[`Storyshots Modal Full preview 1`] = `
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            description
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
+                              description
+                            </span>
+                            <span>
+                              =
                               <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
+                                style={Object {}}
                               >
                                 "
-                                Lorem ispum dolor sit amet
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  Lorem ispum dolor sit amet
+                                </span>
                                 "
                               </span>
                             </span>
                           </span>
-                        </span>
-                        <span>
                           <span>
-                            <br />
-                              
-                          </span>
-                          <span
-                            style={Object {}}
-                          >
-                            suppressed
-                          </span>
-                          <span>
-                            =
+                            <span>
+                              <br />
+                                
+                            </span>
                             <span
                               style={Object {}}
                             >
-                              <span>
+                              suppressed
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
                                 {
                                 <span
                                   style={
@@ -625,68 +586,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                                 }
                               </span>
                             </span>
-                          </span>
-                          <br />
-                        </span>
-                      </span>
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        /&gt;
-                      </span>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          ModalSection
-                        </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              suppressed
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span>
-                                  {
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#a11",
-                                      }
-                                    }
-                                  >
-                                    false
-                                  </span>
-                                  }
-                                </span>
-                              </span>
-                            </span>
-                            
+                            <br />
                           </span>
                         </span>
                         <span
@@ -696,14 +596,14 @@ exports[`Storyshots Modal Full preview 1`] = `
                             }
                           }
                         >
-                          &gt;
+                          /&gt;
                         </span>
                       </div>
                       <div>
                         <div
                           style={
                             Object {
-                              "paddingLeft": 48,
+                              "paddingLeft": 33,
                               "paddingRight": 3,
                             }
                           }
@@ -716,483 +616,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                             }
                           >
                             &lt;
-                            Text
-                          </span>
-                          <span />
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &gt;
-                          </span>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 63,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-                          </span>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;/
-                            Text
-                            &gt;
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          ModalSection
-                          &gt;
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          ModalSection
-                        </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              suppressed
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span>
-                                  {
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#a11",
-                                      }
-                                    }
-                                  >
-                                    false
-                                  </span>
-                                  }
-                                </span>
-                              </span>
-                            </span>
-                            
-                          </span>
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;
-                            Text
-                          </span>
-                          <span />
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &gt;
-                          </span>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 63,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-                          </span>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;/
-                            Text
-                            &gt;
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          ModalSection
-                          &gt;
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          ModalSection
-                        </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              suppressed
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span>
-                                  {
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#a11",
-                                      }
-                                    }
-                                  >
-                                    false
-                                  </span>
-                                  }
-                                </span>
-                              </span>
-                            </span>
-                            
-                          </span>
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;
-                            Text
-                          </span>
-                          <span />
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &gt;
-                          </span>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 63,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-                          </span>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;/
-                            Text
-                            &gt;
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          ModalSection
-                          &gt;
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          ModalFooter
-                        </span>
-                        <span>
-                          <span>
-                             
-                            <span
-                              style={Object {}}
-                            >
-                              flex
-                            </span>
-                            <span>
-                              =
-                              <span
-                                style={Object {}}
-                              >
-                                <span>
-                                  {
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    [
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      "
-                                      0 0 auto
-                                      "
-                                    </span>
-                                    , 
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      "
-                                      1 1 100%
-                                      "
-                                    </span>
-                                    ]
-                                  </span>
-                                  }
-                                </span>
-                              </span>
-                            </span>
-                            
-                          </span>
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
-                      <div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;
-                            Stack
+                            ModalSection
                           </span>
                           <span>
                             <span>
@@ -1200,25 +624,24 @@ exports[`Storyshots Modal Full preview 1`] = `
                               <span
                                 style={Object {}}
                               >
-                                direction
+                                suppressed
                               </span>
                               <span>
                                 =
                                 <span
                                   style={Object {}}
                                 >
+                                  {
                                   <span
                                     style={
                                       Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
+                                        "color": "#a11",
                                       }
                                     }
                                   >
-                                    "
-                                    row
-                                    "
+                                    false
                                   </span>
+                                  }
                                 </span>
                               </span>
                               
@@ -1238,7 +661,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                           <div
                             style={
                               Object {
-                                "paddingLeft": 63,
+                                "paddingLeft": 48,
                                 "paddingRight": 3,
                               }
                             }
@@ -1251,7 +674,477 @@ exports[`Storyshots Modal Full preview 1`] = `
                               }
                             >
                               &lt;
-                              Button
+                              Text
+                            </span>
+                            <span />
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Text
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            ModalSection
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            ModalSection
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                suppressed
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#a11",
+                                      }
+                                    }
+                                  >
+                                    false
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Text
+                            </span>
+                            <span />
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Text
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            ModalSection
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            ModalSection
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                suppressed
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#a11",
+                                      }
+                                    }
+                                  >
+                                    false
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Text
+                            </span>
+                            <span />
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Text
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            ModalSection
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            ModalFooter
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                flex
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    [
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        '0 0 auto'
+                                      </span>
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        '1 1 100%'
+                                      </span>
+                                    </span>
+                                    ]
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Stack
                             </span>
                             <span>
                               <span>
@@ -1259,13 +1152,14 @@ exports[`Storyshots Modal Full preview 1`] = `
                                 <span
                                   style={Object {}}
                                 >
-                                  type
+                                  direction
                                 </span>
                                 <span>
                                   =
                                   <span
                                     style={Object {}}
                                   >
+                                    "
                                     <span
                                       style={
                                         Object {
@@ -1274,26 +1168,83 @@ exports[`Storyshots Modal Full preview 1`] = `
                                         }
                                       }
                                     >
+                                      row
+                                    </span>
+                                    "
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;
+                                Button
+                              </span>
+                              <span>
+                                <span>
+                                   
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    type
+                                  </span>
+                                  <span>
+                                    =
+                                    <span
+                                      style={Object {}}
+                                    >
                                       "
-                                      secondary
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        secondary
+                                      </span>
                                       "
                                     </span>
                                   </span>
                                 </span>
-                              </span>
-                              <span>
-                                 
-                                <span
-                                  style={Object {}}
-                                >
-                                  iconLeft
-                                </span>
                                 <span>
-                                  =
+                                   
                                   <span
                                     style={Object {}}
                                   >
-                                    <span>
+                                    iconLeft
+                                  </span>
+                                  <span>
+                                    =
+                                    <span
+                                      style={Object {}}
+                                    >
                                       {
                                       <span
                                         style={
@@ -1307,42 +1258,160 @@ exports[`Storyshots Modal Full preview 1`] = `
                                       }
                                     </span>
                                   </span>
+                                  
                                 </span>
-                                
                               </span>
-                            </span>
-                            <span
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &gt;
+                              </span>
+                            </div>
+                            <div
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "paddingLeft": 78,
+                                  "paddingRight": 3,
                                 }
                               }
                             >
-                              &gt;
-                            </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                Back
+                              </span>
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;/
+                                Button
+                                &gt;
+                              </span>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;
+                                ButtonLink
+                              </span>
+                              <span>
+                                <span>
+                                   
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    type
+                                  </span>
+                                  <span>
+                                    =
+                                    <span
+                                      style={Object {}}
+                                    >
+                                      "
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        secondary
+                                      </span>
+                                      "
+                                    </span>
+                                  </span>
+                                  
+                                </span>
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &gt;
+                              </span>
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 78,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                Button
+                              </span>
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;/
+                                ButtonLink
+                                &gt;
+                              </span>
+                            </div>
                           </div>
                           <div
                             style={
                               Object {
-                                "paddingLeft": 78,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              Back
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
+                                "paddingLeft": 48,
                                 "paddingRight": 3,
                               }
                             }
@@ -1355,7 +1424,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                               }
                             >
                               &lt;/
-                              Button
+                              Stack
                               &gt;
                             </span>
                           </div>
@@ -1364,7 +1433,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                           <div
                             style={
                               Object {
-                                "paddingLeft": 63,
+                                "paddingLeft": 48,
                                 "paddingRight": 3,
                               }
                             }
@@ -1377,7 +1446,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                               }
                             >
                               &lt;
-                              ButtonLink
+                              Button
                             </span>
                             <span>
                               <span>
@@ -1385,26 +1454,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                                 <span
                                   style={Object {}}
                                 >
-                                  type
-                                </span>
-                                <span>
-                                  =
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      "
-                                      secondary
-                                      "
-                                    </span>
-                                  </span>
+                                  block
                                 </span>
                                 
                               </span>
@@ -1422,24 +1472,6 @@ exports[`Storyshots Modal Full preview 1`] = `
                           <div
                             style={
                               Object {
-                                "paddingLeft": 78,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              Button
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
                                 "paddingLeft": 63,
                                 "paddingRight": 3,
                               }
@@ -1452,8 +1484,26 @@ exports[`Storyshots Modal Full preview 1`] = `
                                 }
                               }
                             >
+                              Continue to Payment
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
                               &lt;/
-                              ButtonLink
+                              Button
                               &gt;
                             </span>
                           </div>
@@ -1461,7 +1511,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                         <div
                           style={
                             Object {
-                              "paddingLeft": 48,
+                              "paddingLeft": 33,
                               "paddingRight": 3,
                             }
                           }
@@ -1474,86 +1524,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                             }
                           >
                             &lt;/
-                            Stack
-                            &gt;
-                          </span>
-                        </div>
-                      </div>
-                      <div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;
-                            Button
-                          </span>
-                          <span>
-                            <span>
-                               
-                              <span
-                                style={Object {}}
-                              >
-                                block
-                              </span>
-                              
-                            </span>
-                          </span>
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &gt;
-                          </span>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 63,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            Continue to Payment
-                          </span>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 48,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
-                            style={
-                              Object {
-                                "color": "#777",
-                              }
-                            }
-                          >
-                            &lt;/
-                            Button
+                            ModalFooter
                             &gt;
                           </span>
                         </div>
@@ -1561,7 +1532,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -1574,32 +1545,33 @@ exports[`Storyshots Modal Full preview 1`] = `
                           }
                         >
                           &lt;/
-                          ModalFooter
+                          Modal
                           &gt;
                         </span>
                       </div>
                     </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
                     <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
+                      className="css-kv47nt"
                     >
-                      <span
+                      <div
                         style={
                           Object {
-                            "color": "#777",
+                            "marginBottom": 6,
                           }
                         }
                       >
-                        &lt;/
-                        Modal
-                        &gt;
-                      </span>
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
                     </div>
-                  </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -1711,7 +1683,6 @@ exports[`Storyshots Modal Sizes 1`] = `
         >
           <div
             className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
-            data-test={undefined}
             onClick={[Function]}
             onKeyDown={[Function]}
             tabIndex="0"
@@ -1730,10 +1701,8 @@ exports[`Storyshots Modal Sizes 1`] = `
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE"
-                    data-test={undefined}
                     onClick={[Function]}
                     size="normal"
-                    target={undefined}
                     type="button"
                   >
                     <div
@@ -1742,7 +1711,6 @@ exports[`Storyshots Modal Sizes 1`] = `
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                        data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >
@@ -1755,14 +1723,12 @@ exports[`Storyshots Modal Sizes 1`] = `
                 </div>
                 <div
                   className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 kCzuax"
-                  data-test={undefined}
                 >
                   <div
                     className="ModalHeader__ModalTitle-sc-13vyf6i-0 kCHUSx"
                   >
                     <h1
                       className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
-                      data-test={undefined}
                     >
                       Orbit design system
                     </h1>
@@ -1780,44 +1746,36 @@ exports[`Storyshots Modal Sizes 1`] = `
                 </div>
                 <section
                   className="ModalSection__StyledModalSection-sc-1ayrdn8-0 jleUCC"
-                  data-test={undefined}
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                    data-test={undefined}
                   >
                     You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                   </p>
                 </section>
                 <section
                   className="ModalSection__StyledModalSection-sc-1ayrdn8-0 jleUCC"
-                  data-test={undefined}
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                    data-test={undefined}
                   >
                     You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                   </p>
                 </section>
                 <section
                   className="ModalSection__StyledModalSection-sc-1ayrdn8-0 jleUCC"
-                  data-test={undefined}
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                    data-test={undefined}
                   >
                     You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                   </p>
                 </section>
                 <section
                   className="ModalSection__StyledModalSection-sc-1ayrdn8-0 jleUCC"
-                  data-test={undefined}
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                    data-test={undefined}
                   >
                     You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                   </p>
@@ -1850,109 +1808,14 @@ exports[`Storyshots Modal Sizes 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
                   <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        Modal
-                      </span>
-                      <span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            onClose
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span>
-                                {
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#170",
-                                    }
-                                  }
-                                >
-                                  onClose()
-                                </span>
-                                }
-                              </span>
-                            </span>
-                          </span>
-                        </span>
-                        <span>
-                           
-                          <span
-                            style={Object {}}
-                          >
-                            size
-                          </span>
-                          <span>
-                            =
-                            <span
-                              style={Object {}}
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                "
-                                normal
-                                "
-                              </span>
-                            </span>
-                          </span>
-                          
-                        </span>
-                      </span>
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
                     <div>
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -1965,7 +1828,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                           }
                         >
                           &lt;
-                          ModalHeader
+                          Modal
                         </span>
                         <span>
                           <span>
@@ -1973,13 +1836,40 @@ exports[`Storyshots Modal Sizes 1`] = `
                             <span
                               style={Object {}}
                             >
-                              title
+                              onClose
                             </span>
                             <span>
                               =
                               <span
                                 style={Object {}}
                               >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#170",
+                                    }
+                                  }
+                                >
+                                  onClose
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              size
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
                                 <span
                                   style={
                                     Object {
@@ -1988,10 +1878,9 @@ exports[`Storyshots Modal Sizes 1`] = `
                                     }
                                   }
                                 >
-                                  "
-                                  Orbit design system
-                                  "
+                                  normal
                                 </span>
+                                "
                               </span>
                             </span>
                             
@@ -2007,80 +1896,11 @@ exports[`Storyshots Modal Sizes 1`] = `
                           &gt;
                         </span>
                       </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 48,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          I'm lovely description
-                        </span>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          ModalHeader
-                          &gt;
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          ModalSection
-                        </span>
-                        <span />
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
-                      </div>
                       <div>
                         <div
                           style={
                             Object {
-                              "paddingLeft": 48,
+                              "paddingLeft": 33,
                               "paddingRight": 3,
                             }
                           }
@@ -2093,9 +1913,38 @@ exports[`Storyshots Modal Sizes 1`] = `
                             }
                           >
                             &lt;
-                            Text
+                            ModalHeader
                           </span>
-                          <span />
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                title
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    Orbit design system
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
                           <span
                             style={
                               Object {
@@ -2109,7 +1958,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                         <div
                           style={
                             Object {
-                              "paddingLeft": 63,
+                              "paddingLeft": 48,
                               "paddingRight": 3,
                             }
                           }
@@ -2121,13 +1970,13 @@ exports[`Storyshots Modal Sizes 1`] = `
                               }
                             }
                           >
-                            You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                            I'm lovely description
                           </span>
                         </div>
                         <div
                           style={
                             Object {
-                              "paddingLeft": 48,
+                              "paddingLeft": 33,
                               "paddingRight": 3,
                             }
                           }
@@ -2140,67 +1989,16 @@ exports[`Storyshots Modal Sizes 1`] = `
                             }
                           >
                             &lt;/
-                            Text
+                            ModalHeader
                             &gt;
                           </span>
                         </div>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          ModalSection
-                          &gt;
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          ModalSection
-                        </span>
-                        <span />
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
                       </div>
                       <div>
                         <div
                           style={
                             Object {
-                              "paddingLeft": 48,
+                              "paddingLeft": 33,
                               "paddingRight": 3,
                             }
                           }
@@ -2213,7 +2011,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                             }
                           >
                             &lt;
-                            Text
+                            ModalSection
                           </span>
                           <span />
                           <span
@@ -2226,28 +2024,79 @@ exports[`Storyshots Modal Sizes 1`] = `
                             &gt;
                           </span>
                         </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 63,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
+                        <div>
+                          <div
                             style={
                               Object {
-                                "color": "#777",
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
                               }
                             }
                           >
-                            You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-                          </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Text
+                            </span>
+                            <span />
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Text
+                              &gt;
+                            </span>
+                          </div>
                         </div>
                         <div
                           style={
                             Object {
-                              "paddingLeft": 48,
+                              "paddingLeft": 33,
                               "paddingRight": 3,
                             }
                           }
@@ -2260,67 +2109,16 @@ exports[`Storyshots Modal Sizes 1`] = `
                             }
                           >
                             &lt;/
-                            Text
+                            ModalSection
                             &gt;
                           </span>
                         </div>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          ModalSection
-                          &gt;
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          ModalSection
-                        </span>
-                        <span />
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
                       </div>
                       <div>
                         <div
                           style={
                             Object {
-                              "paddingLeft": 48,
+                              "paddingLeft": 33,
                               "paddingRight": 3,
                             }
                           }
@@ -2333,7 +2131,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                             }
                           >
                             &lt;
-                            Text
+                            ModalSection
                           </span>
                           <span />
                           <span
@@ -2346,28 +2144,79 @@ exports[`Storyshots Modal Sizes 1`] = `
                             &gt;
                           </span>
                         </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 63,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
+                        <div>
+                          <div
                             style={
                               Object {
-                                "color": "#777",
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
                               }
                             }
                           >
-                            You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-                          </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Text
+                            </span>
+                            <span />
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Text
+                              &gt;
+                            </span>
+                          </div>
                         </div>
                         <div
                           style={
                             Object {
-                              "paddingLeft": 48,
+                              "paddingLeft": 33,
                               "paddingRight": 3,
                             }
                           }
@@ -2380,67 +2229,16 @@ exports[`Storyshots Modal Sizes 1`] = `
                             }
                           >
                             &lt;/
-                            Text
+                            ModalSection
                             &gt;
                           </span>
                         </div>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;/
-                          ModalSection
-                          &gt;
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        style={
-                          Object {
-                            "paddingLeft": 33,
-                            "paddingRight": 3,
-                          }
-                        }
-                      >
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &lt;
-                          ModalSection
-                        </span>
-                        <span />
-                        <span
-                          style={
-                            Object {
-                              "color": "#777",
-                            }
-                          }
-                        >
-                          &gt;
-                        </span>
                       </div>
                       <div>
                         <div
                           style={
                             Object {
-                              "paddingLeft": 48,
+                              "paddingLeft": 33,
                               "paddingRight": 3,
                             }
                           }
@@ -2453,7 +2251,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                             }
                           >
                             &lt;
-                            Text
+                            ModalSection
                           </span>
                           <span />
                           <span
@@ -2466,28 +2264,79 @@ exports[`Storyshots Modal Sizes 1`] = `
                             &gt;
                           </span>
                         </div>
-                        <div
-                          style={
-                            Object {
-                              "paddingLeft": 63,
-                              "paddingRight": 3,
-                            }
-                          }
-                        >
-                          <span
+                        <div>
+                          <div
                             style={
                               Object {
-                                "color": "#777",
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
                               }
                             }
                           >
-                            You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-                          </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Text
+                            </span>
+                            <span />
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Text
+                              &gt;
+                            </span>
+                          </div>
                         </div>
                         <div
                           style={
                             Object {
-                              "paddingLeft": 48,
+                              "paddingLeft": 33,
                               "paddingRight": 3,
                             }
                           }
@@ -2500,7 +2349,127 @@ exports[`Storyshots Modal Sizes 1`] = `
                             }
                           >
                             &lt;/
-                            Text
+                            ModalSection
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            ModalSection
+                          </span>
+                          <span />
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Text
+                            </span>
+                            <span />
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Text
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            ModalSection
                             &gt;
                           </span>
                         </div>
@@ -2508,7 +2477,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                       <div
                         style={
                           Object {
-                            "paddingLeft": 33,
+                            "paddingLeft": 18,
                             "paddingRight": 3,
                           }
                         }
@@ -2521,32 +2490,33 @@ exports[`Storyshots Modal Sizes 1`] = `
                           }
                         >
                           &lt;/
-                          ModalSection
+                          Modal
                           &gt;
                         </span>
                       </div>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 18,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;/
-                        Modal
-                        &gt;
-                      </span>
                     </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>

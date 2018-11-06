@@ -31,7 +31,7 @@ describe("ClickOutside shallow", () => {
 
     const instance = wrapper.instance();
 
-    instance.node = document.createElement("div");
+    instance.node.current = document.createElement("div");
     const node = document.createElement("div");
 
     const ev = { target: node };

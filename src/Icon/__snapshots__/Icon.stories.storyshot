@@ -100,7 +100,6 @@ exports[`Storyshots Icon Custom color 1`] = `
         >
           <svg
             className="Icon__StyledIcon-sc-1pnzn3g-0 bhNSsO"
-            data-test={undefined}
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
@@ -133,102 +132,116 @@ exports[`Storyshots Icon Custom color 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      Airplane
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Airplane
+                      </span>
                       <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          size
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
+                            size
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              medium
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                medium
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          customColor
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
+                            customColor
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              #ABCDEF
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                #ABCDEF
+                              </span>
                               "
                             </span>
                           </span>
+                           
                         </span>
-                         
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -373,131 +386,141 @@ exports[`Storyshots Icon Default 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      Airplane
-                    </span>
-                    <span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          size
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#777",
-                                  }
-                                }
-                              >
-                                null
-                              </span>
-                              }
-                            </span>
-                          </span>
-                        </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Airplane
                       </span>
                       <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          color
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#777",
-                                  }
-                                }
-                              >
-                                null
-                              </span>
-                              }
-                            </span>
+                            size
                           </span>
-                        </span>
-                      </span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          dataTest
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
                                 }
+                              >
+                                null
+                              </span>
                               }
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            color
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                null
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
                             >
                               "
-                              test
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                test
+                              </span>
                               "
                             </span>
                           </span>
+                           
                         </span>
-                         
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -615,7 +638,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -634,7 +656,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -653,7 +674,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -672,7 +692,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -691,7 +710,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -710,7 +728,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -729,7 +746,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -748,7 +764,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -767,7 +782,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -786,7 +800,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -805,7 +818,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -824,7 +836,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -843,7 +854,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -862,7 +872,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -881,7 +890,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -900,7 +908,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -919,7 +926,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -938,7 +944,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -957,7 +962,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -976,7 +980,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -995,7 +998,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1014,7 +1016,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1033,7 +1034,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1052,7 +1052,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1071,7 +1070,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1090,7 +1088,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1109,7 +1106,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1128,7 +1124,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1147,7 +1142,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1166,7 +1160,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1185,7 +1178,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1204,7 +1196,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1223,7 +1214,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1242,7 +1232,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1261,7 +1250,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1280,7 +1268,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1299,7 +1286,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1318,7 +1304,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1337,7 +1322,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1356,7 +1340,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1375,7 +1358,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1394,7 +1376,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1413,7 +1394,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1432,7 +1412,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1451,7 +1430,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1470,7 +1448,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1489,7 +1466,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1508,7 +1484,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1527,7 +1502,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1546,7 +1520,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1565,7 +1538,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1584,7 +1556,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1603,7 +1574,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1622,7 +1592,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1641,7 +1610,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1660,7 +1628,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1679,7 +1646,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1698,7 +1664,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1717,7 +1682,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1736,7 +1700,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1755,7 +1718,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1774,7 +1736,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1793,7 +1754,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1812,7 +1772,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1831,7 +1790,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1850,7 +1808,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1869,7 +1826,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1888,7 +1844,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1907,7 +1862,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1926,7 +1880,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1945,7 +1898,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1964,7 +1916,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -1983,7 +1934,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2002,7 +1952,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2021,7 +1970,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2040,7 +1988,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2059,7 +2006,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2078,7 +2024,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2097,7 +2042,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2116,7 +2060,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2135,7 +2078,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2154,7 +2096,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2173,7 +2114,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2192,7 +2132,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2211,7 +2150,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2247,7 +2185,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2266,7 +2203,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2285,7 +2221,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2304,7 +2239,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2323,7 +2257,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2342,7 +2275,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2361,7 +2293,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2380,7 +2311,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2399,7 +2329,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2418,7 +2347,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2437,7 +2365,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2456,7 +2383,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2475,7 +2401,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2494,7 +2419,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2513,7 +2437,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2532,7 +2455,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2551,7 +2473,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2570,7 +2491,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2589,7 +2509,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2608,7 +2527,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2751,7 +2669,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2770,7 +2687,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2789,7 +2705,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2808,7 +2723,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2827,7 +2741,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2846,7 +2759,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2865,7 +2777,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2884,7 +2795,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2903,7 +2813,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2922,7 +2831,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2941,7 +2849,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2960,7 +2867,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2979,7 +2885,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -2998,7 +2903,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3017,7 +2921,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3036,7 +2939,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3055,7 +2957,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3074,7 +2975,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3093,7 +2993,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3112,7 +3011,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3131,7 +3029,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3150,7 +3047,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3169,7 +3065,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3188,7 +3083,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3207,7 +3101,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3226,7 +3119,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3245,7 +3137,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3264,7 +3155,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3283,7 +3173,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3302,7 +3191,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3321,7 +3209,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3340,7 +3227,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3359,7 +3245,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3378,7 +3263,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3397,7 +3281,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3416,7 +3299,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3435,7 +3317,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3454,7 +3335,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3473,7 +3353,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3492,7 +3371,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3511,7 +3389,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3530,7 +3407,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3549,7 +3425,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3568,7 +3443,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3587,7 +3461,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3606,7 +3479,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3625,7 +3497,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3644,7 +3515,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3663,7 +3533,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3682,7 +3551,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3701,7 +3569,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3720,7 +3587,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3739,7 +3605,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3758,7 +3623,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3777,7 +3641,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3796,7 +3659,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3815,7 +3677,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3834,7 +3695,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3853,7 +3713,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3872,7 +3731,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3891,7 +3749,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3910,7 +3767,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3929,7 +3785,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3948,7 +3803,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3967,7 +3821,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -3986,7 +3839,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4005,7 +3857,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4024,7 +3875,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4043,7 +3893,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4062,7 +3911,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4081,7 +3929,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4100,7 +3947,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4119,7 +3965,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4138,7 +3983,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4157,7 +4001,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4176,7 +4019,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4195,7 +4037,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4214,7 +4055,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4233,7 +4073,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4252,7 +4091,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4271,7 +4109,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4290,7 +4127,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4309,7 +4145,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4328,7 +4163,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4347,7 +4181,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4366,7 +4199,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4385,7 +4217,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4404,7 +4235,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4423,7 +4253,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4442,7 +4271,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4461,7 +4289,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4480,7 +4307,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4499,7 +4325,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4518,7 +4343,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4537,7 +4361,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4556,7 +4379,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4575,7 +4397,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4594,7 +4415,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4613,7 +4433,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4632,7 +4451,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4651,7 +4469,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4670,7 +4487,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4689,7 +4505,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4708,7 +4523,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4727,7 +4541,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4746,7 +4559,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4765,7 +4577,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4784,7 +4595,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4803,7 +4613,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4822,7 +4631,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4841,7 +4649,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4860,7 +4667,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4879,7 +4685,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -4898,7 +4703,6 @@ exports[`Storyshots Icon List of all icons 1`] = `
             >
               <svg
                 className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
-                data-test={undefined}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >

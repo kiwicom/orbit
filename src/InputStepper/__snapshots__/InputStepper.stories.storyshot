@@ -103,7 +103,6 @@ exports[`Storyshots InputStepper Default 1`] = `
           >
             <label
               className="InputField__Field-sc-4opay-0 iedcUZ"
-              data-test={undefined}
             >
               <div
                 className="InputField__InputContainer-sc-4opay-2 ksKWcl"
@@ -113,11 +112,9 @@ exports[`Storyshots InputStepper Default 1`] = `
                 >
                   <div
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
-                    data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
-                    target={undefined}
                   >
                     <div
                       className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
@@ -125,7 +122,6 @@ exports[`Storyshots InputStepper Default 1`] = `
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
-                        data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >
@@ -138,18 +134,8 @@ exports[`Storyshots InputStepper Default 1`] = `
                 </div>
                 <input
                   className="InputField__Input-sc-4opay-6 fqqXrq"
-                  disabled={undefined}
-                  max={undefined}
-                  maxLength={undefined}
-                  min={undefined}
-                  minLength={undefined}
-                  name={undefined}
-                  onBlur={undefined}
                   onChange={[Function]}
-                  onFocus={undefined}
                   onKeyDown={[Function]}
-                  onKeyUp={undefined}
-                  placeholder={undefined}
                   size="normal"
                   type="number"
                   value={0}
@@ -159,11 +145,9 @@ exports[`Storyshots InputStepper Default 1`] = `
                 >
                   <div
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
-                    data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
-                    target={undefined}
                   >
                     <div
                       className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
@@ -171,7 +155,6 @@ exports[`Storyshots InputStepper Default 1`] = `
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
-                        data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >
@@ -213,49 +196,40 @@ exports[`Storyshots InputStepper Default 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      InputStepper
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        InputStepper
+                      </span>
                       <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          onChange
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            onChange
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -264,25 +238,46 @@ exports[`Storyshots InputStepper Default 1`] = `
                                   }
                                 }
                               >
-                                onChange()
+                                onChange
                               </span>
                               }
                             </span>
                           </span>
+                           
                         </span>
-                         
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -397,11 +392,9 @@ exports[`Storyshots InputStepper Playground 1`] = `
           >
             <label
               className="InputField__Field-sc-4opay-0 iedcUZ"
-              data-test={undefined}
             >
               <span
                 className="FormLabel-sc-1927civ-1 bSnaNp"
-                data-test={undefined}
               >
                 <span>
                   Label
@@ -415,11 +408,9 @@ exports[`Storyshots InputStepper Playground 1`] = `
                 >
                   <div
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
-                    data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
-                    target={undefined}
                   >
                     <div
                       className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
@@ -427,7 +418,6 @@ exports[`Storyshots InputStepper Playground 1`] = `
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
-                        data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >
@@ -442,16 +432,12 @@ exports[`Storyshots InputStepper Playground 1`] = `
                   className="InputField__Input-sc-4opay-6 fqqXrq"
                   disabled={false}
                   max={10}
-                  maxLength={undefined}
                   min={1}
-                  minLength={undefined}
                   name="name"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
-                  onKeyUp={undefined}
-                  placeholder={undefined}
                   size="normal"
                   type="number"
                   value={4}
@@ -461,11 +447,9 @@ exports[`Storyshots InputStepper Playground 1`] = `
                 >
                   <div
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
-                    data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
-                    target={undefined}
                   >
                     <div
                       className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
@@ -473,7 +457,6 @@ exports[`Storyshots InputStepper Playground 1`] = `
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
-                        data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >
@@ -490,7 +473,6 @@ exports[`Storyshots InputStepper Playground 1`] = `
               </div>
               <div
                 className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
-                data-test={undefined}
               >
                 Error message (explain how to solve it)
               </div>
@@ -521,82 +503,73 @@ exports[`Storyshots InputStepper Playground 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      InputStepper
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        InputStepper
+                      </span>
                       <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          label
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            label
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              Label
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                Label
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          defaultValue
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            defaultValue
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -611,53 +584,51 @@ exports[`Storyshots InputStepper Playground 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          size
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            size
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              normal
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                normal
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          step
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            step
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -672,53 +643,51 @@ exports[`Storyshots InputStepper Playground 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          error
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            error
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              Error message (explain how to solve it)
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                Error message (explain how to solve it)
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          help
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            help
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -733,53 +702,51 @@ exports[`Storyshots InputStepper Playground 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          name
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            name
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              name
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                name
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          maxValue
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            maxValue
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -794,23 +761,21 @@ exports[`Storyshots InputStepper Playground 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          minValue
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            minValue
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -825,115 +790,109 @@ exports[`Storyshots InputStepper Playground 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          disabled
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#a11",
-                                  }
-                                }
-                              >
-                                false
-                              </span>
-                              }
-                            </span>
+                          <span>
+                            <br />
+                              
                           </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          required
-                        </span>
-                        <span>
-                          =
                           <span
                             style={Object {}}
                           >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#a11",
-                                  }
-                                }
-                              >
-                                false
-                              </span>
-                              }
-                            </span>
+                            disabled
                           </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          dataTest
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
                                 }
+                              >
+                                false
+                              </span>
                               }
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            required
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                false
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
                             >
                               "
-                              test
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                test
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onChange
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            onChange
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -942,29 +901,27 @@ exports[`Storyshots InputStepper Playground 1`] = `
                                   }
                                 }
                               >
-                                onChange()
+                                onChange
                               </span>
                               }
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onFocus
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            onFocus
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -973,29 +930,27 @@ exports[`Storyshots InputStepper Playground 1`] = `
                                   }
                                 }
                               >
-                                onFocus()
+                                onFocus
                               </span>
                               }
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onBlur
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            onBlur
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -1004,25 +959,46 @@ exports[`Storyshots InputStepper Playground 1`] = `
                                   }
                                 }
                               >
-                                onBlur()
+                                onBlur
                               </span>
                               }
                             </span>
                           </span>
+                          <br />
                         </span>
-                        <br />
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -1137,11 +1113,9 @@ exports[`Storyshots InputStepper With different size 1`] = `
           >
             <label
               className="InputField__Field-sc-4opay-0 iedcUZ"
-              data-test={undefined}
             >
               <span
                 className="FormLabel-sc-1927civ-1 iTEGJS"
-                data-test={undefined}
               >
                 <span>
                   Label
@@ -1155,11 +1129,9 @@ exports[`Storyshots InputStepper With different size 1`] = `
                 >
                   <div
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
-                    data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
-                    target={undefined}
                   >
                     <div
                       className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
@@ -1167,7 +1139,6 @@ exports[`Storyshots InputStepper With different size 1`] = `
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
-                        data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >
@@ -1180,18 +1151,10 @@ exports[`Storyshots InputStepper With different size 1`] = `
                 </div>
                 <input
                   className="InputField__Input-sc-4opay-6 fqqXrq"
-                  disabled={undefined}
-                  max={undefined}
-                  maxLength={undefined}
-                  min={undefined}
-                  minLength={undefined}
-                  name={undefined}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
-                  onKeyUp={undefined}
-                  placeholder={undefined}
                   size="normal"
                   type="number"
                   value={0}
@@ -1201,11 +1164,9 @@ exports[`Storyshots InputStepper With different size 1`] = `
                 >
                   <div
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
-                    data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
-                    target={undefined}
                   >
                     <div
                       className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
@@ -1213,7 +1174,6 @@ exports[`Storyshots InputStepper With different size 1`] = `
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
-                        data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >
@@ -1255,201 +1215,209 @@ exports[`Storyshots InputStepper With different size 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      InputStepper
-                    </span>
-                    <span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          label
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              Label
-                              "
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          size
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              normal
-                              "
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onChange
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onChange()
-                              </span>
-                              }
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onFocus
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onFocus()
-                              </span>
-                              }
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onBlur
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onBlur()
-                              </span>
-                              }
-                            </span>
-                          </span>
-                        </span>
-                        <br />
-                      </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        &lt;
+                        InputStepper
+                      </span>
+                      <span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            label
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                Label
+                              </span>
+                              "
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            size
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                normal
+                              </span>
+                              "
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            onChange
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onChange
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            onFocus
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onFocus
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            onBlur
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onBlur
+                              </span>
+                              }
+                            </span>
+                          </span>
+                          <br />
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -1564,11 +1532,9 @@ exports[`Storyshots InputStepper With help 1`] = `
           >
             <label
               className="InputField__Field-sc-4opay-0 iedcUZ"
-              data-test={undefined}
             >
               <span
                 className="FormLabel-sc-1927civ-1 iTEGJS"
-                data-test={undefined}
               >
                 <span>
                   Aduls
@@ -1582,11 +1548,9 @@ exports[`Storyshots InputStepper With help 1`] = `
                 >
                   <div
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
-                    data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
-                    target={undefined}
                   >
                     <div
                       className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
@@ -1594,7 +1558,6 @@ exports[`Storyshots InputStepper With help 1`] = `
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
-                        data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >
@@ -1607,18 +1570,10 @@ exports[`Storyshots InputStepper With help 1`] = `
                 </div>
                 <input
                   className="InputField__Input-sc-4opay-6 fqqXrq"
-                  disabled={undefined}
-                  max={undefined}
-                  maxLength={undefined}
-                  min={undefined}
-                  minLength={undefined}
-                  name={undefined}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
-                  onKeyUp={undefined}
-                  placeholder={undefined}
                   size="normal"
                   type="number"
                   value={0}
@@ -1628,11 +1583,9 @@ exports[`Storyshots InputStepper With help 1`] = `
                 >
                   <div
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
-                    data-test={undefined}
                     disabled={false}
                     onClick={[Function]}
                     size="normal"
-                    target={undefined}
                   >
                     <div
                       className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
@@ -1640,7 +1593,6 @@ exports[`Storyshots InputStepper With help 1`] = `
                     >
                       <svg
                         className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
-                        data-test={undefined}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >
@@ -1657,7 +1609,6 @@ exports[`Storyshots InputStepper With help 1`] = `
               </div>
               <div
                 className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
-                data-test={undefined}
               >
                 You need to enter count of adults
               </div>
@@ -1688,231 +1639,239 @@ exports[`Storyshots InputStepper With help 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      InputStepper
-                    </span>
-                    <span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          label
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              Aduls
-                              "
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          size
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              normal
-                              "
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          help
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              "
-                              You need to enter count of adults
-                              "
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onChange
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onChange()
-                              </span>
-                              }
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onFocus
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onFocus()
-                              </span>
-                              }
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onBlur
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onBlur()
-                              </span>
-                              }
-                            </span>
-                          </span>
-                        </span>
-                        <br />
-                      </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        &lt;
+                        InputStepper
+                      </span>
+                      <span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            label
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                Aduls
+                              </span>
+                              "
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            size
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                normal
+                              </span>
+                              "
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            help
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                You need to enter count of adults
+                              </span>
+                              "
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            onChange
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onChange
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            onFocus
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onFocus
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            onBlur
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onBlur
+                              </span>
+                              }
+                            </span>
+                          </span>
+                          <br />
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>

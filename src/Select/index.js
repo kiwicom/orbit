@@ -216,7 +216,7 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
           onBlur={onBlur}
           onChange={onChange}
           filled={filled}
-          innerRef={ref}
+          ref={ref}
         >
           {placeholder && (
             <option label={placeholder} value="">

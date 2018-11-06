@@ -1,4 +1,6 @@
 // @flow
+import type { ReactComponentStyled } from "styled-components";
+
 import type { Globals } from "../../common/common.js.flow";
 
 export type Props = {|
@@ -9,4 +11,4 @@ export type Props = {|
 
 declare export default React$ComponentType<Props>;
 
-declare export var StyledModalFooter: React$ComponentType<>;
+declare export var StyledModalFooter: ReactComponentStyled<any>;

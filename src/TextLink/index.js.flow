@@ -1,4 +1,6 @@
 // @flow
+import type { ReactComponentStyled } from "styled-components";
+
 import type { Globals } from "../common/common.js.flow";
 
 type Type = "primary" | "secondary";
@@ -19,6 +21,6 @@ type styledTextLink = {
   type?: Type,
 };
 
-declare export var StyledTextLink: React$ComponentType<styledTextLink>;
+declare export var StyledTextLink: ReactComponentStyled<styledTextLink>;
 
 declare export default React$ComponentType<Props>;

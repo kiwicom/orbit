@@ -1,4 +1,6 @@
 // @flow
+import type { ReactComponentStyled } from "styled-components";
+
 import type { Globals } from "../common/common.js.flow";
 
 export type Name =
@@ -26,5 +28,5 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>
-declare export var StyledServiceLogo: React$ComponentType<>;
+declare export default React$ComponentType<Props>;
+declare export var StyledServiceLogo: ReactComponentStyled<any>;

@@ -1,5 +1,7 @@
 // @flow
 
+import type { ReactComponentStyled } from "styled-components";
+
 import TableRow from "../TableRow/index";
 
 export type Props = {|
@@ -8,4 +10,4 @@ export type Props = {|
 
 declare export default React$ComponentType<Props>;
 
-declare export var StyledTableBody: React$ComponentType<Props>;
+declare export var StyledTableBody: ReactComponentStyled<Props>;

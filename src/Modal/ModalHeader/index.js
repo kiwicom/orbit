@@ -101,23 +101,26 @@ const StyledModalHeaderContent = styled.div`
 
 const ModalHeader = (props: Props) => {
   const { title, illustration, description, children, suppressed, dataTest } = props;
+  const hasHeader = title || description;
   return (
     <StyledModalHeader illustration={!!illustration} suppressed={suppressed} data-test={dataTest}>
       {illustration}
-      <ModalTitle illustration={!!illustration}>
-        <Heading type="title1">{title}</Heading>
-        {description && (
-          <ModalDescription>
-            <Text size="large" element="div">
-              {description}
-            </Text>
-          </ModalDescription>
-        )}
-      </ModalTitle>
+      {hasHeader && (
+        <ModalTitle illustration={!!illustration}>
+          {title && <Heading type="title1">{title}</Heading>}
+          {description && (
+            <ModalDescription>
+              <Text size="large" element="div">
+                {description}
+              </Text>
+            </ModalDescription>
+          )}
+        </ModalTitle>
+      )}
       {children && (
         <StyledModalHeaderContent description={!!description}>{children}</StyledModalHeaderContent>
       )}
-      <MobileHeader>{title}</MobileHeader>
+      {title && <MobileHeader>{title}</MobileHeader>}
     </StyledModalHeader>
   );
 };

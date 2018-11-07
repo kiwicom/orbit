@@ -5,7 +5,6 @@ import { withKnobs } from "@storybook/addon-knobs";
 
 import { storiesOf } from "../../helpers/storiesOf";
 import CenterView from "../CenterView";
-import defaultTokens from "../defaultTokens";
 import IconsList from "./IconsList";
 
 import Icon from "./index";

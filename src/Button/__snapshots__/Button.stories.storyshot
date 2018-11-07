@@ -9,6 +9,7 @@ exports[`Storyshots Button Basic buttons 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -18,14 +19,18 @@ exports[`Storyshots Button Basic buttons 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -38,14 +43,8 @@ exports[`Storyshots Button Basic buttons 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -57,6 +56,7 @@ exports[`Storyshots Button Basic buttons 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -71,6 +71,7 @@ exports[`Storyshots Button Basic buttons 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -78,11 +79,8 @@ exports[`Storyshots Button Basic buttons 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -92,6 +90,7 @@ exports[`Storyshots Button Basic buttons 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -116,6 +115,7 @@ exports[`Storyshots Button Basic buttons 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -123,14 +123,7 @@ exports[`Storyshots Button Basic buttons 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -369,6 +362,7 @@ exports[`Storyshots Button Button as a link 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -378,14 +372,18 @@ exports[`Storyshots Button Button as a link 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -398,14 +396,8 @@ exports[`Storyshots Button Button as a link 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -417,6 +409,7 @@ exports[`Storyshots Button Button as a link 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -431,6 +424,7 @@ exports[`Storyshots Button Button as a link 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -438,11 +432,8 @@ exports[`Storyshots Button Button as a link 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -452,6 +443,7 @@ exports[`Storyshots Button Button as a link 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -490,6 +482,7 @@ exports[`Storyshots Button Button as a link 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -497,14 +490,7 @@ exports[`Storyshots Button Button as a link 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -812,6 +798,7 @@ exports[`Storyshots Button Button with icons 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -821,14 +808,18 @@ exports[`Storyshots Button Button with icons 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -841,14 +832,8 @@ exports[`Storyshots Button Button with icons 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -860,6 +845,7 @@ exports[`Storyshots Button Button with icons 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -874,6 +860,7 @@ exports[`Storyshots Button Button with icons 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -881,11 +868,8 @@ exports[`Storyshots Button Button with icons 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -895,6 +879,7 @@ exports[`Storyshots Button Button with icons 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -945,6 +930,7 @@ exports[`Storyshots Button Button with icons 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -952,14 +938,7 @@ exports[`Storyshots Button Button with icons 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -1243,6 +1222,7 @@ exports[`Storyshots Button Button with icons 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -1250,11 +1230,8 @@ exports[`Storyshots Button Button with icons 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -1264,6 +1241,7 @@ exports[`Storyshots Button Button with icons 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -1301,6 +1279,7 @@ exports[`Storyshots Button Button with icons 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -1308,14 +1287,7 @@ exports[`Storyshots Button Button with icons 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -1583,6 +1555,7 @@ exports[`Storyshots Button Circled button 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -1592,14 +1565,18 @@ exports[`Storyshots Button Circled button 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -1612,14 +1589,8 @@ exports[`Storyshots Button Circled button 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -1631,6 +1602,7 @@ exports[`Storyshots Button Circled button 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -1645,6 +1617,7 @@ exports[`Storyshots Button Circled button 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -1652,11 +1625,8 @@ exports[`Storyshots Button Circled button 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -1666,6 +1636,7 @@ exports[`Storyshots Button Circled button 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -1702,6 +1673,7 @@ exports[`Storyshots Button Circled button 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -1709,14 +1681,7 @@ exports[`Storyshots Button Circled button 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -1926,6 +1891,7 @@ exports[`Storyshots Button Default 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -1935,14 +1901,18 @@ exports[`Storyshots Button Default 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -1955,14 +1925,8 @@ exports[`Storyshots Button Default 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -1974,6 +1938,7 @@ exports[`Storyshots Button Default 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -1988,6 +1953,7 @@ exports[`Storyshots Button Default 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -1995,11 +1961,8 @@ exports[`Storyshots Button Default 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -2009,6 +1972,7 @@ exports[`Storyshots Button Default 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -2033,6 +1997,7 @@ exports[`Storyshots Button Default 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -2040,14 +2005,7 @@ exports[`Storyshots Button Default 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -2194,6 +2152,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -2203,14 +2162,18 @@ exports[`Storyshots Button Destructive buttons 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -2223,14 +2186,8 @@ exports[`Storyshots Button Destructive buttons 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -2242,6 +2199,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -2256,6 +2214,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -2263,11 +2222,8 @@ exports[`Storyshots Button Destructive buttons 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -2277,6 +2233,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -2314,6 +2271,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -2321,14 +2279,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -2596,6 +2547,7 @@ exports[`Storyshots Button Playground 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -2605,14 +2557,18 @@ exports[`Storyshots Button Playground 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -2625,14 +2581,8 @@ exports[`Storyshots Button Playground 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -2644,6 +2594,7 @@ exports[`Storyshots Button Playground 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -2658,6 +2609,7 @@ exports[`Storyshots Button Playground 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -2665,11 +2617,8 @@ exports[`Storyshots Button Playground 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -2679,6 +2628,7 @@ exports[`Storyshots Button Playground 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -2731,6 +2681,7 @@ exports[`Storyshots Button Playground 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -2738,14 +2689,7 @@ exports[`Storyshots Button Playground 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -3334,6 +3278,7 @@ exports[`Storyshots Button Social buttons 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -3343,14 +3288,18 @@ exports[`Storyshots Button Social buttons 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -3363,14 +3312,8 @@ exports[`Storyshots Button Social buttons 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -3382,6 +3325,7 @@ exports[`Storyshots Button Social buttons 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -3396,6 +3340,7 @@ exports[`Storyshots Button Social buttons 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -3403,11 +3348,8 @@ exports[`Storyshots Button Social buttons 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -3417,6 +3359,7 @@ exports[`Storyshots Button Social buttons 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -3454,6 +3397,7 @@ exports[`Storyshots Button Social buttons 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -3461,14 +3405,7 @@ exports[`Storyshots Button Social buttons 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -3675,6 +3612,7 @@ exports[`Storyshots Button Social buttons 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -3682,11 +3620,8 @@ exports[`Storyshots Button Social buttons 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -3696,6 +3631,7 @@ exports[`Storyshots Button Social buttons 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -3750,6 +3686,7 @@ exports[`Storyshots Button Social buttons 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -3757,14 +3694,7 @@ exports[`Storyshots Button Social buttons 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -3984,6 +3914,7 @@ exports[`Storyshots Button Status buttons 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -3993,14 +3924,18 @@ exports[`Storyshots Button Status buttons 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -4013,14 +3948,8 @@ exports[`Storyshots Button Status buttons 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -4032,6 +3961,7 @@ exports[`Storyshots Button Status buttons 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -4046,6 +3976,7 @@ exports[`Storyshots Button Status buttons 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -4053,11 +3984,8 @@ exports[`Storyshots Button Status buttons 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -4067,6 +3995,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -4104,6 +4033,7 @@ exports[`Storyshots Button Status buttons 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -4111,14 +4041,7 @@ exports[`Storyshots Button Status buttons 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -4344,6 +4267,7 @@ exports[`Storyshots Button Status buttons 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -4351,11 +4275,8 @@ exports[`Storyshots Button Status buttons 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -4365,6 +4286,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -4402,6 +4324,7 @@ exports[`Storyshots Button Status buttons 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -4409,14 +4332,7 @@ exports[`Storyshots Button Status buttons 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -4642,6 +4558,7 @@ exports[`Storyshots Button Status buttons 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -4649,11 +4566,8 @@ exports[`Storyshots Button Status buttons 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -4663,6 +4577,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -4700,6 +4615,7 @@ exports[`Storyshots Button Status buttons 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -4707,14 +4623,7 @@ exports[`Storyshots Button Status buttons 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -4940,6 +4849,7 @@ exports[`Storyshots Button Status buttons 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -4947,11 +4857,8 @@ exports[`Storyshots Button Status buttons 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -4961,6 +4868,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -4998,6 +4906,7 @@ exports[`Storyshots Button Status buttons 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -5005,14 +4914,7 @@ exports[`Storyshots Button Status buttons 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>

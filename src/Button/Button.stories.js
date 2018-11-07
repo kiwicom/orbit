@@ -5,7 +5,7 @@ import { storiesOf, setAddon } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, text, number, boolean, select } from "@storybook/addon-knobs/react";
+import { withKnobs, text, number, boolean, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";

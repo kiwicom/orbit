@@ -9,6 +9,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -18,14 +19,18 @@ exports[`Storyshots Alert Critical alert 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -38,14 +43,8 @@ exports[`Storyshots Alert Critical alert 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -57,6 +56,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -71,6 +71,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -78,11 +79,8 @@ exports[`Storyshots Alert Critical alert 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -92,6 +90,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -130,6 +129,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -137,14 +137,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -326,6 +319,7 @@ exports[`Storyshots Alert Default 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -335,14 +329,18 @@ exports[`Storyshots Alert Default 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -355,14 +353,8 @@ exports[`Storyshots Alert Default 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -374,6 +366,7 @@ exports[`Storyshots Alert Default 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -388,6 +381,7 @@ exports[`Storyshots Alert Default 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -395,11 +389,8 @@ exports[`Storyshots Alert Default 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -409,6 +400,7 @@ exports[`Storyshots Alert Default 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -434,6 +426,7 @@ exports[`Storyshots Alert Default 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -441,14 +434,7 @@ exports[`Storyshots Alert Default 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -567,6 +553,7 @@ exports[`Storyshots Alert Info alert 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -576,14 +563,18 @@ exports[`Storyshots Alert Info alert 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -596,14 +587,8 @@ exports[`Storyshots Alert Info alert 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -615,6 +600,7 @@ exports[`Storyshots Alert Info alert 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -629,6 +615,7 @@ exports[`Storyshots Alert Info alert 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -636,11 +623,8 @@ exports[`Storyshots Alert Info alert 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -650,6 +634,7 @@ exports[`Storyshots Alert Info alert 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -688,6 +673,7 @@ exports[`Storyshots Alert Info alert 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -695,14 +681,7 @@ exports[`Storyshots Alert Info alert 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -857,6 +836,7 @@ exports[`Storyshots Alert Playground 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -866,14 +846,18 @@ exports[`Storyshots Alert Playground 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -886,14 +870,8 @@ exports[`Storyshots Alert Playground 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -905,6 +883,7 @@ exports[`Storyshots Alert Playground 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -919,6 +898,7 @@ exports[`Storyshots Alert Playground 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -926,11 +906,8 @@ exports[`Storyshots Alert Playground 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -940,6 +917,7 @@ exports[`Storyshots Alert Playground 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -1045,6 +1023,7 @@ exports[`Storyshots Alert Playground 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -1052,14 +1031,7 @@ exports[`Storyshots Alert Playground 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -1938,6 +1910,7 @@ exports[`Storyshots Alert Success alert 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -1947,14 +1920,18 @@ exports[`Storyshots Alert Success alert 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -1967,14 +1944,8 @@ exports[`Storyshots Alert Success alert 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -1987,6 +1958,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -2001,6 +1973,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -2008,11 +1981,8 @@ Avoid using success banner if there is any follow-up action, for example, in cas
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -2022,6 +1992,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -2060,6 +2031,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -2067,14 +2039,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -2256,6 +2221,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -2265,14 +2231,18 @@ exports[`Storyshots Alert Warning alert 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -2285,14 +2255,8 @@ exports[`Storyshots Alert Warning alert 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -2304,6 +2268,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -2318,6 +2283,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -2325,11 +2291,8 @@ exports[`Storyshots Alert Warning alert 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -2339,6 +2302,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -2377,6 +2341,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -2384,14 +2349,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>

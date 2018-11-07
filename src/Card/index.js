@@ -130,9 +130,18 @@ class Card extends React.Component<Props, State> {
       // Jest test
       return [];
     }
-    return children[0].type.name === Loading.name && !children[0].props.loading
-      ? children[0].props.children
-      : children;
+
+    if (children[0].type.name === Loading.name && !children[0].props.loading) {
+      if (
+        !Array.isArray(children[0].props.children) &&
+        children[0].props.children.type.toString() === React.Fragment.toString()
+      ) {
+        return children[0].props.children.props.children;
+      }
+
+      return children[0].props.children;
+    }
+    return children;
   };
 
   isExpandableCardSection = (item: any) =>
@@ -151,7 +160,6 @@ class Card extends React.Component<Props, State> {
 
   hasAdjustedHeader = () => {
     const children = this.getChildren();
-
     // Check if first element is Header
     if (children[0] !== undefined && children[0].type.name !== CardHeader.name) {
       return false;

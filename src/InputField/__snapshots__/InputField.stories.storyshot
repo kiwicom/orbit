@@ -9,6 +9,7 @@ exports[`Storyshots InputField Compact input 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -18,14 +19,18 @@ exports[`Storyshots InputField Compact input 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -38,14 +43,8 @@ exports[`Storyshots InputField Compact input 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -57,6 +56,7 @@ exports[`Storyshots InputField Compact input 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -71,6 +71,7 @@ exports[`Storyshots InputField Compact input 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -78,11 +79,8 @@ exports[`Storyshots InputField Compact input 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -92,6 +90,7 @@ exports[`Storyshots InputField Compact input 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -135,6 +134,7 @@ exports[`Storyshots InputField Compact input 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -142,14 +142,7 @@ exports[`Storyshots InputField Compact input 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -418,6 +411,7 @@ exports[`Storyshots InputField Default input 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -427,14 +421,18 @@ exports[`Storyshots InputField Default input 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -447,14 +445,8 @@ exports[`Storyshots InputField Default input 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -466,6 +458,7 @@ exports[`Storyshots InputField Default input 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -480,6 +473,7 @@ exports[`Storyshots InputField Default input 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -487,11 +481,8 @@ exports[`Storyshots InputField Default input 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -501,6 +492,7 @@ exports[`Storyshots InputField Default input 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -539,6 +531,7 @@ exports[`Storyshots InputField Default input 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -546,14 +539,7 @@ exports[`Storyshots InputField Default input 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -753,6 +739,7 @@ exports[`Storyshots InputField Email input 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -762,14 +749,18 @@ exports[`Storyshots InputField Email input 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -782,14 +773,8 @@ exports[`Storyshots InputField Email input 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -801,6 +786,7 @@ exports[`Storyshots InputField Email input 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -815,6 +801,7 @@ exports[`Storyshots InputField Email input 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -822,11 +809,8 @@ exports[`Storyshots InputField Email input 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -836,6 +820,7 @@ exports[`Storyshots InputField Email input 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -888,6 +873,7 @@ exports[`Storyshots InputField Email input 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -895,14 +881,7 @@ exports[`Storyshots InputField Email input 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -1161,6 +1140,7 @@ exports[`Storyshots InputField Number input 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -1170,14 +1150,18 @@ exports[`Storyshots InputField Number input 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -1190,14 +1174,8 @@ exports[`Storyshots InputField Number input 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -1209,6 +1187,7 @@ exports[`Storyshots InputField Number input 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -1223,6 +1202,7 @@ exports[`Storyshots InputField Number input 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -1230,11 +1210,8 @@ exports[`Storyshots InputField Number input 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -1244,6 +1221,7 @@ exports[`Storyshots InputField Number input 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -1284,6 +1262,7 @@ exports[`Storyshots InputField Number input 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -1291,14 +1270,7 @@ exports[`Storyshots InputField Number input 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -1585,6 +1557,7 @@ exports[`Storyshots InputField Password input 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -1594,14 +1567,18 @@ exports[`Storyshots InputField Password input 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -1614,14 +1591,8 @@ exports[`Storyshots InputField Password input 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -1633,6 +1604,7 @@ exports[`Storyshots InputField Password input 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -1647,6 +1619,7 @@ exports[`Storyshots InputField Password input 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -1654,11 +1627,8 @@ exports[`Storyshots InputField Password input 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -1668,6 +1638,7 @@ exports[`Storyshots InputField Password input 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -1706,6 +1677,7 @@ exports[`Storyshots InputField Password input 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -1713,14 +1685,7 @@ exports[`Storyshots InputField Password input 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -1950,6 +1915,7 @@ exports[`Storyshots InputField Playground 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -1959,14 +1925,18 @@ exports[`Storyshots InputField Playground 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -1979,14 +1949,8 @@ exports[`Storyshots InputField Playground 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -1998,6 +1962,7 @@ exports[`Storyshots InputField Playground 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -2012,6 +1977,7 @@ exports[`Storyshots InputField Playground 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -2019,11 +1985,8 @@ exports[`Storyshots InputField Playground 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -2033,6 +1996,7 @@ exports[`Storyshots InputField Playground 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -2115,6 +2079,7 @@ exports[`Storyshots InputField Playground 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -2122,14 +2087,7 @@ exports[`Storyshots InputField Playground 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -2826,6 +2784,7 @@ exports[`Storyshots InputField Required field 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -2835,14 +2794,18 @@ exports[`Storyshots InputField Required field 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -2855,14 +2818,8 @@ exports[`Storyshots InputField Required field 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -2874,6 +2831,7 @@ exports[`Storyshots InputField Required field 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -2888,6 +2846,7 @@ exports[`Storyshots InputField Required field 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -2895,11 +2854,8 @@ exports[`Storyshots InputField Required field 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -2909,6 +2865,7 @@ exports[`Storyshots InputField Required field 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -2952,6 +2909,7 @@ exports[`Storyshots InputField Required field 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -2959,14 +2917,7 @@ exports[`Storyshots InputField Required field 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -3177,6 +3128,7 @@ exports[`Storyshots InputField Small input 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -3186,14 +3138,18 @@ exports[`Storyshots InputField Small input 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -3206,14 +3162,8 @@ exports[`Storyshots InputField Small input 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -3225,6 +3175,7 @@ exports[`Storyshots InputField Small input 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -3239,6 +3190,7 @@ exports[`Storyshots InputField Small input 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -3246,11 +3198,8 @@ exports[`Storyshots InputField Small input 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -3260,6 +3209,7 @@ exports[`Storyshots InputField Small input 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -3298,6 +3248,7 @@ exports[`Storyshots InputField Small input 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -3305,14 +3256,7 @@ exports[`Storyshots InputField Small input 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -3542,6 +3486,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -3551,14 +3496,18 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -3571,14 +3520,8 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -3590,6 +3533,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -3604,6 +3548,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -3611,11 +3556,8 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -3625,6 +3567,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -3688,6 +3631,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -3695,14 +3639,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -3931,6 +3868,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -3940,14 +3878,18 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -3960,14 +3902,8 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -3979,6 +3915,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -3993,6 +3930,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -4000,11 +3938,8 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -4014,6 +3949,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -4065,6 +4001,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -4072,14 +4009,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -4308,6 +4238,7 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -4317,14 +4248,18 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -4337,14 +4272,8 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -4356,6 +4285,7 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -4370,6 +4300,7 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -4377,11 +4308,8 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -4391,6 +4319,7 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -4439,6 +4368,7 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -4446,14 +4376,7 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -4682,6 +4605,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -4691,14 +4615,18 @@ exports[`Storyshots InputField With text prefix 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -4711,14 +4639,8 @@ exports[`Storyshots InputField With text prefix 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -4730,6 +4652,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -4744,6 +4667,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -4751,11 +4675,8 @@ exports[`Storyshots InputField With text prefix 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -4765,6 +4686,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -4808,6 +4730,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -4815,14 +4738,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>

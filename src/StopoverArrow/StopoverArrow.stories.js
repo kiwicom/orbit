@@ -3,7 +3,7 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { select, text, withKnobs } from "@storybook/addon-knobs/react";
+import { select, text, withKnobs } from "@storybook/addon-knobs";
 
 import STOPS from "./consts";
 

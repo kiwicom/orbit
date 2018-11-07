@@ -67,3 +67,4 @@ lib
 es
 .out
 .cache
+.DS_Store

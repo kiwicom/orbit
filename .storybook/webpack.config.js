@@ -12,8 +12,24 @@ module.exports = {
   module: {
     rules: [{
       test: /\.js?$/,
-      use: "babel-loader",
+      loader: require.resolve('babel-loader'),
+      // use: "babel-loader",
       exclude: /node_modules/,
+      options: {
+        // babelrc: false,
+        presets: ['react-app'],
+        plugins: [
+          [
+            "module-resolver",
+            {
+              "alias": {
+                "react-native": "./node_modules/react-native-web",
+              }
+            }
+          ]
+        ],
+        cacheDirectory: true,
+      },
     }]
   }
 };

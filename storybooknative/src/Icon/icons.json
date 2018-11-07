@@ -1,0 +1,1191 @@
+{
+  "account-circle" : {
+    "description": "Use as icon for login, register and similar account related features.",
+    "character": "E134",
+    "category": "basic"
+  },
+  "alert-circle" : {
+    "description": "Use when some action is blocking, e.g. in error message.",
+    "character": "U",
+    "category": "basic"
+  },
+  "alert" : {
+    "description": "Use for getting users attention, e.g. in warning message.",
+    "character": "E07F",
+    "category": "basic"
+  },
+  "chat" : {
+    "description": "Associated with customer support chat.",
+    "character": "9",
+    "category": "basic"
+  },
+  "messages" : {
+    "description": "",
+    "character": "E135",
+    "category": "basic"
+  },
+  "messages-outline" : {
+    "description": "Non-selected version for mobile menu.",
+    "character": "E136",
+    "category": "basic",
+    "added": "0.11"
+  },
+  "check-circle" : {
+    "description": "Use when confirming user's action.",
+    "character": "S",
+    "category": "basic"
+  },
+  "check" : {
+    "description": "",
+    "character": "V",
+    "category": "basic"
+  },
+  "close" : {
+    "description": "",
+    "character": "X",
+    "category": "basic"
+  },
+  "close-circle" : {
+    "description": "",
+    "character": "t",
+    "category": "basic"
+  },
+  "edit" : {
+    "description": "",
+    "character": "E",
+    "category": "basic"
+  },
+  "edit-off" : {
+    "description": "Use when you need to show that editing is not available anymore",
+    "character": "E00D",
+    "category": "basic"
+  },
+  "email" : {
+    "description": "",
+    "character": "G",
+    "category": "basic"
+  },
+  "filters" : {
+    "description": "Shows additional options of filtering results, e.g. in search",
+    "character": "&",
+    "category": "basic"
+  },
+  "information-circle" : {
+    "description": "",
+    "character": "R",
+    "category": "basic"
+  },
+  "loading" : {
+    "description": "",
+    "category": "basic"
+  },
+  "minus-circle" : {
+    "description": "",
+    "character": "E119",
+    "category": "basic"
+  },
+  "minus" : {
+    "description": "",
+    "character": "E118",
+    "category": "basic"
+  },
+  "phone" : {
+    "description": "",
+    "character": "E058",
+    "category": "basic"
+  },
+  "plus-circle" : {
+    "description": "",
+    "character": "E027",
+    "category": "basic"
+  },
+  "plus" : {
+    "description": "",
+    "character": "E122",
+    "category": "basic"
+  },
+  "reload" : {
+    "description": "",
+    "character": "2",
+    "category": "basic"
+  },
+  "remove" : {
+    "description": "",
+    "character": "W",
+    "category": "basic"
+  },
+  "search" : {
+    "description": "",
+    "character": "E07C",
+    "category": "basic"
+  },
+  "settings" : {
+    "description": "For all possible settings, like cookies, etc.",
+    "character": "8",
+    "category": "basic"
+  },
+  "star-empty" : {
+    "description": "",
+    "character": "E08C",
+    "category": "basic"
+  },
+  "star-full" : {
+    "description": "Also for Top Routes",
+    "character": "#",
+    "category": "basic"
+  },
+  "visibility" : {
+    "description": "",
+    "character": "E005",
+    "category": "basic"
+  },
+  "visibility-off" : {
+    "description": "",
+    "character": "E004",
+    "category": "basic"
+  },
+  "document" : {
+    "description": "Use when we want some text document from user.",
+    "character": "E110",
+    "category": "files"
+  },
+  "download" : {
+    "description": "Use every time when user should download something from us.",
+    "character": "E014",
+    "category": "files"
+  },
+  "attachment" : {
+    "description": "Use for multi-type attachments, like images, etc.",
+    "character": "E104",
+    "category": "files"
+  },
+  "money" : {
+    "description": "",
+    "character": "@",
+    "category": "money"
+  },
+  "paid" : {
+    "description": "",
+    "character": "E121",
+    "category": "money"
+  },
+  "invoice" : {
+    "description": "",
+    "character": "E113",
+    "category": "money"
+  },
+  "promo-code" : {
+    "description": "",
+    "character": "E081",
+    "category": "money"
+  },
+  "billing-details" : {
+    "description": "",
+    "character": "E108",
+    "category": "money"
+  },
+  "wallet" : {
+    "description": "",
+    "character": "E133",
+    "category": "money"
+  },
+  "credit-card" : {
+    "description": "",
+    "character": "u",
+    "category": "money"
+  },
+  "chevron-right" : {
+    "description": "",
+    "character": "E01F",
+    "category": "navigation"
+  },
+  "chevron-left" : {
+    "description": "",
+    "character": "!",
+    "category": "navigation"
+  },
+  "chevron-up" : {
+    "description": "",
+    "character": "m",
+    "category": "navigation"
+  },
+  "chevron-down" : {
+    "description": "",
+    "character": "E09D",
+    "category": "navigation"
+  },
+  "show-less" : {
+    "description": "",
+    "character": "E124",
+    "category": "navigation"
+  },
+  "show-more" : {
+    "description": "",
+    "character": "E125",
+    "category": "navigation"
+  },
+  "new-window" : {
+    "description": "",
+    "character": "E05E",
+    "category": "navigation"
+  },
+  "menu-hamburger" : {
+    "description": "",
+    "character": "D",
+    "category": "navigation"
+  },
+  "grid" : {
+    "description": "",
+    "character": "E06D",
+    "category": "navigation"
+  },
+  "list" : {
+    "description": "",
+    "character": "E115",
+    "category": "navigation"
+  },
+  "arrow-down" : {
+    "description": "",
+    "character": "E0A0",
+    "category": "navigation"
+  },
+  "arrow-up" : {
+    "description": "",
+    "character": "E09F",
+    "category": "navigation"
+  },
+  "menu-kebab" : {
+    "description": "",
+    "character": "E117",
+    "category": "navigation"
+  },
+  "menu-meatballs" : {
+    "description": "",
+    "character": "E07D",
+    "category": "navigation"
+  },
+  "thumb-down" : {
+    "description": "",
+    "character": "E128",
+    "category": "social"
+  },
+  "thumb-up" : {
+    "description": "",
+    "character": "E01B",
+    "category": "social"
+  },
+  "twitter" : {
+    "description": "",
+    "character": "E131",
+    "category": "social"
+  },
+  "facebook" : {
+    "description": "",
+    "character": "E002",
+    "category": "social"
+  },
+  "google" : {
+    "description": "Use this icon only in pre-defined colors",
+    "character": "E003",
+    "category": "social"
+  },
+  "linkedin" : {
+    "description": "",
+    "character": "E114",
+    "category": "social"
+  },
+  "instagram" : {
+    "description": "",
+    "character": "E112",
+    "category": "social"
+  },
+  "share" : {
+    "description": "Use for every share action",
+    "character": "E016",
+    "category": "social"
+  },
+  "share-android" : {
+    "description": "Share version only for Android devices",
+    "character": "E068",
+    "category": "social",
+    "added": "0.11.0"
+  },
+  "share-ios" : {
+    "description": "Share version only for iOS devices",
+    "character": "E163",
+    "category": "social",
+    "added": "0.11.0"
+  },
+  "calendar-anytime" : {
+    "description": "Use for calendar feature when removing specific date",
+    "character": "A",
+    "category": "time"
+  },
+  "calendar-trip-length" : {
+    "description": "Use for calendar feature for setting relative trip length",
+    "character": "E109",
+    "category": "time"
+  },
+  "calendar-range" : {
+    "description": "Use for calendar feature for setting range of dates",
+    "character": "z",
+    "category": "time"
+  },
+  "calendar" : {
+    "description": "",
+    "character": "f",
+    "category": "time"
+  },
+  "nonstop" : {
+    "description": "",
+    "character": "E120",
+    "category": "time"
+  },
+  "notification-on" : {
+    "description": "",
+    "character": "E025",
+    "category": "time"
+  },
+  "notification-off" : {
+    "description": "",
+    "character": "E023",
+    "category": "time"
+  },
+  "notification" : {
+    "description": "",
+    "character": "E018",
+    "category": "time"
+  },
+  "clock" : {
+    "description": "",
+    "character": "e",
+    "category": "time"
+  },
+  "timelapse" : {
+    "description": "",
+    "character": "E000",
+    "category": "time"
+  },
+  "parking" : {
+    "description": "",
+    "character": "E03E",
+    "category": "services"
+  },
+  "walk" : {
+    "description": "",
+    "character": "E052",
+    "category": "transportation"
+  },
+  "bus" : {
+    "description": "",
+    "character": "<",
+    "category": "transportation"
+  },
+  "taxi" : {
+    "description": "",
+    "character": ";",
+    "category": "transportation"
+  },
+  "train" : {
+    "description": "",
+    "character": "E028",
+    "category": "transportation"
+  },
+  "airplane-down" : {
+    "description": "Deprecated, use 'airplane' icon instead",
+    "character": "E101",
+    "category": "transportation"
+  },
+  "airplane-up" : {
+    "description": "Use in lists when there is a chance to meet other transportation types",
+    "character": "E160",
+    "category": "transportation",
+    "added": "0.26"
+  },
+  "airplane-right" : {
+    "description": "",
+    "character": "E103",
+    "category": "transportation"
+  },
+  "airplane-off" : {
+    "description": "",
+    "character": "E102",
+    "category": "transportation"
+  },
+  "airplane" : {
+    "description": "",
+    "character": "a",
+    "category": "transportation"
+  },
+  "airplane-return" : {
+    "description": "",
+    "character": "E159",
+    "category": "transportation",
+    "added": "0.26"
+  },
+  "passenger" : {
+    "description": "",
+    "character": "w",
+    "category": "travel"
+  },
+  "passenger-outline" : {
+    "description": "Non-selected version for mobile menu",
+    "character": "E137",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "passenger-add" : {
+    "description": "",
+    "character": ")",
+    "category": "travel"
+  },
+  "passengers" : {
+    "description": "",
+    "character": "(",
+    "category": "travel"
+  },
+  "trip" : {
+    "description": "Also good for general use or for 'Stories' section",
+    "character": "E130",
+    "category": "travel"
+  },
+  "insurance" : {
+    "description": "",
+    "character": "'",
+    "category": "travel"
+  },
+  "insurance-confirmed" : {
+    "description": "",
+    "character": "r",
+    "category": "travel"
+  },
+  "insurance-off" : {
+    "description": "",
+    "character": ":",
+    "category": "travel"
+  },
+  "flight-direct" : {
+    "description": "",
+    "character": "C",
+    "category": "travel"
+  },
+  "flight-multicity" : {
+    "description": "",
+    "character": "]",
+    "category": "travel"
+  },
+  "baggage-none" : {
+    "description": "",
+    "character": "E021",
+    "category": "travel"
+  },
+  "baggage-checked" : {
+    "description": "",
+    "character": "h",
+    "category": "travel"
+  },
+  "baggage-recheck" : {
+    "description": "",
+    "character": "E105",
+    "category": "travel"
+  },
+  "suitcase" : {
+    "description": "",
+    "character": "E02D",
+    "category": "travel"
+  },
+  "baggage-cabin" : {
+    "description": "",
+    "character": "E106",
+    "category": "travel"
+  },
+  "flight-return" : {
+    "description": "",
+    "character": "s",
+    "category": "travel"
+  },
+  "passport" : {
+    "description": "",
+    "character": "Q",
+    "category": "travel"
+  },
+  "baggage-set" : {
+    "description": "",
+    "character": "E107",
+    "category": "travel"
+  },
+  "airplane-landing" : {
+    "description": "Use for arrival date",
+    "character": "%",
+    "category": "travel"
+  },
+  "airplane-takeoff" : {
+    "description": "Use for departure date",
+    "character": "*",
+    "category": "travel"
+  },
+  "boarding-gate" : {
+    "description": "Use in info about boarding gate & in timeline for gate",
+    "character": "E00A",
+    "category": "travel"
+  },
+  "visa" : {
+    "description": "",
+    "character": "E132",
+    "category": "travel"
+  },
+  "musical-instruments" : {
+    "description": "",
+    "character": "E086",
+    "category": "services"
+  },
+  "accommodation" : {
+    "description": "Use for hotels and similar accommodation services",
+    "character": "E085",
+    "category": "services"
+  },
+  "meal" : {
+    "description": "Use for meal on board, don't use for restaurants",
+    "character": "E116",
+    "category": "services"
+  },
+  "sport-equipment" : {
+    "description": "",
+    "character": "E127",
+    "category": "services"
+  },
+  "location-a" : {
+    "description": "",
+    "character": "j",
+    "category": "travel"
+  },
+  "location-b" : {
+    "description": "",
+    "character": "k",
+    "category": "travel"
+  },
+  "location-c" : {
+    "description": "",
+    "character": "^",
+    "category": "travel"
+  },
+  "location-d" : {
+    "description": "",
+    "character": "_",
+    "category": "travel"
+  },
+  "location-e" : {
+    "description": "",
+    "character": "`",
+    "category": "travel"
+  },
+  "location-f" : {
+    "description": "",
+    "character": "{",
+    "category": "travel"
+  },
+  "location-g" : {
+    "description": "",
+    "character": "|",
+    "category": "travel"
+  },
+  "location-h" : {
+    "description": "",
+    "character": "}",
+    "category": "travel"
+  },
+  "location-i" : {
+    "description": "",
+    "character": "~",
+    "category": "travel"
+  },
+  "location-j" : {
+    "description": "",
+    "character": "\\",
+    "category": "travel"
+  },
+  "location" : {
+    "description": "",
+    "character":  "$",
+    "category": "travel"
+  },
+  "location-add" : {
+    "description": "Use in multicity when adding new location",
+    "character": "?",
+    "category": "travel"
+  },
+  "contact-email" : {
+    "description": "Also for newsletter features",
+    "character": "v",
+    "category": "travel"
+  },
+  "pet" : {
+    "description": "",
+    "character": "E043",
+    "category": "services"
+  },
+  "wheelchair" : {
+    "description": "",
+    "character": "E088",
+    "category": "services"
+  },
+  "child-friendly" : {
+    "description": "",
+    "character": "E05D",
+    "category": "travel"
+  },
+  "child" : {
+    "description": "Use when you need to select child as passenger",
+    "character": "E050",
+    "category": "travel"
+  },
+  "all" : {
+    "description": "Use in filters & lists for \"All\" option",
+    "character": "E061",
+    "category": "services",
+    "added": "0.11"
+  },
+  "car-rental" : {
+    "description": "",
+    "character": "E030",
+    "category": "services",
+    "added": "0.11"
+  },
+  "car" : {
+    "description": "",
+    "category": "transportation",
+    "character": "E03A",
+    "added": "0.11"
+  },
+  "city" : {
+    "description": "For destinations or 'careers' in side menu",
+    "character": "c",
+    "category": "transportation",
+    "added": "0.11"
+  },
+  "compass" : {
+    "description": "Use for discover feature",
+    "character": "E07E",
+    "category": "transportation",
+    "added": "0.11"
+  },
+  "gps" : {
+    "description": "Use in map when you need to locate position of user",
+    "character": "\"",
+    "category": "transportation",
+    "added": "0.11"
+  },
+  "gps-off" : {
+    "description": "Use when GPS is not available",
+    "character": "E01C",
+    "category": "transportation",
+    "added": "0.11"
+  },
+  "map" : {
+    "description": "",
+    "character": "E001",
+    "category": "transportation",
+    "added": "0.11"
+  },
+  "wifi" : {
+    "description": "",
+    "character": "E062",
+    "category": "services",
+    "added": "0.11"
+  },
+  "wifi-off" : {
+    "description": "When wifi is not available.",
+    "character": "Z",
+    "category": "services",
+    "added": "0.11"
+  },
+  "pool" : {
+    "description": "",
+    "character": "E123",
+    "category": "services",
+    "added": "0.11"
+  },
+  "spa" : {
+    "description": "",
+    "character": "E04A",
+    "category": "services",
+    "added": "0.11"
+  },
+  "lounge" : {
+    "description": "",
+    "character": "E04E",
+    "category": "services",
+    "added": "0.11"
+  },
+  "restaurant" : {
+    "description": "",
+    "character": "1",
+    "category": "services",
+    "added": "0.11"
+  },
+  "shopping" : {
+    "description": "",
+    "character": "E036",
+    "category": "services",
+    "added": "0.11"
+  },
+  "toilets" : {
+    "description": "",
+    "character": "E129",
+    "category": "services",
+    "added": "0.11"
+  },
+  "sports" : {
+    "description": "",
+    "character": "E042",
+    "category": "services",
+    "added": "0.11"
+  },
+  "playground" : {
+    "description": "",
+    "character": "E053",
+    "category": "services",
+    "added": "0.11"
+  },
+  "cocktail" : {
+    "description": "",
+    "character": "E038",
+    "category": "services",
+    "added": "0.11"
+  },
+  "seat" : {
+    "description": "",
+    "character": "E02A",
+    "category": "services",
+    "added": "0.11"
+  },
+  "question-circle" : {
+    "description": "",
+    "character": "F",
+    "category": "basic",
+    "added": "0.11"
+  },
+  "sightseeing" : {
+    "description": "",
+    "character": "E015",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "airport-security" : {
+    "description": "Use in trip timeline",
+    "character": "E035",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "anywhere" : {
+    "description": "Use in search for discover feature",
+    "character": "g",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "atm" : {
+    "description": "Use in map for ATMs",
+    "character": "E02C",
+    "category": "money",
+    "added": "0.11"
+  },
+  "coffee" : {
+    "description": "Use in map for coffee places",
+    "character": "E02F",
+    "category": "services",
+    "added": "0.11"
+  },
+  "exchange" : {
+    "description": "Use in map for exchange places",
+    "character": "E032",
+    "category": "money",
+    "added": "0.11"
+  },
+  "flight-services" : {
+    "description": "Use as general icon for in-flight services",
+    "character": "E049",
+    "category": "services",
+    "added": "0.11"
+  },
+  "full-screen" : {
+    "description": "",
+    "character": "E0A6",
+    "category": "navigation",
+    "added": "0.11"
+  },
+  "full-screen-off" : {
+    "description": "",
+    "character": "E111",
+    "category": "navigation",
+    "added": "0.11"
+  },
+  "gallery" : {
+    "description": "Use when you need to display number of photos in gallery",
+    "character": "E064",
+    "category": "navigation",
+    "added": "0.11"
+  },
+  "gym" : {
+    "description": "",
+    "character": "E089",
+    "category": "services",
+    "added": "0.11"
+  },
+  "link" : {
+    "description": "",
+    "character": "E057",
+    "category": "basic",
+    "added": "0.11"
+  },
+  "online-checkin" : {
+    "description": "",
+    "character": "E00F",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "online-checkin-off" : {
+    "description": "",
+    "character": "E00E",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "pharmacy" : {
+    "description": "",
+    "character": "E034",
+    "category": "services",
+    "added": "0.11"
+  },
+  "power-plug" : {
+    "description": "",
+    "character": "E06F",
+    "category": "services",
+    "added": "0.11"
+  },
+  "power-plug-off" : {
+    "description": "",
+    "character": "3",
+    "category": "services",
+    "added": "0.11"
+  },
+  "radius-search" : {
+    "description": "",
+    "character": "d",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "relax" : {
+    "description": "",
+    "character": "E046",
+    "category": "services",
+    "added": "0.11"
+  },
+  "replace" : {
+    "description": "Use for switching from and to location in search form",
+    "character": "I",
+    "category": "navigation",
+    "added": "0.11"
+  },
+  "self-transfer" : {
+    "description": "Use when passengers need to transfer between locations on their own",
+    "character": "E020",
+    "category": "transportation",
+    "added": "0.11"
+  },
+  "send" : {
+    "description": "Use for send button for chat",
+    "character": "M",
+    "category": "basic",
+    "added": "0.11"
+  },
+  "smoking" : {
+    "description": "",
+    "character": "E037",
+    "category": "basic",
+    "added": "0.11"
+  },
+  "smoking-off" : {
+    "description": "",
+    "character": "E126",
+    "category": "basic",
+    "added": "0.11"
+  },
+  "subway" : {
+    "description": "",
+    "character": "E06A",
+    "category": "transportation",
+    "added": "0.11"
+  },
+  "terms-and-conditions" : {
+    "description": "Also for Terms of Use and other similar features",
+    "character": "E0A4",
+    "category": "services",
+    "added": "0.11"
+  },
+  "ticket" : {
+    "description": "Use for generic tickets",
+    "character": ".",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "ticket-outline" : {
+    "description": "Non-selected icon for mobile menu",
+    "character": "E138",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "ticket-flight" : {
+    "description": "Use for flight tickets",
+    "character": "6",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "ticket-train" : {
+    "description": "Use for train tickets",
+    "character": "E084",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "route-no-stops" : {
+    "description": "Use as connecting symbol between locations for direct trip",
+    "character": "o",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "route-one-stop" : {
+    "description": "Use as connecting symbol between locations for trip with one stop",
+    "character": "q",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "route-two-stops" : {
+    "description": "Use as connecting symbol between locations for trip with two stops",
+    "character": "p",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "priority-boarding" : {
+    "description": "",
+    "character": "E08D",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "circle" : {
+    "description": "Use for radio buttons or status dot",
+    "character": "E013",
+    "category": "basic",
+    "added": "0.11"
+  },
+  "tips" : {
+    "description": "Use when showing some interesting tips",
+    "character": "E047",
+    "category": "travel",
+    "added": "0.11"
+  },
+  "logout" : {
+    "description": "",
+    "character": "E0A7",
+    "category": "basic",
+    "added": "0.11"
+  },
+  "bug" : {
+    "description": "Used just for developer purposes",
+    "character": "N",
+    "category": "basic",
+    "added": "0.11"
+  },
+  "camera" : {
+    "description": "Use when you need to open phone's camera",
+    "character": "E017",
+    "category": "basic",
+    "added": "0.11"
+  },
+  "entertainment" : {
+    "description": "Use when there is an movie entertainement on board",
+    "character": "E06E",
+    "category": "services",
+    "added": "0.11"
+  },
+  "boat" : {
+    "description": "",
+    "character": "E139",
+    "category": "transportation",
+    "added": "0.14"
+  },
+  "feedback" : {
+    "description": "",
+    "character": "E140",
+    "category": "social",
+    "added": "0.16"
+  },
+  "code" : {
+    "description": "Basically for code.kiwi.com in menu",
+    "character": "E141",
+    "category": "basic",
+    "added": "0.19"
+  },
+  "deals" : {
+    "description": "",
+    "character": "E142",
+    "category": "services",
+    "added": "0.19"
+  },
+  "kiwicom" : {
+    "description": "Our logo, use for company related links like Press Kit or About page.",
+    "character": "E143",
+    "category": "kiwicom",
+    "added": "0.19"
+  },
+  "kiwicom-care" : {
+    "description": "",
+    "character": "E144",
+    "category": "kiwicom",
+    "added": "0.19"
+  },
+  "kiwicom-guarantee" : {
+    "description": "Only for Kiwi.com Guarantee!",
+    "character": "E145",
+    "category": "kiwicom",
+    "added": "0.19"
+  },
+  "security" : {
+    "description": "Security articles, privacy policy, ...",
+    "character": "E146",
+    "category": "services",
+    "added": "0.19"
+  },
+  "baggage-storage" : {
+    "description": "... or 'luggage storage' if you prefer :)",
+    "character": "E147",
+    "category": "services",
+    "added": "0.21"
+  },
+  "circle-small" : {
+    "description": "...or point, bullet or dot.",
+    "character": "E148",
+    "category": "basic",
+    "added": "0.21"
+  },
+  "item-completed" : {
+    "description": "",
+    "character": "E149",
+    "category": "basic",
+    "added": "0.21"
+  },
+  "flight-nomad" : {
+    "description": "",
+    "character": "E150",
+    "category": "travel",
+    "added": "0.21"
+  },
+  "gender-woman" : {
+    "description": "",
+    "character": "E151",
+    "category": "basic",
+    "added": "0.21"
+  },
+  "gender-man" : {
+    "description": "",
+    "character": "E152",
+    "category": "basic",
+    "added": "0.21"
+  },
+  "history" : {
+    "description": "",
+    "character": "E153",
+    "category": "basic",
+    "added": "0.21"
+  },
+  "sun" : {
+    "description": "",
+    "character": "E096",
+    "category": "time",
+    "added": "0.22"
+  },
+  "sunrise" : {
+    "description": "",
+    "character": "E08E",
+    "category": "time",
+    "added": "0.22"
+  },
+  "moon" : {
+    "description": "",
+    "character": "E090",
+    "category": "time",
+    "added": "0.22"
+  },
+  "duplicate" : {
+    "description": "alias: copy",
+    "character": "E154",
+    "added": "0.23"
+  },
+  "compare" : {
+    "description": "",
+    "character": "E155",
+    "added": "0.23"
+  },
+  "baggage-personal-item" : {
+    "description": "the smallest baggage allowed",
+    "character": "E156",
+    "added": "0.23"
+  },
+  "device-mobile" : {
+    "description": "",
+    "character": "E157",
+    "added": "0.23"
+  },
+  "device-desktop" : {
+    "description": "",
+    "character": "E158",
+    "added": "0.23"
+  },
+  "gps-ios" : {
+    "description": "",
+    "character": "E161",
+    "added": "0.26"
+  },
+  "uber" : {
+    "description": "",
+    "character": "E162",
+    "added": "0.26"
+  },
+  "partners" : {
+    "description": "",
+    "character": "E164",
+    "added": "0.27"
+  },
+  "refund" : {
+    "description": "",
+    "character": "E165",
+    "added": "0.27"
+  },
+  "profit" : {
+    "description": "",
+    "character": "E166",
+    "added": "0.27"
+  },
+  "money-transfer-in" : {
+    "description": "",
+    "character": "E167",
+    "added": "0.27"
+  },
+  "money-transfer-out" : {
+    "description": "",
+    "character": "E168",
+    "added": "0.27"
+  },
+  "lock" : {
+    "description": "",
+    "character": "E169",
+    "added": "0.28"
+  },
+  "lock-open" : {
+    "description": "",
+    "character": "E170",
+    "added": "0.28"
+  },
+  "sort" : {
+    "description": "",
+    "character": "E171",
+    "added": "0.28"
+  }
+}

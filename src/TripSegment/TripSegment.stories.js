@@ -4,7 +4,7 @@ import { storiesOf, setAddon } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { text, withKnobs, object, boolean } from "@storybook/addon-knobs/react";
+import { text, withKnobs, object, boolean } from "@storybook/addon-knobs";
 
 import List from "../List";
 import ListItem from "../List/ListItem";

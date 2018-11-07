@@ -4,7 +4,7 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, boolean, text } from "@storybook/addon-knobs/react";
+import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import Button from "../Button";

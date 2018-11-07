@@ -9,6 +9,7 @@ exports[`Storyshots InputFile Default 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -18,14 +19,18 @@ exports[`Storyshots InputFile Default 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -38,14 +43,8 @@ exports[`Storyshots InputFile Default 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -57,6 +56,7 @@ exports[`Storyshots InputFile Default 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -71,6 +71,7 @@ exports[`Storyshots InputFile Default 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -78,11 +79,8 @@ exports[`Storyshots InputFile Default 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -92,6 +90,7 @@ exports[`Storyshots InputFile Default 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -155,6 +154,7 @@ exports[`Storyshots InputFile Default 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -162,14 +162,7 @@ exports[`Storyshots InputFile Default 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -396,6 +389,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -405,14 +399,18 @@ exports[`Storyshots InputFile Filled with file 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -425,14 +423,8 @@ exports[`Storyshots InputFile Filled with file 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -444,6 +436,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -458,6 +451,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -465,11 +459,8 @@ exports[`Storyshots InputFile Filled with file 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -479,6 +470,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -563,6 +555,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -570,14 +563,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -834,6 +820,7 @@ exports[`Storyshots InputFile Playground 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -843,14 +830,18 @@ exports[`Storyshots InputFile Playground 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -863,14 +854,8 @@ exports[`Storyshots InputFile Playground 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -882,6 +867,7 @@ exports[`Storyshots InputFile Playground 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -896,6 +882,7 @@ exports[`Storyshots InputFile Playground 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -903,11 +890,8 @@ exports[`Storyshots InputFile Playground 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -917,6 +901,7 @@ exports[`Storyshots InputFile Playground 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -993,6 +978,7 @@ exports[`Storyshots InputFile Playground 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -1000,14 +986,7 @@ exports[`Storyshots InputFile Playground 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -1497,6 +1476,7 @@ exports[`Storyshots InputFile With error 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -1506,14 +1486,18 @@ exports[`Storyshots InputFile With error 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -1526,14 +1510,8 @@ exports[`Storyshots InputFile With error 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -1545,6 +1523,7 @@ exports[`Storyshots InputFile With error 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -1559,6 +1538,7 @@ exports[`Storyshots InputFile With error 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -1566,11 +1546,8 @@ exports[`Storyshots InputFile With error 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -1580,6 +1557,7 @@ exports[`Storyshots InputFile With error 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -1648,6 +1626,7 @@ exports[`Storyshots InputFile With error 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -1655,14 +1634,7 @@ exports[`Storyshots InputFile With error 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>
@@ -1919,6 +1891,7 @@ exports[`Storyshots InputFile With help 1`] = `
   }
 >
   <div
+    className="story"
     style={
       Object {
         "WebkitFontSmoothing": "antialiased",
@@ -1928,14 +1901,18 @@ exports[`Storyshots InputFile With help 1`] = `
     }
   >
     <div
+      className="story-header"
       style={
         Object {
-          "marginBottom": 60,
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
         }
       }
     >
       <div>
         <h1
+          className="story-title"
           style={
             Object {
               "color": "#363a45",
@@ -1948,14 +1925,8 @@ exports[`Storyshots InputFile With help 1`] = `
         </h1>
         
         <span
-          style={
-            Object {
-              "color": "#898d97",
-              "fontSize": 18,
-              "marginBottom": 20,
-              "marginTop": 0,
-            }
-          }
+          className="story-subtitle"
+          style={Object {}}
         >
           <div>
             <p>
@@ -1967,6 +1938,7 @@ exports[`Storyshots InputFile With help 1`] = `
     </div>
     <div>
       <div
+        className="chapter-header"
         style={
           Object {
             "marginBottom": 60,
@@ -1981,6 +1953,7 @@ exports[`Storyshots InputFile With help 1`] = `
         </div>
       </div>
       <div
+        className="section-container"
         style={
           Object {
             "marginBottom": 100,
@@ -1988,11 +1961,8 @@ exports[`Storyshots InputFile With help 1`] = `
         }
       >
         <div
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
+          className="section-header"
+          style={Object {}}
         >
           <div>
             <div>
@@ -2002,6 +1972,7 @@ exports[`Storyshots InputFile With help 1`] = `
           </div>
         </div>
         <div
+          className="section-component-container"
           style={
             Object {
               "marginBottom": 60,
@@ -2075,6 +2046,7 @@ exports[`Storyshots InputFile With help 1`] = `
             <div>
               
               <div
+                className="section-subsection"
                 style={
                   Object {
                     "marginBottom": 60,
@@ -2082,14 +2054,7 @@ exports[`Storyshots InputFile With help 1`] = `
                 }
               >
                 <h4
-                  style={
-                    Object {
-                      "color": "#898d97",
-                      "fontSize": 12,
-                      "letterSpacing": 2,
-                      "textTransform": "uppercase",
-                    }
-                  }
+                  className="section-subsection-title"
                 >
                   Source
                 </h4>

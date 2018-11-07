@@ -66,3 +66,4 @@ typings/
 lib
 es
 .out
+.cache

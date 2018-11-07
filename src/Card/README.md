@@ -13,7 +13,7 @@ After adding import into your project you can use it simply like:
 </Card>
 ```
 ## Props
-Table below contains all types of the props available in ButtonLink component.
+Table below contains all types of the props available in the Card component.
 
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :---------------------| :-------------- | :------------------------------- |
@@ -67,7 +67,7 @@ import CardSection from "@kiwicom/orbit-components/lib/Card/CardSection";
 ```
 
 #### Props
-Table below contains all types of the props in CardContent component.
+Table below contains all types of the props in CardSection component.
 
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :---------------------| :-------------- | :------------------------------- |

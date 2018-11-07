@@ -119,7 +119,6 @@ const StyledTextInput = styled(TextInput, props => {
     fontSize: getToken(TOKENS.fontSizeInput, props),
     width: "100%",
     height: getToken(TOKENS.heightInput, props),
-    lineHeight: getToken(TOKENS.heightInput, props),
     zIndex: 2,
   };
 });

@@ -20,7 +20,7 @@ storiesOf("Icon", module)
   ))
   .add("Custom Icon", () => (
     <React.Fragment>
-      <Icon name="loading" style={{ color: defaultTokens.orbit.colorIconSuccess, fontSize: 80 }} />
+      <Icon name="check" style={{ color: defaultTokens.orbit.colorIconSuccess, fontSize: 80 }} />
     </React.Fragment>
   ))
   .add("All Icons list", () => (

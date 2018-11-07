@@ -166,7 +166,7 @@ const Radio = React.forwardRef((props: Props, ref: Ref) => {
         checked={checked}
         onChange={onChange}
         name={name}
-        innerRef={ref}
+        ref={ref}
       />
       <IconContainer>
         <Glyph disabled={disabled} />

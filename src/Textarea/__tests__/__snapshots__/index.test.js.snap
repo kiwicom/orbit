@@ -392,7 +392,6 @@ exports[`Textarea number with error and help should match snapshot 1`] = `
         Something went wrong.
       </div>
     }
-    innerRef={null}
     resize="none"
     size="small"
     theme={
@@ -1567,7 +1566,6 @@ exports[`Textarea with help should match snapshot 1`] = `
   </FormLabel>
   <Textarea__StyledTextArea
     fullHeight={true}
-    innerRef={null}
     maxLength={200}
     name="name"
     onBlur={

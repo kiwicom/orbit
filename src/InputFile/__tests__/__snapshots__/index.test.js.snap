@@ -392,7 +392,6 @@ exports[`InputFiInputFile with error should match snapshot 1`] = `
         Error message (explain how to solve it)
       </div>
     }
-    innerRef={null}
     theme={
       Object {
         "orbit": Object {
@@ -1974,7 +1973,6 @@ exports[`InputFile with help should match snapshot 1`] = `
         ".pdf",
       ]
     }
-    innerRef={null}
     name="name"
     onBlur={
       [MockFunction] {

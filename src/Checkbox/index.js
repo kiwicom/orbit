@@ -175,7 +175,7 @@ const Checkbox = React.forwardRef((props: Props, ref: Ref) => {
         name={name}
         checked={checked}
         onChange={onChange}
-        innerRef={ref}
+        ref={ref}
       />
       <IconContainer>
         <Check />

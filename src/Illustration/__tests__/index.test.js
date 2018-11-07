@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import Illustration from "../index";
 import { SIZE_OPTIONS } from "../consts";
@@ -18,6 +18,11 @@ describe(`Illustration of ${name}`, () => {
   const component = shallow(
     <Illustration size={size} name={name} dataTest={dataTest} spaceAfter={SPACINGS_AFTER.NORMAL} />,
   );
+
+  const mountedComponent = mount(
+    <Illustration size={size} name={name} dataTest={dataTest} spaceAfter={SPACINGS_AFTER.NORMAL} />,
+  );
+
   it("should have passed props", () => {
     expect(component.prop("size")).toBe(size);
     expect(component.render().prop("alt")).toBe(name);
@@ -29,7 +34,7 @@ describe(`Illustration of ${name}`, () => {
     expect(component.render().attr("srcset")).toContain(URL_RETINA);
   });
   it("should have margin-bottom", () => {
-    expect(component).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
+    expect(mountedComponent).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

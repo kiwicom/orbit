@@ -93,12 +93,6 @@ StyledTitleAndSubtitle.defaultProps = {
 };
 
 class CardSection extends React.Component<any, Props> {
-  constructor(props: Props) {
-    super(props);
-    this.contentHeight = 0;
-    this.node = React.createRef();
-  }
-
   componentDidMount() {
     const { expandable } = this.props;
 
@@ -116,11 +110,11 @@ class CardSection extends React.Component<any, Props> {
   }
 
   setHeight = () => {
-    this.contentHeight = this.node.current.clientHeight;
+    this.contentHeight = this.node?.current.clientHeight;
   };
 
-  contentHeight: number;
-  node: { current: any | HTMLDivElement };
+  contentHeight: number = 0;
+  node: { current: any | HTMLDivElement } = React.createRef();
 
   render() {
     const { title, subTitle, children, dataTest, expandable, expanded, onClick } = this.props;

@@ -61,9 +61,8 @@ storiesOf("TripSector", module)
                   <List type="secondary" size="small">
                     <ListItem icon={<Clock />}>4h 50m layover</ListItem>
                     <ListItem icon={<Check />}>
-                      Transfer protected by the&nbsp;<TextLink type="secondary">
-                        Kiwi.com Guarantee
-                      </TextLink>
+                      Transfer protected by the&nbsp;
+                      <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
                     </ListItem>
                     <ListItem icon={<FlightReturn />}>
                       Changing airports is your responsibility
@@ -92,9 +91,8 @@ storiesOf("TripSector", module)
                   <List type="secondary" size="small">
                     <ListItem icon={<Clock />}>2h 25m layover</ListItem>
                     <ListItem icon={<Check />}>
-                      Transfer protected by the&nbsp;<TextLink type="secondary">
-                        Kiwi.com Guarantee
-                      </TextLink>
+                      Transfer protected by the&nbsp;
+                      <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
                     </ListItem>
                   </List>
                 </TripLayover>
@@ -120,9 +118,8 @@ storiesOf("TripSector", module)
                   <List type="secondary" size="small">
                     <ListItem icon={<Clock />}>13h 05m layover</ListItem>
                     <ListItem icon={<Check />}>
-                      Transfer protected by the&nbsp;<TextLink type="secondary">
-                        Kiwi.com Guarantee
-                      </TextLink>
+                      Transfer protected by the&nbsp;
+                      <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
                     </ListItem>
                     <ListItem icon={<FlightReturn />}>
                       Changing airports is your responsibility

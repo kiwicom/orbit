@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import Card from "../index";
 import CardSection from "../CardSection";
@@ -28,7 +28,7 @@ describe("Card", () => {
   });
 
   it("should have margin-bottom", () => {
-    const component = shallow(<Card spaceAfter={SPACINGS_AFTER.NORMAL} />);
+    const component = mount(<Card spaceAfter={SPACINGS_AFTER.NORMAL} />);
     expect(component).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
   });
   it("should have data-test", () => {

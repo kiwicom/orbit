@@ -673,11 +673,11 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@kiwicom/orbit-design-tokens@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.2.4.tgz#61ce4930b8f28f8b25424d1f043913587d11b310"
+"@kiwicom/orbit-design-tokens@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.2.5.tgz#b945e5f792d321aa66ef23bc327000e4ff702e50"
   dependencies:
-    deepmerge "^2.2.1"
+    ramda "^0.25.0"
 
 "@octokit/rest@^15.13.1":
   version "15.13.1"
@@ -4107,10 +4107,6 @@ deep-extend@~0.4.0:
 deep-is@~0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
-
-deepmerge@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-2.2.1.tgz#5d3ff22a01c00f645405a2fbc17d0778a1801170"
 
 default-require-extensions@^2.0.0:
   version "2.0.0"
@@ -9460,6 +9456,10 @@ ramda@^0.24.1:
   version "0.24.1"
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.24.1.tgz#c3b7755197f35b8dc3502228262c4c91ddb6b857"
 
+ramda@^0.25.0:
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.25.0.tgz#8fdf68231cffa90bc2f9460390a0cb74a29b29a9"
+
 randexp@0.4.6:
   version "0.4.6"
   resolved "https://registry.yarnpkg.com/randexp/-/randexp-0.4.6.tgz#e986ad5e5e31dae13ddd6f7b3019aa7c87f60ca3"
@@ -9633,10 +9633,6 @@ react-html-attributes@^1.3.0:
 react-icon-base@2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/react-icon-base/-/react-icon-base-2.1.0.tgz#a196e33fdf1e7aaa1fda3aefbb68bdad9e82a79d"
-
-react-icon-base@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/react-icon-base/-/react-icon-base-2.1.2.tgz#a17101dad9c1192652356096860a9ab43a0766c7"
 
 react-icons@^2.2.7:
   version "2.2.7"

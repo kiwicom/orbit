@@ -13,6 +13,12 @@ export { default as CarrierLogo } from "./CarrierLogo";
 export { default as Checkbox } from "./Checkbox";
 export { default as CountryFlag } from "./CountryFlag";
 
+// Deprecated Card
+export { default as DeprecatedCard } from "./_deprecated/Card";
+export { default as DeprecatedCardHeader } from "./_deprecated/Card/CardHeader";
+export { default as DeprecatedCardSection } from "./_deprecated/Card/CardSection";
+export { default as DeprecatedCardContent } from "./_deprecated/Card/CardContent";
+
 // Card
 export { default as Card } from "./Card";
 export { default as CardHeader } from "./Card/CardHeader";

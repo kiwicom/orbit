@@ -35,6 +35,10 @@ import typeof TextareaType from "./Textarea";
 import typeof CardType from "./Card";
 import typeof CardHeaderType from "./Card/CardHeader";
 import typeof CardSectionType from "./Card/CardSection";
+import typeof DeprecatedCardType from "./_deprecated/Card";
+import typeof DeprecatedCardHeaderType from "./_deprecated/Card/CardHeader";
+import typeof DeprecatedCardSectionType from "./_deprecated/Card/CardSection";
+import typeof DeprecatedCardContentType from "./_deprecated/Card/CardContent";
 import typeof mediaType from "./utils/media";
 import typeof PortalType from "./Portal";
 import typeof ModalType from "./Modal";
@@ -72,6 +76,11 @@ declare export var ListItem: ListItemType;
 declare export var Card: CardType;
 declare export var CardHeader: CardHeaderType;
 declare export var CardSection: CardSectionType;
+
+declare export var DeprecatedCard: DeprecatedCardType;
+declare export var DeprecatedCardHeader: DeprecatedCardHeaderType;
+declare export var DeprecatedCardSection: DeprecatedCardSectionType;
+declare export var DeprecatedCardContent: DeprecatedCardContentType;
 
 declare export var Portal: PortalType;
 declare export var ClickOutside: ClickOutsideType;

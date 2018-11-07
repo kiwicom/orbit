@@ -19,31 +19,22 @@ class ClickOutside extends React.PureComponent<Props> {
 
   handleClickOutside = (ev: MouseEvent) => {
     const { onClickOutside } = this.props;
-
     if (
       onClickOutside &&
-      this.node &&
+      this.node?.current &&
       ev.target instanceof Node &&
-      !this.node.contains(ev.target)
+      !this.node.current.contains(ev.target)
     ) {
       onClickOutside(ev);
     }
   };
 
-  node: ?HTMLDivElement;
+  node: { current: any | HTMLDivElement } = React.createRef();
 
   render() {
     const { children } = this.props;
 
-    return (
-      <Inner
-        innerRef={node => {
-          this.node = node;
-        }}
-      >
-        {children}
-      </Inner>
-    );
+    return <Inner ref={this.node}>{children}</Inner>;
   }
 }
 

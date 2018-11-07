@@ -209,12 +209,10 @@ class Card extends React.Component<Props, State> {
         hasAdjustedHeader={this.hasAdjustedHeader()}
       >
         {children &&
-          React.Children.map(
-            children,
-            (item, index) =>
-              this.isExpandableCardSection(item)
-                ? this.renderExpandableSection(item, index)
-                : this.renderSection(item, index),
+          React.Children.map(children, (item, index) =>
+            this.isExpandableCardSection(item)
+              ? this.renderExpandableSection(item, index)
+              : this.renderSection(item, index),
           )}
 
         {closable && (

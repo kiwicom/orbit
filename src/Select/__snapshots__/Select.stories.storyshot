@@ -100,7 +100,6 @@ exports[`Storyshots Select Default 1`] = `
         >
           <label
             className="Select__Label-sc-6agypz-0 daIoOD"
-            data-test={undefined}
           >
             <div
               className="Select__SelectContainer-sc-6agypz-2 zfoUd"
@@ -108,26 +107,20 @@ exports[`Storyshots Select Default 1`] = `
               <select
                 className="Select__StyledSelect-sc-6agypz-1 opAdU"
                 disabled={false}
-                name={undefined}
-                onBlur={undefined}
                 onChange={[Function]}
-                onFocus={undefined}
                 value=""
               >
                 <option
-                  disabled={undefined}
                   value={1}
                 >
                   First item
                 </option>
                 <option
-                  disabled={undefined}
                   value={2}
                 >
                   Second item
                 </option>
                 <option
-                  disabled={undefined}
                   value={3}
                 >
                   Third item
@@ -138,7 +131,6 @@ exports[`Storyshots Select Default 1`] = `
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
@@ -174,49 +166,40 @@ exports[`Storyshots Select Default 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      Select
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Select
+                      </span>
                       <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          options
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            options
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -227,7 +210,6 @@ exports[`Storyshots Select Default 1`] = `
                               >
                                 [
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -236,38 +218,38 @@ exports[`Storyshots Select Default 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        1
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      1
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -278,17 +260,13 @@ exports[`Storyshots Select Default 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      First item
-                                      "
+                                      'First item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -297,38 +275,38 @@ exports[`Storyshots Select Default 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        2
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      2
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -339,17 +317,13 @@ exports[`Storyshots Select Default 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Second item
-                                      "
+                                      'Second item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -358,38 +332,38 @@ exports[`Storyshots Select Default 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        3
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      3
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -400,13 +374,10 @@ exports[`Storyshots Select Default 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Third item
-                                      "
+                                      'Third item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
                                 ]
                               </span>
@@ -414,20 +385,18 @@ exports[`Storyshots Select Default 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          onChange
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            onChange
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -436,25 +405,46 @@ exports[`Storyshots Select Default 1`] = `
                                   }
                                 }
                               >
-                                onChange()
+                                onChange
                               </span>
                               }
                             </span>
                           </span>
+                           
                         </span>
-                         
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -587,19 +577,16 @@ exports[`Storyshots Select Playground 1`] = `
                   Select value from list
                 </option>
                 <option
-                  disabled={undefined}
                   value={1}
                 >
                   First item
                 </option>
                 <option
-                  disabled={undefined}
                   value={2}
                 >
                   Second item
                 </option>
                 <option
-                  disabled={undefined}
                   value={3}
                 >
                   Third item
@@ -610,7 +597,6 @@ exports[`Storyshots Select Playground 1`] = `
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
@@ -646,112 +632,103 @@ exports[`Storyshots Select Playground 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      Select
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Select
+                      </span>
                       <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          placeholder
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            placeholder
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              Select value from list
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                Select value from list
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          size
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            size
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              normal
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                normal
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          options
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            options
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -762,7 +739,6 @@ exports[`Storyshots Select Playground 1`] = `
                               >
                                 [
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -771,38 +747,38 @@ exports[`Storyshots Select Playground 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        1
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      1
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -813,17 +789,13 @@ exports[`Storyshots Select Playground 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      First item
-                                      "
+                                      'First item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -832,38 +804,38 @@ exports[`Storyshots Select Playground 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        2
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      2
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -874,17 +846,13 @@ exports[`Storyshots Select Playground 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Second item
-                                      "
+                                      'Second item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -893,38 +861,38 @@ exports[`Storyshots Select Playground 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        3
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      3
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -935,13 +903,10 @@ exports[`Storyshots Select Playground 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Third item
-                                      "
+                                      'Third item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
                                 ]
                               </span>
@@ -949,23 +914,21 @@ exports[`Storyshots Select Playground 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          disabled
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            disabled
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -980,53 +943,51 @@ exports[`Storyshots Select Playground 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          name
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            name
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              name
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                name
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          label
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            label
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -1041,146 +1002,138 @@ exports[`Storyshots Select Playground 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onChange
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onChange()
-                              </span>
-                              }
-                            </span>
+                          <span>
+                            <br />
+                              
                           </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onBlur
-                        </span>
-                        <span>
-                          =
                           <span
                             style={Object {}}
                           >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onBlur()
-                              </span>
-                              }
-                            </span>
+                            onChange
                           </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onFocus
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            <span>
-                              {
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onFocus()
-                              </span>
-                              }
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          dataTest
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
                                 }
+                              >
+                                onChange
+                              </span>
                               }
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            onBlur
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onBlur
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            onFocus
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onFocus
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            dataTest
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
                             >
                               "
-                              test
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                test
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          value
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            value
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -1194,20 +1147,41 @@ exports[`Storyshots Select Playground 1`] = `
                               }
                             </span>
                           </span>
+                          <br />
                         </span>
-                        <br />
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -1319,11 +1293,9 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
         >
           <label
             className="Select__Label-sc-6agypz-0 daIoOD"
-            data-test={undefined}
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
-              data-test={undefined}
             >
               <span>
                 Select box (with prefix)
@@ -1338,7 +1310,6 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                 <img
                   alt="Anywhere"
                   className="CountryFlag__StyledCountryFlag-h98fwe-0 gMcwUa"
-                  data-test={undefined}
                   src="//images.kiwi.com/flags/24x0/flag-anywhere.jpg"
                   srcSet="//images.kiwi.com/flags/48x0/flag-anywhere.jpg 2x"
                   title="Anywhere"
@@ -1347,26 +1318,20 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
               <select
                 className="Select__StyledSelect-sc-6agypz-1 cQXTBT"
                 disabled={false}
-                name={undefined}
-                onBlur={undefined}
                 onChange={[Function]}
-                onFocus={undefined}
                 value=""
               >
                 <option
-                  disabled={undefined}
                   value={1}
                 >
                   First item
                 </option>
                 <option
-                  disabled={undefined}
                   value={2}
                 >
                   Second item
                 </option>
                 <option
-                  disabled={undefined}
                   value={3}
                 >
                   Third item
@@ -1377,7 +1342,6 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
@@ -1413,82 +1377,73 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      Select
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Select
+                      </span>
                       <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          label
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            label
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              Select box (with prefix)
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                Select box (with prefix)
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          options
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            options
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -1499,7 +1454,6 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                               >
                                 [
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -1508,38 +1462,38 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        1
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      1
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -1550,17 +1504,13 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      First item
-                                      "
+                                      'First item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -1569,38 +1519,38 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        2
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      2
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -1611,17 +1561,13 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Second item
-                                      "
+                                      'Second item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -1630,38 +1576,38 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        3
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      3
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -1672,13 +1618,10 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Third item
-                                      "
+                                      'Third item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
                                 ]
                               </span>
@@ -1686,23 +1629,21 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onChange
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            onChange
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -1711,29 +1652,27 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                                   }
                                 }
                               >
-                                onChange()
+                                onChange
                               </span>
                               }
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          prefix
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            prefix
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -1747,20 +1686,41 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                               }
                             </span>
                           </span>
+                          <br />
                         </span>
-                        <br />
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -1872,11 +1832,9 @@ exports[`Storyshots Select With error message 1`] = `
         >
           <label
             className="Select__Label-sc-6agypz-0 daIoOD"
-            data-test={undefined}
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
-              data-test={undefined}
             >
               <span>
                 Select box (with error text)
@@ -1888,26 +1846,20 @@ exports[`Storyshots Select With error message 1`] = `
               <select
                 className="Select__StyledSelect-sc-6agypz-1 hhbclm"
                 disabled={false}
-                name={undefined}
-                onBlur={undefined}
                 onChange={[Function]}
-                onFocus={undefined}
                 value=""
               >
                 <option
-                  disabled={undefined}
                   value={1}
                 >
                   First item
                 </option>
                 <option
-                  disabled={undefined}
                   value={2}
                 >
                   Second item
                 </option>
                 <option
-                  disabled={undefined}
                   value={3}
                 >
                   Third item
@@ -1918,7 +1870,6 @@ exports[`Storyshots Select With error message 1`] = `
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
@@ -1930,7 +1881,6 @@ exports[`Storyshots Select With error message 1`] = `
             </div>
             <div
               className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
-              data-test={undefined}
             >
               <div>
                 You need to select some value.
@@ -1962,82 +1912,73 @@ exports[`Storyshots Select With error message 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      Select
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Select
+                      </span>
                       <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          label
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            label
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              Select box (with error text)
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                Select box (with error text)
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          options
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            options
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -2048,7 +1989,6 @@ exports[`Storyshots Select With error message 1`] = `
                               >
                                 [
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -2057,38 +1997,38 @@ exports[`Storyshots Select With error message 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        1
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      1
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -2099,17 +2039,13 @@ exports[`Storyshots Select With error message 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      First item
-                                      "
+                                      'First item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -2118,38 +2054,38 @@ exports[`Storyshots Select With error message 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        2
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      2
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -2160,17 +2096,13 @@ exports[`Storyshots Select With error message 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Second item
-                                      "
+                                      'Second item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -2179,38 +2111,38 @@ exports[`Storyshots Select With error message 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        3
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      3
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -2221,13 +2153,10 @@ exports[`Storyshots Select With error message 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Third item
-                                      "
+                                      'Third item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
                                 ]
                               </span>
@@ -2235,23 +2164,21 @@ exports[`Storyshots Select With error message 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          error
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            error
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -2266,23 +2193,21 @@ exports[`Storyshots Select With error message 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onChange
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            onChange
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -2291,25 +2216,46 @@ exports[`Storyshots Select With error message 1`] = `
                                   }
                                 }
                               >
-                                onChange()
+                                onChange
                               </span>
                               }
                             </span>
                           </span>
+                          <br />
                         </span>
-                        <br />
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -2421,11 +2367,9 @@ exports[`Storyshots Select With help message 1`] = `
         >
           <label
             className="Select__Label-sc-6agypz-0 daIoOD"
-            data-test={undefined}
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
-              data-test={undefined}
             >
               <span>
                 Select box (with help text)
@@ -2437,26 +2381,20 @@ exports[`Storyshots Select With help message 1`] = `
               <select
                 className="Select__StyledSelect-sc-6agypz-1 opAdU"
                 disabled={false}
-                name={undefined}
-                onBlur={undefined}
                 onChange={[Function]}
-                onFocus={undefined}
                 value=""
               >
                 <option
-                  disabled={undefined}
                   value={1}
                 >
                   First item
                 </option>
                 <option
-                  disabled={undefined}
                   value={2}
                 >
                   Second item
                 </option>
                 <option
-                  disabled={undefined}
                   value={3}
                 >
                   Third item
@@ -2467,7 +2405,6 @@ exports[`Storyshots Select With help message 1`] = `
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
@@ -2479,7 +2416,6 @@ exports[`Storyshots Select With help message 1`] = `
             </div>
             <div
               className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
-              data-test={undefined}
             >
               Most common choice is Booking cancellation
             </div>
@@ -2509,82 +2445,73 @@ exports[`Storyshots Select With help message 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      Select
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Select
+                      </span>
                       <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          label
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            label
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              Select box (with help text)
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                Select box (with help text)
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          options
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            options
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -2595,7 +2522,6 @@ exports[`Storyshots Select With help message 1`] = `
                               >
                                 [
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -2604,38 +2530,38 @@ exports[`Storyshots Select With help message 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        1
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      1
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -2646,17 +2572,13 @@ exports[`Storyshots Select With help message 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      First item
-                                      "
+                                      'First item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -2665,38 +2587,38 @@ exports[`Storyshots Select With help message 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        2
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      2
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -2707,17 +2629,13 @@ exports[`Storyshots Select With help message 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Second item
-                                      "
+                                      'Second item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -2726,38 +2644,38 @@ exports[`Storyshots Select With help message 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        3
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      3
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -2768,13 +2686,10 @@ exports[`Storyshots Select With help message 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Third item
-                                      "
+                                      'Third item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
                                 ]
                               </span>
@@ -2782,53 +2697,51 @@ exports[`Storyshots Select With help message 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          help
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            help
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              Most common choice is Booking cancellation
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                Most common choice is Booking cancellation
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onChange
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            onChange
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -2837,25 +2750,46 @@ exports[`Storyshots Select With help message 1`] = `
                                   }
                                 }
                               >
-                                onChange()
+                                onChange
                               </span>
                               }
                             </span>
                           </span>
+                          <br />
                         </span>
-                        <br />
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -2967,11 +2901,9 @@ exports[`Storyshots Select With placeholder 1`] = `
         >
           <label
             className="Select__Label-sc-6agypz-0 daIoOD"
-            data-test={undefined}
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
-              data-test={undefined}
             >
               <span>
                 Select box (with placeholder)
@@ -2983,10 +2915,7 @@ exports[`Storyshots Select With placeholder 1`] = `
               <select
                 className="Select__StyledSelect-sc-6agypz-1 opAdU"
                 disabled={false}
-                name={undefined}
-                onBlur={undefined}
                 onChange={[Function]}
-                onFocus={undefined}
                 value=""
               >
                 <option
@@ -2996,19 +2925,16 @@ exports[`Storyshots Select With placeholder 1`] = `
                   Select value from list
                 </option>
                 <option
-                  disabled={undefined}
                   value={1}
                 >
                   First item
                 </option>
                 <option
-                  disabled={undefined}
                   value={2}
                 >
                   Second item
                 </option>
                 <option
-                  disabled={undefined}
                   value={3}
                 >
                   Third item
@@ -3019,7 +2945,6 @@ exports[`Storyshots Select With placeholder 1`] = `
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
@@ -3055,112 +2980,103 @@ exports[`Storyshots Select With placeholder 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      Select
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Select
+                      </span>
                       <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          label
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            label
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              Select box (with placeholder)
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                Select box (with placeholder)
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          placeholder
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            placeholder
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              Select value from list
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                Select value from list
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          options
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            options
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -3171,7 +3087,6 @@ exports[`Storyshots Select With placeholder 1`] = `
                               >
                                 [
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -3180,38 +3095,38 @@ exports[`Storyshots Select With placeholder 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        1
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      1
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -3222,17 +3137,13 @@ exports[`Storyshots Select With placeholder 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      First item
-                                      "
+                                      'First item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -3241,38 +3152,38 @@ exports[`Storyshots Select With placeholder 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        2
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      2
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -3283,17 +3194,13 @@ exports[`Storyshots Select With placeholder 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Second item
-                                      "
+                                      'Second item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -3302,38 +3209,38 @@ exports[`Storyshots Select With placeholder 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        3
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      3
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -3344,13 +3251,10 @@ exports[`Storyshots Select With placeholder 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Third item
-                                      "
+                                      'Third item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
                                 ]
                               </span>
@@ -3358,23 +3262,21 @@ exports[`Storyshots Select With placeholder 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onChange
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            onChange
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -3383,25 +3285,46 @@ exports[`Storyshots Select With placeholder 1`] = `
                                   }
                                 }
                               >
-                                onChange()
+                                onChange
                               </span>
                               }
                             </span>
                           </span>
+                          <br />
                         </span>
-                        <br />
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -3513,11 +3436,9 @@ exports[`Storyshots Select With prefix 1`] = `
         >
           <label
             className="Select__Label-sc-6agypz-0 daIoOD"
-            data-test={undefined}
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
-              data-test={undefined}
             >
               <span>
                 Select box (with prefix)
@@ -3531,7 +3452,6 @@ exports[`Storyshots Select With prefix 1`] = `
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
-                  data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
@@ -3543,26 +3463,20 @@ exports[`Storyshots Select With prefix 1`] = `
               <select
                 className="Select__StyledSelect-sc-6agypz-1 cQXTBT"
                 disabled={false}
-                name={undefined}
-                onBlur={undefined}
                 onChange={[Function]}
-                onFocus={undefined}
                 value=""
               >
                 <option
-                  disabled={undefined}
                   value={1}
                 >
                   First item
                 </option>
                 <option
-                  disabled={undefined}
                   value={2}
                 >
                   Second item
                 </option>
                 <option
-                  disabled={undefined}
                   value={3}
                 >
                   Third item
@@ -3573,7 +3487,6 @@ exports[`Storyshots Select With prefix 1`] = `
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
@@ -3609,82 +3522,73 @@ exports[`Storyshots Select With prefix 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      Select
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Select
+                      </span>
                       <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          label
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            label
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              Select box (with prefix)
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                Select box (with prefix)
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          options
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            options
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -3695,7 +3599,6 @@ exports[`Storyshots Select With prefix 1`] = `
                               >
                                 [
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -3704,38 +3607,38 @@ exports[`Storyshots Select With prefix 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        1
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      1
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -3746,17 +3649,13 @@ exports[`Storyshots Select With prefix 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      First item
-                                      "
+                                      'First item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -3765,38 +3664,38 @@ exports[`Storyshots Select With prefix 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        2
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      2
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -3807,17 +3706,13 @@ exports[`Storyshots Select With prefix 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Second item
-                                      "
+                                      'Second item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -3826,38 +3721,38 @@ exports[`Storyshots Select With prefix 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        3
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      3
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -3868,13 +3763,10 @@ exports[`Storyshots Select With prefix 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Third item
-                                      "
+                                      'Third item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
                                 ]
                               </span>
@@ -3882,23 +3774,21 @@ exports[`Storyshots Select With prefix 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onChange
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            onChange
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -3907,29 +3797,27 @@ exports[`Storyshots Select With prefix 1`] = `
                                   }
                                 }
                               >
-                                onChange()
+                                onChange
                               </span>
                               }
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          prefix
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            prefix
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -3943,20 +3831,41 @@ exports[`Storyshots Select With prefix 1`] = `
                               }
                             </span>
                           </span>
+                          <br />
                         </span>
-                        <br />
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>
@@ -4068,11 +3977,9 @@ exports[`Storyshots Select With small size 1`] = `
         >
           <label
             className="Select__Label-sc-6agypz-0 daIoOD"
-            data-test={undefined}
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
-              data-test={undefined}
             >
               <span>
                 Select box (small size)
@@ -4084,26 +3991,20 @@ exports[`Storyshots Select With small size 1`] = `
               <select
                 className="Select__StyledSelect-sc-6agypz-1 hHCjZX"
                 disabled={false}
-                name={undefined}
-                onBlur={undefined}
                 onChange={[Function]}
-                onFocus={undefined}
                 value=""
               >
                 <option
-                  disabled={undefined}
                   value={1}
                 >
                   First item
                 </option>
                 <option
-                  disabled={undefined}
                   value={2}
                 >
                   Second item
                 </option>
                 <option
-                  disabled={undefined}
                   value={3}
                 >
                   Third item
@@ -4114,7 +4015,6 @@ exports[`Storyshots Select With small size 1`] = `
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  data-test={undefined}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
@@ -4150,112 +4050,103 @@ exports[`Storyshots Select With small size 1`] = `
                   Source
                 </h4>
                 <pre
-                  style={
-                    Object {
-                      "backgroundColor": "#fafafa",
-                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                      "fontSize": ".88em",
-                      "lineHeight": 1.5,
-                      "overflowX": "scroll",
-                      "padding": ".5rem",
-                    }
-                  }
+                  className="css-4akams"
                 >
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#777",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      Select
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        Select
+                      </span>
                       <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          label
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            label
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              Select box (small size)
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                Select box (small size)
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          size
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
+                            size
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
                               "
-                              small
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                small
+                              </span>
                               "
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          options
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            options
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -4266,7 +4157,6 @@ exports[`Storyshots Select With small size 1`] = `
                               >
                                 [
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -4275,38 +4165,38 @@ exports[`Storyshots Select With small size 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        1
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      1
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -4317,17 +4207,13 @@ exports[`Storyshots Select With small size 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      First item
-                                      "
+                                      'First item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -4336,38 +4222,38 @@ exports[`Storyshots Select With small size 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        2
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      2
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -4378,17 +4264,13 @@ exports[`Storyshots Select With small size 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Second item
-                                      "
+                                      'Second item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
-                                , 
+                                ,
                                 <span>
-                                  {
                                   <span
                                     style={
                                       Object {
@@ -4397,38 +4279,38 @@ exports[`Storyshots Select With small size 1`] = `
                                     }
                                   >
                                     {
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      value
-                                    </span>
-                                    : 
                                     <span>
-                                      {
                                       <span
                                         style={
                                           Object {
-                                            "color": "#a11",
+                                            "color": "#666",
                                           }
                                         }
                                       >
-                                        3
+                                        value
                                       </span>
-                                      }
                                     </span>
-                                    , 
+                                    : 
                                     <span
                                       style={
                                         Object {
-                                          "color": "#666",
+                                          "color": "#a11",
                                         }
                                       }
                                     >
-                                      label
+                                      3
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        label
+                                      </span>
                                     </span>
                                     : 
                                     <span
@@ -4439,13 +4321,10 @@ exports[`Storyshots Select With small size 1`] = `
                                         }
                                       }
                                     >
-                                      "
-                                      Third item
-                                      "
+                                      'Third item'
                                     </span>
                                     }
                                   </span>
-                                  }
                                 </span>
                                 ]
                               </span>
@@ -4453,23 +4332,21 @@ exports[`Storyshots Select With small size 1`] = `
                             </span>
                           </span>
                         </span>
-                      </span>
-                      <span>
                         <span>
-                          <br />
-                            
-                        </span>
-                        <span
-                          style={Object {}}
-                        >
-                          onChange
-                        </span>
-                        <span>
-                          =
+                          <span>
+                            <br />
+                              
+                          </span>
                           <span
                             style={Object {}}
                           >
-                            <span>
+                            onChange
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
                               {
                               <span
                                 style={
@@ -4478,25 +4355,46 @@ exports[`Storyshots Select With small size 1`] = `
                                   }
                                 }
                               >
-                                onChange()
+                                onChange
                               </span>
                               }
                             </span>
                           </span>
+                          <br />
                         </span>
-                        <br />
                       </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
                         }
-                      }
-                    >
-                      /&gt;
-                    </span>
+                      >
+                        /&gt;
+                      </span>
+                    </div>
                   </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
                 </pre>
               </div>
             </div>

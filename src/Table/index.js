@@ -114,7 +114,7 @@ class Table extends React.PureComponent<Props, State> {
   handleResize = () => {
     const { table, outer } = this;
     if (table && outer) {
-      const showShadows = table.clientWidth > outer.clientWidth;
+      const showShadows = table.current?.clientWidth > outer.current?.clientWidth;
       this.setState({ showShadows, showRight: showShadows });
     }
   };
@@ -124,42 +124,30 @@ class Table extends React.PureComponent<Props, State> {
     const { showShadows } = this.state;
     if (showShadows && inner && table && outer) {
       this.setState({
-        showLeft: inner.scrollLeft >= 5,
-        showRight: inner.scrollLeft + outer.clientWidth <= table.clientWidth,
+        showLeft: inner.current?.scrollLeft >= 5,
+        showRight:
+          inner.current?.scrollLeft + outer.current?.clientWidth <= table.current?.clientWidth,
       });
     }
   };
 
-  outer: ?HTMLElement;
-  inner: ?HTMLElement;
-  table: ?HTMLElement;
+  outer: { current: any | HTMLElement } = React.createRef();
+  inner: { current: any | HTMLElement } = React.createRef();
+  table: { current: any | HTMLElement } = React.createRef();
 
   render() {
     const { children, compact = false, dataTest } = this.props;
     const { showShadows, showLeft, showRight } = this.state;
     return (
       <StyledTableOuter
-        innerRef={outer => {
-          this.outer = outer;
-        }}
+        ref={this.outer}
         showShadows={showShadows}
         showLeft={showLeft}
         showRight={showRight}
         data-test={dataTest}
       >
-        <StyledTableInner
-          innerRef={inner => {
-            this.inner = inner;
-          }}
-          onScroll={this.handleScroll}
-          showShadows={showShadows}
-        >
-          <StyledTable
-            compact={compact}
-            innerRef={table => {
-              this.table = table;
-            }}
-          >
+        <StyledTableInner ref={this.inner} onScroll={this.handleScroll} showShadows={showShadows}>
+          <StyledTable compact={compact} ref={this.table}>
             {children}
           </StyledTable>
         </StyledTableInner>

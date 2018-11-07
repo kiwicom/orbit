@@ -1,12 +1,21 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import toggleDown from "../../utils/toggleDown/index";
 import toggleUp from "../../utils/toggleUp/index";
 import defaultTokens from "../../defaultTokens";
 
 import type { Props } from "./index";
+
+const getAnimation = ({ theme, expanded, contentHeight }) =>
+  expanded
+    ? css`
+        ${theme.orbit.durationFast} ${toggleDown(contentHeight)} linear;
+      `
+    : css`
+        ${theme.orbit.durationFast} ${toggleUp(contentHeight)} linear;
+      `;
 
 const StyledTileExpandable = styled.div`
   border-top: ${({ theme, expanded }) =>
@@ -25,11 +34,7 @@ const StyledTileExpandable = styled.div`
       border-top ${theme.orbit.durationFast} linear
     `};
   overflow: hidden;
-  animation: ${({ theme, contentHeight, expanded, initialExpanded }) =>
-    !initialExpanded &&
-    (expanded
-      ? `${theme.orbit.durationFast} ${toggleDown(contentHeight)} linear`
-      : `${theme.orbit.durationFast} ${toggleUp(contentHeight)} linear`)};
+  animation: ${({ initialExpanded }) => !initialExpanded && getAnimation};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   color: ${({ theme }) => theme.orbit.colorTextPrimary};
@@ -51,7 +56,7 @@ class TileExpandable extends React.PureComponent<Props> {
   }
 
   setHeight = () => {
-    this.contentHeight = this.node.current.clientHeight;
+    this.contentHeight = this.node?.current.clientHeight;
   };
 
   contentHeight: number;

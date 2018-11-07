@@ -125,7 +125,7 @@ const Textarea = React.forwardRef((props: Props, ref: Ref) => {
         onFocus={props.onFocus}
         onBlur={props.onBlur}
         resize={resize}
-        innerRef={ref}
+        ref={ref}
       />
       {props.help && !props.error && <FormFeedback type="help">{props.help}</FormFeedback>}
       {props.error && <FormFeedback type="error">{props.error}</FormFeedback>}

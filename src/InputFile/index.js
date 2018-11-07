@@ -118,7 +118,7 @@ const InputFile = React.forwardRef((props: Props, ref: Ref) => {
         onFocus={props.onChange}
         onBlur={props.onBlur}
         accept={props.allowedFileTypes}
-        innerRef={ref}
+        ref={ref}
       />
       {props.label && <FormLabel filled={!!props.fileName}>{props.label}</FormLabel>}
       <FakeInput error={props.error}>

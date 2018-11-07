@@ -276,16 +276,16 @@ class Modal extends React.PureComponent<Props, State> {
     if (
       closable &&
       onClose &&
-      this.node &&
+      this.node?.current &&
       ev.target instanceof Node &&
-      !this.node.contains(ev.target)
+      !this.node.current.contains(ev.target)
     ) {
       // If is clicked outside of modal
       onClose(ev);
     }
   };
 
-  node: ?HTMLElement;
+  node: { current: any | HTMLElement } = React.createRef();
   offset = 40;
 
   render() {
@@ -315,9 +315,7 @@ class Modal extends React.PureComponent<Props, State> {
             size={size}
             fixedFooter={fixedFooter}
             scrolled={scrolled}
-            innerRef={node => {
-              this.node = node;
-            }}
+            ref={this.node}
             fixedClose={fixedClose}
             fullyScrolled={fullyScrolled}
           >

@@ -33,7 +33,7 @@ module.exports = {
   heightServiceLogoLarge: "48px",
   backgroundButtonLinkSecondaryHover: "rgb(229, 234, 239)",
   paletteBlueNormalActive: "rgb(0, 100, 178)",
-  boxShadowElevatedLevel1: "0 4px 12px 0 rgba(23, 27, 30, 0.15)",
+  boxShadowElevatedLevel1: "0 4px 12px 0 rgba(23, 27, 30, 0.3)",
   colorIconAttention: "rgb(23, 27, 30)",
   colorTextButtonWarningHover: "rgb(255, 255, 255)",
   boxShadowModal: "0 20px 60px 0 rgba(23, 27, 30, 0.4)",
@@ -67,7 +67,7 @@ module.exports = {
   opacityOverlay: "0.8",
   borderStyleInput: "solid",
   fontSizeButtonSmall: "12px",
-  // use for all basic elements like buttons, inputs, content containers
+  /* use for all basic elements like buttons, inputs, content containers */
   borderRadiusNormal: "3px",
   borderRadiusBadge: "12px",
   colorTextButtonWarningBordered: "rgb(249, 151, 30)",
@@ -119,7 +119,7 @@ module.exports = {
   borderColorButtonCriticalBorderedHover: "rgb(189, 25, 25)",
   spaceXxxLarge: "52px",
   fontSizeButtonNormal: "14px",
-  // use for smaller elements like tags
+  /* use for smaller elements like tags */
   borderRadiusSmall: "2px",
   paletteInkNormalHover: "rgb(63, 72, 84)",
   fontSizeTextSmall: "12px",
@@ -180,7 +180,7 @@ module.exports = {
   marginButtonIconSmall: "8px",
   heightServiceLogoSmall: "12px",
   paddingInputSmall: "0 12px",
-  // use only for square
+  /* use only for square */
   borderRadiusCircle: "50%",
   paletteWhite: "rgb(255, 255, 255)",
   colorPlaceholderInputError: "rgb(210, 28, 28)",
@@ -353,7 +353,7 @@ module.exports = {
   colorTextButtonPrimaryHover: "rgb(255, 255, 255)",
   paletteRedNormal: "rgb(210, 28, 28)",
   colorTextButtonSecondaryBordered: "rgb(70, 81, 94)",
-  // use for big elements like modal and large buttons
+  /* use for big elements like modal and large buttons */
   borderRadiusLarge: "6px",
   backgroundButtonCriticalHover: "rgb(189, 25, 25)",
   colorTextButtonLinkSecondaryActive: "rgb(56, 64, 75)",

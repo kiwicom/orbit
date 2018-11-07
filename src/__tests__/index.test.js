@@ -12,7 +12,7 @@ describe("defaultTokens", () => {
   });
 });
 
-describe("getTokens should accept some palette", () => {
+describe("getTokens should accept some palette and base foundation", () => {
   var brand = {
     palette: {
       product: {

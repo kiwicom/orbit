@@ -5,7 +5,7 @@ import { View, Text } from "react-native";
 
 import defaultTokens from "../defaultTokens";
 import TOKENS from "./consts";
-import styled from "../styled";
+import styled, {lineHeight} from "../styled";
 import Touchable from "../Touchable";
 
 import type { Props } from "./index";
@@ -57,7 +57,7 @@ const StyledLabel = styled(Text, props => {
     fontSize: theme.orbit.fontSizeFormLabel,
     color: theme.orbit.colorFormLabel,
     height: theme.orbit.heightCheckbox,
-    // lineHeight: theme.orbit.heightCheckbox,
+    lineHeight: lineHeight(theme.orbit.fontSizeFormLabel, theme.orbit.heightCheckbox),
   };
 });
 
@@ -70,7 +70,7 @@ const StyledInfo = styled(Text, props => {
   return {
     fontSize: theme.orbit.fontSizeFormFeedback,
     color: theme.orbit.colorInfoCheckBoxRadio,
-    // lineHeight: theme.orbit.lineHeightText,
+    lineHeight: lineHeight(theme.orbit.fontSizeFormFeedback, theme.orbit.lineHeightText),
   };
 });
 

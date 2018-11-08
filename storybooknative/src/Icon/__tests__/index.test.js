@@ -14,6 +14,14 @@ describe("Icon", () => {
     expect(instance.findByType(Text).props.children).toBe("V");
   });
 
+  it("should have correct size and color", () => {
+    const customComponent = renderer.create(<Icon name="check" size={40} color="red" />);
+    const customInstance = customComponent.root;
+
+    expect(customInstance.findByType(Text).props.size).toBe(40);
+    expect(customInstance.findByType(Text).props.color).toBe("red");
+  });
+
   it("should match the snapshot", () => {
     expect(component.toJSON()).toMatchSnapshot();
   });

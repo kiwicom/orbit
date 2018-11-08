@@ -25,6 +25,11 @@ StyledText.defaultProps = {
 };
 
 const getIconCharacter = name => {
+  const icon = iconsMap[name];
+  if (!icon) {
+    throw Error(`Icon with name "${name}" does not exist.`);
+  }
+
   if (/^E(.{3})$/.test(iconsMap[name].character)) {
     return String.fromCharCode(parseInt(iconsMap[name].character, 16));
   }

@@ -18,43 +18,63 @@ Table below contains all types of the props available in CarrierLogo component.
 | spaceAfter    | `enum`                           |                 | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 ### enum
 
-| name                        | size           |
-| :-------------------------- | :------------- |
-| `"Accommodation"`           | `"small"`      |
-| `"AirportTransport"`        | `"medium"`     |
-| `"AirportTransportTaxi"`    |                |
-| `"BoardingPass"`            |                |
-| `"CabinBaggage"`            |                |
-| `"EnjoyApp"`                |                |
-| `"Feedback"`                |                |
-| `"Help"`                    |                |
-| `"Improve"`                 |                |
-| `"Insurance"`               |                |
-| `"InviteAFriend"`           |                |
-| `"Login"`                   |                |
-| `"Lounge"`                  |                |
-| `"Mailbox"`                 |                |
-| `"Meal"`                    |                |
-| `"Money"`                   |                |
-| `"NetVerify"`               |                |
-| `"NoBookings"`              |                |
-| `"NoFavoriteFlights"`       |                |
-| `"NoNotification"`          |                |
-| `"Offline"`                 |                |
-| `"OpenSearch"`              |                |
-| `"Parking"`                 |                |
-| `"PlaceholderAirport"`      |                |
-| `"PlaceholderDestination"`  |                |
-| `"PlaceholderHotel"`        |                |
-| `"PlaneAndMoney"`           |                |
-| `"PriorityBoarding"`        |                |
-| `"Rating"`                  |                |
-| `"ReferAFriend"`            |                |
-| `"RentalCar"`               |                |
-| `"Time"`                    |                |
-| `"TimelineBoarding"`        |                |
-| `"TimelineDropBaggage"`     |                |
-| `"TimelineLeave"`           |                |
-| `"TimelinePick"`            |                |
-| `"Tours"`                   |                |
-| `"Train"`                   |                |
+| name                          | size           |
+| :---------------------------- | :------------- |
+| `"Accommodation"`             | `"small"`      |
+| `"AirHelp"`                   | `"medium"`     |
+| `"AirportTransport"`          |
+| `"AirportTransportTaxi"`      |
+| `"BaggageDrop"`               |
+| `"Boarding"`                  |
+| `"BoardingPass"`              |
+| `"BusinessTravel"`            |
+| `"CabinBaggage"`              |
+| `"DesktopSearch"`             |
+| `"EnjoyApp"`                  |
+| `"Error"`                     |
+| `"FastTrack"`                 |
+| `"Feedback"`                  |
+| `"Help"`                      |
+| `"Improve"`                   |
+| `"Insurance"`                 |
+| `"InviteAFriend"`             |
+| `"Login"`                     |
+| `"Lounge"`                    |
+| `"Mailbox"`                   |
+| `"Meal"`                      |
+| `"MobileApp"`                 |
+| `"Money"`                     |
+| `"MusicalInstruments"`        |
+| `"NetVerify"`                 |
+| `"NoBookings"`                |
+| `"NoFavoriteFlights"`         |
+| `"Nomad"`                     |
+| `"NoNotification"`            |
+| `"NoResults"`                 |
+| `"Offline"`                   |
+| `"OnlineCheckIn"`             |
+| `"OpenSearch"`                |
+| `"Parking"`                   |
+| `"Pets"`                      |
+| `"PlaceholderAirport"`        |
+| `"PlaceholderDestination"`    |
+| `"PlaceholderHotel"`          |
+| `"PlaceholderTours"`          |
+| `"PlaneAndMoney"`             |
+| `"PriorityBoarding"`          |
+| `"Rating"`                    |
+| `"ReferAFriend"`              |
+| `"RentalCar"`                 |
+| `"Seating"`                   |
+| `"SpecialAssistance"`         |
+| `"SportsEquipment"`           |
+| `"Success"`                   |
+| `"Time"`                      |
+| `"TimelineBoarding"`          |
+| `"TimelineDropBaggage"`       |
+| `"TimelineLeave"`             |
+| `"TimelinePick"`              |
+| `"Tours"`                     |
+| `"Train"`                     |
+| `"TransportBus"`              |
+| `"TransportTaxi"`             |

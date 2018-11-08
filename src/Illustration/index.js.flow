@@ -1,6 +1,5 @@
 // @flow
 import type { Globals } from "../common/common.js.flow";
-import defaultTokens from "../defaultTokens";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 type Name =

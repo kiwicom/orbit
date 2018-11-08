@@ -1,8 +1,15 @@
 {
   "name": "@kiwicom/orbit-react-native",
-  "version": "0.0.8",
+  "version": "0.0.1",
   "private": true,
-  "main": "index.js",
+  "main": "lib/index.js",
+  "files": [
+    "/lib",
+    "package.json",
+    ".babelrc",
+    ".flowconfig",
+    "README.md"
+  ],
   "scripts": {
     "start": "yarn storybook",
     "test": "./scripts/test.sh",
@@ -14,7 +21,8 @@
     "android": "react-native run-android",
     "storybook-web": "start-storybook -p 9009 -s public",
     "build-storybook-web": "build-storybook -s public",
-    "create-new-component": "node ./scripts/create-new-component.js"
+    "create-new-component": "node ./scripts/create-new-component.js",
+    "create-package": "yarn babel-node scripts/createPackage.js"
   },
   "peerDependencies": {
     "react": "^16.5.1",
@@ -26,6 +34,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
+    "@babel/node": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-transform-flow-strip-types": "^7.0.0",
     "@babel/runtime": "^7.1.2",
@@ -45,13 +54,14 @@
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.48.0",
     "prop-types": "^15.6.2",
-    "react-art": "^16.5.2",
     "react": "^16.5.1",
-    "react-native": "0.57.1",
+    "react-art": "^16.5.2",
     "react-dom": "16.5.1",
+    "react-native": "0.57.1",
     "react-native-storybook-loader": "^1.8.0",
     "react-native-web": "^0.9.1",
     "react-test-renderer": "16.5.0",
+    "rimraf": "^2.6.2",
     "webpack": "^4.20.2"
   },
   "jest": {

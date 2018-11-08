@@ -58,3 +58,6 @@ storybook-static
 
 # Bundle artifact
 *.jsbundle
+
+# Build
+lib/

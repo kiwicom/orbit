@@ -26,7 +26,7 @@ StyledText.defaultProps = {
 
 const getIconCharacter = name => {
   if (/^E(.{3})$/.test(iconsMap[name].character)) {
-    return String.fromCodePoint(parseInt(iconsMap[name].character, 16));
+    return String.fromCharCode(parseInt(iconsMap[name].character, 16));
   }
   return iconsMap[name].character;
 };

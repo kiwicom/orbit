@@ -2,7 +2,7 @@
 import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
-import chaptersAddon from "react-storybook-addon-chapters";
+import chaptersAddon, { setDefaults } from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 
 import {
@@ -17,6 +17,7 @@ import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import Text from "./index";
 
 setAddon(chaptersAddon);
+setDefaults({ sectionOptions: { showSource: false } });
 
 const customText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.";

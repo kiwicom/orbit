@@ -1,18 +1,37 @@
 // @flow
+
 import * as React from "react";
+import { Text as RNText, Platform } from "react-native";
 import styled from "styled-components";
 
+import getSpacingToken from "../common/getSpacingToken";
 import defaultTokens from "../defaultTokens";
 import {
   TYPE_OPTIONS,
   WEIGHT_OPTIONS,
-  ELEMENT_OPTIONS,
   ALIGN_OPTIONS,
   SIZE_OPTIONS,
+  ELEMENT_OPTIONS,
 } from "./consts";
-import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
+
+const getSizeToken = () => ({ theme, size }) => {
+  const sizeTokens = {
+    [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeTextNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeTextSmall,
+  };
+  return sizeTokens[size];
+};
+
+const getWeightToken = () => ({ theme, weight }) => {
+  const weightTokens = {
+    [WEIGHT_OPTIONS.NORMAL]: theme.orbit.fontWeightNormal,
+    [WEIGHT_OPTIONS.BOLD]: theme.orbit.fontWeightBold,
+  };
+  return weightTokens[weight];
+};
 
 const getTypeToken = () => ({ theme, type }) => {
   const typeTokens = {
@@ -28,31 +47,18 @@ const getTypeToken = () => ({ theme, type }) => {
   return typeTokens[type];
 };
 
-const getWeightToken = () => ({ theme, weight }) => {
-  const weightTokens = {
-    [WEIGHT_OPTIONS.NORMAL]: theme.orbit.fontWeightNormal,
-    [WEIGHT_OPTIONS.BOLD]: theme.orbit.fontWeightBold,
-  };
-  return weightTokens[weight];
-};
-
-const getSizeToken = () => ({ theme, size }) => {
-  const sizeTokens = {
-    [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeTextNormal,
-    [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeTextSmall,
-  };
-  return sizeTokens[size];
-};
-
-export const StyledText = styled(({ element, children, className, dataTest }) => {
-  const TextElement = element;
-  return (
-    <TextElement className={className} data-test={dataTest}>
-      {children}
-    </TextElement>
-  );
-})`
+const Text = styled(
+  Platform.OS !== "web"
+    ? RNText
+    : ({ element = "span", children, className, dataTest }) => {
+        const TextElement = element;
+        return (
+          <TextElement className={className} data-test={dataTest}>
+            {children}
+          </TextElement>
+        );
+      },
+)`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${getSizeToken()};
   font-weight: ${getWeightToken()};
@@ -65,35 +71,32 @@ export const StyledText = styled(({ element, children, className, dataTest }) =>
   margin-bottom: ${getSpacingToken};
 `;
 
-StyledText.defaultProps = {
+Text.defaultProps = {
   theme: defaultTokens,
 };
-
-const Text = ({
+export default ({
+  element = ELEMENT_OPTIONS.P,
   type = TYPE_OPTIONS.PRIMARY,
   size = SIZE_OPTIONS.NORMAL,
   weight = WEIGHT_OPTIONS.NORMAL,
   align = ALIGN_OPTIONS.LEFT,
-  element = ELEMENT_OPTIONS.P,
   uppercase = false,
   italic = false,
   dataTest,
   spaceAfter,
   children,
 }: Props) => (
-  <StyledText
+  <Text
+    element={element}
     type={type}
     size={size}
     weight={weight}
     align={align}
-    element={element}
     uppercase={uppercase}
     italic={italic}
     dataTest={dataTest}
     spaceAfter={spaceAfter}
   >
     {children}
-  </StyledText>
+  </Text>
 );
-
-export default Text;

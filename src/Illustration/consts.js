@@ -3,11 +3,16 @@
 export const NAMES = [
   "Accommodation",
   "AirHelp",
-  "AirportTransport",
-  "AirportTransportTaxi",
+  "AirportTransport", // TODO: Get rid off 22.11
+  "AirportTransportTaxi", // TODO: Get rid off 22.11
+  "BaggageDrop",
+  "Boarding",
   "BoardingPass",
+  "BusinessTravel",
   "CabinBaggage",
+  "DesktopSearch",
   "EnjoyApp",
+  "Error",
   "FastTrack",
   "Feedback",
   "Help",
@@ -18,12 +23,15 @@ export const NAMES = [
   "Lounge",
   "Mailbox",
   "Meal",
+  "MobileApp",
   "Money",
   "MusicalInstruments",
   "NetVerify",
-  "NoBookings",
+  "NoBookings", // TODO: Get rid off 22.11
   "NoFavoriteFlights",
+  "Nomad",
   "NoNotification",
+  "NoResults",
   "Offline",
   "OnlineCheckIn",
   "OpenSearch",
@@ -32,6 +40,7 @@ export const NAMES = [
   "PlaceholderAirport",
   "PlaceholderDestination",
   "PlaceholderHotel",
+  "PlaceholderTours",
   "PlaneAndMoney",
   "PriorityBoarding",
   "Rating",
@@ -40,13 +49,16 @@ export const NAMES = [
   "Seating",
   "SpecialAssistance",
   "SportsEquipment",
+  "Success",
   "Time",
-  "TimelineBoarding",
-  "TimelineDropBaggage",
+  "TimelineBoarding", // TODO: Get rid off 22.11
+  "TimelineDropBaggage", // TODO: Get rid off 22.11
   "TimelineLeave",
   "TimelinePick",
   "Tours",
   "Train",
+  "TransportBus",
+  "TransportTaxi",
 ];
 export const SIZE_OPTIONS = {
   SMALL: "small",

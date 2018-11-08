@@ -29,7 +29,7 @@ const IconsList = () => (
     renderItem={({ item }) => (
       <StyledView key={item}>
         <Text>{item}</Text>
-        <Icon name={item} style={{ fontSize: 40 }} />
+        <Icon name={item} size={40} />
       </StyledView>
     )}
   />

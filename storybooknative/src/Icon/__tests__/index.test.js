@@ -7,6 +7,12 @@ import { Text } from "react-native";
 
 import Icon from "../index";
 
+// Jest have problems with the current structure of Icon && storybooknative
+jest.mock("@kiwicom/orbit-react-native", () => ({
+  // eslint-disable-next-line global-require
+  styled: require("../../styled").default,
+}));
+
 describe("Icon", () => {
   const component = renderer.create(<Icon name="check" />);
   const instance = component.root;

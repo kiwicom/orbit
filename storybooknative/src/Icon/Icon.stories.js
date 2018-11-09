@@ -1,6 +1,7 @@
 // @flow
 
 import * as React from "react";
+/* eslint-disable import/no-extraneous-dependencies */
 import { withKnobs } from "@storybook/addon-knobs";
 
 import { storiesOf } from "../../helpers/storiesOf";

@@ -1,6 +1,7 @@
 // @flow
 
 import * as React from "react";
+/* eslint-disable import/no-extraneous-dependencies */
 import renderer from "react-test-renderer";
 import { Text } from "react-native";
 

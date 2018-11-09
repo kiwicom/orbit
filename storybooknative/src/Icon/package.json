@@ -15,5 +15,11 @@
   "dependencies": {
     "@kiwicom/orbit-design-tokens": "^0.2.3",
     "@kiwicom/orbit-react-native": "^0.0.1"
-  }
+  },
+  "files": [
+    "fonts",
+    "index.js",
+    "index.js.flow",
+    "yarn.lock"
+  ]
 }

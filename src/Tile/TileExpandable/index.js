@@ -52,13 +52,20 @@ class TileExpandable extends React.PureComponent<Props> {
   }
 
   componentDidMount() {
-    setTimeout(this.setHeight, 250); // Prevent showing children on initial render
+    this.timeout = setTimeout(this.setHeight, 250); // Prevent showing children on initial render
+  }
+
+  componentWillUnmount() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
   }
 
   setHeight = () => {
     this.contentHeight = this.node?.current.clientHeight;
   };
 
+  timeout: TimeoutID;
   contentHeight: number;
   node: { current: any | HTMLDivElement };
 

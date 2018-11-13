@@ -74,6 +74,7 @@ const StyledChildren = styled.div`
 const StyledChild = styled.div`
   flex: ${({ flex }) => flex};
   padding-right: ${({ theme }) => theme.orbit.spaceXSmall};
+  box-sizing: initial;
   :last-child {
     padding-right: 0;
   }

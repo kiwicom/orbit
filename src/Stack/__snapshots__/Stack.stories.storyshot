@@ -578,7 +578,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                 className="InputField__InputContainer-sc-4opay-2 ksKWcl"
               >
                 <input
-                  className="InputField__Input-sc-4opay-6 fqqXrq"
+                  className="InputField__Input-sc-4opay-6 jLBLvd"
                   size="normal"
                   type="password"
                 />
@@ -1858,7 +1858,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                   className="InputField__InputContainer-sc-4opay-2 bnDMxw"
                 >
                   <input
-                    className="InputField__Input-sc-4opay-6 fqqXrq"
+                    className="InputField__Input-sc-4opay-6 jLBLvd"
                     size="normal"
                     type="password"
                   />

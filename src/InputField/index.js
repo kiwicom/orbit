@@ -170,6 +170,7 @@ Suffix.defaultProps = {
 
 export const Input = styled.input`
   appearance: none;
+  box-sizing: initial;
   font-family: inherit;
   border: none;
   padding: ${getToken(TOKENS.paddingInput)};

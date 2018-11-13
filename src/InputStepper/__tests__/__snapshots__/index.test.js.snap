@@ -285,6 +285,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  box-sizing: initial;
   font-family: inherit;
   border: none;
   padding: 0 12px;
@@ -11883,7 +11884,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     "isStatic": false,
                                     "lastClassName": "c11",
                                     "rules": Array [
-                                      "appearance:none;font-family:inherit;border:none;padding:",
+                                      "appearance:none;box-sizing:initial;font-family:inherit;border:none;padding:",
                                       [Function],
                                       ";font-size:inherit;color:inherit;background-color:transparent;cursor:inherit;flex:1 auto;width:100%;height:100%;line-height:",
                                       [Function],

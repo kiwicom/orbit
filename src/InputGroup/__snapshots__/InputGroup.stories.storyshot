@@ -111,7 +111,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
               className="InputGroup__StyledChildren-cyuwoi-1 dFOuKS"
             >
               <div
-                className="InputGroup__StyledChild-cyuwoi-2 dDOQUJ"
+                className="InputGroup__StyledChild-cyuwoi-2 iBvZxn"
               >
                 <label
                   className="InputField__Field-sc-4opay-0 iedcUZ"
@@ -120,7 +120,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 fqqXrq"
+                      className="InputField__Input-sc-4opay-6 jLBLvd"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -135,7 +135,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                 </label>
               </div>
               <div
-                className="InputGroup__StyledChild-cyuwoi-2 evMQAw"
+                className="InputGroup__StyledChild-cyuwoi-2 iwIuhV"
               >
                 <label
                   className="Select__Label-sc-6agypz-0 daIoOD"
@@ -235,7 +235,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                 </label>
               </div>
               <div
-                className="InputGroup__StyledChild-cyuwoi-2 fDMlGe"
+                className="InputGroup__StyledChild-cyuwoi-2 dWLYQx"
               >
                 <label
                   className="InputField__Field-sc-4opay-0 iedcUZ"
@@ -244,7 +244,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 fqqXrq"
+                      className="InputField__Input-sc-4opay-6 jLBLvd"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -1146,7 +1146,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
               className="InputGroup__StyledChildren-cyuwoi-1 dFOuKS"
             >
               <div
-                className="InputGroup__StyledChild-cyuwoi-2 cpbNdl"
+                className="InputGroup__StyledChild-cyuwoi-2 eQshZC"
               >
                 <label
                   className="Select__Label-sc-6agypz-0 daIoOD"
@@ -1201,7 +1201,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                 </label>
               </div>
               <div
-                className="InputGroup__StyledChild-cyuwoi-2 evMQAw"
+                className="InputGroup__StyledChild-cyuwoi-2 iwIuhV"
               >
                 <label
                   className="InputField__Field-sc-4opay-0 iedcUZ"
@@ -1210,7 +1210,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 fqqXrq"
+                      className="InputField__Input-sc-4opay-6 jLBLvd"
                       maxLength={11}
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -1989,7 +1989,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
               className="InputGroup__StyledChildren-cyuwoi-1 dFOuKS"
             >
               <div
-                className="InputGroup__StyledChild-cyuwoi-2 bgNOTt"
+                className="InputGroup__StyledChild-cyuwoi-2 jqPbfI"
               >
                 <label
                   className="Select__Label-sc-6agypz-0 daIoOD"
@@ -2033,7 +2033,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 </label>
               </div>
               <div
-                className="InputGroup__StyledChild-cyuwoi-2 evMQAw"
+                className="InputGroup__StyledChild-cyuwoi-2 iwIuhV"
               >
                 <label
                   className="InputField__Field-sc-4opay-0 iedcUZ"
@@ -2042,7 +2042,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 fqqXrq"
+                      className="InputField__Input-sc-4opay-6 jLBLvd"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -2057,7 +2057,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 </label>
               </div>
               <div
-                className="InputGroup__StyledChild-cyuwoi-2 jkIxV"
+                className="InputGroup__StyledChild-cyuwoi-2 LMSqA"
               >
                 <label
                   className="Select__Label-sc-6agypz-0 daIoOD"
@@ -2101,7 +2101,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 </label>
               </div>
               <div
-                className="InputGroup__StyledChild-cyuwoi-2 fCErSP"
+                className="InputGroup__StyledChild-cyuwoi-2 ipoSNN"
               >
                 <label
                   className="InputField__Field-sc-4opay-0 iedcUZ"
@@ -2110,7 +2110,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 fqqXrq"
+                      className="InputField__Input-sc-4opay-6 jLBLvd"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}

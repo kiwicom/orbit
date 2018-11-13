@@ -26,6 +26,7 @@ const Container = styled.div`
   border: ${defaultTokens.borderWidthCard} ${defaultTokens.borderStyleCard}
     ${defaultTokens.paletteCloudNormal};
   padding-right: ${defaultTokens.spaceLarge};
+  box-sizing: initial;
 `;
 
 const IconImport = styled.div`
@@ -45,6 +46,7 @@ const IconList = () => (
       const Icon = styled(Icons[icon])`
         padding: 0 ${defaultTokens.spaceLarge};
         flex-shrink: 0;
+        box-sizing: initial;
       `;
       const iconName = `${icon}`;
       return (

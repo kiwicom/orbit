@@ -98,7 +98,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
           }
         >
           <div
-            className="TripSector__StyledTripSector-v14xkf-0 jbYUNi"
+            className="TripSector__StyledTripSector-v14xkf-0 gzaCdT"
           >
             <div
               className="TripDate__StyledTripDate-sc-1t2zo5b-0 kmrFNu"
@@ -142,7 +142,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                 className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 hRbSbx"
                   onClick={[Function]}
                 >
                   <div
@@ -222,7 +222,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   </div>
                 </div>
                 <div
-                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
+                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 leRYGJ"
                 >
                   <div>
                     <ul
@@ -364,7 +364,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                 className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 hRbSbx"
                   onClick={[Function]}
                 >
                   <div
@@ -444,7 +444,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   </div>
                 </div>
                 <div
-                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
+                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 leRYGJ"
                 >
                   <div>
                     <ul
@@ -546,7 +546,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                 className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 hRbSbx"
                   onClick={[Function]}
                 >
                   <div
@@ -626,7 +626,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   </div>
                 </div>
                 <div
-                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
+                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 leRYGJ"
                 >
                   <div>
                     <ul
@@ -764,7 +764,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                 className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 hRbSbx"
                   onClick={[Function]}
                 >
                   <div
@@ -844,7 +844,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   </div>
                 </div>
                 <div
-                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
+                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 leRYGJ"
                 >
                   <div>
                     <ul
@@ -4877,7 +4877,7 @@ exports[`Storyshots TripSector Playground 1`] = `
           }
         >
           <div
-            className="TripSector__StyledTripSector-v14xkf-0 jbYUNi"
+            className="TripSector__StyledTripSector-v14xkf-0 gzaCdT"
             data-test="test"
           >
             <div
@@ -4922,7 +4922,7 @@ exports[`Storyshots TripSector Playground 1`] = `
                 className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 hRbSbx"
                   onClick={[Function]}
                 >
                   <div
@@ -5002,7 +5002,7 @@ exports[`Storyshots TripSector Playground 1`] = `
                   </div>
                 </div>
                 <div
-                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
+                  className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 leRYGJ"
                 >
                   <div>
                     <ul

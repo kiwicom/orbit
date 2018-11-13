@@ -121,7 +121,7 @@ exports[`Storyshots TripSegment Default 1`] = `
               className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
             >
               <div
-                className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 hRbSbx"
                 onClick={[Function]}
               >
                 <div
@@ -201,7 +201,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                 </div>
               </div>
               <div
-                className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
+                className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 leRYGJ"
               >
                 <div>
                   <ul
@@ -1059,7 +1059,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
               className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
             >
               <div
-                className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 hRbSbx"
                 onClick={[Function]}
               >
                 <div
@@ -1139,7 +1139,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                 </div>
               </div>
               <div
-                className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
+                className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 leRYGJ"
               >
                 <div>
                   <ul
@@ -2075,7 +2075,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
               className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
             >
               <div
-                className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 hRbSbx"
                 onClick={[Function]}
               >
                 <div
@@ -2155,7 +2155,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                 </div>
               </div>
               <div
-                className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 iAchZq"
+                className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 cjdRvW"
               >
                 <div>
                   <ul

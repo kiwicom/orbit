@@ -165,7 +165,8 @@ const StyledTripSegmentOverviewWrapper = styled.div`
   cursor: pointer;
 
   ${StyledCarrierLogo} {
-    padding: ${({ theme }) => `0 ${theme.orbit.spaceXXSmall} 0
+    box-sizing: initial;
+    margin: ${({ theme }) => `0 ${theme.orbit.spaceXXSmall} 0
       ${theme.orbit.spaceXSmall}`};
   }
 `;
@@ -188,6 +189,7 @@ StyledTripSegmentOverviewTime.defaultProps = {
 };
 
 const StyledTripSegmentChildren = styled.div`
+  box-sizing: initial;
   width: 100%;
   padding: ${({ theme, expanded }) => (expanded ? `${theme.orbit.spaceXSmall} 0` : "0")};
   margin: ${({ theme }) => `0 ${theme.orbit.spaceXSmall}`};

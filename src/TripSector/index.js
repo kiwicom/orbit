@@ -12,7 +12,6 @@ const StyledTripSector = styled.div`
   position: relative;
   width: 100%;
   flex-direction: column;
-  height: 100%;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
 
   &:before {

@@ -25,7 +25,7 @@ Table below contains all types of the props available in InputField component.
 | required      | `boolean`         |              | If true, the label is displayed as required.
 | name          | `string`          |              | The name for the InputField.
 | onBlur        | `func`            |              | Function for handling onBlur event.
-| onChange      | `func`            |              | Function for handling onClick event.
+| onChange      | `func`            |              | Function for handling onChange event.
 | onFocus       | `func`            |              | Function for handling onFocus event.
 | onKeyDown     | `func`            |              | Function for handling onKeyDown event.
 | onKeyUp       | `func`            |              | Function for handling onKeyUp event.

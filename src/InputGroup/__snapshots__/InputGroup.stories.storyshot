@@ -98,7 +98,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
           }
         >
           <div
-            className="InputGroup__StyledInputGroup-cyuwoi-3 fwEWQN"
+            className="InputGroup__StyledInputGroup-cyuwoi-3 fcwSBn"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -114,7 +114,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                 className="InputGroup__StyledChild-cyuwoi-2 dDOQUJ"
               >
                 <label
-                  className="InputField__Field-sc-4opay-0 iedcUZ"
+                  className="InputField__Field-sc-4opay-0 kCAFyx"
                 >
                   <div
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
@@ -138,7 +138,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                 className="InputGroup__StyledChild-cyuwoi-2 evMQAw"
               >
                 <label
-                  className="Select__Label-sc-6agypz-0 daIoOD"
+                  className="Select__Label-sc-6agypz-0 cqbVlc"
                 >
                   <div
                     className="Select__SelectContainer-sc-6agypz-2 zfoUd"
@@ -238,7 +238,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                 className="InputGroup__StyledChild-cyuwoi-2 fDMlGe"
               >
                 <label
-                  className="InputField__Field-sc-4opay-0 iedcUZ"
+                  className="InputField__Field-sc-4opay-0 kCAFyx"
                 >
                   <div
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
@@ -1140,7 +1140,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
           }
         >
           <div
-            className="InputGroup__StyledInputGroup-cyuwoi-3 fxqIBW"
+            className="InputGroup__StyledInputGroup-cyuwoi-3 cDWydb"
           >
             <div
               className="InputGroup__StyledChildren-cyuwoi-1 dFOuKS"
@@ -1149,7 +1149,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                 className="InputGroup__StyledChild-cyuwoi-2 cpbNdl"
               >
                 <label
-                  className="Select__Label-sc-6agypz-0 daIoOD"
+                  className="Select__Label-sc-6agypz-0 cqbVlc"
                 >
                   <div
                     className="Select__SelectContainer-sc-6agypz-2 zfoUd"
@@ -1204,7 +1204,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                 className="InputGroup__StyledChild-cyuwoi-2 evMQAw"
               >
                 <label
-                  className="InputField__Field-sc-4opay-0 iedcUZ"
+                  className="InputField__Field-sc-4opay-0 kCAFyx"
                 >
                   <div
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
@@ -1975,7 +1975,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
           }
         >
           <div
-            className="InputGroup__StyledInputGroup-cyuwoi-3 fwEWQN"
+            className="InputGroup__StyledInputGroup-cyuwoi-3 fcwSBn"
             data-test="test"
           >
             <span
@@ -1992,7 +1992,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 className="InputGroup__StyledChild-cyuwoi-2 bgNOTt"
               >
                 <label
-                  className="Select__Label-sc-6agypz-0 daIoOD"
+                  className="Select__Label-sc-6agypz-0 cqbVlc"
                 >
                   <div
                     className="Select__SelectContainer-sc-6agypz-2 zfoUd"
@@ -2036,7 +2036,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 className="InputGroup__StyledChild-cyuwoi-2 evMQAw"
               >
                 <label
-                  className="InputField__Field-sc-4opay-0 iedcUZ"
+                  className="InputField__Field-sc-4opay-0 kCAFyx"
                 >
                   <div
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
@@ -2060,7 +2060,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 className="InputGroup__StyledChild-cyuwoi-2 jkIxV"
               >
                 <label
-                  className="Select__Label-sc-6agypz-0 daIoOD"
+                  className="Select__Label-sc-6agypz-0 cqbVlc"
                 >
                   <div
                     className="Select__SelectContainer-sc-6agypz-2 zfoUd"
@@ -2104,7 +2104,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                 className="InputGroup__StyledChild-cyuwoi-2 fCErSP"
               >
                 <label
-                  className="InputField__Field-sc-4opay-0 iedcUZ"
+                  className="InputField__Field-sc-4opay-0 kCAFyx"
                 >
                   <div
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"

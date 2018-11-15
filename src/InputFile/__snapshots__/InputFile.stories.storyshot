@@ -98,7 +98,7 @@ exports[`Storyshots InputFile Default 1`] = `
           }
         >
           <label
-            className="InputFile__Field-sc-12oq9bq-0 fshpwe"
+            className="InputFile__Field-sc-12oq9bq-0 eLePZo"
           >
             <input
               className="InputFile__Input-sc-12oq9bq-2 jotmqH"
@@ -478,7 +478,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
           }
         >
           <label
-            className="InputFile__Field-sc-12oq9bq-0 fshpwe"
+            className="InputFile__Field-sc-12oq9bq-0 eLePZo"
           >
             <input
               className="InputFile__Input-sc-12oq9bq-2 jotmqH"
@@ -909,7 +909,7 @@ exports[`Storyshots InputFile Playground 1`] = `
           }
         >
           <label
-            className="InputFile__Field-sc-12oq9bq-0 fshpwe"
+            className="InputFile__Field-sc-12oq9bq-0 eLePZo"
             data-test="test"
           >
             <input
@@ -1565,7 +1565,7 @@ exports[`Storyshots InputFile With error 1`] = `
           }
         >
           <label
-            className="InputFile__Field-sc-12oq9bq-0 fshpwe"
+            className="InputFile__Field-sc-12oq9bq-0 eLePZo"
           >
             <input
               className="InputFile__Input-sc-12oq9bq-2 jotmqH"
@@ -1980,7 +1980,7 @@ exports[`Storyshots InputFile With help 1`] = `
           }
         >
           <label
-            className="InputFile__Field-sc-12oq9bq-0 fshpwe"
+            className="InputFile__Field-sc-12oq9bq-0 eLePZo"
           >
             <input
               className="InputFile__Input-sc-12oq9bq-2 jotmqH"

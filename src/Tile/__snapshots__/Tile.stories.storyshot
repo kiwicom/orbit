@@ -98,7 +98,7 @@ exports[`Storyshots Tile Default 1`] = `
           }
         >
           <div
-            className="Tile__StyledTile-sc-15i01z6-0 iiSZtx"
+            className="Tile__StyledTile-sc-15i01z6-0 cVFIOL"
           >
             <div
               className="TileHeader__StyledTileHeader-sc-1k1u3lr-0 dbRrBh"
@@ -365,7 +365,7 @@ exports[`Storyshots Tile Expandable 1`] = `
           }
         >
           <div
-            className="Tile__StyledTile-sc-15i01z6-0 iiSZtx"
+            className="Tile__StyledTile-sc-15i01z6-0 cVFIOL"
           >
             <div
               className="TileHeader__StyledTileHeader-sc-1k1u3lr-0 dbRrBh"
@@ -762,7 +762,7 @@ exports[`Storyshots Tile Expandable with custom description 1`] = `
           }
         >
           <div
-            className="Tile__StyledTile-sc-15i01z6-0 iiSZtx"
+            className="Tile__StyledTile-sc-15i01z6-0 cVFIOL"
           >
             <div
               className="TileHeader__StyledTileHeader-sc-1k1u3lr-0 dbRrBh"
@@ -772,7 +772,7 @@ exports[`Storyshots Tile Expandable with custom description 1`] = `
                 className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 eVXcAk"
               >
                 <div
-                  className="Stack__StyledStack-sc-1t576ow-0 dBbhzD"
+                  className="Stack__StyledStack-sc-1t576ow-0 huvugl"
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -1084,7 +1084,7 @@ exports[`Storyshots Tile Playground 1`] = `
           }
         >
           <a
-            className="Tile__StyledTile-sc-15i01z6-0 iiSZtx"
+            className="Tile__StyledTile-sc-15i01z6-0 cVFIOL"
             data-test="test"
             href="https://www.kiwi.com/"
           >

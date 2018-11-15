@@ -98,7 +98,7 @@ exports[`Storyshots Card Card with description 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-ff0z2v-1 ivlOUx"
+            className="Card__StyledCard-ff0z2v-1 PJvWj"
           >
             <div
               className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
@@ -455,7 +455,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-ff0z2v-1 ivlOUx"
+            className="Card__StyledCard-ff0z2v-1 PJvWj"
           >
             <div
               className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
@@ -1313,7 +1313,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-ff0z2v-1 iuQByM"
+            className="Card__StyledCard-ff0z2v-1 jyVwJN"
           >
             <div
               className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
@@ -2043,7 +2043,7 @@ exports[`Storyshots Card Card with only section 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-ff0z2v-1 ivlOUx"
+            className="Card__StyledCard-ff0z2v-1 PJvWj"
           >
             <div
               className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
@@ -2396,7 +2396,7 @@ exports[`Storyshots Card Card with sections 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-ff0z2v-1 ivlOUx"
+            className="Card__StyledCard-ff0z2v-1 PJvWj"
           >
             <div
               className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
@@ -3431,7 +3431,7 @@ exports[`Storyshots Card Default 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-ff0z2v-1 ivlOUx"
+            className="Card__StyledCard-ff0z2v-1 PJvWj"
           >
             <div
               className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
@@ -3778,7 +3778,7 @@ exports[`Storyshots Card Playground 1`] = `
           }
         >
           <div
-            className="Card__StyledCard-ff0z2v-1 iuQByM"
+            className="Card__StyledCard-ff0z2v-1 jyVwJN"
             data-test="test"
           >
             <div

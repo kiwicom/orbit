@@ -98,10 +98,10 @@ exports[`Storyshots InputStepper Default 1`] = `
           }
         >
           <div
-            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 jisWFq"
+            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 dpErlr"
           >
             <label
-              className="InputField__Field-sc-4opay-0 iedcUZ"
+              className="InputField__Field-sc-4opay-0 kCAFyx"
             >
               <div
                 className="InputField__InputContainer-sc-4opay-2 ksKWcl"
@@ -380,10 +380,10 @@ exports[`Storyshots InputStepper Playground 1`] = `
           }
         >
           <div
-            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 jisWFq"
+            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 dpErlr"
           >
             <label
-              className="InputField__Field-sc-4opay-0 iedcUZ"
+              className="InputField__Field-sc-4opay-0 kCAFyx"
             >
               <span
                 className="FormLabel-sc-1927civ-1 bSnaNp"
@@ -1094,10 +1094,10 @@ exports[`Storyshots InputStepper With different size 1`] = `
           }
         >
           <div
-            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 jisWFq"
+            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 dpErlr"
           >
             <label
-              className="InputField__Field-sc-4opay-0 iedcUZ"
+              className="InputField__Field-sc-4opay-0 kCAFyx"
             >
               <span
                 className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -1506,10 +1506,10 @@ exports[`Storyshots InputStepper With help 1`] = `
           }
         >
           <div
-            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 jisWFq"
+            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 dpErlr"
           >
             <label
-              className="InputField__Field-sc-4opay-0 iedcUZ"
+              className="InputField__Field-sc-4opay-0 kCAFyx"
             >
               <span
                 className="FormLabel-sc-1927civ-1 iTEGJS"

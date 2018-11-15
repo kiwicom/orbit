@@ -98,7 +98,7 @@ exports[`Storyshots InputField Compact input 1`] = `
           }
         >
           <label
-            className="InputField__Field-sc-4opay-0 iedcUZ"
+            className="InputField__Field-sc-4opay-0 kCAFyx"
           >
             <div
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
@@ -500,7 +500,7 @@ exports[`Storyshots InputField Default input 1`] = `
           }
         >
           <label
-            className="InputField__Field-sc-4opay-0 iedcUZ"
+            className="InputField__Field-sc-4opay-0 kCAFyx"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -828,7 +828,7 @@ exports[`Storyshots InputField Email input 1`] = `
           }
         >
           <label
-            className="InputField__Field-sc-4opay-0 iedcUZ"
+            className="InputField__Field-sc-4opay-0 kCAFyx"
           >
             <span
               className="FormLabel-sc-1927civ-1 bSnaNp"
@@ -1229,7 +1229,7 @@ exports[`Storyshots InputField Number input 1`] = `
           }
         >
           <label
-            className="InputField__Field-sc-4opay-0 iedcUZ"
+            className="InputField__Field-sc-4opay-0 kCAFyx"
           >
             <span
               className="FormLabel-sc-1927civ-1 bSnaNp"
@@ -1646,7 +1646,7 @@ exports[`Storyshots InputField Password input 1`] = `
           }
         >
           <label
-            className="InputField__Field-sc-4opay-0 iedcUZ"
+            className="InputField__Field-sc-4opay-0 kCAFyx"
           >
             <span
               className="FormLabel-sc-1927civ-1 bSnaNp"
@@ -2004,7 +2004,7 @@ exports[`Storyshots InputField Playground 1`] = `
           }
         >
           <label
-            className="InputField__Field-sc-4opay-0 iedcUZ"
+            className="InputField__Field-sc-4opay-0 kCAFyx"
             data-test="test"
           >
             <span
@@ -2873,7 +2873,7 @@ exports[`Storyshots InputField Required field 1`] = `
           }
         >
           <label
-            className="InputField__Field-sc-4opay-0 iedcUZ"
+            className="InputField__Field-sc-4opay-0 kCAFyx"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -3217,7 +3217,7 @@ exports[`Storyshots InputField Small input 1`] = `
           }
         >
           <label
-            className="InputField__Field-sc-4opay-0 iedcUZ"
+            className="InputField__Field-sc-4opay-0 kCAFyx"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -3575,7 +3575,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
           }
         >
           <label
-            className="InputField__Field-sc-4opay-0 iedcUZ"
+            className="InputField__Field-sc-4opay-0 kCAFyx"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -3957,7 +3957,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
           }
         >
           <label
-            className="InputField__Field-sc-4opay-0 iedcUZ"
+            className="InputField__Field-sc-4opay-0 kCAFyx"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -4327,7 +4327,7 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
           }
         >
           <label
-            className="InputField__Field-sc-4opay-0 iedcUZ"
+            className="InputField__Field-sc-4opay-0 kCAFyx"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -4694,7 +4694,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
           }
         >
           <label
-            className="InputField__Field-sc-4opay-0 iedcUZ"
+            className="InputField__Field-sc-4opay-0 kCAFyx"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"

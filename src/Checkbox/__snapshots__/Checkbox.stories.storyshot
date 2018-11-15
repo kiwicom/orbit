@@ -98,7 +98,7 @@ exports[`Storyshots CheckBox Default 1`] = `
           }
         >
           <label
-            className="Checkbox__Label-sc-1x6twh3-5 hPIPOh"
+            className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
           >
             <input
               checked={false}
@@ -393,7 +393,7 @@ exports[`Storyshots CheckBox Playground 1`] = `
           }
         >
           <label
-            className="Checkbox__Label-sc-1x6twh3-5 eXtSiF"
+            className="Checkbox__Label-sc-1x6twh3-5 ccpUEG"
             data-test="test"
           >
             <input
@@ -847,7 +847,7 @@ exports[`Storyshots CheckBox With TextLink in label 1`] = `
           }
         >
           <label
-            className="Checkbox__Label-sc-1x6twh3-5 hPIPOh"
+            className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
           >
             <input
               checked={true}
@@ -1173,7 +1173,7 @@ exports[`Storyshots CheckBox With help 1`] = `
           }
         >
           <label
-            className="Checkbox__Label-sc-1x6twh3-5 hPIPOh"
+            className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
           >
             <input
               checked={false}

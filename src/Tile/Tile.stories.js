@@ -9,6 +9,7 @@ import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
 import * as Icons from "../icons";
 import Stack from "../Stack";
 import Text from "../Text";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Tile from "./index";
 
@@ -126,4 +127,30 @@ storiesOf("Tile", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <Tile
+                  onClick={action("clicked")}
+                  description={
+                    <Stack justify="between" direction="row">
+                      <Text>Mr. John Smith</Text>
+                      <Text>20 kg</Text>
+                    </Stack>
+                  }
+                >
+                  This is example of expanded content
+                </Tile>
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

@@ -104,7 +104,7 @@ exports[`Storyshots List Default 1`] = `
               className="ListItem__Item-sc-1vswvev-0 gOoBnf"
             >
               <div
-                className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
+                className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -122,7 +122,7 @@ exports[`Storyshots List Default 1`] = `
               className="ListItem__Item-sc-1vswvev-0 gOoBnf"
             >
               <div
-                className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
+                className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -143,7 +143,7 @@ exports[`Storyshots List Default 1`] = `
               className="ListItem__Item-sc-1vswvev-0 gOoBnf"
             >
               <div
-                className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
+                className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -644,7 +644,7 @@ exports[`Storyshots List Different type and size 1`] = `
               className="ListItem__Item-sc-1vswvev-0 gOoBnf"
             >
               <div
-                className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
+                className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -662,7 +662,7 @@ exports[`Storyshots List Different type and size 1`] = `
               className="ListItem__Item-sc-1vswvev-0 gOoBnf"
             >
               <div
-                className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
+                className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -680,7 +680,7 @@ exports[`Storyshots List Different type and size 1`] = `
               className="ListItem__Item-sc-1vswvev-0 gOoBnf"
             >
               <div
-                className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
+                className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -1169,7 +1169,7 @@ exports[`Storyshots List Playground 1`] = `
               className="ListItem__Item-sc-1vswvev-0 gOoBnf"
             >
               <div
-                className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
+                className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 eQrvxm"
@@ -1187,7 +1187,7 @@ exports[`Storyshots List Playground 1`] = `
               className="ListItem__Item-sc-1vswvev-0 gOoBnf"
             >
               <div
-                className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
+                className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 eQrvxm"
@@ -1205,7 +1205,7 @@ exports[`Storyshots List Playground 1`] = `
               className="ListItem__Item-sc-1vswvev-0 gOoBnf"
             >
               <div
-                className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
+                className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 eQrvxm"
@@ -1738,6 +1738,784 @@ exports[`Storyshots List Playground 1`] = `
 </div>
 `;
 
+exports[`Storyshots List RTL 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="story"
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      className="story-header"
+      style={
+        Object {
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      <div>
+        <h1
+          className="story-title"
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          RTL
+        </h1>
+        
+        <span
+          className="story-subtitle"
+          style={Object {}}
+        >
+          <div>
+            <p>
+              This is a preview of this component in RTL setup.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        className="chapter-header"
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="section-container"
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          className="section-header"
+          style={Object {}}
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="section-component-container"
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <ul
+            className="List__StyledList-iwilat-0 hcKuvi"
+          >
+            <li
+              className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+            >
+              <div
+                className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
+              >
+                <div
+                  className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                  size="large"
+                >
+                  <img
+                    alt="Ryanair"
+                    className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
+                    size="large"
+                    src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
+                    srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
+                    title="Ryanair"
+                  />
+                </div>
+              </div>
+              Airline: Ryanair
+            </li>
+            <li
+              className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+            >
+              <div
+                className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
+              >
+                <svg
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
+                  />
+                </svg>
+              </div>
+              Flight no: FR 1337
+            </li>
+            <li
+              className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+            >
+              <div
+                className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
+              >
+                <svg
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
+                  />
+                </svg>
+              </div>
+              PNR: TEST0X0
+            </li>
+            <li
+              className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+            >
+              <div
+                className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
+              >
+                <svg
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                  />
+                </svg>
+              </div>
+              Airbus A320 (320)
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                className="section-subsection"
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  className="section-subsection-title"
+                >
+                  Source
+                </h4>
+                <pre
+                  className="css-4akams"
+                >
+                  <div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          RenderInRtl
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            List
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                size
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    small
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                type
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    secondary
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              ListItem
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  icon
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      &lt;CarrierLogo /&gt;
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              Airline: Ryanair
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              ListItem
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              ListItem
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  icon
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      &lt;InformationCircle /&gt;
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              Flight no: FR 1337
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              ListItem
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              ListItem
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  icon
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      &lt;Trip /&gt;
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              PNR: TEST0X0
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              ListItem
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              ListItem
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  icon
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      &lt;Airplane /&gt;
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              Airbus A320 (320)
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              ListItem
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            List
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          RenderInRtl
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots List With carrier 1`] = `
 <div
   style={
@@ -1842,7 +2620,7 @@ exports[`Storyshots List With carrier 1`] = `
               className="ListItem__Item-sc-1vswvev-0 gOoBnf"
             >
               <div
-                className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
+                className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
               >
                 <div
                   className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
@@ -1864,7 +2642,7 @@ exports[`Storyshots List With carrier 1`] = `
               className="ListItem__Item-sc-1vswvev-0 gOoBnf"
             >
               <div
-                className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
+                className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -1882,7 +2660,7 @@ exports[`Storyshots List With carrier 1`] = `
               className="ListItem__Item-sc-1vswvev-0 gOoBnf"
             >
               <div
-                className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
+                className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -1900,7 +2678,7 @@ exports[`Storyshots List With carrier 1`] = `
               className="ListItem__Item-sc-1vswvev-0 gOoBnf"
             >
               <div
-                className="ListItem__IconContainer-sc-1vswvev-1 lbwjTx"
+                className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"

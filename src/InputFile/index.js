@@ -10,6 +10,7 @@ import FormFeedback from "../FormFeedback";
 import Attachment from "../icons/Attachment";
 import CloseCircle from "../icons/CloseCircle";
 import type { Ref } from "../common/common.js.flow";
+import { rtlSpacing } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -28,7 +29,7 @@ const FakeInput = styled(({ children, className }) => <div className={className}
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  padding-left: 6px; // TODO create token (paddingLeftInputFile)
+  padding: ${rtlSpacing(`0 0 0 6px`)}; // TODO create token (paddingInputFile)
   height: ${({ theme }) => theme.orbit.heightInputNormal};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: inset 0 0 0
@@ -82,7 +83,7 @@ const StyledFileInput = styled.div`
   color: ${({ error, fileName, theme }) => getFileInputColor({ error, fileName }, theme)};
   width: 100%;
   white-space: nowrap;
-  padding-left: ${({ theme }) => theme.orbit.spaceSmall};
+  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
 `;
 
 StyledFileInput.defaultProps = {

@@ -388,6 +388,7 @@ exports[`Illustration of Accommodation should match snapshot 1`] = `
         "zIndexOnTheTop": "900",
         "zIndexSticky": "100",
       },
+      "rtl": false,
     }
   }
 />

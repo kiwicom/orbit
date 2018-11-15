@@ -104,7 +104,7 @@ exports[`Storyshots InputField Compact input 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <div
-                className="InputField__StyledInlineLabel-sc-4opay-3 ioszgv"
+                className="InputField__StyledInlineLabel-sc-4opay-3 YrOpk"
                 size="normal"
               >
                 <span
@@ -2018,7 +2018,7 @@ exports[`Storyshots InputField Playground 1`] = `
               className="InputField__InputContainer-sc-4opay-2 kXcsVj"
             >
               <div
-                className="InputField__Prefix-sc-4opay-4 cXHKcz"
+                className="InputField__Prefix-sc-4opay-4 cnqfau"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -2043,18 +2043,17 @@ exports[`Storyshots InputField Playground 1`] = `
                 value=""
               />
               <div
-                className="InputField__Suffix-sc-4opay-5 jbPRBB"
+                className="InputField__Suffix-sc-4opay-5 cOwOrH"
               >
                 <button
-                  className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 kUmrif"
+                  className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 ilpdWM"
                   disabled={false}
                   onClick={[Function]}
                   size="small"
                   type="button"
                 >
                   <div
-                    className="ButtonLink__IconContainer-sc-14jv5cl-0 wiVgN"
-                    size="small"
+                    className="ButtonLink__IconContainer-sc-14jv5cl-0 bCwZJN"
                   >
                     <svg
                       className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -2741,6 +2740,411 @@ exports[`Storyshots InputField Playground 1`] = `
                       >
                         /&gt;
                       </span>
+                    </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField RTL 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="story"
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      className="story-header"
+      style={
+        Object {
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      <div>
+        <h1
+          className="story-title"
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          RTL
+        </h1>
+        
+        <span
+          className="story-subtitle"
+          style={Object {}}
+        >
+          <div>
+            <p>
+              This is a preview of this component in RTL setup.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        className="chapter-header"
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="section-container"
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          className="section-header"
+          style={Object {}}
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="section-component-container"
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            className="InputField__Field-sc-4opay-0 kCAFyx"
+          >
+            <span
+              className="FormLabel-sc-1927civ-1 iTEGJS"
+            >
+              <span>
+                My label
+              </span>
+            </span>
+            <div
+              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+            >
+              <div
+                className="InputField__Prefix-sc-4opay-4 gBJmTs"
+              >
+                $
+              </div>
+              <input
+                className="InputField__Input-sc-4opay-6 fqqXrq"
+                placeholder="Placeholder"
+                size="normal"
+                type="text"
+              />
+              <div
+                className="InputField__Suffix-sc-4opay-5 gxwjvO"
+              >
+                <button
+                  className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 deBnZa"
+                  size="normal"
+                  type="button"
+                >
+                  <div
+                    className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+                      />
+                    </svg>
+                  </div>
+                </button>
+              </div>
+              <div
+                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+              />
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                className="section-subsection"
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  className="section-subsection-title"
+                >
+                  Source
+                </h4>
+                <pre
+                  className="css-4akams"
+                >
+                  <div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          RenderInRtl
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          InputField
+                        </span>
+                        <span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              placeholder
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  Placeholder
+                                </span>
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              label
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  My label
+                                </span>
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              prefix
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  $
+                                </span>
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              suffix
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;ButtonLink /&gt;
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            <br />
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          /&gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          RenderInRtl
+                          &gt;
+                        </span>
+                      </div>
                     </div>
                   </div>
                   <button
@@ -3596,17 +4000,16 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                 value=""
               />
               <div
-                className="InputField__Suffix-sc-4opay-5 jXQtRs"
+                className="InputField__Suffix-sc-4opay-5 kCvrXk"
               >
                 <button
-                  className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 gBbmwE"
+                  className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
                   onClick={[Function]}
                   size="normal"
                   type="button"
                 >
                   <div
-                    className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
-                    size="normal"
+                    className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
                   >
                     <svg
                       className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -3970,7 +4373,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <div
-                className="InputField__Prefix-sc-4opay-4 kZvirV"
+                className="InputField__Prefix-sc-4opay-4 iNucwo"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -4348,7 +4751,7 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
                 value=""
               />
               <div
-                className="InputField__Suffix-sc-4opay-5 jXQtRs"
+                className="InputField__Suffix-sc-4opay-5 kCvrXk"
               >
                 <img
                   alt="AirHelp"
@@ -4707,7 +5110,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <div
-                className="InputField__Prefix-sc-4opay-4 kZvirV"
+                className="InputField__Prefix-sc-4opay-4 iNucwo"
               >
                 $
               </div>

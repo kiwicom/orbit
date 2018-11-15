@@ -25,7 +25,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-right: 0;
 }
 
 .c8 > * {
@@ -58,8 +57,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   border: 0;
   border-radius: 3px;
   padding: 0;
-  padding-right: 0;
-  padding-left: 0;
   font-weight: 700!important;
   font-size: 14px;
   cursor: default;
@@ -111,8 +108,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   border: 0;
   border-radius: 3px;
   padding: 0;
-  padding-right: 0;
-  padding-left: 0;
   font-weight: 700!important;
   font-size: 14px;
   cursor: pointer;
@@ -245,7 +240,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-left: 12px;
+  padding: 0 0 0 12px;
   z-index: 3;
 }
 
@@ -279,7 +274,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
 
 .c12 .c18 {
   height: 16px;
-  padding-right: 12px;
+  padding: 0 12px 0 0;
 }
 
 .c11 {
@@ -921,6 +916,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                     "zIndexOnTheTop": "900",
                     "zIndexSticky": "100",
                   },
+                  "rtl": false,
                 }
               }
             >
@@ -1320,6 +1316,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                           "zIndexOnTheTop": "900",
                           "zIndexSticky": "100",
                         },
+                        "rtl": false,
                       },
                     },
                     "displayName": "InputField__Field",
@@ -1713,6 +1710,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                       "zIndexOnTheTop": "900",
                       "zIndexSticky": "100",
                     },
+                    "rtl": false,
                   }
                 }
               >
@@ -2108,6 +2106,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                     >
@@ -2516,6 +2515,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               },
                             },
                             "displayName": "FormLabel",
@@ -2911,6 +2911,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           }
                         }
                       >
@@ -3299,6 +3300,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             }
                           }
                         >
@@ -3698,6 +3700,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                           "zIndexOnTheTop": "900",
                           "zIndexSticky": "100",
                         },
+                        "rtl": false,
                       }
                     }
                   >
@@ -4111,6 +4114,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             },
                           },
                           "displayName": "InputField__InputContainer",
@@ -4506,6 +4510,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                     >
@@ -4895,6 +4900,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           }
                         }
                       >
@@ -5284,6 +5290,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               }
                             }
                           >
@@ -5299,7 +5306,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     "rules": Array [
                                       "height:100%;color:",
                                       [Function],
-                                      ";display:flex;align-items:center;pointer-events:none;justify-content:center;padding-left:",
+                                      ";display:flex;align-items:center;pointer-events:none;justify-content:center;padding:",
                                       [Function],
                                       ";z-index:3;& > svg{width:",
                                       [Function],
@@ -5691,6 +5698,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         "zIndexOnTheTop": "900",
                                         "zIndexSticky": "100",
                                       },
+                                      "rtl": false,
                                     },
                                   },
                                   "displayName": "InputField__Prefix",
@@ -6086,6 +6094,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     "zIndexOnTheTop": "900",
                                     "zIndexSticky": "100",
                                   },
+                                  "rtl": false,
                                 }
                               }
                             >
@@ -6473,6 +6482,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       "zIndexOnTheTop": "900",
                                       "zIndexSticky": "100",
                                     },
+                                    "rtl": false,
                                   }
                                 }
                               >
@@ -6934,6 +6944,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             "zIndexOnTheTop": "900",
                                             "zIndexSticky": "100",
                                           },
+                                          "rtl": false,
                                         }
                                       }
                                       transparent={true}
@@ -6972,7 +6983,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             "$$typeof": Symbol(react.forward_ref),
                                             "attrs": undefined,
                                             "componentStyle": ComponentStyle {
-                                              "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-2",
+                                              "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
                                               "isStatic": false,
                                               "lastClassName": "c13",
                                               "rules": Array [
@@ -6988,9 +6999,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                 [Function],
                                                 "!important;border:0;border-radius:",
                                                 [Function],
-                                                ";padding:0;padding-right:",
-                                                [Function],
-                                                ";padding-left:",
+                                                ";padding:",
                                                 [Function],
                                                 ";font-weight:",
                                                 [Function],
@@ -7396,11 +7405,12 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                   "zIndexOnTheTop": "900",
                                                   "zIndexSticky": "100",
                                                 },
+                                                "rtl": false,
                                               },
                                             },
                                             "displayName": "ButtonLink__StyledButtonLink",
                                             "render": [Function],
-                                            "styledComponentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-2",
+                                            "styledComponentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
                                             "target": [Function],
                                             "toString": [Function],
                                             "warnTooManyClasses": [Function],
@@ -7799,6 +7809,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                               "zIndexOnTheTop": "900",
                                               "zIndexSticky": "100",
                                             },
+                                            "rtl": false,
                                           }
                                         }
                                         transparent={true}
@@ -8223,6 +8234,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                 "zIndexOnTheTop": "900",
                                                 "zIndexSticky": "100",
                                               },
+                                              "rtl": false,
                                             }
                                           }
                                           transparent={true}
@@ -8666,6 +8678,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                           "zIndexOnTheTop": "900",
                                                           "zIndexSticky": "100",
                                                         },
+                                                        "rtl": false,
                                                       }
                                                     }
                                                     type="primary"
@@ -8680,7 +8693,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                             "isStatic": false,
                                                             "lastClassName": "c8",
                                                             "rules": Array [
-                                                              "display:flex;flex-direction:row;align-items:center;justify-content:center;margin-right:",
+                                                              "display:flex;flex-direction:row;align-items:center;justify-content:center;margin:",
                                                               [Function],
                                                               ";> *{width:",
                                                               [Function],
@@ -9070,6 +9083,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                 "zIndexOnTheTop": "900",
                                                                 "zIndexSticky": "100",
                                                               },
+                                                              "rtl": false,
                                                             },
                                                           },
                                                           "displayName": "ButtonLink__IconContainer",
@@ -9467,6 +9481,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                             "zIndexOnTheTop": "900",
                                                             "zIndexSticky": "100",
                                                           },
+                                                          "rtl": false,
                                                         }
                                                       }
                                                       type="primary"
@@ -9857,13 +9872,13 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                               "zIndexOnTheTop": "900",
                                                               "zIndexSticky": "100",
                                                             },
+                                                            "rtl": false,
                                                           }
                                                         }
                                                         type="primary"
                                                       >
                                                         <div
                                                           className="c8"
-                                                          size="normal"
                                                         >
                                                           <MinusCircle
                                                             color="secondary"
@@ -10257,6 +10272,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                       "zIndexOnTheTop": "900",
                                                                       "zIndexSticky": "100",
                                                                     },
+                                                                    "rtl": false,
                                                                   }
                                                                 }
                                                                 viewBox="0 0 24 24"
@@ -10662,6 +10678,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                             "zIndexOnTheTop": "900",
                                                                             "zIndexSticky": "100",
                                                                           },
+                                                                          "rtl": false,
                                                                         },
                                                                       },
                                                                       "displayName": "Icon__StyledIcon",
@@ -11057,6 +11074,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                         "zIndexOnTheTop": "900",
                                                                         "zIndexSticky": "100",
                                                                       },
+                                                                      "rtl": false,
                                                                     }
                                                                   }
                                                                   viewBox="0 0 24 24"
@@ -11446,6 +11464,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                           "zIndexOnTheTop": "900",
                                                                           "zIndexSticky": "100",
                                                                         },
+                                                                        "rtl": false,
                                                                       }
                                                                     }
                                                                     viewBox="0 0 24 24"
@@ -11872,6 +11891,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               }
                             }
                             type="number"
@@ -12289,6 +12309,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         "zIndexOnTheTop": "900",
                                         "zIndexSticky": "100",
                                       },
+                                      "rtl": false,
                                     },
                                   },
                                   "displayName": "InputField__Input",
@@ -12690,6 +12711,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     "zIndexOnTheTop": "900",
                                     "zIndexSticky": "100",
                                   },
+                                  "rtl": false,
                                 }
                               }
                               type="number"
@@ -13094,6 +13116,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               }
                             }
                           >
@@ -13117,7 +13140,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       [Function],
                                       ";}",
                                       ".c18",
-                                      "{height:16px;padding-right:",
+                                      "{height:16px;padding:",
                                       [Function],
                                       ";}",
                                     ],
@@ -13503,6 +13526,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         "zIndexOnTheTop": "900",
                                         "zIndexSticky": "100",
                                       },
+                                      "rtl": false,
                                     },
                                   },
                                   "displayName": "InputField__Suffix",
@@ -13898,6 +13922,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     "zIndexOnTheTop": "900",
                                     "zIndexSticky": "100",
                                   },
+                                  "rtl": false,
                                 }
                               }
                             >
@@ -14285,6 +14310,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       "zIndexOnTheTop": "900",
                                       "zIndexSticky": "100",
                                     },
+                                    "rtl": false,
                                   }
                                 }
                               >
@@ -14746,6 +14772,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             "zIndexOnTheTop": "900",
                                             "zIndexSticky": "100",
                                           },
+                                          "rtl": false,
                                         }
                                       }
                                       transparent={true}
@@ -14784,7 +14811,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             "$$typeof": Symbol(react.forward_ref),
                                             "attrs": undefined,
                                             "componentStyle": ComponentStyle {
-                                              "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-2",
+                                              "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
                                               "isStatic": false,
                                               "lastClassName": "c13",
                                               "rules": Array [
@@ -14800,9 +14827,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                 [Function],
                                                 "!important;border:0;border-radius:",
                                                 [Function],
-                                                ";padding:0;padding-right:",
-                                                [Function],
-                                                ";padding-left:",
+                                                ";padding:",
                                                 [Function],
                                                 ";font-weight:",
                                                 [Function],
@@ -15208,11 +15233,12 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                   "zIndexOnTheTop": "900",
                                                   "zIndexSticky": "100",
                                                 },
+                                                "rtl": false,
                                               },
                                             },
                                             "displayName": "ButtonLink__StyledButtonLink",
                                             "render": [Function],
-                                            "styledComponentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-2",
+                                            "styledComponentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
                                             "target": [Function],
                                             "toString": [Function],
                                             "warnTooManyClasses": [Function],
@@ -15611,6 +15637,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                               "zIndexOnTheTop": "900",
                                               "zIndexSticky": "100",
                                             },
+                                            "rtl": false,
                                           }
                                         }
                                         transparent={true}
@@ -16035,6 +16062,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                 "zIndexOnTheTop": "900",
                                                 "zIndexSticky": "100",
                                               },
+                                              "rtl": false,
                                             }
                                           }
                                           transparent={true}
@@ -16478,6 +16506,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                           "zIndexOnTheTop": "900",
                                                           "zIndexSticky": "100",
                                                         },
+                                                        "rtl": false,
                                                       }
                                                     }
                                                     type="primary"
@@ -16492,7 +16521,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                             "isStatic": false,
                                                             "lastClassName": "c8",
                                                             "rules": Array [
-                                                              "display:flex;flex-direction:row;align-items:center;justify-content:center;margin-right:",
+                                                              "display:flex;flex-direction:row;align-items:center;justify-content:center;margin:",
                                                               [Function],
                                                               ";> *{width:",
                                                               [Function],
@@ -16882,6 +16911,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                 "zIndexOnTheTop": "900",
                                                                 "zIndexSticky": "100",
                                                               },
+                                                              "rtl": false,
                                                             },
                                                           },
                                                           "displayName": "ButtonLink__IconContainer",
@@ -17279,6 +17309,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                             "zIndexOnTheTop": "900",
                                                             "zIndexSticky": "100",
                                                           },
+                                                          "rtl": false,
                                                         }
                                                       }
                                                       type="primary"
@@ -17669,13 +17700,13 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                               "zIndexOnTheTop": "900",
                                                               "zIndexSticky": "100",
                                                             },
+                                                            "rtl": false,
                                                           }
                                                         }
                                                         type="primary"
                                                       >
                                                         <div
                                                           className="c8"
-                                                          size="normal"
                                                         >
                                                           <PlusCircle
                                                             color="secondary"
@@ -18069,6 +18100,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                       "zIndexOnTheTop": "900",
                                                                       "zIndexSticky": "100",
                                                                     },
+                                                                    "rtl": false,
                                                                   }
                                                                 }
                                                                 viewBox="0 0 24 24"
@@ -18474,6 +18506,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                             "zIndexOnTheTop": "900",
                                                                             "zIndexSticky": "100",
                                                                           },
+                                                                          "rtl": false,
                                                                         },
                                                                       },
                                                                       "displayName": "Icon__StyledIcon",
@@ -18869,6 +18902,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                         "zIndexOnTheTop": "900",
                                                                         "zIndexSticky": "100",
                                                                       },
+                                                                      "rtl": false,
                                                                     }
                                                                   }
                                                                   viewBox="0 0 24 24"
@@ -19258,6 +19292,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                           "zIndexOnTheTop": "900",
                                                                           "zIndexSticky": "100",
                                                                         },
+                                                                        "rtl": false,
                                                                       }
                                                                     }
                                                                     viewBox="0 0 24 24"
@@ -19677,6 +19712,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               }
                             }
                           >
@@ -20088,6 +20124,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         "zIndexOnTheTop": "900",
                                         "zIndexSticky": "100",
                                       },
+                                      "rtl": false,
                                     },
                                   },
                                   "displayName": "InputField__FakeInput",
@@ -20483,6 +20520,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     "zIndexOnTheTop": "900",
                                     "zIndexSticky": "100",
                                   },
+                                  "rtl": false,
                                 }
                               }
                             >
@@ -20872,6 +20910,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       "zIndexOnTheTop": "900",
                                       "zIndexSticky": "100",
                                     },
+                                    "rtl": false,
                                   }
                                 }
                               >
@@ -21270,6 +21309,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                             "zIndexOnTheTop": "900",
                             "zIndexSticky": "100",
                           },
+                          "rtl": false,
                         }
                       }
                       type="error"
@@ -21688,6 +21728,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "zIndexOnTheTop": "900",
                                   "zIndexSticky": "100",
                                 },
+                                "rtl": false,
                               },
                             },
                             "displayName": "FormFeedback__StyledFormFeedback",
@@ -22082,6 +22123,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                               "zIndexOnTheTop": "900",
                               "zIndexSticky": "100",
                             },
+                            "rtl": false,
                           }
                         }
                         type="error"
@@ -22469,6 +22511,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                 "zIndexOnTheTop": "900",
                                 "zIndexSticky": "100",
                               },
+                              "rtl": false,
                             }
                           }
                           type="error"

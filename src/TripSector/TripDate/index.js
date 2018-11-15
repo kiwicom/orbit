@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Calendar from "../../icons/Calendar";
 import defaultTokens from "../../defaultTokens";
 import Text, { StyledText } from "../../Text";
+import { left } from "../../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -18,7 +19,7 @@ const StyledTripDate = styled.div`
 
   ${StyledText} {
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
-    margin-left: ${({ theme }) => theme.orbit.spaceXSmall};
+    margin-${left}: ${({ theme }) => theme.orbit.spaceXSmall};
     height: ${({ theme }) => theme.orbit.heightIconSmall};
   }
 `;

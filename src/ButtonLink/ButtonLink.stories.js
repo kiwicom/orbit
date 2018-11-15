@@ -9,6 +9,7 @@ import { withKnobs, text, number, boolean, select } from "@storybook/addon-knobs
 
 import * as Icons from "../icons";
 import { TYPES, SIZES } from "./consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import ButtonLink from "./index";
 
@@ -129,4 +130,20 @@ storiesOf("ButtonLink", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <ButtonLink icon={<Icons.Airplane />}>ButtonLink</ButtonLink>
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

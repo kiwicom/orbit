@@ -98,14 +98,13 @@ exports[`Storyshots ButtonLink Circled 1`] = `
           }
         >
           <button
-            className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 dJrjPy"
+            className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 jOwJwb"
             onClick={[Function]}
             size="large"
             type="button"
           >
             <div
-              className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
-              size="large"
+              className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -431,7 +430,7 @@ exports[`Storyshots ButtonLink Default 1`] = `
           }
         >
           <a
-            className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 mSknQ"
+            className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 hfsQzj"
             href="https://kiwi.com"
             size="normal"
           >
@@ -688,7 +687,7 @@ exports[`Storyshots ButtonLink Playground 1`] = `
           }
         >
           <button
-            className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 eLlCgZ"
+            className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 iEuPIM"
             data-test="test"
             disabled={false}
             href=""
@@ -697,8 +696,7 @@ exports[`Storyshots ButtonLink Playground 1`] = `
             type="button"
           >
             <div
-              className="ButtonLink__IconContainer-sc-14jv5cl-0 WxqtO"
-              size="large"
+              className="ButtonLink__IconContainer-sc-14jv5cl-0 bijzj"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -712,8 +710,7 @@ exports[`Storyshots ButtonLink Playground 1`] = `
             </div>
             ButtonLink
             <div
-              className="ButtonLink__IconContainerRight-sc-14jv5cl-1 isqqo"
-              size="large"
+              className="ButtonLink__IconContainer-sc-14jv5cl-0 iWGAoM"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -1146,6 +1143,326 @@ exports[`Storyshots ButtonLink Playground 1`] = `
 </div>
 `;
 
+exports[`Storyshots ButtonLink RTL 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="story"
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      className="story-header"
+      style={
+        Object {
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      <div>
+        <h1
+          className="story-title"
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          RTL
+        </h1>
+        
+        <span
+          className="story-subtitle"
+          style={Object {}}
+        >
+          <div>
+            <p>
+              This is a preview of this component in RTL setup.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        className="chapter-header"
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="section-container"
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          className="section-header"
+          style={Object {}}
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="section-component-container"
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <button
+            className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 igSJzL"
+            size="normal"
+            type="button"
+          >
+            <div
+              className="ButtonLink__IconContainer-sc-14jv5cl-0 hfafwY"
+            >
+              <svg
+                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                />
+              </svg>
+            </div>
+            ButtonLink
+          </button>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                className="section-subsection"
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  className="section-subsection-title"
+                >
+                  Source
+                </h4>
+                <pre
+                  className="css-4akams"
+                >
+                  <div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          RenderInRtl
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            ButtonLink
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                icon
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    &lt;Airplane /&gt;
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            ButtonLink
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            ButtonLink
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          RenderInRtl
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots ButtonLink Secondary 1`] = `
 <div
   style={
@@ -1244,7 +1561,7 @@ exports[`Storyshots ButtonLink Secondary 1`] = `
           }
         >
           <a
-            className="ButtonLink__StyledButtonLink-sc-14jv5cl-2 biTQRn"
+            className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 fuWMAQ"
             href="https://kiwi.com"
             size="normal"
           >

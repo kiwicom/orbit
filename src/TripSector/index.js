@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import { StyledTripSegment, StyledTripSegmentMilestone } from "../TripSegment";
 import defaultTokens from "../defaultTokens";
+import { left } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -22,7 +23,7 @@ const StyledTripSector = styled.div`
     background-color: ${({ theme }) => theme.orbit.paletteCloudNormal};
     width: 1px;
     height: 100%;
-    left: 7px;
+    ${left}: 7px;
     top: 0;
   }
 

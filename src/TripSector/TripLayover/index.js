@@ -3,12 +3,14 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTokens from "../../defaultTokens";
+import { rtlSpacing } from "../../utils/rtl";
 
 import type { Props } from "./index";
 
 const StyledTripLayover = styled.div`
-  margin: ${({ theme }) => `${theme.orbit.spaceSmall} 0 ${theme.orbit.spaceSmall}
-    ${theme.orbit.spaceLarge}`};
+  margin: ${({ theme }) =>
+    rtlSpacing(`${theme.orbit.spaceSmall} 0 ${theme.orbit.spaceSmall}
+    ${theme.orbit.spaceLarge}`)};
 `;
 
 StyledTripLayover.defaultProps = {

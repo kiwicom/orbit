@@ -13,6 +13,7 @@ import Text, { StyledText } from "../Text";
 import { CARRIER_TYPE_OPTIONS } from "../CarrierLogo/consts";
 import { getSize } from "../Icon";
 import { ICON_SIZES } from "../Icon/consts";
+import { left, right, rtlSpacing } from "../utils/rtl";
 
 import type { Props, State, ExpandedType } from "./index";
 
@@ -47,8 +48,9 @@ const StyledTripSegmentMilestoneArrow = styled.div`
   position: relative;
   width: 6px;
   height: 12px;
-  right: -1px;
+  ${right}: -1px;
   z-index: 1;
+  transform: ${({ theme }) => theme.rtl && `rotate(180deg)`};
   &:before,
   &:after {
     position: absolute;
@@ -67,7 +69,7 @@ const StyledTripSegmentMilestoneArrow = styled.div`
     border-color: transparent ${({ theme }) => theme.orbit.paletteWhite} transparent transparent;
     border-width: 4px 4px 4px 0;
     border-color: transparent ${({ theme }) => theme.orbit.paletteWhite} transparent transparent;
-    margin: 2px 0 0 0;
+    margin: ${rtlSpacing(`2px 0 0 0`)};
     right: 0;
   }
 `;
@@ -149,7 +151,7 @@ const StyledTripSegmentCarrier = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  left: ${({ theme }) => theme.orbit.spaceMedium};
+  ${left}: ${({ theme }) => theme.orbit.spaceMedium};
 `;
 
 StyledTripSegmentCarrier.defaultProps = {
@@ -165,8 +167,9 @@ const StyledTripSegmentOverviewWrapper = styled.div`
   cursor: pointer;
 
   ${StyledCarrierLogo} {
-    padding: ${({ theme }) => `0 ${theme.orbit.spaceXXSmall} 0
-      ${theme.orbit.spaceXSmall}`};
+    padding: ${({ theme }) =>
+      rtlSpacing(`0 ${theme.orbit.spaceXXSmall} 0
+      ${theme.orbit.spaceXSmall}`)};
   }
 `;
 
@@ -180,7 +183,7 @@ const StyledTripSegmentOverviewColumn = styled.div`
 `;
 
 const StyledTripSegmentOverviewTime = styled.div`
-  padding: 0 ${({ theme }) => theme.orbit.spaceSmall} 0 0;
+  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
 `;
 
 StyledTripSegmentOverviewTime.defaultProps = {

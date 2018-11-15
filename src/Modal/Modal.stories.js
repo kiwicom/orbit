@@ -17,6 +17,7 @@ import ModalFooter from "./ModalFooter";
 import ChevronLeft from "../icons/ChevronLeft";
 import Stack from "../Stack";
 import ButtonLink from "../ButtonLink";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Modal from "./index";
 
@@ -137,4 +138,45 @@ storiesOf("Modal", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <Modal>
+                  <ModalHeader
+                    title="The title of the ModalHeader"
+                    illustration={<Illustration name="Accommodation" size="small" />}
+                    description="The description of the ModalHeader"
+                    suppressed
+                  />
+                  <ModalSection>
+                    <Text>
+                      You can try all possible configurations of this component. However, check
+                      Orbit.Kiwi for more detailed design guidelines.
+                    </Text>
+                  </ModalSection>
+                  <ModalSection suppressed>
+                    <Text>
+                      You can try all possible configurations of this component. However, check
+                      Orbit.Kiwi for more detailed design guidelines.
+                    </Text>
+                  </ModalSection>
+                  <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
+                    <Button type="secondary" iconLeft={<ChevronLeft />}>
+                      Back
+                    </Button>
+                    <Button block>Continue to Payment</Button>
+                  </ModalFooter>
+                </Modal>
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

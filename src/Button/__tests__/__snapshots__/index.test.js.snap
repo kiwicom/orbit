@@ -405,6 +405,7 @@ exports[`Button with icon should match snapshot 1`] = `
         "zIndexOnTheTop": "900",
         "zIndexSticky": "100",
       },
+      "rtl": false,
     }
   }
   type="primary"
@@ -793,6 +794,7 @@ exports[`Button with icon should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
   >
@@ -1181,6 +1183,7 @@ exports[`Button with icon should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
       type="primary"
@@ -1188,8 +1191,9 @@ exports[`Button with icon should match snapshot 1`] = `
       <Airplane />
     </Button__IconContainer>
     button
-    <Button__IconContainerRight
+    <Button__IconContainer
       onlyIcon={false}
+      right={true}
       size="normal"
       sizeIcon="medium"
       theme={
@@ -1573,12 +1577,13 @@ exports[`Button with icon should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
       type="primary"
     >
       <ChevronDown />
-    </Button__IconContainerRight>
+    </Button__IconContainer>
   </Button__StyledButtonContent>
 </Button__StyledButton>
 `;

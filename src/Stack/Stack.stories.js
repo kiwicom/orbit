@@ -49,6 +49,7 @@ import TripSector from "../TripSector";
 import Clock from "../icons/Clock";
 import Check from "../icons/Check";
 import FlightReturn from "../icons/FlightReturn";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Stack from "./index";
 
@@ -821,6 +822,34 @@ storiesOf("Stack", module)
                   </TripSector>
                 </Stack>
               </Stack>
+            ),
+          },
+        ],
+      },
+    ],
+  }))
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <Stack spacing="comfy" direction="column" align="start">
+                  <Stack spacing="condensed" direction="row" inline>
+                    <Text weight="bold">email@gmail.com</Text>
+                    <Edit size="small" color="success" />
+                  </Stack>
+                  <Stack direction="row" spaceAfter="large" align="end">
+                    <InputField type="password" label="Password" error="You need some help!" />
+                    <Button>Sign In</Button>
+                  </Stack>
+                  <Text size="small">
+                    <TextLink type="secondary">Forgot password?</TextLink>
+                  </Text>
+                </Stack>
+              </RenderInRtl>
             ),
           },
         ],

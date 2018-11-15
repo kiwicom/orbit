@@ -7,15 +7,11 @@ import { withKnobs, object, select, text } from "@storybook/addon-knobs";
 import styles from "@sambego/storybook-styles/dist/index";
 
 import { SIZE_OPTIONS, CARRIER_TYPE_OPTIONS } from "./consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import CarrierLogo from "./index";
 
 setAddon(chaptersAddon);
-
-const options = {
-  allowSourceToggling: false,
-  allowPropTablesToggling: false,
-};
 
 const carriersLabel = "Carriers";
 
@@ -44,7 +40,6 @@ storiesOf("CarrierLogo", module)
               sectionFn: () => (
                 <CarrierLogo size={size} carriers={carriersObject} dataTest={dataTest} />
               ),
-              options,
             },
           ],
         },
@@ -64,7 +59,6 @@ storiesOf("CarrierLogo", module)
           sections: [
             {
               sectionFn: () => <CarrierLogo carriers={carriersObject} />,
-              options,
             },
           ],
         },
@@ -89,7 +83,6 @@ storiesOf("CarrierLogo", module)
           sections: [
             {
               sectionFn: () => <CarrierLogo carriers={carriersObject} />,
-              options,
             },
           ],
         },
@@ -113,7 +106,6 @@ storiesOf("CarrierLogo", module)
           sections: [
             {
               sectionFn: () => <CarrierLogo carriers={carriersObject} />,
-              options,
             },
           ],
         },
@@ -134,10 +126,31 @@ storiesOf("CarrierLogo", module)
           sections: [
             {
               sectionFn: () => <CarrierLogo size={size} carriers={carriersObject} />,
-              options,
             },
           ],
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <CarrierLogo
+                  size="large"
+                  carriers={[
+                    { code: "FR", name: "Lorem ipsum", type: "airline" },
+                    { code: "TO", name: "Lorem ipsum", type: "train" },
+                  ]}
+                />
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

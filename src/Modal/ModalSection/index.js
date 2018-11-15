@@ -21,14 +21,14 @@ export const StyledModalSection = styled.section`
       suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};
     border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
     border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-    margin: ${({ suppressed, theme }) => suppressed && `${theme.orbit.spaceLarge} 0 0 0`};
+    margin-top: ${({ suppressed, theme }) => suppressed && theme.orbit.spaceLarge};
   }
 
   &:last-of-type {
     border-bottom: ${({ suppressed, theme }) =>
       suppressed ? `1px solid ${theme.orbit.paletteCloudNormal}` : "0"};
     & ~ ${StyledModalFooter} {
-      margin: ${({ theme, suppressed }) => suppressed && `${theme.orbit.spaceMedium} 0 0 0`};
+      margin-top: ${({ theme, suppressed }) => suppressed && theme.orbit.spaceMedium};
     }
   }
 
@@ -36,13 +36,13 @@ export const StyledModalSection = styled.section`
     padding: ${({ theme }) => theme.orbit.spaceXXLarge};
     
     &:first-of-type {
-      margin: ${({ suppressed, theme }) => suppressed && `${theme.orbit.spaceXXLarge} 0 0 0`};
+      margin-top: ${({ suppressed, theme }) => suppressed && theme.orbit.spaceXXLarge};
     }
     &:last-of-type {
       border-bottom-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
       border-bottom-right-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
       & ~ ${StyledModalFooter} {
-        margin: ${({ suppressed, theme }) => suppressed && `${theme.orbit.spaceXXLarge} 0 0 0`};
+        margin-top: ${({ suppressed, theme }) => suppressed && theme.orbit.spaceXXLarge};
       }
     }
   `};

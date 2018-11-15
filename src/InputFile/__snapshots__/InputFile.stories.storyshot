@@ -115,18 +115,18 @@ exports[`Storyshots InputFile Default 1`] = `
               </span>
             </span>
             <div
-              className="InputFile__FakeInput-sc-12oq9bq-1 gWZvnQ"
+              className="InputFile__FakeInput-sc-12oq9bq-1 jTsmps"
             >
               <div
-                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-2 eGVtPn"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 fuspNZ"
                 size="small"
                 type="button"
               >
                 <div
-                  className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
+                  className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
                 >
                   <div
-                    className="Button__IconContainer-sc-1brqp3f-0 biYVFt"
+                    className="Button__IconContainer-sc-1brqp3f-0 fYILxr"
                   >
                     <svg
                       className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -142,7 +142,7 @@ exports[`Storyshots InputFile Default 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-sc-12oq9bq-3 pKPWD"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 cLrUCG"
               >
                 No file selected
               </div>
@@ -495,18 +495,18 @@ exports[`Storyshots InputFile Filled with file 1`] = `
               </span>
             </span>
             <div
-              className="InputFile__FakeInput-sc-12oq9bq-1 gWZvnQ"
+              className="InputFile__FakeInput-sc-12oq9bq-1 jTsmps"
             >
               <div
-                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-2 eGVtPn"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 fuspNZ"
                 size="small"
                 type="button"
               >
                 <div
-                  className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
+                  className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
                 >
                   <div
-                    className="Button__IconContainer-sc-1brqp3f-0 biYVFt"
+                    className="Button__IconContainer-sc-1brqp3f-0 fYILxr"
                   >
                     <svg
                       className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -522,19 +522,18 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-sc-12oq9bq-3 fYyhxF"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 ighfKL"
               >
                 file.png
               </div>
               <button
-                className="InputFile__CloseButton-sc-12oq9bq-5 gjeIqY ButtonLink__StyledButtonLink-sc-14jv5cl-2 cPWzYm"
+                className="InputFile__CloseButton-sc-12oq9bq-5 gjeIqY ButtonLink__StyledButtonLink-sc-14jv5cl-1 gcOSyq"
                 onClick={[Function]}
                 size="normal"
                 type="button"
               >
                 <div
-                  className="ButtonLink__IconContainer-sc-14jv5cl-0 cbCnGN"
-                  size="normal"
+                  className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
                 >
                   <svg
                     className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -934,18 +933,18 @@ exports[`Storyshots InputFile Playground 1`] = `
               </span>
             </span>
             <div
-              className="InputFile__FakeInput-sc-12oq9bq-1 hshmn"
+              className="InputFile__FakeInput-sc-12oq9bq-1 fJAgRb"
             >
               <div
-                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-2 eGVtPn"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 fuspNZ"
                 size="small"
                 type="button"
               >
                 <div
-                  className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
+                  className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
                 >
                   <div
-                    className="Button__IconContainer-sc-1brqp3f-0 biYVFt"
+                    className="Button__IconContainer-sc-1brqp3f-0 fYILxr"
                   >
                     <svg
                       className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -961,7 +960,7 @@ exports[`Storyshots InputFile Playground 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-sc-12oq9bq-3 iFFyDx"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 biIjaN"
               >
                 No file has been selected yet
               </div>
@@ -1467,6 +1466,315 @@ exports[`Storyshots InputFile Playground 1`] = `
 </div>
 `;
 
+exports[`Storyshots InputFile RTL 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="story"
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      className="story-header"
+      style={
+        Object {
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      <div>
+        <h1
+          className="story-title"
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          RTL
+        </h1>
+        
+        <span
+          className="story-subtitle"
+          style={Object {}}
+        >
+          <div>
+            <p>
+              This is a preview of this component in RTL setup.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        className="chapter-header"
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="section-container"
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          className="section-header"
+          style={Object {}}
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="section-component-container"
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            className="InputFile__Field-sc-12oq9bq-0 eLePZo"
+          >
+            <input
+              className="InputFile__Input-sc-12oq9bq-2 jotmqH"
+              type="file"
+            />
+            <span
+              className="FormLabel-sc-1927civ-1 iTEGJS"
+            >
+              <span>
+                My label
+              </span>
+            </span>
+            <div
+              className="InputFile__FakeInput-sc-12oq9bq-1 fKczvh"
+            >
+              <div
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 eZjUuO"
+                size="small"
+                type="button"
+              >
+                <div
+                  className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
+                >
+                  <div
+                    className="Button__IconContainer-sc-1brqp3f-0 hhzYip"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M11 23c-2.897 0-5-2.313-5-5.5V9c0-3.991 2.794-7 6.5-7S19 5.009 19 9v7h-2V9c0-2.897-1.893-5-4.5-5S8 6.103 8 9v8.5c0 1.743.928 3.5 3 3.5s3-1.757 3-3.5V10c0-.602-.146-2-1.5-2S11 9.398 11 10v7H9v-7c0-2.393 1.407-4 3.5-4S16 7.607 16 10v7.5c0 3.187-2.103 5.5-5 5.5"
+                      />
+                    </svg>
+                  </div>
+                  Select file
+                </div>
+              </div>
+              <div
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 cpRVZR"
+              >
+                No file selected
+              </div>
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                className="section-subsection"
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  className="section-subsection-title"
+                >
+                  Source
+                </h4>
+                <pre
+                  className="css-4akams"
+                >
+                  <div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          RenderInRtl
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          InputFile
+                        </span>
+                        <span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              label
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  My label
+                                </span>
+                                "
+                              </span>
+                            </span>
+                             
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          /&gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          RenderInRtl
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots InputFile With error 1`] = `
 <div
   style={
@@ -1582,18 +1890,18 @@ exports[`Storyshots InputFile With error 1`] = `
               </span>
             </span>
             <div
-              className="InputFile__FakeInput-sc-12oq9bq-1 hshmn"
+              className="InputFile__FakeInput-sc-12oq9bq-1 fJAgRb"
             >
               <div
-                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-2 eGVtPn"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 fuspNZ"
                 size="small"
                 type="button"
               >
                 <div
-                  className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
+                  className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
                 >
                   <div
-                    className="Button__IconContainer-sc-1brqp3f-0 biYVFt"
+                    className="Button__IconContainer-sc-1brqp3f-0 fYILxr"
                   >
                     <svg
                       className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -1609,7 +1917,7 @@ exports[`Storyshots InputFile With error 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-sc-12oq9bq-3 iFFyDx"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 biIjaN"
               >
                 No file selected
               </div>
@@ -1997,18 +2305,18 @@ exports[`Storyshots InputFile With help 1`] = `
               </span>
             </span>
             <div
-              className="InputFile__FakeInput-sc-12oq9bq-1 gWZvnQ"
+              className="InputFile__FakeInput-sc-12oq9bq-1 jTsmps"
             >
               <div
-                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-2 eGVtPn"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 fuspNZ"
                 size="small"
                 type="button"
               >
                 <div
-                  className="Button__StyledButtonContent-sc-1brqp3f-3 Elmxo"
+                  className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
                 >
                   <div
-                    className="Button__IconContainer-sc-1brqp3f-0 biYVFt"
+                    className="Button__IconContainer-sc-1brqp3f-0 fYILxr"
                   >
                     <svg
                       className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -2024,7 +2332,7 @@ exports[`Storyshots InputFile With help 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-sc-12oq9bq-3 pKPWD"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 cLrUCG"
               >
                 No file selected
               </div>

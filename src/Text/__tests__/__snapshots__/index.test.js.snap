@@ -389,6 +389,7 @@ exports[`Text should match snapshot 1`] = `
         "zIndexOnTheTop": "900",
         "zIndexSticky": "100",
       },
+      "rtl": false,
     }
   }
   type="primary"

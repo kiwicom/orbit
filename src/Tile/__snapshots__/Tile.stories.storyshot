@@ -394,7 +394,7 @@ exports[`Storyshots Tile Expandable 1`] = `
                 </h3>
               </div>
               <div
-                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 dLmwCT"
+                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 eutXVS"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
               </div>
@@ -769,7 +769,7 @@ exports[`Storyshots Tile Expandable with custom description 1`] = `
               onClick={[Function]}
             >
               <div
-                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 eVXcAk"
+                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 kCIyP"
               >
                 <div
                   className="Stack__StyledStack-sc-1t576ow-0 huvugl"
@@ -1115,7 +1115,7 @@ exports[`Storyshots Tile Playground 1`] = `
                 </h3>
               </div>
               <div
-                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 dLmwCT"
+                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 eutXVS"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
               </div>
@@ -1393,6 +1393,379 @@ exports[`Storyshots Tile Playground 1`] = `
                       >
                         /&gt;
                       </span>
+                    </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tile RTL 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="story"
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      className="story-header"
+      style={
+        Object {
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      <div>
+        <h1
+          className="story-title"
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          RTL
+        </h1>
+        
+        <span
+          className="story-subtitle"
+          style={Object {}}
+        >
+          <div>
+            <p>
+              This is a preview of this component in RTL setup.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        className="chapter-header"
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="section-container"
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          className="section-header"
+          style={Object {}}
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="section-component-container"
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div
+            className="Tile__StyledTile-sc-15i01z6-0 cVFIOL"
+          >
+            <div
+              className="TileHeader__StyledTileHeader-sc-1k1u3lr-0 dbRrBh"
+              onClick={[Function]}
+            >
+              <div
+                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 FrEYK"
+              >
+                <div
+                  className="Stack__StyledStack-sc-1t576ow-0 kZjBSg"
+                >
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                  >
+                    Mr. John Smith
+                  </p>
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                  >
+                    20 kg
+                  </p>
+                </div>
+              </div>
+              <div
+                className="TileHeader__StyledIconRight-sc-1k1u3lr-4 sqokT"
+              >
+                <svg
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              className="TileExpandable__StyledTileExpandable-notqy1-0 SlrAS"
+            >
+              <div>
+                This is example of expanded content
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                className="section-subsection"
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  className="section-subsection-title"
+                >
+                  Source
+                </h4>
+                <pre
+                  className="css-4akams"
+                >
+                  <div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          RenderInRtl
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            Tile
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                onClick
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#170",
+                                      }
+                                    }
+                                  >
+                                    clicked
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                description
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    &lt;Stack /&gt;
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            This is example of expanded content
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            Tile
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          RenderInRtl
+                          &gt;
+                        </span>
+                      </div>
                     </div>
                   </div>
                   <button

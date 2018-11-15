@@ -8,8 +8,3 @@ export const RESIZE_OPTIONS = {
   VERTICAL: "vertical",
   NONE: "none",
 };
-
-export const TOKENS = {
-  fontSizeInput: "fontSizeInput",
-  paddingInput: "paddingInput",
-};

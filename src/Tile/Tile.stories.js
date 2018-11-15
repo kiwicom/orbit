@@ -79,7 +79,7 @@ storiesOf("Tile", module)
               <Tile
                 onClick={action("clicked")}
                 description={
-                  <Stack align="even" direction="row">
+                  <Stack justify="between" direction="row">
                     <Text>Mr. John Smith</Text>
                     <Text>20 kg</Text>
                   </Stack>

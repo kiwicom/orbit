@@ -206,7 +206,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     className="ModalFooter__StyledChild-sc-17ld6v4-0 bwFtzF"
                   >
                     <div
-                      className="Stack__StyledStack-sc-1t576ow-0 fGCjfg"
+                      className="Stack__StyledStack-sc-1t576ow-0 jOHKrp"
                     >
                       <button
                         className="Button__StyledButton-sc-1brqp3f-2 gicbG"

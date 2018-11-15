@@ -4,7 +4,9 @@ import type { spaceAfter } from "../common/getSpacingToken/index";
 
 type Direction = "row" | "column";
 
-type Align = "start" | "end" | "center" | "even";
+type Align = "start" | "end" | "center";
+
+type Justify = "start" | "end" | "center" | "between" | "around";
 
 type Spacing =
   | "extraTight"
@@ -17,6 +19,7 @@ type Spacing =
   | "extraLoose";
 
 type Desktop = {|
+  ...spaceAfter,
   +inline?: boolean,
   +direction?: Direction,
   +wrap?: boolean,
@@ -24,22 +27,24 @@ type Desktop = {|
   +shrink?: boolean,
   +basis?: string,
   +align?: Align,
+  +justify?: Justify,
   +spacing?: Spacing,
-  ...spaceAfter,
 |};
 
 export type Props = {|
+  ...spaceAfter,
   +inline?: boolean,
   +direction?: Direction,
+  +flex?: boolean,
   +wrap?: boolean,
   +grow?: boolean,
   +shrink?: boolean,
   +basis?: string,
   +align?: Align,
+  +justify?: Justify,
   +spacing?: Spacing,
   +desktop?: Desktop,
   +children: React$Node,
-  ...spaceAfter,
 |};
 
 declare export default React$ComponentType<Props>;

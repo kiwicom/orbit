@@ -98,7 +98,7 @@ exports[`Storyshots Select Default 1`] = `
           }
         >
           <label
-            className="Select__Label-sc-6agypz-0 daIoOD"
+            className="Select__Label-sc-6agypz-0 cqbVlc"
           >
             <div
               className="Select__SelectContainer-sc-6agypz-2 zfoUd"
@@ -547,7 +547,7 @@ exports[`Storyshots Select Playground 1`] = `
           }
         >
           <label
-            className="Select__Label-sc-6agypz-0 daIoOD"
+            className="Select__Label-sc-6agypz-0 cqbVlc"
             data-test="test"
           >
             <div
@@ -1277,7 +1277,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
           }
         >
           <label
-            className="Select__Label-sc-6agypz-0 daIoOD"
+            className="Select__Label-sc-6agypz-0 cqbVlc"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -1809,7 +1809,7 @@ exports[`Storyshots Select With error message 1`] = `
           }
         >
           <label
-            className="Select__Label-sc-6agypz-0 daIoOD"
+            className="Select__Label-sc-6agypz-0 cqbVlc"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -2337,7 +2337,7 @@ exports[`Storyshots Select With help message 1`] = `
           }
         >
           <label
-            className="Select__Label-sc-6agypz-0 daIoOD"
+            className="Select__Label-sc-6agypz-0 cqbVlc"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -2864,7 +2864,7 @@ exports[`Storyshots Select With placeholder 1`] = `
           }
         >
           <label
-            className="Select__Label-sc-6agypz-0 daIoOD"
+            className="Select__Label-sc-6agypz-0 cqbVlc"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -3392,7 +3392,7 @@ exports[`Storyshots Select With prefix 1`] = `
           }
         >
           <label
-            className="Select__Label-sc-6agypz-0 daIoOD"
+            className="Select__Label-sc-6agypz-0 cqbVlc"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -3926,7 +3926,7 @@ exports[`Storyshots Select With small size 1`] = `
           }
         >
           <label
-            className="Select__Label-sc-6agypz-0 daIoOD"
+            className="Select__Label-sc-6agypz-0 cqbVlc"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"

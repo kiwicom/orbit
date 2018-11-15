@@ -180,6 +180,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
+  width: 100%;
 }
 
 .c16 {
@@ -357,6 +358,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   z-index: 3;
 }
 
+.c0 {
+  width: 100%;
+}
+
 .c0 .c10 {
   text-align: center;
 }
@@ -416,6 +421,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
               "isStatic": true,
               "lastClassName": "c0",
               "rules": Array [
+                "width:100%;",
                 ".c10",
                 "{text-align:center;&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}}",
                 ".c4",
@@ -930,7 +936,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                       "rules": Array [
                         "font-family:",
                         [Function],
-                        ";position:relative;display:block;z-index:2;flex:1 1 100%;",
+                        ";position:relative;display:block;z-index:2;flex:1 1 100%;width:100%;",
                       ],
                     },
                     "defaultProps": Object {

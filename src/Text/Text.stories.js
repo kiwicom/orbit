@@ -13,6 +13,7 @@ import {
   ELEMENT_OPTIONS,
 } from "./consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Text from "./index";
 
@@ -165,4 +166,20 @@ storiesOf("Text", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <Text align="left">Lorem ipsum dolor sit amet</Text>
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

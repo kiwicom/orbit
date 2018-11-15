@@ -12,6 +12,7 @@ import CardSection from "../Card/CardSection";
 import Card from "../Card";
 import Illustration from "../Illustration";
 import Button from "../Button";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Loading from "./index";
 
@@ -99,4 +100,24 @@ storiesOf("Loading", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <Loading
+                  loading
+                  type="pageLoader"
+                  text="Please wait, content of the page is loading..."
+                />
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

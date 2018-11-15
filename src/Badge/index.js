@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import { TYPE_OPTIONS, TOKENS } from "./consts";
+import { rtlSpacing } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -61,7 +62,7 @@ const IconContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
   display: flex;
-  margin-right: ${({ theme }) => theme.orbit.marginRightBadgeIcon};
+  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.marginRightBadgeIcon} 0 0`)};
 
   svg {
     height: ${({ theme }) => theme.orbit.widthIconSmall};

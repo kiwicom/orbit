@@ -6,6 +6,8 @@ import { action } from "@storybook/addon-actions";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, array } from "@storybook/addon-knobs";
 
+import RenderInRtl from "../utils/rtl/RenderInRtl";
+
 import InputFile from "./index";
 
 setAddon(chaptersAddon);
@@ -165,4 +167,20 @@ storiesOf("InputFile", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <InputFile label="My label" />
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

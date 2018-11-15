@@ -5,6 +5,7 @@ import styled, { keyframes } from "styled-components";
 import defaultTokens from "../defaultTokens";
 import { TYPE_OPTIONS, TOKENS } from "./consts";
 import type { Props } from "../Loading/index";
+import { left, right } from "../utils/rtl";
 
 const getToken = name => ({ type }) => {
   const tokens = {
@@ -43,8 +44,8 @@ export const StyledLoading = styled(({ children, className, dataTest }) => (
   </div>
 ))`
   position: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "absolute"};
-  left: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
   top: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
+  ${left}: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
   width: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "100%"};
   height: ${getToken(TOKENS.HEIGHT)};
   padding: 0 ${({ theme }) => theme.orbit.spaceSmall}; // TODO: create token paddingLoading
@@ -66,7 +67,8 @@ const StyledLoadingText = styled.div`
   color: ${({ theme }) => theme.orbit.paletteInkLighter}; // TODO: create token colorTextLoading
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   margin-top: ${({ theme, type }) => type === TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceMedium};
-  margin-left: ${({ theme, type }) => type !== TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceSmall};
+  margin-${left}: ${({ theme, type }) =>
+  type !== TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceSmall};
 `;
 
 StyledLoadingText.defaultProps = {
@@ -103,7 +105,7 @@ const StyledLoaderCircle = styled.div`
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  margin-right: 6px;
+  margin-${right}: 6px;
   background: ${({ theme }) => theme.orbit.paletteInkLighter};
   animation: ${LoaderAnimation} 1.25s infinite ease-in-out;
   &:nth-child(2) {

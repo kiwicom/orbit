@@ -9,6 +9,7 @@ import FormFeedback from "../FormFeedback";
 import TYPE_OPTIONS from "../FormFeedback/consts";
 import SIZE_OPTIONS from "./consts";
 import type { Ref } from "../common/common.js.flow";
+import { right, rtlSpacing } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -55,10 +56,17 @@ const StyledSelect = styled(
   font-size: ${({ theme, size }) =>
     size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
   height: ${getSelectSize};
-  padding: ${({ theme, size }) =>
-    size === SIZE_OPTIONS.SMALL
-      ? `0 ${theme.orbit.spaceXLarge} 0 ${theme.orbit.spaceSmall}`
-      : `0 ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.spaceSmall}`};
+  padding: ${({ theme, size, prefix }) =>
+    rtlSpacing(
+      (size === SIZE_OPTIONS.SMALL &&
+        !prefix &&
+        `0 ${theme.orbit.spaceXLarge} 0 ${theme.orbit.spaceSmall}`) ||
+        (size === SIZE_OPTIONS.SMALL &&
+          prefix &&
+          `0 ${theme.orbit.spaceXLarge} 0 ${theme.orbit.paddingLeftSelectPrefix}`) ||
+        (prefix && `0 ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.paddingLeftSelectPrefix}`) ||
+        `0 ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.spaceSmall}`,
+    )};
   outline: none;
   width: 100%;
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
@@ -74,9 +82,6 @@ const StyledSelect = styled(
     color: ${({ theme, filled }) =>
       filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
   }
-
-  /* With prefix */
-  padding-left: ${({ prefix, theme }) => prefix && theme.orbit.paddingLeftSelectPrefix};
 
   /* Based on state of select */
   border: 0;
@@ -155,7 +160,7 @@ const SelectSuffix = styled(({ children, className }) => (
   justify-content: center;
   align-items: center;
   top: 0;
-  right: ${({ theme }) => theme.orbit.spaceXSmall};
+  ${right}: ${({ theme }) => theme.orbit.spaceXSmall};
   color: ${({ theme, disabled }) =>
     disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
   pointer-events: none;

@@ -11,6 +11,7 @@ import { StyledModalFooter } from "./ModalFooter";
 import { MobileHeader } from "./ModalHeader";
 import { StyledModalSection } from "./ModalSection";
 import { StyledHeading } from "../Heading";
+import { right } from "../utils/rtl";
 
 import type { Props, State, CloseElementType } from "./index";
 
@@ -105,7 +106,7 @@ const CloseContainer = styled.div`
   }
 
   ${StyledButtonLink} {
-    margin-right: 4px;
+    margin-${right}: ${({ theme }) => theme.orbit.spaceXXSmall};
 
     & svg {
       transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;

@@ -7,12 +7,13 @@ import Heading from "../../Heading";
 import defaultTokens from "../../defaultTokens";
 import media from "../../utils/media";
 import { StyledModalSection } from "../ModalSection";
+import { left, rtlSpacing } from "../../utils/rtl";
 
 import type { Props } from "./index";
 
 const ModalTitle = styled.div`
   // TODO: create token marginModalTitle and marginModalTitleWithIllustration
-  margin: ${({ theme, illustration }) => `${illustration ? theme.orbit.spaceXSmall : "0"} 0 0 0`};
+  margin-top: ${({ theme, illustration }) => illustration && theme.orbit.spaceXSmall};
 `;
 
 ModalTitle.defaultProps = {
@@ -20,7 +21,7 @@ ModalTitle.defaultProps = {
 };
 
 const ModalDescription = styled.div`
-  margin: ${({ theme }) => `${theme.orbit.spaceXSmall} 0 0 0`};
+  margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 
 ModalDescription.defaultProps = {
@@ -31,13 +32,22 @@ const StyledModalHeader = styled.div`
   width: 100%;
   display: block;
   padding: ${({ theme, illustration, suppressed }) =>
-    illustration
-      ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium} ${
-          suppressed ? theme.orbit.spaceLarge : "0"
-        } ${theme.orbit.spaceMedium}`
-      : `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${
-          suppressed ? theme.orbit.spaceLarge : "0"
-        } ${theme.orbit.spaceMedium}`};
+    rtlSpacing(
+      (illustration &&
+        suppressed &&
+        `${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge} ${
+          theme.orbit.spaceMedium
+        }`) ||
+        (illustration &&
+          !suppressed &&
+          `${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`) ||
+        (!illustration &&
+          suppressed &&
+          `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge} ${
+            theme.orbit.spaceMedium
+          }`) ||
+        `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`,
+    )};
   border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-sizing: border-box;
@@ -52,13 +62,15 @@ const StyledModalHeader = styled.div`
 
   ${media.desktop`
     padding: ${({ theme, illustration, suppressed }) =>
-      illustration
-        ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXXLarge} ${
-            suppressed ? theme.orbit.spaceXXLarge : "0"
-          } ${theme.orbit.spaceXXLarge}`
-        : `${theme.orbit.spaceXXLarge} ${theme.orbit.spaceXXLarge} ${
-            suppressed ? theme.orbit.spaceXXLarge : "0"
-          } ${theme.orbit.spaceXXLarge}`};
+      rtlSpacing(
+        illustration
+          ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXXLarge} ${
+              suppressed ? theme.orbit.spaceXXLarge : "0"
+            } ${theme.orbit.spaceXXLarge}`
+          : `${theme.orbit.spaceXXLarge} ${theme.orbit.spaceXXLarge} ${
+              suppressed ? theme.orbit.spaceXXLarge : "0"
+            } ${theme.orbit.spaceXXLarge}`,
+      )};
   `};
 `;
 
@@ -71,7 +83,7 @@ export const MobileHeader = styled.div`
   position: fixed;
   // TODO use token for 52px
   top: 16px;
-  left: 0;
+  ${left}: 0;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightHeadingDisplay};
   // TODO create token
@@ -80,7 +92,7 @@ export const MobileHeader = styled.div`
   // TODO use token for 52px
   line-height: 52px;
   box-sizing: border-box;
-  padding-left: ${({ theme }) => theme.orbit.spaceLarge};
+  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceLarge}`)};
   opacity: 0;
   transition: top ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
     opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out;

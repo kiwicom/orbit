@@ -6,6 +6,7 @@ import defaultTokens from "../defaultTokens";
 import { TYPES, SIZES, TOKENS } from "./consts";
 import { ICON_SIZES } from "../Icon/consts";
 import { getSize } from "../Icon";
+import { rtlSpacing } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -20,21 +21,6 @@ const getSizeToken = name => ({ theme, size }) => {
       [SIZES.LARGE]: theme.orbit.fontSizeButtonLarge,
       [SIZES.NORMAL]: theme.orbit.fontSizeButtonNormal,
       [SIZES.SMALL]: theme.orbit.fontSizeButtonSmall,
-    },
-    [TOKENS.paddingButton]: {
-      [SIZES.LARGE]: theme.orbit.paddingButtonLarge,
-      [SIZES.NORMAL]: theme.orbit.paddingButtonNormal,
-      [SIZES.SMALL]: theme.orbit.paddingButtonSmall,
-    },
-    [TOKENS.paddingButtonWithIcon]: {
-      [SIZES.LARGE]: theme.orbit.paddingButtonLargeWithIcon,
-      [SIZES.NORMAL]: theme.orbit.paddingButtonNormalWithIcon,
-      [SIZES.SMALL]: theme.orbit.paddingButtonSmallWithIcon,
-    },
-    [TOKENS.marginRightIcon]: {
-      [SIZES.LARGE]: theme.orbit.marginButtonIconLarge,
-      [SIZES.NORMAL]: theme.orbit.marginButtonIconNormal,
-      [SIZES.SMALL]: theme.orbit.marginButtonIconSmall,
     },
   };
   return tokens[name][size];
@@ -70,12 +56,88 @@ const getTypeToken = name => ({ theme, type }) => {
   return tokens[name][type];
 };
 
-const IconContainer = styled(({ theme, sizeIcon, type, onlyIcon, ...props }) => <div {...props} />)`
+const buttonSpacing = () => ({ theme, onlyIcon, iconRight, iconLeft, size }) => {
+  const tokens = {
+    [TOKENS.paddingButton]: {
+      [SIZES.LARGE]: theme.orbit.paddingButtonLarge,
+      [SIZES.NORMAL]: theme.orbit.paddingButtonNormal,
+      [SIZES.SMALL]: theme.orbit.paddingButtonSmall,
+    },
+    [TOKENS.paddingButtonWithIcon]: {
+      [SIZES.LARGE]: theme.orbit.paddingButtonLargeWithIcon,
+      [SIZES.NORMAL]: theme.orbit.paddingButtonNormalWithIcon,
+      [SIZES.SMALL]: theme.orbit.paddingButtonSmallWithIcon,
+    },
+  };
+
+  /*
+  TODO: we need to define/update tokens
+  NEEDS TO BE CHECKED ONCE AGAIN DUE TO https://github.com/kiwicom/orbit-design-tokens/pull/55
+
+  paddingButtonWithoutText: 0
+
+  paddingButtonSmall: 0 12px
+  paddingButtonNormal: 0 16px
+  paddingButtonLarge: 0 28px
+
+
+  paddingButtonSmallWithIcons: 0 8px
+  paddingButtonNormalWithIcons: 0 8px
+  paddingButtonLargeWithIcons: 0 12px
+
+  paddingButtonSmallWithLeftIcon: 0 12px 0 8px
+  paddingButtonNormalWithLeftIcon: 0 16px 0 8px
+  paddingButtonLargeWithLeftIcon: 0 28px 0 12px
+
+  paddingButtonSmallWithRightIcon: 0 8px 0 12px
+  paddingButtonNormalWithRightIcon: 0 8px 0 16px
+  paddingButtonLargeWithRightIcon: 0 12px 0 28px
+  */
+  return rtlSpacing(
+    (onlyIcon && "0") ||
+      (iconLeft && iconRight && `0 ${tokens[TOKENS.paddingButtonWithIcon][size]}`) ||
+      (iconLeft &&
+        !iconRight &&
+        `0 ${tokens[TOKENS.paddingButton][size]} 0 ${
+          tokens[TOKENS.paddingButtonWithIcon][size]
+        }`) ||
+      (!iconLeft &&
+        iconRight &&
+        `0 ${tokens[TOKENS.paddingButtonWithIcon][size]} 0 ${
+          tokens[TOKENS.paddingButton][size]
+        }`) ||
+      `0 ${tokens[TOKENS.paddingButton][size]}`,
+  );
+};
+
+const iconSpacing = () => ({ theme, right, size, onlyIcon }) => {
+  const tokens = {
+    [TOKENS.marginRightIcon]: {
+      [SIZES.LARGE]: theme.orbit.marginButtonIconLarge,
+      [SIZES.NORMAL]: theme.orbit.marginButtonIconNormal,
+      [SIZES.SMALL]: theme.orbit.marginButtonIconSmall,
+    },
+  };
+
+  if (onlyIcon) {
+    return null;
+  }
+
+  return rtlSpacing(
+    right
+      ? `0 0 0 ${tokens[TOKENS.marginRightIcon][size]}`
+      : `0 ${tokens[TOKENS.marginRightIcon][size]} 0 0`,
+  );
+};
+
+const IconContainer = styled(({ className, children }) => (
+  <div className={className}>{children}</div>
+))`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-right: ${({ onlyIcon }) => (onlyIcon ? "0" : getSizeToken(TOKENS.marginRightIcon))};
+  margin: ${iconSpacing()};
 
   > * {
     width: ${({ sizeIcon }) => getSize(sizeIcon)};
@@ -84,15 +146,6 @@ const IconContainer = styled(({ theme, sizeIcon, type, onlyIcon, ...props }) => 
 `;
 
 IconContainer.defaultProps = {
-  theme: defaultTokens,
-};
-
-const IconContainerRight = styled(IconContainer)`
-  margin-right: 0;
-  margin-left: ${({ onlyIcon }) => (onlyIcon ? "0" : getSizeToken(TOKENS.marginRightIcon))};
-`;
-
-IconContainerRight.defaultProps = {
   theme: defaultTokens,
 };
 
@@ -143,15 +196,7 @@ export const StyledButtonLink = styled(
   border: 0;
   border-radius: ${({ theme, circled }) =>
     circled ? getSizeToken(TOKENS.heightButton) : theme.orbit.borderRadiusNormal};
-  padding: 0;
-  padding-right: ${({ onlyIcon, iconRight }) =>
-    (onlyIcon && "0") ||
-    (iconRight ? getSizeToken(TOKENS.paddingButtonWithIcon) : getSizeToken(TOKENS.paddingButton))};
-  padding-left: ${({ onlyIcon, icon, iconLeft }) =>
-    (onlyIcon && "0") ||
-    (iconLeft || icon
-      ? getSizeToken(TOKENS.paddingButtonWithIcon)
-      : getSizeToken(TOKENS.paddingButton))};
+  padding: ${buttonSpacing()};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
   font-size: ${getSizeToken(TOKENS.fontSizeButton)};
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
@@ -204,13 +249,14 @@ const ButtonLink = (props: Props) => {
 
   return (
     <StyledButtonLink
+      {...props}
       onClick={onClick}
       component={component}
       onlyIcon={onlyIcon}
       sizeIcon={sizeIcon}
       type={type}
       target={href && external ? "_blank" : undefined}
-      {...props}
+      iconLeft={iconLeft}
     >
       {iconLeft && (
         <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon}>
@@ -219,9 +265,9 @@ const ButtonLink = (props: Props) => {
       )}
       {children}
       {iconRight && (
-        <IconContainerRight size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon}>
+        <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon} right>
           {iconRight}
-        </IconContainerRight>
+        </IconContainer>
       )}
     </StyledButtonLink>
   );

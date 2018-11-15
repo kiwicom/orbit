@@ -5,8 +5,9 @@ import styled from "styled-components";
 import defaultTokens from "../defaultTokens";
 import FormFeedback from "../FormFeedback";
 import FormLabel from "../FormLabel";
-import { SIZE_OPTIONS, RESIZE_OPTIONS, TOKENS } from "./consts";
+import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import type { Ref } from "../common/common.js.flow";
+import { rtlSpacing } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -25,19 +26,21 @@ Field.defaultProps = {
   theme: defaultTokens,
 };
 
-const getTokens = name => ({ theme, size }) => {
+const getFontSize = () => ({ theme, size }) => {
   const tokens = {
-    [TOKENS.fontSizeInput]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
-    },
-    [TOKENS.paddingInput]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingTextareaSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingTextareaNormal,
-    },
+    [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
   };
 
-  return tokens[name][size];
+  return tokens[size];
+};
+
+const getPadding = () => ({ theme, size }) => {
+  const tokens = {
+    [SIZE_OPTIONS.SMALL]: theme.orbit.paddingTextareaSmall,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingTextareaNormal,
+  };
+  return rtlSpacing(tokens[size]);
 };
 
 const StyledTextArea = styled.textarea`
@@ -46,7 +49,7 @@ const StyledTextArea = styled.textarea`
   display: block;
   width: 100%;
   height: ${({ fullHeight }) => fullHeight && "100%"};
-  padding: ${getTokens(TOKENS.paddingInput)};
+  padding: ${getPadding()};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
@@ -57,7 +60,7 @@ const StyledTextArea = styled.textarea`
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   color: ${({ disabled, theme }) =>
     disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
-  font-size: ${getTokens(TOKENS.fontSizeInput)};
+  font-size: ${getFontSize()};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
   font-family: inherit;

@@ -401,6 +401,7 @@ exports[`Icon should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
       viewBox="0 0 24 24"
@@ -806,6 +807,7 @@ exports[`Icon should match snapshot 1`] = `
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
                 },
+                "rtl": false,
               },
             },
             "displayName": "Icon__StyledIcon",
@@ -1201,6 +1203,7 @@ exports[`Icon should match snapshot 1`] = `
               "zIndexOnTheTop": "900",
               "zIndexSticky": "100",
             },
+            "rtl": false,
           }
         }
         viewBox="0 0 24 24"
@@ -1590,6 +1593,7 @@ exports[`Icon should match snapshot 1`] = `
                 "zIndexOnTheTop": "900",
                 "zIndexSticky": "100",
               },
+              "rtl": false,
             }
           }
           viewBox="0 0 24 24"
@@ -2015,6 +2019,7 @@ exports[`Icon with custom props should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
       viewBox="0 0 24 24"
@@ -2421,6 +2426,7 @@ exports[`Icon with custom props should match snapshot 1`] = `
                   "zIndexOnTheTop": "900",
                   "zIndexSticky": "100",
                 },
+                "rtl": false,
               },
             },
             "displayName": "Icon__StyledIcon",
@@ -2816,6 +2822,7 @@ exports[`Icon with custom props should match snapshot 1`] = `
               "zIndexOnTheTop": "900",
               "zIndexSticky": "100",
             },
+            "rtl": false,
           }
         }
         viewBox="0 0 24 24"
@@ -3206,6 +3213,7 @@ exports[`Icon with custom props should match snapshot 1`] = `
                 "zIndexOnTheTop": "900",
                 "zIndexSticky": "100",
               },
+              "rtl": false,
             }
           }
           viewBox="0 0 24 24"

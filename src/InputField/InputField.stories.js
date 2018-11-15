@@ -13,6 +13,7 @@ import { NAME_OPTIONS } from "../ServiceLogo/consts";
 import ButtonLink from "../ButtonLink";
 import TextLink from "../TextLink";
 import ServiceLogo from "../ServiceLogo";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import InputField from "./index";
 
@@ -405,4 +406,25 @@ storiesOf("InputField", module)
         },
       ],
     };
-  });
+  })
+  .addWithChapters("RTL", () => ({
+    info: "This is a preview of this component in RTL setup.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <RenderInRtl>
+                <InputField
+                  placeholder="Placeholder"
+                  label="My label"
+                  prefix="$"
+                  suffix={<ButtonLink iconLeft={<Icons.Visibility />} />}
+                />
+              </RenderInRtl>
+            ),
+          },
+        ],
+      },
+    ],
+  }));

@@ -53,6 +53,7 @@ For live preview check out [Storybook](https://kiwicom.github.io/orbit-component
 ## Main Sections:
 * [Components](https://github.com/kiwicom/orbit-components/tree/master/src/)
 * [Icons](https://github.com/kiwicom/orbit-components/tree/master/src/Icon/README.md)
+* [Right to left languages](https://github.com/kiwicom/orbit-components/tree/master/src/utils/rtl/README.md)
 * [Theming](https://github.com/kiwicom/orbit-components/tree/master/.github/theming.md)
 
 ## Contributing

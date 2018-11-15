@@ -7,6 +7,7 @@ import Heading from "../../Heading/index";
 import NewWindow from "../../icons/NewWindow";
 import ChevronRight from "../../icons/ChevronRight";
 import ChevronDown from "../../icons/ChevronDown";
+import { right, rtlSpacing } from "../../utils/rtl";
 
 import type { Props, IconProps, IconRightProps } from "./index";
 
@@ -35,7 +36,7 @@ const StyledTileIcon = styled.div`
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  margin: ${({ theme }) => `0 ${theme.orbit.spaceXSmall} 0 0`};
+  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
 `;
 
 StyledTileIcon.defaultProps = {
@@ -46,9 +47,12 @@ const StyledTileDescription = styled.div`
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   color: ${({ theme }) => theme.orbit.colorTextPrimary};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
-  margin-top: ${({ theme }) => theme.orbit.spaceXXSmall};
-  margin-right: ${({ theme }) => theme.orbit.spaceXLarge};
-  margin-left: ${({ theme, hasIcon, hasTitle }) => hasIcon && hasTitle && theme.orbit.spaceXLarge};
+  margin: ${({ theme, hasIcon, hasTitle }) =>
+    rtlSpacing(
+      `${theme.orbit.spaceXXSmall} ${theme.orbit.spaceXLarge} 0 ${
+        hasIcon && hasTitle ? theme.orbit.spaceXLarge : 0
+      }`,
+    )};
 `;
 
 StyledTileDescription.defaultProps = {
@@ -59,11 +63,11 @@ const Icon = ({ icon }: IconProps) => <StyledTileIcon>{icon}</StyledTileIcon>;
 
 export const StyledIconRight = styled.div`
   position: absolute;
-  right: 0;
+  ${right}: 0;
   top: 50%;
   transform: translateY(-50%);
   color: ${({ theme }) => theme.orbit.paletteInkLight};
-  padding: ${({ theme }) => `0 ${theme.orbit.spaceMedium} 0 0`};
+  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceMedium} 0 0`)};
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   svg {

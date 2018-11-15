@@ -11,6 +11,7 @@ import {
   SIZE_OPTIONS,
 } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
+import { textAlign } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -58,7 +59,7 @@ export const StyledText = styled(({ element, children, className, dataTest }) =>
   font-weight: ${getWeightToken()};
   color: ${getTypeToken()};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
-  text-align: ${({ align }) => align};
+  text-align: ${({ align }) => textAlign(align)};
   text-transform: ${({ uppercase }) => uppercase && `uppercase`};
   font-style: ${({ italic }) => italic && `italic`};
   margin: 0;

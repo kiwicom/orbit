@@ -397,6 +397,7 @@ exports[`StopoverArrow should match snapshot 1`] = `
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
         },
+        "rtl": false,
       }
     }
     viewBox="0 0 50 7"
@@ -798,6 +799,7 @@ exports[`StopoverArrow should match snapshot 1`] = `
                 "zIndexOnTheTop": "900",
                 "zIndexSticky": "100",
               },
+              "rtl": false,
             },
           },
           "displayName": "StopoverArrow__StyledArrow",
@@ -1192,6 +1194,7 @@ exports[`StopoverArrow should match snapshot 1`] = `
             "zIndexOnTheTop": "900",
             "zIndexSticky": "100",
           },
+          "rtl": false,
         }
       }
       viewBox="0 0 50 7"

@@ -9,6 +9,7 @@ import { withKnobs, select, text } from "@storybook/addon-knobs";
 import * as Icons from "../icons";
 import IconList from "./IconList";
 import { ICON_SIZES, ICON_COLORS } from "./consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 setAddon(chaptersAddon);
 
@@ -52,6 +53,27 @@ storiesOf("Icon", module)
           sections: [
             {
               sectionFn: () => <Icon size={size} customColor={customColor} />,
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Reversed on RTL", () => {
+    const source = select("Icon", Object.keys(Icons), "ChevronLeft");
+    const Icon = Icons[source];
+    return {
+      info:
+        "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <RenderInRtl>
+                  <Icon reverseOnRtl />
+                </RenderInRtl>
+              ),
             },
           ],
         },

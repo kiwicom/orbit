@@ -17,6 +17,7 @@ Table below contains all types of the props available for icons in general.
 | customColor   | `string`        |                 | The customColor of the Icon. [See Functional specs](#functional-specs)
 | dataTest      | `string`        |                 | Optional prop for testing purposes.
 | **size**      | [`enum`](#enum) | `"medium"`      | The size of the Icon.
+| reverseOnRtl  | `boolean`       | `false`         | If `true`, the icon will be reversed if `theme.rtl` is set to `true`.
 
 ### enum
 

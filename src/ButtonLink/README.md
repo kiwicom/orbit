@@ -24,6 +24,7 @@ Table below contains all types of the props available in ButtonLink component.
 | iconLeft      | `React.Node`                    |                 | The displayed icon on the left.
 | iconRight     | `React.Node`                    |                 | The displayed icon on the right.
 | onClick       | `event => void \| Promise`      |                 | Function for handling onClick event.
+| ref           | `func`                          |                 | Prop for forwarded ref of the Button.
 | **size**      | [`enum`](#enum)                 | `"normal"`      | The size of the ButtonLink.
 | submit        | `boolean`                       | `false`         | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.
 | transparent   | `boolean`                       | `false`         | If `true`, the ButtonLink will not have `:hover` and `:active` state.

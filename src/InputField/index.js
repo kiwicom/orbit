@@ -176,7 +176,7 @@ Suffix.defaultProps = {
 
 export const Input = styled.input`
   appearance: none;
-  font-family: inherit;
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   border: none;
   padding: ${getPadding()};
   font-size: inherit;

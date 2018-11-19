@@ -101,7 +101,7 @@ exports[`Storyshots ButtonGroup RTL 1`] = `
             className="ButtonGroup__StyledButtonGroup-sc-82hrp5-0 drLYJp"
           >
             <button
-              className="Button__StyledButton-sc-1brqp3f-1 iHnTKb"
+              className="Button__StyledButton-sc-1brqp3f-1 iqzNzf"
               size="normal"
               type="button"
             >
@@ -125,7 +125,7 @@ exports[`Storyshots ButtonGroup RTL 1`] = `
               </div>
             </button>
             <button
-              className="Button__StyledButton-sc-1brqp3f-1 hQvWci"
+              className="Button__StyledButton-sc-1brqp3f-1 jZANKJ"
               size="normal"
               type="button"
             >
@@ -1063,7 +1063,7 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
             data-test="test"
           >
             <button
-              className="Button__StyledButton-sc-1brqp3f-1 eLIUCZ"
+              className="Button__StyledButton-sc-1brqp3f-1 bAPsAE"
               size="normal"
               type="button"
             >
@@ -1087,7 +1087,7 @@ exports[`Storyshots ButtonGroup With Buttons 1`] = `
               </div>
             </button>
             <button
-              className="Button__StyledButton-sc-1brqp3f-1 hQvWci"
+              className="Button__StyledButton-sc-1brqp3f-1 jZANKJ"
               size="normal"
               type="button"
             >

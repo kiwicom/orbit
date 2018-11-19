@@ -98,7 +98,7 @@ exports[`Storyshots Loading Button loading 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 KyVJG"
+            className="Button__StyledButton-sc-1brqp3f-1 bzwRny"
             disabled={true}
             size="normal"
             type="button"

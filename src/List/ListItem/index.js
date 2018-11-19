@@ -9,6 +9,7 @@ import { rtlSpacing } from "../../utils/rtl";
 import type { Props } from "./index";
 
 export const Item = styled.li`
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   display: flex;
   flex-direction: row;
   align-items: flex-start;

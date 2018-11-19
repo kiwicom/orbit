@@ -80,6 +80,7 @@ const getFileInputColor = ({ error, fileName }, theme) => {
 };
 
 const StyledFileInput = styled.div`
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   color: ${({ error, fileName, theme }) => getFileInputColor({ error, fileName }, theme)};
   width: 100%;
   white-space: nowrap;

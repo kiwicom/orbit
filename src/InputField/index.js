@@ -215,7 +215,8 @@ export const Input = styled.input`
     color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
   }
 
-  &::-ms-clear {
+  &::-ms-clear,
+  &::-ms-reveal {
     display: none;
   }
 `;

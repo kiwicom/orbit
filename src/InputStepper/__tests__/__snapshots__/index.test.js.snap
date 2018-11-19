@@ -334,7 +334,8 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   color: #bac7d5;
 }
 
-.c11::-ms-clear {
+.c11::-ms-clear,
+.c11::-ms-reveal {
   display: none;
 }
 
@@ -11927,7 +11928,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       [Function],
                                       ";}&::-ms-input-placeholder{color:",
                                       [Function],
-                                      ";}&::-ms-clear{display:none;}",
+                                      ";}&::-ms-clear,&::-ms-reveal{display:none;}",
                                     ],
                                   },
                                   "defaultProps": Object {

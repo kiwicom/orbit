@@ -12439,6 +12439,7 @@ exports[`Default Stack should match snapshot 1`] = `
         </InputField>
         <Button>
           <Button__StyledButton
+            buttonRef={null}
             component="button"
             loading={false}
             size="normal"
@@ -12882,6 +12883,7 @@ exports[`Default Stack should match snapshot 1`] = `
             width={0}
           >
             <StyledComponent
+              buttonRef={null}
               component="button"
               forwardedComponent={
                 Object {
@@ -13846,6 +13848,7 @@ exports[`Default Stack should match snapshot 1`] = `
               width={0}
             >
               <Component
+                buttonRef={null}
                 className="c8"
                 component="button"
                 loading={false}
@@ -28220,6 +28223,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
           </InputField>
           <Button>
             <Button__StyledButton
+              buttonRef={null}
               component="button"
               loading={false}
               size="normal"
@@ -28663,6 +28667,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
               width={0}
             >
               <StyledComponent
+                buttonRef={null}
                 component="button"
                 forwardedComponent={
                   Object {
@@ -29627,6 +29632,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                 width={0}
               >
                 <Component
+                  buttonRef={null}
                   className="c8"
                   component="button"
                   loading={false}
@@ -43889,6 +43895,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
         </InputField>
         <Button>
           <Button__StyledButton
+            buttonRef={null}
             component="button"
             loading={false}
             size="normal"
@@ -44332,6 +44339,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
             width={0}
           >
             <StyledComponent
+              buttonRef={null}
               component="button"
               forwardedComponent={
                 Object {
@@ -45296,6 +45304,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
               width={0}
             >
               <Component
+                buttonRef={null}
                 className="c8"
                 component="button"
                 loading={false}

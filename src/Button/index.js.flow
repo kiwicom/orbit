@@ -1,7 +1,7 @@
 // @flow
 import type { ReactComponentStyled } from "styled-components";
 
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Ref } from "../common/common.js.flow";
 
 export type Type =
   | "primary"
@@ -17,6 +17,8 @@ export type Type =
 export type Size = "small" | "normal" | "large";
 
 export type Props = {|
+  ...Globals,
+  ...Ref,
   +children?: React$Node,
   +component?: string | React$Node,
   +href?: string,
@@ -35,7 +37,6 @@ export type Props = {|
   +iconLeft?: React$Node,
   +iconRight?: React$Node,
   +tabIndex?: string,
-  ...Globals,
 |};
 
 declare export var StyledButton: ReactComponentStyled<Props>;

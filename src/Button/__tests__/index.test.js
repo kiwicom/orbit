@@ -12,8 +12,9 @@ const onClick = jest.fn();
 
 describe("Button", () => {
   const submit = true;
+  const ref = React.createRef();
   const component = shallow(
-    <Button size="normal" type="secondary" onClick={onClick} submit={submit}>
+    <Button size="normal" type="secondary" onClick={onClick} submit={submit} ref={ref}>
       {children}
     </Button>,
   );
@@ -27,6 +28,9 @@ describe("Button", () => {
   it("should execute onClick method", () => {
     button.simulate("click");
     expect(onClick).toHaveBeenCalled();
+  });
+  it("should have ref", () => {
+    expect(ref.current).toBeDefined();
   });
 });
 describe("Button with icon", () => {

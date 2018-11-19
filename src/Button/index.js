@@ -8,6 +8,7 @@ import { TYPE_OPTIONS, SIZE_OPTIONS, TOKENS } from "./consts";
 import Loading, { StyledSpinner } from "../Loading";
 import { rtlSpacing } from "../utils/rtl";
 import { getSize } from "../Icon";
+import type { Ref } from "../common/common.js.flow";
 
 import type { Props } from "./index";
 
@@ -322,13 +323,19 @@ export const StyledButton = styled(
     style,
     dataTest,
     submit,
+    buttonRef,
     ...props
   }) => {
     const isButtonWithHref = component === "button" && props.href;
     const Component = isButtonWithHref ? "a" : component;
     const buttonType = submit ? "submit" : "button";
     return (
-      <Component data-test={dataTest} type={!isButtonWithHref ? buttonType : undefined} {...props}>
+      <Component
+        data-test={dataTest}
+        type={!isButtonWithHref ? buttonType : undefined}
+        {...props}
+        ref={buttonRef}
+      >
         {props.children}
       </Component>
     );
@@ -453,7 +460,8 @@ StyledButtonContent.defaultProps = {
   theme: defaultTokens,
 };
 
-const Button = (props: Props) => {
+// $FlowExpected
+const Button = React.forwardRef((props: Props, ref: Ref) => {
   const {
     component = "button",
     children,
@@ -490,6 +498,7 @@ const Button = (props: Props) => {
       rel={href && external ? "noopener noreferrer" : undefined}
       type={type}
       width={width}
+      buttonRef={ref}
     >
       {loading && <Loading type="buttonLoader" />}
       <StyledButtonContent loading={loading}>
@@ -520,6 +529,8 @@ const Button = (props: Props) => {
       </StyledButtonContent>
     </StyledButton>
   );
-};
+});
+
+Button.displayName = "Button";
 
 export default Button;

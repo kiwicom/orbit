@@ -2,6 +2,7 @@
 
 exports[`Button with icon should match snapshot 1`] = `
 <Button__StyledButton
+  buttonRef={null}
   component="button"
   dataTest="test"
   external={true}

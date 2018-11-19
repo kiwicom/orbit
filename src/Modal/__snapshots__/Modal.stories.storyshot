@@ -208,7 +208,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       className="Stack__StyledStack-sc-1t576ow-0 jOHKrp"
                     >
                       <button
-                        className="Button__StyledButton-sc-1brqp3f-1 DURWC"
+                        className="Button__StyledButton-sc-1brqp3f-1 bwmbUD"
                         size="normal"
                         type="button"
                       >
@@ -244,7 +244,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     className="ModalFooter__StyledChild-sc-17ld6v4-0 ZHtLp"
                   >
                     <button
-                      className="Button__StyledButton-sc-1brqp3f-1 beTcpN"
+                      className="Button__StyledButton-sc-1brqp3f-1 bwWmAt"
                       size="normal"
                       type="button"
                     >
@@ -1769,7 +1769,7 @@ exports[`Storyshots Modal RTL 1`] = `
                     className="ModalFooter__StyledChild-sc-17ld6v4-0 hswcsR"
                   >
                     <button
-                      className="Button__StyledButton-sc-1brqp3f-1 kxFPsg"
+                      className="Button__StyledButton-sc-1brqp3f-1 jOtiqI"
                       size="normal"
                       type="button"
                     >
@@ -1797,7 +1797,7 @@ exports[`Storyshots Modal RTL 1`] = `
                     className="ModalFooter__StyledChild-sc-17ld6v4-0 jYpTMd"
                   >
                     <button
-                      className="Button__StyledButton-sc-1brqp3f-1 beTcpN"
+                      className="Button__StyledButton-sc-1brqp3f-1 bwWmAt"
                       size="normal"
                       type="button"
                     >

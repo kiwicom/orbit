@@ -25,6 +25,7 @@ const StyledHeadingWrapper = styled.div`
 `;
 
 const StyledSubTitle = styled.div`
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   text-align: center;
   margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
 `;

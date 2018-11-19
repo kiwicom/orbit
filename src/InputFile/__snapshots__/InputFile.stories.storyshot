@@ -118,7 +118,7 @@ exports[`Storyshots InputFile Default 1`] = `
               className="InputFile__FakeInput-sc-12oq9bq-1 jTsmps"
             >
               <div
-                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 fuspNZ"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 gvsbTN"
                 size="small"
                 type="button"
               >
@@ -142,7 +142,7 @@ exports[`Storyshots InputFile Default 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-sc-12oq9bq-3 cLrUCG"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 eEDRgG"
               >
                 No file selected
               </div>
@@ -498,7 +498,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
               className="InputFile__FakeInput-sc-12oq9bq-1 jTsmps"
             >
               <div
-                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 fuspNZ"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 gvsbTN"
                 size="small"
                 type="button"
               >
@@ -522,7 +522,7 @@ exports[`Storyshots InputFile Filled with file 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-sc-12oq9bq-3 ighfKL"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 iiHiZT"
               >
                 file.png
               </div>
@@ -936,7 +936,7 @@ exports[`Storyshots InputFile Playground 1`] = `
               className="InputFile__FakeInput-sc-12oq9bq-1 fJAgRb"
             >
               <div
-                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 fuspNZ"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 gvsbTN"
                 size="small"
                 type="button"
               >
@@ -960,7 +960,7 @@ exports[`Storyshots InputFile Playground 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-sc-12oq9bq-3 biIjaN"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 gmYSGB"
               >
                 No file has been selected yet
               </div>
@@ -1581,7 +1581,7 @@ exports[`Storyshots InputFile RTL 1`] = `
               className="InputFile__FakeInput-sc-12oq9bq-1 fKczvh"
             >
               <div
-                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 eZjUuO"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 mjLem"
                 size="small"
                 type="button"
               >
@@ -1605,7 +1605,7 @@ exports[`Storyshots InputFile RTL 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-sc-12oq9bq-3 cpRVZR"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 iYfiJe"
               >
                 No file selected
               </div>
@@ -1893,7 +1893,7 @@ exports[`Storyshots InputFile With error 1`] = `
               className="InputFile__FakeInput-sc-12oq9bq-1 fJAgRb"
             >
               <div
-                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 fuspNZ"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 gvsbTN"
                 size="small"
                 type="button"
               >
@@ -1917,7 +1917,7 @@ exports[`Storyshots InputFile With error 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-sc-12oq9bq-3 biIjaN"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 gmYSGB"
               >
                 No file selected
               </div>
@@ -2308,7 +2308,7 @@ exports[`Storyshots InputFile With help 1`] = `
               className="InputFile__FakeInput-sc-12oq9bq-1 jTsmps"
             >
               <div
-                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 fuspNZ"
+                className="InputFile__InputButton-sc-12oq9bq-4 iMISeL Button__StyledButton-sc-1brqp3f-1 gvsbTN"
                 size="small"
                 type="button"
               >
@@ -2332,7 +2332,7 @@ exports[`Storyshots InputFile With help 1`] = `
                 </div>
               </div>
               <div
-                className="InputFile__StyledFileInput-sc-12oq9bq-3 cLrUCG"
+                className="InputFile__StyledFileInput-sc-12oq9bq-3 eEDRgG"
               >
                 No file selected
               </div>

@@ -126,7 +126,7 @@ exports[`Storyshots Deprecated Card Card with description 1`] = `
                 </h2>
               </div>
               <div
-                className="CardHeader__StyledSubTitle-sc-39t2tz-2 jJqVlr"
+                className="CardHeader__StyledSubTitle-sc-39t2tz-2 exFKvr"
               >
                 <p
                   className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -454,7 +454,7 @@ exports[`Storyshots Deprecated Card Card with only content 1`] = `
             className="Card__StyledCard-vnl6dw-0 kbpLnR"
           >
             <div
-              className="CardContent__StyledCardContent-sc-1hk88tp-0 bcinQX"
+              className="CardContent__StyledCardContent-sc-1hk88tp-0 guZEke"
             >
               <p
                 className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -802,7 +802,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                 </h2>
               </div>
               <div
-                className="CardHeader__StyledSubTitle-sc-39t2tz-2 jJqVlr"
+                className="CardHeader__StyledSubTitle-sc-39t2tz-2 exFKvr"
               >
                 <p
                   className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -812,7 +812,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
               </div>
             </div>
             <div
-              className="CardSection__StyledCardSection-sc-1hbg2mb-0 bKGjSA"
+              className="CardSection__StyledCardSection-sc-1hbg2mb-0 bUAMxU"
             >
               <h3
                 className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
@@ -826,7 +826,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
               </p>
             </div>
             <div
-              className="CardSection__StyledCardSection-sc-1hbg2mb-0 bKGjSA"
+              className="CardSection__StyledCardSection-sc-1hbg2mb-0 bUAMxU"
             >
               <h3
                 className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
@@ -840,7 +840,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
               </p>
             </div>
             <div
-              className="CardSection__StyledCardSection-sc-1hbg2mb-0 bKGjSA"
+              className="CardSection__StyledCardSection-sc-1hbg2mb-0 bUAMxU"
             >
               <h3
                 className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
@@ -2250,7 +2250,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                 </h2>
               </div>
               <div
-                className="CardHeader__StyledSubTitle-sc-39t2tz-2 jJqVlr"
+                className="CardHeader__StyledSubTitle-sc-39t2tz-2 exFKvr"
               >
                 <p
                   className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -2260,7 +2260,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
               </div>
             </div>
             <div
-              className="CardContent__StyledCardContent-sc-1hk88tp-0 bcinQX"
+              className="CardContent__StyledCardContent-sc-1hk88tp-0 guZEke"
               data-test="test"
             >
               <h3
@@ -2275,7 +2275,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
               </p>
             </div>
             <div
-              className="CardSection__StyledCardSection-sc-1hbg2mb-0 bKGjSA"
+              className="CardSection__StyledCardSection-sc-1hbg2mb-0 bUAMxU"
               data-test="test"
             >
               <h3

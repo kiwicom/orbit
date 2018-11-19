@@ -394,7 +394,7 @@ exports[`Storyshots Tile Expandable 1`] = `
                 </h3>
               </div>
               <div
-                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 eutXVS"
+                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 cGzcea"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
               </div>
@@ -769,7 +769,7 @@ exports[`Storyshots Tile Expandable with custom description 1`] = `
               onClick={[Function]}
             >
               <div
-                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 kCIyP"
+                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 fseUel"
               >
                 <div
                   className="Stack__StyledStack-sc-1t576ow-0 huvugl"
@@ -1115,7 +1115,7 @@ exports[`Storyshots Tile Playground 1`] = `
                 </h3>
               </div>
               <div
-                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 eutXVS"
+                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 cGzcea"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
               </div>
@@ -1532,7 +1532,7 @@ exports[`Storyshots Tile RTL 1`] = `
               onClick={[Function]}
             >
               <div
-                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 FrEYK"
+                className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 bhhcKn"
               >
                 <div
                   className="Stack__StyledStack-sc-1t576ow-0 kZjBSg"

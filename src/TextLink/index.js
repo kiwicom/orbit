@@ -37,6 +37,7 @@ export const StyledTextLink = styled(({ theme, type, ...props }) => (
   <a {...props}>{props.children}</a>
 ))`
   color: ${getColor};
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightLinks};
   text-decoration: ${({ theme, type }) =>
     type === [TYPE_OPTIONS.SECONDARY]

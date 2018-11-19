@@ -108,7 +108,7 @@ exports[`Default Stack should match snapshot 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  font-family: inherit;
+  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   border: none;
   padding: 0 12px;
   font-size: inherit;
@@ -195,6 +195,7 @@ exports[`Default Stack should match snapshot 1`] = `
   border: 0;
   border-radius: 3px;
   padding: 0 16px;
+  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-weight: 700!important;
   font-size: 14px;
   cursor: pointer;
@@ -6649,7 +6650,9 @@ exports[`Default Stack should match snapshot 1`] = `
                                   "isStatic": false,
                                   "lastClassName": "c4",
                                   "rules": Array [
-                                    "appearance:none;font-family:inherit;border:none;padding:",
+                                    "appearance:none;font-family:",
+                                    [Function],
+                                    ";border:none;padding:",
                                     [Function],
                                     ";font-size:inherit;color:inherit;background-color:transparent;cursor:inherit;flex:1 auto;width:100%;height:100%;line-height:",
                                     [Function],
@@ -11072,6 +11075,8 @@ exports[`Default Stack should match snapshot 1`] = `
                       [Function],
                       ";padding:",
                       [Function],
+                      ";font-family:",
+                      [Function],
                       ";font-weight:",
                       [Function],
                       "!important;font-size:",
@@ -13641,7 +13646,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  font-family: inherit;
+  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   border: none;
   padding: 0 12px;
   font-size: inherit;
@@ -13728,6 +13733,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   border: 0;
   border-radius: 3px;
   padding: 0 16px;
+  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-weight: 700!important;
   font-size: 14px;
   cursor: pointer;
@@ -20288,7 +20294,9 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                     "isStatic": false,
                                     "lastClassName": "c4",
                                     "rules": Array [
-                                      "appearance:none;font-family:inherit;border:none;padding:",
+                                      "appearance:none;font-family:",
+                                      [Function],
+                                      ";border:none;padding:",
                                       [Function],
                                       ";font-size:inherit;color:inherit;background-color:transparent;cursor:inherit;flex:1 auto;width:100%;height:100%;line-height:",
                                       [Function],
@@ -24711,6 +24719,8 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                         [Function],
                         ";padding:",
                         [Function],
+                        ";font-family:",
+                        [Function],
                         ";font-weight:",
                         [Function],
                         "!important;font-size:",
@@ -27277,7 +27287,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  font-family: inherit;
+  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   border: none;
   padding: 0 12px;
   font-size: inherit;
@@ -27364,6 +27374,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   border: 0;
   border-radius: 3px;
   padding: 0 16px;
+  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-weight: 700!important;
   font-size: 14px;
   cursor: pointer;
@@ -33815,7 +33826,9 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                   "isStatic": false,
                                   "lastClassName": "c4",
                                   "rules": Array [
-                                    "appearance:none;font-family:inherit;border:none;padding:",
+                                    "appearance:none;font-family:",
+                                    [Function],
+                                    ";border:none;padding:",
                                     [Function],
                                     ";font-size:inherit;color:inherit;background-color:transparent;cursor:inherit;flex:1 auto;width:100%;height:100%;line-height:",
                                     [Function],
@@ -38237,6 +38250,8 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                       " !important;border:0;border-radius:",
                       [Function],
                       ";padding:",
+                      [Function],
+                      ";font-family:",
                       [Function],
                       ";font-weight:",
                       [Function],

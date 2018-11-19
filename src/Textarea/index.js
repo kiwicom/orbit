@@ -63,7 +63,7 @@ const StyledTextArea = styled.textarea`
   font-size: ${getFontSize()};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
-  font-family: inherit;
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   resize: ${({ resize }) => resize};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 

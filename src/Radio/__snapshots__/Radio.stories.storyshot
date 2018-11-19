@@ -869,7 +869,7 @@ exports[`Storyshots Radio RTL 1`] = `
                 >
                   Lorem ipsum dolor sit 
                   <a
-                    className="TextLink__StyledTextLink-sc-1bvlje4-1 dFiGVo"
+                    className="TextLink__StyledTextLink-sc-1bvlje4-1 naMEP"
                   >
                     amet
                   </a>
@@ -1242,7 +1242,7 @@ exports[`Storyshots Radio With TextLink in label 1`] = `
                 >
                   Lorem ipsum dolor sit 
                   <a
-                    className="TextLink__StyledTextLink-sc-1bvlje4-1 dFiGVo"
+                    className="TextLink__StyledTextLink-sc-1bvlje4-1 naMEP"
                   >
                     amet
                   </a>

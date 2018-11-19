@@ -521,7 +521,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                     </svg>
                   </div>
                   <div
-                    className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                    className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                   >
                     <div>
                       This is hidden content
@@ -568,7 +568,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                     </svg>
                   </div>
                   <div
-                    className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                    className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                   >
                     <div>
                       This is hidden content
@@ -615,7 +615,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                     </svg>
                   </div>
                   <div
-                    className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                    className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                   >
                     <div>
                       This is hidden content
@@ -1366,7 +1366,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                   </div>
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                 >
                   <div />
                 </div>
@@ -1410,7 +1410,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                     </svg>
                   </div>
                   <div
-                    className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                    className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                   >
                     <div>
                       This is hidden content
@@ -1444,7 +1444,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                   </div>
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                 >
                   <div />
                 </div>
@@ -2059,7 +2059,7 @@ exports[`Storyshots Card Card with only section 1`] = `
                   />
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                 >
                   <div>
                     <p
@@ -2412,7 +2412,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                   />
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                 >
                   <div>
                     <h3
@@ -2443,7 +2443,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                   />
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                 >
                   <div>
                     <h3
@@ -2474,7 +2474,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                   />
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                 >
                   <div>
                     <h3
@@ -3836,7 +3836,7 @@ exports[`Storyshots Card Playground 1`] = `
                   />
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                 >
                   <div>
                     <h3
@@ -3868,7 +3868,7 @@ exports[`Storyshots Card Playground 1`] = `
                   />
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                 >
                   <div>
                     <h3
@@ -4962,7 +4962,7 @@ exports[`Storyshots Card RTL 1`] = `
                   />
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                 >
                   <div>
                     <h3
@@ -4993,7 +4993,7 @@ exports[`Storyshots Card RTL 1`] = `
                   />
                 </div>
                 <div
-                  className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                  className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                 >
                   <div>
                     <h3

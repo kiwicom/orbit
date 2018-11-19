@@ -124,7 +124,7 @@ exports[`Storyshots CheckBox Default 1`] = `
               className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
             >
               <span
-                className="Checkbox__LabelText-sc-1x6twh3-3 iJscfQ"
+                className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
               >
                 Label
               </span>
@@ -422,7 +422,7 @@ exports[`Storyshots CheckBox Playground 1`] = `
               className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
             >
               <span
-                className="Checkbox__LabelText-sc-1x6twh3-3 iJscfQ"
+                className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
               >
                 Label
               </span>
@@ -874,14 +874,14 @@ exports[`Storyshots CheckBox RTL 1`] = `
               className="Checkbox__TextContainer-sc-1x6twh3-1 lgBZYI"
             >
               <span
-                className="Checkbox__LabelText-sc-1x6twh3-3 iJscfQ"
+                className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
               >
                 <p
                   className="Text__StyledText-sc-19qtt4y-0 huZevl"
                 >
                   I instruct Kiwi.com to cancel this booking under the herein specified conditions and to process a refund in accordance with Kiwi.com’ 
                   <a
-                    className="TextLink__StyledTextLink-sc-1bvlje4-1 dFiGVo"
+                    className="TextLink__StyledTextLink-sc-1bvlje4-1 naMEP"
                   >
                     Terms and Conditions
                   </a>
@@ -1251,14 +1251,14 @@ exports[`Storyshots CheckBox With TextLink in label 1`] = `
               className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
             >
               <span
-                className="Checkbox__LabelText-sc-1x6twh3-3 iJscfQ"
+                className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
               >
                 <p
                   className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                 >
                   I instruct Kiwi.com to cancel this booking under the herein specified conditions and to process a refund in accordance with Kiwi.com’ 
                   <a
-                    className="TextLink__StyledTextLink-sc-1bvlje4-1 dFiGVo"
+                    className="TextLink__StyledTextLink-sc-1bvlje4-1 naMEP"
                   >
                     Terms and Conditions
                   </a>
@@ -1577,7 +1577,7 @@ exports[`Storyshots CheckBox With help 1`] = `
               className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
             >
               <span
-                className="Checkbox__LabelText-sc-1x6twh3-3 iJscfQ"
+                className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
               >
                 Label
               </span>

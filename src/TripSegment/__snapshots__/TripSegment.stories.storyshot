@@ -208,7 +208,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                     className="List__StyledList-iwilat-0 hcKuvi"
                   >
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -230,7 +230,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                       Airline: Ryanair
                     </li>
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -1146,7 +1146,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                     className="List__StyledList-iwilat-0 hcKuvi"
                   >
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -1169,7 +1169,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                       Ryanair
                     </li>
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -2162,7 +2162,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                     className="List__StyledList-iwilat-0 hcKuvi"
                   >
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
@@ -2184,7 +2184,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                       Airline: Ryanair
                     </li>
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
@@ -3122,7 +3122,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                     className="List__StyledList-iwilat-0 hcKuvi"
                   >
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -3144,7 +3144,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                       Airline: Ryanair
                     </li>
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"

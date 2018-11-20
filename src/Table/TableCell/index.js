@@ -12,6 +12,7 @@ export const StyledTableCell = styled(({ children, className }) => (
   <td className={className}>{children}</td>
 ))`
   box-sizing: border-box;
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   color: ${({ theme }) => theme.orbit.paletteInkLight};
   // TODO: create token

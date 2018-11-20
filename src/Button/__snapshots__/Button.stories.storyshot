@@ -98,7 +98,7 @@ exports[`Storyshots Button Basic buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 dvWUea"
+            className="Button__StyledButton-sc-1brqp3f-1 dIWTP"
             onClick={[Function]}
             size="normal"
             type="button"
@@ -451,7 +451,7 @@ exports[`Storyshots Button Button as a link 1`] = `
           }
         >
           <a
-            className="Button__StyledButton-sc-1brqp3f-1 kiTvqK"
+            className="Button__StyledButton-sc-1brqp3f-1 gYDhSq"
             disabled={false}
             href="https://kiwi.com"
             onClick={[Function]}
@@ -887,7 +887,7 @@ exports[`Storyshots Button Button with icons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 dSdVvL"
+            className="Button__StyledButton-sc-1brqp3f-1 MtMxt"
             onClick={[Function]}
             size="small"
             type="button"
@@ -1249,7 +1249,7 @@ exports[`Storyshots Button Button with icons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 nyBMm"
+            className="Button__StyledButton-sc-1brqp3f-1 ganeuh"
             onClick={[Function]}
             size="small"
             type="button"
@@ -1644,7 +1644,7 @@ exports[`Storyshots Button Circled button 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 gzIjeS"
+            className="Button__StyledButton-sc-1brqp3f-1 kqpZGI"
             onClick={[Function]}
             size="normal"
             type="button"
@@ -1980,7 +1980,7 @@ exports[`Storyshots Button Default 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 dvWUea"
+            className="Button__StyledButton-sc-1brqp3f-1 dIWTP"
             onClick={[Function]}
             size="normal"
             type="button"
@@ -2241,7 +2241,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 cLjHjK"
+            className="Button__StyledButton-sc-1brqp3f-1 eLfjNI"
             onClick={[Function]}
             size="normal"
             type="button"
@@ -2636,7 +2636,7 @@ exports[`Storyshots Button Playground 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 cVNUua"
+            className="Button__StyledButton-sc-1brqp3f-1 ewSkXT"
             data-test="test"
             disabled={false}
             onClick={[Function]}
@@ -3367,7 +3367,7 @@ exports[`Storyshots Button RTL 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 eDYzat"
+            className="Button__StyledButton-sc-1brqp3f-1 gGsQHc"
             size="normal"
             type="button"
           >
@@ -3718,7 +3718,7 @@ exports[`Storyshots Button Social buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 hjPgOw"
+            className="Button__StyledButton-sc-1brqp3f-1 iUJPnF"
             onClick={[Function]}
             size="normal"
             type="button"
@@ -3990,7 +3990,7 @@ exports[`Storyshots Button Social buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 fSjkGY"
+            className="Button__StyledButton-sc-1brqp3f-1 cHScIK"
             onClick={[Function]}
             size="normal"
             type="button"
@@ -4354,7 +4354,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 UiCXu"
+            className="Button__StyledButton-sc-1brqp3f-1 jWIVBP"
             onClick={[Function]}
             size="small"
             type="button"
@@ -4645,7 +4645,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 cqXXOC"
+            className="Button__StyledButton-sc-1brqp3f-1 GXJhJ"
             onClick={[Function]}
             size="small"
             type="button"
@@ -4936,7 +4936,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 bAXcln"
+            className="Button__StyledButton-sc-1brqp3f-1 iZIbjz"
             onClick={[Function]}
             size="small"
             type="button"
@@ -5227,7 +5227,7 @@ exports[`Storyshots Button Status buttons 1`] = `
           }
         >
           <button
-            className="Button__StyledButton-sc-1brqp3f-1 hnypNt"
+            className="Button__StyledButton-sc-1brqp3f-1 cQokxe"
             onClick={[Function]}
             size="small"
             type="button"

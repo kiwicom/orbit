@@ -74,6 +74,7 @@ Info.defaultProps = {
 };
 
 const LabelText = styled.span`
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
   font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
   color: ${({ theme }) => theme.orbit.colorFormLabel};

@@ -22,6 +22,7 @@ StyledCardSectionIconRight.defaultProps = {
 };
 
 const StyledCardSectionContent = styled.div`
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   color: ${({ theme }) => theme.orbit.colorTextPrimary};

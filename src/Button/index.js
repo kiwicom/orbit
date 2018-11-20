@@ -359,6 +359,7 @@ export const StyledButton = styled(
   border-radius: ${({ theme, circled }) =>
     circled ? getSizeToken(TOKENS.heightButton) : theme.orbit.borderRadiusNormal};
   padding: ${buttonSpacing()};
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
   font-size: ${getSizeToken(TOKENS.fontSizeButton)};
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};

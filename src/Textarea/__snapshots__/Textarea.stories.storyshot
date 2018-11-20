@@ -101,7 +101,7 @@ exports[`Storyshots Textarea Default 1`] = `
             className="Textarea__Field-sc-1ezoqgy-0 EbmYP"
           >
             <textarea
-              className="Textarea__StyledTextArea-sc-1ezoqgy-1 hMtVDq"
+              className="Textarea__StyledTextArea-sc-1ezoqgy-1 fkJzNf"
               onChange={[Function]}
               placeholder="Placeholder"
               size="normal"
@@ -383,7 +383,7 @@ exports[`Storyshots Textarea Playground 1`] = `
               </span>
             </span>
             <textarea
-              className="Textarea__StyledTextArea-sc-1ezoqgy-1 iRjIat"
+              className="Textarea__StyledTextArea-sc-1ezoqgy-1 iQaAKZ"
               disabled={true}
               onBlur={[Function]}
               onChange={[Function]}
@@ -962,7 +962,7 @@ exports[`Storyshots Textarea RTL 1`] = `
             className="Textarea__Field-sc-1ezoqgy-0 EbmYP"
           >
             <textarea
-              className="Textarea__StyledTextArea-sc-1ezoqgy-1 hMtVDq"
+              className="Textarea__StyledTextArea-sc-1ezoqgy-1 fkJzNf"
               placeholder="My placeholder"
               size="normal"
               value="Content of the Textarea"
@@ -1260,7 +1260,7 @@ exports[`Storyshots Textarea Small size 1`] = `
             className="Textarea__Field-sc-1ezoqgy-0 EbmYP"
           >
             <textarea
-              className="Textarea__StyledTextArea-sc-1ezoqgy-1 eEaEUU"
+              className="Textarea__StyledTextArea-sc-1ezoqgy-1 eReEOB"
               onChange={[Function]}
               placeholder="Placeholder"
               size="small"
@@ -1573,7 +1573,7 @@ exports[`Storyshots Textarea With error 1`] = `
             className="Textarea__Field-sc-1ezoqgy-0 EbmYP"
           >
             <textarea
-              className="Textarea__StyledTextArea-sc-1ezoqgy-1 gqmoAk"
+              className="Textarea__StyledTextArea-sc-1ezoqgy-1 hLIrQO"
               onChange={[Function]}
               placeholder="Placeholder"
               size="normal"
@@ -1891,7 +1891,7 @@ exports[`Storyshots Textarea With help 1`] = `
             className="Textarea__Field-sc-1ezoqgy-0 EbmYP"
           >
             <textarea
-              className="Textarea__StyledTextArea-sc-1ezoqgy-1 hMtVDq"
+              className="Textarea__StyledTextArea-sc-1ezoqgy-1 fkJzNf"
               onChange={[Function]}
               placeholder="Placeholder"
               size="normal"
@@ -2216,7 +2216,7 @@ exports[`Storyshots Textarea With label 1`] = `
               </span>
             </span>
             <textarea
-              className="Textarea__StyledTextArea-sc-1ezoqgy-1 hMtVDq"
+              className="Textarea__StyledTextArea-sc-1ezoqgy-1 fkJzNf"
               onChange={[Function]}
               placeholder="Placeholder"
               size="normal"

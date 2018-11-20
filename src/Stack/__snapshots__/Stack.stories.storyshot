@@ -166,7 +166,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                 </div>
               </div>
               <button
-                className="Button__StyledButton-sc-1brqp3f-1 dvWUea"
+                className="Button__StyledButton-sc-1brqp3f-1 dIWTP"
                 size="normal"
                 type="button"
               >
@@ -181,7 +181,7 @@ exports[`Storyshots Stack Components preview 1`] = `
               className="Stack__StyledStack-sc-1t576ow-0 gAMdfY"
             >
               <button
-                className="Button__StyledButton-sc-1brqp3f-1 dvWUea"
+                className="Button__StyledButton-sc-1brqp3f-1 dIWTP"
                 size="normal"
                 type="button"
               >
@@ -220,7 +220,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                 className="ButtonGroup__StyledButtonGroup-sc-82hrp5-0 kqOFSu"
               >
                 <button
-                  className="Button__StyledButton-sc-1brqp3f-1 dvWUea"
+                  className="Button__StyledButton-sc-1brqp3f-1 dIWTP"
                   size="normal"
                   type="button"
                 >
@@ -231,7 +231,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   </div>
                 </button>
                 <button
-                  className="Button__StyledButton-sc-1brqp3f-1 dvWUea"
+                  className="Button__StyledButton-sc-1brqp3f-1 dIWTP"
                   size="normal"
                   type="button"
                 >
@@ -246,7 +246,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                 className="ButtonGroup__StyledButtonGroup-sc-82hrp5-0 kqOFSu"
               >
                 <button
-                  className="Button__StyledButton-sc-1brqp3f-1 lKMfU"
+                  className="Button__StyledButton-sc-1brqp3f-1 btseQ"
                   size="normal"
                   type="button"
                 >
@@ -257,7 +257,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   </div>
                 </button>
                 <button
-                  className="Button__StyledButton-sc-1brqp3f-1 lKMfU"
+                  className="Button__StyledButton-sc-1brqp3f-1 btseQ"
                   size="normal"
                   type="button"
                 >
@@ -276,7 +276,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                 className="ButtonGroup__StyledButtonGroup-sc-82hrp5-0 kqOFSu"
               >
                 <button
-                  className="Button__StyledButton-sc-1brqp3f-1 dvWUea"
+                  className="Button__StyledButton-sc-1brqp3f-1 dIWTP"
                   size="normal"
                   type="button"
                 >
@@ -287,7 +287,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   </div>
                 </button>
                 <button
-                  className="Button__StyledButton-sc-1brqp3f-1 dvWUea"
+                  className="Button__StyledButton-sc-1brqp3f-1 dIWTP"
                   size="normal"
                   type="button"
                 >
@@ -302,7 +302,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                 className="ButtonGroup__StyledButtonGroup-sc-82hrp5-0 kqOFSu"
               >
                 <button
-                  className="Button__StyledButton-sc-1brqp3f-1 lKMfU"
+                  className="Button__StyledButton-sc-1brqp3f-1 btseQ"
                   size="normal"
                   type="button"
                 >
@@ -313,7 +313,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   </div>
                 </button>
                 <button
-                  className="Button__StyledButton-sc-1brqp3f-1 lKMfU"
+                  className="Button__StyledButton-sc-1brqp3f-1 btseQ"
                   size="normal"
                   type="button"
                 >
@@ -403,7 +403,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                     </div>
                     <div
-                      className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                      className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                     >
                       <div />
                     </div>
@@ -447,7 +447,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         </svg>
                       </div>
                       <div
-                        className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                        className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                       >
                         <div>
                           This is hidden content
@@ -481,7 +481,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                     </div>
                     <div
-                      className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                      className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                     >
                       <div />
                     </div>
@@ -567,7 +567,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                     </div>
                     <div
-                      className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                      className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                     >
                       <div />
                     </div>
@@ -611,7 +611,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         </svg>
                       </div>
                       <div
-                        className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                        className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                       >
                         <div>
                           This is hidden content
@@ -645,7 +645,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                     </div>
                     <div
-                      className="CardSection__StyledCardSectionContent-o8zdxr-1 kEXPkX"
+                      className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
                     >
                       <div />
                     </div>
@@ -744,7 +744,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
                 >
                   <span
-                    className="Checkbox__LabelText-sc-1x6twh3-3 iJscfQ"
+                    className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
                   >
                     My Label
                   </span>
@@ -818,7 +818,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
                 >
                   <span
-                    className="Checkbox__LabelText-sc-1x6twh3-3 iJscfQ"
+                    className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
                   >
                     My Label
                   </span>
@@ -1021,7 +1021,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                     </div>
                     <input
-                      className="InputField__Input-sc-4opay-6 fqqXrq"
+                      className="InputField__Input-sc-4opay-6 bRbZOK"
                       onChange={[Function]}
                       onKeyDown={[Function]}
                       size="normal"
@@ -1072,7 +1072,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
                   <input
-                    className="InputField__Input-sc-4opay-6 fqqXrq"
+                    className="InputField__Input-sc-4opay-6 bRbZOK"
                     size="normal"
                     type="text"
                   />
@@ -1126,7 +1126,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                     </div>
                     <input
-                      className="InputField__Input-sc-4opay-6 fqqXrq"
+                      className="InputField__Input-sc-4opay-6 bRbZOK"
                       onChange={[Function]}
                       onKeyDown={[Function]}
                       size="normal"
@@ -1177,7 +1177,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
                   <input
-                    className="InputField__Input-sc-4opay-6 fqqXrq"
+                    className="InputField__Input-sc-4opay-6 bRbZOK"
                     size="normal"
                     type="text"
                   />
@@ -1204,7 +1204,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
                   <input
-                    className="InputField__Input-sc-4opay-6 fqqXrq"
+                    className="InputField__Input-sc-4opay-6 bRbZOK"
                     size="normal"
                     type="text"
                   />
@@ -1285,7 +1285,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                       >
                         <input
-                          className="InputField__Input-sc-4opay-6 fqqXrq"
+                          className="InputField__Input-sc-4opay-6 bRbZOK"
                           onBlur={[Function]}
                           onChange={[Function]}
                           onFocus={[Function]}
@@ -1370,7 +1370,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
                   <input
-                    className="InputField__Input-sc-4opay-6 fqqXrq"
+                    className="InputField__Input-sc-4opay-6 bRbZOK"
                     size="normal"
                     type="text"
                   />
@@ -1451,7 +1451,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                       >
                         <input
-                          className="InputField__Input-sc-4opay-6 fqqXrq"
+                          className="InputField__Input-sc-4opay-6 bRbZOK"
                           onBlur={[Function]}
                           onChange={[Function]}
                           onFocus={[Function]}
@@ -1529,7 +1529,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   </span>
                 </span>
                 <textarea
-                  className="Textarea__StyledTextArea-sc-1ezoqgy-1 hMtVDq"
+                  className="Textarea__StyledTextArea-sc-1ezoqgy-1 fkJzNf"
                   size="normal"
                 />
               </label>
@@ -1569,22 +1569,22 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -1597,46 +1597,22 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                      </tr>
-                      <tr
-                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                      >
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -1645,22 +1621,46 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -1686,22 +1686,22 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -1714,46 +1714,22 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                      </tr>
-                      <tr
-                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                      >
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -1762,22 +1738,46 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -1807,22 +1807,22 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -1835,46 +1835,22 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                      </tr>
-                      <tr
-                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                      >
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -1883,22 +1859,46 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -1924,22 +1924,22 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -1952,46 +1952,22 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                      </tr>
-                      <tr
-                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                      >
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -2000,22 +1976,46 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -2041,22 +2041,22 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -2069,46 +2069,22 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                      </tr>
-                      <tr
-                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                      >
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -2117,22 +2093,46 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -2158,22 +2158,22 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -2186,46 +2186,22 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                      </tr>
-                      <tr
-                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                      >
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
-                        >
-                          Cell
-                        </td>
-                        <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -2234,22 +2210,46 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
                       >
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
                         <td
-                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 juRaSj"
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Cell
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
                         >
                           Cell
                         </td>
@@ -2293,7 +2293,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     </h3>
                   </div>
                   <div
-                    className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 eutXVS"
+                    className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 cGzcea"
                   >
                     Some description
                   </div>
@@ -2343,7 +2343,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     </h3>
                   </div>
                   <div
-                    className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 eutXVS"
+                    className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 cGzcea"
                   >
                     Some description
                   </div>
@@ -2396,7 +2396,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     </h3>
                   </div>
                   <div
-                    className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 eutXVS"
+                    className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 cGzcea"
                   >
                     Some description
                   </div>
@@ -2452,7 +2452,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     </h3>
                   </div>
                   <div
-                    className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 eutXVS"
+                    className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 cGzcea"
                   >
                     Some description
                   </div>
@@ -2696,7 +2696,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                           className="List__StyledList-iwilat-0 hcKuvi"
                         >
                           <li
-                            className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                            className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                           >
                             <div
                               className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -2718,7 +2718,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                             Airline: Ryanair
                           </li>
                           <li
-                            className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                            className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                           >
                             <div
                               className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -2747,7 +2747,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     className="List__StyledList-iwilat-0 hcKuvi"
                   >
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -2765,7 +2765,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       4h 50m layover
                     </li>
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -2782,13 +2782,13 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                       Transfer protected by the 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 lfTmsb"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
                       >
                         Kiwi.com Guarantee
                       </a>
                     </li>
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -2918,7 +2918,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                           className="List__StyledList-iwilat-0 hcKuvi"
                         >
                           <li
-                            className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                            className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                           >
                             <div
                               className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -2947,7 +2947,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     className="List__StyledList-iwilat-0 hcKuvi"
                   >
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -2965,7 +2965,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       2h 25m layover
                     </li>
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -2982,7 +2982,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                       Transfer protected by the 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 lfTmsb"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
                       >
                         Kiwi.com Guarantee
                       </a>
@@ -3100,7 +3100,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                           className="List__StyledList-iwilat-0 hcKuvi"
                         >
                           <li
-                            className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                            className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                           >
                             <div
                               className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -3129,7 +3129,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     className="List__StyledList-iwilat-0 hcKuvi"
                   >
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -3147,7 +3147,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       13h 05m layover
                     </li>
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -3164,13 +3164,13 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                       Transfer protected by the 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 lfTmsb"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
                       >
                         Kiwi.com Guarantee
                       </a>
                     </li>
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -3318,7 +3318,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                           className="List__StyledList-iwilat-0 hcKuvi"
                         >
                           <li
-                            className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                            className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                           >
                             <div
                               className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -3473,7 +3473,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                           className="List__StyledList-iwilat-0 hcKuvi"
                         >
                           <li
-                            className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                            className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                           >
                             <div
                               className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -3495,7 +3495,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                             Airline: Ryanair
                           </li>
                           <li
-                            className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                            className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                           >
                             <div
                               className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -3524,7 +3524,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     className="List__StyledList-iwilat-0 hcKuvi"
                   >
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -3542,7 +3542,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       4h 50m layover
                     </li>
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -3559,13 +3559,13 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                       Transfer protected by the 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 lfTmsb"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
                       >
                         Kiwi.com Guarantee
                       </a>
                     </li>
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -3695,7 +3695,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                           className="List__StyledList-iwilat-0 hcKuvi"
                         >
                           <li
-                            className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                            className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                           >
                             <div
                               className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -28380,7 +28380,7 @@ exports[`Storyshots Stack Default 1`] = `
             className="Stack__StyledStack-sc-1t576ow-0 cmtuGW"
           >
             <button
-              className="Button__StyledButton-sc-1brqp3f-1 doSqFT"
+              className="Button__StyledButton-sc-1brqp3f-1 hCBYWk"
               size="normal"
               type="button"
             >
@@ -28404,7 +28404,7 @@ exports[`Storyshots Stack Default 1`] = `
               </div>
             </button>
             <button
-              className="Button__StyledButton-sc-1brqp3f-1 fmfzeo"
+              className="Button__StyledButton-sc-1brqp3f-1 cTQGTA"
               size="normal"
               type="button"
             >
@@ -28857,7 +28857,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                 className="InputField__InputContainer-sc-4opay-2 ksKWcl"
               >
                 <input
-                  className="InputField__Input-sc-4opay-6 fqqXrq"
+                  className="InputField__Input-sc-4opay-6 bRbZOK"
                   size="normal"
                   type="password"
                 />
@@ -28872,7 +28872,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
               </div>
             </label>
             <button
-              className="Button__StyledButton-sc-1brqp3f-1 dvWUea"
+              className="Button__StyledButton-sc-1brqp3f-1 dIWTP"
               size="normal"
               type="button"
             >
@@ -29393,7 +29393,7 @@ exports[`Storyshots Stack Mobile properties 1`] = `
             className="Stack__StyledStack-sc-1t576ow-0 bDCvqq"
           >
             <button
-              className="Button__StyledButton-sc-1brqp3f-1 doSqFT"
+              className="Button__StyledButton-sc-1brqp3f-1 hCBYWk"
               size="normal"
               type="button"
             >
@@ -29417,7 +29417,7 @@ exports[`Storyshots Stack Mobile properties 1`] = `
               </div>
             </button>
             <button
-              className="Button__StyledButton-sc-1brqp3f-1 fmfzeo"
+              className="Button__StyledButton-sc-1brqp3f-1 cTQGTA"
               size="normal"
               type="button"
             >
@@ -30166,7 +30166,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                   className="InputField__InputContainer-sc-4opay-2 bnDMxw"
                 >
                   <input
-                    className="InputField__Input-sc-4opay-6 fqqXrq"
+                    className="InputField__Input-sc-4opay-6 bRbZOK"
                     size="normal"
                     type="password"
                   />
@@ -30181,7 +30181,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                 </div>
               </label>
               <button
-                className="Button__StyledButton-sc-1brqp3f-1 dvWUea"
+                className="Button__StyledButton-sc-1brqp3f-1 dIWTP"
                 size="normal"
                 type="button"
               >
@@ -30196,7 +30196,7 @@ exports[`Storyshots Stack Nested example 1`] = `
               className="Text__StyledText-sc-19qtt4y-0 efCYLv"
             >
               <a
-                className="TextLink__StyledTextLink-sc-1bvlje4-1 lfTmsb"
+                className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
               >
                 Forgot password?
               </a>
@@ -31296,7 +31296,7 @@ exports[`Storyshots Stack Playground 1`] = `
                 className="InputField__InputContainer-sc-4opay-2 ksKWcl"
               >
                 <input
-                  className="InputField__Input-sc-4opay-6 fqqXrq"
+                  className="InputField__Input-sc-4opay-6 bRbZOK"
                   size="normal"
                   type="password"
                 />
@@ -31311,7 +31311,7 @@ exports[`Storyshots Stack Playground 1`] = `
               </div>
             </label>
             <button
-              className="Button__StyledButton-sc-1brqp3f-1 dvWUea"
+              className="Button__StyledButton-sc-1brqp3f-1 dIWTP"
               size="normal"
               type="button"
             >
@@ -32171,7 +32171,7 @@ exports[`Storyshots Stack RTL 1`] = `
                   className="InputField__InputContainer-sc-4opay-2 bnDMxw"
                 >
                   <input
-                    className="InputField__Input-sc-4opay-6 fqqXrq"
+                    className="InputField__Input-sc-4opay-6 bRbZOK"
                     size="normal"
                     type="password"
                   />
@@ -32186,7 +32186,7 @@ exports[`Storyshots Stack RTL 1`] = `
                 </div>
               </label>
               <button
-                className="Button__StyledButton-sc-1brqp3f-1 dvWUea"
+                className="Button__StyledButton-sc-1brqp3f-1 dIWTP"
                 size="normal"
                 type="button"
               >
@@ -32201,7 +32201,7 @@ exports[`Storyshots Stack RTL 1`] = `
               className="Text__StyledText-sc-19qtt4y-0 hsoaey"
             >
               <a
-                className="TextLink__StyledTextLink-sc-1bvlje4-1 lfTmsb"
+                className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
               >
                 Forgot password?
               </a>

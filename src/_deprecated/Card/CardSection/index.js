@@ -7,6 +7,7 @@ import defaultTokens from "../../../defaultTokens";
 import type { Props } from "./index";
 
 export const StyledCardSection = styled.div`
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   width: 100%;
   padding: ${({ theme }) => theme.orbit.spaceLarge};
   box-sizing: border-box;

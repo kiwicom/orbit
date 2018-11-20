@@ -962,7 +962,7 @@ exports[`Storyshots Alert Playground 1`] = `
                     className="List__StyledList-iwilat-0 hOMCgN"
                   >
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -984,7 +984,7 @@ exports[`Storyshots Alert Playground 1`] = `
                       </p>
                     </li>
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
@@ -1003,7 +1003,7 @@ exports[`Storyshots Alert Playground 1`] = `
                     </li>
                   </ul>
                   <a
-                    className="Button__StyledButton-sc-1brqp3f-1 ffzAXN"
+                    className="Button__StyledButton-sc-1brqp3f-1 cqrQcn"
                     href="#"
                     size="small"
                   >
@@ -2035,7 +2035,7 @@ exports[`Storyshots Alert RTL 1`] = `
                     className="List__StyledList-iwilat-0 hOMCgN"
                   >
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
@@ -2057,7 +2057,7 @@ exports[`Storyshots Alert RTL 1`] = `
                       </p>
                     </li>
                     <li
-                      className="ListItem__Item-sc-1vswvev-0 gOoBnf"
+                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
                     >
                       <div
                         className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
@@ -2076,7 +2076,7 @@ exports[`Storyshots Alert RTL 1`] = `
                     </li>
                   </ul>
                   <a
-                    className="Button__StyledButton-sc-1brqp3f-1 ffzAXN"
+                    className="Button__StyledButton-sc-1brqp3f-1 cqrQcn"
                     href="#"
                     size="small"
                   >

@@ -131,7 +131,7 @@ exports[`Storyshots InputStepper Default 1`] = `
                   </div>
                 </div>
                 <input
-                  className="InputField__Input-sc-4opay-6 bRbZOK"
+                  className="InputField__Input-sc-4opay-6 bvdgbX"
                   onChange={[Function]}
                   onKeyDown={[Function]}
                   size="normal"
@@ -418,7 +418,7 @@ exports[`Storyshots InputStepper Playground 1`] = `
                   </div>
                 </div>
                 <input
-                  className="InputField__Input-sc-4opay-6 bRbZOK"
+                  className="InputField__Input-sc-4opay-6 bvdgbX"
                   disabled={false}
                   max={10}
                   min={1}
@@ -1130,7 +1130,7 @@ exports[`Storyshots InputStepper RTL 1`] = `
                   </div>
                 </div>
                 <input
-                  className="InputField__Input-sc-4opay-6 bRbZOK"
+                  className="InputField__Input-sc-4opay-6 bvdgbX"
                   onChange={[Function]}
                   onKeyDown={[Function]}
                   size="normal"
@@ -1469,7 +1469,7 @@ exports[`Storyshots InputStepper With different size 1`] = `
                   </div>
                 </div>
                 <input
-                  className="InputField__Input-sc-4opay-6 bRbZOK"
+                  className="InputField__Input-sc-4opay-6 bvdgbX"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -1879,7 +1879,7 @@ exports[`Storyshots InputStepper With help 1`] = `
                   </div>
                 </div>
                 <input
-                  className="InputField__Input-sc-4opay-6 bRbZOK"
+                  className="InputField__Input-sc-4opay-6 bvdgbX"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}

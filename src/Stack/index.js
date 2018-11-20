@@ -12,7 +12,6 @@ import type { Props } from "./index";
 
 const isDefined = prop => typeof prop !== "undefined";
 
-// TODO: use tokens for spacings and RTL
 const getMobileSpacing = ({ spacing, direction }) => {
   const tokens = {
     [SPACINGS.EXTRATIGHT]: "2px",
@@ -28,7 +27,7 @@ const getMobileSpacing = ({ spacing, direction }) => {
     direction === DIRECTIONS.COLUMN ? `0 0 ${tokens[spacing]} 0` : `0 ${tokens[spacing]} 0 0`;
   return css`
     & > * {
-      margin: ${margin}!important;
+      margin: ${rtlSpacing(margin)}!important;
       &:last-child {
         margin: 0 !important;
       }
@@ -36,7 +35,6 @@ const getMobileSpacing = ({ spacing, direction }) => {
   `;
 };
 
-// TODO: use tokens for spacings and RTL
 const getDesktopSpacing = ({ spacing, direction, desktop }) => {
   const finalDirection = desktop?.direction || direction;
   const finalSpacing = desktop?.spacing || spacing;

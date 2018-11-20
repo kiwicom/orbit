@@ -32137,7 +32137,7 @@ exports[`Storyshots Stack RTL 1`] = `
             className="Stack__StyledStack-sc-1t576ow-0 iNavTr"
           >
             <div
-              className="Stack__StyledStack-sc-1t576ow-0 hdAGrM"
+              className="Stack__StyledStack-sc-1t576ow-0 fLVhZw"
             >
               <p
                 className="Text__StyledText-sc-19qtt4y-0 kGMOFq"
@@ -32155,7 +32155,7 @@ exports[`Storyshots Stack RTL 1`] = `
               </svg>
             </div>
             <div
-              className="Stack__StyledStack-sc-1t576ow-0 gJnawY"
+              className="Stack__StyledStack-sc-1t576ow-0 jEhSZy"
             >
               <label
                 className="InputField__Field-sc-4opay-0 kCAFyx"

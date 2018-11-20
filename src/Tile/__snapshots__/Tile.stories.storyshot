@@ -1535,7 +1535,7 @@ exports[`Storyshots Tile RTL 1`] = `
                 className="TileHeader__StyledTileDescription-sc-1k1u3lr-3 bhhcKn"
               >
                 <div
-                  className="Stack__StyledStack-sc-1t576ow-0 kZjBSg"
+                  className="Stack__StyledStack-sc-1t576ow-0 kHrzZa"
                 >
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 huZevl"

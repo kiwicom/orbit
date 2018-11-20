@@ -161,7 +161,8 @@ exports[`Default Stack should match snapshot 1`] = `
   color: #bac7d5;
 }
 
-.c4::-ms-clear {
+.c4::-ms-clear,
+.c4::-ms-reveal {
   display: none;
 }
 
@@ -6668,7 +6669,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                     [Function],
                                     ";}&::-ms-input-placeholder{color:",
                                     [Function],
-                                    ";}&::-ms-clear{display:none;}",
+                                    ";}&::-ms-clear,&::-ms-reveal{display:none;}",
                                   ],
                                 },
                                 "defaultProps": Object {
@@ -13699,7 +13700,8 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   color: #bac7d5;
 }
 
-.c4::-ms-clear {
+.c4::-ms-clear,
+.c4::-ms-reveal {
   display: none;
 }
 
@@ -20312,7 +20314,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                       [Function],
                                       ";}&::-ms-input-placeholder{color:",
                                       [Function],
-                                      ";}&::-ms-clear{display:none;}",
+                                      ";}&::-ms-clear,&::-ms-reveal{display:none;}",
                                     ],
                                   },
                                   "defaultProps": Object {
@@ -27340,7 +27342,8 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   color: #bac7d5;
 }
 
-.c4::-ms-clear {
+.c4::-ms-clear,
+.c4::-ms-reveal {
   display: none;
 }
 
@@ -33844,7 +33847,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                     [Function],
                                     ";}&::-ms-input-placeholder{color:",
                                     [Function],
-                                    ";}&::-ms-clear{display:none;}",
+                                    ";}&::-ms-clear,&::-ms-reveal{display:none;}",
                                   ],
                                 },
                                 "defaultProps": Object {

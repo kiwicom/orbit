@@ -60,7 +60,7 @@ Table below contains all types of the props in the ModalSection component.
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :---------------------| :-------------- | :------------------------------- |
 | **children**  | `React.Node`          |                 | Content of the ModalSection component.
-| dateTest      | `string`              |                 | Optional prop for testing purposes.
+| dataTest      | `string`              |                 | Optional prop for testing purposes.
 | suppressed    | `boolean`             | `false`         | If `true` the ModalSection will have cloudy background.
 
 ### ModalHeader
@@ -83,7 +83,7 @@ Table below contains all types of the props in the ModalHeader component.
 | Name          | Type                                  | Default         | Description                      |
 | :------------ | :------------------------------------ | :-------------- | :------------------------------- |
 | children      | `React.Node`                          |                 | The content of the ModalHeader.
-| dateTest      | `string`                              |                 | Optional prop for testing purposes.
+| dataTest      | `string`                              |                 | Optional prop for testing purposes.
 | description   | `React.Node`                          |                 | The displayed description of the ModalHeader.
 | illustration  | `React.Element<typeof Illustration>`  |                 | The displayed Illustration of the ModalHeader.
 | suppressed    | `boolean`                             | `false`         | If `true` the ModalHeader will have cloudy background.
@@ -114,7 +114,7 @@ Table below contains all types of the props in the ModalFooter component.
 | Name          | Type                        | Default         | Description                      |
 | :------------ | :-------------------------- | :-------------- | :------------------------------- |
 | **children**  | `React.Node`                |                 | The content of the ModalFooter.
-| dateTest      | `string`                    |                 | Optional prop for testing purposes.
+| dataTest      | `string`                    |                 | Optional prop for testing purposes.
 | flex          | `string` or `Array<string>` | `"0 1 auto`     | The flex attribute(s) for children of the ModalFooter. [See Functional specs](#functional-specs)
 
 #### Functional specs

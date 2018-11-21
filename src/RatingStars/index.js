@@ -30,17 +30,22 @@ const RatingStars = ({
   size = ICON_SIZES.SMALL,
   dataTest,
   color = ICON_COLORS.PRIMARY,
-}: Props) => (
-  <StyledRatingStars data-test={dataTest} size={size}>
-    {Array(...Array(MAX_STARS)).map((_, index) => {
-      const key = `star-${index}`;
-      return index <= Math.round(rating) - 1 ? (
-        <StarFull key={key} size={size} color={color} />
-      ) : (
-        <StarEmpty key={key} size={size} color={color} />
-      );
-    })}
-  </StyledRatingStars>
-);
+  showEmpty = false,
+}: Props) => {
+  const ratingRounded = Math.round(rating);
+  const starsCount = showEmpty ? MAX_STARS : ratingRounded;
+  return (
+    <StyledRatingStars data-test={dataTest} size={size}>
+      {Array(...Array(starsCount)).map((_, index) => {
+        const key = `star-${index}`;
+        return index <= ratingRounded - 1 ? (
+          <StarFull key={key} size={size} color={color} />
+        ) : (
+          <StarEmpty key={key} size={size} color={color} />
+        );
+      })}
+    </StyledRatingStars>
+  );
+};
 
 export default RatingStars;

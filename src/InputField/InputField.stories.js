@@ -382,6 +382,7 @@ storiesOf("InputField", module)
     const required = boolean("required", false);
     const maxLength = number("maxLength", undefined);
     const minLength = number("minLength", undefined);
+    const readOnly = boolean("readOnly", false);
     const dataTest = text("dataTest", "test");
 
     return {
@@ -420,6 +421,7 @@ storiesOf("InputField", module)
                   minValue={minValue}
                   maxLength={maxLength}
                   minLength={minLength}
+                  readOnly={readOnly}
                   onChange={action("change")}
                   onFocus={action("focus")}
                   onBlur={action("blur")}

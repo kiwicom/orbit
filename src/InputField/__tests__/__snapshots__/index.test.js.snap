@@ -3151,6 +3151,7 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
         }
       }
       placeholder="placeholder"
+      readOnly={true}
       size="normal"
       tabIndex="-1"
       theme={

@@ -24,8 +24,7 @@ Table below contains all types of the props available in the Modal component.
 | dataTest      | `string`                |                 | Optional prop for testing purposes.
 | fixedFooter   | `boolean`               | `false`         | If `true` the ModalFooter will be fixed to the bottom of window.
 | size          | [`enum`](#modalenum)    | `"medium"`      | The maximum width of the Modal on desktop viewport.
-| closable      | `boolean`               | `true`          | If `false`, the Close button will not be displayed and it will not be possible to close the Modal.
-| onClose       | `func \| Promise<any>`  |                 | Function for handling onClose event.
+| onClose       | `func \| Promise<any>`  |                 | Function for handling onClose event. If you don't pass any function the Close button will not be displayed and it will not be possible to close the Modal.
 
 ### Modal enum
 

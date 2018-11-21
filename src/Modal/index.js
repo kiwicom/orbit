@@ -12,6 +12,7 @@ import { MobileHeader } from "./ModalHeader";
 import { StyledModalSection } from "./ModalSection";
 import { StyledHeading } from "../Heading";
 import { right } from "../utils/rtl";
+import transition from "../utils/transition";
 
 import type { Props, State, CloseElementType } from "./index";
 
@@ -60,9 +61,9 @@ const ModalWrapper = styled.div`
 
   position: fixed;
   width: 100%;
-  border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  transition: top ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
+  border-top-left-radius: 9px; // TODO: create token
+  border-top-right-radius: 9px; // TODO: create token
+  transition: ${transition(["top"], "normal", "ease-in-out")};
   top: ${({ loaded }) => (loaded ? "32px" : "100%")};
 
   ${media.desktop`
@@ -79,25 +80,27 @@ ModalWrapper.defaultProps = {
 
 const CloseContainer = styled.div`
   display: flex;
-  position: absolute;
-  top: 0;
+  position: ${({ scrolled, fixedClose }) => (fixedClose || scrolled ? "fixed" : "absolute")};
+  top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled ? "32px" : "0")};
   right: 0;
-  z-index: 1;
+  z-index: 10;
   justify-content: flex-end;
   align-items: center;
   box-sizing: border-box;
   // TODO create tokens
   height: 52px;
   width: 100%;
-  transition: box-shadow ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
-    background-color ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
-  border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-
+  max-width: ${({ modalWidth }) => `${modalWidth}px`};
+  box-shadow: ${({ scrolled }) => scrolled && `0 2px 4px 0 rgba(23, 27, 30, 0.1)`};
+  background-color: ${({ theme, scrolled }) => scrolled && theme.orbit.paletteWhite};
+  border-top-left-radius: 9px; // TODO: create token
+  border-top-right-radius: 9px; // TODO: create token
+  transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
+  
   ${media.desktop`
-    box-shadow: none!important;
-    background: transparent!important;
-  `}
+    top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "0"};
+    right: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "initial"};
+  `};
   
   & + ${StyledModalSection}:first-of-type {
     padding-top: 52px;
@@ -109,7 +112,7 @@ const CloseContainer = styled.div`
     margin-${right}: ${({ theme }) => theme.orbit.spaceXXSmall};
 
     & svg {
-      transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+      transition: ${transition(["color"], "fast", "ease-in-out")};
       color: ${({ theme }) => theme.orbit.paletteInkLight};
     }
     &:hover svg {
@@ -129,23 +132,21 @@ CloseContainer.defaultProps = {
 const ModalWrapperContent = styled.div`
   position: absolute;
   box-sizing: border-box;
-  border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  border-top-left-radius: 9px; // TODO: create token
+  border-top-right-radius: 9px; // TODO: create token
   background-color: ${({ theme }) => theme.orbit.backgroundModal};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   width: 100%;
-  height: calc(
+  max-height: calc(
     100% - ${({ theme }) => theme.orbit.spaceXLarge} -
-      ${({ fixedFooter }) => (fixedFooter ? "76px" : "0px")}
+      ${({ fixedFooter, footerHeight }) => `${fixedFooter && !!footerHeight ? footerHeight : 0}px`}
   );
+  bottom: ${({ fixedFooter, footerHeight }) =>
+    `${32 + (fixedFooter && !!footerHeight ? footerHeight : 0)}px`};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowModal};
   overflow-y: auto;
   overflow-x: hidden;
 
-  ${StyledModalSection}:last-of-type {
-    padding-bottom: ${({ theme, fixedFooter }) => fixedFooter && theme.orbit.spaceLarge};
-    margin-bottom: ${({ fixedFooter }) => fixedFooter && "0"};
-  }
   ${({ fixedFooter, theme }) =>
     fixedFooter &&
     css`
@@ -153,45 +154,56 @@ const ModalWrapperContent = styled.div`
         padding: ${theme.orbit.spaceMedium};
         box-shadow: ${({ fullyScrolled }) =>
           fullyScrolled
-            ? `0 0 1px 0 ${theme.orbit.paletteCloudNormal}`
-            : "0 -2px 4px 0 rgba(23, 27, 30, 0.1)"};
+            ? `inset 0 1px 0 ${theme.orbit.paletteCloudNormal}, 0 -2px 4px 0 rgba(23, 27, 30, 0)`
+            : `inset 0 0 0 transparent, 0 -2px 4px 0 rgba(23, 27, 30, 0.1)`};
         position: fixed;
-        transition: box-shadow ${theme.orbit.durationFast} ease-in-out;
+        transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
+      }
+      ${StyledModalSection}:last-of-type {
+        padding-bottom: ${theme.orbit.spaceLarge};
+        margin-bottom: 0;
       }
     `};
 
   ${MobileHeader} {
     top: ${({ scrolled, theme }) => scrolled && theme.orbit.spaceXLarge};
     opacity: ${({ scrolled }) => scrolled && "1"};
-  }
-  ${CloseContainer} {
-    top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "32px"};
-    position: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "fixed"};
-    box-shadow: ${({ scrolled }) => scrolled && `0 2px 4px 0 rgba(23, 27, 30, 0.1)`};
-    background-color: ${({ theme, scrolled }) => scrolled && theme.orbit.paletteWhite};
+    visibility: ${({ scrolled }) => scrolled && "visible"};
+    transition: ${({ scrolled, theme }) =>
+      scrolled &&
+      `top ${theme.orbit.durationNormal} ease-in-out,
+    opacity ${theme.orbit.durationFast} ease-in-out,
+    visibility ${theme.orbit.durationFast} ease-in-out ${theme.orbit.durationFast}`};
   }
 
   ${media.desktop`
     position: relative;
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+    bottom: initial;
+    border-radius: 9px;
     padding-bottom: 0;
     height: auto;
     overflow: visible;
     ${StyledModalSection}:last-of-type {
       padding-bottom: ${({ theme }) => theme.orbit.spaceXXLarge};
-      margin-bottom: 0;
+      margin-bottom: ${({ fixedFooter, footerHeight }) =>
+        fixedFooter ? `${footerHeight}px` : "0"};
       &::after {
         content: none;
       }
     }
     ${StyledModalFooter} {
-      position: relative;
-      box-shadow: none;
-      padding: ${({ theme }) => `0 ${theme.orbit.spaceXXLarge} ${theme.orbit.spaceXXLarge}`};
+      padding: ${({ theme, fixedFooter }) =>
+        fixedFooter
+          ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXXLarge}!important`
+          : theme.orbit.spaceXXLarge};
+      max-width: ${({ modalWidth }) => `${modalWidth}px`};
+      position: ${({ fullyScrolled, fixedFooter }) => fixedFooter && fullyScrolled && "absolute"};
+      box-shadow: ${({ fullyScrolled }) => fullyScrolled && "none"};
     }
-    ${CloseContainer} {
-      position: absolute;
-      top: 0;
+    ${MobileHeader} {
+      top: ${({ scrolled, theme }) => (scrolled ? "0" : `-${theme.orbit.spaceXXLarge}`)};
+      width: ${({ modalWidth, theme }) =>
+        `calc(${modalWidth}px - 48px - ${theme.orbit.spaceXXLarge})`};
     }
   `};
 `;
@@ -200,128 +212,171 @@ ModalWrapperContent.defaultProps = {
   theme: defaultTokens,
 };
 
-const CloseElement = ({ onClose, closable }: CloseElementType) => (
-  <CloseContainer>
-    {closable && <ButtonLink onClick={onClose} size="normal" icon={<Close />} transparent />}
+const CloseElement = ({ onClose, modalWidth, scrolled, fixedClose }: CloseElementType) => (
+  <CloseContainer modalWidth={modalWidth} scrolled={scrolled} fixedClose={fixedClose}>
+    {onClose && <ButtonLink onClick={onClose} size="normal" icon={<Close />} transparent />}
   </CloseContainer>
 );
 
 class Modal extends React.PureComponent<Props, State> {
-  constructor() {
-    super();
-    // $FlowExpected
-    this.handleScroll = this.handleScroll.bind(this);
-  }
-
   state = {
     scrolled: false,
     loaded: false,
     fixedClose: false,
     fullyScrolled: false,
+    modalWidth: 0,
+    footerHeight: 0,
   };
 
   componentDidMount() {
-    // eslint-disable-next-line
-    setTimeout(
-      () =>
-        this.setState({
-          loaded: true,
-        }),
-      150,
-    );
+    this.setScrollPoint();
+    this.timeout = setTimeout(() => {
+      this.setState({
+        loaded: true,
+      });
+      this.decideFixedFooter();
+      this.setDimensions();
+    }, 1);
+    window.addEventListener("resize", this.handleResize);
   }
 
-  componentDidUpdate() {
-    if (!this.state.scrolled) {
+  componentDidUpdate(prevProps: Props) {
+    if (this.props.children !== prevProps.children) {
       this.setScrollPoint();
+      this.setDimensions();
     }
   }
 
-  setScrollPoint() {
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+  }
+
+  setDimensions = () => {
+    const content = this.modalContent.current;
+    if (content) {
+      const footerEl = content.querySelector(`.${<StyledModalFooter />.type.styledComponentId}`);
+      const headingEl = content.querySelector(`.${<StyledHeading />.type.styledComponentId}`);
+      this.offset = headingEl?.clientHeight + headingEl?.offsetTop;
+      const contentDimensions = content.getBoundingClientRect();
+      const modalWidth = contentDimensions.width;
+      const footerHeight = footerEl?.clientHeight;
+      this.setState({ modalWidth, footerHeight });
+    }
+  };
+
+  setScrollPoint = () => {
     setTimeout(() => {
       if (!this.state.scrolled) {
-        const { node } = this;
-        if (node instanceof HTMLElement) {
-          const el = node.querySelector(`.${<StyledHeading />.type.styledComponentId}`);
+        const content = this.modalContent.current;
+        if (content instanceof HTMLElement) {
+          const el = content.querySelector(`.${<StyledHeading />.type.styledComponentId}`);
           if (el) {
             this.offset = el.clientHeight + el.offsetTop;
           }
         }
       }
     }, 550);
-  }
+  };
 
-  handleScroll(ev: Event) {
-    if (ev.target instanceof HTMLDivElement && ev.target === this.node) {
-      this.setState({
-        scrolled: ev.target.scrollTop >= this.offset,
-        fixedClose: ev.target.scrollTop >= 1,
-        fullyScrolled:
-          this.props.fixedFooter &&
-          // set this state sooner than the exact end of the scroll (with 10 value)
-          ev.target.scrollTop >= ev.target.scrollHeight - ev.target.clientHeight - 10,
-      });
+  decideFixedFooter = () => {
+    // if the content height is smaller than window height, we need to explicitly set fullyScrolled to true
+    const content = this.modalContent.current;
+    // what is 40 value?
+    const fullyScrolled = content?.scrollHeight + 40 <= window.innerHeight;
+    this.setState({ fullyScrolled });
+  };
+
+  handleResize = () => {
+    this.setDimensions();
+    this.decideFixedFooter();
+  };
+
+  resolveAndSetStates = (target: HTMLElement, fullScrollOffset: number, fixCloseOffset: number) => {
+    this.setState({
+      scrolled: target.scrollTop >= this.offset,
+      fixedClose: target.scrollTop >= fixCloseOffset,
+      fullyScrolled:
+        this.props.fixedFooter &&
+        // set fullyScrolled state sooner than the exact end of the scroll (with fullScrollOffset value)
+        target.scrollTop >= target.scrollHeight - target.clientHeight - fullScrollOffset,
+    });
+  };
+
+  handleMobileScroll = (ev: Event) => {
+    if (ev.target instanceof HTMLDivElement && ev.target === this.modalContent.current) {
+      this.resolveAndSetStates(ev.target, 10, 1);
     }
-  }
+  };
+
+  handleScroll = (ev: Event) => {
+    if (ev.target instanceof HTMLDivElement && ev.target === this.modalBody.current) {
+      this.resolveAndSetStates(ev.target, 40, 40);
+    }
+  };
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
-    const { onClose, closable } = this.props;
-    if (closable && ev.key === "Escape" && onClose) {
+    const { onClose } = this.props;
+    if (onClose && ev.key === "Escape") {
       ev.stopPropagation();
       onClose(ev);
     }
   };
 
   handleClickOutside = (ev: MouseEvent) => {
-    const { onClose, closable } = this.props;
-
+    const { onClose } = this.props;
     if (
-      closable &&
       onClose &&
-      this.node?.current &&
+      this.modalContent?.current &&
       ev.target instanceof Node &&
-      !this.node.current.contains(ev.target)
+      !this.modalContent.current.contains(ev.target)
     ) {
       // If is clicked outside of modal
       onClose(ev);
     }
   };
 
-  node: { current: any | HTMLElement } = React.createRef();
+  modalContent: { current: any | HTMLElement } = React.createRef();
+  modalBody: { current: any | HTMLElement } = React.createRef();
+  timeout: TimeoutID;
   offset = 40;
 
   render() {
-    const {
-      onClose,
-      children,
-      size = SIZES.NORMAL,
-      closable = true,
-      fixedFooter = false,
-      dataTest,
-    } = this.props;
-    const { scrolled, loaded, fixedClose, fullyScrolled } = this.state;
+    const { onClose, children, size = SIZES.NORMAL, fixedFooter = false, dataTest } = this.props;
+    const { scrolled, loaded, fixedClose, fullyScrolled, modalWidth, footerHeight } = this.state;
     return (
       <ModalBody
         tabIndex="0"
         onKeyDown={this.handleKeyDown}
+        onScroll={this.handleScroll}
         onClick={this.handleClickOutside}
         data-test={dataTest}
+        ref={this.modalBody}
       >
         <ModalWrapper
           size={size}
           loaded={loaded}
-          onScroll={this.handleScroll}
+          onScroll={this.handleMobileScroll}
           fixedFooter={fixedFooter}
         >
           <ModalWrapperContent
             size={size}
             fixedFooter={fixedFooter}
             scrolled={scrolled}
-            ref={this.node}
+            ref={this.modalContent}
             fixedClose={fixedClose}
             fullyScrolled={fullyScrolled}
+            modalWidth={modalWidth}
+            footerHeight={footerHeight}
           >
-            <CloseElement onClose={onClose} closable={closable} />
+            <CloseElement
+              onClose={onClose}
+              modalWidth={modalWidth}
+              scrolled={scrolled}
+              fixedClose={fixedClose}
+            />
             {children}
           </ModalWrapperContent>
         </ModalWrapper>

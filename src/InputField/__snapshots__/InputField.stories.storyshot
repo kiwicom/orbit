@@ -2360,6 +2360,7 @@ exports[`Storyshots InputField Playground 1`] = `
                 onChange={[Function]}
                 onFocus={[Function]}
                 placeholder="Placeholder"
+                readOnly={false}
                 type="text"
                 value=""
               />
@@ -2958,6 +2959,35 @@ exports[`Storyshots InputField Playground 1`] = `
                                 }
                               >
                                 null
+                              </span>
+                              }
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            readOnly
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                false
                               </span>
                               }
                             </span>

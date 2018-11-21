@@ -31,6 +31,7 @@ describe("Button", () => {
 });
 describe("Button with icon", () => {
   const dataTest = "test";
+  const tabIndex = "-1";
   const href = "https://kiwi.com";
   const component = shallow(
     <Button
@@ -39,6 +40,7 @@ describe("Button with icon", () => {
       iconRight={<ChevronDown />}
       onClick={onClick}
       dataTest={dataTest}
+      tabIndex={tabIndex}
       href={href}
     >
       {children}
@@ -46,6 +48,9 @@ describe("Button with icon", () => {
   );
   it("should have data-test", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
+  });
+  it("should have tabindex", () => {
+    expect(component.render().prop("tabindex")).toBe(tabIndex);
   });
   it("should have href", () => {
     expect(component.render().prop("href")).toBe(href);

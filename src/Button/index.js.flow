@@ -34,6 +34,7 @@ export type Props = {|
   +icon?: React$Node,
   +iconLeft?: React$Node,
   +iconRight?: React$Node,
+  +tabIndex?: string,
   ...Globals,
 |};
 

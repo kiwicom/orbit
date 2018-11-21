@@ -13,6 +13,7 @@ export type Props = {|
   +resize?: "vertical" | "none",
   +disabled?: boolean,
   +maxLength?: number,
+  +tabIndex?: string,
   +onChange?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,

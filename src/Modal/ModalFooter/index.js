@@ -33,6 +33,7 @@ export const StyledModalFooter = styled.div`
   padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`)};
   box-sizing: border-box;
   // TODO: create token boxShadowActionableInverted
+  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   @media (max-width: 599px) {
     ${StyledButton}, ${StyledButtonLink} {

@@ -89,15 +89,11 @@ const CloseContainer = styled.div`
   // TODO create tokens
   height: 52px;
   width: 100%;
+  max-width: ${({ modalWidth }) => `${modalWidth}px`};
   transition: box-shadow ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
     background-color ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
   border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-
-  ${media.desktop`
-    box-shadow: none!important;
-    background: transparent!important;
-  `}
   
   & + ${StyledModalSection}:first-of-type {
     padding-top: 52px;
@@ -153,10 +149,23 @@ const ModalWrapperContent = styled.div`
         padding: ${theme.orbit.spaceMedium};
         box-shadow: ${({ fullyScrolled }) =>
           fullyScrolled
-            ? `0 0 1px 0 ${theme.orbit.paletteCloudNormal}`
-            : "0 -2px 4px 0 rgba(23, 27, 30, 0.1)"};
+            ? `inset 0 1px 0 ${theme.orbit.paletteCloudNormal}, 0 -2px 4px 0 rgba(23, 27, 30, 0)`
+            : `inset 0 0 0 transparent, 0 -2px 4px 0 rgba(23, 27, 30, 0.1)`};
         position: fixed;
         transition: box-shadow ${theme.orbit.durationFast} ease-in-out;
+        ${media.desktop`
+          & {
+            ${({ fullyScrolled }) =>
+              fullyScrolled &&
+              css`
+                position: absolute;
+              `};
+              box-shadow: ${({ fullyScrolled }) => fullyScrolled && "none"};
+          }
+        `};
+      }
+      ${StyledModalSection}:last-of-type {
+        border-radius: 0;
       }
     `};
 
@@ -179,19 +188,24 @@ const ModalWrapperContent = styled.div`
     overflow: visible;
     ${StyledModalSection}:last-of-type {
       padding-bottom: ${({ theme }) => theme.orbit.spaceXXLarge};
-      margin-bottom: 0;
+      margin-bottom: ${({ fixedFooter, footerHeight }) =>
+        fixedFooter ? `${footerHeight}px` : "0"};
       &::after {
         content: none;
       }
     }
     ${StyledModalFooter} {
-      position: relative;
-      box-shadow: none;
-      padding: ${({ theme }) => `0 ${theme.orbit.spaceXXLarge} ${theme.orbit.spaceXXLarge}`};
+      padding: ${({ theme }) => `${theme.orbit.spaceLarge} ${theme.orbit.spaceXXLarge}`};
+      max-width: ${({ modalWidth }) => `${modalWidth}px`};
     }
     ${CloseContainer} {
-      position: absolute;
+      top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "0"};
+      left: ${({ scrolled, fixedClose, modalLeft }) =>
+        (fixedClose || scrolled) && `${modalLeft}px`};
+    }
+    ${MobileHeader} {
       top: 0;
+      left: ${({ modalLeft }) => `${modalLeft}px`};
     }
   `};
 `;
@@ -200,59 +214,93 @@ ModalWrapperContent.defaultProps = {
   theme: defaultTokens,
 };
 
-const CloseElement = ({ onClose, closable }: CloseElementType) => (
-  <CloseContainer>
+const CloseElement = ({ onClose, closable, modalWidth }: CloseElementType) => (
+  <CloseContainer modalWidth={modalWidth}>
     {closable && <ButtonLink onClick={onClose} size="normal" icon={<Close />} transparent />}
   </CloseContainer>
 );
 
 class Modal extends React.PureComponent<Props, State> {
-  constructor() {
-    super();
-    // $FlowExpected
-    this.handleScroll = this.handleScroll.bind(this);
-  }
-
   state = {
     scrolled: false,
     loaded: false,
     fixedClose: false,
     fullyScrolled: false,
+    modalLeft: 0,
+    modalWidth: 0,
+    footerHeight: 0,
   };
 
   componentDidMount() {
-    // eslint-disable-next-line
-    setTimeout(
+    this.setScrollPoint();
+    this.decideFixedFooter();
+    this.timeout = setTimeout(
       () =>
         this.setState({
           loaded: true,
         }),
       150,
     );
+    this.setDimensions();
+    window.addEventListener("resize", this.handleResize);
   }
 
   componentDidUpdate() {
     if (!this.state.scrolled) {
       this.setScrollPoint();
+      this.setDimensions();
     }
   }
 
-  setScrollPoint() {
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+  }
+
+  setDimensions = () => {
+    const content = this.modalContent.current;
+    if (content) {
+      const footerEl = content.querySelector(`.${<StyledModalFooter />.type.styledComponentId}`);
+      const contentDimensions = content.getBoundingClientRect();
+      const modalLeft = contentDimensions.left;
+      const modalWidth = contentDimensions.width;
+      const footerHeight = footerEl?.clientHeight;
+      this.setState({ modalLeft, modalWidth, footerHeight });
+    }
+  };
+
+  setScrollPoint = () => {
     setTimeout(() => {
       if (!this.state.scrolled) {
-        const { node } = this;
-        if (node instanceof HTMLElement) {
-          const el = node.querySelector(`.${<StyledHeading />.type.styledComponentId}`);
+        const content = this.modalContent.current;
+        if (content instanceof HTMLElement) {
+          const el = content.querySelector(`.${<StyledHeading />.type.styledComponentId}`);
           if (el) {
             this.offset = el.clientHeight + el.offsetTop;
           }
         }
       }
     }, 550);
-  }
+  };
 
-  handleScroll(ev: Event) {
-    if (ev.target instanceof HTMLDivElement && ev.target === this.node) {
+  decideFixedFooter = () => {
+    // if the content height is smaller than window height, we need to explicitly set fullyScrolled to false
+    // I don't know why, but DOM returns height that is smaller by 92 pixels
+    // devTools are showing height + 92px
+    const content = this.modalContent.current;
+    const fullyScrolled = content?.scrollHeight + 92 < window.innerHeight;
+    this.setState({ fullyScrolled });
+  };
+
+  handleResize = () => {
+    this.setDimensions();
+    this.decideFixedFooter();
+  };
+
+  handleMobileScroll = (ev: Event) => {
+    if (ev.target instanceof HTMLDivElement && ev.target === this.modalContent.current) {
       this.setState({
         scrolled: ev.target.scrollTop >= this.offset,
         fixedClose: ev.target.scrollTop >= 1,
@@ -262,7 +310,17 @@ class Modal extends React.PureComponent<Props, State> {
           ev.target.scrollTop >= ev.target.scrollHeight - ev.target.clientHeight - 10,
       });
     }
-  }
+  };
+
+  handleScroll = (ev: Event) => {
+    if (ev.target instanceof HTMLDivElement && ev.target === this.modalBody.current) {
+      this.setState({
+        scrolled: ev.target.scrollTop >= this.offset,
+        fixedClose: ev.target.scrollTop >= 40,
+        fullyScrolled: ev.target.scrollTop >= ev.target.scrollHeight - ev.target.clientHeight - 40,
+      });
+    }
+  };
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
     const { onClose, closable } = this.props;
@@ -277,16 +335,18 @@ class Modal extends React.PureComponent<Props, State> {
     if (
       closable &&
       onClose &&
-      this.node?.current &&
+      this.modalContent?.current &&
       ev.target instanceof Node &&
-      !this.node.current.contains(ev.target)
+      !this.modalContent.current.contains(ev.target)
     ) {
       // If is clicked outside of modal
       onClose(ev);
     }
   };
 
-  node: { current: any | HTMLElement } = React.createRef();
+  modalContent: { current: any | HTMLElement } = React.createRef();
+  modalBody: { current: any | HTMLElement } = React.createRef();
+  timeout: TimeoutID;
   offset = 40;
 
   render() {
@@ -298,29 +358,42 @@ class Modal extends React.PureComponent<Props, State> {
       fixedFooter = false,
       dataTest,
     } = this.props;
-    const { scrolled, loaded, fixedClose, fullyScrolled } = this.state;
+    const {
+      scrolled,
+      loaded,
+      fixedClose,
+      fullyScrolled,
+      modalLeft,
+      modalWidth,
+      footerHeight,
+    } = this.state;
     return (
       <ModalBody
         tabIndex="0"
         onKeyDown={this.handleKeyDown}
+        onScroll={this.handleScroll}
         onClick={this.handleClickOutside}
         data-test={dataTest}
+        ref={this.modalBody}
       >
         <ModalWrapper
           size={size}
           loaded={loaded}
-          onScroll={this.handleScroll}
+          onScroll={this.handleMobileScroll}
           fixedFooter={fixedFooter}
         >
           <ModalWrapperContent
             size={size}
             fixedFooter={fixedFooter}
             scrolled={scrolled}
-            ref={this.node}
+            ref={this.modalContent}
             fixedClose={fixedClose}
             fullyScrolled={fullyScrolled}
+            modalLeft={modalLeft}
+            modalWidth={modalWidth}
+            footerHeight={footerHeight}
           >
-            <CloseElement onClose={onClose} closable={closable} />
+            <CloseElement onClose={onClose} closable={closable} modalWidth={modalWidth} />
             {children}
           </ModalWrapperContent>
         </ModalWrapper>

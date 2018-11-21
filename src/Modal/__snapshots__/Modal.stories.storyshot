@@ -102,6 +102,7 @@ exports[`Storyshots Modal Full preview 1`] = `
             data-test="test"
             onClick={[Function]}
             onKeyDown={[Function]}
+            onScroll={[Function]}
             tabIndex="0"
           >
             <div
@@ -110,11 +111,11 @@ exports[`Storyshots Modal Full preview 1`] = `
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 dxbjJL"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 dlOuNX"
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-sc-1f0srsl-2 hSDLwd"
+                  className="Modal__CloseContainer-sc-1f0srsl-2 dbJXht"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
@@ -166,7 +167,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     </div>
                   </div>
                   <div
-                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 jbubjQ"
+                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 zKUAy"
                   >
                     Orbit design system
                   </div>
@@ -199,7 +200,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                   </p>
                 </section>
                 <div
-                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 dynzUI"
+                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 nnNNI"
                 >
                   <div
                     className="ModalFooter__StyledChild-sc-17ld6v4-0 eHFSqa"
@@ -1676,6 +1677,7 @@ exports[`Storyshots Modal RTL 1`] = `
             className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
             onClick={[Function]}
             onKeyDown={[Function]}
+            onScroll={[Function]}
             tabIndex="0"
           >
             <div
@@ -1684,11 +1686,11 @@ exports[`Storyshots Modal RTL 1`] = `
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 dxbjJL"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 dlOuNX"
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-sc-1f0srsl-2 dMspsM"
+                  className="Modal__CloseContainer-sc-1f0srsl-2 bEzEj"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
@@ -1739,7 +1741,7 @@ exports[`Storyshots Modal RTL 1`] = `
                     </div>
                   </div>
                   <div
-                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 dyomzI"
+                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 fmcezd"
                   >
                     The title of the ModalHeader
                   </div>
@@ -1763,7 +1765,7 @@ exports[`Storyshots Modal RTL 1`] = `
                   </p>
                 </section>
                 <div
-                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 dynzUI"
+                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 nnNNI"
                 >
                   <div
                     className="ModalFooter__StyledChild-sc-17ld6v4-0 hswcsR"
@@ -2759,6 +2761,7 @@ exports[`Storyshots Modal Sizes 1`] = `
             className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
             onClick={[Function]}
             onKeyDown={[Function]}
+            onScroll={[Function]}
             tabIndex="0"
           >
             <div
@@ -2767,11 +2770,11 @@ exports[`Storyshots Modal Sizes 1`] = `
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 dxbjJL"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 dlOuNX"
                 size="normal"
               >
                 <div
-                  className="Modal__CloseContainer-sc-1f0srsl-2 hSDLwd"
+                  className="Modal__CloseContainer-sc-1f0srsl-2 dbJXht"
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
@@ -2812,7 +2815,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                     I&#39;m lovely description
                   </div>
                   <div
-                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 jbubjQ"
+                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 zKUAy"
                   >
                     Orbit design system
                   </div>
@@ -3537,6 +3540,3459 @@ exports[`Storyshots Modal Sizes 1`] = `
                           >
                             &lt;/
                             ModalSection
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          Modal
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Modal With fixedFooter 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="story"
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      className="story-header"
+      style={
+        Object {
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      <div>
+        <h1
+          className="story-title"
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          With fixedFooter
+        </h1>
+        
+        <span
+          className="story-subtitle"
+          style={Object {}}
+        >
+          <div>
+            <p>
+              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        className="chapter-header"
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="section-container"
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          className="section-header"
+          style={Object {}}
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="section-component-container"
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div
+            className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onScroll={[Function]}
+            tabIndex="0"
+          >
+            <div
+              className="Modal__ModalWrapper-sc-1f0srsl-1 gBLsar"
+              onScroll={[Function]}
+              size="normal"
+            >
+              <div
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 gWPBJv"
+                size="normal"
+              >
+                <div
+                  className="Modal__CloseContainer-sc-1f0srsl-2 dbJXht"
+                >
+                  <button
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
+                    onClick={[Function]}
+                    size="normal"
+                    type="button"
+                  >
+                    <div
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
+                    >
+                      <svg
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+                <div
+                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 rdsPY"
+                >
+                  <img
+                    alt="Meal"
+                    className="Illustration__StyledImage-uskdow-0 brJZdH"
+                    size="small"
+                    src="//images.kiwi.com/illustrations/0x90/Meal.png"
+                    srcSet="//images.kiwi.com/illustrations/0x180/Meal.png 2x"
+                  />
+                  <div
+                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 fUjDML"
+                  >
+                    <h1
+                      className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
+                    >
+                      Enjoy something to eat while you fly
+                    </h1>
+                    <div
+                      className="ModalHeader__ModalDescription-sc-13vyf6i-1 Zivqa"
+                    >
+                      <div
+                        className="Text__StyledText-sc-19qtt4y-0 lKAms"
+                      >
+                        Select a flight below to see the menu (where available)
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 zKUAy"
+                  >
+                    Enjoy something to eat while you fly
+                  </div>
+                </div>
+                <section
+                  className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dkLYaA"
+                >
+                  <div
+                    className="Stack__StyledStack-sc-1t576ow-0 cmtuGW"
+                  >
+                    <p
+                      className="Text__StyledText-sc-19qtt4y-0 fuDZxU"
+                    >
+                      OUTBOUND
+                    </p>
+                    <div
+                      className="Card__StyledCard-ff0z2v-1 PJvWj"
+                    >
+                      <div
+                        className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
+                      >
+                        <div
+                          className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
+                        >
+                          <div
+                            className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
+                          >
+                            <div
+                              className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
+                            />
+                          </div>
+                          <div
+                            className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
+                          >
+                            <div>
+                              <div
+                                className="Stack__StyledStack-sc-1t576ow-0 buXwHC"
+                              >
+                                <div
+                                  className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                                  size="large"
+                                >
+                                  <img
+                                    alt="Ryanair"
+                                    className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
+                                    size="large"
+                                    src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
+                                    srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
+                                    title="Ryanair"
+                                  />
+                                </div>
+                                <div
+                                  className="Stack__StyledStack-sc-1t576ow-0 kdnAvY"
+                                >
+                                  <p
+                                    className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                                  >
+                                    Sat, Mar 31 Trip length: 1h55m
+                                  </p>
+                                  <div
+                                    className="Stack__StyledStack-sc-1t576ow-0 hFKyqx"
+                                  >
+                                    <p
+                                      className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                    >
+                                      London LHR
+                                    </p>
+                                    <svg
+                                      className="Icon__StyledIcon-sc-1pnzn3g-0 jWhQVI"
+                                      preserveAspectRatio="xMidYMid meet"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        d="M17.75 12l-4.083-3.5v2.333H6v2.334h7.667V15.5z"
+                                      />
+                                    </svg>
+                                    <p
+                                      className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                    >
+                                      Prague PRG
+                                    </p>
+                                  </div>
+                                </div>
+                                <button
+                                  className="Button__StyledButton-sc-1brqp3f-1 kLdDFQ"
+                                  size="small"
+                                  type="button"
+                                >
+                                  <div
+                                    className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
+                                  >
+                                    Edit
+                                  </div>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="Card__StyledCard-ff0z2v-1 PJvWj"
+                    >
+                      <div
+                        className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
+                      >
+                        <div
+                          className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
+                        >
+                          <div
+                            className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
+                          >
+                            <div
+                              className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
+                            />
+                          </div>
+                          <div
+                            className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
+                          >
+                            <div>
+                              <div
+                                className="Stack__StyledStack-sc-1t576ow-0 buXwHC"
+                              >
+                                <div
+                                  className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                                  size="large"
+                                >
+                                  <img
+                                    alt="Ryanair"
+                                    className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
+                                    size="large"
+                                    src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
+                                    srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
+                                    title="Ryanair"
+                                  />
+                                </div>
+                                <div
+                                  className="Stack__StyledStack-sc-1t576ow-0 kdnAvY"
+                                >
+                                  <p
+                                    className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                                  >
+                                    Sat, Mar 31 Trip length: 1h55m
+                                  </p>
+                                  <div
+                                    className="Stack__StyledStack-sc-1t576ow-0 hFKyqx"
+                                  >
+                                    <p
+                                      className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                    >
+                                      London LHR
+                                    </p>
+                                    <svg
+                                      className="Icon__StyledIcon-sc-1pnzn3g-0 jWhQVI"
+                                      preserveAspectRatio="xMidYMid meet"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        d="M17.75 12l-4.083-3.5v2.333H6v2.334h7.667V15.5z"
+                                      />
+                                    </svg>
+                                    <p
+                                      className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                    >
+                                      Prague PRG
+                                    </p>
+                                  </div>
+                                </div>
+                                <button
+                                  className="Button__StyledButton-sc-1brqp3f-1 kLdDFQ"
+                                  size="small"
+                                  type="button"
+                                >
+                                  <div
+                                    className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
+                                  >
+                                    Edit
+                                  </div>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <div
+                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 nnNNI"
+                >
+                  <div
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 eHFSqa"
+                  >
+                    <button
+                      className="Button__StyledButton-sc-1brqp3f-1 bwmbUD"
+                      size="normal"
+                      type="button"
+                    >
+                      <div
+                        className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
+                      >
+                        <div
+                          className="Button__IconContainer-sc-1brqp3f-0 cvyiB"
+                        >
+                          <svg
+                            className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                            />
+                          </svg>
+                        </div>
+                        Back
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 ZHtLp"
+                  >
+                    <button
+                      className="Button__StyledButton-sc-1brqp3f-1 bwWmAt"
+                      size="normal"
+                      type="button"
+                    >
+                      <div
+                        className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
+                      >
+                        Proceed to Payment (23.98€)
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                className="section-subsection"
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  className="section-subsection-title"
+                >
+                  Source
+                </h4>
+                <pre
+                  className="css-4akams"
+                >
+                  <div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          Modal
+                        </span>
+                        <span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              onClose
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#170",
+                                    }
+                                  }
+                                >
+                                  onClose
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              fixedFooter
+                            </span>
+                            
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          ModalHeader
+                        </span>
+                        <span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              title
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  Enjoy something to eat while you fly
+                                </span>
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              illustration
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;Illustration /&gt;
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              description
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  Select a flight below to see the menu (where avail…
+                                </span>
+                                "
+                              </span>
+                            </span>
+                             
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          /&gt;
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            ModalSection
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                suppressed
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Stack
+                            </span>
+                            <span />
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;
+                                Text
+                              </span>
+                              <span>
+                                <span>
+                                   
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    uppercase
+                                  </span>
+                                </span>
+                                <span>
+                                   
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    weight
+                                  </span>
+                                  <span>
+                                    =
+                                    <span
+                                      style={Object {}}
+                                    >
+                                      "
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        bold
+                                      </span>
+                                      "
+                                    </span>
+                                  </span>
+                                  
+                                </span>
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &gt;
+                              </span>
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 78,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                OUTBOUND
+                              </span>
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;/
+                                Text
+                                &gt;
+                              </span>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;
+                                Card
+                              </span>
+                              <span />
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &gt;
+                              </span>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  CardSection
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;
+                                    Stack
+                                  </span>
+                                  <span>
+                                    <span>
+                                      <span>
+                                        <br />
+                                          
+                                      </span>
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        direction
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          "
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            row
+                                          </span>
+                                          "
+                                        </span>
+                                      </span>
+                                    </span>
+                                    <span>
+                                      <span>
+                                        <br />
+                                          
+                                      </span>
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        align
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          "
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            center
+                                          </span>
+                                          "
+                                        </span>
+                                      </span>
+                                    </span>
+                                    <span>
+                                      <span>
+                                        <br />
+                                          
+                                      </span>
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        justify
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          "
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            between
+                                          </span>
+                                          "
+                                        </span>
+                                      </span>
+                                    </span>
+                                    <span>
+                                      <span>
+                                        <br />
+                                          
+                                      </span>
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        spacing
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          "
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            condensed
+                                          </span>
+                                          "
+                                        </span>
+                                      </span>
+                                      <br />
+                                    </span>
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &gt;
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 108,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;
+                                    CarrierLogo
+                                  </span>
+                                  <span>
+                                    <span>
+                                       
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        carriers
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          {
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#666",
+                                              }
+                                            }
+                                          >
+                                            [
+                                            <span>
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#666",
+                                                  }
+                                                }
+                                              >
+                                                {
+                                                <span>
+                                                  <span
+                                                    style={
+                                                      Object {
+                                                        "color": "#666",
+                                                      }
+                                                    }
+                                                  >
+                                                    code
+                                                  </span>
+                                                </span>
+                                                : 
+                                                <span
+                                                  style={
+                                                    Object {
+                                                      "color": "#22a",
+                                                      "wordBreak": "break-word",
+                                                    }
+                                                  }
+                                                >
+                                                  'FR'
+                                                </span>
+                                                ,
+                                                <span>
+                                                  <span
+                                                    style={
+                                                      Object {
+                                                        "color": "#666",
+                                                      }
+                                                    }
+                                                  >
+                                                    name
+                                                  </span>
+                                                </span>
+                                                : 
+                                                <span
+                                                  style={
+                                                    Object {
+                                                      "color": "#22a",
+                                                      "wordBreak": "break-word",
+                                                    }
+                                                  }
+                                                >
+                                                  'Ryanair'
+                                                </span>
+                                                }
+                                              </span>
+                                            </span>
+                                            ]
+                                          </span>
+                                          }
+                                        </span>
+                                      </span>
+                                    </span>
+                                    <span>
+                                       
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        size
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          "
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            large
+                                          </span>
+                                          "
+                                        </span>
+                                      </span>
+                                       
+                                    </span>
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    /&gt;
+                                  </span>
+                                </div>
+                                <div>
+                                  <div
+                                    style={
+                                      Object {
+                                        "paddingLeft": 108,
+                                        "paddingRight": 3,
+                                      }
+                                    }
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#777",
+                                        }
+                                      }
+                                    >
+                                      &lt;
+                                      Stack
+                                    </span>
+                                    <span>
+                                      <span>
+                                         
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          spacing
+                                        </span>
+                                        <span>
+                                          =
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            "
+                                            <span
+                                              style={
+                                                Object {
+                                                  "color": "#22a",
+                                                  "wordBreak": "break-word",
+                                                }
+                                              }
+                                            >
+                                              tight
+                                            </span>
+                                            "
+                                          </span>
+                                        </span>
+                                        
+                                      </span>
+                                    </span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#777",
+                                        }
+                                      }
+                                    >
+                                      &gt;
+                                    </span>
+                                  </div>
+                                  <div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "paddingLeft": 123,
+                                          "paddingRight": 3,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        &lt;
+                                        Text
+                                      </span>
+                                      <span>
+                                        <span>
+                                           
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            size
+                                          </span>
+                                          <span>
+                                            =
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              "
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#22a",
+                                                    "wordBreak": "break-word",
+                                                  }
+                                                }
+                                              >
+                                                small
+                                              </span>
+                                              "
+                                            </span>
+                                          </span>
+                                        </span>
+                                        <span>
+                                           
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            type
+                                          </span>
+                                          <span>
+                                            =
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              "
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#22a",
+                                                    "wordBreak": "break-word",
+                                                  }
+                                                }
+                                              >
+                                                secondary
+                                              </span>
+                                              "
+                                            </span>
+                                          </span>
+                                          
+                                        </span>
+                                      </span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        &gt;
+                                      </span>
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "paddingLeft": 138,
+                                          "paddingRight": 3,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        Sat, Mar 31 Trip length: 1h55m
+                                      </span>
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "paddingLeft": 123,
+                                          "paddingRight": 3,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        &lt;/
+                                        Text
+                                        &gt;
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "paddingLeft": 123,
+                                          "paddingRight": 3,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        &lt;
+                                        Stack
+                                      </span>
+                                      <span>
+                                        <span>
+                                           
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            direction
+                                          </span>
+                                          <span>
+                                            =
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              "
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#22a",
+                                                    "wordBreak": "break-word",
+                                                  }
+                                                }
+                                              >
+                                                row
+                                              </span>
+                                              "
+                                            </span>
+                                          </span>
+                                        </span>
+                                        <span>
+                                           
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            spacing
+                                          </span>
+                                          <span>
+                                            =
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              "
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#22a",
+                                                    "wordBreak": "break-word",
+                                                  }
+                                                }
+                                              >
+                                                tight
+                                              </span>
+                                              "
+                                            </span>
+                                          </span>
+                                        </span>
+                                        <span>
+                                           
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            align
+                                          </span>
+                                          <span>
+                                            =
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              "
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#22a",
+                                                    "wordBreak": "break-word",
+                                                  }
+                                                }
+                                              >
+                                                center
+                                              </span>
+                                              "
+                                            </span>
+                                          </span>
+                                          
+                                        </span>
+                                      </span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        &gt;
+                                      </span>
+                                    </div>
+                                    <div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "paddingLeft": 138,
+                                            "paddingRight": 3,
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          &lt;
+                                          Text
+                                        </span>
+                                        <span>
+                                          <span>
+                                             
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              weight
+                                            </span>
+                                            <span>
+                                              =
+                                              <span
+                                                style={Object {}}
+                                              >
+                                                "
+                                                <span
+                                                  style={
+                                                    Object {
+                                                      "color": "#22a",
+                                                      "wordBreak": "break-word",
+                                                    }
+                                                  }
+                                                >
+                                                  bold
+                                                </span>
+                                                "
+                                              </span>
+                                            </span>
+                                            
+                                          </span>
+                                        </span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          &gt;
+                                        </span>
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "paddingLeft": 153,
+                                            "paddingRight": 3,
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          London LHR
+                                        </span>
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "paddingLeft": 138,
+                                            "paddingRight": 3,
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          &lt;/
+                                          Text
+                                          &gt;
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "paddingLeft": 138,
+                                          "paddingRight": 3,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        &lt;
+                                        FlightDirect
+                                      </span>
+                                      <span>
+                                        <span>
+                                           
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            size
+                                          </span>
+                                          <span>
+                                            =
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              "
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#22a",
+                                                    "wordBreak": "break-word",
+                                                  }
+                                                }
+                                              >
+                                                small
+                                              </span>
+                                              "
+                                            </span>
+                                          </span>
+                                           
+                                        </span>
+                                      </span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        /&gt;
+                                      </span>
+                                    </div>
+                                    <div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "paddingLeft": 138,
+                                            "paddingRight": 3,
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          &lt;
+                                          Text
+                                        </span>
+                                        <span>
+                                          <span>
+                                             
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              weight
+                                            </span>
+                                            <span>
+                                              =
+                                              <span
+                                                style={Object {}}
+                                              >
+                                                "
+                                                <span
+                                                  style={
+                                                    Object {
+                                                      "color": "#22a",
+                                                      "wordBreak": "break-word",
+                                                    }
+                                                  }
+                                                >
+                                                  bold
+                                                </span>
+                                                "
+                                              </span>
+                                            </span>
+                                            
+                                          </span>
+                                        </span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          &gt;
+                                        </span>
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "paddingLeft": 153,
+                                            "paddingRight": 3,
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          Prague PRG
+                                        </span>
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "paddingLeft": 138,
+                                            "paddingRight": 3,
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          &lt;/
+                                          Text
+                                          &gt;
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "paddingLeft": 123,
+                                          "paddingRight": 3,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        &lt;/
+                                        Stack
+                                        &gt;
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div
+                                    style={
+                                      Object {
+                                        "paddingLeft": 108,
+                                        "paddingRight": 3,
+                                      }
+                                    }
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#777",
+                                        }
+                                      }
+                                    >
+                                      &lt;/
+                                      Stack
+                                      &gt;
+                                    </span>
+                                  </div>
+                                </div>
+                                <div>
+                                  <div
+                                    style={
+                                      Object {
+                                        "paddingLeft": 108,
+                                        "paddingRight": 3,
+                                      }
+                                    }
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#777",
+                                        }
+                                      }
+                                    >
+                                      &lt;
+                                      Button
+                                    </span>
+                                    <span>
+                                      <span>
+                                         
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          type
+                                        </span>
+                                        <span>
+                                          =
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            "
+                                            <span
+                                              style={
+                                                Object {
+                                                  "color": "#22a",
+                                                  "wordBreak": "break-word",
+                                                }
+                                              }
+                                            >
+                                              secondary
+                                            </span>
+                                            "
+                                          </span>
+                                        </span>
+                                      </span>
+                                      <span>
+                                         
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          size
+                                        </span>
+                                        <span>
+                                          =
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            "
+                                            <span
+                                              style={
+                                                Object {
+                                                  "color": "#22a",
+                                                  "wordBreak": "break-word",
+                                                }
+                                              }
+                                            >
+                                              small
+                                            </span>
+                                            "
+                                          </span>
+                                        </span>
+                                        
+                                      </span>
+                                    </span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#777",
+                                        }
+                                      }
+                                    >
+                                      &gt;
+                                    </span>
+                                  </div>
+                                  <div
+                                    style={
+                                      Object {
+                                        "paddingLeft": 123,
+                                        "paddingRight": 3,
+                                      }
+                                    }
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#777",
+                                        }
+                                      }
+                                    >
+                                      Edit
+                                    </span>
+                                  </div>
+                                  <div
+                                    style={
+                                      Object {
+                                        "paddingLeft": 108,
+                                        "paddingRight": 3,
+                                      }
+                                    }
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#777",
+                                        }
+                                      }
+                                    >
+                                      &lt;/
+                                      Button
+                                      &gt;
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;/
+                                    Stack
+                                    &gt;
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  CardSection
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;/
+                                Card
+                                &gt;
+                              </span>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;
+                                Card
+                              </span>
+                              <span />
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &gt;
+                              </span>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  CardSection
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;
+                                    Stack
+                                  </span>
+                                  <span>
+                                    <span>
+                                      <span>
+                                        <br />
+                                          
+                                      </span>
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        direction
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          "
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            row
+                                          </span>
+                                          "
+                                        </span>
+                                      </span>
+                                    </span>
+                                    <span>
+                                      <span>
+                                        <br />
+                                          
+                                      </span>
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        align
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          "
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            center
+                                          </span>
+                                          "
+                                        </span>
+                                      </span>
+                                    </span>
+                                    <span>
+                                      <span>
+                                        <br />
+                                          
+                                      </span>
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        justify
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          "
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            between
+                                          </span>
+                                          "
+                                        </span>
+                                      </span>
+                                    </span>
+                                    <span>
+                                      <span>
+                                        <br />
+                                          
+                                      </span>
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        spacing
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          "
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            condensed
+                                          </span>
+                                          "
+                                        </span>
+                                      </span>
+                                      <br />
+                                    </span>
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &gt;
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 108,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;
+                                    CarrierLogo
+                                  </span>
+                                  <span>
+                                    <span>
+                                       
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        carriers
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          {
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#666",
+                                              }
+                                            }
+                                          >
+                                            [
+                                            <span>
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#666",
+                                                  }
+                                                }
+                                              >
+                                                {
+                                                <span>
+                                                  <span
+                                                    style={
+                                                      Object {
+                                                        "color": "#666",
+                                                      }
+                                                    }
+                                                  >
+                                                    code
+                                                  </span>
+                                                </span>
+                                                : 
+                                                <span
+                                                  style={
+                                                    Object {
+                                                      "color": "#22a",
+                                                      "wordBreak": "break-word",
+                                                    }
+                                                  }
+                                                >
+                                                  'FR'
+                                                </span>
+                                                ,
+                                                <span>
+                                                  <span
+                                                    style={
+                                                      Object {
+                                                        "color": "#666",
+                                                      }
+                                                    }
+                                                  >
+                                                    name
+                                                  </span>
+                                                </span>
+                                                : 
+                                                <span
+                                                  style={
+                                                    Object {
+                                                      "color": "#22a",
+                                                      "wordBreak": "break-word",
+                                                    }
+                                                  }
+                                                >
+                                                  'Ryanair'
+                                                </span>
+                                                }
+                                              </span>
+                                            </span>
+                                            ]
+                                          </span>
+                                          }
+                                        </span>
+                                      </span>
+                                    </span>
+                                    <span>
+                                       
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        size
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          "
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            large
+                                          </span>
+                                          "
+                                        </span>
+                                      </span>
+                                       
+                                    </span>
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    /&gt;
+                                  </span>
+                                </div>
+                                <div>
+                                  <div
+                                    style={
+                                      Object {
+                                        "paddingLeft": 108,
+                                        "paddingRight": 3,
+                                      }
+                                    }
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#777",
+                                        }
+                                      }
+                                    >
+                                      &lt;
+                                      Stack
+                                    </span>
+                                    <span>
+                                      <span>
+                                         
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          spacing
+                                        </span>
+                                        <span>
+                                          =
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            "
+                                            <span
+                                              style={
+                                                Object {
+                                                  "color": "#22a",
+                                                  "wordBreak": "break-word",
+                                                }
+                                              }
+                                            >
+                                              tight
+                                            </span>
+                                            "
+                                          </span>
+                                        </span>
+                                        
+                                      </span>
+                                    </span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#777",
+                                        }
+                                      }
+                                    >
+                                      &gt;
+                                    </span>
+                                  </div>
+                                  <div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "paddingLeft": 123,
+                                          "paddingRight": 3,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        &lt;
+                                        Text
+                                      </span>
+                                      <span>
+                                        <span>
+                                           
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            size
+                                          </span>
+                                          <span>
+                                            =
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              "
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#22a",
+                                                    "wordBreak": "break-word",
+                                                  }
+                                                }
+                                              >
+                                                small
+                                              </span>
+                                              "
+                                            </span>
+                                          </span>
+                                        </span>
+                                        <span>
+                                           
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            type
+                                          </span>
+                                          <span>
+                                            =
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              "
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#22a",
+                                                    "wordBreak": "break-word",
+                                                  }
+                                                }
+                                              >
+                                                secondary
+                                              </span>
+                                              "
+                                            </span>
+                                          </span>
+                                          
+                                        </span>
+                                      </span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        &gt;
+                                      </span>
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "paddingLeft": 138,
+                                          "paddingRight": 3,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        Sat, Mar 31 Trip length: 1h55m
+                                      </span>
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "paddingLeft": 123,
+                                          "paddingRight": 3,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        &lt;/
+                                        Text
+                                        &gt;
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "paddingLeft": 123,
+                                          "paddingRight": 3,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        &lt;
+                                        Stack
+                                      </span>
+                                      <span>
+                                        <span>
+                                           
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            direction
+                                          </span>
+                                          <span>
+                                            =
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              "
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#22a",
+                                                    "wordBreak": "break-word",
+                                                  }
+                                                }
+                                              >
+                                                row
+                                              </span>
+                                              "
+                                            </span>
+                                          </span>
+                                        </span>
+                                        <span>
+                                           
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            spacing
+                                          </span>
+                                          <span>
+                                            =
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              "
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#22a",
+                                                    "wordBreak": "break-word",
+                                                  }
+                                                }
+                                              >
+                                                tight
+                                              </span>
+                                              "
+                                            </span>
+                                          </span>
+                                        </span>
+                                        <span>
+                                           
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            align
+                                          </span>
+                                          <span>
+                                            =
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              "
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#22a",
+                                                    "wordBreak": "break-word",
+                                                  }
+                                                }
+                                              >
+                                                center
+                                              </span>
+                                              "
+                                            </span>
+                                          </span>
+                                          
+                                        </span>
+                                      </span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        &gt;
+                                      </span>
+                                    </div>
+                                    <div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "paddingLeft": 138,
+                                            "paddingRight": 3,
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          &lt;
+                                          Text
+                                        </span>
+                                        <span>
+                                          <span>
+                                             
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              weight
+                                            </span>
+                                            <span>
+                                              =
+                                              <span
+                                                style={Object {}}
+                                              >
+                                                "
+                                                <span
+                                                  style={
+                                                    Object {
+                                                      "color": "#22a",
+                                                      "wordBreak": "break-word",
+                                                    }
+                                                  }
+                                                >
+                                                  bold
+                                                </span>
+                                                "
+                                              </span>
+                                            </span>
+                                            
+                                          </span>
+                                        </span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          &gt;
+                                        </span>
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "paddingLeft": 153,
+                                            "paddingRight": 3,
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          London LHR
+                                        </span>
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "paddingLeft": 138,
+                                            "paddingRight": 3,
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          &lt;/
+                                          Text
+                                          &gt;
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "paddingLeft": 138,
+                                          "paddingRight": 3,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        &lt;
+                                        FlightDirect
+                                      </span>
+                                      <span>
+                                        <span>
+                                           
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            size
+                                          </span>
+                                          <span>
+                                            =
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              "
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#22a",
+                                                    "wordBreak": "break-word",
+                                                  }
+                                                }
+                                              >
+                                                small
+                                              </span>
+                                              "
+                                            </span>
+                                          </span>
+                                           
+                                        </span>
+                                      </span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        /&gt;
+                                      </span>
+                                    </div>
+                                    <div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "paddingLeft": 138,
+                                            "paddingRight": 3,
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          &lt;
+                                          Text
+                                        </span>
+                                        <span>
+                                          <span>
+                                             
+                                            <span
+                                              style={Object {}}
+                                            >
+                                              weight
+                                            </span>
+                                            <span>
+                                              =
+                                              <span
+                                                style={Object {}}
+                                              >
+                                                "
+                                                <span
+                                                  style={
+                                                    Object {
+                                                      "color": "#22a",
+                                                      "wordBreak": "break-word",
+                                                    }
+                                                  }
+                                                >
+                                                  bold
+                                                </span>
+                                                "
+                                              </span>
+                                            </span>
+                                            
+                                          </span>
+                                        </span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          &gt;
+                                        </span>
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "paddingLeft": 153,
+                                            "paddingRight": 3,
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          Prague PRG
+                                        </span>
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "paddingLeft": 138,
+                                            "paddingRight": 3,
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#777",
+                                            }
+                                          }
+                                        >
+                                          &lt;/
+                                          Text
+                                          &gt;
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "paddingLeft": 123,
+                                          "paddingRight": 3,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#777",
+                                          }
+                                        }
+                                      >
+                                        &lt;/
+                                        Stack
+                                        &gt;
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div
+                                    style={
+                                      Object {
+                                        "paddingLeft": 108,
+                                        "paddingRight": 3,
+                                      }
+                                    }
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#777",
+                                        }
+                                      }
+                                    >
+                                      &lt;/
+                                      Stack
+                                      &gt;
+                                    </span>
+                                  </div>
+                                </div>
+                                <div>
+                                  <div
+                                    style={
+                                      Object {
+                                        "paddingLeft": 108,
+                                        "paddingRight": 3,
+                                      }
+                                    }
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#777",
+                                        }
+                                      }
+                                    >
+                                      &lt;
+                                      Button
+                                    </span>
+                                    <span>
+                                      <span>
+                                         
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          type
+                                        </span>
+                                        <span>
+                                          =
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            "
+                                            <span
+                                              style={
+                                                Object {
+                                                  "color": "#22a",
+                                                  "wordBreak": "break-word",
+                                                }
+                                              }
+                                            >
+                                              secondary
+                                            </span>
+                                            "
+                                          </span>
+                                        </span>
+                                      </span>
+                                      <span>
+                                         
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          size
+                                        </span>
+                                        <span>
+                                          =
+                                          <span
+                                            style={Object {}}
+                                          >
+                                            "
+                                            <span
+                                              style={
+                                                Object {
+                                                  "color": "#22a",
+                                                  "wordBreak": "break-word",
+                                                }
+                                              }
+                                            >
+                                              small
+                                            </span>
+                                            "
+                                          </span>
+                                        </span>
+                                        
+                                      </span>
+                                    </span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#777",
+                                        }
+                                      }
+                                    >
+                                      &gt;
+                                    </span>
+                                  </div>
+                                  <div
+                                    style={
+                                      Object {
+                                        "paddingLeft": 123,
+                                        "paddingRight": 3,
+                                      }
+                                    }
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#777",
+                                        }
+                                      }
+                                    >
+                                      Edit
+                                    </span>
+                                  </div>
+                                  <div
+                                    style={
+                                      Object {
+                                        "paddingLeft": 108,
+                                        "paddingRight": 3,
+                                      }
+                                    }
+                                  >
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#777",
+                                        }
+                                      }
+                                    >
+                                      &lt;/
+                                      Button
+                                      &gt;
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;/
+                                    Stack
+                                    &gt;
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  CardSection
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;/
+                                Card
+                                &gt;
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Stack
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            ModalSection
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            ModalFooter
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                flex
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    [
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        '0 0 auto'
+                                      </span>
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        '1 1 100%'
+                                      </span>
+                                    </span>
+                                    ]
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Button
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  icon
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      &lt;ChevronLeft /&gt;
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                              </span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  type
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    "
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      secondary
+                                    </span>
+                                    "
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              Back
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Button
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Button
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  block
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              Proceed to Payment (23.98€)
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Button
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            ModalFooter
                             &gt;
                           </span>
                         </div>

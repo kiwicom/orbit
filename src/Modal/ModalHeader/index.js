@@ -99,7 +99,7 @@ export const MobileHeader = styled.div`
   z-index: 1;
 
   ${media.desktop`
-    display: none;
+      padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXXLarge}`)};
   `};
 `;
 

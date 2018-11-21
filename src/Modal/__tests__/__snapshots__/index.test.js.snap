@@ -5,6 +5,7 @@ exports[`Large Modal should match snapshot 1`] = `
   data-test="test"
   onClick={[Function]}
   onKeyDown={[Function]}
+  onScroll={[Function]}
   tabIndex="0"
   theme={
     Object {
@@ -784,7 +785,10 @@ exports[`Large Modal should match snapshot 1`] = `
     <Modal__ModalWrapperContent
       fixedClose={false}
       fixedFooter={true}
+      footerHeight={0}
       fullyScrolled={false}
+      modalLeft={0}
+      modalWidth={0}
       scrolled={false}
       size="large"
       theme={
@@ -1174,6 +1178,7 @@ exports[`Large Modal should match snapshot 1`] = `
     >
       <CloseElement
         closable={true}
+        modalWidth={0}
         onClose={[MockFunction]}
       />
       <ModalHeader

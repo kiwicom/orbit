@@ -9,6 +9,9 @@ export type State = {|
   loaded: boolean,
   fixedClose: boolean,
   fullyScrolled: boolean,
+  modalLeft: number,
+  modalWidth: number,
+  footerHeight: number,
 |};
 
 type Size = "small" | "normal" | "large";
@@ -25,6 +28,7 @@ type onClose = (
 export type CloseElementType = {
   +onClose?: onClose,
   +closable?: boolean,
+  +modalWidth?: number,
 };
 
 export type Props = {|

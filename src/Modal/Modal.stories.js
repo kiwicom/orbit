@@ -15,9 +15,13 @@ import Text from "../Text";
 import { NAMES } from "../Illustration/consts";
 import ModalFooter from "./ModalFooter";
 import ChevronLeft from "../icons/ChevronLeft";
+import FlightDirect from "../icons/FlightDirect";
 import Stack from "../Stack";
 import ButtonLink from "../ButtonLink";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import Card from "../Card";
+import { CarrierLogo } from "../index";
+import CardSection from "../Card/CardSection";
 
 import Modal from "./index";
 
@@ -70,6 +74,80 @@ storiesOf("Modal", module)
       ],
     };
   })
+  .addWithChapters("With fixedFooter", () => ({
+    info:
+      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <Modal onClose={action("onClose")} fixedFooter>
+                <ModalHeader
+                  title="Enjoy something to eat while you fly"
+                  illustration={<Illustration name="Meal" size="small" />}
+                  description="Select a flight below to see the menu (where available)"
+                />
+                <ModalSection suppressed>
+                  <Stack>
+                    <Text uppercase weight="bold">
+                      OUTBOUND
+                    </Text>
+                    <Card>
+                      <CardSection>
+                        <Stack direction="row" align="center" justify="between" spacing="condensed">
+                          <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                          <Stack spacing="tight">
+                            <Text size="small" type="secondary">
+                              Sat, Mar 31 Trip length: 1h55m
+                            </Text>
+                            <Stack direction="row" spacing="tight" align="center">
+                              <Text weight="bold">London LHR</Text>
+                              <FlightDirect size="small" />
+                              <Text weight="bold">Prague PRG</Text>
+                            </Stack>
+                          </Stack>
+                          <Button type="secondary" size="small">
+                            Edit
+                          </Button>
+                        </Stack>
+                      </CardSection>
+                    </Card>
+                    <Card>
+                      <CardSection>
+                        <Stack direction="row" align="center" justify="between" spacing="condensed">
+                          <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                          <Stack spacing="tight">
+                            <Text size="small" type="secondary">
+                              Sat, Mar 31 Trip length: 1h55m
+                            </Text>
+                            <Stack direction="row" spacing="tight" align="center">
+                              <Text weight="bold">London LHR</Text>
+                              <FlightDirect size="small" />
+                              <Text weight="bold">Prague PRG</Text>
+                            </Stack>
+                          </Stack>
+                          <Button type="secondary" size="small">
+                            Edit
+                          </Button>
+                        </Stack>
+                      </CardSection>
+                    </Card>
+                  </Stack>
+                </ModalSection>
+                <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
+                  <Button icon={<ChevronLeft />} type="secondary">
+                    Back
+                  </Button>
+                  <Button block>Proceed to Payment (23.98€)</Button>
+                </ModalFooter>
+              </Modal>
+            ),
+          },
+        ],
+      },
+    ],
+  }))
   .addWithChapters("Full preview", () => {
     const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
     const title = text("Title", "Orbit design system");

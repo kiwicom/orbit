@@ -2018,6 +2018,7 @@ exports[`InputFile with help should match snapshot 1`] = `
         ],
       }
     }
+    tabIndex="-1"
     theme={
       Object {
         "orbit": Object {

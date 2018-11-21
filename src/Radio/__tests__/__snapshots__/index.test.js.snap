@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Default CheckBox should match snapshot 1`] = `
+exports[`Default Radio should match snapshot 1`] = `
 <Radio__Label
   checked={false}
   data-test="test"
@@ -408,6 +408,7 @@ exports[`Default CheckBox should match snapshot 1`] = `
         ],
       }
     }
+    tabIndex="-1"
     theme={
       Object {
         "orbit": Object {

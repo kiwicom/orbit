@@ -13,6 +13,7 @@ export type Props = {|
   +external?: boolean,
   +type?: Type,
   +rel?: string,
+  +tabIndex?: string,
   ...Globals,
 |};
 

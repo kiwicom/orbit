@@ -9,12 +9,21 @@ const label = "Checkbox";
 const onChange = jest.fn();
 const value = "option";
 const dataTest = "test";
+const tabIndex = "-1";
 const name = "name";
 
 describe(`Default CheckBox`, () => {
   const component = shallow(
-    <CheckBox label={label} onChange={onChange} value={value} dataTest={dataTest} name={name} />,
+    <CheckBox
+      label={label}
+      onChange={onChange}
+      value={value}
+      dataTest={dataTest}
+      name={name}
+      tabIndex={tabIndex}
+    />,
   );
+
   it("should contain a label", () => {
     expect(
       component
@@ -29,6 +38,16 @@ describe(`Default CheckBox`, () => {
   it("should have data-test", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
   });
+
+  it("should have tabindex", () => {
+    expect(
+      component
+        .find("Checkbox__Input")
+        .render()
+        .prop("tabindex"),
+    ).toBe(tabIndex);
+  });
+
   it("should have name", () => {
     expect(
       component

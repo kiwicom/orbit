@@ -157,6 +157,7 @@ const Radio = React.forwardRef((props: Props, ref: Ref) => {
     onChange,
     name,
     info,
+    tabIndex,
     dataTest,
   } = props;
   return (
@@ -168,6 +169,7 @@ const Radio = React.forwardRef((props: Props, ref: Ref) => {
         checked={checked}
         onChange={onChange}
         name={name}
+        tabIndex={tabIndex}
         ref={ref}
       />
       <IconContainer>

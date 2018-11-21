@@ -167,6 +167,7 @@ const Checkbox = React.forwardRef((props: Props, ref: Ref) => {
     onChange,
     dataTest,
     info,
+    tabIndex,
   } = props;
 
   return (
@@ -176,6 +177,7 @@ const Checkbox = React.forwardRef((props: Props, ref: Ref) => {
         type="checkbox"
         disabled={disabled}
         name={name}
+        tabIndex={tabIndex}
         checked={checked}
         onChange={onChange}
         ref={ref}

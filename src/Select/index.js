@@ -30,7 +30,7 @@ const Label = styled.label`
 const StyledSelect = styled(
   // $FlowExpected
   React.forwardRef(
-    ({ className, children, value, disabled, name, onChange, onFocus, onBlur }, ref) => (
+    ({ className, children, value, disabled, name, tabIndex, onChange, onFocus, onBlur }, ref) => (
       <select
         value={value}
         className={className}
@@ -39,6 +39,7 @@ const StyledSelect = styled(
         onBlur={onBlur}
         disabled={disabled}
         name={name}
+        tabIndex={tabIndex}
         ref={ref}
       >
         {children}
@@ -193,6 +194,7 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
     onBlur,
     onFocus,
     options,
+    tabIndex,
     dataTest,
     prefix,
   } = props;
@@ -221,6 +223,7 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
           onBlur={onBlur}
           onChange={onChange}
           filled={filled}
+          tabIndex={tabIndex}
           ref={ref}
         >
           {placeholder && (

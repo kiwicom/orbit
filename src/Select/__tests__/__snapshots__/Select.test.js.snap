@@ -397,6 +397,7 @@ exports[`Select should match snapshot 1`] = `
       name="name"
       onChange={[MockFunction]}
       size="normal"
+      tabIndex="-1"
       theme={
         Object {
           "orbit": Object {

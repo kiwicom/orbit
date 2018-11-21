@@ -17,6 +17,7 @@ exports[`TextLink should match snapshot 1`] = `
       ],
     }
   }
+  tabIndex="-1"
   target="_blank"
   theme={
     Object {

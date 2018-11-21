@@ -98,6 +98,7 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
       maxValue,
       minValue,
       required,
+      tabIndex,
       forwardedRef,
     } = this.props;
     const { value } = this.state;
@@ -119,6 +120,7 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
           value={value || 0}
           minValue={minValue}
           maxValue={maxValue}
+          tabIndex={tabIndex}
           ref={forwardedRef}
           prefix={
             <ButtonLink

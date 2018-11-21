@@ -65,6 +65,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   href="https://kiwi.com"
   size="normal"
   submit={true}
+  tabIndex="-1"
   transparent={false}
   type="primary"
   width={0}
@@ -77,6 +78,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
     size="normal"
     sizeIcon="medium"
     submit={true}
+    tabIndex="-1"
     target="_blank"
     theme={
       Object {
@@ -915,6 +917,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
       size="normal"
       sizeIcon="medium"
       submit={true}
+      tabIndex="-1"
       target="_blank"
       theme={
         Object {
@@ -1313,6 +1316,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
         size="normal"
         sizeIcon="medium"
         submit={true}
+        tabIndex="-1"
         target="_blank"
         theme={
           Object {
@@ -1707,6 +1711,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           data-test="test"
           href="https://kiwi.com"
           size="normal"
+          tabIndex="-1"
           target="_blank"
         >
           ButtonLink

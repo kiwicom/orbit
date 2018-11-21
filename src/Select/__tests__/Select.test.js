@@ -8,6 +8,7 @@ import Select from "../index";
 const mockChange = jest.fn();
 const placeholder = "Default placeholder";
 const dataTest = "test";
+const tabIndex = "-1";
 const name = "name";
 const objectOptions = [
   { value: "1", label: "One" },
@@ -26,6 +27,7 @@ describe("Select", () => {
       placeholder={placeholder}
       options={objectOptions}
       onChange={mockChange}
+      tabIndex={tabIndex}
       dataTest={dataTest}
     />,
   );
@@ -46,6 +48,15 @@ describe("Select", () => {
 
   it("should have data-test", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
+  });
+
+  it("should have tabindex", () => {
+    expect(
+      component
+        .find("Select__StyledSelect")
+        .render()
+        .prop("tabindex"),
+    ).toBe(tabIndex);
   });
 
   it("should have placeholder", () => {

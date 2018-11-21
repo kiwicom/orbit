@@ -25,6 +25,7 @@ export type Props = {|
   +circled?: boolean,
   +submit?: boolean,
   +transparent?: boolean,
+  tabIndex?: string,
   ...Globals,
 |};
 

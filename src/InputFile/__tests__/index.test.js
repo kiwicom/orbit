@@ -11,6 +11,7 @@ describe(`InputFile with help`, () => {
   const placeholder = "Not file has been selected";
   const fileName = "fileName.png";
   const dataTest = "test";
+  const tabIndex = "-1";
   const allowedFileTypes = [".png", ".jpg", ".pdf"];
   const onChange = jest.fn();
   const onFocus = jest.fn();
@@ -31,6 +32,7 @@ describe(`InputFile with help`, () => {
           Supported files: <strong>PNG, JPG, PDF</strong>
         </div>
       }
+      tabIndex={tabIndex}
       onChange={onChange}
       onFocus={onFocus}
       onBlur={onBlur}
@@ -60,6 +62,7 @@ describe(`InputFile with help`, () => {
         .prop("attribs").name,
     ).toBe(name);
     expect(input.prop("accept")).toBe(allowedFileTypes);
+    expect(input.render().prop("tabindex")).toBe(tabIndex);
     expect(labelComponent.render().prop("data-test")).toBe(dataTest);
   });
   it("should contain a input Button", () => {

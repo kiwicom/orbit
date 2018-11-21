@@ -9,6 +9,7 @@ export type Props = {|
   +checked?: boolean,
   +name?: string,
   +info?: React$Node,
+  +tabIndex?: string,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   ...Globals,
   ...Ref,

@@ -10,6 +10,7 @@ describe("TextLink", () => {
   const href = "https://kiwi.com";
   const onClick = jest.fn();
   const type = "primary";
+  const tabIndex = "-1";
   const dataTest = "test";
 
   const component = shallow(
@@ -19,6 +20,7 @@ describe("TextLink", () => {
       type={type}
       external
       icon={<ChevronRight />}
+      tabIndex={tabIndex}
       dataTest={dataTest}
     >
       {title}
@@ -33,6 +35,9 @@ describe("TextLink", () => {
   });
   it("should have data-test", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
+  });
+  it("should have tabindex", () => {
+    expect(component.render().prop("tabindex")).toBe(tabIndex);
   });
   it("should contain an external href", () => {
     expect(component.render().prop("target")).toBe("_blank");

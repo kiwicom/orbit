@@ -10,6 +10,7 @@ describe(`InputStepper with help, prefix and suffix`, () => {
   const label = "Label";
   const defaultValue = 1;
   const step = 2;
+  const tabIndex = "-1";
   const help = "Help message";
   const error = "Error message";
   const name = "name";
@@ -33,6 +34,7 @@ describe(`InputStepper with help, prefix and suffix`, () => {
       disabled={disabled}
       maxValue={maxValue}
       minValue={minValue}
+      tabIndex={tabIndex}
       required={required}
       onChange={onChange}
       onFocus={onFocus}
@@ -40,6 +42,7 @@ describe(`InputStepper with help, prefix and suffix`, () => {
     />,
   );
   const input = component.find("InputField");
+  const inputFieldInput = component.find("InputField__Input");
 
   it("should contain an input", () => {
     expect(input.exists()).toBe(true);
@@ -55,6 +58,7 @@ describe(`InputStepper with help, prefix and suffix`, () => {
     expect(input.prop("maxValue")).toBe(maxValue);
     expect(input.prop("minValue")).toBe(minValue);
     expect(input.prop("required")).toBe(required);
+    expect(inputFieldInput.render().prop("tabindex")).toBe(tabIndex);
   });
 
   it("should match snapshot", () => {

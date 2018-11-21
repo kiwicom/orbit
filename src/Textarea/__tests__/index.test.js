@@ -11,6 +11,7 @@ describe(`Textarea with help`, () => {
   const label = "Label";
   const value = "value";
   const placeholder = "placeholder";
+  const tabIndex = "-1";
   const dataTest = "test";
   const maxLength = 200;
   const fullHeight = true;
@@ -28,6 +29,7 @@ describe(`Textarea with help`, () => {
       placeholder={placeholder}
       maxLength={maxLength}
       help={<div>Something useful.</div>}
+      tabIndex={tabIndex}
       onChange={onChange}
       onFocus={onFocus}
       onBlur={onBlur}
@@ -57,6 +59,7 @@ describe(`Textarea with help`, () => {
     expect(area.prop("maxLength")).toBe(maxLength);
     expect(area.prop("fullHeight")).toBe(fullHeight);
     expect(labelField.render().prop("data-test")).toBe(dataTest);
+    expect(area.render().prop("tabindex")).toBe(tabIndex);
     expect(
       component
         .find("Textarea__StyledTextArea")

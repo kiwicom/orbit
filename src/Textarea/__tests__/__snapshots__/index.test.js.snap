@@ -1619,6 +1619,7 @@ exports[`Textarea with help should match snapshot 1`] = `
     placeholder="placeholder"
     resize="vertical"
     size="normal"
+    tabIndex="-1"
     theme={
       Object {
         "orbit": Object {

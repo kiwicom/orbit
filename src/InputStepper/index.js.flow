@@ -16,6 +16,7 @@ export type Props = {|
   +maxValue?: number,
   +minValue?: number,
   +required?: boolean,
+  tabIndex?: string,
   +onChange?: number => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,

@@ -11,6 +11,7 @@ export type Props = {|
   +allowedFileTypes?: string | string[],
   +help?: React$Node,
   +error?: React$Node,
+  tabIndex?: string,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,

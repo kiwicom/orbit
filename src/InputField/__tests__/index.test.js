@@ -16,6 +16,7 @@ describe(`InputField with help, prefix and suffix`, () => {
   const value = "value";
   const placeholder = "placeholder";
   const dataTest = "test";
+  const tabIndex = "-1";
   const minLength = 1;
   const maxLength = 10;
   const onChange = jest.fn();
@@ -33,6 +34,7 @@ describe(`InputField with help, prefix and suffix`, () => {
       minLength={minLength}
       maxLength={maxLength}
       dataTest={dataTest}
+      tabIndex={tabIndex}
       prefix={<Search />}
       suffix={<ButtonLink transparent icon={<Visibility />} />}
       help={
@@ -77,6 +79,7 @@ describe(`InputField with help, prefix and suffix`, () => {
     expect(input.prop("placeholder")).toBe(placeholder);
     expect(input.prop("maxLength")).toBe(maxLength);
     expect(input.prop("minLength")).toBe(minLength);
+    expect(input.render().prop("tabindex")).toBe(tabIndex);
     expect(labelComponent.render().prop("data-test")).toBe(dataTest);
   });
   it("should contain a Button as suffix", () => {

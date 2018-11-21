@@ -408,6 +408,7 @@ exports[`Default CheckBox should match snapshot 1`] = `
         ],
       }
     }
+    tabIndex="-1"
     theme={
       Object {
         "orbit": Object {

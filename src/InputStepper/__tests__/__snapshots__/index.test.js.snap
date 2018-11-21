@@ -388,6 +388,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   required={false}
   size="normal"
   step={2}
+  tabIndex="-1"
 >
   <InputStepper
     defaultValue={1}
@@ -405,6 +406,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
     required={false}
     size="normal"
     step={2}
+    tabIndex="-1"
   >
     <InputStepper__StyledInputStepper>
       <StyledComponent
@@ -532,6 +534,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                 width={0}
               />
             }
+            tabIndex="-1"
             type="number"
             value={1}
           >
@@ -11511,6 +11514,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                             onFocus={[MockFunction]}
                             onKeyDown={[Function]}
                             size="normal"
+                            tabIndex="-1"
                             theme={
                               Object {
                                 "orbit": Object {
@@ -12333,6 +12337,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                               onFocus={[MockFunction]}
                               onKeyDown={[Function]}
                               size="normal"
+                              tabIndex="-1"
                               theme={
                                 Object {
                                   "orbit": Object {
@@ -12731,6 +12736,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                 onFocus={[MockFunction]}
                                 onKeyDown={[Function]}
                                 size="normal"
+                                tabIndex="-1"
                                 type="number"
                                 value={1}
                               />

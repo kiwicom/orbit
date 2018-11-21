@@ -83,6 +83,7 @@ const TextLink = ({
   icon,
   onClick,
   dataTest,
+  tabIndex,
 }: Props) => (
   <StyledTextLink
     type={type}
@@ -91,6 +92,7 @@ const TextLink = ({
     rel={rel}
     onClick={onClick}
     data-test={dataTest}
+    tabIndex={tabIndex}
   >
     {children}
     {icon && <IconContainer type={type}>{icon}</IconContainer>}

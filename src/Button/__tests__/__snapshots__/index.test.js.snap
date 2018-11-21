@@ -24,6 +24,7 @@ exports[`Button with icon should match snapshot 1`] = `
   onlyIcon={false}
   size="normal"
   sizeIcon="medium"
+  tabIndex="-1"
   theme={
     Object {
       "orbit": Object {

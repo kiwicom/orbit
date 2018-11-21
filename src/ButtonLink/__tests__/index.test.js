@@ -12,15 +12,19 @@ const href = "https://kiwi.com";
 
 describe("ButtonLink with Icon", () => {
   const dataTest = "test";
+  const tabIndex = "-1";
   const submit = true;
   const component = mount(
-    <ButtonLink href={href} external dataTest={dataTest} submit={submit}>
+    <ButtonLink href={href} external dataTest={dataTest} submit={submit} tabIndex={tabIndex}>
       {children}
     </ButtonLink>,
   );
   const button = component.find("ButtonLink__StyledButtonLink");
   it("should have data-test", () => {
     expect(button.render().prop("data-test")).toBe(dataTest);
+  });
+  it("should have tabindex", () => {
+    expect(component.render().prop("tabindex")).toBe(tabIndex);
   });
   it("should have type submit", () => {
     expect(button.prop("submit")).toBe(submit);

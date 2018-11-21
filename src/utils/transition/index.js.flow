@@ -1,0 +1,10 @@
+// @flow
+import type { ThemeProps } from "../../defaultTokens";
+
+export type Transition = (
+  properties: string[],
+  duration: "slow" | "normal" | "fast",
+  timingFunction: string,
+) => (theme: ThemeProps) => string;
+
+declare export default Transition;

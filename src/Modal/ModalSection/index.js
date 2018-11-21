@@ -19,16 +19,21 @@ export const StyledModalSection = styled.section`
   &:first-of-type {
     border-top: ${({ suppressed, theme }) =>
       suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};
-    border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-    border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+    border-top-left-radius: 9px; // TODO: create token
+    border-top-right-radius: 9px; // TODO: create token
     margin-top: ${({ suppressed, theme }) => suppressed && theme.orbit.spaceLarge};
   }
 
   &:last-of-type {
     border-bottom: ${({ suppressed, theme }) =>
       suppressed ? `1px solid ${theme.orbit.paletteCloudNormal}` : "0"};
+    border-bottom-left-radius: 9px; // TODO: create token
+    border-bottom-right-radius: 9px; // TODO: create token
     & ~ ${StyledModalFooter} {
       margin-top: ${({ theme, suppressed }) => suppressed && theme.orbit.spaceMedium};
+    }
+    &:not(:last-child) {
+      border-radius: 0;
     }
   }
 
@@ -39,10 +44,9 @@ export const StyledModalSection = styled.section`
       margin-top: ${({ suppressed, theme }) => suppressed && theme.orbit.spaceXXLarge};
     }
     &:last-of-type {
-      border-bottom-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-      border-bottom-right-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
       & ~ ${StyledModalFooter} {
-        margin-top: ${({ suppressed, theme }) => suppressed && theme.orbit.spaceXXLarge};
+        padding-top: ${({ suppressed }) => !suppressed && "0"};
+        margin-top: 0;
       }
     }
   `};

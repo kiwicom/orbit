@@ -112,7 +112,7 @@ Input.defaultProps = {
   theme: defaultTokens,
 };
 
-const Label = styled(({ className, children, dataTest }) => (
+export const Label = styled(({ className, children, dataTest }) => (
   <label className={className} data-test={dataTest}>
     {children}
   </label>
@@ -167,6 +167,7 @@ const Checkbox = React.forwardRef((props: Props, ref: Ref) => {
     onChange,
     dataTest,
     info,
+    readOnly,
     tabIndex,
   } = props;
 
@@ -181,14 +182,17 @@ const Checkbox = React.forwardRef((props: Props, ref: Ref) => {
         checked={checked}
         onChange={onChange}
         ref={ref}
+        readOnly={readOnly}
       />
       <IconContainer>
         <Check />
       </IconContainer>
-      <TextContainer>
-        {label && <LabelText>{label}</LabelText>}
-        {info && <Info>{info}</Info>}
-      </TextContainer>
+      {(label || info) && (
+        <TextContainer>
+          {label && <LabelText>{label}</LabelText>}
+          {info && <Info>{info}</Info>}
+        </TextContainer>
+      )}
     </Label>
   );
 });

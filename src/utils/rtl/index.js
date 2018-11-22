@@ -1,5 +1,6 @@
 // @flow
-import type { LeftToRight, RtlSpacing, BorderRadius, TextAlign } from "./index";
+
+import type { LeftToRight, RtlSpacing, BorderRadius, TextAlign, Translate3d } from "./index";
 
 const leftToRight: LeftToRight = (left, right) => ({ theme }) => (theme.rtl ? right : left);
 
@@ -34,4 +35,14 @@ export const textAlign: TextAlign = value => ({ theme }) => {
     }
   }
   return value;
+};
+
+export const translate3d: Translate3d = value => ({ theme }) => {
+  if (!theme.rtl) {
+    return `translate3d(${value})`;
+  }
+  const parts = value.split(", ").filter(part => !Number.isNaN(parseFloat(part)) && part);
+  const x = parts[0];
+  const newX = x[0] === "-" ? x.slice(1) : `-${x}`;
+  return `translate3d(${newX},${parts[1]},${parts[2]})`;
 };

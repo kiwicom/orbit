@@ -2565,7 +2565,7 @@ exports[`Storyshots Stack Components preview 1`] = `
               className="Stack__StyledStack-sc-1t576ow-0 jOHKrp"
             >
               <div
-                className="TripSector__StyledTripSector-v14xkf-0 jbYUNi"
+                className="TripSector__StyledTripSector-v14xkf-0 gzaCdT"
               >
                 <div
                   className="TripDate__StyledTripDate-sc-1t2zo5b-0 kmrFNu"
@@ -3342,7 +3342,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                 </div>
               </div>
               <div
-                className="TripSector__StyledTripSector-v14xkf-0 jbYUNi"
+                className="TripSector__StyledTripSector-v14xkf-0 gzaCdT"
               >
                 <div
                   className="TripDate__StyledTripDate-sc-1t2zo5b-0 kmrFNu"

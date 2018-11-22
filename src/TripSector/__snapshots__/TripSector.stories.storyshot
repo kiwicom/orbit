@@ -98,7 +98,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
           }
         >
           <div
-            className="TripSector__StyledTripSector-v14xkf-0 jbYUNi"
+            className="TripSector__StyledTripSector-v14xkf-0 gzaCdT"
           >
             <div
               className="TripDate__StyledTripDate-sc-1t2zo5b-0 kmrFNu"
@@ -4877,7 +4877,7 @@ exports[`Storyshots TripSector Playground 1`] = `
           }
         >
           <div
-            className="TripSector__StyledTripSector-v14xkf-0 jbYUNi"
+            className="TripSector__StyledTripSector-v14xkf-0 gzaCdT"
             data-test="test"
           >
             <div
@@ -5958,7 +5958,7 @@ exports[`Storyshots TripSector RTL 1`] = `
           }
         >
           <div
-            className="TripSector__StyledTripSector-v14xkf-0 ePeJQX"
+            className="TripSector__StyledTripSector-v14xkf-0 fgJwHK"
           >
             <div
               className="TripDate__StyledTripDate-sc-1t2zo5b-0 gEQLBt"

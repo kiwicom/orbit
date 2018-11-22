@@ -167,7 +167,7 @@ const StyledTripSegmentOverviewWrapper = styled.div`
   cursor: pointer;
 
   ${StyledCarrierLogo} {
-    padding: ${({ theme }) =>
+    margin: ${({ theme }) =>
       rtlSpacing(`0 ${theme.orbit.spaceXXSmall} 0
       ${theme.orbit.spaceXSmall}`)};
   }

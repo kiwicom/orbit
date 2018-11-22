@@ -1,0 +1,14 @@
+// @flow
+import type { Globals } from "../../common/common.js.flow";
+
+export type Props = {|
+  ...Globals,
+  +active?: boolean,
+  +component?: any,
+  +children: React$Node,
+  +href?: string,
+  +contentKey?: number,
+  +onClick?: (ev?: SyntheticEvent<HTMLLinkElement>) => void | Promise<any>,
+|};
+
+declare export default React$ComponentType<Props>;

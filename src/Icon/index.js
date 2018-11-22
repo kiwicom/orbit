@@ -30,12 +30,13 @@ const getColor = () => ({ theme, color }) => {
   return tokens[color];
 };
 
-const StyledIcon = styled(({ className, viewBox, dataTest, children }) => (
+const StyledIcon = styled(({ className, viewBox, dataTest, children, ariaHidden }) => (
   <svg
     className={className}
     viewBox={viewBox}
     data-test={dataTest}
     preserveAspectRatio="xMidYMid meet"
+    aria-hidden={ariaHidden ? "true" : undefined}
   >
     {children}
   </svg>
@@ -52,7 +53,7 @@ StyledIcon.defaultProps = {
 };
 
 const OrbitIcon = (props: Props) => {
-  const { size, color, customColor, className, children, viewBox, dataTest } = props;
+  const { size, color, customColor, className, children, viewBox, dataTest, ariaHidden } = props;
 
   return (
     <StyledIcon
@@ -62,6 +63,7 @@ const OrbitIcon = (props: Props) => {
       dataTest={dataTest}
       customColor={customColor}
       color={color}
+      ariaHidden={ariaHidden}
     >
       {children}
     </StyledIcon>

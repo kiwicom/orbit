@@ -2609,7 +2609,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
                   >
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                      className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
                       onClick={[Function]}
                     >
                       <div
@@ -2831,7 +2831,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
                   >
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                      className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
                       onClick={[Function]}
                     >
                       <div
@@ -3013,7 +3013,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
                   >
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                      className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
                       onClick={[Function]}
                     >
                       <div
@@ -3231,7 +3231,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
                   >
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                      className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
                       onClick={[Function]}
                     >
                       <div
@@ -3386,7 +3386,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
                   >
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                      className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
                       onClick={[Function]}
                     >
                       <div
@@ -3608,7 +3608,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
                   >
                     <div
-                      className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                      className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
                       onClick={[Function]}
                     >
                       <div

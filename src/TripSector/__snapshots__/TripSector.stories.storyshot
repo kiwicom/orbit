@@ -142,7 +142,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                 className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
                   onClick={[Function]}
                 >
                   <div
@@ -364,7 +364,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                 className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
                   onClick={[Function]}
                 >
                   <div
@@ -546,7 +546,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                 className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
                   onClick={[Function]}
                 >
                   <div
@@ -764,7 +764,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                 className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
                   onClick={[Function]}
                 >
                   <div
@@ -4922,7 +4922,7 @@ exports[`Storyshots TripSector Playground 1`] = `
                 className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 cOLKif"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
                   onClick={[Function]}
                 >
                   <div
@@ -6002,7 +6002,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                 className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 gzQBHQ"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 jBGoTL"
                   onClick={[Function]}
                 >
                   <div
@@ -6224,7 +6224,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                 className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 gzQBHQ"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 jBGoTL"
                   onClick={[Function]}
                 >
                   <div
@@ -6406,7 +6406,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                 className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 gzQBHQ"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 jBGoTL"
                   onClick={[Function]}
                 >
                   <div
@@ -6624,7 +6624,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                 className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 gzQBHQ"
+                  className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 jBGoTL"
                   onClick={[Function]}
                 >
                   <div

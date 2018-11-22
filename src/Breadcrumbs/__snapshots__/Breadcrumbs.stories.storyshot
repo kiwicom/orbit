@@ -1,0 +1,992 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Breadcrumbs Default 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="story"
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      className="story-header"
+      style={
+        Object {
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      <div>
+        <h1
+          className="story-title"
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Default
+        </h1>
+        
+        <span
+          className="story-subtitle"
+          style={Object {}}
+        >
+          <div>
+            <p>
+              Some description about this type of component. 
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        className="chapter-header"
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="section-container"
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          className="section-header"
+          style={Object {}}
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="section-component-container"
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <nav
+            aria-label="Breadcrumb"
+            className="Breadcrumbs__StyledBreadcrumbs-sc-1zqkwq-0 besHxw"
+            role="navigation"
+          >
+            <ol
+              className="Breadcrumbs__StyledBreadcrumbsList-sc-1zqkwq-1 cDzxmK"
+              typeof="BreadcrumbList"
+              vocab="http://schema.org/"
+            >
+              <li
+                className="BreadcrumbsItem__StyledBreadcrumbsItem-sc-1aqqbs7-0 cdvJqk"
+                property="itemListElement"
+                typeof="ListItem"
+              >
+                <a
+                  className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 dzlZpd"
+                  href="https://kiwi.com"
+                  onClick={[Function]}
+                  property="item"
+                  typeof="WebPage"
+                >
+                  <span
+                    property="name"
+                  >
+                    Kiwi.com
+                  </span>
+                </a>
+                <meta
+                  content={1}
+                  property="position"
+                />
+                <svg
+                  aria-hidden="true"
+                  className="BreadcrumbsItem__StyledBreadcrumbsItemIcon-sc-1aqqbs7-2 fgpptZ Icon__StyledIcon-sc-1pnzn3g-0 dHDGaH"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                  />
+                </svg>
+              </li>
+              <li
+                className="BreadcrumbsItem__StyledBreadcrumbsItem-sc-1aqqbs7-0 cdvJqk"
+                property="itemListElement"
+                typeof="ListItem"
+              >
+                <a
+                  className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 dzlZpd"
+                  href="#1"
+                  onClick={[Function]}
+                  property="item"
+                  typeof="WebPage"
+                >
+                  <span
+                    property="name"
+                  >
+                    1. Level
+                  </span>
+                </a>
+                <meta
+                  content={2}
+                  property="position"
+                />
+                <svg
+                  aria-hidden="true"
+                  className="BreadcrumbsItem__StyledBreadcrumbsItemIcon-sc-1aqqbs7-2 fgpptZ Icon__StyledIcon-sc-1pnzn3g-0 dHDGaH"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                  />
+                </svg>
+              </li>
+              <li
+                className="BreadcrumbsItem__StyledBreadcrumbsItem-sc-1aqqbs7-0 cdvJqk"
+                property="itemListElement"
+                typeof="ListItem"
+              >
+                <a
+                  className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 dzlZpd"
+                  href="#2"
+                  onClick={[Function]}
+                  property="item"
+                  typeof="WebPage"
+                >
+                  <span
+                    property="name"
+                  >
+                    2. Level
+                  </span>
+                </a>
+                <meta
+                  content={3}
+                  property="position"
+                />
+                <svg
+                  aria-hidden="true"
+                  className="BreadcrumbsItem__StyledBreadcrumbsItemIcon-sc-1aqqbs7-2 fgpptZ Icon__StyledIcon-sc-1pnzn3g-0 dHDGaH"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                  />
+                </svg>
+              </li>
+              <li
+                className="BreadcrumbsItem__StyledBreadcrumbsItem-sc-1aqqbs7-0 cdvJqk"
+                property="itemListElement"
+                typeof="ListItem"
+              >
+                <a
+                  className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 dzlZpd"
+                  href="#3"
+                  onClick={[Function]}
+                  property="item"
+                  typeof="WebPage"
+                >
+                  <span
+                    property="name"
+                  >
+                    3. Level
+                  </span>
+                </a>
+                <meta
+                  content={4}
+                  property="position"
+                />
+                <svg
+                  aria-hidden="true"
+                  className="BreadcrumbsItem__StyledBreadcrumbsItemIcon-sc-1aqqbs7-2 fgpptZ Icon__StyledIcon-sc-1pnzn3g-0 dHDGaH"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                  />
+                </svg>
+              </li>
+              <li
+                aria-current="page"
+                className="BreadcrumbsItem__StyledBreadcrumbsItem-sc-1aqqbs7-0 cdvJqk"
+                property="itemListElement"
+                typeof="ListItem"
+              >
+                <a
+                  className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 gJndOU"
+                  href="#4"
+                  onClick={[Function]}
+                  property="item"
+                  typeof="WebPage"
+                >
+                  <span
+                    property="name"
+                  >
+                    4. Level
+                  </span>
+                </a>
+                <meta
+                  content={5}
+                  property="position"
+                />
+              </li>
+            </ol>
+          </nav>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                className="section-subsection"
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  className="section-subsection-title"
+                >
+                  Source
+                </h4>
+                <pre
+                  className="css-4akams"
+                >
+                  <div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          Breadcrumbs
+                        </span>
+                        <span />
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            BreadcrumbsItem
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                href
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    https://kiwi.com
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                onClick
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#170",
+                                      }
+                                    }
+                                  >
+                                    clicked
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            Kiwi.com
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            BreadcrumbsItem
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            BreadcrumbsItem
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                href
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    #1
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                onClick
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#170",
+                                      }
+                                    }
+                                  >
+                                    clicked
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            1. Level
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            BreadcrumbsItem
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            BreadcrumbsItem
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                href
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    #2
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                onClick
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#170",
+                                      }
+                                    }
+                                  >
+                                    clicked
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            2. Level
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            BreadcrumbsItem
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            BreadcrumbsItem
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                href
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    #3
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                onClick
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#170",
+                                      }
+                                    }
+                                  >
+                                    clicked
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            3. Level
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            BreadcrumbsItem
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            BreadcrumbsItem
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                href
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  "
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    #4
+                                  </span>
+                                  "
+                                </span>
+                              </span>
+                            </span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                onClick
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#170",
+                                      }
+                                    }
+                                  >
+                                    clicked
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 48,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            4. Level
+                          </span>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            BreadcrumbsItem
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          Breadcrumbs
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

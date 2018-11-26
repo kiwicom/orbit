@@ -116,7 +116,7 @@ exports[`Storyshots InputField Compact input 1`] = `
                 </span>
               </div>
               <input
-                className="InputField__Input-sc-4opay-6 bvdgbX"
+                className="InputField__Input-sc-4opay-6 ijQzfL"
                 onChange={[Function]}
                 placeholder="Placeholder"
                 size="normal"
@@ -513,7 +513,7 @@ exports[`Storyshots InputField Default input 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-sc-4opay-6 bvdgbX"
+                className="InputField__Input-sc-4opay-6 iDeTJU"
                 onChange={[Function]}
                 placeholder="Placeholder"
                 size="normal"
@@ -841,7 +841,7 @@ exports[`Storyshots InputField Email input 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-sc-4opay-6 bvdgbX"
+                className="InputField__Input-sc-4opay-6 iDeTJU"
                 onChange={[Function]}
                 placeholder="Email"
                 size="normal"
@@ -1242,7 +1242,7 @@ exports[`Storyshots InputField Number input 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-sc-4opay-6 bvdgbX"
+                className="InputField__Input-sc-4opay-6 iDeTJU"
                 max={3}
                 min={1}
                 onChange={[Function]}
@@ -1659,7 +1659,7 @@ exports[`Storyshots InputField Password input 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-sc-4opay-6 bvdgbX"
+                className="InputField__Input-sc-4opay-6 iDeTJU"
                 onChange={[Function]}
                 placeholder="Password"
                 size="normal"
@@ -2031,7 +2031,7 @@ exports[`Storyshots InputField Playground 1`] = `
                 </svg>
               </div>
               <input
-                className="InputField__Input-sc-4opay-6 gEmGek"
+                className="InputField__Input-sc-4opay-6 bqekVA"
                 disabled={false}
                 name="input"
                 onBlur={[Function]}
@@ -2890,7 +2890,7 @@ exports[`Storyshots InputField RTL 1`] = `
                 $
               </div>
               <input
-                className="InputField__Input-sc-4opay-6 bvdgbX"
+                className="InputField__Input-sc-4opay-6 iDeTJU"
                 placeholder="Placeholder"
                 size="normal"
                 type="text"
@@ -3295,7 +3295,7 @@ exports[`Storyshots InputField Required field 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-sc-4opay-6 bvdgbX"
+                className="InputField__Input-sc-4opay-6 iDeTJU"
                 onChange={[Function]}
                 placeholder="Placeholder"
                 size="normal"
@@ -3634,7 +3634,7 @@ exports[`Storyshots InputField Small input 1`] = `
               className="InputField__InputContainer-sc-4opay-2 kXcsVj"
             >
               <input
-                className="InputField__Input-sc-4opay-6 gEmGek"
+                className="InputField__Input-sc-4opay-6 bqekVA"
                 onChange={[Function]}
                 placeholder="Placeholder"
                 size="small"
@@ -3992,7 +3992,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-sc-4opay-6 bvdgbX"
+                className="InputField__Input-sc-4opay-6 iDeTJU"
                 onChange={[Function]}
                 placeholder="Placeholder"
                 size="normal"
@@ -4386,7 +4386,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
                 </svg>
               </div>
               <input
-                className="InputField__Input-sc-4opay-6 bvdgbX"
+                className="InputField__Input-sc-4opay-6 iDeTJU"
                 onChange={[Function]}
                 placeholder="Placeholder"
                 size="normal"
@@ -4743,7 +4743,7 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-sc-4opay-6 bvdgbX"
+                className="InputField__Input-sc-4opay-6 iDeTJU"
                 onChange={[Function]}
                 placeholder="Placeholder"
                 size="normal"
@@ -5115,7 +5115,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
                 $
               </div>
               <input
-                className="InputField__Input-sc-4opay-6 bvdgbX"
+                className="InputField__Input-sc-4opay-6 iDeTJU"
                 onChange={[Function]}
                 placeholder="Placeholder"
                 size="normal"

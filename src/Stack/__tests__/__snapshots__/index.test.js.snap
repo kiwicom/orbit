@@ -112,6 +112,7 @@ exports[`Default Stack should match snapshot 1`] = `
   border: none;
   padding: 0 12px;
   font-size: inherit;
+  font-weight: 400;
   color: inherit;
   background-color: transparent;
   cursor: inherit;
@@ -6659,7 +6660,9 @@ exports[`Default Stack should match snapshot 1`] = `
                                     [Function],
                                     ";border:none;padding:",
                                     [Function],
-                                    ";font-size:inherit;color:inherit;background-color:transparent;cursor:inherit;flex:1 auto;width:100%;height:100%;line-height:",
+                                    ";font-size:inherit;font-weight:",
+                                    [Function],
+                                    ";color:inherit;background-color:transparent;cursor:inherit;flex:1 auto;width:100%;height:100%;line-height:",
                                     [Function],
                                     ";border-radius:",
                                     [Function],
@@ -13655,6 +13658,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   border: none;
   padding: 0 12px;
   font-size: inherit;
+  font-weight: 400;
   color: inherit;
   background-color: transparent;
   cursor: inherit;
@@ -20304,7 +20308,9 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                       [Function],
                                       ";border:none;padding:",
                                       [Function],
-                                      ";font-size:inherit;color:inherit;background-color:transparent;cursor:inherit;flex:1 auto;width:100%;height:100%;line-height:",
+                                      ";font-size:inherit;font-weight:",
+                                      [Function],
+                                      ";color:inherit;background-color:transparent;cursor:inherit;flex:1 auto;width:100%;height:100%;line-height:",
                                       [Function],
                                       ";border-radius:",
                                       [Function],
@@ -27297,6 +27303,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   border: none;
   padding: 0 12px;
   font-size: inherit;
+  font-weight: 400;
   color: inherit;
   background-color: transparent;
   cursor: inherit;
@@ -33837,7 +33844,9 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                     [Function],
                                     ";border:none;padding:",
                                     [Function],
-                                    ";font-size:inherit;color:inherit;background-color:transparent;cursor:inherit;flex:1 auto;width:100%;height:100%;line-height:",
+                                    ";font-size:inherit;font-weight:",
+                                    [Function],
+                                    ";color:inherit;background-color:transparent;cursor:inherit;flex:1 auto;width:100%;height:100%;line-height:",
                                     [Function],
                                     ";border-radius:",
                                     [Function],

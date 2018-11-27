@@ -98,13 +98,13 @@ exports[`Storyshots StopoverArrow Playground 1`] = `
           }
         >
           <svg
-            className="StopoverArrow__StyledArrow-sc-19ccrmh-0 fERVLz"
+            className="StopoverArrow__StyledArrow-sc-19ccrmh-0 lpgFUw"
             data-test="test"
             preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 50 7"
+            viewBox="0 0 36 7"
           >
             <path
-              d="M49.293 4.2L50 3.5l-.706-.7L46.467 0l-.707.7 2.327 2.305H0v.99h48.087L45.76 6.3l.707.7z"
+              d="M35.2934 4.2L36 3.5002 35.2937 2.8 32.4671 0l-.7068.7 2.327 2.3051H0v.99h34.0872l-2.3267 2.3047L32.467 7z"
             />
           </svg>
         </div>

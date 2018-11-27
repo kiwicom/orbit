@@ -648,7 +648,7 @@ storiesOf("Stack", module)
                 </Stack>
                 <Stack direction="row" align="center">
                   <Text>Prague</Text>
-                  <StopoverArrow stops="4" />
+                  <StopoverArrow stops="3" />
                   <Text>Barcelona</Text>
                 </Stack>
                 <Stack direction="row">

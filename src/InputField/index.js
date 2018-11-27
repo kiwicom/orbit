@@ -180,6 +180,8 @@ export const Input = styled.input`
   border: none;
   padding: ${getPadding()};
   font-size: inherit;
+  font-weight: ${({ inlineLabel, theme }) =>
+    inlineLabel ? theme.orbit.fontWeightMedium : theme.orbit.fontWeightNormal};
   color: inherit;
   background-color: transparent;
   cursor: inherit;
@@ -297,6 +299,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           error={error}
           ref={ref}
           tabIndex={tabIndex}
+          inlineLabel={inlineLabel}
         />
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />

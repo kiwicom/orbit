@@ -259,6 +259,7 @@ exports[`Default Stack should match snapshot 1`] = `
 
 <Stack__StyledStack
   align="start"
+  dataTest="test"
   direction="column"
   flex={false}
   grow={true}
@@ -655,6 +656,7 @@ exports[`Default Stack should match snapshot 1`] = `
 >
   <StyledComponent
     align="start"
+    dataTest="test"
     direction="column"
     flex={false}
     forwardedClass={
@@ -1488,6 +1490,7 @@ exports[`Default Stack should match snapshot 1`] = `
     <Component
       align="start"
       className="c0"
+      dataTest="test"
       direction="column"
       flex={false}
       grow={true}
@@ -1884,6 +1887,7 @@ exports[`Default Stack should match snapshot 1`] = `
     >
       <div
         className="c0"
+        data-test="test"
       >
         <InputField
           help="You need some help!"

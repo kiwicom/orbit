@@ -1,6 +1,7 @@
 // @flow
 
 import type { spaceAfter } from "../common/getSpacingToken/index";
+import type { Globals } from "../common/common.js.flow";
 
 type Direction = "row" | "column";
 
@@ -32,6 +33,7 @@ type Desktop = {|
 |};
 
 export type Props = {|
+  ...Globals,
   ...spaceAfter,
   +inline?: boolean,
   +direction?: Direction,

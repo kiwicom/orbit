@@ -98,7 +98,7 @@ exports[`Storyshots Heading Default 1`] = `
           }
         >
           <h1
-            className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
+            className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
           >
             Orbit design system
           </h1>
@@ -332,7 +332,7 @@ exports[`Storyshots Heading Inverted heading 1`] = `
             }
           >
             <h1
-              className="Heading__StyledHeading-sc-1b8cso5-0 wtWUZ"
+              className="Heading__StyledHeading-sc-1b8cso5-0 jqwitc"
             >
               Orbit design system
             </h1>
@@ -747,7 +747,7 @@ exports[`Storyshots Heading Playground 1`] = `
           }
         >
           <h2
-            className="Heading__StyledHeading-sc-1b8cso5-0 jWTWgE"
+            className="Heading__StyledHeading-sc-1b8cso5-0 izJJsG"
             data-test="test"
           >
             Orbit design system
@@ -1095,7 +1095,7 @@ exports[`Storyshots Heading RTL 1`] = `
           }
         >
           <h1
-            className="Heading__StyledHeading-sc-1b8cso5-0 jWTWgE"
+            className="Heading__StyledHeading-sc-1b8cso5-0 izJJsG"
           >
             Orbit design system
           </h1>
@@ -1401,7 +1401,7 @@ exports[`Storyshots Heading Title 1 1`] = `
           }
         >
           <h1
-            className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
+            className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
           >
             Orbit design system
           </h1>
@@ -1683,7 +1683,7 @@ exports[`Storyshots Heading Title 2 1`] = `
           }
         >
           <h2
-            className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
+            className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
           >
             Orbit design system
           </h2>
@@ -1965,7 +1965,7 @@ exports[`Storyshots Heading Title 3 1`] = `
           }
         >
           <h3
-            className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+            className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
           >
             Orbit design system
           </h3>
@@ -2247,7 +2247,7 @@ exports[`Storyshots Heading Title 4 1`] = `
           }
         >
           <h4
-            className="Heading__StyledHeading-sc-1b8cso5-0 kChVuk"
+            className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
           >
             Orbit design system
           </h4>
@@ -2342,6 +2342,288 @@ exports[`Storyshots Heading Title 4 1`] = `
                                   }
                                 >
                                   h4
+                                </span>
+                                "
+                              </span>
+                            </span>
+                            
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          Orbit design system
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          Heading
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading Title 5 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="story"
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      className="story-header"
+      style={
+        Object {
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      <div>
+        <h1
+          className="story-title"
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Title 5
+        </h1>
+        
+        <span
+          className="story-subtitle"
+          style={Object {}}
+        >
+          <div>
+            <p>
+              Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        className="chapter-header"
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="section-container"
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          className="section-header"
+          style={Object {}}
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="section-component-container"
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <h5
+            className="Heading__StyledHeading-sc-1b8cso5-0 blqObl"
+          >
+            Orbit design system
+          </h5>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                className="section-subsection"
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  className="section-subsection-title"
+                >
+                  Source
+                </h4>
+                <pre
+                  className="css-4akams"
+                >
+                  <div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          Heading
+                        </span>
+                        <span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              type
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  title5
+                                </span>
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              element
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  h5
                                 </span>
                                 "
                               </span>
@@ -2529,7 +2811,7 @@ exports[`Storyshots Heading Title Display 1`] = `
           }
         >
           <h1
-            className="Heading__StyledHeading-sc-1b8cso5-0 jWTWgE"
+            className="Heading__StyledHeading-sc-1b8cso5-0 izJJsG"
           >
             Orbit design system
           </h1>

@@ -4,16 +4,16 @@ import type { ReactComponentStyled } from "styled-components";
 import type { Globals } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
-type Element = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-type Type = "display" | "title1" | "title2" | "title3" | "title4";
+type Element = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
+type Type = "display" | "title1" | "title2" | "title3" | "title4" | "title5";
 
 export type Props = {|
+  ...Globals,
+  ...spaceAfter,
   +element?: Element,
   +type?: Type,
   +children: React$Node,
   +inverted?: boolean,
-  ...Globals,
-  ...spaceAfter,
 |};
 
 declare export default React$ComponentType<Props>;

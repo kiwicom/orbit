@@ -341,7 +341,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
                     >
                       <h2
-                        className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
+                        className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
                       >
                         Hola amigo
                       </h2>
@@ -362,7 +362,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
                     >
                       <h2
-                        className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
+                        className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
                       >
                         Insert your title here...
                       </h2>
@@ -391,7 +391,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                       >
                         <h3
-                          className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                          className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                         >
                           Insert your title here...
                         </h3>
@@ -426,7 +426,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                           className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                         >
                           <h3
-                            className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                            className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                           >
                             Insert your title here...
                           </h3>
@@ -469,7 +469,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                       >
                         <h3
-                          className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                          className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                         >
                           Insert your title here...
                         </h3>
@@ -505,7 +505,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
                     >
                       <h2
-                        className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
+                        className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
                       >
                         Hola amigo
                       </h2>
@@ -526,7 +526,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
                     >
                       <h2
-                        className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
+                        className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
                       >
                         Insert your title here...
                       </h2>
@@ -555,7 +555,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                       >
                         <h3
-                          className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                          className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                         >
                           Insert your title here...
                         </h3>
@@ -590,7 +590,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                           className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                         >
                           <h3
-                            className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                            className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                           >
                             Insert your title here...
                           </h3>
@@ -633,7 +633,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                       >
                         <h3
-                          className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                          className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                         >
                           Insert your title here...
                         </h3>
@@ -903,12 +903,12 @@ exports[`Storyshots Stack Components preview 1`] = `
               className="Stack__StyledStack-sc-1t576ow-0 iYGkmR"
             >
               <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
+                className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
               >
                 Hola Amigo
               </h1>
               <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
+                className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
               >
                 Hola Amigo
               </h1>
@@ -917,12 +917,12 @@ exports[`Storyshots Stack Components preview 1`] = `
               className="Stack__StyledStack-sc-1t576ow-0 jCLhiZ"
             >
               <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
+                className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
               >
                 Hola Amigo
               </h1>
               <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
+                className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
               >
                 Hola Amigo
               </h1>
@@ -1538,7 +1538,7 @@ exports[`Storyshots Stack Components preview 1`] = `
               className="Stack__StyledStack-sc-1t576ow-0 gRnnoi"
             >
               <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
               >
                 My heading
               </h1>
@@ -2287,7 +2287,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </svg>
                     </div>
                     <h3
-                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                     >
                       My title
                     </h3>
@@ -2337,7 +2337,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </svg>
                     </div>
                     <h3
-                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                     >
                       My title
                     </h3>
@@ -2390,7 +2390,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </svg>
                     </div>
                     <h3
-                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                     >
                       My title
                     </h3>
@@ -2446,7 +2446,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </svg>
                     </div>
                     <h3
-                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                     >
                       My title
                     </h3>
@@ -2483,7 +2483,7 @@ exports[`Storyshots Stack Components preview 1`] = `
               className="Stack__StyledStack-sc-1t576ow-0 gRnnoi"
             >
               <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
+                className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
               >
                 Orbit Design System
               </h1>

@@ -23,4 +23,3 @@ Table below contains all types of the props available in StopoverArrow component
 | `"1"`             |
 | `"2"`             |
 | `"3"`             |
-| `"4"`             |

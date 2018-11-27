@@ -2,7 +2,7 @@
 import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
-  +stops: "0" | "1" | "2" | "3" | "4",
+  +stops: "0" | "1" | "2" | "3",
   ...Globals,
 |};
 

@@ -61,6 +61,7 @@ export { default as Stack } from "./Stack";
 export { default as ServiceLogo } from "./ServiceLogo";
 export { default as Separator } from "./Separator";
 export { default as StopoverArrow } from "./StopoverArrow";
+export { default as Tag } from "./Tag";
 export { default as Textarea } from "./Textarea";
 export { default as Tile } from "./Tile";
 

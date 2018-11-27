@@ -123,7 +123,7 @@ exports[`Storyshots Card Card with description 1`] = `
                     </svg>
                   </div>
                   <h2
-                    className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
+                    className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
                   >
                     Card with title &amp; description
                   </h2>
@@ -467,7 +467,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                   className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
                 >
                   <h2
-                    className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
+                    className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
                   >
                     Card with sections
                   </h2>
@@ -500,7 +500,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                       className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                     >
                       <h3
-                        className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                        className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                       >
                         Insert your title here...
                       </h3>
@@ -547,7 +547,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                       className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                     >
                       <h3
-                        className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                        className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                       >
                         Insert your title here...
                       </h3>
@@ -594,7 +594,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                       className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                     >
                       <h3
-                        className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                        className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                       >
                         Insert your title here...
                       </h3>
@@ -1325,7 +1325,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                   className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
                 >
                   <h2
-                    className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
+                    className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
                   >
                     Card with sections
                   </h2>
@@ -1354,7 +1354,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                     className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                   >
                     <h3
-                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                     >
                       Insert your title here...
                     </h3>
@@ -1389,7 +1389,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                       className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                     >
                       <h3
-                        className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                        className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                       >
                         Insert your title here...
                       </h3>
@@ -1432,7 +1432,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                     className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
                   >
                     <h3
-                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                     >
                       Insert your title here...
                     </h3>
@@ -2416,7 +2416,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                 >
                   <div>
                     <h3
-                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                     >
                       Card with sections
                     </h3>
@@ -2447,7 +2447,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                 >
                   <div>
                     <h3
-                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                     >
                       Card with sections
                     </h3>
@@ -2478,7 +2478,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                 >
                   <div>
                     <h3
-                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                     >
                       Card with sections
                     </h3>
@@ -3456,7 +3456,7 @@ exports[`Storyshots Card Default 1`] = `
                     </svg>
                   </div>
                   <h2
-                    className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
+                    className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
                   >
                     Card with title
                   </h2>
@@ -3805,7 +3805,7 @@ exports[`Storyshots Card Playground 1`] = `
                     </svg>
                   </div>
                   <h2
-                    className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
+                    className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
                   >
                     Customisable card title
                   </h2>
@@ -3840,7 +3840,7 @@ exports[`Storyshots Card Playground 1`] = `
                 >
                   <div>
                     <h3
-                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                     >
                       Content with Heading and text
                     </h3>
@@ -3872,7 +3872,7 @@ exports[`Storyshots Card Playground 1`] = `
                 >
                   <div>
                     <h3
-                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                     >
                       Section with Heading and text
                     </h3>
@@ -4932,7 +4932,7 @@ exports[`Storyshots Card RTL 1`] = `
                     </svg>
                   </div>
                   <h2
-                    className="Heading__StyledHeading-sc-1b8cso5-0 jrEWlK"
+                    className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
                   >
                     Title of the CardHeader
                   </h2>
@@ -4966,7 +4966,7 @@ exports[`Storyshots Card RTL 1`] = `
                 >
                   <div>
                     <h3
-                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                     >
                       Content with Heading and text
                     </h3>
@@ -4997,7 +4997,7 @@ exports[`Storyshots Card RTL 1`] = `
                 >
                   <div>
                     <h3
-                      className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                     >
                       Section with Heading and text
                     </h3>

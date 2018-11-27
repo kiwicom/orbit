@@ -143,6 +143,27 @@ storiesOf("Heading", module)
       ],
     };
   })
+  .addWithChapters("Title 5", () => {
+    const customTitle = text("Title", "Orbit design system");
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H5);
+    return {
+      info:
+        "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Heading type="title5" element={element}>
+                  {customTitle}
+                </Heading>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Inverted heading", () => {
     const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
     const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DISPLAY);

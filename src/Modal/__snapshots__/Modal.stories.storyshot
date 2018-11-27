@@ -151,7 +151,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                     className="ModalHeader__ModalTitle-sc-13vyf6i-0 fUjDML"
                   >
                     <h1
-                      className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
                     >
                       Orbit design system
                     </h1>
@@ -1724,7 +1724,7 @@ exports[`Storyshots Modal RTL 1`] = `
                     className="ModalHeader__ModalTitle-sc-13vyf6i-0 fUjDML"
                   >
                     <h1
-                      className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
                     >
                       The title of the ModalHeader
                     </h1>
@@ -2801,7 +2801,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                     className="ModalHeader__ModalTitle-sc-13vyf6i-0 cjkZTc"
                   >
                     <h1
-                      className="Heading__StyledHeading-sc-1b8cso5-0 lfVfwo"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
                     >
                       Orbit design system
                     </h1>

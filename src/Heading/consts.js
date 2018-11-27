@@ -5,6 +5,8 @@ export const ELEMENT_OPTIONS = {
   H3: "h3",
   H4: "h4",
   H5: "h5",
+  H6: "h6",
+  DIV: "div",
 };
 
 export const TYPE_OPTIONS = {
@@ -13,6 +15,7 @@ export const TYPE_OPTIONS = {
   TITLE2: "title2",
   TITLE3: "title3",
   TITLE4: "title4",
+  TITLE5: "title5",
 };
 
 export const TOKENS = {

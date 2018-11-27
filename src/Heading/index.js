@@ -16,6 +16,7 @@ const getToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.TITLE2]: theme.orbit.fontWeightHeadingTitle2,
       [TYPE_OPTIONS.TITLE3]: theme.orbit.fontWeightHeadingTitle3,
       [TYPE_OPTIONS.TITLE4]: theme.orbit.fontWeightMedium, // TODO: create token fontWeightHeadingTitle4
+      [TYPE_OPTIONS.TITLE5]: theme.orbit.fontWeightBold, // TODO: create token fontWeightHeadingTitle5
     },
     [TOKENS.sizeHeading]: {
       [TYPE_OPTIONS.DISPLAY]: theme.orbit.fontSizeHeadingDisplay,
@@ -23,6 +24,7 @@ const getToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.TITLE2]: theme.orbit.fontSizeHeadingTitle2,
       [TYPE_OPTIONS.TITLE3]: theme.orbit.fontSizeHeadingTitle3,
       [TYPE_OPTIONS.TITLE4]: theme.orbit.fontSizeTextNormal, // TODO: create token fontSizeHeadingTitle4
+      [TYPE_OPTIONS.TITLE5]: theme.orbit.fontSizeTextSmall, // TODO: create token fontSizeHeadingTitle5
     },
   };
 
@@ -40,6 +42,7 @@ export const StyledHeading = styled(({ element: Component, className, children, 
   color: ${({ theme, inverted }) =>
     inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
   line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
+  text-transform: ${({ type }) => type === TYPE_OPTIONS.TITLE5 && "uppercase"};
   margin: 0;
   margin-bottom: ${getSpacingToken};
 `;

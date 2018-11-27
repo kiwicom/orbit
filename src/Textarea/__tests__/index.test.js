@@ -38,7 +38,6 @@ describe(`Textarea with help`, () => {
   );
 
   const area = component.find("Textarea__StyledTextArea");
-  const labelField = component.find("Textarea__Field");
 
   it("should contain a label", () => {
     expect(
@@ -58,7 +57,7 @@ describe(`Textarea with help`, () => {
     expect(area.prop("placeholder")).toBe(placeholder);
     expect(area.prop("maxLength")).toBe(maxLength);
     expect(area.prop("fullHeight")).toBe(fullHeight);
-    expect(labelField.render().prop("data-test")).toBe(dataTest);
+    expect(area.render().prop("data-test")).toBe(dataTest);
     expect(area.render().prop("tabindex")).toBe(tabIndex);
     expect(
       component

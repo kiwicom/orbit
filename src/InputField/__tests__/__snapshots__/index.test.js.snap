@@ -1579,7 +1579,6 @@ exports[`InputField number with error and help should match snapshot 1`] = `
 
 exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
 <InputField__Field
-  data-test="test"
   theme={
     Object {
       "orbit": Object {
@@ -2746,6 +2745,7 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
       <Search />
     </InputField__Prefix>
     <InputField__Input
+      data-test="test"
       maxLength={10}
       minLength={1}
       name="name"

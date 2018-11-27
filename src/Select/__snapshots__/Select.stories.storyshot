@@ -548,13 +548,13 @@ exports[`Storyshots Select Playground 1`] = `
         >
           <label
             className="Select__Label-sc-6agypz-0 cqbVlc"
-            data-test="test"
           >
             <div
               className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <select
                 className="Select__StyledSelect-sc-6agypz-1 dxQsPW"
+                data-test="test"
                 disabled={false}
                 name="name"
                 onBlur={[Function]}

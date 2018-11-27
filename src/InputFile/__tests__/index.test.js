@@ -39,7 +39,6 @@ describe(`InputFile with help`, () => {
       onRemoveFile={onRemoveFile}
     />,
   );
-  const labelComponent = component.find("InputFile__Field");
   const input = component.find("InputFile__Input");
   const closeButton = component.find("InputFile__CloseButton");
 
@@ -63,7 +62,7 @@ describe(`InputFile with help`, () => {
     ).toBe(name);
     expect(input.prop("accept")).toBe(allowedFileTypes);
     expect(input.render().prop("tabindex")).toBe(tabIndex);
-    expect(labelComponent.render().prop("data-test")).toBe(dataTest);
+    expect(input.render().prop("data-test")).toBe(dataTest);
   });
   it("should contain a input Button", () => {
     expect(component.find("InputFile__InputButton").exists()).toBe(true);

@@ -44,3 +44,23 @@ describe("Heading in H2, type Title1, not inverted", () => {
     expect(component).toMatchSnapshot();
   });
 });
+describe("Heading in DIV, type Title5", () => {
+  const element = ELEMENT_OPTIONS.DIV;
+  const type = TYPE_OPTIONS.TITLE5;
+  const children = "My lovely heading";
+
+  const component = mount(
+    <Heading element={element} type={type}>
+      {children}
+    </Heading>,
+  );
+  it("should have text-transform uppercase", () => {
+    expect(component.render().prop("name")).toBe(element);
+  });
+  it("should have text-transform uppercase", () => {
+    expect(component).toHaveStyleRule("text-transform", "uppercase");
+  });
+  it("should match snapshot", () => {
+    expect(component).toMatchSnapshot();
+  });
+});

@@ -108,7 +108,7 @@ exports[`Storyshots Tile Default 1`] = `
                 className="TileHeader__StyledTileTitle-sc-1k1u3lr-1 huhbMr"
               >
                 <h3
-                  className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                  className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                 >
                   Urgent information
                 </h3>
@@ -388,7 +388,7 @@ exports[`Storyshots Tile Expandable 1`] = `
                   </svg>
                 </div>
                 <h3
-                  className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                  className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                 >
                   Expandable
                 </h3>
@@ -1109,7 +1109,7 @@ exports[`Storyshots Tile Playground 1`] = `
                   </svg>
                 </div>
                 <h3
-                  className="Heading__StyledHeading-sc-1b8cso5-0 dvOUpt"
+                  className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                 >
                   Tile with title
                 </h3>

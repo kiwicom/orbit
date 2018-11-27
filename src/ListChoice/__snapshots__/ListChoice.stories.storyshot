@@ -118,7 +118,7 @@ exports[`Storyshots ListChoice Default 1`] = `
               className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
             >
               <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 kChVuk"
+                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
               >
                 Choice Title
               </h1>
@@ -451,7 +451,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
               className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
             >
               <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 kChVuk"
+                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
               >
                 Choice Title
               </h1>
@@ -507,7 +507,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
               className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
             >
               <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 kChVuk"
+                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
               >
                 Choice Title
               </h1>
@@ -563,7 +563,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
               className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
             >
               <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 kChVuk"
+                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
               >
                 Choice Title
               </h1>
@@ -1314,7 +1314,7 @@ exports[`Storyshots ListChoice Playground 1`] = `
               className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
             >
               <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 kChVuk"
+                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
               >
                 Choice Title
               </h1>
@@ -1741,7 +1741,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
               className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 iNARFK"
             >
               <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 kChVuk"
+                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
               >
                 Choice Title
               </h1>
@@ -1797,7 +1797,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
               className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 iNARFK"
             >
               <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 kChVuk"
+                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
               >
                 Choice Title
               </h1>
@@ -1853,7 +1853,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
               className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 iNARFK"
             >
               <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 kChVuk"
+                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
               >
                 Choice Title
               </h1>

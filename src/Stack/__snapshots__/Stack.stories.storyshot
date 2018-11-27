@@ -31281,6 +31281,7 @@ exports[`Storyshots Stack Playground 1`] = `
         >
           <div
             className="Stack__StyledStack-sc-1t576ow-0 hzTMiu"
+            data-test="test"
           >
             <label
               className="InputField__Field-sc-4opay-0 kCAFyx"
@@ -31364,6 +31365,36 @@ exports[`Storyshots Stack Playground 1`] = `
                           Stack
                         </span>
                         <span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              dataTest
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  test
+                                </span>
+                                "
+                              </span>
+                            </span>
+                          </span>
                           <span>
                             <span>
                               <br />

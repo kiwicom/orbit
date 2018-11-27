@@ -129,8 +129,10 @@ const flexAttributesDesktop = ({
   align-items: ${getAlign(align !== desktop.align && desktop.align)};
 `;
 
-const StyledStack = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
+const StyledStack = styled(({ className, children, dataTest }) => (
+  <div className={className} data-test={dataTest}>
+    {children}
+  </div>
 ))`
   // if not inline 100 %
   width: ${({ inline }) => getWidth(inline)};
@@ -172,6 +174,7 @@ StyledStack.defaultProps = {
 
 const Stack = (props: Props) => {
   const {
+    dataTest,
     inline = false,
     spacing = SPACINGS.NATURAL,
     align = ALIGNS.START,
@@ -189,7 +192,15 @@ const Stack = (props: Props) => {
   const flex =
     props.flex ||
     Object.keys(props)
-      .map(item => !(item === "children" || item === "spaceAfter" || item === "spacing"))
+      .map(
+        item =>
+          !(
+            item === "children" ||
+            item === "spaceAfter" ||
+            item === "spacing" ||
+            item === "dataTest"
+          ),
+      )
       .includes(true);
 
   // when flex - use direction, otherwise column because it's block element
@@ -197,6 +208,7 @@ const Stack = (props: Props) => {
 
   return (
     <StyledStack
+      dataTest={dataTest}
       flex={flex}
       direction={props.direction || direction}
       align={align}

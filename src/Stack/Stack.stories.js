@@ -197,6 +197,7 @@ storiesOf("Stack", module)
     ],
   }))
   .addWithChapters("Playground", () => {
+    const dataTest = text("dataTest", "test");
     const flex = boolean("flex", false);
     const inline = boolean("Inline", false);
     const direction = select("Direction", [undefined, ...Object.values(DIRECTIONS)]);
@@ -230,6 +231,7 @@ storiesOf("Stack", module)
             {
               sectionFn: () => (
                 <Stack
+                  dataTest={dataTest}
                   flex={flex}
                   direction={direction}
                   align={align}

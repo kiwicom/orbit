@@ -12,8 +12,9 @@ import defaultTokens from "../../defaultTokens";
 describe("Default Stack", () => {
   const spacing = SPACINGS.EXTRALOOSE;
   const spaceAfter = SPACINGS_AFTER.LARGE;
+  const dataTest = "test";
   const component = mount(
-    <Stack spacing={spacing} spaceAfter={spaceAfter}>
+    <Stack spacing={spacing} spaceAfter={spaceAfter} dataTest={dataTest}>
       <InputField type="password" label="Password" help="You need some help!" />
       <Button>Sign In</Button>
     </Stack>,
@@ -23,6 +24,7 @@ describe("Default Stack", () => {
   it("should have passed props", () => {
     expect(stack.prop("spacing")).toBe(spacing);
     expect(stack.prop("spaceAfter")).toBe(spaceAfter);
+    expect(stack.render().prop("data-test")).toBe(dataTest);
   });
   it("should contain children", () => {
     expect(stack.find("InputField").exists()).toBe(true);

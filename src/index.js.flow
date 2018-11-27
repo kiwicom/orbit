@@ -48,6 +48,7 @@ import typeof ModalHeaderType from "./Modal/ModalHeader";
 import typeof ModalSectionType from "./Modal/ModalSection";
 import typeof ModalFooterType from "./Modal/ModalFooter";
 import typeof ClickOutsideType from "./ClickOutside";
+import typeof TagType from "./Tag";
 import typeof TableType from "./Table";
 import typeof TableBodyType from "./Table/TableBody";
 import typeof TableCellType from "./Table/TableCell";
@@ -92,6 +93,8 @@ declare export var Modal: ModalType;
 declare export var ModalHeader: ModalHeaderType;
 declare export var ModalSection: ModalSectionType;
 declare export var ModalFooter: ModalFooterType;
+
+declare export var Tag: TagType;
 
 declare export var Table: TableType;
 declare export var TableBody: TableBodyType;

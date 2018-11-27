@@ -23,6 +23,7 @@ describe(`Default Radio`, () => {
       tabIndex={tabIndex}
     />,
   );
+  const radio = component.find("Radio__Input");
   it("should contain a label", () => {
     expect(
       component
@@ -32,30 +33,20 @@ describe(`Default Radio`, () => {
     ).toBe(label);
   });
   it("should have data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
+    expect(radio.render().prop("data-test")).toBe(dataTest);
   });
 
   it("should have tabindex", () => {
-    expect(
-      component
-        .find("Radio__Input")
-        .render()
-        .prop("tabindex"),
-    ).toBe(tabIndex);
+    expect(radio.render().prop("tabindex")).toBe(tabIndex);
   });
   it("should have name", () => {
-    expect(
-      component
-        .find("Radio__Input")
-        .render()
-        .prop("attribs").name,
-    ).toBe(name);
+    expect(radio.render().prop("attribs").name).toBe(name);
   });
   it("input value should match", () => {
-    expect(component.find("Radio__Input").prop("value")).toBe(value);
+    expect(radio.prop("value")).toBe(value);
   });
   it("should execute onChange method", () => {
-    component.find("Radio__Input").simulate("change");
+    radio.simulate("change");
     expect(onChange).toHaveBeenCalled();
   });
   it("should match snapshot", () => {

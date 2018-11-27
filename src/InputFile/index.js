@@ -112,8 +112,9 @@ const InputFile = React.forwardRef((props: Props, ref: Ref) => {
   const { placeholder = "No file selected", title = "Select file", onRemoveFile, dataTest } = props;
 
   return (
-    <Field data-test={dataTest}>
+    <Field>
       <Input
+        data-test={dataTest}
         type="file"
         name={props.name}
         error={props.error}

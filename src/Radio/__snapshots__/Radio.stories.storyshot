@@ -391,11 +391,11 @@ exports[`Storyshots Radio Playground 1`] = `
           <label
             checked={true}
             className="Radio__Label-sc-5lanou-6 chZGQX"
-            data-test="test"
           >
             <input
               checked={true}
               className="Radio__Input-sc-5lanou-5 juylbO"
+              data-test="test"
               disabled={true}
               name="name"
               onChange={[Function]}

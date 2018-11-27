@@ -1584,7 +1584,6 @@ exports[`InputFiInputFile with error should match snapshot 1`] = `
 
 exports[`InputFile with help should match snapshot 1`] = `
 <InputFile__Field
-  data-test="test"
   theme={
     Object {
       "orbit": Object {
@@ -1978,6 +1977,7 @@ exports[`InputFile with help should match snapshot 1`] = `
         ".pdf",
       ]
     }
+    data-test="test"
     name="name"
     onBlur={
       [MockFunction] {

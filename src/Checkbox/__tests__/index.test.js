@@ -23,7 +23,7 @@ describe(`Default CheckBox`, () => {
       tabIndex={tabIndex}
     />,
   );
-
+  const checkbox = component.find("Checkbox__Input");
   it("should contain a label", () => {
     expect(
       component
@@ -33,31 +33,21 @@ describe(`Default CheckBox`, () => {
     ).toBe(label);
   });
   it("inputs value should match", () => {
-    expect(component.find("Checkbox__Input").prop("value")).toBe(value);
+    expect(checkbox.prop("value")).toBe(value);
   });
   it("should have data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
+    expect(checkbox.render().prop("data-test")).toBe(dataTest);
   });
 
   it("should have tabindex", () => {
-    expect(
-      component
-        .find("Checkbox__Input")
-        .render()
-        .prop("tabindex"),
-    ).toBe(tabIndex);
+    expect(checkbox.render().prop("tabindex")).toBe(tabIndex);
   });
 
   it("should have name", () => {
-    expect(
-      component
-        .find("Checkbox__Input")
-        .render()
-        .prop("attribs").name,
-    ).toBe(name);
+    expect(checkbox.render().prop("attribs").name).toBe(name);
   });
   it("should execute onChange method", () => {
-    component.find("Checkbox__Input").simulate("change");
+    checkbox.simulate("change");
     expect(onChange).toHaveBeenCalled();
   });
   it("should match snapshot", () => {

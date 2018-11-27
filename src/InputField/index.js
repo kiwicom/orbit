@@ -271,7 +271,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
   } = props;
 
   return (
-    <Field data-test={dataTest}>
+    <Field>
       {label && !inlineLabel && <FormLabel label={label} isFilled={!!value} required={required} />}
       <InputContainer size={size} disabled={disabled} error={error}>
         {prefix && <Prefix size={size}>{prefix}</Prefix>}
@@ -281,6 +281,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           </StyledInlineLabel>
         )}
         <Input
+          data-test={dataTest}
           onChange={onChange}
           onFocus={onFocus}
           onBlur={onBlur}

@@ -109,13 +109,14 @@ const Textarea = React.forwardRef((props: Props, ref: Ref) => {
   } = props;
 
   return (
-    <Field data-test={dataTest} fullHeight={props.fullHeight}>
+    <Field fullHeight={props.fullHeight}>
       {props.label && (
         <FormLabel filled={!!props.value} disabled={disabled}>
           {props.label}
         </FormLabel>
       )}
       <StyledTextArea
+        data-test={dataTest}
         name={props.name}
         value={props.value}
         size={size}

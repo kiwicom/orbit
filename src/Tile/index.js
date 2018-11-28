@@ -75,6 +75,7 @@ class Tile extends React.PureComponent<Props, State> {
     return (
       <StyledTile
         target={!isExpandable && external ? "_blank" : undefined}
+        rel={!isExpandable && external ? "noopener noreferrer" : undefined}
         href={!isExpandable ? href : undefined}
         data-test={dataTest}
       >

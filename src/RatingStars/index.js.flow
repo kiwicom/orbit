@@ -6,6 +6,7 @@ export type Props = {
   +rating: number,
   +size?: Size,
   +color?: "attention" | "primary" | "secondary",
+  +showEmpty?: boolean,
   ...Globals,
 };
 

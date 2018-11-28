@@ -1,15 +1,15 @@
 # Card
-To implement Card component into your project you'll need to the import at least the Card and the [CardContent](#cardcontent):
+To implement Card component into your project you'll need to the import at least the Card and the [CardSection](#cardsection):
 ```jsx
 import Card from "@kiwicom/orbit-components/lib/Card";
-import CardContent from "@kiwicom/orbit-components/lib/Card/CardContent";
+import CardSection from "@kiwicom/orbit-components/lib/Card/CardSection";
 ```
 After adding import into your project you can use it simply like:
 ```jsx
 <Card>
-  <CardContent>
+  <CardSection>
     Hello World!
-  </CardContent>
+  </CardSection>
 </Card>
 ```
 ## Props

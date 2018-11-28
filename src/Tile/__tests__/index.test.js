@@ -43,6 +43,10 @@ describe("Tile Default", () => {
     ).toBe(true);
   });
 
+  it("should render rel when external", () => {
+    expect(shallowedComponent.render().prop("rel")).toBe("noopener noreferrer");
+  });
+
   it("should render proper element", () => {
     expect(shallowedComponent.render().prop("name")).toBe("a");
   });

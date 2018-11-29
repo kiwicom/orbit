@@ -316,6 +316,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   Transfer protected by the 
                   <a
                     className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                    rel=""
                   >
                     Kiwi.com Guarantee
                   </a>
@@ -516,6 +517,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   Transfer protected by the 
                   <a
                     className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                    rel=""
                   >
                     Kiwi.com Guarantee
                   </a>
@@ -698,6 +700,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                   Transfer protected by the 
                   <a
                     className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                    rel=""
                   >
                     Kiwi.com Guarantee
                   </a>
@@ -6176,6 +6179,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                   Transfer protected by the 
                   <a
                     className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                    rel=""
                   >
                     Kiwi.com Guarantee
                   </a>
@@ -6376,6 +6380,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                   Transfer protected by the 
                   <a
                     className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                    rel=""
                   >
                     Kiwi.com Guarantee
                   </a>
@@ -6558,6 +6563,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                   Transfer protected by the 
                   <a
                     className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                    rel=""
                   >
                     Kiwi.com Guarantee
                   </a>

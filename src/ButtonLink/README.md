@@ -18,7 +18,7 @@ Table below contains all types of the props available in ButtonLink component.
 | **component** | `string \| React.Node`| `"button"`      | The component used for the root node. Either a string to use a DOM element or a component.
 | disabled      | `boolean`             | `false`         | If `true`, the ButtonLink will be disabled.
 | dataTest      | `string`              |                 | Optional prop for testing purposes.
-| external      | `boolean`             | `false`         | If `true`, the ButtonLink opens link in a new tab.
+| external      | `boolean`             | `false`         | If `true`, the ButtonLink opens link in a new tab. [See Functional specs](#functional-specs)
 | href          | `string`              |                 | The URL of link to open when ButtonLink is clicked. [See Functional specs](#functional-specs)
 | icon          | `React.Node`          |                 | The displayed icon on the left (will be removed in the future, use iconLeft instead).
 | iconLeft      | `React.Node`          |                 | The displayed icon on the left.
@@ -39,6 +39,8 @@ Table below contains all types of the props available in ButtonLink component.
 |               | `"large"`  |
 
 ## Functional specs
+* When the `external` is specified, `noopener` and `noreferrer` values will automatically added to attribute `rel` for security reason.
+
 * By passing the `href` prop into Button, it will render into `a` element. If you pass `component` prop it will override this logic.
 
 * If you want to render **Icon only ButtonLink**, you just need to let `children` prop empty and set up any `icon` you want to use.

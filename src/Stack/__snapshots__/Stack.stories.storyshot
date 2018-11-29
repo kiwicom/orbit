@@ -2774,6 +2774,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       Transfer protected by the 
                       <a
                         className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                        rel=""
                       >
                         Kiwi.com Guarantee
                       </a>
@@ -2974,6 +2975,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       Transfer protected by the 
                       <a
                         className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                        rel=""
                       >
                         Kiwi.com Guarantee
                       </a>
@@ -3156,6 +3158,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       Transfer protected by the 
                       <a
                         className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                        rel=""
                       >
                         Kiwi.com Guarantee
                       </a>
@@ -3551,6 +3554,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       Transfer protected by the 
                       <a
                         className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                        rel=""
                       >
                         Kiwi.com Guarantee
                       </a>
@@ -30188,6 +30192,7 @@ exports[`Storyshots Stack Nested example 1`] = `
             >
               <a
                 className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                rel=""
               >
                 Forgot password?
               </a>
@@ -32224,6 +32229,7 @@ exports[`Storyshots Stack RTL 1`] = `
             >
               <a
                 className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                rel=""
               >
                 Forgot password?
               </a>

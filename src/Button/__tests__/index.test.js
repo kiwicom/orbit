@@ -40,6 +40,7 @@ describe("Button with icon", () => {
       iconRight={<ChevronDown />}
       onClick={onClick}
       dataTest={dataTest}
+      external
       tabIndex={tabIndex}
       href={href}
     >
@@ -48,6 +49,9 @@ describe("Button with icon", () => {
   );
   it("should have data-test", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
+  });
+  it("should have rel attribute", () => {
+    expect(component.render().prop("rel")).toBe("noopener noreferrer");
   });
   it("should have tabindex", () => {
     expect(component.render().prop("tabindex")).toBe(tabIndex);

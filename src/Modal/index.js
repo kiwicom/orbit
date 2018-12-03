@@ -267,6 +267,7 @@ class Modal extends React.PureComponent<Props, State> {
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
     const { onClose, closable } = this.props;
     if (closable && ev.key === "Escape" && onClose) {
+      ev.stopPropagation();
       onClose(ev);
     }
   };

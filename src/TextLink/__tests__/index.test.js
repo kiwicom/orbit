@@ -12,12 +12,14 @@ describe("TextLink", () => {
   const type = "primary";
   const tabIndex = "-1";
   const dataTest = "test";
+  const rel = "nofollow";
 
   const component = shallow(
     <TextLink
       onClick={onClick}
       href={href}
       type={type}
+      rel={rel}
       external
       icon={<ChevronRight />}
       tabIndex={tabIndex}
@@ -35,6 +37,33 @@ describe("TextLink", () => {
   });
   it("should have data-test", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
+  });
+  it("should have noopener in attribute", () => {
+    expect(
+      component
+        .render()
+        .prop("rel")
+        .split(" ")
+        .includes("noopener"),
+    ).toBe(true);
+  });
+  it("should have noreferrer in attribute", () => {
+    expect(
+      component
+        .render()
+        .prop("rel")
+        .split(" ")
+        .includes("noreferrer"),
+    ).toBe(true);
+  });
+  it("should have rel values in the rel attribute", () => {
+    expect(
+      component
+        .render()
+        .prop("rel")
+        .split(" ")
+        .includes(rel),
+    ).toBe(true);
   });
   it("should have tabindex", () => {
     expect(component.render().prop("tabindex")).toBe(tabIndex);

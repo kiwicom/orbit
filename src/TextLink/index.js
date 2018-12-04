@@ -84,18 +84,32 @@ const TextLink = ({
   onClick,
   dataTest,
   tabIndex,
-}: Props) => (
-  <StyledTextLink
-    type={type}
-    href={href}
-    target={external ? "_blank" : undefined}
-    rel={rel}
-    onClick={onClick}
-    data-test={dataTest}
-    tabIndex={tabIndex}
-  >
-    {children}
-    {icon && <IconContainer type={type}>{icon}</IconContainer>}
-  </StyledTextLink>
-);
+}: Props) => {
+  const relValues = rel ? rel.split(" ") : [];
+
+  // add noopener and noreferrer whenever external
+  if (relValues && external) {
+    if (!relValues.includes("noopener")) {
+      relValues.push("noopener");
+    }
+    if (!relValues.includes("noreferrer")) {
+      relValues.push("noreferrer");
+    }
+  }
+
+  return (
+    <StyledTextLink
+      type={type}
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={relValues && relValues.join(" ")}
+      onClick={onClick}
+      data-test={dataTest}
+      tabIndex={tabIndex}
+    >
+      {children}
+      {icon && <IconContainer type={type}>{icon}</IconContainer>}
+    </StyledTextLink>
+  );
+};
 export default TextLink;

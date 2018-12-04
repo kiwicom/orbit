@@ -487,6 +487,7 @@ const Button = (props: Props) => {
       size={size}
       sizeIcon={sizeIcon}
       target={href && external ? "_blank" : undefined}
+      rel={href && external ? "noopener noreferrer" : undefined}
       type={type}
       width={width}
     >

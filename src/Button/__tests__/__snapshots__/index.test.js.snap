@@ -4,6 +4,7 @@ exports[`Button with icon should match snapshot 1`] = `
 <Button__StyledButton
   component="button"
   dataTest="test"
+  external={true}
   href="https://kiwi.com"
   iconLeft={<Airplane />}
   iconRight={<ChevronDown />}
@@ -22,9 +23,11 @@ exports[`Button with icon should match snapshot 1`] = `
     }
   }
   onlyIcon={false}
+  rel="noopener noreferrer"
   size="normal"
   sizeIcon="medium"
   tabIndex="-1"
+  target="_blank"
   theme={
     Object {
       "orbit": Object {

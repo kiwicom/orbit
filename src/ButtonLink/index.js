@@ -256,6 +256,7 @@ const ButtonLink = (props: Props) => {
       sizeIcon={sizeIcon}
       type={type}
       target={href && external ? "_blank" : undefined}
+      rel={href && external ? "noopener noreferrer" : undefined}
       iconLeft={iconLeft}
     >
       {iconLeft && (

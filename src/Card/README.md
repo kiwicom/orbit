@@ -48,8 +48,8 @@ Table below contains all types of the props in CardHeader component.
 | :------------ | :---------------------| :-------------- | :------------------------------- |
 | dataTest      | `string`              |                 | Optional prop for testing purposes.
 | icon          | `React.Node`          |                 | Displayed icon.
-| **title**     | `string `             |                 | The title of the CardHeader.
-| subTitle      | `string`              |                 | The description of the CardHeader.
+| **title**     | `React.Node`          |                 | The title of the CardHeader.
+| subTitle      | `React.Node`          |                 | The description of the CardHeader.
 
 
 ### CardSection

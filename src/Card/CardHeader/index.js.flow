@@ -5,8 +5,8 @@ import type { Globals } from "../../common/common.js.flow";
 
 export type Props = {|
   +icon?: React$Node,
-  +title: string,
-  +subTitle?: string,
+  +title: React$Node,
+  +subTitle?: React$Node,
   ...Globals,
 |};
 

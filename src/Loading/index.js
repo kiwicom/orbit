@@ -124,8 +124,8 @@ StyledLoaderCircle.defaultProps = {
 const Loading = (props: Props) => {
   const { loading = false, type = TYPE_OPTIONS.PAGE_LOADER, text, children, dataTest } = props;
 
-  return children && !loading ? (
-    children
+  return !loading ? (
+    children || null
   ) : (
     <StyledLoading type={type} dataTest={dataTest}>
       {type === TYPE_OPTIONS.BOX_LOADER || type === TYPE_OPTIONS.SEARCH_LOADER ? (

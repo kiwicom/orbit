@@ -23,6 +23,9 @@ describe("ButtonLink with Icon", () => {
   it("should have data-test", () => {
     expect(button.render().prop("data-test")).toBe(dataTest);
   });
+  it("should have rel attribute", () => {
+    expect(button.render().prop("rel")).toBe("noopener noreferrer");
+  });
   it("should have tabindex", () => {
     expect(component.render().prop("tabindex")).toBe(tabIndex);
   });

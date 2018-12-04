@@ -860,6 +860,7 @@ exports[`Storyshots InputField Email input 1`] = `
                 <a
                   className="TextLink__StyledTextLink-sc-1bvlje4-1 naMEP"
                   onClick={[Function]}
+                  rel=""
                 >
                   name@example.com
                 </a>

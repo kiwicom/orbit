@@ -18,7 +18,7 @@ Table below contains all types of the props available in TextLink component.
 | href          | `string`              |                 | The URL to link when the TextLink is clicked.
 | icon          | `React.Node`          |                 | The displayed icon.
 | onClick       | `func`                |                 | Function for handling onClick event.
-| rel           | `string`              |                 | The rel of the TextLink.
+| rel           | `string`              |                 | The rel of the TextLink. [See Functional specs](#functional-specs)
 | **type**      | [`enum`](#enum)       | `"primary"`     | The color type of the TextLink.
 
 ### enum
@@ -27,3 +27,6 @@ Table below contains all types of the props available in TextLink component.
 | :------------ |
 | `"primary"`   |
 | `"secondary"` |
+
+## Functional specs
+* When the `external` is specified, `noopener` and `noreferrer` values will automatically added to attribute `rel` for security reason.

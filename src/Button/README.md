@@ -19,7 +19,7 @@ Table below contains all types of the props available in Button component.
 | **component** | `string \| React.Node`| `"button"`      | The component used for the root node. Either a string to use a DOM element or a component.
 | dataTest      | `string`              |                 | Optional prop for testing purposes.
 | disabled      | `boolean`             | `false`         | If `true`, the Button will be disabled.
-| external      | `boolean`             | `false`         | If `true`, the Button opens link in a new tab.
+| external      | `boolean`             | `false`         | If `true`, the Button opens link in a new tab. [See Functional specs](#functional-specs)
 | href          | `string`              |                 | The URL of the link to open when Button is clicked. [See Functional specs](#functional-specs)
 | icon          | `React.Node`          |                 | The displayed icon (will be removed in the future, use iconLeft instead).
 | iconLeft      | `React.Node`          |                 | The displayed icon on the left.
@@ -45,6 +45,8 @@ Table below contains all types of the props available in Button component.
 | `"white"`     |            |
 
 ## Functional specs
+* When the `external` is specified, `noopener` and `noreferrer` values will automatically added to attribute `rel` for security reason.
+
 * By passing the `href` prop into Button, it will render into `a` element. If you pass `component` prop it will override this logic.
 
 * If you want to render **Icon only Button**, you just need to let `children` prop empty and set up any `icon` you want to use.

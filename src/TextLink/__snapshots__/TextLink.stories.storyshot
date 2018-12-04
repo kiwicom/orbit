@@ -101,6 +101,7 @@ exports[`Storyshots TextLink Link with icon 1`] = `
             className="TextLink__StyledTextLink-sc-1bvlje4-1 naMEP"
             href="https://kiwi.com"
             onClick={[Function]}
+            rel=""
           >
             TextLink with icon
             <span
@@ -424,6 +425,7 @@ exports[`Storyshots TextLink Playground 1`] = `
             data-test="test"
             href="https://kiwi.com"
             onClick={[Function]}
+            rel="noopener noreferrer"
             target="_blank"
           >
             Custom link
@@ -856,6 +858,7 @@ exports[`Storyshots TextLink Primary link 1`] = `
             className="TextLink__StyledTextLink-sc-1bvlje4-1 naMEP"
             href="https://kiwi.com"
             onClick={[Function]}
+            rel=""
           >
             Primary link
           </a>
@@ -1204,6 +1207,7 @@ exports[`Storyshots TextLink RTL 1`] = `
             className="TextLink__StyledTextLink-sc-1bvlje4-1 naMEP"
             href="#"
             onClick={[Function]}
+            rel=""
           >
             Link
             <span
@@ -1577,6 +1581,7 @@ exports[`Storyshots TextLink Secondary link 1`] = `
             className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
             href="https://kiwi.com"
             onClick={[Function]}
+            rel=""
           >
             Secondary link
           </a>

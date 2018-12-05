@@ -1,16 +1,26 @@
 // @flow
+import * as React from "react";
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../../common/common.js.flow";
 
 export type Props = {|
-  +children?: React$Node,
-  +title?: React$Node,
-  +subTitle?: React$Node,
+  +children: React$Node,
   +expandable?: boolean,
+  +initialExpanded?: boolean,
+  +onClose?: () => void,
+  +onExpand?: () => void,
   ...Globals,
 |};
 
 declare export var StyledCardSection: ReactComponentStyled<any>;
+
+export type ContextType = {|
+  +expandable: boolean,
+  +expanded: boolean,
+  +handleToggleSection: () => void,
+|};
+
+declare export var CardSectionContext: React.Context<ContextType>;
 
 declare export default React$ComponentType<Props>;

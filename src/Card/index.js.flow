@@ -12,6 +12,7 @@ export type Props = {|
 
 export type State = {|
   expandedSections: Array<number>,
+  initialExpandedSections: Array<number>,
 |};
 
 declare export default React$ComponentType<Props>;

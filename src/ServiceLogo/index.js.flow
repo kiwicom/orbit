@@ -5,16 +5,21 @@ import type { Globals } from "../common/common.js.flow";
 
 export type Name =
   | "AirHelp"
+  | "Alipay"
   | "Amex"
   | "AxaAssistance"
   | "DinersClub"
+  | "Discover"
   | "JCB"
   | "Maestro"
   | "MasterCard"
   | "MIR"
   | "NewYorkTimes"
   | "NortonSecured"
+  | "PayPal"
+  | "Sofort"
   | "TravelPulse"
+  | "Trustly"
   | "Visa"
   | "VisaHQ"
   | "Zooz";

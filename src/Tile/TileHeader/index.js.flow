@@ -7,7 +7,7 @@ export type Props = {
   +title?: string,
   +description?: React$Node,
   +external?: boolean,
-  +onClick?: Function,
+  +onClick?: (ev: SyntheticEvent<HTMLDivElement>) => void,
   +isExpandable?: boolean,
   +isExpanded?: boolean,
 };

@@ -22,16 +22,21 @@ Table below contains all types of the props available in ServiceLogo component.
 | code              | size        |
 | :---------------- | :---------- |
 | `"AirHelp"`       | `"small"`   |
-| `"Amex"`          | `"medium"`  |
-| `"AxaAssistance"` | `"large"`   |
+| `"Alipay"`        | `"medium"`  |
+| `"Amex"`          | `"large"`   |
+| `"AxaAssistance"` |
 | `"DinersClub"`    |
+| `"Discover"`      |
 | `"JCB"`           |
 | `"Maestro"`       |
 | `"MasterCard"`    |
 | `"MIR"`           |
 | `"NewYorkTimes"`  |
 | `"NortonSecured"` |
+| `"PayPal"`        |
+| `"Sofort"`        |
 | `"TravelPulse"`   |
+| `"Trustly"`       |
 | `"Visa"`          |
 | `"VisaHQ"`        |
 | `"Zooz"`          |

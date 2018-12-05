@@ -329,16 +329,16 @@ exports[`Storyshots Stack Components preview 1`] = `
               className="Stack__StyledStack-sc-1t576ow-0 gRnnoi"
             >
               <div
-                className="Card__StyledCard-ff0z2v-1 PJvWj"
+                className="Card__StyledCard-ff0z2v-1 irRylt"
               >
                 <div
-                  className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
+                  className="Card__StyledChildWrapper-ff0z2v-0 jtYTwu"
                 >
                   <div
                     className="CardHeader__StyledCardHeader-lvjkay-0 bZeHlk"
                   >
                     <div
-                      className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
+                      className="CardHeader__StyledHeadingWrapper-lvjkay-1 TbCam"
                     >
                       <h2
                         className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
@@ -350,51 +350,43 @@ exports[`Storyshots Stack Components preview 1`] = `
                 </div>
               </div>
               <div
-                className="Card__StyledCard-ff0z2v-1 jyVwJN"
+                className="Card__StyledCard-ff0z2v-1 irRylt"
               >
                 <div
-                  className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
+                  className="Card__StyledChildWrapper-ff0z2v-0 jtYTwu"
                 >
                   <div
-                    className="CardHeader__StyledCardHeader-lvjkay-0 bZeHlk"
+                    className="CardSection__StyledCardSection-o8zdxr-2 bKTuvR"
                   >
-                    <div
-                      className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
+                    <h1
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                     >
-                      <h2
-                        className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
-                      >
-                        Insert your title here...
-                      </h2>
-                    </div>
-                    <div
-                      className="CardHeader__StyledSubTitle-lvjkay-2 byqGxX"
+                      Insert your title here...
+                    </h1>
+                    <p
+                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                     >
-                      <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                      >
-                        subtitle
-                      </p>
-                    </div>
+                      subtitle
+                    </p>
                   </div>
                 </div>
                 <div
-                  className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
+                  className="Card__StyledChildWrapper-ff0z2v-0 jtYTwu"
                 >
                   <div
-                    className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
+                    className="CardSection__StyledCardSection-o8zdxr-2 bKTuvR"
                   >
                     <div
-                      className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
+                      className="CardSectionHeader__StyledCardSectionHeader-sc-1gmw3sa-1 cKBmPY"
                     >
                       <div
-                        className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
+                        className="CardSectionHeader__StyledCardSectionHeaderContent-sc-1gmw3sa-3 lcnsxe"
                       >
-                        <h3
+                        <h1
                           className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                         >
                           Insert your title here...
-                        </h3>
+                        </h1>
                         <p
                           className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         >
@@ -403,87 +395,11 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                     </div>
                     <div
-                      className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
+                      className="CardSectionContent__StyledCardSectionContent-sc-1mj8dfx-0 jPtWKI"
                     >
-                      <div />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
-                >
-                  <div
-                    className="Card__StyledExpandableSectionWrapper-ff0z2v-3 eVeAaM"
-                  >
-                    <div
-                      className="CardSection__StyledCardSection-o8zdxr-2 vpPwA"
-                    >
-                      <div
-                        className="CardSection__StyledCardSectionHeader-o8zdxr-3 cGvEeq"
-                        onClick={[Function]}
-                      >
-                        <div
-                          className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
-                        >
-                          <h3
-                            className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
-                          >
-                            Insert your title here...
-                          </h3>
-                          <p
-                            className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                          >
-                            subtitle
-                          </p>
-                        </div>
-                        <svg
-                          className="CardSection__StyledCardSectionIconRight-o8zdxr-0 eKryal Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                          />
-                        </svg>
+                      <div>
+                        Content
                       </div>
-                      <div
-                        className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
-                      >
-                        <div>
-                          This is hidden content
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
-                >
-                  <div
-                    className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
-                  >
-                    <div
-                      className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
-                    >
-                      <div
-                        className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
-                      >
-                        <h3
-                          className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
-                        >
-                          Insert your title here...
-                        </h3>
-                        <p
-                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                        >
-                          subtitle
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
-                    >
-                      <div />
                     </div>
                   </div>
                 </div>
@@ -493,16 +409,16 @@ exports[`Storyshots Stack Components preview 1`] = `
               className="Stack__StyledStack-sc-1t576ow-0 iYGkmR"
             >
               <div
-                className="Card__StyledCard-ff0z2v-1 PJvWj"
+                className="Card__StyledCard-ff0z2v-1 irRylt"
               >
                 <div
-                  className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
+                  className="Card__StyledChildWrapper-ff0z2v-0 jtYTwu"
                 >
                   <div
                     className="CardHeader__StyledCardHeader-lvjkay-0 bZeHlk"
                   >
                     <div
-                      className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
+                      className="CardHeader__StyledHeadingWrapper-lvjkay-1 TbCam"
                     >
                       <h2
                         className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
@@ -514,16 +430,16 @@ exports[`Storyshots Stack Components preview 1`] = `
                 </div>
               </div>
               <div
-                className="Card__StyledCard-ff0z2v-1 jyVwJN"
+                className="Card__StyledCard-ff0z2v-1 diYIWP"
               >
                 <div
-                  className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
+                  className="Card__StyledChildWrapper-ff0z2v-0 jtYTwu"
                 >
                   <div
                     className="CardHeader__StyledCardHeader-lvjkay-0 bZeHlk"
                   >
                     <div
-                      className="CardHeader__StyledHeadingWrapper-lvjkay-1 hIawaA"
+                      className="CardHeader__StyledHeadingWrapper-lvjkay-1 TbCam"
                     >
                       <h2
                         className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
@@ -543,22 +459,22 @@ exports[`Storyshots Stack Components preview 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
+                  className="Card__StyledChildWrapper-ff0z2v-0 jtYTwu"
                 >
                   <div
-                    className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
+                    className="CardSection__StyledCardSection-o8zdxr-2 bKTuvR"
                   >
                     <div
-                      className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
+                      className="CardSectionHeader__StyledCardSectionHeader-sc-1gmw3sa-1 cKBmPY"
                     >
                       <div
-                        className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
+                        className="CardSectionHeader__StyledCardSectionHeaderContent-sc-1gmw3sa-3 lcnsxe"
                       >
-                        <h3
+                        <h1
                           className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                         >
                           Insert your title here...
-                        </h3>
+                        </h1>
                         <p
                           className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         >
@@ -566,88 +482,74 @@ exports[`Storyshots Stack Components preview 1`] = `
                         </p>
                       </div>
                     </div>
-                    <div
-                      className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
-                    >
-                      <div />
-                    </div>
                   </div>
                 </div>
                 <div
-                  className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
+                  className="Card__StyledChildWrapper-ff0z2v-0 jtYTwu"
                 >
                   <div
-                    className="Card__StyledExpandableSectionWrapper-ff0z2v-3 eVeAaM"
+                    className="CardSection__StyledCardSection-o8zdxr-2 bQGZxl"
                   >
                     <div
-                      className="CardSection__StyledCardSection-o8zdxr-2 vpPwA"
+                      className="CardSectionHeader__StyledCardSectionHeader-sc-1gmw3sa-1 gJCuKk"
+                      onClick={[Function]}
                     >
                       <div
-                        className="CardSection__StyledCardSectionHeader-o8zdxr-3 cGvEeq"
-                        onClick={[Function]}
+                        className="CardSectionHeader__StyledCardSectionHeaderContent-sc-1gmw3sa-3 lcnsxe"
                       >
-                        <div
-                          className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
-                        >
-                          <h3
-                            className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
-                          >
-                            Insert your title here...
-                          </h3>
-                          <p
-                            className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                          >
-                            subtitle
-                          </p>
-                        </div>
-                        <svg
-                          className="CardSection__StyledCardSectionIconRight-o8zdxr-0 eKryal Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                          />
-                        </svg>
-                      </div>
-                      <div
-                        className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
-                      >
-                        <div>
-                          This is hidden content
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="Card__StyledChildWrapper-ff0z2v-0 iqmOfY"
-                >
-                  <div
-                    className="CardSection__StyledCardSection-o8zdxr-2 kHyFLZ"
-                  >
-                    <div
-                      className="CardSection__StyledCardSectionHeader-o8zdxr-3 eWcItg"
-                    >
-                      <div
-                        className="CardSection__StyledTitleAndSubtitle-o8zdxr-4 itfMhB"
-                      >
-                        <h3
+                        <h1
                           className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
                         >
                           Insert your title here...
-                        </h3>
+                        </h1>
                         <p
                           className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
                         >
                           subtitle
                         </p>
                       </div>
+                      <svg
+                        className="CardSectionHeader__StyledCardSectionIconRight-sc-1gmw3sa-0 dtdYCR Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                        />
+                      </svg>
                     </div>
                     <div
-                      className="CardSection__StyledCardSectionContent-o8zdxr-1 gAOJBL"
+                      className="CardSectionContent__StyledCardSectionContent-sc-1mj8dfx-0 XBYnT"
                     >
-                      <div />
+                      <div>
+                        Hidden content
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="Card__StyledChildWrapper-ff0z2v-0 jtYTwu"
+                >
+                  <div
+                    className="CardSection__StyledCardSection-o8zdxr-2 bKTuvR"
+                  >
+                    <div
+                      className="CardSectionHeader__StyledCardSectionHeader-sc-1gmw3sa-1 cKBmPY"
+                    >
+                      <div
+                        className="CardSectionHeader__StyledCardSectionHeaderContent-sc-1gmw3sa-3 lcnsxe"
+                      >
+                        <h1
+                          className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
+                        >
+                          Insert your title here...
+                        </h1>
+                        <p
+                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        >
+                          subtitle
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -6054,176 +5956,6 @@ exports[`Storyshots Stack Components preview 1`] = `
                               &gt;
                             </span>
                           </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;
-                              CardHeader
-                            </span>
-                            <span>
-                              <span>
-                                 
-                                <span
-                                  style={Object {}}
-                                >
-                                  title
-                                </span>
-                                <span>
-                                  =
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    "
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      Insert your title here...
-                                    </span>
-                                    "
-                                  </span>
-                                </span>
-                              </span>
-                              <span>
-                                 
-                                <span
-                                  style={Object {}}
-                                >
-                                  subTitle
-                                </span>
-                                <span>
-                                  =
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    "
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      subtitle
-                                    </span>
-                                    "
-                                  </span>
-                                </span>
-                                 
-                              </span>
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              /&gt;
-                            </span>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              &lt;
-                              CardSection
-                            </span>
-                            <span>
-                              <span>
-                                 
-                                <span
-                                  style={Object {}}
-                                >
-                                  title
-                                </span>
-                                <span>
-                                  =
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    "
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      Insert your title here...
-                                    </span>
-                                    "
-                                  </span>
-                                </span>
-                              </span>
-                              <span>
-                                 
-                                <span
-                                  style={Object {}}
-                                >
-                                  subTitle
-                                </span>
-                                <span>
-                                  =
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    "
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      subtitle
-                                    </span>
-                                    "
-                                  </span>
-                                </span>
-                                 
-                              </span>
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#777",
-                                }
-                              }
-                            >
-                              /&gt;
-                            </span>
-                          </div>
                           <div>
                             <div
                               style={
@@ -6243,71 +5975,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 &lt;
                                 CardSection
                               </span>
-                              <span>
-                                <span>
-                                   
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    title
-                                  </span>
-                                  <span>
-                                    =
-                                    <span
-                                      style={Object {}}
-                                    >
-                                      "
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#22a",
-                                            "wordBreak": "break-word",
-                                          }
-                                        }
-                                      >
-                                        Insert your title here...
-                                      </span>
-                                      "
-                                    </span>
-                                  </span>
-                                </span>
-                                <span>
-                                   
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    subTitle
-                                  </span>
-                                  <span>
-                                    =
-                                    <span
-                                      style={Object {}}
-                                    >
-                                      "
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#22a",
-                                            "wordBreak": "break-word",
-                                          }
-                                        }
-                                      >
-                                        subtitle
-                                      </span>
-                                      "
-                                    </span>
-                                  </span>
-                                </span>
-                                <span>
-                                   
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    expandable
-                                  </span>
-                                  
-                                </span>
-                              </span>
+                              <span />
                               <span
                                 style={
                                   Object {
@@ -6318,23 +5986,172 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 &gt;
                               </span>
                             </div>
-                            <div
-                              style={
-                                Object {
-                                  "paddingLeft": 78,
-                                  "paddingRight": 3,
-                                }
-                              }
-                            >
-                              <span
+                            <div>
+                              <div
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
                                   }
                                 }
                               >
-                                This is hidden content
-                              </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  Heading
+                                </span>
+                                <span>
+                                  <span>
+                                     
+                                    <span
+                                      style={Object {}}
+                                    >
+                                      type
+                                    </span>
+                                    <span>
+                                      =
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        "
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#22a",
+                                              "wordBreak": "break-word",
+                                            }
+                                          }
+                                        >
+                                          title3
+                                        </span>
+                                        "
+                                      </span>
+                                    </span>
+                                    
+                                  </span>
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Insert your title here...
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  Heading
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  Text
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  subtitle
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  Text
+                                  &gt;
+                                </span>
+                              </div>
                             </div>
                             <div
                               style={
@@ -6357,90 +6174,343 @@ exports[`Storyshots Stack Components preview 1`] = `
                               </span>
                             </div>
                           </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
+                          <div>
+                            <div
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
                                 }
                               }
                             >
-                              &lt;
-                              CardSection
-                            </span>
-                            <span>
-                              <span>
-                                 
-                                <span
-                                  style={Object {}}
-                                >
-                                  title
-                                </span>
-                                <span>
-                                  =
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    "
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      Insert your title here...
-                                    </span>
-                                    "
-                                  </span>
-                                </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;
+                                CardSection
                               </span>
-                              <span>
-                                 
-                                <span
-                                  style={Object {}}
-                                >
-                                  subTitle
-                                </span>
-                                <span>
-                                  =
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    "
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      subtitle
-                                    </span>
-                                    "
-                                  </span>
-                                </span>
-                                 
+                              <span />
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &gt;
                               </span>
-                            </span>
-                            <span
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  CardSectionHeader
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;
+                                    Heading
+                                  </span>
+                                  <span>
+                                    <span>
+                                       
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        type
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          "
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            title3
+                                          </span>
+                                          "
+                                        </span>
+                                      </span>
+                                      
+                                    </span>
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &gt;
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 108,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    Insert your title here...
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;/
+                                    Heading
+                                    &gt;
+                                  </span>
+                                </div>
+                              </div>
+                              <div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;
+                                    Text
+                                  </span>
+                                  <span />
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &gt;
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 108,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    subtitle
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;/
+                                    Text
+                                    &gt;
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  CardSectionHeader
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  CardSectionContent
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Content
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  CardSectionContent
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
                                 }
                               }
                             >
-                              /&gt;
-                            </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;/
+                                CardSection
+                                &gt;
+                              </span>
+                            </div>
                           </div>
                           <div
                             style={
@@ -6794,90 +6864,274 @@ exports[`Storyshots Stack Components preview 1`] = `
                               /&gt;
                             </span>
                           </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
+                          <div>
+                            <div
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
                                 }
                               }
                             >
-                              &lt;
-                              CardSection
-                            </span>
-                            <span>
-                              <span>
-                                 
-                                <span
-                                  style={Object {}}
-                                >
-                                  title
-                                </span>
-                                <span>
-                                  =
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    "
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      Insert your title here...
-                                    </span>
-                                    "
-                                  </span>
-                                </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;
+                                CardSection
                               </span>
-                              <span>
-                                 
-                                <span
-                                  style={Object {}}
-                                >
-                                  subTitle
-                                </span>
-                                <span>
-                                  =
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    "
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      subtitle
-                                    </span>
-                                    "
-                                  </span>
-                                </span>
-                                 
+                              <span />
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &gt;
                               </span>
-                            </span>
-                            <span
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  CardSectionHeader
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;
+                                    Heading
+                                  </span>
+                                  <span>
+                                    <span>
+                                       
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        type
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          "
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            title3
+                                          </span>
+                                          "
+                                        </span>
+                                      </span>
+                                      
+                                    </span>
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &gt;
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 108,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    Insert your title here...
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;/
+                                    Heading
+                                    &gt;
+                                  </span>
+                                </div>
+                              </div>
+                              <div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;
+                                    Text
+                                  </span>
+                                  <span />
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &gt;
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 108,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    subtitle
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;/
+                                    Text
+                                    &gt;
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  CardSectionHeader
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
                                 }
                               }
                             >
-                              /&gt;
-                            </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;/
+                                CardSection
+                                &gt;
+                              </span>
+                            </div>
                           </div>
                           <div>
                             <div
@@ -6904,60 +7158,6 @@ exports[`Storyshots Stack Components preview 1`] = `
                                   <span
                                     style={Object {}}
                                   >
-                                    title
-                                  </span>
-                                  <span>
-                                    =
-                                    <span
-                                      style={Object {}}
-                                    >
-                                      "
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#22a",
-                                            "wordBreak": "break-word",
-                                          }
-                                        }
-                                      >
-                                        Insert your title here...
-                                      </span>
-                                      "
-                                    </span>
-                                  </span>
-                                </span>
-                                <span>
-                                   
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    subTitle
-                                  </span>
-                                  <span>
-                                    =
-                                    <span
-                                      style={Object {}}
-                                    >
-                                      "
-                                      <span
-                                        style={
-                                          Object {
-                                            "color": "#22a",
-                                            "wordBreak": "break-word",
-                                          }
-                                        }
-                                      >
-                                        subtitle
-                                      </span>
-                                      "
-                                    </span>
-                                  </span>
-                                </span>
-                                <span>
-                                   
-                                  <span
-                                    style={Object {}}
-                                  >
                                     expandable
                                   </span>
                                   
@@ -6973,23 +7173,292 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 &gt;
                               </span>
                             </div>
-                            <div
-                              style={
-                                Object {
-                                  "paddingLeft": 78,
-                                  "paddingRight": 3,
-                                }
-                              }
-                            >
-                              <span
+                            <div>
+                              <div
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
                                   }
                                 }
                               >
-                                This is hidden content
-                              </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  CardSectionHeader
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;
+                                    Heading
+                                  </span>
+                                  <span>
+                                    <span>
+                                       
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        type
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          "
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            title3
+                                          </span>
+                                          "
+                                        </span>
+                                      </span>
+                                      
+                                    </span>
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &gt;
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 108,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    Insert your title here...
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;/
+                                    Heading
+                                    &gt;
+                                  </span>
+                                </div>
+                              </div>
+                              <div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;
+                                    Text
+                                  </span>
+                                  <span />
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &gt;
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 108,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    subtitle
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;/
+                                    Text
+                                    &gt;
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  CardSectionHeader
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  CardSectionContent
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 93,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  Hidden content
+                                </span>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  CardSectionContent
+                                  &gt;
+                                </span>
+                              </div>
                             </div>
                             <div
                               style={
@@ -7012,90 +7481,274 @@ exports[`Storyshots Stack Components preview 1`] = `
                               </span>
                             </div>
                           </div>
-                          <div
-                            style={
-                              Object {
-                                "paddingLeft": 63,
-                                "paddingRight": 3,
-                              }
-                            }
-                          >
-                            <span
+                          <div>
+                            <div
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
                                 }
                               }
                             >
-                              &lt;
-                              CardSection
-                            </span>
-                            <span>
-                              <span>
-                                 
-                                <span
-                                  style={Object {}}
-                                >
-                                  title
-                                </span>
-                                <span>
-                                  =
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    "
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      Insert your title here...
-                                    </span>
-                                    "
-                                  </span>
-                                </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;
+                                CardSection
                               </span>
-                              <span>
-                                 
-                                <span
-                                  style={Object {}}
-                                >
-                                  subTitle
-                                </span>
-                                <span>
-                                  =
-                                  <span
-                                    style={Object {}}
-                                  >
-                                    "
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#22a",
-                                          "wordBreak": "break-word",
-                                        }
-                                      }
-                                    >
-                                      subtitle
-                                    </span>
-                                    "
-                                  </span>
-                                </span>
-                                 
+                              <span />
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &gt;
                               </span>
-                            </span>
-                            <span
+                            </div>
+                            <div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;
+                                  CardSectionHeader
+                                </span>
+                                <span />
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &gt;
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;
+                                    Heading
+                                  </span>
+                                  <span>
+                                    <span>
+                                       
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        type
+                                      </span>
+                                      <span>
+                                        =
+                                        <span
+                                          style={Object {}}
+                                        >
+                                          "
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            title3
+                                          </span>
+                                          "
+                                        </span>
+                                      </span>
+                                      
+                                    </span>
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &gt;
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 108,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    Insert your title here...
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;/
+                                    Heading
+                                    &gt;
+                                  </span>
+                                </div>
+                              </div>
+                              <div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;
+                                    Text
+                                  </span>
+                                  <span />
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &gt;
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 108,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    subtitle
+                                  </span>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "paddingLeft": 93,
+                                      "paddingRight": 3,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#777",
+                                      }
+                                    }
+                                  >
+                                    &lt;/
+                                    Text
+                                    &gt;
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "paddingLeft": 78,
+                                    "paddingRight": 3,
+                                  }
+                                }
+                              >
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#777",
+                                    }
+                                  }
+                                >
+                                  &lt;/
+                                  CardSectionHeader
+                                  &gt;
+                                </span>
+                              </div>
+                            </div>
+                            <div
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "paddingLeft": 63,
+                                  "paddingRight": 3,
                                 }
                               }
                             >
-                              /&gt;
-                            </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#777",
+                                  }
+                                }
+                              >
+                                &lt;/
+                                CardSection
+                                &gt;
+                              </span>
+                            </div>
                           </div>
                           <div
                             style={

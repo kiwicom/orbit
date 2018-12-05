@@ -3,7 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTokens from "../../defaultTokens";
-import Heading from "../../Heading";
+import Heading, { StyledHeading } from "../../Heading";
 import Text from "../../Text";
 import { rtlSpacing } from "../../utils/rtl";
 
@@ -23,6 +23,11 @@ StyledCardHeader.defaultProps = {
 
 const StyledHeadingWrapper = styled.div`
   display: flex;
+  align-items: start;
+
+  ${StyledHeading} {
+    width: 100%;
+  }
 `;
 
 const StyledSubTitle = styled.div`

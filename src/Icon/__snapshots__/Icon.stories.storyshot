@@ -3414,6 +3414,24 @@ exports[`Storyshots Icon List of all icons 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
+                  d="M8.002 16.006c-2.205 0-4-1.795-4-4s1.795-4 4-4 4 1.795 4 4-1.795 4-4 4zm0 1c4.711 0 8 2.467 8 6v1h-16v-1c0-3.533 3.289-6 8-6zm14-10v2h-8v-2h8z"
+                />
+              </svg>
+              <div
+                className="IconList__IconImport-sc-1yquwk8-2 hoEmBP"
+              >
+                import PassengerRemove from "@kiwicom/orbit-components/lib/icons/PassengerRemove"
+              </div>
+            </div>
+            <div
+              className="IconList__Container-sc-1yquwk8-1 flxcKh"
+            >
+              <svg
+                className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24"
+              >
+                <path
                   d="M12.002 12.006c-2.205 0-4-1.795-4-4s1.794-4 4-4 4 1.795 4 4-1.794 4-4 4zm0 1c4.711 0 8 2.467 8 6v1h-16v-1c0-3.533 3.29-6 8-6z"
                 />
               </svg>
@@ -4555,6 +4573,24 @@ exports[`Storyshots Icon List of all icons 1`] = `
                 className="IconList__IconImport-sc-1yquwk8-2 hoEmBP"
               >
                 import Twitter from "@kiwicom/orbit-components/lib/icons/Twitter"
+              </div>
+            </div>
+            <div
+              className="IconList__Container-sc-1yquwk8-1 flxcKh"
+            >
+              <svg
+                className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M5 10h4v6h6v-6h4l-7-7-7 7zm0 8v2h14v-2H5z"
+                />
+              </svg>
+              <div
+                className="IconList__IconImport-sc-1yquwk8-2 hoEmBP"
+              >
+                import Upload from "@kiwicom/orbit-components/lib/icons/Upload"
               </div>
             </div>
             <div

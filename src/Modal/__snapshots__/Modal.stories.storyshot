@@ -119,6 +119,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
+                    data-test="ModalCloseButton"
                     onClick={[Function]}
                     size="normal"
                     type="button"
@@ -1683,6 +1684,7 @@ exports[`Storyshots Modal RTL 1`] = `
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
+                    data-test="ModalCloseButton"
                     onClick={[Function]}
                     size="normal"
                     type="button"
@@ -2804,6 +2806,7 @@ exports[`Storyshots Modal Short Modal 1`] = `
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
+                    data-test="ModalCloseButton"
                     onClick={[Function]}
                     size="normal"
                     type="button"
@@ -4575,6 +4578,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
+                    data-test="ModalCloseButton"
                     onClick={[Function]}
                     size="normal"
                     type="button"
@@ -5513,6 +5517,7 @@ exports[`Storyshots Modal With Form 1`] = `
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
+                    data-test="ModalCloseButton"
                     onClick={[Function]}
                     size="normal"
                     type="button"
@@ -7978,6 +7983,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                 >
                   <button
                     className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
+                    data-test="ModalCloseButton"
                     onClick={[Function]}
                     size="normal"
                     type="button"

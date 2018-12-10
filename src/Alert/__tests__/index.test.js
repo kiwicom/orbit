@@ -5,6 +5,7 @@ import { shallow, mount } from "enzyme";
 import Alert from "../index";
 import defaultTokens from "../../defaultTokens";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import { CLOSE_BUTTON_DATA_TEST } from "../consts";
 
 const message = "Alert message";
 
@@ -35,6 +36,7 @@ describe("Alert", () => {
       </Alert>,
     );
     const ButtonLink = component.find("Alert__CloseContainer ButtonLink");
+    expect(ButtonLink.prop("dataTest")).toBe(CLOSE_BUTTON_DATA_TEST);
     ButtonLink.simulate("click");
     expect(onClose).toHaveBeenCalled();
   });

@@ -24,7 +24,7 @@ Table below contains all types of the props available in the Card component.
 | spaceAfter    | `enum`                |                 | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 
 ## Functional specs
-* By passing the `closable` prop into Card, you will be able to handle `onClose` function and Close icon will be displayed.
+* By passing the `closable` prop into Card, you will be able to handle `onClose` function and Close icon will be displayed. Also, if you want to select the Close Button element for testing purposes, use [data-test="CardCloseButton"] selector.
 
 ## Subcomponents
 Card component offers a good flexibility and many variations in its usage. There are four subcomponents which you may use.

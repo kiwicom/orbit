@@ -46,14 +46,11 @@ const getSizeToken = () => ({ theme, size }) => {
   return sizeTokens[size];
 };
 
-export const StyledText = styled(({ element, children, className, dataTest }) => {
-  const TextElement = element;
-  return (
-    <TextElement className={className} data-test={dataTest}>
-      {children}
-    </TextElement>
-  );
-})`
+export const StyledText = styled(({ element: TextElement, children, className, dataTest }) => (
+  <TextElement className={className} data-test={dataTest}>
+    {children}
+  </TextElement>
+))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${getSizeToken()};
   font-weight: ${getWeightToken()};

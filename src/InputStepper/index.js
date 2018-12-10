@@ -51,7 +51,7 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
     const { maxValue, step = 1 } = this.props;
     const newValue = value + step;
     this.setState({
-      value: maxValue && newValue > maxValue ? maxValue : newValue,
+      value: newValue >= +maxValue ? maxValue : newValue,
     });
   };
 
@@ -61,7 +61,7 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
     const newValue = value - step;
 
     this.setState({
-      value: minValue && newValue < minValue ? minValue : newValue,
+      value: newValue <= +minValue ? minValue : newValue,
     });
   };
 

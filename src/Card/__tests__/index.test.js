@@ -8,6 +8,8 @@ import Heading from "../../Heading";
 import Text from "../../Text";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import defaultTokens from "../../defaultTokens";
+import CardSectionHeader from "../CardSection/CardSectionHeader";
+import CardSectionContent from "../CardSection/CardSectionContent";
 
 const text = "Text for testing";
 
@@ -31,11 +33,13 @@ describe("Card", () => {
     const component = mount(<Card spaceAfter={SPACINGS_AFTER.NORMAL} />);
     expect(component).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
   });
+
   it("should have data-test", () => {
     const dataTest = "test";
     const component = shallow(<Card dataTest={dataTest} />);
     expect(component.render().prop("data-test")).toBe(dataTest);
   });
+
   it("should be closable", () => {
     const onClose = jest.fn();
     const component = shallow(<Card onClose={onClose} closable />);
@@ -44,5 +48,29 @@ describe("Card", () => {
       .children()
       .simulate("click");
     expect(onClose).toHaveBeenCalled();
+  });
+});
+
+describe("CardSection", () => {
+  const onExpand = jest.fn();
+  const onClose = jest.fn();
+
+  const component = mount(
+    <Card>
+      <CardSection expandable onExpand={onExpand} onClose={onClose}>
+        <CardSectionHeader>
+          <Heading type="title3" element="h3">
+            Title
+          </Heading>
+          <Text>Description</Text>
+        </CardSectionHeader>
+        <CardSectionContent>Content</CardSectionContent>
+      </CardSection>
+    </Card>,
+  );
+
+  it("should have callback onExpand", () => {
+    component.find("CardSectionHeader__StyledCardSectionHeader").simulate("click");
+    expect(onExpand).toHaveBeenCalled();
   });
 });

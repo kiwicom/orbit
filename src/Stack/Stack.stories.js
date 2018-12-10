@@ -50,6 +50,8 @@ import Clock from "../icons/Clock";
 import Check from "../icons/Check";
 import FlightReturn from "../icons/FlightReturn";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import CardSectionHeader from "../Card/CardSection/CardSectionHeader";
+import CardSectionContent from "../Card/CardSection/CardSectionContent";
 
 import Stack from "./index";
 
@@ -306,12 +308,17 @@ storiesOf("Stack", module)
                     <CardHeader title="Hola amigo" />
                   </Card>
                   <Card>
-                    <CardHeader title="Insert your title here..." subTitle="subtitle" />
-                    <CardSection title="Insert your title here..." subTitle="subtitle" />
-                    <CardSection title="Insert your title here..." subTitle="subtitle" expandable>
-                      This is hidden content
+                    <CardSection>
+                      <Heading type="title3">Insert your title here...</Heading>
+                      <Text>subtitle</Text>
                     </CardSection>
-                    <CardSection title="Insert your title here..." subTitle="subtitle" />
+                    <CardSection>
+                      <CardSectionHeader>
+                        <Heading type="title3">Insert your title here...</Heading>
+                        <Text>subtitle</Text>
+                      </CardSectionHeader>
+                      <CardSectionContent>Content</CardSectionContent>
+                    </CardSection>
                   </Card>
                 </Stack>
                 <Stack direction="column" align="center">
@@ -320,11 +327,25 @@ storiesOf("Stack", module)
                   </Card>
                   <Card>
                     <CardHeader title="Insert your title here..." subTitle="subtitle" />
-                    <CardSection title="Insert your title here..." subTitle="subtitle" />
-                    <CardSection title="Insert your title here..." subTitle="subtitle" expandable>
-                      This is hidden content
+                    <CardSection>
+                      <CardSectionHeader>
+                        <Heading type="title3">Insert your title here...</Heading>
+                        <Text>subtitle</Text>
+                      </CardSectionHeader>
                     </CardSection>
-                    <CardSection title="Insert your title here..." subTitle="subtitle" />
+                    <CardSection expandable>
+                      <CardSectionHeader>
+                        <Heading type="title3">Insert your title here...</Heading>
+                        <Text>subtitle</Text>
+                      </CardSectionHeader>
+                      <CardSectionContent>Hidden content</CardSectionContent>
+                    </CardSection>
+                    <CardSection>
+                      <CardSectionHeader>
+                        <Heading type="title3">Insert your title here...</Heading>
+                        <Text>subtitle</Text>
+                      </CardSectionHeader>
+                    </CardSection>
                   </Card>
                 </Stack>
                 <Stack direction="row" justify="between">

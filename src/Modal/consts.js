@@ -1,8 +1,8 @@
 // @flow
-const SIZES = {
+export const SIZES = {
   SMALL: "small",
   NORMAL: "normal",
   LARGE: "large",
 };
 
-export default SIZES;
+export const CLOSE_BUTTON_DATA_TEST = "ModalCloseButton";

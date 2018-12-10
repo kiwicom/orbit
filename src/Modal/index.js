@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import defaultTokens from "../defaultTokens";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import Close from "../icons/Close";
-import SIZES from "./consts";
+import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
 import media from "../utils/media";
 import { StyledModalFooter } from "./ModalFooter";
 import { MobileHeader } from "./ModalHeader";
@@ -14,7 +14,7 @@ import { StyledHeading } from "../Heading";
 import { right } from "../utils/rtl";
 import transition from "../utils/transition";
 
-import type { Props, State, CloseElementType } from "./index";
+import type { Props, State } from "./index";
 
 const getSizeToken = () => ({ size }) => {
   const tokens = {
@@ -212,12 +212,6 @@ ModalWrapperContent.defaultProps = {
   theme: defaultTokens,
 };
 
-const CloseElement = ({ onClose, modalWidth, scrolled, fixedClose }: CloseElementType) => (
-  <CloseContainer modalWidth={modalWidth} scrolled={scrolled} fixedClose={fixedClose}>
-    {onClose && <ButtonLink onClick={onClose} size="normal" icon={<Close />} transparent />}
-  </CloseContainer>
-);
-
 class Modal extends React.PureComponent<Props, State> {
   state = {
     scrolled: false,
@@ -371,12 +365,17 @@ class Modal extends React.PureComponent<Props, State> {
             modalWidth={modalWidth}
             footerHeight={footerHeight}
           >
-            <CloseElement
-              onClose={onClose}
-              modalWidth={modalWidth}
-              scrolled={scrolled}
-              fixedClose={fixedClose}
-            />
+            <CloseContainer modalWidth={modalWidth} scrolled={scrolled} fixedClose={fixedClose}>
+              {onClose && (
+                <ButtonLink
+                  onClick={onClose}
+                  size="normal"
+                  icon={<Close />}
+                  transparent
+                  dataTest={CLOSE_BUTTON_DATA_TEST}
+                />
+              )}
+            </CloseContainer>
             {children}
           </ModalWrapperContent>
         </ModalWrapper>

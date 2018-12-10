@@ -10,6 +10,7 @@ import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import defaultTokens from "../../defaultTokens";
 import CardSectionHeader from "../CardSection/CardSectionHeader";
 import CardSectionContent from "../CardSection/CardSectionContent";
+import CLOSE_BUTTON_DATA_TEST from "../consts";
 
 const text = "Text for testing";
 
@@ -43,10 +44,9 @@ describe("Card", () => {
   it("should be closable", () => {
     const onClose = jest.fn();
     const component = shallow(<Card onClose={onClose} closable />);
-    component
-      .find("Card__CloseContainer")
-      .children()
-      .simulate("click");
+    const ButtonLink = component.find("ButtonLink");
+    expect(ButtonLink.prop("dataTest")).toBe(CLOSE_BUTTON_DATA_TEST);
+    ButtonLink.simulate("click");
     expect(onClose).toHaveBeenCalled();
   });
 });

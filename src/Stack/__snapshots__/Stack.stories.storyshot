@@ -2675,7 +2675,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                       Transfer protected by the 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 daTvTO"
                         rel=""
                       >
                         Kiwi.com Guarantee
@@ -2876,7 +2876,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                       Transfer protected by the 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 daTvTO"
                         rel=""
                       >
                         Kiwi.com Guarantee
@@ -3059,7 +3059,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                       Transfer protected by the 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 daTvTO"
                         rel=""
                       >
                         Kiwi.com Guarantee
@@ -3455,7 +3455,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                       Transfer protected by the 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 daTvTO"
                         rel=""
                       >
                         Kiwi.com Guarantee
@@ -30844,7 +30844,7 @@ exports[`Storyshots Stack Nested example 1`] = `
               className="Text__StyledText-sc-19qtt4y-0 efCYLv"
             >
               <a
-                className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                className="TextLink__StyledTextLink-sc-1bvlje4-1 daTvTO"
                 rel=""
               >
                 Forgot password?
@@ -32881,7 +32881,7 @@ exports[`Storyshots Stack RTL 1`] = `
               className="Text__StyledText-sc-19qtt4y-0 hsoaey"
             >
               <a
-                className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+                className="TextLink__StyledTextLink-sc-1bvlje4-1 daTvTO"
                 rel=""
               >
                 Forgot password?

@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select should match snapshot 1`] = `
-<Select__Label
-  data-test="test"
->
+<Select__Label>
   <Select__SelectContainer
     disabled={false}
     theme={
@@ -392,6 +390,7 @@ exports[`Select should match snapshot 1`] = `
     }
   >
     <Select__StyledSelect
+      dataTest="test"
       disabled={false}
       filled={true}
       name="name"

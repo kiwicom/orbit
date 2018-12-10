@@ -31,40 +31,20 @@ describe("Select", () => {
       dataTest={dataTest}
     />,
   );
+  const select = component.find("Select__StyledSelect");
   it("should have data-test", () => {
-    expect(component.prop("data-test")).toBe(dataTest);
+    expect(select.render().prop("data-test")).toBe(dataTest);
   });
   it("should have name", () => {
-    expect(
-      component
-        .find("Select__StyledSelect")
-        .render()
-        .prop("attribs").name,
-    ).toBe(name);
+    expect(select.render().prop("attribs").name).toBe(name);
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();
   });
-
-  it("should have data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
-  });
-
   it("should have tabindex", () => {
-    expect(
-      component
-        .find("Select__StyledSelect")
-        .render()
-        .prop("tabindex"),
-    ).toBe(tabIndex);
+    expect(select.render().prop("tabindex")).toBe(tabIndex);
   });
-
   it("should have placeholder", () => {
-    expect(
-      component
-        .find("Select__StyledSelect")
-        .childAt(0)
-        .text(),
-    ).toBe(placeholder);
+    expect(select.childAt(0).text()).toBe(placeholder);
   });
 });

@@ -103,8 +103,9 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
     } = this.props;
     const { value } = this.state;
     return (
-      <StyledInputStepper dataTest={dataTest}>
+      <StyledInputStepper>
         <InputField
+          dataTest={dataTest}
           size={size}
           label={label}
           disabled={disabled}

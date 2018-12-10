@@ -909,7 +909,6 @@ exports[`Storyshots InputFile Playground 1`] = `
         >
           <label
             className="InputFile__Field-sc-12oq9bq-0 eLePZo"
-            data-test="test"
           >
             <input
               accept={
@@ -919,6 +918,7 @@ exports[`Storyshots InputFile Playground 1`] = `
                 ]
               }
               className="InputFile__Input-sc-12oq9bq-2 jotmqH"
+              data-test="test"
               name="fileInput"
               onBlur={[Function]}
               onChange={[Function]}

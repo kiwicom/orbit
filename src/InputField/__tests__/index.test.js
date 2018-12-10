@@ -48,7 +48,6 @@ describe(`InputField with help, prefix and suffix`, () => {
     />,
   );
   const prefix = component.find("InputField__Prefix");
-  const labelComponent = component.find("InputField__Field");
   const input = component.find("InputField__Input");
   const suffix = component.find("InputField__Suffix");
 
@@ -80,7 +79,7 @@ describe(`InputField with help, prefix and suffix`, () => {
     expect(input.prop("maxLength")).toBe(maxLength);
     expect(input.prop("minLength")).toBe(minLength);
     expect(input.render().prop("tabindex")).toBe(tabIndex);
-    expect(labelComponent.render().prop("data-test")).toBe(dataTest);
+    expect(input.render().prop("data-test")).toBe(dataTest);
   });
   it("should contain a Button as suffix", () => {
     expect(suffix.find("ButtonLink").exists()).toBe(true);

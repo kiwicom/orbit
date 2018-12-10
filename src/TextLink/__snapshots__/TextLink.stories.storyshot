@@ -421,7 +421,7 @@ exports[`Storyshots TextLink Playground 1`] = `
           }
         >
           <a
-            className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+            className="TextLink__StyledTextLink-sc-1bvlje4-1 daTvTO"
             data-test="test"
             href="https://kiwi.com"
             onClick={[Function]}
@@ -1578,7 +1578,7 @@ exports[`Storyshots TextLink Secondary link 1`] = `
           }
         >
           <a
-            className="TextLink__StyledTextLink-sc-1bvlje4-1 dBmWeS"
+            className="TextLink__StyledTextLink-sc-1bvlje4-1 daTvTO"
             href="https://kiwi.com"
             onClick={[Function]}
             rel=""

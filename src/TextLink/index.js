@@ -40,7 +40,7 @@ export const StyledTextLink = styled(({ theme, type, ...props }) => (
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightLinks};
   text-decoration: ${({ theme, type }) =>
-    type === [TYPE_OPTIONS.SECONDARY]
+    type === TYPE_OPTIONS.SECONDARY
       ? theme.orbit.textDecorationTextLinkSecondary
       : theme.orbit.textDecorationTextLinkPrimary};
   cursor: pointer;
@@ -50,17 +50,17 @@ export const StyledTextLink = styled(({ theme, type, ...props }) => (
 
   &:hover {
     text-decoration: ${({ theme, type }) =>
-      type === [TYPE_OPTIONS.SECONDARY]
+      type === TYPE_OPTIONS.SECONDARY
         ? theme.orbit.textDecorationTextLinkSecondaryHover
         : theme.orbit.textDecorationTextLinkPrimaryHover};
     color: ${({ theme, type }) =>
-      type === [TYPE_OPTIONS.SECONDARY]
+      type === TYPE_OPTIONS.SECONDARY
         ? theme.orbit.colorTextLinkSecondaryHover
         : theme.orbit.colorTextLinkPrimaryHover};
 
     ${IconContainer} {
       color: ${({ theme, type }) =>
-        type === [TYPE_OPTIONS.SECONDARY]
+        type === TYPE_OPTIONS.SECONDARY
           ? theme.orbit.colorTextLinkSecondaryHover
           : theme.orbit.colorTextLinkPrimaryHover};
     }

@@ -25,6 +25,7 @@ Table below contains all types of the props available in ServiceLogo component.
 | `"Alipay"`        | `"medium"`  |
 | `"Amex"`          | `"large"`   |
 | `"AxaAssistance"` |
+| `"ChinaUnionPay"` |
 | `"DinersClub"`    |
 | `"Discover"`      |
 | `"JCB"`           |

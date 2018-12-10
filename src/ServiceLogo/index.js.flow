@@ -8,6 +8,7 @@ export type Name =
   | "Alipay"
   | "Amex"
   | "AxaAssistance"
+  | "ChinaUnionPay"
   | "DinersClub"
   | "Discover"
   | "JCB"

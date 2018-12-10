@@ -2006,7 +2006,6 @@ exports[`Storyshots InputField Playground 1`] = `
         >
           <label
             className="InputField__Field-sc-4opay-0 kCAFyx"
-            data-test="test"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -2033,6 +2032,7 @@ exports[`Storyshots InputField Playground 1`] = `
               </div>
               <input
                 className="InputField__Input-sc-4opay-6 bqekVA"
+                data-test="test"
                 disabled={false}
                 name="input"
                 onBlur={[Function]}

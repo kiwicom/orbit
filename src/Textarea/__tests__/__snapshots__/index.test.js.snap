@@ -792,7 +792,6 @@ exports[`Textarea number with error and help should match snapshot 1`] = `
 
 exports[`Textarea with help should match snapshot 1`] = `
 <Textarea__Field
-  data-test="test"
   fullHeight={true}
   theme={
     Object {
@@ -1569,6 +1568,7 @@ exports[`Textarea with help should match snapshot 1`] = `
     Label
   </FormLabel>
   <Textarea__StyledTextArea
+    data-test="test"
     fullHeight={true}
     maxLength={200}
     name="name"

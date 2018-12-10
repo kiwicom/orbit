@@ -394,11 +394,11 @@ exports[`Storyshots CheckBox Playground 1`] = `
         >
           <label
             className="Checkbox__Label-sc-1x6twh3-5 ccpUEG"
-            data-test="test"
           >
             <input
               checked={true}
               className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
+              data-test="test"
               disabled={true}
               name="name"
               onChange={[Function]}

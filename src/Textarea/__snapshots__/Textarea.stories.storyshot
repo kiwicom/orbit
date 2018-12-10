@@ -373,7 +373,6 @@ exports[`Storyshots Textarea Playground 1`] = `
         >
           <label
             className="Textarea__Field-sc-1ezoqgy-0 zzGLi"
-            data-test="test"
           >
             <span
               className="FormLabel-sc-1927civ-1 iTEGJS"
@@ -384,6 +383,7 @@ exports[`Storyshots Textarea Playground 1`] = `
             </span>
             <textarea
               className="Textarea__StyledTextArea-sc-1ezoqgy-1 iQaAKZ"
+              data-test="test"
               disabled={true}
               onBlur={[Function]}
               onChange={[Function]}

@@ -419,6 +419,7 @@ exports[`Storyshots InputStepper Playground 1`] = `
                 </div>
                 <input
                   className="InputField__Input-sc-4opay-6 iDeTJU"
+                  data-test="test"
                   disabled={false}
                   max={10}
                   min={1}

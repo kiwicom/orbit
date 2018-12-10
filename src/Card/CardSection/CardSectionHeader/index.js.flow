@@ -1,0 +1,11 @@
+// @flow
+import type { ReactComponentStyled } from "styled-components";
+
+export type Props = {|
+  children: React$Node,
+  actions?: React$Node,
+|}
+
+declare export var StyledCardSectionHeader: ReactComponentStyled<any>;
+
+declare export default React$ComponentType<Props>;

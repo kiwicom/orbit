@@ -9,10 +9,18 @@ import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 import * as Icons from "../icons";
 import Heading from "../Heading";
 import Text from "../Text";
+import Loading from "../Loading";
+import Button from "../Button";
 import CardHeader from "./CardHeader";
 import CardSection from "./CardSection";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import CardSectionHeader from "./CardSection/CardSectionHeader";
+import CardSectionContent from "./CardSection/CardSectionContent";
+import Clock from "../icons/Clock";
+import CarrierLogo from "../CarrierLogo";
+import Stack from "../Stack";
+import Badge from "../Badge";
 
 import Card from "./index";
 
@@ -142,14 +150,101 @@ storiesOf("Card", module)
               sectionFn: () => (
                 <Card>
                   <CardHeader title={title} subTitle={description} />
-                  <CardSection title="Insert your title here..." subTitle="subtitle" expandable>
-                    This is hidden content
+                  <CardSection expandable>
+                    <CardSectionHeader>
+                      <Heading type="title3" element="h3">
+                        {title}
+                      </Heading>
+                    </CardSectionHeader>
+                    <CardSectionContent>
+                      <Text>{description}</Text>
+                    </CardSectionContent>
                   </CardSection>
-                  <CardSection title="Insert your title here..." subTitle="subtitle" expandable>
-                    This is hidden content
+                  <CardSection expandable>
+                    <CardSectionHeader>
+                      <Heading type="title3" element="h3">
+                        {title}
+                      </Heading>
+                    </CardSectionHeader>
+                    <CardSectionContent>
+                      <Text>{description}</Text>
+                    </CardSectionContent>
                   </CardSection>
-                  <CardSection title="Insert your title here..." subTitle="subtitle" expandable>
-                    This is hidden content
+                  <CardSection expandable>
+                    <CardSectionHeader>
+                      <Heading type="title3" element="h3">
+                        {title}
+                      </Heading>
+                      <Text>{description}</Text>
+                    </CardSectionHeader>
+                    <CardSectionContent>
+                      <Text>{description}</Text>
+                    </CardSectionContent>
+                  </CardSection>
+                </Card>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Card with default expanded", () => {
+    const initialExpanded = boolean("initialExpended", true);
+    return {
+      info:
+        "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Card>
+                  <CardSection expandable>
+                    <CardSectionHeader>
+                      <Stack direction="row" align="center" justify="between">
+                        <div>
+                          <CarrierLogo size="large" carriers={[{ code: "FR", name: "Ryanair" }]} />
+                        </div>
+                        <div>
+                          <Stack direction="row" align="center">
+                            <Text type="secondary">Trip length: 1h55m</Text>
+                            <Badge icon={<Clock />} type="warning">
+                              Unavailable
+                            </Badge>
+                          </Stack>
+                        </div>
+                      </Stack>
+                    </CardSectionHeader>
+                    <CardSectionContent>Hidden content</CardSectionContent>
+                  </CardSection>
+                  <CardSection
+                    expandable
+                    initialExpanded={initialExpanded}
+                    onExpand={action("onExpand")}
+                    onClose={action("onClose")}
+                  >
+                    <CardSectionHeader
+                      actions={
+                        <div>
+                          <Button type="secondary" size="small">
+                            Close
+                          </Button>
+                        </div>
+                      }
+                    >
+                      <Stack direction="row" align="center" justify="between">
+                        <div>
+                          <CarrierLogo size="large" carriers={[{ code: "FR", name: "Ryanair" }]} />
+                        </div>
+                        <div>
+                          <Stack direction="row" align="center">
+                            <Text type="secondary">Trip length: 1h55m</Text>
+                          </Stack>
+                        </div>
+                      </Stack>
+                    </CardSectionHeader>
+                    <CardSectionContent visible>By default visible content</CardSectionContent>
                   </CardSection>
                 </Card>
               ),
@@ -172,11 +267,27 @@ storiesOf("Card", module)
               sectionFn: () => (
                 <Card>
                   <CardHeader title={title} subTitle={description} />
-                  <CardSection title="Insert your title here..." subTitle="subtitle" />
-                  <CardSection title="Insert your title here..." subTitle="subtitle" expandable>
-                    This is hidden content
+                  <CardSection>
+                    <CardSectionHeader>
+                      <Heading type="title3" element="h3">
+                        {title}
+                      </Heading>
+                      <Text>Test</Text>
+                    </CardSectionHeader>
+                    <CardSectionContent>{description}</CardSectionContent>
                   </CardSection>
-                  <CardSection title="Insert your title here..." subTitle="subtitle" />
+                  <CardSection expandable>
+                    <CardSectionHeader>
+                      <Heading type="title3">{title}</Heading>
+                    </CardSectionHeader>
+                    <CardSectionContent>{description}</CardSectionContent>
+                  </CardSection>
+                  <CardSection>
+                    <CardSectionHeader>
+                      <Heading type="title3">{title}</Heading>
+                    </CardSectionHeader>
+                    <CardSectionContent>{description}</CardSectionContent>
+                  </CardSection>
                 </Card>
               ),
             },
@@ -185,6 +296,30 @@ storiesOf("Card", module)
       ],
     };
   })
+  .addWithChapters("Loading Card", () => ({
+    info:
+      "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <Card>
+                <Loading type="boxLoader" loading>
+                  {true && (
+                    <React.Fragment>
+                      <CardHeader title="Test" />
+                      <CardSection>kek</CardSection>
+                    </React.Fragment>
+                  )}
+                </Loading>
+              </Card>
+            ),
+          },
+        ],
+      },
+    ],
+  }))
   .addWithChapters("Playground", () => {
     const title = text("Title", "Customisable card title");
     const description = text("Description", "This is a customisable description of the card.");
@@ -257,6 +392,29 @@ storiesOf("Card", module)
                       Section with Heading and text
                     </Heading>
                     <Text>Text in section</Text>
+                  </CardSection>
+                  <CardSection expandable>
+                    <CardSectionHeader>
+                      <Heading type="title3" element="h3">
+                        Content with Heading and text
+                      </Heading>
+                      <Text>Text in content</Text>
+                    </CardSectionHeader>
+                    <CardSectionContent>
+                      <Text>Text in content</Text>
+                    </CardSectionContent>
+                  </CardSection>
+
+                  <CardSection expandable initialExpanded>
+                    <CardSectionHeader actions={<Button size="small">Action</Button>}>
+                      <Heading type="title3" element="h3">
+                        Content with Heading and text
+                      </Heading>
+                      <Text>Text in content</Text>
+                    </CardSectionHeader>
+                    <CardSectionContent>
+                      <Text>Text in content</Text>
+                    </CardSectionContent>
                   </CardSection>
                 </Card>
               </RenderInRtl>

@@ -4,13 +4,10 @@ import styled from "styled-components";
 
 import defaultTokens from "../../defaultTokens";
 import ChevronDown from "../../icons/ChevronDown";
-import Heading from "../../Heading/index";
-import Text from "../../Text/index";
 import { getSize } from "../../Icon";
 import { ICON_SIZES } from "../../Icon/consts";
-import { right } from "../../utils/rtl";
 
-import type { Props } from "./index";
+import type { ContextType, Props } from "./index";
 
 const StyledCardSectionIconRight = styled(ChevronDown)`
   align-self: center;
@@ -31,9 +28,6 @@ const StyledCardSectionContent = styled.div`
       ? `1px solid ${theme.orbit.paletteCloudNormal}`
       : `0px solid ${theme.orbit.paletteCloudNormal}`};
   padding-top: ${({ theme, expanded }) => expanded && `${theme.orbit.spaceMedium}`};
-  transition: max-height ${({ theme }) => theme.orbit.durationFast} linear,
-    padding ${({ theme }) => theme.orbit.durationFast} linear,
-    border-top ${({ theme }) => theme.orbit.durationFast} linear;
   overflow: hidden;
 `;
 
@@ -58,10 +52,6 @@ export const StyledCardSection = styled.div`
   position: relative;
   background: ${({ theme }) => theme.orbit.backgroundCard};
 
-  ${StyledCardSectionIconRight} {
-    transform: ${({ expanded }) => expanded && "rotate(-180deg)"};
-  }
-
   ${StyledCardSectionContent} {
     max-height: ${getMaxHeight};
   }
@@ -75,7 +65,6 @@ const StyledCardSectionHeader = styled.div`
   margin-bottom: ${({ theme, expanded }) => expanded && theme.orbit.spaceMedium};
   display: flex;
   flex-direction: row;
-  transition: margin ${({ theme }) => theme.orbit.durationFast} linear;
   cursor: pointer;
   position: relative;
   min-height: ${({ expandable }) => expandable && getSize(ICON_SIZES.MEDIUM)};
@@ -85,62 +74,45 @@ StyledCardSectionHeader.defaultProps = {
   theme: defaultTokens,
 };
 
-const StyledTitleAndSubtitle = styled.div`
-  flex: 1;
-  padding-${right}: ${({ theme }) => theme.orbit.spaceMedium};
-`;
-
-StyledTitleAndSubtitle.defaultProps = {
-  theme: defaultTokens,
-};
+export const CardSectionContext: React.Context<ContextType> = React.createContext({
+  expandable: false,
+  expanded: false,
+  handleToggleSection: () => {},
+});
 
 class CardSection extends React.Component<any, Props> {
   componentDidMount() {
-    const { expandable } = this.props;
+    const { handleToggleSection, initialExpanded, setInitialExpandedSection } = this.props;
 
-    if (expandable) {
-      setTimeout(this.setHeight, 250); // Prevent showing children on initial render
+    if (initialExpanded) {
+      handleToggleSection();
+      setInitialExpandedSection();
     }
   }
 
-  componentDidUpdate() {
-    const { expandable } = this.props;
+  injectCallbackAndToggleSection = () => {
+    const { handleToggleSection, onClose, onExpand, expanded } = this.props;
+    handleToggleSection(); // First do toggle
 
-    if (expandable) {
-      this.setHeight(); // Prevent showing children on initial render
+    if (expanded && onClose) {
+      // If is expanded -> action is closing
+      onClose();
     }
-  }
-
-  setHeight = () => {
-    this.contentHeight = this.node?.current.clientHeight;
+    if (!expanded && onExpand) {
+      // if is closed > action is expanding
+      onExpand();
+    }
   };
 
-  contentHeight: number = 0;
-  node: { current: any | HTMLDivElement } = React.createRef();
-
   render() {
-    const { title, subTitle, children, dataTest, expandable, expanded, onClick } = this.props;
+    const { children, dataTest, expandable, expanded } = this.props;
     return (
-      <StyledCardSection
-        data-test={dataTest}
-        expandable={expandable}
-        expanded={expanded}
-        contentHeight={this.contentHeight}
-      >
-        <StyledCardSectionHeader expandable={expandable} expanded={expanded} onClick={onClick}>
-          <StyledTitleAndSubtitle>
-            {title && (
-              <Heading type="title3" element="h3">
-                {title}
-              </Heading>
-            )}
-            {subTitle && <Text>{subTitle}</Text>}
-          </StyledTitleAndSubtitle>
-          {expandable && <StyledCardSectionIconRight size="medium" color="secondary" />}
-        </StyledCardSectionHeader>
-        <StyledCardSectionContent expanded={expanded}>
-          <div ref={this.node}>{children}</div>
-        </StyledCardSectionContent>
+      <StyledCardSection data-test={dataTest} expandable={expandable} expanded={expanded}>
+        <CardSectionContext.Provider
+          value={{ expandable, expanded, handleToggleSection: this.injectCallbackAndToggleSection }}
+        >
+          {children}
+        </CardSectionContext.Provider>
       </StyledCardSection>
     );
   }

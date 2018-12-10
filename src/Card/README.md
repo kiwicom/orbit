@@ -69,10 +69,63 @@ import CardSection from "@kiwicom/orbit-components/lib/Card/CardSection";
 #### Props
 Table below contains all types of the props in CardSection component.
 
-| Name          | Type                  | Default         | Description                      |
-| :------------ | :---------------------| :-------------- | :------------------------------- |
-| children      | `React.Node`          |                 | The content of the CardSection.
-| title         | `React.Node`          |                 | The title of the CardSection
-| subTitle      | `React.Node`          |                 | The description of the CardSection.
-| expandable    | `boolean`             |                 | CardSection may be expandable
-| dataTest      | `string`              |                 | Optional prop for testing purposes.
+| Name            | Type                  | Default         | Description                      |
+| :---------------| :---------------------| :-------------- | :------------------------------- |
+| **children**    | `React.Node`          |                 | The content of the CardSection.
+| expandable      | `boolean`             |                 | CardSection could be expandable
+| initialExpanded | `boolean`             |                 | CardSection is expanded by default
+| onClose         | `func`                |                 | Callback after close
+| onExpand        | `func`                |                 | Callback after expand
+| dataTest        | `string`              |                 | Optional prop for testing purposes.
+
+
+### CardSectionHeader
+```jsx
+import Card from "@kiwicom/orbit-components/lib/Card";
+import CardSection from "@kiwicom/orbit-components/lib/Card/CardSection";
+import CardSectionHeader from "@kiwicom/orbit-components/lib/Card/CardSection/CardSectionHeader";
+```
+#### Usage:
+```jsx
+<Card>
+  <CardSection>
+    <CardSectionHeader>
+      Hello World!
+    </CardSectionHeader>
+  </CardSection>
+</Card>
+```
+
+#### Props
+Table below contains all types of the props in CardSectionHeader component.
+
+| Name            | Type                  | Default         | Description                      |
+| :---------------| :---------------------| :-------------- | :------------------------------- |
+| **children**    | `React.Node`          |                 | The content of the CardSection.
+| actions         | `React.Node`          |                 | Actions in CardSectionHeader especially Buuttons 
+
+
+### CardSectionContent
+```jsx
+import Card from "@kiwicom/orbit-components/lib/Card";
+import CardSection from "@kiwicom/orbit-components/lib/Card/CardSection";
+import CardSectionContent from "@kiwicom/orbit-components/lib/Card/CardSection/CardSectionContent";
+```
+#### Usage:
+```jsx
+<Card>
+  <CardSection>
+    <CardSectionContent>
+      Hello World!
+    </CardSectionContent>
+  </CardSection>
+</Card>
+```
+
+#### Props
+Table below contains all types of the props in CardSectionContent component.
+
+| Name            | Type                  | Default         | Description                      |
+| :---------------| :---------------------| :-------------- | :------------------------------- |
+| **children**    | `React.Node`          |                 | The content of the CardSection.
+| visible         | `boolean`             |                 | If visible is passed and CardSection is expandable, the content will be always shown

@@ -10,6 +10,8 @@ import CardHeader, { StyledCardHeader } from "./CardHeader";
 import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
 import { right } from "../utils/rtl";
+import { StyledCardSectionContent } from "./CardSection/CardSectionContent";
+import { StyledCardSectionHeader } from "./CardSection/CardSectionHeader";
 
 import type { Props, State } from "./index";
 
@@ -19,23 +21,32 @@ const getBorder = ({ theme }) =>
 const getBorderRadius = ({ theme }) => theme.orbit.borderRadiusNormal;
 
 // Logic of borders radius
-
 const StyledChildWrapper = styled.div`
-  ${StyledCardSection}, ${StyledCardHeader}, ${StyledLoading} {
+  margin: ${({ theme, expanded }) => expanded && `${theme.orbit.spaceXSmall} 0`};
+  transition: margin ${({ theme, initialExpanded }) =>
+    !initialExpanded && theme.orbit.durationFast} ease-in-out;
+
+  ${StyledCardSection}, ${StyledCardHeader}, > ${StyledLoading} {
     border-top-left-radius: ${({ roundedTopBorders }) => roundedTopBorders && getBorderRadius};
     border-top-right-radius: ${({ roundedTopBorders }) => roundedTopBorders && getBorderRadius};
     border-bottom-left-radius: ${({ roundedBottomBorders }) =>
       roundedBottomBorders && getBorderRadius};
     border-bottom-right-radius: ${({ roundedBottomBorders }) =>
       roundedBottomBorders && getBorderRadius};
+    box-shadow: ${({ expanded }) =>
+      expanded && `0 4px 12px 0 rgba(23, 27, 30, 0.1)`}; //TODO Create token boxShadowCard
     border-left: ${getBorder};
     border-right: ${getBorder};
     border-bottom: ${getBorder};
     background: ${({ theme }) => theme.orbit.backgroundCard};
   }
 
-  + div ${StyledCardSection} {
+  + div ${StyledCardSection}, ${StyledCardSection} { // If expanded - next CardSection and current CardSection will have border-top
     border-top: ${({ expanded }) => expanded && getBorder};
+    
+    ${StyledCardSectionHeader}, ${StyledCardSectionContent} {
+      transition: ${({ initialExpanded }) => (initialExpanded ? "none" : undefined)}
+    }
   }
 `;
 
@@ -55,8 +66,9 @@ const StyledCard = styled.div`
   }
 
   ${StyledChildWrapper} {
+  
     &:first-of-type {
-      ${StyledCardHeader}, ${StyledCardSection}, ${StyledLoading} {
+      ${StyledCardHeader}, ${StyledCardSection}, > ${StyledLoading} {
         border-top: ${getBorder};
         border-top-left-radius: ${getBorderRadius};
         border-top-right-radius: ${getBorderRadius};
@@ -87,32 +99,14 @@ const CloseContainer = styled.div`
   z-index: 1;
 `;
 
-// Logic of spacing and animation in expandable Card
-
-const StyledExpandableSectionWrapper = styled.div`
-  margin: ${({ theme, expanded }) => expanded && `${theme.orbit.spaceXSmall} 0`};
-  transition: margin ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  box-shadow: ${({ expanded }) =>
-    expanded && `0 4px 12px 0 rgba(23, 27, 30, 0.1)`}; //TODO Create token boxShadowCard
-
-  // Adds top border of expanded section
-  ${StyledCardSection} {
-    border-top: ${({ expanded }) => expanded && getBorder};
-  }
-`;
-
-StyledExpandableSectionWrapper.defaultProps = {
-  theme: defaultTokens,
-};
-
 class Card extends React.Component<Props, State> {
   state = {
     expandedSections: [],
+    initialExpandedSections: [],
   };
 
   getRoundedBorders = (index: number) => {
     const { expandedSections } = this.state;
-
     const topBorder =
       expandedSections.indexOf(index - 1) !== -1 || expandedSections.indexOf(index) !== -1;
     const bottomBorder =
@@ -144,10 +138,17 @@ class Card extends React.Component<Props, State> {
     return children;
   };
 
-  isExpandableCardSection = (item: any) =>
-    item.type.name === CardSection.name && item.props.expandable;
+  setInitialExpandedSection = (index: number) => {
+    this.setState({
+      initialExpandedSections: [...this.state.initialExpandedSections, index],
+    });
+  };
 
   isExpanded = (index: number) => this.state.expandedSections.indexOf(index) !== -1;
+  isInitialExpanded = (index: number) => this.state.initialExpandedSections.indexOf(index) !== -1;
+
+  isExpandableCardSection = (item: any) =>
+    item.type.name === CardSection.name && item.props.expandable;
 
   handleToggleSection = (index: number) => {
     this.setState({
@@ -155,6 +156,9 @@ class Card extends React.Component<Props, State> {
         this.state.expandedSections.indexOf(index) === -1
           ? [...this.state.expandedSections, index]
           : this.state.expandedSections.filter(value => value !== index),
+      initialExpandedSections: [
+        ...this.state.initialExpandedSections.filter(sectionIndex => sectionIndex !== index),
+      ],
     });
   };
 
@@ -174,41 +178,29 @@ class Card extends React.Component<Props, State> {
   };
 
   renderSection = (section: any, index: number) => {
-    const roundedBorders = this.getRoundedBorders(index);
-    return (
-      <StyledChildWrapper
-        roundedTopBorders={roundedBorders.top}
-        roundedBottomBorders={roundedBorders.bottom}
-      >
-        {section}
-      </StyledChildWrapper>
-    );
-  };
-
-  renderExpandableSection = (section: any, index: number) => {
     const isExpanded = this.isExpanded(index);
+    const isInitialExpanded = this.isInitialExpanded(index);
+
     const roundedBorders = this.getRoundedBorders(index);
     return (
       <StyledChildWrapper
         roundedTopBorders={roundedBorders.top}
         roundedBottomBorders={roundedBorders.bottom}
         expanded={isExpanded}
+        initialExpanded={isInitialExpanded}
       >
-        <StyledExpandableSectionWrapper expanded={isExpanded}>
-          {React.cloneElement(section, {
-            expanded: this.isExpanded(index),
-            onClick: () => this.handleToggleSection(index),
-          })}
-        </StyledExpandableSectionWrapper>
+        {React.cloneElement(section, {
+          expanded: isExpanded,
+          handleToggleSection: () => this.handleToggleSection(index),
+          setInitialExpandedSection: () => this.setInitialExpandedSection(index),
+        })}
       </StyledChildWrapper>
     );
   };
 
   render() {
     const { closable, dataTest, spaceAfter, onClose } = this.props;
-
     const children = this.getChildren();
-
     return (
       <StyledCard
         closable={closable}
@@ -216,13 +208,7 @@ class Card extends React.Component<Props, State> {
         spaceAfter={spaceAfter}
         hasAdjustedHeader={this.hasAdjustedHeader()}
       >
-        {children &&
-          React.Children.map(children, (item, index) =>
-            this.isExpandableCardSection(item)
-              ? this.renderExpandableSection(item, index)
-              : this.renderSection(item, index),
-          )}
-
+        {children && React.Children.map(children, (item, index) => this.renderSection(item, index))}
         {closable && (
           <CloseContainer>
             <ButtonLink

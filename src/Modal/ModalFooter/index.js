@@ -26,6 +26,7 @@ StyledChild.defaultProps = {
 
 export const StyledModalFooter = styled.div`
   display: flex;
+  z-index: 10;
   bottom: 0;
   width: 100%;
   background-color: ${({ theme }) => theme.orbit.paletteWhite};
@@ -33,6 +34,7 @@ export const StyledModalFooter = styled.div`
   padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`)};
   box-sizing: border-box;
   // TODO: create token boxShadowActionableInverted
+  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   @media (max-width: 599px) {
     ${StyledButton}, ${StyledButtonLink} {
@@ -44,8 +46,8 @@ export const StyledModalFooter = styled.div`
   ${media.desktop`
     justify-content: ${({ children }) => (children.length > 1 ? "space-between" : "flex-end")};
     // TODO: create token paddingModalFooterDesktop
-    border-bottom-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-    border-bottom-right-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
   `};
 
   ${StyledChild}:last-of-type {

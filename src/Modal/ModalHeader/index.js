@@ -3,17 +3,26 @@ import * as React from "react";
 import styled from "styled-components";
 
 import Text from "../../Text";
-import Heading from "../../Heading";
+import Heading, { StyledHeading } from "../../Heading";
 import defaultTokens from "../../defaultTokens";
 import media from "../../utils/media";
 import { StyledModalSection } from "../ModalSection";
-import { left, rtlSpacing } from "../../utils/rtl";
+import { left, right, rtlSpacing } from "../../utils/rtl";
 
 import type { Props } from "./index";
 
 const ModalTitle = styled.div`
   // TODO: create token marginModalTitle and marginModalTitleWithIllustration
   margin-top: ${({ theme, illustration }) => illustration && theme.orbit.spaceXSmall};
+  
+  ${StyledHeading} {
+    padding-${right}: ${({ theme }) => theme.orbit.spaceXLarge};
+  }
+  ${media.desktop`
+    ${StyledHeading} {
+      padding: 0;
+    }
+  `};
 `;
 
 ModalTitle.defaultProps = {
@@ -48,8 +57,8 @@ const StyledModalHeader = styled.div`
           }`) ||
         `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`,
     )};
-  border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  border-top-left-radius: 9px; // TODO: create token
+  border-top-right-radius: 9px; // TODO: create token
   box-sizing: border-box;
   background-color: ${({ suppressed, theme }) =>
     suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
@@ -57,6 +66,8 @@ const StyledModalHeader = styled.div`
   & ~ ${StyledModalSection}:first-of-type {
     border-top: ${({ suppressed, theme }) =>
       suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     margin-top: ${({ suppressed }) => suppressed && "0!important"};
   }
 
@@ -71,6 +82,11 @@ const StyledModalHeader = styled.div`
               suppressed ? theme.orbit.spaceXXLarge : "0"
             } ${theme.orbit.spaceXXLarge}`,
       )};
+    
+    & ~ ${StyledModalSection}:first-of-type {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
   `};
 `;
 
@@ -81,8 +97,14 @@ StyledModalHeader.defaultProps = {
 export const MobileHeader = styled.div`
   display: inline-block;
   position: fixed;
+  visibility: hidden;
+  height: 52px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   // TODO use token for 52px
   top: 16px;
+  ${right}: 48px;
   ${left}: 0;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightHeadingDisplay};
@@ -94,12 +116,15 @@ export const MobileHeader = styled.div`
   box-sizing: border-box;
   padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceLarge}`)};
   opacity: 0;
-  transition: top ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
-    opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  z-index: 1;
+  transition: top ${({ theme }) => theme.orbit.durationFast} ease-in-out,
+    opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out,
+    visibility ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  z-index: 10;
 
   ${media.desktop`
-    display: none;
+      left: unset;
+      right: unset;
+      padding: 0;
   `};
 `;
 

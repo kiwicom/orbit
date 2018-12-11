@@ -24,6 +24,7 @@ Table below contains all types of the props available in Button component.
 | icon          | `React.Node`          |                 | The displayed icon (will be removed in the future, use iconLeft instead).
 | iconLeft      | `React.Node`          |                 | The displayed icon on the left.
 | iconRight     | `React.Node`          |                 | The displayed icon on the right.
+| loading       | `boolean`             | `false`         | If `true`, the loading glyph will be displayed.
 | onClick       | `func`                |                 | Function for handling onClick event.
 | **size**      | [`enum`](#enum)       | `"normal"`      | The size of the Button.
 | submit        | `boolean`             | `false`         | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.

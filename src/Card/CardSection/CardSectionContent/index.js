@@ -71,7 +71,10 @@ class CardSectionContent extends React.Component<Props, State> {
     const { expandable } = this.props;
 
     if (expandable) {
-      if (prevState.contentHeight !== this.state.contentHeight) {
+      if (
+        prevState.contentHeight !== this.state.contentHeight ||
+        prevProps.children !== this.props.children
+      ) {
         setTimeout(this.setHeight, 10);
       }
     }

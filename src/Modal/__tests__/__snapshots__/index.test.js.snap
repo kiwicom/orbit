@@ -1588,53 +1588,62 @@ exports[`Large Modal should match snapshot 1`] = `
           width={0}
         />
       </Modal__CloseContainer>
-      <ModalHeader
-        dataTest="test"
-        description="My description"
-        illustration={
-          <Illustration
-            name="Accommodation"
-            size="small"
-          />
+      <ContextProvider
+        value={
+          Object {
+            "decideFixedFooter": [Function],
+            "setDimensions": [Function],
+          }
         }
-        suppressed={true}
-        title="My title"
       >
-        <List>
-          <ListItem
-            icon={<Wallet />}
+        <ModalHeader
+          dataTest="test"
+          description="My description"
+          illustration={
+            <Illustration
+              name="Accommodation"
+              size="small"
+            />
+          }
+          suppressed={true}
+          title="My title"
+        >
+          <List>
+            <ListItem
+              icon={<Wallet />}
+            >
+              To save you time, we have calculated your total possible refundable amount.
+            </ListItem>
+          </List>
+        </ModalHeader>
+        <ModalSection
+          dataTest="test"
+          suppressed={true}
+        >
+          My content
+        </ModalSection>
+        <ModalFooter
+          dataTest="test"
+          flex={
+            Array [
+              "0 0 auto",
+              "1 1 100%",
+            ]
+          }
+        >
+          <Button
+            icon={<ChevronLeft />}
+            type="secondary"
           >
-            To save you time, we have calculated your total possible refundable amount.
-          </ListItem>
-        </List>
-      </ModalHeader>
-      <ModalSection
-        dataTest="test"
-        suppressed={true}
-      >
-        My content
-      </ModalSection>
-      <ModalFooter
-        dataTest="test"
-        flex={
-          Array [
-            "0 0 auto",
-            "1 1 100%",
-          ]
-        }
-      >
-        <Button
-          icon={<ChevronLeft />}
-          type="secondary"
-        >
-          Back
-        </Button>
-        <Button
-          block={true}
-        >
-          Continue to Payment
-        </Button>
-      </ModalFooter>
+            Back
+          </Button>
+          <Button
+            block={true}
+          >
+            Continue to Payment
+          </Button>
+        </ModalFooter>
+      </ContextProvider>
     </Modal__ModalWrapperContent>
   </Modal__ModalWrapper>
 </Modal__ModalBody>

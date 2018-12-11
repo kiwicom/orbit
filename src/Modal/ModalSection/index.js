@@ -5,6 +5,7 @@ import styled from "styled-components";
 import defaultTokens from "../../defaultTokens";
 import media from "../../utils/media";
 import { StyledModalFooter } from "../ModalFooter";
+import { withModalContext } from "../ModalContext";
 
 import type { Props } from "./index";
 
@@ -56,13 +57,35 @@ StyledModalSection.defaultProps = {
   theme: defaultTokens,
 };
 
-const ModalSection = (props: Props) => {
-  const { suppressed, children, dataTest } = props;
-  return (
-    <StyledModalSection suppressed={suppressed} data-test={dataTest}>
-      {children}
-    </StyledModalSection>
-  );
-};
+class ModalSection extends React.PureComponent<Props> {
+  componentDidMount() {
+    this.callContextFunctions();
+  }
+  componentDidUpdate(prevProps: Props) {
+    if (prevProps !== this.props) {
+      this.callContextFunctions();
+    }
+  }
+  callContextFunctions = () => {
+    const { setDimensions, decideFixedFooter } = this.props;
+    if (setDimensions) {
+      setDimensions();
+    }
+    if (decideFixedFooter) {
+      decideFixedFooter();
+    }
+  };
 
-export default ModalSection;
+  render() {
+    const { suppressed, children, dataTest } = this.props;
+    return (
+      <StyledModalSection suppressed={suppressed} data-test={dataTest}>
+        {children}
+      </StyledModalSection>
+    );
+  }
+}
+
+const DecoratedComponent = withModalContext(ModalSection);
+DecoratedComponent.displayName = "ModalSection";
+export default DecoratedComponent;

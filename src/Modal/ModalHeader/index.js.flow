@@ -3,14 +3,16 @@ import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../../common/common.js.flow";
 import Illustration from "../../Illustration";
+import type { ModalContextProps } from "../ModalContext";
 
 export type Props = {|
+  ...Globals,
+  ...ModalContextProps,
   +children?: React$Node,
   +illustration?: React$Element<typeof Illustration>,
   +title?: React$Node,
   +description?: React$Node,
   +suppressed?: boolean,
-  ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;

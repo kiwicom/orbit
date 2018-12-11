@@ -8,6 +8,7 @@ import defaultTokens from "../../defaultTokens";
 import media from "../../utils/media";
 import { StyledModalSection } from "../ModalSection";
 import { left, right, rtlSpacing } from "../../utils/rtl";
+import { withModalContext } from "../ModalContext";
 
 import type { Props } from "./index";
 
@@ -136,30 +137,53 @@ const StyledModalHeaderContent = styled.div`
   margin-top: ${({ description }) => (description ? "32px" : "16px")};
 `;
 
-const ModalHeader = (props: Props) => {
-  const { title, illustration, description, children, suppressed, dataTest } = props;
-  const hasHeader = title || description;
-  return (
-    <StyledModalHeader illustration={!!illustration} suppressed={suppressed} data-test={dataTest}>
-      {illustration}
-      {hasHeader && (
-        <ModalTitle illustration={!!illustration}>
-          {title && <Heading type="title1">{title}</Heading>}
-          {description && (
-            <ModalDescription>
-              <Text size="large" element="div">
-                {description}
-              </Text>
-            </ModalDescription>
-          )}
-        </ModalTitle>
-      )}
-      {children && (
-        <StyledModalHeaderContent description={!!description}>{children}</StyledModalHeaderContent>
-      )}
-      {title && <MobileHeader>{title}</MobileHeader>}
-    </StyledModalHeader>
-  );
-};
+class ModalHeader extends React.PureComponent<Props> {
+  componentDidMount() {
+    this.callContextFunctions();
+  }
+  componentDidUpdate(prevProps: Props) {
+    if (prevProps !== this.props) {
+      this.callContextFunctions();
+    }
+  }
+  callContextFunctions = () => {
+    const { setDimensions, decideFixedFooter } = this.props;
+    if (setDimensions) {
+      setDimensions();
+    }
+    if (decideFixedFooter) {
+      decideFixedFooter();
+    }
+  };
 
-export default ModalHeader;
+  render() {
+    const { title, illustration, description, children, suppressed, dataTest } = this.props;
+    const hasHeader = title || description;
+    return (
+      <StyledModalHeader illustration={!!illustration} suppressed={suppressed} data-test={dataTest}>
+        {illustration}
+        {hasHeader && (
+          <ModalTitle illustration={!!illustration}>
+            {title && <Heading type="title1">{title}</Heading>}
+            {description && (
+              <ModalDescription>
+                <Text size="large" element="div">
+                  {description}
+                </Text>
+              </ModalDescription>
+            )}
+          </ModalTitle>
+        )}
+        {children && (
+          <StyledModalHeaderContent description={!!description}>
+            {children}
+          </StyledModalHeaderContent>
+        )}
+        {title && <MobileHeader>{title}</MobileHeader>}
+      </StyledModalHeader>
+    );
+  }
+}
+const DecoratedComponent = withModalContext(ModalHeader);
+DecoratedComponent.displayName = "ModalHeader";
+export default DecoratedComponent;

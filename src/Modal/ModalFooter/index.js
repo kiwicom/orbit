@@ -7,6 +7,7 @@ import defaultTokens from "../../defaultTokens";
 import { StyledButton } from "../../Button";
 import { rtlSpacing } from "../../utils/rtl";
 import { StyledButtonLink } from "../../ButtonLink";
+import { withModalContext } from "../ModalContext";
 
 import type { Props } from "./index";
 
@@ -59,19 +60,41 @@ StyledModalFooter.defaultProps = {
   theme: defaultTokens,
 };
 
-const ModalFooter = (props: Props) => {
-  const { flex = "0 1 auto", children, dataTest } = props;
-  return (
-    <StyledModalFooter data-test={dataTest}>
-      {React.Children.map(children, (item, key) => {
-        if (item) {
-          const childFlex = Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
-          return <StyledChild flex={childFlex}>{<item.type {...item.props} />}</StyledChild>;
-        }
-        return null;
-      })}
-    </StyledModalFooter>
-  );
-};
+class ModalFooter extends React.PureComponent<Props> {
+  componentDidMount() {
+    this.callContextFunctions();
+  }
+  componentDidUpdate(prevProps: Props) {
+    if (prevProps !== this.props) {
+      this.callContextFunctions();
+    }
+  }
+  callContextFunctions = () => {
+    const { setDimensions, decideFixedFooter } = this.props;
+    if (setDimensions) {
+      setDimensions();
+    }
+    if (decideFixedFooter) {
+      decideFixedFooter();
+    }
+  };
+  render() {
+    const { flex = "0 1 auto", children, dataTest } = this.props;
+    return (
+      <StyledModalFooter data-test={dataTest}>
+        {React.Children.map(children, (item, key) => {
+          if (item) {
+            const childFlex =
+              Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
+            return <StyledChild flex={childFlex}>{<item.type {...item.props} />}</StyledChild>;
+          }
+          return null;
+        })}
+      </StyledModalFooter>
+    );
+  }
+}
 
-export default ModalFooter;
+const DecoratedComponent = withModalContext(ModalFooter);
+DecoratedComponent.displayName = "ModalFooter";
+export default DecoratedComponent;

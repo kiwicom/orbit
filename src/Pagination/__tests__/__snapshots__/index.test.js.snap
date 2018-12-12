@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination should match snapshot 1`] = `
+<Stack
+  align="center"
+  dataTest="test"
+  direction="row"
+  spacing="tight"
+>
+  <ButtonLink
+    component="button"
+    external={false}
+    iconLeft={<ChevronLeft />}
+    onClick={[Function]}
+    size="normal"
+    transparent={false}
+    type="secondary"
+    width={0}
+  >
+    Předchozí
+  </ButtonLink>
+  <CompactPages
+    onPageChange={[MockFunction]}
+    pageCount={9}
+    selectedPage={3}
+  />
+  <ButtonLink
+    component="button"
+    external={false}
+    iconRight={<ChevronRight />}
+    onClick={[Function]}
+    size="normal"
+    transparent={false}
+    type="secondary"
+    width={0}
+  >
+    Následující
+  </ButtonLink>
+</Stack>
+`;

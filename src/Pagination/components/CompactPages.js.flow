@@ -1,0 +1,8 @@
+// @flow
+export type Props = {|
+  pageCount: number,
+  selectedPage: number,
+  onPageChange: number => void,
+|};
+
+declare export default React$ComponentType<Props>;

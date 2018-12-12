@@ -1,0 +1,19 @@
+// @flow
+import type { Globals } from "../common/common.js.flow";
+
+export type OnPageChange = {| +onPageChange: number => void |};
+
+export type PageCount = {| +pageCount: number |};
+
+export type SelectedPage = {| +selectedPage?: number |};
+
+export type Props = {|
+  ...Globals,
+  ...OnPageChange,
+  ...PageCount,
+  ...SelectedPage,
+  +previousLabel?: string,
+  +nextLabel?: string,
+|};
+
+declare export default React$ComponentType<Props>;

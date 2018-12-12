@@ -411,10 +411,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   >
     <InputStepper__StyledInputStepper>
       <StyledComponent
-        forwardedClass={
+        forwardedComponent={
           Object {
             "$$typeof": Symbol(react.forward_ref),
-            "attrs": undefined,
+            "attrs": Array [],
             "componentStyle": ComponentStyle {
               "componentId": "InputStepper__StyledInputStepper-sc-1kqzp6i-1",
               "isStatic": true,
@@ -428,6 +428,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
               ],
             },
             "displayName": "InputStepper__StyledInputStepper",
+            "foldedComponentIds": Array [],
             "render": [Function],
             "styledComponentId": "InputStepper__StyledInputStepper-sc-1kqzp6i-1",
             "target": "div",
@@ -458,7 +459,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                 component={
                   Object {
                     "$$typeof": Symbol(react.forward_ref),
-                    "attrs": undefined,
+                    "attrs": Array [],
                     "componentStyle": ComponentStyle {
                       "componentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                       "isStatic": false,
@@ -470,6 +471,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                       ],
                     },
                     "displayName": "InputStepper__PrefixSuffix",
+                    "foldedComponentIds": Array [],
                     "render": [Function],
                     "styledComponentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                     "target": [Function],
@@ -500,7 +502,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                 component={
                   Object {
                     "$$typeof": Symbol(react.forward_ref),
-                    "attrs": undefined,
+                    "attrs": Array [],
                     "componentStyle": ComponentStyle {
                       "componentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                       "isStatic": false,
@@ -512,6 +514,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                       ],
                     },
                     "displayName": "InputStepper__PrefixSuffix",
+                    "foldedComponentIds": Array [],
                     "render": [Function],
                     "styledComponentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                     "target": [Function],
@@ -926,10 +929,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
               }
             >
               <StyledComponent
-                forwardedClass={
+                forwardedComponent={
                   Object {
                     "$$typeof": Symbol(react.forward_ref),
-                    "attrs": undefined,
+                    "attrs": Array [],
                     "componentStyle": ComponentStyle {
                       "componentId": "InputField__Field-sc-4opay-0",
                       "isStatic": false,
@@ -1325,6 +1328,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                       },
                     },
                     "displayName": "InputField__Field",
+                    "foldedComponentIds": Array [],
                     "render": [Function],
                     "styledComponentId": "InputField__Field-sc-4opay-0",
                     "target": "label",
@@ -2117,10 +2121,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                     >
                       <StyledComponent
                         filled={true}
-                        forwardedClass={
+                        forwardedComponent={
                           Object {
                             "$$typeof": Symbol(react.forward_ref),
-                            "attrs": undefined,
+                            "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "FormLabel-sc-1927civ-1",
                               "isStatic": false,
@@ -2524,6 +2528,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                               },
                             },
                             "displayName": "FormLabel",
+                            "foldedComponentIds": Array [],
                             "render": [Function],
                             "styledComponentId": "FormLabel-sc-1927civ-1",
                             "target": [Function],
@@ -3712,10 +3717,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                     <StyledComponent
                       disabled={false}
                       error="Error message"
-                      forwardedClass={
+                      forwardedComponent={
                         Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "attrs": undefined,
+                          "attrs": Array [],
                           "componentStyle": ComponentStyle {
                             "componentId": "InputField__InputContainer-sc-4opay-2",
                             "isStatic": false,
@@ -4123,6 +4128,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                             },
                           },
                           "displayName": "InputField__InputContainer",
+                          "foldedComponentIds": Array [],
                           "render": [Function],
                           "styledComponentId": "InputField__InputContainer-sc-4opay-2",
                           "target": [Function],
@@ -5300,10 +5306,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                             }
                           >
                             <StyledComponent
-                              forwardedClass={
+                              forwardedComponent={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": undefined,
+                                  "attrs": Array [],
                                   "componentStyle": ComponentStyle {
                                     "componentId": "c4",
                                     "isStatic": false,
@@ -5707,6 +5713,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     },
                                   },
                                   "displayName": "InputField__Prefix",
+                                  "foldedComponentIds": Array [],
                                   "render": [Function],
                                   "styledComponentId": "c4",
                                   "target": [Function],
@@ -6498,7 +6505,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     component={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
-                                        "attrs": undefined,
+                                        "attrs": Array [],
                                         "componentStyle": ComponentStyle {
                                           "componentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                           "isStatic": false,
@@ -6510,6 +6517,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                           ],
                                         },
                                         "displayName": "InputStepper__PrefixSuffix",
+                                        "foldedComponentIds": Array [],
                                         "render": [Function],
                                         "styledComponentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                         "target": [Function],
@@ -6536,7 +6544,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       component={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": undefined,
+                                          "attrs": Array [],
                                           "componentStyle": ComponentStyle {
                                             "componentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                             "isStatic": false,
@@ -6548,6 +6556,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             ],
                                           },
                                           "displayName": "InputStepper__PrefixSuffix",
+                                          "foldedComponentIds": Array [],
                                           "render": [Function],
                                           "styledComponentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                           "target": [Function],
@@ -6960,7 +6969,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         component={
                                           Object {
                                             "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": undefined,
+                                            "attrs": Array [],
                                             "componentStyle": ComponentStyle {
                                               "componentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                               "isStatic": false,
@@ -6972,6 +6981,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                               ],
                                             },
                                             "displayName": "InputStepper__PrefixSuffix",
+                                            "foldedComponentIds": Array [],
                                             "render": [Function],
                                             "styledComponentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                             "target": [Function],
@@ -6983,10 +6993,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         }
                                         disabled={true}
                                         external={false}
-                                        forwardedClass={
+                                        forwardedComponent={
                                           Object {
                                             "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": undefined,
+                                            "attrs": Array [],
                                             "componentStyle": ComponentStyle {
                                               "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
                                               "isStatic": false,
@@ -7414,6 +7424,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                               },
                                             },
                                             "displayName": "ButtonLink__StyledButtonLink",
+                                            "foldedComponentIds": Array [],
                                             "render": [Function],
                                             "styledComponentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
                                             "target": [Function],
@@ -7826,7 +7837,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                           component={
                                             Object {
                                               "$$typeof": Symbol(react.forward_ref),
-                                              "attrs": undefined,
+                                              "attrs": Array [],
                                               "componentStyle": ComponentStyle {
                                                 "componentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                                 "isStatic": false,
@@ -7838,6 +7849,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                 ],
                                               },
                                               "displayName": "InputStepper__PrefixSuffix",
+                                              "foldedComponentIds": Array [],
                                               "render": [Function],
                                               "styledComponentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                               "target": [Function],
@@ -8256,10 +8268,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             <StyledComponent
                                               className="c6"
                                               disabled={true}
-                                              forwardedClass={
+                                              forwardedComponent={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
-                                                  "attrs": undefined,
+                                                  "attrs": Array [],
                                                   "componentStyle": ComponentStyle {
                                                     "componentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                                     "isStatic": false,
@@ -8271,6 +8283,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                     ],
                                                   },
                                                   "displayName": "InputStepper__PrefixSuffix",
+                                                  "foldedComponentIds": Array [],
                                                   "render": [Function],
                                                   "styledComponentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                                   "target": [Function],
@@ -8689,10 +8702,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                     type="primary"
                                                   >
                                                     <StyledComponent
-                                                      forwardedClass={
+                                                      forwardedComponent={
                                                         Object {
                                                           "$$typeof": Symbol(react.forward_ref),
-                                                          "attrs": undefined,
+                                                          "attrs": Array [],
                                                           "componentStyle": ComponentStyle {
                                                             "componentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
                                                             "isStatic": false,
@@ -9092,6 +9105,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                             },
                                                           },
                                                           "displayName": "ButtonLink__IconContainer",
+                                                          "foldedComponentIds": Array [],
                                                           "render": [Function],
                                                           "styledComponentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
                                                           "target": [Function],
@@ -10284,10 +10298,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                               >
                                                                 <StyledComponent
                                                                   color="secondary"
-                                                                  forwardedClass={
+                                                                  forwardedComponent={
                                                                     Object {
                                                                       "$$typeof": Symbol(react.forward_ref),
-                                                                      "attrs": undefined,
+                                                                      "attrs": Array [],
                                                                       "componentStyle": ComponentStyle {
                                                                         "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
                                                                         "isStatic": false,
@@ -10687,6 +10701,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                         },
                                                                       },
                                                                       "displayName": "Icon__StyledIcon",
+                                                                      "foldedComponentIds": Array [],
                                                                       "render": [Function],
                                                                       "styledComponentId": "Icon__StyledIcon-sc-1pnzn3g-0",
                                                                       "target": [Function],
@@ -11906,10 +11921,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                             <StyledComponent
                               disabled={false}
                               error="Error message"
-                              forwardedClass={
+                              forwardedComponent={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": undefined,
+                                  "attrs": Array [],
                                   "componentStyle": ComponentStyle {
                                     "componentId": "c10",
                                     "isStatic": false,
@@ -12323,6 +12338,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     },
                                   },
                                   "displayName": "InputField__Input",
+                                  "foldedComponentIds": Array [],
                                   "render": [Function],
                                   "styledComponentId": "c10",
                                   "target": "input",
@@ -13133,10 +13149,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                             }
                           >
                             <StyledComponent
-                              forwardedClass={
+                              forwardedComponent={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": undefined,
+                                  "attrs": Array [],
                                   "componentStyle": ComponentStyle {
                                     "componentId": "InputField__Suffix-sc-4opay-5",
                                     "isStatic": false,
@@ -13542,6 +13558,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     },
                                   },
                                   "displayName": "InputField__Suffix",
+                                  "foldedComponentIds": Array [],
                                   "render": [Function],
                                   "styledComponentId": "InputField__Suffix-sc-4opay-5",
                                   "target": [Function],
@@ -14333,7 +14350,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     component={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
-                                        "attrs": undefined,
+                                        "attrs": Array [],
                                         "componentStyle": ComponentStyle {
                                           "componentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                           "isStatic": false,
@@ -14345,6 +14362,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                           ],
                                         },
                                         "displayName": "InputStepper__PrefixSuffix",
+                                        "foldedComponentIds": Array [],
                                         "render": [Function],
                                         "styledComponentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                         "target": [Function],
@@ -14371,7 +14389,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       component={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": undefined,
+                                          "attrs": Array [],
                                           "componentStyle": ComponentStyle {
                                             "componentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                             "isStatic": false,
@@ -14383,6 +14401,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             ],
                                           },
                                           "displayName": "InputStepper__PrefixSuffix",
+                                          "foldedComponentIds": Array [],
                                           "render": [Function],
                                           "styledComponentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                           "target": [Function],
@@ -14795,7 +14814,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         component={
                                           Object {
                                             "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": undefined,
+                                            "attrs": Array [],
                                             "componentStyle": ComponentStyle {
                                               "componentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                               "isStatic": false,
@@ -14807,6 +14826,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                               ],
                                             },
                                             "displayName": "InputStepper__PrefixSuffix",
+                                            "foldedComponentIds": Array [],
                                             "render": [Function],
                                             "styledComponentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                             "target": [Function],
@@ -14818,10 +14838,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         }
                                         disabled={false}
                                         external={false}
-                                        forwardedClass={
+                                        forwardedComponent={
                                           Object {
                                             "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": undefined,
+                                            "attrs": Array [],
                                             "componentStyle": ComponentStyle {
                                               "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
                                               "isStatic": false,
@@ -15249,6 +15269,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                               },
                                             },
                                             "displayName": "ButtonLink__StyledButtonLink",
+                                            "foldedComponentIds": Array [],
                                             "render": [Function],
                                             "styledComponentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
                                             "target": [Function],
@@ -15661,7 +15682,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                           component={
                                             Object {
                                               "$$typeof": Symbol(react.forward_ref),
-                                              "attrs": undefined,
+                                              "attrs": Array [],
                                               "componentStyle": ComponentStyle {
                                                 "componentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                                 "isStatic": false,
@@ -15673,6 +15694,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                 ],
                                               },
                                               "displayName": "InputStepper__PrefixSuffix",
+                                              "foldedComponentIds": Array [],
                                               "render": [Function],
                                               "styledComponentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                               "target": [Function],
@@ -16091,10 +16113,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             <StyledComponent
                                               className="c13"
                                               disabled={false}
-                                              forwardedClass={
+                                              forwardedComponent={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
-                                                  "attrs": undefined,
+                                                  "attrs": Array [],
                                                   "componentStyle": ComponentStyle {
                                                     "componentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                                     "isStatic": false,
@@ -16106,6 +16128,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                     ],
                                                   },
                                                   "displayName": "InputStepper__PrefixSuffix",
+                                                  "foldedComponentIds": Array [],
                                                   "render": [Function],
                                                   "styledComponentId": "InputStepper__PrefixSuffix-sc-1kqzp6i-0",
                                                   "target": [Function],
@@ -16524,10 +16547,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                     type="primary"
                                                   >
                                                     <StyledComponent
-                                                      forwardedClass={
+                                                      forwardedComponent={
                                                         Object {
                                                           "$$typeof": Symbol(react.forward_ref),
-                                                          "attrs": undefined,
+                                                          "attrs": Array [],
                                                           "componentStyle": ComponentStyle {
                                                             "componentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
                                                             "isStatic": false,
@@ -16927,6 +16950,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                             },
                                                           },
                                                           "displayName": "ButtonLink__IconContainer",
+                                                          "foldedComponentIds": Array [],
                                                           "render": [Function],
                                                           "styledComponentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
                                                           "target": [Function],
@@ -18119,10 +18143,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                               >
                                                                 <StyledComponent
                                                                   color="secondary"
-                                                                  forwardedClass={
+                                                                  forwardedComponent={
                                                                     Object {
                                                                       "$$typeof": Symbol(react.forward_ref),
-                                                                      "attrs": undefined,
+                                                                      "attrs": Array [],
                                                                       "componentStyle": ComponentStyle {
                                                                         "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
                                                                         "isStatic": false,
@@ -18522,6 +18546,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                         },
                                                                       },
                                                                       "displayName": "Icon__StyledIcon",
+                                                                      "foldedComponentIds": Array [],
                                                                       "render": [Function],
                                                                       "styledComponentId": "Icon__StyledIcon-sc-1pnzn3g-0",
                                                                       "target": [Function],
@@ -19731,10 +19756,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                             <StyledComponent
                               disabled={false}
                               error="Error message"
-                              forwardedClass={
+                              forwardedComponent={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": undefined,
+                                  "attrs": Array [],
                                   "componentStyle": ComponentStyle {
                                     "componentId": "c15",
                                     "isStatic": false,
@@ -20140,6 +20165,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     },
                                   },
                                   "displayName": "InputField__FakeInput",
+                                  "foldedComponentIds": Array [],
                                   "render": [Function],
                                   "styledComponentId": "c15",
                                   "target": [Function],
@@ -21327,10 +21353,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                       type="error"
                     >
                       <StyledComponent
-                        forwardedClass={
+                        forwardedComponent={
                           Object {
                             "$$typeof": Symbol(react.forward_ref),
-                            "attrs": undefined,
+                            "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "FormFeedback__StyledFormFeedback-sc-1lhzkwp-0",
                               "isStatic": false,
@@ -21744,6 +21770,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                               },
                             },
                             "displayName": "FormFeedback__StyledFormFeedback",
+                            "foldedComponentIds": Array [],
                             "render": [Function],
                             "styledComponentId": "FormFeedback__StyledFormFeedback-sc-1lhzkwp-0",
                             "target": [Function],

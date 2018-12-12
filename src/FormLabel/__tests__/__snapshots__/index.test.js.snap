@@ -4,10 +4,10 @@ exports[`FormLabel should match snapshot 1`] = `
 <StyledComponent
   dataTest="test"
   filled={false}
-  forwardedClass={
+  forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
-      "attrs": undefined,
+      "attrs": Array [],
       "componentStyle": ComponentStyle {
         "componentId": "FormLabel-sc-1927civ-1",
         "isStatic": false,
@@ -411,6 +411,7 @@ exports[`FormLabel should match snapshot 1`] = `
         },
       },
       "displayName": "FormLabel",
+      "foldedComponentIds": Array [],
       "render": [Function],
       "styledComponentId": "FormLabel-sc-1927civ-1",
       "target": [Function],

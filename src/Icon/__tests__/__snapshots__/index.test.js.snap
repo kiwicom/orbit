@@ -408,10 +408,10 @@ exports[`Icon should match snapshot 1`] = `
     >
       <StyledComponent
         color="attention"
-        forwardedClass={
+        forwardedComponent={
           Object {
             "$$typeof": Symbol(react.forward_ref),
-            "attrs": undefined,
+            "attrs": Array [],
             "componentStyle": ComponentStyle {
               "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
               "isStatic": false,
@@ -811,6 +811,7 @@ exports[`Icon should match snapshot 1`] = `
               },
             },
             "displayName": "Icon__StyledIcon",
+            "foldedComponentIds": Array [],
             "render": [Function],
             "styledComponentId": "Icon__StyledIcon-sc-1pnzn3g-0",
             "target": [Function],
@@ -2027,10 +2028,10 @@ exports[`Icon with custom props should match snapshot 1`] = `
       <StyledComponent
         customColor="#FF0000"
         dataTest="test"
-        forwardedClass={
+        forwardedComponent={
           Object {
             "$$typeof": Symbol(react.forward_ref),
-            "attrs": undefined,
+            "attrs": Array [],
             "componentStyle": ComponentStyle {
               "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
               "isStatic": false,
@@ -2430,6 +2431,7 @@ exports[`Icon with custom props should match snapshot 1`] = `
               },
             },
             "displayName": "Icon__StyledIcon",
+            "foldedComponentIds": Array [],
             "render": [Function],
             "styledComponentId": "Icon__StyledIcon-sc-1pnzn3g-0",
             "target": [Function],

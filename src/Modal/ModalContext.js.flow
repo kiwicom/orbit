@@ -1,0 +1,16 @@
+// @flow
+import * as React from "react";
+
+export type ModalContextProps = {|
+  +setDimensions?: () => void,
+  +decideFixedFooter?: () => void,
+|};
+
+export type ModalContextType = React.Context<ModalContextProps>;
+
+// write better type
+export type WithModalContextType = (React$ComponentType<any>) => ({ [key: string]: any }) => any;
+
+declare export var ModalContext: ModalContextType;
+
+declare export var withModalContext: WithModalContextType;

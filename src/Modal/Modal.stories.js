@@ -142,61 +142,68 @@ storiesOf("Modal", module)
       },
     ],
   }))
-  .addWithChapters("With Form", () => ({
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <Modal onClose={action("onClose")} fixedFooter>
-                <ModalHeader title="Refund" description="Reservation number: 123456789" />
-                <ModalSection>
-                  <Stack>
-                    <Card>
-                      <CardHeader title="Cancellation" icon={<Airplane />} />
-                    </Card>
-                    <Text size="small" weight="bold">
-                      Contact information
-                    </Text>
-                    <InputField label="E-mail" placeholder="Your email" />
-                    <InputGroup
-                      flex={["0 0 120px", "1 1 100%"]}
-                      onChange={action("onChange")}
-                      label="Mobile phone"
-                    >
-                      <Select
-                        options={[{ value: 1, label: "+420" }, { value: 2, label: "+421" }]}
-                        value={1}
-                        prefix={<CountryFlag code="cz" />}
-                      />
-                      <InputField placeholder="111 222 333" />
-                    </InputGroup>
-                    <Text weight="bold" size="small">
-                      Options
-                    </Text>
-                    <Radio label="Option one" checked />
-                    <Radio label="Option two" />
-                    <Text size="small" type="secondary" spaceAfter="large">
-                      These are the most favorite. <TextLink href="#">Show more</TextLink>
-                    </Text>
-                    <Checkbox label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at mauris laoreet, eleifend nunc eu, venenatis sem. Etiam ullamcorper euismod suscipit. In a tortor ac velit elementum ultrices. Sed accumsan suscipit pulvinar." />
-                  </Stack>
-                </ModalSection>
-                <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-                  <Button icon={<ChevronLeft />} type="secondary">
-                    Back
-                  </Button>
-                  <Button block>Proceed to Payment (23.98€)</Button>
-                </ModalFooter>
-              </Modal>
-            ),
-          },
-        ],
-      },
-    ],
-  }))
+  .addWithChapters("With Form", () => {
+    const showMore = boolean("showMore", false);
+    return {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Modal onClose={action("onClose")} fixedFooter>
+                  <ModalHeader title="Refund" description="Reservation number: 123456789" />
+                  <ModalSection>
+                    <Stack>
+                      <Card>
+                        <CardHeader title="Cancellation" icon={<Airplane />} />
+                      </Card>
+                      <Text size="small" weight="bold">
+                        Contact information
+                      </Text>
+                      <InputField label="E-mail" placeholder="Your email" />
+                      <InputGroup
+                        flex={["0 0 120px", "1 1 100%"]}
+                        onChange={action("onChange")}
+                        label="Mobile phone"
+                      >
+                        <Select
+                          options={[{ value: 1, label: "+420" }, { value: 2, label: "+421" }]}
+                          value={1}
+                          prefix={<CountryFlag code="cz" />}
+                        />
+                        <InputField placeholder="111 222 333" />
+                      </InputGroup>
+                      {showMore && (
+                        <React.Fragment>
+                          <Text weight="bold" size="small">
+                            Options
+                          </Text>
+                          <Radio label="Option one" checked />
+                          <Radio label="Option two" />
+                          <Text size="small" type="secondary" spaceAfter="large">
+                            These are the most favorite. <TextLink href="#">Show more</TextLink>
+                          </Text>
+                          <Checkbox label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at mauris laoreet, eleifend nunc eu, venenatis sem. Etiam ullamcorper euismod suscipit. In a tortor ac velit elementum ultrices. Sed accumsan suscipit pulvinar." />
+                        </React.Fragment>
+                      )}
+                    </Stack>
+                  </ModalSection>
+                  <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
+                    <Button icon={<ChevronLeft />} type="secondary">
+                      Back
+                    </Button>
+                    <Button block>Proceed to Payment (23.98€)</Button>
+                  </ModalFooter>
+                </Modal>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("With fixedFooter", () => ({
     info:
       "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",

@@ -2,11 +2,13 @@
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../../common/common.js.flow";
+import type { ModalContextProps } from "../ModalContext";
 
 export type Props = {|
+  ...Globals,
+  ...ModalContextProps,
   +children: React$Node,
   +suppressed?: boolean,
-  ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;

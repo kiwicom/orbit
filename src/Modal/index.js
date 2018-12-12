@@ -13,6 +13,7 @@ import { StyledModalSection } from "./ModalSection";
 import { StyledHeading } from "../Heading";
 import { right } from "../utils/rtl";
 import transition from "../utils/transition";
+import { ModalContext } from "./ModalContext";
 
 import type { Props, State } from "./index";
 
@@ -223,20 +224,19 @@ class Modal extends React.PureComponent<Props, State> {
   };
 
   componentDidMount() {
-    this.setScrollPoint();
     this.timeout = setTimeout(() => {
       this.setState({
         loaded: true,
       });
       this.decideFixedFooter();
       this.setDimensions();
-    }, 1);
+    }, 15);
     window.addEventListener("resize", this.handleResize);
   }
 
   componentDidUpdate(prevProps: Props) {
     if (this.props.children !== prevProps.children) {
-      this.setScrollPoint();
+      this.decideFixedFooter();
       this.setDimensions();
     }
   }
@@ -259,20 +259,6 @@ class Modal extends React.PureComponent<Props, State> {
       const footerHeight = footerEl?.clientHeight;
       this.setState({ modalWidth, footerHeight });
     }
-  };
-
-  setScrollPoint = () => {
-    setTimeout(() => {
-      if (!this.state.scrolled) {
-        const content = this.modalContent.current;
-        if (content instanceof HTMLElement) {
-          const el = content.querySelector(`.${<StyledHeading />.type.styledComponentId}`);
-          if (el) {
-            this.offset = el.clientHeight + el.offsetTop;
-          }
-        }
-      }
-    }, 550);
   };
 
   decideFixedFooter = () => {
@@ -376,7 +362,14 @@ class Modal extends React.PureComponent<Props, State> {
                 />
               )}
             </CloseContainer>
-            {children}
+            <ModalContext.Provider
+              value={{
+                setDimensions: this.setDimensions,
+                decideFixedFooter: this.decideFixedFooter,
+              }}
+            >
+              {children}
+            </ModalContext.Provider>
           </ModalWrapperContent>
         </ModalWrapper>
       </ModalBody>

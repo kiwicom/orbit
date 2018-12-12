@@ -490,10 +490,10 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
         ]
       }
       data-test="test"
-      forwardedClass={
+      forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "attrs": undefined,
+          "attrs": Array [],
           "componentStyle": ComponentStyle {
             "componentId": "CarrierLogo__StyledCarrierLogo-d4doc9-1",
             "isStatic": false,
@@ -895,6 +895,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
             },
           },
           "displayName": "CarrierLogo__StyledCarrierLogo",
+          "foldedComponentIds": Array [],
           "render": [Function],
           "styledComponentId": "CarrierLogo__StyledCarrierLogo-d4doc9-1",
           "target": "div",
@@ -1691,13 +1692,15 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
             alt="Ryanair"
             carriersLength={4}
             code="FR"
-            forwardedClass={
+            forwardedComponent={
               Object {
                 "$$typeof": Symbol(react.forward_ref),
-                "attrs": Object {
-                  "src": [Function],
-                  "srcSet": [Function],
-                },
+                "attrs": Array [
+                  Object {
+                    "src": [Function],
+                    "srcSet": [Function],
+                  },
+                ],
                 "componentStyle": ComponentStyle {
                   "componentId": "CarrierLogo__StyledImage-d4doc9-0",
                   "isStatic": false,
@@ -2099,6 +2102,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                   },
                 },
                 "displayName": "CarrierLogo__StyledImage",
+                "foldedComponentIds": Array [],
                 "render": [Function],
                 "styledComponentId": "CarrierLogo__StyledImage-d4doc9-0",
                 "target": "img",
@@ -2901,13 +2905,15 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
             alt="Transavia France"
             carriersLength={4}
             code="TO"
-            forwardedClass={
+            forwardedComponent={
               Object {
                 "$$typeof": Symbol(react.forward_ref),
-                "attrs": Object {
-                  "src": [Function],
-                  "srcSet": [Function],
-                },
+                "attrs": Array [
+                  Object {
+                    "src": [Function],
+                    "srcSet": [Function],
+                  },
+                ],
                 "componentStyle": ComponentStyle {
                   "componentId": "CarrierLogo__StyledImage-d4doc9-0",
                   "isStatic": false,
@@ -3309,6 +3315,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                   },
                 },
                 "displayName": "CarrierLogo__StyledImage",
+                "foldedComponentIds": Array [],
                 "render": [Function],
                 "styledComponentId": "CarrierLogo__StyledImage-d4doc9-0",
                 "target": "img",
@@ -4111,13 +4118,15 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
             alt="Vueling"
             carriersLength={4}
             code="VY"
-            forwardedClass={
+            forwardedComponent={
               Object {
                 "$$typeof": Symbol(react.forward_ref),
-                "attrs": Object {
-                  "src": [Function],
-                  "srcSet": [Function],
-                },
+                "attrs": Array [
+                  Object {
+                    "src": [Function],
+                    "srcSet": [Function],
+                  },
+                ],
                 "componentStyle": ComponentStyle {
                   "componentId": "CarrierLogo__StyledImage-d4doc9-0",
                   "isStatic": false,
@@ -4519,6 +4528,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                   },
                 },
                 "displayName": "CarrierLogo__StyledImage",
+                "foldedComponentIds": Array [],
                 "render": [Function],
                 "styledComponentId": "CarrierLogo__StyledImage-d4doc9-0",
                 "target": "img",
@@ -5321,13 +5331,15 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
             alt="Czech Airlines"
             carriersLength={4}
             code="OK"
-            forwardedClass={
+            forwardedComponent={
               Object {
                 "$$typeof": Symbol(react.forward_ref),
-                "attrs": Object {
-                  "src": [Function],
-                  "srcSet": [Function],
-                },
+                "attrs": Array [
+                  Object {
+                    "src": [Function],
+                    "srcSet": [Function],
+                  },
+                ],
                 "componentStyle": ComponentStyle {
                   "componentId": "CarrierLogo__StyledImage-d4doc9-0",
                   "isStatic": false,
@@ -5729,6 +5741,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                   },
                 },
                 "displayName": "CarrierLogo__StyledImage",
+                "foldedComponentIds": Array [],
                 "render": [Function],
                 "styledComponentId": "CarrierLogo__StyledImage-d4doc9-0",
                 "target": "img",

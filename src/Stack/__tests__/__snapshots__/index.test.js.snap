@@ -660,10 +660,10 @@ exports[`Default Stack should match snapshot 1`] = `
     dataTest="test"
     direction="column"
     flex={false}
-    forwardedClass={
+    forwardedComponent={
       Object {
         "$$typeof": Symbol(react.forward_ref),
-        "attrs": undefined,
+        "attrs": Array [],
         "componentStyle": ComponentStyle {
           "componentId": "Stack__StyledStack-sc-1t576ow-0",
           "isStatic": false,
@@ -1086,6 +1086,7 @@ exports[`Default Stack should match snapshot 1`] = `
           },
         },
         "displayName": "Stack__StyledStack",
+        "foldedComponentIds": Array [],
         "render": [Function],
         "styledComponentId": "Stack__StyledStack-sc-1t576ow-0",
         "target": [Function],
@@ -2282,10 +2283,10 @@ exports[`Default Stack should match snapshot 1`] = `
             }
           >
             <StyledComponent
-              forwardedClass={
+              forwardedComponent={
                 Object {
                   "$$typeof": Symbol(react.forward_ref),
-                  "attrs": undefined,
+                  "attrs": Array [],
                   "componentStyle": ComponentStyle {
                     "componentId": "InputField__Field-sc-4opay-0",
                     "isStatic": false,
@@ -2681,6 +2682,7 @@ exports[`Default Stack should match snapshot 1`] = `
                     },
                   },
                   "displayName": "InputField__Field",
+                  "foldedComponentIds": Array [],
                   "render": [Function],
                   "styledComponentId": "InputField__Field-sc-4opay-0",
                   "target": "label",
@@ -3471,10 +3473,10 @@ exports[`Default Stack should match snapshot 1`] = `
                   >
                     <StyledComponent
                       filled={false}
-                      forwardedClass={
+                      forwardedComponent={
                         Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "attrs": undefined,
+                          "attrs": Array [],
                           "componentStyle": ComponentStyle {
                             "componentId": "FormLabel-sc-1927civ-1",
                             "isStatic": false,
@@ -3878,6 +3880,7 @@ exports[`Default Stack should match snapshot 1`] = `
                             },
                           },
                           "displayName": "FormLabel",
+                          "foldedComponentIds": Array [],
                           "render": [Function],
                           "styledComponentId": "FormLabel-sc-1927civ-1",
                           "target": [Function],
@@ -5060,10 +5063,10 @@ exports[`Default Stack should match snapshot 1`] = `
                   }
                 >
                   <StyledComponent
-                    forwardedClass={
+                    forwardedComponent={
                       Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "attrs": undefined,
+                        "attrs": Array [],
                         "componentStyle": ComponentStyle {
                           "componentId": "InputField__InputContainer-sc-4opay-2",
                           "isStatic": false,
@@ -5471,6 +5474,7 @@ exports[`Default Stack should match snapshot 1`] = `
                           },
                         },
                         "displayName": "InputField__InputContainer",
+                        "foldedComponentIds": Array [],
                         "render": [Function],
                         "styledComponentId": "InputField__InputContainer-sc-4opay-2",
                         "target": [Function],
@@ -6647,10 +6651,10 @@ exports[`Default Stack should match snapshot 1`] = `
                           type="password"
                         >
                           <StyledComponent
-                            forwardedClass={
+                            forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "attrs": undefined,
+                                "attrs": Array [],
                                 "componentStyle": ComponentStyle {
                                   "componentId": "InputField__Input-sc-4opay-6",
                                   "isStatic": false,
@@ -7064,6 +7068,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                   },
                                 },
                                 "displayName": "InputField__Input",
+                                "foldedComponentIds": Array [],
                                 "render": [Function],
                                 "styledComponentId": "InputField__Input-sc-4opay-6",
                                 "target": "input",
@@ -7855,10 +7860,10 @@ exports[`Default Stack should match snapshot 1`] = `
                           }
                         >
                           <StyledComponent
-                            forwardedClass={
+                            forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "attrs": undefined,
+                                "attrs": Array [],
                                 "componentStyle": ComponentStyle {
                                   "componentId": "c5",
                                   "isStatic": false,
@@ -8264,6 +8269,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                   },
                                 },
                                 "displayName": "InputField__FakeInput",
+                                "foldedComponentIds": Array [],
                                 "render": [Function],
                                 "styledComponentId": "c5",
                                 "target": [Function],
@@ -9449,10 +9455,10 @@ exports[`Default Stack should match snapshot 1`] = `
                     type="help"
                   >
                     <StyledComponent
-                      forwardedClass={
+                      forwardedComponent={
                         Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "attrs": undefined,
+                          "attrs": Array [],
                           "componentStyle": ComponentStyle {
                             "componentId": "FormFeedback__StyledFormFeedback-sc-1lhzkwp-0",
                             "isStatic": false,
@@ -9866,6 +9872,7 @@ exports[`Default Stack should match snapshot 1`] = `
                             },
                           },
                           "displayName": "FormFeedback__StyledFormFeedback",
+                          "foldedComponentIds": Array [],
                           "render": [Function],
                           "styledComponentId": "FormFeedback__StyledFormFeedback-sc-1lhzkwp-0",
                           "target": [Function],
@@ -11058,10 +11065,10 @@ exports[`Default Stack should match snapshot 1`] = `
           >
             <StyledComponent
               component="button"
-              forwardedClass={
+              forwardedComponent={
                 Object {
                   "$$typeof": Symbol(react.forward_ref),
-                  "attrs": undefined,
+                  "attrs": Array [],
                   "componentStyle": ComponentStyle {
                     "componentId": "Button__StyledButton-sc-1brqp3f-1",
                     "isStatic": false,
@@ -11517,6 +11524,7 @@ exports[`Default Stack should match snapshot 1`] = `
                     },
                   },
                   "displayName": "Button__StyledButton",
+                  "foldedComponentIds": Array [],
                   "render": [Function],
                   "styledComponentId": "Button__StyledButton-sc-1brqp3f-1",
                   "target": [Function],
@@ -12703,10 +12711,10 @@ exports[`Default Stack should match snapshot 1`] = `
                     }
                   >
                     <StyledComponent
-                      forwardedClass={
+                      forwardedComponent={
                         Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "attrs": undefined,
+                          "attrs": Array [],
                           "componentStyle": ComponentStyle {
                             "componentId": "Button__StyledButtonContent-sc-1brqp3f-2",
                             "isStatic": false,
@@ -13102,6 +13110,7 @@ exports[`Default Stack should match snapshot 1`] = `
                             },
                           },
                           "displayName": "Button__StyledButtonContent",
+                          "foldedComponentIds": Array [],
                           "render": [Function],
                           "styledComponentId": "Button__StyledButtonContent-sc-1brqp3f-2",
                           "target": "div",
@@ -14295,10 +14304,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
       }
       direction="row"
       flex={true}
-      forwardedClass={
+      forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "attrs": undefined,
+          "attrs": Array [],
           "componentStyle": ComponentStyle {
             "componentId": "Stack__StyledStack-sc-1t576ow-0",
             "isStatic": false,
@@ -14721,6 +14730,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
             },
           },
           "displayName": "Stack__StyledStack",
+          "foldedComponentIds": Array [],
           "render": [Function],
           "styledComponentId": "Stack__StyledStack-sc-1t576ow-0",
           "target": [Function],
@@ -15930,10 +15940,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
               }
             >
               <StyledComponent
-                forwardedClass={
+                forwardedComponent={
                   Object {
                     "$$typeof": Symbol(react.forward_ref),
-                    "attrs": undefined,
+                    "attrs": Array [],
                     "componentStyle": ComponentStyle {
                       "componentId": "InputField__Field-sc-4opay-0",
                       "isStatic": false,
@@ -16329,6 +16339,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                       },
                     },
                     "displayName": "InputField__Field",
+                    "foldedComponentIds": Array [],
                     "render": [Function],
                     "styledComponentId": "InputField__Field-sc-4opay-0",
                     "target": "label",
@@ -17119,10 +17130,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                     >
                       <StyledComponent
                         filled={false}
-                        forwardedClass={
+                        forwardedComponent={
                           Object {
                             "$$typeof": Symbol(react.forward_ref),
-                            "attrs": undefined,
+                            "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "FormLabel-sc-1927civ-1",
                               "isStatic": false,
@@ -17526,6 +17537,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               },
                             },
                             "displayName": "FormLabel",
+                            "foldedComponentIds": Array [],
                             "render": [Function],
                             "styledComponentId": "FormLabel-sc-1927civ-1",
                             "target": [Function],
@@ -18708,10 +18720,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                     }
                   >
                     <StyledComponent
-                      forwardedClass={
+                      forwardedComponent={
                         Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "attrs": undefined,
+                          "attrs": Array [],
                           "componentStyle": ComponentStyle {
                             "componentId": "InputField__InputContainer-sc-4opay-2",
                             "isStatic": false,
@@ -19119,6 +19131,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             },
                           },
                           "displayName": "InputField__InputContainer",
+                          "foldedComponentIds": Array [],
                           "render": [Function],
                           "styledComponentId": "InputField__InputContainer-sc-4opay-2",
                           "target": [Function],
@@ -20295,10 +20308,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             type="password"
                           >
                             <StyledComponent
-                              forwardedClass={
+                              forwardedComponent={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": undefined,
+                                  "attrs": Array [],
                                   "componentStyle": ComponentStyle {
                                     "componentId": "InputField__Input-sc-4opay-6",
                                     "isStatic": false,
@@ -20712,6 +20725,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                     },
                                   },
                                   "displayName": "InputField__Input",
+                                  "foldedComponentIds": Array [],
                                   "render": [Function],
                                   "styledComponentId": "InputField__Input-sc-4opay-6",
                                   "target": "input",
@@ -21503,10 +21517,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             }
                           >
                             <StyledComponent
-                              forwardedClass={
+                              forwardedComponent={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": undefined,
+                                  "attrs": Array [],
                                   "componentStyle": ComponentStyle {
                                     "componentId": "c5",
                                     "isStatic": false,
@@ -21912,6 +21926,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                     },
                                   },
                                   "displayName": "InputField__FakeInput",
+                                  "foldedComponentIds": Array [],
                                   "render": [Function],
                                   "styledComponentId": "c5",
                                   "target": [Function],
@@ -23097,10 +23112,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                       type="help"
                     >
                       <StyledComponent
-                        forwardedClass={
+                        forwardedComponent={
                           Object {
                             "$$typeof": Symbol(react.forward_ref),
-                            "attrs": undefined,
+                            "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "FormFeedback__StyledFormFeedback-sc-1lhzkwp-0",
                               "isStatic": false,
@@ -23514,6 +23529,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               },
                             },
                             "displayName": "FormFeedback__StyledFormFeedback",
+                            "foldedComponentIds": Array [],
                             "render": [Function],
                             "styledComponentId": "FormFeedback__StyledFormFeedback-sc-1lhzkwp-0",
                             "target": [Function],
@@ -24706,10 +24722,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
             >
               <StyledComponent
                 component="button"
-                forwardedClass={
+                forwardedComponent={
                   Object {
                     "$$typeof": Symbol(react.forward_ref),
-                    "attrs": undefined,
+                    "attrs": Array [],
                     "componentStyle": ComponentStyle {
                       "componentId": "Button__StyledButton-sc-1brqp3f-1",
                       "isStatic": false,
@@ -25165,6 +25181,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                       },
                     },
                     "displayName": "Button__StyledButton",
+                    "foldedComponentIds": Array [],
                     "render": [Function],
                     "styledComponentId": "Button__StyledButton-sc-1brqp3f-1",
                     "target": [Function],
@@ -26351,10 +26368,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                       }
                     >
                       <StyledComponent
-                        forwardedClass={
+                        forwardedComponent={
                           Object {
                             "$$typeof": Symbol(react.forward_ref),
-                            "attrs": undefined,
+                            "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "Button__StyledButtonContent-sc-1brqp3f-2",
                               "isStatic": false,
@@ -26750,6 +26767,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               },
                             },
                             "displayName": "Button__StyledButtonContent",
+                            "foldedComponentIds": Array [],
                             "render": [Function],
                             "styledComponentId": "Button__StyledButtonContent-sc-1brqp3f-2",
                             "target": "div",
@@ -27848,10 +27866,10 @@ exports[`Stack with flex prop should match snapshot 1`] = `
     align="start"
     direction="row"
     flex={true}
-    forwardedClass={
+    forwardedComponent={
       Object {
         "$$typeof": Symbol(react.forward_ref),
-        "attrs": undefined,
+        "attrs": Array [],
         "componentStyle": ComponentStyle {
           "componentId": "Stack__StyledStack-sc-1t576ow-0",
           "isStatic": false,
@@ -28274,6 +28292,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
           },
         },
         "displayName": "Stack__StyledStack",
+        "foldedComponentIds": Array [],
         "render": [Function],
         "styledComponentId": "Stack__StyledStack-sc-1t576ow-0",
         "target": [Function],
@@ -29466,10 +29485,10 @@ exports[`Stack with flex prop should match snapshot 1`] = `
             }
           >
             <StyledComponent
-              forwardedClass={
+              forwardedComponent={
                 Object {
                   "$$typeof": Symbol(react.forward_ref),
-                  "attrs": undefined,
+                  "attrs": Array [],
                   "componentStyle": ComponentStyle {
                     "componentId": "InputField__Field-sc-4opay-0",
                     "isStatic": false,
@@ -29865,6 +29884,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                     },
                   },
                   "displayName": "InputField__Field",
+                  "foldedComponentIds": Array [],
                   "render": [Function],
                   "styledComponentId": "InputField__Field-sc-4opay-0",
                   "target": "label",
@@ -30655,10 +30675,10 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                   >
                     <StyledComponent
                       filled={false}
-                      forwardedClass={
+                      forwardedComponent={
                         Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "attrs": undefined,
+                          "attrs": Array [],
                           "componentStyle": ComponentStyle {
                             "componentId": "FormLabel-sc-1927civ-1",
                             "isStatic": false,
@@ -31062,6 +31082,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             },
                           },
                           "displayName": "FormLabel",
+                          "foldedComponentIds": Array [],
                           "render": [Function],
                           "styledComponentId": "FormLabel-sc-1927civ-1",
                           "target": [Function],
@@ -32244,10 +32265,10 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                   }
                 >
                   <StyledComponent
-                    forwardedClass={
+                    forwardedComponent={
                       Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "attrs": undefined,
+                        "attrs": Array [],
                         "componentStyle": ComponentStyle {
                           "componentId": "InputField__InputContainer-sc-4opay-2",
                           "isStatic": false,
@@ -32655,6 +32676,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           },
                         },
                         "displayName": "InputField__InputContainer",
+                        "foldedComponentIds": Array [],
                         "render": [Function],
                         "styledComponentId": "InputField__InputContainer-sc-4opay-2",
                         "target": [Function],
@@ -33831,10 +33853,10 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           type="password"
                         >
                           <StyledComponent
-                            forwardedClass={
+                            forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "attrs": undefined,
+                                "attrs": Array [],
                                 "componentStyle": ComponentStyle {
                                   "componentId": "InputField__Input-sc-4opay-6",
                                   "isStatic": false,
@@ -34248,6 +34270,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                   },
                                 },
                                 "displayName": "InputField__Input",
+                                "foldedComponentIds": Array [],
                                 "render": [Function],
                                 "styledComponentId": "InputField__Input-sc-4opay-6",
                                 "target": "input",
@@ -35039,10 +35062,10 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           }
                         >
                           <StyledComponent
-                            forwardedClass={
+                            forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "attrs": undefined,
+                                "attrs": Array [],
                                 "componentStyle": ComponentStyle {
                                   "componentId": "c5",
                                   "isStatic": false,
@@ -35448,6 +35471,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                   },
                                 },
                                 "displayName": "InputField__FakeInput",
+                                "foldedComponentIds": Array [],
                                 "render": [Function],
                                 "styledComponentId": "c5",
                                 "target": [Function],
@@ -36633,10 +36657,10 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                     type="help"
                   >
                     <StyledComponent
-                      forwardedClass={
+                      forwardedComponent={
                         Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "attrs": undefined,
+                          "attrs": Array [],
                           "componentStyle": ComponentStyle {
                             "componentId": "FormFeedback__StyledFormFeedback-sc-1lhzkwp-0",
                             "isStatic": false,
@@ -37050,6 +37074,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             },
                           },
                           "displayName": "FormFeedback__StyledFormFeedback",
+                          "foldedComponentIds": Array [],
                           "render": [Function],
                           "styledComponentId": "FormFeedback__StyledFormFeedback-sc-1lhzkwp-0",
                           "target": [Function],
@@ -38242,10 +38267,10 @@ exports[`Stack with flex prop should match snapshot 1`] = `
           >
             <StyledComponent
               component="button"
-              forwardedClass={
+              forwardedComponent={
                 Object {
                   "$$typeof": Symbol(react.forward_ref),
-                  "attrs": undefined,
+                  "attrs": Array [],
                   "componentStyle": ComponentStyle {
                     "componentId": "Button__StyledButton-sc-1brqp3f-1",
                     "isStatic": false,
@@ -38701,6 +38726,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                     },
                   },
                   "displayName": "Button__StyledButton",
+                  "foldedComponentIds": Array [],
                   "render": [Function],
                   "styledComponentId": "Button__StyledButton-sc-1brqp3f-1",
                   "target": [Function],
@@ -39887,10 +39913,10 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                     }
                   >
                     <StyledComponent
-                      forwardedClass={
+                      forwardedComponent={
                         Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "attrs": undefined,
+                          "attrs": Array [],
                           "componentStyle": ComponentStyle {
                             "componentId": "Button__StyledButtonContent-sc-1brqp3f-2",
                             "isStatic": false,
@@ -40286,6 +40312,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             },
                           },
                           "displayName": "Button__StyledButtonContent",
+                          "foldedComponentIds": Array [],
                           "render": [Function],
                           "styledComponentId": "Button__StyledButtonContent-sc-1brqp3f-2",
                           "target": "div",

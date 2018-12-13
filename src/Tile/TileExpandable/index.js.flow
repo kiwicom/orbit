@@ -1,5 +1,9 @@
 // @flow
 
+export type State = {|
+  contentHeight: number,
+|};
+
 export type Props = {
   +expanded?: boolean,
   +initialExpanded?: boolean,

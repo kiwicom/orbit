@@ -70,30 +70,44 @@ storiesOf("Tile", module)
       ],
     };
   })
-  .addWithChapters("Expandable with custom description", () => ({
-    info: "This is the playground configuration of this component.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <Tile
-                onClick={action("clicked")}
-                description={
-                  <Stack justify="between" direction="row">
-                    <Text>Mr. John Smith</Text>
-                    <Text>20 kg</Text>
-                  </Stack>
-                }
-              >
-                This is example of expanded content
-              </Tile>
-            ),
-          },
-        ],
-      },
-    ],
-  }))
+  .addWithChapters("Expandable with custom description", () => {
+    const showMore = boolean("showMore", false);
+
+    return {
+      info: "This is the playground configuration of this component.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Tile
+                  onClick={action("clicked")}
+                  description={
+                    <Stack justify="between" direction="row">
+                      <Text>Mr. John Smith</Text>
+                      <Text>20 kg</Text>
+                    </Stack>
+                  }
+                >
+                  This is example of expanded content
+                  {showMore && (
+                    <Text>
+                      Etiam posuere lacus quis dolor. Mauris elementum mauris vitae tortor. Class
+                      aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                      hymenaeos. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                      per inceptos hymenaeos. Aenean id metus id velit ullamcorper pulvinar. Mauris
+                      metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                      ridiculus mus.
+                    </Text>
+                  )}
+                </Tile>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Playground", () => {
     const href = text("Href", "https://www.kiwi.com/");
     const title = text("Title", "Tile with title");

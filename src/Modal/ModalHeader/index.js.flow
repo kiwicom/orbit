@@ -18,3 +18,5 @@ export type Props = {|
 declare export default React$ComponentType<Props>;
 
 declare export var MobileHeader: ReactComponentStyled<any>;
+
+declare export var StyledModalHeader: ReactComponentStyled<any>;

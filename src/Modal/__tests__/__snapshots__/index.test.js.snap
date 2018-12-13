@@ -787,6 +787,7 @@ exports[`Large Modal should match snapshot 1`] = `
       fixedFooter={true}
       footerHeight={0}
       fullyScrolled={false}
+      hasModalSection={false}
       modalWidth={0}
       scrolled={false}
       size="large"
@@ -1592,6 +1593,7 @@ exports[`Large Modal should match snapshot 1`] = `
         value={
           Object {
             "decideFixedFooter": [Function],
+            "decideModalSection": [Function],
             "setDimensions": [Function],
           }
         }

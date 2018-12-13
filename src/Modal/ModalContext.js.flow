@@ -4,6 +4,7 @@ import * as React from "react";
 export type ModalContextProps = {|
   +setDimensions?: () => void,
   +decideFixedFooter?: () => void,
+  +decideModalSection?: () => void,
 |};
 
 export type ModalContextType = React.Context<ModalContextProps>;

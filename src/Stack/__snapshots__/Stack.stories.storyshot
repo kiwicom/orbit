@@ -883,7 +883,7 @@ exports[`Storyshots Stack Components preview 1`] = `
               className="Stack__StyledStack-sc-1t576ow-0 jOHKrp"
             >
               <div
-                className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 dpErlr"
+                className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 fNaGqE"
               >
                 <label
                   className="InputField__Field-sc-4opay-0 kCAFyx"
@@ -923,7 +923,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                     </div>
                     <input
-                      className="InputField__Input-sc-4opay-6 iDeTJU"
+                      className="InputField__Input-sc-4opay-6 jLeeWm"
                       onChange={[Function]}
                       onKeyDown={[Function]}
                       size="normal"
@@ -974,7 +974,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
                   <input
-                    className="InputField__Input-sc-4opay-6 iDeTJU"
+                    className="InputField__Input-sc-4opay-6 jLeeWm"
                     size="normal"
                     type="text"
                   />
@@ -988,7 +988,7 @@ exports[`Storyshots Stack Components preview 1`] = `
               className="Stack__StyledStack-sc-1t576ow-0 hxYZYN"
             >
               <div
-                className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 dpErlr"
+                className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 fNaGqE"
               >
                 <label
                   className="InputField__Field-sc-4opay-0 kCAFyx"
@@ -1028,7 +1028,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </div>
                     </div>
                     <input
-                      className="InputField__Input-sc-4opay-6 iDeTJU"
+                      className="InputField__Input-sc-4opay-6 jLeeWm"
                       onChange={[Function]}
                       onKeyDown={[Function]}
                       size="normal"
@@ -1079,7 +1079,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
                   <input
-                    className="InputField__Input-sc-4opay-6 iDeTJU"
+                    className="InputField__Input-sc-4opay-6 jLeeWm"
                     size="normal"
                     type="text"
                   />
@@ -1106,7 +1106,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
                   <input
-                    className="InputField__Input-sc-4opay-6 iDeTJU"
+                    className="InputField__Input-sc-4opay-6 jLeeWm"
                     size="normal"
                     type="text"
                   />
@@ -1187,7 +1187,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                       >
                         <input
-                          className="InputField__Input-sc-4opay-6 iDeTJU"
+                          className="InputField__Input-sc-4opay-6 jLeeWm"
                           onBlur={[Function]}
                           onChange={[Function]}
                           onFocus={[Function]}
@@ -1272,7 +1272,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
                   <input
-                    className="InputField__Input-sc-4opay-6 iDeTJU"
+                    className="InputField__Input-sc-4opay-6 jLeeWm"
                     size="normal"
                     type="text"
                   />
@@ -1353,7 +1353,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                       >
                         <input
-                          className="InputField__Input-sc-4opay-6 iDeTJU"
+                          className="InputField__Input-sc-4opay-6 jLeeWm"
                           onBlur={[Function]}
                           onChange={[Function]}
                           onFocus={[Function]}
@@ -29505,7 +29505,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                 className="InputField__InputContainer-sc-4opay-2 ksKWcl"
               >
                 <input
-                  className="InputField__Input-sc-4opay-6 iDeTJU"
+                  className="InputField__Input-sc-4opay-6 jLeeWm"
                   size="normal"
                   type="password"
                 />
@@ -30814,7 +30814,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                   className="InputField__InputContainer-sc-4opay-2 bnDMxw"
                 >
                   <input
-                    className="InputField__Input-sc-4opay-6 iDeTJU"
+                    className="InputField__Input-sc-4opay-6 jLeeWm"
                     size="normal"
                     type="password"
                   />
@@ -31946,7 +31946,7 @@ exports[`Storyshots Stack Playground 1`] = `
                 className="InputField__InputContainer-sc-4opay-2 ksKWcl"
               >
                 <input
-                  className="InputField__Input-sc-4opay-6 iDeTJU"
+                  className="InputField__Input-sc-4opay-6 jLeeWm"
                   size="normal"
                   type="password"
                 />
@@ -32851,7 +32851,7 @@ exports[`Storyshots Stack RTL 1`] = `
                   className="InputField__InputContainer-sc-4opay-2 bnDMxw"
                 >
                   <input
-                    className="InputField__Input-sc-4opay-6 iDeTJU"
+                    className="InputField__Input-sc-4opay-6 jLeeWm"
                     size="normal"
                     type="password"
                   />

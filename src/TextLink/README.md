@@ -19,14 +19,18 @@ Table below contains all types of the props available in TextLink component.
 | icon          | `React.Node`          |                 | The displayed icon.
 | onClick       | `func`                |                 | Function for handling onClick event.
 | rel           | `string`              |                 | The rel of the TextLink. [See Functional specs](#functional-specs)
+| size          | [`enum`](#enum)       |                 | The size of the TextLink. [See Functional specs](#functional-specs)
 | **type**      | [`enum`](#enum)       | `"primary"`     | The color type of the TextLink.
 
 ### enum
 
-| type          |
-| :------------ |
-| `"primary"`   |
-| `"secondary"` |
+| size          | type          |
+| :------------ | :------------ |
+| `"small"`     | `"primary"`   |
+| `"normal"`    | `"secondary"` |
+| `"large"`     |
 
 ## Functional specs
 * When the `external` is specified, `noopener` and `noreferrer` values will automatically added to attribute `rel` for security reason.
+
+* The default size of the `TextLink` is inherited from parent element, e.g. `TextLink` is wrapped in `Text` component. Use `size` prop only when you need to set it explicitly.

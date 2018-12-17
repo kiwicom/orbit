@@ -192,6 +192,12 @@ export const Input = styled.input`
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   z-index: 2;
 
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   &:focus {
     outline: none;
     & ~ ${FakeInput} {

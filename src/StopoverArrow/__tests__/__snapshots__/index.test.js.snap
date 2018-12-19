@@ -404,10 +404,10 @@ exports[`StopoverArrow should match snapshot 1`] = `
   >
     <StyledComponent
       data-test="test"
-      forwardedClass={
+      forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "attrs": undefined,
+          "attrs": Array [],
           "componentStyle": ComponentStyle {
             "componentId": "StopoverArrow__StyledArrow-sc-19ccrmh-0",
             "isStatic": false,
@@ -803,6 +803,7 @@ exports[`StopoverArrow should match snapshot 1`] = `
             },
           },
           "displayName": "StopoverArrow__StyledArrow",
+          "foldedComponentIds": Array [],
           "render": [Function],
           "styledComponentId": "StopoverArrow__StyledArrow-sc-19ccrmh-0",
           "target": "svg",

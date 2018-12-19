@@ -473,10 +473,10 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
       component="button"
       dataTest="test"
       external={true}
-      forwardedClass={
+      forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "attrs": undefined,
+          "attrs": Array [],
           "componentStyle": ComponentStyle {
             "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
             "isStatic": false,
@@ -904,6 +904,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
             },
           },
           "displayName": "ButtonLink__StyledButtonLink",
+          "foldedComponentIds": Array [],
           "render": [Function],
           "styledComponentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
           "target": [Function],
@@ -2250,10 +2251,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
     <StyledComponent
       component="button"
       external={false}
-      forwardedClass={
+      forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "attrs": undefined,
+          "attrs": Array [],
           "componentStyle": ComponentStyle {
             "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
             "isStatic": false,
@@ -2681,6 +2682,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
             },
           },
           "displayName": "ButtonLink__StyledButtonLink",
+          "foldedComponentIds": Array [],
           "render": [Function],
           "styledComponentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
           "target": [Function],
@@ -3879,10 +3881,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
             type="primary"
           >
             <StyledComponent
-              forwardedClass={
+              forwardedComponent={
                 Object {
                   "$$typeof": Symbol(react.forward_ref),
-                  "attrs": undefined,
+                  "attrs": Array [],
                   "componentStyle": ComponentStyle {
                     "componentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
                     "isStatic": false,
@@ -4282,6 +4284,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                     },
                   },
                   "displayName": "ButtonLink__IconContainer",
+                  "foldedComponentIds": Array [],
                   "render": [Function],
                   "styledComponentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
                   "target": [Function],
@@ -5469,10 +5472,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                         viewBox="0 0 24 24"
                       >
                         <StyledComponent
-                          forwardedClass={
+                          forwardedComponent={
                             Object {
                               "$$typeof": Symbol(react.forward_ref),
-                              "attrs": undefined,
+                              "attrs": Array [],
                               "componentStyle": ComponentStyle {
                                 "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
                                 "isStatic": false,
@@ -5872,6 +5875,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                 },
                               },
                               "displayName": "Icon__StyledIcon",
+                              "foldedComponentIds": Array [],
                               "render": [Function],
                               "styledComponentId": "Icon__StyledIcon-sc-1pnzn3g-0",
                               "target": [Function],
@@ -7069,10 +7073,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
             type="primary"
           >
             <StyledComponent
-              forwardedClass={
+              forwardedComponent={
                 Object {
                   "$$typeof": Symbol(react.forward_ref),
-                  "attrs": undefined,
+                  "attrs": Array [],
                   "componentStyle": ComponentStyle {
                     "componentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
                     "isStatic": false,
@@ -7472,6 +7476,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                     },
                   },
                   "displayName": "ButtonLink__IconContainer",
+                  "foldedComponentIds": Array [],
                   "render": [Function],
                   "styledComponentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
                   "target": [Function],
@@ -8661,10 +8666,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                         viewBox="0 0 24 24"
                       >
                         <StyledComponent
-                          forwardedClass={
+                          forwardedComponent={
                             Object {
                               "$$typeof": Symbol(react.forward_ref),
-                              "attrs": undefined,
+                              "attrs": Array [],
                               "componentStyle": ComponentStyle {
                                 "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
                                 "isStatic": false,
@@ -9064,6 +9069,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                 },
                               },
                               "displayName": "Icon__StyledIcon",
+                              "foldedComponentIds": Array [],
                               "render": [Function],
                               "styledComponentId": "Icon__StyledIcon-sc-1pnzn3g-0",
                               "target": [Function],

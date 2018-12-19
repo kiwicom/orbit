@@ -413,7 +413,7 @@ exports[`Storyshots Tile Expandable 1`] = `
               </div>
             </div>
             <div
-              className="TileExpandable__StyledTileExpandable-notqy1-0 SlrAS"
+              className="TileExpandable__StyledTileExpandable-notqy1-0 dHKDbF"
             >
               <div>
                 This is example of expanded content
@@ -801,7 +801,7 @@ exports[`Storyshots Tile Expandable with custom description 1`] = `
               </div>
             </div>
             <div
-              className="TileExpandable__StyledTileExpandable-notqy1-0 SlrAS"
+              className="TileExpandable__StyledTileExpandable-notqy1-0 dHKDbF"
             >
               <div>
                 This is example of expanded content
@@ -931,6 +931,22 @@ exports[`Storyshots Tile Expandable with custom description 1`] = `
                         >
                           This is example of expanded content
                         </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        />
                       </div>
                       <div
                         style={
@@ -1564,7 +1580,7 @@ exports[`Storyshots Tile RTL 1`] = `
               </div>
             </div>
             <div
-              className="TileExpandable__StyledTileExpandable-notqy1-0 SlrAS"
+              className="TileExpandable__StyledTileExpandable-notqy1-0 dHKDbF"
             >
               <div>
                 This is example of expanded content

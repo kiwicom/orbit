@@ -2,20 +2,9 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import toggleDown from "../../utils/toggleDown/index";
-import toggleUp from "../../utils/toggleUp/index";
 import defaultTokens from "../../defaultTokens";
 
-import type { Props } from "./index";
-
-const getAnimation = ({ theme, expanded, contentHeight }) =>
-  expanded
-    ? css`
-        ${theme.orbit.durationFast} ${toggleDown(contentHeight)} linear;
-      `
-    : css`
-        ${theme.orbit.durationFast} ${toggleUp(contentHeight)} linear;
-      `;
+import type { Props, State } from "./index";
 
 const StyledTileExpandable = styled.div`
   border-top: ${({ theme, expanded }) =>
@@ -26,15 +15,14 @@ const StyledTileExpandable = styled.div`
   margin: 0 ${({ theme }) => theme.orbit.spaceMedium};
   max-height: ${({ contentHeight, expanded, initialExpanded }) =>
     !initialExpanded && (expanded ? `${contentHeight}px` : "0")};
-  transition: ${({ initialExpanded, theme }) =>
+  ${({ initialExpanded, theme }) =>
     !initialExpanded &&
-    `
-      max-height ${theme.orbit.durationFast} linear,
-      padding ${theme.orbit.durationFast} linear,
-      border-top ${theme.orbit.durationFast} linear
+    css`
+      transition: max-height ${theme.orbit.durationFast} ease-in-out,
+        padding ${theme.orbit.durationFast} ease-in-out,
+        border-top ${theme.orbit.durationFast} ease-in-out;
     `};
   overflow: hidden;
-  animation: ${({ initialExpanded }) => !initialExpanded && getAnimation};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   color: ${({ theme }) => theme.orbit.colorTextPrimary};
@@ -44,29 +32,39 @@ StyledTileExpandable.defaultProps = {
   theme: defaultTokens,
 };
 
-class TileExpandable extends React.PureComponent<Props> {
+class TileExpandable extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.contentHeight = 0;
     this.node = React.createRef();
+    this.state = {
+      contentHeight: 0,
+    };
   }
 
   componentDidMount() {
     this.timeout = setTimeout(this.setHeight, 250); // Prevent showing children on initial render
+    window.addEventListener("resize", this.setHeight);
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    if (prevProps.children !== this.props.children) {
+      this.setHeight();
+    }
   }
 
   componentWillUnmount() {
     if (this.timeout) {
       clearTimeout(this.timeout);
     }
+    window.removeEventListener("resize", this.setHeight);
   }
 
   setHeight = () => {
-    this.contentHeight = this.node?.current.clientHeight;
+    const contentHeight = this.node?.current.clientHeight;
+    this.setState({ contentHeight });
   };
 
   timeout: TimeoutID;
-  contentHeight: number;
   node: { current: any | HTMLDivElement };
 
   render() {
@@ -74,7 +72,7 @@ class TileExpandable extends React.PureComponent<Props> {
     return (
       <StyledTileExpandable
         expanded={expanded}
-        contentHeight={this.contentHeight}
+        contentHeight={this.state.contentHeight}
         initialExpanded={initialExpanded}
       >
         <div ref={this.node}>{children}</div>

@@ -145,5 +145,6 @@ const Loading = (props: Props) => {
     </StyledLoading>
   );
 };
+Loading.displayName = "Loading";
 
 export default Loading;

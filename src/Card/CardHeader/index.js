@@ -65,5 +65,5 @@ const CardHeader = ({ icon, title, subTitle, dataTest }: Props) => (
     )}
   </StyledCardHeader>
 );
-
+CardHeader.displayName = "CardHeader";
 export default CardHeader;

@@ -2258,7 +2258,7 @@ exports[`Storyshots Button Destructive buttons 1`] = `
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M5 6h14v12c0 1.103-.897 2-2 2H7c-1.103 0-2-.897-2-2V6zm10 10v-6h-2v6h2zm-4 0v-6H9v6h2zm4-13h6v2H3V3h6V1h6v2z"
+                    d="M5 7h14v12c0 1.103-.897 2-2 2H7c-1.103 0-2-.897-2-2V7zm10 10v-6h-2v6h2zm-4 0v-6H9v6h2zm4-13h6v2H3V4h6V2h6v2z"
                   />
                 </svg>
               </div>

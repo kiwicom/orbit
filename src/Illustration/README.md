@@ -24,6 +24,7 @@ Table below contains all types of the props available in CarrierLogo component.
 | `"AirHelp"`                   | `"medium"`     |
 | `"AirportTransport"`          |
 | `"AirportTransportTaxi"`      |
+| `"AirportShuttle"`            |
 | `"BaggageDrop"`               |
 | `"Boarding"`                  |
 | `"BoardingPass"`              |

@@ -1,2 +1,8 @@
 // @flow
-declare export default React$ComponentType<{||}>;
+import type { spaceAfter } from "../common/getSpacingToken/index";
+
+export type Props = {|
+  ...spaceAfter,
+|};
+
+declare export default React$ComponentType<Props>;

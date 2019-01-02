@@ -2,6 +2,7 @@
 
 exports[`Separator should match snapshot 1`] = `
 <Separator__StyledSeparator
+  spaceAfter="large"
   theme={
     Object {
       "orbit": Object {

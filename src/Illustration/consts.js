@@ -5,6 +5,7 @@ export const NAMES = [
   "AirHelp",
   "AirportTransport", // TODO: Get rid off 22.11
   "AirportTransportTaxi", // TODO: Get rid off 22.11
+  "AirportShuttle",
   "BaggageDrop",
   "Boarding",
   "BoardingPass",

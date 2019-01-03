@@ -38,6 +38,10 @@
     "library",
     "component"
   ],
+  "browserslist": [
+    "last 2 versions",
+    "Edge >= 38"
+  ],
   "files": [
     "es",
     "lib",

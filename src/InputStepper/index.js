@@ -51,7 +51,7 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
     const { maxValue, step = 1 } = this.props;
     const newValue = value + step;
     this.setState({
-      value: maxValue && newValue > maxValue ? maxValue : newValue,
+      value: newValue >= +maxValue ? maxValue : newValue,
     });
   };
 
@@ -61,7 +61,7 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
     const newValue = value - step;
 
     this.setState({
-      value: minValue && newValue < minValue ? minValue : newValue,
+      value: newValue <= +minValue ? minValue : newValue,
     });
   };
 
@@ -125,7 +125,7 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
           ref={forwardedRef}
           prefix={
             <ButtonLink
-              disabled={disabled || (!!minValue && value <= minValue)}
+              disabled={disabled || value <= +minValue}
               iconLeft={<MinusCircle color="secondary" />}
               size={size}
               onClick={this.decrementCounter}
@@ -135,7 +135,7 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
           }
           suffix={
             <ButtonLink
-              disabled={disabled || (!!maxValue && value >= maxValue)}
+              disabled={disabled || value >= +maxValue}
               iconLeft={<PlusCircle color="secondary" />}
               size={size}
               onClick={this.incrementCounter}

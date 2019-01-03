@@ -136,8 +136,6 @@ class Card extends React.Component<Props, State> {
       ) {
         return children[0].props?.children?.props?.children;
       }
-
-      return children[0].props?.children;
     }
     return children;
   };

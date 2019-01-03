@@ -19,7 +19,7 @@ const babelOptions = {
     "babel-plugin-styled-components"
   ],
   babelrc: false,
-};
+}
 
 module.exports = {
   resolve: {

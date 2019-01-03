@@ -44,7 +44,7 @@ const StyledChildWrapper = styled.div`
 
   + div ${StyledCardSection}, ${StyledCardSection} { // If expanded - next CardSection and current CardSection will have border-top
     border-top: ${({ expanded }) => expanded && getBorder};
-    
+
     ${StyledCardSectionHeader}, ${StyledCardSectionContent} {
       transition: ${({ initialExpanded }) => (initialExpanded ? "none" : undefined)}
     }
@@ -67,7 +67,7 @@ const StyledCard = styled.div`
   }
 
   ${StyledChildWrapper} {
-  
+
     &:first-of-type {
       ${StyledCardHeader}, ${StyledCardSection}, > ${StyledLoading} {
         border-top: ${getBorder};
@@ -125,16 +125,17 @@ class Card extends React.Component<Props, State> {
       // Jest test
       return [];
     }
-
-    if (children[0].type.name === Loading.name && !children[0].props.loading) {
+    if (
+      Loading.name !== "" &&
+      children[0].type?.name === Loading.name &&
+      !children[0].props?.loading
+    ) {
       if (
-        !Array.isArray(children[0].props.children) &&
-        children[0].props.children.type.toString() === React.Fragment.toString()
+        !Array.isArray(children[0].props?.children) &&
+        String(children[0].props?.children?.type) === React.Fragment.toString()
       ) {
-        return children[0].props.children.props.children;
+        return children[0].props?.children?.props?.children;
       }
-
-      return children[0].props.children;
     }
     return children;
   };
@@ -165,13 +166,16 @@ class Card extends React.Component<Props, State> {
 
   hasAdjustedHeader = () => {
     const children = this.getChildren();
+    if (children === undefined) {
+      return false;
+    }
     // Check if first element is Header
-    if (children[0] !== undefined && children[0].type.name !== CardHeader.name) {
+    if (children && children[0] !== undefined && children[0].type.name !== CardHeader.name) {
       return false;
     }
 
     // Check if first section exists
-    if (children[1] === undefined) {
+    if (children && children[1] === undefined) {
       return false;
     }
 

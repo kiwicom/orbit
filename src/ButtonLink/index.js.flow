@@ -9,9 +9,7 @@ type Size = "small" | "normal" | "large";
 export type Props = {|
   +children?: React$Node,
   +component?: string | React$Node,
-  +onClick?: (
-    e: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLDivElement>,
-  ) => void | Promise<any>,
+  +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
   +disabled?: boolean,
   +block?: boolean,
   +external?: boolean,

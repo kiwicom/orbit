@@ -67,7 +67,6 @@ const IconContainer = styled(({ className, children }) => (
   svg {
     height: ${({ theme }) => theme.orbit.widthIconSmall};
     width: ${({ theme }) => theme.orbit.heightIconSmall};
-    color: ${getTypeToken(TOKENS.color)};
   }
 `;
 

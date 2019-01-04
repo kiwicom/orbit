@@ -101,7 +101,7 @@ exports[`Storyshots Badge Default 1`] = `
             className="Badge__StyledBadge-sc-1y6i8f0-0 iQkwdQ"
           >
             <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 fXJPst"
+              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -632,7 +632,7 @@ exports[`Storyshots Badge Playground 1`] = `
             data-test="test"
           >
             <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 fTxikZ"
+              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -991,7 +991,7 @@ exports[`Storyshots Badge RTL 1`] = `
             className="Badge__StyledBadge-sc-1y6i8f0-0 bxpgmY"
           >
             <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 bxRyRT"
+              className="Badge__IconContainer-sc-1y6i8f0-1 ksxIrm"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -1336,7 +1336,7 @@ exports[`Storyshots Badge Types 1`] = `
             className="Badge__StyledBadge-sc-1y6i8f0-0 iQkwdQ"
           >
             <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 fXJPst"
+              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -1555,7 +1555,7 @@ exports[`Storyshots Badge Types 1`] = `
             className="Badge__StyledBadge-sc-1y6i8f0-0 bxpgmY"
           >
             <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 fTxikZ"
+              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -1774,7 +1774,7 @@ exports[`Storyshots Badge Types 1`] = `
             className="Badge__StyledBadge-sc-1y6i8f0-0 eINXZg"
           >
             <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 GtFvF"
+              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -1993,7 +1993,7 @@ exports[`Storyshots Badge Types 1`] = `
             className="Badge__StyledBadge-sc-1y6i8f0-0 qdIcr"
           >
             <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 klJGVo"
+              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -2212,7 +2212,7 @@ exports[`Storyshots Badge Types 1`] = `
             className="Badge__StyledBadge-sc-1y6i8f0-0 iHgMEy"
           >
             <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 lhySVz"
+              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -2431,7 +2431,7 @@ exports[`Storyshots Badge Types 1`] = `
             className="Badge__StyledBadge-sc-1y6i8f0-0 eBqsVH"
           >
             <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 fYHJTT"
+              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -2658,7 +2658,7 @@ exports[`Storyshots Badge Types 1`] = `
               className="Badge__StyledBadge-sc-1y6i8f0-0 cGXnVY"
             >
               <div
-                className="Badge__IconContainer-sc-1y6i8f0-1 fXJPst"
+                className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
               >
                 <svg
                   className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"

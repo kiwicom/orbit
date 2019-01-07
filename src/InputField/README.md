@@ -33,7 +33,7 @@ Table below contains all types of the props available in InputField component.
 | **prefix**    | `React.Node`      |              | The prefix component for the InputField. 
 | ref           | `func`            |              | Prop for forwarded ref of the InputField. [See Functional specs](#functional-specs)
 | **size**      | [`enum`](#enum)   | `"normal"`   | The size of the InputField.
-| suffix        | `React.Node`      |              | The suffix component for the InputField.
+| suffix        | `React.Node`      |              | The suffix component for the InputField. [See Functional specs](#functional-specs)
 | **type**      | [`enum`](#enum)   | `"text"`     | The type of the InputField.
 | value         | `string`          |              | Specifies the value of the InputField.
 
@@ -53,6 +53,16 @@ Table below contains all types of the props available in InputField component.
 * The color of the label will turn into cloud shade when the InputField has some filled value.
 
 * You can use `string` for currency InputField, or `React.Node` for InputField with icon.
+
+* If you want to use `ButtonLink` as suffix for the `InputField`, use `transparent` prop for the `ButtonLink`, e.g.:
+```jsx
+<InputField
+  placeholder="My placeholder"
+  suffix={
+    <ButtonLink transparent icon={<Visibility />} />
+  }
+/>
+```
 
 * `ref` can be used for example auto-focus the elements immediately after render.
 ```jsx

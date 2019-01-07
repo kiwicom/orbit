@@ -20,12 +20,6 @@ const StyledInputStepper = styled.div`
   width: 100%;
   ${Input} {
     text-align: center;
-
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
   }
   ${Prefix} {
     padding: 0;

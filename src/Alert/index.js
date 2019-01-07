@@ -173,8 +173,7 @@ const CloseContainer = styled(StyledDiv)`
   top: ${({ hasChildren }) => (hasChildren ? 0 : "50%")};
   margin-top: ${({ hasChildren, theme }) => !hasChildren && `-${theme.orbit.widthIconSmall}`};
   ${right}: 0;
-  margin: ${({ hasChildren, theme }) =>
-    !hasChildren && rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+  margin-${right}: ${({ hasChildren, theme }) => !hasChildren && theme.orbit.spaceXSmall};
 `;
 
 CloseContainer.defaultProps = {

@@ -131,6 +131,22 @@ storiesOf("Alert", module)
       ],
     };
   })
+  .addWithChapters("Only title", () => {
+    const message = "The quick, brown fox jumps over a lazy dog.";
+    return {
+      info:
+        "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => <Alert title={message} closable />,
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Playground", () => {
     const type = select("Type", Object.values(TYPE_OPTIONS), "info");
     const title = text("Title", "You can change the title by changing the Title knob");

@@ -98,14 +98,14 @@ exports[`Storyshots TextLink Link with icon 1`] = `
           }
         >
           <a
-            className="TextLink__StyledTextLink-sc-1bvlje4-1 naMEP"
+            className="TextLink__StyledTextLink-sc-1bvlje4-1 gjnkGq"
             href="https://kiwi.com"
             onClick={[Function]}
             rel=""
           >
             TextLink with icon
             <span
-              className="TextLink__IconContainer-sc-1bvlje4-0 evHoym"
+              className="TextLink__IconContainer-sc-1bvlje4-0 hvVwEI"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -421,16 +421,17 @@ exports[`Storyshots TextLink Playground 1`] = `
           }
         >
           <a
-            className="TextLink__StyledTextLink-sc-1bvlje4-1 daTvTO"
+            className="TextLink__StyledTextLink-sc-1bvlje4-1 hiklAr"
             data-test="test"
             href="https://kiwi.com"
             onClick={[Function]}
             rel="noopener noreferrer"
+            size="small"
             target="_blank"
           >
             Custom link
             <span
-              className="TextLink__IconContainer-sc-1bvlje4-0 iaiTzP"
+              className="TextLink__IconContainer-sc-1bvlje4-0 dwbANF"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -580,6 +581,36 @@ exports[`Storyshots TextLink Playground 1`] = `
                                   }
                                 >
                                   secondary
+                                </span>
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              size
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  small
                                 </span>
                                 "
                               </span>
@@ -855,7 +886,7 @@ exports[`Storyshots TextLink Primary link 1`] = `
           }
         >
           <a
-            className="TextLink__StyledTextLink-sc-1bvlje4-1 naMEP"
+            className="TextLink__StyledTextLink-sc-1bvlje4-1 gjnkGq"
             href="https://kiwi.com"
             onClick={[Function]}
             rel=""
@@ -1204,14 +1235,14 @@ exports[`Storyshots TextLink RTL 1`] = `
           }
         >
           <a
-            className="TextLink__StyledTextLink-sc-1bvlje4-1 naMEP"
+            className="TextLink__StyledTextLink-sc-1bvlje4-1 gjnkGq"
             href="#"
             onClick={[Function]}
             rel=""
           >
             Link
             <span
-              className="TextLink__IconContainer-sc-1bvlje4-0 evHoym"
+              className="TextLink__IconContainer-sc-1bvlje4-0 hvVwEI"
             >
               <svg
                 className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -1578,7 +1609,7 @@ exports[`Storyshots TextLink Secondary link 1`] = `
           }
         >
           <a
-            className="TextLink__StyledTextLink-sc-1bvlje4-1 daTvTO"
+            className="TextLink__StyledTextLink-sc-1bvlje4-1 fdRcJC"
             href="https://kiwi.com"
             onClick={[Function]}
             rel=""

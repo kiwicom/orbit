@@ -3,7 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
-import TYPE_OPTIONS from "./consts";
+import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 
 import type { Props } from "./index";
 
@@ -16,10 +16,20 @@ const getColor = ({ theme, type }) => {
   return tokens[type];
 };
 
+const getSizeToken = () => ({ theme, size }) => {
+  const sizeTokens = {
+    [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeTextNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeTextSmall,
+  };
+  return size && sizeTokens[size];
+};
+
 const IconContainer = styled(({ children, className }) => (
   <span className={className}>{children}</span>
 ))`
-  display: block;
+  display: flex;
+  align-items: center;
   color: ${getColor};
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
@@ -39,6 +49,7 @@ export const StyledTextLink = styled(({ theme, type, ...props }) => (
   color: ${getColor};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightLinks};
+  font-size: ${getSizeToken};
   text-decoration: ${({ theme, type }) =>
     type === TYPE_OPTIONS.SECONDARY
       ? theme.orbit.textDecorationTextLinkSecondary
@@ -76,6 +87,7 @@ StyledTextLink.defaultProps = {
 
 const TextLink = ({
   type = TYPE_OPTIONS.PRIMARY,
+  size,
   children,
   href,
   external = false,
@@ -100,6 +112,7 @@ const TextLink = ({
   return (
     <StyledTextLink
       type={type}
+      size={size}
       href={href}
       target={external ? "_blank" : undefined}
       rel={relValues && relValues.join(" ")}

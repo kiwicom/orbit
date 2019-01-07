@@ -5,6 +5,8 @@ import type { Globals } from "../common/common.js.flow";
 
 type Type = "primary" | "secondary";
 
+type Size = "large" | "normal" | "small";
+
 export type Props = {|
   +children: React$Node,
   +href?: string,
@@ -12,6 +14,7 @@ export type Props = {|
   +onClick?: (SyntheticEvent<HTMLLinkElement>) => void | Promise<any>,
   +external?: boolean,
   +type?: Type,
+  +size?: Size,
   +rel?: string,
   +tabIndex?: string,
   ...Globals,

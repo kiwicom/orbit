@@ -7,7 +7,7 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 
-import TYPE_OPTIONS from "./consts";
+import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 import * as Icons from "../icons";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
@@ -109,6 +109,7 @@ storiesOf("TextLink", module)
   .addWithChapters("Playground", () => {
     const href = text("Href", "https://kiwi.com");
     const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.SECONDARY);
+    const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
     const external = boolean("External", true);
     const title = text("Text", "Custom link");
     const rel = text("Rel", undefined);
@@ -128,6 +129,7 @@ storiesOf("TextLink", module)
                   onClick={action("clicked")}
                   href={href}
                   type={type}
+                  size={size}
                   rel={validate(rel)}
                   icon={Icon && <Icon />}
                   dataTest={dataTest}

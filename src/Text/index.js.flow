@@ -16,7 +16,7 @@ type Type =
   | "critical"
   | "white";
 type Size = "large" | "normal" | "small";
-type Weight = "regular" | "bold";
+type Weight = "normal" | "bold";
 
 export type Props = {|
   +type?: Type,

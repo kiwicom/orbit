@@ -1,7 +1,11 @@
 // @flow
-const TYPE_OPTIONS = {
+export const TYPE_OPTIONS = {
   PRIMARY: "primary",
   SECONDARY: "secondary",
 };
 
-export default TYPE_OPTIONS;
+export const SIZE_OPTIONS = {
+  SMALL: "small",
+  NORMAL: "normal",
+  LARGE: "large",
+};

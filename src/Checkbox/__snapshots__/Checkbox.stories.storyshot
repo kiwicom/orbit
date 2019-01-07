@@ -881,7 +881,7 @@ exports[`Storyshots CheckBox RTL 1`] = `
                 >
                   I instruct Kiwi.com to cancel this booking under the herein specified conditions and to process a refund in accordance with Kiwi.com’ 
                   <a
-                    className="TextLink__StyledTextLink-sc-1bvlje4-1 naMEP"
+                    className="TextLink__StyledTextLink-sc-1bvlje4-1 gjnkGq"
                     rel=""
                   >
                     Terms and Conditions
@@ -1259,7 +1259,7 @@ exports[`Storyshots CheckBox With TextLink in label 1`] = `
                 >
                   I instruct Kiwi.com to cancel this booking under the herein specified conditions and to process a refund in accordance with Kiwi.com’ 
                   <a
-                    className="TextLink__StyledTextLink-sc-1bvlje4-1 naMEP"
+                    className="TextLink__StyledTextLink-sc-1bvlje4-1 gjnkGq"
                     rel=""
                   >
                     Terms and Conditions

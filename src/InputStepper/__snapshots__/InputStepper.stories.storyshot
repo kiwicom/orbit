@@ -98,7 +98,7 @@ exports[`Storyshots InputStepper Default 1`] = `
           }
         >
           <div
-            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 dpErlr"
+            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 fNaGqE"
           >
             <label
               className="InputField__Field-sc-4opay-0 kCAFyx"
@@ -131,7 +131,7 @@ exports[`Storyshots InputStepper Default 1`] = `
                   </div>
                 </div>
                 <input
-                  className="InputField__Input-sc-4opay-6 iDeTJU"
+                  className="InputField__Input-sc-4opay-6 jLeeWm"
                   onChange={[Function]}
                   onKeyDown={[Function]}
                   size="normal"
@@ -378,7 +378,7 @@ exports[`Storyshots InputStepper Playground 1`] = `
           }
         >
           <div
-            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 dpErlr"
+            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 fNaGqE"
           >
             <label
               className="InputField__Field-sc-4opay-0 kCAFyx"
@@ -418,7 +418,7 @@ exports[`Storyshots InputStepper Playground 1`] = `
                   </div>
                 </div>
                 <input
-                  className="InputField__Input-sc-4opay-6 iDeTJU"
+                  className="InputField__Input-sc-4opay-6 jLeeWm"
                   data-test="test"
                   disabled={false}
                   max={10}
@@ -1091,7 +1091,7 @@ exports[`Storyshots InputStepper RTL 1`] = `
           }
         >
           <div
-            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 dpErlr"
+            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 fNaGqE"
           >
             <label
               className="InputField__Field-sc-4opay-0 kCAFyx"
@@ -1131,7 +1131,7 @@ exports[`Storyshots InputStepper RTL 1`] = `
                   </div>
                 </div>
                 <input
-                  className="InputField__Input-sc-4opay-6 iDeTJU"
+                  className="InputField__Input-sc-4opay-6 jLeeWm"
                   onChange={[Function]}
                   onKeyDown={[Function]}
                   size="normal"
@@ -1430,7 +1430,7 @@ exports[`Storyshots InputStepper With different size 1`] = `
           }
         >
           <div
-            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 dpErlr"
+            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 fNaGqE"
           >
             <label
               className="InputField__Field-sc-4opay-0 kCAFyx"
@@ -1470,7 +1470,7 @@ exports[`Storyshots InputStepper With different size 1`] = `
                   </div>
                 </div>
                 <input
-                  className="InputField__Input-sc-4opay-6 iDeTJU"
+                  className="InputField__Input-sc-4opay-6 jLeeWm"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -1840,7 +1840,7 @@ exports[`Storyshots InputStepper With help 1`] = `
           }
         >
           <div
-            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 dpErlr"
+            className="InputStepper__StyledInputStepper-sc-1kqzp6i-1 fNaGqE"
           >
             <label
               className="InputField__Field-sc-4opay-0 kCAFyx"
@@ -1880,7 +1880,7 @@ exports[`Storyshots InputStepper With help 1`] = `
                   </div>
                 </div>
                 <input
-                  className="InputField__Input-sc-4opay-6 iDeTJU"
+                  className="InputField__Input-sc-4opay-6 jLeeWm"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}

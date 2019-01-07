@@ -299,6 +299,12 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   z-index: 2;
 }
 
+.c11::-webkit-inner-spin-button,
+.c11::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .c11:focus {
   outline: none;
 }
@@ -363,12 +369,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   text-align: center;
 }
 
-.c0 .c10::-webkit-inner-spin-button,
-.c0 .c10::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .c0 .c4 {
   padding: 0;
   pointer-events: auto;
@@ -422,7 +422,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
               "rules": Array [
                 "width:100%;",
                 ".c10",
-                "{text-align:center;&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}}",
+                "{text-align:center;}",
                 ".c4",
                 "{padding:0;pointer-events:auto;}",
               ],
@@ -11940,7 +11940,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       [Function],
                                       ";border-radius:",
                                       [Function],
-                                      ";z-index:2;&:focus{outline:none;& ~ ",
+                                      ";z-index:2;&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&:focus{outline:none;& ~ ",
                                       ".c15",
                                       "{box-shadow:inset 0 0 0 ",
                                       [Function],

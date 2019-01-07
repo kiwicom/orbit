@@ -5623,7 +5623,7 @@ exports[`Storyshots Modal With Form 1`] = `
                         className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                       >
                         <input
-                          className="InputField__Input-sc-4opay-6 iDeTJU"
+                          className="InputField__Input-sc-4opay-6 jLeeWm"
                           placeholder="Your email"
                           size="normal"
                           type="text"
@@ -5711,7 +5711,7 @@ exports[`Storyshots Modal With Form 1`] = `
                               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                             >
                               <input
-                                className="InputField__Input-sc-4opay-6 iDeTJU"
+                                className="InputField__Input-sc-4opay-6 jLeeWm"
                                 onBlur={[Function]}
                                 onChange={[Function]}
                                 onFocus={[Function]}

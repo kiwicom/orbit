@@ -3,7 +3,7 @@ import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
 
-type Type = "buttonLoader" | "boxLoader" | "searchLoader" | "pageLoader";
+type Type = "buttonLoader" | "boxLoader" | "searchLoader" | "pageLoader" | "inlineLoader";
 
 export type Props = {|
   +children?: React$Node,

@@ -14,12 +14,14 @@ const getToken = name => ({ type }) => {
       [TYPE_OPTIONS.SEARCH_LOADER]: "start",
       [TYPE_OPTIONS.BOX_LOADER]: "center",
       [TYPE_OPTIONS.PAGE_LOADER]: "center",
+      [TYPE_OPTIONS.INLINE_LOADER]: "center",
     },
     [TOKENS.HEIGHT]: {
       [TYPE_OPTIONS.BUTTON_LOADER]: "100%",
       [TYPE_OPTIONS.SEARCH_LOADER]: "40px",
       [TYPE_OPTIONS.BOX_LOADER]: "80px",
       [TYPE_OPTIONS.PAGE_LOADER]: "120px",
+      [TYPE_OPTIONS.INLINE_LOADER]: "auto",
     },
   };
 
@@ -48,8 +50,10 @@ export const StyledLoading = styled(({ children, className, dataTest }) => (
   ${left}: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
   width: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "100%"};
   height: ${getToken(TOKENS.HEIGHT)};
-  padding: 0 ${({ theme }) => theme.orbit.spaceSmall}; // TODO: create token paddingLoading
-  display: flex;
+  padding: ${({ theme, type }) =>
+    type !== TYPE_OPTIONS.INLINE_LOADER &&
+    `0 ${theme.orbit.spaceSmall}`}; // TODO: create token paddingLoading
+  display: ${({ type }) => (type === TYPE_OPTIONS.INLINE_LOADER ? "inline-flex" : "flex")};
   flex-direction: ${({ type }) => (type === TYPE_OPTIONS.PAGE_LOADER ? "column" : "row")};
   justify-content: ${getToken(TOKENS.ALIGN)};
   align-items: center;
@@ -128,7 +132,9 @@ const Loading = (props: Props) => {
     children
   ) : (
     <StyledLoading type={type} dataTest={dataTest}>
-      {type === TYPE_OPTIONS.BOX_LOADER || type === TYPE_OPTIONS.SEARCH_LOADER ? (
+      {type === TYPE_OPTIONS.BOX_LOADER ||
+      type === TYPE_OPTIONS.SEARCH_LOADER ||
+      type === TYPE_OPTIONS.INLINE_LOADER ? (
         <StyledLoader>
           <StyledLoaderCircle />
           <StyledLoaderCircle />

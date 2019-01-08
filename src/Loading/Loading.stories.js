@@ -79,6 +79,23 @@ storiesOf("Loading", module)
       ],
     };
   })
+  .addWithChapters("Inline loader", () => {
+    const loadingText = text("Text", "Please wait, content of the page is loading...");
+
+    return {
+      info:
+        "This configuration of this component is without any height, width or paddings. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => <Loading type={TYPE_OPTIONS.INLINE_LOADER} text={loadingText} />,
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Playground", () => {
     const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PAGE_LOADER);
     const loadingText = text("Text", "Please wait, content of the page is loading...");

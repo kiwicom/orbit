@@ -120,12 +120,11 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 jLeeWm"
+                      className="InputField__Input-sc-4opay-6 btlEqS"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
                       placeholder="DD"
-                      size="normal"
                       type="text"
                     />
                     <div
@@ -244,12 +243,11 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 jLeeWm"
+                      className="InputField__Input-sc-4opay-6 btlEqS"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
                       placeholder="YYYY"
-                      size="normal"
                       type="text"
                     />
                     <div
@@ -1210,13 +1208,12 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 jLeeWm"
+                      className="InputField__Input-sc-4opay-6 btlEqS"
                       maxLength={11}
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
                       placeholder="e.g. 123 456 789"
-                      size="normal"
                       type="text"
                     />
                     <div
@@ -2042,12 +2039,11 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 jLeeWm"
+                      className="InputField__Input-sc-4opay-6 btlEqS"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
                       placeholder="Placeholder"
-                      size="normal"
                       type="text"
                     />
                     <div
@@ -2110,12 +2106,11 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 jLeeWm"
+                      className="InputField__Input-sc-4opay-6 btlEqS"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
                       placeholder="Placeholder"
-                      size="normal"
                       type="text"
                     />
                     <div
@@ -3250,12 +3245,11 @@ exports[`Storyshots InputGroup RTL 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 jLeeWm"
+                      className="InputField__Input-sc-4opay-6 btlEqS"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
                       placeholder="DD"
-                      size="normal"
                       type="text"
                     />
                     <div
@@ -3374,12 +3368,11 @@ exports[`Storyshots InputGroup RTL 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 jLeeWm"
+                      className="InputField__Input-sc-4opay-6 btlEqS"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
                       placeholder="YYYY"
-                      size="normal"
                       type="text"
                     />
                     <div

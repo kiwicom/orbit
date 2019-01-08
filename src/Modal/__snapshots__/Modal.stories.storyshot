@@ -6674,9 +6674,8 @@ exports[`Storyshots Modal With Form 1`] = `
                         className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                       >
                         <input
-                          className="InputField__Input-sc-4opay-6 jLeeWm"
+                          className="InputField__Input-sc-4opay-6 btlEqS"
                           placeholder="Your email"
-                          size="normal"
                           type="text"
                         />
                         <div
@@ -6762,12 +6761,11 @@ exports[`Storyshots Modal With Form 1`] = `
                               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                             >
                               <input
-                                className="InputField__Input-sc-4opay-6 jLeeWm"
+                                className="InputField__Input-sc-4opay-6 btlEqS"
                                 onBlur={[Function]}
                                 onChange={[Function]}
                                 onFocus={[Function]}
                                 placeholder="111 222 333"
-                                size="normal"
                                 type="text"
                               />
                               <div

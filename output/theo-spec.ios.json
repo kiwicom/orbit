@@ -13,6 +13,12 @@
       "name": "paddingInputNormal"
     },
     {
+      "value": "540px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "widthModalSmall"
+    },
+    {
       "value": "rgb(244, 138, 6)",
       "type": "color",
       "category": "Background colors",
@@ -71,6 +77,12 @@
       "type": "color",
       "category": "Color palette",
       "name": "paletteRedLight"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundTable"
     },
     {
       "value": "rgb(1, 118, 210)",
@@ -289,6 +301,12 @@
       "name": "backgroundBadgeInfo"
     },
     {
+      "value": "rgb(232, 237, 241)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorTag"
+    },
+    {
       "value": "rgb(70, 182, 85)",
       "type": "color",
       "category": "Background colors",
@@ -428,6 +446,12 @@
       "name": "colorTextButtonWarningBordered"
     },
     {
+      "value": "rgb(232, 237, 241)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextTagSelected"
+    },
+    {
       "value": "rgb(70, 182, 85)",
       "type": "color",
       "category": "Border color",
@@ -462,6 +486,12 @@
       "type": "color",
       "category": "Color palette",
       "name": "paletteRedLightActive"
+    },
+    {
+      "value": "8px 12px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingTableCompact"
     },
     {
       "value": "rgb(23, 27, 30)",
@@ -506,6 +536,12 @@
       "name": "paletteCloudNormalActive"
     },
     {
+      "value": "linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23))",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundTableShadowLeft"
+    },
+    {
       "value": "20px",
       "type": "size",
       "category": "Size (width, height)",
@@ -530,6 +566,12 @@
       "name": "colorIconSuccess"
     },
     {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundTagSelected"
+    },
+    {
       "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "Border color",
@@ -548,6 +590,12 @@
       "name": "heightIconSmall"
     },
     {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonWhite"
+    },
+    {
       "value": "rgb(252, 241, 205)",
       "type": "color",
       "category": "Background colors",
@@ -558,6 +606,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorInfoCheckBoxRadio"
+    },
+    {
+      "value": "700",
+      "type": "string",
+      "category": "Font weight",
+      "name": "fontWeightTableHead"
     },
     {
       "value": "rgb(176, 232, 254)",
@@ -632,6 +686,18 @@
       "name": "backgroundButtonLinkPrimary"
     },
     {
+      "value": "rgba(255, 255, 255, 0.2)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonWhiteBorderedHover"
+    },
+    {
+      "value": "6px 8px 6px 6px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingTagWithIcon"
+    },
+    {
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "category": "Colors",
@@ -656,6 +722,12 @@
       "name": "borderColorInputHover"
     },
     {
+      "value": "6px 8px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingTag"
+    },
+    {
       "value": "rgb(249, 151, 30)",
       "type": "color",
       "category": "Colors",
@@ -666,6 +738,12 @@
       "type": "size",
       "category": "Spacing",
       "name": "paddingButtonNormalWithIcon"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonWhite"
     },
     {
       "value": "32px",
@@ -777,10 +855,22 @@
       "name": "borderColorButtonPrimaryBorderedActive"
     },
     {
+      "value": "rgb(70, 81, 94)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextTag"
+    },
+    {
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonFilledActive"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonWhiteBorderedHover"
     },
     {
       "value": "1px",
@@ -855,6 +945,12 @@
       "name": "paletteBlueDark"
     },
     {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorButtonWhiteBordered"
+    },
+    {
       "value": "rgb(0, 169, 145)",
       "type": "color",
       "category": "Colors",
@@ -877,6 +973,12 @@
       "type": "size",
       "category": "Spacing",
       "name": "paddingAlert"
+    },
+    {
+      "value": "12px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingLoading"
     },
     {
       "value": "transparent",
@@ -963,16 +1065,40 @@
       "name": "colorTextButtonLinkPrimaryActive"
     },
     {
+      "value": "rgb(245, 247, 249)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundTag"
+    },
+    {
       "value": "rgb(53, 79, 136)",
       "type": "color",
       "category": "Background colors",
       "name": "backgroundButtonFacebookActive"
     },
     {
+      "value": "rgb(186, 199, 213)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextLoading"
+    },
+    {
+      "value": "7px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "heightStopoverArrow"
+    },
+    {
       "value": "rgb(70, 81, 94)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorButtonGoogleBordered"
+    },
+    {
+      "value": "rgb(56, 64, 75)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundTagSelectedActive"
     },
     {
       "value": "14px",
@@ -991,6 +1117,18 @@
       "type": "color",
       "category": "Colors",
       "name": "colorIconRadioButtonDisabled"
+    },
+    {
+      "value": "rgb(56, 64, 75)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonWhiteActive"
+    },
+    {
+      "value": "36px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "widthStopoverArrow"
     },
     {
       "value": "rgb(252, 241, 205)",
@@ -1015,6 +1153,12 @@
       "type": "color",
       "category": "Background colors",
       "name": "backgroundAlertCritical"
+    },
+    {
+      "value": "740px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "widthModalNormal"
     },
     {
       "value": "rgb(255, 255, 255)",
@@ -1090,6 +1234,12 @@
       "name": "paletteWhite"
     },
     {
+      "value": "14px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeHeadingTitle4"
+    },
+    {
       "value": "rgb(210, 28, 28)",
       "type": "color",
       "category": "Colors",
@@ -1150,12 +1300,6 @@
       "name": "fontWeightNormal"
     },
     {
-      "value": "6px",
-      "type": "size",
-      "category": "Spacing",
-      "name": "paddingLeftInputFile"
-    },
-    {
       "value": "rgb(214, 222, 230)",
       "type": "color",
       "category": "Background colors",
@@ -1186,6 +1330,12 @@
       "name": "borderColorButtonGoogleBorderedHover"
     },
     {
+      "value": "rgb(229, 234, 239)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonWhiteActive"
+    },
+    {
       "value": "rgb(210, 28, 28)",
       "type": "color",
       "category": "Colors",
@@ -1208,6 +1358,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonSuccessBorderedHover"
+    },
+    {
+      "value": "rgb(229, 234, 239)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundTagHover"
     },
     {
       "value": "40px",
@@ -1264,6 +1420,12 @@
       "name": "heightIllustrationSmall"
     },
     {
+      "value": "rgb(127, 145, 168)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorStopoverArrow"
+    },
+    {
       "value": "24px",
       "type": "size",
       "category": "Size (width, height)",
@@ -1294,10 +1456,28 @@
       "name": "colorTextButtonPrimaryBorderedHover"
     },
     {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorButtonWhiteBorderedHover"
+    },
+    {
       "value": "rgb(210, 28, 28)",
       "type": "color",
       "category": "Colors",
       "name": "colorAlertIconCritical"
+    },
+    {
+      "value": "6px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingTagRemovableWithIcon"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorButtonWhiteBorderedActive"
     },
     {
       "value": "rgb(0, 143, 123)",
@@ -1360,10 +1540,34 @@
       "name": "backgroundBadgeNeutral"
     },
     {
+      "value": "6px 6px 6px 8px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingTagRemovable"
+    },
+    {
       "value": "rgb(70, 81, 94)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonSecondary"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonWhiteBordered"
+    },
+    {
+      "value": "rgb(214, 222, 230)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundTagActive"
+    },
+    {
+      "value": "0 8px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingBadge"
     },
     {
       "value": "rgb(0, 169, 145)",
@@ -1412,6 +1616,12 @@
       "type": "string",
       "category": "Font family",
       "name": "fontFamily"
+    },
+    {
+      "value": "rgb(245, 247, 249)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonWhiteHover"
     },
     {
       "value": "rgb(210, 28, 28)",
@@ -1498,6 +1708,18 @@
       "name": "colorTextButtonFacebookHover"
     },
     {
+      "value": "transparent",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonWhiteBordered"
+    },
+    {
+      "value": "1280px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "widthModalLarge"
+    },
+    {
       "value": "rgb(229, 234, 239)",
       "type": "color",
       "category": "Color palette",
@@ -1564,6 +1786,12 @@
       "name": "zIndexModal"
     },
     {
+      "value": "rgb(1, 118, 210)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorTagFocus"
+    },
+    {
       "value": "solid",
       "type": "string",
       "category": "Border style",
@@ -1606,10 +1834,28 @@
       "name": "backgroundCarrierLogo"
     },
     {
+      "value": "rgb(63, 72, 84)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonWhiteHover"
+    },
+    {
+      "value": "rgb(63, 72, 84)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundTagSelectedHover"
+    },
+    {
       "value": "rgb(231, 243, 232)",
       "type": "color",
       "category": "Background colors",
       "name": "backgroundAlertSuccess"
+    },
+    {
+      "value": "0 0 0 6px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingInputFile"
     },
     {
       "value": "rgb(0, 152, 130)",
@@ -1696,6 +1942,12 @@
       "name": "fontSizeMessage"
     },
     {
+      "value": "500",
+      "type": "string",
+      "category": "Font weight",
+      "name": "fontWeightHeadingTitle4"
+    },
+    {
       "value": "rgb(66, 172, 80)",
       "type": "color",
       "category": "Border color",
@@ -1720,10 +1972,22 @@
       "name": "colorTextButtonWarningBorderedHover"
     },
     {
+      "value": "rgb(186, 199, 213)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorTableHead"
+    },
+    {
       "value": "rgb(6, 93, 18)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextAlertSuccess"
+    },
+    {
+      "value": "rgb(232, 237, 241)",
+      "type": "color",
+      "category": "Border color",
+      "name": "borderColorTable"
     },
     {
       "value": "rgb(210, 28, 28)",
@@ -1798,6 +2062,12 @@
       "name": "colorTextLinkPrimary"
     },
     {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonWhiteBorderedActive"
+    },
+    {
       "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "Colors",
@@ -1864,6 +2134,12 @@
       "name": "colorTextWhite"
     },
     {
+      "value": "rgb(245, 247, 249)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundTableEven"
+    },
+    {
       "value": "transparent",
       "type": "string",
       "category": "Background colors",
@@ -1910,6 +2186,12 @@
       "type": "color",
       "category": "Color palette",
       "name": "paletteProductLightHover"
+    },
+    {
+      "value": "rgba(255, 255, 255, 0.2)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundButtonWhiteBorderedActive"
     },
     {
       "value": "rgb(202, 213, 223)",
@@ -2050,10 +2332,22 @@
       "name": "paddingTextareaSmall"
     },
     {
+      "value": "linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundTableShadowRight"
+    },
+    {
       "value": "rgb(249, 151, 30)",
       "type": "color",
       "category": "Background colors",
       "name": "backgroundButtonWarning"
+    },
+    {
+      "value": "rgb(232, 237, 241)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundTableHover"
     },
     {
       "value": "500",
@@ -2129,6 +2423,12 @@
       "name": "borderRadiusLarge"
     },
     {
+      "value": "12px 16px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingTable"
+    },
+    {
       "value": "rgb(189, 25, 25)",
       "type": "color",
       "category": "Background colors",
@@ -2193,6 +2493,12 @@
       "type": "color",
       "category": "Border color",
       "name": "borderColorButtonWarningBorderedHover"
+    },
+    {
+      "value": "rgb(127, 145, 168)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextTable"
     },
     {
       "value": "0.5",

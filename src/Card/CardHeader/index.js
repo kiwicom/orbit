@@ -50,13 +50,14 @@ StyledIcon.defaultProps = {
   theme: defaultTokens,
 };
 
-const CardHeader = ({ icon, title, subTitle, dataTest }: Props) => (
+const CardHeader = ({ icon, title, subTitle, actions, dataTest }: Props) => (
   <StyledCardHeader data-test={dataTest}>
     <StyledHeadingWrapper>
       {icon && <StyledIcon>{icon}</StyledIcon>}
       <Heading type="title2" element="h2">
         {title}
       </Heading>
+      {actions}
     </StyledHeadingWrapper>
     {subTitle && (
       <StyledSubTitle>

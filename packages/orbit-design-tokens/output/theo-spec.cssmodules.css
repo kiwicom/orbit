@@ -248,6 +248,7 @@
 @value palette-green-light-active: rgb(199, 227, 201);
 @value palette-social-facebook-active: rgb(53, 79, 136);
 @value background-badge-critical: rgb(250, 232, 232);
+@value background-badge-white: rgb(255, 255, 255);
 @value background-country-flag: "transparent";
 @value color-text-button-facebook-hover: rgb(255, 255, 255);
 @value palette-white-active: rgb(229, 234, 239);
@@ -273,6 +274,7 @@
 @value color-placeholder-input-file: rgb(127, 145, 168);
 @value font-weight-heading-title3: "500";
 @value color-text-button-info-active: rgb(255, 255, 255);
+@value color-text-badge-white: rgb(23, 27, 30);
 @value border-color-button-secondary-bordered: rgb(70, 81, 94);
 @value palette-orange-normal-active: rgb(230, 130, 6);
 @value border-color-modal: rgb(232, 237, 241);

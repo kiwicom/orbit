@@ -1,4 +1,5 @@
 // @flow
+var convertHexToRgba = require("./convertHexToRgba");
 
 var palette = {
   product: {
@@ -111,10 +112,10 @@ var base = {
   boxShadowActionable: "0 2px 4px 0",
   boxShadowElevated: "0 4px 12px 0",
   boxShadowModal: "0 20px 60px 0",
-  boxShadowColorStatic: "rgba(1, 118, 210, 0.3)",
-  boxShadowColorActionable: "rgba(23, 27, 30, 0.1)",
-  boxShadowColorElevated: "rgba(23, 27, 30, 0.3)",
-  boxShadowColorModal: "rgba(23, 27, 30, 0.4)",
+  boxShadowColorStatic: convertHexToRgba(palette.blue.normal, 30),
+  boxShadowColorActionable: convertHexToRgba(palette.ink.dark, 10),
+  boxShadowColorElevated: convertHexToRgba(palette.ink.dark, 30),
+  boxShadowColorModal: convertHexToRgba(palette.ink.dark, 40),
 };
 
 module.exports = {

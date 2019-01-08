@@ -784,6 +784,14 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
+    "colorTextBadgeWhite": {
+      "value": "#171b1e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
     "colorIconInput": {
       "value": "#bac7d5",
       "type": "color",
@@ -1282,6 +1290,14 @@
     },
     "backgroundBadgeDark": {
       "value": "#46515e",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundBadgeWhite": {
+      "value": "#fff",
       "type": "color",
       "category": "Background colors",
       "meta": {

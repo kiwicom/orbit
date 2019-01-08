@@ -4181,6 +4181,17 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                   >
                     Card with sections
                   </h2>
+                  <button
+                    className="Button__StyledButton-sc-1brqp3f-1 jRQFkN"
+                    size="small"
+                    type="button"
+                  >
+                    <div
+                      className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
+                    >
+                      Button
+                    </div>
+                  </button>
                 </div>
                 <div
                   className="CardHeader__StyledSubTitle-lvjkay-2 byqGxX"
@@ -4415,6 +4426,32 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                                   This is a description of the card.
                                 </span>
                                 "
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              actions
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;Button /&gt;
+                                </span>
+                                }
                               </span>
                             </span>
                              

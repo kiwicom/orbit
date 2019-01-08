@@ -38,7 +38,7 @@ ModalDescription.defaultProps = {
   theme: defaultTokens,
 };
 
-const StyledModalHeader = styled.div`
+export const StyledModalHeader = styled.div`
   width: 100%;
   display: block;
   padding: ${({ theme, illustration, suppressed }) =>

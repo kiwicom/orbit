@@ -8,8 +8,8 @@ import Close from "../icons/Close";
 import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
 import media from "../utils/media";
 import { StyledModalFooter } from "./ModalFooter";
-import { MobileHeader } from "./ModalHeader";
-import { StyledModalSection } from "./ModalSection";
+import { MobileHeader, StyledModalHeader } from "./ModalHeader";
+import ModalSection, { StyledModalSection } from "./ModalSection";
 import { StyledHeading } from "../Heading";
 import { right } from "../utils/rtl";
 import transition from "../utils/transition";
@@ -177,6 +177,10 @@ const ModalWrapperContent = styled.div`
     visibility ${theme.orbit.durationFast} ease-in-out ${theme.orbit.durationFast}`};
   }
 
+  ${StyledModalHeader} {
+    margin-bottom: ${({ hasModalSection, theme }) => !hasModalSection && theme.orbit.spaceXLarge};
+  }
+
   ${media.desktop`
     position: relative;
     bottom: initial;
@@ -191,6 +195,10 @@ const ModalWrapperContent = styled.div`
       &::after {
         content: none;
       }
+    }
+    ${StyledModalHeader} {
+      margin-bottom: ${({ hasModalSection, fixedFooter, footerHeight }) =>
+        !hasModalSection && fixedFooter ? `${footerHeight}px` : "0"};
     }
     ${StyledModalFooter} {
       padding: ${({ theme, fixedFooter }) =>
@@ -221,6 +229,7 @@ class Modal extends React.PureComponent<Props, State> {
     fullyScrolled: false,
     modalWidth: 0,
     footerHeight: 0,
+    hasModalSection: false,
   };
 
   componentDidMount() {
@@ -251,8 +260,9 @@ class Modal extends React.PureComponent<Props, State> {
   setDimensions = () => {
     const content = this.modalContent.current;
     if (content) {
-      const footerEl = content.querySelector(`.${<StyledModalFooter />.type.styledComponentId}`);
-      const headingEl = content.querySelector(`.${<StyledHeading />.type.styledComponentId}`);
+      // added in 4.0.3, interpolation of styled component return static className
+      const footerEl = content.querySelector(`${StyledModalFooter}`);
+      const headingEl = content.querySelector(`${StyledHeading}`);
       this.offset = headingEl?.clientHeight + headingEl?.offsetTop;
       const contentDimensions = content.getBoundingClientRect();
       const modalWidth = contentDimensions.width;
@@ -318,6 +328,14 @@ class Modal extends React.PureComponent<Props, State> {
     }
   };
 
+  decideModalSection = () => {
+    const children = React.Children.toArray(this.props.children);
+    const hasModalSection =
+      children.map(child => child.type.displayName).indexOf(ModalSection.displayName) !== -1;
+
+    this.setState({ hasModalSection });
+  };
+
   modalContent: { current: any | HTMLElement } = React.createRef();
   modalBody: { current: any | HTMLElement } = React.createRef();
   timeout: TimeoutID;
@@ -325,7 +343,15 @@ class Modal extends React.PureComponent<Props, State> {
 
   render() {
     const { onClose, children, size = SIZES.NORMAL, fixedFooter = false, dataTest } = this.props;
-    const { scrolled, loaded, fixedClose, fullyScrolled, modalWidth, footerHeight } = this.state;
+    const {
+      scrolled,
+      loaded,
+      fixedClose,
+      fullyScrolled,
+      modalWidth,
+      footerHeight,
+      hasModalSection,
+    } = this.state;
     return (
       <ModalBody
         tabIndex="0"
@@ -350,6 +376,7 @@ class Modal extends React.PureComponent<Props, State> {
             fullyScrolled={fullyScrolled}
             modalWidth={modalWidth}
             footerHeight={footerHeight}
+            hasModalSection={hasModalSection}
           >
             <CloseContainer modalWidth={modalWidth} scrolled={scrolled} fixedClose={fixedClose}>
               {onClose && (
@@ -366,6 +393,7 @@ class Modal extends React.PureComponent<Props, State> {
               value={{
                 setDimensions: this.setDimensions,
                 decideFixedFooter: this.decideFixedFooter,
+                decideModalSection: this.decideModalSection,
               }}
             >
               {children}

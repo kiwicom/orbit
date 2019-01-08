@@ -11,6 +11,7 @@ export type State = {|
   fullyScrolled: boolean,
   modalWidth: number,
   footerHeight: number,
+  hasModalSection: boolean,
 |};
 
 type Size = "small" | "normal" | "large";

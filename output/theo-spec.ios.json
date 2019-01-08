@@ -1480,6 +1480,12 @@
       "name": "backgroundBadgeCritical"
     },
     {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundBadgeWhite"
+    },
+    {
       "value": "transparent",
       "type": "string",
       "category": "Background colors",
@@ -1628,6 +1634,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonInfoActive"
+    },
+    {
+      "value": "rgb(23, 27, 30)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextBadgeWhite"
     },
     {
       "value": "rgb(70, 81, 94)",

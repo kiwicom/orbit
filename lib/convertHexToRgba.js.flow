@@ -1,0 +1,3 @@
+// @flow
+declare function convertHexToRgba(color: string, opacity: number): string;
+declare module.exports: typeof convertHexToRgba;

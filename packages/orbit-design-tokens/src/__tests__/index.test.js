@@ -1,6 +1,7 @@
 // @flow
 var tokens = require("../../lib/index");
 var foundation = require("../../lib/foundation");
+var convertHexToRgba = require("../../lib/convertHexToRgba");
 
 var defaultTokens = tokens.defaultTokens;
 var getTokens = tokens.getTokens;
@@ -95,5 +96,32 @@ describe("fromPlainObject should create full theme", () => {
     expect(theme.colorTextButtonPrimaryBordered).toBe(palette.productNormal);
     expect(theme.colorTextButtonPrimaryBorderedHover).toBe(palette.productNormalHover);
     expect(theme.colorTextButtonPrimaryBorderedActive).toBe(palette.productNormalActive);
+  });
+});
+
+describe("convertHexToRgba", () => {
+  var colors = {
+    lighter: "#bac7d5",
+    lighterHover: "#a6b6c8",
+    lighterActive: "#94a8be",
+    light: "#7f91a8",
+    whiteShort: "#fff",
+    whiteLong: "#ffffff",
+  };
+  var finalColors = {
+    lighter: "rgba(186, 199, 213, 0.6)",
+    lighterHover: "rgba(166, 182, 200, 0.23)",
+    lighterActive: "rgba(148, 168, 190, 1)",
+    light: "rgba(127, 145, 168, 0)",
+    whiteShort: "rgba(255, 255, 255, 0.1)",
+    whiteLong: "rgba(255, 255, 255, 1)",
+  };
+  it("should converts to right RGBA colors", () => {
+    expect(convertHexToRgba(colors.lighter, 60)).toBe(finalColors.lighter);
+    expect(convertHexToRgba(colors.lighterHover, 23)).toBe(finalColors.lighterHover);
+    expect(convertHexToRgba(colors.lighterActive, 100)).toBe(finalColors.lighterActive);
+    expect(convertHexToRgba(colors.light, 0)).toBe(finalColors.light);
+    expect(convertHexToRgba(colors.whiteShort, 10)).toBe(finalColors.whiteShort);
+    expect(convertHexToRgba(colors.whiteLong, 100)).toBe(finalColors.whiteLong);
   });
 });

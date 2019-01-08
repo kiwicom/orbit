@@ -246,6 +246,7 @@
   <color name="PALETTEGREENLIGHTACTIVE" category="Color palette">#ffc7e3c9</color>
   <color name="PALETTESOCIALFACEBOOKACTIVE" category="Color palette">#ff354f88</color>
   <color name="BACKGROUNDBADGECRITICAL" category="Background colors">#fffae8e8</color>
+  <color name="BACKGROUNDBADGEWHITE" category="Background colors">#ffffffff</color>
   <string name="BACKGROUNDCOUNTRYFLAG" category="Background colors">transparent</string>
   <color name="COLORTEXTBUTTONFACEBOOKHOVER" category="Colors">#ffffffff</color>
   <color name="PALETTEWHITEACTIVE" category="Color palette">#ffe5eaef</color>
@@ -271,6 +272,7 @@
   <color name="COLORPLACEHOLDERINPUTFILE" category="Colors">#ff7f91a8</color>
   <string name="FONTWEIGHTHEADINGTITLE3" category="Font weight">500</string>
   <color name="COLORTEXTBUTTONINFOACTIVE" category="Colors">#ffffffff</color>
+  <color name="COLORTEXTBADGEWHITE" category="Colors">#ff171b1e</color>
   <color name="BORDERCOLORBUTTONSECONDARYBORDERED" category="Border color">#ff46515e</color>
   <color name="PALETTEORANGENORMALACTIVE" category="Color palette">#ffe68206</color>
   <color name="BORDERCOLORMODAL" category="Border color">#ffe8edf1</color>

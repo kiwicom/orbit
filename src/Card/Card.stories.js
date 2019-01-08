@@ -266,7 +266,11 @@ storiesOf("Card", module)
             {
               sectionFn: () => (
                 <Card>
-                  <CardHeader title={title} subTitle={description} />
+                  <CardHeader
+                    title={title}
+                    subTitle={description}
+                    actions={<Button size="small">Button</Button>}
+                  />
                   <CardSection>
                     <CardSectionHeader>
                       <Heading type="title3" element="h3">

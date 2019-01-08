@@ -50,6 +50,7 @@ Table below contains all types of the props in CardHeader component.
 | icon          | `React.Node`          |                 | Displayed icon.
 | **title**     | `React.Node`          |                 | The title of the CardHeader.
 | subTitle      | `React.Node`          |                 | The description of the CardHeader.
+| actions       | `React.Node`          |                 | Actions in CardHeader especially Buttons
 
 
 ### CardSection
@@ -102,7 +103,7 @@ Table below contains all types of the props in CardSectionHeader component.
 | Name            | Type                  | Default         | Description                      |
 | :---------------| :---------------------| :-------------- | :------------------------------- |
 | **children**    | `React.Node`          |                 | The content of the CardSection.
-| actions         | `React.Node`          |                 | Actions in CardSectionHeader especially Buuttons 
+| actions         | `React.Node`          |                 | Actions in CardSectionHeader especially Buttons 
 
 
 ### CardSectionContent

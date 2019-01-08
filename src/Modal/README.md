@@ -15,6 +15,8 @@ After adding import into your project you can use it simply like:
   </ModalSection>
 </Modal>
 ```
+
+The Modal component has big variety of usage, please check examples for usage [below](#use-cases).
 ## Props
 Table below contains all types of the props available in the Modal component.
 
@@ -23,7 +25,7 @@ Table below contains all types of the props available in the Modal component.
 | children      | `React.Node`            |                 | The content of the Modal. [See Subcomponents](#sub-components)
 | dataTest      | `string`                |                 | Optional prop for testing purposes.
 | fixedFooter   | `boolean`               | `false`         | If `true` the ModalFooter will be fixed to the bottom of window.
-| size          | [`enum`](#modalenum)    | `"medium"`      | The maximum width of the Modal on desktop viewport.
+| size          | [`enum`](#modal-enum)    | `"medium"`      | The maximum width of the Modal on desktop viewport.
 | onClose       | `func \| Promise<any>`  |                 | Function for handling onClose event. If you don't pass any function the Close button will not be displayed and it will not be possible to close the Modal. [See Functional specs](#functional-specs)
 
 ### Modal enum
@@ -122,3 +124,38 @@ Table below contains all types of the props in the ModalFooter component.
 
 #### ModalFooter Functional specs
 * You can set up different `flex` attribute for every children, or use one for all. See [flex property docs](https://www.w3schools.com/cssref/css3_pr_flex.asp) for more information.
+
+## Use cases
+Although this component offers good flexibility of usage, there are tiny limitations for usage.
+
+### Wrapper ModalSections
+If you need to wrap the children into custom component, wrap all of the children into **one wrapper**, e.g.:
+```jsx
+// good
+<Modal fixedFooter>
+  <CustomWrapper>
+    <ModalHeader />
+      <ModalSection>
+        My content
+      </ModalSection>
+      <ModalSection>
+        My content
+      </ModalSection>
+    <ModalFooter />
+  </CustomWrapper>
+</Modal>
+
+// bad, the CSS styles will be broken
+<Modal fixedFooter>
+  <ModalHeader />
+  <CustomWrapper>
+    <ModalSection>
+      My content
+    </ModalSection>
+    <ModalSection>
+      My content
+    </ModalSection>
+  </CustomWrapper>
+  <ModalFooter />
+</Modal>
+```

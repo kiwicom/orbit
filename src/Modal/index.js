@@ -9,7 +9,7 @@ import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
 import media from "../utils/media";
 import { StyledModalFooter } from "./ModalFooter";
 import { MobileHeader, StyledModalHeader } from "./ModalHeader";
-import ModalSection, { StyledModalSection } from "./ModalSection";
+import { StyledModalSection } from "./ModalSection";
 import { StyledHeading } from "../Heading";
 import { right } from "../utils/rtl";
 import transition from "../utils/transition";
@@ -271,6 +271,16 @@ class Modal extends React.PureComponent<Props, State> {
     }
   };
 
+  setHasModalSection = () => {
+    if (!this.state.hasModalSection) {
+      this.setState({ hasModalSection: true });
+    }
+  };
+
+  removeHasModalSection = () => {
+    if (this.state.hasModalSection) this.setState({ hasModalSection: false });
+  };
+
   decideFixedFooter = () => {
     // if the content height is smaller than window height, we need to explicitly set fullyScrolled to true
     const content = this.modalContent.current;
@@ -326,14 +336,6 @@ class Modal extends React.PureComponent<Props, State> {
       // If is clicked outside of modal
       onClose(ev);
     }
-  };
-
-  decideModalSection = () => {
-    const children = React.Children.toArray(this.props.children);
-    const hasModalSection =
-      children.map(child => child.type.displayName).indexOf(ModalSection.displayName) !== -1;
-
-    this.setState({ hasModalSection });
   };
 
   modalContent: { current: any | HTMLElement } = React.createRef();
@@ -393,7 +395,9 @@ class Modal extends React.PureComponent<Props, State> {
               value={{
                 setDimensions: this.setDimensions,
                 decideFixedFooter: this.decideFixedFooter,
-                decideModalSection: this.decideModalSection,
+                setHasModalSection: this.setHasModalSection,
+                removeHasModalSection: this.removeHasModalSection,
+                hasModalSection,
               }}
             >
               {children}

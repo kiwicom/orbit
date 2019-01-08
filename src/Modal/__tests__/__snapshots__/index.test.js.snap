@@ -1593,8 +1593,10 @@ exports[`Large Modal should match snapshot 1`] = `
         value={
           Object {
             "decideFixedFooter": [Function],
-            "decideModalSection": [Function],
+            "hasModalSection": false,
+            "removeHasModalSection": [Function],
             "setDimensions": [Function],
+            "setHasModalSection": [Function],
           }
         }
       >

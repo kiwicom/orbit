@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import Modal from "../index";
 import { SIZES, CLOSE_BUTTON_DATA_TEST } from "../consts";
@@ -14,7 +14,10 @@ import Wallet from "../../icons/Wallet";
 import Button from "../../Button";
 import ChevronLeft from "../../icons/ChevronLeft";
 
-describe(`Large Modal`, () => {
+// for testing purposes only
+const Div = (props: any) => <div>{props.children}</div>;
+
+describe("Large Modal", () => {
   const size = SIZES.LARGE;
   const title = "My title";
   const illustration = <Illustration name="Accommodation" size="small" />;
@@ -84,5 +87,47 @@ describe(`Large Modal`, () => {
 
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();
+  });
+});
+
+describe("Modal with ModalSection", () => {
+  const title = "My title";
+  const content = "My content";
+
+  const component = mount(
+    <Modal>
+      <ModalHeader title={title} />
+      <Div>
+        <Div>
+          <Div>
+            <ModalSection>{content}</ModalSection>
+          </Div>
+        </Div>
+      </Div>
+      <ModalFooter>
+        <Button block>Continue to Payment</Button>
+      </ModalFooter>
+    </Modal>,
+  );
+  it("should match snapshot", () => {
+    const instance = component.instance();
+    expect(instance.state.hasModalSection).toBe(true);
+  });
+});
+
+describe("Modal without ModalSection", () => {
+  const title = "My title";
+
+  const component = mount(
+    <Modal>
+      <ModalHeader title={title} />
+      <ModalFooter>
+        <Button block>Continue to Payment</Button>
+      </ModalFooter>
+    </Modal>,
+  );
+  it("should match snapshot", () => {
+    const instance = component.instance();
+    expect(instance.state.hasModalSection).toBe(false);
   });
 });

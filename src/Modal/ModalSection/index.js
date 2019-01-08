@@ -59,23 +59,27 @@ StyledModalSection.defaultProps = {
 
 class ModalSection extends React.PureComponent<Props> {
   componentDidMount() {
-    const { decideModalSection } = this.props;
+    const { setHasModalSection } = this.props;
     this.callContextFunctions();
-    if (decideModalSection) {
-      decideModalSection();
+    if (setHasModalSection) {
+      setHasModalSection();
     }
   }
   componentDidUpdate(prevProps: Props) {
     if (prevProps !== this.props) {
       this.callContextFunctions();
+      const { setHasModalSection } = this.props;
+      if (setHasModalSection) {
+        setHasModalSection();
+      }
     }
   }
 
   componentWillUnmount() {
-    const { decideModalSection } = this.props;
+    const { removeHasModalSection } = this.props;
     this.callContextFunctions();
-    if (decideModalSection) {
-      decideModalSection();
+    if (removeHasModalSection) {
+      removeHasModalSection();
     }
   }
 

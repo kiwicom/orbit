@@ -6,7 +6,9 @@ import type { WithModalContextType, ModalContextType } from "./ModalContext";
 export const ModalContext: ModalContextType = React.createContext({
   setDimensions: () => {},
   decideFixedFooter: () => {},
-  decideModalSection: () => {},
+  setHasModalSection: () => {},
+  removeHasModalSection: () => {},
+  hasModalSection: false,
 });
 
 export const withModalContext: WithModalContextType = Component => props => (

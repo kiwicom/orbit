@@ -4,12 +4,14 @@ import * as React from "react";
 export type ModalContextProps = {|
   +setDimensions?: () => void,
   +decideFixedFooter?: () => void,
-  +decideModalSection?: () => void,
+  +setHasModalSection?: () => void,
+  +removeHasModalSection?: () => void,
+  +hasModalSection?: boolean,
 |};
 
 export type ModalContextType = React.Context<ModalContextProps>;
 
-// write better type
+// TODO: write better type
 export type WithModalContextType = (React$ComponentType<any>) => ({ [key: string]: any }) => any;
 
 declare export var ModalContext: ModalContextType;

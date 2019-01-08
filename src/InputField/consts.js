@@ -4,6 +4,7 @@ export const TYPE_OPTIONS = {
   NUMBER: "number",
   EMAIL: "email",
   PASSWORD: "password",
+  PASSPORTID: "passportid",
 };
 
 export const SIZE_OPTIONS = {

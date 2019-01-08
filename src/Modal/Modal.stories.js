@@ -142,6 +142,140 @@ storiesOf("Modal", module)
       },
     ],
   }))
+  .addWithChapters("Without section", () => {
+    const showMore = boolean("showMore", false);
+    return {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Modal onClose={action("onClose")} fixedFooter>
+                  <ModalHeader
+                    title="Enjoy something to eat while you fly"
+                    illustration={<Illustration name="Meal" size="small" />}
+                    description="Select a flight below to see the menu (where available)"
+                  />
+                  {showMore && (
+                    <ModalSection>
+                      <Stack>
+                        <Text uppercase weight="bold">
+                          INBOUND
+                        </Text>
+                        <Card>
+                          <CardSection expandable>
+                            <CardSectionHeader
+                              actions={
+                                <Button type="secondary" size="small">
+                                  Edit
+                                </Button>
+                              }
+                            >
+                              <Stack
+                                direction="row"
+                                align="center"
+                                justify="between"
+                                spacing="condensed"
+                              >
+                                <CarrierLogo
+                                  carriers={[{ code: "FR", name: "Ryanair" }]}
+                                  size="large"
+                                />
+                                <Stack spacing="tight">
+                                  <Text size="small" type="secondary">
+                                    Sat, Mar 31 Trip length: 1h55m
+                                  </Text>
+                                  <Stack direction="row" spacing="tight" align="center">
+                                    <Text weight="bold">London LHR</Text>
+                                    <FlightDirect size="small" />
+                                    <Text weight="bold">Prague PRG</Text>
+                                  </Stack>
+                                </Stack>
+                              </Stack>
+                            </CardSectionHeader>
+                          </CardSection>
+                          <CardSection expandable>
+                            <CardSectionHeader
+                              actions={
+                                <Button type="secondary" size="small">
+                                  Edit
+                                </Button>
+                              }
+                            >
+                              <Stack
+                                direction="row"
+                                align="center"
+                                justify="between"
+                                spacing="condensed"
+                              >
+                                <CarrierLogo
+                                  carriers={[{ code: "FR", name: "Ryanair" }]}
+                                  size="large"
+                                />
+                                <Stack spacing="tight">
+                                  <Text size="small" type="secondary">
+                                    Sat, Mar 31 Trip length: 1h55m
+                                  </Text>
+                                  <Stack direction="row" spacing="tight" align="center">
+                                    <Text weight="bold">London LHR</Text>
+                                    <FlightDirect size="small" />
+                                    <Text weight="bold">Prague PRG</Text>
+                                  </Stack>
+                                </Stack>
+                              </Stack>
+                            </CardSectionHeader>
+                          </CardSection>
+                          <CardSection expandable>
+                            <CardSectionHeader
+                              actions={
+                                <Button type="secondary" size="small">
+                                  Edit
+                                </Button>
+                              }
+                            >
+                              <Stack
+                                direction="row"
+                                align="center"
+                                justify="between"
+                                spacing="condensed"
+                              >
+                                <CarrierLogo
+                                  carriers={[{ code: "FR", name: "Ryanair" }]}
+                                  size="large"
+                                />
+                                <Stack spacing="tight">
+                                  <Text size="small" type="secondary">
+                                    Sat, Mar 31 Trip length: 1h55m
+                                  </Text>
+                                  <Stack direction="row" spacing="tight" align="center">
+                                    <Text weight="bold">London LHR</Text>
+                                    <FlightDirect size="small" />
+                                    <Text weight="bold">Prague PRG</Text>
+                                  </Stack>
+                                </Stack>
+                              </Stack>
+                            </CardSectionHeader>
+                          </CardSection>
+                        </Card>
+                      </Stack>
+                    </ModalSection>
+                  )}
+                  <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
+                    <Button icon={<ChevronLeft />} type="secondary">
+                      Back
+                    </Button>
+                    <Button block>Proceed to Payment (23.98€)</Button>
+                  </ModalFooter>
+                </Modal>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("With Form", () => {
     const showMore = boolean("showMore", false);
     return {

@@ -111,7 +111,7 @@ exports[`Storyshots Modal Full preview 1`] = `
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 ialCto"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 bmgkiO"
                 size="normal"
               >
                 <div
@@ -1676,7 +1676,7 @@ exports[`Storyshots Modal RTL 1`] = `
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 bRZfdo"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 gabuig"
                 size="normal"
               >
                 <div
@@ -2798,7 +2798,7 @@ exports[`Storyshots Modal Short Modal 1`] = `
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 bRZfdo"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 gabuig"
                 size="normal"
               >
                 <div
@@ -4570,7 +4570,7 @@ exports[`Storyshots Modal Sizes 1`] = `
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 ialCto"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 bmgkiO"
                 size="normal"
               >
                 <div
@@ -5509,7 +5509,7 @@ exports[`Storyshots Modal With Form 1`] = `
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 bRZfdo"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 gabuig"
                 size="normal"
               >
                 <div
@@ -7329,7 +7329,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
               size="normal"
             >
               <div
-                className="Modal__ModalWrapperContent-sc-1f0srsl-3 bRZfdo"
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 gabuig"
                 size="normal"
               >
                 <div
@@ -14975,6 +14975,805 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                             &gt;
                           </span>
                         </div>
+                      </div>
+                      <div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            ModalFooter
+                          </span>
+                          <span>
+                            <span>
+                               
+                              <span
+                                style={Object {}}
+                              >
+                                flex
+                              </span>
+                              <span>
+                                =
+                                <span
+                                  style={Object {}}
+                                >
+                                  {
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    [
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        '0 0 auto'
+                                      </span>
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        '1 1 100%'
+                                      </span>
+                                    </span>
+                                    ]
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              
+                            </span>
+                          </span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &gt;
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Button
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  icon
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    {
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      &lt;ChevronLeft /&gt;
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                              </span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  type
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    "
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      secondary
+                                    </span>
+                                    "
+                                  </span>
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              Back
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Button
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;
+                              Button
+                            </span>
+                            <span>
+                              <span>
+                                 
+                                <span
+                                  style={Object {}}
+                                >
+                                  block
+                                </span>
+                                
+                              </span>
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 63,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              Proceed to Payment (23.98€)
+                            </span>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 48,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#777",
+                                }
+                              }
+                            >
+                              &lt;/
+                              Button
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;/
+                            ModalFooter
+                            &gt;
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          Modal
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Modal Without section 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="story"
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      className="story-header"
+      style={
+        Object {
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      <div>
+        <h1
+          className="story-title"
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Without section
+        </h1>
+        
+        <span
+          className="story-subtitle"
+          style={Object {}}
+        >
+          <div>
+            <p>
+              You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        className="chapter-header"
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="section-container"
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          className="section-header"
+          style={Object {}}
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="section-component-container"
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <div
+            className="Modal__ModalBody-sc-1f0srsl-0 fKLvpC"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onScroll={[Function]}
+            tabIndex="0"
+          >
+            <div
+              className="Modal__ModalWrapper-sc-1f0srsl-1 ismJct"
+              onScroll={[Function]}
+              size="normal"
+            >
+              <div
+                className="Modal__ModalWrapperContent-sc-1f0srsl-3 vpYvx"
+                size="normal"
+              >
+                <div
+                  className="Modal__CloseContainer-sc-1f0srsl-2 bsErpU"
+                >
+                  <button
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
+                    data-test="ModalCloseButton"
+                    onClick={[Function]}
+                    size="normal"
+                    type="button"
+                  >
+                    <div
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
+                    >
+                      <svg
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+                <div
+                  className="ModalHeader__StyledModalHeader-sc-13vyf6i-2 gYfBDl"
+                >
+                  <img
+                    alt="Meal"
+                    className="Illustration__StyledImage-uskdow-0 brJZdH"
+                    size="small"
+                    src="//images.kiwi.com/illustrations/0x90/Meal.png"
+                    srcSet="//images.kiwi.com/illustrations/0x180/Meal.png 2x"
+                  />
+                  <div
+                    className="ModalHeader__ModalTitle-sc-13vyf6i-0 hfgMqg"
+                  >
+                    <h1
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kCqDso"
+                    >
+                      Enjoy something to eat while you fly
+                    </h1>
+                    <div
+                      className="ModalHeader__ModalDescription-sc-13vyf6i-1 Zivqa"
+                    >
+                      <div
+                        className="Text__StyledText-sc-19qtt4y-0 lKAms"
+                      >
+                        Select a flight below to see the menu (where available)
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="ModalHeader__MobileHeader-sc-13vyf6i-3 cRHUqx"
+                  >
+                    Enjoy something to eat while you fly
+                  </div>
+                </div>
+                <div
+                  className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 hnhBGU"
+                >
+                  <div
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 eHFSqa"
+                  >
+                    <button
+                      className="Button__StyledButton-sc-1brqp3f-1 bwmbUD"
+                      size="normal"
+                      type="button"
+                    >
+                      <div
+                        className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
+                      >
+                        <div
+                          className="Button__IconContainer-sc-1brqp3f-0 cvyiB"
+                        >
+                          <svg
+                            className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                            />
+                          </svg>
+                        </div>
+                        Back
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    className="ModalFooter__StyledChild-sc-17ld6v4-0 ZHtLp"
+                  >
+                    <button
+                      className="Button__StyledButton-sc-1brqp3f-1 bwWmAt"
+                      size="normal"
+                      type="button"
+                    >
+                      <div
+                        className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
+                      >
+                        Proceed to Payment (23.98€)
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                className="section-subsection"
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  className="section-subsection-title"
+                >
+                  Source
+                </h4>
+                <pre
+                  className="css-4akams"
+                >
+                  <div>
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          Modal
+                        </span>
+                        <span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              onClose
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#170",
+                                    }
+                                  }
+                                >
+                                  onClose
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              fixedFooter
+                            </span>
+                            
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          ModalHeader
+                        </span>
+                        <span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              title
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  Enjoy something to eat while you fly
+                                </span>
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              illustration
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;Illustration /&gt;
+                                </span>
+                                }
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                             
+                            <span
+                              style={Object {}}
+                            >
+                              description
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  Select a flight below to see the menu (where avail…
+                                </span>
+                                "
+                              </span>
+                            </span>
+                             
+                          </span>
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          /&gt;
+                        </span>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 33,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        />
                       </div>
                       <div>
                         <div

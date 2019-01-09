@@ -1,0 +1,22 @@
+// @flow
+import type { Globals } from "../common/common.js.flow";
+import Radio from "../Radio";
+import Checkbox from "../Checkbox";
+
+type LabelSize = "normal" | "large";
+
+type LabelElement = "h2" | "h3" | "h4" | "h5" | "h6";
+
+type Children = React$Element<typeof Radio> | React$Element<typeof Checkbox>
+
+export type Props = {|
+  ...Globals,
+  children: Children | Children[],
+  label?: string,
+  labelSize?: LabelSize,
+  labelElement?: LabelElement,
+  hasError?: boolean,
+  onChange: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+|};
+
+declare export default React$ComponentType<Props>;

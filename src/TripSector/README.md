@@ -3,9 +3,9 @@
 To implement TripSector component into your project you'll need import component itself and pass some other Trip components.
 
 ```jsx
-import TripSector from "@kiwicom/orbit-components/lib/TripSegment";
-import TripDate from "@kiwicom/orbit-components/lib/TripSegment/TripDate";
-import TripLayover from "@kiwicom/orbit-components/lib/TripSegment/TripLayover";
+import TripSector from "@kiwicom/orbit-components/lib/TripSector";
+import TripDate from "@kiwicom/orbit-components/lib/TripSector/TripDate";
+import TripLayover from "@kiwicom/orbit-components/lib/TripSector/TripLayover";
 
 import TripSegment from "@kiwicom/orbit-components/lib/TripSegment";
 ```

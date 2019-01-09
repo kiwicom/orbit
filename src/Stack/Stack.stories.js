@@ -2,6 +2,7 @@
 import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
+import { action } from "@storybook/addon-actions";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, boolean, select, object, text } from "@storybook/addon-knobs";
 
@@ -50,6 +51,7 @@ import Clock from "../icons/Clock";
 import Check from "../icons/Check";
 import FlightReturn from "../icons/FlightReturn";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import ChoiceGroup from "../ChoiceGroup";
 import CardSectionHeader from "../Card/CardSection/CardSectionHeader";
 import CardSectionContent from "../Card/CardSection/CardSectionContent";
 
@@ -371,6 +373,28 @@ storiesOf("Stack", module)
                 <Stack direction="column" align="center">
                   <Checkbox label="My Label" info="Some help" />
                   <Radio label="My Label" info="Some help" />
+                </Stack>
+                <Stack direction="row">
+                  <ChoiceGroup
+                    label="What was the reason for your cancellation?"
+                    labelSize="normal"
+                    labelElement="h4"
+                    onChange={action("onChange")}
+                  >
+                    <Checkbox label="Reason one" value="one" />
+                    <Checkbox label="Reason two" value="two" />
+                    <Checkbox label="Reason three" value="three" />
+                  </ChoiceGroup>
+                  <ChoiceGroup
+                    label="What was the reason for your cancellation?"
+                    labelSize="normal"
+                    labelElement="h4"
+                    onChange={action("onChange")}
+                  >
+                    <Checkbox label="Reason one" value="one" />
+                    <Checkbox label="Reason two" value="two" />
+                    <Checkbox label="Reason three" value="three" />
+                  </ChoiceGroup>
                 </Stack>
                 <Stack direction="row">
                   <CountryFlag code="cz" />

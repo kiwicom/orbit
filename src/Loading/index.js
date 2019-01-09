@@ -51,8 +51,7 @@ export const StyledLoading = styled(({ children, className, dataTest }) => (
   width: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "100%"};
   height: ${getToken(TOKENS.HEIGHT)};
   padding: ${({ theme, type }) =>
-    type !== TYPE_OPTIONS.INLINE_LOADER &&
-    `0 ${theme.orbit.spaceSmall}`}; // TODO: create token paddingLoading
+    type !== TYPE_OPTIONS.INLINE_LOADER && theme.orbit.paddingLoading};
   display: ${({ type }) => (type === TYPE_OPTIONS.INLINE_LOADER ? "inline-flex" : "flex")};
   flex-direction: ${({ type }) => (type === TYPE_OPTIONS.PAGE_LOADER ? "column" : "row")};
   justify-content: ${getToken(TOKENS.ALIGN)};
@@ -68,7 +67,7 @@ StyledLoading.defaultProps = {
 const StyledLoadingText = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  color: ${({ theme }) => theme.orbit.paletteInkLighter}; // TODO: create token colorTextLoading
+  color: ${({ theme }) => theme.orbit.colorTextLoading};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   margin-top: ${({ theme, type }) => type === TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceMedium};
   margin-${left}: ${({ theme, type }) =>

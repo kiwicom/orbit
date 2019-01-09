@@ -104,7 +104,7 @@ exports[`Storyshots Loading Button loading 1`] = `
             type="button"
           >
             <div
-              className="Loading__StyledLoading-sc-1psg3na-0 jRMjid"
+              className="Loading__StyledLoading-sc-1psg3na-0 iPCRgG"
             >
               <svg
                 className="Loading__StyledSpinner-sc-1psg3na-2 dCPhrt"
@@ -363,7 +363,7 @@ exports[`Storyshots Loading Card loading 1`] = `
               className="Card__StyledChildWrapper-ff0z2v-0 jtYTwu"
             >
               <div
-                className="Loading__StyledLoading-sc-1psg3na-0 bWljwL"
+                className="Loading__StyledLoading-sc-1psg3na-0 oKkLd"
               >
                 <div
                   className="Loading__StyledLoader-sc-1psg3na-4 ggWVnQ"
@@ -952,7 +952,7 @@ exports[`Storyshots Loading Default 1`] = `
           }
         >
           <div
-            className="Loading__StyledLoading-sc-1psg3na-0 cWAiEh"
+            className="Loading__StyledLoading-sc-1psg3na-0 bWDkpr"
           >
             <svg
               className="Loading__StyledSpinner-sc-1psg3na-2 dCPhrt"
@@ -1413,7 +1413,7 @@ exports[`Storyshots Loading Playground 1`] = `
           }
         >
           <div
-            className="Loading__StyledLoading-sc-1psg3na-0 cWAiEh"
+            className="Loading__StyledLoading-sc-1psg3na-0 bWDkpr"
             data-test="test"
           >
             <svg
@@ -1720,7 +1720,7 @@ exports[`Storyshots Loading RTL 1`] = `
           }
         >
           <div
-            className="Loading__StyledLoading-sc-1psg3na-0 cmdpzr"
+            className="Loading__StyledLoading-sc-1psg3na-0 kOKtAa"
           >
             <svg
               className="Loading__StyledSpinner-sc-1psg3na-2 dCPhrt"

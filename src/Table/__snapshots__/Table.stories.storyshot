@@ -98,7 +98,7 @@ exports[`Storyshots Table Compact Table 1`] = `
           }
         >
           <div
-            className="Table__StyledTableOuter-sc-156ovmd-0 eoNpTU"
+            className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
           >
             <div
               className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
@@ -1487,7 +1487,7 @@ exports[`Storyshots Table Default Table 1`] = `
           }
         >
           <div
-            className="Table__StyledTableOuter-sc-156ovmd-0 eoNpTU"
+            className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
           >
             <div
               className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
@@ -2866,7 +2866,7 @@ exports[`Storyshots Table Playground 1`] = `
           }
         >
           <div
-            className="Table__StyledTableOuter-sc-156ovmd-0 eoNpTU"
+            className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
             data-test="test"
           >
             <div
@@ -4649,7 +4649,7 @@ exports[`Storyshots Table RTL 1`] = `
           }
         >
           <div
-            className="Table__StyledTableOuter-sc-156ovmd-0 eoNpTU"
+            className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
           >
             <div
               className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"

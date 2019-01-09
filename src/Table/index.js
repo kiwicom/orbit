@@ -29,18 +29,14 @@ const StyledTableOuter = styled.div`
 
   &::after {
     opacity: ${({ showRight }) => (showRight ? "1" : "0")};
-    background-image: linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23));
-    // TODO: create token
-    // backgroundTableShadowRight
+    background-image: ${({ theme }) => theme.orbit.backgroundTableShadowRight};
     right: 0;
   }
 
   &::before {
     opacity: ${({ showLeft }) => (showLeft ? "1" : "0")};
     left: 0;
-    background-image: linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23));
-    // TODO: create token
-    // backgroundTableShadowLeft
+    background-image: ${({ theme }) => theme.orbit.backgroundTableShadowLeft};
   }
 `;
 
@@ -62,34 +58,23 @@ const StyledTable = styled.table`
   white-space: nowrap;
 
   & ${StyledTableBody} > ${StyledTableRow} {
-    background-color: ${({ theme }) => theme.orbit.paletteWhite};
-    border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
-    // TODO: create token
-    // borderColorTable
+    background-color: ${({ theme }) => theme.orbit.backgroundTable};
+    border-bottom: 1px solid ${({ theme }) => theme.orbit.borderColorTable};
     transition: background-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
     &:nth-of-type(even) {
-      background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
-      // TODO: create token
-      // backgroundTableEven
+      background-color: ${({ theme }) => theme.orbit.backgroundTableEven};
     }
     &:last-child {
       border: 0;
     }
     &:hover {
-      background-color: ${({ theme }) => theme.orbit.paletteCloudNormal};
-      // TODO: create token
-      // backgroundTableHover
+      background-color: ${({ theme }) => theme.orbit.backgroundTableHover};
     }
   }
   & ${StyledTableCell} {
     min-height: ${({ compact }) => (compact ? "24px" : "48px")};
     padding: ${({ theme, compact }) =>
-      compact
-        ? `${theme.orbit.spaceXSmall} ${theme.orbit.spaceSmall}`
-        : `${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium}`};
-    // TODO: create tokens
-    // paddingTableCompact 8px 12px
-    // paddingTable 12px 16px
+      compact ? theme.orbit.paddingTableCompact : theme.orbit.paddingTable};
   }
 `;
 

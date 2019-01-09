@@ -39,12 +39,13 @@ Table below contains all types of the props available in InputField component.
 
 ### enum
 
-| type         | size        |
-| :----------- | :---------- |
-| `"text"`     | `"small"`   |
-| `"number"`   | `"normal"`  |
-| `"email"`    |
-| `"password"` |
+| type            | size        |
+| :-------------- | :---------- |
+| `"text"`        | `"small"`   |
+| `"number"`      | `"normal"`  |
+| `"email"`       |
+| `"password"`    |
+| `"passportid"`  |
 
 
 ## Functional specs

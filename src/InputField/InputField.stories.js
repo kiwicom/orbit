@@ -137,6 +137,30 @@ storiesOf("InputField", module)
       ],
     };
   })
+  .addWithChapters("Passport or ID Input", () => {
+    const label = text("Label", "Passport or ID number");
+    const placeholder = text("Placeholder", "588539238");
+
+    return {
+      info: "Some description about this type of InputField in general.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <InputField
+                  type="passportid"
+                  label={label}
+                  placeholder={placeholder}
+                  onChange={action("change")}
+                />
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Email input", () => {
     const label = text("Label", "Email");
     const value = text("Value", "name@example.co");

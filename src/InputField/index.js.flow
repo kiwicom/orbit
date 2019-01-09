@@ -7,7 +7,7 @@ export type Size = "small" | "normal";
 
 export type Props = {|
   +size?: Size,
-  +type?: "text" | "number" | "email" | "password",
+  +type?: "text" | "number" | "email" | "password" | "passportid",
   +name?: string,
   +label?: string,
   +inlineLabel?: boolean,

@@ -116,10 +116,9 @@ exports[`Storyshots InputField Compact input 1`] = `
                 </span>
               </div>
               <input
-                className="InputField__Input-sc-4opay-6 kiVcDD"
+                className="InputField__Input-sc-4opay-6 lczgVF"
                 onChange={[Function]}
                 placeholder="Placeholder"
-                size="normal"
                 type="text"
                 value=""
               />
@@ -513,10 +512,9 @@ exports[`Storyshots InputField Default input 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-sc-4opay-6 jLeeWm"
+                className="InputField__Input-sc-4opay-6 btlEqS"
                 onChange={[Function]}
                 placeholder="Placeholder"
-                size="normal"
                 type="text"
                 value=""
               />
@@ -841,10 +839,9 @@ exports[`Storyshots InputField Email input 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-sc-4opay-6 jLeeWm"
+                className="InputField__Input-sc-4opay-6 btlEqS"
                 onChange={[Function]}
                 placeholder="Email"
-                size="normal"
                 type="email"
                 value="name@example.co"
               />
@@ -1243,12 +1240,11 @@ exports[`Storyshots InputField Number input 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-sc-4opay-6 jLeeWm"
+                className="InputField__Input-sc-4opay-6 btlEqS"
                 max={3}
                 min={1}
                 onChange={[Function]}
                 placeholder="Number"
-                size="normal"
                 type="number"
                 value={2}
               />
@@ -1549,6 +1545,332 @@ exports[`Storyshots InputField Number input 1`] = `
 </div>
 `;
 
+exports[`Storyshots InputField Passport or ID Input 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="story"
+    style={
+      Object {
+        "WebkitFontSmoothing": "antialiased",
+        "color": "#444",
+        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+      }
+    }
+  >
+    <div
+      className="story-header"
+      style={
+        Object {
+          "color": "#565d6b",
+          "fontSize": 14,
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      <div>
+        <h1
+          className="story-title"
+          style={
+            Object {
+              "color": "#363a45",
+              "fontSize": 36,
+              "marginBottom": 10,
+            }
+          }
+        >
+          Passport or ID Input
+        </h1>
+        
+        <span
+          className="story-subtitle"
+          style={Object {}}
+        >
+          <div>
+            <p>
+              Some description about this type of InputField in general.
+            </p>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        className="chapter-header"
+        style={
+          Object {
+            "marginBottom": 60,
+          }
+        }
+      >
+        <div>
+          
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="section-container"
+        style={
+          Object {
+            "marginBottom": 100,
+          }
+        }
+      >
+        <div
+          className="section-header"
+          style={Object {}}
+        >
+          <div>
+            <div>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="section-component-container"
+          style={
+            Object {
+              "marginBottom": 60,
+            }
+          }
+        >
+          <label
+            className="InputField__Field-sc-4opay-0 kCAFyx"
+          >
+            <span
+              className="FormLabel-sc-1927civ-1 iTEGJS"
+            >
+              <span>
+                Passport or ID number
+              </span>
+            </span>
+            <div
+              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+            >
+              <input
+                className="InputField__Input-sc-4opay-6 cmRMqp"
+                onChange={[Function]}
+                placeholder="588539238"
+                type="text"
+              />
+              <div
+                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+              />
+            </div>
+          </label>
+        </div>
+        <div>
+          <div>
+            <div>
+              
+              <div
+                className="section-subsection"
+                style={
+                  Object {
+                    "marginBottom": 60,
+                  }
+                }
+              >
+                <h4
+                  className="section-subsection-title"
+                >
+                  Source
+                </h4>
+                <pre
+                  className="css-4akams"
+                >
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        &lt;
+                        InputField
+                      </span>
+                      <span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            type
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                passportid
+                              </span>
+                              "
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            label
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                Passport or ID number
+                              </span>
+                              "
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            placeholder
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                588539238
+                              </span>
+                              "
+                            </span>
+                          </span>
+                        </span>
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          <span
+                            style={Object {}}
+                          >
+                            onChange
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              {
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                change
+                              </span>
+                              }
+                            </span>
+                          </span>
+                          <br />
+                        </span>
+                      </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        /&gt;
+                      </span>
+                    </div>
+                  </div>
+                  <button
+                    className="css-py33tc"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="css-kv47nt"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "marginBottom": 6,
+                          }
+                        }
+                      >
+                        Copied!
+                      </div>
+                      <div>
+                        Copy
+                      </div>
+                    </div>
+                  </button>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots InputField Password input 1`] = `
 <div
   style={
@@ -1660,10 +1982,9 @@ exports[`Storyshots InputField Password input 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-sc-4opay-6 jLeeWm"
+                className="InputField__Input-sc-4opay-6 btlEqS"
                 onChange={[Function]}
                 placeholder="Password"
-                size="normal"
                 type="password"
                 value="p422W0rd"
               />
@@ -2031,7 +2352,7 @@ exports[`Storyshots InputField Playground 1`] = `
                 </svg>
               </div>
               <input
-                className="InputField__Input-sc-4opay-6 gEuwqy"
+                className="InputField__Input-sc-4opay-6 cIuLAF"
                 data-test="test"
                 disabled={false}
                 name="input"
@@ -2039,7 +2360,6 @@ exports[`Storyshots InputField Playground 1`] = `
                 onChange={[Function]}
                 onFocus={[Function]}
                 placeholder="Placeholder"
-                size="small"
                 type="text"
                 value=""
               />
@@ -2891,9 +3211,8 @@ exports[`Storyshots InputField RTL 1`] = `
                 $
               </div>
               <input
-                className="InputField__Input-sc-4opay-6 jLeeWm"
+                className="InputField__Input-sc-4opay-6 btlEqS"
                 placeholder="Placeholder"
-                size="normal"
                 type="text"
               />
               <div
@@ -3296,10 +3615,9 @@ exports[`Storyshots InputField Required field 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-sc-4opay-6 jLeeWm"
+                className="InputField__Input-sc-4opay-6 btlEqS"
                 onChange={[Function]}
                 placeholder="Placeholder"
-                size="normal"
                 type="text"
                 value=""
               />
@@ -3635,10 +3953,9 @@ exports[`Storyshots InputField Small input 1`] = `
               className="InputField__InputContainer-sc-4opay-2 kXcsVj"
             >
               <input
-                className="InputField__Input-sc-4opay-6 gEuwqy"
+                className="InputField__Input-sc-4opay-6 cIuLAF"
                 onChange={[Function]}
                 placeholder="Placeholder"
-                size="small"
                 type="text"
                 value=""
               />
@@ -3993,10 +4310,9 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-sc-4opay-6 jLeeWm"
+                className="InputField__Input-sc-4opay-6 btlEqS"
                 onChange={[Function]}
                 placeholder="Placeholder"
-                size="normal"
                 type="text"
                 value=""
               />
@@ -4387,10 +4703,9 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
                 </svg>
               </div>
               <input
-                className="InputField__Input-sc-4opay-6 jLeeWm"
+                className="InputField__Input-sc-4opay-6 btlEqS"
                 onChange={[Function]}
                 placeholder="Placeholder"
-                size="normal"
                 type="text"
                 value=""
               />
@@ -4744,10 +5059,9 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
               className="InputField__InputContainer-sc-4opay-2 ksKWcl"
             >
               <input
-                className="InputField__Input-sc-4opay-6 jLeeWm"
+                className="InputField__Input-sc-4opay-6 btlEqS"
                 onChange={[Function]}
                 placeholder="Placeholder"
-                size="normal"
                 type="text"
                 value=""
               />
@@ -5116,10 +5430,9 @@ exports[`Storyshots InputField With text prefix 1`] = `
                 $
               </div>
               <input
-                className="InputField__Input-sc-4opay-6 jLeeWm"
+                className="InputField__Input-sc-4opay-6 btlEqS"
                 onChange={[Function]}
                 placeholder="Placeholder"
-                size="normal"
                 type="text"
                 value=""
               />

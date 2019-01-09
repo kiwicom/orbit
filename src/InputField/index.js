@@ -39,6 +39,13 @@ const getPadding = () => ({ theme, size }) => {
   return rtlSpacing(tokens[size]);
 };
 
+const getDOMType = type => {
+  if (type === TYPE_OPTIONS.PASSPORTID) {
+    return TYPE_OPTIONS.TEXT;
+  }
+  return type;
+};
+
 const Field = styled.label`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   position: relative;
@@ -174,7 +181,9 @@ Suffix.defaultProps = {
   theme: defaultTokens,
 };
 
-export const Input = styled.input`
+export const Input = styled(({ type, size, theme, error, help, inlineLabel, ...props }) => (
+  <input type={getDOMType(type)} {...props} />
+))`
   appearance: none;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   border: none;
@@ -191,6 +200,9 @@ export const Input = styled.input`
   line-height: ${getToken(TOKENS.heightInput)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   z-index: 2;
+
+  font-variant-numeric: ${({ type }) => type === TYPE_OPTIONS.PASSPORTID && "tabular-nums"};
+  letter-spacing: ${({ type }) => type === TYPE_OPTIONS.PASSPORTID && "2px"};
 
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {

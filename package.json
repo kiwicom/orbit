@@ -75,7 +75,7 @@
     "styled-components": "^4.0.3"
   },
   "dependencies": {
-    "@kiwicom/orbit-design-tokens": "^0.2.5"
+    "@kiwicom/orbit-design-tokens": "^0.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

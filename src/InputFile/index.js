@@ -29,7 +29,7 @@ const FakeInput = styled(({ children, className }) => <div className={className}
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  padding: ${rtlSpacing(`0 0 0 6px`)}; // TODO create token (paddingInputFile)
+  padding: ${({ theme }) => rtlSpacing(theme.orbit.paddingInputFile)};
   height: ${({ theme }) => theme.orbit.heightInputNormal};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: inset 0 0 0

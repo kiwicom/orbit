@@ -51,7 +51,7 @@ const StyledBadge = styled(({ className, children, dataTest }) => (
   background-color: ${getTypeToken(TOKENS.background)};
   color: ${getTypeToken(TOKENS.color)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusBadge};
-  padding: 0 8px; // TODO: create token paddingBadge
+  padding: ${({ theme }) => theme.orbit.paddingBadge};
 `;
 
 StyledBadge.defaultProps = {
@@ -62,7 +62,10 @@ const IconContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
   display: flex;
-  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.marginRightBadgeIcon} 0 0`)};
+  margin: ${({ theme }) =>
+    rtlSpacing(
+      `0 ${theme.orbit.marginRightBadgeIcon} 0 0`,
+    )}; // TODO: change token to four direction one
 
   svg {
     height: ${({ theme }) => theme.orbit.widthIconSmall};

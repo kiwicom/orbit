@@ -10,15 +10,11 @@ import type { Props } from "./";
 const StyledTableHead = styled(({ children, className }) => (
   <thead className={className}>{children}</thead>
 ))`
-  border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteInkLighter};
-  // TODO: create token
-  // borderColorTableHead
+  border-bottom: 1px solid ${({ theme }) => theme.orbit.borderColorTableHead};
   width: 100%;
   white-space: nowrap;
   ${StyledTableCell} {
-    font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
-    // TODO: create token
-    // fontWeightTableHead
+    font-weight: ${({ theme }) => theme.orbit.fontWeightTableHead};
   }
 `;
 

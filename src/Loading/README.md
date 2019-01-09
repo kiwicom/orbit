@@ -26,6 +26,7 @@ Table below contains all types of the props available for icons in general.
 | `"searchLoader"` |
 | `"boxLoader"`    |
 | `"pageLoader"`   |
+| `"inlineLoader"` |
 
 ## Functional specs
 * Loading which doesn't have a children is always shown, even though that `loading` prop is set to `false`.

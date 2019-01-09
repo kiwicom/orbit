@@ -17,12 +17,12 @@ import { ModalContext } from "./ModalContext";
 
 import type { Props, State } from "./index";
 
-const getSizeToken = () => ({ size }) => {
+const getSizeToken = () => ({ size, theme }) => {
   const tokens = {
     // TODO: create tokens widthModalSmall,...
-    [SIZES.SMALL]: "540px",
-    [SIZES.NORMAL]: "740px",
-    [SIZES.LARGE]: "1280px",
+    [SIZES.SMALL]: theme.orbit.widthModalSmall,
+    [SIZES.NORMAL]: theme.orbit.widthModalNormal,
+    [SIZES.LARGE]: theme.orbit.widthModalLarge,
   };
 
   return tokens[size];

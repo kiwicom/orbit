@@ -1688,7 +1688,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   onScroll={[Function]}
                 >
                   <table
-                    className="Table__StyledTable-sc-156ovmd-2 jcaKFE"
+                    className="Table__StyledTable-sc-156ovmd-2 brAyHM"
                   >
                     <thead
                       className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
@@ -1805,7 +1805,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   onScroll={[Function]}
                 >
                   <table
-                    className="Table__StyledTable-sc-156ovmd-2 jcaKFE"
+                    className="Table__StyledTable-sc-156ovmd-2 brAyHM"
                   >
                     <thead
                       className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
@@ -1926,7 +1926,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   onScroll={[Function]}
                 >
                   <table
-                    className="Table__StyledTable-sc-156ovmd-2 jcaKFE"
+                    className="Table__StyledTable-sc-156ovmd-2 brAyHM"
                   >
                     <thead
                       className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
@@ -2043,7 +2043,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   onScroll={[Function]}
                 >
                   <table
-                    className="Table__StyledTable-sc-156ovmd-2 jcaKFE"
+                    className="Table__StyledTable-sc-156ovmd-2 brAyHM"
                   >
                     <thead
                       className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
@@ -2160,7 +2160,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   onScroll={[Function]}
                 >
                   <table
-                    className="Table__StyledTable-sc-156ovmd-2 jcaKFE"
+                    className="Table__StyledTable-sc-156ovmd-2 brAyHM"
                   >
                     <thead
                       className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
@@ -2277,7 +2277,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   onScroll={[Function]}
                 >
                   <table
-                    className="Table__StyledTable-sc-156ovmd-2 jcaKFE"
+                    className="Table__StyledTable-sc-156ovmd-2 brAyHM"
                   >
                     <thead
                       className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"

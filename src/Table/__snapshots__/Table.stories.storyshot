@@ -105,7 +105,7 @@ exports[`Storyshots Table Compact Table 1`] = `
               onScroll={[Function]}
             >
               <table
-                className="Table__StyledTable-sc-156ovmd-2 cWcSXF"
+                className="Table__StyledTable-sc-156ovmd-2 dKYCBh"
               >
                 <thead
                   className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
@@ -1494,7 +1494,7 @@ exports[`Storyshots Table Default Table 1`] = `
               onScroll={[Function]}
             >
               <table
-                className="Table__StyledTable-sc-156ovmd-2 jcaKFE"
+                className="Table__StyledTable-sc-156ovmd-2 brAyHM"
               >
                 <thead
                   className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
@@ -2874,7 +2874,7 @@ exports[`Storyshots Table Playground 1`] = `
               onScroll={[Function]}
             >
               <table
-                className="Table__StyledTable-sc-156ovmd-2 jcaKFE"
+                className="Table__StyledTable-sc-156ovmd-2 brAyHM"
               >
                 <thead
                   className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
@@ -4656,7 +4656,7 @@ exports[`Storyshots Table RTL 1`] = `
               onScroll={[Function]}
             >
               <table
-                className="Table__StyledTable-sc-156ovmd-2 jcaKFE"
+                className="Table__StyledTable-sc-156ovmd-2 brAyHM"
               >
                 <thead
                   className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"

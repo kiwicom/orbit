@@ -62,14 +62,15 @@ const StyledTable = styled.table`
   white-space: nowrap;
 
   & ${StyledTableBody} > ${StyledTableRow} {
+    background-color: ${({ theme }) => theme.orbit.paletteWhite};
     border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
     // TODO: create token
     // borderColorTable
+    transition: background-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
     &:nth-of-type(even) {
       background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
       // TODO: create token
       // backgroundTableEven
-      transition: background-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
     }
     &:last-child {
       border: 0;

@@ -10,9 +10,9 @@ import type { Props } from "./index";
 const StyledArrow = styled.svg`
   vertical-align: middle;
   fill: currentColor;
-  color: ${({ theme }) => theme.orbit.paletteInkLight}; // TODO: create token colorStopoverArrow
-  width: 36px; // TODO: Create token widthStopoverArrow
-  height: 7px; // TODO: Create token heightStopoverArrow
+  color: ${({ theme }) => theme.orbit.colorStopoverArrow};
+  width: ${({ theme }) => theme.orbit.widthStopoverArrow};
+  height: ${({ theme }) => theme.orbit.heightStopoverArrow};
 `;
 
 StyledArrow.defaultProps = {

@@ -11,11 +11,9 @@ export const StyledTableBody = styled(({ children, className }) => (
 ))`
   width: 100%;
   white-space: nowrap;
-  border-left: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
-  border-right: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
-  border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
-  // TODO: create token
-  // borderColorTable
+  border-left: 1px solid ${({ theme }) => theme.orbit.borderColorTable};
+  border-right: 1px solid ${({ theme }) => theme.orbit.borderColorTable};
+  border-bottom: 1px solid ${({ theme }) => theme.orbit.borderColorTable};
 `;
 
 StyledTableBody.defaultProps = {

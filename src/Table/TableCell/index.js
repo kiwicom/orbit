@@ -14,9 +14,7 @@ export const StyledTableCell = styled(({ children, className }) => (
   box-sizing: border-box;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  color: ${({ theme }) => theme.orbit.paletteInkLight};
-  // TODO: create token
-  // colorTable
+  color: ${({ theme }) => theme.orbit.colorTextTable};
   text-align: ${({ align }) => textAlign(align)};
 `;
 

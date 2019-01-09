@@ -20,32 +20,30 @@ const getFontSize = ({ theme, size }) => {
 
 const getBackgroundColor = state => ({ selected, theme }) => {
   const states = {
-    [STATES.DEFAULT]: selected ? theme.orbit.paletteInkNormal : theme.orbit.paletteCloudLight,
+    [STATES.DEFAULT]: selected ? theme.orbit.backgroundTagSelected : theme.orbit.backgroundTag,
     [STATES.HOVER]: selected
-      ? theme.orbit.paletteInkNormalHover
-      : theme.orbit.paletteCloudLightHover,
+      ? theme.orbit.backgroundTagSelectedHover
+      : theme.orbit.backgroundTagHover,
     [STATES.ACTIVE]: selected
-      ? theme.orbit.paletteInkNormalActive
-      : theme.orbit.paletteCloudLightActive,
+      ? theme.orbit.backgroundTagSelectedActive
+      : theme.orbit.backgroundTagActive,
   };
   return states[state];
 };
 
-const getSpacing = ({ icon, removable }) => {
+const getSpacing = ({ icon, removable, theme }) => {
   const padding =
-    (removable && icon && `6px`) ||
-    (removable && !icon && `6px 6px 6px 8px`) ||
-    (!removable && icon && `6px 8px 6px 6px`) ||
-    (!removable && !icon && `6px 8px`);
+    (removable && icon && theme.orbit.paddingTagRemovableWithIcon) ||
+    (removable && !icon && theme.orbit.paddingTagRemovable) ||
+    (!removable && icon && theme.orbit.paddingTagWithIcon) ||
+    (!removable && !icon && theme.orbit.paddingTag);
   return rtlSpacing(padding);
 };
 
 const StyledTag = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   color: ${({ theme, selected }) =>
-    selected
-      ? theme.orbit.paletteCloudNormal
-      : theme.orbit.paletteInkNormal}; // TODO: createToken textColorTag, textColorTagSelected
+    selected ? theme.orbit.colorTextTagSelected : theme.orbit.colorTextTag};
   background: ${getBackgroundColor(STATES.DEFAULT)};
   display: inline-flex;
   cursor: pointer;
@@ -56,8 +54,7 @@ const StyledTag = styled.div`
   font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: ${({ theme, selected }) =>
-    !selected &&
-    `inset 0 0 0 1px ${theme.orbit.paletteCloudNormal}`}; // TODO: createToken borderColorTag
+    !selected && `inset 0 0 0 1px ${theme.orbit.borderColorTag}`};
   padding: ${getSpacing};
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out,
     box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out,
@@ -74,10 +71,7 @@ const StyledTag = styled.div`
   }
 
   &:focus {
-    box-shadow: ${({ theme }) =>
-      `inset 0 0 0 2px ${
-        theme.orbit.paletteBlueNormal
-      }`}; // TODO: createToken borderColorTagFocused
+    box-shadow: ${({ theme }) => `inset 0 0 0 2px ${theme.orbit.borderColorTagFocus}`};
     outline: 0;
   }
 `;

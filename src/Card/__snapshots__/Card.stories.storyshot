@@ -7221,7 +7221,7 @@ exports[`Storyshots Card Loading Card 1`] = `
               className="Card__StyledChildWrapper-ff0z2v-0 jtYTwu"
             >
               <div
-                className="Loading__StyledLoading-sc-1psg3na-0 bWljwL"
+                className="Loading__StyledLoading-sc-1psg3na-0 oKkLd"
               >
                 <div
                   className="Loading__StyledLoader-sc-1psg3na-4 ggWVnQ"

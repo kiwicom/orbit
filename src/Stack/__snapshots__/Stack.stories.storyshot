@@ -1681,7 +1681,7 @@ exports[`Storyshots Stack Components preview 1`] = `
               className="Stack__StyledStack-sc-1t576ow-0 cmtuGW"
             >
               <div
-                className="Table__StyledTableOuter-sc-156ovmd-0 eoNpTU"
+                className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
               >
                 <div
                   className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
@@ -1798,7 +1798,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                 </div>
               </div>
               <div
-                className="Table__StyledTableOuter-sc-156ovmd-0 eoNpTU"
+                className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
               >
                 <div
                   className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
@@ -1919,7 +1919,7 @@ exports[`Storyshots Stack Components preview 1`] = `
               className="Stack__StyledStack-sc-1t576ow-0 jOHKrp"
             >
               <div
-                className="Table__StyledTableOuter-sc-156ovmd-0 eoNpTU"
+                className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
               >
                 <div
                   className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
@@ -2036,7 +2036,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                 </div>
               </div>
               <div
-                className="Table__StyledTableOuter-sc-156ovmd-0 eoNpTU"
+                className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
               >
                 <div
                   className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
@@ -2153,7 +2153,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                 </div>
               </div>
               <div
-                className="Table__StyledTableOuter-sc-156ovmd-0 eoNpTU"
+                className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
               >
                 <div
                   className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
@@ -2270,7 +2270,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                 </div>
               </div>
               <div
-                className="Table__StyledTableOuter-sc-156ovmd-0 eoNpTU"
+                className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
               >
                 <div
                   className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"

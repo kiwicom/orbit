@@ -472,6 +472,30 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
+    "colorTextButtonWhite": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonWhiteHover": {
+      "value": "#3f4854",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonWhiteActive": {
+      "value": "#38404b",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
     "colorTextButtonPrimaryBordered": {
       "value": "#00a991",
       "type": "color",
@@ -664,6 +688,30 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
+    "colorTextButtonWhiteBordered": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonWhiteBorderedHover": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonWhiteBorderedActive": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
     "colorTextButtonLinkPrimary": {
       "value": "#00a991",
       "type": "color",
@@ -792,6 +840,38 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
+    "colorTextLoading": {
+      "value": "#bac7d5",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextTable": {
+      "value": "#7f91a8",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextTag": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextTagSelected": {
+      "value": "#e8edf1",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
     "colorIconInput": {
       "value": "#bac7d5",
       "type": "color",
@@ -882,6 +962,14 @@
     },
     "colorIconRadioButtonDisabled": {
       "value": "#bac7d5",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorStopoverArrow": {
+      "value": "#7f91a8",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -1128,6 +1216,30 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
       }
     },
+    "backgroundButtonWhite": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonWhiteHover": {
+      "value": "#f5f7f9",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonWhiteActive": {
+      "value": "#e5eaef",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
     "backgroundButtonBordered": {
       "value": "transparent",
       "type": "string",
@@ -1146,6 +1258,30 @@
     },
     "backgroundButtonBorderedActive": {
       "value": "#fff",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonWhiteBordered": {
+      "value": "transparent",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonWhiteBorderedHover": {
+      "value": "rgba(255, 255, 255, 0.2)",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonWhiteBorderedActive": {
+      "value": "rgba(255, 255, 255, 0.2)",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1328,6 +1464,94 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
       }
     },
+    "backgroundTableShadowLeft": {
+      "value": "linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23))",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundTableShadowRight": {
+      "value": "linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundTable": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundTableEven": {
+      "value": "#f5f7f9",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundTableHover": {
+      "value": "#e8edf1",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundTag": {
+      "value": "#f5f7f9",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundTagSelected": {
+      "value": "#46515e",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundTagHover": {
+      "value": "#e5eaef",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundTagSelectedHover": {
+      "value": "#3f4854",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundTagActive": {
+      "value": "#d6dee6",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundTagSelectedActive": {
+      "value": "#38404b",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
     "fontSizeHeadingDisplay": {
       "value": "40px",
       "type": "size",
@@ -1354,6 +1578,14 @@
     },
     "fontSizeHeadingTitle3": {
       "value": "16px",
+      "type": "size",
+      "category": "Font size",
+      "meta": {
+        "categoryDescription": "Use these sizing tokens for font sizes."
+      }
+    },
+    "fontSizeHeadingTitle4": {
+      "value": "14px",
       "type": "size",
       "category": "Font size",
       "meta": {
@@ -1756,6 +1988,46 @@
         "categoryDescription": ""
       }
     },
+    "widthModalSmall": {
+      "value": "540px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "widthModalNormal": {
+      "value": "740px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "widthModalLarge": {
+      "value": "1280px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "widthStopoverArrow": {
+      "value": "36px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "heightStopoverArrow": {
+      "value": "7px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "borderColorInput": {
       "value": "#bac7d5",
       "type": "color",
@@ -2028,6 +2300,30 @@
         "categoryDescription": ""
       }
     },
+    "borderColorButtonWhiteBordered": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonWhiteBorderedHover": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorButtonWhiteBorderedActive": {
+      "value": "#fff",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "borderColorCheckboxRadio": {
       "value": "#bac7d5",
       "type": "color",
@@ -2061,6 +2357,38 @@
       }
     },
     "borderColorCheckboxRadioFocus": {
+      "value": "#0176D2",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorTable": {
+      "value": "#e8edf1",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorTableHead": {
+      "value": "#bac7d5",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorTag": {
+      "value": "#e8edf1",
+      "type": "color",
+      "category": "Border color",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "borderColorTagFocus": {
       "value": "#0176D2",
       "type": "color",
       "category": "Border color",
@@ -2204,6 +2532,22 @@
         "categoryDescription": "Use this for setting basic font weights."
       }
     },
+    "fontWeightHeadingTitle4": {
+      "value": "500",
+      "type": "string",
+      "category": "Font weight",
+      "meta": {
+        "categoryDescription": "Use this for setting basic font weights."
+      }
+    },
+    "fontWeightTableHead": {
+      "value": "700",
+      "type": "string",
+      "category": "Font weight",
+      "meta": {
+        "categoryDescription": "Use this for setting basic font weights."
+      }
+    },
     "paddingAlert": {
       "value": "16px",
       "type": "size",
@@ -2214,6 +2558,14 @@
     },
     "paddingAlertWithIcon": {
       "value": "12px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingBadge": {
+      "value": "0 8px",
       "type": "size",
       "category": "Spacing",
       "meta": {
@@ -2348,8 +2700,8 @@
         "categoryDescription": "Use this for setting spacings for elements."
       }
     },
-    "paddingLeftInputFile": {
-      "value": "6px",
+    "paddingInputFile": {
+      "value": "0 0 0 6px",
       "type": "size",
       "category": "Spacing",
       "meta": {
@@ -2358,6 +2710,62 @@
     },
     "paddingLeftSelectPrefix": {
       "value": "48px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingLoading": {
+      "value": "12px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingTable": {
+      "value": "12px 16px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingTableCompact": {
+      "value": "8px 12px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingTag": {
+      "value": "6px 8px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingTagWithIcon": {
+      "value": "6px 8px 6px 6px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingTagRemovable": {
+      "value": "6px 6px 6px 8px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingTagRemovableWithIcon": {
+      "value": "6px",
       "type": "size",
       "category": "Spacing",
       "meta": {

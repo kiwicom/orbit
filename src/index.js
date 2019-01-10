@@ -43,6 +43,7 @@ export { default as TableRow } from "./Table/TableRow";
 export { default as TableHead } from "./Table/TableHead";
 
 export { default as Heading } from "./Heading";
+export { default as Hide } from "./Hide";
 export { default as Text } from "./Text";
 export { default as List } from "./List";
 export { default as ListItem } from "./List/ListItem";
@@ -75,4 +76,4 @@ export { default as TripLayover } from "./TripSector/TripLayover";
 export { defaultTokens as defaultTheme, getTokens } from "@kiwicom/orbit-design-tokens";
 
 // utilities
-export { default as media } from "./utils/media";
+export { default as mediaQueries, breakpoints } from "./utils/mediaQuery";

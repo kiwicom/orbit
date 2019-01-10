@@ -1,0 +1,67 @@
+# Media queries
+
+In the `orbit-components` package you can find several media queries that are based on the mobile first approach.
+
+## Media query functions
+
+Example below is a good start to implement media query functions into your project that uses `styled-components`:
+```jsx
+import media from "@kiwicom/orbit-components/lib/utils/mediaQuery";
+import styled, { css } from "styled-components";
+
+const StyledComponent = styled.div`
+  width: 100%;
+  
+  ${mq.desktop(css`
+    width: 50%;
+  `)};
+`
+```
+
+You can use these media queries in your project:
+
+| Name          | Applies from width    |
+| :------------ | :-------------------- |
+| mediumMobile  | `1400px`              |
+| largeMobile   | `1200px`              |
+| table         | `992px`               |
+| desktop       | `600px`               |
+| largeDesktop  | `414px`               |
+
+## Breakpoints for testing purposes
+
+For testing your components with Enzyme, you can also use static breakpoints.
+
+Imagine that we have component and we want to test if it's contain specific styles:
+```jsx
+const StyledComponent = styled.div`
+  width: 100%;
+  
+  ${mq.desktop(css`
+    width: 50%;
+  `)};
+```
+
+In this case, our test would require to `mount` this component and than check if it's have specific styles with `toHaveStyleRule` function from package [`jest-styled-components`](https://www.npmjs.com/package/jest-styled-components):
+```jsx
+import * as React from "react";
+import { mount } from "enzyme";
+
+import { breakpoints } from "@kiwicom/orbit-components/lib/utils/mediaQuery"
+
+import StyledComponent from "./"
+
+describe("StyledComponent", () => {
+  const component = mount(<StyledComponent />);
+  
+  it("should have width 100 % by default", () => {
+    expect(component).toHaveStyleRule("width", "100%");
+  });
+  
+  it("should have width 50 % on desktop viewport", () => {
+    expect(component).toHaveStyleRule("width", "50%", {
+      media: breakpoints.desktop,
+    });
+  });
+});
+```

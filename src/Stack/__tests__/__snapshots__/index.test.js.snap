@@ -258,7 +258,7 @@ exports[`Default Stack should match snapshot 1`] = `
   align-items: center;
 }
 
-@media (min-width:600px) {
+@media (min-width:1200px) {
   .c0 > * {
     margin: 0 0 40px 0!important;
   }
@@ -724,7 +724,7 @@ exports[`Default Stack should match snapshot 1`] = `
         "componentStyle": ComponentStyle {
           "componentId": "Stack__StyledStack-sc-1t576ow-0",
           "isStatic": false,
-          "lastClassName": "hgtuCS",
+          "lastClassName": "bpOViJ",
           "rules": Array [
             "width:",
             [Function],
@@ -735,25 +735,17 @@ exports[`Default Stack should match snapshot 1`] = `
             ";margin-bottom:",
             [Function],
             ";",
-            "@media (min-width:600px){",
-            "
-    // spacing between children needs to set again - different spacings for desktop
-    ",
+            "@media ",
+            "(min-width: 1200px)",
+            "{",
             [Function],
-            ";
-    // spaceAfter can be different for desktop
-    ",
+            ";",
             [Function],
-            ";
-    // if not inline 100 %
-    width: ",
+            ";width:",
             [Function],
-            ";
-    // all other styles
-    ",
+            ";",
             [Function],
-            ";
-  ",
+            ";",
             ";}",
             ";",
           ],
@@ -15947,7 +15939,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   align-items: center;
 }
 
-@media (min-width:600px) {
+@media (min-width:1200px) {
   .c0 {
     margin-bottom: 8px;
     display: -webkit-inline-box;
@@ -16502,7 +16494,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "Stack__StyledStack-sc-1t576ow-0",
             "isStatic": false,
-            "lastClassName": "hgtuCS",
+            "lastClassName": "bpOViJ",
             "rules": Array [
               "width:",
               [Function],
@@ -16513,25 +16505,17 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
               ";margin-bottom:",
               [Function],
               ";",
-              "@media (min-width:600px){",
-              "
-    // spacing between children needs to set again - different spacings for desktop
-    ",
+              "@media ",
+              "(min-width: 1200px)",
+              "{",
               [Function],
-              ";
-    // spaceAfter can be different for desktop
-    ",
+              ";",
               [Function],
-              ";
-    // if not inline 100 %
-    width: ",
+              ";width:",
               [Function],
-              ";
-    // all other styles
-    ",
+              ";",
               [Function],
-              ";
-  ",
+              ";",
               ";}",
               ";",
             ],
@@ -31735,7 +31719,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   align-items: center;
 }
 
-@media (min-width:600px) {
+@media (min-width:1200px) {
   .c0 > * {
     margin: 0 16px 0 0!important;
   }
@@ -32198,7 +32182,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
         "componentStyle": ComponentStyle {
           "componentId": "Stack__StyledStack-sc-1t576ow-0",
           "isStatic": false,
-          "lastClassName": "hgtuCS",
+          "lastClassName": "bpOViJ",
           "rules": Array [
             "width:",
             [Function],
@@ -32209,25 +32193,17 @@ exports[`Stack with flex prop should match snapshot 1`] = `
             ";margin-bottom:",
             [Function],
             ";",
-            "@media (min-width:600px){",
-            "
-    // spacing between children needs to set again - different spacings for desktop
-    ",
+            "@media ",
+            "(min-width: 1200px)",
+            "{",
             [Function],
-            ";
-    // spaceAfter can be different for desktop
-    ",
+            ";",
             [Function],
-            ";
-    // if not inline 100 %
-    width: ",
+            ";width:",
             [Function],
-            ";
-    // all other styles
-    ",
+            ";",
             [Function],
-            ";
-  ",
+            ";",
             ";}",
             ";",
           ],

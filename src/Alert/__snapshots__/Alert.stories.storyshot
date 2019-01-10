@@ -1209,7 +1209,7 @@ exports[`Storyshots Alert Playground 1`] = `
                 className="Alert__Content-svgppc-4 gHGFTr"
               >
                 <div
-                  className="Stack__StyledStack-sc-1t576ow-0 iwIxs"
+                  className="Stack__StyledStack-sc-1t576ow-0 jeoIpO"
                 >
                   <div>
                     Also you can change the message by changing the Message knob
@@ -2282,7 +2282,7 @@ exports[`Storyshots Alert RTL 1`] = `
                 className="Alert__Content-svgppc-4 gHGFTr"
               >
                 <div
-                  className="Stack__StyledStack-sc-1t576ow-0 iwIxs"
+                  className="Stack__StyledStack-sc-1t576ow-0 jeoIpO"
                 >
                   <div>
                     Message of the Alert

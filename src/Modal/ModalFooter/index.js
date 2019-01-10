@@ -1,13 +1,14 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-import media from "../../utils/media";
+import media from "../../utils/mediaQuery";
 import defaultTokens from "../../defaultTokens";
 import { StyledButton } from "../../Button";
 import { rtlSpacing } from "../../utils/rtl";
 import { StyledButtonLink } from "../../ButtonLink";
 import { withModalContext } from "../ModalContext";
+import { DEVICES } from "../../utils/mediaQuery/consts";
 
 import type { Props } from "./index";
 
@@ -16,9 +17,9 @@ const StyledChild = styled.div`
   box-sizing: border-box;
   padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceMedium} 0 0`)};
 
-  ${media.desktop`
+  ${media.largeMobile(css`
     flex: none;
-  `};
+  `)};
 `;
 
 StyledChild.defaultProps = {
@@ -37,19 +38,19 @@ export const StyledModalFooter = styled.div`
   // TODO: create token boxShadowActionableInverted
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
-  @media (max-width: 599px) {
+  @media (max-width: ${DEVICES.largeMobile - 1}px) {
     ${StyledButton}, ${StyledButtonLink} {
       font-size: ${({ theme }) => theme.orbit.fontSizeButtonNormal};
       height: ${({ theme }) => theme.orbit.heightButtonNormal};
     }
   }
 
-  ${media.desktop`
+  ${media.largeMobile(css`
     justify-content: ${({ children }) => (children.length > 1 ? "space-between" : "flex-end")};
     // TODO: create token paddingModalFooterDesktop
     border-bottom-left-radius: 9px;
     border-bottom-right-radius: 9px;
-  `};
+  `)};
 
   ${StyledChild}:last-of-type {
     padding: 0;

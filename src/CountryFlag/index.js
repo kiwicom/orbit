@@ -23,8 +23,8 @@ const CountryFlag = (props: Props) => {
   return (
     <StyledCountryFlag
       key={code}
-      src={`${baseURL}/flags/24x0/flag-${code}.jpg`}
-      srcSet={`${baseURL}/flags/48x0/flag-${code}.jpg 2x`}
+      src={`${baseURL}/flags/24x0/flag-${code.toLowerCase()}.jpg`}
+      srcSet={`${baseURL}/flags/48x0/flag-${code.toLowerCase()}.jpg 2x`}
       alt={name}
       title={name}
       data-test={dataTest}

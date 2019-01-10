@@ -22,11 +22,11 @@ You can use these media queries in your project:
 
 | Name          | Applies from width    |
 | :------------ | :-------------------- |
-| mediumMobile  | `1400px`              |
-| largeMobile   | `1200px`              |
-| table         | `992px`               |
-| desktop       | `600px`               |
-| largeDesktop  | `414px`               |
+| mediumMobile  | `414px`               |
+| largeMobile   | `600px`               |
+| tablet        | `992px`               |
+| desktop       | `1200px`              |
+| largeDesktop  | `1400px`              |
 
 ## Breakpoints for testing purposes
 

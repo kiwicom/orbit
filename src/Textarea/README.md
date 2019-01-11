@@ -17,13 +17,13 @@ Table below contains all types of the props available in Textarea component.
 | error         | `React.Node`      |              | The error to display beneath the Textarea. [See Functional specs](#functional-specs)
 | fullHeight    | `boolean`         | `false`      | If `true`, the Textarea will take 100 % of parent's height.
 | help          | `React.Node`      |              | The help to display beneath the Textarea.
-| label         | `string`          |              | The label for the Textarea. [See Functional specs](#functional-specs)
+| label         | `Translation`     |              | The label for the Textarea. [See Functional specs](#functional-specs)
 | maxLength     | `number`          |              | Specifies the maximum number of characters allowed.
 | name          | `string`          |              | The name for the Textarea.
 | onChange      | `func`            |              | Function for handling onClick event.
 | onFocus       | `func`            |              | Function for handling onFocus event.
 | onBlur        | `func`            |              | Function for handling onBlur event.
-| placeholder   | `string`          |              | The placeholder of the Textarea.
+| placeholder   | `Translation`     |              | The placeholder of the Textarea.
 | ref           | `func`            |              | Prop for forwarded ref of the Textarea. [See Functional specs](#functional-specs)
 | resize        | [`enum`](#enum)   | `"vertical"` | The resize option for Textarea.
 | size          | [`enum`](#enum)   | `"normal"`   | The size of the Textarea.

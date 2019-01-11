@@ -13824,11 +13824,13 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "foldedComponentIds": Array [],
                                   "render": [Function],
                                   "styledComponentId": "c10",
-                                  "target": [Function],
+                                  "target": Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "render": [Function],
+                                  },
                                   "toString": [Function],
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
-                                  Symbol(Symbol.hasInstance): [Function],
                                 }
                               }
                               forwardedRef={null}
@@ -14279,7 +14281,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                               type="number"
                               value={1}
                             >
-                              <Component
+                              <ForwardRef
                                 className="c10 c11"
                                 disabled={false}
                                 error="Error message"
@@ -14744,7 +14746,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   type="number"
                                   value={1}
                                 />
-                              </Component>
+                              </ForwardRef>
                             </StyledComponent>
                           </InputField__Input>
                           <InputField__Suffix

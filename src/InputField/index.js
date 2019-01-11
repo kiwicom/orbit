@@ -181,9 +181,12 @@ Suffix.defaultProps = {
   theme: defaultTokens,
 };
 
-export const Input = styled(({ type, size, theme, error, help, inlineLabel, ...props }) => (
-  <input type={getDOMType(type)} {...props} />
-))`
+export const Input = styled(
+  // $FlowExpected
+  React.forwardRef(({ type, size, theme, error, help, inlineLabel, ...props }, ref) => (
+    <input type={getDOMType(type)} {...props} ref={ref} />
+  )),
+)`
   appearance: none;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   border: none;

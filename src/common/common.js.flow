@@ -8,3 +8,5 @@ export type RefType = () => { current: ?HTMLElement };
 export type Ref = {|
   +ref?: RefType,
 |};
+
+export type Translation = React$Element<React$ComponentType<any>> | string;

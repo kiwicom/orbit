@@ -1,13 +1,13 @@
 // @flow
 import type { spaceAfter } from "../common/getSpacingToken/index";
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Translation } from "../common/common.js.flow";
 
 type Type = "info" | "success" | "warning" | "critical";
 
 export type Props = {|
   +type?: Type,
   +children?: React$Node,
-  +title?: string | React$Node,
+  +title?: Translation,
   +icon?: React$Element<any> | boolean,
   +closable?: boolean,
   +onClose?: () => void,

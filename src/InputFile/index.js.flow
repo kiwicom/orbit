@@ -1,12 +1,12 @@
 // @flow
-import type { Globals, Ref } from "../common/common.js.flow";
+import type { Globals, Translation, Ref } from "../common/common.js.flow";
 
 export type Props = {|
   ...Globals,
-  +label?: string,
-  +title?: string,
+  +label?: Translation,
+  +title?: React$Node,
   +name?: string,
-  +placeholder?: string,
+  +placeholder?: Translation,
   +fileName?: string,
   +allowedFileTypes?: string | string[],
   +help?: React$Node,

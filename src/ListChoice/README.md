@@ -13,9 +13,9 @@ Table below contains all types of the props available in the ListChoice componen
 | Name              | Type          | Default | Description                      |
 | :---------------- | :------------ | :------ | :------------------------------- |
 | dataTest          | `string`      |         | Optional prop for testing purposes.
-| description       | `string`      |         | The additional info about the ListChoice.
+| description       | `Translation` |         | The additional info about the ListChoice.
 | icon              | `React.Node`  |         | The icon on the left of the ListChoice.
 | onClick           | `func`        |         | Function for handling onClick event.
 | selectable        | `boolean`     | `false` | If `true`, the check box glyph appears on the right size and it will be possible to select the ListChoice.
 | selected          | `boolean`     | `false` | If `true`, the check box glyph will be checked.
-| **title**         | `string`      |         | The title of the ListChoice.
+| **title**         | `Translation` |         | The title of the ListChoice.

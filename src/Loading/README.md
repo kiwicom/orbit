@@ -16,7 +16,7 @@ Table below contains all types of the props available for icons in general.
 | dataTest      | `string`        |                 | Optional prop for testing purposes.
 | loading       | `boolean`       | `false`         | If `true`, the Loading will be displayed.
 | **type**      | [`enum`](#enum) |                 | The type of the Loading.
-| text          | `string`        |                 | The text of the Loading.
+| text          | `Translation`   |                 | The text of the Loading.
 
 ### enum
 

@@ -17,15 +17,15 @@ Table below contains all types of the props available in the InputFile component
 | error               | `React.Node`          |                      | The error message for the Select. [See Functional specs](#functional-specs)
 | fileName            | `string`              |                      | The name of selected file.
 | help                | `React.Node`          |                      | The help message for the InputFile.
-| label               | `string`              |                      | The label for the InputFile.
+| label               | `Translation`         |                      | The label for the InputFile.
 | name                | `string`              |                      | The name for the InputFile.
 | onBlur              | `func`                |                      | Function for handling onBlur event.
 | onChange            | `func`                |                      | Function for handling onChange event.
 | onFocus             | `func`                |                      | Function for handling onFocus event.
 | onRemoveFile        | `func`                |                      | Function for handling file name removing.
-| placeholder         | `string`              | `"No file selected"` | The placeholder for the InputFile. [See Functional specs](#functional-specs)
+| placeholder         | `Translation`         | `"No file selected"` | The placeholder for the InputFile. [See Functional specs](#functional-specs)
 | ref                 | `func`                |                      | Prop for forwarded ref of the InputFile. [See Functional specs](#functional-specs)
-| title               | `string`              | `"Select file"`      | The title for the InputFile. [See Functional specs](#functional-specs)
+| title               | `Translation`         | `"Select file"`      | The title for the InputFile. [See Functional specs](#functional-specs)
 
 ## Functional specs
 * The `error` prop overwrites the `help` prop, due to higher priority.

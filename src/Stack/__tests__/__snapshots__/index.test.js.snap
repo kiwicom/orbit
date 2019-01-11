@@ -7940,11 +7940,13 @@ exports[`Default Stack should match snapshot 1`] = `
                                 "foldedComponentIds": Array [],
                                 "render": [Function],
                                 "styledComponentId": "InputField__Input-sc-4opay-6",
-                                "target": [Function],
+                                "target": Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "render": [Function],
+                                },
                                 "toString": [Function],
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
-                                Symbol(Symbol.hasInstance): [Function],
                               }
                             }
                             forwardedRef={null}
@@ -8386,7 +8388,7 @@ exports[`Default Stack should match snapshot 1`] = `
                             }
                             type="password"
                           >
-                            <Component
+                            <ForwardRef
                               className="c4"
                               size="normal"
                               theme={
@@ -8830,7 +8832,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                 className="c4"
                                 type="password"
                               />
-                            </Component>
+                            </ForwardRef>
                           </StyledComponent>
                         </InputField__Input>
                         <InputField__FakeInput
@@ -23723,11 +23725,13 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                   "foldedComponentIds": Array [],
                                   "render": [Function],
                                   "styledComponentId": "InputField__Input-sc-4opay-6",
-                                  "target": [Function],
+                                  "target": Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "render": [Function],
+                                  },
                                   "toString": [Function],
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
-                                  Symbol(Symbol.hasInstance): [Function],
                                 }
                               }
                               forwardedRef={null}
@@ -24169,7 +24173,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               }
                               type="password"
                             >
-                              <Component
+                              <ForwardRef
                                 className="c4"
                                 size="normal"
                                 theme={
@@ -24613,7 +24617,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                   className="c4"
                                   type="password"
                                 />
-                              </Component>
+                              </ForwardRef>
                             </StyledComponent>
                           </InputField__Input>
                           <InputField__FakeInput
@@ -39394,11 +39398,13 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                 "foldedComponentIds": Array [],
                                 "render": [Function],
                                 "styledComponentId": "InputField__Input-sc-4opay-6",
-                                "target": [Function],
+                                "target": Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "render": [Function],
+                                },
                                 "toString": [Function],
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
-                                Symbol(Symbol.hasInstance): [Function],
                               }
                             }
                             forwardedRef={null}
@@ -39840,7 +39846,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             }
                             type="password"
                           >
-                            <Component
+                            <ForwardRef
                               className="c4"
                               size="normal"
                               theme={
@@ -40284,7 +40290,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                 className="c4"
                                 type="password"
                               />
-                            </Component>
+                            </ForwardRef>
                           </StyledComponent>
                         </InputField__Input>
                         <InputField__FakeInput

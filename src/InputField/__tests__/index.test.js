@@ -118,11 +118,13 @@ describe(`Compact input`, () => {
 
 describe(`Required field`, () => {
   const label = "Label";
-
-  const component = mount(<InputField label={label} required />);
-
+  const ref = React.createRef();
+  const component = mount(<InputField label={label} required ref={ref} />);
   it("should render asterisk", () => {
     expect(component.find("FormLabel__StyledAsterisk").exists()).toBe(true);
+  });
+  it("should have ref", () => {
+    expect(ref.current).toBeDefined();
   });
 });
 

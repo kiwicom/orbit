@@ -1227,7 +1227,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
               className="InputGroup__FakeGroup-cyuwoi-0 iDDzCF"
             />
             <div
-              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
+              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 fcdYJr"
             >
               error
             </div>

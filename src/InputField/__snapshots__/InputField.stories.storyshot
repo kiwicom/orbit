@@ -850,7 +850,7 @@ exports[`Storyshots InputField Email input 1`] = `
               />
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
+              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 ffreab"
             >
               <div>
                 Did you mean 

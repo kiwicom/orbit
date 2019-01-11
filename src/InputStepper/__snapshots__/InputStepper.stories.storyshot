@@ -459,7 +459,7 @@ exports[`Storyshots InputStepper Playground 1`] = `
                 />
               </div>
               <div
-                className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
+                className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 fcdYJr"
               >
                 Error message (explain how to solve it)
               </div>
@@ -1913,7 +1913,7 @@ exports[`Storyshots InputStepper With help 1`] = `
                 />
               </div>
               <div
-                className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
+                className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 ffreab"
               >
                 You need to enter count of adults
               </div>

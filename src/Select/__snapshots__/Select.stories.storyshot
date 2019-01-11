@@ -2398,7 +2398,7 @@ exports[`Storyshots Select With error message 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
+              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 fcdYJr"
             >
               <div>
                 You need to select some value.
@@ -2926,7 +2926,7 @@ exports[`Storyshots Select With help message 1`] = `
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
+              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 ffreab"
             >
               Most common choice is Booking cancellation
             </div>

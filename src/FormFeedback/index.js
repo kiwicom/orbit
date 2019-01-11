@@ -1,13 +1,13 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import TYPE_OPTIONS from "./consts";
 
 import type { Props } from "./index";
 
-const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {...props} />)`
+export const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {...props} />)`
   color: ${({ theme, type }) =>
     type === TYPE_OPTIONS.ERROR ? theme.orbit.colorTextError : theme.orbit.colorTextSecondary};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -17,13 +17,18 @@ const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {...props}
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   width: 100%;
   margin-top: 2px;
-  position: absolute;
-  top: 100%;
-  max-height: ${({ theme }) =>
-    Math.floor(theme.orbit.lineHeightText * parseInt(theme.orbit.fontSizeFormFeedback, 10))}px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+
+  ${({ stationary }) =>
+    !stationary &&
+    css`
+      position: absolute;
+      top: 100%;
+      max-height: ${({ theme }) =>
+        Math.floor(theme.orbit.lineHeightText * parseInt(theme.orbit.fontSizeFormFeedback, 10))}px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    `};
 
   & a {
     color: ${({ theme, type }) =>
@@ -45,9 +50,9 @@ StyledFormFeedback.defaultProps = {
 };
 
 const FormFeedback = (props: Props) => {
-  const { children, type = TYPE_OPTIONS.HELP, dataTest } = props;
+  const { children, type = TYPE_OPTIONS.HELP, dataTest, stationary } = props;
   return (
-    <StyledFormFeedback type={type} data-test={dataTest}>
+    <StyledFormFeedback type={type} data-test={dataTest} stationary={stationary}>
       {children}
     </StyledFormFeedback>
   );

@@ -30673,7 +30673,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                 />
               </div>
               <div
-                className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
+                className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 ffreab"
               >
                 You need some help!
               </div>
@@ -31981,7 +31981,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                   />
                 </div>
                 <div
-                  className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
+                  className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 fcdYJr"
                 >
                   You need some help!
                 </div>
@@ -33112,7 +33112,7 @@ exports[`Storyshots Stack Playground 1`] = `
                 />
               </div>
               <div
-                className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
+                className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 ffreab"
               >
                 You need some help!
               </div>
@@ -34016,7 +34016,7 @@ exports[`Storyshots Stack RTL 1`] = `
                   />
                 </div>
                 <div
-                  className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
+                  className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 fcdYJr"
                 >
                   You need some help!
                 </div>

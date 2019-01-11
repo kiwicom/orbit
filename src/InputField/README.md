@@ -16,7 +16,7 @@ Table below contains all types of the props available in InputField component.
 | dataTest      | `string`          |              | Optional prop for testing purposes.
 | error         | `React.Node`      |              | The error to display beneath the InputField. [See Functional specs](#functional-specs)
 | help          | `React.Node`      |              | The help to display beneath the InputField.
-| label         | `string`          |              | The label for the InputField. [See Functional specs](#functional-specs)
+| label         | `Translation`     |              | The label for the InputField. [See Functional specs](#functional-specs)
 | inlineLabel   | `boolean`         |              | If true the label renders on the left side of input
 | maxLength     | `number`          |              | Specifies the maximum number of characters allowed.
 | maxValue      | `number`          |              | Specifies the maximum value for the InputField.
@@ -29,7 +29,7 @@ Table below contains all types of the props available in InputField component.
 | onFocus       | `func`            |              | Function for handling onFocus event.
 | onKeyDown     | `func`            |              | Function for handling onKeyDown event.
 | onKeyUp       | `func`            |              | Function for handling onKeyUp event.
-| placeholder   | `string`          |              | The placeholder of the InputField.
+| placeholder   | `Translation`     |              | The placeholder of the InputField.
 | **prefix**    | `React.Node`      |              | The prefix component for the InputField. 
 | ref           | `func`            |              | Prop for forwarded ref of the InputField. [See Functional specs](#functional-specs)
 | **size**      | [`enum`](#enum)   | `"normal"`   | The size of the InputField.

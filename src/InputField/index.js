@@ -8,7 +8,7 @@ import FormFeedback from "../FormFeedback";
 import DefaultFormLabel from "../FormLabel";
 import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
-import type { Ref } from "../common/common.js.flow";
+import type { Ref, Translation } from "../common/common.js.flow";
 
 import type { Props } from "./index";
 
@@ -253,7 +253,7 @@ const FormLabel = ({
   isFilled,
   required,
 }: {
-  label: string,
+  label: Translation,
   isFilled: boolean,
   required?: boolean,
 }) => (

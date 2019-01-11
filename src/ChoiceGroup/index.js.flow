@@ -1,5 +1,5 @@
 // @flow
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Translation } from "../common/common.js.flow";
 import Radio from "../Radio";
 import Checkbox from "../Checkbox";
 
@@ -12,7 +12,7 @@ type Children = React$Element<typeof Radio> | React$Element<typeof Checkbox>
 export type Props = {|
   ...Globals,
   children: Children | Children[],
-  label?: string,
+  label?: Translation,
   labelSize?: LabelSize,
   labelElement?: LabelElement,
   hasError?: boolean,

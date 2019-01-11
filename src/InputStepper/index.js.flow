@@ -1,12 +1,12 @@
 // @flow
-import type { Globals, Ref, RefType } from "../common/common.js.flow";
+import type { Globals, Ref, RefType, Translation } from "../common/common.js.flow";
 import type { Size } from "../InputField/index";
 
 export type Props = {|
   ...Globals,
   ...Ref,
   +size?: Size,
-  +label?: string,
+  +label?: Translation,
   +defaultValue?: number,
   +step?: number,
   +help?: React$Node,

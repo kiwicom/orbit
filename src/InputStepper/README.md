@@ -22,7 +22,7 @@ Table below contains all types of the props available in InputStepper component.
 | disabled        | `boolean`        | `false`     | If `true`, the InputStepper will be disabled.
 | error           | `React.Node`     |             | The error to display beneath the InputStepper. [See Functional specs](#functional-specs)
 | help            | `React.Node`     |             | The help to display beneath the InputStepper.
-| label           | `string`         |             | The label for the InputStepper. [See Functional specs](#functional-specs)
+| label           | `Translation`    |             | The label for the InputStepper. [See Functional specs](#functional-specs)
 | maxValue        | `number`         | `∞`         | Specifies the maximum value for the InputStepper.
 | minValue        | `number`         | `-∞`        | Specifies the minimum value for the InputStepper.
 | name            | `string`         |             | The name for the InputStepper.

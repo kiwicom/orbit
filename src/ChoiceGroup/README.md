@@ -18,9 +18,9 @@ Table below contains all types of the props available in the ChoiceGroup compone
 | Name                | Type                       | Default     | Description                      |
 | :------------------ | :------------------------- | :---------- | :------------------------------- |
 | dataTest            | `string`                   |             | Optional prop for testing purposes.
-| **children**         | `Array<Radio or Checkbox>`|             | Could accept `<Radio />` or `<Checkbox />`
+| **children**        | `Array<Radio or Checkbox>` |             | Could accept `<Radio />` or `<Checkbox />`
 | hasError            | `boolean`                  |             | If `true`, the glyphs will have red border color.
-| label               | `string`                   |             | Heading text of `<ChoiceGroup />`
+| label               | `Translation`              |             | Heading text of `<ChoiceGroup />`
 | labelSize           | [`enum`](#enum)            | `"normal"`  | The size type of Heading.
 | labelElement        | [`enum`](#enum)            | `"h4"`      | The element used to render the label into.
 | **onChange**        | `func`                     |             | Function for handling onChange event. [See Functional specs](#functional-specs)

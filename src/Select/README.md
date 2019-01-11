@@ -16,13 +16,13 @@ Table below contains all types of the props available in the Select component.
 | disabled    | `boolean`                         | `false`    | If `true`, the Select will be disabled.
 | error       | `React.Node`                      |            | The error message for the Select. [See Functional specs](#functional-specs)
 | help        | `React.Node`                      |            | The help message for the Select.
-| label       | `string`                          |            | The label for the Select.
+| label       | `Translation`                     |            | The label for the Select.
 | name        | `string`                          |            | The name for the Select.
 | onBlur      | `func`                            |            | Function for handling onBlur event.
 | onChange    | `func`                            |            | Function for handling onChange event.
 | onFocus     | `func`                            |            | Function for handling onFocus event.
 | **options** | [`Option[]`](#option)             |            | The content of the Select, passed as array of objects.
-| placeholder | `string`                          |            | The placeholder for the Select. 
+| placeholder | `Translation`                     |            | The placeholder for the Select. 
 | prefix      | `React.Node`                      |            | The prefix component for the Select. [See Functional specs](#functional-specs)
 | ref         | `func`                            |            | Prop for forwarded ref of the Select. [See Functional specs](#functional-specs)
 | size        | [`enum`](#enum)                   | `"normal"` | The size of the Select.

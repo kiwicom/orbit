@@ -235,9 +235,13 @@ class TripSegment extends React.PureComponent<Props, State> {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setHeight();
-    }, 500);
+    this.timeout = setTimeout(this.setHeight, 10);
+  }
+
+  componentWillUnmount() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
   }
 
   setHeight() {
@@ -258,6 +262,7 @@ class TripSegment extends React.PureComponent<Props, State> {
 
   contentHeight: number;
   node: { current: any | HTMLDivElement };
+  timeout: TimeoutID;
 
   render() {
     const {

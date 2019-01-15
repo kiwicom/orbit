@@ -31,6 +31,7 @@ Table below contains all types of the props available in InputField component.
 | onKeyUp       | `func`            |              | Function for handling onKeyUp event.
 | placeholder   | `Translation`     |              | The placeholder of the InputField.
 | **prefix**    | `React.Node`      |              | The prefix component for the InputField. 
+| readOnly      | `boolean`         | `"false"`    | If `true`, the InputField be readOnly.
 | ref           | `func`            |              | Prop for forwarded ref of the InputField. [See Functional specs](#functional-specs)
 | **size**      | [`enum`](#enum)   | `"normal"`   | The size of the InputField.
 | suffix        | `React.Node`      |              | The suffix component for the InputField. [See Functional specs](#functional-specs)

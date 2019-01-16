@@ -1,0 +1,14 @@
+// @flow
+type isPosition = (p: string) => boolean;
+
+declare export var isVertical: isPosition;
+
+declare export var isHorizontal: isPosition;
+
+declare export var isPositionLeft: isPosition;
+
+declare export var isPositionRight: isPosition;
+
+declare export var isPositionBottom: isPosition;
+
+declare export var isPositionTop: isPosition;

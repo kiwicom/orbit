@@ -16,7 +16,7 @@ export type Props = {|
   label?: Translation,
   labelSize?: LabelSize,
   labelElement?: LabelElement,
-  labelSpaceAfter?: spaceAfter,
+  labelSpaceAfter?: "smallest" | "small" | "normal" | "medium" | "large" | "largest",
   hasError?: boolean,
   onChange: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};

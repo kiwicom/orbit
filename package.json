@@ -129,13 +129,10 @@
     "prettier": "^1.12.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-storybook-addon-chapters": "2.1.9",
+    "react-storybook-addon-chapters": "3.0.3",
     "react-test-renderer": "^16.3.2",
     "rimraf": "^2.6.2",
     "styled-components": "^4.0.3",
     "surge": "^0.20.1"
-  },
-  "resolutions": {
-    "@storybook/addons": "4.0.4"
   }
 }

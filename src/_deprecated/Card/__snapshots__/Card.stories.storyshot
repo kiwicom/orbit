@@ -44,120 +44,153 @@ exports[`Storyshots Deprecated Card Card with description 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Card component is a simple container for grouping some relevant information. It’s possible to add title and description. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Card__StyledCard-vnl6dw-0 kbpLnR"
-          >
-            <div
-              className="CardHeader__StyledCardHeader-sc-39t2tz-0 PdwCu"
-            >
-              <div
-                className="CardHeader__StyledHeadingWrapper-sc-39t2tz-1 sRHep"
-              >
-                <div
-                  className="CardHeader__StyledIcon-sc-39t2tz-3 gPEpJk"
-                >
-                  <svg
-                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                    />
-                  </svg>
-                </div>
-                <h2
-                  className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
-                >
-                  Card with title &amp; description
-                </h2>
-              </div>
-              <div
-                className="CardHeader__StyledSubTitle-sc-39t2tz-2 exFKvr"
-              >
-                <p
-                  className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                >
-                  This is a description of the card.
-                </p>
-              </div>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Card__StyledCard-vnl6dw-0 kbpLnR"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="CardHeader__StyledCardHeader-sc-39t2tz-0 PdwCu"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <div
+                    className="CardHeader__StyledHeadingWrapper-sc-39t2tz-1 sRHep"
+                  >
+                    <div
+                      className="CardHeader__StyledIcon-sc-39t2tz-3 gPEpJk"
+                    >
+                      <svg
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                        />
+                      </svg>
+                    </div>
+                    <h2
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
+                    >
+                      Card with title &amp; description
+                    </h2>
+                  </div>
+                  <div
+                    className="CardHeader__StyledSubTitle-sc-39t2tz-2 exFKvr"
+                  >
+                    <p
+                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                    >
+                      This is a description of the card.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -170,7 +203,7 @@ exports[`Storyshots Deprecated Card Card with description 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -181,7 +214,7 @@ exports[`Storyshots Deprecated Card Card with description 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -199,7 +232,7 @@ exports[`Storyshots Deprecated Card Card with description 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -292,7 +325,7 @@ exports[`Storyshots Deprecated Card Card with description 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -310,7 +343,7 @@ exports[`Storyshots Deprecated Card Card with description 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -320,29 +353,8 @@ exports[`Storyshots Deprecated Card Card with description 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -397,94 +409,127 @@ exports[`Storyshots Deprecated Card Card with only content 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Card component is a simple container for grouping some relevant information. You can add a content to Card. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Card__StyledCard-vnl6dw-0 kbpLnR"
-          >
-            <div
-              className="CardContent__StyledCardContent-sc-1hk88tp-0 guZEke"
-            >
-              <p
-                className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-              >
-                This is a content of the card.
-              </p>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Card__StyledCard-vnl6dw-0 kbpLnR"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="CardContent__StyledCardContent-sc-1hk88tp-0 guZEke"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                  >
+                    This is a content of the card.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -497,7 +542,7 @@ exports[`Storyshots Deprecated Card Card with only content 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -508,7 +553,7 @@ exports[`Storyshots Deprecated Card Card with only content 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -527,7 +572,7 @@ exports[`Storyshots Deprecated Card Card with only content 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -538,7 +583,7 @@ exports[`Storyshots Deprecated Card Card with only content 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -557,7 +602,7 @@ exports[`Storyshots Deprecated Card Card with only content 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -568,7 +613,7 @@ exports[`Storyshots Deprecated Card Card with only content 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -586,7 +631,7 @@ exports[`Storyshots Deprecated Card Card with only content 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -604,7 +649,7 @@ exports[`Storyshots Deprecated Card Card with only content 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -625,7 +670,7 @@ exports[`Storyshots Deprecated Card Card with only content 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -646,7 +691,7 @@ exports[`Storyshots Deprecated Card Card with only content 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -656,29 +701,8 @@ exports[`Storyshots Deprecated Card Card with only content 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -733,149 +757,182 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Card__StyledCard-vnl6dw-0 kbpLnR"
-          >
-            <div
-              className="CardHeader__StyledCardHeader-sc-39t2tz-0 PdwCu"
-            >
-              <div
-                className="CardHeader__StyledHeadingWrapper-sc-39t2tz-1 sRHep"
-              >
-                <h2
-                  className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
-                >
-                  Card with sections
-                </h2>
-              </div>
-              <div
-                className="CardHeader__StyledSubTitle-sc-39t2tz-2 exFKvr"
-              >
-                <p
-                  className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                >
-                  This is a description of the card.
-                </p>
-              </div>
-            </div>
-            <div
-              className="CardSection__StyledCardSection-sc-1hbg2mb-0 bUAMxU"
-            >
-              <h3
-                className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
-              >
-                Insert your title here...
-              </h3>
-              <p
-                className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-              >
-                Insert your content here...
-              </p>
-            </div>
-            <div
-              className="CardSection__StyledCardSection-sc-1hbg2mb-0 bUAMxU"
-            >
-              <h3
-                className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
-              >
-                Insert your title here...
-              </h3>
-              <p
-                className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-              >
-                Insert your content here...
-              </p>
-            </div>
-            <div
-              className="CardSection__StyledCardSection-sc-1hbg2mb-0 bUAMxU"
-            >
-              <h3
-                className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
-              >
-                Insert your title here...
-              </h3>
-              <p
-                className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-              >
-                Insert your content here...
-              </p>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Card__StyledCard-vnl6dw-0 kbpLnR"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="CardHeader__StyledCardHeader-sc-39t2tz-0 PdwCu"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <div
+                    className="CardHeader__StyledHeadingWrapper-sc-39t2tz-1 sRHep"
+                  >
+                    <h2
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
+                    >
+                      Card with sections
+                    </h2>
+                  </div>
+                  <div
+                    className="CardHeader__StyledSubTitle-sc-39t2tz-2 exFKvr"
+                  >
+                    <p
+                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                    >
+                      This is a description of the card.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="CardSection__StyledCardSection-sc-1hbg2mb-0 bUAMxU"
                 >
-                  <div>
+                  <h3
+                    className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
+                  >
+                    Insert your title here...
+                  </h3>
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                  >
+                    Insert your content here...
+                  </p>
+                </div>
+                <div
+                  className="CardSection__StyledCardSection-sc-1hbg2mb-0 bUAMxU"
+                >
+                  <h3
+                    className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
+                  >
+                    Insert your title here...
+                  </h3>
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                  >
+                    Insert your content here...
+                  </p>
+                </div>
+                <div
+                  className="CardSection__StyledCardSection-sc-1hbg2mb-0 bUAMxU"
+                >
+                  <h3
+                    className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
+                  >
+                    Insert your title here...
+                  </h3>
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                  >
+                    Insert your content here...
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -888,7 +945,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -899,7 +956,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -917,7 +974,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -984,7 +1041,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1003,7 +1060,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1014,7 +1071,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1033,7 +1090,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1100,7 +1157,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1118,7 +1175,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1136,7 +1193,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1158,7 +1215,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1169,7 +1226,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1187,7 +1244,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1205,7 +1262,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1226,7 +1283,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1248,7 +1305,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1259,7 +1316,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1278,7 +1335,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1345,7 +1402,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1363,7 +1420,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1381,7 +1438,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1403,7 +1460,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1414,7 +1471,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1432,7 +1489,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1450,7 +1507,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1471,7 +1528,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1493,7 +1550,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1504,7 +1561,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1523,7 +1580,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1590,7 +1647,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1608,7 +1665,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1626,7 +1683,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1648,7 +1705,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1659,7 +1716,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1677,7 +1734,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1695,7 +1752,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1716,7 +1773,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1737,7 +1794,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1747,29 +1804,8 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1824,111 +1860,144 @@ exports[`Storyshots Deprecated Card Default 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is the default configuration of this component.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Card__StyledCard-vnl6dw-0 kbpLnR"
-          >
-            <div
-              className="CardHeader__StyledCardHeader-sc-39t2tz-0 PdwCu"
-            >
-              <div
-                className="CardHeader__StyledHeadingWrapper-sc-39t2tz-1 sRHep"
-              >
-                <div
-                  className="CardHeader__StyledIcon-sc-39t2tz-3 gPEpJk"
-                >
-                  <svg
-                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                    />
-                  </svg>
-                </div>
-                <h2
-                  className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
-                >
-                  Card with title
-                </h2>
-              </div>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Card__StyledCard-vnl6dw-0 kbpLnR"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="CardHeader__StyledCardHeader-sc-39t2tz-0 PdwCu"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <div
+                    className="CardHeader__StyledHeadingWrapper-sc-39t2tz-1 sRHep"
+                  >
+                    <div
+                      className="CardHeader__StyledIcon-sc-39t2tz-3 gPEpJk"
+                    >
+                      <svg
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                        />
+                      </svg>
+                    </div>
+                    <h2
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
+                    >
+                      Card with title
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -1941,7 +2010,7 @@ exports[`Storyshots Deprecated Card Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1952,7 +2021,7 @@ exports[`Storyshots Deprecated Card Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1970,7 +2039,7 @@ exports[`Storyshots Deprecated Card Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2047,7 +2116,7 @@ exports[`Storyshots Deprecated Card Default 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -2062,7 +2131,7 @@ exports[`Storyshots Deprecated Card Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2080,7 +2149,7 @@ exports[`Storyshots Deprecated Card Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2090,29 +2159,8 @@ exports[`Storyshots Deprecated Card Default 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -2167,151 +2215,184 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Card__StyledCard-vnl6dw-0 kbpLnR"
-            data-test="test"
-          >
-            <div
-              className="CardHeader__StyledCardHeader-sc-39t2tz-0 PdwCu"
-            >
-              <div
-                className="CardHeader__StyledHeadingWrapper-sc-39t2tz-1 sRHep"
-              >
-                <div
-                  className="CardHeader__StyledIcon-sc-39t2tz-3 gPEpJk"
-                >
-                  <svg
-                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                    />
-                  </svg>
-                </div>
-                <h2
-                  className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
-                >
-                  Customisable card title
-                </h2>
-              </div>
-              <div
-                className="CardHeader__StyledSubTitle-sc-39t2tz-2 exFKvr"
-              >
-                <p
-                  className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                >
-                  This is a customisable description of the card.
-                </p>
-              </div>
-            </div>
-            <div
-              className="CardContent__StyledCardContent-sc-1hk88tp-0 guZEke"
-              data-test="test"
-            >
-              <h3
-                className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
-              >
-                Content with Heading and text
-              </h3>
-              <p
-                className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-              >
-                Text in content
-              </p>
-            </div>
-            <div
-              className="CardSection__StyledCardSection-sc-1hbg2mb-0 bUAMxU"
-              data-test="test"
-            >
-              <h3
-                className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
-              >
-                Section with Heading and text
-              </h3>
-              <p
-                className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-              >
-                Text in section
-              </p>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Card__StyledCard-vnl6dw-0 kbpLnR"
+                data-test="test"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="CardHeader__StyledCardHeader-sc-39t2tz-0 PdwCu"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <div
+                    className="CardHeader__StyledHeadingWrapper-sc-39t2tz-1 sRHep"
+                  >
+                    <div
+                      className="CardHeader__StyledIcon-sc-39t2tz-3 gPEpJk"
+                    >
+                      <svg
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                        />
+                      </svg>
+                    </div>
+                    <h2
+                      className="Heading__StyledHeading-sc-1b8cso5-0 kEjkpv"
+                    >
+                      Customisable card title
+                    </h2>
+                  </div>
+                  <div
+                    className="CardHeader__StyledSubTitle-sc-39t2tz-2 exFKvr"
+                  >
+                    <p
+                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                    >
+                      This is a customisable description of the card.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="CardContent__StyledCardContent-sc-1hk88tp-0 guZEke"
+                  data-test="test"
                 >
-                  <div>
+                  <h3
+                    className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
+                  >
+                    Content with Heading and text
+                  </h3>
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                  >
+                    Text in content
+                  </p>
+                </div>
+                <div
+                  className="CardSection__StyledCardSection-sc-1hbg2mb-0 bUAMxU"
+                  data-test="test"
+                >
+                  <h3
+                    className="Heading__StyledHeading-sc-1b8cso5-0 kyjUks"
+                  >
+                    Section with Heading and text
+                  </h3>
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                  >
+                    Text in section
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -2324,7 +2405,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2439,7 +2520,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -2454,7 +2535,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2472,7 +2553,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2604,7 +2685,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2623,7 +2704,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2663,7 +2744,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2682,7 +2763,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2749,7 +2830,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2767,7 +2848,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2785,7 +2866,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2807,7 +2888,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2818,7 +2899,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2836,7 +2917,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2854,7 +2935,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2875,7 +2956,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2897,7 +2978,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2937,7 +3018,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2956,7 +3037,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3023,7 +3104,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3041,7 +3122,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3059,7 +3140,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3081,7 +3162,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3092,7 +3173,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3110,7 +3191,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3128,7 +3209,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3149,7 +3230,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -3170,7 +3251,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3180,29 +3261,8 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>

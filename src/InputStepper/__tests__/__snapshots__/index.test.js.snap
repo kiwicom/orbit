@@ -294,7 +294,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   flex: 1 auto;
   width: 100%;
   height: 100%;
-  line-height: 44px;
   border-radius: 3px;
   z-index: 2;
 }
@@ -13364,9 +13363,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       [Function],
                                       ";font-size:inherit;font-weight:",
                                       [Function],
-                                      ";color:inherit;background-color:transparent;cursor:inherit;flex:1 auto;width:100%;height:100%;line-height:",
-                                      [Function],
-                                      ";border-radius:",
+                                      ";color:inherit;background-color:transparent;cursor:inherit;flex:1 auto;width:100%;height:100%;border-radius:",
                                       [Function],
                                       ";z-index:2;font-variant-numeric:",
                                       [Function],

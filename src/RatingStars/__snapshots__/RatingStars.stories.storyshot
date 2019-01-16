@@ -44,132 +44,165 @@ exports[`Storyshots RatingStars Playground 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Playground of RatingStars
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="RatingStars__StyledRatingStars-vyfznx-0 dIuBne"
-            data-test="test"
-            size="small"
-          >
-            <svg
-              className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M21.924 8.618A1.001 1.001 0 0 0 21 8h-5.382l-2.723-5.447c-.34-.677-1.45-.677-1.79 0L8.383 8H3a1.001 1.001 0 0 0-.707 1.707l4.584 4.584-1.838 6.435a.999.999 0 0 0 1.516 1.106L12 18.202l5.445 3.63a1.003 1.003 0 0 0 1.145-.024 1 1 0 0 0 .372-1.082l-1.84-6.435 4.585-4.584a.998.998 0 0 0 .217-1.09"
-              />
-            </svg>
-            <svg
-              className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M21.924 8.618A1.001 1.001 0 0 0 21 8h-5.382l-2.723-5.447c-.34-.677-1.45-.677-1.79 0L8.383 8H3a1.001 1.001 0 0 0-.707 1.707l4.584 4.584-1.838 6.435a.999.999 0 0 0 1.516 1.106L12 18.202l5.445 3.63a1.003 1.003 0 0 0 1.145-.024 1 1 0 0 0 .372-1.082l-1.84-6.435 4.585-4.584a.998.998 0 0 0 .217-1.09"
-              />
-            </svg>
-            <svg
-              className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M21.924 8.618A1.001 1.001 0 0 0 21 8h-5.382l-2.723-5.447c-.34-.677-1.45-.677-1.79 0L8.383 8H3a1.001 1.001 0 0 0-.707 1.707l4.584 4.584-1.838 6.435a.999.999 0 0 0 1.516 1.106L12 18.202l5.445 3.63a1.003 1.003 0 0 0 1.145-.024 1 1 0 0 0 .372-1.082l-1.84-6.435 4.585-4.584a.998.998 0 0 0 .217-1.09"
-              />
-            </svg>
-            <svg
-              className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M21.924 8.618A1.001 1.001 0 0 0 21 8h-5.382l-2.723-5.447c-.34-.677-1.45-.677-1.79 0L8.383 8H3a1.001 1.001 0 0 0-.707 1.707l4.584 4.584-1.838 6.435a.999.999 0 0 0 1.516 1.106L12 18.202l5.445 3.63a1.003 1.003 0 0 0 1.145-.024 1 1 0 0 0 .372-1.082l-1.84-6.435 4.585-4.584a.998.998 0 0 0 .217-1.09"
-              />
-            </svg>
-            <svg
-              className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 16a1 1 0 0 1 .555.168l3.736 2.491-1.252-4.384a.997.997 0 0 1 .254-.982L18.586 10H15c-.379 0-.725-.214-.895-.553L12 5.236 9.895 9.447C9.725 9.786 9.379 10 9 10H5.414l3.293 3.293a.997.997 0 0 1 .254.982l-1.252 4.384 3.736-2.491A1 1 0 0 1 12 16m6 6c-.193 0-.386-.056-.555-.168L12 18.202l-5.445 3.63a1 1 0 0 1-1.516-1.107l1.838-6.434-4.584-4.584A.998.998 0 0 1 3 8h5.382l2.723-5.447c.339-.677 1.451-.677 1.79 0L15.618 8H21a1.001 1.001 0 0 1 .707 1.707l-4.584 4.584 1.838 6.434A.999.999 0 0 1 18 22"
-              />
-            </svg>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="RatingStars__StyledRatingStars-vyfznx-0 dIuBne"
+                data-test="test"
+                size="small"
               >
-                <h4
-                  className="section-subsection-title"
+                <svg
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <path
+                    d="M21.924 8.618A1.001 1.001 0 0 0 21 8h-5.382l-2.723-5.447c-.34-.677-1.45-.677-1.79 0L8.383 8H3a1.001 1.001 0 0 0-.707 1.707l4.584 4.584-1.838 6.435a.999.999 0 0 0 1.516 1.106L12 18.202l5.445 3.63a1.003 1.003 0 0 0 1.145-.024 1 1 0 0 0 .372-1.082l-1.84-6.435 4.585-4.584a.998.998 0 0 0 .217-1.09"
+                  />
+                </svg>
+                <svg
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
                 >
-                  <div>
+                  <path
+                    d="M21.924 8.618A1.001 1.001 0 0 0 21 8h-5.382l-2.723-5.447c-.34-.677-1.45-.677-1.79 0L8.383 8H3a1.001 1.001 0 0 0-.707 1.707l4.584 4.584-1.838 6.435a.999.999 0 0 0 1.516 1.106L12 18.202l5.445 3.63a1.003 1.003 0 0 0 1.145-.024 1 1 0 0 0 .372-1.082l-1.84-6.435 4.585-4.584a.998.998 0 0 0 .217-1.09"
+                  />
+                </svg>
+                <svg
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M21.924 8.618A1.001 1.001 0 0 0 21 8h-5.382l-2.723-5.447c-.34-.677-1.45-.677-1.79 0L8.383 8H3a1.001 1.001 0 0 0-.707 1.707l4.584 4.584-1.838 6.435a.999.999 0 0 0 1.516 1.106L12 18.202l5.445 3.63a1.003 1.003 0 0 0 1.145-.024 1 1 0 0 0 .372-1.082l-1.84-6.435 4.585-4.584a.998.998 0 0 0 .217-1.09"
+                  />
+                </svg>
+                <svg
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M21.924 8.618A1.001 1.001 0 0 0 21 8h-5.382l-2.723-5.447c-.34-.677-1.45-.677-1.79 0L8.383 8H3a1.001 1.001 0 0 0-.707 1.707l4.584 4.584-1.838 6.435a.999.999 0 0 0 1.516 1.106L12 18.202l5.445 3.63a1.003 1.003 0 0 0 1.145-.024 1 1 0 0 0 .372-1.082l-1.84-6.435 4.585-4.584a.998.998 0 0 0 .217-1.09"
+                  />
+                </svg>
+                <svg
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 16a1 1 0 0 1 .555.168l3.736 2.491-1.252-4.384a.997.997 0 0 1 .254-.982L18.586 10H15c-.379 0-.725-.214-.895-.553L12 5.236 9.895 9.447C9.725 9.786 9.379 10 9 10H5.414l3.293 3.293a.997.997 0 0 1 .254.982l-1.252 4.384 3.736-2.491A1 1 0 0 1 12 16m6 6c-.193 0-.386-.056-.555-.168L12 18.202l-5.445 3.63a1 1 0 0 1-1.516-1.107l1.838-6.434-4.584-4.584A.998.998 0 0 1 3 8h5.382l2.723-5.447c.339-.677 1.451-.677 1.79 0L15.618 8H21a1.001 1.001 0 0 1 .707 1.707l-4.584 4.584 1.838 6.434A.999.999 0 0 1 18 22"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -181,7 +214,7 @@ exports[`Storyshots RatingStars Playground 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -237,7 +270,7 @@ exports[`Storyshots RatingStars Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -266,7 +299,7 @@ exports[`Storyshots RatingStars Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -322,36 +355,15 @@ exports[`Storyshots RatingStars Playground 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -406,113 +418,146 @@ exports[`Storyshots RatingStars RTL 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is a preview of this component in RTL setup.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="RatingStars__StyledRatingStars-vyfznx-0 dIuBne"
-            size="small"
-          >
-            <svg
-              className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M21.924 8.618A1.001 1.001 0 0 0 21 8h-5.382l-2.723-5.447c-.34-.677-1.45-.677-1.79 0L8.383 8H3a1.001 1.001 0 0 0-.707 1.707l4.584 4.584-1.838 6.435a.999.999 0 0 0 1.516 1.106L12 18.202l5.445 3.63a1.003 1.003 0 0 0 1.145-.024 1 1 0 0 0 .372-1.082l-1.84-6.435 4.585-4.584a.998.998 0 0 0 .217-1.09"
-              />
-            </svg>
-            <svg
-              className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M21.924 8.618A1.001 1.001 0 0 0 21 8h-5.382l-2.723-5.447c-.34-.677-1.45-.677-1.79 0L8.383 8H3a1.001 1.001 0 0 0-.707 1.707l4.584 4.584-1.838 6.435a.999.999 0 0 0 1.516 1.106L12 18.202l5.445 3.63a1.003 1.003 0 0 0 1.145-.024 1 1 0 0 0 .372-1.082l-1.84-6.435 4.585-4.584a.998.998 0 0 0 .217-1.09"
-              />
-            </svg>
-            <svg
-              className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M21.924 8.618A1.001 1.001 0 0 0 21 8h-5.382l-2.723-5.447c-.34-.677-1.45-.677-1.79 0L8.383 8H3a1.001 1.001 0 0 0-.707 1.707l4.584 4.584-1.838 6.435a.999.999 0 0 0 1.516 1.106L12 18.202l5.445 3.63a1.003 1.003 0 0 0 1.145-.024 1 1 0 0 0 .372-1.082l-1.84-6.435 4.585-4.584a.998.998 0 0 0 .217-1.09"
-              />
-            </svg>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="RatingStars__StyledRatingStars-vyfznx-0 dIuBne"
+                size="small"
               >
-                <h4
-                  className="section-subsection-title"
+                <svg
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <path
+                    d="M21.924 8.618A1.001 1.001 0 0 0 21 8h-5.382l-2.723-5.447c-.34-.677-1.45-.677-1.79 0L8.383 8H3a1.001 1.001 0 0 0-.707 1.707l4.584 4.584-1.838 6.435a.999.999 0 0 0 1.516 1.106L12 18.202l5.445 3.63a1.003 1.003 0 0 0 1.145-.024 1 1 0 0 0 .372-1.082l-1.84-6.435 4.585-4.584a.998.998 0 0 0 .217-1.09"
+                  />
+                </svg>
+                <svg
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
                 >
-                  <div>
+                  <path
+                    d="M21.924 8.618A1.001 1.001 0 0 0 21 8h-5.382l-2.723-5.447c-.34-.677-1.45-.677-1.79 0L8.383 8H3a1.001 1.001 0 0 0-.707 1.707l4.584 4.584-1.838 6.435a.999.999 0 0 0 1.516 1.106L12 18.202l5.445 3.63a1.003 1.003 0 0 0 1.145-.024 1 1 0 0 0 .372-1.082l-1.84-6.435 4.585-4.584a.998.998 0 0 0 .217-1.09"
+                  />
+                </svg>
+                <svg
+                  className="Icon__StyledIcon-sc-1pnzn3g-0 GODQa"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M21.924 8.618A1.001 1.001 0 0 0 21 8h-5.382l-2.723-5.447c-.34-.677-1.45-.677-1.79 0L8.383 8H3a1.001 1.001 0 0 0-.707 1.707l4.584 4.584-1.838 6.435a.999.999 0 0 0 1.516 1.106L12 18.202l5.445 3.63a1.003 1.003 0 0 0 1.145-.024 1 1 0 0 0 .372-1.082l-1.84-6.435 4.585-4.584a.998.998 0 0 0 .217-1.09"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -525,7 +570,7 @@ exports[`Storyshots RatingStars RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -536,7 +581,7 @@ exports[`Storyshots RatingStars RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -554,7 +599,7 @@ exports[`Storyshots RatingStars RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -593,7 +638,7 @@ exports[`Storyshots RatingStars RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -611,7 +656,7 @@ exports[`Storyshots RatingStars RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -621,29 +666,8 @@ exports[`Storyshots RatingStars RTL 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>

@@ -44,84 +44,117 @@ exports[`Storyshots Separator Default 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <hr
-            className="Separator__StyledSeparator-sc-8j6gay-0 etnESt"
-          />
-        </div>
-        <div>
           <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
-              >
-                <h4
-                  className="section-subsection-title"
+              }
+            >
+              <hr
+                className="Separator__StyledSeparator-sc-8j6gay-0 etnESt"
+              />
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
-                >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -133,7 +166,7 @@ exports[`Storyshots Separator Default 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -144,36 +177,15 @@ exports[`Storyshots Separator Default 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -228,84 +240,117 @@ exports[`Storyshots Separator Playground 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <hr
-            className="Separator__StyledSeparator-sc-8j6gay-0 gOEJuR"
-          />
-        </div>
-        <div>
           <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
-              >
-                <h4
-                  className="section-subsection-title"
+              }
+            >
+              <hr
+                className="Separator__StyledSeparator-sc-8j6gay-0 gOEJuR"
+              />
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
-                >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -317,7 +362,7 @@ exports[`Storyshots Separator Playground 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -357,36 +402,15 @@ exports[`Storyshots Separator Playground 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>

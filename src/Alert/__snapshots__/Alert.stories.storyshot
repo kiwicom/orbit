@@ -44,107 +44,140 @@ exports[`Storyshots Alert Critical alert 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Use when something is blocking users from continuing or when some issue needs to be resolved immediately. A critical alert should provide some form of solution for their problem. If something is important for users to solve as soon as possible, automatic open of a modal window is worthy of considering. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Alert__StyledAlert-svgppc-0 fvjAYr"
-          >
-            <div
-              className="Alert__IconContainer-svgppc-1 ipNFuH"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M12 17.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM11 6h2v7h-2V6zm1-4C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
-                />
-              </svg>
-            </div>
-            <div
-              className="Alert__ContentWrapper-svgppc-2 gGclWN"
-            >
-              <div
-                className="Alert__Content-svgppc-4 ldxfOm"
-              >
-                The quick, brown fox jumps over a lazy dog.
-              </div>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Alert__StyledAlert-svgppc-0 fvjAYr"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Alert__IconContainer-svgppc-1 ipNFuH"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 17.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM11 6h2v7h-2V6zm1-4C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="Alert__ContentWrapper-svgppc-2 gGclWN"
                 >
-                  <div>
+                  <div
+                    className="Alert__Content-svgppc-4 ldxfOm"
+                  >
+                    The quick, brown fox jumps over a lazy dog.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -157,7 +190,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -208,7 +241,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -231,7 +264,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -249,7 +282,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -267,7 +300,7 @@ exports[`Storyshots Alert Critical alert 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -277,29 +310,8 @@ exports[`Storyshots Alert Critical alert 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -354,94 +366,127 @@ exports[`Storyshots Alert Default 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Alert__StyledAlert-svgppc-0 bDbgdK"
-          >
-            <div
-              className="Alert__ContentWrapper-svgppc-2 gGclWN"
-            >
-              <div
-                className="Alert__Content-svgppc-4 eSbjeQ"
-              >
-                The quick, brown fox jumps over a lazy dog.
-              </div>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Alert__StyledAlert-svgppc-0 bDbgdK"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Alert__ContentWrapper-svgppc-2 gGclWN"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <div
+                    className="Alert__Content-svgppc-4 eSbjeQ"
+                  >
+                    The quick, brown fox jumps over a lazy dog.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -454,7 +499,7 @@ exports[`Storyshots Alert Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -465,7 +510,7 @@ exports[`Storyshots Alert Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -483,7 +528,7 @@ exports[`Storyshots Alert Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -501,7 +546,7 @@ exports[`Storyshots Alert Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -511,29 +556,8 @@ exports[`Storyshots Alert Default 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -588,107 +612,140 @@ exports[`Storyshots Alert Info alert 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Use when you need to inform users about something that is happening in their booking or a trip. If the issue is potentially dangerous, consider using warning alert. Keep in mind that warning alert can stress users more than the informational one. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Alert__StyledAlert-svgppc-0 fhPsd"
-          >
-            <div
-              className="Alert__IconContainer-svgppc-1 jOCXyK"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
-                />
-              </svg>
-            </div>
-            <div
-              className="Alert__ContentWrapper-svgppc-2 gGclWN"
-            >
-              <div
-                className="Alert__Content-svgppc-4 eSbjeQ"
-              >
-                The quick, brown fox jumps over a lazy dog.
-              </div>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Alert__StyledAlert-svgppc-0 fhPsd"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Alert__IconContainer-svgppc-1 jOCXyK"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="Alert__ContentWrapper-svgppc-2 gGclWN"
                 >
-                  <div>
+                  <div
+                    className="Alert__Content-svgppc-4 eSbjeQ"
+                  >
+                    The quick, brown fox jumps over a lazy dog.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -701,7 +758,7 @@ exports[`Storyshots Alert Info alert 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -725,7 +782,7 @@ exports[`Storyshots Alert Info alert 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -748,7 +805,7 @@ exports[`Storyshots Alert Info alert 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -766,7 +823,7 @@ exports[`Storyshots Alert Info alert 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -784,7 +841,7 @@ exports[`Storyshots Alert Info alert 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -794,29 +851,8 @@ exports[`Storyshots Alert Info alert 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -871,119 +907,152 @@ exports[`Storyshots Alert Only title 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
           <div
-            className="Alert__StyledAlert-svgppc-0 cPsAmw"
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="Alert__ContentWrapper-svgppc-2 iDwGVm"
+              className="section-header"
+              style={Object {}}
             >
-              <div
-                className="Alert__Title-svgppc-3 jtCulq"
-              >
-                The quick, brown fox jumps over a lazy dog.
+              <div>
+                
+                
               </div>
             </div>
             <div
-              className="Alert__CloseContainer-svgppc-5 oFApK"
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
             >
-              <button
-                className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 ilpdWM"
-                data-test="AlertCloseButton"
-                onClick={[Function]}
-                size="small"
-                type="button"
+              <div
+                className="Alert__StyledAlert-svgppc-0 cPsAmw"
               >
                 <div
-                  className="ButtonLink__IconContainer-sc-14jv5cl-0 bCwZJN"
+                  className="Alert__ContentWrapper-svgppc-2 iDwGVm"
                 >
-                  <svg
-                    className="Icon__StyledIcon-sc-1pnzn3g-0 bIWLsu"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24"
+                  <div
+                    className="Alert__Title-svgppc-3 jtCulq"
                   >
-                    <path
-                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                    />
-                  </svg>
+                    The quick, brown fox jumps over a lazy dog.
+                  </div>
                 </div>
-              </button>
+                <div
+                  className="Alert__CloseContainer-svgppc-5 oFApK"
+                >
+                  <button
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 ilpdWM"
+                    data-test="AlertCloseButton"
+                    onClick={[Function]}
+                    size="small"
+                    type="button"
+                  >
+                    <div
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 bCwZJN"
+                    >
+                      <svg
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 bIWLsu"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
                   }
-                }
-              >
-                <h4
-                  className="section-subsection-title"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
-                >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -995,7 +1064,7 @@ exports[`Storyshots Alert Only title 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -1043,36 +1112,15 @@ exports[`Storyshots Alert Only title 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1127,174 +1175,207 @@ exports[`Storyshots Alert Playground 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
           <div
-            className="Alert__StyledAlert-svgppc-0 fhPsd"
-            data-test="test"
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="Alert__IconContainer-svgppc-1 jOCXyK"
+              className="section-header"
+              style={Object {}}
             >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                />
-              </svg>
+              <div>
+                
+                
+              </div>
             </div>
             <div
-              className="Alert__ContentWrapper-svgppc-2 iDwGVm"
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
             >
               <div
-                className="Alert__Title-svgppc-3 caZUNU"
-              >
-                You can change the title by changing the Title knob
-              </div>
-              <div
-                className="Alert__Content-svgppc-4 gHGFTr"
+                className="Alert__StyledAlert-svgppc-0 fhPsd"
+                data-test="test"
               >
                 <div
-                  className="Stack__StyledStack-sc-1t576ow-0 jeoIpO"
+                  className="Alert__IconContainer-svgppc-1 jOCXyK"
                 >
-                  <div>
-                    Also you can change the message by changing the Message knob
-                  </div>
-                  <ul
-                    className="List__StyledList-iwilat-0 hOMCgN"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
                   >
-                    <li
-                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
-                    >
-                      <div
-                        className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
-                      >
-                        <svg
-                          className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
-                          />
-                        </svg>
-                      </div>
-                      <p
-                        className="Text__StyledText-sc-19qtt4y-0 fTObxL"
-                      >
-                        623 Kč will be refunded by your payment card
-                      </p>
-                    </li>
-                    <li
-                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
-                    >
-                      <div
-                        className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
-                      >
-                        <svg
-                          className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
-                          />
-                        </svg>
-                      </div>
-                      623 Kč will be refunded by your payment card
-                    </li>
-                  </ul>
-                  <a
-                    className="Button__StyledButton-sc-1brqp3f-1 cqrQcn"
-                    href="#"
-                    size="small"
+                    <path
+                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="Alert__ContentWrapper-svgppc-2 iDwGVm"
+                >
+                  <div
+                    className="Alert__Title-svgppc-3 caZUNU"
+                  >
+                    You can change the title by changing the Title knob
+                  </div>
+                  <div
+                    className="Alert__Content-svgppc-4 gHGFTr"
                   >
                     <div
-                      className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
+                      className="Stack__StyledStack-sc-1t576ow-0 jeoIpO"
                     >
-                      I am a link
+                      <div>
+                        Also you can change the message by changing the Message knob
+                      </div>
+                      <ul
+                        className="List__StyledList-iwilat-0 hOMCgN"
+                      >
+                        <li
+                          className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                        >
+                          <div
+                            className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
+                          >
+                            <svg
+                              className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
+                              />
+                            </svg>
+                          </div>
+                          <p
+                            className="Text__StyledText-sc-19qtt4y-0 fTObxL"
+                          >
+                            623 Kč will be refunded by your payment card
+                          </p>
+                        </li>
+                        <li
+                          className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                        >
+                          <div
+                            className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
+                          >
+                            <svg
+                              className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
+                              />
+                            </svg>
+                          </div>
+                          623 Kč will be refunded by your payment card
+                        </li>
+                      </ul>
+                      <a
+                        className="Button__StyledButton-sc-1brqp3f-1 cqrQcn"
+                        href="#"
+                        size="small"
+                      >
+                        <div
+                          className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
+                        >
+                          I am a link
+                        </div>
+                      </a>
                     </div>
-                  </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
                   }
-                }
-              >
-                <h4
-                  className="section-subsection-title"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
-                >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -1307,7 +1388,7 @@ exports[`Storyshots Alert Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1511,7 +1592,7 @@ exports[`Storyshots Alert Playground 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -1526,7 +1607,7 @@ exports[`Storyshots Alert Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1545,7 +1626,7 @@ exports[`Storyshots Alert Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1585,7 +1666,7 @@ exports[`Storyshots Alert Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1604,7 +1685,7 @@ exports[`Storyshots Alert Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1615,7 +1696,7 @@ exports[`Storyshots Alert Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1633,7 +1714,7 @@ exports[`Storyshots Alert Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1651,7 +1732,7 @@ exports[`Storyshots Alert Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1673,7 +1754,7 @@ exports[`Storyshots Alert Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1684,7 +1765,7 @@ exports[`Storyshots Alert Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1703,7 +1784,7 @@ exports[`Storyshots Alert Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1714,7 +1795,7 @@ exports[`Storyshots Alert Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1733,7 +1814,7 @@ exports[`Storyshots Alert Playground 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -1773,7 +1854,7 @@ exports[`Storyshots Alert Playground 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -1791,7 +1872,7 @@ exports[`Storyshots Alert Playground 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -1809,7 +1890,7 @@ exports[`Storyshots Alert Playground 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -1830,7 +1911,7 @@ exports[`Storyshots Alert Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1852,7 +1933,7 @@ exports[`Storyshots Alert Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1863,7 +1944,7 @@ exports[`Storyshots Alert Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1881,7 +1962,7 @@ exports[`Storyshots Alert Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1899,7 +1980,7 @@ exports[`Storyshots Alert Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1920,7 +2001,7 @@ exports[`Storyshots Alert Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1942,7 +2023,7 @@ exports[`Storyshots Alert Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2036,7 +2117,7 @@ exports[`Storyshots Alert Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2054,7 +2135,7 @@ exports[`Storyshots Alert Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2072,7 +2153,7 @@ exports[`Storyshots Alert Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2093,7 +2174,7 @@ exports[`Storyshots Alert Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2114,7 +2195,7 @@ exports[`Storyshots Alert Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2124,29 +2205,8 @@ exports[`Storyshots Alert Playground 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -2201,198 +2261,231 @@ exports[`Storyshots Alert RTL 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is a preview of this component in RTL setup.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
           <div
-            className="Alert__StyledAlert-svgppc-0 hjbLHm"
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="Alert__IconContainer-svgppc-1 crrRnv"
+              className="section-header"
+              style={Object {}}
             >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                />
-              </svg>
-            </div>
-            <div
-              className="Alert__ContentWrapper-svgppc-2 iDwGVm"
-            >
-              <div
-                className="Alert__Title-svgppc-3 caZUNU"
-              >
-                The title of the Alert
-              </div>
-              <div
-                className="Alert__Content-svgppc-4 gHGFTr"
-              >
-                <div
-                  className="Stack__StyledStack-sc-1t576ow-0 jeoIpO"
-                >
-                  <div>
-                    Message of the Alert
-                  </div>
-                  <ul
-                    className="List__StyledList-iwilat-0 hOMCgN"
-                  >
-                    <li
-                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
-                    >
-                      <div
-                        className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
-                      >
-                        <svg
-                          className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
-                          />
-                        </svg>
-                      </div>
-                      <p
-                        className="Text__StyledText-sc-19qtt4y-0 dVeMeZ"
-                      >
-                        623 Kč will be refunded by your payment card
-                      </p>
-                    </li>
-                    <li
-                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
-                    >
-                      <div
-                        className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
-                      >
-                        <svg
-                          className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
-                          />
-                        </svg>
-                      </div>
-                      623 Kč will be refunded by your payment card
-                    </li>
-                  </ul>
-                  <a
-                    className="Button__StyledButton-sc-1brqp3f-1 cqrQcn"
-                    href="#"
-                    size="small"
-                  >
-                    <div
-                      className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
-                    >
-                      Click on me
-                    </div>
-                  </a>
-                </div>
+              <div>
+                
+                
               </div>
             </div>
             <div
-              className="Alert__CloseContainer-svgppc-5 iOPyVO"
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
             >
-              <button
-                className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 ilpdWM"
-                data-test="AlertCloseButton"
-                onClick={[Function]}
-                size="small"
-                type="button"
+              <div
+                className="Alert__StyledAlert-svgppc-0 hjbLHm"
               >
                 <div
-                  className="ButtonLink__IconContainer-sc-14jv5cl-0 bCwZJN"
+                  className="Alert__IconContainer-svgppc-1 crrRnv"
                 >
                   <svg
-                    className="Icon__StyledIcon-sc-1pnzn3g-0 bIWLsu"
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
                   >
                     <path
-                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
                     />
                   </svg>
                 </div>
-              </button>
+                <div
+                  className="Alert__ContentWrapper-svgppc-2 iDwGVm"
+                >
+                  <div
+                    className="Alert__Title-svgppc-3 caZUNU"
+                  >
+                    The title of the Alert
+                  </div>
+                  <div
+                    className="Alert__Content-svgppc-4 gHGFTr"
+                  >
+                    <div
+                      className="Stack__StyledStack-sc-1t576ow-0 jeoIpO"
+                    >
+                      <div>
+                        Message of the Alert
+                      </div>
+                      <ul
+                        className="List__StyledList-iwilat-0 hOMCgN"
+                      >
+                        <li
+                          className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                        >
+                          <div
+                            className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
+                          >
+                            <svg
+                              className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
+                              />
+                            </svg>
+                          </div>
+                          <p
+                            className="Text__StyledText-sc-19qtt4y-0 dVeMeZ"
+                          >
+                            623 Kč will be refunded by your payment card
+                          </p>
+                        </li>
+                        <li
+                          className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                        >
+                          <div
+                            className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
+                          >
+                            <svg
+                              className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
+                              />
+                            </svg>
+                          </div>
+                          623 Kč will be refunded by your payment card
+                        </li>
+                      </ul>
+                      <a
+                        className="Button__StyledButton-sc-1brqp3f-1 cqrQcn"
+                        href="#"
+                        size="small"
+                      >
+                        <div
+                          className="Button__StyledButtonContent-sc-1brqp3f-2 bmuxXg"
+                        >
+                          Click on me
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="Alert__CloseContainer-svgppc-5 iOPyVO"
+                >
+                  <button
+                    className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 ilpdWM"
+                    data-test="AlertCloseButton"
+                    onClick={[Function]}
+                    size="small"
+                    type="button"
+                  >
+                    <div
+                      className="ButtonLink__IconContainer-sc-14jv5cl-0 bCwZJN"
+                    >
+                      <svg
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 bIWLsu"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
                   }
-                }
-              >
-                <h4
-                  className="section-subsection-title"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
-                >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -2405,7 +2498,7 @@ exports[`Storyshots Alert RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2416,7 +2509,7 @@ exports[`Storyshots Alert RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2435,7 +2528,7 @@ exports[`Storyshots Alert RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2577,7 +2670,7 @@ exports[`Storyshots Alert RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2596,7 +2689,7 @@ exports[`Storyshots Alert RTL 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2636,7 +2729,7 @@ exports[`Storyshots Alert RTL 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2655,7 +2748,7 @@ exports[`Storyshots Alert RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2666,7 +2759,7 @@ exports[`Storyshots Alert RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2684,7 +2777,7 @@ exports[`Storyshots Alert RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2702,7 +2795,7 @@ exports[`Storyshots Alert RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2724,7 +2817,7 @@ exports[`Storyshots Alert RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2735,7 +2828,7 @@ exports[`Storyshots Alert RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2754,7 +2847,7 @@ exports[`Storyshots Alert RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -2765,7 +2858,7 @@ exports[`Storyshots Alert RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -2784,7 +2877,7 @@ exports[`Storyshots Alert RTL 1`] = `
                                   <span
                                     style={
                                       Object {
-                                        "color": "#777",
+                                        "color": "#444",
                                       }
                                     }
                                   >
@@ -2824,7 +2917,7 @@ exports[`Storyshots Alert RTL 1`] = `
                                   <span
                                     style={
                                       Object {
-                                        "color": "#777",
+                                        "color": "#444",
                                       }
                                     }
                                   >
@@ -2842,7 +2935,7 @@ exports[`Storyshots Alert RTL 1`] = `
                                   <span
                                     style={
                                       Object {
-                                        "color": "#777",
+                                        "color": "#444",
                                       }
                                     }
                                   >
@@ -2860,7 +2953,7 @@ exports[`Storyshots Alert RTL 1`] = `
                                   <span
                                     style={
                                       Object {
-                                        "color": "#777",
+                                        "color": "#444",
                                       }
                                     }
                                   >
@@ -2881,7 +2974,7 @@ exports[`Storyshots Alert RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -2903,7 +2996,7 @@ exports[`Storyshots Alert RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -2914,7 +3007,7 @@ exports[`Storyshots Alert RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -2932,7 +3025,7 @@ exports[`Storyshots Alert RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -2950,7 +3043,7 @@ exports[`Storyshots Alert RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -2971,7 +3064,7 @@ exports[`Storyshots Alert RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2993,7 +3086,7 @@ exports[`Storyshots Alert RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3087,7 +3180,7 @@ exports[`Storyshots Alert RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3105,7 +3198,7 @@ exports[`Storyshots Alert RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3123,7 +3216,7 @@ exports[`Storyshots Alert RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3144,7 +3237,7 @@ exports[`Storyshots Alert RTL 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3165,7 +3258,7 @@ exports[`Storyshots Alert RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -3186,7 +3279,7 @@ exports[`Storyshots Alert RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3196,29 +3289,8 @@ exports[`Storyshots Alert RTL 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -3273,108 +3345,141 @@ exports[`Storyshots Alert Success alert 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Use when a user just performed some action and we need to tell them that action was successful. This button is usually used without an action button.
 Avoid using success banner if there is any follow-up action, for example, in cases where we need to confirm something to users by e-mail later. It’s recommended to use informational alert instead. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Alert__StyledAlert-svgppc-0 cUoJuX"
-          >
-            <div
-              className="Alert__IconContainer-svgppc-1 eLpkaR"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
-                />
-              </svg>
-            </div>
-            <div
-              className="Alert__ContentWrapper-svgppc-2 gGclWN"
-            >
-              <div
-                className="Alert__Content-svgppc-4 QvZM"
-              >
-                The quick, brown fox jumps over a lazy dog.
-              </div>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Alert__StyledAlert-svgppc-0 cUoJuX"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Alert__IconContainer-svgppc-1 eLpkaR"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="Alert__ContentWrapper-svgppc-2 gGclWN"
                 >
-                  <div>
+                  <div
+                    className="Alert__Content-svgppc-4 QvZM"
+                  >
+                    The quick, brown fox jumps over a lazy dog.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -3387,7 +3492,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3438,7 +3543,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -3461,7 +3566,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3479,7 +3584,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3497,7 +3602,7 @@ Avoid using success banner if there is any follow-up action, for example, in cas
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3507,29 +3612,8 @@ Avoid using success banner if there is any follow-up action, for example, in cas
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -3584,107 +3668,140 @@ exports[`Storyshots Alert Warning alert 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Use in cases when you need to inform users about a potentially dangerous situation in their trip and it requires some action from them. However, if the issue requires immediate attention, use critical alert instead. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Alert__StyledAlert-svgppc-0 danwRq"
-          >
-            <div
-              className="Alert__IconContainer-svgppc-1 Jewxp"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M12 19.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM11 10h2v6h-2v-6zm10.895 10.553l-9-18c-.339-.678-1.451-.678-1.79 0l-9 18c-.154.31-.138.678.044.973.183.294.504.474.851.474h18c.347 0 .668-.18.851-.474.182-.295.198-.663.044-.973z"
-                />
-              </svg>
-            </div>
-            <div
-              className="Alert__ContentWrapper-svgppc-2 gGclWN"
-            >
-              <div
-                className="Alert__Content-svgppc-4 lgBeCK"
-              >
-                The quick, brown fox jumps over a lazy dog.
-              </div>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Alert__StyledAlert-svgppc-0 danwRq"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Alert__IconContainer-svgppc-1 Jewxp"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 19.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM11 10h2v6h-2v-6zm10.895 10.553l-9-18c-.339-.678-1.451-.678-1.79 0l-9 18c-.154.31-.138.678.044.973.183.294.504.474.851.474h18c.347 0 .668-.18.851-.474.182-.295.198-.663.044-.973z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="Alert__ContentWrapper-svgppc-2 gGclWN"
                 >
-                  <div>
+                  <div
+                    className="Alert__Content-svgppc-4 lgBeCK"
+                  >
+                    The quick, brown fox jumps over a lazy dog.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -3697,7 +3814,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3748,7 +3865,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -3771,7 +3888,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3789,7 +3906,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3807,7 +3924,7 @@ exports[`Storyshots Alert Warning alert 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3817,29 +3934,8 @@ exports[`Storyshots Alert Warning alert 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>

@@ -44,113 +44,146 @@ exports[`Storyshots ListChoice Default 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of ListChoice in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
-            onClick={[Function]}
-          >
-            <div
-              className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 btWrZR"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-                />
-              </svg>
-            </div>
-            <div
-              className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
-            >
-              <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
-              >
-                Choice Title
-              </h1>
-              <p
-                className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
-              >
-                Further description
-              </p>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
+                onClick={[Function]}
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 btWrZR"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
                 >
-                  <div>
+                  <h1
+                    className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
+                  >
+                    Choice Title
+                  </h1>
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                  >
+                    Further description
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -162,7 +195,7 @@ exports[`Storyshots ListChoice Default 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -293,36 +326,15 @@ exports[`Storyshots ListChoice Default 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -377,249 +389,282 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of ListChoice in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
-            onClick={[Function]}
-          >
-            <div
-              className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 btWrZR"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-                />
-              </svg>
-            </div>
-            <div
-              className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
-            >
-              <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
-              >
-                Choice Title
-              </h1>
-              <p
-                className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
-              >
-                Further description
-              </p>
-            </div>
-            <label
-              className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
-            >
-              <input
-                checked={false}
-                className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
-                disabled={false}
-                readOnly={true}
-                type="checkbox"
-              />
-              <div
-                className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
-                  />
-                </svg>
-              </div>
-            </label>
-          </div>
-          <div
-            className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
-            onClick={[Function]}
-          >
-            <div
-              className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 btWrZR"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-                />
-              </svg>
-            </div>
-            <div
-              className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
-            >
-              <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
-              >
-                Choice Title
-              </h1>
-              <p
-                className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
-              >
-                Further description
-              </p>
-            </div>
-            <label
-              className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
-            >
-              <input
-                checked={true}
-                className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
-                disabled={false}
-                readOnly={true}
-                type="checkbox"
-              />
-              <div
-                className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
-                  />
-                </svg>
-              </div>
-            </label>
-          </div>
-          <div
-            className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
-            onClick={[Function]}
-          >
-            <div
-              className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 btWrZR"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-                />
-              </svg>
-            </div>
-            <div
-              className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
-            >
-              <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
-              >
-                Choice Title
-              </h1>
-              <p
-                className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
-              >
-                Further description
-              </p>
-            </div>
-            <label
-              className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
-            >
-              <input
-                checked={false}
-                className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
-                disabled={false}
-                readOnly={true}
-                type="checkbox"
-              />
-              <div
-                className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
-                  />
-                </svg>
-              </div>
-            </label>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
+                onClick={[Function]}
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 btWrZR"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
                 >
-                  <div>
+                  <h1
+                    className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
+                  >
+                    Choice Title
+                  </h1>
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                  >
+                    Further description
+                  </p>
+                </div>
+                <label
+                  className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
+                >
+                  <input
+                    checked={false}
+                    className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
+                    disabled={false}
+                    readOnly={true}
+                    type="checkbox"
+                  />
+                  <div
+                    className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
+                      />
+                    </svg>
+                  </div>
+                </label>
+              </div>
+              <div
+                className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
+                onClick={[Function]}
+              >
+                <div
+                  className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 btWrZR"
+                >
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
+                >
+                  <h1
+                    className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
+                  >
+                    Choice Title
+                  </h1>
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                  >
+                    Further description
+                  </p>
+                </div>
+                <label
+                  className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
+                >
+                  <input
+                    checked={true}
+                    className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
+                    disabled={false}
+                    readOnly={true}
+                    type="checkbox"
+                  />
+                  <div
+                    className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
+                      />
+                    </svg>
+                  </div>
+                </label>
+              </div>
+              <div
+                className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
+                onClick={[Function]}
+              >
+                <div
+                  className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 btWrZR"
+                >
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
+                >
+                  <h1
+                    className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
+                  >
+                    Choice Title
+                  </h1>
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                  >
+                    Further description
+                  </p>
+                </div>
+                <label
+                  className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
+                >
+                  <input
+                    checked={false}
+                    className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
+                    disabled={false}
+                    readOnly={true}
+                    type="checkbox"
+                  />
+                  <div
+                    className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
+                      />
+                    </svg>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -632,7 +677,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -643,7 +688,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -661,7 +706,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -803,7 +848,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -821,7 +866,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -974,7 +1019,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -992,7 +1037,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1134,7 +1179,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1152,7 +1197,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1162,29 +1207,8 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1239,138 +1263,171 @@ exports[`Storyshots ListChoice Playground 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of InputField in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
-            data-test="test"
-            onClick={[Function]}
-          >
-            <div
-              className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 btWrZR"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-                />
-              </svg>
-            </div>
-            <div
-              className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
-            >
-              <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
-              >
-                Choice Title
-              </h1>
-              <p
-                className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
-              >
-                Further description
-              </p>
-            </div>
-            <label
-              className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
-            >
-              <input
-                checked={false}
-                className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
-                disabled={false}
-                readOnly={true}
-                type="checkbox"
-              />
-              <div
-                className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
-                  />
-                </svg>
-              </div>
-            </label>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
+                data-test="test"
+                onClick={[Function]}
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 btWrZR"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 fixYk"
                 >
-                  <div>
+                  <h1
+                    className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
+                  >
+                    Choice Title
+                  </h1>
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                  >
+                    Further description
+                  </p>
+                </div>
+                <label
+                  className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
+                >
+                  <input
+                    checked={false}
+                    className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
+                    disabled={false}
+                    readOnly={true}
+                    type="checkbox"
+                  />
+                  <div
+                    className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
+                      />
+                    </svg>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -1382,7 +1439,7 @@ exports[`Storyshots ListChoice Playground 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -1583,36 +1640,15 @@ exports[`Storyshots ListChoice Playground 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1667,249 +1703,282 @@ exports[`Storyshots ListChoice RTL 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of ListChoice.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
-            onClick={[Function]}
-          >
-            <div
-              className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 kIlQgM"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-                />
-              </svg>
-            </div>
-            <div
-              className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 iNARFK"
-            >
-              <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
-              >
-                Choice Title
-              </h1>
-              <p
-                className="Text__StyledText-sc-19qtt4y-0 HRYQf"
-              >
-                Further description
-              </p>
-            </div>
-            <label
-              className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
-            >
-              <input
-                checked={false}
-                className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
-                disabled={false}
-                readOnly={true}
-                type="checkbox"
-              />
-              <div
-                className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
-                  />
-                </svg>
-              </div>
-            </label>
-          </div>
-          <div
-            className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
-            onClick={[Function]}
-          >
-            <div
-              className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 kIlQgM"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-                />
-              </svg>
-            </div>
-            <div
-              className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 iNARFK"
-            >
-              <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
-              >
-                Choice Title
-              </h1>
-              <p
-                className="Text__StyledText-sc-19qtt4y-0 HRYQf"
-              >
-                Further description
-              </p>
-            </div>
-            <label
-              className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
-            >
-              <input
-                checked={true}
-                className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
-                disabled={false}
-                readOnly={true}
-                type="checkbox"
-              />
-              <div
-                className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
-                  />
-                </svg>
-              </div>
-            </label>
-          </div>
-          <div
-            className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
-            onClick={[Function]}
-          >
-            <div
-              className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 kIlQgM"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-                />
-              </svg>
-            </div>
-            <div
-              className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 iNARFK"
-            >
-              <h1
-                className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
-              >
-                Choice Title
-              </h1>
-              <p
-                className="Text__StyledText-sc-19qtt4y-0 HRYQf"
-              >
-                Further description
-              </p>
-            </div>
-            <label
-              className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
-            >
-              <input
-                checked={false}
-                className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
-                disabled={false}
-                readOnly={true}
-                type="checkbox"
-              />
-              <div
-                className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
-                  />
-                </svg>
-              </div>
-            </label>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
+                onClick={[Function]}
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 kIlQgM"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 iNARFK"
                 >
-                  <div>
+                  <h1
+                    className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
+                  >
+                    Choice Title
+                  </h1>
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 HRYQf"
+                  >
+                    Further description
+                  </p>
+                </div>
+                <label
+                  className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
+                >
+                  <input
+                    checked={false}
+                    className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
+                    disabled={false}
+                    readOnly={true}
+                    type="checkbox"
+                  />
+                  <div
+                    className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
+                      />
+                    </svg>
+                  </div>
+                </label>
+              </div>
+              <div
+                className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
+                onClick={[Function]}
+              >
+                <div
+                  className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 kIlQgM"
+                >
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 iNARFK"
+                >
+                  <h1
+                    className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
+                  >
+                    Choice Title
+                  </h1>
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 HRYQf"
+                  >
+                    Further description
+                  </p>
+                </div>
+                <label
+                  className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
+                >
+                  <input
+                    checked={true}
+                    className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
+                    disabled={false}
+                    readOnly={true}
+                    type="checkbox"
+                  />
+                  <div
+                    className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
+                      />
+                    </svg>
+                  </div>
+                </label>
+              </div>
+              <div
+                className="ListChoice__StyledListChoice-sc-1y53xes-1 VRpHx"
+                onClick={[Function]}
+              >
+                <div
+                  className="ListChoice__StyledListChoiceIcon-sc-1y53xes-0 kIlQgM"
+                >
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="ListChoice__StyledListChoiceContent-sc-1y53xes-2 iNARFK"
+                >
+                  <h1
+                    className="Heading__StyledHeading-sc-1b8cso5-0 gORNFi"
+                  >
+                    Choice Title
+                  </h1>
+                  <p
+                    className="Text__StyledText-sc-19qtt4y-0 HRYQf"
+                  >
+                    Further description
+                  </p>
+                </div>
+                <label
+                  className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
+                >
+                  <input
+                    checked={false}
+                    className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
+                    disabled={false}
+                    readOnly={true}
+                    type="checkbox"
+                  />
+                  <div
+                    className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
+                      />
+                    </svg>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -1922,7 +1991,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1933,7 +2002,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1952,7 +2021,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1963,7 +2032,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1981,7 +2050,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2123,7 +2192,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2141,7 +2210,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2294,7 +2363,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2312,7 +2381,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2454,7 +2523,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2472,7 +2541,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2493,7 +2562,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2503,29 +2572,8 @@ exports[`Storyshots ListChoice RTL 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>

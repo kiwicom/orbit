@@ -44,18 +44,13 @@ const getURLSizes = ({ size }) => {
   };
 };
 
-const getURL = (retina = false) => ({ code, carrierType, carriersLength, size }) => {
-  const type = carrierType === undefined ? "airline" : carrierType;
+const StyledImage = styled.img.attrs(({ carrierType = "airline", carriersLength, size, code }) => {
   const urlSizes =
     carriersLength > 1 ? getURLSizes({ size: SIZE_OPTIONS.SMALL }) : getURLSizes({ size });
-  return retina
-    ? `${BASE_URL}/airlines/${urlSizes.retina}/${code}.png?default=${type}.png 2x`
-    : `${BASE_URL}/airlines/${urlSizes.base}/${code}.png?default=${type}.png`;
-};
-
-const StyledImage = styled.img.attrs({
-  src: getURL(),
-  srcSet: getURL(true),
+  return {
+    src: `${BASE_URL}/airlines/${urlSizes.base}/${code}.png?default=${carrierType}.png`,
+    srcSet: `${BASE_URL}/airlines/${urlSizes.retina}/${code}.png?default=${carrierType}.png 2x`,
+  };
 })`
   background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};

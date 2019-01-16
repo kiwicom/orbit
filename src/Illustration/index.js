@@ -16,16 +16,13 @@ const getHeightToken = ({ theme, size }) => {
   return tokens[size];
 };
 
-const getURL = (retina = false) => ({ theme, size, illustrationName }) => {
+export const StyledImage = styled.img.attrs(({ theme, size, illustrationName }) => {
   const height = parseInt(getHeightToken({ theme, size }), 10);
-  return retina
-    ? `${baseURL}/illustrations/0x${height * 2}/${illustrationName}.png 2x`
-    : `${baseURL}/illustrations/0x${height}/${illustrationName}.png`;
-};
 
-export const StyledImage = styled.img.attrs({
-  src: getURL(),
-  srcSet: getURL(true),
+  return {
+    src: `${baseURL}/illustrations/0x${height}/${illustrationName}.png`,
+    srcSet: `${baseURL}/illustrations/0x${height * 2}/${illustrationName}.png 2x`,
+  };
 })`
   height: ${getHeightToken};
   width: auto;

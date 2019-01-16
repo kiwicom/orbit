@@ -44,174 +44,207 @@ exports[`Storyshots Table Compact Table 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is the compact configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
-          >
-            <div
-              className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
-              onScroll={[Function]}
-            >
-              <table
-                className="Table__StyledTable-sc-156ovmd-2 dKYCBh"
-              >
-                <thead
-                  className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
-                >
-                  <tr
-                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                  </tr>
-                </thead>
-                <tbody
-                  className="TableBody__StyledTableBody-sc-1uovf8k-0 kqMaSS"
-                >
-                  <tr
-                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
+                  onScroll={[Function]}
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <table
+                    className="Table__StyledTable-sc-156ovmd-2 dKYCBh"
+                  >
+                    <thead
+                      className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
+                    >
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                      </tr>
+                    </thead>
+                    <tbody
+                      className="TableBody__StyledTableBody-sc-1uovf8k-0 kqMaSS"
+                    >
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -224,7 +257,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -245,7 +278,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -264,7 +297,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -275,7 +308,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -294,7 +327,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -305,7 +338,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -324,7 +357,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -335,7 +368,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -353,7 +386,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -371,7 +404,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -393,7 +426,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -404,7 +437,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -422,7 +455,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -440,7 +473,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -462,7 +495,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -473,7 +506,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -491,7 +524,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -509,7 +542,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -531,7 +564,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -542,7 +575,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -560,7 +593,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -578,7 +611,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -599,7 +632,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -620,7 +653,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -642,7 +675,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -653,7 +686,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -672,7 +705,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -683,7 +716,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -702,7 +735,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -713,7 +746,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -731,7 +764,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -749,7 +782,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -771,7 +804,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -782,7 +815,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -800,7 +833,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -818,7 +851,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -840,7 +873,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -851,7 +884,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -869,7 +902,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -887,7 +920,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -909,7 +942,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -920,7 +953,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -938,7 +971,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -956,7 +989,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -977,7 +1010,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -999,7 +1032,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1010,7 +1043,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1029,7 +1062,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1040,7 +1073,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1058,7 +1091,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1076,7 +1109,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1098,7 +1131,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1109,7 +1142,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1127,7 +1160,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1145,7 +1178,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1167,7 +1200,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1178,7 +1211,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1196,7 +1229,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1214,7 +1247,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1236,7 +1269,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1247,7 +1280,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1265,7 +1298,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1283,7 +1316,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1304,7 +1337,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1325,7 +1358,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1346,7 +1379,7 @@ exports[`Storyshots Table Compact Table 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1356,29 +1389,8 @@ exports[`Storyshots Table Compact Table 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1433,174 +1445,207 @@ exports[`Storyshots Table Default Table 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
-          >
-            <div
-              className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
-              onScroll={[Function]}
-            >
-              <table
-                className="Table__StyledTable-sc-156ovmd-2 brAyHM"
-              >
-                <thead
-                  className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
-                >
-                  <tr
-                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                  </tr>
-                </thead>
-                <tbody
-                  className="TableBody__StyledTableBody-sc-1uovf8k-0 kqMaSS"
-                >
-                  <tr
-                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
+                  onScroll={[Function]}
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <table
+                    className="Table__StyledTable-sc-156ovmd-2 brAyHM"
+                  >
+                    <thead
+                      className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
+                    >
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                      </tr>
+                    </thead>
+                    <tbody
+                      className="TableBody__StyledTableBody-sc-1uovf8k-0 kqMaSS"
+                    >
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -1613,7 +1658,7 @@ exports[`Storyshots Table Default Table 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1624,7 +1669,7 @@ exports[`Storyshots Table Default Table 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1643,7 +1688,7 @@ exports[`Storyshots Table Default Table 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1654,7 +1699,7 @@ exports[`Storyshots Table Default Table 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1673,7 +1718,7 @@ exports[`Storyshots Table Default Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1684,7 +1729,7 @@ exports[`Storyshots Table Default Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1703,7 +1748,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1714,7 +1759,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1732,7 +1777,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1750,7 +1795,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1772,7 +1817,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1783,7 +1828,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1801,7 +1846,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1819,7 +1864,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1841,7 +1886,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1852,7 +1897,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1870,7 +1915,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1888,7 +1933,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1910,7 +1955,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1921,7 +1966,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1939,7 +1984,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1957,7 +2002,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1978,7 +2023,7 @@ exports[`Storyshots Table Default Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1999,7 +2044,7 @@ exports[`Storyshots Table Default Table 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2021,7 +2066,7 @@ exports[`Storyshots Table Default Table 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2032,7 +2077,7 @@ exports[`Storyshots Table Default Table 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2051,7 +2096,7 @@ exports[`Storyshots Table Default Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2062,7 +2107,7 @@ exports[`Storyshots Table Default Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2081,7 +2126,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2092,7 +2137,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2110,7 +2155,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2128,7 +2173,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2150,7 +2195,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2161,7 +2206,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2179,7 +2224,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2197,7 +2242,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2219,7 +2264,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2230,7 +2275,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2248,7 +2293,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2266,7 +2311,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2288,7 +2333,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2299,7 +2344,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2317,7 +2362,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2335,7 +2380,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2356,7 +2401,7 @@ exports[`Storyshots Table Default Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2378,7 +2423,7 @@ exports[`Storyshots Table Default Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2389,7 +2434,7 @@ exports[`Storyshots Table Default Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2408,7 +2453,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2419,7 +2464,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2437,7 +2482,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2455,7 +2500,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2477,7 +2522,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2488,7 +2533,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2506,7 +2551,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2524,7 +2569,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2546,7 +2591,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2557,7 +2602,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2575,7 +2620,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2593,7 +2638,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2615,7 +2660,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2626,7 +2671,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2644,7 +2689,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2662,7 +2707,7 @@ exports[`Storyshots Table Default Table 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2683,7 +2728,7 @@ exports[`Storyshots Table Default Table 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2704,7 +2749,7 @@ exports[`Storyshots Table Default Table 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2725,7 +2770,7 @@ exports[`Storyshots Table Default Table 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2735,29 +2780,8 @@ exports[`Storyshots Table Default Table 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -2812,175 +2836,208 @@ exports[`Storyshots Table Playground 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
-            data-test="test"
-          >
-            <div
-              className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
-              onScroll={[Function]}
-            >
-              <table
-                className="Table__StyledTable-sc-156ovmd-2 brAyHM"
-              >
-                <thead
-                  className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
-                >
-                  <tr
-                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                  </tr>
-                </thead>
-                <tbody
-                  className="TableBody__StyledTableBody-sc-1uovf8k-0 kqMaSS"
-                >
-                  <tr
-                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Lorem ipsum dolor sit amet
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
+                data-test="test"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
+                  onScroll={[Function]}
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <table
+                    className="Table__StyledTable-sc-156ovmd-2 brAyHM"
+                  >
+                    <thead
+                      className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
+                    >
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                      </tr>
+                    </thead>
+                    <tbody
+                      className="TableBody__StyledTableBody-sc-1uovf8k-0 kqMaSS"
+                    >
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Lorem ipsum dolor sit amet
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -2993,7 +3050,7 @@ exports[`Storyshots Table Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3059,7 +3116,7 @@ exports[`Storyshots Table Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3078,7 +3135,7 @@ exports[`Storyshots Table Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -3089,7 +3146,7 @@ exports[`Storyshots Table Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -3108,7 +3165,7 @@ exports[`Storyshots Table Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3119,7 +3176,7 @@ exports[`Storyshots Table Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3138,7 +3195,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3178,7 +3235,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3196,7 +3253,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3214,7 +3271,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3236,7 +3293,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3276,7 +3333,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3294,7 +3351,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3312,7 +3369,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3334,7 +3391,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3374,7 +3431,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3392,7 +3449,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3410,7 +3467,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3432,7 +3489,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3472,7 +3529,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3490,7 +3547,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3508,7 +3565,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3529,7 +3586,7 @@ exports[`Storyshots Table Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3550,7 +3607,7 @@ exports[`Storyshots Table Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -3572,7 +3629,7 @@ exports[`Storyshots Table Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -3583,7 +3640,7 @@ exports[`Storyshots Table Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -3602,7 +3659,7 @@ exports[`Storyshots Table Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3613,7 +3670,7 @@ exports[`Storyshots Table Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3632,7 +3689,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3672,7 +3729,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3690,7 +3747,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3708,7 +3765,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3730,7 +3787,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3770,7 +3827,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3788,7 +3845,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3806,7 +3863,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3828,7 +3885,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3868,7 +3925,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3886,7 +3943,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3904,7 +3961,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3926,7 +3983,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3966,7 +4023,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3984,7 +4041,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4002,7 +4059,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4023,7 +4080,7 @@ exports[`Storyshots Table Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -4045,7 +4102,7 @@ exports[`Storyshots Table Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -4056,7 +4113,7 @@ exports[`Storyshots Table Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -4075,7 +4132,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4115,7 +4172,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4133,7 +4190,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4151,7 +4208,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4173,7 +4230,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4213,7 +4270,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4231,7 +4288,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4249,7 +4306,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4271,7 +4328,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4311,7 +4368,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4329,7 +4386,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4347,7 +4404,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4369,7 +4426,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4409,7 +4466,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4427,7 +4484,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4445,7 +4502,7 @@ exports[`Storyshots Table Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4466,7 +4523,7 @@ exports[`Storyshots Table Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -4487,7 +4544,7 @@ exports[`Storyshots Table Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -4508,7 +4565,7 @@ exports[`Storyshots Table Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -4518,29 +4575,8 @@ exports[`Storyshots Table Playground 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -4595,247 +4631,280 @@ exports[`Storyshots Table RTL 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is a preview of this component in RTL setup.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
-          >
-            <div
-              className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
-              onScroll={[Function]}
-            >
-              <table
-                className="Table__StyledTable-sc-156ovmd-2 brAyHM"
-              >
-                <thead
-                  className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
-                >
-                  <tr
-                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      First column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Second column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Third column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Fourth column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Fifth column
-                    </td>
-                  </tr>
-                </thead>
-                <tbody
-                  className="TableBody__StyledTableBody-sc-1uovf8k-0 kqMaSS"
-                >
-                  <tr
-                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      First column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Second column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Third column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Fourth column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Fifth column
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      First column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Second column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Third column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Fourth column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Fifth column
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      First column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Second column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Third column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Fourth column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Fifth column
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
-                  >
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      First column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Second column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Third column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Fourth column
-                    </td>
-                    <td
-                      className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
-                    >
-                      Fifth column
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Table__StyledTableOuter-sc-156ovmd-0 eHmADd"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Table__StyledTableInner-sc-156ovmd-1 ipExTE"
+                  onScroll={[Function]}
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <table
+                    className="Table__StyledTable-sc-156ovmd-2 brAyHM"
+                  >
+                    <thead
+                      className="TableHead__StyledTableHead-sc-17bka47-0 kXbKtX"
+                    >
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          First column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Second column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Third column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Fourth column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Fifth column
+                        </td>
+                      </tr>
+                    </thead>
+                    <tbody
+                      className="TableBody__StyledTableBody-sc-1uovf8k-0 kqMaSS"
+                    >
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          First column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Second column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Third column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Fourth column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Fifth column
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          First column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Second column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Third column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Fourth column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Fifth column
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          First column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Second column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Third column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Fourth column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Fifth column
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableRow__StyledTableRow-nnt9s9-0 efbCJT"
+                      >
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          First column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Second column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Third column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Fourth column
+                        </td>
+                        <td
+                          className="TableCell__StyledTableCell-sc-1dr7ow2-0 dBJnYX"
+                        >
+                          Fifth column
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -4848,7 +4917,7 @@ exports[`Storyshots Table RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -4859,7 +4928,7 @@ exports[`Storyshots Table RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -4878,7 +4947,7 @@ exports[`Storyshots Table RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -4889,7 +4958,7 @@ exports[`Storyshots Table RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -4908,7 +4977,7 @@ exports[`Storyshots Table RTL 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -4919,7 +4988,7 @@ exports[`Storyshots Table RTL 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -4938,7 +5007,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4949,7 +5018,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -4968,7 +5037,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -4979,7 +5048,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -4997,7 +5066,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5015,7 +5084,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5037,7 +5106,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5048,7 +5117,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5066,7 +5135,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5084,7 +5153,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5106,7 +5175,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5117,7 +5186,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5135,7 +5204,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5153,7 +5222,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5175,7 +5244,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5186,7 +5255,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5204,7 +5273,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5222,7 +5291,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5244,7 +5313,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5255,7 +5324,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5273,7 +5342,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5291,7 +5360,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5312,7 +5381,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -5333,7 +5402,7 @@ exports[`Storyshots Table RTL 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -5355,7 +5424,7 @@ exports[`Storyshots Table RTL 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -5366,7 +5435,7 @@ exports[`Storyshots Table RTL 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -5385,7 +5454,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -5396,7 +5465,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -5415,7 +5484,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5426,7 +5495,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5444,7 +5513,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5462,7 +5531,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5484,7 +5553,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5495,7 +5564,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5513,7 +5582,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5531,7 +5600,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5553,7 +5622,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5564,7 +5633,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5582,7 +5651,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5600,7 +5669,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5622,7 +5691,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5633,7 +5702,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5651,7 +5720,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5669,7 +5738,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5691,7 +5760,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5702,7 +5771,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5720,7 +5789,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5738,7 +5807,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5759,7 +5828,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -5781,7 +5850,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -5792,7 +5861,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -5811,7 +5880,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5822,7 +5891,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5840,7 +5909,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5858,7 +5927,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5880,7 +5949,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5891,7 +5960,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5909,7 +5978,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5927,7 +5996,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5949,7 +6018,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5960,7 +6029,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5978,7 +6047,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -5996,7 +6065,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6018,7 +6087,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6029,7 +6098,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6047,7 +6116,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6065,7 +6134,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6087,7 +6156,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6098,7 +6167,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6116,7 +6185,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6134,7 +6203,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6155,7 +6224,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -6177,7 +6246,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -6188,7 +6257,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -6207,7 +6276,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6218,7 +6287,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6236,7 +6305,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6254,7 +6323,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6276,7 +6345,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6287,7 +6356,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6305,7 +6374,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6323,7 +6392,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6345,7 +6414,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6356,7 +6425,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6374,7 +6443,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6392,7 +6461,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6414,7 +6483,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6425,7 +6494,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6443,7 +6512,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6461,7 +6530,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6483,7 +6552,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6494,7 +6563,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6512,7 +6581,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6530,7 +6599,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6551,7 +6620,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -6573,7 +6642,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -6584,7 +6653,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -6603,7 +6672,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6614,7 +6683,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6632,7 +6701,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6650,7 +6719,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6672,7 +6741,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6683,7 +6752,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6701,7 +6770,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6719,7 +6788,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6741,7 +6810,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6752,7 +6821,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6770,7 +6839,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6788,7 +6857,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6810,7 +6879,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6821,7 +6890,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6839,7 +6908,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6857,7 +6926,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6879,7 +6948,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6890,7 +6959,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6908,7 +6977,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6926,7 +6995,7 @@ exports[`Storyshots Table RTL 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -6947,7 +7016,7 @@ exports[`Storyshots Table RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -6968,7 +7037,7 @@ exports[`Storyshots Table RTL 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -6989,7 +7058,7 @@ exports[`Storyshots Table RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -7010,7 +7079,7 @@ exports[`Storyshots Table RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -7020,29 +7089,8 @@ exports[`Storyshots Table RTL 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>

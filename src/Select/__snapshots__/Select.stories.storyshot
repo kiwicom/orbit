@@ -44,124 +44,157 @@ exports[`Storyshots Select Default 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="Select__Label-sc-6agypz-0 cqbVlc"
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
+              className="section-header"
+              style={Object {}}
             >
-              <select
-                className="Select__StyledSelect-sc-6agypz-1 kHfmep"
-                disabled={false}
-                onChange={[Function]}
-                value=""
-              >
-                <option
-                  value={1}
-                >
-                  First item
-                </option>
-                <option
-                  value={2}
-                >
-                  Second item
-                </option>
-                <option
-                  value={3}
-                >
-                  Third item
-                </option>
-              </select>
-              <div
-                className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                  />
-                </svg>
+              <div>
+                
+                
               </div>
             </div>
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="Select__Label-sc-6agypz-0 cqbVlc"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <select
+                    className="Select__StyledSelect-sc-6agypz-1 kHfmep"
+                    disabled={false}
+                    onChange={[Function]}
+                    value=""
+                  >
+                    <option
+                      value={1}
+                    >
+                      First item
+                    </option>
+                    <option
+                      value={2}
+                    >
+                      Second item
+                    </option>
+                    <option
+                      value={3}
+                    >
+                      Third item
+                    </option>
+                  </select>
+                  <div
+                    className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -173,7 +206,7 @@ exports[`Storyshots Select Default 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -409,36 +442,15 @@ exports[`Storyshots Select Default 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -493,134 +505,167 @@ exports[`Storyshots Select Playground 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="Select__Label-sc-6agypz-0 cqbVlc"
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
+              className="section-header"
+              style={Object {}}
             >
-              <select
-                className="Select__StyledSelect-sc-6agypz-1 kHfmep"
-                data-test="test"
-                disabled={false}
-                name="name"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                value=""
-              >
-                <option
-                  label="Select value from list"
-                  value=""
-                >
-                  Select value from list
-                </option>
-                <option
-                  value={1}
-                >
-                  First item
-                </option>
-                <option
-                  value={2}
-                >
-                  Second item
-                </option>
-                <option
-                  value={3}
-                >
-                  Third item
-                </option>
-              </select>
-              <div
-                className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                  />
-                </svg>
+              <div>
+                
+                
               </div>
             </div>
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="Select__Label-sc-6agypz-0 cqbVlc"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <select
+                    className="Select__StyledSelect-sc-6agypz-1 kHfmep"
+                    data-test="test"
+                    disabled={false}
+                    name="name"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    value=""
+                  >
+                    <option
+                      label="Select value from list"
+                      value=""
+                    >
+                      Select value from list
+                    </option>
+                    <option
+                      value={1}
+                    >
+                      First item
+                    </option>
+                    <option
+                      value={2}
+                    >
+                      Second item
+                    </option>
+                    <option
+                      value={3}
+                    >
+                      Third item
+                    </option>
+                  </select>
+                  <div
+                    className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -632,7 +677,7 @@ exports[`Storyshots Select Playground 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -978,7 +1023,7 @@ exports[`Storyshots Select Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1124,7 +1169,7 @@ exports[`Storyshots Select Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1139,36 +1184,15 @@ exports[`Storyshots Select Playground 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1223,136 +1247,169 @@ exports[`Storyshots Select RTL 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is a preview of this component in RTL setup.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="Select__Label-sc-6agypz-0 cqbVlc"
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                My label
-              </span>
-            </span>
             <div
-              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
+              className="section-header"
+              style={Object {}}
             >
-              <select
-                className="Select__StyledSelect-sc-6agypz-1 cVeomh"
-                disabled={false}
-                value=""
-              >
-                <option
-                  label="My placeholder"
-                  value=""
-                >
-                  My placeholder
-                </option>
-                <option
-                  value={1}
-                >
-                  First item
-                </option>
-                <option
-                  value={2}
-                >
-                  Second item
-                </option>
-                <option
-                  value={3}
-                >
-                  Third item
-                </option>
-              </select>
-              <div
-                className="Select__SelectSuffix-sc-6agypz-4 gXjPeR"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                  />
-                </svg>
+              <div>
+                
+                
               </div>
             </div>
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="Select__Label-sc-6agypz-0 cqbVlc"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    My label
+                  </span>
+                </span>
+                <div
+                  className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                 >
-                  <div>
+                  <select
+                    className="Select__StyledSelect-sc-6agypz-1 cVeomh"
+                    disabled={false}
+                    value=""
+                  >
+                    <option
+                      label="My placeholder"
+                      value=""
+                    >
+                      My placeholder
+                    </option>
+                    <option
+                      value={1}
+                    >
+                      First item
+                    </option>
+                    <option
+                      value={2}
+                    >
+                      Second item
+                    </option>
+                    <option
+                      value={3}
+                    >
+                      Third item
+                    </option>
+                  </select>
+                  <div
+                    className="Select__SelectSuffix-sc-6agypz-4 gXjPeR"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -1365,7 +1422,7 @@ exports[`Storyshots Select RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1376,7 +1433,7 @@ exports[`Storyshots Select RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1394,7 +1451,7 @@ exports[`Storyshots Select RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1658,7 +1715,7 @@ exports[`Storyshots Select RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1676,7 +1733,7 @@ exports[`Storyshots Select RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1686,29 +1743,8 @@ exports[`Storyshots Select RTL 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1763,142 +1799,175 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="Select__Label-sc-6agypz-0 cqbVlc"
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                Select box (with prefix)
-              </span>
-            </span>
             <div
-              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
+              className="section-header"
+              style={Object {}}
             >
-              <div
-                className="Select__SelectPrefix-sc-6agypz-3 gQduFD"
-              >
-                <img
-                  alt="Anywhere"
-                  className="CountryFlag__StyledCountryFlag-h98fwe-0 gMcwUa"
-                  src="//images.kiwi.com/flags/24x0/flag-anywhere.jpg"
-                  srcSet="//images.kiwi.com/flags/48x0/flag-anywhere.jpg 2x"
-                  title="Anywhere"
-                />
-              </div>
-              <select
-                className="Select__StyledSelect-sc-6agypz-1 lnxbuS"
-                disabled={false}
-                onChange={[Function]}
-                value=""
-              >
-                <option
-                  value={1}
-                >
-                  First item
-                </option>
-                <option
-                  value={2}
-                >
-                  Second item
-                </option>
-                <option
-                  value={3}
-                >
-                  Third item
-                </option>
-              </select>
-              <div
-                className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                  />
-                </svg>
+              <div>
+                
+                
               </div>
             </div>
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="Select__Label-sc-6agypz-0 cqbVlc"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Select box (with prefix)
+                  </span>
+                </span>
+                <div
+                  className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                 >
-                  <div>
+                  <div
+                    className="Select__SelectPrefix-sc-6agypz-3 gQduFD"
+                  >
+                    <img
+                      alt="Anywhere"
+                      className="CountryFlag__StyledCountryFlag-h98fwe-0 gMcwUa"
+                      src="//images.kiwi.com/flags/24x0/flag-anywhere.jpg"
+                      srcSet="//images.kiwi.com/flags/48x0/flag-anywhere.jpg 2x"
+                      title="Anywhere"
+                    />
+                  </div>
+                  <select
+                    className="Select__StyledSelect-sc-6agypz-1 lnxbuS"
+                    disabled={false}
+                    onChange={[Function]}
+                    value=""
+                  >
+                    <option
+                      value={1}
+                    >
+                      First item
+                    </option>
+                    <option
+                      value={2}
+                    >
+                      Second item
+                    </option>
+                    <option
+                      value={3}
+                    >
+                      Third item
+                    </option>
+                  </select>
+                  <div
+                    className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -1910,7 +1979,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -2211,36 +2280,15 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -2295,138 +2343,171 @@ exports[`Storyshots Select With error message 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="Select__Label-sc-6agypz-0 cqbVlc"
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                Select box (with error text)
-              </span>
-            </span>
             <div
-              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
-            >
-              <select
-                className="Select__StyledSelect-sc-6agypz-1 dcxgBh"
-                disabled={false}
-                onChange={[Function]}
-                value=""
-              >
-                <option
-                  value={1}
-                >
-                  First item
-                </option>
-                <option
-                  value={2}
-                >
-                  Second item
-                </option>
-                <option
-                  value={3}
-                >
-                  Third item
-                </option>
-              </select>
-              <div
-                className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div
-              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
+              className="section-header"
+              style={Object {}}
             >
               <div>
-                You need to select some value.
+                
+                
               </div>
             </div>
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="Select__Label-sc-6agypz-0 cqbVlc"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Select box (with error text)
+                  </span>
+                </span>
+                <div
+                  className="Select__SelectContainer-sc-6agypz-2 zfoUd"
+                >
+                  <select
+                    className="Select__StyledSelect-sc-6agypz-1 dcxgBh"
+                    disabled={false}
+                    onChange={[Function]}
+                    value=""
+                  >
+                    <option
+                      value={1}
+                    >
+                      First item
+                    </option>
+                    <option
+                      value={2}
+                    >
+                      Second item
+                    </option>
+                    <option
+                      value={3}
+                    >
+                      Third item
+                    </option>
+                  </select>
+                  <div
+                    className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
                 >
                   <div>
+                    You need to select some value.
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -2438,7 +2519,7 @@ exports[`Storyshots Select With error message 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -2739,36 +2820,15 @@ exports[`Storyshots Select With error message 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -2823,136 +2883,169 @@ exports[`Storyshots Select With help message 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="Select__Label-sc-6agypz-0 cqbVlc"
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                Select box (with help text)
-              </span>
-            </span>
             <div
-              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
+              className="section-header"
+              style={Object {}}
             >
-              <select
-                className="Select__StyledSelect-sc-6agypz-1 kHfmep"
-                disabled={false}
-                onChange={[Function]}
-                value=""
-              >
-                <option
-                  value={1}
-                >
-                  First item
-                </option>
-                <option
-                  value={2}
-                >
-                  Second item
-                </option>
-                <option
-                  value={3}
-                >
-                  Third item
-                </option>
-              </select>
-              <div
-                className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                  />
-                </svg>
+              <div>
+                
+                
               </div>
             </div>
             <div
-              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
-            >
-              Most common choice is Booking cancellation
-            </div>
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="Select__Label-sc-6agypz-0 cqbVlc"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Select box (with help text)
+                  </span>
+                </span>
+                <div
+                  className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                 >
-                  <div>
+                  <select
+                    className="Select__StyledSelect-sc-6agypz-1 kHfmep"
+                    disabled={false}
+                    onChange={[Function]}
+                    value=""
+                  >
+                    <option
+                      value={1}
+                    >
+                      First item
+                    </option>
+                    <option
+                      value={2}
+                    >
+                      Second item
+                    </option>
+                    <option
+                      value={3}
+                    >
+                      Third item
+                    </option>
+                  </select>
+                  <div
+                    className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
+                >
+                  Most common choice is Booking cancellation
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -2964,7 +3057,7 @@ exports[`Storyshots Select With help message 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -3266,36 +3359,15 @@ exports[`Storyshots Select With help message 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -3350,137 +3422,170 @@ exports[`Storyshots Select With placeholder 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="Select__Label-sc-6agypz-0 cqbVlc"
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                Select box (with placeholder)
-              </span>
-            </span>
             <div
-              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
+              className="section-header"
+              style={Object {}}
             >
-              <select
-                className="Select__StyledSelect-sc-6agypz-1 kHfmep"
-                disabled={false}
-                onChange={[Function]}
-                value=""
-              >
-                <option
-                  label="Select value from list"
-                  value=""
-                >
-                  Select value from list
-                </option>
-                <option
-                  value={1}
-                >
-                  First item
-                </option>
-                <option
-                  value={2}
-                >
-                  Second item
-                </option>
-                <option
-                  value={3}
-                >
-                  Third item
-                </option>
-              </select>
-              <div
-                className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                  />
-                </svg>
+              <div>
+                
+                
               </div>
             </div>
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="Select__Label-sc-6agypz-0 cqbVlc"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Select box (with placeholder)
+                  </span>
+                </span>
+                <div
+                  className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                 >
-                  <div>
+                  <select
+                    className="Select__StyledSelect-sc-6agypz-1 kHfmep"
+                    disabled={false}
+                    onChange={[Function]}
+                    value=""
+                  >
+                    <option
+                      label="Select value from list"
+                      value=""
+                    >
+                      Select value from list
+                    </option>
+                    <option
+                      value={1}
+                    >
+                      First item
+                    </option>
+                    <option
+                      value={2}
+                    >
+                      Second item
+                    </option>
+                    <option
+                      value={3}
+                    >
+                      Third item
+                    </option>
+                  </select>
+                  <div
+                    className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -3492,7 +3597,7 @@ exports[`Storyshots Select With placeholder 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -3794,36 +3899,15 @@ exports[`Storyshots Select With placeholder 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -3878,144 +3962,177 @@ exports[`Storyshots Select With prefix 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="Select__Label-sc-6agypz-0 cqbVlc"
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                Select box (with prefix)
-              </span>
-            </span>
             <div
-              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
+              className="section-header"
+              style={Object {}}
             >
-              <div
-                className="Select__SelectPrefix-sc-6agypz-3 gQduFD"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                  />
-                </svg>
-              </div>
-              <select
-                className="Select__StyledSelect-sc-6agypz-1 lnxbuS"
-                disabled={false}
-                onChange={[Function]}
-                value=""
-              >
-                <option
-                  value={1}
-                >
-                  First item
-                </option>
-                <option
-                  value={2}
-                >
-                  Second item
-                </option>
-                <option
-                  value={3}
-                >
-                  Third item
-                </option>
-              </select>
-              <div
-                className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                  />
-                </svg>
+              <div>
+                
+                
               </div>
             </div>
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="Select__Label-sc-6agypz-0 cqbVlc"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Select box (with prefix)
+                  </span>
+                </span>
+                <div
+                  className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                 >
-                  <div>
+                  <div
+                    className="Select__SelectPrefix-sc-6agypz-3 gQduFD"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                      />
+                    </svg>
+                  </div>
+                  <select
+                    className="Select__StyledSelect-sc-6agypz-1 lnxbuS"
+                    disabled={false}
+                    onChange={[Function]}
+                    value=""
+                  >
+                    <option
+                      value={1}
+                    >
+                      First item
+                    </option>
+                    <option
+                      value={2}
+                    >
+                      Second item
+                    </option>
+                    <option
+                      value={3}
+                    >
+                      Third item
+                    </option>
+                  </select>
+                  <div
+                    className="Select__SelectSuffix-sc-6agypz-4 dtnAjS"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -4027,7 +4144,7 @@ exports[`Storyshots Select With prefix 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -4328,36 +4445,15 @@ exports[`Storyshots Select With prefix 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -4412,131 +4508,164 @@ exports[`Storyshots Select With small size 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="Select__Label-sc-6agypz-0 cqbVlc"
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                Select box (small size)
-              </span>
-            </span>
             <div
-              className="Select__SelectContainer-sc-6agypz-2 zfoUd"
+              className="section-header"
+              style={Object {}}
             >
-              <select
-                className="Select__StyledSelect-sc-6agypz-1 ctBvtk"
-                disabled={false}
-                onChange={[Function]}
-                value=""
-              >
-                <option
-                  value={1}
-                >
-                  First item
-                </option>
-                <option
-                  value={2}
-                >
-                  Second item
-                </option>
-                <option
-                  value={3}
-                >
-                  Third item
-                </option>
-              </select>
-              <div
-                className="Select__SelectSuffix-sc-6agypz-4 jEDQBY"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                  />
-                </svg>
+              <div>
+                
+                
               </div>
             </div>
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="Select__Label-sc-6agypz-0 cqbVlc"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Select box (small size)
+                  </span>
+                </span>
+                <div
+                  className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                 >
-                  <div>
+                  <select
+                    className="Select__StyledSelect-sc-6agypz-1 ctBvtk"
+                    disabled={false}
+                    onChange={[Function]}
+                    value=""
+                  >
+                    <option
+                      value={1}
+                    >
+                      First item
+                    </option>
+                    <option
+                      value={2}
+                    >
+                      Second item
+                    </option>
+                    <option
+                      value={3}
+                    >
+                      Third item
+                    </option>
+                  </select>
+                  <div
+                    className="Select__SelectSuffix-sc-6agypz-4 jEDQBY"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -4548,7 +4677,7 @@ exports[`Storyshots Select With small size 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -4850,36 +4979,15 @@ exports[`Storyshots Select With small size 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>

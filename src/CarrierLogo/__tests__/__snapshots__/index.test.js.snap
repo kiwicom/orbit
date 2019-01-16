@@ -1900,10 +1900,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               Object {
                 "$$typeof": Symbol(react.forward_ref),
                 "attrs": Array [
-                  Object {
-                    "src": [Function],
-                    "srcSet": [Function],
-                  },
+                  [Function],
                 ],
                 "componentStyle": ComponentStyle {
                   "componentId": "CarrierLogo__StyledImage-d4doc9-0",
@@ -3266,10 +3263,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               Object {
                 "$$typeof": Symbol(react.forward_ref),
                 "attrs": Array [
-                  Object {
-                    "src": [Function],
-                    "srcSet": [Function],
-                  },
+                  [Function],
                 ],
                 "componentStyle": ComponentStyle {
                   "componentId": "CarrierLogo__StyledImage-d4doc9-0",
@@ -4632,10 +4626,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               Object {
                 "$$typeof": Symbol(react.forward_ref),
                 "attrs": Array [
-                  Object {
-                    "src": [Function],
-                    "srcSet": [Function],
-                  },
+                  [Function],
                 ],
                 "componentStyle": ComponentStyle {
                   "componentId": "CarrierLogo__StyledImage-d4doc9-0",
@@ -5998,10 +5989,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               Object {
                 "$$typeof": Symbol(react.forward_ref),
                 "attrs": Array [
-                  Object {
-                    "src": [Function],
-                    "srcSet": [Function],
-                  },
+                  [Function],
                 ],
                 "componentStyle": ComponentStyle {
                   "componentId": "CarrierLogo__StyledImage-d4doc9-0",

@@ -143,7 +143,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                   >
                     <select
-                      className="Select__StyledSelect-sc-6agypz-1 dxQsPW"
+                      className="Select__StyledSelect-sc-6agypz-1 kHfmep"
                       disabled={false}
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -1164,7 +1164,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                       />
                     </div>
                     <select
-                      className="Select__StyledSelect-sc-6agypz-1 kIxyQv"
+                      className="Select__StyledSelect-sc-6agypz-1 lnxbuS"
                       disabled={false}
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -1995,7 +1995,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                   >
                     <select
-                      className="Select__StyledSelect-sc-6agypz-1 dxQsPW"
+                      className="Select__StyledSelect-sc-6agypz-1 kHfmep"
                       disabled={false}
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -2062,7 +2062,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                   >
                     <select
-                      className="Select__StyledSelect-sc-6agypz-1 dxQsPW"
+                      className="Select__StyledSelect-sc-6agypz-1 kHfmep"
                       disabled={false}
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -3268,7 +3268,7 @@ exports[`Storyshots InputGroup RTL 1`] = `
                     className="Select__SelectContainer-sc-6agypz-2 zfoUd"
                   >
                     <select
-                      className="Select__StyledSelect-sc-6agypz-1 fzwuaE"
+                      className="Select__StyledSelect-sc-6agypz-1 cVeomh"
                       disabled={false}
                       onBlur={[Function]}
                       onChange={[Function]}

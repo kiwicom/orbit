@@ -120,7 +120,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 btlEqS"
+                      className="InputField__Input-sc-4opay-6 ceKwqb"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -243,7 +243,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 btlEqS"
+                      className="InputField__Input-sc-4opay-6 ceKwqb"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -1208,7 +1208,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 btlEqS"
+                      className="InputField__Input-sc-4opay-6 ceKwqb"
                       maxLength={11}
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -2039,7 +2039,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 btlEqS"
+                      className="InputField__Input-sc-4opay-6 ceKwqb"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -2106,7 +2106,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 btlEqS"
+                      className="InputField__Input-sc-4opay-6 ceKwqb"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -3245,7 +3245,7 @@ exports[`Storyshots InputGroup RTL 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 btlEqS"
+                      className="InputField__Input-sc-4opay-6 ceKwqb"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -3368,7 +3368,7 @@ exports[`Storyshots InputGroup RTL 1`] = `
                     className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                   >
                     <input
-                      className="InputField__Input-sc-4opay-6 btlEqS"
+                      className="InputField__Input-sc-4opay-6 ceKwqb"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}

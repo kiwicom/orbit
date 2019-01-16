@@ -200,7 +200,6 @@ export const Input = styled(
   flex: 1 auto;
   width: 100%;
   height: 100%;
-  line-height: ${getToken(TOKENS.heightInput)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   z-index: 2;
 

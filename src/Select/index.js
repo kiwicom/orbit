@@ -77,6 +77,10 @@ const StyledSelect = styled(
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   z-index: 2;
 
+  > option {
+    color: ${({ theme }) => theme.orbit.colorTextInput};
+  }
+
   &::-ms-expand {
     display: none;
   }

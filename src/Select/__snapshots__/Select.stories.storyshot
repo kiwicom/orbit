@@ -104,7 +104,7 @@ exports[`Storyshots Select Default 1`] = `
               className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <select
-                className="Select__StyledSelect-sc-6agypz-1 dxQsPW"
+                className="Select__StyledSelect-sc-6agypz-1 kHfmep"
                 disabled={false}
                 onChange={[Function]}
                 value=""
@@ -553,7 +553,7 @@ exports[`Storyshots Select Playground 1`] = `
               className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <select
-                className="Select__StyledSelect-sc-6agypz-1 dxQsPW"
+                className="Select__StyledSelect-sc-6agypz-1 kHfmep"
                 data-test="test"
                 disabled={false}
                 name="name"
@@ -1290,7 +1290,7 @@ exports[`Storyshots Select RTL 1`] = `
               className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <select
-                className="Select__StyledSelect-sc-6agypz-1 fzwuaE"
+                className="Select__StyledSelect-sc-6agypz-1 cVeomh"
                 disabled={false}
                 value=""
               >
@@ -1841,7 +1841,7 @@ exports[`Storyshots Select With CountryFlag prefix 1`] = `
                 />
               </div>
               <select
-                className="Select__StyledSelect-sc-6agypz-1 kIxyQv"
+                className="Select__StyledSelect-sc-6agypz-1 lnxbuS"
                 disabled={false}
                 onChange={[Function]}
                 value=""
@@ -2362,7 +2362,7 @@ exports[`Storyshots Select With error message 1`] = `
               className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <select
-                className="Select__StyledSelect-sc-6agypz-1 bVMWEd"
+                className="Select__StyledSelect-sc-6agypz-1 dcxgBh"
                 disabled={false}
                 onChange={[Function]}
                 value=""
@@ -2890,7 +2890,7 @@ exports[`Storyshots Select With help message 1`] = `
               className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <select
-                className="Select__StyledSelect-sc-6agypz-1 dxQsPW"
+                className="Select__StyledSelect-sc-6agypz-1 kHfmep"
                 disabled={false}
                 onChange={[Function]}
                 value=""
@@ -3417,7 +3417,7 @@ exports[`Storyshots Select With placeholder 1`] = `
               className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <select
-                className="Select__StyledSelect-sc-6agypz-1 dxQsPW"
+                className="Select__StyledSelect-sc-6agypz-1 kHfmep"
                 disabled={false}
                 onChange={[Function]}
                 value=""
@@ -3958,7 +3958,7 @@ exports[`Storyshots Select With prefix 1`] = `
                 </svg>
               </div>
               <select
-                className="Select__StyledSelect-sc-6agypz-1 kIxyQv"
+                className="Select__StyledSelect-sc-6agypz-1 lnxbuS"
                 disabled={false}
                 onChange={[Function]}
                 value=""
@@ -4479,7 +4479,7 @@ exports[`Storyshots Select With small size 1`] = `
               className="Select__SelectContainer-sc-6agypz-2 zfoUd"
             >
               <select
-                className="Select__StyledSelect-sc-6agypz-1 hAZtlN"
+                className="Select__StyledSelect-sc-6agypz-1 ctBvtk"
                 disabled={false}
                 onChange={[Function]}
                 value=""

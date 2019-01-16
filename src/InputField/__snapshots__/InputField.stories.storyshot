@@ -44,111 +44,144 @@ exports[`Storyshots InputField Compact input 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Compact input with FormLabel as prefix
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="InputField__Field-sc-4opay-0 kCAFyx"
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+              className="section-header"
+              style={Object {}}
             >
-              <div
-                className="InputField__StyledInlineLabel-sc-4opay-3 YrOpk"
-                size="normal"
-              >
-                <span
-                  className="FormLabel-sc-1927civ-1 iTEGJS"
-                >
-                  <span>
-                    Label
-                  </span>
-                </span>
+              <div>
+                
+                
               </div>
-              <input
-                className="InputField__Input-sc-4opay-6 zwGyB"
-                onChange={[Function]}
-                placeholder="Placeholder"
-                type="text"
-                value=""
-              />
-              <div
-                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
-              />
             </div>
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="InputField__Field-sc-4opay-0 kCAFyx"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <div
+                    className="InputField__StyledInlineLabel-sc-4opay-3 YrOpk"
+                    size="normal"
+                  >
+                    <span
+                      className="FormLabel-sc-1927civ-1 iTEGJS"
+                    >
+                      <span>
+                        Label
+                      </span>
+                    </span>
+                  </div>
+                  <input
+                    className="InputField__Input-sc-4opay-6 zwGyB"
+                    onChange={[Function]}
+                    placeholder="Placeholder"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -160,7 +193,7 @@ exports[`Storyshots InputField Compact input 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -228,7 +261,7 @@ exports[`Storyshots InputField Compact input 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -361,36 +394,15 @@ exports[`Storyshots InputField Compact input 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -445,106 +457,139 @@ exports[`Storyshots InputField Default input 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of InputField in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="InputField__Field-sc-4opay-0 kCAFyx"
-          >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                Label
-              </span>
-            </span>
-            <div
-              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
-            >
-              <input
-                className="InputField__Input-sc-4opay-6 ceKwqb"
-                onChange={[Function]}
-                placeholder="Placeholder"
-                type="text"
-                value=""
-              />
-              <div
-                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
-              />
-            </div>
-          </label>
-        </div>
-        <div>
           <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="InputField__Field-sc-4opay-0 kCAFyx"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Label
+                  </span>
+                </span>
+                <div
+                  className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
-                  <div>
+                  <input
+                    className="InputField__Input-sc-4opay-6 ceKwqb"
+                    onChange={[Function]}
+                    placeholder="Placeholder"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -556,7 +601,7 @@ exports[`Storyshots InputField Default input 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -688,36 +733,15 @@ exports[`Storyshots InputField Default input 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -772,121 +796,154 @@ exports[`Storyshots InputField Email input 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of InputField in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="InputField__Field-sc-4opay-0 kCAFyx"
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
-            <span
-              className="FormLabel-sc-1927civ-1 bSnaNp"
-            >
-              <span>
-                Email
-              </span>
-            </span>
             <div
-              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
-            >
-              <input
-                className="InputField__Input-sc-4opay-6 ceKwqb"
-                onChange={[Function]}
-                placeholder="Email"
-                type="email"
-                value="name@example.co"
-              />
-              <div
-                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
-              />
-            </div>
-            <div
-              className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
+              className="section-header"
+              style={Object {}}
             >
               <div>
-                Did you mean 
-                <a
-                  className="TextLink__StyledTextLink-sc-1bvlje4-1 gjnkGq"
-                  onClick={[Function]}
-                  rel=""
-                >
-                  name@example.com
-                </a>
-                ?
+                
+                
               </div>
             </div>
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="InputField__Field-sc-4opay-0 kCAFyx"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 bSnaNp"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Email
+                  </span>
+                </span>
+                <div
+                  className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                >
+                  <input
+                    className="InputField__Input-sc-4opay-6 ceKwqb"
+                    onChange={[Function]}
+                    placeholder="Email"
+                    type="email"
+                    value="name@example.co"
+                  />
+                  <div
+                    className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+                  />
+                </div>
+                <div
+                  className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kmOHgC"
                 >
                   <div>
+                    Did you mean 
+                    <a
+                      className="TextLink__StyledTextLink-sc-1bvlje4-1 gjnkGq"
+                      onClick={[Function]}
+                      rel=""
+                    >
+                      name@example.com
+                    </a>
+                    ?
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -898,7 +955,7 @@ exports[`Storyshots InputField Email input 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -1089,36 +1146,15 @@ exports[`Storyshots InputField Email input 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1173,108 +1209,141 @@ exports[`Storyshots InputField Number input 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of InputField in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="InputField__Field-sc-4opay-0 kCAFyx"
-          >
-            <span
-              className="FormLabel-sc-1927civ-1 bSnaNp"
-            >
-              <span>
-                Number
-              </span>
-            </span>
-            <div
-              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
-            >
-              <input
-                className="InputField__Input-sc-4opay-6 ceKwqb"
-                max={3}
-                min={1}
-                onChange={[Function]}
-                placeholder="Number"
-                type="number"
-                value={2}
-              />
-              <div
-                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
-              />
-            </div>
-          </label>
-        </div>
-        <div>
           <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="InputField__Field-sc-4opay-0 kCAFyx"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 bSnaNp"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Number
+                  </span>
+                </span>
+                <div
+                  className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
-                  <div>
+                  <input
+                    className="InputField__Input-sc-4opay-6 ceKwqb"
+                    max={3}
+                    min={1}
+                    onChange={[Function]}
+                    placeholder="Number"
+                    type="number"
+                    value={2}
+                  />
+                  <div
+                    className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -1286,7 +1355,7 @@ exports[`Storyshots InputField Number input 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -1505,36 +1574,15 @@ exports[`Storyshots InputField Number input 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1589,105 +1637,138 @@ exports[`Storyshots InputField Passport or ID Input 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of InputField in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="InputField__Field-sc-4opay-0 kCAFyx"
-          >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                Passport or ID number
-              </span>
-            </span>
-            <div
-              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
-            >
-              <input
-                className="InputField__Input-sc-4opay-6 lcdLxL"
-                onChange={[Function]}
-                placeholder="588539238"
-                type="text"
-              />
-              <div
-                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
-              />
-            </div>
-          </label>
-        </div>
-        <div>
           <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="InputField__Field-sc-4opay-0 kCAFyx"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Passport or ID number
+                  </span>
+                </span>
+                <div
+                  className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
-                  <div>
+                  <input
+                    className="InputField__Input-sc-4opay-6 lcdLxL"
+                    onChange={[Function]}
+                    placeholder="588539238"
+                    type="text"
+                  />
+                  <div
+                    className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -1699,7 +1780,7 @@ exports[`Storyshots InputField Passport or ID Input 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -1831,36 +1912,15 @@ exports[`Storyshots InputField Passport or ID Input 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1915,106 +1975,139 @@ exports[`Storyshots InputField Password input 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of InputField in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="InputField__Field-sc-4opay-0 kCAFyx"
-          >
-            <span
-              className="FormLabel-sc-1927civ-1 bSnaNp"
-            >
-              <span>
-                Password
-              </span>
-            </span>
-            <div
-              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
-            >
-              <input
-                className="InputField__Input-sc-4opay-6 ceKwqb"
-                onChange={[Function]}
-                placeholder="Password"
-                type="password"
-                value="p422W0rd"
-              />
-              <div
-                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
-              />
-            </div>
-          </label>
-        </div>
-        <div>
           <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="InputField__Field-sc-4opay-0 kCAFyx"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 bSnaNp"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Password
+                  </span>
+                </span>
+                <div
+                  className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
-                  <div>
+                  <input
+                    className="InputField__Input-sc-4opay-6 ceKwqb"
+                    onChange={[Function]}
+                    placeholder="Password"
+                    type="password"
+                    value="p422W0rd"
+                  />
+                  <div
+                    className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -2026,7 +2119,7 @@ exports[`Storyshots InputField Password input 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -2188,36 +2281,15 @@ exports[`Storyshots InputField Password input 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -2272,110 +2344,96 @@ exports[`Storyshots InputField Playground 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of InputField in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="InputField__Field-sc-4opay-0 kCAFyx"
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                Label
-              </span>
-            </span>
             <div
-              className="InputField__InputContainer-sc-4opay-2 kXcsVj"
+              className="section-header"
+              style={Object {}}
             >
-              <div
-                className="InputField__Prefix-sc-4opay-4 cnqfau"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-                  />
-                </svg>
+              <div>
+                
+                
               </div>
-              <input
-                className="InputField__Input-sc-4opay-6 ceKwqb"
-                data-test="test"
-                disabled={false}
-                name="input"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                placeholder="Placeholder"
-                readOnly={false}
-                type="text"
-                value=""
-              />
-              <div
-                className="InputField__Suffix-sc-4opay-5 cOwOrH"
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
+            >
+              <label
+                className="InputField__Field-sc-4opay-0 kCAFyx"
               >
-                <button
-                  className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 ilpdWM"
-                  disabled={false}
-                  onClick={[Function]}
-                  size="small"
-                  type="button"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
+                >
+                  <span>
+                    Label
+                  </span>
+                </span>
+                <div
+                  className="InputField__InputContainer-sc-4opay-2 kXcsVj"
                 >
                   <div
-                    className="ButtonLink__IconContainer-sc-14jv5cl-0 bCwZJN"
+                    className="InputField__Prefix-sc-4opay-4 cnqfau"
                   >
                     <svg
                       className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
@@ -2383,39 +2441,86 @@ exports[`Storyshots InputField Playground 1`] = `
                       viewBox="0 0 24 24"
                     >
                       <path
-                        d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+                        d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
                       />
                     </svg>
                   </div>
-                </button>
-              </div>
-              <div
-                className="InputField__FakeInput-sc-4opay-1 iZbYiQ"
-              />
+                  <input
+                    className="InputField__Input-sc-4opay-6 ceKwqb"
+                    data-test="test"
+                    disabled={false}
+                    name="input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    placeholder="Placeholder"
+                    readOnly={false}
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    className="InputField__Suffix-sc-4opay-5 cOwOrH"
+                  >
+                    <button
+                      className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 ilpdWM"
+                      disabled={false}
+                      onClick={[Function]}
+                      size="small"
+                      type="button"
+                    >
+                      <div
+                        className="ButtonLink__IconContainer-sc-14jv5cl-0 bCwZJN"
+                      >
+                        <svg
+                          className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    className="InputField__FakeInput-sc-4opay-1 iZbYiQ"
+                  />
+                </div>
+              </label>
             </div>
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
                   }
-                }
-              >
-                <h4
-                  className="section-subsection-title"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
-                >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -2427,7 +2532,7 @@ exports[`Storyshots InputField Playground 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -2780,7 +2885,7 @@ exports[`Storyshots InputField Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2809,7 +2914,7 @@ exports[`Storyshots InputField Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2867,7 +2972,7 @@ exports[`Storyshots InputField Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2896,7 +3001,7 @@ exports[`Storyshots InputField Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2925,7 +3030,7 @@ exports[`Storyshots InputField Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2954,7 +3059,7 @@ exports[`Storyshots InputField Playground 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3085,36 +3190,15 @@ exports[`Storyshots InputField Playground 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -3169,132 +3253,165 @@ exports[`Storyshots InputField RTL 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is a preview of this component in RTL setup.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="InputField__Field-sc-4opay-0 kCAFyx"
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                My label
-              </span>
-            </span>
             <div
-              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+              className="section-header"
+              style={Object {}}
             >
-              <div
-                className="InputField__Prefix-sc-4opay-4 gBJmTs"
-              >
-                $
+              <div>
+                
+                
               </div>
-              <input
-                className="InputField__Input-sc-4opay-6 ceKwqb"
-                placeholder="Placeholder"
-                type="text"
-              />
-              <div
-                className="InputField__Suffix-sc-4opay-5 gxwjvO"
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
+            >
+              <label
+                className="InputField__Field-sc-4opay-0 kCAFyx"
               >
-                <button
-                  className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 deBnZa"
-                  size="normal"
-                  type="button"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
+                >
+                  <span>
+                    My label
+                  </span>
+                </span>
+                <div
+                  className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
                   <div
-                    className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
+                    className="InputField__Prefix-sc-4opay-4 gBJmTs"
                   >
-                    <svg
-                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
-                      />
-                    </svg>
+                    $
                   </div>
-                </button>
-              </div>
-              <div
-                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
-              />
+                  <input
+                    className="InputField__Input-sc-4opay-6 ceKwqb"
+                    placeholder="Placeholder"
+                    type="text"
+                  />
+                  <div
+                    className="InputField__Suffix-sc-4opay-5 gxwjvO"
+                  >
+                    <button
+                      className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 deBnZa"
+                      size="normal"
+                      type="button"
+                    >
+                      <div
+                        className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
+                      >
+                        <svg
+                          className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+                  />
+                </div>
+              </label>
             </div>
-          </label>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
                   }
-                }
-              >
-                <h4
-                  className="section-subsection-title"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
-                >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -3307,7 +3424,7 @@ exports[`Storyshots InputField RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3318,7 +3435,7 @@ exports[`Storyshots InputField RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3336,7 +3453,7 @@ exports[`Storyshots InputField RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3468,7 +3585,7 @@ exports[`Storyshots InputField RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3486,7 +3603,7 @@ exports[`Storyshots InputField RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3496,29 +3613,8 @@ exports[`Storyshots InputField RTL 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -3573,111 +3669,144 @@ exports[`Storyshots InputField Required field 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of InputField in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="InputField__Field-sc-4opay-0 kCAFyx"
-          >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span
-                className="FormLabel__StyledAsterisk-sc-1927civ-0 jCXsSw"
-              >
-                * 
-              </span>
-              <span>
-                Label
-              </span>
-            </span>
-            <div
-              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
-            >
-              <input
-                className="InputField__Input-sc-4opay-6 ceKwqb"
-                onChange={[Function]}
-                placeholder="Placeholder"
-                type="text"
-                value=""
-              />
-              <div
-                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
-              />
-            </div>
-          </label>
-        </div>
-        <div>
           <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="InputField__Field-sc-4opay-0 kCAFyx"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span
+                    className="FormLabel__StyledAsterisk-sc-1927civ-0 jCXsSw"
+                  >
+                    * 
+                  </span>
+                  <span>
+                    Label
+                  </span>
+                </span>
+                <div
+                  className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
-                  <div>
+                  <input
+                    className="InputField__Input-sc-4opay-6 ceKwqb"
+                    onChange={[Function]}
+                    placeholder="Placeholder"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -3689,7 +3818,7 @@ exports[`Storyshots InputField Required field 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -3832,36 +3961,15 @@ exports[`Storyshots InputField Required field 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -3916,106 +4024,139 @@ exports[`Storyshots InputField Small input 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of InputField in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="InputField__Field-sc-4opay-0 kCAFyx"
-          >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                Label
-              </span>
-            </span>
-            <div
-              className="InputField__InputContainer-sc-4opay-2 kXcsVj"
-            >
-              <input
-                className="InputField__Input-sc-4opay-6 ceKwqb"
-                onChange={[Function]}
-                placeholder="Placeholder"
-                type="text"
-                value=""
-              />
-              <div
-                className="InputField__FakeInput-sc-4opay-1 iZbYiQ"
-              />
-            </div>
-          </label>
-        </div>
-        <div>
           <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="InputField__Field-sc-4opay-0 kCAFyx"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Label
+                  </span>
+                </span>
+                <div
+                  className="InputField__InputContainer-sc-4opay-2 kXcsVj"
                 >
-                  <div>
+                  <input
+                    className="InputField__Input-sc-4opay-6 ceKwqb"
+                    onChange={[Function]}
+                    placeholder="Placeholder"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    className="InputField__FakeInput-sc-4opay-1 iZbYiQ"
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -4027,7 +4168,7 @@ exports[`Storyshots InputField Small input 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -4189,36 +4330,15 @@ exports[`Storyshots InputField Small input 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -4273,130 +4393,163 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of InputField in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="InputField__Field-sc-4opay-0 kCAFyx"
-          >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                Label
-              </span>
-            </span>
-            <div
-              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
-            >
-              <input
-                className="InputField__Input-sc-4opay-6 ceKwqb"
-                onChange={[Function]}
-                placeholder="Placeholder"
-                type="text"
-                value=""
-              />
-              <div
-                className="InputField__Suffix-sc-4opay-5 kCvrXk"
-              >
-                <button
-                  className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
-                  onClick={[Function]}
-                  size="normal"
-                  type="button"
-                >
-                  <div
-                    className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
-                  >
-                    <svg
-                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
-                      />
-                    </svg>
-                  </div>
-                </button>
-              </div>
-              <div
-                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
-              />
-            </div>
-          </label>
-        </div>
-        <div>
           <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="InputField__Field-sc-4opay-0 kCAFyx"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Label
+                  </span>
+                </span>
+                <div
+                  className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
-                  <div>
+                  <input
+                    className="InputField__Input-sc-4opay-6 ceKwqb"
+                    onChange={[Function]}
+                    placeholder="Placeholder"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    className="InputField__Suffix-sc-4opay-5 kCvrXk"
+                  >
+                    <button
+                      className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA"
+                      onClick={[Function]}
+                      size="normal"
+                      type="button"
+                    >
+                      <div
+                        className="ButtonLink__IconContainer-sc-14jv5cl-0 pfllg"
+                      >
+                        <svg
+                          className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -4408,7 +4561,7 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -4569,36 +4722,15 @@ exports[`Storyshots InputField With ButtonLink suffix 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -4653,119 +4785,152 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of InputField in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="InputField__Field-sc-4opay-0 kCAFyx"
-          >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                Label
-              </span>
-            </span>
-            <div
-              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
-            >
-              <div
-                className="InputField__Prefix-sc-4opay-4 iNucwo"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-                  />
-                </svg>
-              </div>
-              <input
-                className="InputField__Input-sc-4opay-6 ceKwqb"
-                onChange={[Function]}
-                placeholder="Placeholder"
-                type="text"
-                value=""
-              />
-              <div
-                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
-              />
-            </div>
-          </label>
-        </div>
-        <div>
           <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="InputField__Field-sc-4opay-0 kCAFyx"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Label
+                  </span>
+                </span>
+                <div
+                  className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
-                  <div>
+                  <div
+                    className="InputField__Prefix-sc-4opay-4 iNucwo"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                      />
+                    </svg>
+                  </div>
+                  <input
+                    className="InputField__Input-sc-4opay-6 ceKwqb"
+                    onChange={[Function]}
+                    placeholder="Placeholder"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -4777,7 +4942,7 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -4938,36 +5103,15 @@ exports[`Storyshots InputField With Icon prefix 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -5022,116 +5166,149 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of InputField in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="InputField__Field-sc-4opay-0 kCAFyx"
-          >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                Label
-              </span>
-            </span>
-            <div
-              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
-            >
-              <input
-                className="InputField__Input-sc-4opay-6 ceKwqb"
-                onChange={[Function]}
-                placeholder="Placeholder"
-                type="text"
-                value=""
-              />
-              <div
-                className="InputField__Suffix-sc-4opay-5 kCvrXk"
-              >
-                <img
-                  alt="AirHelp"
-                  className="ServiceLogo__StyledServiceLogo-sc-1ujs7cw-0 halGWp"
-                  src="//images.kiwi.com/logos/0x24/AirHelp.png"
-                  srcSet="//images.kiwi.com/logos/0x48/AirHelp.png 2x"
-                />
-              </div>
-              <div
-                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
-              />
-            </div>
-          </label>
-        </div>
-        <div>
           <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="InputField__Field-sc-4opay-0 kCAFyx"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Label
+                  </span>
+                </span>
+                <div
+                  className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
-                  <div>
+                  <input
+                    className="InputField__Input-sc-4opay-6 ceKwqb"
+                    onChange={[Function]}
+                    placeholder="Placeholder"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    className="InputField__Suffix-sc-4opay-5 kCvrXk"
+                  >
+                    <img
+                      alt="AirHelp"
+                      className="ServiceLogo__StyledServiceLogo-sc-1ujs7cw-0 halGWp"
+                      src="//images.kiwi.com/logos/0x24/AirHelp.png"
+                      srcSet="//images.kiwi.com/logos/0x48/AirHelp.png 2x"
+                    />
+                  </div>
+                  <div
+                    className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -5143,7 +5320,7 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -5304,36 +5481,15 @@ exports[`Storyshots InputField With ServiceLogo prefix 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -5388,111 +5544,144 @@ exports[`Storyshots InputField With text prefix 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Some description about this type of InputField in general.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <label
-            className="InputField__Field-sc-4opay-0 kCAFyx"
-          >
-            <span
-              className="FormLabel-sc-1927civ-1 iTEGJS"
-            >
-              <span>
-                Label
-              </span>
-            </span>
-            <div
-              className="InputField__InputContainer-sc-4opay-2 ksKWcl"
-            >
-              <div
-                className="InputField__Prefix-sc-4opay-4 iNucwo"
-              >
-                $
-              </div>
-              <input
-                className="InputField__Input-sc-4opay-6 ceKwqb"
-                onChange={[Function]}
-                placeholder="Placeholder"
-                type="text"
-                value=""
-              />
-              <div
-                className="InputField__FakeInput-sc-4opay-1 ipxhgc"
-              />
-            </div>
-          </label>
-        </div>
-        <div>
           <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <label
+                className="InputField__Field-sc-4opay-0 kCAFyx"
               >
-                <h4
-                  className="section-subsection-title"
+                <span
+                  className="FormLabel-sc-1927civ-1 iTEGJS"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <span>
+                    Label
+                  </span>
+                </span>
+                <div
+                  className="InputField__InputContainer-sc-4opay-2 ksKWcl"
                 >
-                  <div>
+                  <div
+                    className="InputField__Prefix-sc-4opay-4 iNucwo"
+                  >
+                    $
+                  </div>
+                  <input
+                    className="InputField__Input-sc-4opay-6 ceKwqb"
+                    onChange={[Function]}
+                    placeholder="Placeholder"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    className="InputField__FakeInput-sc-4opay-1 ipxhgc"
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -5504,7 +5693,7 @@ exports[`Storyshots InputField With text prefix 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -5666,36 +5855,15 @@ exports[`Storyshots InputField With text prefix 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>

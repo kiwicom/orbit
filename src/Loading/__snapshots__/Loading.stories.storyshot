@@ -44,109 +44,142 @@ exports[`Storyshots Loading Button loading 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <button
-            className="Button__StyledButton-sc-1brqp3f-1 bzwRny"
-            disabled={true}
-            size="normal"
-            type="button"
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="Loading__StyledLoading-sc-1psg3na-0 iPCRgG"
+              className="section-header"
+              style={Object {}}
             >
-              <svg
-                className="Loading__StyledSpinner-sc-1psg3na-2 dCPhrt"
-                viewBox="0 0 40 40"
-              >
-                <circle
-                  className="Loading__StyledSpinnerCircle-sc-1psg3na-3 lldmFp"
-                  cx="50%"
-                  cy="50%"
-                  r="18"
-                  type="buttonLoader"
-                />
-              </svg>
+              <div>
+                
+                
+              </div>
             </div>
             <div
-              className="Button__StyledButtonContent-sc-1brqp3f-2 jVmGmx"
-            >
-              Default button
-            </div>
-          </button>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <button
+                className="Button__StyledButton-sc-1brqp3f-1 bzwRny"
+                disabled={true}
+                size="normal"
+                type="button"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Loading__StyledLoading-sc-1psg3na-0 iPCRgG"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Loading__StyledSpinner-sc-1psg3na-2 dCPhrt"
+                    viewBox="0 0 40 40"
+                  >
+                    <circle
+                      className="Loading__StyledSpinnerCircle-sc-1psg3na-3 lldmFp"
+                      cx="50%"
+                      cy="50%"
+                      r="18"
+                      type="buttonLoader"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="Button__StyledButtonContent-sc-1brqp3f-2 jVmGmx"
                 >
-                  <div>
+                  Default button
+                </div>
+              </button>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -159,7 +192,7 @@ exports[`Storyshots Loading Button loading 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -180,7 +213,7 @@ exports[`Storyshots Loading Button loading 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -198,7 +231,7 @@ exports[`Storyshots Loading Button loading 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -216,7 +249,7 @@ exports[`Storyshots Loading Button loading 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -226,29 +259,8 @@ exports[`Storyshots Loading Button loading 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -303,112 +315,145 @@ exports[`Storyshots Loading Card loading 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
           <div
-            className="Card__StyledCard-ff0z2v-1 irRylt"
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="Card__StyledChildWrapper-ff0z2v-0 jtYTwu"
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
             >
               <div
-                className="Loading__StyledLoading-sc-1psg3na-0 oKkLd"
+                className="Card__StyledCard-ff0z2v-1 irRylt"
               >
                 <div
-                  className="Loading__StyledLoader-sc-1psg3na-4 ggWVnQ"
+                  className="Card__StyledChildWrapper-ff0z2v-0 jtYTwu"
                 >
                   <div
-                    className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
-                  />
-                  <div
-                    className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
-                  />
-                  <div
-                    className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
-                  />
-                </div>
-                <div
-                  className="Loading__StyledLoadingText-sc-1psg3na-1 fMroPq"
-                  type="boxLoader"
-                >
-                  Please wait, Card content is loading...
+                    className="Loading__StyledLoading-sc-1psg3na-0 oKkLd"
+                  >
+                    <div
+                      className="Loading__StyledLoader-sc-1psg3na-4 ggWVnQ"
+                    >
+                      <div
+                        className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
+                      />
+                      <div
+                        className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
+                      />
+                      <div
+                        className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
+                      />
+                    </div>
+                    <div
+                      className="Loading__StyledLoadingText-sc-1psg3na-1 fMroPq"
+                      type="boxLoader"
+                    >
+                      Please wait, Card content is loading...
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
                   }
-                }
-              >
-                <h4
-                  className="section-subsection-title"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
-                >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -421,7 +466,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -432,7 +477,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -451,7 +496,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -526,7 +571,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -544,7 +589,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -621,7 +666,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                                   <span
                                     style={
                                       Object {
-                                        "color": "#777",
+                                        "color": "#444",
                                       }
                                     }
                                   >
@@ -636,7 +681,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -655,7 +700,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -666,7 +711,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -684,7 +729,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -751,7 +796,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -769,7 +814,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -790,7 +835,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -811,7 +856,7 @@ exports[`Storyshots Loading Card loading 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -821,29 +866,8 @@ exports[`Storyshots Loading Card loading 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -898,101 +922,134 @@ exports[`Storyshots Loading Default 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Loading__StyledLoading-sc-1psg3na-0 bWDkpr"
-          >
-            <svg
-              className="Loading__StyledSpinner-sc-1psg3na-2 dCPhrt"
-              viewBox="0 0 40 40"
-            >
-              <circle
-                className="Loading__StyledSpinnerCircle-sc-1psg3na-3 eaNPVb"
-                cx="50%"
-                cy="50%"
-                r="18"
-                type="pageLoader"
-              />
-            </svg>
-            <div
-              className="Loading__StyledLoadingText-sc-1psg3na-1 Ufzgk"
-              type="pageLoader"
-            />
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Loading__StyledLoading-sc-1psg3na-0 bWDkpr"
               >
-                <h4
-                  className="section-subsection-title"
+                <svg
+                  className="Loading__StyledSpinner-sc-1psg3na-2 dCPhrt"
+                  viewBox="0 0 40 40"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <circle
+                    className="Loading__StyledSpinnerCircle-sc-1psg3na-3 eaNPVb"
+                    cx="50%"
+                    cy="50%"
+                    r="18"
+                    type="pageLoader"
+                  />
+                </svg>
+                <div
+                  className="Loading__StyledLoadingText-sc-1psg3na-1 Ufzgk"
+                  type="pageLoader"
+                />
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -1004,7 +1061,7 @@ exports[`Storyshots Loading Default 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -1015,36 +1072,15 @@ exports[`Storyshots Loading Default 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1099,104 +1135,137 @@ exports[`Storyshots Loading Inline loader 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This configuration of this component is without any height, width or paddings. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Loading__StyledLoading-sc-1psg3na-0 cRcboc"
-          >
-            <div
-              className="Loading__StyledLoader-sc-1psg3na-4 ggWVnQ"
-            >
-              <div
-                className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
-              />
-              <div
-                className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
-              />
-              <div
-                className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
-              />
-            </div>
-            <div
-              className="Loading__StyledLoadingText-sc-1psg3na-1 fMroPq"
-              type="inlineLoader"
-            >
-              Please wait, content of the page is loading...
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Loading__StyledLoading-sc-1psg3na-0 cRcboc"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Loading__StyledLoader-sc-1psg3na-4 ggWVnQ"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <div
+                    className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
+                  />
+                  <div
+                    className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
+                  />
+                  <div
+                    className="Loading__StyledLoaderCircle-sc-1psg3na-5 dQKBGH"
+                  />
+                </div>
+                <div
+                  className="Loading__StyledLoadingText-sc-1psg3na-1 fMroPq"
+                  type="inlineLoader"
                 >
-                  <div>
+                  Please wait, content of the page is loading...
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -1208,7 +1277,7 @@ exports[`Storyshots Loading Inline loader 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -1275,36 +1344,15 @@ exports[`Storyshots Loading Inline loader 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1359,104 +1407,137 @@ exports[`Storyshots Loading Playground 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Loading__StyledLoading-sc-1psg3na-0 bWDkpr"
-            data-test="test"
-          >
-            <svg
-              className="Loading__StyledSpinner-sc-1psg3na-2 dCPhrt"
-              viewBox="0 0 40 40"
-            >
-              <circle
-                className="Loading__StyledSpinnerCircle-sc-1psg3na-3 eaNPVb"
-                cx="50%"
-                cy="50%"
-                r="18"
-                type="pageLoader"
-              />
-            </svg>
-            <div
-              className="Loading__StyledLoadingText-sc-1psg3na-1 Ufzgk"
-              type="pageLoader"
-            >
-              Please wait, content of the page is loading...
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Loading__StyledLoading-sc-1psg3na-0 bWDkpr"
+                data-test="test"
               >
-                <h4
-                  className="section-subsection-title"
+                <svg
+                  className="Loading__StyledSpinner-sc-1psg3na-2 dCPhrt"
+                  viewBox="0 0 40 40"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <circle
+                    className="Loading__StyledSpinnerCircle-sc-1psg3na-3 eaNPVb"
+                    cx="50%"
+                    cy="50%"
+                    r="18"
+                    type="pageLoader"
+                  />
+                </svg>
+                <div
+                  className="Loading__StyledLoadingText-sc-1psg3na-1 Ufzgk"
+                  type="pageLoader"
                 >
-                  <div>
+                  Please wait, content of the page is loading...
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div
                       style={
                         Object {
@@ -1468,7 +1549,7 @@ exports[`Storyshots Loading Playground 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
@@ -1582,36 +1663,15 @@ exports[`Storyshots Loading Playground 1`] = `
                       <span
                         style={
                           Object {
-                            "color": "#777",
+                            "color": "#444",
                           }
                         }
                       >
                         /&gt;
                       </span>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1666,103 +1726,136 @@ exports[`Storyshots Loading RTL 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is a preview of this component in RTL setup.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Loading__StyledLoading-sc-1psg3na-0 kOKtAa"
-          >
-            <svg
-              className="Loading__StyledSpinner-sc-1psg3na-2 dCPhrt"
-              viewBox="0 0 40 40"
-            >
-              <circle
-                className="Loading__StyledSpinnerCircle-sc-1psg3na-3 eaNPVb"
-                cx="50%"
-                cy="50%"
-                r="18"
-                type="pageLoader"
-              />
-            </svg>
-            <div
-              className="Loading__StyledLoadingText-sc-1psg3na-1 dVYMjJ"
-              type="pageLoader"
-            >
-              Please wait, content of the page is loading...
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Loading__StyledLoading-sc-1psg3na-0 kOKtAa"
               >
-                <h4
-                  className="section-subsection-title"
+                <svg
+                  className="Loading__StyledSpinner-sc-1psg3na-2 dCPhrt"
+                  viewBox="0 0 40 40"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <circle
+                    className="Loading__StyledSpinnerCircle-sc-1psg3na-3 eaNPVb"
+                    cx="50%"
+                    cy="50%"
+                    r="18"
+                    type="pageLoader"
+                  />
+                </svg>
+                <div
+                  className="Loading__StyledLoadingText-sc-1psg3na-1 dVYMjJ"
+                  type="pageLoader"
                 >
-                  <div>
+                  Please wait, content of the page is loading...
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -1775,7 +1868,7 @@ exports[`Storyshots Loading RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1786,7 +1879,7 @@ exports[`Storyshots Loading RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1804,7 +1897,7 @@ exports[`Storyshots Loading RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1879,7 +1972,7 @@ exports[`Storyshots Loading RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1897,7 +1990,7 @@ exports[`Storyshots Loading RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1907,29 +2000,8 @@ exports[`Storyshots Loading RTL 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>

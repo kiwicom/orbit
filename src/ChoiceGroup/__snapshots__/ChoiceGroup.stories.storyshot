@@ -44,184 +44,217 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Playground of ChoiceGroup
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
-          >
-            <h4
-              className="Heading__StyledHeading-sc-1b8cso5-0 cyTyQi"
-            >
-              What was the reason for your cancellation?
-            </h4>
-            <div
-              className="Stack__StyledStack-sc-1t576ow-0 bRODnW"
-            >
-              <label
-                checked={false}
-                className="Radio__Label-sc-5lanou-6 jZYznP"
-              >
-                <input
-                  checked={false}
-                  className="Radio__Input-sc-5lanou-5 juylbO"
-                  disabled={false}
-                  onChange={[Function]}
-                  type="radio"
-                  value="one"
-                />
-                <div
-                  className="Radio__IconContainer-sc-5lanou-1 hRhfzi"
-                >
-                  <span
-                    className="Radio__Glyph-sc-5lanou-0 kbnJYl"
-                    disabled={false}
-                  />
-                </div>
-                <div
-                  className="Radio__TextContainer-sc-5lanou-2 fngmbH"
-                >
-                  <span
-                    className="Radio__LabelText-sc-5lanou-4 kvtYjE"
-                  >
-                    Reason one
-                  </span>
-                </div>
-              </label>
-              <label
-                checked={false}
-                className="Radio__Label-sc-5lanou-6 jZYznP"
-              >
-                <input
-                  checked={false}
-                  className="Radio__Input-sc-5lanou-5 juylbO"
-                  disabled={false}
-                  onChange={[Function]}
-                  type="radio"
-                  value="two"
-                />
-                <div
-                  className="Radio__IconContainer-sc-5lanou-1 hRhfzi"
-                >
-                  <span
-                    className="Radio__Glyph-sc-5lanou-0 kbnJYl"
-                    disabled={false}
-                  />
-                </div>
-                <div
-                  className="Radio__TextContainer-sc-5lanou-2 fngmbH"
-                >
-                  <span
-                    className="Radio__LabelText-sc-5lanou-4 kvtYjE"
-                  >
-                    Reason two
-                  </span>
-                </div>
-              </label>
-              <label
-                checked={false}
-                className="Radio__Label-sc-5lanou-6 jZYznP"
-              >
-                <input
-                  checked={false}
-                  className="Radio__Input-sc-5lanou-5 juylbO"
-                  disabled={false}
-                  onChange={[Function]}
-                  type="radio"
-                  value="three"
-                />
-                <div
-                  className="Radio__IconContainer-sc-5lanou-1 hRhfzi"
-                >
-                  <span
-                    className="Radio__Glyph-sc-5lanou-0 kbnJYl"
-                    disabled={false}
-                  />
-                </div>
-                <div
-                  className="Radio__TextContainer-sc-5lanou-2 fngmbH"
-                >
-                  <span
-                    className="Radio__LabelText-sc-5lanou-4 kvtYjE"
-                  >
-                    Reason three
-                  </span>
-                </div>
-              </label>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
               >
                 <h4
-                  className="section-subsection-title"
+                  className="Heading__StyledHeading-sc-1b8cso5-0 cyTyQi"
                 >
-                  Source
+                  What was the reason for your cancellation?
                 </h4>
-                <pre
-                  className="css-4akams"
+                <div
+                  className="Stack__StyledStack-sc-1t576ow-0 bRODnW"
                 >
-                  <div>
+                  <label
+                    checked={false}
+                    className="Radio__Label-sc-5lanou-6 jZYznP"
+                  >
+                    <input
+                      checked={false}
+                      className="Radio__Input-sc-5lanou-5 juylbO"
+                      disabled={false}
+                      onChange={[Function]}
+                      type="radio"
+                      value="one"
+                    />
+                    <div
+                      className="Radio__IconContainer-sc-5lanou-1 hRhfzi"
+                    >
+                      <span
+                        className="Radio__Glyph-sc-5lanou-0 kbnJYl"
+                        disabled={false}
+                      />
+                    </div>
+                    <div
+                      className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                    >
+                      <span
+                        className="Radio__LabelText-sc-5lanou-4 kvtYjE"
+                      >
+                        Reason one
+                      </span>
+                    </div>
+                  </label>
+                  <label
+                    checked={false}
+                    className="Radio__Label-sc-5lanou-6 jZYznP"
+                  >
+                    <input
+                      checked={false}
+                      className="Radio__Input-sc-5lanou-5 juylbO"
+                      disabled={false}
+                      onChange={[Function]}
+                      type="radio"
+                      value="two"
+                    />
+                    <div
+                      className="Radio__IconContainer-sc-5lanou-1 hRhfzi"
+                    >
+                      <span
+                        className="Radio__Glyph-sc-5lanou-0 kbnJYl"
+                        disabled={false}
+                      />
+                    </div>
+                    <div
+                      className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                    >
+                      <span
+                        className="Radio__LabelText-sc-5lanou-4 kvtYjE"
+                      >
+                        Reason two
+                      </span>
+                    </div>
+                  </label>
+                  <label
+                    checked={false}
+                    className="Radio__Label-sc-5lanou-6 jZYznP"
+                  >
+                    <input
+                      checked={false}
+                      className="Radio__Input-sc-5lanou-5 juylbO"
+                      disabled={false}
+                      onChange={[Function]}
+                      type="radio"
+                      value="three"
+                    />
+                    <div
+                      className="Radio__IconContainer-sc-5lanou-1 hRhfzi"
+                    >
+                      <span
+                        className="Radio__Glyph-sc-5lanou-0 kbnJYl"
+                        disabled={false}
+                      />
+                    </div>
+                    <div
+                      className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                    >
+                      <span
+                        className="Radio__LabelText-sc-5lanou-4 kvtYjE"
+                      >
+                        Reason three
+                      </span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -234,7 +267,7 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -300,7 +333,7 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -318,7 +351,7 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -385,7 +418,7 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -403,7 +436,7 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -470,7 +503,7 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -488,7 +521,7 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -555,7 +588,7 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -573,7 +606,7 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -583,29 +616,8 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -660,196 +672,229 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Playground of ChoiceGroup
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
-          >
-            <h4
-              className="Heading__StyledHeading-sc-1b8cso5-0 cyTyQi"
-            >
-              What was the reason for your cancellation?
-            </h4>
-            <div
-              className="Stack__StyledStack-sc-1t576ow-0 bRODnW"
-            >
-              <label
-                className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
-              >
-                <input
-                  checked={false}
-                  className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
-                  disabled={false}
-                  onChange={[Function]}
-                  type="checkbox"
-                  value="one"
-                />
-                <div
-                  className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
-                >
-                  <svg
-                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
-                >
-                  <span
-                    className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
-                  >
-                    Reason one
-                  </span>
-                </div>
-              </label>
-              <label
-                className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
-              >
-                <input
-                  checked={false}
-                  className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
-                  disabled={false}
-                  onChange={[Function]}
-                  type="checkbox"
-                  value="two"
-                />
-                <div
-                  className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
-                >
-                  <svg
-                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
-                >
-                  <span
-                    className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
-                  >
-                    Reason two
-                  </span>
-                </div>
-              </label>
-              <label
-                className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
-              >
-                <input
-                  checked={false}
-                  className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
-                  disabled={false}
-                  onChange={[Function]}
-                  type="checkbox"
-                  value="three"
-                />
-                <div
-                  className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
-                >
-                  <svg
-                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
-                >
-                  <span
-                    className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
-                  >
-                    Reason three
-                  </span>
-                </div>
-              </label>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
               >
                 <h4
-                  className="section-subsection-title"
+                  className="Heading__StyledHeading-sc-1b8cso5-0 cyTyQi"
                 >
-                  Source
+                  What was the reason for your cancellation?
                 </h4>
-                <pre
-                  className="css-4akams"
+                <div
+                  className="Stack__StyledStack-sc-1t576ow-0 bRODnW"
                 >
-                  <div>
+                  <label
+                    className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
+                  >
+                    <input
+                      checked={false}
+                      className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
+                      disabled={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                      value="one"
+                    />
+                    <div
+                      className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
+                    >
+                      <svg
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
+                    >
+                      <span
+                        className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
+                      >
+                        Reason one
+                      </span>
+                    </div>
+                  </label>
+                  <label
+                    className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
+                  >
+                    <input
+                      checked={false}
+                      className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
+                      disabled={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                      value="two"
+                    />
+                    <div
+                      className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
+                    >
+                      <svg
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
+                    >
+                      <span
+                        className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
+                      >
+                        Reason two
+                      </span>
+                    </div>
+                  </label>
+                  <label
+                    className="Checkbox__Label-sc-1x6twh3-5 jCEmqK"
+                  >
+                    <input
+                      checked={false}
+                      className="Checkbox__Input-sc-1x6twh3-4 dokhnj"
+                      disabled={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                      value="three"
+                    />
+                    <div
+                      className="Checkbox__IconContainer-sc-1x6twh3-0 gpteLp"
+                    >
+                      <svg
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.926 18.652L4 13.725l1.767-1.768 3.074 3.074L17.959 5l1.849 1.682z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
+                    >
+                      <span
+                        className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
+                      >
+                        Reason three
+                      </span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -862,7 +907,7 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -928,7 +973,7 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -946,7 +991,7 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1013,7 +1058,7 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1031,7 +1076,7 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1098,7 +1143,7 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1116,7 +1161,7 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1183,7 +1228,7 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1201,7 +1246,7 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1211,29 +1256,8 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1288,185 +1312,218 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Playground of ChoiceGroup
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
-            data-test="test"
-          >
-            <h4
-              className="Heading__StyledHeading-sc-1b8cso5-0 cyTyQi"
-            >
-              What was the reason for your cancellation?
-            </h4>
-            <div
-              className="Stack__StyledStack-sc-1t576ow-0 bRODnW"
-            >
-              <label
-                checked={false}
-                className="Radio__Label-sc-5lanou-6 GaLVi"
-              >
-                <input
-                  checked={false}
-                  className="Radio__Input-sc-5lanou-5 juylbO"
-                  disabled={false}
-                  onChange={[Function]}
-                  type="radio"
-                  value="one"
-                />
-                <div
-                  className="Radio__IconContainer-sc-5lanou-1 hRhfzi"
-                >
-                  <span
-                    className="Radio__Glyph-sc-5lanou-0 kbnJYl"
-                    disabled={false}
-                  />
-                </div>
-                <div
-                  className="Radio__TextContainer-sc-5lanou-2 fngmbH"
-                >
-                  <span
-                    className="Radio__LabelText-sc-5lanou-4 kvtYjE"
-                  >
-                    Reason one
-                  </span>
-                </div>
-              </label>
-              <label
-                checked={false}
-                className="Radio__Label-sc-5lanou-6 GaLVi"
-              >
-                <input
-                  checked={false}
-                  className="Radio__Input-sc-5lanou-5 juylbO"
-                  disabled={false}
-                  onChange={[Function]}
-                  type="radio"
-                  value="two"
-                />
-                <div
-                  className="Radio__IconContainer-sc-5lanou-1 hRhfzi"
-                >
-                  <span
-                    className="Radio__Glyph-sc-5lanou-0 kbnJYl"
-                    disabled={false}
-                  />
-                </div>
-                <div
-                  className="Radio__TextContainer-sc-5lanou-2 fngmbH"
-                >
-                  <span
-                    className="Radio__LabelText-sc-5lanou-4 kvtYjE"
-                  >
-                    Reason two
-                  </span>
-                </div>
-              </label>
-              <label
-                checked={false}
-                className="Radio__Label-sc-5lanou-6 GaLVi"
-              >
-                <input
-                  checked={false}
-                  className="Radio__Input-sc-5lanou-5 juylbO"
-                  disabled={false}
-                  onChange={[Function]}
-                  type="radio"
-                  value="three"
-                />
-                <div
-                  className="Radio__IconContainer-sc-5lanou-1 hRhfzi"
-                >
-                  <span
-                    className="Radio__Glyph-sc-5lanou-0 kbnJYl"
-                    disabled={false}
-                  />
-                </div>
-                <div
-                  className="Radio__TextContainer-sc-5lanou-2 fngmbH"
-                >
-                  <span
-                    className="Radio__LabelText-sc-5lanou-4 kvtYjE"
-                  >
-                    Reason three
-                  </span>
-                </div>
-              </label>
-            </div>
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
+                data-test="test"
               >
                 <h4
-                  className="section-subsection-title"
+                  className="Heading__StyledHeading-sc-1b8cso5-0 cyTyQi"
                 >
-                  Source
+                  What was the reason for your cancellation?
                 </h4>
-                <pre
-                  className="css-4akams"
+                <div
+                  className="Stack__StyledStack-sc-1t576ow-0 bRODnW"
                 >
-                  <div>
+                  <label
+                    checked={false}
+                    className="Radio__Label-sc-5lanou-6 GaLVi"
+                  >
+                    <input
+                      checked={false}
+                      className="Radio__Input-sc-5lanou-5 juylbO"
+                      disabled={false}
+                      onChange={[Function]}
+                      type="radio"
+                      value="one"
+                    />
+                    <div
+                      className="Radio__IconContainer-sc-5lanou-1 hRhfzi"
+                    >
+                      <span
+                        className="Radio__Glyph-sc-5lanou-0 kbnJYl"
+                        disabled={false}
+                      />
+                    </div>
+                    <div
+                      className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                    >
+                      <span
+                        className="Radio__LabelText-sc-5lanou-4 kvtYjE"
+                      >
+                        Reason one
+                      </span>
+                    </div>
+                  </label>
+                  <label
+                    checked={false}
+                    className="Radio__Label-sc-5lanou-6 GaLVi"
+                  >
+                    <input
+                      checked={false}
+                      className="Radio__Input-sc-5lanou-5 juylbO"
+                      disabled={false}
+                      onChange={[Function]}
+                      type="radio"
+                      value="two"
+                    />
+                    <div
+                      className="Radio__IconContainer-sc-5lanou-1 hRhfzi"
+                    >
+                      <span
+                        className="Radio__Glyph-sc-5lanou-0 kbnJYl"
+                        disabled={false}
+                      />
+                    </div>
+                    <div
+                      className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                    >
+                      <span
+                        className="Radio__LabelText-sc-5lanou-4 kvtYjE"
+                      >
+                        Reason two
+                      </span>
+                    </div>
+                  </label>
+                  <label
+                    checked={false}
+                    className="Radio__Label-sc-5lanou-6 GaLVi"
+                  >
+                    <input
+                      checked={false}
+                      className="Radio__Input-sc-5lanou-5 juylbO"
+                      disabled={false}
+                      onChange={[Function]}
+                      type="radio"
+                      value="three"
+                    />
+                    <div
+                      className="Radio__IconContainer-sc-5lanou-1 hRhfzi"
+                    >
+                      <span
+                        className="Radio__Glyph-sc-5lanou-0 kbnJYl"
+                        disabled={false}
+                      />
+                    </div>
+                    <div
+                      className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                    >
+                      <span
+                        className="Radio__LabelText-sc-5lanou-4 kvtYjE"
+                      >
+                        Reason three
+                      </span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
+                >
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -1479,7 +1536,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1652,7 +1709,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1670,7 +1727,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1737,7 +1794,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1755,7 +1812,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1822,7 +1879,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1840,7 +1897,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1907,7 +1964,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1925,7 +1982,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1935,29 +1992,8 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>

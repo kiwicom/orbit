@@ -44,236 +44,269 @@ exports[`Storyshots TripSegment Default 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               TripSegments are used for showing information about one trip.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
           <div
-            className="TripSegment__StyledTripSegment-sc-1pmcslk-0 fgsDhJ"
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="TripSegment__StyledTripSegmentMilestone-sc-1pmcslk-1 emIWQn"
-              onClick={[Function]}
+              className="section-header"
+              style={Object {}}
             >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                />
-              </svg>
-              <div
-                className="TripSegment__StyledTripSegmentMilestoneArrow-sc-1pmcslk-2 gdZpEh"
-              />
+              <div>
+                
+                
+              </div>
             </div>
             <div
-              className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
             >
               <div
-                className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
-                onClick={[Function]}
+                className="TripSegment__StyledTripSegment-sc-1pmcslk-0 fgsDhJ"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverview-sc-1pmcslk-5 cPzgqf"
+                  className="TripSegment__StyledTripSegmentMilestone-sc-1pmcslk-1 emIWQn"
+                  onClick={[Function]}
                 >
-                  <div
-                    className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
                   >
-                    <div
-                      className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
-                    >
-                      <p
-                        className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
-                      >
-                        11:20
-                      </p>
-                    </div>
-                    <div
-                      className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
-                    >
-                      <p
-                        className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
-                      >
-                        4:20
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
-                  >
-                    <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                    >
-                      Berlin TXL
-                    </p>
-                    <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                    >
-                      Moscow VKO
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
-                >
-                  <p
-                    className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
-                  >
-                    3h
-                  </p>
-                  <div
-                    className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
-                    size="medium"
-                  >
-                    <img
-                      alt="Ryanair"
-                      className="CarrierLogo__StyledImage-d4doc9-0 gMgxxa"
-                      size="medium"
-                      src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
-                      srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
-                      title="Ryanair"
+                    <path
+                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
                     />
-                  </div>
+                  </svg>
                   <div
-                    className="TripSegment__StyledChevrons-sc-1pmcslk-4 bQNEky"
-                  >
-                    <svg
-                      className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"
-                      />
-                    </svg>
-                  </div>
+                    className="TripSegment__StyledTripSegmentMilestoneArrow-sc-1pmcslk-2 gdZpEh"
+                  />
                 </div>
-              </div>
-              <div
-                className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
-              >
-                <div>
-                  <ul
-                    className="List__StyledList-iwilat-0 hcKuvi"
+                <div
+                  className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
+                >
+                  <div
+                    className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
+                    onClick={[Function]}
                   >
-                    <li
-                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                    <div
+                      className="TripSegment__StyledTripSegmentOverview-sc-1pmcslk-5 cPzgqf"
                     >
                       <div
-                        className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
+                        className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                       >
                         <div
-                          className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
-                          size="large"
+                          className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                         >
-                          <img
-                            alt="Ryanair"
-                            className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
-                            size="large"
-                            src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
-                            srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
-                            title="Ryanair"
-                          />
+                          <p
+                            className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                          >
+                            11:20
+                          </p>
+                        </div>
+                        <div
+                          className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
+                        >
+                          <p
+                            className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                          >
+                            4:20
+                          </p>
                         </div>
                       </div>
-                      Airline: Ryanair
-                    </li>
-                    <li
-                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
-                    >
                       <div
-                        className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
+                        className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
+                      >
+                        <p
+                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        >
+                          Berlin TXL
+                        </p>
+                        <p
+                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        >
+                          Moscow VKO
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
+                    >
+                      <p
+                        className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                      >
+                        3h
+                      </p>
+                      <div
+                        className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
+                        size="medium"
+                      >
+                        <img
+                          alt="Ryanair"
+                          className="CarrierLogo__StyledImage-d4doc9-0 gMgxxa"
+                          size="medium"
+                          src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
+                          srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
+                          title="Ryanair"
+                        />
+                      </div>
+                      <div
+                        className="TripSegment__StyledChevrons-sc-1pmcslk-4 bQNEky"
                       >
                         <svg
-                          className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
+                          className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
                           preserveAspectRatio="xMidYMid meet"
                           viewBox="0 0 24 24"
                         >
                           <path
-                            d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
+                            d="M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"
                           />
                         </svg>
                       </div>
-                      Flight no: D8 1762
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
+                  <div
+                    className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
+                  >
+                    <div>
+                      <ul
+                        className="List__StyledList-iwilat-0 hcKuvi"
+                      >
+                        <li
+                          className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                        >
+                          <div
+                            className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
+                          >
+                            <div
+                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                              size="large"
+                            >
+                              <img
+                                alt="Ryanair"
+                                className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
+                                size="large"
+                                src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
+                                srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
+                                title="Ryanair"
+                              />
+                            </div>
+                          </div>
+                          Airline: Ryanair
+                        </li>
+                        <li
+                          className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                        >
+                          <div
+                            className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
+                          >
+                            <svg
+                              className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
+                              />
+                            </svg>
+                          </div>
+                          Flight no: D8 1762
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
                   }
-                }
-              >
-                <h4
-                  className="section-subsection-title"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
-                >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -286,7 +319,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -576,7 +609,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -595,7 +628,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -662,7 +695,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -681,7 +714,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -720,7 +753,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -738,7 +771,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -756,7 +789,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -778,7 +811,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -817,7 +850,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -835,7 +868,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -853,7 +886,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -874,7 +907,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -895,7 +928,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -905,29 +938,8 @@ exports[`Storyshots TripSegment Default 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -982,237 +994,270 @@ exports[`Storyshots TripSegment Playground 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               TripSegments are used for showing information about one trip.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
           <div
-            className="TripSegment__StyledTripSegment-sc-1pmcslk-0 fgsDhJ"
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="TripSegment__StyledTripSegmentMilestone-sc-1pmcslk-1 emIWQn"
-              onClick={[Function]}
+              className="section-header"
+              style={Object {}}
             >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                />
-              </svg>
-              <div
-                className="TripSegment__StyledTripSegmentMilestoneArrow-sc-1pmcslk-2 gdZpEh"
-              />
+              <div>
+                
+                
+              </div>
             </div>
             <div
-              className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
             >
               <div
-                className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
-                onClick={[Function]}
+                className="TripSegment__StyledTripSegment-sc-1pmcslk-0 fgsDhJ"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverview-sc-1pmcslk-5 cPzgqf"
+                  className="TripSegment__StyledTripSegmentMilestone-sc-1pmcslk-1 emIWQn"
+                  onClick={[Function]}
                 >
-                  <div
-                    className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
                   >
-                    <div
-                      className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
-                    >
-                      <p
-                        className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
-                      >
-                        11:20
-                      </p>
-                    </div>
-                    <div
-                      className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
-                    >
-                      <p
-                        className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
-                      >
-                        14:20
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
-                  >
-                    <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                    >
-                      Berlin TXL
-                    </p>
-                    <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                    >
-                      Moscow VKO
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
-                >
-                  <p
-                    className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
-                  >
-                    3h
-                  </p>
-                  <div
-                    className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
-                    size="medium"
-                  >
-                    <img
-                      alt="Ryanair"
-                      className="CarrierLogo__StyledImage-d4doc9-0 gMgxxa"
-                      size="medium"
-                      src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
-                      srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
-                      title="Ryanair"
+                    <path
+                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
                     />
-                  </div>
+                  </svg>
                   <div
-                    className="TripSegment__StyledChevrons-sc-1pmcslk-4 bQNEky"
-                  >
-                    <svg
-                      className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"
-                      />
-                    </svg>
-                  </div>
+                    className="TripSegment__StyledTripSegmentMilestoneArrow-sc-1pmcslk-2 gdZpEh"
+                  />
                 </div>
-              </div>
-              <div
-                className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
-              >
-                <div>
-                  <ul
-                    className="List__StyledList-iwilat-0 hcKuvi"
+                <div
+                  className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
+                >
+                  <div
+                    className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
+                    onClick={[Function]}
                   >
-                    <li
-                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                    <div
+                      className="TripSegment__StyledTripSegmentOverview-sc-1pmcslk-5 cPzgqf"
                     >
                       <div
-                        className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
+                        className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                       >
                         <div
-                          className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
-                          size="large"
+                          className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                         >
-                          <img
-                            alt="Ryanair"
-                            className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
-                            size="large"
-                            src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
-                            srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
-                            title="Ryanair"
-                          />
+                          <p
+                            className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                          >
+                            11:20
+                          </p>
+                        </div>
+                        <div
+                          className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
+                        >
+                          <p
+                            className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                          >
+                            14:20
+                          </p>
                         </div>
                       </div>
-                      Airline: 
-                      Ryanair
-                    </li>
-                    <li
-                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
-                    >
                       <div
-                        className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
+                        className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
+                      >
+                        <p
+                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        >
+                          Berlin TXL
+                        </p>
+                        <p
+                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        >
+                          Moscow VKO
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
+                    >
+                      <p
+                        className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                      >
+                        3h
+                      </p>
+                      <div
+                        className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
+                        size="medium"
+                      >
+                        <img
+                          alt="Ryanair"
+                          className="CarrierLogo__StyledImage-d4doc9-0 gMgxxa"
+                          size="medium"
+                          src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
+                          srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
+                          title="Ryanair"
+                        />
+                      </div>
+                      <div
+                        className="TripSegment__StyledChevrons-sc-1pmcslk-4 bQNEky"
                       >
                         <svg
-                          className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
+                          className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
                           preserveAspectRatio="xMidYMid meet"
                           viewBox="0 0 24 24"
                         >
                           <path
-                            d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
+                            d="M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"
                           />
                         </svg>
                       </div>
-                      Flight no: D8 1762
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
+                  <div
+                    className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
+                  >
+                    <div>
+                      <ul
+                        className="List__StyledList-iwilat-0 hcKuvi"
+                      >
+                        <li
+                          className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                        >
+                          <div
+                            className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
+                          >
+                            <div
+                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                              size="large"
+                            >
+                              <img
+                                alt="Ryanair"
+                                className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
+                                size="large"
+                                src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
+                                srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
+                                title="Ryanair"
+                              />
+                            </div>
+                          </div>
+                          Airline: 
+                          Ryanair
+                        </li>
+                        <li
+                          className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                        >
+                          <div
+                            className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
+                          >
+                            <svg
+                              className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
+                              />
+                            </svg>
+                          </div>
+                          Flight no: D8 1762
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
                   }
-                }
-              >
-                <h4
-                  className="section-subsection-title"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
-                >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -1225,7 +1270,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1574,7 +1619,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1593,7 +1638,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1660,7 +1705,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1679,7 +1724,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1718,7 +1763,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1736,7 +1781,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1754,7 +1799,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1772,7 +1817,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1794,7 +1839,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1833,7 +1878,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1851,7 +1896,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1869,7 +1914,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -1890,7 +1935,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1911,7 +1956,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1921,29 +1966,8 @@ exports[`Storyshots TripSegment Playground 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1998,236 +2022,269 @@ exports[`Storyshots TripSegment RTL 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is a preview of this component in RTL setup.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
           <div
-            className="TripSegment__StyledTripSegment-sc-1pmcslk-0 fgsDhJ"
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="TripSegment__StyledTripSegmentMilestone-sc-1pmcslk-1 emIWQn"
-              onClick={[Function]}
+              className="section-header"
+              style={Object {}}
             >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                />
-              </svg>
-              <div
-                className="TripSegment__StyledTripSegmentMilestoneArrow-sc-1pmcslk-2 dOdyEk"
-              />
+              <div>
+                
+                
+              </div>
             </div>
             <div
-              className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
             >
               <div
-                className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 jBGoTL"
-                onClick={[Function]}
+                className="TripSegment__StyledTripSegment-sc-1pmcslk-0 fgsDhJ"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverview-sc-1pmcslk-5 cPzgqf"
+                  className="TripSegment__StyledTripSegmentMilestone-sc-1pmcslk-1 emIWQn"
+                  onClick={[Function]}
                 >
-                  <div
-                    className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
                   >
-                    <div
-                      className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 hJKede"
-                    >
-                      <p
-                        className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
-                      >
-                        6:30
-                      </p>
-                    </div>
-                    <div
-                      className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 hJKede"
-                    >
-                      <p
-                        className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
-                      >
-                        8:30
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
-                  >
-                    <p
-                      className="Text__StyledText-sc-19qtt4y-0 huZevl"
-                    >
-                      Barcelona BCN
-                    </p>
-                    <p
-                      className="Text__StyledText-sc-19qtt4y-0 huZevl"
-                    >
-                      Paris BVA
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 lbWUUI"
-                >
-                  <p
-                    className="Text__StyledText-sc-19qtt4y-0 HRYQf"
-                  >
-                    2h
-                  </p>
-                  <div
-                    className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
-                    size="medium"
-                  >
-                    <img
-                      alt="Ryanair"
-                      className="CarrierLogo__StyledImage-d4doc9-0 gMgxxa"
-                      size="medium"
-                      src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
-                      srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
-                      title="Ryanair"
+                    <path
+                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
                     />
-                  </div>
+                  </svg>
                   <div
-                    className="TripSegment__StyledChevrons-sc-1pmcslk-4 bQNEky"
-                  >
-                    <svg
-                      className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"
-                      />
-                    </svg>
-                  </div>
+                    className="TripSegment__StyledTripSegmentMilestoneArrow-sc-1pmcslk-2 dOdyEk"
+                  />
                 </div>
-              </div>
-              <div
-                className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
-              >
-                <div>
-                  <ul
-                    className="List__StyledList-iwilat-0 hcKuvi"
+                <div
+                  className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
+                >
+                  <div
+                    className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 jBGoTL"
+                    onClick={[Function]}
                   >
-                    <li
-                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                    <div
+                      className="TripSegment__StyledTripSegmentOverview-sc-1pmcslk-5 cPzgqf"
                     >
                       <div
-                        className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
+                        className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                       >
                         <div
-                          className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
-                          size="large"
+                          className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 hJKede"
                         >
-                          <img
-                            alt="Ryanair"
-                            className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
-                            size="large"
-                            src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
-                            srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
-                            title="Ryanair"
-                          />
+                          <p
+                            className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                          >
+                            6:30
+                          </p>
+                        </div>
+                        <div
+                          className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 hJKede"
+                        >
+                          <p
+                            className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                          >
+                            8:30
+                          </p>
                         </div>
                       </div>
-                      Airline: Ryanair
-                    </li>
-                    <li
-                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
-                    >
                       <div
-                        className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
+                        className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
+                      >
+                        <p
+                          className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                        >
+                          Barcelona BCN
+                        </p>
+                        <p
+                          className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                        >
+                          Paris BVA
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 lbWUUI"
+                    >
+                      <p
+                        className="Text__StyledText-sc-19qtt4y-0 HRYQf"
+                      >
+                        2h
+                      </p>
+                      <div
+                        className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
+                        size="medium"
+                      >
+                        <img
+                          alt="Ryanair"
+                          className="CarrierLogo__StyledImage-d4doc9-0 gMgxxa"
+                          size="medium"
+                          src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
+                          srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
+                          title="Ryanair"
+                        />
+                      </div>
+                      <div
+                        className="TripSegment__StyledChevrons-sc-1pmcslk-4 bQNEky"
                       >
                         <svg
-                          className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
+                          className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
                           preserveAspectRatio="xMidYMid meet"
                           viewBox="0 0 24 24"
                         >
                           <path
-                            d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
+                            d="M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"
                           />
                         </svg>
                       </div>
-                      Flight no: D8 1762
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
+                  <div
+                    className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 ddpMcU"
+                  >
+                    <div>
+                      <ul
+                        className="List__StyledList-iwilat-0 hcKuvi"
+                      >
+                        <li
+                          className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                        >
+                          <div
+                            className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
+                          >
+                            <div
+                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                              size="large"
+                            >
+                              <img
+                                alt="Ryanair"
+                                className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
+                                size="large"
+                                src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
+                                srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
+                                title="Ryanair"
+                              />
+                            </div>
+                          </div>
+                          Airline: Ryanair
+                        </li>
+                        <li
+                          className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                        >
+                          <div
+                            className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
+                          >
+                            <svg
+                              className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
+                              />
+                            </svg>
+                          </div>
+                          Flight no: D8 1762
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
                   }
-                }
-              >
-                <h4
-                  className="section-subsection-title"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
-                >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -2240,7 +2297,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2251,7 +2308,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2270,7 +2327,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2531,7 +2588,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2550,7 +2607,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2617,7 +2674,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2636,7 +2693,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2675,7 +2732,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2693,7 +2750,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2711,7 +2768,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2733,7 +2790,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2772,7 +2829,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2790,7 +2847,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2808,7 +2865,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -2829,7 +2886,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -2850,7 +2907,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2871,7 +2928,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2881,29 +2938,8 @@ exports[`Storyshots TripSegment RTL 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -2958,236 +2994,269 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               TripSegments are used for showing information about one trip.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+        <div
+          className="chapter-sections"
+        >
           <div
-            className="TripSegment__StyledTripSegment-sc-1pmcslk-0 fgsDhJ"
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="TripSegment__StyledTripSegmentMilestone-sc-1pmcslk-1 emIWQn"
-              onClick={[Function]}
+              className="section-header"
+              style={Object {}}
             >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                />
-              </svg>
-              <div
-                className="TripSegment__StyledTripSegmentMilestoneArrow-sc-1pmcslk-2 gdZpEh"
-              />
+              <div>
+                
+                
+              </div>
             </div>
             <div
-              className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
             >
               <div
-                className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
-                onClick={[Function]}
+                className="TripSegment__StyledTripSegment-sc-1pmcslk-0 fgsDhJ"
               >
                 <div
-                  className="TripSegment__StyledTripSegmentOverview-sc-1pmcslk-5 cPzgqf"
+                  className="TripSegment__StyledTripSegmentMilestone-sc-1pmcslk-1 emIWQn"
+                  onClick={[Function]}
                 >
-                  <div
-                    className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
                   >
-                    <div
-                      className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
-                    >
-                      <p
-                        className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
-                      >
-                        11:20
-                      </p>
-                    </div>
-                    <div
-                      className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
-                    >
-                      <p
-                        className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
-                      >
-                        4:20
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
-                  >
-                    <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                    >
-                      Berlin TXL
-                    </p>
-                    <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
-                    >
-                      Moscow VKO
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
-                >
-                  <p
-                    className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
-                  >
-                    3h
-                  </p>
-                  <div
-                    className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
-                    size="medium"
-                  >
-                    <img
-                      alt="Ryanair"
-                      className="CarrierLogo__StyledImage-d4doc9-0 gMgxxa"
-                      size="medium"
-                      src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
-                      srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
-                      title="Ryanair"
+                    <path
+                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
                     />
-                  </div>
+                  </svg>
                   <div
-                    className="TripSegment__StyledChevrons-sc-1pmcslk-4 bQNEky"
-                  >
-                    <svg
-                      className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M7 18.59L8.392 20l3.108-3.17L14.608 20l1.382-1.41L11.5 14 7 18.59zm9-13.18L14.608 4 11.5 7.17 8.392 4 7 5.41 11.5 10 16 5.41z"
-                      />
-                    </svg>
-                  </div>
+                    className="TripSegment__StyledTripSegmentMilestoneArrow-sc-1pmcslk-2 gdZpEh"
+                  />
                 </div>
-              </div>
-              <div
-                className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 iAchZq"
-              >
-                <div>
-                  <ul
-                    className="List__StyledList-iwilat-0 hcKuvi"
+                <div
+                  className="TripSegment__StyledTripSegmentContent-sc-1pmcslk-3 hCeplr"
+                >
+                  <div
+                    className="TripSegment__StyledTripSegmentOverviewWrapper-sc-1pmcslk-7 fpOvIG"
+                    onClick={[Function]}
                   >
-                    <li
-                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                    <div
+                      className="TripSegment__StyledTripSegmentOverview-sc-1pmcslk-5 cPzgqf"
                     >
                       <div
-                        className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
+                        className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                       >
                         <div
-                          className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
-                          size="large"
+                          className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                         >
-                          <img
-                            alt="Ryanair"
-                            className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
-                            size="large"
-                            src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
-                            srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
-                            title="Ryanair"
-                          />
+                          <p
+                            className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                          >
+                            11:20
+                          </p>
+                        </div>
+                        <div
+                          className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
+                        >
+                          <p
+                            className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                          >
+                            4:20
+                          </p>
                         </div>
                       </div>
-                      Airline: Ryanair
-                    </li>
-                    <li
-                      className="ListItem__Item-sc-1vswvev-0 jgYvzO"
-                    >
                       <div
-                        className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
+                        className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
+                      >
+                        <p
+                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        >
+                          Berlin TXL
+                        </p>
+                        <p
+                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        >
+                          Moscow VKO
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
+                    >
+                      <p
+                        className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                      >
+                        3h
+                      </p>
+                      <div
+                        className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
+                        size="medium"
+                      >
+                        <img
+                          alt="Ryanair"
+                          className="CarrierLogo__StyledImage-d4doc9-0 gMgxxa"
+                          size="medium"
+                          src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
+                          srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
+                          title="Ryanair"
+                        />
+                      </div>
+                      <div
+                        className="TripSegment__StyledChevrons-sc-1pmcslk-4 bQNEky"
                       >
                         <svg
-                          className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
+                          className="Icon__StyledIcon-sc-1pnzn3g-0 dLVAmt"
                           preserveAspectRatio="xMidYMid meet"
                           viewBox="0 0 24 24"
                         >
                           <path
-                            d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
+                            d="M7 18.59L8.392 20l3.108-3.17L14.608 20l1.382-1.41L11.5 14 7 18.59zm9-13.18L14.608 4 11.5 7.17 8.392 4 7 5.41 11.5 10 16 5.41z"
                           />
                         </svg>
                       </div>
-                      Flight no: D8 1762
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
+                  <div
+                    className="TripSegment__StyledTripSegmentChildren-sc-1pmcslk-10 iAchZq"
+                  >
+                    <div>
+                      <ul
+                        className="List__StyledList-iwilat-0 hcKuvi"
+                      >
+                        <li
+                          className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                        >
+                          <div
+                            className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
+                          >
+                            <div
+                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                              size="large"
+                            >
+                              <img
+                                alt="Ryanair"
+                                className="CarrierLogo__StyledImage-d4doc9-0 ejWWtn"
+                                size="large"
+                                src="//images.kiwi.com/airlines/32/FR.png?default=airline.png"
+                                srcSet="//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"
+                                title="Ryanair"
+                              />
+                            </div>
+                          </div>
+                          Airline: Ryanair
+                        </li>
+                        <li
+                          className="ListItem__Item-sc-1vswvev-0 jgYvzO"
+                        >
+                          <div
+                            className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
+                          >
+                            <svg
+                              className="Icon__StyledIcon-sc-1pnzn3g-0 jAabTa"
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
+                              />
+                            </svg>
+                          </div>
+                          Flight no: D8 1762
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
                   }
-                }
-              >
-                <h4
-                  className="section-subsection-title"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
-                >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -3200,7 +3269,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3501,7 +3570,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3520,7 +3589,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -3587,7 +3656,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -3606,7 +3675,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3645,7 +3714,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3663,7 +3732,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3681,7 +3750,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3703,7 +3772,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3742,7 +3811,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3760,7 +3829,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3778,7 +3847,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3799,7 +3868,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -3820,7 +3889,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -3830,29 +3899,8 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>

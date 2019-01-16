@@ -44,99 +44,132 @@ exports[`Storyshots Badge Default 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Check Orbit.Kiwi for more detailed design guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Badge__StyledBadge-sc-1y6i8f0-0 iQkwdQ"
-          >
-            <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                />
-              </svg>
-            </div>
-            Badge
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Badge__StyledBadge-sc-1y6i8f0-0 iQkwdQ"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                    />
+                  </svg>
+                </div>
+                Badge
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -149,7 +182,7 @@ exports[`Storyshots Badge Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -188,7 +221,7 @@ exports[`Storyshots Badge Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -206,7 +239,7 @@ exports[`Storyshots Badge Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -224,7 +257,7 @@ exports[`Storyshots Badge Default 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -234,29 +267,8 @@ exports[`Storyshots Badge Default 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -311,86 +323,119 @@ exports[`Storyshots Badge Notification badge 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Check Orbit.Kiwi for more detailed design guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Badge__StyledBadge-sc-1y6i8f0-0 iFXaxY"
-          >
-            3
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Badge__StyledBadge-sc-1y6i8f0-0 iFXaxY"
               >
-                <h4
-                  className="section-subsection-title"
+                3
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
-                >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -403,7 +448,7 @@ exports[`Storyshots Badge Notification badge 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -451,7 +496,7 @@ exports[`Storyshots Badge Notification badge 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -469,7 +514,7 @@ exports[`Storyshots Badge Notification badge 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -487,7 +532,7 @@ exports[`Storyshots Badge Notification badge 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -497,29 +542,8 @@ exports[`Storyshots Badge Notification badge 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -574,100 +598,133 @@ exports[`Storyshots Badge Playground 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Badge__StyledBadge-sc-1y6i8f0-0 bxpgmY"
-            data-test="test"
-          >
-            <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                />
-              </svg>
-            </div>
-            Badge
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Badge__StyledBadge-sc-1y6i8f0-0 bxpgmY"
+                data-test="test"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                    />
+                  </svg>
+                </div>
+                Badge
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -680,7 +737,7 @@ exports[`Storyshots Badge Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -811,7 +868,7 @@ exports[`Storyshots Badge Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -829,7 +886,7 @@ exports[`Storyshots Badge Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -847,7 +904,7 @@ exports[`Storyshots Badge Playground 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -857,29 +914,8 @@ exports[`Storyshots Badge Playground 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -934,99 +970,132 @@ exports[`Storyshots Badge RTL 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               This is a preview of this component in RTL setup.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Badge__StyledBadge-sc-1y6i8f0-0 bxpgmY"
-          >
-            <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 ksxIrm"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
-                />
-              </svg>
-            </div>
-            Badge
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Badge__StyledBadge-sc-1y6i8f0-0 bxpgmY"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Badge__IconContainer-sc-1y6i8f0-1 ksxIrm"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                    />
+                  </svg>
+                </div>
+                Badge
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -1039,7 +1108,7 @@ exports[`Storyshots Badge RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1050,7 +1119,7 @@ exports[`Storyshots Badge RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1069,7 +1138,7 @@ exports[`Storyshots Badge RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1135,7 +1204,7 @@ exports[`Storyshots Badge RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1153,7 +1222,7 @@ exports[`Storyshots Badge RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1171,7 +1240,7 @@ exports[`Storyshots Badge RTL 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -1192,7 +1261,7 @@ exports[`Storyshots Badge RTL 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1202,29 +1271,8 @@ exports[`Storyshots Badge RTL 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1279,99 +1327,132 @@ exports[`Storyshots Badge Types 1`] = `
         
         <span
           className="story-subtitle"
-          style={Object {}}
+          style={
+            Object {
+              "color": "#898d97",
+              "fontSize": 18,
+              "marginBottom": 20,
+              "marginTop": 0,
+            }
+          }
         >
           <div>
-            <p>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
               Check Orbit.Kiwi for more detailed design guidelines.
-            </p>
+            </div>
           </div>
         </span>
       </div>
     </div>
-    <div>
+    <div
+      className="story-chapters"
+    >
       <div
-        className="chapter-header"
-        style={
-          Object {
-            "marginBottom": 60,
-          }
-        }
-      >
-        <div>
-          
-          
-          
-          
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
+        className="chapter"
       >
         <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
+          className="chapter-header"
           style={
             Object {
               "marginBottom": 60,
             }
           }
         >
-          <div
-            className="Badge__StyledBadge-sc-1y6i8f0-0 iQkwdQ"
-          >
-            <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
-            >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M4 9a1 1 0 0 1-1-1V6.65c0-.395.233-.753.594-.914l8-3.555a.999.999 0 0 1 .812 0l8 3.555A1 1 0 0 1 21 6.65V8a1 1 0 0 1-1 1H4zm17.562 9.684A1.002 1.002 0 0 1 20.613 20H3.387a1 1 0 0 1-.949-1.316l.334-1c.137-.409.519-.684.949-.684H5v-7h2v7h2v-7h2v7h2v-7h2v7h2v-7h2v7h1.279c.431 0 .813.275.95.684l.333 1z"
-                />
-              </svg>
-            </div>
-            Badge
+          <div>
+            
+            
+            
+            
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+        <div
+          className="chapter-sections"
+        >
+          <div
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
+          >
+            <div
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Badge__StyledBadge-sc-1y6i8f0-0 iQkwdQ"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M4 9a1 1 0 0 1-1-1V6.65c0-.395.233-.753.594-.914l8-3.555a.999.999 0 0 1 .812 0l8 3.555A1 1 0 0 1 21 6.65V8a1 1 0 0 1-1 1H4zm17.562 9.684A1.002 1.002 0 0 1 20.613 20H3.387a1 1 0 0 1-.949-1.316l.334-1c.137-.409.519-.684.949-.684H5v-7h2v7h2v-7h2v7h2v-7h2v7h2v-7h2v7h1.279c.431 0 .813.275.95.684l.333 1z"
+                    />
+                  </svg>
+                </div>
+                Badge
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -1384,7 +1465,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1450,7 +1531,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1468,7 +1549,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1486,7 +1567,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1496,101 +1577,87 @@ exports[`Storyshots Badge Types 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
-      >
-        <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
-        >
           <div
-            className="Badge__StyledBadge-sc-1y6i8f0-0 bxpgmY"
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
+              className="section-header"
+              style={Object {}}
             >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
-                />
-              </svg>
+              <div>
+                
+                
+              </div>
             </div>
-            Badge
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Badge__StyledBadge-sc-1y6i8f0-0 bxpgmY"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M15 17H9v-2h2v-3h-1v-2h2a1 1 0 0 1 1 1v4h2v2zM12 6.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 2C6.486 2 2 6.486 2 12c0 5.515 4.486 10 10 10s10-4.485 10-10c0-5.514-4.486-10-10-10z"
+                    />
+                  </svg>
+                </div>
+                Badge
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -1603,7 +1670,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1669,7 +1736,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1687,7 +1754,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1705,7 +1772,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1715,101 +1782,87 @@ exports[`Storyshots Badge Types 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
-      >
-        <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
-        >
           <div
-            className="Badge__StyledBadge-sc-1y6i8f0-0 eINXZg"
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
+              className="section-header"
+              style={Object {}}
             >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M11.25 17.75l-5-3.75 1.5-2 3 2.25 5.25-7 2 1.5-6.75 9zM12 2C6.477 2 2 6.478 2 12s4.477 10 10 10 10-4.478 10-10S17.523 2 12 2z"
-                />
-              </svg>
+              <div>
+                
+                
+              </div>
             </div>
-            Badge
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Badge__StyledBadge-sc-1y6i8f0-0 eINXZg"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.25 17.75l-5-3.75 1.5-2 3 2.25 5.25-7 2 1.5-6.75 9zM12 2C6.477 2 2 6.478 2 12s4.477 10 10 10 10-4.478 10-10S17.523 2 12 2z"
+                    />
+                  </svg>
+                </div>
+                Badge
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -1822,7 +1875,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1888,7 +1941,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1906,7 +1959,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1924,7 +1977,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -1934,101 +1987,87 @@ exports[`Storyshots Badge Types 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
-      >
-        <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
-        >
           <div
-            className="Badge__StyledBadge-sc-1y6i8f0-0 qdIcr"
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
+              className="section-header"
+              style={Object {}}
             >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M12 22C6.487 22 2 17.514 2 12S6.487 2 12 2s10 4.486 10 10-4.487 10-10 10zm0-17.778c-4.289 0-7.778 3.49-7.778 7.778 0 4.289 3.49 7.778 7.778 7.778 4.289 0 7.778-3.49 7.778-7.778 0-4.289-3.49-7.778-7.778-7.778zm2.55 11.899l-3.336-3.335a1.11 1.11 0 0 1-.326-.786V6.442h2.224v5.098l3.009 3.01-1.572 1.571z"
-                />
-              </svg>
+              <div>
+                
+                
+              </div>
             </div>
-            Badge
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Badge__StyledBadge-sc-1y6i8f0-0 qdIcr"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 22C6.487 22 2 17.514 2 12S6.487 2 12 2s10 4.486 10 10-4.487 10-10 10zm0-17.778c-4.289 0-7.778 3.49-7.778 7.778 0 4.289 3.49 7.778 7.778 7.778 4.289 0 7.778-3.49 7.778-7.778 0-4.289-3.49-7.778-7.778-7.778zm2.55 11.899l-3.336-3.335a1.11 1.11 0 0 1-.326-.786V6.442h2.224v5.098l3.009 3.01-1.572 1.571z"
+                    />
+                  </svg>
+                </div>
+                Badge
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -2041,7 +2080,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2107,7 +2146,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2125,7 +2164,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2143,7 +2182,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2153,101 +2192,87 @@ exports[`Storyshots Badge Types 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
-      >
-        <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
-        >
           <div
-            className="Badge__StyledBadge-sc-1y6i8f0-0 iHgMEy"
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
+              className="section-header"
+              style={Object {}}
             >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M7.05 3a1.8 1.8 0 0 0-1.8 1.8v14.4a1.8 1.8 0 0 0 1.8 1.8h10.8a1.8 1.8 0 0 0 1.8-1.8V4.8a1.8 1.8 0 0 0-1.8-1.8H7.05zm5.4 2.7a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 .9a6.771 6.771 0 0 0-.864 1.8h1.728a6.507 6.507 0 0 0-.864-1.8zm-1.17.198A3.504 3.504 0 0 0 9.336 8.4h1.314c.162-.558.36-1.098.63-1.602zm2.331 0c.27.504.477 1.044.639 1.602h1.314c-.414-.747-1.125-1.314-1.953-1.602zM8.967 9.3a3.68 3.68 0 0 0-.117.9c0 .315.045.612.117.9h1.521a7.432 7.432 0 0 1-.063-.9c0-.306.027-.603.063-.9H8.967zm2.43 0a5.878 5.878 0 0 0-.072.9c0 .306.027.603.072.9h2.106a7.43 7.43 0 0 0 .072-.9c0-.306-.036-.612-.072-.9h-2.106zm3.015 0c.036.297.063.594.063.9 0 .306-.027.603-.063.9h1.521a3.68 3.68 0 0 0 .117-.9 3.68 3.68 0 0 0-.117-.9h-1.521zM9.336 12c.414.747 1.116 1.314 1.944 1.602A8.017 8.017 0 0 1 10.65 12H9.336zm2.25 0c.189.648.495 1.242.864 1.8a6.387 6.387 0 0 0 .864-1.8h-1.728zm2.664 0a8.042 8.042 0 0 1-.639 1.602c.828-.288 1.539-.855 1.953-1.602H14.25zm-6.3 4.5h9v1.8h-9v-1.8z"
-                />
-              </svg>
+              <div>
+                
+                
+              </div>
             </div>
-            Badge
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Badge__StyledBadge-sc-1y6i8f0-0 iHgMEy"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M7.05 3a1.8 1.8 0 0 0-1.8 1.8v14.4a1.8 1.8 0 0 0 1.8 1.8h10.8a1.8 1.8 0 0 0 1.8-1.8V4.8a1.8 1.8 0 0 0-1.8-1.8H7.05zm5.4 2.7a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 .9a6.771 6.771 0 0 0-.864 1.8h1.728a6.507 6.507 0 0 0-.864-1.8zm-1.17.198A3.504 3.504 0 0 0 9.336 8.4h1.314c.162-.558.36-1.098.63-1.602zm2.331 0c.27.504.477 1.044.639 1.602h1.314c-.414-.747-1.125-1.314-1.953-1.602zM8.967 9.3a3.68 3.68 0 0 0-.117.9c0 .315.045.612.117.9h1.521a7.432 7.432 0 0 1-.063-.9c0-.306.027-.603.063-.9H8.967zm2.43 0a5.878 5.878 0 0 0-.072.9c0 .306.027.603.072.9h2.106a7.43 7.43 0 0 0 .072-.9c0-.306-.036-.612-.072-.9h-2.106zm3.015 0c.036.297.063.594.063.9 0 .306-.027.603-.063.9h1.521a3.68 3.68 0 0 0 .117-.9 3.68 3.68 0 0 0-.117-.9h-1.521zM9.336 12c.414.747 1.116 1.314 1.944 1.602A8.017 8.017 0 0 1 10.65 12H9.336zm2.25 0c.189.648.495 1.242.864 1.8a6.387 6.387 0 0 0 .864-1.8h-1.728zm2.664 0a8.042 8.042 0 0 1-.639 1.602c.828-.288 1.539-.855 1.953-1.602H14.25zm-6.3 4.5h9v1.8h-9v-1.8z"
+                    />
+                  </svg>
+                </div>
+                Badge
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -2260,7 +2285,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2326,7 +2351,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2344,7 +2369,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2362,7 +2387,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2372,101 +2397,87 @@ exports[`Storyshots Badge Types 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
-      >
-        <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
-        >
           <div
-            className="Badge__StyledBadge-sc-1y6i8f0-0 eBqsVH"
+            className="section-container"
+            style={
+              Object {
+                "marginBottom": 100,
+              }
+            }
           >
             <div
-              className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
+              className="section-header"
+              style={Object {}}
             >
-              <svg
-                className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M4 9a1 1 0 0 1-1-1V6.65c0-.395.233-.753.594-.914l8-3.555a.999.999 0 0 1 .812 0l8 3.555A1 1 0 0 1 21 6.65V8a1 1 0 0 1-1 1H4zm17.562 9.684A1.002 1.002 0 0 1 20.613 20H3.387a1 1 0 0 1-.949-1.316l.334-1c.137-.409.519-.684.949-.684H5v-7h2v7h2v-7h2v7h2v-7h2v7h2v-7h2v7h1.279c.431 0 .813.275.95.684l.333 1z"
-                />
-              </svg>
+              <div>
+                
+                
+              </div>
             </div>
-            Badge
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
-                style={
-                  Object {
-                    "marginBottom": 60,
-                  }
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
                 }
+              }
+            >
+              <div
+                className="Badge__StyledBadge-sc-1y6i8f0-0 eBqsVH"
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <svg
+                    className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M4 9a1 1 0 0 1-1-1V6.65c0-.395.233-.753.594-.914l8-3.555a.999.999 0 0 1 .812 0l8 3.555A1 1 0 0 1 21 6.65V8a1 1 0 0 1-1 1H4zm17.562 9.684A1.002 1.002 0 0 1 20.613 20H3.387a1 1 0 0 1-.949-1.316l.334-1c.137-.409.519-.684.949-.684H5v-7h2v7h2v-7h2v7h2v-7h2v7h2v-7h2v7h1.279c.431 0 .813.275.95.684l.333 1z"
+                    />
+                  </svg>
+                </div>
+                Badge
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -2479,7 +2490,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2545,7 +2556,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2563,7 +2574,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2581,7 +2592,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2591,110 +2602,96 @@ exports[`Storyshots Badge Types 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div
-        className="section-container"
-        style={
-          Object {
-            "marginBottom": 100,
-          }
-        }
-      >
-        <div
-          className="section-header"
-          style={Object {}}
-        >
-          <div>
-            <div>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div
-          className="section-component-container"
-          style={
-            Object {
-              "marginBottom": 60,
-            }
-          }
-        >
           <div
+            className="section-container"
             style={
               Object {
-                "backgroundColor": "#46515e",
-                "padding": "10px",
+                "marginBottom": 100,
               }
             }
           >
             <div
-              className="Badge__StyledBadge-sc-1y6i8f0-0 cGXnVY"
+              className="section-header"
+              style={Object {}}
+            >
+              <div>
+                
+                
+              </div>
+            </div>
+            <div
+              className="section-component-container"
+              style={
+                Object {
+                  "marginBottom": 60,
+                }
+              }
             >
               <div
-                className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
-              >
-                <svg
-                  className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M4 9a1 1 0 0 1-1-1V6.65c0-.395.233-.753.594-.914l8-3.555a.999.999 0 0 1 .812 0l8 3.555A1 1 0 0 1 21 6.65V8a1 1 0 0 1-1 1H4zm17.562 9.684A1.002 1.002 0 0 1 20.613 20H3.387a1 1 0 0 1-.949-1.316l.334-1c.137-.409.519-.684.949-.684H5v-7h2v7h2v-7h2v7h2v-7h2v7h2v-7h2v7h1.279c.431 0 .813.275.95.684l.333 1z"
-                  />
-                </svg>
-              </div>
-              Badge
-            </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              
-              <div
-                className="section-subsection"
                 style={
                   Object {
-                    "marginBottom": 60,
+                    "backgroundColor": "#46515e",
+                    "padding": "10px",
                   }
                 }
               >
-                <h4
-                  className="section-subsection-title"
+                <div
+                  className="Badge__StyledBadge-sc-1y6i8f0-0 cGXnVY"
                 >
-                  Source
-                </h4>
-                <pre
-                  className="css-4akams"
+                  <div
+                    className="Badge__IconContainer-sc-1y6i8f0-1 gMFnXK"
+                  >
+                    <svg
+                      className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M4 9a1 1 0 0 1-1-1V6.65c0-.395.233-.753.594-.914l8-3.555a.999.999 0 0 1 .812 0l8 3.555A1 1 0 0 1 21 6.65V8a1 1 0 0 1-1 1H4zm17.562 9.684A1.002 1.002 0 0 1 20.613 20H3.387a1 1 0 0 1-.949-1.316l.334-1c.137-.409.519-.684.949-.684H5v-7h2v7h2v-7h2v7h2v-7h2v7h2v-7h2v7h1.279c.431 0 .813.275.95.684l.333 1z"
+                      />
+                    </svg>
+                  </div>
+                  Badge
+                </div>
+              </div>
+            </div>
+            <div
+              className="section-additional"
+              style={Object {}}
+            >
+              <div>
+                
+                <div
+                  className="section-subsection"
+                  style={
+                    Object {
+                      "marginBottom": 60,
+                    }
+                  }
                 >
-                  <div>
+                  <h4
+                    className="section-subsection-title"
+                  >
+                    Source
+                  </h4>
+                  <pre
+                    className="section-pre"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(250, 250, 250)",
+                        "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                        "fontSize": ".88em",
+                        "lineHeight": "1.5",
+                        "overflowX": "scroll",
+                        "padding": "0.5rem",
+                      }
+                    }
+                  >
                     <div>
                       <div
                         style={
@@ -2707,7 +2704,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2792,7 +2789,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2811,7 +2808,7 @@ exports[`Storyshots Badge Types 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2877,7 +2874,7 @@ exports[`Storyshots Badge Types 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2895,7 +2892,7 @@ exports[`Storyshots Badge Types 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2913,7 +2910,7 @@ exports[`Storyshots Badge Types 1`] = `
                           <span
                             style={
                               Object {
-                                "color": "#777",
+                                "color": "#444",
                               }
                             }
                           >
@@ -2934,7 +2931,7 @@ exports[`Storyshots Badge Types 1`] = `
                         <span
                           style={
                             Object {
-                              "color": "#777",
+                              "color": "#444",
                             }
                           }
                         >
@@ -2944,29 +2941,8 @@ exports[`Storyshots Badge Types 1`] = `
                         </span>
                       </div>
                     </div>
-                  </div>
-                  <button
-                    className="css-py33tc"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-kv47nt"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginBottom": 6,
-                          }
-                        }
-                      >
-                        Copied!
-                      </div>
-                      <div>
-                        Copy
-                      </div>
-                    </div>
-                  </button>
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>

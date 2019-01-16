@@ -6717,7 +6717,7 @@ exports[`Storyshots Modal With Form 1`] = `
                                 />
                               </div>
                               <select
-                                className="Select__StyledSelect-sc-6agypz-1 hmpa"
+                                className="Select__StyledSelect-sc-6agypz-1 iqgmny"
                                 disabled={false}
                                 onBlur={[Function]}
                                 onChange={[Function]}

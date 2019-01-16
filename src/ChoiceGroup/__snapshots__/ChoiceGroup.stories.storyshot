@@ -1392,7 +1392,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                 data-test="test"
               >
                 <h4
-                  className="Heading__StyledHeading-sc-1b8cso5-0 cyTyQi"
+                  className="Heading__StyledHeading-sc-1b8cso5-0 leAbYN"
                 >
                   What was the reason for your cancellation?
                 </h4>
@@ -1659,6 +1659,36 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                                   }
                                 >
                                   h4
+                                </span>
+                                "
+                              </span>
+                            </span>
+                          </span>
+                          <span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            <span
+                              style={Object {}}
+                            >
+                              labelSpaceAfter
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  medium
                                 </span>
                                 "
                               </span>

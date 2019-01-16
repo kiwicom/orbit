@@ -9,6 +9,7 @@ import { withKnobs, text, select, boolean } from "@storybook/addon-knobs/react";
 import { LABEL_ELEMENTS, LABEL_SIZES } from "./consts";
 import Radio from "../Radio";
 import Checkbox from "../Checkbox";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import ChoiceGroup from "./index";
 
@@ -68,6 +69,11 @@ storiesOf("ChoiceGroup", module)
     const label = text("Label", "What was the reason for your cancellation?");
     const labelSize = select("labelSize", Object.values(LABEL_SIZES), LABEL_SIZES.NORMAL);
     const labelElement = select("labelElement", Object.values(LABEL_ELEMENTS), LABEL_ELEMENTS.H4);
+    const labelSpaceAfter = select(
+      "labelSpaceAfter",
+      Object.values(SPACINGS_AFTER),
+      SPACINGS_AFTER.MEDIUM,
+    );
     const hasError = boolean("hasError", true);
     return {
       info: "Playground of ChoiceGroup",
@@ -81,6 +87,7 @@ storiesOf("ChoiceGroup", module)
                   label={label}
                   labelSize={labelSize}
                   labelElement={labelElement}
+                  labelSpaceAfter={labelSpaceAfter}
                   onChange={action("onChange")}
                   hasError={hasError}
                 >

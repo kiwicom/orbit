@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Heading from "../Heading";
 import Stack from "../Stack";
 import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import type { Props } from "./index";
 
@@ -35,12 +36,17 @@ class ChoiceGroup extends React.PureComponent<Props> {
       label,
       labelSize = LABEL_SIZES.NORMAL,
       labelElement = LABEL_ELEMENTS.H4,
+      labelSpaceAfter = SPACINGS_AFTER.SMALL,
       children,
     } = this.props;
     return (
       <StyledChoiceGroup data-test={dataTest}>
         {label && (
-          <Heading type={getHeadingSize(labelSize)} element={labelElement} spaceAfter="small">
+          <Heading
+            type={getHeadingSize(labelSize)}
+            element={labelElement}
+            spaceAfter={labelSpaceAfter}
+          >
             {label}
           </Heading>
         )}

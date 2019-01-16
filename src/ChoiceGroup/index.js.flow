@@ -2,12 +2,13 @@
 import type { Globals, Translation } from "../common/common.js.flow";
 import Radio from "../Radio";
 import Checkbox from "../Checkbox";
+import type { spaceAfter } from "../common/getSpacingToken/index";
 
 type LabelSize = "normal" | "large";
 
 type LabelElement = "h2" | "h3" | "h4" | "h5" | "h6";
 
-type Children = React$Element<typeof Radio> | React$Element<typeof Checkbox>
+type Children = React$Element<typeof Radio> | React$Element<typeof Checkbox>;
 
 export type Props = {|
   ...Globals,
@@ -15,6 +16,7 @@ export type Props = {|
   label?: Translation,
   labelSize?: LabelSize,
   labelElement?: LabelElement,
+  labelSpaceAfter?: spaceAfter,
   hasError?: boolean,
   onChange: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};

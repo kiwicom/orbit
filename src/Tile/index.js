@@ -60,10 +60,10 @@ class Tile extends React.PureComponent<Props, State> {
 
   handleClick = (ev: SyntheticEvent<HTMLDivElement>) => {
     const { onClick } = this.props;
-
     if (this.isExpandable()) {
       this.setExpanded({ expanded: !this.state.expanded, initialExpanded: false });
-    } else if (onClick) {
+    }
+    if (onClick) {
       onClick(ev);
     }
   };

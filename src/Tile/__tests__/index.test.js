@@ -88,6 +88,11 @@ describe("Tile Expandable", () => {
     </Tile>
   );
 
+  it("should call onClick on Expandable Tile", () => {
+    shallowednotDefaultExpandedTile.find("TileHeader").simulate("click");
+    expect(onClick).toHaveBeenCalled();
+  });
+
   it("should render proper element", () => {
     expect(shallowednotDefaultExpandedTile.render().prop("name")).toBe("div");
   });

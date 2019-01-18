@@ -21,7 +21,9 @@ export const StyledImage = styled.img.attrs(({ theme, size, illustrationName }) 
 
   return {
     src: `${baseURL}/illustrations/0x${height}/${illustrationName}.png`,
-    srcSet: `${baseURL}/illustrations/0x${height * 2}/${illustrationName}.png 2x`,
+    srcSet: `${baseURL}/illustrations/0x${height *
+      2}/${illustrationName}.png 2x, ${baseURL}/illustrations/0x${height *
+      3}/${illustrationName}.png 3x`,
   };
 })`
   height: ${getHeightToken};

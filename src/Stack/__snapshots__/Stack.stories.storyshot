@@ -1111,7 +1111,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     className="Illustration__StyledImage-uskdow-0 brJZdH"
                     size="small"
                     src="//images.kiwi.com/illustrations/0x90/Accommodation.png"
-                    srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x"
+                    srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x, //images.kiwi.com/illustrations/0x270/Accommodation.png 3x"
                   />
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
@@ -1127,7 +1127,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     className="Illustration__StyledImage-uskdow-0 brJZdH"
                     size="small"
                     src="//images.kiwi.com/illustrations/0x90/Accommodation.png"
-                    srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x"
+                    srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x, //images.kiwi.com/illustrations/0x270/Accommodation.png 3x"
                   />
                   <p
                     className="Text__StyledText-sc-19qtt4y-0 dJNjRc"

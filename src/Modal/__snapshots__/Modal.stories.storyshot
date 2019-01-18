@@ -169,7 +169,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                         className="Illustration__StyledImage-uskdow-0 brJZdH"
                         size="small"
                         src="//images.kiwi.com/illustrations/0x90/Accommodation.png"
-                        srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x"
+                        srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x, //images.kiwi.com/illustrations/0x270/Accommodation.png 3x"
                       />
                       <div
                         className="ModalHeader__ModalTitle-sc-13vyf6i-0 fsixYs"
@@ -1746,7 +1746,7 @@ exports[`Storyshots Modal RTL 1`] = `
                         className="Illustration__StyledImage-uskdow-0 brJZdH"
                         size="small"
                         src="//images.kiwi.com/illustrations/0x90/Accommodation.png"
-                        srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x"
+                        srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x, //images.kiwi.com/illustrations/0x270/Accommodation.png 3x"
                       />
                       <div
                         className="ModalHeader__ModalTitle-sc-13vyf6i-0 houuhE"
@@ -2880,7 +2880,7 @@ exports[`Storyshots Modal Removable sections 1`] = `
                         className="Illustration__StyledImage-uskdow-0 brJZdH"
                         size="small"
                         src="//images.kiwi.com/illustrations/0x90/Meal.png"
-                        srcSet="//images.kiwi.com/illustrations/0x180/Meal.png 2x"
+                        srcSet="//images.kiwi.com/illustrations/0x180/Meal.png 2x, //images.kiwi.com/illustrations/0x270/Meal.png 3x"
                       />
                       <div
                         className="ModalHeader__ModalTitle-sc-13vyf6i-0 fsixYs"
@@ -8508,7 +8508,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                         className="Illustration__StyledImage-uskdow-0 brJZdH"
                         size="small"
                         src="//images.kiwi.com/illustrations/0x90/Meal.png"
-                        srcSet="//images.kiwi.com/illustrations/0x180/Meal.png 2x"
+                        srcSet="//images.kiwi.com/illustrations/0x180/Meal.png 2x, //images.kiwi.com/illustrations/0x270/Meal.png 3x"
                       />
                       <div
                         className="ModalHeader__ModalTitle-sc-13vyf6i-0 fsixYs"
@@ -16639,7 +16639,7 @@ exports[`Storyshots Modal Without section 1`] = `
                         className="Illustration__StyledImage-uskdow-0 brJZdH"
                         size="small"
                         src="//images.kiwi.com/illustrations/0x90/Meal.png"
-                        srcSet="//images.kiwi.com/illustrations/0x180/Meal.png 2x"
+                        srcSet="//images.kiwi.com/illustrations/0x180/Meal.png 2x, //images.kiwi.com/illustrations/0x270/Meal.png 3x"
                       />
                       <div
                         className="ModalHeader__ModalTitle-sc-13vyf6i-0 fsixYs"

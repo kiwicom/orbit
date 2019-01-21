@@ -5,7 +5,7 @@ import type { Globals } from "../common/common.js.flow";
 export type Props = {|
   +children?: React$Node,
   +closable?: boolean,
-  +onClose?: () => void,
+  +onClose?: (ev: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
   ...Globals,
   ...spaceAfter,
 |};

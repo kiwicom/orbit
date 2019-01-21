@@ -226,9 +226,8 @@ const MilestoneIcon = ({ type }) => {
 class TripSegment extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.contentHeight = 0;
-    this.node = React.createRef();
     this.state = {
+      contentHeight: 0,
       expanded: this.props.initialExpanded || false,
       initialExpanded: !this.props.initialExpanded,
     };
@@ -238,15 +237,23 @@ class TripSegment extends React.PureComponent<Props, State> {
     this.timeout = setTimeout(this.setHeight, 10);
   }
 
+  componentDidUpdate(prevProps: Props) {
+    if (this.props.children !== prevProps.children) {
+      this.setHeight();
+    }
+  }
+
   componentWillUnmount() {
     if (this.timeout) {
       clearTimeout(this.timeout);
     }
   }
 
-  setHeight() {
-    this.contentHeight = this.node?.current.clientHeight;
-  }
+  setHeight = () => {
+    this.setState({
+      contentHeight: this.node?.current?.clientHeight,
+    });
+  };
 
   handleToggle = () => {
     const { onClick } = this.props;
@@ -260,8 +267,7 @@ class TripSegment extends React.PureComponent<Props, State> {
     }
   };
 
-  contentHeight: number;
-  node: { current: any | HTMLDivElement };
+  node: { current: any | HTMLDivElement } = React.createRef();
   timeout: TimeoutID;
 
   render() {
@@ -275,8 +281,7 @@ class TripSegment extends React.PureComponent<Props, State> {
       carrier,
       dataTest,
     } = this.props;
-    const { expanded, initialExpanded } = this.state;
-    const { contentHeight } = this;
+    const { expanded, initialExpanded, contentHeight } = this.state;
 
     return (
       <StyledTripSegment dataTest={dataTest}>

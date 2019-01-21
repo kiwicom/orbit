@@ -10,6 +10,7 @@ export type ExpandedType = {|
 
 export type State = {|
   ...ExpandedType,
+  contentHeight: number,
   initialExpanded: boolean,
 |};
 

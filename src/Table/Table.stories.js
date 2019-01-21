@@ -5,14 +5,10 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { boolean, text, withKnobs, select } from "@storybook/addon-knobs";
 
-import TableHead from "./TableHead";
-import TableBody from "./TableBody";
-import TableRow from "./TableRow";
-import TableCell from "./TableCell";
 import ALIGN_OPTIONS from "./TableCell/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import Table from "./";
+import Table, { TableHead, TableBody, TableRow, TableCell } from "./index";
 
 setAddon(chaptersAddon);
 

@@ -135,7 +135,7 @@ exports[`Storyshots Breadcrumbs Default 1`] = `
                     typeof="ListItem"
                   >
                     <a
-                      className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 dzlZpd"
+                      className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 ldkPjA"
                       href="https://kiwi.com"
                       onClick={[Function]}
                       property="item"
@@ -168,7 +168,7 @@ exports[`Storyshots Breadcrumbs Default 1`] = `
                     typeof="ListItem"
                   >
                     <a
-                      className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 dzlZpd"
+                      className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 ldkPjA"
                       href="#1"
                       onClick={[Function]}
                       property="item"
@@ -201,7 +201,7 @@ exports[`Storyshots Breadcrumbs Default 1`] = `
                     typeof="ListItem"
                   >
                     <a
-                      className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 dzlZpd"
+                      className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 ldkPjA"
                       href="#2"
                       onClick={[Function]}
                       property="item"
@@ -234,7 +234,7 @@ exports[`Storyshots Breadcrumbs Default 1`] = `
                     typeof="ListItem"
                   >
                     <a
-                      className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 dzlZpd"
+                      className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 ldkPjA"
                       href="#3"
                       onClick={[Function]}
                       property="item"
@@ -268,7 +268,7 @@ exports[`Storyshots Breadcrumbs Default 1`] = `
                     typeof="ListItem"
                   >
                     <a
-                      className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 gJndOU"
+                      className="BreadcrumbsItem__StyledBreadcrumbsItemAnchor-sc-1aqqbs7-1 iYfIoC"
                       href="#4"
                       onClick={[Function]}
                       property="item"

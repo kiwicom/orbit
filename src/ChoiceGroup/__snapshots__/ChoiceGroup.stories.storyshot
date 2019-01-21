@@ -123,7 +123,7 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
                 className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
               >
                 <h4
-                  className="Heading__StyledHeading-sc-1b8cso5-0 cyTyQi"
+                  className="Heading__StyledHeading-sc-1b8cso5-0 leAbYN"
                 >
                   What was the reason for your cancellation?
                 </h4>
@@ -751,7 +751,7 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
                 className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
               >
                 <h4
-                  className="Heading__StyledHeading-sc-1b8cso5-0 cyTyQi"
+                  className="Heading__StyledHeading-sc-1b8cso5-0 leAbYN"
                 >
                   What was the reason for your cancellation?
                 </h4>
@@ -1392,7 +1392,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                 data-test="test"
               >
                 <h4
-                  className="Heading__StyledHeading-sc-1b8cso5-0 cyTyQi"
+                  className="Heading__StyledHeading-sc-1b8cso5-0 leAbYN"
                 >
                   What was the reason for your cancellation?
                 </h4>

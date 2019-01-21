@@ -794,7 +794,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
                   >
                     <h4
-                      className="Heading__StyledHeading-sc-1b8cso5-0 cyTyQi"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 leAbYN"
                     >
                       What was the reason for your cancellation?
                     </h4>
@@ -909,7 +909,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
                   >
                     <h4
-                      className="Heading__StyledHeading-sc-1b8cso5-0 cyTyQi"
+                      className="Heading__StyledHeading-sc-1b8cso5-0 leAbYN"
                     >
                       What was the reason for your cancellation?
                     </h4>

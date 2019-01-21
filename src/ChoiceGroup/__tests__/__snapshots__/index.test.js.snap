@@ -6,7 +6,7 @@ exports[`RadioGroup should match snapshot 1`] = `
 >
   <Heading
     element="h5"
-    spaceAfter="small"
+    spaceAfter="medium"
     type="title2"
   >
     Label

@@ -40,7 +40,7 @@ class ChoiceGroup extends React.PureComponent<Props> {
     return (
       <StyledChoiceGroup data-test={dataTest}>
         {label && (
-          <Heading type={getHeadingSize(labelSize)} element={labelElement} spaceAfter="small">
+          <Heading type={getHeadingSize(labelSize)} element={labelElement} spaceAfter="medium">
             {label}
           </Heading>
         )}

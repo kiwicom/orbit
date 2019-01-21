@@ -125,7 +125,7 @@ exports[`Storyshots Illustration Playground 1`] = `
                 data-test="test"
                 size="medium"
                 src="//images.kiwi.com/illustrations/0x200/Accommodation.png"
-                srcSet="//images.kiwi.com/illustrations/0x400/Accommodation.png 2x"
+                srcSet="//images.kiwi.com/illustrations/0x400/Accommodation.png 2x, //images.kiwi.com/illustrations/0x600/Accommodation.png 3x"
               />
             </div>
             <div

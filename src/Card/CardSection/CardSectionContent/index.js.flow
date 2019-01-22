@@ -6,11 +6,11 @@ export type Props = {|
   expanded?: boolean,
   expandable?: boolean,
   visible?: boolean,
-|}
+|};
 
 export type State = {|
   contentHeight: number,
-|}
+|};
 
 declare export var StyledCardSectionContent: ReactComponentStyled<any>;
 

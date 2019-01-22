@@ -10,25 +10,25 @@ After adding import into your project you can use it simply like:
 ## Props
 Table below contains all types of the props available in ButtonLink component.
 
-| Name          | Type                  | Default         | Description                      |
-| :------------ | :---------------------| :-------------- | :------------------------------- |
-| block         | `boolean`             | `false`         | If `true`, the ButtonLink will grow up to the full width of its container.
-| circled       | `boolean`             | `false`         | If `true`, the ButtonLink will have circular shape.
-| children      | `React.Node`          |                 | The content of the ButtonLink. [See Functional specs](#functional-specs)
-| **component** | `string \| React.Node`| `"button"`      | The component used for the root node. Either a string to use a DOM element or a component.
-| disabled      | `boolean`             | `false`         | If `true`, the ButtonLink will be disabled.
-| dataTest      | `string`              |                 | Optional prop for testing purposes.
-| external      | `boolean`             | `false`         | If `true`, the ButtonLink opens link in a new tab. [See Functional specs](#functional-specs)
-| href          | `string`              |                 | The URL of link to open when ButtonLink is clicked. [See Functional specs](#functional-specs)
-| icon          | `React.Node`          |                 | The displayed icon on the left (will be removed in the future, use iconLeft instead).
-| iconLeft      | `React.Node`          |                 | The displayed icon on the left.
-| iconRight     | `React.Node`          |                 | The displayed icon on the right.
-| onClick       | `func`                |                 | Function for handling onClick event.
-| **size**      | [`enum`](#enum)       | `"normal"`      | The size of the ButtonLink.
-| submit        | `boolean`             | `false`         | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.
-| transparent   | `boolean`             | `false`         | If `true`, the ButtonLink will not have `:hover` and `:active` state.
-| **type**      | [`enum`](#enum)       | `"primary"`     | The type of ButtonLink.
-| width         | `number`              | `0`             | The width of the ButtonLink. Number is defined in `px`.
+| Name          | Type                            | Default         | Description                      |
+| :------------ | :------------------------------ | :-------------- | :------------------------------- |
+| block         | `boolean`                       | `false`         | If `true`, the ButtonLink will grow up to the full width of its container.
+| circled       | `boolean`                       | `false`         | If `true`, the ButtonLink will have circular shape.
+| children      | `React.Node`                    |                 | The content of the ButtonLink. [See Functional specs](#functional-specs)
+| **component** | `string \| React.Node`          | `"button"`      | The component used for the root node. Either a string to use a DOM element or a component.
+| disabled      | `boolean`                       | `false`         | If `true`, the ButtonLink will be disabled.
+| dataTest      | `string`                        |                 | Optional prop for testing purposes.
+| external      | `boolean`                       | `false`         | If `true`, the ButtonLink opens link in a new tab. [See Functional specs](#functional-specs)
+| href          | `string`                        |                 | The URL of link to open when ButtonLink is clicked. [See Functional specs](#functional-specs)
+| icon          | `React.Node`                    |                 | The displayed icon on the left (will be removed in the future, use iconLeft instead).
+| iconLeft      | `React.Node`                    |                 | The displayed icon on the left.
+| iconRight     | `React.Node`                    |                 | The displayed icon on the right.
+| onClick       | `event => void \| Promise`      |                 | Function for handling onClick event.
+| **size**      | [`enum`](#enum)                 | `"normal"`      | The size of the ButtonLink.
+| submit        | `boolean`                       | `false`         | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.
+| transparent   | `boolean`                       | `false`         | If `true`, the ButtonLink will not have `:hover` and `:active` state.
+| **type**      | [`enum`](#enum)                 | `"primary"`     | The type of ButtonLink.
+| width         | `number`                        | `0`             | The width of the ButtonLink. Number is defined in `px`.
 
 ### enum
 

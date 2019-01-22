@@ -7,7 +7,7 @@ import TYPE_OPTIONS from "./consts";
 
 import type { Props } from "./index";
 
-const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {...props} />)`
+export const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {...props} />)`
   color: ${({ theme, type }) =>
     type === TYPE_OPTIONS.ERROR ? theme.orbit.colorTextError : theme.orbit.colorTextSecondary};
   font-family: ${({ theme }) => theme.orbit.fontFamily};

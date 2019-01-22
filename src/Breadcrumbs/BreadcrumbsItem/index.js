@@ -19,9 +19,11 @@ const StyledBreadcrumbsItemAnchor = styled(({ active, component, children, theme
   font-weight: ${({ active, theme }) => active && theme.orbit.fontWeightBold};
   color: ${({ theme }) => theme.orbit.paletteInkLight};
   text-decoration: none;
+  transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   &:hover,
   &:focus {
+    color: ${({ theme }) => theme.orbit.paletteInkLightHover};
     outline: none;
     text-decoration: underline;
   }

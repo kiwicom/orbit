@@ -4,7 +4,7 @@ import { storiesOf, setAddon } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, text, select, boolean } from "@storybook/addon-knobs/react";
+import { withKnobs, text, select } from "@storybook/addon-knobs/react";
 
 import { LABEL_ELEMENTS, LABEL_SIZES } from "./consts";
 import Radio from "../Radio";
@@ -68,7 +68,7 @@ storiesOf("ChoiceGroup", module)
     const label = text("Label", "What was the reason for your cancellation?");
     const labelSize = select("labelSize", Object.values(LABEL_SIZES), LABEL_SIZES.NORMAL);
     const labelElement = select("labelElement", Object.values(LABEL_ELEMENTS), LABEL_ELEMENTS.H4);
-    const hasError = boolean("hasError", true);
+    const error = text("error", "Something is wrong");
     return {
       info: "Playground of ChoiceGroup",
       chapters: [
@@ -82,7 +82,7 @@ storiesOf("ChoiceGroup", module)
                   labelSize={labelSize}
                   labelElement={labelElement}
                   onChange={action("onChange")}
-                  hasError={hasError}
+                  error={error}
                 >
                   <Radio label="Reason one" value="one" />
                   <Radio label="Reason two" value="two" />

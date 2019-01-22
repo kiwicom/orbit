@@ -19,7 +19,7 @@ Table below contains all types of the props available in the ChoiceGroup compone
 | :------------------ | :------------------------- | :---------- | :------------------------------- |
 | dataTest            | `string`                   |             | Optional prop for testing purposes.
 | **children**        | `Array<Radio or Checkbox>` |             | Could accept `<Radio />` or `<Checkbox />`
-| hasError            | `boolean`                  |             | If `true`, the glyphs will have red border color.
+| error               | `Translation`              |             | The error to display beneath the ChoiceGroup. Also, the Checkboxes/Radios will turn red when you pass some valuue.
 | label               | `Translation`              |             | Heading text of `<ChoiceGroup />`
 | labelSize           | [`enum`](#enum)            | `"normal"`  | The size type of Heading.
 | labelElement        | [`enum`](#enum)            | `"h4"`      | The element used to render the label into.

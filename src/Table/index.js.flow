@@ -1,11 +1,15 @@
 // @flow
+import TBody from "./TableBody";
+import THead from "./TableHead";
 import type { Globals } from "../common/common.js.flow";
-import TableBody from "./TableBody/index";
-import TableHead from "./TableHead/index";
+import typeof TableBodyType from "./TableBody/index.js.flow";
+import typeof TableCellType from "./TableCell/index.js.flow";
+import typeof TableHeadType from "./TableHead/index.js.flow";
+import typeof TableRowType from "./TableRow/index.js.flow";
 
 export type Props = {|
   +compact?: boolean,
-  +children: Array<React$Element<typeof TableHead> | React$Element<typeof TableBody>>,
+  +children: Array<React$Element<typeof THead> | React$Element<typeof TBody>>,
   ...Globals,
 |};
 
@@ -16,3 +20,8 @@ export type State = {|
 |};
 
 declare export default React$ComponentType<Props>;
+
+declare export var TableBody: TableBodyType;
+declare export var TableCell: TableCellType;
+declare export var TableHead: TableHeadType;
+declare export var TableRow: TableRowType;

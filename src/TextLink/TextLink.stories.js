@@ -151,7 +151,7 @@ storiesOf("TextLink", module)
           {
             sectionFn: () => (
               <RenderInRtl>
-                <TextLink onClick={action("clicked")} href="#" icon={<Icons.ChevronRight />}>
+                <TextLink onClick={action("clicked")} href="#" icon={<Icons.ChevronLeft />}>
                   Link
                 </TextLink>
               </RenderInRtl>

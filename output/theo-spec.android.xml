@@ -342,7 +342,7 @@
   <dimen name="PADDINGBUTTONLARGE" category="Spacing">28dp</dimen>
   <color name="COLORTEXTBUTTONSECONDARYACTIVE" category="Colors">#ff38404b</color>
   <color name="COLORTEXTBUTTONLINKSECONDARY" category="Colors">#ff46515e</color>
-  <color name="COLORTEXTLINKPRIMARY" category="Colors">#ff00a991</color>
+  <color name="COLORTEXTLINKPRIMARY" category="Colors">#ff00826f</color>
   <color name="COLORTEXTBUTTONWHITEBORDEREDACTIVE" category="Colors">#ffffffff</color>
   <color name="COLORICONCHECKBOXRADIODISABLED" category="Colors">#ffbac7d5</color>
   <dimen name="FONTSIZEBUTTONLARGE" category="Font size">16dp</dimen>
@@ -412,7 +412,7 @@
   <color name="BORDERCOLORBUTTONWARNINGBORDERED" category="Border color">#fff9971e</color>
   <string name="BACKGROUNDILLUSTRATION" category="Background colors">transparent</string>
   <dimen name="HEIGHTINPUTGROUPSEPARATORSMALL" category="Size (width, height)">16dp</dimen>
-  <string name="TEXTDECORATIONTEXTLINKPRIMARY" category="Text decoration">none</string>
+  <string name="TEXTDECORATIONTEXTLINKPRIMARY" category="Text decoration">underline</string>
   <string name="TEXTDECORATIONTEXTLINKPRIMARYHOVER" category="Text decoration">underline</string>
   <color name="BORDERCOLORBUTTONWARNINGBORDEREDHOVER" category="Border color">#fff48a06</color>
   <color name="COLORTEXTTABLE" category="Colors">#ff7f91a8</color>

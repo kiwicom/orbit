@@ -104,9 +104,7 @@ describe("Modal with ModalSection", () => {
           </Div>
         </Div>
       </Div>
-      <ModalFooter>
-        <Button block>Continue to Payment</Button>
-      </ModalFooter>
+      <ModalFooter>It should render if needed</ModalFooter>
     </Modal>,
   );
   it("should match snapshot", () => {

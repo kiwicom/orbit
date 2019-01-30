@@ -232,3 +232,8 @@ class Card extends React.Component<Props, State> {
 }
 
 export default Card;
+
+export { default as CardHeader } from "./CardHeader";
+export { default as CardSection } from "./CardSection";
+export { default as CardSectionHeader } from "./CardSection/CardSectionHeader";
+export { default as CardSectionContent } from "./CardSection/CardSectionContent";

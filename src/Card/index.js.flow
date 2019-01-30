@@ -1,6 +1,10 @@
 // @flow
 import type { spaceAfter } from "../common/getSpacingToken/index";
 import type { Globals } from "../common/common.js.flow";
+import typeof CardSectionType from "./CardSection/index.js.flow";
+import typeof CardSectionHeaderType from "./CardSection/CardSectionHeader/index.js.flow";
+import typeof CardSectionContentType from "./CardSection/CardSectionContent/index.js.flow";
+import typeof CardHeaderType from "./CardHeader/index.js.flow";
 
 export type Props = {|
   +children?: React$Node,
@@ -16,3 +20,8 @@ export type State = {|
 |};
 
 declare export default React$ComponentType<Props>;
+
+declare export var CardHeader: CardHeaderType;
+declare export var CardSection: CardSectionType;
+declare export var CardSectionHeader: CardSectionHeaderType;
+declare export var CardSectionContent: CardSectionContentType;

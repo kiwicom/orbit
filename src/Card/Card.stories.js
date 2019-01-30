@@ -11,18 +11,14 @@ import Heading from "../Heading";
 import Text from "../Text";
 import Loading from "../Loading";
 import Button from "../Button";
-import CardHeader from "./CardHeader";
-import CardSection from "./CardSection";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import CardSectionHeader from "./CardSection/CardSectionHeader";
-import CardSectionContent from "./CardSection/CardSectionContent";
 import Clock from "../icons/Clock";
 import CarrierLogo from "../CarrierLogo";
 import Stack from "../Stack";
 import Badge from "../Badge";
 
-import Card from "./index";
+import Card, { CardHeader, CardSection, CardSectionHeader, CardSectionContent } from "./index";
 
 setAddon(chaptersAddon);
 

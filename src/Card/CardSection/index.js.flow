@@ -3,6 +3,8 @@ import * as React from "react";
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../../common/common.js.flow";
+import typeof CardSectionHeaderType from "./CardSectionHeader/index.js.flow";
+import typeof CardSectionContentType from "./CardSectionContent/index.js.flow";
 
 export type Props = {|
   +children: React$Node,
@@ -24,3 +26,6 @@ export type ContextType = {|
 declare export var CardSectionContext: React.Context<ContextType>;
 
 declare export default React$ComponentType<Props>;
+
+declare export var CardSectionHeader: CardSectionHeaderType;
+declare export var CardSectionContent: CardSectionContentType;

@@ -5,6 +5,8 @@ import styled from "styled-components";
 import Heading from "../Heading";
 import Stack from "../Stack";
 import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
+import FormFeedback, { StyledFormFeedback } from "../FormFeedback";
+import defaultTokens from "../defaultTokens";
 
 import type { Props } from "./index";
 
@@ -18,7 +20,19 @@ const getHeadingSize = size => {
 
 const StyledChoiceGroup = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  ${StyledFormFeedback} {
+    position: relative;
+    margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
+    top: initial;
+  }
 `;
+
+StyledChoiceGroup.defaultProps = {
+  theme: defaultTokens,
+};
 
 class ChoiceGroup extends React.PureComponent<Props> {
   handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
@@ -35,6 +49,7 @@ class ChoiceGroup extends React.PureComponent<Props> {
       label,
       labelSize = LABEL_SIZES.NORMAL,
       labelElement = LABEL_ELEMENTS.H4,
+      error,
       children,
     } = this.props;
     return (
@@ -48,10 +63,15 @@ class ChoiceGroup extends React.PureComponent<Props> {
           {React.Children.map(children, child =>
             React.cloneElement(child, {
               onChange: this.handleChange,
-              hasError: this.props.hasError,
+              hasError: !!error,
             }),
           )}
         </Stack>
+        {error && (
+          <FormFeedback type="error" fixed>
+            {error}
+          </FormFeedback>
+        )}
       </StyledChoiceGroup>
     );
   }

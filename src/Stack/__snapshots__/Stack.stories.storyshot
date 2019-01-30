@@ -791,7 +791,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   className="Stack__StyledStack-sc-1t576ow-0 fJMDdH"
                 >
                   <div
-                    className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
+                    className="ChoiceGroup__StyledChoiceGroup-njp29m-0 fglYeh"
                   >
                     <h4
                       className="Heading__StyledHeading-sc-1b8cso5-0 leAbYN"
@@ -906,7 +906,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     </div>
                   </div>
                   <div
-                    className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
+                    className="ChoiceGroup__StyledChoiceGroup-njp29m-0 fglYeh"
                   >
                     <h4
                       className="Heading__StyledHeading-sc-1b8cso5-0 leAbYN"

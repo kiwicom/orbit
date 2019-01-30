@@ -120,7 +120,7 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
               }
             >
               <div
-                className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
+                className="ChoiceGroup__StyledChoiceGroup-njp29m-0 fglYeh"
               >
                 <h4
                   className="Heading__StyledHeading-sc-1b8cso5-0 leAbYN"
@@ -748,7 +748,7 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
               }
             >
               <div
-                className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
+                className="ChoiceGroup__StyledChoiceGroup-njp29m-0 fglYeh"
               >
                 <h4
                   className="Heading__StyledHeading-sc-1b8cso5-0 leAbYN"
@@ -1388,7 +1388,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
               }
             >
               <div
-                className="ChoiceGroup__StyledChoiceGroup-njp29m-0 bcXxKO"
+                className="ChoiceGroup__StyledChoiceGroup-njp29m-0 fglYeh"
                 data-test="test"
               >
                 <h4
@@ -1489,6 +1489,11 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                       </span>
                     </div>
                   </label>
+                </div>
+                <div
+                  className="FormFeedback__StyledFormFeedback-sc-1lhzkwp-0 kPCzrr"
+                >
+                  Something is wrong
                 </div>
               </div>
             </div>
@@ -1701,7 +1706,26 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                             <span
                               style={Object {}}
                             >
-                              hasError
+                              error
+                            </span>
+                            <span>
+                              =
+                              <span
+                                style={Object {}}
+                              >
+                                "
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  Something is wrong
+                                </span>
+                                "
+                              </span>
                             </span>
                             <br />
                           </span>

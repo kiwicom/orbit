@@ -119,3 +119,6 @@ class CardSection extends React.Component<any, Props> {
 }
 
 export default CardSection;
+
+export { default as CardSectionHeader } from "./CardSectionHeader";
+export { default as CardSectionContent } from "./CardSectionContent";

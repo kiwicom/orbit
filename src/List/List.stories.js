@@ -7,14 +7,13 @@ import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
-import ListItem from "./ListItem";
 import { SIZES, TYPES } from "./consts";
 import { ICON_COLORS } from "../Icon/consts";
 import CarrierLogo from "../CarrierLogo";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import List from "./index";
+import List, { ListItem } from "./index";
 
 setAddon(chaptersAddon);
 

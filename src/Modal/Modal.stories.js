@@ -8,12 +8,9 @@ import { withKnobs, text, boolean, select, array } from "@storybook/addon-knobs"
 
 import Button from "../Button";
 import { SIZES } from "./consts";
-import ModalHeader from "./ModalHeader";
-import ModalSection from "./ModalSection";
 import Illustration from "../Illustration";
 import Text from "../Text";
 import { NAMES } from "../Illustration/consts";
-import ModalFooter from "./ModalFooter";
 import ChevronLeft from "../icons/ChevronLeft";
 import FlightDirect from "../icons/FlightDirect";
 import Stack from "../Stack";
@@ -34,7 +31,7 @@ import Radio from "../Radio";
 import CardSectionHeader from "../Card/CardSection/CardSectionHeader";
 import CardSectionContent from "../Card/CardSection/CardSectionContent";
 
-import Modal from "./index";
+import Modal, { ModalHeader, ModalSection, ModalFooter } from "./index";
 
 setAddon(chaptersAddon);
 

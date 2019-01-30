@@ -1,8 +1,8 @@
 // @flow
 import type { Globals } from "../common/common.js.flow";
-import ModalSection from "./ModalSection";
-import ModalHeader from "./ModalHeader";
-import ModalFooter from "./ModalFooter";
+import typeof ModalSectionType from "./ModalSection";
+import typeof ModalHeaderType from "./ModalHeader";
+import typeof ModalFooterType from "./ModalFooter";
 
 export type State = {|
   scrolled: boolean,
@@ -17,9 +17,9 @@ export type State = {|
 type Size = "small" | "normal" | "large";
 
 type Children =
-  | React$Element<typeof ModalHeader>
-  | React$Element<typeof ModalSection>
-  | React$Element<typeof ModalFooter>;
+  | React$Element<ModalHeaderType>
+  | React$Element<ModalSectionType>
+  | React$Element<ModalFooterType>;
 
 type onClose = (
   ev: SyntheticKeyboardEvent<HTMLDivElement> | SyntheticEvent<HTMLButtonElement> | MouseEvent,
@@ -34,3 +34,7 @@ export type Props = {|
 |};
 
 declare export default React$ComponentType<Props>;
+
+declare export var ModalHeader: ModalHeaderType;
+declare export var ModalSection: ModalSectionType;
+declare export var ModalFooter: ModalFooterType;

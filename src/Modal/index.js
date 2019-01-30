@@ -410,3 +410,7 @@ class Modal extends React.PureComponent<Props, State> {
 }
 
 export default Modal;
+
+export { default as ModalHeader } from "./ModalHeader";
+export { default as ModalSection } from "./ModalSection";
+export { default as ModalFooter } from "./ModalFooter";

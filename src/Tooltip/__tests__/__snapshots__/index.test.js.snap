@@ -3,7 +3,6 @@
 exports[`Tooltip it should match snapshot 1`] = `
 <Fragment>
   <Tooltip__StyledTooltipChildren
-    block={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -463,6 +462,7 @@ exports[`Tooltip it should match snapshot 1`] = `
         containerLeft={0}
         containerTop={0}
         containerWidth={0}
+        contentHeight={0}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         position="right"

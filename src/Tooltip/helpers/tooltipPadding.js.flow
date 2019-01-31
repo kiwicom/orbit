@@ -1,0 +1,12 @@
+// @flow
+import type { ThemeProps } from "../../defaultTokens";
+import type { Dimensions } from "../index";
+
+export type Props = {
+  ...Dimensions,
+  ...ThemeProps,
+};
+
+type TooltipPadding = Props => string;
+
+declare export default TooltipPadding;

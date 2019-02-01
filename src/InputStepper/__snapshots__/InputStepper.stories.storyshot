@@ -126,7 +126,7 @@ exports[`Storyshots InputStepper Default 1`] = `
                   className="InputField__Field-sc-4opay-0 kCAFyx"
                 >
                   <div
-                    className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                    className="InputField__InputContainer-sc-4opay-2 kccDHe"
                   >
                     <div
                       className="InputField__Prefix-sc-4opay-4 iNucwo"
@@ -160,7 +160,7 @@ exports[`Storyshots InputStepper Default 1`] = `
                       value={0}
                     />
                     <div
-                      className="InputField__Suffix-sc-4opay-5 kCvrXk"
+                      className="InputField__Suffix-sc-4opay-5 kANGZa"
                     >
                       <div
                         className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
@@ -424,7 +424,7 @@ exports[`Storyshots InputStepper Playground 1`] = `
                     </span>
                   </span>
                   <div
-                    className="InputField__InputContainer-sc-4opay-2 bnDMxw"
+                    className="InputField__InputContainer-sc-4opay-2 bitzWY"
                   >
                     <div
                       className="InputField__Prefix-sc-4opay-4 iNucwo"
@@ -465,7 +465,7 @@ exports[`Storyshots InputStepper Playground 1`] = `
                       value={4}
                     />
                     <div
-                      className="InputField__Suffix-sc-4opay-5 kCvrXk"
+                      className="InputField__Suffix-sc-4opay-5 kANGZa"
                     >
                       <div
                         className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
@@ -1148,7 +1148,7 @@ exports[`Storyshots InputStepper RTL 1`] = `
                     </span>
                   </span>
                   <div
-                    className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                    className="InputField__InputContainer-sc-4opay-2 kccDHe"
                   >
                     <div
                       className="InputField__Prefix-sc-4opay-4 gBJmTs"
@@ -1182,7 +1182,7 @@ exports[`Storyshots InputStepper RTL 1`] = `
                       value={0}
                     />
                     <div
-                      className="InputField__Suffix-sc-4opay-5 gxwjvO"
+                      className="InputField__Suffix-sc-4opay-5 exEPdy"
                     >
                       <div
                         className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
@@ -1498,7 +1498,7 @@ exports[`Storyshots InputStepper With different size 1`] = `
                     </span>
                   </span>
                   <div
-                    className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                    className="InputField__InputContainer-sc-4opay-2 kccDHe"
                   >
                     <div
                       className="InputField__Prefix-sc-4opay-4 iNucwo"
@@ -1534,7 +1534,7 @@ exports[`Storyshots InputStepper With different size 1`] = `
                       value={0}
                     />
                     <div
-                      className="InputField__Suffix-sc-4opay-5 kCvrXk"
+                      className="InputField__Suffix-sc-4opay-5 kANGZa"
                     >
                       <div
                         className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
@@ -1919,7 +1919,7 @@ exports[`Storyshots InputStepper With help 1`] = `
                     </span>
                   </span>
                   <div
-                    className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                    className="InputField__InputContainer-sc-4opay-2 kccDHe"
                   >
                     <div
                       className="InputField__Prefix-sc-4opay-4 iNucwo"
@@ -1955,7 +1955,7 @@ exports[`Storyshots InputStepper With help 1`] = `
                       value={0}
                     />
                     <div
-                      className="InputField__Suffix-sc-4opay-5 kCvrXk"
+                      className="InputField__Suffix-sc-4opay-5 kANGZa"
                     >
                       <div
                         className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"

@@ -1,1 +1,5 @@
+<!--description:Non-selected version for mobile menu.-->
+<!--category:basic-->
+<!--character:E136-->
+<!--added:0.11-->
 <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"><path id="messages-outline-a" d="M4,2 C2.8954305,2 2,2.8954305 2,4 L2,17 L6,13 L15,13 C16.1045695,13 17,12.1045695 17,11 L17,4 C17,2.8954305 16.1045695,2 15,2 L4,2 Z M4,4 L15,4 L15,11 L6,11 L4,13 L4,4 Z M19,6 L19,8 L20,8 L20,18 L18,16 L8,16 L8,15 L6,15 L6,16 C6,17.1045695 6.8954305,18 8,18 L18,18 L22,22 L22,8 C22,6.8954305 21.1045695,6 20,6 L19,6 Z"/></svg>

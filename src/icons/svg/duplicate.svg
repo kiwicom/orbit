@@ -1,1 +1,4 @@
+<!--description:alias copy-->
+<!--character:E154-->
+<!--added:0.23-->
 <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"><path id="duplicate-a" d="M4,2 C2.895,2 2,2.895 2,4 L2,18 L4,18 L4,4 L18,4 L18,2 L4,2 Z M8,6 C6.895,6 6,6.895 6,8 L6,20 C6,21.105 6.895,22 8,22 L20,22 C21.105,22 22,21.105 22,20 L22,8 C22,6.895 21.105,6 20,6 L8,6 Z M8,8 L20,8 L20,20 L8,20 L8,8 Z M13,11 L13,13 L11,13 L11,15 L13,15 L13,17 L15,17 L15,15 L17,15 L17,13 L15,13 L15,11 L13,11 Z"/></svg>

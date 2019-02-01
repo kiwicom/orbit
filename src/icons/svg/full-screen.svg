@@ -1,1 +1,4 @@
+<!--category:navigation-->
+<!--character:E0A6-->
+<!--added:0.11-->
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path id="full-screen-a" d="M20,21 L14,21 L14,19 L19,19 L19,14 L21,14 L21,20 C21,20.553 20.553,21 20,21 Z M21,10 L19,10 L19,5 L14,5 L14,3 L20,3 C20.553,3 21,3.448 21,4 L21,10 Z M5,10 L3,10 L3,4 C3,3.448 3.447,3 4,3 L10,3 L10,5 L5,5 L5,10 Z M10,21 L4,21 C3.447,21 3,20.552 3,20 L3,14 L5,14 L5,19 L10,19 L10,21 Z"/></svg>

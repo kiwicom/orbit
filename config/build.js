@@ -1,5 +1,6 @@
 // @noflow
 /* eslint-disable import/no-extraneous-dependencies */
+
 const path = require("path");
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -10,20 +11,22 @@ const glob = require("glob");
 const svgr = require("@svgr/core").default;
 
 const files = glob.sync("src/icons/**/*.svg");
+
 const names = files.map(inputFileName => {
-  const functionName = capitalize(
-    camelcase(path.basename(inputFileName).replace(/( \(custom\))?\.svg$/, "")),
-  );
+  const baseName = path.basename(inputFileName).replace(/( \(custom\))?\.svg$/, "");
+  const functionName = capitalize(camelcase(baseName));
   const outputComponentFileName = `${functionName}.js`;
 
   return {
     inputFileName,
     outputComponentFileName,
     functionName,
+    baseName,
   };
 });
 
 const componentPath = path.join(__dirname, "..", "src", "icons");
+const svgPath = path.join(__dirname, "..", "src", "icons", "svg");
 mkdirp(componentPath);
 
 function getViewBox(attributes) {
@@ -98,3 +101,28 @@ const flowDeclares = names
   .join("");
 
 fs.writeFileSync(path.join(componentPath, "index.js.flow"), flow + flowTypes + flowDeclares);
+
+// create icons json file
+Promise.all(
+  names.map(
+    ({ inputFileName, baseName }) =>
+      new Promise((resolve, reject) => {
+        fs.readFile(inputFileName, "utf8", (err, content) => {
+          if (err) reject();
+          // only get the HTML comments
+          const comments = content.match(/<!--([\s\S]*?)-->/gm).map(item => {
+            // remove HTML comments and split by colon
+            const items = item.replace(/<!--([\s\S]*?)-->/gm, "$1").split(":");
+            // one icon has color as character
+            const value = items[1] === "" && items[2] === "" ? ":" : items[1];
+            return { [items[0]]: value };
+          });
+          const commentsObject = Object.assign({}, ...comments);
+          const url = `https://raw.githubusercontent.com/kiwicom/orbit-components/master/src/icons/svg/${baseName}.svg`;
+          resolve({ [baseName]: { ...commentsObject, url } });
+        });
+      }),
+  ),
+).then(data =>
+  fs.writeFileSync(path.join(svgPath, "icons.json"), JSON.stringify(Object.assign({}, ...data))),
+);

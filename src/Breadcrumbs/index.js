@@ -37,3 +37,5 @@ const Breadcrumbs = ({ children, dataTest }: Props) => (
 );
 
 export default Breadcrumbs;
+
+export { default as BreadcrumbsItem } from "./BreadcrumbsItem";

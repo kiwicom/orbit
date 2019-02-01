@@ -1,8 +1,7 @@
 # Breadcrumbs
 To implement Button component into your project you'll need to add the import:
 ```jsx
-import Breadcrumbs from "@kiwicom/orbit-components/lib/Breadcrumbs";
-import BreadcrumbsItem from "@kiwicom/orbit-components/lib/Breadcrumbs/BreadcrumbsItem";
+import Breadcrumbs, { BreadcrumbsItem } from "@kiwicom/orbit-components/lib/Breadcrumbs";
 ```
 After adding import into your project you can use it simply like:
 ```jsx

@@ -1,8 +1,7 @@
 # Modal
 To implement Modal component into your project you'll need to the import at least the Modal and the [ModalSection](#modalsection):
 ```jsx
-import Modal from "@kiwicom/orbit-components/lib/Modal";
-import ModalSection from "@kiwicom/orbit-components/lib/Modal/ModalSection";
+import Modal, { ModalSection } from "@kiwicom/orbit-components/lib/Modal";
 ```
 
 > You might need the Portal also. See it's [docs](../Portal).
@@ -47,8 +46,7 @@ Modal component offers a good flexibility and many variations in its usage. Ther
 
 ### ModalSection
 ```jsx
-import Modal from "@kiwicom/orbit-components/lib/Modal";
-import ModalSection from "@kiwicom/orbit-components/lib/Modal/ModalSection";
+import Modal, { ModalSection } from "@kiwicom/orbit-components/lib/Modal";
 ```
 #### Usage:
 ```jsx
@@ -70,8 +68,7 @@ Table below contains all types of the props in the ModalSection component.
 
 ### ModalHeader
 ```jsx
-import Modal from "@kiwicom/orbit-components/lib/Modal";
-import ModalHeader from "@kiwicom/orbit-components/lib/Modal/ModalHeader";
+import Modal, { ModalHeader } from "@kiwicom/orbit-components/lib/Modal";
 ```
 #### Usage:
 ```jsx
@@ -96,8 +93,7 @@ Table below contains all types of the props in the ModalHeader component.
 
 ### ModalFooter
 ```jsx
-import Modal from "@kiwicom/orbit-components/lib/Modal";
-import ModalFooter from "@kiwicom/orbit-components/lib/Modal/ModalFooter";
+import Modal, { ModalFooter } from "@kiwicom/orbit-components/lib/Modal";
 
 // and probably Button
 import Button from "@kiwicom/orbit-components/lib/Button";

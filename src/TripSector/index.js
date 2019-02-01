@@ -49,3 +49,6 @@ const TripSector = ({ children, dataTest }: Props) => (
 );
 
 export default TripSector;
+
+export { default as TripDate } from "./TripDate";
+export { default as TripLayover } from "./TripLayover";

@@ -5,10 +5,8 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text } from "@storybook/addon-knobs";
 
-import TripSector from "../TripSector";
+import TripSector, { TripLayover, TripDate } from "../TripSector";
 import TripSegment from "../TripSegment";
-import TripDate from "../TripSector/TripDate";
-import TripLayover from "../TripSector/TripLayover";
 import List from "../List";
 import ListItem from "../List/ListItem";
 import CarrierLogo from "../CarrierLogo";

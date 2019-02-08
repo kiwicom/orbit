@@ -123,8 +123,8 @@ export const MobileHeader = styled.div`
   z-index: 10;
 
   ${media.largeMobile(css`
-    left: unset;
-    right: unset;
+    left: auto;
+    right: auto;
     padding: 0;
   `)};
 `;

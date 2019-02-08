@@ -6,7 +6,7 @@ import defaultTokens from "../defaultTokens";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import Close from "../icons/Close";
 import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
-import media from "../utils/mediaQuery";
+import media, { breakpoints } from "../utils/mediaQuery";
 import { StyledModalFooter } from "./ModalFooter";
 import { MobileHeader, StyledModalHeader } from "./ModalHeader";
 import { StyledModalSection } from "./ModalSection";
@@ -28,6 +28,14 @@ const getSizeToken = () => ({ size, theme }) => {
   return tokens[size];
 };
 
+// media query only for IE 10+, not Edge
+const onlyIE = (style, breakpoint = "all") =>
+  css`
+    @media ${breakpoint} and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      ${style};
+    }
+  `;
+
 const ModalBody = styled.div`
   width: 100%;
   height: 100%;
@@ -42,10 +50,13 @@ const ModalBody = styled.div`
   overflow-x: hidden;
   background-color: rgba(0, 0, 0, 0.5);
   font-family: ${({ theme }) => theme.orbit.fontfamily};
-
+  -webkit-overflow-scrolling: auto;
   ${media.largeMobile(css`
     overflow-y: auto;
     padding: ${({ theme }) => theme.orbit.spaceXXLarge};
+  `)};
+  ${onlyIE(css`
+    position: -ms-page;
   `)};
 `;
 
@@ -66,6 +77,12 @@ const ModalWrapper = styled.div`
   border-top-right-radius: 9px; // TODO: create token
   transition: ${transition(["top"], "normal", "ease-in-out")};
   top: ${({ loaded }) => (loaded ? "32px" : "100%")};
+
+  ${onlyIE(css`
+    /* IE flex bug, the content won't be centered if there is not 'height' property
+    https://github.com/philipwalton/flexbugs/issues/231 */
+    height: 1px;
+  `)};
 
   ${media.largeMobile(css`
     position: relative;
@@ -100,7 +117,7 @@ const CloseContainer = styled.div`
   
   ${media.largeMobile(css`
     top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "0"};
-    right: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "initial"};
+    right: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "auto"};
   `)};
   
   & + ${StyledModalSection}:first-of-type {
@@ -183,11 +200,12 @@ const ModalWrapperContent = styled.div`
 
   ${media.largeMobile(css`
     position: relative;
-    bottom: initial;
+    bottom: auto;
     border-radius: 9px;
     padding-bottom: 0;
     height: auto;
     overflow: visible;
+    max-height: 100%;
     ${StyledModalSection}:last-of-type {
       padding-bottom: ${({ theme }) => theme.orbit.spaceXXLarge};
       margin-bottom: ${({ fixedFooter, footerHeight }) =>
@@ -215,6 +233,19 @@ const ModalWrapperContent = styled.div`
         `calc(${modalWidth}px - 48px - ${theme.orbit.spaceXXLarge})`};
     }
   `)};
+
+  // we need to re-apply fixed position for IE only
+  ${({ fullyScrolled, fixedFooter }) =>
+    fixedFooter &&
+    fullyScrolled &&
+    onlyIE(
+      css`
+        ${StyledModalFooter} {
+          position: fixed;
+        }
+      `,
+      breakpoints.largeMobile,
+    )};
 `;
 
 ModalWrapperContent.defaultProps = {

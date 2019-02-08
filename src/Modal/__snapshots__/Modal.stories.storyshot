@@ -120,7 +120,7 @@ exports[`Storyshots Modal Full preview 1`] = `
               }
             >
               <div
-                className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
+                className="Modal__ModalBody-sc-1f0srsl-0 cFHwNN"
                 data-test="test"
                 onClick={[Function]}
                 onKeyDown={[Function]}
@@ -128,12 +128,12 @@ exports[`Storyshots Modal Full preview 1`] = `
                 tabIndex="0"
               >
                 <div
-                  className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
+                  className="Modal__ModalWrapper-sc-1f0srsl-1 cRKVsK"
                   onScroll={[Function]}
                   size="normal"
                 >
                   <div
-                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 jnycQk"
+                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 fbaJzI"
                     size="normal"
                   >
                     <div
@@ -190,7 +190,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                         </div>
                       </div>
                       <div
-                        className="ModalHeader__MobileHeader-sc-13vyf6i-3 jWCUfS"
+                        className="ModalHeader__MobileHeader-sc-13vyf6i-3 cOHRtu"
                       >
                         Orbit design system
                       </div>
@@ -223,7 +223,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       </p>
                     </section>
                     <div
-                      className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 brcocJ"
+                      className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 cjDoFb"
                     >
                       <div
                         className="ModalFooter__StyledChild-sc-17ld6v4-0 hFCwHC"
@@ -1698,19 +1698,19 @@ exports[`Storyshots Modal RTL 1`] = `
               }
             >
               <div
-                className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
+                className="Modal__ModalBody-sc-1f0srsl-0 cFHwNN"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onScroll={[Function]}
                 tabIndex="0"
               >
                 <div
-                  className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
+                  className="Modal__ModalWrapper-sc-1f0srsl-1 cRKVsK"
                   onScroll={[Function]}
                   size="normal"
                 >
                   <div
-                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 erowRe"
+                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 laylQb"
                     size="normal"
                   >
                     <div
@@ -1767,7 +1767,7 @@ exports[`Storyshots Modal RTL 1`] = `
                         </div>
                       </div>
                       <div
-                        className="ModalHeader__MobileHeader-sc-13vyf6i-3 cAtvVy"
+                        className="ModalHeader__MobileHeader-sc-13vyf6i-3 gfBIia"
                       >
                         The title of the ModalHeader
                       </div>
@@ -1791,7 +1791,7 @@ exports[`Storyshots Modal RTL 1`] = `
                       </p>
                     </section>
                     <div
-                      className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 brcocJ"
+                      className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 cjDoFb"
                     >
                       <div
                         className="ModalFooter__StyledChild-sc-17ld6v4-0 hahHfK"
@@ -2832,19 +2832,19 @@ exports[`Storyshots Modal Removable sections 1`] = `
               }
             >
               <div
-                className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
+                className="Modal__ModalBody-sc-1f0srsl-0 cFHwNN"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onScroll={[Function]}
                 tabIndex="0"
               >
                 <div
-                  className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
+                  className="Modal__ModalWrapper-sc-1f0srsl-1 cRKVsK"
                   onScroll={[Function]}
                   size="normal"
                 >
                   <div
-                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 erowRe"
+                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 laylQb"
                     size="normal"
                   >
                     <div
@@ -2901,7 +2901,7 @@ exports[`Storyshots Modal Removable sections 1`] = `
                         </div>
                       </div>
                       <div
-                        className="ModalHeader__MobileHeader-sc-13vyf6i-3 jWCUfS"
+                        className="ModalHeader__MobileHeader-sc-13vyf6i-3 cOHRtu"
                       >
                         Enjoy something to eat while you fly
                       </div>
@@ -2925,7 +2925,7 @@ exports[`Storyshots Modal Removable sections 1`] = `
                       </p>
                     </section>
                     <div
-                      className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 brcocJ"
+                      className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 cjDoFb"
                     >
                       <div
                         className="ModalFooter__StyledChild-sc-17ld6v4-0 hFCwHC"
@@ -3895,19 +3895,19 @@ exports[`Storyshots Modal Short Modal 1`] = `
               }
             >
               <div
-                className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
+                className="Modal__ModalBody-sc-1f0srsl-0 cFHwNN"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onScroll={[Function]}
                 tabIndex="0"
               >
                 <div
-                  className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
+                  className="Modal__ModalWrapper-sc-1f0srsl-1 cRKVsK"
                   onScroll={[Function]}
                   size="normal"
                 >
                   <div
-                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 erowRe"
+                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 laylQb"
                     size="normal"
                   >
                     <div
@@ -5679,19 +5679,19 @@ exports[`Storyshots Modal Sizes 1`] = `
               }
             >
               <div
-                className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
+                className="Modal__ModalBody-sc-1f0srsl-0 cFHwNN"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onScroll={[Function]}
                 tabIndex="0"
               >
                 <div
-                  className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
+                  className="Modal__ModalWrapper-sc-1f0srsl-1 cRKVsK"
                   onScroll={[Function]}
                   size="normal"
                 >
                   <div
-                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 jnycQk"
+                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 fbaJzI"
                     size="normal"
                   >
                     <div
@@ -5737,7 +5737,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                         I&#39;m lovely description
                       </div>
                       <div
-                        className="ModalHeader__MobileHeader-sc-13vyf6i-3 jWCUfS"
+                        className="ModalHeader__MobileHeader-sc-13vyf6i-3 cOHRtu"
                       >
                         Orbit design system
                       </div>
@@ -6630,19 +6630,19 @@ exports[`Storyshots Modal With Form 1`] = `
               }
             >
               <div
-                className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
+                className="Modal__ModalBody-sc-1f0srsl-0 cFHwNN"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onScroll={[Function]}
                 tabIndex="0"
               >
                 <div
-                  className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
+                  className="Modal__ModalWrapper-sc-1f0srsl-1 cRKVsK"
                   onScroll={[Function]}
                   size="normal"
                 >
                   <div
-                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 erowRe"
+                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 laylQb"
                     size="normal"
                   >
                     <div
@@ -6692,7 +6692,7 @@ exports[`Storyshots Modal With Form 1`] = `
                         </div>
                       </div>
                       <div
-                        className="ModalHeader__MobileHeader-sc-13vyf6i-3 jWCUfS"
+                        className="ModalHeader__MobileHeader-sc-13vyf6i-3 cOHRtu"
                       >
                         Refund
                       </div>
@@ -6864,7 +6864,7 @@ exports[`Storyshots Modal With Form 1`] = `
                       </div>
                     </section>
                     <div
-                      className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 brcocJ"
+                      className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 cjDoFb"
                     >
                       <div
                         className="ModalFooter__StyledChild-sc-17ld6v4-0 hFCwHC"
@@ -8460,19 +8460,19 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
               }
             >
               <div
-                className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
+                className="Modal__ModalBody-sc-1f0srsl-0 cFHwNN"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onScroll={[Function]}
                 tabIndex="0"
               >
                 <div
-                  className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
+                  className="Modal__ModalWrapper-sc-1f0srsl-1 cRKVsK"
                   onScroll={[Function]}
                   size="normal"
                 >
                   <div
-                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 erowRe"
+                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 laylQb"
                     size="normal"
                   >
                     <div
@@ -8529,7 +8529,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                         </div>
                       </div>
                       <div
-                        className="ModalHeader__MobileHeader-sc-13vyf6i-3 jWCUfS"
+                        className="ModalHeader__MobileHeader-sc-13vyf6i-3 cOHRtu"
                       >
                         Enjoy something to eat while you fly
                       </div>
@@ -9055,7 +9055,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                       </div>
                     </section>
                     <div
-                      className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 brcocJ"
+                      className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 cjDoFb"
                     >
                       <div
                         className="ModalFooter__StyledChild-sc-17ld6v4-0 hFCwHC"
@@ -16591,19 +16591,19 @@ exports[`Storyshots Modal Without section 1`] = `
               }
             >
               <div
-                className="Modal__ModalBody-sc-1f0srsl-0 dqeWDj"
+                className="Modal__ModalBody-sc-1f0srsl-0 cFHwNN"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onScroll={[Function]}
                 tabIndex="0"
               >
                 <div
-                  className="Modal__ModalWrapper-sc-1f0srsl-1 cFckeH"
+                  className="Modal__ModalWrapper-sc-1f0srsl-1 cRKVsK"
                   onScroll={[Function]}
                   size="normal"
                 >
                   <div
-                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 etYHmv"
+                    className="Modal__ModalWrapperContent-sc-1f0srsl-3 iVGFt"
                     size="normal"
                   >
                     <div
@@ -16660,13 +16660,13 @@ exports[`Storyshots Modal Without section 1`] = `
                         </div>
                       </div>
                       <div
-                        className="ModalHeader__MobileHeader-sc-13vyf6i-3 jWCUfS"
+                        className="ModalHeader__MobileHeader-sc-13vyf6i-3 cOHRtu"
                       >
                         Enjoy something to eat while you fly
                       </div>
                     </div>
                     <div
-                      className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 brcocJ"
+                      className="ModalFooter__StyledModalFooter-sc-17ld6v4-1 cjDoFb"
                     >
                       <div
                         className="ModalFooter__StyledChild-sc-17ld6v4-0 hFCwHC"

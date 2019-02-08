@@ -28,7 +28,7 @@ StyledChild.defaultProps = {
 
 export const StyledModalFooter = styled.div`
   display: flex;
-  z-index: 10;
+  z-index: 800; // TODO: use z-index framework
   bottom: 0;
   width: 100%;
   background-color: ${({ theme }) => theme.orbit.paletteWhite};

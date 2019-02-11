@@ -143,7 +143,7 @@ exports[`Storyshots CheckBox Default 1`] = `
                   </svg>
                 </div>
                 <div
-                  className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
+                  className="Checkbox__TextContainer-sc-1x6twh3-1 iRwkQb"
                 >
                   <span
                     className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
@@ -453,7 +453,7 @@ exports[`Storyshots CheckBox Playground 1`] = `
                   </svg>
                 </div>
                 <div
-                  className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
+                  className="Checkbox__TextContainer-sc-1x6twh3-1 iRwkQb"
                 >
                   <span
                     className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
@@ -917,7 +917,7 @@ exports[`Storyshots CheckBox RTL 1`] = `
                   </svg>
                 </div>
                 <div
-                  className="Checkbox__TextContainer-sc-1x6twh3-1 lgBZYI"
+                  className="Checkbox__TextContainer-sc-1x6twh3-1 gaCoAR"
                 >
                   <span
                     className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
@@ -1307,7 +1307,7 @@ exports[`Storyshots CheckBox With TextLink in label 1`] = `
                   </svg>
                 </div>
                 <div
-                  className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
+                  className="Checkbox__TextContainer-sc-1x6twh3-1 iRwkQb"
                 >
                   <span
                     className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
@@ -1646,7 +1646,7 @@ exports[`Storyshots CheckBox With help 1`] = `
                   </svg>
                 </div>
                 <div
-                  className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
+                  className="Checkbox__TextContainer-sc-1x6twh3-1 iRwkQb"
                 >
                   <span
                     className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"

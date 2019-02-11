@@ -12,7 +12,7 @@ Table below contains all types of the props available in Badge component.
 
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :---------------------| :-------------- | :------------------------------- |
-| circled       | `boolean`             | `false`         | If `true`, the Badge will have circular shape.
+| circled       | `boolean`             | `false`         | If `true`, the Badge will have circular shape.  [See Functional specs](#functional-specs)
 | **children**  | `React.Node`          |                 | The content of the Badge.
 | dataTest      | `string`              |                 | Optional prop for testing purposes.
 | icon          | `React.Node`          |                 | The displayed icon on the left.
@@ -28,3 +28,7 @@ Table below contains all types of the props available in Badge component.
 | `"success"`   |
 | `"warning"`   |
 | `"critical"`  |
+
+## Functional specs
+
+* The `circled` property is meant to be used only for two characters. Don't combine it with any `icon` or `children`.

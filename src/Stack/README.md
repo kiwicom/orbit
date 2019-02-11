@@ -20,7 +20,7 @@ Table below contains all types of the props available in Stack component.
 | **children**  | `React.Node`                |              | Content of the Stack.
 | dataTest      | `string`                    |              | Optional prop for testing purposes.
 | desktop       | [`Object`](#desktop)        |              | Object for setting up properties for desktop view.
-| direction     | [`enum`](#enum)             | `"row"`      | The `flex-direction` of the Stack.
+| direction     | [`enum`](#enum)             | `"row"`      | The `flex-direction` of the Stack. [See Functional specs](#functional-specs)
 | flex          | `boolean`                   | `false`      | If `true` or you specify some flex attribute, the Stack will use flex attributes.
 | grow          | `boolean`                   | `false`      | If `true`, the Stack will have `flex-grow` set to `1`, otherwise it will be `0`.
 | inline        | `boolean`                   | `false`      | If `true`, the Stack will have `display` set to `inline-flex`, otherwise it will be `flex`.
@@ -38,7 +38,7 @@ This props have the same usage, but applies only when viewport is bigger than `4
 | :------------ | :-------------------------- | :----------- | :------------------------------- |
 | align         | [`enum`](#enum)             | `"start"`    | The `align-items` and `align-content` of the Stack.
 | basis         | `string`                    | `auto`       | Specifies the basis value of `flex-basis`.
-| direction     | [`enum`](#enum)             | `"row"`      | The `flex-direction` of the Stack.
+| direction     | [`enum`](#enum)             | `"row"`      | The `flex-direction` of the Stack. [See Functional specs](#functional-specs)
 | grow          | `boolean`                   | `false`      | If `true`, the Stack will have `flex-grow` set to `1`, otherwise it will be `0`.
 | inline        | `boolean`                   | `false`      | If `true`, the Stack will have `display` set to `inline-flex`, otherwise it will be `flex`.
 | justify       | [`enum`](#enum)             | `"start"`    | The `justify-content` of the Stack.
@@ -46,6 +46,11 @@ This props have the same usage, but applies only when viewport is bigger than `4
 | spacing       | [`spacing`](#spacing)       | `"natural"`  | The spacing between its children.
 | spaceAfter    | `enum`                      |              | Additional `padding` to bottom of the Stack. [See this doc](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | wrap          | `boolean`                   | `false`      | If `true`, the Stack will have `flex-wrap` set to `wrap`, otherwise it will be `nowrap`.
+
+## Functional specs
+* The default behaviour for the `Stack` component is to not be a `flexbox` container. It means that by default it's nesting children natively (below each other) and it won't use any `flex` CSS properties.
+
+* If you specify some property (except children, spaceAfter, dataTest and spacing) it will become a `flexbox` container and the `flex-direction: row` will be used.
 
 ### enum
 

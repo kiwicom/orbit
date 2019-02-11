@@ -151,7 +151,7 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
                       />
                     </div>
                     <div
-                      className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                      className="Radio__TextContainer-sc-5lanou-2 hNfBAd"
                     >
                       <span
                         className="Radio__LabelText-sc-5lanou-4 kvtYjE"
@@ -181,7 +181,7 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
                       />
                     </div>
                     <div
-                      className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                      className="Radio__TextContainer-sc-5lanou-2 hNfBAd"
                     >
                       <span
                         className="Radio__LabelText-sc-5lanou-4 kvtYjE"
@@ -211,7 +211,7 @@ exports[`Storyshots ChoiceGroup Default 1`] = `
                       />
                     </div>
                     <div
-                      className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                      className="Radio__TextContainer-sc-5lanou-2 hNfBAd"
                     >
                       <span
                         className="Radio__LabelText-sc-5lanou-4 kvtYjE"
@@ -783,7 +783,7 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
                       </svg>
                     </div>
                     <div
-                      className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
+                      className="Checkbox__TextContainer-sc-1x6twh3-1 iRwkQb"
                     >
                       <span
                         className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
@@ -817,7 +817,7 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
                       </svg>
                     </div>
                     <div
-                      className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
+                      className="Checkbox__TextContainer-sc-1x6twh3-1 iRwkQb"
                     >
                       <span
                         className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
@@ -851,7 +851,7 @@ exports[`Storyshots ChoiceGroup Multiple 1`] = `
                       </svg>
                     </div>
                     <div
-                      className="Checkbox__TextContainer-sc-1x6twh3-1 ePDkGQ"
+                      className="Checkbox__TextContainer-sc-1x6twh3-1 iRwkQb"
                     >
                       <span
                         className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
@@ -1420,7 +1420,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                       />
                     </div>
                     <div
-                      className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                      className="Radio__TextContainer-sc-5lanou-2 hNfBAd"
                     >
                       <span
                         className="Radio__LabelText-sc-5lanou-4 kvtYjE"
@@ -1450,7 +1450,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                       />
                     </div>
                     <div
-                      className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                      className="Radio__TextContainer-sc-5lanou-2 hNfBAd"
                     >
                       <span
                         className="Radio__LabelText-sc-5lanou-4 kvtYjE"
@@ -1480,7 +1480,7 @@ exports[`Storyshots ChoiceGroup Playground 1`] = `
                       />
                     </div>
                     <div
-                      className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                      className="Radio__TextContainer-sc-5lanou-2 hNfBAd"
                     >
                       <span
                         className="Radio__LabelText-sc-5lanou-4 kvtYjE"

@@ -139,7 +139,7 @@ exports[`Storyshots Radio Default 1`] = `
                   />
                 </div>
                 <div
-                  className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                  className="Radio__TextContainer-sc-5lanou-2 hNfBAd"
                 >
                   <span
                     className="Radio__LabelText-sc-5lanou-4 kvtYjE"
@@ -445,7 +445,7 @@ exports[`Storyshots Radio Playground 1`] = `
                   />
                 </div>
                 <div
-                  className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                  className="Radio__TextContainer-sc-5lanou-2 hNfBAd"
                 >
                   <span
                     className="Radio__LabelText-sc-5lanou-4 kvtYjE"
@@ -905,7 +905,7 @@ exports[`Storyshots Radio RTL 1`] = `
                   />
                 </div>
                 <div
-                  className="Radio__TextContainer-sc-5lanou-2 lmqToe"
+                  className="Radio__TextContainer-sc-5lanou-2 QKAgd"
                 >
                   <span
                     className="Radio__LabelText-sc-5lanou-4 kvtYjE"
@@ -1291,7 +1291,7 @@ exports[`Storyshots Radio With TextLink in label 1`] = `
                   />
                 </div>
                 <div
-                  className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                  className="Radio__TextContainer-sc-5lanou-2 hNfBAd"
                 >
                   <span
                     className="Radio__LabelText-sc-5lanou-4 kvtYjE"
@@ -1626,7 +1626,7 @@ exports[`Storyshots Radio With help 1`] = `
                   />
                 </div>
                 <div
-                  className="Radio__TextContainer-sc-5lanou-2 fngmbH"
+                  className="Radio__TextContainer-sc-5lanou-2 hNfBAd"
                 >
                   <span
                     className="Radio__LabelText-sc-5lanou-4 kvtYjE"

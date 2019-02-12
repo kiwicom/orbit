@@ -31,18 +31,27 @@ import {
 } from "./helpers/isPosition";
 import { isAlignCenter, isAlignEnd, isAlignStart } from "./helpers/isAlign";
 import { DEVICES } from "../utils/mediaQuery/consts";
+import tooltipPadding from "./helpers/tooltipPadding";
 
 import type { Props, State, Aligns, Positions } from "./index";
 
 const StyledTooltipChildren = styled.span`
-  ${({ block }) =>
-    block &&
-    css`
-      display: block;
-      width: 100%;
-    `};
   &:focus {
     outline: none;
+  }
+
+  ${StyledText} {
+    position: relative;
+    display: inline-block;
+    :after {
+      display: block;
+      border-bottom: 1px dotted currentColor;
+      position: relative;
+      content: " ";
+      width: 100%;
+      height: 0;
+      top: -1px;
+    }
   }
 `;
 
@@ -62,27 +71,35 @@ const StyledTooltipWrapper = styled.div`
   padding: ${({ theme }) => theme.orbit.spaceMedium}; // TODO: create token paddingTooltip
   visibility: ${({ shownMobile }) => (shownMobile ? "visible" : "hidden")};
   opacity: ${({ shownMobile }) => (shownMobile ? "1" : "0")};
-  transition: opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out,
-    visibility ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  z-index: 3; // TODO: use some good value
-  bottom: 0;
+  transition: bottom ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
+    visibility ${({ theme }) => theme.orbit.durationFast} linear ${({ shownMobile, theme }) =>
+  !shownMobile && theme.orbit.durationNormal};
+  z-index: 10012; // TODO: use some good value
+  bottom: ${({ shownMobile, tooltipWidth }) => (shownMobile ? "0" : `-${tooltipWidth}px`)};
   left: 0;
   right: 0;
   
+  img {
+    max-width: 100%;
+  }
+
   ${media.largeMobile(css`
-    width: ${tooltipSize};
+    width: auto;
+    max-width: ${tooltipSize};
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-    padding: ${({ theme }) => theme.orbit.spaceSmall}; // TODO: create token paddingTooltip
+    padding: ${tooltipPadding};
     background-color: ${({ theme }) =>
       theme.orbit.paletteBlueDark}; // TODO: use token backgroundTooltip
     visibility: ${({ shown }) => (shown ? "visible" : "hidden")};
     opacity: ${({ shown }) => (shown ? "1" : "0")};
+    transition: opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out,
+      visibility ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
-    // prevent position
-    top: unset;
-    right: unset;
-    bottom: unset;
-    left: unset;
+    // prevent position, IEs don't have initial YAY
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
 
     // tooltip positions
     ${resolveContainerPosition};
@@ -135,6 +152,7 @@ const StyledTooltipContent = styled.div`
     & ${StyledText}, ${Item} {
       color: ${({ theme }) => theme.orbit.paletteWhite};
       font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
+      font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
     }
   `)};
 `;
@@ -156,7 +174,8 @@ StyledTooltipClose.defaultProps = {
 
 const StyledTooltipOverlay = styled.div`
   position: fixed;
-  display: ${({ shownMobile }) => (shownMobile ? "block" : "none")};
+  display: block;
+  visibility: ${({ shownMobile }) => (shownMobile ? "visible" : "hidden")};
   width: 100%;
   height: 100%;
   top: 0;
@@ -164,11 +183,11 @@ const StyledTooltipOverlay = styled.div`
   bottom: 0;
   left: 0;
   background-color: rgba(23, 27, 30, 0.6); // TODO: token
-  z-index: 2; // TODO: use some good value
+  z-index: 10011; // TODO: use some good value
   opacity: ${({ shownMobile }) => (shownMobile ? "1" : "0")};
-  transition: opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out,
-    display ${({ theme }) => theme.orbit.durationFast} linear
-      ${({ theme }) => theme.orbit.durationFast};
+  transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
+    visibility ${({ theme }) => theme.orbit.durationFast} linear
+      ${({ shownMobile, theme }) => !shownMobile && theme.orbit.durationNormal};
 
   ${media.largeMobile(css`
     display: none;
@@ -188,9 +207,14 @@ class Tooltip extends React.PureComponent<Props, State> {
     shownMobile: false,
   };
 
+  componentDidUpdate(prevProps: Props) {
+    if (this.props !== prevProps) {
+      this.getDimensions();
+    }
+  }
+
   getDimensions = () => {
-    // maybe it can be statics not states
-    if (this.container && this.tooltip && typeof window !== "undefined") {
+    if (this.container && this.tooltip && this.content && typeof window !== "undefined") {
       const containerDimensions = this.container.current.getBoundingClientRect();
       const tooltipDimensions = this.tooltip.current.getBoundingClientRect();
 
@@ -216,6 +240,9 @@ class Tooltip extends React.PureComponent<Props, State> {
       this.tooltipWidth = tooltipWidth;
       this.windowWidth = windowWidth;
       this.windowHeight = windowHeight;
+
+      this.contentHeight =
+        this.content.current && this.content.current.getBoundingClientRect().height;
     }
   };
 
@@ -335,9 +362,15 @@ class Tooltip extends React.PureComponent<Props, State> {
   };
 
   handleIn = () => {
+    const { preferredPosition } = this.props;
+    const positions = Object.keys(POSITIONS).map(k => POSITIONS[k]);
     this.getDimensions();
+    if (preferredPosition) {
+      this.setPosition([preferredPosition, ...positions.filter(p => p !== preferredPosition)]);
+    } else {
+      this.setPosition(positions);
+    }
     // https://github.com/facebook/flow/issues/2221
-    this.setPosition(Object.keys(POSITIONS).map(k => POSITIONS[k]));
     this.setState({ shown: true });
   };
 
@@ -358,6 +391,7 @@ class Tooltip extends React.PureComponent<Props, State> {
 
   container: { current: any | HTMLDivElement } = React.createRef();
   tooltip: { current: any | HTMLDivElement } = React.createRef();
+  content: { current: any | HTMLDivElement } = React.createRef();
 
   containerTop: number = 0;
   containerLeft: number = 0;
@@ -367,14 +401,15 @@ class Tooltip extends React.PureComponent<Props, State> {
   tooltipHeight: number = 0;
   windowWidth: number = 0;
   windowHeight: number = 0;
+  contentHeight: number = 0;
 
   render() {
     const {
       content,
       children,
-      block = false,
       size = SIZE_OPTIONS.SMALL,
       closeText = "Close",
+      dataTest,
     } = this.props;
     const { shown, shownMobile, position, align } = this.state;
     const {
@@ -384,6 +419,7 @@ class Tooltip extends React.PureComponent<Props, State> {
       containerWidth,
       tooltipHeight,
       tooltipWidth,
+      contentHeight,
     } = this;
 
     return (
@@ -395,12 +431,11 @@ class Tooltip extends React.PureComponent<Props, State> {
           onFocus={this.handleIn}
           onBlur={this.handleOut}
           ref={this.container}
-          block={block}
         >
           {children}
         </StyledTooltipChildren>
         <Portal element="tooltips">
-          <StyledTooltip role="tooltip">
+          <StyledTooltip role="tooltip" data-test={dataTest}>
             <StyledTooltipOverlay onClick={this.handleClose} shownMobile={shownMobile} />
             <StyledTooltipWrapper
               shown={shown}
@@ -417,8 +452,9 @@ class Tooltip extends React.PureComponent<Props, State> {
               containerWidth={containerWidth}
               tooltipHeight={tooltipHeight}
               tooltipWidth={tooltipWidth}
+              contentHeight={contentHeight}
             >
-              <StyledTooltipContent>{content}</StyledTooltipContent>
+              <StyledTooltipContent ref={this.content}>{content}</StyledTooltipContent>
               <StyledTooltipClose>
                 <Button type="secondary" block onClick={this.handleClose}>
                   {closeText}

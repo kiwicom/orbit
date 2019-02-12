@@ -3,7 +3,7 @@
   "version": "0.29.0",
   "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
   "scripts": {
-    "storybook": "start-storybook -p 6007 -c .storybook --ci",
+    "storybook": "start-storybook -p 6007 -c .storybook --ci -s ./static",
     "build": "yarn clean && yarn build:icons && yarn build:lib && yarn build:module",
     "build:lib": "babel --out-dir lib --ignore **/*.stories.js,**/*.test.js,**/*.storyshot.js src && yarn copy:lib",
     "build:module": "babel --presets @babel/react,@babel/flow --plugins babel-plugin-styled-components,@babel/plugin-proposal-nullish-coalescing-operator,@babel/plugin-proposal-optional-chaining,@babel/plugin-proposal-class-properties,@babel/plugin-proposal-object-rest-spread --no-babelrc --out-dir es --ignore **/*.stories.js,**/*.test.js,**/*.storyshot src && yarn copy:module",

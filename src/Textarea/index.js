@@ -138,6 +138,6 @@ const Textarea = React.forwardRef((props: Props, ref: Ref) => {
   );
 });
 
-Textarea.display = "Textarea";
+Textarea.displayName = "Textarea";
 
 export default Textarea;

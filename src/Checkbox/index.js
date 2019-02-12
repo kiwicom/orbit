@@ -57,6 +57,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
+  flex: 1; // IE wrapping fix
 `;
 
 TextContainer.defaultProps = {

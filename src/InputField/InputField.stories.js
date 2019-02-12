@@ -220,6 +220,35 @@ storiesOf("InputField", module)
       ],
     };
   })
+  .addWithChapters("With text suffix", () => {
+    const label = text("Label", "Label");
+    const value = text("Value", "");
+    const placeholder = text("Placeholder", "Placeholder");
+    const suffix = text("Suffix", "Some long text");
+
+    return {
+      info: "Some description about this type of InputField in general.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <InputField
+                  label={label}
+                  value={value}
+                  placeholder={placeholder}
+                  suffix={
+                    <div style={{ paddingRight: "12px", whiteSpace: "nowrap" }}>{suffix}</div>
+                  }
+                  onChange={action("change")}
+                />
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
 
   .addWithChapters("Compact input", () => {
     const value = text("Value", "");

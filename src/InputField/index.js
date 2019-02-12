@@ -94,7 +94,6 @@ export const InputContainer = styled(({ children, className }) => (
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  width: 100%;
   height: ${getToken(TOKENS.heightInput)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   color: ${({ disabled, theme }) =>
@@ -161,7 +160,7 @@ Prefix.defaultProps = {
 
 const Suffix = styled(({ children, className }) => <div className={className}>{children}</div>)`
   height: ${getToken(TOKENS.heightInput)};
-  color: ${({ theme }) => theme.orbit.colorIconInput};
+  color: ${({ theme }) => theme.orbit.colorTextInputPrefix};
   display: flex;
   align-items: center;
   justify-content: center;

@@ -139,7 +139,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                       className="InputField__Field-sc-4opay-0 kCAFyx"
                     >
                       <div
-                        className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                        className="InputField__InputContainer-sc-4opay-2 kccDHe"
                       >
                         <input
                           className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -262,7 +262,7 @@ exports[`Storyshots InputGroup Date of birth 1`] = `
                       className="InputField__Field-sc-4opay-0 kCAFyx"
                     >
                       <div
-                        className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                        className="InputField__InputContainer-sc-4opay-2 kccDHe"
                       >
                         <input
                           className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -1239,7 +1239,7 @@ exports[`Storyshots InputGroup Phone number 1`] = `
                       className="InputField__Field-sc-4opay-0 kCAFyx"
                     >
                       <div
-                        className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                        className="InputField__InputContainer-sc-4opay-2 kccDHe"
                       >
                         <input
                           className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -2082,7 +2082,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       className="InputField__Field-sc-4opay-0 kCAFyx"
                     >
                       <div
-                        className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                        className="InputField__InputContainer-sc-4opay-2 kccDHe"
                       >
                         <input
                           className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -2149,7 +2149,7 @@ exports[`Storyshots InputGroup Playground 1`] = `
                       className="InputField__Field-sc-4opay-0 kCAFyx"
                     >
                       <div
-                        className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                        className="InputField__InputContainer-sc-4opay-2 kccDHe"
                       >
                         <input
                           className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -3300,7 +3300,7 @@ exports[`Storyshots InputGroup RTL 1`] = `
                       className="InputField__Field-sc-4opay-0 kCAFyx"
                     >
                       <div
-                        className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                        className="InputField__InputContainer-sc-4opay-2 kccDHe"
                       >
                         <input
                           className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -3423,7 +3423,7 @@ exports[`Storyshots InputGroup RTL 1`] = `
                       className="InputField__Field-sc-4opay-0 kCAFyx"
                     >
                       <div
-                        className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                        className="InputField__InputContainer-sc-4opay-2 kccDHe"
                       >
                         <input
                           className="InputField__Input-sc-4opay-6 ceKwqb"

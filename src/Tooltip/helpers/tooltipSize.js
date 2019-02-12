@@ -5,7 +5,7 @@ import type { Props } from "./tooltipSize";
 const tooltipSize = ({ size }: Props) => {
   const sizes = {
     [SIZE_OPTIONS.SMALL]: "240px",
-    [SIZE_OPTIONS.MEDIUM]: "340px",
+    [SIZE_OPTIONS.MEDIUM]: "380px",
   };
   return sizes[size];
 };

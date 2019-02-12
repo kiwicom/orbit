@@ -1152,7 +1152,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         </span>
                       </span>
                       <div
-                        className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                        className="InputField__InputContainer-sc-4opay-2 kccDHe"
                       >
                         <div
                           className="InputField__Prefix-sc-4opay-4 iNucwo"
@@ -1186,7 +1186,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                           value={0}
                         />
                         <div
-                          className="InputField__Suffix-sc-4opay-5 kCvrXk"
+                          className="InputField__Suffix-sc-4opay-5 kANGZa"
                         >
                           <div
                             className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
@@ -1226,7 +1226,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </span>
                     </span>
                     <div
-                      className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                      className="InputField__InputContainer-sc-4opay-2 kccDHe"
                     >
                       <input
                         className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -1255,7 +1255,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         </span>
                       </span>
                       <div
-                        className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                        className="InputField__InputContainer-sc-4opay-2 kccDHe"
                       >
                         <div
                           className="InputField__Prefix-sc-4opay-4 iNucwo"
@@ -1289,7 +1289,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                           value={0}
                         />
                         <div
-                          className="InputField__Suffix-sc-4opay-5 kCvrXk"
+                          className="InputField__Suffix-sc-4opay-5 kANGZa"
                         >
                           <div
                             className="ButtonLink__StyledButtonLink-sc-14jv5cl-1 mwSQA InputStepper__PrefixSuffix-sc-1kqzp6i-0 gTLEXo"
@@ -1329,7 +1329,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </span>
                     </span>
                     <div
-                      className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                      className="InputField__InputContainer-sc-4opay-2 kccDHe"
                     >
                       <input
                         className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -1355,7 +1355,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </span>
                     </span>
                     <div
-                      className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                      className="InputField__InputContainer-sc-4opay-2 kccDHe"
                     >
                       <input
                         className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -1435,7 +1435,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                           className="InputField__Field-sc-4opay-0 kCAFyx"
                         >
                           <div
-                            className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                            className="InputField__InputContainer-sc-4opay-2 kccDHe"
                           >
                             <input
                               className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -1519,7 +1519,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                       </span>
                     </span>
                     <div
-                      className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                      className="InputField__InputContainer-sc-4opay-2 kccDHe"
                     >
                       <input
                         className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -1599,7 +1599,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                           className="InputField__Field-sc-4opay-0 kCAFyx"
                         >
                           <div
-                            className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                            className="InputField__InputContainer-sc-4opay-2 kccDHe"
                           >
                             <input
                               className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -30708,7 +30708,7 @@ exports[`Storyshots Stack Desktop properties 1`] = `
                     </span>
                   </span>
                   <div
-                    className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                    className="InputField__InputContainer-sc-4opay-2 kccDHe"
                   >
                     <input
                       className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -32040,7 +32040,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                       </span>
                     </span>
                     <div
-                      className="InputField__InputContainer-sc-4opay-2 bnDMxw"
+                      className="InputField__InputContainer-sc-4opay-2 bitzWY"
                     >
                       <input
                         className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -33183,7 +33183,7 @@ exports[`Storyshots Stack Playground 1`] = `
                     </span>
                   </span>
                   <div
-                    className="InputField__InputContainer-sc-4opay-2 ksKWcl"
+                    className="InputField__InputContainer-sc-4opay-2 kccDHe"
                   >
                     <input
                       className="InputField__Input-sc-4opay-6 ceKwqb"
@@ -34099,7 +34099,7 @@ exports[`Storyshots Stack RTL 1`] = `
                       </span>
                     </span>
                     <div
-                      className="InputField__InputContainer-sc-4opay-2 bnDMxw"
+                      className="InputField__InputContainer-sc-4opay-2 bitzWY"
                     >
                       <input
                         className="InputField__Input-sc-4opay-6 ceKwqb"

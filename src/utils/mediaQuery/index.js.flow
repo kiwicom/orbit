@@ -17,7 +17,7 @@ type Query = {|
 |};
 
 type Queries = {|
-  [key: string]: Query,
+  [key: Devices]: Query,
 |};
 
 type Breakpoints = $ObjMap<Queries, () => string>;

@@ -17,6 +17,7 @@ export const NAME_OPTIONS = {
   SOFORT: "Sofort",
   TRAVELPULSE: "TravelPulse",
   TRUSTLY: "Trustly",
+  USATODAY: "UsaToday",
   VISA: "Visa",
   VISAHQ: "VisaHQ",
   ZOOZ: "Zooz",

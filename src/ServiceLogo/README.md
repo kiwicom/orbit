@@ -38,6 +38,7 @@ Table below contains all types of the props available in ServiceLogo component.
 | `"Sofort"`        |
 | `"TravelPulse"`   |
 | `"Trustly"`       |
+| `"UsaToday"`      |
 | `"Visa"`          |
 | `"VisaHQ"`        |
 | `"Zooz"`          |

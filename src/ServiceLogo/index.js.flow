@@ -21,6 +21,7 @@ export type Name =
   | "Sofort"
   | "TravelPulse"
   | "Trustly"
+  | "UsaToday"
   | "Visa"
   | "VisaHQ"
   | "Zooz";

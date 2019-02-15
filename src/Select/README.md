@@ -18,9 +18,9 @@ Table below contains all types of the props available in the Select component.
 | help        | `React.Node`                      |            | The help message for the Select.
 | label       | `Translation`                     |            | The label for the Select.
 | name        | `string`                          |            | The name for the Select.
-| onBlur      | `func`                            |            | Function for handling onBlur event.
-| onChange    | `func`                            |            | Function for handling onChange event.
-| onFocus     | `func`                            |            | Function for handling onFocus event.
+| onBlur      | `event => void \| Promise`        |            | Function for handling onBlur event.
+| onChange    | `event => void \| Promise`        |            | Function for handling onChange event.
+| onFocus     | `event => void \| Promise`        |            | Function for handling onFocus event.
 | **options** | [`Option[]`](#option)             |            | The content of the Select, passed as array of objects.
 | placeholder | `Translation`                     |            | The placeholder for the Select. 
 | prefix      | `React.Node`                      |            | The prefix component for the Select. [See Functional specs](#functional-specs)

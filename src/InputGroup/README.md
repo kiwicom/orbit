@@ -23,9 +23,9 @@ Table below contains all types of the props available in InputGroup component.
 | flex          | `string` or `Array<string>`   | `"0 1 auto"` | The flex attribute(s) for children of the InputGroup. [See Functional specs](#functional-specs)
 | help          | `React.Node`                  |              | The help to display beneath the InputGroup.
 | label         | `Translation`                 |              | The label for the InputGroup. [See Functional specs](#functional-specs)
-| onChange      | `func`                        |              | Function for handling onClick event. [See Functional specs](#functional-specs)
-| onFocus       | `func`                        |              | Function for handling onFocus event. [See Functional specs](#functional-specs)
-| onBlur        | `func`                        |              | Function for handling onBlur event. [See Functional specs](#functional-specs)
+| onChange      | `event => void \| Promise`    |              | Function for handling onClick event. [See Functional specs](#functional-specs)
+| onFocus       | `event => void \| Promise`    |              | Function for handling onFocus event. [See Functional specs](#functional-specs)
+| onBlur        | `event => void \| Promise`    |              | Function for handling onBlur event. [See Functional specs](#functional-specs)
 | size          | [`enum`](#enum)               | `"normal"`   | The size of the InputField. [See Functional specs](#functional-specs)
 
 ### enum

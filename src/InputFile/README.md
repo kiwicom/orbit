@@ -10,22 +10,22 @@ After adding import into your project you can use it simply like:
 ## Props
 Table below contains all types of the props available in the InputFile component.
 
-| Name                | Type                  | Default              | Description                      |
-| :------------------ | :-------------------- | :------------------- | :------------------------------- |
-| allowedFileTypes    | `string` | `string[]` |                      | You can specify allow file types. [See W3S](#functional-specs)
-| dataTest            | `string`              |                      | Optional prop for testing purposes.
-| error               | `React.Node`          |                      | The error message for the Select. [See Functional specs](#functional-specs)
-| fileName            | `string`              |                      | The name of selected file.
-| help                | `React.Node`          |                      | The help message for the InputFile.
-| label               | `Translation`         |                      | The label for the InputFile.
-| name                | `string`              |                      | The name for the InputFile.
-| onBlur              | `func`                |                      | Function for handling onBlur event.
-| onChange            | `func`                |                      | Function for handling onChange event.
-| onFocus             | `func`                |                      | Function for handling onFocus event.
-| onRemoveFile        | `func`                |                      | Function for handling file name removing.
-| placeholder         | `Translation`         | `"No file selected"` | The placeholder for the InputFile. [See Functional specs](#functional-specs)
-| ref                 | `func`                |                      | Prop for forwarded ref of the InputFile. [See Functional specs](#functional-specs)
-| title               | `Translation`         | `"Select file"`      | The title for the InputFile. [See Functional specs](#functional-specs)
+| Name                | Type                        | Default              | Description                      |
+| :------------------ | :-------------------------- | :------------------- | :------------------------------- |
+| allowedFileTypes    | `string` | `string[]`       |                      | You can specify allow file types. [See W3S](#functional-specs)
+| dataTest            | `string`                    |                      | Optional prop for testing purposes.
+| error               | `React.Node`                |                      | The error message for the Select. [See Functional specs](#functional-specs)
+| fileName            | `string`                    |                      | The name of selected file.
+| help                | `React.Node`                |                      | The help message for the InputFile.
+| label               | `Translation`               |                      | The label for the InputFile.
+| name                | `string`                    |                      | The name for the InputFile.
+| onBlur              | `event => void \| Promise`  |                      | Function for handling onBlur event.
+| onChange            | `event => void \| Promise`  |                      | Function for handling onChange event.
+| onFocus             | `event => void \| Promise`  |                      | Function for handling onFocus event.
+| onRemoveFile        | `() => void \| Promise`     |                      | Function for handling file name removing.
+| placeholder         | `Translation`               | `"No file selected"` | The placeholder for the InputFile. [See Functional specs](#functional-specs)
+| ref                 | `func`                      |                      | Prop for forwarded ref of the InputFile. [See Functional specs](#functional-specs)
+| title               | `Translation`               | `"Select file"`      | The title for the InputFile. [See Functional specs](#functional-specs)
 
 ## Functional specs
 * The `error` prop overwrites the `help` prop, due to higher priority.

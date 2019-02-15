@@ -16,7 +16,7 @@ Table below contains all types of the props available in Alert component.
 | closable      | `boolean`                       | `false`         | If `true`, the Close icon will be displayed. [See Functional specs](#functional-specs)
 | dataTest      | `string`                        |                 | Optional prop for testing purposes.
 | icon          | `React.Element<any> \| boolean` |                 | The displayed icon. [See Functional specs](#functional-specs)
-| onClose       | `func`                          |                 | Function for handling Alert onClose.
+| onClose       | `() => void`                    |                 | Function for handling Alert onClose.
 | spaceAfter    | `enum`                          |                 | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | title         | `Translation`                   |                 | The title of the Alert.
 | **type**      | [`enum`](#enum)                 | `"info"`        | The type of Alert.

@@ -23,7 +23,7 @@ Table below contains all types of the props available in the ChoiceGroup compone
 | label               | `Translation`              |             | Heading text of `<ChoiceGroup />`
 | labelSize           | [`enum`](#enum)            | `"normal"`  | The size type of Heading.
 | labelElement        | [`enum`](#enum)            | `"h4"`      | The element used to render the label into.
-| **onChange**        | `func`                     |             | Function for handling onChange event. [See Functional specs](#functional-specs)
+| **onChange**        | `event => void \| Promise` |             | Function for handling onChange event. [See Functional specs](#functional-specs)
   
 ### enum
 | labelElement  | labelSize   |

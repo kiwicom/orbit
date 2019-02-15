@@ -1,8 +1,7 @@
 # Card
 To implement Card component into your project you'll need to the import at least the Card and the [CardSection](#cardsection):
 ```jsx
-import Card from "@kiwicom/orbit-components/lib/Card";
-import CardSection from "@kiwicom/orbit-components/lib/Card/CardSection";
+import Card, { CardSection } from "@kiwicom/orbit-components/lib/Card";
 ```
 After adding import into your project you can use it simply like:
 ```jsx
@@ -31,8 +30,7 @@ Card component offers a good flexibility and many variations in its usage. There
 
 ### CardHeader
 ```jsx
-import Card from "@kiwicom/orbit-components/lib/Card";
-import CardHeader from "@kiwicom/orbit-components/lib/Card/CardHeader";
+import Card, { CardHeader } from "@kiwicom/orbit-components/lib/Card";
 ```
 #### Usage:
 ```jsx
@@ -55,8 +53,7 @@ Table below contains all types of the props in CardHeader component.
 
 ### CardSection
 ```jsx
-import Card from "@kiwicom/orbit-components/lib/Card";
-import CardSection from "@kiwicom/orbit-components/lib/Card/CardSection";
+import Card, { CardSection } from "@kiwicom/orbit-components/lib/Card";
 ```
 #### Usage:
 ```jsx
@@ -82,9 +79,7 @@ Table below contains all types of the props in CardSection component.
 
 ### CardSectionHeader
 ```jsx
-import Card from "@kiwicom/orbit-components/lib/Card";
-import CardSection from "@kiwicom/orbit-components/lib/Card/CardSection";
-import CardSectionHeader from "@kiwicom/orbit-components/lib/Card/CardSection/CardSectionHeader";
+import Card, { CardSection, CardSectionHeader } from "@kiwicom/orbit-components/lib/Card";
 ```
 #### Usage:
 ```jsx
@@ -108,9 +103,7 @@ Table below contains all types of the props in CardSectionHeader component.
 
 ### CardSectionContent
 ```jsx
-import Card from "@kiwicom/orbit-components/lib/Card";
-import CardSection from "@kiwicom/orbit-components/lib/Card/CardSection";
-import CardSectionContent from "@kiwicom/orbit-components/lib/Card/CardSection/CardSectionContent";
+import Card, { CardSection, CardSectionContent } from "@kiwicom/orbit-components/lib/Card";
 ```
 #### Usage:
 ```jsx

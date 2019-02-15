@@ -1,8 +1,7 @@
 # List
 To implement List component into your project you'll need to add the import:
 ```jsx
-import List from "@kiwicom/orbit-components/lib/List";
-import ListItem from "@kiwicom/orbit-components/lib/List/ListItem";
+import List, { ListItem } from "@kiwicom/orbit-components/lib/List";
 ```
 After adding import into your project you can use it simply like:
 ```jsx

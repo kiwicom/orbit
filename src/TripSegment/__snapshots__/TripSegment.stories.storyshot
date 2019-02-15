@@ -195,7 +195,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                         3h
                       </p>
                       <div
-                        className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
+                        className="CarrierLogo__StyledCarrierLogo-d4doc9-1 fhCKPx"
                         size="medium"
                       >
                         <img
@@ -236,7 +236,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                             className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
                           >
                             <div
-                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 gRdVDN"
                               size="large"
                             >
                               <img
@@ -1145,7 +1145,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                         3h
                       </p>
                       <div
-                        className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
+                        className="CarrierLogo__StyledCarrierLogo-d4doc9-1 fhCKPx"
                         size="medium"
                       >
                         <img
@@ -1186,7 +1186,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                             className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
                           >
                             <div
-                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 gRdVDN"
                               size="large"
                             >
                               <img
@@ -2173,7 +2173,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                         2h
                       </p>
                       <div
-                        className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
+                        className="CarrierLogo__StyledCarrierLogo-d4doc9-1 fhCKPx"
                         size="medium"
                       >
                         <img
@@ -2214,7 +2214,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                             className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
                           >
                             <div
-                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 gRdVDN"
                               size="large"
                             >
                               <img
@@ -3145,7 +3145,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                         3h
                       </p>
                       <div
-                        className="CarrierLogo__StyledCarrierLogo-d4doc9-1 jJRzEb"
+                        className="CarrierLogo__StyledCarrierLogo-d4doc9-1 fhCKPx"
                         size="medium"
                       >
                         <img
@@ -3186,7 +3186,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                             className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
                           >
                             <div
-                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 gRdVDN"
                               size="large"
                             >
                               <img

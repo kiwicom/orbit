@@ -3,19 +3,28 @@ import { css } from "styled-components";
 
 import { QUERIES } from "./consts";
 
-import type { MediaQueries } from "./index";
+import type { MediaQueries, GetBreakpointWidth } from ".";
 
-export const breakpoints = Object.keys(QUERIES).reduce(
-  (o, name) => ({ ...o, [name]: QUERIES[name].min && `(min-width: ${QUERIES[name].min}px)` }),
-  {},
-);
+export const getBreakpointWidth: GetBreakpointWidth = (name, pure) => ({ theme }) => {
+  const tokens = {
+    [QUERIES.MEDIUMMOBILE]: theme.orbit.widthMediaQueryMediumMobile,
+    [QUERIES.LARGEMOBILE]: theme.orbit.widthMediaQueryLargeMobile,
+    [QUERIES.TABLET]: theme.orbit.widthMediaQueryTablet,
+    [QUERIES.DESKTOP]: theme.orbit.widthMediaQueryDesktop,
+    [QUERIES.LARGEDESKTOP]: theme.orbit.widthMediaQueryLargeDesktop,
+  };
+  if (pure) {
+    return tokens[name];
+  }
+  return `(min-width: ${tokens[name]}px)`;
+};
 
-const mediaQueries: MediaQueries = Object.keys(breakpoints).reduce(
+const mediaQueries: MediaQueries = Object.keys(QUERIES).reduce(
   (o, name) => ({
     ...o,
-    [name]: style =>
+    [QUERIES[name]]: style =>
       css`
-        @media ${breakpoints[name]} {
+        @media ${({ theme }) => getBreakpointWidth(QUERIES[name])({ theme })} {
           ${style};
         }
       `,

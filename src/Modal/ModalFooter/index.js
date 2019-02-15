@@ -2,13 +2,13 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import media from "../../utils/mediaQuery";
+import media, { getBreakpointWidth } from "../../utils/mediaQuery";
 import defaultTheme from "../../defaultTheme";
 import { StyledButton } from "../../Button";
 import { rtlSpacing } from "../../utils/rtl";
 import { StyledButtonLink } from "../../ButtonLink";
 import { withModalContext } from "../ModalContext";
-import { DEVICES_WIDTH } from "../../utils/mediaQuery/consts";
+import { QUERIES } from "../../utils/mediaQuery/consts";
 
 import type { Props } from "./index";
 
@@ -38,7 +38,8 @@ export const StyledModalFooter = styled.div`
   // TODO: create token boxShadowActionableInverted
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
-  @media (max-width: ${DEVICES_WIDTH.largeMobile - 1}px) {
+  @media (max-width: ${({ theme }) =>
+      Number(getBreakpointWidth(QUERIES.LARGEMOBILE, true)({ theme })) - 1}px) {
     ${StyledButton}, ${StyledButtonLink} {
       font-size: ${({ theme }) => theme.orbit.fontSizeButtonNormal};
       height: ${({ theme }) => theme.orbit.heightButtonNormal};

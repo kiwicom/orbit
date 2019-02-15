@@ -4,9 +4,10 @@ import { mount } from "enzyme";
 
 import Hide from "..";
 
-import { breakpoints } from "../../utils/mediaQuery/index";
 import Airplane from "../../icons/Airplane";
-import { DEVICES } from "../../utils/mediaQuery/consts";
+import { DEVICES, QUERIES } from "../../utils/mediaQuery/consts";
+import { getBreakpointWidth } from "../../utils/mediaQuery/index";
+import defaultTheme from "../../defaultTheme";
 
 describe("Hide", () => {
   const on = ["smallMobile", "largeMobile", "largeDesktop"];
@@ -25,15 +26,19 @@ describe("Hide", () => {
     expect(component.find("Airplane").exists()).toBe(true);
   });
   it("should contain styles", () => {
-    Object.keys(breakpoints).map(
+    DEVICES.map(
       viewport =>
-        viewport !== DEVICES.SMALLMOBILE &&
+        viewport !== DEVICES[0] &&
         (on.indexOf(viewport) !== -1
           ? expect(component).toHaveStyleRule("display", "none", {
-              media: breakpoints[viewport],
+              media: getBreakpointWidth(viewport)({
+                theme: defaultTheme,
+              }),
             })
           : expect(component).toHaveStyleRule("display", "inline-block", {
-              media: breakpoints[viewport],
+              media: getBreakpointWidth(viewport)({
+                theme: defaultTheme,
+              }),
             })),
     );
     expect(component).toHaveStyleRule("display", "none");
@@ -41,13 +46,13 @@ describe("Hide", () => {
   it("should be displayed block", () => {
     component.setProps({ block: true, on: on[1] });
     expect(component).toHaveStyleRule("display", "block", {
-      media: breakpoints[on[2]],
+      media: getBreakpointWidth(QUERIES.LARGEDESKTOP)({ theme: defaultTheme }),
     });
   });
   it("should be none", () => {
     component.setProps({ block: true, on: on[1] });
     expect(component).toHaveStyleRule("display", "none", {
-      media: breakpoints[on[1]],
+      media: getBreakpointWidth(QUERIES.LARGEMOBILE)({ theme: defaultTheme }),
     });
   });
   it("should match snapshot", () => {

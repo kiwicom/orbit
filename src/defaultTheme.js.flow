@@ -1,8 +1,16 @@
 // @flow
 import type { Tokens } from "@kiwicom/orbit-design-tokens";
 
+type MediaQueries = {
+  widthMediaQueryMediumMobile: number,
+  widthMediaQueryLargeMobile: number,
+  widthMediaQueryTablet: number,
+  widthMediaQueryDesktop: number,
+  widthMediaQueryLargeDesktop: number,
+};
+
 export type Theme = {|
-  +orbit: Tokens,
+  +orbit: { ...MediaQueries, ...Tokens },
   +rtl: boolean,
 |};
 

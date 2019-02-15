@@ -8,7 +8,8 @@ import Button from "../../Button";
 import { ALIGNS, DIRECTIONS, JUSTIFY, SPACINGS } from "../consts";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import defaultTheme from "../../defaultTheme";
-import { breakpoints } from "../../utils/mediaQuery";
+import { getBreakpointWidth } from "../../utils/mediaQuery";
+import { QUERIES } from "../../utils/mediaQuery/consts";
 
 const defaultValues = {
   align: "start",
@@ -65,7 +66,7 @@ describe("Default Stack", () => {
       modifier: "& > *:last-child",
     });
     expect(stack).toHaveStyleRule("margin", "0 0 40px 0!important", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
       modifier: "& > *",
     });
   });
@@ -183,40 +184,40 @@ describe("Stack with enabled flex", () => {
   });
   it("should contain desktop styles", () => {
     expect(stack).toHaveStyleRule("display", "inline-flex", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).not.toHaveStyleRule("width", expect.any(String), {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("flex-direction", "column", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("flex-wrap", "wrap", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("flex-shrink", "0", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("flex-grow", "1", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("flex-basis", "auto", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("align-content", "flex-start", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("justify-content", "flex-end", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("align-items", "flex-start", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(component).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceXSmall, {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("margin", "0 0 12px 0!important", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
       modifier: "& > *",
     });
   });
@@ -264,28 +265,28 @@ describe("Stack with only desktop properties", () => {
   });
   it("should contain desktop styles", () => {
     expect(stack).toHaveStyleRule("display", "inline-flex", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("flex-wrap", "wrap", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("flex-shrink", "1", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("flex-grow", "0", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("flex-basis", "auto", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("justify-content", "flex-end", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceXSmall, {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("margin", "0 0 12px 0!important", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
       modifier: "& > *",
     });
   });
@@ -347,13 +348,13 @@ describe("Stack with mobile and some desktop properties", () => {
   });
   it("should contain desktop styles - only defined", () => {
     expect(stack).toHaveStyleRule("flex-direction", "column", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("flex-shrink", "0", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("margin", "0 0 32px 0!important", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
       modifier: "& > *",
     });
   });
@@ -382,40 +383,40 @@ describe("Stack with every media query", () => {
   });
   it("should contain mediumMobile styles", () => {
     expect(stack).toHaveStyleRule("flex-direction", "column", {
-      media: breakpoints.mediumMobile,
+      media: getBreakpointWidth(QUERIES.MEDIUMMOBILE)({ theme: defaultTheme }),
     });
     expect(stack).not.toHaveStyleRule("margin", expect.any(String), {
-      media: breakpoints.mediumMobile,
+      media: getBreakpointWidth(QUERIES.MEDIUMMOBILE)({ theme: defaultTheme }),
       modifier: "& > *",
     });
   });
   it("should contain largeMobile styles", () => {
     expect(stack).toHaveStyleRule("margin", "0 0 28px 0!important", {
-      media: breakpoints.largeMobile,
+      media: getBreakpointWidth(QUERIES.LARGEMOBILE)({ theme: defaultTheme }),
       modifier: "& > *",
     });
   });
   it("should contain tablet styles", () => {
     expect(stack).toHaveStyleRule("flex-direction", "row", {
-      media: breakpoints.tablet,
+      media: getBreakpointWidth(QUERIES.TABLET)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("margin", "0 32px 0 0!important", {
-      media: breakpoints.tablet,
+      media: getBreakpointWidth(QUERIES.TABLET)({ theme: defaultTheme }),
       modifier: "& > *",
     });
   });
   it("should contain desktop styles", () => {
     expect(stack).toHaveStyleRule("margin", "0 2px 0 0!important", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
       modifier: "& > *",
     });
   });
   it("should contain largeDesktop styles", () => {
     expect(stack).toHaveStyleRule("flex-direction", "column", {
-      media: breakpoints.largeDesktop,
+      media: getBreakpointWidth(QUERIES.LARGEDESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("margin", "0 0 2px 0!important", {
-      media: breakpoints.largeDesktop,
+      media: getBreakpointWidth(QUERIES.LARGEDESKTOP)({ theme: defaultTheme }),
       modifier: "& > *",
     });
   });
@@ -444,40 +445,40 @@ describe("Stack with every media query and reverse directions", () => {
   });
   it("should contain mediumMobile styles", () => {
     expect(stack).toHaveStyleRule("flex-direction", "column-reverse", {
-      media: breakpoints.mediumMobile,
+      media: getBreakpointWidth(QUERIES.MEDIUMMOBILE)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("margin", "4px 0 0 0!important", {
-      media: breakpoints.mediumMobile,
+      media: getBreakpointWidth(QUERIES.MEDIUMMOBILE)({ theme: defaultTheme }),
       modifier: "& > *",
     });
   });
   it("should contain largeMobile styles", () => {
     expect(stack).toHaveStyleRule("margin", "28px 0 0 0!important", {
-      media: breakpoints.largeMobile,
+      media: getBreakpointWidth(QUERIES.LARGEMOBILE)({ theme: defaultTheme }),
       modifier: "& > *",
     });
   });
   it("should contain tablet styles", () => {
     expect(stack).toHaveStyleRule("flex-direction", "row-reverse", {
-      media: breakpoints.tablet,
+      media: getBreakpointWidth(QUERIES.TABLET)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("margin", "0 0 0 32px!important", {
-      media: breakpoints.tablet,
+      media: getBreakpointWidth(QUERIES.TABLET)({ theme: defaultTheme }),
       modifier: "& > *",
     });
   });
   it("should contain desktop styles", () => {
     expect(stack).toHaveStyleRule("margin", "0 0 0 2px!important", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth(QUERIES.DESKTOP)({ theme: defaultTheme }),
       modifier: "& > *",
     });
   });
   it("should contain largeDesktop styles", () => {
     expect(stack).toHaveStyleRule("flex-direction", "column", {
-      media: breakpoints.largeDesktop,
+      media: getBreakpointWidth(QUERIES.LARGEDESKTOP)({ theme: defaultTheme }),
     });
     expect(stack).toHaveStyleRule("margin", "0 0 2px 0!important", {
-      media: breakpoints.largeDesktop,
+      media: getBreakpointWidth(QUERIES.LARGEDESKTOP)({ theme: defaultTheme }),
       modifier: "& > *",
     });
   });

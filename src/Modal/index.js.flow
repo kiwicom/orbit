@@ -33,6 +33,8 @@ export type Props = {|
 
 declare export default React$ComponentType<Props>;
 
+declare export var PureModal: React$ComponentType<Props>;
+
 declare export var ModalHeader: ModalHeaderType;
 declare export var ModalSection: ModalSectionType;
 declare export var ModalFooter: ModalFooterType;

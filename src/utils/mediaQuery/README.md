@@ -4,6 +4,8 @@ In the `orbit-components` package you can find several media queries that are ba
 
 ## Media query functions
 
+By default you should define styles firstly for mobile and then use queries for bigger devices.
+
 Example below is a good start to implement media query functions into your project that uses `styled-components`:
 ```jsx
 import media from "@kiwicom/orbit-components/lib/utils/mediaQuery";
@@ -23,10 +25,10 @@ You can use these media queries in your project:
 | Name          | Applies from width    |
 | :------------ | :-------------------- |
 | mediumMobile  | `414px`               |
-| largeMobile   | `600px`               |
-| tablet        | `992px`               |
-| desktop       | `1200px`              |
-| largeDesktop  | `1400px`              |
+| largeMobile   | `576px`               |
+| tablet        | `768px`               |
+| desktop       | `992px`               |
+| largeDesktop  | `1200px`              |
 
 ## Breakpoints for testing purposes
 

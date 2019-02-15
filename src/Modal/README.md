@@ -20,13 +20,13 @@ The Modal component has big variety of usage, please check examples for usage [b
 ## Props
 Table below contains all types of the props available in the Modal component.
 
-| Name          | Type                    | Default         | Description                      |
-| :------------ | :---------------------- | :-------------- | :------------------------------- |
-| children      | `React.Node`            |                 | The content of the Modal. [See Subcomponents](#sub-components)
-| dataTest      | `string`                |                 | Optional prop for testing purposes.
-| fixedFooter   | `boolean`               | `false`         | If `true` the ModalFooter will be fixed to the bottom of window.
-| size          | [`enum`](#modal-enum)   | `"normal"`      | The maximum width of the Modal on desktop viewport.
-| onClose       | `func \| Promise<any>`  |                 | Function for handling onClose event. If you don't pass any function the Close button will not be displayed and it will not be possible to close the Modal. [See Functional specs](#functional-specs)
+| Name          | Type                        | Default         | Description                      |
+| :------------ | :-------------------------- | :-------------- | :------------------------------- |
+| children      | `React.Node`                |                 | The content of the Modal. [See Subcomponents](#sub-components)
+| dataTest      | `string`                    |                 | Optional prop for testing purposes.
+| fixedFooter   | `boolean`                   | `false`         | If `true` the ModalFooter will be fixed to the bottom of window.
+| size          | [`enum`](#modal-enum)       | `"normal"`      | The maximum width of the Modal on desktop viewport.
+| onClose       | `event => void \| Promise`  |                 | Function for handling onClose event. If you don't pass any function the Close button will not be displayed and it will not be possible to close the Modal. [See Functional specs](#functional-specs)
 
 ### Modal enum
 

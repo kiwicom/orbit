@@ -15,13 +15,13 @@ After adding import into your project you can use it simply like:
 ## Props
 Table below contains all types of the props available in the Card component.
 
-| Name          | Type                  | Default         | Description                      |
-| :------------ | :---------------------| :-------------- | :------------------------------- |
-| children      | `React.Node`          |                 | The content of the Card. [See Subcomponents](#sub-components)
-| closable      | `boolean`             | `false`         | If `true`, the Close icon will be displayed. [See Functional specs](#functional-specs)
-| dataTest      | `string`              |                 | Optional prop for testing purposes.
-| onClose       | `func`                |                 | Function for handling onClick event.
-| spaceAfter    | `enum`                |                 | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
+| Name          | Type                          | Default         | Description                      |
+| :------------ | :---------------------------- | :-------------- | :------------------------------- |
+| children      | `React.Node`                  |                 | The content of the Card. [See Subcomponents](#sub-components)
+| closable      | `boolean`                     | `false`         | If `true`, the Close icon will be displayed. [See Functional specs](#functional-specs)
+| dataTest      | `string`                      |                 | Optional prop for testing purposes.
+| onClose       | `event => void \| Promise`    |                 | Function for handling onClick event.
+| spaceAfter    | `enum`                        |                 | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 
 ## Functional specs
 * By passing the `closable` prop into Card, you will be able to handle `onClose` function and Close icon will be displayed. Also, if you want to select the Close Button element for testing purposes, use [data-test="CardCloseButton"] selector.
@@ -75,8 +75,8 @@ Table below contains all types of the props in CardSection component.
 | **children**    | `React.Node`          |                 | The content of the CardSection.
 | expandable      | `boolean`             |                 | CardSection could be expandable
 | initialExpanded | `boolean`             |                 | CardSection is expanded by default
-| onClose         | `func`                |                 | Callback after close
-| onExpand        | `func`                |                 | Callback after expand
+| onClose         | `() => void`          |                 | Callback after close
+| onExpand        | `() => void`          |                 | Callback after expand
 | dataTest        | `string`              |                 | Optional prop for testing purposes.
 
 

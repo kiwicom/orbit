@@ -35,4 +35,4 @@ Table below contains all types of the props available in TripSegment component.
 | **departureTime** | `string`                |             | The departure time.
 | **duration**      | `string \| number`      |             | The flight duration.
 | initialExpanded   | `boolean`               | `false`     | If `true`, the children will be displayed by default.
-| onClick           | `func \| Promise<any>`  |             | Function for handling onClick event.
+| onClick           | `() => void \| Promise` |             | Function for handling onClick event.

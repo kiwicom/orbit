@@ -1903,7 +1903,7 @@ exports[`Storyshots List RTL 1`] = `
                     className="ListItem__IconContainer-sc-1vswvev-1 cbucXp"
                   >
                     <div
-                      className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                      className="CarrierLogo__StyledCarrierLogo-d4doc9-1 gRdVDN"
                       size="large"
                     >
                       <img
@@ -2693,7 +2693,7 @@ exports[`Storyshots List With carrier 1`] = `
                     className="ListItem__IconContainer-sc-1vswvev-1 goeBax"
                   >
                     <div
-                      className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                      className="CarrierLogo__StyledCarrierLogo-d4doc9-1 gRdVDN"
                       size="large"
                     >
                       <img

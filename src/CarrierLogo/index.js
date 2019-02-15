@@ -73,7 +73,7 @@ export const StyledCarrierLogo = styled.div`
     carriers.length > 1 ? theme.orbit.widthIconLarge : `${getRenderSize({ theme, size })}px`};
   display: flex;
   flex-direction: ${({ carriers }) => (carriers.length > 1 ? "column" : "row")};
-  flex-wrap: wrap;
+  flex-wrap: ${({ carriers }) => carriers.length > 2 && "wrap"};
   align-content: space-between;
   justify-content: space-between;
 `;

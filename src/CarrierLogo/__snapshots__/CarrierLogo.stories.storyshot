@@ -580,7 +580,7 @@ exports[`Storyshots CarrierLogo Non-existing carrier 1`] = `
               }
             >
               <div
-                className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                className="CarrierLogo__StyledCarrierLogo-d4doc9-1 gRdVDN"
                 size="large"
               >
                 <img
@@ -1415,7 +1415,7 @@ exports[`Storyshots CarrierLogo One carrier 1`] = `
               }
             >
               <div
-                className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                className="CarrierLogo__StyledCarrierLogo-d4doc9-1 gRdVDN"
                 data-test="test"
                 size="large"
               >
@@ -1762,7 +1762,7 @@ exports[`Storyshots CarrierLogo RTL 1`] = `
               }
             >
               <div
-                className="CarrierLogo__StyledCarrierLogo-d4doc9-1 imXoUt"
+                className="CarrierLogo__StyledCarrierLogo-d4doc9-1 dvsIGd"
                 size="large"
               >
                 <img
@@ -2244,7 +2244,7 @@ exports[`Storyshots CarrierLogo Two carriers 1`] = `
               }
             >
               <div
-                className="CarrierLogo__StyledCarrierLogo-d4doc9-1 imXoUt"
+                className="CarrierLogo__StyledCarrierLogo-d4doc9-1 dvsIGd"
                 size="large"
               >
                 <img

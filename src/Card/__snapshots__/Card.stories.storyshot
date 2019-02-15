@@ -140,7 +140,7 @@ exports[`Storyshots Card Card with default expanded 1`] = `
                         >
                           <div>
                             <div
-                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 gRdVDN"
                               size="large"
                             >
                               <img
@@ -221,7 +221,7 @@ exports[`Storyshots Card Card with default expanded 1`] = `
                         >
                           <div>
                             <div
-                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 iFQLXP"
+                              className="CarrierLogo__StyledCarrierLogo-d4doc9-1 gRdVDN"
                               size="large"
                             >
                               <img

@@ -1573,6 +1573,42 @@ exports[`Storyshots Icon List of all icons 1`] = `
                     viewBox="0 0 24 24"
                   >
                     <path
+                      d="M12 22C6.487 22 2 17.514 2 12S6.487 2 12 2s10 4.486 10 10-4.487 10-10 10zm0-17.778c-4.289 0-7.778 3.49-7.778 7.778 0 4.289 3.49 7.778 7.778 7.778 4.289 0 7.778-3.49 7.778-7.778 0-4.289-3.49-7.778-7.778-7.778z"
+                    />
+                  </svg>
+                  <div
+                    className="IconList__IconImport-sc-1yquwk8-2 hoEmBP"
+                  >
+                    import CircleEmpty from "@kiwicom/orbit-components/lib/icons/CircleEmpty"
+                  </div>
+                </div>
+                <div
+                  className="IconList__Container-sc-1yquwk8-1 flxcKh"
+                >
+                  <svg
+                    className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 22C6.487 22 2 17.514 2 12S6.487 2 12 2s10 4.486 10 10-4.487 10-10 10zm0-17.778c-4.289 0-7.778 3.49-7.778 7.778 0 4.289 3.49 7.778 7.778 7.778 4.289 0 7.778-3.49 7.778-7.778 0-4.289-3.49-7.778-7.778-7.778zM12 7c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5z"
+                    />
+                  </svg>
+                  <div
+                    className="IconList__IconImport-sc-1yquwk8-2 hoEmBP"
+                  >
+                    import CircleFilled from "@kiwicom/orbit-components/lib/icons/CircleFilled"
+                  </div>
+                </div>
+                <div
+                  className="IconList__Container-sc-1yquwk8-1 flxcKh"
+                >
+                  <svg
+                    className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
                       d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"
                     />
                   </svg>
@@ -3431,6 +3467,34 @@ exports[`Storyshots Icon List of all icons 1`] = `
                     className="IconList__IconImport-sc-1yquwk8-2 hoEmBP"
                   >
                     import OnlineCheckin from "@kiwicom/orbit-components/lib/icons/OnlineCheckin"
+                  </div>
+                </div>
+                <div
+                  className="IconList__Container-sc-1yquwk8-1 flxcKh"
+                >
+                  <svg
+                    className="IconList__Icon-sc-1yquwk8-3 hPJgZR Icon__StyledIcon-sc-1pnzn3g-0 fYgYkG"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill="#0072C6"
+                    >
+                      <path
+                        d="M14.417 6.253v3.924l1.37.863a.35.35 0 0 0 .152 0l5.901-3.978c0-.471-.439-.809-.687-.809h-6.736z"
+                      />
+                      <path
+                        d="M14.417 11.641l1.251.86c.176.13.389 0 .389 0-.212.13 5.784-3.853 5.784-3.853v7.211c0 .786-.503 1.115-1.068 1.115h-6.357V11.64zm-6.48-1.809c-.426 0-.766.2-1.017.6-.251.4-.377.93-.377 1.59 0 .669.126 1.197.377 1.586.25.39.58.583.987.583.42 0 .753-.189.998-.567.246-.378.37-.903.37-1.575 0-.7-.12-1.244-.358-1.634-.24-.389-.566-.583-.98-.583z"
+                      />
+                      <path
+                        d="M2 4.26v15.352l11.678 2.448V2L2 4.26zm7.815 10.271c-.494.65-1.137.975-1.931.975-.774 0-1.404-.315-1.892-.944-.486-.63-.73-1.45-.73-2.46 0-1.068.247-1.932.742-2.591.495-.66 1.15-.99 1.966-.99.771 0 1.395.316 1.87.947.476.631.715 1.463.715 2.496 0 1.062-.247 1.918-.74 2.567z"
+                      />
+                    </g>
+                  </svg>
+                  <div
+                    className="IconList__IconImport-sc-1yquwk8-2 hoEmBP"
+                  >
+                    import Outlook from "@kiwicom/orbit-components/lib/icons/Outlook"
                   </div>
                 </div>
                 <div

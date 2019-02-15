@@ -548,7 +548,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "CarrierLogo__StyledCarrierLogo-d4doc9-1",
             "isStatic": false,
-            "lastClassName": "iFQLXP",
+            "lastClassName": "gRdVDN",
             "rules": Array [
               "background-color:",
               [Function],
@@ -558,7 +558,9 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               [Function],
               ";display:flex;flex-direction:",
               [Function],
-              ";flex-wrap:wrap;align-content:space-between;justify-content:space-between;",
+              ";flex-wrap:",
+              [Function],
+              ";align-content:space-between;justify-content:space-between;",
             ],
           },
           "defaultProps": Object {

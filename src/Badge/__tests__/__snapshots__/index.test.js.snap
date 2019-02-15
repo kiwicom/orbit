@@ -442,6 +442,7 @@ exports[`Badge should match snapshot 1`] = `
   type="info"
 >
   <Badge__IconContainer
+    hasContent={true}
     theme={
       Object {
         "orbit": Object {

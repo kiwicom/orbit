@@ -7,9 +7,7 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs } from "@storybook/addon-knobs/react";
 
-import BreadcrumbsItem from "./BreadcrumbsItem";
-
-import Breadcrumbs from "./index";
+import Breadcrumbs, { BreadcrumbsItem } from "./index";
 
 setAddon(chaptersAddon);
 

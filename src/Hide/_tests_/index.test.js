@@ -24,7 +24,7 @@ describe("Hide", () => {
   it("should contain styles", () => {
     Object.keys(breakpoints).map(
       viewport =>
-        viewport !== DEVICES.smallMobile &&
+        viewport !== DEVICES.SMALLMOBILE &&
         (on.indexOf(viewport) !== -1
           ? expect(component).toHaveStyleRule("display", "none", {
               media: breakpoints[viewport],

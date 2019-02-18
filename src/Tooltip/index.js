@@ -30,7 +30,7 @@ import {
   isVertical,
 } from "./helpers/isPosition";
 import { isAlignCenter, isAlignEnd, isAlignStart } from "./helpers/isAlign";
-import { DEVICES } from "../utils/mediaQuery/consts";
+import { DEVICES_WIDTH } from "../utils/mediaQuery/consts";
 import tooltipPadding from "./helpers/tooltipPadding";
 
 import type { Props, State, Aligns, Positions } from "./index";
@@ -380,7 +380,7 @@ class Tooltip extends React.PureComponent<Props, State> {
 
   handleOpen = () => {
     this.getDimensions();
-    if (this.windowWidth <= DEVICES.largeMobile) {
+    if (this.windowWidth <= DEVICES_WIDTH.largeMobile) {
       this.setState({ shownMobile: true });
     }
   };

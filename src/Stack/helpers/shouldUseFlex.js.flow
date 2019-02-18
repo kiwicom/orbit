@@ -1,0 +1,6 @@
+// @flow
+import type { Props } from "../index";
+
+export type ShouldUseFlex = Props => boolean;
+
+declare export default ShouldUseFlex;

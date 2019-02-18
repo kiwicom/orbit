@@ -10,6 +10,19 @@ import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import defaultTokens from "../../defaultTokens";
 import { breakpoints } from "../../utils/mediaQuery";
 
+const defaultValues = {
+  align: "start",
+  basis: undefined,
+  direction: "column",
+  grow: true,
+  inline: false,
+  justify: "start",
+  shrink: false,
+  spaceAfter: undefined,
+  spacing: "natural",
+  wrap: false,
+};
+
 describe("Default Stack", () => {
   const spacing = SPACINGS.EXTRALOOSE;
   const spaceAfter = SPACINGS_AFTER.LARGE;
@@ -22,8 +35,9 @@ describe("Default Stack", () => {
   );
   const stack = component.find("Stack__StyledStack");
   it("should have passed props", () => {
-    expect(stack.prop("spacing")).toBe(spacing);
-    expect(stack.prop("spaceAfter")).toBe(spaceAfter);
+    expect(stack.prop("smallMobile")).toEqual(
+      Object.assign(defaultValues, { spacing, spaceAfter }),
+    );
     expect(stack.render().prop("data-test")).toBe(dataTest);
   });
   it("should contain children", () => {
@@ -46,6 +60,9 @@ describe("Default Stack", () => {
     expect(stack).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceLarge);
     expect(stack).toHaveStyleRule("margin", "0 0 36px 0!important", {
       modifier: "& > *",
+    });
+    expect(stack).toHaveStyleRule("margin", "0 !important", {
+      modifier: "& > *:last-child",
     });
     expect(stack).toHaveStyleRule("margin", "0 0 40px 0!important", {
       media: breakpoints.desktop,
@@ -132,16 +149,20 @@ describe("Stack with enabled flex", () => {
   );
   const stack = component.find("Stack__StyledStack");
   it("should have passed props", () => {
-    expect(stack.prop("inline")).toBe(inline);
-    expect(stack.prop("direction")).toBe(direction);
-    expect(stack.prop("wrap")).toBe(wrap);
-    expect(stack.prop("shrink")).toBe(shrink);
-    expect(stack.prop("grow")).toBe(grow);
-    expect(stack.prop("basis")).toBe(basis);
-    expect(stack.prop("align")).toBe(align);
-    expect(stack.prop("justify")).toBe(justify);
-    expect(stack.prop("spaceAfter")).toBe(spaceAfter);
-    expect(stack.prop("spacing")).toBe(spacing);
+    expect(stack.prop("smallMobile")).toEqual(
+      Object.assign(defaultValues, {
+        inline,
+        direction,
+        wrap,
+        shrink,
+        grow,
+        basis,
+        align,
+        justify,
+        spaceAfter,
+        spacing,
+      }),
+    );
     expect(stack.prop("desktop")).toBe(desktop);
   });
   it("should contain styles", () => {
@@ -270,7 +291,7 @@ describe("Stack with only desktop properties", () => {
   });
 });
 
-describe("Stack with same mobile and desktop properties", () => {
+describe("Stack with mobile and some desktop properties", () => {
   const inline = true;
   const direction = DIRECTIONS.ROW;
   const wrap = true;
@@ -282,16 +303,9 @@ describe("Stack with same mobile and desktop properties", () => {
   const spaceAfter = SPACINGS_AFTER.LARGE;
   const spacing = SPACINGS.EXTRALOOSE;
   const desktop = {
-    inline,
-    direction,
-    wrap,
-    shrink,
-    grow,
-    basis,
-    align,
-    justify,
-    spaceAfter,
-    spacing,
+    shrink: false,
+    direction: DIRECTIONS.COLUMN,
+    spacing: SPACINGS.LOOSE,
   };
 
   const component = mount(
@@ -331,43 +345,14 @@ describe("Stack with same mobile and desktop properties", () => {
       modifier: "& > *",
     });
   });
-  it("should not contain desktop styles", () => {
-    expect(stack).not.toHaveStyleRule("display", expect.any(String), {
+  it("should contain desktop styles - only defined", () => {
+    expect(stack).toHaveStyleRule("flex-direction", "column", {
       media: breakpoints.desktop,
     });
-    expect(stack).not.toHaveStyleRule("width", expect.any(String), {
+    expect(stack).toHaveStyleRule("flex-shrink", "0", {
       media: breakpoints.desktop,
     });
-    expect(stack).not.toHaveStyleRule("flex-direction", expect.any(String), {
-      media: breakpoints.desktop,
-    });
-    expect(stack).not.toHaveStyleRule("flex-wrap", expect.any(String), {
-      media: breakpoints.desktop,
-    });
-    expect(stack).not.toHaveStyleRule("flex-shrink", expect.any(String), {
-      media: breakpoints.desktop,
-    });
-    expect(stack).not.toHaveStyleRule("flex-grow", expect.any(String), {
-      media: breakpoints.desktop,
-    });
-    expect(stack).not.toHaveStyleRule("flex-basis", expect.any(String), {
-      media: breakpoints.desktop,
-    });
-    expect(stack).not.toHaveStyleRule("justify-content", expect.any(String), {
-      media: breakpoints.desktop,
-    });
-    expect(stack).not.toHaveStyleRule("align-items", expect.any(String), {
-      media: breakpoints.desktop,
-    });
-    expect(stack).not.toHaveStyleRule("align-content", expect.any(String), {
-      media: breakpoints.desktop,
-    });
-    expect(stack).not.toHaveStyleRule("margin-bottom", expect.any(String), {
-      media: breakpoints.desktop,
-    });
-  });
-  it("should contain desktop styles - only for spacing", () => {
-    expect(stack).toHaveStyleRule("margin", "0 40px 0 0!important", {
+    expect(stack).toHaveStyleRule("margin", "0 0 32px 0!important", {
       media: breakpoints.desktop,
       modifier: "& > *",
     });

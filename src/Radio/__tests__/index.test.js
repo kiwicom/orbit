@@ -23,17 +23,18 @@ describe(`Default Radio`, () => {
       tabIndex={tabIndex}
     />,
   );
+  const labelEl = component.find("Radio__Label");
   const radio = component.find("Radio__Input");
   it("should contain a label", () => {
     expect(
       component
-        .find("Radio__LabelText")
+        .find("Radio__Label")
         .render()
         .text(),
     ).toBe(label);
   });
   it("should have data-test", () => {
-    expect(radio.render().prop("data-test")).toBe(dataTest);
+    expect(labelEl.render().prop("data-test")).toBe(dataTest);
   });
 
   it("should have tabindex", () => {

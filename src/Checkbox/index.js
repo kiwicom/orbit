@@ -173,9 +173,8 @@ const Checkbox = React.forwardRef((props: Props, ref: Ref) => {
   } = props;
 
   return (
-    <Label disabled={disabled} hasError={hasError} checked={checked}>
+    <Label disabled={disabled} hasError={hasError} checked={checked} dataTest={dataTest}>
       <Input
-        data-test={dataTest}
         value={value}
         type="checkbox"
         disabled={disabled}

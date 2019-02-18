@@ -3,6 +3,7 @@
 exports[`Default Radio should match snapshot 1`] = `
 <Radio__Label
   checked={false}
+  data-test="test"
   disabled={false}
   hasError={false}
   theme={
@@ -443,7 +444,6 @@ exports[`Default Radio should match snapshot 1`] = `
 >
   <Radio__Input
     checked={false}
-    data-test="test"
     disabled={false}
     name="name"
     onChange={

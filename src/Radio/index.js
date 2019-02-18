@@ -163,9 +163,8 @@ const Radio = React.forwardRef((props: Props, ref: Ref) => {
     dataTest,
   } = props;
   return (
-    <Label disabled={disabled} hasError={hasError} checked={checked}>
+    <Label disabled={disabled} hasError={hasError} checked={checked} data-test={dataTest}>
       <Input
-        data-test={dataTest}
         value={value}
         type="radio"
         disabled={disabled}

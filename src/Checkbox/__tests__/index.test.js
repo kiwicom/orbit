@@ -23,11 +23,12 @@ describe(`Default CheckBox`, () => {
       tabIndex={tabIndex}
     />,
   );
+  const labelEl = component.find("Checkbox__Label");
   const checkbox = component.find("Checkbox__Input");
   it("should contain a label", () => {
     expect(
       component
-        .find("Checkbox__LabelText")
+        .find("Checkbox__Label")
         .render()
         .text(),
     ).toBe(label);
@@ -36,7 +37,7 @@ describe(`Default CheckBox`, () => {
     expect(checkbox.prop("value")).toBe(value);
   });
   it("should have data-test", () => {
-    expect(checkbox.render().prop("data-test")).toBe(dataTest);
+    expect(labelEl.render().prop("data-test")).toBe(dataTest);
   });
 
   it("should have tabindex", () => {

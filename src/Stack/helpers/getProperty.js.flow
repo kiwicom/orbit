@@ -1,0 +1,11 @@
+// @flow
+import type { Direction, Props, Spacing, SmallMobile } from "../index";
+import type { Devices } from "../../utils/mediaQuery/index";
+
+export type GetProperty = (
+  property: "spacing" | "direction",
+  {| index: number, devices: Devices[] |},
+  { ...Props, ...SmallMobile },
+) => ?Direction | ?Spacing;
+
+declare export default GetProperty;

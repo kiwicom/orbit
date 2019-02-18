@@ -8,7 +8,7 @@ import { StyledButton } from "../../Button";
 import { rtlSpacing } from "../../utils/rtl";
 import { StyledButtonLink } from "../../ButtonLink";
 import { withModalContext } from "../ModalContext";
-import { DEVICES } from "../../utils/mediaQuery/consts";
+import { DEVICES_WIDTH } from "../../utils/mediaQuery/consts";
 
 import type { Props } from "./index";
 
@@ -38,7 +38,7 @@ export const StyledModalFooter = styled.div`
   // TODO: create token boxShadowActionableInverted
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
-  @media (max-width: ${DEVICES.largeMobile - 1}px) {
+  @media (max-width: ${DEVICES_WIDTH.largeMobile - 1}px) {
     ${StyledButton}, ${StyledButtonLink} {
       font-size: ${({ theme }) => theme.orbit.fontSizeButtonNormal};
       height: ${({ theme }) => theme.orbit.heightButtonNormal};

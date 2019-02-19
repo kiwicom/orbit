@@ -1253,15 +1253,17 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
 "@storybook/addon-actions@^4.0.4":
-  version "4.0.12"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-4.0.12.tgz#a6ca63d73d30bceb6e2837bf0491eccc29bc8bdb"
+  version "4.1.12"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-4.1.12.tgz#12dcbbe92b7c77763940df4d5413d716af1e5109"
+  integrity sha512-qsv4WLzdRth0JnDfGJkhvtrTMjpmhDJyuTYz+6l1jlHRcsjwR6fiy1QeFdArX2rgzdxA5bu6fu68gOBi8GmJxg==
   dependencies:
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.0.12"
-    "@storybook/components" "4.0.12"
-    "@storybook/core-events" "4.0.12"
+    "@storybook/addons" "4.1.12"
+    "@storybook/components" "4.1.12"
+    "@storybook/core-events" "4.1.12"
+    core-js "^2.5.7"
     deep-equal "^1.0.1"
     global "^4.3.2"
     lodash "^4.17.11"
@@ -1316,7 +1318,7 @@
     jest-specific-snapshot "^1.0.0"
     read-pkg-up "^4.0.0"
 
-"@storybook/addons@4.0.12", "@storybook/addons@4.0.4", "@storybook/addons@4.1.6":
+"@storybook/addons@4.0.12", "@storybook/addons@4.0.4", "@storybook/addons@4.1.12", "@storybook/addons@4.1.6":
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-4.0.4.tgz#133609c527435aba1149ead53ca91f694db1a490"
   dependencies:
@@ -1394,7 +1396,23 @@
     react-textarea-autosize "^7.0.4"
     render-fragment "^0.1.1"
 
-"@storybook/components@4.1.6", "@storybook/components@^4.0.11":
+"@storybook/components@4.1.12", "@storybook/components@^4.0.11":
+  version "4.1.12"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-4.1.12.tgz#c497167562907ce2adb31b275b60109c9f3269da"
+  integrity sha512-3s+zvzaUXjsAIFimKFmCUsKUEtQAAZwsNQc501IOE61A+g7LQypM7UWBhlzwaPh33L1Z34WQrEP991ThF9tXUw==
+  dependencies:
+    "@emotion/core" "^0.13.1"
+    "@emotion/provider" "^0.11.2"
+    "@emotion/styled" "^0.10.6"
+    global "^4.3.2"
+    lodash "^4.17.11"
+    prop-types "^15.6.2"
+    react-inspector "^2.3.0"
+    react-split-pane "^0.1.84"
+    react-textarea-autosize "^7.0.4"
+    render-fragment "^0.1.1"
+
+"@storybook/components@4.1.6":
   version "4.1.6"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-4.1.6.tgz#f4430c77fc3eceddcd912a6c5e461554539c4f4d"
   integrity sha512-kWIUiexzFurNwW8NaJEhlFWD1kohnvNlOxgph7oSoXo/yCBodkEYpIuNbznQnNSH2xIjqh1dvbniJNSJZyEbTQ==
@@ -1413,6 +1431,11 @@
 "@storybook/core-events@4.0.12":
   version "4.0.12"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-4.0.12.tgz#76330bf25e521d69947216815a3695255fade24c"
+
+"@storybook/core-events@4.1.12":
+  version "4.1.12"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-4.1.12.tgz#1a861c1c450f076c146f6cc3c8a4ccd0d4dc0d35"
+  integrity sha512-NrZ5k2tsS8Cil99E2M4wzOdkTaxkK0NvicwEPoTcz0utyWrF4T7fThE3qoGBoVTZ+6quWazRFvsvO9MhEnMYnw==
 
 "@storybook/core-events@4.1.6":
   version "4.1.6"

@@ -911,11 +911,11 @@ exports[`Storyshots Radio RTL 1`] = `
                     className="Radio__LabelText-sc-5lanou-4 kvtYjE"
                   >
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                      className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                     >
                       Lorem ipsum dolor sit 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 gjnkGq"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 hWPNdU"
                         rel=""
                       >
                         amet
@@ -1297,11 +1297,11 @@ exports[`Storyshots Radio With TextLink in label 1`] = `
                     className="Radio__LabelText-sc-5lanou-4 kvtYjE"
                   >
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                      className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                     >
                       Lorem ipsum dolor sit 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 gjnkGq"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 hWPNdU"
                         rel=""
                       >
                         amet

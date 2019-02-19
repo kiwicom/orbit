@@ -158,7 +158,7 @@ exports[`Storyshots Card Card with default expanded 1`] = `
                               className="Stack__StyledStack-sc-1t576ow-0 czFEn"
                             >
                               <p
-                                className="Text__StyledText-sc-19qtt4y-0 jgniMG"
+                                className="Text__StyledText-sc-19qtt4y-0 ktIePR"
                               >
                                 Trip length: 1h55m
                               </p>
@@ -239,7 +239,7 @@ exports[`Storyshots Card Card with default expanded 1`] = `
                               className="Stack__StyledStack-sc-1t576ow-0 czFEn"
                             >
                               <p
-                                className="Text__StyledText-sc-19qtt4y-0 jgniMG"
+                                className="Text__StyledText-sc-19qtt4y-0 ktIePR"
                               >
                                 Trip length: 1h55m
                               </p>
@@ -2287,7 +2287,7 @@ exports[`Storyshots Card Card with description 1`] = `
                       className="CardHeader__StyledSubTitle-lvjkay-2 byqGxX"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         This is a description of the card.
                       </p>
@@ -2643,7 +2643,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                       className="CardHeader__StyledSubTitle-lvjkay-2 byqGxX"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         This is a description of the card.
                       </p>
@@ -2684,7 +2684,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                     >
                       <div>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                          className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                         >
                           This is a description of the card.
                         </p>
@@ -2726,7 +2726,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                     >
                       <div>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                          className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                         >
                           This is a description of the card.
                         </p>
@@ -2753,7 +2753,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                           Card with sections
                         </h3>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                          className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                         >
                           This is a description of the card.
                         </p>
@@ -2773,7 +2773,7 @@ exports[`Storyshots Card Card with expandable sections 1`] = `
                     >
                       <div>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                          className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                         >
                           This is a description of the card.
                         </p>
@@ -4255,7 +4255,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                       className="CardHeader__StyledSubTitle-lvjkay-2 byqGxX"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         This is a description of the card.
                       </p>
@@ -4280,7 +4280,7 @@ exports[`Storyshots Card Card with mixed sections 1`] = `
                           Card with sections
                         </h3>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                          className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                         >
                           Test
                         </p>
@@ -5611,7 +5611,7 @@ exports[`Storyshots Card Card with only section 1`] = `
                     className="CardSection__StyledCardSection-o8zdxr-2 bKTuvR"
                   >
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                      className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                     >
                       This is a content of the card.
                     </p>
@@ -5968,7 +5968,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                       Card with sections
                     </h3>
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                      className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                     >
                       This is a description of the card.
                     </p>
@@ -5986,7 +5986,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                       Card with sections
                     </h3>
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                      className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                     >
                       This is a description of the card.
                     </p>
@@ -6004,7 +6004,7 @@ exports[`Storyshots Card Card with sections 1`] = `
                       Card with sections
                     </h3>
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                      className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                     >
                       This is a description of the card.
                     </p>
@@ -7867,7 +7867,7 @@ exports[`Storyshots Card Playground 1`] = `
                       className="CardHeader__StyledSubTitle-lvjkay-2 byqGxX"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         This is a customisable description of the card.
                       </p>
@@ -7887,7 +7887,7 @@ exports[`Storyshots Card Playground 1`] = `
                       Content with Heading and text
                     </h3>
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                      className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                     >
                       Text in content
                     </p>
@@ -7906,7 +7906,7 @@ exports[`Storyshots Card Playground 1`] = `
                       Section with Heading and text
                     </h3>
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                      className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                     >
                       Text in section
                     </p>
@@ -8980,7 +8980,7 @@ exports[`Storyshots Card RTL 1`] = `
                       className="CardHeader__StyledSubTitle-lvjkay-2 byqGxX"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                        className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                       >
                         Description of the CardHeader
                       </p>
@@ -8999,7 +8999,7 @@ exports[`Storyshots Card RTL 1`] = `
                       Content with Heading and text
                     </h3>
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                      className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                     >
                       Text in content
                     </p>
@@ -9017,7 +9017,7 @@ exports[`Storyshots Card RTL 1`] = `
                       Section with Heading and text
                     </h3>
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                      className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                     >
                       Text in section
                     </p>
@@ -9042,7 +9042,7 @@ exports[`Storyshots Card RTL 1`] = `
                           Content with Heading and text
                         </h3>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                          className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                         >
                           Text in content
                         </p>
@@ -9062,7 +9062,7 @@ exports[`Storyshots Card RTL 1`] = `
                     >
                       <div>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                          className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                         >
                           Text in content
                         </p>
@@ -9089,7 +9089,7 @@ exports[`Storyshots Card RTL 1`] = `
                           Content with Heading and text
                         </h3>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                          className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                         >
                           Text in content
                         </p>
@@ -9115,7 +9115,7 @@ exports[`Storyshots Card RTL 1`] = `
                     >
                       <div>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                          className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                         >
                           Text in content
                         </p>

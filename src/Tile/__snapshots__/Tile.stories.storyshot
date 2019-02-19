@@ -821,12 +821,12 @@ exports[`Storyshots Tile Expandable with custom description 1`] = `
                       className="Stack__StyledStack-sc-1t576ow-0 eqzQDG"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         Mr. John Smith
                       </p>
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         20 kg
                       </p>
@@ -1624,12 +1624,12 @@ exports[`Storyshots Tile RTL 1`] = `
                       className="Stack__StyledStack-sc-1t576ow-0 dYJLUG"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                        className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                       >
                         Mr. John Smith
                       </p>
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                        className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                       >
                         20 kg
                       </p>

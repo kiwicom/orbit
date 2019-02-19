@@ -1,11 +1,11 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 
-import type { Props } from "./index";
+import type { Props, GetLinkStyleProps } from "./index";
 
 const getColor = ({ theme, type }) => {
   const tokens = {
@@ -43,38 +43,47 @@ IconContainer.defaultProps = {
   theme: defaultTokens,
 };
 
+export const getLinkStyle = ({
+  theme,
+  type,
+}: GetLinkStyleProps) => css` // Common styles for TextLink and "a" in Text 
+  color: ${getColor({ theme, type })};
+  text-decoration: ${
+    type === TYPE_OPTIONS.SECONDARY
+      ? theme.orbit.textDecorationTextLinkSecondary
+      : theme.orbit.textDecorationTextLinkPrimary
+  };
+  &:hover {
+    text-decoration: ${
+      type === TYPE_OPTIONS.SECONDARY
+        ? theme.orbit.textDecorationTextLinkSecondaryHover
+        : theme.orbit.textDecorationTextLinkPrimaryHover
+    };
+      color: ${
+        type === TYPE_OPTIONS.SECONDARY
+          ? theme.orbit.colorTextLinkSecondaryHover
+          : theme.orbit.colorTextLinkPrimaryHover
+      };
+`;
+
 export const StyledTextLink = styled(({ theme, type, ...props }) => (
   <a {...props}>{props.children}</a>
 ))`
-  color: ${getColor};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightLinks};
   font-size: ${getSizeToken};
-  text-decoration: ${({ theme, type }) =>
-    type === TYPE_OPTIONS.SECONDARY
-      ? theme.orbit.textDecorationTextLinkSecondary
-      : theme.orbit.textDecorationTextLinkPrimary};
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  ${getLinkStyle};
 
-  &:hover {
-    text-decoration: ${({ theme, type }) =>
-      type === TYPE_OPTIONS.SECONDARY
-        ? theme.orbit.textDecorationTextLinkSecondaryHover
-        : theme.orbit.textDecorationTextLinkPrimaryHover};
+  ${IconContainer} {
     color: ${({ theme, type }) =>
       type === TYPE_OPTIONS.SECONDARY
         ? theme.orbit.colorTextLinkSecondaryHover
         : theme.orbit.colorTextLinkPrimaryHover};
-
-    ${IconContainer} {
-      color: ${({ theme, type }) =>
-        type === TYPE_OPTIONS.SECONDARY
-          ? theme.orbit.colorTextLinkSecondaryHover
-          : theme.orbit.colorTextLinkPrimaryHover};
-    }
+  }
   }
   &:focus {
     outline-width: 3px;

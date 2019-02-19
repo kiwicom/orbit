@@ -1,7 +1,8 @@
 // @flow
-import type { ReactComponentStyled } from "styled-components";
+import type { ReactComponentStyled, Interpolation } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
+import type { ThemeProps } from "../defaultTokens";
 
 type Type = "primary" | "secondary";
 
@@ -25,6 +26,14 @@ type styledTextLink = {
   type?: Type,
 };
 
+export type GetLinkStyleProps = {
+  type: Type,
+  ...ThemeProps,
+};
+
+export type GetLinkStyle = GetLinkStyleProps => Interpolation[];
+
+declare export var getLinkStyle: GetLinkStyle;
 declare export var StyledTextLink: ReactComponentStyled<styledTextLink>;
 
 declare export default React$ComponentType<Props>;

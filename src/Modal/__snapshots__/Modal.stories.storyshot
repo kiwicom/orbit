@@ -183,7 +183,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                           className="ModalHeader__ModalDescription-sc-13vyf6i-1 Zivqa"
                         >
                           <div
-                            className="Text__StyledText-sc-19qtt4y-0 lKAms"
+                            className="Text__StyledText-sc-19qtt4y-0 OYarx"
                           >
                             Lorem ispum dolor sit amet
                           </div>
@@ -199,7 +199,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                       </p>
@@ -208,7 +208,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                       </p>
@@ -217,7 +217,7 @@ exports[`Storyshots Modal Full preview 1`] = `
                       className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                       </p>
@@ -1760,7 +1760,7 @@ exports[`Storyshots Modal RTL 1`] = `
                           className="ModalHeader__ModalDescription-sc-13vyf6i-1 Zivqa"
                         >
                           <div
-                            className="Text__StyledText-sc-19qtt4y-0 hPdHKu"
+                            className="Text__StyledText-sc-19qtt4y-0 ilxBRY"
                           >
                             The description of the ModalHeader
                           </div>
@@ -1776,7 +1776,7 @@ exports[`Storyshots Modal RTL 1`] = `
                       className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                        className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                       >
                         You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                       </p>
@@ -1785,7 +1785,7 @@ exports[`Storyshots Modal RTL 1`] = `
                       className="ModalSection__StyledModalSection-sc-1ayrdn8-0 fnhIwH"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                        className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                       >
                         You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                       </p>
@@ -2894,7 +2894,7 @@ exports[`Storyshots Modal Removable sections 1`] = `
                           className="ModalHeader__ModalDescription-sc-13vyf6i-1 Zivqa"
                         >
                           <div
-                            className="Text__StyledText-sc-19qtt4y-0 lKAms"
+                            className="Text__StyledText-sc-19qtt4y-0 OYarx"
                           >
                             Select a flight below to see the menu (where available)
                           </div>
@@ -2910,7 +2910,7 @@ exports[`Storyshots Modal Removable sections 1`] = `
                       className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         Lorem ipsum dolor sit amet
                       </p>
@@ -2919,7 +2919,7 @@ exports[`Storyshots Modal Removable sections 1`] = `
                       className="ModalSection__StyledModalSection-sc-1ayrdn8-0 fnhIwH"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         Lorem ipsum dolor sit amet
                       </p>
@@ -3942,7 +3942,7 @@ exports[`Storyshots Modal Short Modal 1`] = `
                         className="Stack__StyledStack-sc-1t576ow-0 ktahqs"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 fuDZxU"
+                          className="Text__StyledText-sc-19qtt4y-0 caojIp"
                         >
                           OUTBOUND
                         </p>
@@ -3982,7 +3982,7 @@ exports[`Storyshots Modal Short Modal 1`] = `
                                       className="Stack__StyledStack-sc-1t576ow-0 fzhveZ"
                                     >
                                       <p
-                                        className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                                        className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                                       >
                                         Sat, Mar 31 Trip length: 1h55m
                                       </p>
@@ -3990,7 +3990,7 @@ exports[`Storyshots Modal Short Modal 1`] = `
                                         className="Stack__StyledStack-sc-1t576ow-0 efBuLN"
                                       >
                                         <p
-                                          className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                          className="Text__StyledText-sc-19qtt4y-0 edHWJs"
                                         >
                                           London LHR
                                         </p>
@@ -4004,7 +4004,7 @@ exports[`Storyshots Modal Short Modal 1`] = `
                                           />
                                         </svg>
                                         <p
-                                          className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                          className="Text__StyledText-sc-19qtt4y-0 edHWJs"
                                         >
                                           Prague PRG
                                         </p>
@@ -5746,7 +5746,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                       className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                       </p>
@@ -5755,7 +5755,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                       className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                       </p>
@@ -5764,7 +5764,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                       className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                       </p>
@@ -5773,7 +5773,7 @@ exports[`Storyshots Modal Sizes 1`] = `
                       className="ModalSection__StyledModalSection-sc-1ayrdn8-0 dZjkCX"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                       >
                         You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.
                       </p>
@@ -6685,7 +6685,7 @@ exports[`Storyshots Modal With Form 1`] = `
                           className="ModalHeader__ModalDescription-sc-13vyf6i-1 Zivqa"
                         >
                           <div
-                            className="Text__StyledText-sc-19qtt4y-0 lKAms"
+                            className="Text__StyledText-sc-19qtt4y-0 OYarx"
                           >
                             Reservation number: 123456789
                           </div>
@@ -6738,7 +6738,7 @@ exports[`Storyshots Modal With Form 1`] = `
                           </div>
                         </div>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 dxLbdF"
+                          className="Text__StyledText-sc-19qtt4y-0 fhoPGJ"
                         >
                           Contact information
                         </p>
@@ -8522,7 +8522,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                           className="ModalHeader__ModalDescription-sc-13vyf6i-1 Zivqa"
                         >
                           <div
-                            className="Text__StyledText-sc-19qtt4y-0 lKAms"
+                            className="Text__StyledText-sc-19qtt4y-0 OYarx"
                           >
                             Select a flight below to see the menu (where available)
                           </div>
@@ -8541,7 +8541,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                         className="Stack__StyledStack-sc-1t576ow-0 ktahqs"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 fuDZxU"
+                          className="Text__StyledText-sc-19qtt4y-0 caojIp"
                         >
                           OUTBOUND
                         </p>
@@ -8581,7 +8581,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                       className="Stack__StyledStack-sc-1t576ow-0 fzhveZ"
                                     >
                                       <p
-                                        className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                                        className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                                       >
                                         Sat, Mar 31 Trip length: 1h55m
                                       </p>
@@ -8589,7 +8589,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                         className="Stack__StyledStack-sc-1t576ow-0 efBuLN"
                                       >
                                         <p
-                                          className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                          className="Text__StyledText-sc-19qtt4y-0 edHWJs"
                                         >
                                           London LHR
                                         </p>
@@ -8603,7 +8603,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                           />
                                         </svg>
                                         <p
-                                          className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                          className="Text__StyledText-sc-19qtt4y-0 edHWJs"
                                         >
                                           Prague PRG
                                         </p>
@@ -8662,7 +8662,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                       className="Stack__StyledStack-sc-1t576ow-0 fzhveZ"
                                     >
                                       <p
-                                        className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                                        className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                                       >
                                         Sat, Mar 31 Trip length: 1h55m
                                       </p>
@@ -8670,7 +8670,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                         className="Stack__StyledStack-sc-1t576ow-0 efBuLN"
                                       >
                                         <p
-                                          className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                          className="Text__StyledText-sc-19qtt4y-0 edHWJs"
                                         >
                                           London LHR
                                         </p>
@@ -8684,7 +8684,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                           />
                                         </svg>
                                         <p
-                                          className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                          className="Text__StyledText-sc-19qtt4y-0 edHWJs"
                                         >
                                           Prague PRG
                                         </p>
@@ -8743,7 +8743,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                       className="Stack__StyledStack-sc-1t576ow-0 fzhveZ"
                                     >
                                       <p
-                                        className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                                        className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                                       >
                                         Sat, Mar 31 Trip length: 1h55m
                                       </p>
@@ -8751,7 +8751,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                         className="Stack__StyledStack-sc-1t576ow-0 efBuLN"
                                       >
                                         <p
-                                          className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                          className="Text__StyledText-sc-19qtt4y-0 edHWJs"
                                         >
                                           London LHR
                                         </p>
@@ -8765,7 +8765,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                           />
                                         </svg>
                                         <p
-                                          className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                          className="Text__StyledText-sc-19qtt4y-0 edHWJs"
                                         >
                                           Prague PRG
                                         </p>
@@ -8801,7 +8801,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                         className="Stack__StyledStack-sc-1t576ow-0 ktahqs"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 fuDZxU"
+                          className="Text__StyledText-sc-19qtt4y-0 caojIp"
                         >
                           INBOUND
                         </p>
@@ -8841,7 +8841,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                       className="Stack__StyledStack-sc-1t576ow-0 fzhveZ"
                                     >
                                       <p
-                                        className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                                        className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                                       >
                                         Sat, Mar 31 Trip length: 1h55m
                                       </p>
@@ -8849,7 +8849,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                         className="Stack__StyledStack-sc-1t576ow-0 efBuLN"
                                       >
                                         <p
-                                          className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                          className="Text__StyledText-sc-19qtt4y-0 edHWJs"
                                         >
                                           London LHR
                                         </p>
@@ -8863,7 +8863,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                           />
                                         </svg>
                                         <p
-                                          className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                          className="Text__StyledText-sc-19qtt4y-0 edHWJs"
                                         >
                                           Prague PRG
                                         </p>
@@ -8922,7 +8922,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                       className="Stack__StyledStack-sc-1t576ow-0 fzhveZ"
                                     >
                                       <p
-                                        className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                                        className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                                       >
                                         Sat, Mar 31 Trip length: 1h55m
                                       </p>
@@ -8930,7 +8930,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                         className="Stack__StyledStack-sc-1t576ow-0 efBuLN"
                                       >
                                         <p
-                                          className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                          className="Text__StyledText-sc-19qtt4y-0 edHWJs"
                                         >
                                           London LHR
                                         </p>
@@ -8944,7 +8944,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                           />
                                         </svg>
                                         <p
-                                          className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                          className="Text__StyledText-sc-19qtt4y-0 edHWJs"
                                         >
                                           Prague PRG
                                         </p>
@@ -9003,7 +9003,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                       className="Stack__StyledStack-sc-1t576ow-0 fzhveZ"
                                     >
                                       <p
-                                        className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                                        className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                                       >
                                         Sat, Mar 31 Trip length: 1h55m
                                       </p>
@@ -9011,7 +9011,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                         className="Stack__StyledStack-sc-1t576ow-0 efBuLN"
                                       >
                                         <p
-                                          className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                          className="Text__StyledText-sc-19qtt4y-0 edHWJs"
                                         >
                                           London LHR
                                         </p>
@@ -9025,7 +9025,7 @@ exports[`Storyshots Modal With fixedFooter 1`] = `
                                           />
                                         </svg>
                                         <p
-                                          className="Text__StyledText-sc-19qtt4y-0 kUbIBP"
+                                          className="Text__StyledText-sc-19qtt4y-0 edHWJs"
                                         >
                                           Prague PRG
                                         </p>
@@ -16653,7 +16653,7 @@ exports[`Storyshots Modal Without section 1`] = `
                           className="ModalHeader__ModalDescription-sc-13vyf6i-1 Zivqa"
                         >
                           <div
-                            className="Text__StyledText-sc-19qtt4y-0 lKAms"
+                            className="Text__StyledText-sc-19qtt4y-0 OYarx"
                           >
                             Select a flight below to see the menu (where available)
                           </div>

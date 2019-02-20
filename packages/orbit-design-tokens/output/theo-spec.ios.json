@@ -1330,6 +1330,12 @@
       "name": "borderColorButtonGoogleBorderedHover"
     },
     {
+      "value": "12px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeHeadingTitle5"
+    },
+    {
       "value": "rgb(229, 234, 239)",
       "type": "color",
       "category": "Background colors",
@@ -1994,6 +2000,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextError"
+    },
+    {
+      "value": "700",
+      "type": "string",
+      "category": "Font weight",
+      "name": "fontWeightHeadingTitle5"
     },
     {
       "value": "rgb(255, 255, 255)",

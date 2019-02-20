@@ -222,6 +222,7 @@ function getTokens(customFoundation) {
     fontSizeHeadingTitle2: "22px",
     fontSizeHeadingTitle3: "16px",
     fontSizeHeadingTitle4: theme.base.fontSizeMd,
+    fontSizeHeadingTitle5: theme.base.fontSizeSm,
     fontSizeTextNormal: theme.base.fontSizeMd,
     fontSizeTextLarge: theme.base.fontSizeLg,
     fontSizeTextSmall: theme.base.fontSizeSm,
@@ -358,6 +359,7 @@ function getTokens(customFoundation) {
     fontWeightHeadingTitle2: theme.base.fontWeightMedium,
     fontWeightHeadingTitle3: theme.base.fontWeightMedium,
     fontWeightHeadingTitle4: theme.base.fontWeightMedium,
+    fontWeightHeadingTitle5: theme.base.fontWeightBold,
     fontWeightTableHead: theme.base.fontWeightBold,
     // category:Spacing
     // description:Use this for setting spacings for elements.

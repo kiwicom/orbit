@@ -197,9 +197,9 @@
 @value color-text-button-facebook-active: rgb(255, 255, 255);
 @value palette-green-light: rgb(231, 243, 232);
 @value palette-social-facebook: rgb(59, 89, 152);
+@value margin-badge-icon: 0 4px 0 0;
 @value palette-social-facebook-hover: rgb(56, 84, 144);
 @value palette-green-light-hover: rgb(215, 235, 216);
-@value margin-right-badge-icon: 4px;
 @value height-button-small: 32px;
 @value margin-button-icon-small: 8px;
 @value height-service-logo-small: 12px;

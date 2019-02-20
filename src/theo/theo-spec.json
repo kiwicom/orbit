@@ -2788,8 +2788,8 @@
         "categoryDescription": "Use this for setting spacings for elements."
       }
     },
-    "marginRightBadgeIcon": {
-      "value": "4px",
+    "marginBadgeIcon": {
+      "value": "0 4px 0 0",
       "type": "size",
       "category": "Spacing",
       "meta": {

@@ -2748,8 +2748,16 @@
         "categoryDescription": "Use this for setting spacings for elements."
       }
     },
-    "marginRightButtonGroup": {
-      "value": "1px",
+    "marginButtonGroupConnected": {
+      "value": "0 1px 0 0",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "marginButtonGroup": {
+      "value": "0 8px 0 0",
       "type": "size",
       "category": "Spacing",
       "meta": {

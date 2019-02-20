@@ -837,6 +837,12 @@
       "name": "heightInputNormal"
     },
     {
+      "value": "0 1px 0 0",
+      "type": "size",
+      "category": "Spacing",
+      "name": "marginButtonGroupConnected"
+    },
+    {
       "value": "20px",
       "type": "size",
       "category": "Size (width, height)",
@@ -2579,12 +2585,6 @@
       "name": "colorTextInfo"
     },
     {
-      "value": "1px",
-      "type": "size",
-      "category": "Spacing",
-      "name": "marginRightButtonGroup"
-    },
-    {
       "value": "rgb(214, 222, 230)",
       "type": "color",
       "category": "Background colors",
@@ -2625,6 +2625,12 @@
       "type": "color",
       "category": "Color palette",
       "name": "paletteOrangeDark"
+    },
+    {
+      "value": "0 8px 0 0",
+      "type": "size",
+      "category": "Spacing",
+      "name": "marginButtonGroup"
     }
   ]
 }

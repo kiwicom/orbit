@@ -354,7 +354,7 @@ export type Tokens = {|
   paddingTagWithIcon: string,
   paddingTagRemovable: string,
   paddingTagRemovableWithIcon: string,
-  marginRightBadgeIcon: string,
+  marginBadgeIcon: string,
   spaceXXXSmall: string,
   spaceXXSmall: string,
   spaceXSmall: string,

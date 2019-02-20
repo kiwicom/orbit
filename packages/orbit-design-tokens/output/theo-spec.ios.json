@@ -2056,7 +2056,7 @@
       "name": "colorTextButtonLinkSecondary"
     },
     {
-      "value": "rgb(0, 169, 145)",
+      "value": "rgb(0, 130, 111)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextLinkPrimary"
@@ -2477,7 +2477,7 @@
       "name": "heightInputGroupSeparatorSmall"
     },
     {
-      "value": "none",
+      "value": "underline",
       "type": "string",
       "category": "Text decoration",
       "name": "textDecorationTextLinkPrimary"

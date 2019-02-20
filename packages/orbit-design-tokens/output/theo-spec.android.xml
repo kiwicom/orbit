@@ -196,9 +196,9 @@
   <color name="COLORTEXTBUTTONFACEBOOKACTIVE" category="Colors">#ffffffff</color>
   <color name="PALETTEGREENLIGHT" category="Color palette">#ffe7f3e8</color>
   <color name="PALETTESOCIALFACEBOOK" category="Color palette">#ff3b5998</color>
+  <dimen name="MARGINBADGEICON" category="Spacing">0 4px 0 0</dimen>
   <color name="PALETTESOCIALFACEBOOKHOVER" category="Color palette">#ff385490</color>
   <color name="PALETTEGREENLIGHTHOVER" category="Color palette">#ffd7ebd8</color>
-  <dimen name="MARGINRIGHTBADGEICON" category="Spacing">4dp</dimen>
   <dimen name="HEIGHTBUTTONSMALL" category="Size (width, height)">32dp</dimen>
   <dimen name="MARGINBUTTONICONSMALL" category="Spacing">8dp</dimen>
   <dimen name="HEIGHTSERVICELOGOSMALL" category="Size (width, height)">12dp</dimen>

@@ -138,6 +138,7 @@
   "paddingButtonNormal": "0 16px",
   "opacityCheckboxDisabled": "0.5",
   "heightInputNormal": "44px",
+  "marginButtonGroupConnected": "0 1px 0 0",
   "heightCheckbox": "20px",
   "borderColorButtonPrimaryBorderedActive": "rgb(0, 143, 123)",
   "paddingButtonSmallWithLeftIcon": "0 12px 0 8px",
@@ -428,12 +429,12 @@
   "fontSizeTextLarge": "16px",
   "paletteInkLighterActive": "rgb(148, 168, 190)",
   "colorTextInfo": "rgb(1, 118, 210)",
-  "marginRightButtonGroup": "1px",
   "backgroundButtonGoogleActive": "rgb(214, 222, 230)",
   "colorHeading": "rgb(23, 27, 30)",
   "backgroundButtonCritical": "rgb(210, 28, 28)",
   "backgroundModal": "rgb(255, 255, 255)",
   "colorTextButtonSecondaryBorderedHover": "rgb(63, 72, 84)",
   "paletteRedNormalHover": "rgb(189, 25, 25)",
-  "paletteOrangeDark": "rgb(169, 54, 16)"
+  "paletteOrangeDark": "rgb(169, 54, 16)",
+  "marginButtonGroup": "0 8px 0 0"
 }

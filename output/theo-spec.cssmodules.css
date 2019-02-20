@@ -53,9 +53,8 @@
 @value background-button-success: rgb(70, 182, 85);
 @value palette-red-normal-active: rgb(178, 23, 23);
 @value color-text-button-secondary-bordered-active: rgb(56, 64, 75);
-@value padding-button-small-with-icon: 8px;
 @value border-color-input-error-focus: rgb(210, 28, 28);
-@value padding-button-small: 12px;
+@value padding-button-small: 0 12px;
 @value color-text-secondary: rgb(127, 145, 168);
 @value color-text-link-primary-hover: rgb(0, 169, 145);
 @value color-text-button-link-secondary-hover: rgb(63, 72, 84);
@@ -66,6 +65,7 @@
 @value color-text-button-filled: rgb(255, 255, 255);
 @value height-input-small: 32px;
 @value border-color-input-focus: rgb(1, 118, 210);
+@value padding-button-normal-with-right-icon: 0 12px 0 16px;
 @value background-button-critical-active: rgb(178, 23, 23);
 @value opacity-overlay: "0.8";
 @value border-style-input: "solid";
@@ -122,7 +122,6 @@
 @value border-color-input-hover: rgb(166, 182, 200);
 @value padding-tag: 6px 8px;
 @value color-text-badge-warning: rgb(249, 151, 30);
-@value padding-button-normal-with-icon: 12px;
 @value background-button-white: rgb(255, 255, 255);
 @value space-x-large: 32px;
 @value z-index-default: "1";
@@ -138,11 +137,12 @@
 @value font-size-text-small: 12px;
 @value color-text-link-secondary: rgb(23, 27, 30);
 @value color-icon-info: rgb(1, 118, 210);
-@value padding-button-normal: 16px;
+@value padding-button-normal: 0 16px;
 @value opacity-checkbox-disabled: "0.5";
 @value height-input-normal: 44px;
 @value height-checkbox: 20px;
 @value border-color-button-primary-bordered-active: rgb(0, 143, 123);
+@value padding-button-small-with-left-icon: 0 12px 0 8px;
 @value color-text-tag: rgb(70, 81, 94);
 @value color-text-button-filled-active: rgb(255, 255, 255);
 @value color-text-button-white-bordered-hover: rgb(255, 255, 255);
@@ -151,8 +151,10 @@
 @value color-text-button-secondary-hover: rgb(63, 72, 84);
 @value color-alert-icon-warning: rgb(249, 151, 30);
 @value palette-product-dark: rgb(0, 130, 111);
+@value padding-button-normal-with-icons: 0 12px;
 @value background-badge-dark: rgb(70, 81, 94);
 @value palette-ink-light: rgb(127, 145, 168);
+@value padding-button-small-with-right-icon: 0 8px 0 12px;
 @value modifier-scale-button-active: 0.95;
 @value color-text-button-warning-bordered-active: rgb(230, 130, 6);
 @value border-color-button-success-bordered-active: rgb(63, 163, 76);
@@ -233,8 +235,10 @@
 @value font-size-heading-display: 40px;
 @value color-text-alert-warning: rgb(169, 54, 16);
 @value text-decoration-text-link-secondary: "underline";
+@value padding-button-small-with-icons: 0 8px;
 @value color-text-badge-success: rgb(70, 182, 85);
 @value color-text-button-info: rgb(255, 255, 255);
+@value padding-button-normal-with-left-icon: 0 16px 0 12px;
 @value margin-top-form-feedback: 2px;
 @value palette-orange-normal: rgb(249, 151, 30);
 @value border-width-input: 1px;
@@ -269,6 +273,7 @@
 @value color-text-badge-critical: rgb(210, 28, 28);
 @value padding-textarea-normal: 12px;
 @value color-text-button-critical-bordered-active: rgb(178, 23, 23);
+@value padding-button-without-text: "0";
 @value color-placeholder-input-file-error: rgb(210, 28, 28);
 @value background-service-logo: "transparent";
 @value font-family: ""Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif";
@@ -324,7 +329,6 @@
 @value color-text-input-disabled: rgb(186, 199, 213);
 @value background-button-facebook-hover: rgb(56, 84, 144);
 @value border-color-checkbox-radio-focus: rgb(1, 118, 210);
-@value padding-button-large-with-icon: 16px;
 @value font-size-message: 14px;
 @value font-weight-heading-title4: "500";
 @value border-color-button-success-bordered-hover: rgb(66, 172, 80);
@@ -333,6 +337,7 @@
 @value color-text-button-warning-bordered-hover: rgb(244, 138, 6);
 @value border-color-table-head: rgb(186, 199, 213);
 @value color-text-alert-success: rgb(6, 93, 18);
+@value padding-button-large-with-right-icon: 0 16px 0 28px;
 @value border-color-table: rgb(232, 237, 241);
 @value color-text-error: rgb(210, 28, 28);
 @value font-weight-heading-title5: "700";
@@ -343,7 +348,7 @@
 @value height-input-large: 52px;
 @value palette-ink-lighter: rgb(186, 199, 213);
 @value color-icon-secondary: rgb(127, 145, 168);
-@value padding-button-large: 28px;
+@value padding-button-large: 0 28px;
 @value color-text-button-secondary-active: rgb(56, 64, 75);
 @value color-text-button-link-secondary: rgb(70, 81, 94);
 @value color-text-link-primary: rgb(0, 130, 111);
@@ -396,6 +401,7 @@
 @value background-button-warning: rgb(249, 151, 30);
 @value background-table-hover: rgb(232, 237, 241);
 @value font-weight-medium: "500";
+@value padding-button-large-with-icons: 0 16px;
 @value width-country-flag: 24px;
 @value palette-red-light-hover: rgb(245, 212, 212);
 @value background-alert-info: rgb(224, 246, 255);
@@ -420,6 +426,7 @@
 @value text-decoration-text-link-primary: "underline";
 @value text-decoration-text-link-primary-hover: "underline";
 @value border-color-button-warning-bordered-hover: rgb(244, 138, 6);
+@value padding-button-large-with-left-icon: 0 28px 0 16px;
 @value color-text-table: rgb(127, 145, 168);
 @value opacity-radio-button-disabled: "0.5";
 @value font-size-text-large: 16px;

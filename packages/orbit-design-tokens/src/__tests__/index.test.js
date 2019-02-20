@@ -35,7 +35,7 @@ describe("getTokens should accept some palette and base foundation", () => {
   });
   it("tokens should have those colors", () => {
     expect(theme.backgroundButtonPrimary).toBe(brand.palette.product.normal);
-    expect(theme.colorTextLinkPrimary).toBe(brand.palette.product.normal);
+    expect(theme.colorTextLinkPrimary).toBe(brand.palette.product.dark);
     expect(theme.colorTextButtonPrimaryBordered).toBe(brand.palette.product.normal);
     expect(theme.colorTextButtonPrimaryBorderedHover).toBe(brand.palette.product.normalHover);
     expect(theme.colorTextButtonPrimaryBorderedActive).toBe(brand.palette.product.normalActive);
@@ -92,7 +92,7 @@ describe("fromPlainObject should create full theme", () => {
   });
   it("tokens should have those colors", () => {
     expect(theme.backgroundButtonPrimary).toBe(palette.productNormal);
-    expect(theme.colorTextLinkPrimary).toBe(palette.productNormal);
+    expect(theme.colorTextLinkPrimary).toBe(palette.productDark);
     expect(theme.colorTextButtonPrimaryBordered).toBe(palette.productNormal);
     expect(theme.colorTextButtonPrimaryBorderedHover).toBe(palette.productNormalHover);
     expect(theme.colorTextButtonPrimaryBorderedActive).toBe(palette.productNormalActive);

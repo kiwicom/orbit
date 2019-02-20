@@ -325,19 +325,13 @@
       "name": "colorTextButtonSecondaryBorderedActive"
     },
     {
-      "value": "8px",
-      "type": "size",
-      "category": "Spacing",
-      "name": "paddingButtonSmallWithIcon"
-    },
-    {
       "value": "rgb(210, 28, 28)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorInputErrorFocus"
     },
     {
-      "value": "12px",
+      "value": "0 12px",
       "type": "size",
       "category": "Spacing",
       "name": "paddingButtonSmall"
@@ -401,6 +395,12 @@
       "type": "color",
       "category": "Border color",
       "name": "borderColorInputFocus"
+    },
+    {
+      "value": "0 12px 0 16px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonNormalWithRightIcon"
     },
     {
       "value": "rgb(178, 23, 23)",
@@ -734,12 +734,6 @@
       "name": "colorTextBadgeWarning"
     },
     {
-      "value": "12px",
-      "type": "size",
-      "category": "Spacing",
-      "name": "paddingButtonNormalWithIcon"
-    },
-    {
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "category": "Background colors",
@@ -825,7 +819,7 @@
       "name": "colorIconInfo"
     },
     {
-      "value": "16px",
+      "value": "0 16px",
       "type": "size",
       "category": "Spacing",
       "name": "paddingButtonNormal"
@@ -853,6 +847,12 @@
       "type": "color",
       "category": "Border color",
       "name": "borderColorButtonPrimaryBorderedActive"
+    },
+    {
+      "value": "0 12px 0 8px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonSmallWithLeftIcon"
     },
     {
       "value": "rgb(70, 81, 94)",
@@ -903,6 +903,12 @@
       "name": "paletteProductDark"
     },
     {
+      "value": "0 12px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonNormalWithIcons"
+    },
+    {
       "value": "rgb(70, 81, 94)",
       "type": "color",
       "category": "Background colors",
@@ -913,6 +919,12 @@
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLight"
+    },
+    {
+      "value": "0 8px 0 12px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonSmallWithRightIcon"
     },
     {
       "value": 0.95,
@@ -1390,6 +1402,12 @@
       "name": "textDecorationTextLinkSecondary"
     },
     {
+      "value": "0 8px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonSmallWithIcons"
+    },
+    {
       "value": "rgb(70, 182, 85)",
       "type": "color",
       "category": "Colors",
@@ -1400,6 +1418,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonInfo"
+    },
+    {
+      "value": "0 16px 0 12px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonNormalWithLeftIcon"
     },
     {
       "value": "2px",
@@ -1604,6 +1628,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonCriticalBorderedActive"
+    },
+    {
+      "value": "0",
+      "type": "string",
+      "category": "Spacing",
+      "name": "paddingButtonWithoutText"
     },
     {
       "value": "rgb(210, 28, 28)",
@@ -1936,12 +1966,6 @@
       "name": "borderColorCheckboxRadioFocus"
     },
     {
-      "value": "16px",
-      "type": "size",
-      "category": "Spacing",
-      "name": "paddingButtonLargeWithIcon"
-    },
-    {
       "value": "14px",
       "type": "size",
       "category": "Font size",
@@ -1988,6 +2012,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextAlertSuccess"
+    },
+    {
+      "value": "0 16px 0 28px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonLargeWithRightIcon"
     },
     {
       "value": "rgb(232, 237, 241)",
@@ -2050,7 +2080,7 @@
       "name": "colorIconSecondary"
     },
     {
-      "value": "28px",
+      "value": "0 28px",
       "type": "size",
       "category": "Spacing",
       "name": "paddingButtonLarge"
@@ -2368,6 +2398,12 @@
       "name": "fontWeightMedium"
     },
     {
+      "value": "0 16px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonLargeWithIcons"
+    },
+    {
       "value": "24px",
       "type": "size",
       "category": "Size (width, height)",
@@ -2505,6 +2541,12 @@
       "type": "color",
       "category": "Border color",
       "name": "borderColorButtonWarningBorderedHover"
+    },
+    {
+      "value": "0 28px 0 16px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonLargeWithLeftIcon"
     },
     {
       "value": "rgb(127, 145, 168)",

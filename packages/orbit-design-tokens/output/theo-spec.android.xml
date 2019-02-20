@@ -221,6 +221,7 @@
   <color name="COLORFORMLABELFILLED" category="Colors">#ff7f91a8</color>
   <color name="PALETTEGREENNORMAL" category="Color palette">#ff46b655</color>
   <color name="BORDERCOLORBUTTONGOOGLEBORDEREDHOVER" category="Border color">#ff3f4854</color>
+  <dimen name="FONTSIZEHEADINGTITLE5" category="Font size">12dp</dimen>
   <color name="BACKGROUNDBUTTONWHITEACTIVE" category="Background colors">#ffe5eaef</color>
   <color name="COLORTEXTCRITICAL" category="Colors">#ffd21c1c</color>
   <color name="PALETTEORANGELIGHTHOVER" category="Color palette">#fffaeab7</color>
@@ -332,6 +333,7 @@
   <color name="COLORTEXTALERTSUCCESS" category="Colors">#ff065d12</color>
   <color name="BORDERCOLORTABLE" category="Border color">#ffe8edf1</color>
   <color name="COLORTEXTERROR" category="Colors">#ffd21c1c</color>
+  <string name="FONTWEIGHTHEADINGTITLE5" category="Font weight">700</string>
   <color name="COLORTEXTBUTTONFILLEDHOVER" category="Colors">#ffffffff</color>
   <color name="BORDERCOLORBUTTONPRIMARYBORDEREDHOVER" category="Border color">#ff009882</color>
   <color name="BACKGROUNDINPUTDISABLED" category="Background colors">#ffe8edf1</color>

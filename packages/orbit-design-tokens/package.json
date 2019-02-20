@@ -48,7 +48,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "flow-bin": "^0.74.0",
-    "jest": "^23.6.0",
+    "jest": "^24.1.0",
     "lodash": "^4.17.10",
     "prettier": "^1.13.7",
     "theo": "^8.0.0"

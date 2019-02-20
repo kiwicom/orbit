@@ -41,7 +41,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jest": "^21.22.0",

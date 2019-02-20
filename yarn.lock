@@ -2100,7 +2100,7 @@ github@2.4.0:
     https-proxy-agent "^1.0.0"
     mime "^1.2.11"
 
-glob@7.1.2, glob@^7.0.3, glob@^7.0.5:
+glob@7.1.2:
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.2.tgz#c19c9df9a028702d678612384a6552404c636d15"
   dependencies:
@@ -2111,7 +2111,7 @@ glob@7.1.2, glob@^7.0.3, glob@^7.0.5:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^7.1.1, glob@^7.1.2, glob@^7.1.3:
+glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3:
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.3.tgz#3960832d3f1574108342dafd3a67b332c0969df1"
   dependencies:
@@ -2232,7 +2232,7 @@ handlebars-utils@^1.0.2, handlebars-utils@^1.0.4, handlebars-utils@^1.0.6:
     kind-of "^6.0.0"
     typeof-article "^0.1.1"
 
-handlebars@4.0.11, handlebars@^4.0.11:
+handlebars@4.0.11:
   version "4.0.11"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.0.11.tgz#630a35dfe0294bc281edae6ffc5d329fc7982dcc"
   dependencies:
@@ -2242,7 +2242,7 @@ handlebars@4.0.11, handlebars@^4.0.11:
   optionalDependencies:
     uglify-js "^2.6"
 
-handlebars@^4.1.0:
+handlebars@^4.0.11, handlebars@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.1.0.tgz#0d6a6f34ff1f63cecec8423aa4169827bf787c3a"
   dependencies:
@@ -3150,16 +3150,9 @@ js-yaml@3.10.0:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
-js-yaml@^3.12.0:
+js-yaml@^3.12.0, js-yaml@^3.9.1:
   version "3.12.1"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.12.1.tgz#295c8632a18a23e054cf5c9d3cecafe678167600"
-  dependencies:
-    argparse "^1.0.7"
-    esprima "^4.0.0"
-
-js-yaml@^3.9.1:
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.12.0.tgz#eaed656ec8344f10f527c6bfa1b6e2244de167d1"
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
@@ -5025,8 +5018,8 @@ text-table@~0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
 
 theo@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/theo/-/theo-8.0.0.tgz#444c27a94638e3d326cff46084a17f6d9f762424"
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/theo/-/theo-8.1.1.tgz#a4b9994f2912c37bdb37f096b54bc73566a87723"
   dependencies:
     core.lambda "1.0.0"
     data.either "1.5.1"

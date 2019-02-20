@@ -1592,6 +1592,14 @@
         "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
+    "fontSizeHeadingTitle5": {
+      "value": "12px",
+      "type": "size",
+      "category": "Font size",
+      "meta": {
+        "categoryDescription": "Use these sizing tokens for font sizes."
+      }
+    },
     "fontSizeTextNormal": {
       "value": "14px",
       "type": "size",
@@ -2534,6 +2542,14 @@
     },
     "fontWeightHeadingTitle4": {
       "value": "500",
+      "type": "string",
+      "category": "Font weight",
+      "meta": {
+        "categoryDescription": "Use this for setting basic font weights."
+      }
+    },
+    "fontWeightHeadingTitle5": {
+      "value": "700",
       "type": "string",
       "category": "Font weight",
       "meta": {

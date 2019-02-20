@@ -2588,8 +2588,16 @@
         "categoryDescription": "Use this for setting spacings for elements."
       }
     },
+    "paddingButtonWithoutText": {
+      "value": "0",
+      "type": "string",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
     "paddingButtonSmall": {
-      "value": "12px",
+      "value": "0 12px",
       "type": "size",
       "category": "Spacing",
       "meta": {
@@ -2597,7 +2605,7 @@
       }
     },
     "paddingButtonNormal": {
-      "value": "16px",
+      "value": "0 16px",
       "type": "size",
       "category": "Spacing",
       "meta": {
@@ -2605,7 +2613,79 @@
       }
     },
     "paddingButtonLarge": {
-      "value": "28px",
+      "value": "0 28px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingButtonSmallWithIcons": {
+      "value": "0 8px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingButtonNormalWithIcons": {
+      "value": "0 12px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingButtonLargeWithIcons": {
+      "value": "0 16px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingButtonSmallWithLeftIcon": {
+      "value": "0 12px 0 8px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingButtonNormalWithLeftIcon": {
+      "value": "0 16px 0 12px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingButtonLargeWithLeftIcon": {
+      "value": "0 28px 0 16px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingButtonSmallWithRightIcon": {
+      "value": "0 8px 0 12px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingButtonNormalWithRightIcon": {
+      "value": "0 12px 0 16px",
+      "type": "size",
+      "category": "Spacing",
+      "meta": {
+        "categoryDescription": "Use this for setting spacings for elements."
+      }
+    },
+    "paddingButtonLargeWithRightIcon": {
+      "value": "0 16px 0 28px",
       "type": "size",
       "category": "Spacing",
       "meta": {
@@ -2638,30 +2718,6 @@
     },
     "paddingInputNormal": {
       "value": "0 12px",
-      "type": "size",
-      "category": "Spacing",
-      "meta": {
-        "categoryDescription": "Use this for setting spacings for elements."
-      }
-    },
-    "paddingButtonSmallWithIcon": {
-      "value": "8px",
-      "type": "size",
-      "category": "Spacing",
-      "meta": {
-        "categoryDescription": "Use this for setting spacings for elements."
-      }
-    },
-    "paddingButtonNormalWithIcon": {
-      "value": "12px",
-      "type": "size",
-      "category": "Spacing",
-      "meta": {
-        "categoryDescription": "Use this for setting spacings for elements."
-      }
-    },
-    "paddingButtonLargeWithIcon": {
-      "value": "16px",
       "type": "size",
       "category": "Spacing",
       "meta": {

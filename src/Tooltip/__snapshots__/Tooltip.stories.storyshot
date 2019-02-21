@@ -148,6 +148,7 @@ exports[`Storyshots Tooltip Playground 1`] = `
                 />
                 <div
                   className="Tooltip__StyledTooltipWrapper-sc-1l15bi-2 dlEKwd"
+                  onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
                   size="small"
@@ -572,6 +573,7 @@ exports[`Storyshots Tooltip Preferred position 1`] = `
                   />
                   <div
                     className="Tooltip__StyledTooltipWrapper-sc-1l15bi-2 kxnTrI"
+                    onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     size="medium"
@@ -1031,6 +1033,7 @@ exports[`Storyshots Tooltip Tooltip on block element 1`] = `
                 />
                 <div
                   className="Tooltip__StyledTooltipWrapper-sc-1l15bi-2 dlEKwd"
+                  onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
                   size="small"
@@ -1424,6 +1427,7 @@ exports[`Storyshots Tooltip Tooltip on inline element 1`] = `
                       />
                       <div
                         className="Tooltip__StyledTooltipWrapper-sc-1l15bi-2 dlEKwd"
+                        onClick={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
                         size="small"
@@ -1478,6 +1482,7 @@ exports[`Storyshots Tooltip Tooltip on inline element 1`] = `
                       />
                       <div
                         className="Tooltip__StyledTooltipWrapper-sc-1l15bi-2 dlEKwd"
+                        onClick={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
                         size="small"
@@ -2214,6 +2219,7 @@ exports[`Storyshots Tooltip With image inside 1`] = `
                 />
                 <div
                   className="Tooltip__StyledTooltipWrapper-sc-1l15bi-2 kxnTrI"
+                  onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
                   size="medium"

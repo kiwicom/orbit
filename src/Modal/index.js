@@ -335,8 +335,9 @@ class Modal extends React.PureComponent<Props, State> {
   decideFixedFooter = () => {
     // if the content height is smaller than window height, we need to explicitly set fullyScrolled to true
     const content = this.modalContent.current;
-    // what is 40 value?
-    const fullyScrolled = content?.scrollHeight + 40 <= window.innerHeight;
+    const body = this.modalBody.current;
+    // when scrollHeight + topPadding - scrollingElementHeight is smaller or even than window height
+    const fullyScrolled = content?.scrollHeight + 40 - body?.scrollTop <= window.innerHeight;
     this.setState({ fullyScrolled });
   };
 

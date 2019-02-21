@@ -1306,17 +1306,19 @@
     util-deprecate "^1.0.2"
 
 "@storybook/addon-storyshots@^4.0.4":
-  version "4.0.12"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots/-/addon-storyshots-4.0.12.tgz#f44c57472f9f06b153a429cba03399ec90be8af8"
+  version "4.1.13"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots/-/addon-storyshots-4.1.13.tgz#c82071ccd3fddf5330b24450038d8e05c6adaa5f"
+  integrity sha512-8hZZURoXinVIpZ5YEHbJDQxMzKXp+7gNmUodutPPWwtyjmvcQ5zmEF2fPXdOrYw1vhtaEh++ughCf8FJnqDKvw==
   dependencies:
-    "@babel/runtime" "^7.1.2"
-    "@storybook/addons" "4.0.12"
+    "@storybook/addons" "4.1.13"
+    core-js "^2.5.7"
     glob "^7.1.3"
     global "^4.3.2"
     jest-specific-snapshot "^1.0.0"
     read-pkg-up "^4.0.0"
+    regenerator-runtime "^0.12.1"
 
-"@storybook/addons@4.0.12", "@storybook/addons@4.0.4", "@storybook/addons@4.1.6":
+"@storybook/addons@4.0.12", "@storybook/addons@4.0.4", "@storybook/addons@4.1.13", "@storybook/addons@4.1.6":
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-4.0.4.tgz#133609c527435aba1149ead53ca91f694db1a490"
   dependencies:

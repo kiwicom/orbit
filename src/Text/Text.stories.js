@@ -106,6 +106,23 @@ storiesOf("Text", module)
       ],
     };
   })
+  .addWithChapters("Link in text", () => ({
+    info:
+      "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <Text>
+                {customText} <a href="http://kiwi.com">Kiwi.com</a>
+              </Text>
+            ),
+          },
+        ],
+      },
+    ],
+  }))
   .addWithChapters("White text", () => {
     const children = text("Text", customText);
 

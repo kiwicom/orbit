@@ -923,11 +923,11 @@ exports[`Storyshots CheckBox RTL 1`] = `
                     className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
                   >
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                      className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                     >
                       I instruct Kiwi.com to cancel this booking under the herein specified conditions and to process a refund in accordance with Kiwi.com’ 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 gjnkGq"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 hWPNdU"
                         rel=""
                       >
                         Terms and Conditions
@@ -1313,11 +1313,11 @@ exports[`Storyshots CheckBox With TextLink in label 1`] = `
                     className="Checkbox__LabelText-sc-1x6twh3-3 kNgPJv"
                   >
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                      className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                     >
                       I instruct Kiwi.com to cancel this booking under the herein specified conditions and to process a refund in accordance with Kiwi.com’ 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 gjnkGq"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 hWPNdU"
                         rel=""
                       >
                         Terms and Conditions

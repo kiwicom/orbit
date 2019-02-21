@@ -156,7 +156,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                            className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                           >
                             11:20
                           </p>
@@ -165,7 +165,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                            className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                           >
                             4:20
                           </p>
@@ -175,12 +175,12 @@ exports[`Storyshots TripSegment Default 1`] = `
                         className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                          className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                         >
                           Berlin TXL
                         </p>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                          className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                         >
                           Moscow VKO
                         </p>
@@ -190,7 +190,7 @@ exports[`Storyshots TripSegment Default 1`] = `
                       className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                        className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                       >
                         3h
                       </p>
@@ -1106,7 +1106,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                            className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                           >
                             11:20
                           </p>
@@ -1115,7 +1115,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                            className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                           >
                             14:20
                           </p>
@@ -1125,12 +1125,12 @@ exports[`Storyshots TripSegment Playground 1`] = `
                         className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                          className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                         >
                           Berlin TXL
                         </p>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                          className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                         >
                           Moscow VKO
                         </p>
@@ -1140,7 +1140,7 @@ exports[`Storyshots TripSegment Playground 1`] = `
                       className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                        className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                       >
                         3h
                       </p>
@@ -2134,7 +2134,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 hJKede"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                            className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
                           >
                             6:30
                           </p>
@@ -2143,7 +2143,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 hJKede"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                            className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
                           >
                             8:30
                           </p>
@@ -2153,12 +2153,12 @@ exports[`Storyshots TripSegment RTL 1`] = `
                         className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                          className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                         >
                           Barcelona BCN
                         </p>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                          className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                         >
                           Paris BVA
                         </p>
@@ -2168,7 +2168,7 @@ exports[`Storyshots TripSegment RTL 1`] = `
                       className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 lbWUUI"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 HRYQf"
+                        className="Text__StyledText-sc-19qtt4y-0 ifWwcY"
                       >
                         2h
                       </p>
@@ -3106,7 +3106,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                            className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                           >
                             11:20
                           </p>
@@ -3115,7 +3115,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                            className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                           >
                             4:20
                           </p>
@@ -3125,12 +3125,12 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                         className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                          className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                         >
                           Berlin TXL
                         </p>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                          className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                         >
                           Moscow VKO
                         </p>
@@ -3140,7 +3140,7 @@ exports[`Storyshots TripSegment Shown by default 1`] = `
                       className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                        className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                       >
                         3h
                       </p>

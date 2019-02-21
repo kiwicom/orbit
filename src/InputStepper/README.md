@@ -55,17 +55,11 @@ Table below contains all types of the props available in InputStepper component.
 * `ref` can be used for example auto-focus the elements immediately after render.
 ```jsx
 class Component extends React.PureComponent<Props> {
-
-  constructor() {
-    super()
-    this.ref = React.createRef();
-  }
+  ref: { current: React$ElementRef<*> | null } = React.createRef();
   
   componentDidMount() {
     this.ref.current && this.ref.current.focus();
   }
-
-  ref: { current: React$ElementRef<*> | null };
 
   render() {
     return (

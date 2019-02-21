@@ -1,12 +1,14 @@
 // @flow
 import type { ReactComponentStyled } from "styled-components";
 
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Ref } from "../common/common.js.flow";
 
 type Type = "primary" | "secondary";
 type Size = "small" | "normal" | "large";
 
 export type Props = {|
+  ...Globals,
+  ...Ref,
   +children?: React$Node,
   +component?: string | React$Node,
   +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
@@ -24,7 +26,6 @@ export type Props = {|
   +submit?: boolean,
   +transparent?: boolean,
   tabIndex?: string,
-  ...Globals,
 |};
 
 declare export var StyledButtonLink: ReactComponentStyled<Props>;

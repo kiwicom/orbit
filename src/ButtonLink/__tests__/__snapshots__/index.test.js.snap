@@ -71,6 +71,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   width={0}
 >
   <ButtonLink__StyledButtonLink
+    buttonRef={null}
     component="button"
     dataTest="test"
     external={true}
@@ -521,6 +522,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
     width={0}
   >
     <StyledComponent
+      buttonRef={null}
       component="button"
       dataTest="test"
       external={true}
@@ -1464,6 +1466,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
       width={0}
     >
       <Component
+        buttonRef={null}
         className="c0"
         component="button"
         dataTest="test"
@@ -2056,6 +2059,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   width={0}
 >
   <ButtonLink__StyledButtonLink
+    buttonRef={null}
     component="button"
     external={false}
     href="https://kiwi.com"
@@ -2504,6 +2508,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
     width={0}
   >
     <StyledComponent
+      buttonRef={null}
       component="button"
       external={false}
       forwardedComponent={
@@ -3445,6 +3450,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
       width={0}
     >
       <Component
+        buttonRef={null}
         className="c0"
         component="button"
         external={false}

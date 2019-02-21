@@ -132,20 +132,10 @@
     "@babel/traverse" "^7.1.0"
     "@babel/types" "^7.0.0"
 
-"@babel/helper-create-class-features-plugin@^7.2.1":
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.2.1.tgz#f6e8027291669ef64433220dc8327531233f1161"
-  dependencies:
-    "@babel/helper-function-name" "^7.1.0"
-    "@babel/helper-member-expression-to-functions" "^7.0.0"
-    "@babel/helper-optimise-call-expression" "^7.0.0"
-    "@babel/helper-plugin-utils" "^7.0.0"
-    "@babel/helper-replace-supers" "^7.1.0"
-
-"@babel/helper-create-class-features-plugin@^7.2.3":
-  version "7.2.3"
-  resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.2.3.tgz#f6e719abb90cb7f4a69591e35fd5eb89047c4a7c"
-  integrity sha512-xO/3Gn+2C7/eOUeb0VRnSP1+yvWHNxlpAot1eMhtoKDCN7POsyQP5excuT5UsV5daHxMWBeIIOeI5cmB8vMRgQ==
+"@babel/helper-create-class-features-plugin@^7.3.0":
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.3.2.tgz#ba1685603eb1c9f2f51c9106d5180135c163fe73"
+  integrity sha512-tdW8+V8ceh2US4GsYdNVNoohq5uVwOf9k6krjwW4E1lINcHgttnWcNqgdoessn12dAy8QkbezlbQh2nXISNY+A==
   dependencies:
     "@babel/helper-function-name" "^7.1.0"
     "@babel/helper-member-expression-to-functions" "^7.0.0"
@@ -237,16 +227,7 @@
     "@babel/traverse" "^7.1.0"
     "@babel/types" "^7.0.0"
 
-"@babel/helper-replace-supers@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@babel/helper-replace-supers/-/helper-replace-supers-7.1.0.tgz#5fc31de522ec0ef0899dc9b3e7cf6a5dd655f362"
-  dependencies:
-    "@babel/helper-member-expression-to-functions" "^7.0.0"
-    "@babel/helper-optimise-call-expression" "^7.0.0"
-    "@babel/traverse" "^7.1.0"
-    "@babel/types" "^7.0.0"
-
-"@babel/helper-replace-supers@^7.2.3":
+"@babel/helper-replace-supers@^7.1.0", "@babel/helper-replace-supers@^7.2.3":
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/@babel/helper-replace-supers/-/helper-replace-supers-7.2.3.tgz#19970020cf22677d62b3a689561dbd9644d8c5e5"
   integrity sha512-GyieIznGUfPXPWu0yLS6U55Mz67AZD9cUk0BfirOWlPrXlBcan9Gz+vHGz+cPfuoweZSnPzPIm67VtQM0OWZbA==
@@ -333,19 +314,12 @@
     "@babel/helper-replace-supers" "^7.1.0"
     "@babel/plugin-syntax-class-properties" "^7.0.0"
 
-"@babel/plugin-proposal-class-properties@^7.0.0", "@babel/plugin-proposal-class-properties@^7.1.0":
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-class-properties/-/plugin-proposal-class-properties-7.2.1.tgz#c734a53e0a1ec40fe5c22ee5069d26da3b187d05"
+"@babel/plugin-proposal-class-properties@^7.0.0", "@babel/plugin-proposal-class-properties@^7.1.0", "@babel/plugin-proposal-class-properties@^7.2.0":
+  version "7.3.3"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-class-properties/-/plugin-proposal-class-properties-7.3.3.tgz#e69ee114a834a671293ace001708cc1682ed63f9"
+  integrity sha512-XO9eeU1/UwGPM8L+TjnQCykuVcXqaO5J1bkRPIygqZ/A2L1xVMJ9aZXrY31c0U4H2/LHKL4lbFQLsxktSrc/Ng==
   dependencies:
-    "@babel/helper-create-class-features-plugin" "^7.2.1"
-    "@babel/helper-plugin-utils" "^7.0.0"
-
-"@babel/plugin-proposal-class-properties@^7.2.0":
-  version "7.2.3"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-class-properties/-/plugin-proposal-class-properties-7.2.3.tgz#c9e1294363b346cff333007a92080f3203698461"
-  integrity sha512-FVuQngLoN2iDrpW7LmhPZ2sO4DJxf35FOcwidwB9Ru9tMvI5URthnkVHuG14IStV+TzkMTyLMoOUlSTtrdVwqw==
-  dependencies:
-    "@babel/helper-create-class-features-plugin" "^7.2.3"
+    "@babel/helper-create-class-features-plugin" "^7.3.0"
     "@babel/helper-plugin-utils" "^7.0.0"
 
 "@babel/plugin-proposal-decorators@7.1.2":

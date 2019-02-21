@@ -30,6 +30,7 @@ import Checkbox from "../Checkbox";
 import Radio from "../Radio";
 import CardSectionHeader from "../Card/CardSection/CardSectionHeader";
 import CardSectionContent from "../Card/CardSection/CardSectionContent";
+import Tooltip from "../Tooltip";
 
 import Modal, { ModalHeader, ModalSection, ModalFooter } from "./index";
 
@@ -290,9 +291,11 @@ storiesOf("Modal", module)
                 />
                 <ModalSection suppressed>
                   <Stack>
-                    <Text uppercase weight="bold">
-                      OUTBOUND
-                    </Text>
+                    <Tooltip content={<div>Lorem ipsum dolor sit amet</div>}>
+                      <Text uppercase weight="bold">
+                        OUTBOUND
+                      </Text>
+                    </Tooltip>
                     <Card>
                       <CardSection expandable>
                         <CardSectionHeader

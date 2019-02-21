@@ -386,7 +386,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                           Insert your title here...
                         </h1>
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                          className="Text__StyledText-sc-19qtt4y-0 gqybby"
                         >
                           subtitle
                         </p>
@@ -410,7 +410,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                               Insert your title here...
                             </h1>
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                              className="Text__StyledText-sc-19qtt4y-0 gqybby"
                             >
                               subtitle
                             </p>
@@ -473,7 +473,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                           className="CardHeader__StyledSubTitle-lvjkay-2 byqGxX"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                            className="Text__StyledText-sc-19qtt4y-0 gqybby"
                           >
                             subtitle
                           </p>
@@ -498,7 +498,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                               Insert your title here...
                             </h1>
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                              className="Text__StyledText-sc-19qtt4y-0 gqybby"
                             >
                               subtitle
                             </p>
@@ -525,7 +525,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                               Insert your title here...
                             </h1>
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                              className="Text__StyledText-sc-19qtt4y-0 gqybby"
                             >
                               subtitle
                             </p>
@@ -567,7 +567,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                               Insert your title here...
                             </h1>
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                              className="Text__StyledText-sc-19qtt4y-0 gqybby"
                             >
                               subtitle
                             </p>
@@ -1098,7 +1098,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     />
                   </svg>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                    className="Text__StyledText-sc-19qtt4y-0 gqybby"
                   >
                     Hola Amigo
                   </p>
@@ -1114,7 +1114,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x, //images.kiwi.com/illustrations/0x270/Accommodation.png 3x"
                   />
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                    className="Text__StyledText-sc-19qtt4y-0 gqybby"
                   >
                     Hola Amigo
                   </p>
@@ -1130,7 +1130,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     srcSet="//images.kiwi.com/illustrations/0x180/Accommodation.png 2x, //images.kiwi.com/illustrations/0x270/Accommodation.png 3x"
                   />
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                    className="Text__StyledText-sc-19qtt4y-0 gqybby"
                   >
                     Hola Amigo
                   </p>
@@ -2683,7 +2683,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                   className="Stack__StyledStack-sc-1t576ow-0 czFEn"
                 >
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                    className="Text__StyledText-sc-19qtt4y-0 gqybby"
                   >
                     Prague
                   </p>
@@ -2697,7 +2697,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                     />
                   </svg>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                    className="Text__StyledText-sc-19qtt4y-0 gqybby"
                   >
                     Barcelona
                   </p>
@@ -2721,7 +2721,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         />
                       </svg>
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
+                        className="Text__StyledText-sc-19qtt4y-0 kiMYod"
                       >
                         Mon 22 Oct
                       </p>
@@ -2763,7 +2763,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                               >
                                 <p
-                                  className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
+                                  className="Text__StyledText-sc-19qtt4y-0 hzXhyZ"
                                 >
                                   6:30
                                 </p>
@@ -2772,7 +2772,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                               >
                                 <p
-                                  className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
+                                  className="Text__StyledText-sc-19qtt4y-0 hzXhyZ"
                                 >
                                   8:30
                                 </p>
@@ -2782,12 +2782,12 @@ exports[`Storyshots Stack Components preview 1`] = `
                               className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                             >
                               <p
-                                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                                className="Text__StyledText-sc-19qtt4y-0 gqybby"
                               >
                                 Barcelona BCN
                               </p>
                               <p
-                                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                                className="Text__StyledText-sc-19qtt4y-0 gqybby"
                               >
                                 Paris BVA
                               </p>
@@ -2797,7 +2797,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                             className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 Wcewh"
+                              className="Text__StyledText-sc-19qtt4y-0 dWFgIW"
                             >
                               2h
                             </p>
@@ -2986,7 +2986,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                               >
                                 <p
-                                  className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
+                                  className="Text__StyledText-sc-19qtt4y-0 hzXhyZ"
                                 >
                                   13:20
                                 </p>
@@ -2995,7 +2995,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                               >
                                 <p
-                                  className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
+                                  className="Text__StyledText-sc-19qtt4y-0 hzXhyZ"
                                 >
                                   16:20
                                 </p>
@@ -3005,12 +3005,12 @@ exports[`Storyshots Stack Components preview 1`] = `
                               className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                             >
                               <p
-                                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                                className="Text__StyledText-sc-19qtt4y-0 gqybby"
                               >
                                 Paris CDG
                               </p>
                               <p
-                                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                                className="Text__StyledText-sc-19qtt4y-0 gqybby"
                               >
                                 Lille XDB
                               </p>
@@ -3020,7 +3020,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                             className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 Wcewh"
+                              className="Text__StyledText-sc-19qtt4y-0 dWFgIW"
                             >
                               3h
                             </p>
@@ -3169,7 +3169,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                               >
                                 <p
-                                  className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
+                                  className="Text__StyledText-sc-19qtt4y-0 hzXhyZ"
                                 >
                                   18:45
                                 </p>
@@ -3178,7 +3178,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                               >
                                 <p
-                                  className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
+                                  className="Text__StyledText-sc-19qtt4y-0 hzXhyZ"
                                 >
                                   20:15
                                 </p>
@@ -3188,12 +3188,12 @@ exports[`Storyshots Stack Components preview 1`] = `
                               className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                             >
                               <p
-                                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                                className="Text__StyledText-sc-19qtt4y-0 gqybby"
                               >
                                 Lille XDB
                               </p>
                               <p
-                                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                                className="Text__StyledText-sc-19qtt4y-0 gqybby"
                               >
                                 City of Brussels CRL
                               </p>
@@ -3203,7 +3203,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                             className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 Wcewh"
+                              className="Text__StyledText-sc-19qtt4y-0 dWFgIW"
                             >
                               1h 30m
                             </p>
@@ -3346,7 +3346,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         />
                       </svg>
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
+                        className="Text__StyledText-sc-19qtt4y-0 kiMYod"
                       >
                         Tue 23 Oct
                       </p>
@@ -3388,7 +3388,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                               >
                                 <p
-                                  className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
+                                  className="Text__StyledText-sc-19qtt4y-0 hzXhyZ"
                                 >
                                   09:20
                                 </p>
@@ -3397,7 +3397,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                               >
                                 <p
-                                  className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
+                                  className="Text__StyledText-sc-19qtt4y-0 hzXhyZ"
                                 >
                                   14:15
                                 </p>
@@ -3407,12 +3407,12 @@ exports[`Storyshots Stack Components preview 1`] = `
                               className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                             >
                               <p
-                                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                                className="Text__StyledText-sc-19qtt4y-0 gqybby"
                               >
                                 City of Brussels BRU
                               </p>
                               <p
-                                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                                className="Text__StyledText-sc-19qtt4y-0 gqybby"
                               >
                                 Miami MIA
                               </p>
@@ -3422,7 +3422,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                             className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 Wcewh"
+                              className="Text__StyledText-sc-19qtt4y-0 dWFgIW"
                             >
                               10h 55m
                             </p>
@@ -3501,7 +3501,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                         />
                       </svg>
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
+                        className="Text__StyledText-sc-19qtt4y-0 kiMYod"
                       >
                         Mon 22 Oct
                       </p>
@@ -3543,7 +3543,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                               >
                                 <p
-                                  className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
+                                  className="Text__StyledText-sc-19qtt4y-0 hzXhyZ"
                                 >
                                   6:30
                                 </p>
@@ -3552,7 +3552,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                               >
                                 <p
-                                  className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
+                                  className="Text__StyledText-sc-19qtt4y-0 hzXhyZ"
                                 >
                                   8:30
                                 </p>
@@ -3562,12 +3562,12 @@ exports[`Storyshots Stack Components preview 1`] = `
                               className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                             >
                               <p
-                                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                                className="Text__StyledText-sc-19qtt4y-0 gqybby"
                               >
                                 Barcelona BCN
                               </p>
                               <p
-                                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                                className="Text__StyledText-sc-19qtt4y-0 gqybby"
                               >
                                 Paris BVA
                               </p>
@@ -3577,7 +3577,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                             className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 Wcewh"
+                              className="Text__StyledText-sc-19qtt4y-0 dWFgIW"
                             >
                               2h
                             </p>
@@ -3766,7 +3766,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                               >
                                 <p
-                                  className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
+                                  className="Text__StyledText-sc-19qtt4y-0 hzXhyZ"
                                 >
                                   13:20
                                 </p>
@@ -3775,7 +3775,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                                 className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                               >
                                 <p
-                                  className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
+                                  className="Text__StyledText-sc-19qtt4y-0 hzXhyZ"
                                 >
                                   16:20
                                 </p>
@@ -3785,12 +3785,12 @@ exports[`Storyshots Stack Components preview 1`] = `
                               className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                             >
                               <p
-                                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                                className="Text__StyledText-sc-19qtt4y-0 gqybby"
                               >
                                 Paris CDG
                               </p>
                               <p
-                                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                                className="Text__StyledText-sc-19qtt4y-0 gqybby"
                               >
                                 Lille XDB
                               </p>
@@ -3800,7 +3800,7 @@ exports[`Storyshots Stack Components preview 1`] = `
                             className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 Wcewh"
+                              className="Text__StyledText-sc-19qtt4y-0 dWFgIW"
                             >
                               3h
                             </p>
@@ -32012,7 +32012,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                   className="Stack__StyledStack-sc-1t576ow-0 bMtpWR"
                 >
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 edHWJs"
+                    className="Text__StyledText-sc-19qtt4y-0 cyRJlo"
                   >
                     email@gmail.com
                   </p>
@@ -32069,7 +32069,7 @@ exports[`Storyshots Stack Nested example 1`] = `
                   </button>
                 </div>
                 <p
-                  className="Text__StyledText-sc-19qtt4y-0 hoVqsz"
+                  className="Text__StyledText-sc-19qtt4y-0 cLpZOw"
                 >
                   <a
                     className="TextLink__StyledTextLink-sc-1bvlje4-1 hISHPe"
@@ -34071,7 +34071,7 @@ exports[`Storyshots Stack RTL 1`] = `
                   className="Stack__StyledStack-sc-1t576ow-0 dSeYVv"
                 >
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 fLmcws"
+                    className="Text__StyledText-sc-19qtt4y-0 hhyEgh"
                   >
                     email@gmail.com
                   </p>
@@ -34128,7 +34128,7 @@ exports[`Storyshots Stack RTL 1`] = `
                   </button>
                 </div>
                 <p
-                  className="Text__StyledText-sc-19qtt4y-0 dPdjAc"
+                  className="Text__StyledText-sc-19qtt4y-0 cukYhF"
                 >
                   <a
                     className="TextLink__StyledTextLink-sc-1bvlje4-1 hISHPe"

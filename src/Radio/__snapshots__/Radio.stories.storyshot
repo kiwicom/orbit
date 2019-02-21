@@ -911,7 +911,7 @@ exports[`Storyshots Radio RTL 1`] = `
                     className="Radio__LabelText-sc-5lanou-4 kvtYjE"
                   >
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
+                      className="Text__StyledText-sc-19qtt4y-0 sLbwl"
                     >
                       Lorem ipsum dolor sit 
                       <a
@@ -1297,7 +1297,7 @@ exports[`Storyshots Radio With TextLink in label 1`] = `
                     className="Radio__LabelText-sc-5lanou-4 kvtYjE"
                   >
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                      className="Text__StyledText-sc-19qtt4y-0 gqybby"
                     >
                       Lorem ipsum dolor sit 
                       <a

@@ -120,7 +120,7 @@ exports[`Storyshots Text Attention text 1`] = `
               }
             >
               <p
-                className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
+                className="Text__StyledText-sc-19qtt4y-0 kiMYod"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
               </p>
@@ -387,7 +387,7 @@ exports[`Storyshots Text Link in text 1`] = `
               }
             >
               <p
-                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                className="Text__StyledText-sc-19qtt4y-0 gqybby"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
                  
@@ -747,7 +747,7 @@ exports[`Storyshots Text Playground 1`] = `
               }
             >
               <p
-                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                className="Text__StyledText-sc-19qtt4y-0 gqybby"
                 data-test="test"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
@@ -1255,7 +1255,7 @@ exports[`Storyshots Text Primary text 1`] = `
               }
             >
               <p
-                className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                className="Text__StyledText-sc-19qtt4y-0 gqybby"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
               </p>
@@ -1493,7 +1493,7 @@ exports[`Storyshots Text RTL 1`] = `
               }
             >
               <p
-                className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
+                className="Text__StyledText-sc-19qtt4y-0 sLbwl"
               >
                 Lorem ipsum dolor sit amet
               </p>
@@ -1811,7 +1811,7 @@ exports[`Storyshots Text Secondary text 1`] = `
               }
             >
               <p
-                className="Text__StyledText-sc-19qtt4y-0 ktIePR"
+                className="Text__StyledText-sc-19qtt4y-0 lkbVBi"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
               </p>
@@ -2078,7 +2078,7 @@ exports[`Storyshots Text Status text 1`] = `
               }
             >
               <p
-                className="Text__StyledText-sc-19qtt4y-0 HHBPQ"
+                className="Text__StyledText-sc-19qtt4y-0 hDhMFJ"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
               </p>
@@ -2244,7 +2244,7 @@ exports[`Storyshots Text Status text 1`] = `
               }
             >
               <p
-                className="Text__StyledText-sc-19qtt4y-0 beRQLc"
+                className="Text__StyledText-sc-19qtt4y-0 cuBhPr"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
               </p>
@@ -2410,7 +2410,7 @@ exports[`Storyshots Text Status text 1`] = `
               }
             >
               <p
-                className="Text__StyledText-sc-19qtt4y-0 gpctJb"
+                className="Text__StyledText-sc-19qtt4y-0 ljXNF"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
               </p>
@@ -2576,7 +2576,7 @@ exports[`Storyshots Text Status text 1`] = `
               }
             >
               <p
-                className="Text__StyledText-sc-19qtt4y-0 InMSz"
+                className="Text__StyledText-sc-19qtt4y-0 nFsyd"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
               </p>
@@ -2851,7 +2851,7 @@ exports[`Storyshots Text White text 1`] = `
                 }
               >
                 <p
-                  className="Text__StyledText-sc-19qtt4y-0 eUqSAN"
+                  className="Text__StyledText-sc-19qtt4y-0 icXXKI"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dui dolor, ut vestibulum nisi sodales et. Suspendisse molestie felis sit amet dui viverra volutpat sed sit amet lacus. Quisque sapien dolor, blandit ut sodales id, dictum sit amet purus. Nulla facilisi. Nulla eleifend, sem sed fermentum feugiat, eros ligula semper nulla, sit amet semper purus risus nec lorem.
                 </p>

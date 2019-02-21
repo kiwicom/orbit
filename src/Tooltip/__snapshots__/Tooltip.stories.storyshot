@@ -1467,7 +1467,7 @@ exports[`Storyshots Tooltip Tooltip on inline element 1`] = `
                       onMouseLeave={[Function]}
                     >
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                        className="Text__StyledText-sc-19qtt4y-0 gqybby"
                       >
                         Another Tooltip.
                       </p>
@@ -2235,7 +2235,7 @@ exports[`Storyshots Tooltip With image inside 1`] = `
                         src="/tooltip_card_preview.png"
                       />
                       <p
-                        className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
+                        className="Text__StyledText-sc-19qtt4y-0 gqybby"
                       >
                         We take security very seriously. Especially when it comes to your personal and sensitive details.
                       </p>

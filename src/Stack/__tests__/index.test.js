@@ -21,7 +21,6 @@ describe("Default Stack", () => {
     </Stack>,
   );
   const stack = component.find("Stack__StyledStack");
-
   it("should have passed props", () => {
     expect(stack.prop("spacing")).toBe(spacing);
     expect(stack.prop("spaceAfter")).toBe(spaceAfter);

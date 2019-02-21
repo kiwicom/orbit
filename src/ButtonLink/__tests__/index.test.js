@@ -14,8 +14,16 @@ describe("ButtonLink with Icon", () => {
   const dataTest = "test";
   const tabIndex = "-1";
   const submit = true;
+  const ref = React.createRef();
   const component = mount(
-    <ButtonLink href={href} external dataTest={dataTest} submit={submit} tabIndex={tabIndex}>
+    <ButtonLink
+      href={href}
+      external
+      dataTest={dataTest}
+      submit={submit}
+      tabIndex={tabIndex}
+      ref={ref}
+    >
       {children}
     </ButtonLink>,
   );
@@ -37,6 +45,9 @@ describe("ButtonLink with Icon", () => {
   });
   it("should contain SVG", () => {
     expect(button.find("svg").exists()).toBe(false);
+  });
+  it("should have ref", () => {
+    expect(ref.current).toBeDefined();
   });
   it("should be external", () => {
     expect(button.prop("target")).toBe("_blank");

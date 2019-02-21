@@ -1304,7 +1304,7 @@ exports[`Storyshots Alert Playground 1`] = `
                             </svg>
                           </div>
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 fTObxL"
+                            className="Text__StyledText-sc-19qtt4y-0 HHBPQ"
                           >
                             623 Kč will be refunded by your payment card
                           </p>
@@ -2389,7 +2389,7 @@ exports[`Storyshots Alert RTL 1`] = `
                             </svg>
                           </div>
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 dVeMeZ"
+                            className="Text__StyledText-sc-19qtt4y-0 jeqOtV"
                           >
                             623 Kč will be refunded by your payment card
                           </p>

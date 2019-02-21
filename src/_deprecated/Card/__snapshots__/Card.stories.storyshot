@@ -151,7 +151,7 @@ exports[`Storyshots Deprecated Card Card with description 1`] = `
                     className="CardHeader__StyledSubTitle-sc-39t2tz-2 exFKvr"
                   >
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                      className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                     >
                       This is a description of the card.
                     </p>
@@ -491,7 +491,7 @@ exports[`Storyshots Deprecated Card Card with only content 1`] = `
                   className="CardContent__StyledCardContent-sc-1hk88tp-0 guZEke"
                 >
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                    className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                   >
                     This is a content of the card.
                   </p>
@@ -851,7 +851,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                     className="CardHeader__StyledSubTitle-sc-39t2tz-2 exFKvr"
                   >
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                      className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                     >
                       This is a description of the card.
                     </p>
@@ -866,7 +866,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                     Insert your title here...
                   </h3>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                    className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                   >
                     Insert your content here...
                   </p>
@@ -880,7 +880,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                     Insert your title here...
                   </h3>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                    className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                   >
                     Insert your content here...
                   </p>
@@ -894,7 +894,7 @@ exports[`Storyshots Deprecated Card Card with sections 1`] = `
                     Insert your title here...
                   </h3>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                    className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                   >
                     Insert your content here...
                   </p>
@@ -2323,7 +2323,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                     className="CardHeader__StyledSubTitle-sc-39t2tz-2 exFKvr"
                   >
                     <p
-                      className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                      className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                     >
                       This is a customisable description of the card.
                     </p>
@@ -2339,7 +2339,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                     Content with Heading and text
                   </h3>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                    className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                   >
                     Text in content
                   </p>
@@ -2354,7 +2354,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                     Section with Heading and text
                   </h3>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                    className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                   >
                     Text in section
                   </p>

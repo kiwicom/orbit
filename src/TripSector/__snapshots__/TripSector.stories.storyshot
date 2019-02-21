@@ -135,7 +135,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                     />
                   </svg>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                    className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
                   >
                     Mon 22 Oct
                   </p>
@@ -177,7 +177,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                              className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                             >
                               6:30
                             </p>
@@ -186,7 +186,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                              className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                             >
                               8:30
                             </p>
@@ -196,12 +196,12 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                            className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                           >
                             Barcelona BCN
                           </p>
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                            className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                           >
                             Paris BVA
                           </p>
@@ -211,7 +211,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                          className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                         >
                           2h
                         </p>
@@ -337,7 +337,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       </div>
                       Transfer protected by the 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 fdRcJC"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 hISHPe"
                         rel=""
                       >
                         Kiwi.com Guarantee
@@ -400,7 +400,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                              className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                             >
                               13:20
                             </p>
@@ -409,7 +409,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                              className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                             >
                               16:20
                             </p>
@@ -419,12 +419,12 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                            className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                           >
                             Paris CDG
                           </p>
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                            className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                           >
                             Lille XDB
                           </p>
@@ -434,7 +434,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                          className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                         >
                           3h
                         </p>
@@ -538,7 +538,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       </div>
                       Transfer protected by the 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 fdRcJC"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 hISHPe"
                         rel=""
                       >
                         Kiwi.com Guarantee
@@ -583,7 +583,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                              className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                             >
                               18:45
                             </p>
@@ -592,7 +592,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                              className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                             >
                               20:15
                             </p>
@@ -602,12 +602,12 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                            className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                           >
                             Lille XDB
                           </p>
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                            className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                           >
                             City of Brussels CRL
                           </p>
@@ -617,7 +617,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                          className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                         >
                           1h 30m
                         </p>
@@ -721,7 +721,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                       </div>
                       Transfer protected by the 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 fdRcJC"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 hISHPe"
                         rel=""
                       >
                         Kiwi.com Guarantee
@@ -760,7 +760,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                     />
                   </svg>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                    className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
                   >
                     Tue 23 Oct
                   </p>
@@ -802,7 +802,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                              className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                             >
                               09:20
                             </p>
@@ -811,7 +811,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                              className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                             >
                               14:15
                             </p>
@@ -821,12 +821,12 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                            className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                           >
                             City of Brussels BRU
                           </p>
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                            className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                           >
                             Miami MIA
                           </p>
@@ -836,7 +836,7 @@ exports[`Storyshots TripSector Multiple days 1`] = `
                         className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                          className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                         >
                           10h 55m
                         </p>
@@ -4930,7 +4930,7 @@ exports[`Storyshots TripSector Playground 1`] = `
                     />
                   </svg>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                    className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
                   >
                     Mon 22 Oct
                   </p>
@@ -4972,7 +4972,7 @@ exports[`Storyshots TripSector Playground 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                              className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                             >
                               6:30
                             </p>
@@ -4981,7 +4981,7 @@ exports[`Storyshots TripSector Playground 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 ePRHle"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                              className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                             >
                               8:30
                             </p>
@@ -4991,12 +4991,12 @@ exports[`Storyshots TripSector Playground 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                            className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                           >
                             Barcelona BCN
                           </p>
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 dJNjRc"
+                            className="Text__StyledText-sc-19qtt4y-0 cvVEZl"
                           >
                             Paris BVA
                           </p>
@@ -5006,7 +5006,7 @@ exports[`Storyshots TripSector Playground 1`] = `
                         className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 nswXM"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 bqGfgF"
+                          className="Text__StyledText-sc-19qtt4y-0 Wcewh"
                         >
                           2h
                         </p>
@@ -6022,7 +6022,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                     />
                   </svg>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                    className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                   >
                     Mon 22 Oct
                   </p>
@@ -6064,7 +6064,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 hJKede"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                              className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
                             >
                               6:30
                             </p>
@@ -6073,7 +6073,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 hJKede"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                              className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
                             >
                               8:30
                             </p>
@@ -6083,12 +6083,12 @@ exports[`Storyshots TripSector RTL 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                            className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                           >
                             Barcelona BCN
                           </p>
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                            className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                           >
                             Paris BVA
                           </p>
@@ -6098,7 +6098,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                         className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 lbWUUI"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 HRYQf"
+                          className="Text__StyledText-sc-19qtt4y-0 ifWwcY"
                         >
                           2h
                         </p>
@@ -6224,7 +6224,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                       </div>
                       Transfer protected by the 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 fdRcJC"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 hISHPe"
                         rel=""
                       >
                         Kiwi.com Guarantee
@@ -6287,7 +6287,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 hJKede"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                              className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
                             >
                               13:20
                             </p>
@@ -6296,7 +6296,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 hJKede"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                              className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
                             >
                               16:20
                             </p>
@@ -6306,12 +6306,12 @@ exports[`Storyshots TripSector RTL 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                            className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                           >
                             Paris CDG
                           </p>
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                            className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                           >
                             Lille XDB
                           </p>
@@ -6321,7 +6321,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                         className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 lbWUUI"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 HRYQf"
+                          className="Text__StyledText-sc-19qtt4y-0 ifWwcY"
                         >
                           3h
                         </p>
@@ -6425,7 +6425,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                       </div>
                       Transfer protected by the 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 fdRcJC"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 hISHPe"
                         rel=""
                       >
                         Kiwi.com Guarantee
@@ -6470,7 +6470,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 hJKede"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                              className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
                             >
                               18:45
                             </p>
@@ -6479,7 +6479,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 hJKede"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                              className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
                             >
                               20:15
                             </p>
@@ -6489,12 +6489,12 @@ exports[`Storyshots TripSector RTL 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                            className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                           >
                             Lille XDB
                           </p>
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                            className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                           >
                             City of Brussels CRL
                           </p>
@@ -6504,7 +6504,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                         className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 lbWUUI"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 HRYQf"
+                          className="Text__StyledText-sc-19qtt4y-0 ifWwcY"
                         >
                           1h 30m
                         </p>
@@ -6608,7 +6608,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                       </div>
                       Transfer protected by the 
                       <a
-                        className="TextLink__StyledTextLink-sc-1bvlje4-1 fdRcJC"
+                        className="TextLink__StyledTextLink-sc-1bvlje4-1 hISHPe"
                         rel=""
                       >
                         Kiwi.com Guarantee
@@ -6647,7 +6647,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                     />
                   </svg>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 gwtyMa"
+                    className="Text__StyledText-sc-19qtt4y-0 gcYFNv"
                   >
                     Tue 23 Oct
                   </p>
@@ -6689,7 +6689,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 hJKede"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                              className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
                             >
                               09:20
                             </p>
@@ -6698,7 +6698,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                             className="TripSegment__StyledTripSegmentOverviewTime-sc-1pmcslk-9 hJKede"
                           >
                             <p
-                              className="Text__StyledText-sc-19qtt4y-0 jAUAWC"
+                              className="Text__StyledText-sc-19qtt4y-0 cDuNDn"
                             >
                               14:15
                             </p>
@@ -6708,12 +6708,12 @@ exports[`Storyshots TripSector RTL 1`] = `
                           className="TripSegment__StyledTripSegmentOverviewColumn-sc-1pmcslk-8 hmAlyP"
                         >
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                            className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                           >
                             City of Brussels BRU
                           </p>
                           <p
-                            className="Text__StyledText-sc-19qtt4y-0 huZevl"
+                            className="Text__StyledText-sc-19qtt4y-0 hRGvSD"
                           >
                             Miami MIA
                           </p>
@@ -6723,7 +6723,7 @@ exports[`Storyshots TripSector RTL 1`] = `
                         className="TripSegment__StyledTripSegmentCarrier-sc-1pmcslk-6 lbWUUI"
                       >
                         <p
-                          className="Text__StyledText-sc-19qtt4y-0 HRYQf"
+                          className="Text__StyledText-sc-19qtt4y-0 ifWwcY"
                         >
                           10h 55m
                         </p>

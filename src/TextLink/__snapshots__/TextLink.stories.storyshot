@@ -120,7 +120,7 @@ exports[`Storyshots TextLink Link with icon 1`] = `
               }
             >
               <a
-                className="TextLink__StyledTextLink-sc-1bvlje4-1 gjnkGq"
+                className="TextLink__StyledTextLink-sc-1bvlje4-1 hWPNdU"
                 href="https://kiwi.com"
                 onClick={[Function]}
                 rel=""
@@ -455,7 +455,7 @@ exports[`Storyshots TextLink Playground 1`] = `
               }
             >
               <a
-                className="TextLink__StyledTextLink-sc-1bvlje4-1 hiklAr"
+                className="TextLink__StyledTextLink-sc-1bvlje4-1 dXBVrJ"
                 data-test="test"
                 href="https://kiwi.com"
                 onClick={[Function]}
@@ -932,7 +932,7 @@ exports[`Storyshots TextLink Primary link 1`] = `
               }
             >
               <a
-                className="TextLink__StyledTextLink-sc-1bvlje4-1 gjnkGq"
+                className="TextLink__StyledTextLink-sc-1bvlje4-1 hWPNdU"
                 href="https://kiwi.com"
                 onClick={[Function]}
                 rel=""
@@ -1293,7 +1293,7 @@ exports[`Storyshots TextLink RTL 1`] = `
               }
             >
               <a
-                className="TextLink__StyledTextLink-sc-1bvlje4-1 gjnkGq"
+                className="TextLink__StyledTextLink-sc-1bvlje4-1 hWPNdU"
                 href="#"
                 onClick={[Function]}
                 rel=""
@@ -1679,7 +1679,7 @@ exports[`Storyshots TextLink Secondary link 1`] = `
               }
             >
               <a
-                className="TextLink__StyledTextLink-sc-1bvlje4-1 fdRcJC"
+                className="TextLink__StyledTextLink-sc-1bvlje4-1 hISHPe"
                 href="https://kiwi.com"
                 onClick={[Function]}
                 rel=""

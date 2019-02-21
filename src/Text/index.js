@@ -12,7 +12,7 @@ import {
 } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 import { textAlign } from "../utils/rtl";
-import { getLinkStyle } from "../TextLink";
+import { getLinkStyle, StyledTextLink } from "../TextLink";
 import { TYPE_OPTIONS as TEXTLINK_TYPE_OPTIONS } from "../TextLink/consts";
 
 import type { Props } from "./index";
@@ -64,7 +64,8 @@ export const StyledText = styled(({ element: TextElement, children, className, d
   margin: 0;
   margin-bottom: ${getSpacingToken};
 
-  a {
+  a:not(${StyledTextLink}) {
+    // TextLink in Text always win
     ${({ theme }) =>
       getLinkStyle({ theme, type: TEXTLINK_TYPE_OPTIONS.PRIMARY })} // Get styles from TextLink
   }

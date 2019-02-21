@@ -145,7 +145,7 @@ exports[`Storyshots ListChoice Default 1`] = `
                     Choice Title
                   </h1>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 Wcewh"
+                    className="Text__StyledText-sc-19qtt4y-0 dWFgIW"
                   >
                     Further description
                   </p>
@@ -490,7 +490,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
                     Choice Title
                   </h1>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 Wcewh"
+                    className="Text__StyledText-sc-19qtt4y-0 dWFgIW"
                   >
                     Further description
                   </p>
@@ -546,7 +546,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
                     Choice Title
                   </h1>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 Wcewh"
+                    className="Text__StyledText-sc-19qtt4y-0 dWFgIW"
                   >
                     Further description
                   </p>
@@ -602,7 +602,7 @@ exports[`Storyshots ListChoice Multiple choices 1`] = `
                     Choice Title
                   </h1>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 Wcewh"
+                    className="Text__StyledText-sc-19qtt4y-0 dWFgIW"
                   >
                     Further description
                   </p>
@@ -1365,7 +1365,7 @@ exports[`Storyshots ListChoice Playground 1`] = `
                     Choice Title
                   </h1>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 Wcewh"
+                    className="Text__StyledText-sc-19qtt4y-0 dWFgIW"
                   >
                     Further description
                   </p>
@@ -1804,7 +1804,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                     Choice Title
                   </h1>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 ifWwcY"
+                    className="Text__StyledText-sc-19qtt4y-0 dewkRf"
                   >
                     Further description
                   </p>
@@ -1860,7 +1860,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                     Choice Title
                   </h1>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 ifWwcY"
+                    className="Text__StyledText-sc-19qtt4y-0 dewkRf"
                   >
                     Further description
                   </p>
@@ -1916,7 +1916,7 @@ exports[`Storyshots ListChoice RTL 1`] = `
                     Choice Title
                   </h1>
                   <p
-                    className="Text__StyledText-sc-19qtt4y-0 ifWwcY"
+                    className="Text__StyledText-sc-19qtt4y-0 dewkRf"
                   >
                     Further description
                   </p>

@@ -385,13 +385,19 @@ class Tooltip extends React.PureComponent<Props, State> {
     }
   };
 
-  handleClose = () => {
-    this.setState({ shownMobile: false });
+  handleClose = (ev: SyntheticEvent<HTMLElement>) => {
+    ev.stopPropagation();
+    if (ev.target === this.overlay?.current || ev.target === this.closeButton?.current) {
+      this.setState({ shownMobile: false });
+    }
   };
 
   container: { current: any | HTMLDivElement } = React.createRef();
   tooltip: { current: any | HTMLDivElement } = React.createRef();
   content: { current: any | HTMLDivElement } = React.createRef();
+  overlay: { current: any | HTMLDivElement } = React.createRef();
+  // TODO: ged rid off weak types
+  closeButton: { current: any } = React.createRef();
 
   containerTop: number = 0;
   containerLeft: number = 0;
@@ -436,7 +442,11 @@ class Tooltip extends React.PureComponent<Props, State> {
         </StyledTooltipChildren>
         <Portal element="tooltips">
           <StyledTooltip role="tooltip" data-test={dataTest}>
-            <StyledTooltipOverlay onClick={this.handleClose} shownMobile={shownMobile} />
+            <StyledTooltipOverlay
+              onClick={this.handleClose}
+              shownMobile={shownMobile}
+              ref={this.overlay}
+            />
             <StyledTooltipWrapper
               shown={shown}
               shownMobile={shownMobile}
@@ -445,6 +455,7 @@ class Tooltip extends React.PureComponent<Props, State> {
               size={size}
               ref={this.tooltip}
               onMouseEnter={this.handleIn}
+              onClick={this.handleClose}
               onMouseLeave={this.handleOut}
               containerTop={containerTop}
               containerLeft={containerLeft}
@@ -456,7 +467,7 @@ class Tooltip extends React.PureComponent<Props, State> {
             >
               <StyledTooltipContent ref={this.content}>{content}</StyledTooltipContent>
               <StyledTooltipClose>
-                <Button type="secondary" block onClick={this.handleClose}>
+                <Button type="secondary" block onClick={this.handleClose} ref={this.closeButton}>
                   {closeText}
                 </Button>
               </StyledTooltipClose>

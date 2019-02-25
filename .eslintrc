@@ -44,6 +44,8 @@
     "import/no-mutable-exports": "error",
     "import/no-absolute-path": "error",
     "react/jsx-no-bind": "error",
+    "react/no-multi-comp": "off",
+    "react/prop-types":  "off",
     "react/require-default-props": "off", // Optional props can be undefined.
     "react/default-props-match-prop-types": "off", // Conflict between Flow and ESLint
     "react/jsx-filename-extension": ["error", { "extensions": [".js"] }], // Don't use jsx

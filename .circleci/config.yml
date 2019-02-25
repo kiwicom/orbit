@@ -2,7 +2,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: circleci/node:8.11
+      - image: circleci/node:10
     steps:
       - checkout
 
@@ -25,12 +25,20 @@ jobs:
           command: yarn
 
       - run:
-          name: Run all tests
-          command: yarn test-ci
+          name: Flow
+          command: yarn flow:check
+
+      - run:
+          name: Eslint
+          command: yarn eslint
+
+      - run:
+          name: Tests
+          command: yarn test --ci
 
   deploy:
     docker:
-      - image: circleci/node:8.11
+      - image: circleci/node:10
     steps:
       - checkout
       - restore_cache:
@@ -47,7 +55,7 @@ jobs:
 
   deploy-surge:
     docker:
-      - image: circleci/node:8.11
+      - image: circleci/node:10
     steps:
       - checkout
       - restore_cache:

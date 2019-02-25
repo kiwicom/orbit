@@ -237,9 +237,7 @@ storiesOf("InputField", module)
                   label={label}
                   value={value}
                   placeholder={placeholder}
-                  suffix={
-                    <div style={{ paddingRight: "12px", whiteSpace: "nowrap" }}>{suffix}</div>
-                  }
+                  suffix={<div style={{ paddingRight: "12px" }}>{suffix}</div>}
                   onChange={action("change")}
                 />
               ),

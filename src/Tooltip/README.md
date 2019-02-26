@@ -38,7 +38,7 @@ Table below contains all types of the props available in the Tooltip component.
 
 * For mobile devices, the user needs to click on the children to open the Tooltip.
 
-* The Tooltip component supports rendering of many different components inside its children. You can use combination of e.g. Text, Stack, List and custom image to show information to user about the CVV code. All rendered text inside the Tooltip should have white color on big devices (>= largeDesktop) automatically:
+* The Tooltip component supports rendering of many different components inside its children. You can use combination of e.g. Text, Stack, List and custom image to show information to user about the CVV code. All rendered text inside the Tooltip should have white color on big devices (>= largeMobile) automatically:
 ```jsx
 <Tooltip
   content={

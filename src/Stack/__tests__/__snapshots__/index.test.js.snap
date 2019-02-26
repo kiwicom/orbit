@@ -257,7 +257,7 @@ exports[`Default Stack should match snapshot 1`] = `
   align-items: center;
 }
 
-@media (min-width:1200px) {
+@media (min-width:992px) {
   .c0 > * {
     margin: 0 0 40px 0!important;
   }
@@ -726,7 +726,7 @@ exports[`Default Stack should match snapshot 1`] = `
         "componentStyle": ComponentStyle {
           "componentId": "Stack__StyledStack-sc-1t576ow-0",
           "isStatic": false,
-          "lastClassName": "jfoJix",
+          "lastClassName": "dIFOBr",
           "rules": Array [
             [Function],
             ";",
@@ -15935,7 +15935,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   align-items: center;
 }
 
-@media (min-width:1200px) {
+@media (min-width:992px) {
   .c0 {
     display: -webkit-inline-box;
     display: -webkit-inline-flex;
@@ -16491,7 +16491,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "Stack__StyledStack-sc-1t576ow-0",
             "isStatic": false,
-            "lastClassName": "jfoJix",
+            "lastClassName": "dIFOBr",
             "rules": Array [
               [Function],
               ";",
@@ -31709,7 +31709,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   align-items: center;
 }
 
-@media (min-width:1200px) {
+@media (min-width:992px) {
   .c0 > * {
     margin: 0 16px 0 0!important;
   }
@@ -32176,7 +32176,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
         "componentStyle": ComponentStyle {
           "componentId": "Stack__StyledStack-sc-1t576ow-0",
           "isStatic": false,
-          "lastClassName": "jfoJix",
+          "lastClassName": "dIFOBr",
           "rules": Array [
             [Function],
             ";",

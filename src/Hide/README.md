@@ -8,7 +8,7 @@ import Button from "@kiwicom/orbit-components/lib/Button";
 ```
 After adding import into your project you can use it simply like:
 ```jsx
-<Hide on={["smallMobile", "mediumMobile"]}>
+<Hide on={["smallMobile"]}>
   <Button>
     Hello World!
   </Button>
@@ -25,9 +25,9 @@ Table below contains all types of the props available in the Hide component.
 ### enum
 | on                | Applies from to width |
 | :---------------- | :-------------------- |
-| `"largeDesktop"`  | `1400px - ∞`          |
-| `"desktop"`       | `1200px - 1399px`     |
-| `"tablet"`        | `992px - 1199px`      |
-| `"largeMobile"`   | `600px - 991px`       |
-| `"mediumMobile"`  | `414px - 599px`       |
+| `"largeDesktop"`  | `1200px - ∞`          |
+| `"desktop"`       | `992px - 1199px`      |
+| `"tablet"`        | `768px - 991px`       |
+| `"largeMobile"`   | `576px - 767px`       |
+| `"mediumMobile"`  | `414px - 575px`       |
 | `"smallMobile"`   | `0px - 413px`         |

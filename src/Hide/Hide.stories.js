@@ -3,7 +3,7 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, boolean } from "@storybook/addon-knobs/react";
+import { withKnobs, boolean } from "@storybook/addon-knobs";
 
 import ChevronLeft from "../icons/ChevronLeft";
 

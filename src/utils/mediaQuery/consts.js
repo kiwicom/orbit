@@ -1,18 +1,27 @@
 // @flow
 
 export const DEVICES = {
-  largeDesktop: 1400,
-  desktop: 1200,
-  tablet: 992,
-  largeMobile: 600,
-  mediumMobile: 414,
-  smallMobile: 0,
+  LARGEDESKTOP: "largeDesktop",
+  DESKTOP: "desktop",
+  TABLET: "tablet",
+  LARGEMOBILE: "largeMobile",
+  MEDIUMMOBILE: "mediumMobile",
+  SMALLMOBILE: "smallMobile",
+};
+
+export const DEVICES_WIDTH = {
+  [DEVICES.LARGEDESKTOP]: 1400,
+  [DEVICES.DESKTOP]: 1200,
+  [DEVICES.TABLET]: 992,
+  [DEVICES.LARGEMOBILE]: 600,
+  [DEVICES.MEDIUMMOBILE]: 414,
+  [DEVICES.SMALLMOBILE]: 0,
 };
 
 export const QUERIES = {
-  largeDesktop: { min: DEVICES.largeDesktop },
-  desktop: { min: DEVICES.desktop },
-  tablet: { min: DEVICES.tablet },
-  largeMobile: { min: DEVICES.largeMobile },
-  mediumMobile: { min: DEVICES.mediumMobile },
+  largeDesktop: { min: DEVICES_WIDTH.largeDesktop },
+  desktop: { min: DEVICES_WIDTH.desktop },
+  tablet: { min: DEVICES_WIDTH.tablet },
+  largeMobile: { min: DEVICES_WIDTH.largeMobile },
+  mediumMobile: { min: DEVICES_WIDTH.mediumMobile },
 };

@@ -3,12 +3,14 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import mediaQueries from "../utils/mediaQuery";
-import { DEVICES } from "../utils/mediaQuery/consts";
+import { DEVICES_WIDTH } from "../utils/mediaQuery/consts";
 
 import type { Props } from "./index";
 
 // it's need to be sorted for rendering other: from lowest to the highest
-const sortedBreakpoints = Object.keys(DEVICES).sort((a, b) => DEVICES[a] - DEVICES[b]);
+const sortedBreakpoints = Object.keys(DEVICES_WIDTH).sort(
+  (a, b) => DEVICES_WIDTH[a] - DEVICES_WIDTH[b],
+);
 
 const StyledHide = styled.span`
   ${({ on }) =>

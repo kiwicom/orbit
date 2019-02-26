@@ -25,7 +25,6 @@ const CountryFlag = (props: Props) => {
       key={code}
       src={`${baseURL}/flags/24x0/flag-${code.toLowerCase()}.jpg`}
       srcSet={`${baseURL}/flags/48x0/flag-${code.toLowerCase()}.jpg 2x`}
-      crossOrigin="anonymous"
       alt={name}
       title={name}
       data-test={dataTest}

@@ -17,7 +17,6 @@ describe(`CountryFlag of ${name}`, () => {
     expect(component.prop("alt")).toBe(name);
     expect(component.prop("title")).toBe(name);
     expect(component.render().prop("data-test")).toBe(dataTest);
-    expect(component.render().prop("crossorigin")).toBe("anonymous");
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

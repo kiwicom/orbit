@@ -162,6 +162,7 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
   height: ${getToken(TOKENS.heightInput)};
   color: ${({ theme }) => theme.orbit.colorTextInputPrefix};
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   pointer-events: ${({ disabled }) => disabled && "none"};
@@ -201,6 +202,9 @@ export const Input = styled(
   height: 100%;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   z-index: 2;
+
+  // FIREFOX flexbox bug: the input doesn't shrink properly
+  min-width: 0;
 
   font-variant-numeric: ${({ type }) => type === TYPE_OPTIONS.PASSPORTID && "tabular-nums"};
   letter-spacing: ${({ type }) => type === TYPE_OPTIONS.PASSPORTID && "2px"};

@@ -26,6 +26,7 @@ export const StyledServiceLogo = styled(({ className, name, size, grayScale, the
     src={`${baseURL}/${getColor(grayScale)}/0x${parseInt(getHeight(theme, size), 10)}/${name}.png`}
     srcSet={`${baseURL}/${getColor(grayScale)}/0x${parseInt(getHeight(theme, size), 10) *
       2}/${name}.png 2x`}
+    crossOrigin="anonymous"
     alt={name}
     data-test={dataTest}
   />

@@ -10,7 +10,6 @@ exports[`ServiceLogo: AirHelp should match snapshot 1`] = `
 <img
   alt="AirHelp"
   className="c0"
-  crossOrigin="anonymous"
   src="//images.kiwi.com/logos/0x48/AirHelp.png"
   srcSet="//images.kiwi.com/logos/0x96/AirHelp.png 2x"
 />
@@ -26,7 +25,6 @@ exports[`ServiceLogo: AirHelp should match snapshot 2`] = `
 <img
   alt="AirHelp"
   className="c0"
-  crossOrigin="anonymous"
   data-test="test"
   src="//images.kiwi.com/logos-grayscale/0x48/AirHelp.png"
   srcSet="//images.kiwi.com/logos-grayscale/0x96/AirHelp.png 2x"

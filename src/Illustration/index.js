@@ -43,7 +43,6 @@ const Illustration = ({ name, size = SIZE_OPTIONS.MEDIUM, dataTest, spaceAfter }
     size={size}
     data-test={dataTest}
     spaceAfter={spaceAfter}
-    crossOrigin="anonymous"
   />
 );
 

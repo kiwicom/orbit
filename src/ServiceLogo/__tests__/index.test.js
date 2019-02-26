@@ -42,6 +42,7 @@ describe(`ServiceLogo: ${name}`, () => {
     expect(component.prop("srcSet")).toBe(`${IMAGE_PATH_RETINA} 2x`);
     expect(component.prop("alt")).toBe(name);
     expect(component.render().prop("data-test")).toBe(dataTest);
+    expect(component.render().prop("crossorigin")).toBe("anonymous");
   });
 
   it("should match snapshot", () => {

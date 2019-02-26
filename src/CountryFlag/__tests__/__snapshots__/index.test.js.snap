@@ -3,6 +3,7 @@
 exports[`CountryFlag of Anywhere should match snapshot 1`] = `
 <CountryFlag__StyledCountryFlag
   alt="Anywhere"
+  crossOrigin="anonymous"
   data-test="test"
   key="anywhere"
   src="//images.kiwi.com/flags/24x0/flag-anywhere.jpg"

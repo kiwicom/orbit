@@ -130,6 +130,135 @@ storiesOf("Stack", module)
       ],
     };
   })
+  .addWithChapters("MediumMobile properties", () => {
+    const inline = boolean("Inline", false);
+    const direction = select("Direction", [undefined, ...Object.values(DIRECTIONS)]);
+    const wrap = boolean("Wrap", false);
+    const grow = boolean("Grow", true);
+    const shrink = boolean("Shrink", false);
+    const basis = text("Basis", "auto");
+    const align = select("Align", [undefined, ...Object.values(ALIGNS)], ALIGNS.END);
+    const justify = select("Justify", [undefined, ...Object.values(JUSTIFY)]);
+    const spacing = select("Spacing", [undefined, ...Object.values(SPACINGS)], SPACINGS.COMFY);
+    const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
+    const mediumMobile = {
+      inline,
+      direction,
+      wrap,
+      grow,
+      shrink,
+      basis,
+      align,
+      justify,
+      spacing,
+      spaceAfter,
+    };
+
+    return {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Stack mediumMobile={mediumMobile}>
+                  <InputField type="password" label="Password" help="You need some help!" />
+                  <Button>Sign In</Button>
+                </Stack>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("LargeMobile properties", () => {
+    const inline = boolean("Inline", false);
+    const direction = select("Direction", [undefined, ...Object.values(DIRECTIONS)]);
+    const wrap = boolean("Wrap", false);
+    const grow = boolean("Grow", true);
+    const shrink = boolean("Shrink", false);
+    const basis = text("Basis", "auto");
+    const align = select("Align", [undefined, ...Object.values(ALIGNS)], ALIGNS.END);
+    const justify = select("Justify", [undefined, ...Object.values(JUSTIFY)]);
+    const spacing = select("Spacing", [undefined, ...Object.values(SPACINGS)], SPACINGS.COMFY);
+    const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
+    const largeMobile = {
+      inline,
+      direction,
+      wrap,
+      grow,
+      shrink,
+      basis,
+      align,
+      justify,
+      spacing,
+      spaceAfter,
+    };
+
+    return {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Stack largeMobile={largeMobile}>
+                  <InputField type="password" label="Password" help="You need some help!" />
+                  <Button>Sign In</Button>
+                </Stack>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Tablet properties", () => {
+    const inline = boolean("Inline", false);
+    const direction = select("Direction", [undefined, ...Object.values(DIRECTIONS)]);
+    const wrap = boolean("Wrap", false);
+    const grow = boolean("Grow", true);
+    const shrink = boolean("Shrink", false);
+    const basis = text("Basis", "auto");
+    const align = select("Align", [undefined, ...Object.values(ALIGNS)], ALIGNS.END);
+    const justify = select("Justify", [undefined, ...Object.values(JUSTIFY)]);
+    const spacing = select("Spacing", [undefined, ...Object.values(SPACINGS)], SPACINGS.COMFY);
+    const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
+    const tablet = {
+      inline,
+      direction,
+      wrap,
+      grow,
+      shrink,
+      basis,
+      align,
+      justify,
+      spacing,
+      spaceAfter,
+    };
+
+    return {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Stack tablet={tablet}>
+                  <InputField type="password" label="Password" help="You need some help!" />
+                  <Button>Sign In</Button>
+                </Stack>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Desktop properties", () => {
     const inline = boolean("Inline", false);
     const direction = select("Direction", [undefined, ...Object.values(DIRECTIONS)]);
@@ -173,6 +302,49 @@ storiesOf("Stack", module)
       ],
     };
   })
+  .addWithChapters("LargeDesktop properties", () => {
+    const inline = boolean("Inline", false);
+    const direction = select("Direction", [undefined, ...Object.values(DIRECTIONS)]);
+    const wrap = boolean("Wrap", false);
+    const grow = boolean("Grow", true);
+    const shrink = boolean("Shrink", false);
+    const basis = text("Basis", "auto");
+    const align = select("Align", [undefined, ...Object.values(ALIGNS)], ALIGNS.END);
+    const justify = select("Justify", [undefined, ...Object.values(JUSTIFY)]);
+    const spacing = select("Spacing", [undefined, ...Object.values(SPACINGS)], SPACINGS.COMFY);
+    const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
+    const largeDesktop = {
+      inline,
+      direction,
+      wrap,
+      grow,
+      shrink,
+      basis,
+      align,
+      justify,
+      spacing,
+      spaceAfter,
+    };
+
+    return {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Stack largeDesktop={largeDesktop}>
+                  <InputField type="password" label="Password" help="You need some help!" />
+                  <Button>Sign In</Button>
+                </Stack>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Nested example", () => ({
     info:
       "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -204,26 +376,35 @@ storiesOf("Stack", module)
     const dataTest = text("dataTest", "test");
     const flex = boolean("flex", false);
     const inline = boolean("Inline", false);
-    const direction = select("Direction", [undefined, ...Object.values(DIRECTIONS)]);
+    const direction = select(
+      "Direction",
+      [undefined, ...Object.values(DIRECTIONS)],
+      DIRECTIONS.ROW,
+    );
     const wrap = boolean("Wrap", false);
     const grow = boolean("Grow", true);
     const shrink = boolean("Shrink", false);
     const basis = text("Basis", undefined);
     const align = select("Align", [undefined, ...Object.values(ALIGNS)]);
     const justify = select("Justify", [undefined, ...Object.values(JUSTIFY)]);
-    const spacing = select("Spacing", [undefined, ...Object.values(SPACINGS)]);
+    const spacing = select("Spacing", [undefined, ...Object.values(SPACINGS)], SPACINGS.EXTRATIGHT);
     const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
-    const desktop = object("Desktop", {
-      inline: false,
-      direction: DIRECTIONS.ROW,
-      wrap: false,
-      grow: false,
-      shrink: false,
-      basis: "auto",
-      align: ALIGNS.END,
-      justify: JUSTIFY.CENTER,
+    const mediumMobile = object("mediumMobile", {
+      direction: DIRECTIONS.COLUMN,
+    });
+    const largeMobile = object("largeMobile", {
+      align: JUSTIFY.END,
+    });
+    const tablet = object("tablet", {
       spacing: SPACINGS.CONDENSED,
-      spaceAfter: SPACINGS_AFTER.LARGEST,
+    });
+    const desktop = object("desktop", {
+      justify: JUSTIFY.BETWEEN,
+      direction: DIRECTIONS.ROW,
+      align: ALIGNS.START,
+    });
+    const largeDesktop = object("largeDesktop", {
+      spacing: SPACINGS.LOOSE,
     });
 
     return {
@@ -247,10 +428,14 @@ storiesOf("Stack", module)
                   shrink={shrink}
                   spacing={spacing}
                   spaceAfter={spaceAfter}
+                  mediumMobile={mediumMobile}
+                  largeMobile={largeMobile}
+                  tablet={tablet}
                   desktop={desktop}
+                  largeDesktop={largeDesktop}
                 >
-                  <InputField type="password" label="Password" help="You need some help!" />
-                  <Button>Sign In</Button>
+                  <Button type="secondary">Sign In</Button>
+                  <Button>Log In</Button>
                 </Stack>
               ),
             },

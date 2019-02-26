@@ -1,0 +1,4 @@
+// @flow
+export type GetWidth = (inline: boolean) => string | boolean;
+
+declare export default GetWidth;

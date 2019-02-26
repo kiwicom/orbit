@@ -3,13 +3,13 @@
 import type { spaceAfter } from "../common/getSpacingToken/index";
 import type { Globals } from "../common/common.js.flow";
 
-type Direction = "row" | "column";
+export type Direction = "row" | "column";
 
-type Align = "start" | "end" | "center";
+export type Align = "start" | "end" | "center";
 
-type Justify = "start" | "end" | "center" | "between" | "around";
+export type Justify = "start" | "end" | "center" | "between" | "around";
 
-type Spacing =
+export type Spacing =
   | "extraTight"
   | "tight"
   | "condensed"
@@ -19,7 +19,7 @@ type Spacing =
   | "loose"
   | "extraLoose";
 
-type Desktop = {|
+export type MediaQuery = {|
   ...spaceAfter,
   +inline?: boolean,
   +direction?: Direction,
@@ -30,6 +30,10 @@ type Desktop = {|
   +align?: Align,
   +justify?: Justify,
   +spacing?: Spacing,
+|};
+
+export type SmallMobile = {|
+  +smallMobile: MediaQuery,
 |};
 
 export type Props = {|
@@ -45,7 +49,11 @@ export type Props = {|
   +align?: Align,
   +justify?: Justify,
   +spacing?: Spacing,
-  +desktop?: Desktop,
+  +mediumMobile?: MediaQuery,
+  +largeMobile?: MediaQuery,
+  +tablet?: MediaQuery,
+  +desktop?: MediaQuery,
+  +largeDesktop?: MediaQuery,
   +children: React$Node,
 |};
 

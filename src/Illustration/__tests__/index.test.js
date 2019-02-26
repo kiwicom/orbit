@@ -27,7 +27,6 @@ describe(`Illustration of ${name}`, () => {
     expect(component.prop("size")).toBe(size);
     expect(component.render().prop("alt")).toBe(name);
     expect(component.render().prop("data-test")).toBe(dataTest);
-    expect(component.render().prop("crossorigin")).toBe("anonymous");
   });
 
   it("should render proper image", () => {

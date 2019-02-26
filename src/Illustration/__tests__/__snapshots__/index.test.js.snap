@@ -3,6 +3,7 @@
 exports[`Illustration of Accommodation should match snapshot 1`] = `
 <Illustration__StyledImage
   alt="Accommodation"
+  crossOrigin="anonymous"
   data-test="test"
   illustrationName="Accommodation"
   size="small"

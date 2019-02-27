@@ -21,12 +21,12 @@ Table below contains all types of the props available in Heading component.
 
 ### enum
 
-| element | type        |
-| :------ | :---------- |
-| `"h1"`  | `"display"` |
-| `"h2"`  | `"title1"`  |
-| `"h3"`  | `"title2"`  |
-| `"h4"`  | `"title3"`  |
-| `"h5"`  | `"title4"`  |
-| `"h6"`  | `"title5"`  |
-| `"div"` |             |
+| element | type            |
+| :------ | :-------------- |
+| `"h1"`  | `"display"`     |
+| `"h2"`  | `"subDisplay"`  |
+| `"h3"`  | `"title1"`      |
+| `"h4"`  | `"title2"`      |
+| `"h5"`  | `"title3"`      |
+| `"h6"`  | `"title4"`      |
+| `"div"` | `"title5"`      |

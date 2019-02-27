@@ -14,7 +14,7 @@ import styled, { css } from "styled-components";
 const StyledComponent = styled.div`
   width: 100%;
   
-  ${mq.desktop(css`
+  ${media.desktop(css`
     width: 50%;
   `)};
 `
@@ -39,7 +39,7 @@ Imagine that we have component and we want to test if it's contain specific styl
 const StyledComponent = styled.div`
   width: 100%;
   
-  ${mq.desktop(css`
+  ${media.desktop(css`
     width: 50%;
   `)};
 ```

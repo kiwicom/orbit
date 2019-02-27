@@ -13,7 +13,7 @@ jobs:
           command: npm run test-ci
   release:
     docker:
-      - image: circleci/node:8.9
+      - image: circleci/node:9.1
     steps:
       - checkout
       - run:
@@ -26,7 +26,6 @@ jobs:
           name: Publish to NPM
           command: npm run ci-publish || true
 
-
 workflows:
   version: 2
   test_branch:
@@ -38,4 +37,4 @@ workflows:
           filters:
             branches:
               only:
-              - master
+                - master

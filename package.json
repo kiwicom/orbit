@@ -89,7 +89,7 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.3.4",
-    "@octokit/rest": "^15.13.1",
+    "@octokit/rest": "^16.16.1",
     "@sambego/storybook-styles": "^1.0.0",
     "@storybook/addons": "4.1.13",
     "@storybook/addon-actions": "^4.1.13",

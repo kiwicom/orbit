@@ -6,4 +6,4 @@ function convertHexToRgba(color, opacity) {
   var blue = parseInt(hex.substring(4, 6), 16);
   return "rgba(" + red + ", " + green + ", " + blue + ", " + opacity / 100 + ")";
 }
-module.exports = convertHexToRgba;
+export default convertHexToRgba;

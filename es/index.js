@@ -1,7 +1,6 @@
-import mergeDeepRight from "ramda/src/mergeDeepRight";
+import mergeDeepRight from "ramda/es/mergeDeepRight";
 import foundation from "./foundation";
 import convertHexToRgba from "./convertHexToRgba";
-
 
 function getTokens(customFoundation) {
   // By default it takes base foundation config
@@ -198,8 +197,14 @@ function getTokens(customFoundation) {
     backgroundServiceLogo: "transparent",
     backgroundIllustration: "transparent",
     backgroundSeparator: theme.palette.cloud.normal,
-    backgroundTableShadowLeft: "linear-gradient(to left, transparent, " + convertHexToRgba(theme.palette.ink.lighter, 23) + ")",
-    backgroundTableShadowRight: "linear-gradient(to right, transparent, " + convertHexToRgba(theme.palette.ink.lighter, 23) + ")",
+    backgroundTableShadowLeft:
+      "linear-gradient(to left, transparent, " +
+      convertHexToRgba(theme.palette.ink.lighter, 23) +
+      ")",
+    backgroundTableShadowRight:
+      "linear-gradient(to right, transparent, " +
+      convertHexToRgba(theme.palette.ink.lighter, 23) +
+      ")",
     backgroundTable: theme.palette.white.normal,
     backgroundTableEven: theme.palette.cloud.light,
     backgroundTableHover: theme.palette.cloud.normal,
@@ -486,7 +491,7 @@ function getTokens(customFoundation) {
     paletteBlueDark: theme.palette.blue.dark,
     paletteSocialFacebook: theme.palette.social.facebook,
     paletteSocialFacebookHover: theme.palette.social.facebookHover,
-    paletteSocialFacebookActive: theme.palette.social.facebookActive
+    paletteSocialFacebookActive: theme.palette.social.facebookActive,
   };
 }
 
@@ -500,9 +505,9 @@ function fromPlainObject(themePaletteColors) {
         normal: themePaletteColors.productNormal,
         normalHover: themePaletteColors.productNormalHover,
         normalActive: themePaletteColors.productNormalActive,
-        dark: themePaletteColors.productDark
-      }
-    }
+        dark: themePaletteColors.productDark,
+      },
+    },
   };
 
   return getTokens(theme);
@@ -514,5 +519,5 @@ module.exports = {
   defaultTokens: defaultTokens,
   getTokens: getTokens,
   fromPlainObject: fromPlainObject,
-  convertHexToRgba: convertHexToRgba
+  convertHexToRgba: convertHexToRgba,
 };

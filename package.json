@@ -96,7 +96,7 @@
     "@storybook/addon-knobs": "^4.1.13",
     "@storybook/react": "^4.1.13",
     "@storybook/storybook-deployer": "^2.3.0",
-    "@svgr/core": "^2.0.0",
+    "@svgr/core": "^4.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^23.6.0",

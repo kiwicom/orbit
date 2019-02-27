@@ -5,7 +5,7 @@ import convertHexToRgba from "./convertHexToRgba";
 function getTokens(customFoundation) {
   // By default it takes base foundation config
 
-  var theme = customFoundation ? mergeDeepRight(foundation, customFoundation) : foundation;
+  const theme = customFoundation ? mergeDeepRight(foundation, customFoundation) : foundation;
 
   return {
     // category:Colors
@@ -513,10 +513,8 @@ function fromPlainObject(themePaletteColors) {
   return getTokens(theme);
 }
 
-var defaultTokens = getTokens();
-
-module.exports = {
-  defaultTokens: defaultTokens,
+export {
+  defaultTokens: getTokens(),
   getTokens: getTokens,
   fromPlainObject: fromPlainObject,
   convertHexToRgba: convertHexToRgba,

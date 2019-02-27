@@ -1,7 +1,6 @@
 import convertHexToRgba from "./convertHexToRgba";
 
-
-var palette = {
+const palette = {
   product: {
     light: "#E1F5F2",
     lightHover: "#bde9e2",
@@ -9,10 +8,10 @@ var palette = {
     normal: "#00a991",
     normalHover: "#009882",
     normalActive: "#008f7b",
-    dark: "#00826f"
+    dark: "#00826f",
   },
   white: {
-    normal: "#fff"
+    normal: "#fff",
   },
   cloud: {
     light: "#f5f7f9",
@@ -20,7 +19,7 @@ var palette = {
     lightActive: "#d6dee6",
     normal: "#e8edf1",
     normalHover: "#d9e1e8",
-    normalActive: "#cad5df"
+    normalActive: "#cad5df",
   },
   ink: {
     lighter: "#bac7d5",
@@ -32,7 +31,7 @@ var palette = {
     normal: "#46515e",
     normalHover: "#3f4854",
     normalActive: "#38404b",
-    dark: "#171b1e"
+    dark: "#171b1e",
   },
   orange: {
     light: "#fcf1cd",
@@ -41,7 +40,7 @@ var palette = {
     normal: "#f9971e",
     normalHover: "#f48a06",
     normalActive: "#e68206",
-    dark: "#a93610"
+    dark: "#a93610",
   },
   red: {
     light: "#fae8e8",
@@ -50,7 +49,7 @@ var palette = {
     normal: "#d21c1c",
     normalHover: "#bd1919",
     normalActive: "#b21717",
-    dark: "#650808"
+    dark: "#650808",
   },
   green: {
     light: "#e7f3e8",
@@ -59,7 +58,7 @@ var palette = {
     normal: "#46B655",
     normalHover: "#42ac50",
     normalActive: "#3fa34c",
-    dark: "#065d12"
+    dark: "#065d12",
   },
   blue: {
     light: "#e0f6ff",
@@ -68,18 +67,18 @@ var palette = {
     normal: "#0176D2",
     normalHover: "#006abd",
     normalActive: "#0064b2",
-    dark: "#003A69"
+    dark: "#003A69",
   },
   social: {
     facebook: "#3b5998",
     facebookHover: "#385490",
-    facebookActive: "#354f88"
-  }
+    facebookActive: "#354f88",
+  },
 }; // @flow
 
-
-var base = {
-  fontFamily: '"Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
+const base = {
+  fontFamily:
+    '"Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
   fontSizeSm: "12px",
   fontSizeMd: "14px",
   fontSizeLg: "16px",
@@ -115,10 +114,10 @@ var base = {
   boxShadowColorStatic: convertHexToRgba(palette.blue.normal, 30),
   boxShadowColorActionable: convertHexToRgba(palette.ink.dark, 10),
   boxShadowColorElevated: convertHexToRgba(palette.ink.dark, 30),
-  boxShadowColorModal: convertHexToRgba(palette.ink.dark, 40)
+  boxShadowColorModal: convertHexToRgba(palette.ink.dark, 40),
 };
 
-module.exports = {
+export {
   palette: palette,
-  base: base
+  base: base,
 };

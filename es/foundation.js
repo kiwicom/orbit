@@ -117,7 +117,4 @@ const base = {
   boxShadowColorModal: convertHexToRgba(palette.ink.dark, 40),
 };
 
-export {
-  palette: palette,
-  base: base,
-};
+export { palette, base };

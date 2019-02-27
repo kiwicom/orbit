@@ -513,9 +513,6 @@ function fromPlainObject(themePaletteColors) {
   return getTokens(theme);
 }
 
-export {
-  defaultTokens: getTokens(),
-  getTokens: getTokens,
-  fromPlainObject: fromPlainObject,
-  convertHexToRgba: convertHexToRgba,
-};
+const defaultTokens = getTokens();
+
+export { defaultTokens, getTokens, fromPlainObject, convertHexToRgba };

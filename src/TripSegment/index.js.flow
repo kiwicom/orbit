@@ -2,7 +2,7 @@
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Carrier } from "../CarrierLogo";
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Translation } from "../common/common.js.flow";
 
 export type ExpandedType = {|
   expanded: boolean,
@@ -18,11 +18,11 @@ export type Props = {|
   ...Globals,
   +children: React$Node,
   +carrier: Carrier,
-  +departure: string,
-  +departureTime: string,
-  +arrival: string,
-  +arrivalTime: string,
-  +duration: string | number,
+  +departure: Translation,
+  +departureTime: Translation,
+  +arrival: Translation,
+  +arrivalTime: Translation,
+  +duration: Translation,
   +initialExpanded?: boolean,
   +onClick?: () => void | Promise<any>,
 |};

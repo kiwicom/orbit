@@ -2,19 +2,17 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/choicegroup/
 */
-import type { Globals, Translation } from "../common/common.js.flow";
-import Radio from "../Radio";
-import Checkbox from "../Checkbox";
+import type { Globals, Translation, StrictChildren } from "../common/common.js.flow";
+import typeof Radio from "../Radio";
+import typeof Checkbox from "../Checkbox";
 
 type LabelSize = "normal" | "large";
 
 type LabelElement = "h2" | "h3" | "h4" | "h5" | "h6";
 
-type Children = React$Element<typeof Radio> | React$Element<typeof Checkbox>;
-
 export type Props = {|
   ...Globals,
-  children: Children | Children[],
+  children: StrictChildren<Radio | Checkbox>,
   label?: Translation,
   labelSize?: LabelSize,
   labelElement?: LabelElement,

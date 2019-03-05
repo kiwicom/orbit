@@ -4,7 +4,7 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, text, select } from "@storybook/addon-knobs";
+import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { SIZES, TYPES } from "./consts";
@@ -78,6 +78,7 @@ storiesOf("List", module)
   .addWithChapters("With carrier", () => {
     const size = select("Size", Object.values(SIZES), SIZES.SMALL);
     const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
+    const showMore: ?boolean = boolean("showMore", false);
 
     return {
       info:
@@ -93,7 +94,7 @@ storiesOf("List", module)
                   </ListItem>
                   <ListItem icon={<Icons.InformationCircle />}>Flight no: FR 1337</ListItem>
                   <ListItem icon={<Icons.Trip />}>PNR: TEST0X0</ListItem>
-                  <ListItem icon={<Icons.Airplane />}>Airbus A320 (320)</ListItem>
+                  {showMore && <ListItem icon={<Icons.Airplane />}>Airbus A320 (320)</ListItem>}
                 </List>
               ),
             },

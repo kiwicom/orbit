@@ -1,4 +1,6 @@
 // @flow
+import typeof { Fragment } from "react";
+
 export type Globals = {|
   +dataTest?: string,
 |};
@@ -8,5 +10,9 @@ export type RefType = () => { current: ?HTMLElement };
 export type Ref = {|
   +ref?: RefType,
 |};
+
+type StrictNode<T> = boolean | React$Element<T | Fragment>;
+
+export type StrictChildren<T> = ?StrictNode<T> | Array<?StrictNode<T>>;
 
 export type Translation = React$Element<React$ComponentType<any>> | string;

@@ -2,16 +2,16 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/inputgroup/
 */
-import type { Globals, Translation } from "../common/common.js.flow";
-import InputField from "../InputField";
-import Select from "../Select";
+import type { Globals, Translation, StrictChildren } from "../common/common.js.flow";
+import typeof InputField from "../InputField";
+import typeof Select from "../Select";
 
 export type Props = {|
   +label?: Translation,
   +flex?: string | Array<string>,
   +size?: "small" | "normal",
   +help?: React$Node,
-  +children: Array<React$Element<typeof InputField> | React$Element<typeof Select>>,
+  +children: StrictChildren<InputField | Select>,
   +error?: React$Node,
   +onChange?: (
     ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,

@@ -2,12 +2,12 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/buttongroup/
 */
-import type { Globals } from "../common/common.js.flow";
-import ButtonLink from "../ButtonLink";
-import Button from "../Button";
+import type { Globals, StrictChildren } from "../common/common.js.flow";
+import typeof ButtonLink from "../ButtonLink";
+import typeof Button from "../Button";
 
 export type Props = {|
-  +children: Array<React$Element<typeof Button> | React$Element<typeof ButtonLink>>,
+  +children: StrictChildren<Button | ButtonLink>,
   +connected?: boolean,
   ...Globals,
 |};

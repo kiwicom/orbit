@@ -1,10 +1,11 @@
 // @flow
 import type { ReactComponentStyled } from "styled-components";
 
-import TableCell from "../TableCell/index";
+import typeof TableCell from "../TableCell/index";
+import type { StrictChildren } from "../../common/common.js.flow";
 
 export type Props = {|
-  +children: Array<React$Element<typeof TableCell>> | React$Element<typeof TableCell>,
+  +children: StrictChildren<TableCell>,
 |};
 
 declare export default React$ComponentType<Props>;

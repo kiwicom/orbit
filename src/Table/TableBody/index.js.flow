@@ -2,10 +2,11 @@
 
 import type { ReactComponentStyled } from "styled-components";
 
-import TableRow from "../TableRow/index";
+import typeof TableRow from "../TableRow/index";
+import type { StrictChildren } from "../../common/common.js.flow";
 
 export type Props = {|
-  +children: Array<React$Element<typeof TableRow>> | React$Element<typeof TableRow>,
+  +children: StrictChildren<TableRow>,
 |};
 
 declare export default React$ComponentType<Props>;

@@ -5,6 +5,7 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, boolean } from "@storybook/addon-knobs";
 
+import Separator from "../Separator";
 import ChevronLeft from "../icons/ChevronLeft";
 
 import Hide from "./";
@@ -18,6 +19,27 @@ storiesOf("Hide", module)
       padding: "20px",
     }),
   )
+  .addWithChapters("With Separator", () => {
+    const block = boolean("display", false);
+
+    return {
+      info:
+        "Configuration with Separator, for separator to work correctly block property has to be set.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Hide on={[]} block={block}>
+                  <Separator />
+                </Hide>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Playground", () => {
     const largeDesktop = boolean("largeDesktop", false);
     const desktop = boolean("desktop", false);
@@ -25,6 +47,7 @@ storiesOf("Hide", module)
     const largeMobile = boolean("largeMobile", false);
     const mediumMobile = boolean("mediumMobile", false);
     const smallMobile = boolean("smallMobile", false);
+    const block = boolean("display", false);
 
     const on = [
       largeDesktop && "largeDesktop",
@@ -43,7 +66,7 @@ storiesOf("Hide", module)
           sections: [
             {
               sectionFn: () => (
-                <Hide on={on}>
+                <Hide on={on} block={block}>
                   <ChevronLeft />
                 </Hide>
               ),

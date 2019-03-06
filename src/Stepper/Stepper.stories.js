@@ -1,19 +1,12 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import styles from "@sambego/storybook-styles";
 import { action } from "@storybook/addon-actions";
-import { withKnobs, text, number, boolean } from "@storybook/addon-knobs";
+import { text, number, boolean } from "@storybook/addon-knobs";
 
 import Stepper from "./index";
 
 storiesOf("Stepper", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => <Stepper onChange={action("onChange")} />)
   .add("Playground", () => {
     const min = number("minValue", 1);

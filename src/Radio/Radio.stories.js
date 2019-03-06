@@ -2,8 +2,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, text, boolean } from "@storybook/addon-knobs";
+import { text, boolean } from "@storybook/addon-knobs";
 
 import Text from "../Text";
 import TextLink from "../TextLink";
@@ -12,12 +11,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Radio from "./index";
 
 storiesOf("Radio", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => {
     const label = text("Label", "Label");
     const checked = boolean("Checked", false);

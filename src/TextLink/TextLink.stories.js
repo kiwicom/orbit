@@ -3,8 +3,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
+import { text, boolean, select } from "@storybook/addon-knobs";
 
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 import * as Icons from "../icons";
@@ -18,12 +17,6 @@ const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)
 const getIcon = source => Icons[source];
 
 storiesOf("TextLink", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Primary link", () => {
     const href = text("Href", "https://kiwi.com");
     const external = boolean("External", false);

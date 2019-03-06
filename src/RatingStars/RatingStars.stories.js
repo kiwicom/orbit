@@ -1,8 +1,7 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, number, text, select, boolean } from "@storybook/addon-knobs";
+import { number, text, select, boolean } from "@storybook/addon-knobs";
 
 import MAX_STARS from "./consts";
 import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
@@ -11,12 +10,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import RatingStars from "./";
 
 storiesOf("RatingStars", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Playground", () => {
     const rating = number("rating", 4.4, { min: 0, max: MAX_STARS });
     const size = select("size", [undefined, ...Object.values(ICON_SIZES)]);

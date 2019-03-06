@@ -2,8 +2,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import styles from "@sambego/storybook-styles";
-import { object, select, text, boolean, withKnobs } from "@storybook/addon-knobs";
+import { object, select, text, boolean } from "@storybook/addon-knobs";
 
 import Airplane from "../icons/Airplane";
 import SIZE_OPTIONS from "./consts";
@@ -20,12 +19,6 @@ const objectOptions = [
 ];
 
 storiesOf("Select", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => <Select options={objectOptions} onChange={action("onChange")} />)
   .add("With prefix", () => (
     <Select

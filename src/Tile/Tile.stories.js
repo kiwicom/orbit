@@ -2,8 +2,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
+import { text, select, boolean } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import Stack from "../Stack";
@@ -16,12 +15,6 @@ const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)
 const getIcon = source => Icons[source];
 
 storiesOf("Tile", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => {
     const title = text("Title", "Default");
     return <Tile onClick={action("clicked")} title={title} />;

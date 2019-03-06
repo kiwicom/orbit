@@ -2,8 +2,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
+import { text, boolean, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import Button from "../Button";
@@ -21,12 +20,6 @@ const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)
 const getIcon = source => Icons[source];
 
 storiesOf("Alert", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => {
     const message = "The quick, brown fox jumps over a lazy dog.";
     return <Alert>{message}</Alert>;

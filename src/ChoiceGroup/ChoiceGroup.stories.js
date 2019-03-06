@@ -2,8 +2,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, text, select } from "@storybook/addon-knobs";
+import { text, select } from "@storybook/addon-knobs";
 
 import { LABEL_ELEMENTS, LABEL_SIZES } from "./consts";
 import Radio from "../Radio";
@@ -12,12 +11,6 @@ import Checkbox from "../Checkbox";
 import ChoiceGroup from "./index";
 
 storiesOf("ChoiceGroup", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => {
     const label = text("Label", "What was the reason for your cancellation?");
     return (

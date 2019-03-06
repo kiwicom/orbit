@@ -3,8 +3,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
+import { text, boolean, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -16,12 +15,6 @@ const getIcons = (name, defaultIcon) =>
 const getIcon = source => Icons[source];
 
 storiesOf("ListChoice", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => {
     const title = text("title", "Choice Title");
     const description = text("description", "Further description");

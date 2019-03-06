@@ -1,21 +1,14 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import styles from "@sambego/storybook-styles";
 import { action } from "@storybook/addon-actions";
-import { withKnobs, text, array } from "@storybook/addon-knobs";
+import { text, array } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import InputFile from "./index";
 
 storiesOf("InputFile", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => {
     const label = text("Label", "Label");
     return (

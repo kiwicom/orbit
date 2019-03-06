@@ -3,8 +3,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, text, boolean, select, number } from "@storybook/addon-knobs";
+import { text, boolean, select, number } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { SIZE_OPTIONS, TYPE_OPTIONS } from "./consts";
@@ -21,12 +20,6 @@ const getIcons = (name, defaultIcon) =>
 const getIcon = source => Icons[source];
 
 storiesOf("InputField", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default input", () => {
     const label = text("Label", "Label");
     const value = text("Value", "");

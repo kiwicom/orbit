@@ -2,20 +2,13 @@
 
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, select, text } from "@storybook/addon-knobs";
+import { select, text } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import IconList from "./IconList";
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 
 storiesOf("Icon", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => {
     const size = select("Size", [undefined, ...Object.values(ICON_SIZES)]);
     const color = select("Color", [undefined, ...Object.values(ICON_COLORS)]);

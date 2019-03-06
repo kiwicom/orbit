@@ -2,8 +2,7 @@
 
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, object, select, text } from "@storybook/addon-knobs";
-import styles from "@sambego/storybook-styles/dist/index";
+import { object, select, text } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS, CARRIER_TYPE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -13,12 +12,6 @@ import CarrierLogo from "./index";
 const carriersLabel = "Carriers";
 
 storiesOf("CarrierLogo", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("One carrier", () => {
     const size = select("Size", Object.values(SIZE_OPTIONS), "large");
     const dataTest = text("dataTest", "test");

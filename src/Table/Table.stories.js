@@ -1,8 +1,7 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import styles from "@sambego/storybook-styles";
-import { boolean, text, withKnobs, select } from "@storybook/addon-knobs";
+import { boolean, text, select } from "@storybook/addon-knobs";
 
 import ALIGN_OPTIONS from "./TableCell/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -10,12 +9,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Table, { TableHead, TableBody, TableRow, TableCell } from "./index";
 
 storiesOf("Table", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default Table", () => (
     <Table>
       <TableHead>

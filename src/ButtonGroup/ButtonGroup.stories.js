@@ -2,8 +2,7 @@
 
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, boolean, text } from "@storybook/addon-knobs";
+import { boolean, text } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import Button from "../Button";
@@ -13,12 +12,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import ButtonGroup from "./index";
 
 storiesOf("ButtonGroup", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("With Buttons", () => {
     const connected = boolean("Connected", true);
     const dataTest = text("dataTest", "test");

@@ -2,8 +2,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import styles from "@sambego/storybook-styles";
-import { text, withKnobs, object, boolean } from "@storybook/addon-knobs";
+import { text, object, boolean } from "@storybook/addon-knobs";
 
 import List from "../List";
 import ListItem from "../List/ListItem";
@@ -14,12 +13,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import TripSegment from "./index";
 
 storiesOf("TripSegment", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => (
     <TripSegment
       duration="3h"

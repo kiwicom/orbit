@@ -2,20 +2,13 @@
 
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, text, select } from "@storybook/addon-knobs";
-import styles from "@sambego/storybook-styles/dist/index";
+import { text, select } from "@storybook/addon-knobs";
 
 import { CODES } from "./consts";
 
 import CountryFlag from "./index";
 
 storiesOf("CountryFlag", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => {
     const code = select("Code", Object.values(CODES), CODES.ANYWHERE);
 

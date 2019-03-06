@@ -2,8 +2,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, text, boolean, select, array } from "@storybook/addon-knobs";
+import { text, boolean, select, array } from "@storybook/addon-knobs";
 
 import Button from "../Button";
 import { SIZES } from "./consts";
@@ -34,12 +33,6 @@ import Tooltip from "../Tooltip";
 import Modal, { ModalHeader, ModalSection, ModalFooter } from "./index";
 
 storiesOf("Modal", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Sizes", () => {
     const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
     const title = text("Title", "Orbit design system");

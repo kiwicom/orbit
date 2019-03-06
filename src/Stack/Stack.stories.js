@@ -1,9 +1,8 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import styles from "@sambego/storybook-styles";
 import { action } from "@storybook/addon-actions";
-import { withKnobs, boolean, select, object, text } from "@storybook/addon-knobs";
+import { boolean, select, object, text } from "@storybook/addon-knobs";
 
 import { DIRECTIONS, ALIGNS, SPACINGS, JUSTIFY } from "./consts";
 import Edit from "../icons/Edit";
@@ -57,12 +56,6 @@ import CardSectionContent from "../Card/CardSection/CardSectionContent";
 import Stack from "./index";
 
 storiesOf("Stack", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => (
     <Stack>
       <Button type="success" iconLeft={<Airplane />}>

@@ -2,8 +2,7 @@
 
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
+import { text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import * as Icons from "../icons";
@@ -16,12 +15,6 @@ const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)
 const getIcon = source => Icons[source];
 
 storiesOf("Tag", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => {
     const content = text("Content", "Brno");
     const Icon = getIcon(getIcons("Airplane"));

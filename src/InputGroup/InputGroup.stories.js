@@ -3,8 +3,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, text, array, select } from "@storybook/addon-knobs";
+import { text, array, select } from "@storybook/addon-knobs";
 
 import InputField from "../InputField";
 import Select from "../Select";
@@ -15,12 +14,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import InputGroup from "./index";
 
 storiesOf("InputGroup", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Date of birth", () => {
     const label = text("Label", "Date of birth");
     const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);

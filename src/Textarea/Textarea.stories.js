@@ -3,8 +3,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, text, boolean, select, number } from "@storybook/addon-knobs";
+import { text, boolean, select, number } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -12,12 +11,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Textarea from "./index";
 
 storiesOf("Textarea", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => {
     const value = text("Value", "");
     const placeholder = text("Placeholder", "Placeholder");

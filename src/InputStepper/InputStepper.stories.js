@@ -1,9 +1,8 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import styles from "@sambego/storybook-styles";
 import { action } from "@storybook/addon-actions";
-import { withKnobs, text, number, select, boolean } from "@storybook/addon-knobs";
+import { text, number, select, boolean } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS } from "../InputField/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -11,15 +10,7 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import InputStepper from "./index";
 
 storiesOf("InputStepper", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
-
   .add("Default", () => <InputStepper onChange={action("onChange")} />)
-
   .add("With help", () => {
     const label = text("Label", "Adults");
     const help = text("help", "You need to enter count of adults");

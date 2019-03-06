@@ -1,8 +1,7 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, text } from "@storybook/addon-knobs";
+import { text } from "@storybook/addon-knobs";
 
 import TripSector, { TripLayover, TripDate } from "../TripSector";
 import TripSegment from "../TripSegment";
@@ -17,12 +16,6 @@ import Check from "../icons/Check";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 storiesOf("TripSector", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Multiple days", () => (
     <TripSector>
       <TripDate>Mon 22 Oct</TripDate>

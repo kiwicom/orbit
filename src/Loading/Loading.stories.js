@@ -1,8 +1,7 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
+import { text, select, boolean } from "@storybook/addon-knobs";
 
 import { TYPE_OPTIONS } from "./consts";
 import * as Icons from "../icons";
@@ -16,12 +15,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Loading from "./index";
 
 storiesOf("Loading", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => <Loading />)
   .add("Button loading", () => <Button loading>Default button</Button>)
   .add("Card loading", () => {

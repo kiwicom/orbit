@@ -1,8 +1,7 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import styles from "@sambego/storybook-styles";
-import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
+import { text, select, boolean } from "@storybook/addon-knobs";
 
 import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
@@ -11,12 +10,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Heading from "./index";
 
 storiesOf("Heading", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
   .add("Default", () => {
     const customTitle = text("Title", "Orbit design system");
     return <Heading>{customTitle}</Heading>;

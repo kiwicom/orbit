@@ -25,14 +25,14 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in TripSegment component.
 
-| Name              | Type                    | Default     | Description
-| :---------------- | :---------------------- | :---------- | :---------------------------------------------------------------------------------------- |
-| **arrival**       | `string`                |             | The arrival city name and short code.
-| **arrivalTime**   | `string`                |             | The arrival time.
-| **carrier**       | `Carrier`               |             | It's used to render proper icon in the Milestone, by Carrier type. [`See Carrier type`](https://github.com/kiwicom/orbit-components/tree/master/src/CarrierLogo#user-content-carrier)
-| **children**      | `React.Node`            |             | The content of the component.
-| **departure**     | `string`                |             | The departure city and short code.
-| **departureTime** | `string`                |             | The departure time.
-| **duration**      | `string \| number`      |             | The flight duration.
-| initialExpanded   | `boolean`               | `false`     | If `true`, the children will be displayed by default.
-| onClick           | `() => void \| Promise` |             | Function for handling onClick event.
+| Name              | Type                    | Default | Description                                                                                                                                                                           |
+| :---------------- | :---------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **arrival**       | `Translation`           |         | The arrival city name and short code.                                                                                                                                                 |
+| **arrivalTime**   | `Translation`           |         | The arrival time.                                                                                                                                                                     |
+| **carrier**       | `Carrier`               |         | It's used to render proper icon in the Milestone, by Carrier type. [`See Carrier type`](https://github.com/kiwicom/orbit-components/tree/master/src/CarrierLogo#user-content-carrier) |
+| **children**      | `React.Node`            |         | The content of the component.                                                                                                                                                         |
+| **departure**     | `Translation`           |         | The departure city and short code.                                                                                                                                                    |
+| **departureTime** | `Translation`           |         | The departure time.                                                                                                                                                                   |
+| **duration**      | `Translation`           |         | The flight duration.                                                                                                                                                                  |
+| initialExpanded   | `boolean`               | `false` | If `true`, the children will be displayed by default.                                                                                                                                 |
+| onClick           | `() => void \| Promise` |         | Function for handling onClick event.                                                                                                                                                  |

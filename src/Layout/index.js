@@ -7,6 +7,7 @@ import mq from "../utils/mediaQuery";
 const StyledLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  -ms-grid-columns: 1fr;
   grid-gap: 24px;
   padding: 0 24px;
   box-sizing: border-box;
@@ -16,10 +17,12 @@ const StyledLayout = styled.div`
 
   ${mq.tablet(css`
     grid-template-columns: minmax(256px, 3fr) 7fr;
+    -ms-grid-columns: minmax(256px, 3fr) 7fr;
   `)};
 
   ${mq.largeDesktop(css`
     grid-template-columns: 256px 1fr 256px;
+    -ms-grid-columns: 256px 1fr 256px;
   `)};
 `;
 

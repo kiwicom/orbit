@@ -1,0 +1,30 @@
+// @flow
+
+import type { Globals } from "../../common/common.js.flow";
+
+type BasicProps = {|
+  +inline?: boolean,
+  +rows?: string,
+  +columns?: string,
+  +gap?: string,
+  +rowGap?: string,
+  +columnGap?: string,
+  +maxWidth?: string,
+|};
+
+export type MediaQuery = {|
+  ...BasicProps,
+|};
+
+export type Props = {
+  ...BasicProps,
+  ...Globals,
+  +element?: string,
+  +mediumMobile?: MediaQuery,
+  +largeMobile?: MediaQuery,
+  +tablet?: MediaQuery,
+  +desktop?: MediaQuery,
+  +largeDesktop?: MediaQuery,
+};
+
+declare export default React$ComponentType<Props>;

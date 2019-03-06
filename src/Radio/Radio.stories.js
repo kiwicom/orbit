@@ -3,7 +3,6 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import styles from "@sambego/storybook-styles";
-import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 
 import Text from "../Text";
@@ -12,8 +11,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Radio from "./index";
 
-setAddon(chaptersAddon);
-
 storiesOf("Radio", module)
   .addDecorator(withKnobs)
   .addDecorator(
@@ -21,71 +18,34 @@ storiesOf("Radio", module)
       padding: "20px",
     }),
   )
-  .addWithChapters("Default", () => {
+  .add("Default", () => {
     const label = text("Label", "Label");
     const checked = boolean("Checked", false);
-    return {
-      info: "Radio needs only label and onChange by default.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Radio label={label} checked={checked} onChange={action("changed")} />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return <Radio label={label} checked={checked} onChange={action("changed")} />;
   })
-  .addWithChapters("With help", () => {
+  .add("With help", () => {
     const label = text("Label", "Label");
     const value = text("Value", "value");
     const info = text("Info", "Additional information to this choice");
-    return {
-      info: "Additionally you can add info to this component.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Radio label={label} value={value} info={info} onChange={action("changed")} />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return <Radio label={label} value={value} info={info} onChange={action("changed")} />;
   })
-  .addWithChapters("With TextLink in label", () => {
+  .add("With TextLink in label", () => {
     const checked = boolean("checked", true);
-    return {
-      info: "Additionally you can add info to this component.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Radio
-                  label={
-                    <Text>
-                      Lorem ipsum dolor sit&nbsp;
-                      <TextLink>amet</TextLink>.
-                    </Text>
-                  }
-                  checked={checked}
-                  value="value"
-                  onChange={action("changed")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <Radio
+        label={
+          <Text>
+            Lorem ipsum dolor sit&nbsp;
+            <TextLink>amet</TextLink>.
+          </Text>
+        }
+        checked={checked}
+        value="value"
+        onChange={action("changed")}
+      />
+    );
   })
-  .addWithChapters("Playground", () => {
+  .add("Playground", () => {
     const label = text("Label", "Label");
     const value = text("Value", "value");
     const checked = boolean("Checked", true);
@@ -95,54 +55,32 @@ storiesOf("Radio", module)
     const name = text("Name", "name");
     const dataTest = text("dataTest", "test");
 
-    return {
-      info: "Playground of Radio",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Radio
-                  label={label}
-                  value={value}
-                  checked={checked}
-                  disabled={disabled}
-                  hasError={hasError}
-                  name={name}
-                  info={info}
-                  dataTest={dataTest}
-                  onChange={action("changed")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <Radio
+        label={label}
+        value={value}
+        checked={checked}
+        disabled={disabled}
+        hasError={hasError}
+        name={name}
+        info={info}
+        dataTest={dataTest}
+        onChange={action("changed")}
+      />
+    );
   })
-  .addWithChapters("RTL", () => ({
-    info: "This is a preview of this component in RTL setup.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <RenderInRtl>
-                <Radio
-                  label={
-                    <Text>
-                      Lorem ipsum dolor sit&nbsp;
-                      <TextLink>amet</TextLink>.
-                    </Text>
-                  }
-                  checked
-                  value="value"
-                  onChange={action("changed")}
-                />
-              </RenderInRtl>
-            ),
-          },
-        ],
-      },
-    ],
-  }));
+  .add("RTL", () => (
+    <RenderInRtl>
+      <Radio
+        label={
+          <Text>
+            Lorem ipsum dolor sit&nbsp;
+            <TextLink>amet</TextLink>.
+          </Text>
+        }
+        checked
+        value="value"
+        onChange={action("changed")}
+      />
+    </RenderInRtl>
+  ));

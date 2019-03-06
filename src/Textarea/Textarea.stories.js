@@ -4,15 +4,12 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import styles from "@sambego/storybook-styles";
-import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select, number } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Textarea from "./index";
-
-setAddon(chaptersAddon);
 
 storiesOf("Textarea", module)
   .addDecorator(withKnobs)
@@ -21,125 +18,48 @@ storiesOf("Textarea", module)
       padding: "20px",
     }),
   )
-  .addWithChapters("Default", () => {
+  .add("Default", () => {
     const value = text("Value", "");
     const placeholder = text("Placeholder", "Placeholder");
 
-    return {
-      info: "Some description about this type of textarea in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Textarea placeholder={placeholder} onChange={action("change")} value={value} />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return <Textarea placeholder={placeholder} onChange={action("change")} value={value} />;
   })
-  .addWithChapters("Small size", () => {
+  .add("Small size", () => {
     const value = text("Value", "");
     const placeholder = text("Placeholder", "Placeholder");
 
-    return {
-      info: "Some description about this type of textarea in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Textarea
-                  size="small"
-                  placeholder={placeholder}
-                  onChange={action("change")}
-                  value={value}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <Textarea size="small" placeholder={placeholder} onChange={action("change")} value={value} />
+    );
   })
-  .addWithChapters("With label", () => {
+  .add("With label", () => {
     const label = text("Label", "Label");
     const value = text("Value", "");
     const placeholder = text("Placeholder", "Placeholder");
 
-    return {
-      info: "Some description about this type of textarea in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Textarea
-                  label={label}
-                  placeholder={placeholder}
-                  onChange={action("change")}
-                  value={value}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <Textarea label={label} placeholder={placeholder} onChange={action("change")} value={value} />
+    );
   })
-  .addWithChapters("With help", () => {
+  .add("With help", () => {
     const value = text("Value", "Something");
     const placeholder = text("Placeholder", "Placeholder");
     const help = text("Help", "Everything is fine.");
 
-    return {
-      info: "Some description about this type of textarea in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Textarea
-                  placeholder={placeholder}
-                  help={help}
-                  onChange={action("change")}
-                  value={value}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <Textarea placeholder={placeholder} help={help} onChange={action("change")} value={value} />
+    );
   })
-  .addWithChapters("With error", () => {
+  .add("With error", () => {
     const value = text("Value", "Something");
     const placeholder = text("Placeholder", "Placeholder");
     const error = text("Error", "Something went wrong.");
 
-    return {
-      info: "Some description about this type of textarea in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Textarea
-                  placeholder={placeholder}
-                  error={error}
-                  onChange={action("change")}
-                  value={value}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <Textarea placeholder={placeholder} error={error} onChange={action("change")} value={value} />
+    );
   })
-  .addWithChapters("Playground", () => {
+  .add("Playground", () => {
     const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
     const label = text("Label", "Label");
     const value = text("Value", "");
@@ -152,49 +72,27 @@ storiesOf("Textarea", module)
     const maxLength = number("maxLength", undefined);
     const dataTest = text("dataTest", "test");
 
-    return {
-      info: "Some description about this type of textarea in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Textarea
-                  size={size}
-                  label={label}
-                  value={value}
-                  fullHeight={fullHeight}
-                  placeholder={placeholder}
-                  help={help}
-                  error={error}
-                  disabled={disabled}
-                  maxLength={maxLength}
-                  resize={resize}
-                  onChange={action("change")}
-                  onFocus={action("focus")}
-                  onBlur={action("blur")}
-                  dataTest={dataTest}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <Textarea
+        size={size}
+        label={label}
+        value={value}
+        fullHeight={fullHeight}
+        placeholder={placeholder}
+        help={help}
+        error={error}
+        disabled={disabled}
+        maxLength={maxLength}
+        resize={resize}
+        onChange={action("change")}
+        onFocus={action("focus")}
+        onBlur={action("blur")}
+        dataTest={dataTest}
+      />
+    );
   })
-  .addWithChapters("RTL", () => ({
-    info: "This is a preview of this component in RTL setup.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <RenderInRtl>
-                <Textarea placeholder="My placeholder" value="Content of the Textarea" />
-              </RenderInRtl>
-            ),
-          },
-        ],
-      },
-    ],
-  }));
+  .add("RTL", () => (
+    <RenderInRtl>
+      <Textarea placeholder="My placeholder" value="Content of the Textarea" />
+    </RenderInRtl>
+  ));

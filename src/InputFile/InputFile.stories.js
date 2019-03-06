@@ -3,14 +3,11 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
 import { action } from "@storybook/addon-actions";
-import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, array } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import InputFile from "./index";
-
-setAddon(chaptersAddon);
 
 storiesOf("InputFile", module)
   .addDecorator(withKnobs)
@@ -19,115 +16,67 @@ storiesOf("InputFile", module)
       padding: "20px",
     }),
   )
-  .addWithChapters("Default", () => {
+  .add("Default", () => {
     const label = text("Label", "Label");
-    return {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputFile
-                  label={label}
-                  onChange={action("onChange")}
-                  onFocus={action("onFocus")}
-                  onBlur={action("onBlur")}
-                  onRemoveFile={action("removeFile")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputFile
+        label={label}
+        onChange={action("onChange")}
+        onFocus={action("onFocus")}
+        onBlur={action("onBlur")}
+        onRemoveFile={action("removeFile")}
+      />
+    );
   })
-  .addWithChapters("Filled with file", () => {
+  .add("Filled with file", () => {
     const label = text("Label", "Label");
     const fileName = text("fileName", "file.png");
 
-    return {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputFile
-                  label={label}
-                  fileName={fileName}
-                  onChange={action("onChange")}
-                  onFocus={action("onFocus")}
-                  onBlur={action("onBlur")}
-                  onRemoveFile={action("removeFile")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputFile
+        label={label}
+        fileName={fileName}
+        onChange={action("onChange")}
+        onFocus={action("onFocus")}
+        onBlur={action("onBlur")}
+        onRemoveFile={action("removeFile")}
+      />
+    );
   })
-  .addWithChapters("With help", () => {
+  .add("With help", () => {
     const label = text("Label", "Label");
 
-    return {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputFile
-                  label={label}
-                  help={
-                    <div>
-                      Supported files: <strong>PNG, JPG, PDF</strong>
-                    </div>
-                  }
-                  onChange={action("onChange")}
-                  onFocus={action("onFocus")}
-                  onBlur={action("onBlur")}
-                  onRemoveFile={action("removeFile")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputFile
+        label={label}
+        help={
+          <div>
+            Supported files: <strong>PNG, JPG, PDF</strong>
+          </div>
+        }
+        onChange={action("onChange")}
+        onFocus={action("onFocus")}
+        onBlur={action("onBlur")}
+        onRemoveFile={action("removeFile")}
+      />
+    );
   })
-  .addWithChapters("With error", () => {
+  .add("With error", () => {
     const label = text("Label", "Label");
     const error = text("Error", "Error message (explain how to solve it)");
 
-    return {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputFile
-                  label={label}
-                  error={error}
-                  onChange={action("onChange")}
-                  onFocus={action("onFocus")}
-                  onBlur={action("onBlur")}
-                  onRemoveFile={action("removeFile")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputFile
+        label={label}
+        error={error}
+        onChange={action("onChange")}
+        onFocus={action("onFocus")}
+        onBlur={action("onBlur")}
+        onRemoveFile={action("removeFile")}
+      />
+    );
   })
-  .addWithChapters("Playground", () => {
+  .add("Playground", () => {
     const label = text("Label", "Label");
     const title = text("Title", "Please select file");
     const name = text("Name", "fileInput");
@@ -138,49 +87,26 @@ storiesOf("InputFile", module)
     const allowedFileTypes = array("allowedFileTypes", ["media/*", "image/*"]);
     const dataTest = text("dataTest", "test");
 
-    return {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputFile
-                  label={label}
-                  title={title}
-                  name={name}
-                  placeholder={placeholder}
-                  fileName={fileName}
-                  error={error}
-                  help={help}
-                  dataTest={dataTest}
-                  allowedFileTypes={allowedFileTypes}
-                  onChange={action("onChange")}
-                  onFocus={action("onFocus")}
-                  onBlur={action("onBlur")}
-                  onRemoveFile={action("removeFile")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputFile
+        label={label}
+        title={title}
+        name={name}
+        placeholder={placeholder}
+        fileName={fileName}
+        error={error}
+        help={help}
+        dataTest={dataTest}
+        allowedFileTypes={allowedFileTypes}
+        onChange={action("onChange")}
+        onFocus={action("onFocus")}
+        onBlur={action("onBlur")}
+        onRemoveFile={action("removeFile")}
+      />
+    );
   })
-  .addWithChapters("RTL", () => ({
-    info: "This is a preview of this component in RTL setup.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <RenderInRtl>
-                <InputFile label="My label" />
-              </RenderInRtl>
-            ),
-          },
-        ],
-      },
-    ],
-  }));
+  .add("RTL", () => (
+    <RenderInRtl>
+      <InputFile label="My label" />
+    </RenderInRtl>
+  ));

@@ -3,7 +3,6 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import styles from "@sambego/storybook-styles";
-import chaptersAddon from "react-storybook-addon-chapters";
 import { object, select, text, boolean, withKnobs } from "@storybook/addon-knobs";
 
 import Airplane from "../icons/Airplane";
@@ -13,8 +12,6 @@ import { CODES } from "../CountryFlag/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Select from "./index";
-
-setAddon(chaptersAddon);
 
 const objectOptions = [
   { value: 1, label: "First item" },
@@ -29,146 +26,62 @@ storiesOf("Select", module)
       padding: "20px",
     }),
   )
-  .addWithChapters("Default", () => ({
-    info:
-      "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => <Select options={objectOptions} onChange={action("onChange")} />,
-          },
-        ],
-      },
-    ],
-  }))
-  .addWithChapters("With prefix", () => ({
-    info:
-      "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <Select
-                label="Select box (with prefix)"
-                options={objectOptions}
-                onChange={action("onChange")}
-                prefix={<Airplane color="secondary" />}
-              />
-            ),
-          },
-        ],
-      },
-    ],
-  }))
-  .addWithChapters("With CountryFlag prefix", () => {
+  .add("Default", () => <Select options={objectOptions} onChange={action("onChange")} />)
+  .add("With prefix", () => (
+    <Select
+      label="Select box (with prefix)"
+      options={objectOptions}
+      onChange={action("onChange")}
+      prefix={<Airplane color="secondary" />}
+    />
+  ))
+  .add("With CountryFlag prefix", () => {
     const code = select("Code", Object.values(CODES), CODES.ANYWHERE);
-    return {
-      info:
-        "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Select
-                  label="Select box (with prefix)"
-                  options={objectOptions}
-                  onChange={action("onChange")}
-                  prefix={<CountryFlag code={code} />}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <Select
+        label="Select box (with prefix)"
+        options={objectOptions}
+        onChange={action("onChange")}
+        prefix={<CountryFlag code={code} />}
+      />
+    );
   })
-  .addWithChapters("With placeholder", () => {
+  .add("With placeholder", () => {
     const placeholder = text("Placeholder", "Select value from list");
-    return {
-      info:
-        "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Select
-                  label="Select box (with placeholder)"
-                  placeholder={placeholder}
-                  options={objectOptions}
-                  onChange={action("onChange")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <Select
+        label="Select box (with placeholder)"
+        placeholder={placeholder}
+        options={objectOptions}
+        onChange={action("onChange")}
+      />
+    );
   })
-  .addWithChapters("With help message", () => ({
-    info:
-      "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <Select
-                label="Select box (with help text)"
-                options={objectOptions}
-                help="Most common choice is Booking cancellation"
-                onChange={action("onChange")}
-              />
-            ),
-          },
-        ],
-      },
-    ],
-  }))
-  .addWithChapters("With error message", () => ({
-    info:
-      "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <Select
-                label="Select box (with error text)"
-                options={objectOptions}
-                error={<div>You need to select some value.</div>}
-                onChange={action("onChange")}
-              />
-            ),
-          },
-        ],
-      },
-    ],
-  }))
-  .addWithChapters("With small size", () => ({
-    info:
-      "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <Select
-                label="Select box (small size)"
-                size="small"
-                options={objectOptions}
-                onChange={action("onChange")}
-              />
-            ),
-          },
-        ],
-      },
-    ],
-  }))
-  .addWithChapters("Playground", () => {
+  .add("With help message", () => (
+    <Select
+      label="Select box (with help text)"
+      options={objectOptions}
+      help="Most common choice is Booking cancellation"
+      onChange={action("onChange")}
+    />
+  ))
+  .add("With error message", () => (
+    <Select
+      label="Select box (with error text)"
+      options={objectOptions}
+      error={<div>You need to select some value.</div>}
+      onChange={action("onChange")}
+    />
+  ))
+  .add("With small size", () => (
+    <Select
+      label="Select box (small size)"
+      size="small"
+      options={objectOptions}
+      onChange={action("onChange")}
+    />
+  ))
+  .add("Playground", () => {
     const placeholder = text("Placeholder", "Select value from list");
     const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
     const disabled = boolean("Disabled", false);
@@ -177,47 +90,24 @@ storiesOf("Select", module)
     const value = select("Value", [undefined].concat(...objectOptions.map(opt => opt.value)));
     const dataTest = text("dataTest", "test");
 
-    return {
-      info:
-        "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Select
-                  placeholder={placeholder}
-                  size={size}
-                  options={option}
-                  disabled={disabled}
-                  name={name}
-                  label={text("Label")}
-                  onChange={action("onChange")}
-                  onBlur={action("onBlur")}
-                  onFocus={action("onFocus")}
-                  dataTest={dataTest}
-                  value={value}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <Select
+        placeholder={placeholder}
+        size={size}
+        options={option}
+        disabled={disabled}
+        name={name}
+        label={text("Label")}
+        onChange={action("onChange")}
+        onBlur={action("onBlur")}
+        onFocus={action("onFocus")}
+        dataTest={dataTest}
+        value={value}
+      />
+    );
   })
-  .addWithChapters("RTL", () => ({
-    info: "This is a preview of this component in RTL setup.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <RenderInRtl>
-                <Select placeholder="My placeholder" options={objectOptions} label="My label" />
-              </RenderInRtl>
-            ),
-          },
-        ],
-      },
-    ],
-  }));
+  .add("RTL", () => (
+    <RenderInRtl>
+      <Select placeholder="My placeholder" options={objectOptions} label="My label" />
+    </RenderInRtl>
+  ));

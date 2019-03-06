@@ -4,7 +4,6 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import styles from "@sambego/storybook-styles";
-import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select, number } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
@@ -17,8 +16,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import InputField from "./index";
 
-setAddon(chaptersAddon);
-
 const getIcons = (name, defaultIcon) =>
   select(name, [undefined, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
@@ -30,368 +27,221 @@ storiesOf("InputField", module)
       padding: "20px",
     }),
   )
-  .addWithChapters("Default input", () => {
+  .add("Default input", () => {
     const label = text("Label", "Label");
     const value = text("Value", "");
     const placeholder = text("Placeholder", "Placeholder");
 
-    return {
-      info: "Some description about this type of InputField in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputField
-                  label={label}
-                  value={value}
-                  placeholder={placeholder}
-                  onChange={action("change")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputField
+        label={label}
+        value={value}
+        placeholder={placeholder}
+        onChange={action("change")}
+      />
+    );
   })
-  .addWithChapters("Small input", () => {
+  .add("Small input", () => {
     const label = text("Label", "Label");
     const value = text("Value", "");
     const placeholder = text("Placeholder", "Placeholder");
 
-    return {
-      info: "Some description about this type of InputField in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputField
-                  size="small"
-                  label={label}
-                  value={value}
-                  placeholder={placeholder}
-                  onChange={action("change")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputField
+        size="small"
+        label={label}
+        value={value}
+        placeholder={placeholder}
+        onChange={action("change")}
+      />
+    );
   })
-  .addWithChapters("Number input", () => {
+  .add("Number input", () => {
     const label = text("Label", "Number");
     const value = text("Value", 2);
     const placeholder = text("Placeholder", "Number");
     const maxValue = number("maxValue", 3);
     const minValue = number("minValue", 1);
 
-    return {
-      info: "Some description about this type of InputField in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputField
-                  type="number"
-                  label={label}
-                  value={value}
-                  placeholder={placeholder}
-                  maxValue={maxValue}
-                  minValue={minValue}
-                  onChange={action("change")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputField
+        type="number"
+        label={label}
+        value={value}
+        placeholder={placeholder}
+        maxValue={maxValue}
+        minValue={minValue}
+        onChange={action("change")}
+      />
+    );
   })
-  .addWithChapters("Password input", () => {
+  .add("Password input", () => {
     const label = text("Label", "Password");
     const value = text("Value", "p422W0rd");
     const placeholder = text("Placeholder", "Password");
 
-    return {
-      info: "Some description about this type of InputField in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputField
-                  type="password"
-                  label={label}
-                  value={value}
-                  placeholder={placeholder}
-                  onChange={action("change")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputField
+        type="password"
+        label={label}
+        value={value}
+        placeholder={placeholder}
+        onChange={action("change")}
+      />
+    );
   })
-  .addWithChapters("Passport or ID Input", () => {
+  .add("Passport or ID Input", () => {
     const label = text("Label", "Passport or ID number");
     const placeholder = text("Placeholder", "588539238");
 
-    return {
-      info: "Some description about this type of InputField in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputField
-                  type="passportid"
-                  label={label}
-                  placeholder={placeholder}
-                  onChange={action("change")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputField
+        type="passportid"
+        label={label}
+        placeholder={placeholder}
+        onChange={action("change")}
+      />
+    );
   })
-  .addWithChapters("Email input", () => {
+  .add("Email input", () => {
     const label = text("Label", "Email");
     const value = text("Value", "name@example.co");
     const placeholder = text("Placeholder", "Email");
 
-    return {
-      info: "Some description about this type of InputField in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputField
-                  type="email"
-                  label={label}
-                  value={value}
-                  placeholder={placeholder}
-                  onChange={action("change")}
-                  help={
-                    <div>
-                      Did you mean&nbsp;
-                      <TextLink onClick={action("clicked")}>name@example.com</TextLink>?
-                    </div>
-                  }
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputField
+        type="email"
+        label={label}
+        value={value}
+        placeholder={placeholder}
+        onChange={action("change")}
+        help={
+          <div>
+            Did you mean&nbsp;
+            <TextLink onClick={action("clicked")}>name@example.com</TextLink>?
+          </div>
+        }
+      />
+    );
   })
-  .addWithChapters("With text prefix", () => {
+  .add("With text prefix", () => {
     const label = text("Label", "Label");
     const value = text("Value", "");
     const placeholder = text("Placeholder", "Placeholder");
     const prefix = text("Prefix", "$");
 
-    return {
-      info: "Some description about this type of InputField in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputField
-                  label={label}
-                  value={value}
-                  placeholder={placeholder}
-                  prefix={prefix}
-                  onChange={action("change")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputField
+        label={label}
+        value={value}
+        placeholder={placeholder}
+        prefix={prefix}
+        onChange={action("change")}
+      />
+    );
   })
-  .addWithChapters("With text suffix", () => {
+  .add("With text suffix", () => {
     const label = text("Label", "Label");
     const value = text("Value", "");
     const placeholder = text("Placeholder", "Placeholder");
     const suffix = text("Suffix", "Some long text");
 
-    return {
-      info: "Some description about this type of InputField in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputField
-                  label={label}
-                  value={value}
-                  placeholder={placeholder}
-                  suffix={<div style={{ paddingRight: "12px" }}>{suffix}</div>}
-                  onChange={action("change")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputField
+        label={label}
+        value={value}
+        placeholder={placeholder}
+        suffix={<div style={{ paddingRight: "12px" }}>{suffix}</div>}
+        onChange={action("change")}
+      />
+    );
   })
 
-  .addWithChapters("Compact input", () => {
+  .add("Compact input", () => {
     const value = text("Value", "");
     const label = text("Label", "Label");
     const placeholder = text("Placeholder", "Placeholder");
     const required = boolean("required", false);
     const error = text("Error", undefined);
 
-    return {
-      info: "Compact input with FormLabel as prefix",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputField
-                  label={label}
-                  inlineLabel
-                  error={error}
-                  value={value}
-                  placeholder={placeholder}
-                  required={required}
-                  onChange={action("change")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputField
+        label={label}
+        inlineLabel
+        error={error}
+        value={value}
+        placeholder={placeholder}
+        required={required}
+        onChange={action("change")}
+      />
+    );
   })
-  .addWithChapters("Required field", () => {
+  .add("Required field", () => {
     const label = text("Label", "Label");
     const value = text("Value", "");
     const required = boolean("required", true);
     const placeholder = text("Placeholder", "Placeholder");
 
-    return {
-      info: "Some description about this type of InputField in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputField
-                  label={label}
-                  value={value}
-                  placeholder={placeholder}
-                  required={required}
-                  onChange={action("change")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputField
+        label={label}
+        value={value}
+        placeholder={placeholder}
+        required={required}
+        onChange={action("change")}
+      />
+    );
   })
-  .addWithChapters("With Icon prefix", () => {
+  .add("With Icon prefix", () => {
     const label = text("Label", "Label");
     const value = text("Value", "");
     const placeholder = text("Placeholder", "Placeholder");
     const Prefix = getIcon(getIcons("Prefix", "Search"));
 
-    return {
-      info: "Some description about this type of InputField in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputField
-                  label={label}
-                  value={value}
-                  placeholder={placeholder}
-                  prefix={Prefix && <Prefix />}
-                  onChange={action("change")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputField
+        label={label}
+        value={value}
+        placeholder={placeholder}
+        prefix={Prefix && <Prefix />}
+        onChange={action("change")}
+      />
+    );
   })
-  .addWithChapters("With ButtonLink suffix", () => {
+  .add("With ButtonLink suffix", () => {
     const label = text("Label", "Label");
     const value = text("Value", "");
     const placeholder = text("Placeholder", "Placeholder");
     const Suffix = getIcon(getIcons("Suffix", "Visibility"));
 
-    return {
-      info: "Some description about this type of InputField in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputField
-                  label={label}
-                  value={value}
-                  placeholder={placeholder}
-                  suffix={
-                    Suffix && (
-                      <ButtonLink transparent icon={<Suffix />} onClick={action("clicked")} />
-                    )
-                  }
-                  onChange={action("change")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputField
+        label={label}
+        value={value}
+        placeholder={placeholder}
+        suffix={Suffix && <ButtonLink transparent icon={<Suffix />} onClick={action("clicked")} />}
+        onChange={action("change")}
+      />
+    );
   })
-  .addWithChapters("With ServiceLogo prefix", () => {
+  .add("With ServiceLogo prefix", () => {
     const label = text("Label", "Label");
     const value = text("Value", "");
     const placeholder = text("Placeholder", "Placeholder");
     const name = select("Type", Object.values(NAME_OPTIONS), NAME_OPTIONS.AIRHELP);
     const grayScale = boolean("GrayScale", false);
 
-    return {
-      info: "Some description about this type of InputField in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputField
-                  label={label}
-                  value={value}
-                  placeholder={placeholder}
-                  suffix={<ServiceLogo name={name} grayScale={grayScale} />}
-                  onChange={action("change")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputField
+        label={label}
+        value={value}
+        placeholder={placeholder}
+        suffix={<ServiceLogo name={name} grayScale={grayScale} />}
+        onChange={action("change")}
+      />
+    );
   })
-  .addWithChapters("Playground", () => {
+  .add("Playground", () => {
     const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
     const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
     const name = text("Name", "input");
@@ -412,72 +262,50 @@ storiesOf("InputField", module)
     const readOnly = boolean("readOnly", false);
     const dataTest = text("dataTest", "test");
 
-    return {
-      info: "Some description about this type of InputField in general.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <InputField
-                  size={size}
-                  type={type}
-                  name={name}
-                  label={label}
-                  inlineLabel={inlineLabel}
-                  value={value}
-                  dataTest={dataTest}
-                  placeholder={placeholder}
-                  required={required}
-                  prefix={Prefix && <Prefix />}
-                  suffix={
-                    Suffix && (
-                      <ButtonLink
-                        transparent
-                        icon={<Suffix />}
-                        size={size}
-                        onClick={action("clicked")}
-                        disabled={disabled}
-                      />
-                    )
-                  }
-                  help={help}
-                  error={error}
-                  disabled={disabled}
-                  maxValue={maxValue}
-                  minValue={minValue}
-                  maxLength={maxLength}
-                  minLength={minLength}
-                  readOnly={readOnly}
-                  onChange={action("change")}
-                  onFocus={action("focus")}
-                  onBlur={action("blur")}
-                />
-              ),
-            },
-          ],
-        },
-      ],
-    };
+    return (
+      <InputField
+        size={size}
+        type={type}
+        name={name}
+        label={label}
+        inlineLabel={inlineLabel}
+        value={value}
+        dataTest={dataTest}
+        placeholder={placeholder}
+        required={required}
+        prefix={Prefix && <Prefix />}
+        suffix={
+          Suffix && (
+            <ButtonLink
+              transparent
+              icon={<Suffix />}
+              size={size}
+              onClick={action("clicked")}
+              disabled={disabled}
+            />
+          )
+        }
+        help={help}
+        error={error}
+        disabled={disabled}
+        maxValue={maxValue}
+        minValue={minValue}
+        maxLength={maxLength}
+        minLength={minLength}
+        readOnly={readOnly}
+        onChange={action("change")}
+        onFocus={action("focus")}
+        onBlur={action("blur")}
+      />
+    );
   })
-  .addWithChapters("RTL", () => ({
-    info: "This is a preview of this component in RTL setup.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <RenderInRtl>
-                <InputField
-                  placeholder="Placeholder"
-                  label="My label"
-                  prefix="$"
-                  suffix={<ButtonLink iconLeft={<Icons.Visibility />} />}
-                />
-              </RenderInRtl>
-            ),
-          },
-        ],
-      },
-    ],
-  }));
+  .add("RTL", () => (
+    <RenderInRtl>
+      <InputField
+        placeholder="Placeholder"
+        label="My label"
+        prefix="$"
+        suffix={<ButtonLink iconLeft={<Icons.Visibility />} />}
+      />
+    </RenderInRtl>
+  ));

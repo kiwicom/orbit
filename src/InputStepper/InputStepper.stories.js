@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { storiesOf, setAddon } from "@storybook/react";
+import { storiesOf } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
 import { action } from "@storybook/addon-actions";
 import { withKnobs, text, number, select, boolean } from "@storybook/addon-knobs";
@@ -21,7 +21,7 @@ storiesOf("InputStepper", module)
   .add("Default", () => <InputStepper onChange={action("onChange")} />)
 
   .add("With help", () => {
-    const label = text("Label", "Aduls");
+    const label = text("Label", "Adults");
     const help = text("help", "You need to enter count of adults");
     const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
 
@@ -36,15 +36,19 @@ storiesOf("InputStepper", module)
       />
     );
   })
-  .add("With different size", () => (
-    <InputStepper
-      label={label}
-      size={size}
-      onChange={action("onChange")}
-      onFocus={action("onFocus")}
-      onBlur={action("onBlur")}
-    />
-  ))
+  .add("With different size", () => {
+    const label = text("Label", "Adults");
+    const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
+    return (
+      <InputStepper
+        label={label}
+        size={size}
+        onChange={action("onChange")}
+        onFocus={action("onFocus")}
+        onBlur={action("onBlur")}
+      />
+    );
+  })
   .add("Playground", () => {
     const min = number("minValue", 1);
     const max = number("maxValue", 10);

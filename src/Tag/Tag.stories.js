@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from "react";
-import { storiesOf, setAddon } from "@storybook/react";
+import { storiesOf } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
 import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
@@ -11,7 +11,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { SIZES } from "./consts";
 
 import Tag from "./index";
-
 
 const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];

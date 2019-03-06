@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import { configure, setAddon } from "@storybook/react";
+import { configure } from "@storybook/react";
 import 'loki/configure-react';
 
 function requireAll(requireContext) {

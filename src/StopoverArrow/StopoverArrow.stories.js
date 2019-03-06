@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { storiesOf, setAddon } from "@storybook/react";
+import { storiesOf } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
 import { select, text, withKnobs } from "@storybook/addon-knobs";
 
@@ -19,5 +19,5 @@ storiesOf("StopoverArrow", module)
     const stops = select("stops", Object.values(STOPS), STOPS.ZERO);
     const dataTest = text("dataTest", "test");
 
-    return <StopoverArrow stops={stops} dataTest={dataTest} />
+    return <StopoverArrow stops={stops} dataTest={dataTest} />;
   });

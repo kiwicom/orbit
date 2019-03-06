@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { storiesOf, setAddon } from "@storybook/react";
+import { storiesOf } from "@storybook/react";
 import styles from "@sambego/storybook-styles";
 import { withKnobs, text } from "@storybook/addon-knobs";
 
@@ -23,147 +23,7 @@ storiesOf("TripSector", module)
       padding: "20px",
     }),
   )
-  .add("Multiple days", () => (<TripSector>
-    <TripDate>Mon 22 Oct</TripDate>
-    <TripSegment
-      carrier={{
-        code: "FR",
-        type: "airline",
-        name: "Ryanair",
-      }}
-      duration="2h"
-      departure="Barcelona BCN"
-      departureTime="6:30"
-      arrival="Paris BVA"
-      arrivalTime="8:30"
-    >
-      <List size="small" type="secondary">
-        <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
-          Airline: Ryanair
-        </ListItem>
-        <ListItem icon={<InformationCircle color="secondary" />}>
-          Flight no: D8 1762
-        </ListItem>
-      </List>
-    </TripSegment>
-    <TripLayover>
-      <List type="secondary" size="small">
-        <ListItem icon={<Clock />}>4h 50m layover</ListItem>
-        <ListItem icon={<Check />}>
-          Transfer protected by the&nbsp;
-          <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
-        </ListItem>
-        <ListItem icon={<FlightReturn />}>
-          Changing airports is your responsibility
-        </ListItem>
-      </List>
-    </TripLayover>
-    <TripSegment
-      carrier={{
-        code: "REGIOJETT",
-        type: "bus",
-        name: "RegioJet",
-      }}
-      duration="3h"
-      departure="Paris CDG"
-      departureTime="13:20"
-      arrival="Lille XDB"
-      arrivalTime="16:20"
-    >
-      <List size="small" type="secondary">
-        <ListItem icon={<InformationCircle color="secondary" />}>
-          Flight no: D8 1762
-        </ListItem>
-      </List>
-    </TripSegment>
-    <TripLayover>
-      <List type="secondary" size="small">
-        <ListItem icon={<Clock />}>2h 25m layover</ListItem>
-        <ListItem icon={<Check />}>
-          Transfer protected by the&nbsp;
-          <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
-        </ListItem>
-      </List>
-    </TripLayover>
-    <TripSegment
-      carrier={{
-        code: "FLIXBUS",
-        type: "bus",
-        name: "FLIXBUS",
-      }}
-      duration="1h 30m"
-      departure="Lille XDB"
-      departureTime="18:45"
-      arrival="City of Brussels CRL"
-      arrivalTime="20:15"
-    >
-      <List size="small" type="secondary">
-        <ListItem icon={<InformationCircle color="secondary" />}>
-          Flight no: D8 1762
-        </ListItem>
-      </List>
-    </TripSegment>
-    <TripLayover>
-      <List type="secondary" size="small">
-        <ListItem icon={<Clock />}>13h 05m layover</ListItem>
-        <ListItem icon={<Check />}>
-          Transfer protected by the&nbsp;
-          <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
-        </ListItem>
-        <ListItem icon={<FlightReturn />}>
-          Changing airports is your responsibility
-        </ListItem>
-      </List>
-    </TripLayover>
-    <TripDate>Tue 23 Oct</TripDate>
-    <TripSegment
-      carrier={{
-        code: "UA",
-        type: "airline",
-        name: "United Airlines",
-      }}
-      duration="10h 55m"
-      departure="City of Brussels BRU"
-      departureTime="09:20"
-      arrival="Miami MIA"
-      arrivalTime="14:15"
-    >
-      <List size="small" type="secondary">
-        <ListItem icon={<InformationCircle color="secondary" />}>
-          Flight no: D8 1762
-        </ListItem>
-      </List>
-    </TripSegment>
-  </TripSector>))
-  .add("Playground", () => {
-    const date = text("date", "Mon 22 Oct");
-    const dataTest = text("dataTest", "test");
-    return <TripSector dataTest={dataTest}>
-      <TripDate>{date}</TripDate>
-      <TripSegment
-        carrier={{
-          code: "FR",
-          type: "airline",
-          name: "Ryanair",
-        }}
-        duration="2h"
-        departure="Barcelona BCN"
-        departureTime="6:30"
-        arrival="Paris BVA"
-        arrivalTime="8:30"
-      >
-        <List size="small" type="secondary">
-          <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
-            Airline: Ryanair
-          </ListItem>
-          <ListItem icon={<InformationCircle color="secondary" />}>
-            Flight no: D8 1762
-          </ListItem>
-        </List>
-      </TripSegment>
-    </TripSector>
-  })
-  .add("RTL", () => (<RenderInRtl>
+  .add("Multiple days", () => (
     <TripSector>
       <TripDate>Mon 22 Oct</TripDate>
       <TripSegment
@@ -182,9 +42,7 @@ storiesOf("TripSector", module)
           <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
             Airline: Ryanair
           </ListItem>
-          <ListItem icon={<InformationCircle color="secondary" />}>
-            Flight no: D8 1762
-          </ListItem>
+          <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
         </List>
       </TripSegment>
       <TripLayover>
@@ -194,9 +52,7 @@ storiesOf("TripSector", module)
             Transfer protected by the&nbsp;
             <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
           </ListItem>
-          <ListItem icon={<FlightReturn />}>
-            Changing airports is your responsibility
-          </ListItem>
+          <ListItem icon={<FlightReturn />}>Changing airports is your responsibility</ListItem>
         </List>
       </TripLayover>
       <TripSegment
@@ -212,9 +68,7 @@ storiesOf("TripSector", module)
         arrivalTime="16:20"
       >
         <List size="small" type="secondary">
-          <ListItem icon={<InformationCircle color="secondary" />}>
-            Flight no: D8 1762
-          </ListItem>
+          <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
         </List>
       </TripSegment>
       <TripLayover>
@@ -239,9 +93,7 @@ storiesOf("TripSector", module)
         arrivalTime="20:15"
       >
         <List size="small" type="secondary">
-          <ListItem icon={<InformationCircle color="secondary" />}>
-            Flight no: D8 1762
-          </ListItem>
+          <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
         </List>
       </TripSegment>
       <TripLayover>
@@ -251,9 +103,7 @@ storiesOf("TripSector", module)
             Transfer protected by the&nbsp;
             <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
           </ListItem>
-          <ListItem icon={<FlightReturn />}>
-            Changing airports is your responsibility
-          </ListItem>
+          <ListItem icon={<FlightReturn />}>Changing airports is your responsibility</ListItem>
         </List>
       </TripLayover>
       <TripDate>Tue 23 Oct</TripDate>
@@ -270,10 +120,140 @@ storiesOf("TripSector", module)
         arrivalTime="14:15"
       >
         <List size="small" type="secondary">
-          <ListItem icon={<InformationCircle color="secondary" />}>
-            Flight no: D8 1762
-          </ListItem>
+          <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
         </List>
       </TripSegment>
     </TripSector>
-  </RenderInRtl>));
+  ))
+  .add("Playground", () => {
+    const date = text("date", "Mon 22 Oct");
+    const dataTest = text("dataTest", "test");
+    return (
+      <TripSector dataTest={dataTest}>
+        <TripDate>{date}</TripDate>
+        <TripSegment
+          carrier={{
+            code: "FR",
+            type: "airline",
+            name: "Ryanair",
+          }}
+          duration="2h"
+          departure="Barcelona BCN"
+          departureTime="6:30"
+          arrival="Paris BVA"
+          arrivalTime="8:30"
+        >
+          <List size="small" type="secondary">
+            <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
+              Airline: Ryanair
+            </ListItem>
+            <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
+          </List>
+        </TripSegment>
+      </TripSector>
+    );
+  })
+  .add("RTL", () => (
+    <RenderInRtl>
+      <TripSector>
+        <TripDate>Mon 22 Oct</TripDate>
+        <TripSegment
+          carrier={{
+            code: "FR",
+            type: "airline",
+            name: "Ryanair",
+          }}
+          duration="2h"
+          departure="Barcelona BCN"
+          departureTime="6:30"
+          arrival="Paris BVA"
+          arrivalTime="8:30"
+        >
+          <List size="small" type="secondary">
+            <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
+              Airline: Ryanair
+            </ListItem>
+            <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
+          </List>
+        </TripSegment>
+        <TripLayover>
+          <List type="secondary" size="small">
+            <ListItem icon={<Clock />}>4h 50m layover</ListItem>
+            <ListItem icon={<Check />}>
+              Transfer protected by the&nbsp;
+              <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
+            </ListItem>
+            <ListItem icon={<FlightReturn />}>Changing airports is your responsibility</ListItem>
+          </List>
+        </TripLayover>
+        <TripSegment
+          carrier={{
+            code: "REGIOJETT",
+            type: "bus",
+            name: "RegioJet",
+          }}
+          duration="3h"
+          departure="Paris CDG"
+          departureTime="13:20"
+          arrival="Lille XDB"
+          arrivalTime="16:20"
+        >
+          <List size="small" type="secondary">
+            <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
+          </List>
+        </TripSegment>
+        <TripLayover>
+          <List type="secondary" size="small">
+            <ListItem icon={<Clock />}>2h 25m layover</ListItem>
+            <ListItem icon={<Check />}>
+              Transfer protected by the&nbsp;
+              <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
+            </ListItem>
+          </List>
+        </TripLayover>
+        <TripSegment
+          carrier={{
+            code: "FLIXBUS",
+            type: "bus",
+            name: "FLIXBUS",
+          }}
+          duration="1h 30m"
+          departure="Lille XDB"
+          departureTime="18:45"
+          arrival="City of Brussels CRL"
+          arrivalTime="20:15"
+        >
+          <List size="small" type="secondary">
+            <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
+          </List>
+        </TripSegment>
+        <TripLayover>
+          <List type="secondary" size="small">
+            <ListItem icon={<Clock />}>13h 05m layover</ListItem>
+            <ListItem icon={<Check />}>
+              Transfer protected by the&nbsp;
+              <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
+            </ListItem>
+            <ListItem icon={<FlightReturn />}>Changing airports is your responsibility</ListItem>
+          </List>
+        </TripLayover>
+        <TripDate>Tue 23 Oct</TripDate>
+        <TripSegment
+          carrier={{
+            code: "UA",
+            type: "airline",
+            name: "United Airlines",
+          }}
+          duration="10h 55m"
+          departure="City of Brussels BRU"
+          departureTime="09:20"
+          arrival="Miami MIA"
+          arrivalTime="14:15"
+        >
+          <List size="small" type="secondary">
+            <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
+          </List>
+        </TripSegment>
+      </TripSector>
+    </RenderInRtl>
+  ));

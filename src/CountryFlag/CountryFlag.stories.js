@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from "react";
-import { storiesOf, setAddon } from "@storybook/react";
+import { storiesOf } from "@storybook/react";
 import { withKnobs, text, select } from "@storybook/addon-knobs";
 import styles from "@sambego/storybook-styles/dist/index";
 

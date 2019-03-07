@@ -5,6 +5,7 @@ import { storiesOf, setAddon } from "@storybook/react";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, object, number } from "@storybook/addon-knobs/react";
 import styles from "@sambego/storybook-styles/dist/index";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import DestinationCard from "./index";
 
@@ -63,6 +64,30 @@ storiesOf("DestinationCard", module)
       },
     ],
   }))
+  .addWithChapters("Germany mutation", () => ({
+    info:
+      "DestinationCard is a component which is used on the landing page and also on the search page.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <DestinationCard
+                departureCity="Amsterdam"
+                destinationCity="Dubai"
+                destinationCountry="United Arab Emirates"
+                image="dubai_ae"
+                price="NT$3.695"
+                timeOfStay="10 nights"
+                outbound={{ date: "Di. 24.12", type: "Zwischenstopp", duration: "20h 10m" }}
+                inbound={{ date: "Do. 25.12", type: "Zwischenstopp", duration: "20h 50m" }}
+              />
+            ),
+          },
+        ],
+      },
+    ],
+  }))
   .addWithChapters("Playground", () => {
     const image = text("image", "paris_fr");
     const destinationCity = text("destinationCity", "Paris");
@@ -95,6 +120,46 @@ storiesOf("DestinationCard", module)
                   outbound={outbound}
                   inbound={inbound}
                 />
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("RTL", () => {
+    const image = text("image", "paris_fr");
+    const destinationCity = text("destinationCity", "Paris");
+    const dataTest = text("dataTest", "test");
+    const height = number("height", 300);
+    const departureCity = text("departureCity", "Prague");
+    const destinationCountry = text("destinationCountry", "United Arab Emirates");
+    const price = text("price", "5,563 Kč");
+    const timeOfStay = text("timeOfStay", "10 nights");
+    const outbound = object("outbound", { date: "Wed 31 Oct", type: "Direct", duration: "6h 10m" });
+    const inbound = object("inbound", { date: "Fri 9 Nov", type: "Direct", duration: "6h 50m" });
+
+    return {
+      info: "This is a preview of DestinationCard in RTL setup.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <RenderInRtl>
+                  <DestinationCard
+                    dataTest={dataTest}
+                    departureCity={departureCity}
+                    destinationCity={destinationCity}
+                    destinationCountry={destinationCountry}
+                    image={image}
+                    height={height}
+                    price={price}
+                    timeOfStay={timeOfStay}
+                    outbound={outbound}
+                    inbound={inbound}
+                  />
+                </RenderInRtl>
               ),
             },
           ],

@@ -29,12 +29,11 @@ describe("DestinationCard one-way", () => {
     />,
   );
   const imageURL = `${BASE_URL}/photos/1200x628/${image}.jpg`;
-  const departure = component.find("DestinationCard__StyledDeparture");
+  const departure = component.find("DestinationCard__StyledDestinationCardHeader");
   const destination = component.find("DestinationCard__StyledDestination");
 
   it("should have props", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
-    expect(component.prop("imageURL")).toBe(imageURL);
     expect(component.prop("height")).toBe(height);
   });
 
@@ -42,6 +41,7 @@ describe("DestinationCard one-way", () => {
     expect(
       departure
         .find("Heading")
+        .first()
         .children()
         .text(),
     ).toBe(departureCity);
@@ -57,7 +57,8 @@ describe("DestinationCard one-way", () => {
     expect(
       component
         .find("DestinationCard__Shown")
-        .find("SmallHeading")
+        .find("Heading")
+        .at(1)
         .children()
         .text(),
     ).toBe(destinationCountry);
@@ -66,7 +67,7 @@ describe("DestinationCard one-way", () => {
     expect(
       component
         .find("DestinationCard__StyledDestinationCardPriceStay")
-        .find("SmallHeading")
+        .find("Heading")
         .children()
         .text(),
     ).toBe(price);

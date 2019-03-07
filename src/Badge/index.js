@@ -79,6 +79,8 @@ IconContainer.defaultProps = {
   theme: defaultTokens,
 };
 
+const StyledBadgeContent = styled.div``;
+
 const Badge = (props: Props) => {
   const { type = TYPE_OPTIONS.NEUTRAL, icon, children, circled, dataTest } = props;
 
@@ -89,7 +91,7 @@ const Badge = (props: Props) => {
           {icon}
         </IconContainer>
       )}
-      {children}
+      <StyledBadgeContent>{children}</StyledBadgeContent>
     </StyledBadge>
   );
 };

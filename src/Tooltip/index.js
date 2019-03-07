@@ -165,7 +165,7 @@ const StyledTooltipClose = styled.div`
   ${media.largeMobile(css`
     display: none;
     visibility: hidden;
-  `)}
+  `)};
 `;
 
 StyledTooltipClose.defaultProps = {

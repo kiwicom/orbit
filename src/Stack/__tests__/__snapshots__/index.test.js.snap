@@ -726,7 +726,7 @@ exports[`Default Stack should match snapshot 1`] = `
         "componentStyle": ComponentStyle {
           "componentId": "Stack__StyledStack-sc-1t576ow-0",
           "isStatic": false,
-          "lastClassName": "dIFOBr",
+          "lastClassName": "hoYBEX",
           "rules": Array [
             [Function],
             ";",
@@ -16491,7 +16491,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "Stack__StyledStack-sc-1t576ow-0",
             "isStatic": false,
-            "lastClassName": "dIFOBr",
+            "lastClassName": "hoYBEX",
             "rules": Array [
               [Function],
               ";",
@@ -32176,7 +32176,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
         "componentStyle": ComponentStyle {
           "componentId": "Stack__StyledStack-sc-1t576ow-0",
           "isStatic": false,
-          "lastClassName": "dIFOBr",
+          "lastClassName": "hoYBEX",
           "rules": Array [
             [Function],
             ";",

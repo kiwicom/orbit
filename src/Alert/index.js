@@ -92,14 +92,14 @@ const StyledAlert = styled(StyledDiv)`
             `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${
               theme.orbit.paddingAlert
             }`) ||
-            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${
-              theme.orbit.paddingAlert
-            }`
+          `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${
+            theme.orbit.paddingAlert
+          }`
         : (icon &&
             `${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert} ${
               theme.orbit.paddingAlert
             }`) ||
-            `${theme.orbit.paddingAlert}`,
+          `${theme.orbit.paddingAlert}`,
     )};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   background: ${getTypeToken(TOKENS.backgroundAlert)};

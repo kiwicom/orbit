@@ -14,19 +14,20 @@ const sortedBreakpoints = Object.keys(DEVICES_WIDTH).sort(
 
 const StyledHide = styled.span`
   ${({ on }) =>
-    sortedBreakpoints.map(viewport =>
-      viewport in mediaQueries
-        ? css`
-            ${mediaQueries[viewport](css`
-              display: ${on.indexOf(viewport) !== -1 ? "none" : "inline-block"};
-            `)};
-          `
-        : // "smallMobile" is not media query so we need to check it explicitly
-          viewport === "smallMobile" &&
-          on.indexOf(viewport) !== -1 &&
-          css`
-            display: none;
-          `,
+    sortedBreakpoints.map(
+      viewport =>
+        viewport in mediaQueries
+          ? css`
+              ${mediaQueries[viewport](css`
+                display: ${on.indexOf(viewport) !== -1 ? "none" : "inline-block"};
+              `)};
+            `
+          : // "smallMobile" is not media query so we need to check it explicitly
+            viewport === "smallMobile" &&
+            on.indexOf(viewport) !== -1 &&
+            css`
+              display: none;
+            `,
     )};
 `;
 

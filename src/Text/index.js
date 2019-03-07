@@ -67,7 +67,10 @@ export const StyledText = styled(({ element: TextElement, children, className, d
   a:not(${StyledTextLink}) {
     // TextLink in Text always win
     ${({ theme }) =>
-      getLinkStyle({ theme, type: TEXTLINK_TYPE_OPTIONS.PRIMARY })} // Get styles from TextLink
+      getLinkStyle({
+        theme,
+        type: TEXTLINK_TYPE_OPTIONS.PRIMARY,
+      })} // Get styles from TextLink;;;;;;;;;;
   }
 `;
 

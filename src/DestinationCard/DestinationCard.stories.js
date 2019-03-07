@@ -5,6 +5,7 @@ import { storiesOf, setAddon } from "@storybook/react";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, object, number } from "@storybook/addon-knobs/react";
 import styles from "@sambego/storybook-styles/dist/index";
+
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import DestinationCard from "./index";

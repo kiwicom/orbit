@@ -10,6 +10,7 @@ export type Align = "start" | "end" | "center";
 export type Justify = "start" | "end" | "center" | "between" | "around";
 
 export type Spacing =
+  | "none"
   | "extraTight"
   | "tight"
   | "condensed"

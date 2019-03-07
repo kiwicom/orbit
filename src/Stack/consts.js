@@ -20,6 +20,7 @@ export const JUSTIFY = {
 };
 
 export const SPACINGS = {
+  NONE: "none",
   EXTRATIGHT: "extraTight",
   TIGHT: "tight",
   CONDENSED: "condensed",

@@ -84,19 +84,17 @@ StyledCarrierLogo.defaultProps = {
 
 const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest }: Props) => (
   <StyledCarrierLogo carriers={carriers} size={size} data-test={dataTest}>
-    {carriers
-      .slice(0, 4)
-      .map(carrierImage => (
-        <StyledImage
-          key={carrierImage.code}
-          carrierType={carrierImage.type}
-          carriersLength={carriers.length}
-          code={carrierImage.code}
-          size={size}
-          alt={carrierImage.name}
-          title={carrierImage.name}
-        />
-      ))}
+    {carriers.slice(0, 4).map(carrierImage => (
+      <StyledImage
+        key={carrierImage.code}
+        carrierType={carrierImage.type}
+        carriersLength={carriers.length}
+        code={carrierImage.code}
+        size={size}
+        alt={carrierImage.name}
+        title={carrierImage.name}
+      />
+    ))}
   </StyledCarrierLogo>
 );
 export default CarrierLogo;

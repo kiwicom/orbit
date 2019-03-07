@@ -299,12 +299,11 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
       {label && !inlineLabel && <FormLabel label={label} isFilled={!!value} required={required} />}
       <InputContainer size={size} disabled={disabled} error={error}>
         {prefix && <Prefix size={size}>{prefix}</Prefix>}
-        {label &&
-          inlineLabel && (
-            <StyledInlineLabel size={size}>
-              <FormLabel label={label} isFilled={!!value} required={required} />
-            </StyledInlineLabel>
-          )}
+        {label && inlineLabel && (
+          <StyledInlineLabel size={size}>
+            <FormLabel label={label} isFilled={!!value} required={required} />
+          </StyledInlineLabel>
+        )}
         <Input
           data-test={dataTest}
           onChange={onChange}

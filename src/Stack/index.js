@@ -25,18 +25,17 @@ const StyledStack = styled(({ className, children, dataTest }) => (
   // just apply all mediaQueries
   // smallMobile - default values are not mediaQuery and needs to be rendered differently
   ${props =>
-    sortedBreakpoints.map(
-      (viewport, index, devices) =>
-        viewport in mediaQueries
-          ? mediaQueries[viewport](css`
-              ${isDefined(props[viewport]) && getViewportFlexStyles(viewport)};
-              ${getChildrenMargin({ viewport, index, devices })};
-            `)
-          : viewport === "smallMobile" &&
-            css`
-              ${getViewportFlexStyles(viewport)};
-              ${getChildrenMargin({ viewport, index, devices })};
-            `,
+    sortedBreakpoints.map((viewport, index, devices) =>
+      viewport in mediaQueries
+        ? mediaQueries[viewport](css`
+            ${isDefined(props[viewport]) && getViewportFlexStyles(viewport)};
+            ${getChildrenMargin({ viewport, index, devices })};
+          `)
+        : viewport === "smallMobile" &&
+          css`
+            ${getViewportFlexStyles(viewport)};
+            ${getChildrenMargin({ viewport, index, devices })};
+          `,
     )};
 `;
 

@@ -1,0 +1,30 @@
+// @flow
+
+import { ReactComponentStyled } from "styled-components";
+
+type ImageObject = {|
+  jpg: string,
+  webp: string,
+|};
+
+export type Props = {|
+  placeholder?: ImageObject,
+  original: ImageObject,
+  name: string,
+|};
+
+export type State = {|
+  loaded: boolean,
+|};
+
+export type PictureProps = {|
+  pictures: ImageObject,
+  name: string,
+  loaded: boolean,
+  onLoad?: () => void,
+  lowRes?: boolean,
+|};
+
+declare export default React$ComponentType<Props>;
+
+declare export var StyledLazyImage: ReactComponentStyled<any>;

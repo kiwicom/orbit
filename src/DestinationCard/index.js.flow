@@ -3,7 +3,7 @@
 import type { Globals } from "../common/common.js.flow";
 
 export type State = {|
-  shown: boolean,
+  hiddenContentHeight: number,
 |};
 
 export type Props = {|

@@ -17,7 +17,7 @@ Please see https://chris.beams.io/posts/git-commit/ for information on how to wr
 
 ## Commit History
 
-We are using merges in this project without squashing. Please pay attention that your commits make sense and aren't broken up into illogical chunks. Please squash WIP commits, or adjust them so that it is clear what their purpose was.
+We are using merges with squashing commits.
 
 #### Bad:
 

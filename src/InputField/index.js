@@ -188,6 +188,7 @@ export const Input = styled(
   )),
 )`
   appearance: none;
+  -webkit-text-fill-color: inherit;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   border: none;
   padding: ${getPadding()};

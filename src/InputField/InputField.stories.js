@@ -20,285 +20,377 @@ const getIcons = (name, defaultIcon) =>
 const getIcon = source => Icons[source];
 
 storiesOf("InputField", module)
-  .add("Default input", () => {
-    const label = text("Label", "Label");
-    const value = text("Value", "");
-    const placeholder = text("Placeholder", "Placeholder");
+  .add(
+    "Default input",
+    () => {
+      const label = text("Label", "Label");
+      const value = text("Value", "");
+      const placeholder = text("Placeholder", "Placeholder");
 
-    return (
-      <InputField
-        label={label}
-        value={value}
-        placeholder={placeholder}
-        onChange={action("change")}
-      />
-    );
-  })
-  .add("Small input", () => {
-    const label = text("Label", "Label");
-    const value = text("Value", "");
-    const placeholder = text("Placeholder", "Placeholder");
+      return (
+        <InputField
+          label={label}
+          value={value}
+          placeholder={placeholder}
+          onChange={action("change")}
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
+  .add(
+    "Small input",
+    () => {
+      const label = text("Label", "Label");
+      const value = text("Value", "");
+      const placeholder = text("Placeholder", "Placeholder");
 
-    return (
-      <InputField
-        size="small"
-        label={label}
-        value={value}
-        placeholder={placeholder}
-        onChange={action("change")}
-      />
-    );
-  })
-  .add("Number input", () => {
-    const label = text("Label", "Number");
-    const value = text("Value", 2);
-    const placeholder = text("Placeholder", "Number");
-    const maxValue = number("maxValue", 3);
-    const minValue = number("minValue", 1);
+      return (
+        <InputField
+          size="small"
+          label={label}
+          value={value}
+          placeholder={placeholder}
+          onChange={action("change")}
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
+  .add(
+    "Number input",
+    () => {
+      const label = text("Label", "Number");
+      const value = text("Value", 2);
+      const placeholder = text("Placeholder", "Number");
+      const maxValue = number("maxValue", 3);
+      const minValue = number("minValue", 1);
 
-    return (
-      <InputField
-        type="number"
-        label={label}
-        value={value}
-        placeholder={placeholder}
-        maxValue={maxValue}
-        minValue={minValue}
-        onChange={action("change")}
-      />
-    );
-  })
-  .add("Password input", () => {
-    const label = text("Label", "Password");
-    const value = text("Value", "p422W0rd");
-    const placeholder = text("Placeholder", "Password");
+      return (
+        <InputField
+          type="number"
+          label={label}
+          value={value}
+          placeholder={placeholder}
+          maxValue={maxValue}
+          minValue={minValue}
+          onChange={action("change")}
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
+  .add(
+    "Password input",
+    () => {
+      const label = text("Label", "Password");
+      const value = text("Value", "p422W0rd");
+      const placeholder = text("Placeholder", "Password");
 
-    return (
-      <InputField
-        type="password"
-        label={label}
-        value={value}
-        placeholder={placeholder}
-        onChange={action("change")}
-      />
-    );
-  })
-  .add("Passport or ID Input", () => {
-    const label = text("Label", "Passport or ID number");
-    const placeholder = text("Placeholder", "588539238");
+      return (
+        <InputField
+          type="password"
+          label={label}
+          value={value}
+          placeholder={placeholder}
+          onChange={action("change")}
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
+  .add(
+    "Passport or ID Input",
+    () => {
+      const label = text("Label", "Passport or ID number");
+      const placeholder = text("Placeholder", "588539238");
 
-    return (
-      <InputField
-        type="passportid"
-        label={label}
-        placeholder={placeholder}
-        onChange={action("change")}
-      />
-    );
-  })
-  .add("Email input", () => {
-    const label = text("Label", "Email");
-    const value = text("Value", "name@example.co");
-    const placeholder = text("Placeholder", "Email");
+      return (
+        <InputField
+          type="passportid"
+          label={label}
+          placeholder={placeholder}
+          onChange={action("change")}
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
+  .add(
+    "Email input",
+    () => {
+      const label = text("Label", "Email");
+      const value = text("Value", "name@example.co");
+      const placeholder = text("Placeholder", "Email");
 
-    return (
-      <InputField
-        type="email"
-        label={label}
-        value={value}
-        placeholder={placeholder}
-        onChange={action("change")}
-        help={
-          <div>
-            Did you mean&nbsp;
-            <TextLink onClick={action("clicked")}>name@example.com</TextLink>?
-          </div>
-        }
-      />
-    );
-  })
-  .add("With text prefix", () => {
-    const label = text("Label", "Label");
-    const value = text("Value", "");
-    const placeholder = text("Placeholder", "Placeholder");
-    const prefix = text("Prefix", "$");
+      return (
+        <InputField
+          type="email"
+          label={label}
+          value={value}
+          placeholder={placeholder}
+          onChange={action("change")}
+          help={
+            <div>
+              Did you mean&nbsp;
+              <TextLink onClick={action("clicked")}>name@example.com</TextLink>?
+            </div>
+          }
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
+  .add(
+    "With text prefix",
+    () => {
+      const label = text("Label", "Label");
+      const value = text("Value", "");
+      const placeholder = text("Placeholder", "Placeholder");
+      const prefix = text("Prefix", "$");
 
-    return (
-      <InputField
-        label={label}
-        value={value}
-        placeholder={placeholder}
-        prefix={prefix}
-        onChange={action("change")}
-      />
-    );
-  })
-  .add("With text suffix", () => {
-    const label = text("Label", "Label");
-    const value = text("Value", "");
-    const placeholder = text("Placeholder", "Placeholder");
-    const suffix = text("Suffix", "Some long text");
+      return (
+        <InputField
+          label={label}
+          value={value}
+          placeholder={placeholder}
+          prefix={prefix}
+          onChange={action("change")}
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
+  .add(
+    "With text suffix",
+    () => {
+      const label = text("Label", "Label");
+      const value = text("Value", "");
+      const placeholder = text("Placeholder", "Placeholder");
+      const suffix = text("Suffix", "Some long text");
 
-    return (
-      <InputField
-        label={label}
-        value={value}
-        placeholder={placeholder}
-        suffix={<div style={{ paddingRight: "12px" }}>{suffix}</div>}
-        onChange={action("change")}
-      />
-    );
-  })
+      return (
+        <InputField
+          label={label}
+          value={value}
+          placeholder={placeholder}
+          suffix={<div style={{ paddingRight: "12px" }}>{suffix}</div>}
+          onChange={action("change")}
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
 
-  .add("Compact input", () => {
-    const value = text("Value", "");
-    const label = text("Label", "Label");
-    const placeholder = text("Placeholder", "Placeholder");
-    const required = boolean("required", false);
-    const error = text("Error", undefined);
+  .add(
+    "Compact input",
+    () => {
+      const value = text("Value", "");
+      const label = text("Label", "Label");
+      const placeholder = text("Placeholder", "Placeholder");
+      const required = boolean("required", false);
+      const error = text("Error", undefined);
 
-    return (
-      <InputField
-        label={label}
-        inlineLabel
-        error={error}
-        value={value}
-        placeholder={placeholder}
-        required={required}
-        onChange={action("change")}
-      />
-    );
-  })
-  .add("Required field", () => {
-    const label = text("Label", "Label");
-    const value = text("Value", "");
-    const required = boolean("required", true);
-    const placeholder = text("Placeholder", "Placeholder");
+      return (
+        <InputField
+          label={label}
+          inlineLabel
+          error={error}
+          value={value}
+          placeholder={placeholder}
+          required={required}
+          onChange={action("change")}
+        />
+      );
+    },
+    {
+      info: "Compact input with FormLabel as prefix",
+    },
+  )
+  .add(
+    "Required field",
+    () => {
+      const label = text("Label", "Label");
+      const value = text("Value", "");
+      const required = boolean("required", true);
+      const placeholder = text("Placeholder", "Placeholder");
 
-    return (
-      <InputField
-        label={label}
-        value={value}
-        placeholder={placeholder}
-        required={required}
-        onChange={action("change")}
-      />
-    );
-  })
-  .add("With Icon prefix", () => {
-    const label = text("Label", "Label");
-    const value = text("Value", "");
-    const placeholder = text("Placeholder", "Placeholder");
-    const Prefix = getIcon(getIcons("Prefix", "Search"));
+      return (
+        <InputField
+          label={label}
+          value={value}
+          placeholder={placeholder}
+          required={required}
+          onChange={action("change")}
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
+  .add(
+    "With Icon prefix",
+    () => {
+      const label = text("Label", "Label");
+      const value = text("Value", "");
+      const placeholder = text("Placeholder", "Placeholder");
+      const Prefix = getIcon(getIcons("Prefix", "Search"));
 
-    return (
-      <InputField
-        label={label}
-        value={value}
-        placeholder={placeholder}
-        prefix={Prefix && <Prefix />}
-        onChange={action("change")}
-      />
-    );
-  })
-  .add("With ButtonLink suffix", () => {
-    const label = text("Label", "Label");
-    const value = text("Value", "");
-    const placeholder = text("Placeholder", "Placeholder");
-    const Suffix = getIcon(getIcons("Suffix", "Visibility"));
+      return (
+        <InputField
+          label={label}
+          value={value}
+          placeholder={placeholder}
+          prefix={Prefix && <Prefix />}
+          onChange={action("change")}
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
+  .add(
+    "With ButtonLink suffix",
+    () => {
+      const label = text("Label", "Label");
+      const value = text("Value", "");
+      const placeholder = text("Placeholder", "Placeholder");
+      const Suffix = getIcon(getIcons("Suffix", "Visibility"));
 
-    return (
-      <InputField
-        label={label}
-        value={value}
-        placeholder={placeholder}
-        suffix={Suffix && <ButtonLink transparent icon={<Suffix />} onClick={action("clicked")} />}
-        onChange={action("change")}
-      />
-    );
-  })
-  .add("With ServiceLogo prefix", () => {
-    const label = text("Label", "Label");
-    const value = text("Value", "");
-    const placeholder = text("Placeholder", "Placeholder");
-    const name = select("Type", Object.values(NAME_OPTIONS), NAME_OPTIONS.AIRHELP);
-    const grayScale = boolean("GrayScale", false);
+      return (
+        <InputField
+          label={label}
+          value={value}
+          placeholder={placeholder}
+          suffix={
+            Suffix && <ButtonLink transparent icon={<Suffix />} onClick={action("clicked")} />
+          }
+          onChange={action("change")}
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
+  .add(
+    "With ServiceLogo prefix",
+    () => {
+      const label = text("Label", "Label");
+      const value = text("Value", "");
+      const placeholder = text("Placeholder", "Placeholder");
+      const name = select("Type", Object.values(NAME_OPTIONS), NAME_OPTIONS.AIRHELP);
+      const grayScale = boolean("GrayScale", false);
 
-    return (
-      <InputField
-        label={label}
-        value={value}
-        placeholder={placeholder}
-        suffix={<ServiceLogo name={name} grayScale={grayScale} />}
-        onChange={action("change")}
-      />
-    );
-  })
-  .add("Playground", () => {
-    const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
-    const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
-    const name = text("Name", "input");
-    const label = text("Label", "Label");
-    const inlineLabel = boolean("inline label", false);
-    const value = text("Value", "");
-    const placeholder = text("Placeholder", "Placeholder");
-    const Prefix = getIcon(getIcons("Prefix", "Search"));
-    const Suffix = getIcon(getIcons("Suffix", "Visibility"));
-    const help = text("Help", undefined);
-    const error = text("Error", undefined);
-    const disabled = boolean("Disabled", false);
-    const maxValue = number("maxValue", undefined);
-    const minValue = number("minValue", undefined);
-    const required = boolean("required", false);
-    const maxLength = number("maxLength", undefined);
-    const minLength = number("minLength", undefined);
-    const readOnly = boolean("readOnly", false);
-    const dataTest = text("dataTest", "test");
+      return (
+        <InputField
+          label={label}
+          value={value}
+          placeholder={placeholder}
+          suffix={<ServiceLogo name={name} grayScale={grayScale} />}
+          onChange={action("change")}
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
+  .add(
+    "Playground",
+    () => {
+      const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
+      const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
+      const name = text("Name", "input");
+      const label = text("Label", "Label");
+      const inlineLabel = boolean("inline label", false);
+      const value = text("Value", "");
+      const placeholder = text("Placeholder", "Placeholder");
+      const Prefix = getIcon(getIcons("Prefix", "Search"));
+      const Suffix = getIcon(getIcons("Suffix", "Visibility"));
+      const help = text("Help", undefined);
+      const error = text("Error", undefined);
+      const disabled = boolean("Disabled", false);
+      const maxValue = number("maxValue", undefined);
+      const minValue = number("minValue", undefined);
+      const required = boolean("required", false);
+      const maxLength = number("maxLength", undefined);
+      const minLength = number("minLength", undefined);
+      const readOnly = boolean("readOnly", false);
+      const dataTest = text("dataTest", "test");
 
-    return (
-      <InputField
-        size={size}
-        type={type}
-        name={name}
-        label={label}
-        inlineLabel={inlineLabel}
-        value={value}
-        dataTest={dataTest}
-        placeholder={placeholder}
-        required={required}
-        prefix={Prefix && <Prefix />}
-        suffix={
-          Suffix && (
-            <ButtonLink
-              transparent
-              icon={<Suffix />}
-              size={size}
-              onClick={action("clicked")}
-              disabled={disabled}
-            />
-          )
-        }
-        help={help}
-        error={error}
-        disabled={disabled}
-        maxValue={maxValue}
-        minValue={minValue}
-        maxLength={maxLength}
-        minLength={minLength}
-        readOnly={readOnly}
-        onChange={action("change")}
-        onFocus={action("focus")}
-        onBlur={action("blur")}
-      />
-    );
-  })
-  .add("RTL", () => (
-    <RenderInRtl>
-      <InputField
-        placeholder="Placeholder"
-        label="My label"
-        prefix="$"
-        suffix={<ButtonLink iconLeft={<Icons.Visibility />} />}
-      />
-    </RenderInRtl>
-  ));
+      return (
+        <InputField
+          size={size}
+          type={type}
+          name={name}
+          label={label}
+          inlineLabel={inlineLabel}
+          value={value}
+          dataTest={dataTest}
+          placeholder={placeholder}
+          required={required}
+          prefix={Prefix && <Prefix />}
+          suffix={
+            Suffix && (
+              <ButtonLink
+                transparent
+                icon={<Suffix />}
+                size={size}
+                onClick={action("clicked")}
+                disabled={disabled}
+              />
+            )
+          }
+          help={help}
+          error={error}
+          disabled={disabled}
+          maxValue={maxValue}
+          minValue={minValue}
+          maxLength={maxLength}
+          minLength={minLength}
+          readOnly={readOnly}
+          onChange={action("change")}
+          onFocus={action("focus")}
+          onBlur={action("blur")}
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
+  .add(
+    "RTL",
+    () => (
+      <RenderInRtl>
+        <InputField
+          placeholder="Placeholder"
+          label="My label"
+          prefix="$"
+          suffix={<ButtonLink iconLeft={<Icons.Visibility />} />}
+        />
+      </RenderInRtl>
+    ),
+    {
+      info: "This is a preview of this component in RTL setup.",
+    },
+  );

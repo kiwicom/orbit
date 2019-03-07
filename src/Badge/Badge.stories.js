@@ -13,97 +13,164 @@ const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)
 const getIcon = source => Icons[source];
 
 storiesOf("Badge", module)
-  .add("Default", () => {
-    const content = text("Content", "Badge");
-    const Icon = getIcon(getIcons("Airplane"));
+  .add(
+    "Default",
+    () => {
+      const content = text("Content", "Badge");
+      const Icon = getIcon(getIcons("Airplane"));
 
-    return <Badge icon={Icon && <Icon />}>{content}</Badge>;
-  })
+      return <Badge icon={Icon && <Icon />}>{content}</Badge>;
+    },
+    {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
 
-  .add("Neutral", () => {
-    const content = text("Content", "Badge");
-    return (
-      <Badge type={TYPE_OPTIONS.NEUTRAL} icon={<Icons.Sightseeing />}>
-        {content}
-      </Badge>
-    );
-  })
-  .add("Info", () => {
-    const content = text("Content", "Badge");
-    return (
-      <Badge type={TYPE_OPTIONS.INFO} icon={<Icons.InformationCircle />}>
-        {content}
-      </Badge>
-    );
-  })
-  .add("Success", () => {
-    const content = text("Content", "Badge");
-    return (
-      <Badge type={TYPE_OPTIONS.SUCCESS} icon={<Icons.CheckCircle />}>
-        {content}
-      </Badge>
-    );
-  })
-  .add("Warning", () => {
-    const content = text("Content", "Badge");
-    return (
-      <Badge type={TYPE_OPTIONS.WARNING} icon={<Icons.Clock />}>
-        {content}
-      </Badge>
-    );
-  })
-  .add("Critical", () => {
-    const content = text("Content", "Badge");
-    return (
-      <Badge type={TYPE_OPTIONS.CRITICAL} icon={<Icons.Passport />}>
-        {content}
-      </Badge>
-    );
-  })
-  .add("Dark", () => {
-    const content = text("Content", "Badge");
-    return (
-      <Badge type={TYPE_OPTIONS.DARK} icon={<Icons.Sightseeing />}>
-        {content}
-      </Badge>
-    );
-  })
-  .add("White", () => {
-    const content = text("Content", "Badge");
-    return (
-      <div style={{ backgroundColor: "#46515e", padding: "10px" }}>
-        <Badge type={TYPE_OPTIONS.WHITE} icon={<Icons.Sightseeing />}>
+  .add(
+    "Neutral",
+    () => {
+      const content = text("Content", "Badge");
+      return (
+        <Badge type={TYPE_OPTIONS.NEUTRAL} icon={<Icons.Sightseeing />}>
           {content}
         </Badge>
-      </div>
-    );
-  })
-  .add("Notification badge", () => {
-    const content = text("Content", "3");
-    const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.NEUTRAL);
-    return (
-      <Badge type={type} circled>
-        {content}
-      </Badge>
-    );
-  })
-  .add("Playground", () => {
-    const content = text("Content", "Badge");
-    const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO);
-    const circled = boolean("Circled", false);
-    const dataTest = text("dataTest", "test");
-    const Icon = getIcon(getIcons("Airplane"));
+      );
+    },
+    {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Info",
+    () => {
+      const content = text("Content", "Badge");
+      return (
+        <Badge type={TYPE_OPTIONS.INFO} icon={<Icons.InformationCircle />}>
+          {content}
+        </Badge>
+      );
+    },
+    {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Success",
+    () => {
+      const content = text("Content", "Badge");
+      return (
+        <Badge type={TYPE_OPTIONS.SUCCESS} icon={<Icons.CheckCircle />}>
+          {content}
+        </Badge>
+      );
+    },
+    {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Warning",
+    () => {
+      const content = text("Content", "Badge");
+      return (
+        <Badge type={TYPE_OPTIONS.WARNING} icon={<Icons.Clock />}>
+          {content}
+        </Badge>
+      );
+    },
+    {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Critical",
+    () => {
+      const content = text("Content", "Badge");
+      return (
+        <Badge type={TYPE_OPTIONS.CRITICAL} icon={<Icons.Passport />}>
+          {content}
+        </Badge>
+      );
+    },
+    {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Dark",
+    () => {
+      const content = text("Content", "Badge");
+      return (
+        <Badge type={TYPE_OPTIONS.DARK} icon={<Icons.Sightseeing />}>
+          {content}
+        </Badge>
+      );
+    },
+    {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "White",
+    () => {
+      const content = text("Content", "Badge");
+      return (
+        <div style={{ backgroundColor: "#46515e", padding: "10px" }}>
+          <Badge type={TYPE_OPTIONS.WHITE} icon={<Icons.Sightseeing />}>
+            {content}
+          </Badge>
+        </div>
+      );
+    },
+    {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Notification badge",
+    () => {
+      const content = text("Content", "3");
+      const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.NEUTRAL);
+      return (
+        <Badge type={type} circled>
+          {content}
+        </Badge>
+      );
+    },
+    {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Playground",
+    () => {
+      const content = text("Content", "Badge");
+      const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO);
+      const circled = boolean("Circled", false);
+      const dataTest = text("dataTest", "test");
+      const Icon = getIcon(getIcons("Airplane"));
 
-    return (
-      <Badge type={type} icon={Icon && <Icon />} dataTest={dataTest} circled={circled}>
-        {content}
-      </Badge>
-    );
-  })
-  .add("RTL", () => (
-    <RenderInRtl>
-      <Badge type="info" icon={<Icons.Airplane />}>
-        Badge
-      </Badge>
-    </RenderInRtl>
-  ));
+      return (
+        <Badge type={type} icon={Icon && <Icon />} dataTest={dataTest} circled={circled}>
+          {content}
+        </Badge>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "RTL",
+    () => (
+      <RenderInRtl>
+        <Badge type="info" icon={<Icons.Airplane />}>
+          Badge
+        </Badge>
+      </RenderInRtl>
+    ),
+    {
+      info: "This is a preview of this component in RTL setup.",
+    },
+  );

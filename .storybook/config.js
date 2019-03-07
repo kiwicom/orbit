@@ -1,23 +1,16 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import * as React from "react"
-import { configure, addDecorator } from "@storybook/react";
-import  { withInfo } from "@storybook/addon-info"
+import { configure, addDecorator, addParameters } from "@storybook/react";
 import  { withKnobs } from "@storybook/addon-knobs"
 import 'loki/configure-react';
-import Heading from "../src/Heading"
+import orbitDecorator from "./orbitDecorator"
 
-const orbitDecorator = (storyFn, context) =>
-  <div style={{ padding: "20px" }}>
-    <Heading spaceAfter="largest">{context.kind}</Heading>
-    {storyFn(context)}
-  </div>
-
-addDecorator(
-  orbitDecorator
-)
-addDecorator(
-  withKnobs
-)
+addParameters({
+  options: {
+    panelPosition: 'bottom',
+  }
+});
+addDecorator(orbitDecorator);
+addDecorator(withKnobs);
 
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);

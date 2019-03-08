@@ -17,6 +17,7 @@ export type Props = {|
   +suffix?: React$Node,
   +help?: React$Node,
   +error?: React$Node,
+  +tags?: React$Node,
   +disabled?: boolean,
   +maxValue?: number,
   +minValue?: number,

@@ -8,6 +8,9 @@ import FormFeedback from "../FormFeedback";
 import DefaultFormLabel from "../FormLabel";
 import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
+
+import { StyledTag } from "../Tag"
+
 import type { Ref, Translation } from "../common/common.js.flow";
 
 import type { Props } from "./index";
@@ -265,6 +268,28 @@ const FormLabel = ({
   </DefaultFormLabel>
 );
 
+const StyledInputTags = styled.div`
+  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
+  min-width: 50px;
+  flex: 1 1 auto;
+  max-width: 80%;
+  z-index: 2;
+`
+
+StyledInputTags.defaultProps = {
+  theme: defaultTokens,
+};
+
+const StyledInputTagsInner = styled.div`
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap;
+  
+  &::-webkit-scrollbar { 
+    display: none; 
+  }
+`
+
 // $FlowExpected
 const InputField = React.forwardRef((props: Props, ref: Ref) => {
   const {
@@ -291,6 +316,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
     suffix,
     help,
     value,
+    tags,
     tabIndex,
     readOnly,
   } = props;
@@ -305,6 +331,12 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
             <FormLabel label={label} isFilled={!!value} required={required} />
           </StyledInlineLabel>
         )}
+        {tags &&
+        <StyledInputTags>
+          <StyledInputTagsInner>
+            {tags}
+          </StyledInputTagsInner>
+        </StyledInputTags>}
         <Input
           data-test={dataTest}
           onChange={onChange}

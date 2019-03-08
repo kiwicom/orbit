@@ -40,7 +40,7 @@ const getSpacing = ({ icon, removable, theme }) => {
   return rtlSpacing(padding);
 };
 
-const StyledTag = styled.div`
+export const StyledTag = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   color: ${({ theme, selected }) =>
     selected ? theme.orbit.colorTextTagSelected : theme.orbit.colorTextTag};

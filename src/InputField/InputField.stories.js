@@ -14,6 +14,7 @@ import ButtonLink from "../ButtonLink";
 import TextLink from "../TextLink";
 import ServiceLogo from "../ServiceLogo";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import Tag from "../Tag";
 
 import InputField from "./index";
 
@@ -45,6 +46,16 @@ storiesOf("InputField", module)
                 <InputField
                   label={label}
                   value={value}
+                  tags={
+                    <div>
+                      <Tag>Praha</Tag>
+                      <Tag>Brno</Tag>
+                      <Tag>Brno</Tag>
+                      <Tag>Brno</Tag>
+                      <Tag>Brno</Tag>
+                      <Tag>Brno</Tag>
+                    </div>
+                  }
                   placeholder={placeholder}
                   onChange={action("change")}
                 />

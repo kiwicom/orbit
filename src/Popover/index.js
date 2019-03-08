@@ -36,8 +36,6 @@ const resolvePopoverPosition = ({
 };
 
 const PopoverChild = styled.div`
-  background: red;
-  left: 40px;
   position: relative;
 `;
 PopoverChild.defaultProps = {
@@ -58,6 +56,15 @@ const PopoverParent = styled.div`
     ${resolvePopoverPosition}
     ${resolvePopoverAnchor}
   `}
+  opacity: ${({ shown }) => (shown ? "1" : "0")};
+  visibility: ${shown => (shown ? "visible" : "none")};
+  pointer-events: ${shown => (shown ? "auto" : "none")};
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  background-color: #ffffff;
+  padding: ${({ theme }) => theme.orbit.spaceSmall};
+  padding-top: ${({ theme }) => theme.orbit.spaceMedium};
+  box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
+  z-index: ${({ theme }) => theme.orbit.zIndexOnTheTop};
 `;
 PopoverParent.defaultProps = {
   theme: defaultTokens,
@@ -68,7 +75,7 @@ class Popover extends React.PureComponent<Props, State> {
     shown: false,
   };
 
-  getDimensions = () => {
+  setDimensions = () => {
     if (this.container && this.popover && this.content && typeof window !== "undefined") {
       const containerDimensions = this.container.current.getBoundingClientRect();
       const popoverDimensions = this.popover.current.getBoundingClientRect();
@@ -103,7 +110,7 @@ class Popover extends React.PureComponent<Props, State> {
 
   handleIn = () => {
     if (this.props.trigger === "hover") {
-      this.getDimensions();
+      this.setDimensions();
       this.setState({ shown: true });
     }
   };
@@ -116,7 +123,7 @@ class Popover extends React.PureComponent<Props, State> {
 
   handleClick = () => {
     if (this.props.trigger === "click") {
-      this.getDimensions();
+      this.setDimensions();
       this.setState({ shown: true });
     }
   };
@@ -162,6 +169,7 @@ class Popover extends React.PureComponent<Props, State> {
         >
           <ClickOutside onClickOutside={this.handleClickOutside}>{children}</ClickOutside>
         </PopoverChild>
+
         <Portal>
           <PopoverParent
             shown={shown}

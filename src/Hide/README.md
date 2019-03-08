@@ -32,3 +32,6 @@ Table below contains all types of the props available in the Hide component.
 | `"largeMobile"`   | `576px - 767px`       |
 | `"mediumMobile"`  | `414px - 575px`       |
 | `"smallMobile"`   | `0px - 413px`         |
+
+## Functional specs
+In case `Separator` is used inside `Hide`, `block` property has to be set to `true` to display.

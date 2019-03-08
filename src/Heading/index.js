@@ -17,7 +17,7 @@ const getToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.TITLE2]: theme.orbit.fontWeightHeadingTitle2,
       [TYPE_OPTIONS.TITLE3]: theme.orbit.fontWeightHeadingTitle3,
       [TYPE_OPTIONS.TITLE4]: theme.orbit.fontWeightHeadingTitle4,
-      [TYPE_OPTIONS.TITLE5]: theme.orbit.fontWeightBold, // TODO: create token fontWeightHeadingTitle5
+      [TYPE_OPTIONS.TITLE5]: theme.orbit.fontWeightHeadingTitle5,
     },
     [TOKENS.sizeHeading]: {
       [TYPE_OPTIONS.DISPLAY]: theme.orbit.fontSizeHeadingDisplay,
@@ -26,7 +26,7 @@ const getToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.TITLE2]: theme.orbit.fontSizeHeadingTitle2,
       [TYPE_OPTIONS.TITLE3]: theme.orbit.fontSizeHeadingTitle3,
       [TYPE_OPTIONS.TITLE4]: theme.orbit.fontSizeHeadingTitle4,
-      [TYPE_OPTIONS.TITLE5]: theme.orbit.fontSizeTextSmall, // TODO: create token fontSizeHeadingTitle5
+      [TYPE_OPTIONS.TITLE5]: theme.orbit.fontSizeHeadingTitle5,
     },
   };
 

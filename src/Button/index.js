@@ -209,57 +209,39 @@ const getTypeToken = name => ({ theme, type }) => {
 };
 
 const buttonSpacing = () => ({ theme, onlyIcon, iconRight, iconLeft, size }) => {
+  if (onlyIcon) return rtlSpacing(theme.orbit.paddingButtonWithoutText);
   const tokens = {
     [TOKENS.paddingButton]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLarge,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormal,
       [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmall,
     },
-    [TOKENS.paddingButtonWithIcon]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLargeWithIcon,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormalWithIcon,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithIcon,
+    [TOKENS.paddingButtonWithIcons]: {
+      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLargeWithIcons,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormalWithIcons,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithIcons,
+    },
+    [TOKENS.paddingButtonWithLeftIcon]: {
+      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLargeWithLeftIcon,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormalWithLeftIcon,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithLeftIcon,
+    },
+    [TOKENS.paddingButtonWithRightIcon]: {
+      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLargeWithRightIcon,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormalWithRightIcon,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithRightIcon,
     },
   };
-
-  /*
-  TODO: we need to define/update tokens
-  NEEDS TO BE CHECKED ONCE AGAIN DUE TO https://github.com/kiwicom/orbit-design-tokens/pull/55
-
-  paddingButtonWithoutText: 0
-
-  paddingButtonSmall: 0 12px
-  paddingButtonNormal: 0 16px
-  paddingButtonLarge: 0 28px
-
-
-  paddingButtonSmallWithIcons: 0 8px
-  paddingButtonNormalWithIcons: 0 12px
-  paddingButtonLargeWithIcons: 0 16px
-
-  paddingButtonSmallWithLeftIcon: 0 12px 0 8px
-  paddingButtonNormalWithLeftIcon: 0 16px 0 12px
-  paddingButtonLargeWithLeftIcon: 0 28px 0 16px
-
-  paddingButtonSmallWithRightIcon: 0 8px 0 12px
-  paddingButtonNormalWithRightIcon: 0 12px 0 16px
-  paddingButtonLargeWithRightIcon: 0 16px 0 28px
-  */
-  return rtlSpacing(
-    (onlyIcon && "0") ||
-      (iconLeft && iconRight && `0 ${tokens[TOKENS.paddingButtonWithIcon][size]}`) ||
-      (iconLeft &&
-        !iconRight &&
-        `0 ${tokens[TOKENS.paddingButton][size]} 0 ${
-          tokens[TOKENS.paddingButtonWithIcon][size]
-        }`) ||
-      (!iconLeft &&
-        iconRight &&
-        `0 ${tokens[TOKENS.paddingButtonWithIcon][size]} 0 ${
-          tokens[TOKENS.paddingButton][size]
-        }`) ||
-      `0 ${tokens[TOKENS.paddingButton][size]}`,
-  );
+  if (iconLeft && iconRight) {
+    return rtlSpacing(tokens[TOKENS.paddingButtonWithIcons][size]);
+  }
+  if (iconLeft && !iconRight) {
+    return rtlSpacing(tokens[TOKENS.paddingButtonWithLeftIcon][size]);
+  }
+  if (!iconLeft && iconRight) {
+    return rtlSpacing(tokens[TOKENS.paddingButtonWithRightIcon][size]);
+  }
+  return rtlSpacing(tokens[TOKENS.paddingButton][size]);
 };
 
 const iconSpacing = () => ({ theme, right, size, onlyIcon }) => {

@@ -39,17 +39,18 @@ function getViewBox(attributes) {
 }
 
 const template = (code, config, state) => `
+// @flow
 /* eslint-disable */
     import * as React from "react";
     import OrbitIcon from "../Icon";
     import type { Props } from "./${state.componentName}.js.flow";
 
     export default function ${state.componentName}(props: Props) {
-      const { color, size, customColor, className, dataTest, ariaHidden } = props;
+      const { color, size, customColor, className, dataTest, ariaHidden, reverseOnRtl } = props;
       return (
         ${code.replace(
           /<svg\b[^>]* viewBox="(\b[^"]*)".*>([\s\S]*?)<\/svg>/g,
-          `<OrbitIcon viewBox="$1" size={size} color={color} customColor={customColor} className={className} dataTest={dataTest} ariaHidden={ariaHidden}>$2</OrbitIcon>`,
+          `<OrbitIcon viewBox="$1" size={size} color={color} customColor={customColor} className={className} dataTest={dataTest} ariaHidden={ariaHidden} reverseOnRtl={reverseOnRtl}>$2</OrbitIcon>`,
         )}
       );
     };`;
@@ -58,11 +59,20 @@ const flowTemplate = `// @flow
 import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
-  +color?: "attention" | "primary" | "secondary" | "tertiary" | "info" | "success" | "warning" | "critical",
+  +color?:
+    | "attention"
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "info"
+    | "success"
+    | "warning"
+    | "critical",
   +size?: "small" | "medium" | "large",
   +customColor?: string,
   +className?: string,
   +ariaHidden?: boolean,
+  +reverseOnRtl?: boolean,
   ...Globals,
 |};
 

@@ -538,6 +538,8 @@ exports[`Hide should match snapshot 1`] = `
                         ";vertical-align:middle;fill:currentColor;color:",
                         [Function],
                         ";",
+                        [Function],
+                        ";",
                       ],
                     },
                     "defaultProps": Object {

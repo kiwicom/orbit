@@ -132,7 +132,7 @@ exports[`Storyshots Deprecated Card Card with description 1`] = `
                       className="CardHeader__StyledIcon-sc-39t2tz-3 gPEpJk"
                     >
                       <svg
-                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 hoEcZN"
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >
@@ -1948,7 +1948,7 @@ exports[`Storyshots Deprecated Card Default 1`] = `
                       className="CardHeader__StyledIcon-sc-39t2tz-3 gPEpJk"
                     >
                       <svg
-                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 hoEcZN"
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >
@@ -2304,7 +2304,7 @@ exports[`Storyshots Deprecated Card Playground 1`] = `
                       className="CardHeader__StyledIcon-sc-39t2tz-3 gPEpJk"
                     >
                       <svg
-                        className="Icon__StyledIcon-sc-1pnzn3g-0 geWqaO"
+                        className="Icon__StyledIcon-sc-1pnzn3g-0 hoEcZN"
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >

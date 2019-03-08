@@ -12,13 +12,15 @@ const sortedBreakpoints = Object.keys(DEVICES_WIDTH).sort(
   (a, b) => DEVICES_WIDTH[a] - DEVICES_WIDTH[b],
 );
 
+const getDisplay = () => ({ block }) => (block ? "block" : "inline-block");
+
 const StyledHide = styled.span`
   ${({ on }) =>
     sortedBreakpoints.map(viewport =>
       viewport in mediaQueries
         ? css`
             ${mediaQueries[viewport](css`
-              display: ${on.indexOf(viewport) !== -1 ? "none" : "inline-block"};
+              display: ${on.indexOf(viewport) !== -1 ? "none" : getDisplay()};
             `)};
           `
         : // "smallMobile" is not media query so we need to check it explicitly
@@ -30,6 +32,10 @@ const StyledHide = styled.span`
     )};
 `;
 
-const Hide = ({ on = [], children }: Props) => <StyledHide on={on}>{children}</StyledHide>;
+const Hide = ({ on = [], block, children }: Props) => (
+  <StyledHide on={on} block={block}>
+    {children}
+  </StyledHide>
+);
 
 export default Hide;

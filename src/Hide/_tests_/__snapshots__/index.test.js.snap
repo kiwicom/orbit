@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Hide should match snapshot 1`] = `
-.c0 {
-  display: none;
-}
-
 .c1 {
   width: 24px;
   height: 24px;
@@ -14,7 +10,7 @@ exports[`Hide should match snapshot 1`] = `
 
 @media (min-width:414px) {
   .c0 {
-    display: inline-block;
+    display: block;
   }
 }
 
@@ -26,41 +22,32 @@ exports[`Hide should match snapshot 1`] = `
 
 @media (min-width:768px) {
   .c0 {
-    display: inline-block;
+    display: block;
   }
 }
 
 @media (min-width:992px) {
   .c0 {
-    display: inline-block;
+    display: block;
   }
 }
 
 @media (min-width:1200px) {
   .c0 {
-    display: none;
+    display: block;
   }
 }
 
 <Hide
-  on={
-    Array [
-      "smallMobile",
-      "largeMobile",
-      "largeDesktop",
-    ]
-  }
+  block={true}
+  on="largeMobile"
 >
   <Hide__StyledHide
-    on={
-      Array [
-        "smallMobile",
-        "largeMobile",
-        "largeDesktop",
-      ]
-    }
+    block={true}
+    on="largeMobile"
   >
     <StyledComponent
+      block={true}
       forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
@@ -85,13 +72,7 @@ exports[`Hide should match snapshot 1`] = `
         }
       }
       forwardedRef={null}
-      on={
-        Array [
-          "smallMobile",
-          "largeMobile",
-          "largeDesktop",
-        ]
-      }
+      on="largeMobile"
     >
       <span
         className="c0"

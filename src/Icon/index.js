@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 import defaultTokens from "../defaultTokens";
@@ -30,6 +30,13 @@ const getColor = () => ({ theme, color }) => {
   return tokens[color];
 };
 
+const reverse = ({ reverseOnRtl, theme }) =>
+  reverseOnRtl &&
+  theme.rtl &&
+  css`
+    transform: scale(-1, 1);
+  `;
+
 const StyledIcon = styled(({ className, viewBox, dataTest, children, ariaHidden }) => (
   <svg
     className={className}
@@ -46,6 +53,7 @@ const StyledIcon = styled(({ className, viewBox, dataTest, children, ariaHidden 
   vertical-align: middle;
   fill: currentColor;
   color: ${({ color, customColor }) => customColor || (color && getColor())};
+  ${reverse};
 `;
 
 StyledIcon.defaultProps = {
@@ -53,7 +61,17 @@ StyledIcon.defaultProps = {
 };
 
 const OrbitIcon = (props: Props) => {
-  const { size, color, customColor, className, children, viewBox, dataTest, ariaHidden } = props;
+  const {
+    size,
+    color,
+    customColor,
+    className,
+    children,
+    viewBox,
+    dataTest,
+    ariaHidden,
+    reverseOnRtl,
+  } = props;
 
   return (
     <StyledIcon
@@ -64,6 +82,7 @@ const OrbitIcon = (props: Props) => {
       customColor={customColor}
       color={color}
       ariaHidden={ariaHidden}
+      reverseOnRtl={reverseOnRtl}
     >
       {children}
     </StyledIcon>

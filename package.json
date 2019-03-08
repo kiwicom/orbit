@@ -75,7 +75,7 @@
     "styled-components": "^4.0.3"
   },
   "dependencies": {
-    "@kiwicom/orbit-design-tokens": "^0.3.0"
+    "@kiwicom/orbit-design-tokens": "^0.4.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -91,9 +91,9 @@
     "@babel/runtime": "^7.3.4",
     "@octokit/rest": "^15.13.1",
     "@sambego/storybook-styles": "^1.0.0",
-    "@storybook/addons": "4.1.13",
     "@storybook/addon-actions": "^4.1.13",
     "@storybook/addon-knobs": "^4.1.13",
+    "@storybook/addons": "4.1.13",
     "@storybook/react": "^4.1.13",
     "@storybook/storybook-deployer": "^2.3.0",
     "@svgr/core": "^2.0.0",

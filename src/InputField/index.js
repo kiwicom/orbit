@@ -274,6 +274,7 @@ const StyledInputTags = styled.div`
   flex: 0 1 auto;
   height: 100%;
   z-index: 2;
+  min-width: 50px;
   overflow: hidden;
 `;
 

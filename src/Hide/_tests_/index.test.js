@@ -9,7 +9,6 @@ import { DEVICES } from "../../utils/mediaQuery/consts";
 
 describe("Hide", () => {
   const on = ["smallMobile", "largeMobile", "largeDesktop"];
-  console.log(on[1]);
   const block = false;
   const component = mount(
     <Hide on={on} block={block}>

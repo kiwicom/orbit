@@ -8,9 +8,7 @@ import FormFeedback from "../FormFeedback";
 import DefaultFormLabel from "../FormLabel";
 import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
-
-import { StyledTag } from "../Tag"
-
+import { StyledTag } from "../Tag";
 import type { Ref, Translation } from "../common/common.js.flow";
 
 import type { Props } from "./index";
@@ -201,14 +199,15 @@ export const Input = styled(
   color: inherit;
   background-color: transparent;
   cursor: inherit;
-  flex: 1 auto;
+  flex: 1 1 20%;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   z-index: 2;
 
   // FIREFOX flexbox bug: the input doesn't shrink properly
-  min-width: 0;
+  min-width: 100px;
 
   font-variant-numeric: ${({ type }) => type === TYPE_OPTIONS.PASSPORTID && "tabular-nums"};
   letter-spacing: ${({ type }) => type === TYPE_OPTIONS.PASSPORTID && "2px"};
@@ -270,25 +269,34 @@ const FormLabel = ({
 
 const StyledInputTags = styled.div`
   margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
-  min-width: 50px;
-  flex: 1 1 auto;
-  max-width: 80%;
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
+  height: 100%;
   z-index: 2;
-`
+  overflow: hidden;
+`;
 
 StyledInputTags.defaultProps = {
   theme: defaultTokens,
 };
 
 const StyledInputTagsInner = styled.div`
-  display: block;
   overflow-x: scroll;
   white-space: nowrap;
   
   &::-webkit-scrollbar { 
     display: none; 
   }
-`
+  
+  ${StyledTag} + ${StyledTag} {
+    margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
+  }
+`;
+
+StyledInputTagsInner.defaultProps = {
+  theme: defaultTokens,
+};
 
 // $FlowExpected
 const InputField = React.forwardRef((props: Props, ref: Ref) => {
@@ -331,12 +339,11 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
             <FormLabel label={label} isFilled={!!value} required={required} />
           </StyledInlineLabel>
         )}
-        {tags &&
-        <StyledInputTags>
-          <StyledInputTagsInner>
-            {tags}
-          </StyledInputTagsInner>
-        </StyledInputTags>}
+        {tags && (
+          <StyledInputTags>
+            <StyledInputTagsInner>{tags}</StyledInputTagsInner>
+          </StyledInputTags>
+        )}
         <Input
           data-test={dataTest}
           onChange={onChange}

@@ -15,6 +15,7 @@ Table below contains all types of the props available in InputField component.
 | disabled      | `boolean`                     |              | If `true`, the InputField will be disabled.
 | dataTest      | `string`                      |              | Optional prop for testing purposes.
 | error         | `React.Node`                  |              | The error to display beneath the InputField. [See Functional specs](#functional-specs)
+| tags          | `React.Node`                  |              | Here you can pass <Tag /> component for render tags
 | help          | `React.Node`                  |              | The help to display beneath the InputField.
 | label         | `Translation`                 |              | The label for the InputField. [See Functional specs](#functional-specs)
 | inlineLabel   | `boolean`                     |              | If true the label renders on the left side of input

@@ -35,26 +35,12 @@ StyledCardSectionContent.defaultProps = {
   theme: defaultTokens,
 };
 
-const getMaxHeight = ({ expandable, expanded, contentHeight }) => {
-  if (expandable) {
-    if (expanded) {
-      return `${contentHeight}px`;
-    }
-    return 0;
-  }
-  return "auto";
-};
-
 export const StyledCardSection = styled.div`
   width: 100%;
   padding: ${({ theme }) => theme.orbit.spaceLarge};
   box-sizing: border-box;
   position: relative;
   background: ${({ theme }) => theme.orbit.backgroundCard};
-
-  ${StyledCardSectionContent} {
-    max-height: ${getMaxHeight};
-  }
 `;
 
 StyledCardSection.defaultProps = {

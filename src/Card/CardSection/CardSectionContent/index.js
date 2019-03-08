@@ -4,21 +4,9 @@ import styled from "styled-components";
 
 import defaultTokens from "../../../defaultTokens";
 import { CardSectionContext } from "../index";
+import Slide, { StyledSlide } from "../../../utils/Slide";
 
 import type { Props, State } from "./index";
-
-const getMaxHeight = ({ expandable, expanded, contentHeight, visible }) => {
-  if (expandable) {
-    if ((expanded && contentHeight === 0) || visible) {
-      return "none";
-    }
-    if (expanded) {
-      return `${contentHeight}px`;
-    }
-    return 0;
-  }
-  return "none";
-};
 
 const hasPaddingTop = ({ expandable, expanded, visible }) => expanded || visible || !expandable;
 
@@ -33,11 +21,13 @@ export const StyledCardSectionContent = styled.div`
       : `0px solid ${theme.orbit.paletteCloudNormal}`};
   padding-top: ${({ theme, expandable, expanded, visible }) =>
     hasPaddingTop({ expandable, expanded, visible }) && theme.orbit.spaceLarge};
-  transition: max-height ${({ theme }) => theme.orbit.durationFast} linear,
-    padding ${({ theme }) => theme.orbit.durationFast} linear,
+  transition: padding ${({ theme }) => theme.orbit.durationFast} linear,
     border-top ${({ theme }) => theme.orbit.durationFast} linear;
-  max-height: ${getMaxHeight};
   overflow: hidden;
+
+  ${StyledSlide} {
+    max-height: ${({ expandable, visible }) => expandable && visible && "none"};
+  }
 `;
 
 StyledCardSectionContent.defaultProps = {
@@ -77,6 +67,11 @@ class CardSectionContent extends React.Component<Props, State> {
       ) {
         setTimeout(this.setHeight, 10);
       }
+
+      if (prevProps.expanded !== this.props.expanded) {
+        // Calculate height on expand - for dynamic components like TripSector
+        this.setHeight();
+      }
     }
   }
 
@@ -102,7 +97,13 @@ class CardSectionContent extends React.Component<Props, State> {
         visible={visible}
         contentHeight={this.state.contentHeight}
       >
-        <div ref={this.node}>{children}</div>
+        {expandable ? (
+          <Slide maxHeight={this.state.contentHeight} expanded={expanded}>
+            <div ref={this.node}>{children}</div>
+          </Slide>
+        ) : (
+          <div ref={this.node}>{children}</div>
+        )}
       </StyledCardSectionContent>
     );
   }

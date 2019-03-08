@@ -20,7 +20,7 @@ storiesOf("Hide", module)
     }),
   )
   .addWithChapters("With Separator", () => {
-    const block = boolean("display", true);
+    const block = boolean("block", true);
 
     return {
       info:

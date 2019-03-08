@@ -47,7 +47,7 @@ storiesOf("Hide", module)
     const largeMobile = boolean("largeMobile", false);
     const mediumMobile = boolean("mediumMobile", false);
     const smallMobile = boolean("smallMobile", false);
-    const block = boolean("display", false);
+    const block = boolean("block", false);
 
     const on = [
       largeDesktop && "largeDesktop",

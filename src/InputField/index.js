@@ -207,7 +207,7 @@ export const Input = styled(
   z-index: 2;
 
   // FIREFOX flexbox bug: the input doesn't shrink properly
-  min-width: 100px;
+  min-width: 0;
 
   font-variant-numeric: ${({ type }) => type === TYPE_OPTIONS.PASSPORTID && "tabular-nums"};
   letter-spacing: ${({ type }) => type === TYPE_OPTIONS.PASSPORTID && "2px"};
@@ -285,6 +285,8 @@ StyledInputTags.defaultProps = {
 const StyledInputTagsInner = styled.div`
   overflow-x: scroll;
   white-space: nowrap;
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
   
   &::-webkit-scrollbar { 
     display: none; 

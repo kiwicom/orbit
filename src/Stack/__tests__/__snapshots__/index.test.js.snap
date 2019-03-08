@@ -124,7 +124,7 @@ exports[`Default Stack should match snapshot 1`] = `
   box-sizing: border-box;
   border-radius: 3px;
   z-index: 2;
-  min-width: 100px;
+  min-width: 0;
 }
 
 .c4::-webkit-inner-spin-button,
@@ -7478,7 +7478,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                     [Function],
                                     ";color:inherit;background-color:transparent;cursor:inherit;flex:1 1 20%;width:100%;height:100%;box-sizing:border-box;border-radius:",
                                     [Function],
-                                    ";z-index:2;min-width:100px;font-variant-numeric:",
+                                    ";z-index:2;min-width:0;font-variant-numeric:",
                                     [Function],
                                     ";letter-spacing:",
                                     [Function],
@@ -15804,7 +15804,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   box-sizing: border-box;
   border-radius: 3px;
   z-index: 2;
-  min-width: 100px;
+  min-width: 0;
 }
 
 .c4::-webkit-inner-spin-button,
@@ -23257,7 +23257,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                       [Function],
                                       ";color:inherit;background-color:transparent;cursor:inherit;flex:1 1 20%;width:100%;height:100%;box-sizing:border-box;border-radius:",
                                       [Function],
-                                      ";z-index:2;min-width:100px;font-variant-numeric:",
+                                      ";z-index:2;min-width:0;font-variant-numeric:",
                                       [Function],
                                       ";letter-spacing:",
                                       [Function],
@@ -31580,7 +31580,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   box-sizing: border-box;
   border-radius: 3px;
   z-index: 2;
-  min-width: 100px;
+  min-width: 0;
 }
 
 .c4::-webkit-inner-spin-button,
@@ -38930,7 +38930,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                     [Function],
                                     ";color:inherit;background-color:transparent;cursor:inherit;flex:1 1 20%;width:100%;height:100%;box-sizing:border-box;border-radius:",
                                     [Function],
-                                    ";z-index:2;min-width:100px;font-variant-numeric:",
+                                    ";z-index:2;min-width:0;font-variant-numeric:",
                                     [Function],
                                     ";letter-spacing:",
                                     [Function],

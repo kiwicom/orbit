@@ -10,8 +10,6 @@ import CardHeader, { StyledCardHeader } from "./CardHeader";
 import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
 import { right } from "../utils/rtl";
-import { StyledCardSectionContent } from "./CardSection/CardSectionContent";
-import { StyledCardSectionHeader } from "./CardSection/CardSectionHeader";
 import CLOSE_BUTTON_DATA_TEST from "./consts";
 
 import type { Props, State } from "./index";
@@ -44,10 +42,6 @@ const StyledChildWrapper = styled.div`
 
   + div ${StyledCardSection}, ${StyledCardSection} { // If expanded - next CardSection and current CardSection will have border-top
     border-top: ${({ expanded }) => expanded && getBorder};
-
-    ${StyledCardSectionHeader}, ${StyledCardSectionContent} {
-      transition: ${({ initialExpanded }) => (initialExpanded ? "none" : undefined)}
-    }
   }
 `;
 

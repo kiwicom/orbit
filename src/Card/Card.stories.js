@@ -17,6 +17,9 @@ import Clock from "../icons/Clock";
 import CarrierLogo from "../CarrierLogo";
 import Stack from "../Stack";
 import Badge from "../Badge";
+import TripSector, { TripDate } from "../TripSector";
+import TripSegment from "../TripSegment";
+import List, { ListItem } from "../List";
 
 import Card, { CardHeader, CardSection, CardSectionHeader, CardSectionContent } from "./index";
 
@@ -313,6 +316,42 @@ storiesOf("Card", module)
                     </React.Fragment>
                   )}
                 </Loading>
+              </Card>
+            ),
+          },
+        ],
+      },
+    ],
+  }))
+  .addWithChapters("TripSector Card", () => ({
+    info: "TripSector in expandable Card to test if Whole TripSector is visible after expand",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <Card>
+                <CardSection expandable initialExpanded>
+                  <CardSectionHeader>Expandable dynamic height of Card</CardSectionHeader>
+                  <CardSectionContent>
+                    <TripSector dataTest="test">
+                      <TripDate>Mon 22 Oct</TripDate>
+                      <TripSegment
+                        carrier={{ code: "FR", type: "airline", name: "Ryanair" }}
+                        duration="2h"
+                        departure="Barcelona BCN"
+                        departureTime="6:30"
+                        arrival="Paris BVA"
+                        arrivalTime="8:30"
+                      >
+                        <List size="small" type="secondary">
+                          <ListItem>Airline: Ryanair</ListItem>
+                          <ListItem>Flight no: D8 1762</ListItem>
+                        </List>
+                      </TripSegment>
+                    </TripSector>
+                  </CardSectionContent>
+                </CardSection>
               </Card>
             ),
           },

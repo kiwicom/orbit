@@ -882,6 +882,8 @@ exports[`Badge should match snapshot 1`] = `
   >
     <Sightseeing />
   </Badge__IconContainer>
-  badge
+  <Badge__StyledBadgeContent>
+    badge
+  </Badge__StyledBadgeContent>
 </Badge__StyledBadge>
 `;

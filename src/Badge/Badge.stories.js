@@ -126,6 +126,26 @@ storiesOf("Badge", module)
       ],
     };
   })
+  .addWithChapters("Badge with translated node", () => {
+    return {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Badge icon={<Icons.Airplane />}>
+                  <span>Content should </span>
+                  <span>be</span>
+                  <span> with space</span>
+                </Badge>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Playground", () => {
     const content = text("Content", "Badge");
     const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO);

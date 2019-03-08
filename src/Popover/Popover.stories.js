@@ -25,7 +25,11 @@ storiesOf("Popover", module)
         {
           sections: [
             {
-              sectionFn: () => <Popover content="ContentTest">Test</Popover>,
+              sectionFn: () => (
+                <Popover content="ContentTest" trigger="click">
+                  Test
+                </Popover>
+              ),
             },
           ],
         },

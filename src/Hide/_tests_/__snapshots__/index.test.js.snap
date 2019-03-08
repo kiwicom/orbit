@@ -16,7 +16,7 @@ exports[`Hide should match snapshot 1`] = `
 
 @media (min-width:576px) {
   .c0 {
-    display: block;
+    display: none;
   }
 }
 
@@ -40,11 +40,11 @@ exports[`Hide should match snapshot 1`] = `
 
 <Hide
   block={true}
-  on="(min-width: 576px)"
+  on="largeMobile"
 >
   <Hide__StyledHide
     block={true}
-    on="(min-width: 576px)"
+    on="largeMobile"
   >
     <StyledComponent
       block={true}
@@ -72,7 +72,7 @@ exports[`Hide should match snapshot 1`] = `
         }
       }
       forwardedRef={null}
-      on="(min-width: 576px)"
+      on="largeMobile"
     >
       <span
         className="c0"

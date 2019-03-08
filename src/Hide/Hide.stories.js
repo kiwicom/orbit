@@ -20,7 +20,7 @@ storiesOf("Hide", module)
     }),
   )
   .addWithChapters("With Separator", () => {
-    const block = boolean("display", false);
+    const block = boolean("display", true);
 
     return {
       info:
@@ -30,7 +30,7 @@ storiesOf("Hide", module)
           sections: [
             {
               sectionFn: () => (
-                <Hide on={[]} block={block}>
+                <Hide on={["largeMobile"]} block={block}>
                   <Separator />
                 </Hide>
               ),

@@ -9,6 +9,7 @@ import { DEVICES } from "../../utils/mediaQuery/consts";
 
 describe("Hide", () => {
   const on = ["smallMobile", "largeMobile", "largeDesktop"];
+  console.log(on[1]);
   const block = false;
   const component = mount(
     <Hide on={on} block={block}>
@@ -38,8 +39,14 @@ describe("Hide", () => {
     expect(component).toHaveStyleRule("display", "none");
   });
   it("should be displayed block", () => {
-    component.setProps({ block: true, on: breakpoints[on[1]] });
+    component.setProps({ block: true, on: on[1] });
     expect(component).toHaveStyleRule("display", "block", {
+      media: breakpoints[on[2]],
+    });
+  });
+  it("should be none", () => {
+    component.setProps({ block: true, on: on[1] });
+    expect(component).toHaveStyleRule("display", "none", {
       media: breakpoints[on[1]],
     });
   });

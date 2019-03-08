@@ -10,8 +10,8 @@ export type Props = {|
   +children: React$Node,
   +expandable?: boolean,
   +initialExpanded?: boolean,
-  +onClose?: () => void,
-  +onExpand?: () => void,
+  +onClose?: () => void | Promise<any>,
+  +onExpand?: () => void | Promise<any>,
   ...Globals,
 |};
 

@@ -59,6 +59,28 @@ storiesOf("Heading", module)
       ],
     };
   })
+  .addWithChapters("Title displaySubtitle", () => {
+    const customTitle = text("Title", "Orbit design system");
+    const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
+    return {
+      title: "Title displaySubtitle",
+      info:
+        "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Heading type="displaySubtitle" element={element}>
+                  {customTitle}
+                </Heading>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
   .addWithChapters("Title 1", () => {
     const customTitle = text("Title", "Orbit design system");
     const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);

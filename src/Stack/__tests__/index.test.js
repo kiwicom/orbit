@@ -358,3 +358,65 @@ describe("Stack with mobile and some desktop properties", () => {
     });
   });
 });
+describe("Stack with every media query", () => {
+  const component = mount(
+    <Stack
+      direction={DIRECTIONS.ROW}
+      spacing={SPACINGS.NONE}
+      mediumMobile={{ direction: DIRECTIONS.COLUMN }}
+      largeMobile={{ spacing: SPACINGS.LOOSE }}
+      tablet={{ direction: DIRECTIONS.ROW }}
+      desktop={{ spacing: SPACINGS.EXTRATIGHT }}
+      largeDesktop={{ direction: DIRECTIONS.COLUMN }}
+    >
+      <InputField type="password" label="Password" help="You need some help!" />
+      <Button>Sign In</Button>
+    </Stack>,
+  );
+  const stack = component.find("Stack__StyledStack");
+  it("should contain default styles", () => {
+    expect(stack).toHaveStyleRule("flex-direction", "row");
+    expect(stack).not.toHaveStyleRule("margin", expect.any(String), {
+      modifier: "& > *",
+    });
+  });
+  it("should contain mediumMobile styles", () => {
+    expect(stack).toHaveStyleRule("flex-direction", "column", {
+      media: breakpoints.mediumMobile,
+    });
+    expect(stack).not.toHaveStyleRule("margin", expect.any(String), {
+      media: breakpoints.mediumMobile,
+      modifier: "& > *",
+    });
+  });
+  it("should contain largeMobile styles", () => {
+    expect(stack).toHaveStyleRule("margin", "0 0 28px 0!important", {
+      media: breakpoints.largeMobile,
+      modifier: "& > *",
+    });
+  });
+  it("should contain tablet styles", () => {
+    expect(stack).toHaveStyleRule("flex-direction", "row", {
+      media: breakpoints.tablet,
+    });
+    expect(stack).toHaveStyleRule("margin", "0 32px 0 0!important", {
+      media: breakpoints.tablet,
+      modifier: "& > *",
+    });
+  });
+  it("should contain desktop styles", () => {
+    expect(stack).toHaveStyleRule("margin", "0 2px 0 0!important", {
+      media: breakpoints.desktop,
+      modifier: "& > *",
+    });
+  });
+  it("should contain largeDesktop styles", () => {
+    expect(stack).toHaveStyleRule("flex-direction", "column", {
+      media: breakpoints.largeDesktop,
+    });
+    expect(stack).toHaveStyleRule("margin", "0 0 2px 0!important", {
+      media: breakpoints.largeDesktop,
+      modifier: "& > *",
+    });
+  });
+});

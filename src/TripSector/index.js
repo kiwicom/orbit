@@ -33,7 +33,9 @@ const StyledTripSector = styled.div`
       content: " ";
       position: absolute;
       top: 13px;
+      right: 0;
       bottom: 0;
+      left: 0;
       width: 16px;
       background: ${({ theme }) => theme.orbit.paletteWhite};
     }

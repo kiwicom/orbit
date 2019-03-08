@@ -69,13 +69,14 @@ All this properties - objects have the some own properties and none is required.
 
 ### spacing
 
-| name              | mobile          | desktop     |
-| :---------------- | :-------------- | :---------- |
-| `"extraTight"`    | `2px`           | `2px`       |
-| `"tight"`         | `4px`           | `4px`       |
-| `"condensed"`     | `8px`           | `8px`       |
-| `"compact"`       | `12px`          | `12px`      |
-| `"natural"`       | `16px`          | `16px`      |
-| `"comfy"`         | `20px`          | `24px`      |
-| `"loose"`         | `28px`          | `32px`      |
-| `"extraLoose"`    | `36px`          | `40px`      |
+| name              | size on `0 - 991px` | size on `992px - ∞` |
+| :---------------- | :------------------ | :------------------ |
+| `"none"`          | `null`              | `null`              |
+| `"extraTight"`    | `2px`               | `2px`               |
+| `"tight"`         | `4px`               | `4px`               |
+| `"condensed"`     | `8px`               | `8px`               |
+| `"compact"`       | `12px`              | `12px`              |
+| `"natural"`       | `16px`              | `16px`              |
+| `"comfy"`         | `20px`              | `24px`              |
+| `"loose"`         | `28px`              | `32px`              |
+| `"extraLoose"`    | `36px`              | `40px`              |

@@ -14,6 +14,7 @@ import ButtonLink from "../ButtonLink";
 import TextLink from "../TextLink";
 import ServiceLogo from "../ServiceLogo";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import Tag from "../Tag";
 
 import InputField from "./index";
 
@@ -265,6 +266,44 @@ storiesOf("InputField", module)
                 <InputField
                   label={label}
                   inlineLabel
+                  error={error}
+                  value={value}
+                  placeholder={placeholder}
+                  required={required}
+                  onChange={action("change")}
+                />
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Compact input with tags", () => {
+    const value = text("Value", "");
+    const label = text("Label", "Label");
+    const placeholder = text("Placeholder", "Placeholder");
+    const required = boolean("required", false);
+    const error = text("Error", undefined);
+
+    return {
+      info: "Compact input with FormLabel as prefix",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <InputField
+                  label={label}
+                  inlineLabel
+                  tags={
+                    <div>
+                      <Tag selected onRemove={action("onRemove")}>
+                        Brno
+                      </Tag>
+                      <Tag onRemove={action("onRemove")}>Praha</Tag>
+                    </div>
+                  }
                   error={error}
                   value={value}
                   placeholder={placeholder}

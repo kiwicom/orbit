@@ -3,7 +3,7 @@ import { css } from "styled-components";
 
 import getDesktopSpacing from "./getDesktopSpacing";
 import { rtlSpacing } from "../../utils/rtl";
-import { DIRECTIONS } from "../consts";
+import { DIRECTIONS, SPACINGS } from "../consts";
 import isMobileViewport from "./isMobileViewport";
 import getMobileSpacing from "./getMobileSpacing";
 import getProperty from "./getProperty";
@@ -12,9 +12,10 @@ import type { GetChildrenMargin } from "./getChildrenMargin";
 
 const getChildrenMargin: GetChildrenMargin = ({ viewport, index, devices }) => props => {
   if (props[viewport] || viewport === DEVICES.DESKTOP) {
+    const spacing = getProperty("spacing", { index, devices }, props);
+    if (spacing === SPACINGS.NONE) return false;
     const isMobile = isMobileViewport(viewport);
     const spacingTokens = isMobile ? getMobileSpacing() : getDesktopSpacing();
-    const spacing = getProperty("spacing", { index, devices }, props);
     const direction = getProperty("direction", { index, devices }, props);
     const margin =
       spacing &&

@@ -119,7 +119,9 @@ Promise.all(
           });
           const commentsObject = Object.assign({}, ...comments);
           const url = `https://raw.githubusercontent.com/kiwicom/orbit-components/master/src/icons/svg/${baseName}.svg`;
-          resolve({ [baseName]: { ...commentsObject, url } });
+          const dom = JSDOM.fragment(content);
+          const svg = dom.querySelector("svg").outerHTML;
+          resolve({ [baseName]: { ...commentsObject, svg, url } });
         });
       }),
   ),

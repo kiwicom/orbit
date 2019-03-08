@@ -67,14 +67,14 @@ import Card, { CardSection } from "@kiwicom/orbit-components/lib/Card";
 #### Props
 Table below contains all types of the props in CardSection component.
 
-| Name            | Type                  | Default         | Description                      |
-| :---------------| :---------------------| :-------------- | :------------------------------- |
-| **children**    | `React.Node`          |                 | The content of the CardSection.
-| expandable      | `boolean`             |                 | CardSection could be expandable
-| initialExpanded | `boolean`             |                 | CardSection is expanded by default
-| onClose         | `() => void`          |                 | Callback after close
-| onExpand        | `() => void`          |                 | Callback after expand
-| dataTest        | `string`              |                 | Optional prop for testing purposes.
+| Name            | Type                   | Default         | Description                      |
+| :---------------| :--------------------- | :-------------- | :------------------------------- |
+| **children**    | `React.Node`           |                 | The content of the CardSection.
+| expandable      | `boolean`              |                 | CardSection could be expandable
+| initialExpanded | `boolean`              |                 | CardSection is expanded by default
+| onClose         | `() => void \| Promise`|                 | Callback after close
+| onExpand        | `() => void \| Promise`|                 | Callback after expand
+| dataTest        | `string`               |                 | Optional prop for testing purposes.
 
 
 ### CardSectionHeader

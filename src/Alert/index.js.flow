@@ -10,7 +10,7 @@ export type Props = {|
   +title?: Translation,
   +icon?: React$Element<any> | boolean,
   +closable?: boolean,
-  +onClose?: () => void,
+  +onClose?: () => void | Promise<any> ,
   ...Globals,
   ...spaceAfter,
 |};

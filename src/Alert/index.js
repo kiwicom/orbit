@@ -154,7 +154,6 @@ const Content = styled(StyledDiv)`
     color: ${getTypeToken(TOKENS.colorTextAlert)};
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
     transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-    text-decoration: none;
     &:hover {
       color: ${({ theme }) => theme.orbit.colorTextAlertLink};
     }

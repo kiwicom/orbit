@@ -16,9 +16,7 @@ const StyledButtonGroup = styled.div`
     border-radius: ${({ connected }) => connected && "0"};
     margin: ${({ theme, connected }) =>
       rtlSpacing(
-        connected
-          ? `0 ${theme.orbit.marginRightButtonGroup} 0 0`
-          : `0 ${theme.orbit.spaceXSmall} 0 0`,
+        connected ? theme.orbit.marginButtonGroupConnected : theme.orbit.marginButtonGroup,
       )};
 
     &:first-child {

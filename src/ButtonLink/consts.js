@@ -20,6 +20,8 @@ export const TOKENS = {
   heightButton: "heightButton",
   fontSizeButton: "fontSizeButton",
   paddingButton: "paddingButton",
-  paddingButtonWithIcon: "paddingButtonWithIcon",
+  paddingButtonWithIcons: "paddingButtonWithIcons",
+  paddingButtonWithLeftIcon: "paddingButtonWithLeftIcon",
+  paddingButtonWithRightIcon: "paddingButtonWithRightIcon",
   marginRightIcon: "marginRightIcon",
 };

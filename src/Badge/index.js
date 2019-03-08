@@ -63,11 +63,7 @@ const IconContainer = styled(({ className, children }) => (
 ))`
   display: flex;
   flex-shrink: 0;
-  margin: ${({ theme, hasContent }) =>
-    hasContent &&
-    rtlSpacing(
-      `0 ${theme.orbit.marginRightBadgeIcon} 0 0`,
-    )}; // TODO: change token to four direction one
+  margin: ${({ theme, hasContent }) => hasContent && rtlSpacing(theme.orbit.marginBadgeIcon)};
 
   svg {
     height: ${({ theme }) => theme.orbit.widthIconSmall};

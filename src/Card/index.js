@@ -7,6 +7,7 @@ import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
 import CardSection, { StyledCardSection } from "./CardSection";
 import CardHeader, { StyledCardHeader } from "./CardHeader";
+import { StyledCardSectionContent } from "./CardSection/CardSectionContent"
 import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
 import { right } from "../utils/rtl";
@@ -71,6 +72,10 @@ const StyledCard = styled.div`
 
       + ${StyledChildWrapper} ${StyledCardSection} {
         padding-top: ${({ hasAdjustedHeader }) => hasAdjustedHeader && 0};
+        
+        ${StyledCardSectionContent}:first-of-type { // if there isn't any CardSectionHeader we need to delete padding of CardSectionContent 
+          padding-top: ${({ hasAdjustedHeader }) => hasAdjustedHeader && 0};
+        }
       }
     }
 

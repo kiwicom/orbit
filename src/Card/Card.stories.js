@@ -387,10 +387,12 @@ storiesOf("Card", module)
                     dataTest={dataTest}
                   />
                   <CardSection dataTest={dataTest}>
-                    <Heading type="title3" element="h3">
-                      Content with Heading and text
-                    </Heading>
-                    <Text>Text in content</Text>
+                    <CardSectionContent>
+                      <Heading type="title3" element="h3">
+                        Content with Heading and text
+                      </Heading>
+                      <Text>Text in content</Text>
+                    </CardSectionContent>
                   </CardSection>
                   <CardSection dataTest={dataTest}>
                     <Heading type="title3" element="h3">

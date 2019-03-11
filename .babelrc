@@ -1,0 +1,12 @@
+{
+  "presets": ["es2015"],
+  "plugins": [
+    [
+      "replace-import-path",
+      {
+        "src": "ramda/es/mergeDeepRight",
+        "dest": "ramda/src/mergeDeepRight"
+      }
+    ]
+  ]
+}

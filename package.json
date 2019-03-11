@@ -23,7 +23,7 @@
     "build-web": "theo ./src/theo/theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",
     "build-ios": "theo ./src/theo/theo-spec.json --transform ios --format ios.json --dest ./output",
     "build-android": "theo ./src/theo/theo-spec.json --transform android --format android.xml --dest ./output",
-    "build:module": "babel --plugins babel-plugin-require-to-import --no-babelrc --out-dir es --ignore **/*.test.js lib",
+    "build:lib": "babel --out-dir lib --ignore **/*.test.js es",
     "build": "yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android",
     "ci-publish": "ci-publish",
     "test": "jest",
@@ -41,10 +41,10 @@
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
-    "babel-plugin-require-to-import": "^0.0.4",
+    "babel-plugin-replace-import-path": "^0.5.0",
     "babylon": "^6.18.0",
     "ci-publish": "^1.3.1",
-    "eslint": "^5.14.1",
+    "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.1.0",
@@ -60,6 +60,7 @@
     "theo": "^8.1.2"
   },
   "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
     "ramda": "^0.26.1"
   }
 }

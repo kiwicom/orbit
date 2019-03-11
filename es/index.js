@@ -4,7 +4,6 @@ import convertHexToRgba from "./convertHexToRgba";
 
 function getTokens(customFoundation) {
   // By default it takes base foundation config
-
   const theme = customFoundation ? mergeDeepRight(foundation, customFoundation) : foundation;
 
   return {

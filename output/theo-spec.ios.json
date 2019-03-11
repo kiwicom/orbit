@@ -325,19 +325,13 @@
       "name": "colorTextButtonSecondaryBorderedActive"
     },
     {
-      "value": "8px",
-      "type": "size",
-      "category": "Spacing",
-      "name": "paddingButtonSmallWithIcon"
-    },
-    {
       "value": "rgb(210, 28, 28)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorInputErrorFocus"
     },
     {
-      "value": "12px",
+      "value": "0 12px",
       "type": "size",
       "category": "Spacing",
       "name": "paddingButtonSmall"
@@ -401,6 +395,12 @@
       "type": "color",
       "category": "Border color",
       "name": "borderColorInputFocus"
+    },
+    {
+      "value": "0 12px 0 16px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonNormalWithRightIcon"
     },
     {
       "value": "rgb(178, 23, 23)",
@@ -734,12 +734,6 @@
       "name": "colorTextBadgeWarning"
     },
     {
-      "value": "12px",
-      "type": "size",
-      "category": "Spacing",
-      "name": "paddingButtonNormalWithIcon"
-    },
-    {
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "category": "Background colors",
@@ -825,7 +819,7 @@
       "name": "colorIconInfo"
     },
     {
-      "value": "16px",
+      "value": "0 16px",
       "type": "size",
       "category": "Spacing",
       "name": "paddingButtonNormal"
@@ -843,6 +837,12 @@
       "name": "heightInputNormal"
     },
     {
+      "value": "0 1px 0 0",
+      "type": "size",
+      "category": "Spacing",
+      "name": "marginButtonGroupConnected"
+    },
+    {
       "value": "20px",
       "type": "size",
       "category": "Size (width, height)",
@@ -853,6 +853,12 @@
       "type": "color",
       "category": "Border color",
       "name": "borderColorButtonPrimaryBorderedActive"
+    },
+    {
+      "value": "0 12px 0 8px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonSmallWithLeftIcon"
     },
     {
       "value": "rgb(70, 81, 94)",
@@ -903,6 +909,12 @@
       "name": "paletteProductDark"
     },
     {
+      "value": "0 12px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonNormalWithIcons"
+    },
+    {
       "value": "rgb(70, 81, 94)",
       "type": "color",
       "category": "Background colors",
@@ -913,6 +925,12 @@
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLight"
+    },
+    {
+      "value": "0 8px 0 12px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonSmallWithRightIcon"
     },
     {
       "value": 0.95,
@@ -1179,6 +1197,12 @@
       "name": "paletteSocialFacebook"
     },
     {
+      "value": "0 4px 0 0",
+      "type": "size",
+      "category": "Spacing",
+      "name": "marginBadgeIcon"
+    },
+    {
       "value": "rgb(56, 84, 144)",
       "type": "color",
       "category": "Color palette",
@@ -1189,12 +1213,6 @@
       "type": "color",
       "category": "Color palette",
       "name": "paletteGreenLightHover"
-    },
-    {
-      "value": "4px",
-      "type": "size",
-      "category": "Spacing",
-      "name": "marginRightBadgeIcon"
     },
     {
       "value": "32px",
@@ -1330,6 +1348,12 @@
       "name": "borderColorButtonGoogleBorderedHover"
     },
     {
+      "value": "12px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeHeadingTitle5"
+    },
+    {
       "value": "rgb(229, 234, 239)",
       "type": "color",
       "category": "Background colors",
@@ -1384,6 +1408,12 @@
       "name": "textDecorationTextLinkSecondary"
     },
     {
+      "value": "0 8px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonSmallWithIcons"
+    },
+    {
       "value": "rgb(70, 182, 85)",
       "type": "color",
       "category": "Colors",
@@ -1394,6 +1424,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonInfo"
+    },
+    {
+      "value": "0 16px 0 12px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonNormalWithLeftIcon"
     },
     {
       "value": "2px",
@@ -1598,6 +1634,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonCriticalBorderedActive"
+    },
+    {
+      "value": "0",
+      "type": "string",
+      "category": "Spacing",
+      "name": "paddingButtonWithoutText"
     },
     {
       "value": "rgb(210, 28, 28)",
@@ -1930,12 +1972,6 @@
       "name": "borderColorCheckboxRadioFocus"
     },
     {
-      "value": "16px",
-      "type": "size",
-      "category": "Spacing",
-      "name": "paddingButtonLargeWithIcon"
-    },
-    {
       "value": "14px",
       "type": "size",
       "category": "Font size",
@@ -1984,6 +2020,12 @@
       "name": "colorTextAlertSuccess"
     },
     {
+      "value": "0 16px 0 28px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonLargeWithRightIcon"
+    },
+    {
       "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "Border color",
@@ -1994,6 +2036,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextError"
+    },
+    {
+      "value": "700",
+      "type": "string",
+      "category": "Font weight",
+      "name": "fontWeightHeadingTitle5"
     },
     {
       "value": "rgb(255, 255, 255)",
@@ -2038,7 +2086,7 @@
       "name": "colorIconSecondary"
     },
     {
-      "value": "28px",
+      "value": "0 28px",
       "type": "size",
       "category": "Spacing",
       "name": "paddingButtonLarge"
@@ -2056,7 +2104,7 @@
       "name": "colorTextButtonLinkSecondary"
     },
     {
-      "value": "rgb(0, 169, 145)",
+      "value": "rgb(0, 130, 111)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextLinkPrimary"
@@ -2356,6 +2404,12 @@
       "name": "fontWeightMedium"
     },
     {
+      "value": "0 16px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonLargeWithIcons"
+    },
+    {
       "value": "24px",
       "type": "size",
       "category": "Size (width, height)",
@@ -2477,7 +2531,7 @@
       "name": "heightInputGroupSeparatorSmall"
     },
     {
-      "value": "none",
+      "value": "underline",
       "type": "string",
       "category": "Text decoration",
       "name": "textDecorationTextLinkPrimary"
@@ -2493,6 +2547,12 @@
       "type": "color",
       "category": "Border color",
       "name": "borderColorButtonWarningBorderedHover"
+    },
+    {
+      "value": "0 28px 0 16px",
+      "type": "size",
+      "category": "Spacing",
+      "name": "paddingButtonLargeWithLeftIcon"
     },
     {
       "value": "rgb(127, 145, 168)",
@@ -2523,12 +2583,6 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextInfo"
-    },
-    {
-      "value": "1px",
-      "type": "size",
-      "category": "Spacing",
-      "name": "marginRightButtonGroup"
     },
     {
       "value": "rgb(214, 222, 230)",
@@ -2571,6 +2625,12 @@
       "type": "color",
       "category": "Color palette",
       "name": "paletteOrangeDark"
+    },
+    {
+      "value": "0 8px 0 0",
+      "type": "size",
+      "category": "Spacing",
+      "name": "marginButtonGroup"
     }
   ]
 }

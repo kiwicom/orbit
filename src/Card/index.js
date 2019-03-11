@@ -7,7 +7,7 @@ import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
 import CardSection, { StyledCardSection } from "./CardSection";
 import CardHeader, { StyledCardHeader } from "./CardHeader";
-import { StyledCardSectionContent } from "./CardSection/CardSectionContent"
+import { StyledCardSectionContent } from "./CardSection/CardSectionContent";
 import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
 import { right } from "../utils/rtl";

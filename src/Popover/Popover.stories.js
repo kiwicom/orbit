@@ -6,6 +6,8 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select, array } from "@storybook/addon-knobs";
 
+import Button from "../Button";
+
 import Popover from "./index";
 
 setAddon(chaptersAddon);
@@ -26,8 +28,10 @@ storiesOf("Popover", module)
           sections: [
             {
               sectionFn: () => (
-                <Popover content="ContentTest" trigger="click">
-                  Test
+                <Popover content="ContentTest">
+                  <Button block={false} type="primary" size="small">
+                    Button
+                  </Button>
                 </Popover>
               ),
             },

@@ -109,27 +109,26 @@ class Popover extends React.PureComponent<Props, State> {
   };
 
   handleIn = () => {
-    if (this.props.trigger === "hover") {
-      this.setDimensions();
-      this.setState({ shown: true });
-    }
+    this.setDimensions();
+    this.setState({ shown: true });
   };
 
   handleOut = () => {
-    if (this.props.trigger === "hover") {
-      this.setState({ shown: false });
-    }
+    this.setState({ shown: false });
   };
 
   handleClick = () => {
-    if (this.props.trigger === "click") {
-      this.setDimensions();
-      this.setState({ shown: true });
-    }
+    this.setDimensions();
+    this.setState({ shown: !this.state.shown });
   };
 
   handleClickOutside = () => {
-    this.setState({ shown: false });
+    this.timeOutOutside = setTimeout(() => {
+      this.setState({ shown: false });
+    });
+  };
+  handleClickContent = () => {
+    clearTimeout(this.timeOutOutside);
   };
 
   container: { current: any | HTMLDivElement } = React.createRef();
@@ -147,7 +146,7 @@ class Popover extends React.PureComponent<Props, State> {
   contentHeight: number = 0;
 
   render() {
-    const { children, content, trigger = "click" } = this.props;
+    const { children, content } = this.props;
     const { shown } = this.state;
     const {
       containerTop,
@@ -159,17 +158,9 @@ class Popover extends React.PureComponent<Props, State> {
     } = this;
     return (
       <React.Fragment>
-        <PopoverChild
-          onClick={this.handleClick}
-          onMouseEnter={this.handleIn}
-          onMouseLeave={this.handleOut}
-          onFocus={this.handleIn}
-          onBlur={this.handleOut}
-          ref={this.container}
-        >
+        <PopoverChild onClick={this.handleClick} ref={this.container}>
           <ClickOutside onClickOutside={this.handleClickOutside}>{children}</ClickOutside>
         </PopoverChild>
-
         <Portal>
           <PopoverParent
             shown={shown}
@@ -180,6 +171,7 @@ class Popover extends React.PureComponent<Props, State> {
             popoverHeight={popoverHeight}
             popoverWidth={popoverWidth}
             ref={this.popover}
+            onClick={this.handleClickContent}
           >
             <PopoverContent ref={this.content}>{content}</PopoverContent>
           </PopoverParent>

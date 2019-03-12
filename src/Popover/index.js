@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import Portal from "../Portal";
+import ReactDOM from "react-dom";
 
 import ClickOutside from "../ClickOutside";
 
@@ -51,14 +52,10 @@ PopoverContent.defaultProps = {
 
 const PopoverParent = styled.div`
   position: absolute;
-  background: blue;
   ${css`
     ${resolvePopoverPosition}
     ${resolvePopoverAnchor}
   `}
-  opacity: ${({ shown }) => (shown ? "1" : "0")};
-  visibility: ${shown => (shown ? "visible" : "none")};
-  pointer-events: ${shown => (shown ? "auto" : "none")};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   background-color: #ffffff;
   padding: ${({ theme }) => theme.orbit.spaceSmall};
@@ -75,9 +72,70 @@ class Popover extends React.PureComponent<Props, State> {
     shown: false,
   };
 
+  handleIn = () => {
+    this.setState({ shown: true });
+  };
+
+  handleOut = () => {
+    this.setState({ shown: false });
+  };
+
+  handleClick = () => {
+    this.setState({ shown: !this.state.shown });
+  };
+
+  handleClickOutside = () => {
+    this.timeOutOutside = setTimeout(() => {
+      this.setState({ shown: false });
+    });
+  };
+  handleClickContent = () => {
+    clearTimeout(this.timeOutOutside);
+  };
+
+  container: { current: any | HTMLDivElement } = React.createRef();
+
+  render() {
+    const { shown } = this.state;
+    const { children, content } = this.props;
+    const { handleClickContent } = this;
+
+    return (
+      <React.Fragment>
+        <PopoverChild onClick={this.handleClick} ref={this.container}>
+          <ClickOutside onClickOutside={this.handleClickOutside}>{children}</ClickOutside>
+        </PopoverChild>
+        {shown && (
+          <Portal>
+            <PopoverContentWrapper
+              containerRef={this.container}
+              content={content}
+              handleClickContent={handleClickContent}
+            />
+          </Portal>
+        )}
+      </React.Fragment>
+    );
+  }
+}
+
+class PopoverContentWrapper extends React.PureComponent<Props, State> {
+  state = {
+    reRender: false,
+  };
+
+  componentDidMount() {
+    this.setDimensions();
+  }
+
   setDimensions = () => {
-    if (this.container && this.popover && this.content && typeof window !== "undefined") {
-      const containerDimensions = this.container.current.getBoundingClientRect();
+    if (
+      this.props.containerRef.current &&
+      this.popover &&
+      this.content &&
+      typeof window !== "undefined"
+    ) {
+      const containerDimensions = this.props.containerRef.current.getBoundingClientRect();
       const popoverDimensions = this.popover.current.getBoundingClientRect();
 
       // container positions and dimensions for calculation
@@ -105,35 +163,10 @@ class Popover extends React.PureComponent<Props, State> {
 
       this.contentHeight =
         this.content.current && this.content.current.getBoundingClientRect().height;
+
+      this.setState({ reRender: !this.state.reRender });
     }
   };
-
-  handleIn = () => {
-    this.setDimensions();
-    this.setState({ shown: true });
-  };
-
-  handleOut = () => {
-    this.setState({ shown: false });
-  };
-
-  handleClick = () => {
-    this.setDimensions();
-    this.setState({ shown: !this.state.shown });
-  };
-
-  handleClickOutside = () => {
-    this.timeOutOutside = setTimeout(() => {
-      this.setState({ shown: false });
-    });
-  };
-  handleClickContent = () => {
-    clearTimeout(this.timeOutOutside);
-  };
-
-  container: { current: any | HTMLDivElement } = React.createRef();
-  popover: { current: any | HTMLDivElement } = React.createRef();
-  content: { current: any | HTMLDivElement } = React.createRef();
 
   containerTop: number = 0;
   containerLeft: number = 0;
@@ -145,9 +178,10 @@ class Popover extends React.PureComponent<Props, State> {
   windowHeight: number = 0;
   contentHeight: number = 0;
 
+  popover: { current: any | HTMLDivElement } = React.createRef();
+  content: { current: any | HTMLDivElement } = React.createRef();
+
   render() {
-    const { children, content } = this.props;
-    const { shown } = this.state;
     const {
       containerTop,
       containerLeft,
@@ -156,28 +190,24 @@ class Popover extends React.PureComponent<Props, State> {
       popoverHeight,
       popoverWidth,
     } = this;
+    const { shown, content, handleClickContent } = this.props;
     return (
-      <React.Fragment>
-        <PopoverChild onClick={this.handleClick} ref={this.container}>
-          <ClickOutside onClickOutside={this.handleClickOutside}>{children}</ClickOutside>
-        </PopoverChild>
-        <Portal>
-          <PopoverParent
-            shown={shown}
-            containerTop={containerTop}
-            containerLeft={containerLeft}
-            containerHeight={containerHeight}
-            containerWidth={containerWidth}
-            popoverHeight={popoverHeight}
-            popoverWidth={popoverWidth}
-            ref={this.popover}
-            onClick={this.handleClickContent}
-          >
-            <PopoverContent ref={this.content}>{content}</PopoverContent>
-          </PopoverParent>
-        </Portal>
-      </React.Fragment>
+      <PopoverParent
+        shown={shown}
+        containerTop={containerTop}
+        containerLeft={containerLeft}
+        containerHeight={containerHeight}
+        containerWidth={containerWidth}
+        popoverHeight={popoverHeight}
+        popoverWidth={popoverWidth}
+        ref={this.popover}
+        reRender={this.state.reRender}
+        onClick={handleClickContent}
+      >
+        <PopoverContent ref={this.content}>{content}</PopoverContent>
+      </PopoverParent>
     );
   }
 }
+
 export default Popover;

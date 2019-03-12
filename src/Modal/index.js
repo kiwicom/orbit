@@ -300,9 +300,6 @@ class Modal extends React.PureComponent<Props, State> {
       this.decideFixedFooter();
       this.setDimensions();
     }
-    if (this.props.setScroll && this.props.setScroll !== prevProps.setScroll) {
-      this.setScrollPosition(this.props.setScroll);
-    }
   }
 
   componentWillUnmount() {

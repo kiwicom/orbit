@@ -30,7 +30,6 @@ export type Props = {|
   +children: Array<Children> | Children,
   +onClose?: onClose,
   +fixedFooter?: boolean,
-  +setScroll?: number,
   ...Globals,
 |};
 

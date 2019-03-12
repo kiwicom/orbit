@@ -48,6 +48,11 @@ storiesOf("Modal", module)
     const title = text("Title", "Orbit design system");
     const description = text("Title", "I'm lovely description");
 
+    const modalRef: { current: null | React$ElementRef<*> } = React.createRef();
+
+    if (modalRef.current) {
+      setTimeout(() => modalRef.current.setScrollPosition(100), 100);
+    }
     const onClose = action("onClose");
     const content = text(
       "Content",
@@ -61,7 +66,7 @@ storiesOf("Modal", module)
           sections: [
             {
               sectionFn: () => (
-                <Modal onClose={onClose} size={size}>
+                <Modal onClose={onClose} size={size} ref={modalRef}>
                   <ModalHeader title={title}>{description}</ModalHeader>
                   <ModalSection>
                     <Text>{content}</Text>
@@ -527,7 +532,6 @@ storiesOf("Modal", module)
     const flex = array("Flex", ["0 0 auto", "1 1 100%"]);
     const dataTest = text("dataTest", "test");
     const showBack = boolean("showBackButton", true);
-    const setScroll = number("setScroll", 0);
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -536,13 +540,7 @@ storiesOf("Modal", module)
           sections: [
             {
               sectionFn: () => (
-                <Modal
-                  onClose={onClose}
-                  size={size}
-                  fixedFooter={fixed}
-                  dataTest={dataTest}
-                  setScroll={setScroll}
-                >
+                <Modal onClose={onClose} size={size} fixedFooter={fixed} dataTest={dataTest}>
                   <ModalHeader
                     title={title}
                     illustration={illustration && <Illustration name={illustration} size="small" />}

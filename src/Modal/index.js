@@ -14,6 +14,7 @@ import { StyledHeading } from "../Heading";
 import { right } from "../utils/rtl";
 import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
+import { DEVICES_WIDTH } from "../utils/mediaQuery/consts";
 
 import type { Props, State } from "./index";
 
@@ -98,10 +99,25 @@ ModalWrapper.defaultProps = {
 
 const CloseContainer = styled.div`
   display: flex;
+  // -ms-page needs to set up for IE on max largeMobile
+  ${({ scrolled, fixedClose }) =>
+    fixedClose || scrolled
+      ? css`
+          position: fixed;
+          ${onlyIE(
+            css`
+              position: -ms-page;
+            `,
+            `(max-width:${DEVICES_WIDTH.largeMobile - 1}px)`,
+          )};
+        `
+      : css`
+          position: absolute;
+        `};
   position: ${({ scrolled, fixedClose }) => (fixedClose || scrolled ? "fixed" : "absolute")};
   top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled ? "32px" : "0")};
   right: 0;
-  z-index: 10;
+  z-index: 800;
   justify-content: flex-end;
   align-items: center;
   box-sizing: border-box;
@@ -193,6 +209,14 @@ const ModalWrapperContent = styled.div`
     opacity ${theme.orbit.durationFast} ease-in-out,
     visibility ${theme.orbit.durationFast} ease-in-out ${theme.orbit.durationFast}`};
   }
+
+  ${({ scrolled }) =>
+    scrolled &&
+    onlyIE(css`
+      ${MobileHeader} {
+        position: -ms-page;
+      }
+    `)}};
 
   ${StyledModalHeader} {
     margin-bottom: ${({ hasModalSection, theme }) => !hasModalSection && theme.orbit.spaceXLarge};

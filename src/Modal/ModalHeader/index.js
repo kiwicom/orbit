@@ -120,7 +120,7 @@ export const MobileHeader = styled.div`
   transition: top ${({ theme }) => theme.orbit.durationFast} ease-in-out,
     opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out,
     visibility ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  z-index: 10;
+  z-index: 800;
 
   ${media.largeMobile(css`
     left: auto;

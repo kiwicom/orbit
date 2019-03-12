@@ -4,7 +4,7 @@ import { storiesOf, setAddon } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, text, boolean, select, array, number } from "@storybook/addon-knobs";
+import { withKnobs, text, boolean, select, array } from "@storybook/addon-knobs";
 
 import Button from "../Button";
 import { SIZES } from "./consts";
@@ -47,12 +47,6 @@ storiesOf("Modal", module)
     const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
     const title = text("Title", "Orbit design system");
     const description = text("Title", "I'm lovely description");
-
-    const modalRef: { current: null | React$ElementRef<*> } = React.createRef();
-
-    if (modalRef.current) {
-      setTimeout(() => modalRef.current.setScrollPosition(100), 100);
-    }
     const onClose = action("onClose");
     const content = text(
       "Content",
@@ -66,7 +60,7 @@ storiesOf("Modal", module)
           sections: [
             {
               sectionFn: () => (
-                <Modal onClose={onClose} size={size} ref={modalRef}>
+                <Modal onClose={onClose} size={size}>
                   <ModalHeader title={title}>{description}</ModalHeader>
                   <ModalSection>
                     <Text>{content}</Text>

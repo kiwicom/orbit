@@ -47,9 +47,7 @@ PopoverChild.defaultProps = {
   theme: defaultTokens,
 };
 
-const PopoverContent = styled.div`
-  background: transparent;
-`;
+const PopoverContent = styled.div``;
 PopoverContent.defaultProps = {
   theme: defaultTokens,
 };
@@ -61,7 +59,7 @@ const PopoverParent = styled.div`
     ${resolvePopoverAnchor}
   `}
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
   padding: ${({ theme }) => theme.orbit.spaceSmall};
   padding-top: ${({ theme }) => theme.orbit.spaceMedium};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};

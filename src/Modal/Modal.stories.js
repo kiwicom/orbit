@@ -4,7 +4,7 @@ import { storiesOf, setAddon } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, text, boolean, select, array } from "@storybook/addon-knobs";
+import { withKnobs, text, boolean, select, array, number } from "@storybook/addon-knobs";
 
 import Button from "../Button";
 import { SIZES } from "./consts";
@@ -527,6 +527,7 @@ storiesOf("Modal", module)
     const flex = array("Flex", ["0 0 auto", "1 1 100%"]);
     const dataTest = text("dataTest", "test");
     const showBack = boolean("showBackButton", true);
+    const setScroll = number("setScroll", 0);
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -535,7 +536,13 @@ storiesOf("Modal", module)
           sections: [
             {
               sectionFn: () => (
-                <Modal onClose={onClose} size={size} fixedFooter={fixed} dataTest={dataTest}>
+                <Modal
+                  onClose={onClose}
+                  size={size}
+                  fixedFooter={fixed}
+                  dataTest={dataTest}
+                  setScroll={setScroll}
+                >
                   <ModalHeader
                     title={title}
                     illustration={illustration && <Illustration name={illustration} size="small" />}

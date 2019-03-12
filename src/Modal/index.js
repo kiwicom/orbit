@@ -14,6 +14,7 @@ import { StyledHeading } from "../Heading";
 import { right } from "../utils/rtl";
 import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
+import { DEVICES_WIDTH } from "../utils/mediaQuery/consts";
 
 import type { Props, State } from "./index";
 
@@ -299,6 +300,9 @@ class Modal extends React.PureComponent<Props, State> {
       this.decideFixedFooter();
       this.setDimensions();
     }
+    if (this.props.setScroll && this.props.setScroll !== prevProps.setScroll) {
+      this.setScrollPosition(this.props.setScroll);
+    }
   }
 
   componentWillUnmount() {
@@ -307,6 +311,17 @@ class Modal extends React.PureComponent<Props, State> {
       clearTimeout(this.timeout);
     }
   }
+
+  setScrollPosition = (value: number) => {
+    const { modalContent, modalBody } = this;
+    if (window?.innerWidth >= DEVICES_WIDTH.largeMobile) {
+      if (modalBody?.current) {
+        modalBody.current.scrollTop = value;
+      }
+    } else if (modalContent?.current) {
+      modalContent.current.scrollTop = value;
+    }
+  };
 
   setDimensions = () => {
     const content = this.modalContent.current;

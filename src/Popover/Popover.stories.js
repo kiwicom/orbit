@@ -28,11 +28,26 @@ storiesOf("Popover", module)
           sections: [
             {
               sectionFn: () => (
-                <Popover content="ContentTest">
-                  <Button block={false} type="primary" size="small">
-                    Button
-                  </Button>
-                </Popover>
+                <React.Fragment>
+                  <Popover
+                    content="ContentTest"
+                    preferedPosition="top"
+                    preferedAnchorPosition="right"
+                  >
+                    <Button block={false} type="primary" size="small">
+                      Button
+                    </Button>
+                  </Popover>
+                  <Popover
+                    content="ContentTest"
+                    preferedPosition="bottom"
+                    preferedAnchorPosition="right"
+                  >
+                    <Button block={false} type="primary" size="small">
+                      Button
+                    </Button>
+                  </Popover>
+                </React.Fragment>
               ),
             },
           ],

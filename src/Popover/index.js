@@ -6,6 +6,7 @@ import defaultTokens from "../defaultTokens";
 import Portal from "../Portal";
 import ClickOutside from "../ClickOutside";
 
+import { POSITIONS } from "./consts";
 import type { Props } from "./index";
 
 const resolvePopoverAnchor = ({
@@ -22,16 +23,21 @@ const resolvePopoverAnchor = ({
 };
 
 const resolvePopoverPosition = ({
+  position,
   containerTop,
-  containerLeft,
   containerHeight,
-  containerWidth,
-  tooltipHeight,
-  tooltipWidth,
+  popoverHeight,
 }: Props) => {
-  return css`
-    top: ${Math.floor(containerTop + containerHeight)}px;
-  `;
+  if (position === POSITIONS.TOP) {
+    return css`
+      top: ${Math.floor(containerTop - popoverHeight)}px; // TODO: use token
+    `;
+  } else if (position === POSITIONS.BOTTOM) {
+    return css`
+      top: ${Math.floor(containerTop + containerHeight)}px; // TODO: use token
+    `;
+  }
+  return null;
 };
 
 const PopoverChild = styled.div`
@@ -87,6 +93,7 @@ class Popover extends React.PureComponent<Props, State> {
       this.setState({ shown: false });
     });
   };
+
   handleClickContent = () => {
     clearTimeout(this.timeOutOutside);
   };
@@ -95,7 +102,7 @@ class Popover extends React.PureComponent<Props, State> {
 
   render() {
     const { shown } = this.state;
-    const { children, content } = this.props;
+    const { children, content, preferedPosition, preferedAnchorPosition } = this.props;
     const { handleClickContent } = this;
 
     return (
@@ -109,6 +116,8 @@ class Popover extends React.PureComponent<Props, State> {
               containerRef={this.container}
               content={content}
               handleClickContent={handleClickContent}
+              preferedPosition={preferedPosition}
+              preferedAnchorPosition={preferedAnchorPosition}
             />
           </Portal>
         )}
@@ -120,13 +129,17 @@ class Popover extends React.PureComponent<Props, State> {
 class PopoverContentWrapper extends React.PureComponent<Props, State> {
   state = {
     reRender: false,
+    position: "",
   };
 
   componentDidMount() {
-    this.setDimensions();
+    setTimeout(() => {
+      this.setDimensions();
+      this.setPosition([this.props.preferedPosition]);
+    }, 10);
   }
 
-  setDimensions = () => {
+  setDimensions() {
     if (
       this.props.containerRef.current &&
       this.popover &&
@@ -162,7 +175,38 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
       this.contentHeight =
         this.content.current && this.content.current.getBoundingClientRect().height;
 
+      // TODO: Better probably to put the satic vars of sizes to state
       this.setState({ reRender: !this.state.reRender });
+    }
+  }
+
+  setPosition = (desiredPositions: Positions[]) => {
+    const { containerTop, containerHeight, popoverHeight, windowHeight } = this;
+
+    const canBePositionTop = containerTop - popoverHeight > 0;
+    const canBePositionBottom = containerTop + containerHeight + popoverHeight < windowHeight;
+
+    // returns the position name if the position can be set
+    const isInside = (p: Positions) => {
+      if (p === POSITIONS.TOP && canBePositionTop) {
+        return "top";
+      } else if (p === POSITIONS.BOTTOM && canBePositionBottom) {
+        return "bottom";
+      }
+      return false;
+    };
+
+    const possiblePositions = desiredPositions
+      .map(p => isInside(p))
+      // filter all non string values
+      .filter(p => typeof p === "string");
+
+    // set the first valid position
+    // ordering in POSITIONS const is important
+    const position = possiblePositions[0];
+    if (typeof position === "string" && this.state.position !== position) {
+      this.setState({ position });
+      // this.setAlign(position);
     }
   };
 
@@ -180,6 +224,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
   content: { current: any | HTMLDivElement } = React.createRef();
 
   render() {
+    const { position } = this.state;
     const {
       containerTop,
       containerLeft,
@@ -192,6 +237,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
     return (
       <PopoverParent
         shown={shown}
+        position={position}
         containerTop={containerTop}
         containerLeft={containerLeft}
         containerHeight={containerHeight}
@@ -201,6 +247,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
         ref={this.popover}
         reRender={this.state.reRender}
         onClick={handleClickContent}
+        tabIndex="0"
       >
         <PopoverContent ref={this.content}>{content}</PopoverContent>
       </PopoverParent>

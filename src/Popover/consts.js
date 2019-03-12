@@ -7,7 +7,6 @@ export const POSITIONS = {
 };
 
 export const ANCHOR = {
-  CENTER: "center",
   START: "start",
   END: "end",
 };

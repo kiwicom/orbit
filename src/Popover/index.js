@@ -6,10 +6,11 @@ import defaultTokens from "../defaultTokens";
 import Portal from "../Portal";
 import ClickOutside from "../ClickOutside";
 
-import { POSITIONS } from "./consts";
+import { POSITIONS, ANCHOR } from "./consts";
 import type { Props } from "./index";
 
 const resolvePopoverAnchor = ({
+  anchor,
   containerTop,
   containerLeft,
   containerHeight,
@@ -17,9 +18,19 @@ const resolvePopoverAnchor = ({
   PopoverHeight,
   PopoverWidth,
 }: Props) => {
-  return css`
-    left: ${Math.floor(containerLeft)}px;
-  `;
+  if (anchor === ANCHOR.START) {
+    // return css`
+    //   top: ${Math.floor(containerTop - popoverHeight)}px; // TODO: use token
+    // `;
+  } else if (anchor === ANCHOR.END) {
+    // return css`
+    //   top: ${Math.floor(containerTop + containerHeight)}px; // TODO: use token
+    // `;
+  }
+  return null;
+  // return css`
+  //   left: ${Math.floor(containerLeft)}px;
+  // `;
 };
 
 const resolvePopoverPosition = ({
@@ -128,6 +139,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
   state = {
     reRender: false,
     position: "",
+    anchor: "",
   };
 
   componentDidMount() {
@@ -179,7 +191,14 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
   }
 
   setPosition = (desiredPositions: Positions[]) => {
-    const { containerTop, containerHeight, popoverHeight, windowHeight } = this;
+    const {
+      containerTop,
+      containerLeft,
+      containerWidth,
+      containerHeight,
+      popoverHeight,
+      windowHeight,
+    } = this;
 
     const canBePositionTop = containerTop - popoverHeight > 0;
     const canBePositionBottom = containerTop + containerHeight + popoverHeight < windowHeight;
@@ -187,9 +206,9 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
     // returns the position name if the position can be set
     const isInside = (p: Positions) => {
       if (p === POSITIONS.TOP && canBePositionTop) {
-        return "top";
+        return POSITIONS.TOP;
       } else if (p === POSITIONS.BOTTOM && canBePositionBottom) {
-        return "bottom";
+        return POSITIONS.BOTTOM;
       }
       return false;
     };
@@ -222,7 +241,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
   content: { current: any | HTMLDivElement } = React.createRef();
 
   render() {
-    const { position } = this.state;
+    const { position, anchor } = this.state;
     const {
       containerTop,
       containerLeft,
@@ -235,6 +254,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
     return (
       <PopoverParent
         shown={shown}
+        anchor={anchor}
         position={position}
         containerTop={containerTop}
         containerLeft={containerLeft}

@@ -4,8 +4,6 @@ import styled, { css } from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import Portal from "../Portal";
-import ReactDOM from "react-dom";
-
 import ClickOutside from "../ClickOutside";
 
 import type { Props } from "./index";

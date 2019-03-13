@@ -145,9 +145,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   position: absolute;
   top: 100%;
   max-height: 16px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .c17 a {
@@ -24965,7 +24962,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                 [Function],
                                 ";width:100%;margin-top:2px;position:absolute;top:100%;max-height:",
                                 [Function],
-                                "px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;& a{color:",
+                                "px;& a{color:",
                                 [Function],
                                 ";font-weight:",
                                 [Function],

@@ -25,9 +25,6 @@ exports[`Default Stack should match snapshot 1`] = `
   position: absolute;
   top: 100%;
   max-height: 16px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .c7 a {
@@ -11328,7 +11325,7 @@ exports[`Default Stack should match snapshot 1`] = `
                               [Function],
                               ";width:100%;margin-top:2px;position:absolute;top:100%;max-height:",
                               [Function],
-                              "px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;& a{color:",
+                              "px;& a{color:",
                               [Function],
                               ";font-weight:",
                               [Function],
@@ -16045,9 +16042,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   position: absolute;
   top: 100%;
   max-height: 16px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .c7 a {
@@ -27447,7 +27441,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                 [Function],
                                 ";width:100%;margin-top:2px;position:absolute;top:100%;max-height:",
                                 [Function],
-                                "px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;& a{color:",
+                                "px;& a{color:",
                                 [Function],
                                 ";font-weight:",
                                 [Function],
@@ -32161,9 +32155,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   position: absolute;
   top: 100%;
   max-height: 16px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .c7 a {
@@ -43460,7 +43451,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                               [Function],
                               ";width:100%;margin-top:2px;position:absolute;top:100%;max-height:",
                               [Function],
-                              "px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;& a{color:",
+                              "px;& a{color:",
                               [Function],
                               ";font-weight:",
                               [Function],

@@ -19,18 +19,15 @@ const resolvePopoverAnchor = ({
   PopoverWidth,
 }: Props) => {
   if (anchor === ANCHOR.START) {
-    // return css`
-    //   top: ${Math.floor(containerTop - popoverHeight)}px; // TODO: use token
-    // `;
+    return css`
+      left: ${Math.floor(containerLeft)}px;
+    `;
   } else if (anchor === ANCHOR.END) {
-    // return css`
-    //   top: ${Math.floor(containerTop + containerHeight)}px; // TODO: use token
-    // `;
+    return css`
+      right: ${Math.floor(containerLeft)}px; // TODO: use token
+    `;
   }
   return null;
-  // return css`
-  //   left: ${Math.floor(containerLeft)}px;
-  // `;
 };
 
 const resolvePopoverPosition = ({
@@ -111,7 +108,7 @@ class Popover extends React.PureComponent<Props, State> {
 
   render() {
     const { shown } = this.state;
-    const { children, content, preferedPosition, preferedAnchorPosition } = this.props;
+    const { children, content, preferredPosition, prefferedAnchorPosition } = this.props;
     const { handleClickContent } = this;
 
     return (
@@ -125,8 +122,8 @@ class Popover extends React.PureComponent<Props, State> {
               containerRef={this.container}
               content={content}
               handleClickContent={handleClickContent}
-              preferedPosition={preferedPosition}
-              preferedAnchorPosition={preferedAnchorPosition}
+              preferredPosition={preferredPosition}
+              prefferedAnchorPosition={prefferedAnchorPosition}
             />
           </Portal>
         )}
@@ -145,8 +142,27 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
   componentDidMount() {
     setTimeout(() => {
       this.setDimensions();
-      this.setPosition([this.props.preferedPosition]);
-    }, 10);
+
+      const { preferredPosition, prefferedAnchorPosition } = this.props;
+
+      const positions = Object.keys(POSITIONS).map(k => POSITIONS[k]);
+      const anchor = Object.keys(ANCHOR).map(k => ANCHOR[k]);
+
+      const defaultPosition = [
+        ...[preferredPosition].filter(p => typeof p === "string"),
+        ...positions.filter(p => p !== preferredPosition),
+      ];
+
+      const defaultAnchor = [
+        ...[prefferedAnchorPosition].filter(p => typeof p === "string"),
+        ...anchor.filter(p => p !== prefferedAnchorPosition),
+      ];
+
+      console.log(prefferedAnchorPosition);
+      console.log(defaultAnchor);
+
+      this.setPosition(defaultPosition, defaultAnchor);
+    });
   }
 
   setDimensions() {
@@ -184,24 +200,26 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
 
       this.contentHeight =
         this.content.current && this.content.current.getBoundingClientRect().height;
-
-      // TODO: Better probably to put the satic vars of sizes to state
-      this.setState({ reRender: !this.state.reRender });
     }
   }
 
-  setPosition = (desiredPositions: Positions[]) => {
+  setPosition = (desiredPositions: Positions[], desiredAnchor) => {
     const {
       containerTop,
       containerLeft,
       containerWidth,
       containerHeight,
       popoverHeight,
+      popoverWidth,
       windowHeight,
+      windowWidth,
     } = this;
 
     const canBePositionTop = containerTop - popoverHeight > 0;
     const canBePositionBottom = containerTop + containerHeight + popoverHeight < windowHeight;
+
+    const canBeAnchorLeft = containerLeft + popoverWidth < windowWidth;
+    const canBeAnchorRight = containerLeft + containerWidth >= popoverWidth;
 
     // returns the position name if the position can be set
     const isInside = (p: Positions) => {
@@ -209,6 +227,10 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
         return POSITIONS.TOP;
       } else if (p === POSITIONS.BOTTOM && canBePositionBottom) {
         return POSITIONS.BOTTOM;
+      } else if (p === ANCHOR.START && canBeAnchorLeft) {
+        return ANCHOR.START;
+      } else if (p === ANCHOR.END && canBeAnchorRight) {
+        return ANCHOR.END;
       }
       return false;
     };
@@ -218,12 +240,18 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
       // filter all non string values
       .filter(p => typeof p === "string");
 
+    const possibleAnchor = desiredAnchor.map(p => isInside(p)).filter(p => typeof p === "string");
+
     // set the first valid position
     // ordering in POSITIONS const is important
     const position = possiblePositions[0];
     if (typeof position === "string" && this.state.position !== position) {
       this.setState({ position });
-      // this.setAlign(position);
+    }
+
+    const anchor = possibleAnchor[0];
+    if (typeof anchor === "string" && this.state.anchor !== anchor) {
+      this.setState({ anchor });
     }
   };
 

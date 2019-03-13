@@ -31,8 +31,8 @@ storiesOf("Popover", module)
                 <React.Fragment>
                   <Popover
                     content="ContentTest"
-                    preferedPosition="top"
-                    preferedAnchorPosition="right"
+                    preferredPosition="top"
+                    prefferedAnchorPosition="start"
                   >
                     <Button block={false} type="primary" size="small">
                       Button
@@ -40,10 +40,10 @@ storiesOf("Popover", module)
                   </Popover>
                   <Popover
                     content="ContentTest"
-                    preferedPosition="bottom"
-                    preferedAnchorPosition="right"
+                    preferredPosition="bottom"
+                    prefferedAnchorPosition="end"
                   >
-                    <Button block={false} type="primary" size="small">
+                    <Button block type="primary" size="small">
                       Button
                     </Button>
                   </Popover>

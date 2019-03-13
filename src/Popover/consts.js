@@ -2,8 +2,8 @@
 
 // order of positions or aligns is important, the first possible value will be applied
 export const POSITIONS = {
-  TOP: "top",
   BOTTOM: "bottom",
+  TOP: "top",
 };
 
 export const ANCHOR = {

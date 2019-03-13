@@ -1,6 +1,6 @@
 // @flow
 
-// order of positions or aligns is important, the first possible value will be applied
+// order of POSITIONS or ANCHOR is important, the first possible value will be applied
 export const POSITIONS = {
   BOTTOM: "bottom",
   TOP: "top",

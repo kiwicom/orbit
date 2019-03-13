@@ -13,16 +13,17 @@ const resolvePopoverAnchor = ({
   containerLeft,
   containerHeight,
   containerWidth,
-  PopoverHeight,
-  PopoverWidth,
+  popoverHeight,
+  popoverWidth,
 }: Props) => {
+  console.log(popoverWidth, popoverHeight);
   if (anchor === ANCHOR.START) {
     return css`
       left: ${Math.floor(containerLeft)}px;
     `;
   } else if (anchor === ANCHOR.END) {
     return css`
-      right: ${Math.floor(containerLeft)}px; // TODO: use token
+      left: ${Math.floor(containerLeft + containerWidth - popoverWidth)}px; // TODO: use token
     `;
   }
   return null;

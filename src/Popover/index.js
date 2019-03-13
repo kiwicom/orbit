@@ -5,8 +5,11 @@ import styled, { css } from "styled-components";
 import defaultTokens from "../defaultTokens";
 import Portal from "../Portal";
 import ClickOutside from "../ClickOutside";
-
+import media from "../utils/mediaQuery";
 import { POSITIONS, ANCHOR } from "./consts";
+import { DEVICES_WIDTH } from "../utils/mediaQuery/consts";
+import Button from "../Button";
+
 import type { Props } from "./index";
 
 const resolvePopoverAnchor = ({
@@ -48,35 +51,85 @@ const resolvePopoverPosition = ({
   return null;
 };
 
-const PopoverChild = styled.div`
+const StyledPopoverChild = styled.div`
   position: relative;
 `;
-PopoverChild.defaultProps = {
+StyledPopoverChild.defaultProps = {
   theme: defaultTokens,
 };
 
-const PopoverContent = styled.div``;
-PopoverContent.defaultProps = {
+const StyledPopoverContent = styled.div`
+  padding-bottom: ${({ theme }) => theme.orbit.spaceMedium};
+  ${media.largeMobile(css`
+    padding-bottom: 0;
+  `)}
+`;
+StyledPopoverContent.defaultProps = {
   theme: defaultTokens,
 };
 
-const PopoverParent = styled.div`
-  position: absolute;
-  ${css`
-    ${resolvePopoverPosition}
-    ${resolvePopoverAnchor}
-  `}
+const StyledPopoverParent = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
   padding: ${({ theme }) => theme.orbit.spaceSmall};
   padding-top: ${({ theme }) => theme.orbit.spaceMedium};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
   z-index: ${({ theme }) => theme.orbit.zIndexOnTheTop};
+
+  ${media.largeMobile(css`
+    position: absolute;
+    left: initial;
+    right: initial;
+    bottom: initial;
+    width: auto;
+    ${css`
+      ${resolvePopoverPosition}
+      ${resolvePopoverAnchor}
+    `}
+  `)}
 `;
-PopoverParent.defaultProps = {
+StyledPopoverParent.defaultProps = {
   theme: defaultTokens,
 };
 
+const StyledOverlay = styled.div`
+  display: block;
+  background-color: red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: ${({ theme }) => theme.orbit.zIndexOnTheTop - 1};
+  background-color: rgba(23, 27, 30, 0.6); // TODO: token
+
+  ${media.largeMobile(css`
+    display: none;
+  `)}
+`;
+StyledOverlay.defaultProps = {
+  theme: defaultTokens,
+};
+
+const StyledTooltipClose = styled.div`
+  ${media.largeMobile(css`
+    display: none;
+    visibility: hidden;
+  `)}
+`;
+StyledTooltipClose.defaultProps = {
+  theme: defaultTokens,
+};
 class Popover extends React.PureComponent<Props, State> {
   state = {
     shown: false,
@@ -109,21 +162,22 @@ class Popover extends React.PureComponent<Props, State> {
   render() {
     const { shown } = this.state;
     const { children, content, preferredPosition, prefferedAnchorPosition } = this.props;
-    const { handleClickContent } = this;
+    const { handleClickContent, handleOut, container } = this;
 
     return (
       <React.Fragment>
-        <PopoverChild onClick={this.handleClick} ref={this.container}>
+        <StyledPopoverChild onClick={this.handleClick} ref={container}>
           <ClickOutside onClickOutside={this.handleClickOutside}>{children}</ClickOutside>
-        </PopoverChild>
+        </StyledPopoverChild>
         {shown && (
           <Portal>
             <PopoverContentWrapper
-              containerRef={this.container}
+              containerRef={container}
               content={content}
               handleClickContent={handleClickContent}
               preferredPosition={preferredPosition}
               prefferedAnchorPosition={prefferedAnchorPosition}
+              handleClose={handleOut}
             />
           </Portal>
         )}
@@ -136,6 +190,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
   state = {
     reRender: false,
     position: "",
+    shownMobile: false,
     anchor: "",
   };
 
@@ -157,9 +212,6 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
         ...[prefferedAnchorPosition].filter(p => typeof p === "string"),
         ...anchor.filter(p => p !== prefferedAnchorPosition),
       ];
-
-      console.log(prefferedAnchorPosition);
-      console.log(defaultAnchor);
 
       this.setPosition(defaultPosition, defaultAnchor);
     });
@@ -269,7 +321,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
   content: { current: any | HTMLDivElement } = React.createRef();
 
   render() {
-    const { position, anchor } = this.state;
+    const { position, anchor, shownMobile } = this.state;
     const {
       containerTop,
       containerLeft,
@@ -278,25 +330,34 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
       popoverHeight,
       popoverWidth,
     } = this;
-    const { shown, content, handleClickContent } = this.props;
+    const { shown, content, handleClickContent, closeText = "Close", handleClose } = this.props;
     return (
-      <PopoverParent
-        shown={shown}
-        anchor={anchor}
-        position={position}
-        containerTop={containerTop}
-        containerLeft={containerLeft}
-        containerHeight={containerHeight}
-        containerWidth={containerWidth}
-        popoverHeight={popoverHeight}
-        popoverWidth={popoverWidth}
-        ref={this.popover}
-        reRender={this.state.reRender}
-        onClick={handleClickContent}
-        tabIndex="0"
-      >
-        <PopoverContent ref={this.content}>{content}</PopoverContent>
-      </PopoverParent>
+      <React.Fragment>
+        <StyledPopoverParent
+          shown={shown}
+          shownMobile={shownMobile}
+          anchor={anchor}
+          position={position}
+          containerTop={containerTop}
+          containerLeft={containerLeft}
+          containerHeight={containerHeight}
+          containerWidth={containerWidth}
+          popoverHeight={popoverHeight}
+          popoverWidth={popoverWidth}
+          ref={this.popover}
+          reRender={this.state.reRender}
+          onClick={handleClickContent}
+          tabIndex="0"
+        >
+          <StyledPopoverContent ref={this.content}>{content}</StyledPopoverContent>
+          <StyledTooltipClose>
+            <Button type="secondary" block onClick={handleClose}>
+              {closeText}
+            </Button>
+          </StyledTooltipClose>
+        </StyledPopoverParent>
+        <StyledOverlay />
+      </React.Fragment>
     );
   }
 }

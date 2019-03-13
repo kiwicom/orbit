@@ -449,6 +449,7 @@ storiesOf("InputField", module)
     const maxLength = number("maxLength", undefined);
     const minLength = number("minLength", undefined);
     const readOnly = boolean("readOnly", false);
+    const autocomplete = text("autocomplete", "off");
     const dataTest = text("dataTest", "test");
 
     return {
@@ -488,6 +489,7 @@ storiesOf("InputField", module)
                   maxLength={maxLength}
                   minLength={minLength}
                   readOnly={readOnly}
+                  autocomplete={autocomplete}
                   onChange={action("change")}
                   onFocus={action("focus")}
                   onBlur={action("blur")}

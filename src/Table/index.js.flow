@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/table/
+*/
 import TBody from "./TableBody";
 import THead from "./TableHead";
 import type { Globals } from "../common/common.js.flow";

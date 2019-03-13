@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/countryflag/
+*/
 import type { Globals } from "../common/common.js.flow";
 
 type Code =

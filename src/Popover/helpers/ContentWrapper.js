@@ -16,7 +16,6 @@ const resolvePopoverAnchor = ({
   popoverHeight,
   popoverWidth,
 }: Props) => {
-  console.log(popoverWidth, popoverHeight);
   if (anchor === ANCHOR.START) {
     return css`
       left: ${Math.floor(containerLeft)}px;

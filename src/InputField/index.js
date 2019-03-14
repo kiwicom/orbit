@@ -8,6 +8,7 @@ import FormFeedback from "../FormFeedback";
 import DefaultFormLabel from "../FormLabel";
 import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
+import { StyledTag } from "../Tag";
 import type { Ref, Translation } from "../common/common.js.flow";
 
 import type { Props } from "./index";
@@ -188,6 +189,7 @@ export const Input = styled(
   )),
 )`
   appearance: none;
+  -webkit-text-fill-color: inherit;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   border: none;
   padding: ${getPadding()};
@@ -197,9 +199,10 @@ export const Input = styled(
   color: inherit;
   background-color: transparent;
   cursor: inherit;
-  flex: 1 auto;
+  flex: 1 1 20%;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   z-index: 2;
 
@@ -264,6 +267,40 @@ const FormLabel = ({
   </DefaultFormLabel>
 );
 
+const StyledInputTags = styled.div`
+  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
+  height: 100%;
+  z-index: 2;
+  min-width: 50px;
+  overflow: hidden;
+`;
+
+StyledInputTags.defaultProps = {
+  theme: defaultTokens,
+};
+
+const StyledInputTagsInner = styled.div`
+  overflow-x: scroll;
+  white-space: nowrap;
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
+  
+  &::-webkit-scrollbar { 
+    display: none; 
+  }
+  
+  ${StyledTag} + ${StyledTag} {
+    margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
+  }
+`;
+
+StyledInputTagsInner.defaultProps = {
+  theme: defaultTokens,
+};
+
 // $FlowExpected
 const InputField = React.forwardRef((props: Props, ref: Ref) => {
   const {
@@ -290,8 +327,10 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
     suffix,
     help,
     value,
+    tags,
     tabIndex,
     readOnly,
+    autocomplete,
   } = props;
 
   return (
@@ -303,6 +342,11 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           <StyledInlineLabel size={size}>
             <FormLabel label={label} isFilled={!!value} required={required} />
           </StyledInlineLabel>
+        )}
+        {tags && (
+          <StyledInputTags>
+            <StyledInputTagsInner>{tags}</StyledInputTagsInner>
+          </StyledInputTags>
         )}
         <Input
           data-test={dataTest}
@@ -326,6 +370,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           tabIndex={tabIndex}
           inlineLabel={inlineLabel}
           readOnly={readOnly}
+          autocomplete={autocomplete}
         />
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />

@@ -38,6 +38,21 @@ storiesOf("Heading", module)
     },
   )
   .add(
+    "Title displaySubtitle",
+    () => {
+      const customTitle = text("Title", "Orbit design system");
+      const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
+      return (
+        <Heading type="display" element={element}>
+          {customTitle}
+        </Heading>
+      )
+    },
+    {
+      info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    }
+  )
+  .add(
     "Title 1",
     () => {
       const customTitle = text("Title", "Orbit design system");

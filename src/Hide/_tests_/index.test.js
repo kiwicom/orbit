@@ -9,14 +9,16 @@ import { DEVICES } from "../../utils/mediaQuery/consts";
 
 describe("Hide", () => {
   const on = ["smallMobile", "largeMobile", "largeDesktop"];
+  const block = false;
   const component = mount(
-    <Hide on={on}>
+    <Hide on={on} block={block}>
       <Airplane />
     </Hide>,
   );
 
   it("should have passed props", () => {
     expect(component.prop("on")).toBe(on);
+    expect(component.prop("block")).toBe(block);
   });
   it("should contain children", () => {
     expect(component.find("Airplane").exists()).toBe(true);
@@ -34,6 +36,18 @@ describe("Hide", () => {
             })),
     );
     expect(component).toHaveStyleRule("display", "none");
+  });
+  it("should be displayed block", () => {
+    component.setProps({ block: true, on: on[1] });
+    expect(component).toHaveStyleRule("display", "block", {
+      media: breakpoints[on[2]],
+    });
+  });
+  it("should be none", () => {
+    component.setProps({ block: true, on: on[1] });
+    expect(component).toHaveStyleRule("display", "none", {
+      media: breakpoints[on[1]],
+    });
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

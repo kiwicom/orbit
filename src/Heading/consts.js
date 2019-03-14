@@ -11,6 +11,7 @@ export const ELEMENT_OPTIONS = {
 
 export const TYPE_OPTIONS = {
   DISPLAY: "display",
+  DISPLAYSUBTITLE: "displaySubtitle",
   TITLE1: "title1",
   TITLE2: "title2",
   TITLE3: "title3",

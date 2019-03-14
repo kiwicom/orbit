@@ -142,6 +142,16 @@ storiesOf("Badge", module)
     },
   )
   .add(
+    "Badge with translated node",
+    () => (
+      <Badge icon={<Icons.Airplane />}>
+        <span>Content should </span>
+        <span>be</span>
+        <span> with space</span>
+      </Badge>
+    )
+  )
+  .add(
     "Playground",
     () => {
       const content = text("Content", "Badge");

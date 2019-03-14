@@ -47,13 +47,17 @@ export const getLinkStyle = ({
   theme,
   type,
 }: GetLinkStyleProps) => css` // Common styles for TextLink and "a" in Text 
-  color: ${getColor({ theme, type })};
-  text-decoration: ${
-    type === TYPE_OPTIONS.SECONDARY
-      ? theme.orbit.textDecorationTextLinkSecondary
-      : theme.orbit.textDecorationTextLinkPrimary
-  };
-  &:hover {
+  
+  &:link, &:visited {
+    color: ${getColor({ theme, type })};
+    text-decoration: ${
+      type === TYPE_OPTIONS.SECONDARY
+        ? theme.orbit.textDecorationTextLinkSecondary
+        : theme.orbit.textDecorationTextLinkPrimary
+    };  
+  }
+  
+  &:hover, &:active {
     text-decoration: ${
       type === TYPE_OPTIONS.SECONDARY
         ? theme.orbit.textDecorationTextLinkSecondaryHover

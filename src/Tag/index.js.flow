@@ -1,5 +1,6 @@
 // @flow
 import type { Globals } from "../common/common.js.flow";
+import { ReactComponentStyled } from "styled-components";
 
 type Size = "small" | "normal";
 
@@ -14,3 +15,5 @@ export type Props = {|
 |};
 
 declare export default React$ComponentType<Props>;
+
+declare export var StyledTag: ReactComponentStyled<any>;

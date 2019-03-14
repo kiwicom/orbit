@@ -12,6 +12,7 @@ import ButtonLink from "../ButtonLink";
 import TextLink from "../TextLink";
 import ServiceLogo from "../ServiceLogo";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import Tag from "../Tag";
 
 import InputField from "./index";
 
@@ -224,6 +225,39 @@ storiesOf("InputField", module)
     },
   )
   .add(
+    "Compact input with tags",
+    () => {
+      const value = text("Value", "");
+      const label = text("Label", "Label");
+      const placeholder = text("Placeholder", "Placeholder");
+      const required = boolean("required", false);
+      const error = text("Error", undefined);
+
+      return (
+        <InputField
+          label={label}
+          inlineLabel
+          tags={
+            <div>
+              <Tag selected onRemove={action("onRemove")}>
+                Brno
+              </Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+            </div>
+          }
+          error={error}
+          value={value}
+          placeholder={placeholder}
+          required={required}
+          onChange={action("change")}
+        />
+      )
+    },
+    {
+      info: "Compact input with FormLabel as prefix"
+    }
+  )
+  .add(
     "Required field",
     () => {
       const label = text("Label", "Label");
@@ -335,6 +369,7 @@ storiesOf("InputField", module)
       const maxLength = number("maxLength", undefined);
       const minLength = number("minLength", undefined);
       const readOnly = boolean("readOnly", false);
+      const autocomplete = text("autocomplete", "off");
       const dataTest = text("dataTest", "test");
 
       return (
@@ -368,6 +403,7 @@ storiesOf("InputField", module)
           maxLength={maxLength}
           minLength={minLength}
           readOnly={readOnly}
+          autocomplete={autocomplete}
           onChange={action("change")}
           onFocus={action("focus")}
           onBlur={action("blur")}

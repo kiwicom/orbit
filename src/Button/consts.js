@@ -24,7 +24,9 @@ export const TOKENS = {
   loadingHeight: "loadingHeight",
   fontSizeButton: "fontSizeButton",
   paddingButton: "paddingButton",
-  paddingButtonWithIcon: "paddingButtonWithIcon",
+  paddingButtonWithIcons: "paddingButtonWithIcons",
+  paddingButtonWithLeftIcon: "paddingButtonWithLeftIcon",
+  paddingButtonWithRightIcon: "paddingButtonWithRightIcon",
   marginRightIcon: "marginRightIcon",
   // Type tokens
   backgroundButton: "backgroundButton",

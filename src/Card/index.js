@@ -7,11 +7,10 @@ import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
 import CardSection, { StyledCardSection } from "./CardSection";
 import CardHeader, { StyledCardHeader } from "./CardHeader";
+import { StyledCardSectionContent } from "./CardSection/CardSectionContent";
 import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
 import { right } from "../utils/rtl";
-import { StyledCardSectionContent } from "./CardSection/CardSectionContent";
-import { StyledCardSectionHeader } from "./CardSection/CardSectionHeader";
 import CLOSE_BUTTON_DATA_TEST from "./consts";
 
 import type { Props, State } from "./index";
@@ -44,10 +43,6 @@ const StyledChildWrapper = styled.div`
 
   + div ${StyledCardSection}, ${StyledCardSection} { // If expanded - next CardSection and current CardSection will have border-top
     border-top: ${({ expanded }) => expanded && getBorder};
-
-    ${StyledCardSectionHeader}, ${StyledCardSectionContent} {
-      transition: ${({ initialExpanded }) => (initialExpanded ? "none" : undefined)}
-    }
   }
 `;
 
@@ -77,6 +72,10 @@ const StyledCard = styled.div`
 
       + ${StyledChildWrapper} ${StyledCardSection} {
         padding-top: ${({ hasAdjustedHeader }) => hasAdjustedHeader && 0};
+        
+        ${StyledCardSectionContent}:first-of-type { // if there isn't any CardSectionHeader we need to delete padding of CardSectionContent 
+          padding-top: ${({ hasAdjustedHeader }) => hasAdjustedHeader && 0};
+        }
       }
     }
 

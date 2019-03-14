@@ -12,9 +12,11 @@ Table below contains all types of the props available in InputField component.
 
 | Name          | Type                          | Default      | Description                      |
 | :------------ | :---------------------------- | :----------- | :------------------------------- |
+| autocomplete  | `string`                      |              | The autocomplete attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete).
 | disabled      | `boolean`                     |              | If `true`, the InputField will be disabled.
 | dataTest      | `string`                      |              | Optional prop for testing purposes.
 | error         | `React.Node`                  |              | The error to display beneath the InputField. [See Functional specs](#functional-specs)
+| tags          | `React.Node`                  |              | Here you can pass <Tag /> component for render tags [See Functional specs](#functional-specs)
 | help          | `React.Node`                  |              | The help to display beneath the InputField.
 | label         | `Translation`                 |              | The label for the InputField. [See Functional specs](#functional-specs)
 | inlineLabel   | `boolean`                     |              | If true the label renders on the left side of input
@@ -66,20 +68,30 @@ Table below contains all types of the props available in InputField component.
 />
 ```
 
+* Usage of `Tag` in `InputField`
+```jsx
+import Tag from "@kiwicom/orbit-components/lib/Tag";
+
+<InputField
+  placeholder="My placeholder"
+  tags={
+    <div>
+      <Tag>Brno</Tag>
+      <Tag>Praha</Tag>
+    </div>
+  }
+/>
+```
+
 * `ref` can be used for example auto-focus the elements immediately after render.
 ```jsx
 class Component extends React.PureComponent<Props> {
 
-  constructor() {
-    super()
-    this.ref = React.createRef();
-  }
-  
   componentDidMount() {
     this.ref.current && this.ref.current.focus();
   }
 
-  ref: { current: React$ElementRef<*> | null };
+  ref: { current: React$ElementRef<*> | null } = React.createRef();
 
   render() {
     return (

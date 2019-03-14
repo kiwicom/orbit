@@ -7,6 +7,7 @@ import { select, text } from "@storybook/addon-knobs";
 import * as Icons from "../icons";
 import IconList from "./IconList";
 import { ICON_SIZES, ICON_COLORS } from "./consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 storiesOf("Icon", module)
   .add(
@@ -37,5 +38,20 @@ storiesOf("Icon", module)
       info:
         "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
     },
+  )
+  .add(
+    "Reversed on RTL",
+    () => {
+      const source = select("Icon", Object.keys(Icons), "ChevronLeft");
+      const Icon = Icons[source];
+      return (
+        <RenderInRtl>
+          <Icon reverseOnRtl />
+        </RenderInRtl>
+      )
+    },
+    {
+      info: "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
+    }
   )
   .add("List of all icons", () => <IconList />);

@@ -1,0 +1,16 @@
+// @flow
+import { ReactComponentStyled } from "styled-components";
+
+export type State = {|
+  maxHeight: number | null
+|}
+
+export type Props = {|
+  +children: React$Node,
+  +maxHeight: number,
+  +expanded?: boolean,
+|};
+
+declare export var StyledSlide: ReactComponentStyled<any>;
+
+declare export default React$ComponentType<Props>;

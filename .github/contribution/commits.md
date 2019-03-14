@@ -15,7 +15,7 @@ WIP: Commit message
 Please see [https://chris.beams.io/posts/git-commit/](https://chris.beams.io/posts/git-commit/) for information on how to write commit messages.
 
 ## Commit History
-We use merges in this project without squashing. Please ensure that your commits make sense and aren't broken up into illogical chunks. Please squash WIP commits, or adjust them so their purpose is clear.
+We are using merges with squashing commits.
 
 **Bad:**
 ```

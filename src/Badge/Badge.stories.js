@@ -141,16 +141,13 @@ storiesOf("Badge", module)
       info: "Check Orbit.Kiwi for more detailed design guidelines.",
     },
   )
-  .add(
-    "Badge with translated node",
-    () => (
-      <Badge icon={<Icons.Airplane />}>
-        <span>Content should </span>
-        <span>be</span>
-        <span> with space</span>
-      </Badge>
-    )
-  )
+  .add("Badge with translated node", () => (
+    <Badge icon={<Icons.Airplane />}>
+      <span>Content should </span>
+      <span>be</span>
+      <span> with space</span>
+    </Badge>
+  ))
   .add(
     "Playground",
     () => {

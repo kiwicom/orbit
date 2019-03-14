@@ -48,10 +48,11 @@ storiesOf("Icon", module)
         <RenderInRtl>
           <Icon reverseOnRtl />
         </RenderInRtl>
-      )
+      );
     },
     {
-      info: "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
-    }
+      info:
+        "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
+    },
   )
   .add("List of all icons", () => <IconList />);

@@ -302,7 +302,7 @@ storiesOf("Card", module)
     ),
     {
       info: "TripSector in expandable Card to test if Whole TripSector is visible after expand",
-    }
+    },
   )
   .add(
     "Playground",

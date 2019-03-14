@@ -251,11 +251,11 @@ storiesOf("InputField", module)
           required={required}
           onChange={action("change")}
         />
-      )
+      );
     },
     {
-      info: "Compact input with FormLabel as prefix"
-    }
+      info: "Compact input with FormLabel as prefix",
+    },
   )
   .add(
     "Required field",

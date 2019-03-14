@@ -17,11 +17,12 @@ storiesOf("Hide", module)
         <Hide on={["largeMobile"]} block={block}>
           <Separator />
         </Hide>
-      )
+      );
     },
     {
-      info: "Configuration with Separator, for separator to work correctly block property has to be set.",
-    }
+      info:
+        "Configuration with Separator, for separator to work correctly block property has to be set.",
+    },
   )
   .add(
     "Playground",

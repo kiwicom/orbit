@@ -210,12 +210,12 @@ class DestinationCard extends React.PureComponent<Props, State> {
       <StyledDestinationCard
         data-test={dataTest}
         onClick={onClick}
-        height={height >= 175 ? height : SMALLEST_HEIGHT}
+        height={height >= SMALLEST_HEIGHT ? height : SMALLEST_HEIGHT}
       >
         <LazyImage
           original={{
-            webp: ` ${BASE_URL}/photos/236x250/${image}.webp`,
-            jpg: `${BASE_URL}/photos/236x250/${image}.jpg`,
+            webp: ` ${BASE_URL}/photos/385x320/${image}.webp`,
+            jpg: `${BASE_URL}/photos/385x320/${image}.jpg`,
           }}
           placeholder={{
             webp: ` ${BASE_URL}/photos/30x30/${image}.webp`,

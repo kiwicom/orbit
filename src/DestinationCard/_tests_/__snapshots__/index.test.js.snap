@@ -467,8 +467,8 @@ exports[`DestinationCard one-way should match snapshot 1`] = `
     name="Dubai"
     original={
       Object {
-        "jpg": "//images.kiwi.com/photos/236x250/dubai_ae.jpg",
-        "webp": " //images.kiwi.com/photos/236x250/dubai_ae.webp",
+        "jpg": "//images.kiwi.com/photos/385x320/dubai_ae.jpg",
+        "webp": " //images.kiwi.com/photos/385x320/dubai_ae.webp",
       }
     }
     placeholder={

@@ -1,6 +1,6 @@
 // @flow
 
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Translation } from "../common/common.js.flow";
 
 export type State = {|
   hiddenContentHeight: number,
@@ -8,23 +8,23 @@ export type State = {|
 
 export type Props = {|
   ...Globals,
-  +departureCity: string,
-  +destinationCity: string,
-  +destinationCountry: string,
+  +departureCity: Translation,
+  +destinationCity: Translation,
+  +destinationCountry: Translation,
   +image: string,
-  +price: string,
-  +timeOfStay?: string,
+  +price: Translation,
+  +timeOfStay?: Translation,
   +height?: number,
   +outbound: {|
-    +text?: string,
-    +date?: string,
-    +type: string,
-    +duration: string,
+    +text?: Translation,
+    +date?: Translation,
+    +type: Translation,
+    +duration: Translation,
   |},
   +inbound?: {|
-    +date: string,
-    +type: string,
-    +duration: string,
+    +date: Translation,
+    +type: Translation,
+    +duration: Translation,
   |},
   +onClick?: () => void,
 |};

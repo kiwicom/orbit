@@ -9,7 +9,7 @@ export type State = {|
 export type Props = {|
   ...Globals,
   +departureCity: Translation,
-  +destinationCity: string,
+  +destinationCity: Translation,
   +destinationCountry: Translation,
   +image: string,
   +price: Translation,

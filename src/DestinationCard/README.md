@@ -13,35 +13,35 @@ Table below contains all types of the props available in DestinationCard compone
 | Name                    | Type                             | Default          | Description                      |
 | :---------------------- | :------------------------------- | :--------------- | :------------------------------- |
 | dataTest                | `string`                         |                  | Optional prop for testing purposes.
-| **departureCity**       | `string`                         |                  | The name of departure city.
-| **destinationCity**     | `string`                         |                  | The name of destination city.
-| **destinationCountry**  | `string`                         |                  | The name of destination country.
+| **departureCity**       | `Translation`                    |                  | The name of departure city.
+| **destinationCity**     | `Translation`                    |                  | The name of destination city.
+| **destinationCountry**  | `Translation`                    |                  | The name of destination country.
 | height                  | `number`                         | `300`            | The height of the DestinationCard. [See Functional specs](#functional-specs)
 | **image**               | `string`                         |                  | The image name of the destination. [See Functional specs](#functional-specs)
 | inbound                 | [`Inbound`](#inbound)            |                  | The inbound information about the trip. [See Functional specs](#functional-specs)
 | onClick                 | `onClick`                        |                  | Function for handling onClick event.
 | **outbound**            | [`Outbound`](#outbound)          |                  | The outbound information about the trip. [See Functional specs](#functional-specs)
-| **price**               | `string`                         |                  | The price of the trip.
-| timeOfStay              | `string`                         |                  | The time of the stay for the trip. [See Functional specs](#functional-specs)
+| **price**               | `Translation`                    |                  | The price of the trip.
+| timeOfStay              | `Translation`                    |                  | The time of the stay for the trip. [See Functional specs](#functional-specs)
 
 ### Inbound
 Table below contains all types of the props available in `inbound` object.
 
 | Name          | Type             | Description                      |
 | :------------ | :--------------- | :------------------------------- |
-| **date**      | `string`         | The date of the inbound flight.
-| **duration**  | `string`         | The duration of the inbound flight.
-| **type**      | `string`         | The type of the inbound flight, e.g. `Direct`.
+| **date**      | `Translation`         | The date of the inbound flight.
+| **duration**  | `Translation`         | The duration of the inbound flight.
+| **type**      | `Translation`         | The type of the inbound flight, e.g. `Direct`.
 
 ### Outbound
 Table below contains all types of the props available in `outbound` object.
 
 | Name          | Type             | Description                      |
 | :------------ | :--------------- | :------------------------------- |
-| **date**      | `string`         | The date of the inbound flight.
-| **duration**  | `string`         | The duration of the inbound flight.
-| text          | `string`         | The text for the outbound, e.g. `One-way`. [See Functional specs](#functional-specs)
-| **type**      | `string`         | The type of the inbound flight, e.g. `Direct`.
+| **date**      | `Translation`         | The date of the inbound flight.
+| **duration**  | `Translation`         | The duration of the inbound flight.
+| text          | `Translation`         | The text for the outbound, e.g. `One-way`. [See Functional specs](#functional-specs)
+| **type**      | `Translation`         | The type of the inbound flight, e.g. `Direct`.
 
 
 ## Functional specs

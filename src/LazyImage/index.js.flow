@@ -1,6 +1,6 @@
 // @flow
 
-import { ReactComponentStyled } from "styled-components";
+import { ReactComponentStyled, Translation } from "styled-components";
 
 type ImageObject = {|
   jpg: string,
@@ -10,7 +10,7 @@ type ImageObject = {|
 export type Props = {|
   placeholder?: ImageObject,
   original: ImageObject,
-  name: string,
+  name: Translation,
 |};
 
 export type State = {|

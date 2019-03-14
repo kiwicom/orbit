@@ -100,16 +100,6 @@ ArrowUp.defaultProps = {
   theme: defaultTokens,
 };
 
-const StyledDestinationCardPriceStay = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: ${({ theme }) => theme.orbit.spaceSmall};
-`;
-
-StyledDestinationCardPriceStay.defaultProps = {
-  theme: defaultTokens,
-};
-
 const StyledDestinationCardHiddenContent = styled.div`
   padding: ${({ theme }) => theme.orbit.spaceSmall} 0 0;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -175,13 +165,9 @@ const SmallHeading = ({ children }: SmallHeadingType) => (
 );
 
 class DestinationCard extends React.PureComponent<Props, State> {
-  constructor(props: Props) {
-    super(props);
-
-    this.state = {
-      hiddenContentHeight: 0,
-    };
-  }
+  state = {
+    hiddenContentHeight: 0,
+  };
 
   componentDidMount() {
     this.setHeight();
@@ -228,9 +214,13 @@ class DestinationCard extends React.PureComponent<Props, State> {
       >
         <LazyImage
           original={{
-            webp: `${BASE_URL}/photos/1200x628/${image}.webp`,
-            jpg: `${BASE_URL}/photos/1200x628/${image}.jpg`,
+            webp: ` ${BASE_URL}/photos/236x250/${image}.webp 236w, ${BASE_URL}/photos/385x320/${image}.webp 385w`,
+            jpg: `${BASE_URL}/photos/236x250/${image}.jpg 236w, ${BASE_URL}/photos/385x320/${image}.jpg 385w`,
           }}
+          placeholder={{
+            webp: ` ${BASE_URL}/photos/35x37/${image}.webp`,
+            jpg: `${BASE_URL}/photos/35x37/${image}.jpg`,
+          }} //Add that to images kiwi
           name={destinationCity}
         />
         <StyledOverlay />
@@ -256,7 +246,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
               </Heading>
             </Shown>
           </StyledDestinationCardHeader>
-          <StyledDestinationCardPriceStay>
+          <Stack flex justify="between" spaceAfter="small">
             <Heading type="title3" element="div" inverted>
               {price}
             </Heading>
@@ -265,7 +255,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
                 {timeOfStay}
               </Heading>
             )}
-          </StyledDestinationCardPriceStay>
+          </Stack>
           <StyledDestinationCardHiddenContent ref={this.hiddenContent}>
             <Stack direction="row" justify="between">
               <SmallHeading>

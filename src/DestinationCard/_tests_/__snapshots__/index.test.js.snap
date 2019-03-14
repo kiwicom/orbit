@@ -4875,7 +4875,6 @@ exports[`DestinationCard one-way should match snapshot 1`] = `
       }
     >
       <Stack
-        align="even"
         direction="row"
         justify="between"
       >

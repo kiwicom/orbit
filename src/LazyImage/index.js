@@ -25,6 +25,7 @@ const Image = styled.img`
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   min-width: 100%;
+  min-height: 100%;
   opacity: ${({ visible }) => (visible ? "1" : "0")};
   transition: opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   ${({ lowRes }) =>

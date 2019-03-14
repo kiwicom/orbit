@@ -3,7 +3,6 @@ import * as React from "react";
 import { shallow } from "enzyme";
 
 import DestinationCard from "../index";
-import { BASE_URL } from "../consts";
 
 describe("DestinationCard one-way", () => {
   const dataTest = "test";
@@ -28,7 +27,7 @@ describe("DestinationCard one-way", () => {
       onClick={onClick}
     />,
   );
-  const imageURL = `${BASE_URL}/photos/1200x628/${image}.jpg`;
+
   const departure = component.find("DestinationCard__StyledDestinationCardHeader");
   const destination = component.find("DestinationCard__StyledDestination");
 

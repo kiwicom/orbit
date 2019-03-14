@@ -6,16 +6,21 @@ import defaultTokens from "../../defaultTokens";
 import media from "../../utils/mediaQuery";
 import { POSITIONS, ANCHOR } from "../consts";
 import Button from "../../Button";
+import type {
+  Props,
+  State,
+  StyledAnchor,
+  StyledPosition,
+  Positions,
+  Anchors,
+} from "./ContentWrapper.flow";
 
 const resolvePopoverAnchor = ({
   anchor,
-  containerTop,
   containerLeft,
-  containerHeight,
   containerWidth,
-  popoverHeight,
   popoverWidth,
-}: Props) => {
+}: StyledAnchor) => {
   if (anchor === ANCHOR.START) {
     return css`
       left: ${Math.floor(containerLeft)}px;
@@ -33,7 +38,7 @@ const resolvePopoverPosition = ({
   containerTop,
   containerHeight,
   popoverHeight,
-}: Props) => {
+}: StyledPosition) => {
   if (position === POSITIONS.TOP) {
     return css`
       top: ${Math.floor(containerTop - popoverHeight)}px; // TODO: use token
@@ -121,9 +126,7 @@ StyledTooltipClose.defaultProps = {
 
 class PopoverContentWrapper extends React.PureComponent<Props, State> {
   state = {
-    reRender: false,
     position: "",
-    shownMobile: false,
     anchor: "",
   };
 
@@ -188,7 +191,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
     }
   }
 
-  setPosition = (desiredPositions: Positions[], desiredAnchor) => {
+  setPosition(desiredPositions: Positions[], desiredAnchor: Anchors[]) {
     const {
       containerTop,
       containerLeft,
@@ -205,14 +208,18 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
 
     const canBeAnchorLeft = containerLeft + popoverWidth < windowWidth;
     const canBeAnchorRight = containerLeft + containerWidth >= popoverWidth;
-
     // returns the position name if the position can be set
     const isInside = (p: Positions) => {
       if (p === POSITIONS.TOP && canBePositionTop) {
         return POSITIONS.TOP;
       } else if (p === POSITIONS.BOTTOM && canBePositionBottom) {
         return POSITIONS.BOTTOM;
-      } else if (p === ANCHOR.START && canBeAnchorLeft) {
+      }
+      return false;
+    };
+
+    const isInsideAnchor = (p: Anchors) => {
+      if (p === ANCHOR.START && canBeAnchorLeft) {
         return ANCHOR.START;
       } else if (p === ANCHOR.END && canBeAnchorRight) {
         return ANCHOR.END;
@@ -225,7 +232,9 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
       // filter all non string values
       .filter(p => typeof p === "string");
 
-    const possibleAnchor = desiredAnchor.map(p => isInside(p)).filter(p => typeof p === "string");
+    const possibleAnchor = desiredAnchor
+      .map(p => isInsideAnchor(p))
+      .filter(p => typeof p === "string");
 
     // set the first valid position
     // ordering in POSITIONS const is important
@@ -238,7 +247,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
     if (typeof anchor === "string" && this.state.anchor !== anchor) {
       this.setState({ anchor });
     }
-  };
+  }
 
   containerTop: number = 0;
   containerLeft: number = 0;
@@ -254,7 +263,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
   content: { current: any | HTMLDivElement } = React.createRef();
 
   render() {
-    const { position, anchor, shownMobile } = this.state;
+    const { position, anchor } = this.state;
     const {
       containerTop,
       containerLeft,
@@ -263,12 +272,10 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
       popoverHeight,
       popoverWidth,
     } = this;
-    const { shown, content, handleClickContent, closeText = "Close", handleClose } = this.props;
+    const { content, handleClickContent, closeText = "Close", handleClose } = this.props;
     return (
       <React.Fragment>
         <StyledPopoverParent
-          shown={shown}
-          shownMobile={shownMobile}
           anchor={anchor}
           position={position}
           containerTop={containerTop}
@@ -278,7 +285,6 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
           popoverHeight={popoverHeight}
           popoverWidth={popoverWidth}
           ref={this.popover}
-          reRender={this.state.reRender}
           onClick={handleClickContent}
           tabIndex="0"
         >

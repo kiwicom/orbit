@@ -154,6 +154,7 @@ storiesOf("TripSector", module)
   .addWithChapters("Playground", () => {
     const date = text("date", "Mon 22 Oct");
     const dataTest = text("dataTest", "test");
+    const duration = text("duration", "15h 10m");
     return {
       info: "Visit Orbit.Kiwi for more detailed guidelines.",
       chapters: [
@@ -162,7 +163,7 @@ storiesOf("TripSector", module)
             {
               sectionFn: () => (
                 <TripSector dataTest={dataTest}>
-                  <TripDate>{date}</TripDate>
+                  <TripDate duration={duration}>{date}</TripDate>
                   <TripSegment
                     carrier={{
                       code: "FR",

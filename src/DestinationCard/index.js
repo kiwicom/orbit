@@ -214,13 +214,13 @@ class DestinationCard extends React.PureComponent<Props, State> {
       >
         <LazyImage
           original={{
-            webp: ` ${BASE_URL}/photos/236x250/${image}.webp 236w, ${BASE_URL}/photos/385x320/${image}.webp 385w`,
-            jpg: `${BASE_URL}/photos/236x250/${image}.jpg 236w, ${BASE_URL}/photos/385x320/${image}.jpg 385w`,
+            webp: ` ${BASE_URL}/photos/236x250/${image}.webp`,
+            jpg: `${BASE_URL}/photos/236x250/${image}.jpg`,
           }}
           placeholder={{
-            webp: ` ${BASE_URL}/photos/35x37/${image}.webp`,
-            jpg: `${BASE_URL}/photos/35x37/${image}.jpg`,
-          }} //Add that to images kiwi
+            webp: ` ${BASE_URL}/photos/30x30/${image}.webp`,
+            jpg: `${BASE_URL}/photos/30x30/${image}.jpg`,
+          }} // Add that to images kiwi
           name={destinationCity}
         />
         <StyledOverlay />

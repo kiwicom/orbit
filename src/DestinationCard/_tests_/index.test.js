@@ -65,8 +65,9 @@ describe("DestinationCard one-way", () => {
   it("should render price", () => {
     expect(
       component
-        .find("DestinationCard__StyledDestinationCardPriceStay")
+        .find("DestinationCard__StyledDestinationCardContent")
         .find("Heading")
+        .at(3)
         .children()
         .text(),
     ).toBe(price);

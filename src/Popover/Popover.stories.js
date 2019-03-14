@@ -6,6 +6,10 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, boolean, select, array } from "@storybook/addon-knobs";
 
+import Stack from "../Stack";
+import Text from "../Text";
+import List from "../List";
+import ListItem from "../List/ListItem";
 import Button from "../Button";
 
 import Popover from "./index";
@@ -30,7 +34,17 @@ storiesOf("Popover", module)
               sectionFn: () => (
                 <React.Fragment>
                   <Popover
-                    content="ContentTest"
+                    content={
+                      <Stack>
+                        <Text>More information</Text>
+                        <List>
+                          <ListItem>Additional information</ListItem>
+                          <ListItem>Additional information</ListItem>
+                          <ListItem>Additional information</ListItem>
+                        </List>
+                        <Button>Action</Button>
+                      </Stack>
+                    }
                     preferredPosition="top"
                     prefferedAnchorPosition="start"
                   >

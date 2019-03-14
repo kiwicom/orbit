@@ -1,11 +1,11 @@
 // @flow
 import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
 import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, text, boolean, select, array } from "@storybook/addon-knobs";
+import { withKnobs, text, select } from "@storybook/addon-knobs";
 
+import { POSITIONS, ANCHORS } from "./consts";
 import Stack from "../Stack";
 import Text from "../Text";
 import List from "../List";
@@ -23,7 +23,8 @@ storiesOf("Popover", module)
       padding: "20px",
     }),
   )
-  .addWithChapters("Playground", () => {
+  .addWithChapters("Default", () => {
+    const content = text("content", "Write your text here.");
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -32,36 +33,100 @@ storiesOf("Popover", module)
           sections: [
             {
               sectionFn: () => (
-                <React.Fragment>
-                  <Popover
-                    content={
-                      <Stack>
-                        <Text>More information</Text>
-                        <List>
-                          <ListItem>Additional information</ListItem>
-                          <ListItem>Additional information</ListItem>
-                          <ListItem>Additional information</ListItem>
-                        </List>
-                        <Button>Action</Button>
-                      </Stack>
-                    }
-                    preferredPosition="top"
-                    prefferedAnchorPosition="start"
-                  >
-                    <Button block={false} type="primary" size="small">
-                      Button
-                    </Button>
-                  </Popover>
-                  <Popover
-                    content="ContentTest"
-                    preferredPosition="bottom"
-                    prefferedAnchorPosition="end"
-                  >
-                    <Button block type="primary" size="small">
-                      Button
-                    </Button>
-                  </Popover>
-                </React.Fragment>
+                <Popover content={content}>
+                  <Button>Button</Button>
+                </Popover>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Prefered Position", () => {
+    const content = text("content", "Write your text here.");
+    const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.TOP);
+    const preferredAnchor = select("preferredAnchor", Object.values(ANCHORS), ANCHORS.END);
+    return {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Popover
+                  content={content}
+                  preferredPosition={preferredPosition}
+                  prefferedAnchorPosition={preferredAnchor}
+                >
+                  <Button>Button</Button>
+                </Popover>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("With stack", () => {
+    return {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Popover
+                  content={
+                    <Stack>
+                      <Text>More information</Text>
+                      <List>
+                        <ListItem>Additional information</ListItem>
+                        <ListItem>Additional information</ListItem>
+                        <ListItem>Additional information</ListItem>
+                      </List>
+                      <Button>Action</Button>
+                    </Stack>
+                  }
+                  preferredPosition="top"
+                  prefferedAnchorPosition="start"
+                >
+                  <Button>Button</Button>
+                </Popover>
+              ),
+            },
+          ],
+        },
+      ],
+    };
+  })
+  .addWithChapters("Playground", () => {
+    const content = text("content", "Write your text here.");
+    const dataTest = text("dataTest", "test");
+    const preferredPosition = select(
+      "preferredPosition",
+      Object.values(POSITIONS),
+      POSITIONS.BOTTOM,
+    );
+    const preferredAnchor = select("preferredAnchor", Object.values(ANCHORS), ANCHORS.START);
+    return {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+      chapters: [
+        {
+          sections: [
+            {
+              sectionFn: () => (
+                <Popover
+                  dataTest={dataTest}
+                  content={content}
+                  preferredPosition={preferredPosition}
+                  prefferedAnchorPosition={preferredAnchor}
+                >
+                  <Button>Button</Button>
+                </Popover>
               ),
             },
           ],

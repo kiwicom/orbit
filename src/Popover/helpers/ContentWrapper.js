@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 
 import defaultTokens from "../../defaultTokens";
 import media from "../../utils/mediaQuery";
-import { POSITIONS, ANCHOR } from "../consts";
+import { POSITIONS, ANCHORS } from "../consts";
 import Button from "../../Button";
 import type {
   Props,
@@ -21,11 +21,11 @@ const resolvePopoverAnchor = ({
   containerWidth,
   popoverWidth,
 }: StyledAnchor) => {
-  if (anchor === ANCHOR.START) {
+  if (anchor === ANCHORS.START) {
     return css`
       left: ${Math.floor(containerLeft)}px;
     `;
-  } else if (anchor === ANCHOR.END) {
+  } else if (anchor === ANCHORS.END) {
     return css`
       left: ${Math.floor(containerLeft + containerWidth - popoverWidth)}px; // TODO: use token
     `;
@@ -137,7 +137,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
       const { preferredPosition, prefferedAnchorPosition } = this.props;
 
       const positions = Object.keys(POSITIONS).map(k => POSITIONS[k]);
-      const anchor = Object.keys(ANCHOR).map(k => ANCHOR[k]);
+      const anchor = Object.keys(ANCHORS).map(k => ANCHORS[k]);
 
       const defaultPosition = [
         ...[preferredPosition].filter(p => typeof p === "string"),
@@ -219,10 +219,10 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
     };
 
     const isInsideAnchor = (p: Anchors) => {
-      if (p === ANCHOR.START && canBeAnchorLeft) {
-        return ANCHOR.START;
-      } else if (p === ANCHOR.END && canBeAnchorRight) {
-        return ANCHOR.END;
+      if (p === ANCHORS.START && canBeAnchorLeft) {
+        return ANCHORS.START;
+      } else if (p === ANCHORS.END && canBeAnchorRight) {
+        return ANCHORS.END;
       }
       return false;
     };

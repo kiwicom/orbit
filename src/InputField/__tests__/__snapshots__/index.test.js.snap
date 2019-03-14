@@ -3172,6 +3172,7 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
       <Search />
     </InputField__Prefix>
     <InputField__Input
+      autocomplete="off"
       data-test="test"
       maxLength={10}
       minLength={1}

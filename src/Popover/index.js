@@ -1,13 +1,12 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import defaultTokens from "../defaultTokens";
 import Portal from "../Portal";
 import ClickOutside from "../ClickOutside";
 import PopoverContentWrapper from "./helpers/ContentWrapper";
-
-import type { Props } from "./index";
+import type { Props, State } from "./index.flow";
 
 const StyledPopoverChild = styled.div`
   position: relative;
@@ -34,16 +33,17 @@ class Popover extends React.PureComponent<Props, State> {
   };
 
   handleClickOutside = () => {
-    this.timeOutOutside = setTimeout(() => {
+    this.timeoutOutside = setTimeout(() => {
       this.setState({ shown: false });
     });
   };
 
   handleClickContent = () => {
-    clearTimeout(this.timeOutOutside);
+    clearTimeout(this.timeoutOutside);
   };
 
   container: { current: any | HTMLDivElement } = React.createRef();
+  timeoutOutside: TimeoutID;
 
   render() {
     const { shown } = this.state;

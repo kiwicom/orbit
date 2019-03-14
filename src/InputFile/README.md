@@ -38,16 +38,11 @@ Table below contains all types of the props available in the InputFile component
 ```jsx
 class Component extends React.PureComponent<Props> {
 
-  constructor() {
-    super()
-    this.ref = React.createRef();
-  }
-  
   componentDidMount() {
     this.ref.current && this.ref.current.focus();
   }
 
-  ref: { current: React$ElementRef<*> | null };
+  ref: { current: React$ElementRef<*> | null } = React.createRef();
 
   render() {
     return (

@@ -197,7 +197,6 @@ class DestinationCard extends React.PureComponent<Props, State> {
       departureCity,
       destinationCity,
       destinationCountry,
-      image,
       price,
       timeOfStay,
       outbound,
@@ -206,6 +205,9 @@ class DestinationCard extends React.PureComponent<Props, State> {
       onClick,
     } = this.props;
     const { hiddenContentHeight } = this.state;
+
+    const image = this.props.image.toLowerCase();
+
     return (
       <StyledDestinationCard
         data-test={dataTest}

@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/tooltip/
+*/
 import type { Globals, Translation } from "../common/common.js.flow";
 
 export type Dimensions = {|

@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/alert-message/
+*/
 import type { spaceAfter } from "../common/getSpacingToken/index";
 import type { Globals, Translation } from "../common/common.js.flow";
 
@@ -10,7 +13,7 @@ export type Props = {|
   +title?: Translation,
   +icon?: React$Element<any> | boolean,
   +closable?: boolean,
-  +onClose?: () => void | Promise<any> ,
+  +onClose?: () => void | Promise<any>,
   ...Globals,
   ...spaceAfter,
 |};

@@ -35,6 +35,7 @@ import typeof RadioType from "./Radio";
 import typeof RatingStarsType from "./RatingStars";
 import typeof SelectType from "./Select";
 import typeof StackType from "./Stack";
+import typeof StickyType from "./Sticky";
 import typeof SeparatorType from "./Separator";
 import typeof ServiceLogoType from "./ServiceLogo";
 import typeof TextareaType from "./Textarea";
@@ -94,6 +95,7 @@ declare export var DeprecatedCardHeader: DeprecatedCardHeaderType;
 declare export var DeprecatedCardSection: DeprecatedCardSectionType;
 declare export var DeprecatedCardContent: DeprecatedCardContentType;
 
+declare export var Sticky: StickyType;
 declare export var Portal: PortalType;
 declare export var ClickOutside: ClickOutsideType;
 declare export var Modal: ModalType;

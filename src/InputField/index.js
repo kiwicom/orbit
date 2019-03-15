@@ -330,7 +330,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
     tags,
     tabIndex,
     readOnly,
-    autocomplete,
+    autoComplete,
   } = props;
 
   return (
@@ -370,7 +370,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           tabIndex={tabIndex}
           inlineLabel={inlineLabel}
           readOnly={readOnly}
-          autocomplete={autocomplete}
+          autoComplete={autoComplete}
         />
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />

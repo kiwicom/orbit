@@ -38,17 +38,17 @@ const wrapperWithProps = mount(
 
 describe("Sticky", () => {
   it("should contain FloatingWrapper", () => {
-    expect(wrapper.find("Sticky__FloatingWrapper").exists()).toBe(true);
+    expect(wrapper.find("Sticky__StyledStickyContent").exists()).toBe(true);
   });
 
   it("should change offset if props is provided", () => {
     wrapperWithProps.setState({ height: 50 });
-    expect(wrapperWithProps.find("Sticky__FloatingWrapper")).toHaveStyleRule("top", "50px");
+    expect(wrapperWithProps.find("Sticky__StyledStickyContent")).toHaveStyleRule("top", "50px");
   });
 
   it("should change width acc with parent div", () => {
     wrapperWithProps.setState({ width: 300, initialWidth: false });
-    expect(wrapperWithProps.find("Sticky__FloatingWrapper")).toHaveStyleRule("width", "300px");
+    expect(wrapperWithProps.find("Sticky__StyledStickyContent")).toHaveStyleRule("width", "300px");
   });
 
   it("should take props", () => {

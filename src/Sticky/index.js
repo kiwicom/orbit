@@ -7,18 +7,19 @@ import defaultTokens from "../defaultTokens";
 
 import type { Props, State } from "./index";
 
-// TODO: add orbit token for box-shadow
-const FloatingWrapper = styled.div`
+const StyledSticky = styled.div``;
+
+const StyledStickyContent = styled.div`
   position: ${({ sticky }) => (sticky ? `fixed` : `relative`)};
   ${({ size, initialWidth }) => css`
     top: ${size.height && `${size.height}px`};
     width: ${(size.width && !initialWidth && `${size.width}px`) || `100%`};
   `};
-  box-shadow: 0px 2px 20px 6px rgba(23, 27, 30, 0.15);
+  box-shadow: 0 2px 20px 6px rgba(23, 27, 30, 0.15);
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
 `;
 
-FloatingWrapper.defaultProps = {
+StyledStickyContent.defaultProps = {
   theme: defaultTokens,
 };
 
@@ -32,23 +33,25 @@ class Sticky extends React.Component<Props, State> {
   };
 
   componentDidMount() {
+    this.handleTop();
     addScrollHandler(this.handleScroll);
+    window.addEventListener("resize", this.handleTop);
     window.addEventListener("resize", this.handleScroll);
-    if (this.node.current) {
-      const values = this.node.current.getBoundingClientRect();
-      this.handleTop(values.top);
-    }
   }
 
   componentWillUnmount() {
+    window.removeEventListener("resize", this.handleTop);
     window.removeEventListener("resize", this.handleScroll);
     removeScrollHandler(this.handleScroll);
   }
 
-  handleTop = (value: number) => {
-    this.setState({
-      initialTop: value,
-    });
+  handleTop = () => {
+    if (this.sticky?.current) {
+      const values = this.sticky.current.getBoundingClientRect();
+      this.setState({
+        initialTop: values.top,
+      });
+    }
   };
 
   stickyState = (sticky: boolean, height: number, width: number) => {
@@ -56,14 +59,16 @@ class Sticky extends React.Component<Props, State> {
       sticky,
       height,
       width,
+      initialWidth: false,
     });
   };
 
   handleScroll = () => {
-    const element = this.node?.current;
+    const element = this.content?.current;
+    const sticky = this.sticky?.current;
     const elementHeight = element.offsetHeight;
     // $FlowFixMe
-    const parent = element.parentNode.getBoundingClientRect();
+    const parent = sticky.parentNode.getBoundingClientRect();
     const scrollingElement = getScrollingElement().getBoundingClientRect();
 
     const { offset = 0 } = this.props;
@@ -88,7 +93,10 @@ class Sticky extends React.Component<Props, State> {
     }
   };
 
-  node: {
+  content: {
+    current: any | HTMLDivElement,
+  } = React.createRef();
+  sticky: {
     current: any | HTMLDivElement,
   } = React.createRef();
 
@@ -96,14 +104,16 @@ class Sticky extends React.Component<Props, State> {
     const { children } = this.props;
     const { sticky, height, width, initialWidth } = this.state;
     return (
-      <FloatingWrapper
-        sticky={sticky}
-        size={{ height, width }}
-        initialWidth={initialWidth}
-        ref={this.node}
-      >
-        {children}
-      </FloatingWrapper>
+      <StyledSticky ref={this.sticky}>
+        <StyledStickyContent
+          sticky={sticky}
+          size={{ height, width }}
+          initialWidth={initialWidth}
+          ref={this.content}
+        >
+          {children}
+        </StyledStickyContent>
+      </StyledSticky>
     );
   }
 }

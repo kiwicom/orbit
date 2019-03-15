@@ -47,6 +47,7 @@ Table below contains all types of the props in TripDate component.
 | :------------ | :---------------------  | :------------------------------- |
 | **children**  | `React.Node`            | The content of the TripDate.
 | dataTest      | `string`                | Optional prop for testing purposes.
+| duration      | `Translation`           | Optional property for the total duration of the sector. If you pass some value, badge will appear on the right side.
 
 ### TripLayover
 ```jsx

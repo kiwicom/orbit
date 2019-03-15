@@ -40,7 +40,7 @@ const StyledBadge = styled(({ className, children, dataTest }) => (
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   display: inline-flex;
-  flex: 1 0 auto;
+  flex: 0 0 auto;
   box-sizing: border-box;
   justify-content: center;
   align-items: center;

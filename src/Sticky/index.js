@@ -59,7 +59,6 @@ class Sticky extends React.Component<Props, State> {
       sticky,
       height,
       width,
-      initialWidth: false,
     });
   };
 

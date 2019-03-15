@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/separator/
+*/
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|

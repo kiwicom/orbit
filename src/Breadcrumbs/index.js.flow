@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/breadcrumbs/
+*/
 import type { Globals } from "../common/common.js.flow";
 import typeof BreadcrumbsItemType from "./BreadcrumbsItem";
 

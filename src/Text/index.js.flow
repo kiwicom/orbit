@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/text/
+*/
 import type { ReactComponentStyled } from "styled-components";
 
 import type { spaceAfter } from "../common/getSpacingToken/index";

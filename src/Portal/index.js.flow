@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/portal/
+*/
 
 export type Props = {|
   +element?: string,

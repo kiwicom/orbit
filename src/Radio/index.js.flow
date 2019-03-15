@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/radio/
+*/
 import type { Globals, Ref } from "../common/common.js.flow";
 
 export type Props = {|

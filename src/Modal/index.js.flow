@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/modal/
+*/
 import type { Globals } from "../common/common.js.flow";
 import typeof ModalSectionType from "./ModalSection";
 import typeof ModalHeaderType from "./ModalHeader";

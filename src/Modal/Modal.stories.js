@@ -47,7 +47,6 @@ storiesOf("Modal", module)
     const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
     const title = text("Title", "Orbit design system");
     const description = text("Title", "I'm lovely description");
-
     const onClose = action("onClose");
     const content = text(
       "Content",

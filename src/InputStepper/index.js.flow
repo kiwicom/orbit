@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/inputstepper/
+*/
 import type { Globals, Ref, RefType, Translation } from "../common/common.js.flow";
 import type { Size } from "../InputField/index";
 

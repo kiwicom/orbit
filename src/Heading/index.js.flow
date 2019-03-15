@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/heading/
+*/
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";

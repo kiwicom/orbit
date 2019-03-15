@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/inputfield/
+*/
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals, Ref, Translation } from "../common/common.js.flow";
@@ -26,6 +29,7 @@ export type Props = {|
   required?: boolean,
   tabIndex?: string,
   +readOnly?: boolean,
+  +autoComplete?: string,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,

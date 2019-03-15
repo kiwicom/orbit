@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/buttongroup/
+*/
 import type { Globals } from "../common/common.js.flow";
 import ButtonLink from "../ButtonLink";
 import Button from "../Button";

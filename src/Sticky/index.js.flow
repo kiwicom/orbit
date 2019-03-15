@@ -1,0 +1,16 @@
+// @flow
+
+export type Props = {|
+  +offset?: number,
+  +children: React.Node,
+|};
+
+export type State = {|
+  sticky: boolean,
+  height: number,
+  width: number,
+  initialTop: number,
+  initialWidth: boolean,
+|};
+
+declare export default React$ComponentType<Props>;

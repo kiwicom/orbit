@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/tripsegment/
+*/
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Carrier } from "../CarrierLogo";

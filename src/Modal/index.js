@@ -274,6 +274,9 @@ const ModalWrapperContent = styled.div`
         // or fixed when fixedFooter (overwrite -ms-page)
         position: ${({ fullyScrolled, fixedFooter }) =>
           (fullyScrolled && fixedFooter && "static") || (fixedFooter && "fixed")};
+        // for IE there's need to be added inset box-shadow with same background as footer has
+        box-shadow: ${({ fixedFooter, theme }) =>
+          !fixedFooter && `inset 0 0 0 1px ${theme.orbit.paletteWhite}`};
       }
       // also we need to clear not wanted margins
       ${({ fullyScrolled, fixedFooter }) =>
@@ -331,6 +334,17 @@ class Modal extends React.PureComponent<Props, State> {
       clearTimeout(this.timeout);
     }
   }
+
+  setScrollPosition = (value: number) => {
+    const { modalContent, modalBody } = this;
+    if (window?.innerWidth >= DEVICES_WIDTH.largeMobile) {
+      if (modalBody?.current?.scrollTop) {
+        modalBody.current.scrollTop = value;
+      }
+    } else if (modalContent?.current?.scrollTop) {
+      modalContent.current.scrollTop = value;
+    }
+  };
 
   setDimensions = () => {
     const content = this.modalContent.current;

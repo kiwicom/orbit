@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/textlink/
+*/
 import type { ReactComponentStyled, Interpolation } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";

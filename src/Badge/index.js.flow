@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/badge/
+*/
 import type { Globals } from "../common/common.js.flow";
 
 export type Type = "neutral" | "dark" | "info" | "success" | "warning" | "critical" | "white";

@@ -1,5 +1,7 @@
 // @flow
-
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/hide/
+*/
 import type { Devices } from "../utils/mediaQuery/index";
 
 export type Props = {|

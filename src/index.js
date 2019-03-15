@@ -25,6 +25,7 @@ export { default as DeprecatedCardContent } from "./_deprecated/Card/CardContent
 export { default as Card } from "./Card";
 export { default as CardHeader } from "./Card/CardHeader";
 export { default as CardSection } from "./Card/CardSection";
+export { default as DestinationCard } from "./DestinationCard";
 
 // Modal
 export { default as Portal } from "./Portal";

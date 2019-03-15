@@ -1,4 +1,7 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/card/
+*/
 import type { spaceAfter } from "../common/getSpacingToken/index";
 import type { Globals } from "../common/common.js.flow";
 import typeof CardSectionType from "./CardSection/index.js.flow";

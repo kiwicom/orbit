@@ -1,5 +1,7 @@
 // @flow
-
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/tile/
+*/
 import type { Globals } from "../common/common.js.flow";
 
 export type State = {

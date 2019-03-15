@@ -4089,6 +4089,7 @@ exports[`DestinationCard one-way should match snapshot 1`] = `
       </DestinationCard__Shown>
     </DestinationCard__StyledDestinationCardHeader>
     <Stack
+      align="end"
       flex={true}
       justify="between"
       spaceAfter="small"

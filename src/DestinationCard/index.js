@@ -246,7 +246,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
               </Heading>
             </Shown>
           </StyledDestinationCardHeader>
-          <Stack flex justify="between" spaceAfter="small">
+          <Stack flex justify="between" spaceAfter="small" align="end">
             <Heading type="title3" element="div" inverted>
               {price}
             </Heading>

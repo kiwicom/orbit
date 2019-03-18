@@ -13,10 +13,9 @@ Table below contains all types of the props available in DestinationHeader compo
 | Name                | Type                             | Default          | Description                      |
 | :------------------ | :------------------------------- | :--------------- | :------------------------------- |
 | dataTest            | `string`                         |                  | Optional prop for testing purposes.
-| destinationCity     | `string`                         |                  | The name of the destination.
-| image               | `string`                         |                  | The image name of the destination. [See Functional specs](#functional-specs
-| goBackText          | `string`                         | `"Back"`         | The label for the back Button.
-| onGoBack            | `func`                           |                  | Function for handling onGoBack event.
+| destinationCity     | `Translation`                    |                  | The name of the destination.
+| image               | `string`                         |                  | The image name of the destination. [See Functional specs](#functional-specs)
+| onGoBack            | `() => void /| Promise`          |                  | Function for handling onGoBack event.
 
 ## Functional specs
 * You don't have to pass entire src of the image. Just `dubai_ae`, `paris_fr` etc. is enough.

@@ -6,14 +6,14 @@ import DestinationHeader from "../index";
 
 describe("DestinationHeader", () => {
   const destinationName = "Dubai";
-  const destination = "dubai_ae";
+  const image = "dubai_ae";
   const dataTest = "test";
   const goBack = jest.fn();
 
   const component = shallow(
     <DestinationHeader
       destinationName={destinationName}
-      destination={destination}
+      image={image}
       goBack={goBack}
       dataTest={dataTest}
     />,

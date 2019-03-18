@@ -8,7 +8,7 @@ import { TYPE_OPTIONS, TOKENS } from "../Heading/consts";
 import ButtonLink, { StyledButton } from "../Button";
 import BASE_URL from "./consts";
 import defaultTokens from "../defaultTokens";
-import LazyImage, { StyledLazyImage } from "../LazyImage";
+import LazyImage from "../LazyImage";
 import mq from "../utils/mediaQuery";
 
 import type { Props } from "./index";
@@ -20,10 +20,6 @@ const StyledDestinationHeader = styled.div`
   box-sizing: border-box;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   overflow: hidden;
-
-  ${StyledLazyImage} {
-    z-index: 1;
-  }
 
   ${mq.largeMobile(css`
     height: 120px; // TODO: create token largeMobile heightDestinationHeader
@@ -41,7 +37,7 @@ const StyledOverlay = styled.div`
   left: 0;
   top: 0;
   background-image: linear-gradient(to top, rgba(16, 19, 21, 0.75), rgba(0, 0, 0, 0));
-  z-index: 2;
+  z-index: 1;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
 `;
 
@@ -98,18 +94,18 @@ StyledHeader.defaultProps = {
   theme: defaultTokens,
 };
 
-const DestinationHeader = ({ destination, destinationName, goBack, dataTest }: Props) => {
+const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props) => {
   return (
     <StyledDestinationHeader data-test={dataTest}>
-      <StyledOverlay />
       <LazyImage
         original={{
-          webp: `${BASE_URL}/photos/900x120/${destination}.webp`,
-          jpg: `${BASE_URL}/photos/900x120/${destination}.jpg`,
+          webp: `${BASE_URL}/photos/900x120/${image.toLowerCase()}.webp`,
+          jpg: `${BASE_URL}/photos/900x120/${image.toLowerCase()}.jpg`,
         }}
         name={destinationName}
         // TODO: placeholder images, not on S3
       />
+      <StyledOverlay />
       <StyledContent>
         <ButtonLink size="small" iconLeft={<ChevronLeft />} onClick={goBack} />
         <StyledHeader>

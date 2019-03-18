@@ -19,7 +19,7 @@ storiesOf("DestinationHeader", module)
     }),
   )
   .addWithChapters("Playground", () => {
-    const destination = text("destination", "dubai_ae");
+    const image = text("image", "dubai_ae");
     const destinationName = text("destinationName", "Dubai");
     const dataTest = text("dataTest", "test");
 
@@ -32,7 +32,7 @@ storiesOf("DestinationHeader", module)
             {
               sectionFn: () => (
                 <DestinationHeader
-                  destination={destination}
+                  image={image}
                   destinationName={destinationName}
                   goBack={action("goBack")}
                   dataTest={dataTest}

@@ -95,12 +95,17 @@ StyledHeader.defaultProps = {
 };
 
 const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props) => {
+  const destinationImage = image.toLowerCase();
   return (
     <StyledDestinationHeader data-test={dataTest}>
       <LazyImage
         original={{
-          webp: `${BASE_URL}/photos/900x120/${image.toLowerCase()}.webp`,
-          jpg: `${BASE_URL}/photos/900x120/${image.toLowerCase()}.jpg`,
+          webp: `${BASE_URL}/photos/900x120/${destinationImage}.webp`,
+          jpg: `${BASE_URL}/photos/900x120/${destinationImage}.jpg`,
+        }}
+        placeholder={{
+          webp: `${BASE_URL}/photos/225x30/${destinationImage}.webp`,
+          jpg: `${BASE_URL}/photos/225x30/${destinationImage}.jpg`,
         }}
         name={destinationName}
         // TODO: placeholder images, not on S3

@@ -457,6 +457,12 @@ exports[`DestinationHeader should match snapshot 1`] = `
         "webp": "https://images.kiwi.com/photos/900x120/dubai_ae.webp",
       }
     }
+    placeholder={
+      Object {
+        "jpg": "https://images.kiwi.com/photos/225x30/dubai_ae.jpg",
+        "webp": "https://images.kiwi.com/photos/225x30/dubai_ae.webp",
+      }
+    }
   />
   <DestinationHeader__StyledOverlay
     theme={

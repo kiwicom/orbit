@@ -42,15 +42,7 @@ StyledPopoverParent.defaultProps = {
   theme: defaultTokens,
 };
 
-const StyledPopoverContent = styled.div`
-  padding-bottom: ${({ theme }) => theme.orbit.spaceMedium};
-  ${media.largeMobile(css`
-    padding-bottom: 0;
-  `)}
-`;
-StyledPopoverContent.defaultProps = {
-  theme: defaultTokens,
-};
+const StyledPopoverContent = styled.div``;
 
 const StyledOverlay = styled.div`
   display: block;
@@ -64,7 +56,7 @@ const StyledOverlay = styled.div`
   background-color: rgba(23, 27, 30, 0.6); // TODO: token
 
   ${media.largeMobile(css`
-    display: none;
+    background-color: transparent;
   `)}
 `;
 StyledOverlay.defaultProps = {
@@ -72,12 +64,18 @@ StyledOverlay.defaultProps = {
 };
 
 const StyledTooltipClose = styled.div`
+  padding-top: ${({ theme }) => theme.orbit.spaceMedium};
+
   ${media.largeMobile(css`
     display: none;
     visibility: hidden;
+    padding-bottom: 0;
   `)}
 `;
 
+StyledTooltipClose.defaultProps = {
+  theme: defaultTokens,
+};
 class PopoverContentWrapper extends React.PureComponent<Props, State> {
   state = {
     position: "",
@@ -193,6 +191,14 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
     }
   }
 
+  handleClickWhole = (ev: SyntheticEvent<HTMLElement>) => {
+    ev.stopPropagation();
+
+    if (ev.target === this.overlay?.current) {
+      this.props.handleClose();
+    }
+  };
+
   containerTop: number = 0;
   containerLeft: number = 0;
   containerHeight: number = 0;
@@ -205,10 +211,11 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
 
   popover: { current: any | HTMLDivElement } = React.createRef();
   content: { current: any | HTMLDivElement } = React.createRef();
+  overlay: { current: any | HTMLDivElement } = React.createRef();
 
   render() {
     const { position, anchor } = this.state;
-    const { content, handleClickContent, closeText = "Close", handleClose } = this.props;
+    const { content, closeText = "Close", handleClose } = this.props;
     return (
       <React.Fragment>
         <StyledPopoverParent
@@ -221,17 +228,19 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
           popoverHeight={this.popoverHeight}
           popoverWidth={this.popoverWidth}
           ref={this.popover}
-          onClick={handleClickContent}
+          onClick={this.handleClickWhole}
           tabIndex="0"
         >
-          <StyledPopoverContent ref={this.content}>{content}</StyledPopoverContent>
-          <StyledTooltipClose>
-            <Button type="secondary" block onClick={handleClose}>
-              {closeText}
-            </Button>
-          </StyledTooltipClose>
+          <StyledPopoverContent ref={this.content}>
+            {content}
+            <StyledTooltipClose>
+              <Button type="secondary" block onClick={handleClose}>
+                {closeText}
+              </Button>
+            </StyledTooltipClose>
+          </StyledPopoverContent>
         </StyledPopoverParent>
-        <StyledOverlay />
+        <StyledOverlay ref={this.overlay} onClick={this.handleClickWhole} />
       </React.Fragment>
     );
   }

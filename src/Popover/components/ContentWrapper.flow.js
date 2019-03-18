@@ -8,7 +8,6 @@ export type Props = {|
   +closeText?: Translation,
   +preferredPosition?: Positions,
   +containerRef: any | HTMLDivElement,
-  +handleClickContent: () => void,
   +handleClose: () => void,
 |};
 

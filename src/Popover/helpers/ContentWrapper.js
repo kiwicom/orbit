@@ -120,9 +120,6 @@ const StyledTooltipClose = styled.div`
     visibility: hidden;
   `)}
 `;
-StyledTooltipClose.defaultProps = {
-  theme: defaultTokens,
-};
 
 class PopoverContentWrapper extends React.PureComponent<Props, State> {
   state = {

@@ -2,7 +2,6 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
 import Portal from "../Portal";
 import ClickOutside from "../ClickOutside";
 import PopoverContentWrapper from "./helpers/ContentWrapper";
@@ -11,9 +10,6 @@ import type { Props, State } from "./index.flow";
 const StyledPopoverChild = styled.div`
   position: relative;
 `;
-StyledPopoverChild.defaultProps = {
-  theme: defaultTokens,
-};
 
 class Popover extends React.PureComponent<Props, State> {
   state = {

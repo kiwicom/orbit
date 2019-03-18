@@ -108,7 +108,6 @@ const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props) 
           jpg: `${BASE_URL}/photos/225x30/${destinationImage}.jpg`,
         }}
         name={destinationName}
-        // TODO: placeholder images, not on S3
       />
       <StyledOverlay />
       <StyledContent>

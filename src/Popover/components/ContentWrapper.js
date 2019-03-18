@@ -208,26 +208,18 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
 
   render() {
     const { position, anchor } = this.state;
-    const {
-      containerTop,
-      containerLeft,
-      containerHeight,
-      containerWidth,
-      popoverHeight,
-      popoverWidth,
-    } = this;
     const { content, handleClickContent, closeText = "Close", handleClose } = this.props;
     return (
       <React.Fragment>
         <StyledPopoverParent
           anchor={anchor}
           position={position}
-          containerTop={containerTop}
-          containerLeft={containerLeft}
-          containerHeight={containerHeight}
-          containerWidth={containerWidth}
-          popoverHeight={popoverHeight}
-          popoverWidth={popoverWidth}
+          containerTop={this.containerTop}
+          containerLeft={this.containerLeft}
+          containerHeight={this.containerHeight}
+          containerWidth={this.containerWidth}
+          popoverHeight={this.popoverHeight}
+          popoverWidth={this.popoverWidth}
           ref={this.popover}
           onClick={handleClickContent}
           tabIndex="0"

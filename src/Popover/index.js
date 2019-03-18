@@ -44,21 +44,20 @@ class Popover extends React.PureComponent<Props, State> {
   render() {
     const { shown } = this.state;
     const { children, content, preferredPosition } = this.props;
-    const { handleClickContent, handleOut, container } = this;
 
     return (
       <React.Fragment>
-        <StyledPopoverChild onClick={this.handleClick} ref={container}>
+        <StyledPopoverChild onClick={this.handleClick} ref={this.container}>
           <ClickOutside onClickOutside={this.handleClickOutside}>{children}</ClickOutside>
         </StyledPopoverChild>
         {shown && (
-          <Portal>
+          <Portal element="popovers">
             <PopoverContentWrapper
-              containerRef={container.current}
+              containerRef={this.container.current}
               content={content}
-              handleClickContent={handleClickContent}
+              handleClickContent={this.handleClickContent}
               preferredPosition={preferredPosition}
-              handleClose={handleOut}
+              handleClose={this.handleOut}
             />
           </Portal>
         )}

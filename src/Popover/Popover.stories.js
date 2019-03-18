@@ -86,7 +86,6 @@ storiesOf("Popover", module)
                     </Stack>
                   }
                   preferredPosition="top"
-                  prefferedAnchorPosition="start"
                 >
                   <Button>Button</Button>
                 </Popover>

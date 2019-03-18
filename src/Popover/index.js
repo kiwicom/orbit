@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import Portal from "../Portal";
 import ClickOutside from "../ClickOutside";
-import PopoverContentWrapper from "./helpers/ContentWrapper";
+import PopoverContentWrapper from "./components/ContentWrapper";
 import type { Props, State } from "./index.flow";
 
 const StyledPopoverChild = styled.div`

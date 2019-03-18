@@ -6,50 +6,10 @@ import defaultTokens from "../../defaultTokens";
 import media from "../../utils/mediaQuery";
 import { POSITIONS, ANCHORS } from "../consts";
 import Button from "../../Button";
-import type {
-  Props,
-  State,
-  StyledAnchor,
-  StyledPosition,
-  Positions,
-  Anchors,
-} from "./ContentWrapper.flow";
-
-const resolvePopoverAnchor = ({
-  anchor,
-  containerLeft,
-  containerWidth,
-  popoverWidth,
-}: StyledAnchor) => {
-  if (anchor === ANCHORS.START) {
-    return css`
-      left: ${Math.floor(containerLeft)}px;
-    `;
-  } else if (anchor === ANCHORS.END) {
-    return css`
-      left: ${Math.floor(containerLeft + containerWidth - popoverWidth)}px; // TODO: use token
-    `;
-  }
-  return null;
-};
-
-const resolvePopoverPosition = ({
-  position,
-  containerTop,
-  containerHeight,
-  popoverHeight,
-}: StyledPosition) => {
-  if (position === POSITIONS.TOP) {
-    return css`
-      top: ${Math.floor(containerTop - popoverHeight)}px; // TODO: use token
-    `;
-  } else if (position === POSITIONS.BOTTOM) {
-    return css`
-      top: ${Math.floor(containerTop + containerHeight)}px; // TODO: use token
-    `;
-  }
-  return null;
-};
+import resolvePopoverPosition from "../helpers/resolvePopoverPosition";
+import resolvePopoverAnchor from "../helpers/resolvePopoverAnchor";
+import type { Props, State } from "./ContentWrapper.flow";
+import type { Positions, Anchors } from "../index.flow";
 
 const StyledPopoverParent = styled.div`
   position: fixed;
@@ -74,10 +34,8 @@ const StyledPopoverParent = styled.div`
     right: initial;
     bottom: initial;
     width: auto;
-    ${css`
-      ${resolvePopoverPosition}
-      ${resolvePopoverAnchor}
-    `}
+    ${resolvePopoverPosition}
+    ${resolvePopoverAnchor}
   `)}
 `;
 StyledPopoverParent.defaultProps = {

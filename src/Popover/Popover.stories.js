@@ -5,7 +5,7 @@ import styles from "@sambego/storybook-styles";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, select } from "@storybook/addon-knobs";
 
-import { POSITIONS, ANCHORS } from "./consts";
+import { POSITIONS } from "./consts";
 import Stack from "../Stack";
 import Text from "../Text";
 import List from "../List";
@@ -46,7 +46,6 @@ storiesOf("Popover", module)
   .addWithChapters("Prefered Position", () => {
     const content = text("content", "Write your text here.");
     const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.TOP);
-    const preferredAnchor = select("preferredAnchor", Object.values(ANCHORS), ANCHORS.END);
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -55,11 +54,7 @@ storiesOf("Popover", module)
           sections: [
             {
               sectionFn: () => (
-                <Popover
-                  content={content}
-                  preferredPosition={preferredPosition}
-                  prefferedAnchorPosition={preferredAnchor}
-                >
+                <Popover content={content} preferredPosition={preferredPosition}>
                   <Button>Button</Button>
                 </Popover>
               ),
@@ -110,7 +105,7 @@ storiesOf("Popover", module)
       Object.values(POSITIONS),
       POSITIONS.BOTTOM,
     );
-    const preferredAnchor = select("preferredAnchor", Object.values(ANCHORS), ANCHORS.START);
+
     return {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -123,7 +118,6 @@ storiesOf("Popover", module)
                   dataTest={dataTest}
                   content={content}
                   preferredPosition={preferredPosition}
-                  prefferedAnchorPosition={preferredAnchor}
                 >
                   <Button>Button</Button>
                 </Popover>

@@ -96,7 +96,6 @@ StyledPopoverContent.defaultProps = {
 
 const StyledOverlay = styled.div`
   display: block;
-  background-color: red;
   position: fixed;
   top: 0;
   left: 0;
@@ -124,40 +123,30 @@ const StyledTooltipClose = styled.div`
 class PopoverContentWrapper extends React.PureComponent<Props, State> {
   state = {
     position: "",
-    anchor: "",
+    anchor: "start",
   };
 
   componentDidMount() {
     setTimeout(() => {
       this.setDimensions();
 
-      const { preferredPosition, prefferedAnchorPosition } = this.props;
+      const { preferredPosition } = this.props;
 
       const positions = Object.keys(POSITIONS).map(k => POSITIONS[k]);
-      const anchor = Object.keys(ANCHORS).map(k => ANCHORS[k]);
+      const anchors = Object.keys(ANCHORS).map(k => ANCHORS[k]);
 
       const defaultPosition = [
-        ...[preferredPosition].filter(p => typeof p === "string"),
+        preferredPosition,
         ...positions.filter(p => p !== preferredPosition),
       ];
 
-      const defaultAnchor = [
-        ...[prefferedAnchorPosition].filter(p => typeof p === "string"),
-        ...anchor.filter(p => p !== prefferedAnchorPosition),
-      ];
-
-      this.setPosition(defaultPosition, defaultAnchor);
+      this.setPosition(defaultPosition, anchors);
     });
   }
 
   setDimensions() {
-    if (
-      this.props.containerRef.current &&
-      this.popover &&
-      this.content &&
-      typeof window !== "undefined"
-    ) {
-      const containerDimensions = this.props.containerRef.current.getBoundingClientRect();
+    if (this.props.containerRef && this.popover && this.content && typeof window !== "undefined") {
+      const containerDimensions = this.props.containerRef.getBoundingClientRect(); // this.props.containerRef is passed with .current
       const popoverDimensions = this.popover.current.getBoundingClientRect();
 
       // container positions and dimensions for calculation
@@ -236,12 +225,12 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
     // set the first valid position
     // ordering in POSITIONS const is important
     const position = possiblePositions[0];
-    if (typeof position === "string" && this.state.position !== position) {
+    if (typeof position === "string") {
       this.setState({ position });
     }
 
     const anchor = possibleAnchor[0];
-    if (typeof anchor === "string" && this.state.anchor !== anchor) {
+    if (typeof anchor === "string") {
       this.setState({ anchor });
     }
   }

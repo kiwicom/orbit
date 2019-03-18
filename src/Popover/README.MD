@@ -19,14 +19,13 @@ Table below contains all types of the props available in the Popover component.
 | **children**      | `React.Node`          |                 | The reference element where the Popover will appear.
 | **content**       | `React.Node`          |                 | The content to display in the Popover.
 | preferredPosition | [`enum`](#enum)       | `"bottom"`      | The preferred position to choose [See Functional specs](#functional-specs)
-| preferredAnchor   | [`enum`](#enum)       | `"start"`       | The preffered anchoring of Popover [See Functional specs](#functional-specs).
 | closeText         | `Translation`         | `"Close"`       | The text of the close button to display on mobile devices.
 
 ## enum
-| position          | anchor      |
-| :---------------- | :---------- |
-| `"bottom"`        | `"start"`   |
-| `"top"`           | `"end"`     |
+| position          | 
+| :---------------- | 
+| `"bottom"`        | 
+| `"top"`           | 
 
 
 ## Functional specs

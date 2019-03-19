@@ -9,10 +9,13 @@ const resolvePopoverAnchor = ({
   containerLeft,
   containerWidth,
   popoverWidth,
+  theme,
 }: StyledAnchor) => {
   if (anchor === ANCHORS.START) {
     return css`
-      left: ${Math.floor(containerLeft)}px;
+      left: ${theme.rtl
+        ? Math.floor(containerLeft + containerWidth - popoverWidth)
+        : Math.floor(containerLeft)}px;
     `;
   } else if (anchor === ANCHORS.END) {
     return css`

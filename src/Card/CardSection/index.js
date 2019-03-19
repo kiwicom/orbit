@@ -64,6 +64,7 @@ export const CardSectionContext: React.Context<ContextType> = React.createContex
   expandable: false,
   expanded: false,
   handleToggleSection: () => {},
+  onKeyPressHandler: () => {},
 });
 
 class CardSection extends React.Component<any, Props> {
@@ -90,12 +91,34 @@ class CardSection extends React.Component<any, Props> {
     }
   };
 
+  handleKeyPress = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
+    if (ev.key === "Enter" || ev.key === " ") {
+      ev.preventDefault();
+      this.injectCallbackAndToggleSection();
+
+      const { onClose, onExpand, expanded } = this.props;
+      if (expanded && onClose) {
+        // If is expanded -> action is closing
+        onClose();
+      }
+      if (!expanded && onExpand) {
+        // if is closed > action is expanding
+        onExpand();
+      }
+    }
+  };
+
   render() {
     const { children, dataTest, expandable, expanded } = this.props;
     return (
       <StyledCardSection data-test={dataTest} expandable={expandable} expanded={expanded}>
         <CardSectionContext.Provider
-          value={{ expandable, expanded, handleToggleSection: this.injectCallbackAndToggleSection }}
+          value={{
+            expandable,
+            expanded,
+            handleToggleSection: this.injectCallbackAndToggleSection,
+            onKeyPressHandler: this.handleKeyPress,
+          }}
         >
           {children}
         </CardSectionContext.Provider>

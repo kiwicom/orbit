@@ -40,6 +40,12 @@ export const StyledCardSectionHeader = styled.div`
     transform: ${({ expanded }) => expanded && "rotate(-180deg)"};
     margin-${left}: ${({ theme }) => theme.orbit.spaceMedium};
   }
+  &:focus {
+    background: ${({ theme, expandable }) => expandable && theme.orbit.paletteWhiteHover};
+    outline: none;
+  }
+
+ 
 `;
 
 StyledCardSectionHeader.defaultProps = {

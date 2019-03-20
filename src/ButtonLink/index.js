@@ -207,7 +207,8 @@ export const StyledButtonLink = styled(
   }
 
   &:enabled:focus {
-    box-shadow: ${({ transparent, theme }) => !transparent && theme.orbit.boxShadowButtonFocus};
+    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
+      0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
 
     &:active {
       box-shadow: none;

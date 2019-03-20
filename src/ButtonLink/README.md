@@ -30,6 +30,9 @@ Table below contains all types of the props available in ButtonLink component.
 | transparent   | `boolean`                       | `false`         | If `true`, the ButtonLink will not have `:hover` and `:active` state.
 | **type**      | [`enum`](#enum)                 | `"primary"`     | The type of ButtonLink.
 | width         | `number`                        | `0`             | The width of the ButtonLink. Number is defined in `px`.
+| ariaControls  | `string`                        |                 | Id of the element the button controls.
+| ariaExpanded  | `boolean`                       |                 | Tells screen reader the controlled element from `ariaControls` is expanded
+
 
 ### enum
 
@@ -59,3 +62,13 @@ const YourComponent = props => <div {...props}>YourComponent</div>
 <ButtonLink component={YourComponent}>Title</ButtonLink>
 ```
 This example will render ButtonLink in div with children **YourComponent** and not **Title**.
+
+
+## Accessibility
+if you use `ButtonLink` without `href` so it's rendered as a `<Button>` element then you can use props below. In case you are passing `href` and element is rendered as `<a>` then it should be treated as a link and `ariaControls`, `ariaExpanded` shouldn't be useful. 
+
+* Use `ariaControls` prop to add `aria-controls` attribute to establish the relationship between button and element which is controlled by it. `aria-controls` works only with a unique `id` of an element. 
+
+* Use `ariaExpands` prop to add `aria-expands` to indicate screenreaders, that element controlled by button through `ariaControls` is expanded or not.
+
+* Use `disabled` prop to indicate users that button is inactive and they can't interact with it.

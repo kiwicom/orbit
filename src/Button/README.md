@@ -31,6 +31,8 @@ Table below contains all types of the props available in Button component.
 | submit        | `boolean`                         | `false`         | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.
 | **type**      | [`enum`](#enum)                   | `"primary"`     | The type of Button.
 | width         | `number`                          | `0`             | The width of the Button. Number is defined in `px`.
+| ariaControls  | `string`                          |                 | Id of the element the button controls.
+| ariaExpanded  | `boolean`                         |                 | Tells screen reader the controlled element from `ariaControls` is expanded
 
 ### enum
 
@@ -62,3 +64,12 @@ Table below contains all types of the props available in Button component.
   If you specify the children of **YourComponent** component, it will override the children prop of Button component, e.g.:
   ```jsx
   const YourComponent = props => <div {...props}>YourComponent</div>
+
+## Accessibility
+A button is mainly used for indicating an action, submitting a data, opening a modal etc... If you want to use Button for navigation consider using a `<TextLink>` for that.
+
+* Use `ariaControls` prop to add `aria-controls` attribute to establish the relationship between button and element which is controlled by it. `aria-controls` works only with a unique `id` of an element. 
+
+* Use `ariaExpands` prop to add `aria-expands` to indicate screenreaders, that element controlled by button through `ariaControls` is expanded or not.
+
+* Use `disabled` prop to indicate users that button is inactive and they can't interact with it.

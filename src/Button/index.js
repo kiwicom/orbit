@@ -351,11 +351,10 @@ export const StyledButton = styled(
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
   font-size: ${getSizeToken(TOKENS.fontSizeButton)};
-  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   transition: all 0.15s ease-in-out !important;
   outline: 0;
   opacity: ${({ disabled, theme }) => disabled && theme.orbit.opacityButtonDisabled};
-  pointer-events: ${({ disabled }) => disabled && "none"};
   box-shadow: ${({ bordered, theme, type }) =>
     bordered &&
     `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)({
@@ -458,6 +457,8 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
     block,
     loading = false,
     width = 0,
+    ariaExpanded,
+    ariaControls,
   } = props;
   const iconLeft = props.iconLeft || icon;
   const sizeIcon = size === ICON_SIZES.SMALL ? ICON_SIZES.SMALL : ICON_SIZES.MEDIUM;
@@ -481,6 +482,8 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
       type={type}
       width={width}
       buttonRef={ref}
+      aria-controls={ariaControls}
+      aria-expanded={ariaExpanded}
     >
       {loading && <Loading type="buttonLoader" />}
       <StyledButtonContent loading={loading}>

@@ -2,7 +2,7 @@
 
 exports[`Heading in DIV, type Title5 should match snapshot 1`] = `
 .c0 {
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-size: 12px;
   font-weight: 700;
   color: #171b1e;
@@ -277,7 +277,7 @@ exports[`Heading in DIV, type Title5 should match snapshot 1`] = `
           "durationFast": "0.15s",
           "durationNormal": "0.3s",
           "durationSlow": "0.4s",
-          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
           "fontSizeButtonLarge": "16px",
           "fontSizeButtonNormal": "14px",
           "fontSizeButtonSmall": "12px",
@@ -474,7 +474,7 @@ exports[`Heading in DIV, type Title5 should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "Heading__StyledHeading-sc-1b8cso5-0",
             "isStatic": false,
-            "lastClassName": "gsJzsI",
+            "lastClassName": "bgKIwX",
             "rules": Array [
               "font-family:",
               [Function],
@@ -752,7 +752,7 @@ exports[`Heading in DIV, type Title5 should match snapshot 1`] = `
                 "durationFast": "0.15s",
                 "durationNormal": "0.3s",
                 "durationSlow": "0.4s",
-                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                 "fontSizeButtonLarge": "16px",
                 "fontSizeButtonNormal": "14px",
                 "fontSizeButtonSmall": "12px",
@@ -1210,7 +1210,7 @@ exports[`Heading in DIV, type Title5 should match snapshot 1`] = `
             "durationFast": "0.15s",
             "durationNormal": "0.3s",
             "durationSlow": "0.4s",
-            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
             "fontSizeButtonLarge": "16px",
             "fontSizeButtonNormal": "14px",
             "fontSizeButtonSmall": "12px",
@@ -1661,7 +1661,7 @@ exports[`Heading in DIV, type Title5 should match snapshot 1`] = `
               "durationFast": "0.15s",
               "durationNormal": "0.3s",
               "durationSlow": "0.4s",
-              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
               "fontSizeButtonLarge": "16px",
               "fontSizeButtonNormal": "14px",
               "fontSizeButtonSmall": "12px",
@@ -2124,7 +2124,7 @@ exports[`Heading in H2, type Title1, not inverted should match snapshot 1`] = `
         "durationFast": "0.15s",
         "durationNormal": "0.3s",
         "durationSlow": "0.4s",
-        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
         "fontSizeButtonLarge": "16px",
         "fontSizeButtonNormal": "14px",
         "fontSizeButtonSmall": "12px",

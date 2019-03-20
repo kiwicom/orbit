@@ -33,7 +33,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
 }
 
 .c6 {
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -84,7 +84,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
 }
 
 .c13 {
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -136,7 +136,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
 
 .c17 {
   color: #d21c1c;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-size: 12px;
   font-weight: 500;
   line-height: 1.4;
@@ -160,7 +160,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
 
 .c2 {
   display: block;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-size: 14px;
   color: #7f91a8;
   line-height: 1.4;
@@ -168,7 +168,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
 }
 
 .c1 {
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   position: relative;
   display: block;
   z-index: 2;
@@ -284,7 +284,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   -moz-appearance: none;
   appearance: none;
   -webkit-text-fill-color: inherit;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   border: none;
   padding: 0 12px;
   font-size: inherit;
@@ -806,7 +806,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                     "durationFast": "0.15s",
                     "durationNormal": "0.3s",
                     "durationSlow": "0.4s",
-                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                     "fontSizeButtonLarge": "16px",
                     "fontSizeButtonNormal": "14px",
                     "fontSizeButtonSmall": "12px",
@@ -1267,7 +1267,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                           "durationFast": "0.15s",
                           "durationNormal": "0.3s",
                           "durationSlow": "0.4s",
-                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                           "fontSizeButtonLarge": "16px",
                           "fontSizeButtonNormal": "14px",
                           "fontSizeButtonSmall": "12px",
@@ -1723,7 +1723,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                       "durationFast": "0.15s",
                       "durationNormal": "0.3s",
                       "durationSlow": "0.4s",
-                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                       "fontSizeButtonLarge": "16px",
                       "fontSizeButtonNormal": "14px",
                       "fontSizeButtonSmall": "12px",
@@ -2180,7 +2180,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",
@@ -2650,7 +2650,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -3108,7 +3108,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                               "durationFast": "0.15s",
                               "durationNormal": "0.3s",
                               "durationSlow": "0.4s",
-                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                               "fontSizeButtonLarge": "16px",
                               "fontSizeButtonNormal": "14px",
                               "fontSizeButtonSmall": "12px",
@@ -3558,7 +3558,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -4019,7 +4019,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                           "durationFast": "0.15s",
                           "durationNormal": "0.3s",
                           "durationSlow": "0.4s",
-                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                           "fontSizeButtonLarge": "16px",
                           "fontSizeButtonNormal": "14px",
                           "fontSizeButtonSmall": "12px",
@@ -4494,7 +4494,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -4952,7 +4952,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",
@@ -5403,7 +5403,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                               "durationFast": "0.15s",
                               "durationNormal": "0.3s",
                               "durationSlow": "0.4s",
-                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                               "fontSizeButtonLarge": "16px",
                               "fontSizeButtonNormal": "14px",
                               "fontSizeButtonSmall": "12px",
@@ -5854,7 +5854,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -6323,7 +6323,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         "durationFast": "0.15s",
                                         "durationNormal": "0.3s",
                                         "durationSlow": "0.4s",
-                                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                         "fontSizeButtonLarge": "16px",
                                         "fontSizeButtonNormal": "14px",
                                         "fontSizeButtonSmall": "12px",
@@ -6781,7 +6781,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     "durationFast": "0.15s",
                                     "durationNormal": "0.3s",
                                     "durationSlow": "0.4s",
-                                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                     "fontSizeButtonLarge": "16px",
                                     "fontSizeButtonNormal": "14px",
                                     "fontSizeButtonSmall": "12px",
@@ -7230,7 +7230,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       "durationFast": "0.15s",
                                       "durationNormal": "0.3s",
                                       "durationSlow": "0.4s",
-                                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                       "fontSizeButtonLarge": "16px",
                                       "fontSizeButtonNormal": "14px",
                                       "fontSizeButtonSmall": "12px",
@@ -7756,7 +7756,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             "durationFast": "0.15s",
                                             "durationNormal": "0.3s",
                                             "durationSlow": "0.4s",
-                                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                             "fontSizeButtonLarge": "16px",
                                             "fontSizeButtonNormal": "14px",
                                             "fontSizeButtonSmall": "12px",
@@ -8280,7 +8280,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                   "durationFast": "0.15s",
                                                   "durationNormal": "0.3s",
                                                   "durationSlow": "0.4s",
-                                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                   "fontSizeButtonLarge": "16px",
                                                   "fontSizeButtonNormal": "14px",
                                                   "fontSizeButtonSmall": "12px",
@@ -8746,7 +8746,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                               "durationFast": "0.15s",
                                               "durationNormal": "0.3s",
                                               "durationSlow": "0.4s",
-                                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                               "fontSizeButtonLarge": "16px",
                                               "fontSizeButtonNormal": "14px",
                                               "fontSizeButtonSmall": "12px",
@@ -9234,7 +9234,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                 "durationFast": "0.15s",
                                                 "durationNormal": "0.3s",
                                                 "durationSlow": "0.4s",
-                                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                 "fontSizeButtonLarge": "16px",
                                                 "fontSizeButtonNormal": "14px",
                                                 "fontSizeButtonSmall": "12px",
@@ -9740,7 +9740,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                           "durationFast": "0.15s",
                                                           "durationNormal": "0.3s",
                                                           "durationSlow": "0.4s",
-                                                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                           "fontSizeButtonLarge": "16px",
                                                           "fontSizeButtonNormal": "14px",
                                                           "fontSizeButtonSmall": "12px",
@@ -10206,7 +10206,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                 "durationFast": "0.15s",
                                                                 "durationNormal": "0.3s",
                                                                 "durationSlow": "0.4s",
-                                                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                                 "fontSizeButtonLarge": "16px",
                                                                 "fontSizeButtonNormal": "14px",
                                                                 "fontSizeButtonSmall": "12px",
@@ -10666,7 +10666,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                             "durationFast": "0.15s",
                                                             "durationNormal": "0.3s",
                                                             "durationSlow": "0.4s",
-                                                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                             "fontSizeButtonLarge": "16px",
                                                             "fontSizeButtonNormal": "14px",
                                                             "fontSizeButtonSmall": "12px",
@@ -11118,7 +11118,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                               "durationFast": "0.15s",
                                                               "durationNormal": "0.3s",
                                                               "durationSlow": "0.4s",
-                                                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                               "fontSizeButtonLarge": "16px",
                                                               "fontSizeButtonNormal": "14px",
                                                               "fontSizeButtonSmall": "12px",
@@ -11579,7 +11579,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                       "durationFast": "0.15s",
                                                                       "durationNormal": "0.3s",
                                                                       "durationSlow": "0.4s",
-                                                                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                                       "fontSizeButtonLarge": "16px",
                                                                       "fontSizeButtonNormal": "14px",
                                                                       "fontSizeButtonSmall": "12px",
@@ -12048,7 +12048,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                             "durationFast": "0.15s",
                                                                             "durationNormal": "0.3s",
                                                                             "durationSlow": "0.4s",
-                                                                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                                             "fontSizeButtonLarge": "16px",
                                                                             "fontSizeButtonNormal": "14px",
                                                                             "fontSizeButtonSmall": "12px",
@@ -12506,7 +12506,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                         "durationFast": "0.15s",
                                                                         "durationNormal": "0.3s",
                                                                         "durationSlow": "0.4s",
-                                                                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                                         "fontSizeButtonLarge": "16px",
                                                                         "fontSizeButtonNormal": "14px",
                                                                         "fontSizeButtonSmall": "12px",
@@ -12957,7 +12957,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                           "durationFast": "0.15s",
                                                                           "durationNormal": "0.3s",
                                                                           "durationSlow": "0.4s",
-                                                                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                                           "fontSizeButtonLarge": "16px",
                                                                           "fontSizeButtonNormal": "14px",
                                                                           "fontSizeButtonSmall": "12px",
@@ -13446,7 +13446,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -13931,7 +13931,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         "durationFast": "0.15s",
                                         "durationNormal": "0.3s",
                                         "durationSlow": "0.4s",
-                                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                         "fontSizeButtonLarge": "16px",
                                         "fontSizeButtonNormal": "14px",
                                         "fontSizeButtonSmall": "12px",
@@ -14399,7 +14399,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     "durationFast": "0.15s",
                                     "durationNormal": "0.3s",
                                     "durationSlow": "0.4s",
-                                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                     "fontSizeButtonLarge": "16px",
                                     "fontSizeButtonNormal": "14px",
                                     "fontSizeButtonSmall": "12px",
@@ -14860,7 +14860,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       "durationFast": "0.15s",
                                       "durationNormal": "0.3s",
                                       "durationSlow": "0.4s",
-                                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                       "fontSizeButtonLarge": "16px",
                                       "fontSizeButtonNormal": "14px",
                                       "fontSizeButtonSmall": "12px",
@@ -15327,7 +15327,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -15798,7 +15798,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         "durationFast": "0.15s",
                                         "durationNormal": "0.3s",
                                         "durationSlow": "0.4s",
-                                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                         "fontSizeButtonLarge": "16px",
                                         "fontSizeButtonNormal": "14px",
                                         "fontSizeButtonSmall": "12px",
@@ -16256,7 +16256,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     "durationFast": "0.15s",
                                     "durationNormal": "0.3s",
                                     "durationSlow": "0.4s",
-                                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                     "fontSizeButtonLarge": "16px",
                                     "fontSizeButtonNormal": "14px",
                                     "fontSizeButtonSmall": "12px",
@@ -16705,7 +16705,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       "durationFast": "0.15s",
                                       "durationNormal": "0.3s",
                                       "durationSlow": "0.4s",
-                                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                       "fontSizeButtonLarge": "16px",
                                       "fontSizeButtonNormal": "14px",
                                       "fontSizeButtonSmall": "12px",
@@ -17231,7 +17231,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             "durationFast": "0.15s",
                                             "durationNormal": "0.3s",
                                             "durationSlow": "0.4s",
-                                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                             "fontSizeButtonLarge": "16px",
                                             "fontSizeButtonNormal": "14px",
                                             "fontSizeButtonSmall": "12px",
@@ -17755,7 +17755,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                   "durationFast": "0.15s",
                                                   "durationNormal": "0.3s",
                                                   "durationSlow": "0.4s",
-                                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                   "fontSizeButtonLarge": "16px",
                                                   "fontSizeButtonNormal": "14px",
                                                   "fontSizeButtonSmall": "12px",
@@ -18221,7 +18221,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                               "durationFast": "0.15s",
                                               "durationNormal": "0.3s",
                                               "durationSlow": "0.4s",
-                                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                               "fontSizeButtonLarge": "16px",
                                               "fontSizeButtonNormal": "14px",
                                               "fontSizeButtonSmall": "12px",
@@ -18709,7 +18709,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                 "durationFast": "0.15s",
                                                 "durationNormal": "0.3s",
                                                 "durationSlow": "0.4s",
-                                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                 "fontSizeButtonLarge": "16px",
                                                 "fontSizeButtonNormal": "14px",
                                                 "fontSizeButtonSmall": "12px",
@@ -19215,7 +19215,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                           "durationFast": "0.15s",
                                                           "durationNormal": "0.3s",
                                                           "durationSlow": "0.4s",
-                                                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                           "fontSizeButtonLarge": "16px",
                                                           "fontSizeButtonNormal": "14px",
                                                           "fontSizeButtonSmall": "12px",
@@ -19681,7 +19681,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                 "durationFast": "0.15s",
                                                                 "durationNormal": "0.3s",
                                                                 "durationSlow": "0.4s",
-                                                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                                 "fontSizeButtonLarge": "16px",
                                                                 "fontSizeButtonNormal": "14px",
                                                                 "fontSizeButtonSmall": "12px",
@@ -20141,7 +20141,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                             "durationFast": "0.15s",
                                                             "durationNormal": "0.3s",
                                                             "durationSlow": "0.4s",
-                                                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                             "fontSizeButtonLarge": "16px",
                                                             "fontSizeButtonNormal": "14px",
                                                             "fontSizeButtonSmall": "12px",
@@ -20593,7 +20593,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                               "durationFast": "0.15s",
                                                               "durationNormal": "0.3s",
                                                               "durationSlow": "0.4s",
-                                                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                               "fontSizeButtonLarge": "16px",
                                                               "fontSizeButtonNormal": "14px",
                                                               "fontSizeButtonSmall": "12px",
@@ -21054,7 +21054,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                       "durationFast": "0.15s",
                                                                       "durationNormal": "0.3s",
                                                                       "durationSlow": "0.4s",
-                                                                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                                       "fontSizeButtonLarge": "16px",
                                                                       "fontSizeButtonNormal": "14px",
                                                                       "fontSizeButtonSmall": "12px",
@@ -21523,7 +21523,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                             "durationFast": "0.15s",
                                                                             "durationNormal": "0.3s",
                                                                             "durationSlow": "0.4s",
-                                                                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                                             "fontSizeButtonLarge": "16px",
                                                                             "fontSizeButtonNormal": "14px",
                                                                             "fontSizeButtonSmall": "12px",
@@ -21981,7 +21981,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                         "durationFast": "0.15s",
                                                                         "durationNormal": "0.3s",
                                                                         "durationSlow": "0.4s",
-                                                                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                                         "fontSizeButtonLarge": "16px",
                                                                         "fontSizeButtonNormal": "14px",
                                                                         "fontSizeButtonSmall": "12px",
@@ -22432,7 +22432,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                           "durationFast": "0.15s",
                                                                           "durationNormal": "0.3s",
                                                                           "durationSlow": "0.4s",
-                                                                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                                                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                                                           "fontSizeButtonLarge": "16px",
                                                                           "fontSizeButtonNormal": "14px",
                                                                           "fontSizeButtonSmall": "12px",
@@ -22913,7 +22913,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -23386,7 +23386,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         "durationFast": "0.15s",
                                         "durationNormal": "0.3s",
                                         "durationSlow": "0.4s",
-                                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                         "fontSizeButtonLarge": "16px",
                                         "fontSizeButtonNormal": "14px",
                                         "fontSizeButtonSmall": "12px",
@@ -23844,7 +23844,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     "durationFast": "0.15s",
                                     "durationNormal": "0.3s",
                                     "durationSlow": "0.4s",
-                                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                     "fontSizeButtonLarge": "16px",
                                     "fontSizeButtonNormal": "14px",
                                     "fontSizeButtonSmall": "12px",
@@ -24295,7 +24295,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       "durationFast": "0.15s",
                                       "durationNormal": "0.3s",
                                       "durationSlow": "0.4s",
-                                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                       "fontSizeButtonLarge": "16px",
                                       "fontSizeButtonNormal": "14px",
                                       "fontSizeButtonSmall": "12px",
@@ -24755,7 +24755,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",
@@ -25235,7 +25235,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -25692,7 +25692,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                               "durationFast": "0.15s",
                               "durationNormal": "0.3s",
                               "durationSlow": "0.4s",
-                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                               "fontSizeButtonLarge": "16px",
                               "fontSizeButtonNormal": "14px",
                               "fontSizeButtonSmall": "12px",
@@ -26141,7 +26141,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",

@@ -11,7 +11,7 @@ exports[`FormLabel should match snapshot 1`] = `
       "componentStyle": ComponentStyle {
         "componentId": "FormLabel-sc-1927civ-1",
         "isStatic": false,
-        "lastClassName": "iTEGJS",
+        "lastClassName": "bjEJxA",
         "rules": Array [
           "display:block;font-family:",
           [Function],
@@ -285,7 +285,7 @@ exports[`FormLabel should match snapshot 1`] = `
             "durationFast": "0.15s",
             "durationNormal": "0.3s",
             "durationSlow": "0.4s",
-            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
             "fontSizeButtonLarge": "16px",
             "fontSizeButtonNormal": "14px",
             "fontSizeButtonSmall": "12px",
@@ -742,7 +742,7 @@ exports[`FormLabel should match snapshot 1`] = `
         "durationFast": "0.15s",
         "durationNormal": "0.3s",
         "durationSlow": "0.4s",
-        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
         "fontSizeButtonLarge": "16px",
         "fontSizeButtonNormal": "14px",
         "fontSizeButtonSmall": "12px",

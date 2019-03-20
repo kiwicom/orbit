@@ -16,7 +16,7 @@ exports[`Default Stack should match snapshot 1`] = `
 
 .c7 {
   color: #7f91a8;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.4;
@@ -40,7 +40,7 @@ exports[`Default Stack should match snapshot 1`] = `
 
 .c2 {
   display: block;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-size: 14px;
   color: #46515e;
   line-height: 1.4;
@@ -48,7 +48,7 @@ exports[`Default Stack should match snapshot 1`] = `
 }
 
 .c1 {
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   position: relative;
   display: block;
   z-index: 2;
@@ -108,7 +108,7 @@ exports[`Default Stack should match snapshot 1`] = `
   -moz-appearance: none;
   appearance: none;
   -webkit-text-fill-color: inherit;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   border: none;
   padding: 0 12px;
   font-size: inherit;
@@ -204,7 +204,7 @@ exports[`Default Stack should match snapshot 1`] = `
   border: 0;
   border-radius: 3px;
   padding: 0 16px;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-weight: 700!important;
   font-size: 14px;
   cursor: pointer;
@@ -541,7 +541,7 @@ exports[`Default Stack should match snapshot 1`] = `
         "durationFast": "0.15s",
         "durationNormal": "0.3s",
         "durationSlow": "0.4s",
-        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
         "fontSizeButtonLarge": "16px",
         "fontSizeButtonNormal": "14px",
         "fontSizeButtonSmall": "12px",
@@ -1003,7 +1003,7 @@ exports[`Default Stack should match snapshot 1`] = `
               "durationFast": "0.15s",
               "durationNormal": "0.3s",
               "durationSlow": "0.4s",
-              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
               "fontSizeButtonLarge": "16px",
               "fontSizeButtonNormal": "14px",
               "fontSizeButtonSmall": "12px",
@@ -1474,7 +1474,7 @@ exports[`Default Stack should match snapshot 1`] = `
           "durationFast": "0.15s",
           "durationNormal": "0.3s",
           "durationSlow": "0.4s",
-          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
           "fontSizeButtonLarge": "16px",
           "fontSizeButtonNormal": "14px",
           "fontSizeButtonSmall": "12px",
@@ -1938,7 +1938,7 @@ exports[`Default Stack should match snapshot 1`] = `
             "durationFast": "0.15s",
             "durationNormal": "0.3s",
             "durationSlow": "0.4s",
-            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
             "fontSizeButtonLarge": "16px",
             "fontSizeButtonNormal": "14px",
             "fontSizeButtonSmall": "12px",
@@ -2394,7 +2394,7 @@ exports[`Default Stack should match snapshot 1`] = `
                   "durationFast": "0.15s",
                   "durationNormal": "0.3s",
                   "durationSlow": "0.4s",
-                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                   "fontSizeButtonLarge": "16px",
                   "fontSizeButtonNormal": "14px",
                   "fontSizeButtonSmall": "12px",
@@ -2855,7 +2855,7 @@ exports[`Default Stack should match snapshot 1`] = `
                         "durationFast": "0.15s",
                         "durationNormal": "0.3s",
                         "durationSlow": "0.4s",
-                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                         "fontSizeButtonLarge": "16px",
                         "fontSizeButtonNormal": "14px",
                         "fontSizeButtonSmall": "12px",
@@ -3311,7 +3311,7 @@ exports[`Default Stack should match snapshot 1`] = `
                     "durationFast": "0.15s",
                     "durationNormal": "0.3s",
                     "durationSlow": "0.4s",
-                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                     "fontSizeButtonLarge": "16px",
                     "fontSizeButtonNormal": "14px",
                     "fontSizeButtonSmall": "12px",
@@ -3766,7 +3766,7 @@ exports[`Default Stack should match snapshot 1`] = `
                           "durationFast": "0.15s",
                           "durationNormal": "0.3s",
                           "durationSlow": "0.4s",
-                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                           "fontSizeButtonLarge": "16px",
                           "fontSizeButtonNormal": "14px",
                           "fontSizeButtonSmall": "12px",
@@ -4236,7 +4236,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -4693,7 +4693,7 @@ exports[`Default Stack should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",
@@ -5142,7 +5142,7 @@ exports[`Default Stack should match snapshot 1`] = `
                               "durationFast": "0.15s",
                               "durationNormal": "0.3s",
                               "durationSlow": "0.4s",
-                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                               "fontSizeButtonLarge": "16px",
                               "fontSizeButtonNormal": "14px",
                               "fontSizeButtonSmall": "12px",
@@ -5601,7 +5601,7 @@ exports[`Default Stack should match snapshot 1`] = `
                         "durationFast": "0.15s",
                         "durationNormal": "0.3s",
                         "durationSlow": "0.4s",
-                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                         "fontSizeButtonLarge": "16px",
                         "fontSizeButtonNormal": "14px",
                         "fontSizeButtonSmall": "12px",
@@ -6074,7 +6074,7 @@ exports[`Default Stack should match snapshot 1`] = `
                               "durationFast": "0.15s",
                               "durationNormal": "0.3s",
                               "durationSlow": "0.4s",
-                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                               "fontSizeButtonLarge": "16px",
                               "fontSizeButtonNormal": "14px",
                               "fontSizeButtonSmall": "12px",
@@ -6532,7 +6532,7 @@ exports[`Default Stack should match snapshot 1`] = `
                           "durationFast": "0.15s",
                           "durationNormal": "0.3s",
                           "durationSlow": "0.4s",
-                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                           "fontSizeButtonLarge": "16px",
                           "fontSizeButtonNormal": "14px",
                           "fontSizeButtonSmall": "12px",
@@ -6981,7 +6981,7 @@ exports[`Default Stack should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",
@@ -7432,7 +7432,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -7914,7 +7914,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                       "durationFast": "0.15s",
                                       "durationNormal": "0.3s",
                                       "durationSlow": "0.4s",
-                                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                       "fontSizeButtonLarge": "16px",
                                       "fontSizeButtonNormal": "14px",
                                       "fontSizeButtonSmall": "12px",
@@ -8374,7 +8374,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -8824,7 +8824,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                     "durationFast": "0.15s",
                                     "durationNormal": "0.3s",
                                     "durationSlow": "0.4s",
-                                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                     "fontSizeButtonLarge": "16px",
                                     "fontSizeButtonNormal": "14px",
                                     "fontSizeButtonSmall": "12px",
@@ -9280,7 +9280,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -9751,7 +9751,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                       "durationFast": "0.15s",
                                       "durationNormal": "0.3s",
                                       "durationSlow": "0.4s",
-                                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                       "fontSizeButtonLarge": "16px",
                                       "fontSizeButtonNormal": "14px",
                                       "fontSizeButtonSmall": "12px",
@@ -10209,7 +10209,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -10658,7 +10658,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                     "durationFast": "0.15s",
                                     "durationNormal": "0.3s",
                                     "durationSlow": "0.4s",
-                                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                     "fontSizeButtonLarge": "16px",
                                     "fontSizeButtonNormal": "14px",
                                     "fontSizeButtonSmall": "12px",
@@ -11118,7 +11118,7 @@ exports[`Default Stack should match snapshot 1`] = `
                           "durationFast": "0.15s",
                           "durationNormal": "0.3s",
                           "durationSlow": "0.4s",
-                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                           "fontSizeButtonLarge": "16px",
                           "fontSizeButtonNormal": "14px",
                           "fontSizeButtonSmall": "12px",
@@ -11598,7 +11598,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -12055,7 +12055,7 @@ exports[`Default Stack should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",
@@ -12504,7 +12504,7 @@ exports[`Default Stack should match snapshot 1`] = `
                               "durationFast": "0.15s",
                               "durationNormal": "0.3s",
                               "durationSlow": "0.4s",
-                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                               "fontSizeButtonLarge": "16px",
                               "fontSizeButtonNormal": "14px",
                               "fontSizeButtonSmall": "12px",
@@ -12971,7 +12971,7 @@ exports[`Default Stack should match snapshot 1`] = `
                   "durationFast": "0.15s",
                   "durationNormal": "0.3s",
                   "durationSlow": "0.4s",
-                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                   "fontSizeButtonLarge": "16px",
                   "fontSizeButtonNormal": "14px",
                   "fontSizeButtonSmall": "12px",
@@ -13496,7 +13496,7 @@ exports[`Default Stack should match snapshot 1`] = `
                         "durationFast": "0.15s",
                         "durationNormal": "0.3s",
                         "durationSlow": "0.4s",
-                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                         "fontSizeButtonLarge": "16px",
                         "fontSizeButtonNormal": "14px",
                         "fontSizeButtonSmall": "12px",
@@ -13956,7 +13956,7 @@ exports[`Default Stack should match snapshot 1`] = `
                     "durationFast": "0.15s",
                     "durationNormal": "0.3s",
                     "durationSlow": "0.4s",
-                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                     "fontSizeButtonLarge": "16px",
                     "fontSizeButtonNormal": "14px",
                     "fontSizeButtonSmall": "12px",
@@ -14411,7 +14411,7 @@ exports[`Default Stack should match snapshot 1`] = `
                       "durationFast": "0.15s",
                       "durationNormal": "0.3s",
                       "durationSlow": "0.4s",
-                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                       "fontSizeButtonLarge": "16px",
                       "fontSizeButtonNormal": "14px",
                       "fontSizeButtonSmall": "12px",
@@ -14866,7 +14866,7 @@ exports[`Default Stack should match snapshot 1`] = `
                           "durationFast": "0.15s",
                           "durationNormal": "0.3s",
                           "durationSlow": "0.4s",
-                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                           "fontSizeButtonLarge": "16px",
                           "fontSizeButtonNormal": "14px",
                           "fontSizeButtonSmall": "12px",
@@ -15327,7 +15327,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -15784,7 +15784,7 @@ exports[`Default Stack should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",
@@ -16036,7 +16036,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
 
 .c7 {
   color: #7f91a8;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.4;
@@ -16060,7 +16060,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
 
 .c2 {
   display: block;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-size: 14px;
   color: #46515e;
   line-height: 1.4;
@@ -16068,7 +16068,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
 }
 
 .c1 {
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   position: relative;
   display: block;
   z-index: 2;
@@ -16128,7 +16128,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   -moz-appearance: none;
   appearance: none;
   -webkit-text-fill-color: inherit;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   border: none;
   padding: 0 12px;
   font-size: inherit;
@@ -16224,7 +16224,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   border: 0;
   border-radius: 3px;
   padding: 0 16px;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-weight: 700!important;
   font-size: 14px;
   cursor: pointer;
@@ -16635,7 +16635,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
           "durationFast": "0.15s",
           "durationNormal": "0.3s",
           "durationSlow": "0.4s",
-          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
           "fontSizeButtonLarge": "16px",
           "fontSizeButtonNormal": "14px",
           "fontSizeButtonSmall": "12px",
@@ -17110,7 +17110,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                 "durationFast": "0.15s",
                 "durationNormal": "0.3s",
                 "durationSlow": "0.4s",
-                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                 "fontSizeButtonLarge": "16px",
                 "fontSizeButtonNormal": "14px",
                 "fontSizeButtonSmall": "12px",
@@ -17581,7 +17581,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
             "durationFast": "0.15s",
             "durationNormal": "0.3s",
             "durationSlow": "0.4s",
-            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
             "fontSizeButtonLarge": "16px",
             "fontSizeButtonNormal": "14px",
             "fontSizeButtonSmall": "12px",
@@ -18058,7 +18058,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
               "durationFast": "0.15s",
               "durationNormal": "0.3s",
               "durationSlow": "0.4s",
-              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
               "fontSizeButtonLarge": "16px",
               "fontSizeButtonNormal": "14px",
               "fontSizeButtonSmall": "12px",
@@ -18513,7 +18513,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                     "durationFast": "0.15s",
                     "durationNormal": "0.3s",
                     "durationSlow": "0.4s",
-                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                     "fontSizeButtonLarge": "16px",
                     "fontSizeButtonNormal": "14px",
                     "fontSizeButtonSmall": "12px",
@@ -18974,7 +18974,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                           "durationFast": "0.15s",
                           "durationNormal": "0.3s",
                           "durationSlow": "0.4s",
-                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                           "fontSizeButtonLarge": "16px",
                           "fontSizeButtonNormal": "14px",
                           "fontSizeButtonSmall": "12px",
@@ -19430,7 +19430,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                       "durationFast": "0.15s",
                       "durationNormal": "0.3s",
                       "durationSlow": "0.4s",
-                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                       "fontSizeButtonLarge": "16px",
                       "fontSizeButtonNormal": "14px",
                       "fontSizeButtonSmall": "12px",
@@ -19885,7 +19885,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",
@@ -20355,7 +20355,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -20812,7 +20812,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               "durationFast": "0.15s",
                               "durationNormal": "0.3s",
                               "durationSlow": "0.4s",
-                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                               "fontSizeButtonLarge": "16px",
                               "fontSizeButtonNormal": "14px",
                               "fontSizeButtonSmall": "12px",
@@ -21261,7 +21261,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -21720,7 +21720,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                           "durationFast": "0.15s",
                           "durationNormal": "0.3s",
                           "durationSlow": "0.4s",
-                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                           "fontSizeButtonLarge": "16px",
                           "fontSizeButtonNormal": "14px",
                           "fontSizeButtonSmall": "12px",
@@ -22193,7 +22193,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -22651,7 +22651,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",
@@ -23100,7 +23100,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               "durationFast": "0.15s",
                               "durationNormal": "0.3s",
                               "durationSlow": "0.4s",
-                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                               "fontSizeButtonLarge": "16px",
                               "fontSizeButtonNormal": "14px",
                               "fontSizeButtonSmall": "12px",
@@ -23551,7 +23551,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -24033,7 +24033,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                         "durationFast": "0.15s",
                                         "durationNormal": "0.3s",
                                         "durationSlow": "0.4s",
-                                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                         "fontSizeButtonLarge": "16px",
                                         "fontSizeButtonNormal": "14px",
                                         "fontSizeButtonSmall": "12px",
@@ -24493,7 +24493,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                     "durationFast": "0.15s",
                                     "durationNormal": "0.3s",
                                     "durationSlow": "0.4s",
-                                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                     "fontSizeButtonLarge": "16px",
                                     "fontSizeButtonNormal": "14px",
                                     "fontSizeButtonSmall": "12px",
@@ -24943,7 +24943,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                       "durationFast": "0.15s",
                                       "durationNormal": "0.3s",
                                       "durationSlow": "0.4s",
-                                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                       "fontSizeButtonLarge": "16px",
                                       "fontSizeButtonNormal": "14px",
                                       "fontSizeButtonSmall": "12px",
@@ -25399,7 +25399,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -25870,7 +25870,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                         "durationFast": "0.15s",
                                         "durationNormal": "0.3s",
                                         "durationSlow": "0.4s",
-                                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                         "fontSizeButtonLarge": "16px",
                                         "fontSizeButtonNormal": "14px",
                                         "fontSizeButtonSmall": "12px",
@@ -26328,7 +26328,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                     "durationFast": "0.15s",
                                     "durationNormal": "0.3s",
                                     "durationSlow": "0.4s",
-                                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                     "fontSizeButtonLarge": "16px",
                                     "fontSizeButtonNormal": "14px",
                                     "fontSizeButtonSmall": "12px",
@@ -26777,7 +26777,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                       "durationFast": "0.15s",
                                       "durationNormal": "0.3s",
                                       "durationSlow": "0.4s",
-                                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                       "fontSizeButtonLarge": "16px",
                                       "fontSizeButtonNormal": "14px",
                                       "fontSizeButtonSmall": "12px",
@@ -27237,7 +27237,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",
@@ -27717,7 +27717,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -28174,7 +28174,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               "durationFast": "0.15s",
                               "durationNormal": "0.3s",
                               "durationSlow": "0.4s",
-                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                               "fontSizeButtonLarge": "16px",
                               "fontSizeButtonNormal": "14px",
                               "fontSizeButtonSmall": "12px",
@@ -28623,7 +28623,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -29090,7 +29090,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                     "durationFast": "0.15s",
                     "durationNormal": "0.3s",
                     "durationSlow": "0.4s",
-                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                     "fontSizeButtonLarge": "16px",
                     "fontSizeButtonNormal": "14px",
                     "fontSizeButtonSmall": "12px",
@@ -29615,7 +29615,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                           "durationFast": "0.15s",
                           "durationNormal": "0.3s",
                           "durationSlow": "0.4s",
-                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                           "fontSizeButtonLarge": "16px",
                           "fontSizeButtonNormal": "14px",
                           "fontSizeButtonSmall": "12px",
@@ -30075,7 +30075,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                       "durationFast": "0.15s",
                       "durationNormal": "0.3s",
                       "durationSlow": "0.4s",
-                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                       "fontSizeButtonLarge": "16px",
                       "fontSizeButtonNormal": "14px",
                       "fontSizeButtonSmall": "12px",
@@ -30530,7 +30530,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                         "durationFast": "0.15s",
                         "durationNormal": "0.3s",
                         "durationSlow": "0.4s",
-                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                         "fontSizeButtonLarge": "16px",
                         "fontSizeButtonNormal": "14px",
                         "fontSizeButtonSmall": "12px",
@@ -30985,7 +30985,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",
@@ -31446,7 +31446,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -31903,7 +31903,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               "durationFast": "0.15s",
                               "durationNormal": "0.3s",
                               "durationSlow": "0.4s",
-                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                               "fontSizeButtonLarge": "16px",
                               "fontSizeButtonNormal": "14px",
                               "fontSizeButtonSmall": "12px",
@@ -32152,7 +32152,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
 
 .c7 {
   color: #7f91a8;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.4;
@@ -32176,7 +32176,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
 
 .c2 {
   display: block;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-size: 14px;
   color: #46515e;
   line-height: 1.4;
@@ -32184,7 +32184,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
 }
 
 .c1 {
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   position: relative;
   display: block;
   z-index: 2;
@@ -32244,7 +32244,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   -moz-appearance: none;
   appearance: none;
   -webkit-text-fill-color: inherit;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   border: none;
   padding: 0 12px;
   font-size: inherit;
@@ -32340,7 +32340,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   border: 0;
   border-radius: 3px;
   padding: 0 16px;
-  font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
+  font-family: "Circular Pro",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   font-weight: 700!important;
   font-size: 14px;
   cursor: pointer;
@@ -32676,7 +32676,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
         "durationFast": "0.15s",
         "durationNormal": "0.3s",
         "durationSlow": "0.4s",
-        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
         "fontSizeButtonLarge": "16px",
         "fontSizeButtonNormal": "14px",
         "fontSizeButtonSmall": "12px",
@@ -33137,7 +33137,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
               "durationFast": "0.15s",
               "durationNormal": "0.3s",
               "durationSlow": "0.4s",
-              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
               "fontSizeButtonLarge": "16px",
               "fontSizeButtonNormal": "14px",
               "fontSizeButtonSmall": "12px",
@@ -33608,7 +33608,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
           "durationFast": "0.15s",
           "durationNormal": "0.3s",
           "durationSlow": "0.4s",
-          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
           "fontSizeButtonLarge": "16px",
           "fontSizeButtonNormal": "14px",
           "fontSizeButtonSmall": "12px",
@@ -34071,7 +34071,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
             "durationFast": "0.15s",
             "durationNormal": "0.3s",
             "durationSlow": "0.4s",
-            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
             "fontSizeButtonLarge": "16px",
             "fontSizeButtonNormal": "14px",
             "fontSizeButtonSmall": "12px",
@@ -34526,7 +34526,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                   "durationFast": "0.15s",
                   "durationNormal": "0.3s",
                   "durationSlow": "0.4s",
-                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                   "fontSizeButtonLarge": "16px",
                   "fontSizeButtonNormal": "14px",
                   "fontSizeButtonSmall": "12px",
@@ -34987,7 +34987,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                         "durationFast": "0.15s",
                         "durationNormal": "0.3s",
                         "durationSlow": "0.4s",
-                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                         "fontSizeButtonLarge": "16px",
                         "fontSizeButtonNormal": "14px",
                         "fontSizeButtonSmall": "12px",
@@ -35443,7 +35443,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                     "durationFast": "0.15s",
                     "durationNormal": "0.3s",
                     "durationSlow": "0.4s",
-                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                     "fontSizeButtonLarge": "16px",
                     "fontSizeButtonNormal": "14px",
                     "fontSizeButtonSmall": "12px",
@@ -35898,7 +35898,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           "durationFast": "0.15s",
                           "durationNormal": "0.3s",
                           "durationSlow": "0.4s",
-                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                           "fontSizeButtonLarge": "16px",
                           "fontSizeButtonNormal": "14px",
                           "fontSizeButtonSmall": "12px",
@@ -36368,7 +36368,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -36825,7 +36825,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",
@@ -37274,7 +37274,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                               "durationFast": "0.15s",
                               "durationNormal": "0.3s",
                               "durationSlow": "0.4s",
-                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                               "fontSizeButtonLarge": "16px",
                               "fontSizeButtonNormal": "14px",
                               "fontSizeButtonSmall": "12px",
@@ -37733,7 +37733,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                         "durationFast": "0.15s",
                         "durationNormal": "0.3s",
                         "durationSlow": "0.4s",
-                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                         "fontSizeButtonLarge": "16px",
                         "fontSizeButtonNormal": "14px",
                         "fontSizeButtonSmall": "12px",
@@ -38206,7 +38206,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                               "durationFast": "0.15s",
                               "durationNormal": "0.3s",
                               "durationSlow": "0.4s",
-                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                               "fontSizeButtonLarge": "16px",
                               "fontSizeButtonNormal": "14px",
                               "fontSizeButtonSmall": "12px",
@@ -38664,7 +38664,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           "durationFast": "0.15s",
                           "durationNormal": "0.3s",
                           "durationSlow": "0.4s",
-                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                           "fontSizeButtonLarge": "16px",
                           "fontSizeButtonNormal": "14px",
                           "fontSizeButtonSmall": "12px",
@@ -39113,7 +39113,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",
@@ -39564,7 +39564,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -40046,7 +40046,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                       "durationFast": "0.15s",
                                       "durationNormal": "0.3s",
                                       "durationSlow": "0.4s",
-                                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                       "fontSizeButtonLarge": "16px",
                                       "fontSizeButtonNormal": "14px",
                                       "fontSizeButtonSmall": "12px",
@@ -40506,7 +40506,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -40956,7 +40956,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                     "durationFast": "0.15s",
                                     "durationNormal": "0.3s",
                                     "durationSlow": "0.4s",
-                                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                     "fontSizeButtonLarge": "16px",
                                     "fontSizeButtonNormal": "14px",
                                     "fontSizeButtonSmall": "12px",
@@ -41412,7 +41412,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -41883,7 +41883,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                       "durationFast": "0.15s",
                                       "durationNormal": "0.3s",
                                       "durationSlow": "0.4s",
-                                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                       "fontSizeButtonLarge": "16px",
                                       "fontSizeButtonNormal": "14px",
                                       "fontSizeButtonSmall": "12px",
@@ -42341,7 +42341,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                   "durationFast": "0.15s",
                                   "durationNormal": "0.3s",
                                   "durationSlow": "0.4s",
-                                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                   "fontSizeButtonLarge": "16px",
                                   "fontSizeButtonNormal": "14px",
                                   "fontSizeButtonSmall": "12px",
@@ -42790,7 +42790,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                     "durationFast": "0.15s",
                                     "durationNormal": "0.3s",
                                     "durationSlow": "0.4s",
-                                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                     "fontSizeButtonLarge": "16px",
                                     "fontSizeButtonNormal": "14px",
                                     "fontSizeButtonSmall": "12px",
@@ -43250,7 +43250,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           "durationFast": "0.15s",
                           "durationNormal": "0.3s",
                           "durationSlow": "0.4s",
-                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                           "fontSizeButtonLarge": "16px",
                           "fontSizeButtonNormal": "14px",
                           "fontSizeButtonSmall": "12px",
@@ -43730,7 +43730,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -44187,7 +44187,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",
@@ -44636,7 +44636,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                               "durationFast": "0.15s",
                               "durationNormal": "0.3s",
                               "durationSlow": "0.4s",
-                              "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                              "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                               "fontSizeButtonLarge": "16px",
                               "fontSizeButtonNormal": "14px",
                               "fontSizeButtonSmall": "12px",
@@ -45103,7 +45103,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                   "durationFast": "0.15s",
                   "durationNormal": "0.3s",
                   "durationSlow": "0.4s",
-                  "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                  "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                   "fontSizeButtonLarge": "16px",
                   "fontSizeButtonNormal": "14px",
                   "fontSizeButtonSmall": "12px",
@@ -45628,7 +45628,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                         "durationFast": "0.15s",
                         "durationNormal": "0.3s",
                         "durationSlow": "0.4s",
-                        "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                        "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                         "fontSizeButtonLarge": "16px",
                         "fontSizeButtonNormal": "14px",
                         "fontSizeButtonSmall": "12px",
@@ -46088,7 +46088,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                     "durationFast": "0.15s",
                     "durationNormal": "0.3s",
                     "durationSlow": "0.4s",
-                    "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                    "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                     "fontSizeButtonLarge": "16px",
                     "fontSizeButtonNormal": "14px",
                     "fontSizeButtonSmall": "12px",
@@ -46543,7 +46543,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                       "durationFast": "0.15s",
                       "durationNormal": "0.3s",
                       "durationSlow": "0.4s",
-                      "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                      "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                       "fontSizeButtonLarge": "16px",
                       "fontSizeButtonNormal": "14px",
                       "fontSizeButtonSmall": "12px",
@@ -46998,7 +46998,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           "durationFast": "0.15s",
                           "durationNormal": "0.3s",
                           "durationSlow": "0.4s",
-                          "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                          "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                           "fontSizeButtonLarge": "16px",
                           "fontSizeButtonNormal": "14px",
                           "fontSizeButtonSmall": "12px",
@@ -47459,7 +47459,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                 "durationFast": "0.15s",
                                 "durationNormal": "0.3s",
                                 "durationSlow": "0.4s",
-                                "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                                "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                                 "fontSizeButtonLarge": "16px",
                                 "fontSizeButtonNormal": "14px",
                                 "fontSizeButtonSmall": "12px",
@@ -47916,7 +47916,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             "durationFast": "0.15s",
                             "durationNormal": "0.3s",
                             "durationSlow": "0.4s",
-                            "fontFamily": "\\"Roboto\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
+                            "fontFamily": "\\"Circular Pro\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
                             "fontSizeButtonLarge": "16px",
                             "fontSizeButtonNormal": "14px",
                             "fontSizeButtonSmall": "12px",

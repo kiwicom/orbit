@@ -7,6 +7,7 @@ import PlusCircle from "../icons/PlusCircle";
 import MinusCircle from "../icons/MinusCircle";
 import ButtonLink from "../ButtonLink";
 import InputField, { Input, Prefix } from "../InputField";
+import defaultTokens from "../defaultTokens";
 
 import type { Props, State, ForwardedRef } from "./index";
 
@@ -14,7 +15,21 @@ const PrefixSuffix = styled(({ type, ...props }) => <div {...props} />)`
   flex-shrink: 0;
   z-index: 3;
   cursor: ${({ disabled }) => disabled && "not-allowed"};
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
+      0 0 1px 3px rgba(1, 118, 210, 0.6); //TODO: Create token
+  }
+
+  &:focus:active {
+    box-shadow: none;
+  }
 `;
+
+PrefixSuffix.defaultProps = {
+  theme: defaultTokens,
+};
 
 const StyledInputStepper = styled.div`
   width: 100%;
@@ -61,11 +76,12 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
   };
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    ev.preventDefault();
     if (ev.keyCode === 40) {
+      ev.preventDefault();
       this.decrementCounter();
     }
     if (ev.keyCode === 38) {
+      ev.preventDefault();
       this.incrementCounter();
     }
   };
@@ -124,8 +140,11 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
               iconLeft={<MinusCircle color="secondary" />}
               size={size}
               onClick={this.decrementCounter}
+              onKeyDown={this.incrementCounter}
               transparent
               component={PrefixSuffix}
+              role="button"
+              tabindex="0"
             />
           }
           suffix={
@@ -134,8 +153,11 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
               iconLeft={<PlusCircle color="secondary" />}
               size={size}
               onClick={this.incrementCounter}
+              onKeyDown={this.incrementCounter}
               transparent
               component={PrefixSuffix}
+              role="button"
+              tabindex="0"
             />
           }
         />

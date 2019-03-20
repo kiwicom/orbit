@@ -94,8 +94,9 @@ LabelText.defaultProps = {
 };
 
 const Input = styled.input`
-  visibility: hidden;
-  display: none;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
 
   &:checked ~ ${TextContainer} > ${LabelText} {
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
@@ -106,6 +107,18 @@ const Input = styled.input`
 
   &:checked + ${IconContainer} > svg {
     visibility: visible;
+  }
+
+  &:focus + ${IconContainer} {
+    border: ${({ theme }) =>
+      `2px ${theme.orbit.borderStyleInput} ${theme.orbit.borderColorCheckboxRadioFocus}`};
+  }
+
+  &:active + ${IconContainer} {
+    border-color: ${({ disabled, theme }) =>
+      disabled ? getToken(TOKENS.borderColor) : theme.orbit.borderColorCheckboxRadioActive};
+    transform: ${({ disabled, theme }) =>
+      !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
   }
 `;
 
@@ -124,7 +137,7 @@ export const Label = styled(({ className, children, dataTest }) => (
   flex-direction: row;
   align-items: self-start;
   opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityCheckboxDisabled : "1")};
-  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   position: relative;
 
   ${IconContainer} {
@@ -135,20 +148,6 @@ export const Label = styled(({ className, children, dataTest }) => (
   &:hover ${IconContainer} {
     border-color: ${({ disabled, theme }) =>
       !disabled && theme.orbit.borderColorCheckboxRadioHover};
-  }
-
-  &:active ${IconContainer} {
-    border-color: ${({ disabled, theme }) =>
-      disabled ? getToken(TOKENS.borderColor) : theme.orbit.borderColorCheckboxRadioActive};
-    transform: ${({ disabled, theme }) =>
-      !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
-  }
-  &:focus {
-    outline: 0;
-    & ${IconContainer} {
-      border: ${({ theme }) =>
-        `2px ${theme.orbit.borderStyleInput} ${theme.orbit.borderColorCheckboxRadioFocus}`};
-    }
   }
 `;
 

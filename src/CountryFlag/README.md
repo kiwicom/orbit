@@ -17,7 +17,7 @@ Table below contains all types of the props available in CountryFlag component.
 | name          | `string`                         | `"medium"`      | The name for the flag.
 
 ### enum
-If code doesn't exists "anywhere" will be used
+If code doesn't exist "anywhere" will be used
 
 | code            |
 | :-------------- |

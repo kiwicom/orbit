@@ -20,14 +20,11 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   width: auto;
-  height: 44px;
   background: transparent;
   color: #00a991!important;
   border: 0;
   border-radius: 3px;
-  padding: 0 16px;
   font-weight: 700!important;
-  font-size: 14px;
   cursor: pointer;
   opacity: 1;
   -webkit-transition: all 0.15s ease-in-out !important;
@@ -59,16 +56,11 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
 }
 
 <ButtonLink
-  component="button"
   dataTest="test"
   external={true}
   href="https://kiwi.com"
-  size="normal"
   submit={true}
   tabIndex="-1"
-  transparent={false}
-  type="primary"
-  width={0}
 >
   <ButtonLink__StyledButtonLink
     buttonRef={null}
@@ -77,7 +69,6 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
     external={true}
     href="https://kiwi.com"
     rel="noopener noreferrer"
-    size="normal"
     sizeIcon="medium"
     submit={true}
     tabIndex="-1"
@@ -527,7 +518,6 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
         "rtl": false,
       }
     }
-    transparent={false}
     type="primary"
     width={0}
   >
@@ -543,7 +533,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
             "isStatic": false,
-            "lastClassName": "fQEuZU",
+            "lastClassName": "c0",
             "rules": Array [
               "font-family:",
               [Function],
@@ -1041,7 +1031,6 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
       forwardedRef={null}
       href="https://kiwi.com"
       rel="noopener noreferrer"
-      size="normal"
       sizeIcon="medium"
       submit={true}
       tabIndex="-1"
@@ -1491,7 +1480,6 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "rtl": false,
         }
       }
-      transparent={false}
       type="primary"
       width={0}
     >
@@ -1503,7 +1491,6 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
         external={true}
         href="https://kiwi.com"
         rel="noopener noreferrer"
-        size="normal"
         sizeIcon="medium"
         submit={true}
         tabIndex="-1"
@@ -1953,7 +1940,6 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
             "rtl": false,
           }
         }
-        transparent={false}
         type="primary"
         width={0}
       >
@@ -1962,7 +1948,6 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           data-test="test"
           href="https://kiwi.com"
           rel="noopener noreferrer"
-          size="normal"
           tabIndex="-1"
           target="_blank"
         >
@@ -2049,14 +2034,11 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   -ms-flex-align: center;
   align-items: center;
   width: auto;
-  height: 44px;
   background: transparent;
   color: #00a991!important;
   border: 0;
   border-radius: 3px;
-  padding: 0 12px;
   font-weight: 700!important;
-  font-size: 14px;
   cursor: pointer;
   opacity: 1;
   -webkit-transition: all 0.15s ease-in-out !important;
@@ -2088,25 +2070,17 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
 }
 
 <ButtonLink
-  component="button"
-  external={false}
   href="https://kiwi.com"
   iconLeft={<Airplane />}
   iconRight={<ChevronDown />}
-  size="normal"
-  transparent={false}
-  type="primary"
-  width={0}
 >
   <ButtonLink__StyledButtonLink
     buttonRef={null}
     component="button"
-    external={false}
     href="https://kiwi.com"
     iconLeft={<Airplane />}
     iconRight={<ChevronDown />}
     onlyIcon={false}
-    size="normal"
     sizeIcon="medium"
     theme={
       Object {
@@ -2553,14 +2527,12 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
         "rtl": false,
       }
     }
-    transparent={false}
     type="primary"
     width={0}
   >
     <StyledComponent
       buttonRef={null}
       component="button"
-      external={false}
       forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
@@ -3068,7 +3040,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
       iconLeft={<Airplane />}
       iconRight={<ChevronDown />}
       onlyIcon={false}
-      size="normal"
       sizeIcon="medium"
       theme={
         Object {
@@ -3515,7 +3486,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
           "rtl": false,
         }
       }
-      transparent={false}
       type="primary"
       width={0}
     >
@@ -3523,12 +3493,10 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
         buttonRef={null}
         className="c0"
         component="button"
-        external={false}
         href="https://kiwi.com"
         iconLeft={<Airplane />}
         iconRight={<ChevronDown />}
         onlyIcon={false}
-        size="normal"
         sizeIcon="medium"
         theme={
           Object {
@@ -3975,14 +3943,12 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
             "rtl": false,
           }
         }
-        transparent={false}
         type="primary"
         width={0}
       >
         <a
           className="c0"
           href="https://kiwi.com"
-          size="normal"
         >
           <ButtonLink__IconContainer
             onlyIcon={false}

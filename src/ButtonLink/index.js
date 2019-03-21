@@ -224,13 +224,14 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
   const {
     external,
     children,
-    component,
+    component = "button",
     href,
     size = SIZES.NORMAL,
     icon,
     iconRight,
     type = TYPES.PRIMARY,
     onClick,
+    width = 0,
   } = props;
 
   const iconLeft = props.iconLeft || icon;
@@ -250,6 +251,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       rel={href && external ? "noopener noreferrer" : undefined}
       iconLeft={iconLeft}
       buttonRef={ref}
+      width={width}
     >
       {iconLeft && (
         <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon}>
@@ -265,15 +267,6 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
     </StyledButtonLink>
   );
 });
-
-ButtonLink.defaultProps = {
-  component: "button",
-  external: false,
-  type: "primary",
-  size: "normal",
-  width: 0,
-  transparent: false,
-};
 
 ButtonLink.displayName = "ButtonLink";
 

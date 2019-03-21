@@ -1159,12 +1159,12 @@
   resolved "https://registry.yarnpkg.com/@kiwicom/js/-/js-0.2.0.tgz#dff952bd4acaedc3a6edfb11714f1c7aeb430a6e"
   integrity sha512-ft/DLW75P7Ft0YgCHivfz/awOEkrXFMiuG97ZlrLfcTdBmwawrmP4IeUzhAeDxihluBqyvGoa9OWJYVSVlLCWQ==
 
-"@kiwicom/orbit-design-tokens@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.3.0.tgz#5cfc1b5d9a9e4e8f84c9b09769880ebbb9078516"
-  integrity sha512-T5A7QoaadSgEN+WX5qvAS3TPPyklmurRSOz6AR7Th4Ou/Pz6VpGTheIm6QtjoqmZo6CkInLJHRgYAUrWdWaWHA==
+"@kiwicom/orbit-design-tokens@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.4.0.tgz#b8d286dea59ea5f6d17a476991d4b4fa33598e40"
+  integrity sha512-vMmCbkMLTiKEs6FA8fp0vZmS9tjJ77lvjT3PYODJA6AB1FpeF/H7HafEZhu2tGTc5qZPbSPLT2ByXUSRJEdmDA==
   dependencies:
-    ramda "^0.25.0"
+    ramda "^0.26.1"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -9717,10 +9717,10 @@ ramda@^0.24.1:
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.24.1.tgz#c3b7755197f35b8dc3502228262c4c91ddb6b857"
   integrity sha1-w7d1UZfzW43DUCIoJixMkd22uFc=
 
-ramda@^0.25.0:
-  version "0.25.0"
-  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.25.0.tgz#8fdf68231cffa90bc2f9460390a0cb74a29b29a9"
-  integrity sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
+ramda@^0.26.1:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.26.1.tgz#8d41351eb8111c55353617fc3bbffad8e4d35d06"
+  integrity sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
 
 randexp@0.4.6:
   version "0.4.6"

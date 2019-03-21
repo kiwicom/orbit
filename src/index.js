@@ -14,6 +14,7 @@ export { default as CarrierLogo } from "./CarrierLogo";
 export { default as Checkbox } from "./Checkbox";
 export { default as ChoiceGroup } from "./ChoiceGroup";
 export { default as CountryFlag } from "./CountryFlag";
+export { default as DestinationHeader } from "./DestinationHeader";
 
 // Deprecated Card
 export { default as DeprecatedCard } from "./_deprecated/Card";

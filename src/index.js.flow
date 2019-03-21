@@ -11,6 +11,7 @@ import typeof CheckboxType from "./Checkbox";
 import typeof ChoiceGroupType from "./ChoiceGroup";
 import typeof CountryFlagType from "./CountryFlag";
 import typeof CarrierLogoType from "./CarrierLogo";
+import typeof DestinationHeaderType from "./DestinationHeader";
 import typeof DestinationCardType from "./DestinationCard";
 import typeof HeadingType from "./Heading";
 import typeof HideType from "./Hide";
@@ -80,6 +81,7 @@ declare export var CarrierLogo: CarrierLogoType;
 declare export var Checkbox: CheckboxType;
 declare export var ChoiceGroup: ChoiceGroupType;
 declare export var CountryFlag: CountryFlagType;
+declare export var DestinationHeader: DestinationHeaderType;
 declare export var DestinationCard: DestinationCardType;
 
 declare export var List: ListType;

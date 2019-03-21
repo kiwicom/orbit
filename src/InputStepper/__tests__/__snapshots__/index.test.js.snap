@@ -68,25 +68,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   text-decoration: none;
 }
 
-.c6:enabled:hover {
-  color: #009882!important;
-}
-
-.c6:enabled:active {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
-  color: #008f7b!important;
-}
-
-.c6:enabled:focus {
-  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
-}
-
-.c6:enabled:focus:active {
-  box-shadow: none;
-}
-
 .c13 {
   font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   box-sizing: border-box;
@@ -123,22 +104,22 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   text-decoration: none;
 }
 
-.c13:enabled:hover {
+.c13:hover {
   color: #009882!important;
 }
 
-.c13:enabled:active {
+.c13:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   color: #008f7b!important;
 }
 
-.c13:enabled:focus {
+.c13:focus {
   box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
 }
 
-.c13:enabled:focus:active {
+.c13:focus:active {
   box-shadow: none;
 }
 
@@ -7998,19 +7979,13 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                 [Function],
                                                 ";opacity:",
                                                 [Function],
-                                                ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;&:enabled:hover{background:",
+                                                ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;&:hover{",
                                                 [Function],
-                                                ";color:",
+                                                ";}&:active{",
                                                 [Function],
-                                                "!important;}&:enabled:active{transform:scale(",
+                                                ";}&:focus{",
                                                 [Function],
-                                                ");background:",
-                                                [Function],
-                                                ";color:",
-                                                [Function],
-                                                "!important;}&:enabled:focus{box-shadow:0 0 1px 1px ",
-                                                [Function],
-                                                ",0 0 1px 3px rgba(1,118,210,0.6);&:active{box-shadow:none;}}",
+                                                ";}",
                                               ],
                                             },
                                             "defaultProps": Object {
@@ -17460,19 +17435,13 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                 [Function],
                                                 ";opacity:",
                                                 [Function],
-                                                ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;&:enabled:hover{background:",
+                                                ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;&:hover{",
                                                 [Function],
-                                                ";color:",
+                                                ";}&:active{",
                                                 [Function],
-                                                "!important;}&:enabled:active{transform:scale(",
+                                                ";}&:focus{",
                                                 [Function],
-                                                ");background:",
-                                                [Function],
-                                                ";color:",
-                                                [Function],
-                                                "!important;}&:enabled:focus{box-shadow:0 0 1px 1px ",
-                                                [Function],
-                                                ",0 0 1px 3px rgba(1,118,210,0.6);&:active{box-shadow:none;}}",
+                                                ";}",
                                               ],
                                             },
                                             "defaultProps": Object {

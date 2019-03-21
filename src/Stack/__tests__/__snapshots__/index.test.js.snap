@@ -237,11 +237,11 @@ exports[`Default Stack should match snapshot 1`] = `
   color: #fff;
 }
 
-.c8:enabled:focus {
+.c8:focus {
   box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
 }
 
-.c8:enabled:focus:active {
+.c8:focus:active {
   box-shadow: none;
 }
 
@@ -13226,9 +13226,9 @@ exports[`Default Stack should match snapshot 1`] = `
                       ".c11",
                       "{color:",
                       [Function],
-                      ";}}&:enabled:focus{box-shadow:0 0 1px 1px ",
+                      ";}}&:focus{",
                       [Function],
-                      ",0 0 1px 3px rgba(1,118,210,0.6);&:active{box-shadow:none;}}",
+                      ";}",
                       ".c10",
                       "{width:",
                       [Function],
@@ -16256,11 +16256,11 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   color: #fff;
 }
 
-.c8:enabled:focus {
+.c8:focus {
   box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
 }
 
-.c8:enabled:focus:active {
+.c8:focus:active {
   box-shadow: none;
 }
 
@@ -29344,9 +29344,9 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                         ".c11",
                         "{color:",
                         [Function],
-                        ";}}&:enabled:focus{box-shadow:0 0 1px 1px ",
+                        ";}}&:focus{",
                         [Function],
-                        ",0 0 1px 3px rgba(1,118,210,0.6);&:active{box-shadow:none;}}",
+                        ";}",
                         ".c10",
                         "{width:",
                         [Function],
@@ -32371,11 +32371,11 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   color: #fff;
 }
 
-.c8:enabled:focus {
+.c8:focus {
   box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
 }
 
-.c8:enabled:focus:active {
+.c8:focus:active {
   box-shadow: none;
 }
 
@@ -45356,9 +45356,9 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                       ".c11",
                       "{color:",
                       [Function],
-                      ";}}&:enabled:focus{box-shadow:0 0 1px 1px ",
+                      ";}}&:focus{",
                       [Function],
-                      ",0 0 1px 3px rgba(1,118,210,0.6);&:active{box-shadow:none;}}",
+                      ";}",
                       ".c10",
                       "{width:",
                       [Function],

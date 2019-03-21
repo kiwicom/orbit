@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { ICON_SIZES } from "../Icon/consts";
@@ -413,13 +413,16 @@ export const StyledButton = styled(
     }
   }
 
-  &:enabled:focus {
-    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
-      0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: create token
-
-    &:active {
-      box-shadow: none;
-    }
+  &:focus {
+    ${({ disabled, theme }) =>
+      !disabled &&
+      css`
+        box-shadow: 0 0 1px 1px ${theme.orbit.colorTextButtonWhiteBordered},
+          0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
+        &:active {
+          box-shadow: none;
+        }
+      `};
   }
 
   ${StyledSpinner} {

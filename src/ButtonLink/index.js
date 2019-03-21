@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { TYPES, SIZES, TOKENS } from "./consts";
@@ -195,24 +195,35 @@ export const StyledButtonLink = styled(
   outline: 0;
   text-decoration: none;
 
-  &:enabled:hover {
-    background: ${({ transparent }) => !transparent && getTypeToken(TOKENS.backgroundButtonHover)};
-    color: ${getTypeToken(TOKENS.colorTextButtonHover)}!important;
+  &:hover {
+    ${({ transparent, disabled }) =>
+      !disabled &&
+      css`
+        background: ${!transparent && getTypeToken(TOKENS.backgroundButtonHover)};
+        color: ${getTypeToken(TOKENS.colorTextButtonHover)}!important;
+      `};
   }
 
-  &:enabled:active {
-    transform: scale(${({ theme }) => theme.orbit.modifierScaleButtonActive});
-    background: ${({ transparent }) => !transparent && getTypeToken(TOKENS.backgroundButtonActive)};
-    color: ${getTypeToken(TOKENS.colorTextButtonActive)}!important;
+  &:active {
+    ${({ transparent, disabled, theme }) =>
+      !disabled &&
+      css`
+        transform: scale(${theme.orbit.modifierScaleButtonActive});
+        background: ${!transparent && getTypeToken(TOKENS.backgroundButtonActive)};
+        color: ${getTypeToken(TOKENS.colorTextButtonActive)}!important;
+      `};
   }
 
-  &:enabled:focus {
-    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
-      0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
-
-    &:active {
-      box-shadow: none;
-    }
+  &:focus {
+    ${({ disabled, theme }) =>
+      !disabled &&
+      css`
+        box-shadow: 0 0 1px 1px ${theme.orbit.colorTextButtonWhiteBordered},
+          0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
+        &:active {
+          box-shadow: none;
+        }
+      `};
   }
 `;
 

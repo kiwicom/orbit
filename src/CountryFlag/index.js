@@ -19,11 +19,8 @@ StyledCountryFlag.defaultProps = {
   theme: defaultTokens,
 };
 
-export function getCountryProps(
-  code: ?string = "ANYWHERE",
-  name: ?string,
-): { code: string, name: string } {
-  const codeNormalized = code?.toUpperCase();
+export function getCountryProps(code: ?string, name: ?string): { code: string, name: ?string } {
+  const codeNormalized = code ? code.toUpperCase() : "ANYWHERE";
   const countryCodeExists = codeNormalized in CODES;
 
   warning(countryCodeExists, "Country code not supported: %s", code);

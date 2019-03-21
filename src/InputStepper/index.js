@@ -11,20 +11,10 @@ import defaultTokens from "../defaultTokens";
 
 import type { Props, State, ForwardedRef } from "./index";
 
-const PrefixSuffix = styled(({ type, ...props }) => <div role="button" tabIndex="0" {...props} />)`
+const PrefixSuffix = styled(({ type, ...props }) => <div {...props} />)`
   flex-shrink: 0;
   z-index: 3;
   cursor: ${({ disabled }) => disabled && "not-allowed"};
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
-      0 0 1px 3px rgba(1, 118, 210, 0.6); //TODO: Create token
-  }
-
-  &:focus:active {
-    box-shadow: none;
-  }
 `;
 
 PrefixSuffix.defaultProps = {
@@ -42,6 +32,21 @@ const StyledInputStepper = styled.div`
   }
 `;
 
+const StyledButtonWrapper = styled.div`
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
+      0 0 1px 3px rgba(1, 118, 210, 0.6); //TODO: Create token
+  }
+
+  &:focus:active {
+    box-shadow: none;
+  }
+`;
+
+StyledButtonWrapper.defaultProps = {
+  theme: defaultTokens,
+};
 class InputStepper extends React.Component<Props & ForwardedRef, State> {
   state = {
     value: this.props.defaultValue || 0,
@@ -95,6 +100,18 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
     }
   };
 
+  handleKeyDecrement = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
+    if (ev.keyCode === 32 || ev.keyCode === 13) {
+      this.decrementCounter();
+    }
+  };
+
+  handleKeyIncrement = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
+    if (ev.keyCode === 32 || ev.keyCode === 13) {
+      this.incrementCounter();
+    }
+  };
+
   render() {
     const {
       label,
@@ -135,26 +152,28 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
           tabIndex={tabIndex}
           ref={forwardedRef}
           prefix={
-            <ButtonLink
-              disabled={disabled || value <= +minValue}
-              iconLeft={<MinusCircle color="secondary" />}
-              size={size}
-              onClick={this.decrementCounter}
-              onKeyDown={this.decrementCounter}
-              transparent
-              component={PrefixSuffix}
-            />
+            <StyledButtonWrapper role="button" tabIndex="0" onKeyDown={this.handleKeyDecrement}>
+              <ButtonLink
+                disabled={disabled || value <= +minValue}
+                iconLeft={<MinusCircle color="secondary" />}
+                size={size}
+                onClick={this.decrementCounter}
+                transparent
+                component={PrefixSuffix}
+              />
+            </StyledButtonWrapper>
           }
           suffix={
-            <ButtonLink
-              disabled={disabled || value >= +maxValue}
-              iconLeft={<PlusCircle color="secondary" />}
-              size={size}
-              onClick={this.incrementCounter}
-              onKeyDown={this.incrementCounter}
-              transparent
-              component={PrefixSuffix}
-            />
+            <StyledButtonWrapper role="button" tabIndex="0" onKeyDown={this.handleKeyIncrement}>
+              <ButtonLink
+                disabled={disabled || value >= +maxValue}
+                iconLeft={<PlusCircle color="secondary" />}
+                size={size}
+                onClick={this.incrementCounter}
+                transparent
+                component={PrefixSuffix}
+              />
+            </StyledButtonWrapper>
           }
         />
       </StyledInputStepper>

@@ -244,6 +244,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       {...props}
       onClick={onClick}
       component={component}
+      size={size}
       onlyIcon={onlyIcon}
       sizeIcon={sizeIcon}
       type={type}

@@ -113,6 +113,19 @@ CloseContainer.defaultProps = {
   theme: defaultTokens,
 };
 
+const StyledClose = styled.div`
+  display: flex;
+  border-radius: 100%;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0 0px 2px ${({ theme }) => theme.orbit.paletteCloudNormalActive};
+  }
+`;
+StyledClose.defaultProps = {
+  theme: defaultTokens,
+};
+
 const Tag = (props: Props) => {
   const { icon, selected, children, size = SIZES.NORMAL, onClick, onRemove, dataTest } = props;
 
@@ -136,7 +149,9 @@ const Tag = (props: Props) => {
             }
           }}
         >
-          <CloseCircle size="small" />
+          <StyledClose tabIndex="0" role="button">
+            <CloseCircle size="small" />
+          </StyledClose>
         </CloseContainer>
       )}
     </StyledTag>

@@ -12,11 +12,12 @@ Table below contains all types of the props available in CountryFlag component.
 
 | Name          | Type                             | Default         | Description                      |
 | :------------ | :------------------------------- | :-------------- | :------------------------------- |
-| **code**      | [`enum`](#enum)                  | `"anywhere"`    | Code for the displayed country flag.
+| code          | [`enum`](#enum)                  | `"anywhere"`    | Code for the displayed country flag.
 | dataTest      | `string`                         |                 | Optional prop for testing purposes.
 | name          | `string`                         | `"medium"`      | The name for the flag.
 
 ### enum
+If code doesn't exist "anywhere" will be used
 
 | code            |
 | :-------------- |

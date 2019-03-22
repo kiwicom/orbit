@@ -40,6 +40,12 @@ export const StyledCardSectionHeader = styled.div`
     transform: ${({ expanded }) => expanded && "rotate(-180deg)"};
     margin-${left}: ${({ theme }) => theme.orbit.spaceMedium};
   }
+  &:focus {
+    background: ${({ theme, expandable }) => expandable && theme.orbit.paletteWhiteHover};
+    outline: none;
+  }
+
+ 
 `;
 
 StyledCardSectionHeader.defaultProps = {
@@ -64,11 +70,15 @@ StyledCardSectionHeaderContent.defaultProps = {
 
 const CardSectionHeader = ({ children, actions }: Props) => (
   <CardSectionContext.Consumer>
-    {({ expandable, expanded, handleToggleSection }) => (
+    {({ expandable, expanded, handleToggleSection, onKeyDownHandler }) => (
       <StyledCardSectionHeader
         expandable={expandable}
         expanded={expanded}
         onClick={expandable && handleToggleSection}
+        aria-expanded={expandable && expanded}
+        role={expandable && "button"}
+        tabIndex={expandable && "0"}
+        onKeyDown={onKeyDownHandler}
       >
         <StyledCardSectionHeaderContent expandable={expandable}>
           {children}

@@ -5,11 +5,9 @@
 import type { Globals } from "../common/common.js.flow";
 import typeof BreadcrumbsItemType from "./BreadcrumbsItem";
 
-type Children = React$Element<BreadcrumbsItemType>;
-
 export type Props = {|
   ...Globals,
-  children: Children | Children[],
+  children: React$Node,
 |};
 
 declare export default React$ComponentType<Props>;

@@ -2,10 +2,8 @@
 
 import type { ReactComponentStyled } from "styled-components";
 
-import TableRow from "../TableRow/index";
-
 export type Props = {|
-  +children: Array<React$Element<typeof TableRow>> | React$Element<typeof TableRow>,
+  +children: React$Node,
 |};
 
 declare export default React$ComponentType<Props>;

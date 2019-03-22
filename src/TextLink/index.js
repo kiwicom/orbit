@@ -48,7 +48,7 @@ export const getLinkStyle = ({
   type,
 }: GetLinkStyleProps) => css` // Common styles for TextLink and "a" in Text 
   
-  &:link, &:visited {
+  &, &:link, &:visited {
     color: ${getColor({ theme, type })};
     text-decoration: ${
       type === TYPE_OPTIONS.SECONDARY

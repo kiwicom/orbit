@@ -1,4 +1,4 @@
-# Stack
+# Table
 To implement Table component into your project you'll need to add the import:
 ```jsx
 import Table, { TableHead, TableBody, TableRow, TableCell } from "@kiwicom/orbit-components/lib/Table";
@@ -24,7 +24,7 @@ Table below contains all types of the props available in the Table component.
 
 | Name          | Type                            | Default      | Description                      |
 | :------------ | :------------------------------ | :----------- | :------------------------------- |
-| **children**  | `Array<TableHead or TableHead>` |              | The content of the Table.
+| **children**  | `React.Node`                    |              | The content of the Table, normally [`TableHead`](#tablehead) or [`TableHead`](#TableHead).
 | compact       | `boolean`                       | `false`      | If `true`, the Table will have more compact styles.
 | dataTest      | `string`                        |              | Optional prop for testing purposes.
 
@@ -40,8 +40,8 @@ import TableHead from "@kiwicom/orbit-components/lib/Table/TableHead";
 Table below contains all types of the props in TableHead component.
 
 | Name          | Type                  | Default         | Description                      |
-| :------------ | :---------------------| :-------------- | :------------------------------- |
-| **children**  | `Array<TableRow>`     |                 | The content of the TableHead.
+| :------------ | :-------------------- | :-------------- | :------------------------------- |
+| **children**  | `React.Node`          |                 | The content of the TableHead, normally [`TableRow`](#tablerow).
 
 ### TableBody
 ```jsx
@@ -52,8 +52,8 @@ import TableBody from "@kiwicom/orbit-components/lib/Table/TableBody";
 Table below contains all types of the props in TableBody component.
 
 | Name          | Type                  | Default         | Description                      |
-| :------------ | :---------------------| :-------------- | :------------------------------- |
-| **children**  | `Array<TableRow>`     |                 | The content of the TableBody.
+| :------------ | :-------------------- | :-------------- | :------------------------------- |
+| **children**  | `React.Node`          |                 | The content of the TableBody, normally [`TableRow`](#tablerow).
 
 ### TableRow
 ```jsx
@@ -64,8 +64,8 @@ import TableRow from "@kiwicom/orbit-components/lib/Table/TableRow";
 Table below contains all types of the props in TableRow component.
 
 | Name          | Type                  | Default         | Description                      |
-| :------------ | :---------------------| :-------------- | :------------------------------- |
-| **children**  | `Array<TableCell>`    |                 | The content of the TableRow.
+| :------------ | :-------------------- | :-------------- | :------------------------------- |
+| **children**  | `React.Node`          |                 | The content of the TableRow, normally [`TableCell`](#tablecell).
 
 ### TableCell
 ```jsx

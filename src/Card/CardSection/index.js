@@ -91,7 +91,7 @@ class CardSection extends React.Component<any, Props> {
     }
   };
 
-  handleDownPress = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
+  handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
     if (ev.keyCode === 13 || ev.keyCode === 32) {
       ev.preventDefault();
 
@@ -108,7 +108,7 @@ class CardSection extends React.Component<any, Props> {
             expandable,
             expanded,
             handleToggleSection: this.injectCallbackAndToggleSection,
-            onKeyDownHandler: this.handleDownPress,
+            onKeyDownHandler: this.handleKeyDown,
           }}
         >
           {children}

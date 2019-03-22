@@ -73,11 +73,12 @@ class Stepper extends React.PureComponent<Props, State> {
   };
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    ev.preventDefault();
     if (ev.keyCode === 40) {
+      ev.preventDefault();
       this.decrementCounter();
     }
     if (ev.keyCode === 38) {
+      ev.preventDefault();
       this.incrementCounter();
     }
   };

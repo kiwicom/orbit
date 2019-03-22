@@ -11,12 +11,13 @@ const dataTest = "test";
 
 describe(`CountryFlag of ${name}`, () => {
   const component = shallow(<CountryFlag code={code} name={name} dataTest={dataTest} />);
+  const flag = component.find("CountryFlag__StyledImage");
   it("should have passed props", () => {
-    expect(component.prop("src")).toContain(code);
-    expect(component.prop("srcSet")).toContain(code);
-    expect(component.prop("alt")).toBe(name);
-    expect(component.prop("title")).toBe(name);
-    expect(component.render().prop("data-test")).toBe(dataTest);
+    expect(flag.prop("src")).toContain(code);
+    expect(flag.prop("srcSet")).toContain(code);
+    expect(flag.prop("alt")).toBe(name);
+    expect(flag.prop("title")).toBe(name);
+    expect(flag.render().prop("data-test")).toBe(dataTest);
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

@@ -65,7 +65,7 @@ This example will render ButtonLink in div with children **YourComponent** and n
 
 
 ## Accessibility
-if you use `ButtonLink` without `href` so it's rendered as a `<Button>` element then you can use props below. In case you are passing `href` and element is rendered as `<a>` then it should be treated as a link and `ariaControls`, `ariaExpanded` shouldn't be useful. 
+If you use `ButtonLink` without `href` so it's rendered as a `<button>` HTML element then you can use props below. In case you are passing `href` and element is rendered as `<a>` then it should be treated as a link and `ariaControls`, `ariaExpanded` shouldn't be useful. 
 
 * Use `ariaControls` prop to add `aria-controls` attribute to establish the relationship between button and element which is controlled by it. `aria-controls` works only with a unique `id` of an element. 
 

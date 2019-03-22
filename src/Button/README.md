@@ -66,7 +66,7 @@ Table below contains all types of the props available in Button component.
   const YourComponent = props => <div {...props}>YourComponent</div>
 
 ## Accessibility
-A button is mainly used for indicating an action, submitting a data, opening a modal etc... If you want to use Button for navigation consider using a `<TextLink>` for that.
+A button is mainly used for indicating an action, submitting a data, opening a modal etc. If you want to use Button for navigation consider using a `<TextLink>` for that.
 
 * Use `ariaControls` prop to add `aria-controls` attribute to establish the relationship between button and element which is controlled by it. `aria-controls` works only with a unique `id` of an element. 
 

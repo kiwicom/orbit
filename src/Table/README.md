@@ -1,4 +1,4 @@
-# Stack
+# Table
 To implement Table component into your project you'll need to add the import:
 ```jsx
 import Table, { TableHead, TableBody, TableRow, TableCell } from "@kiwicom/orbit-components/lib/Table";

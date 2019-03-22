@@ -15,9 +15,6 @@ Table below contains all types of the props available in ButtonGroup component.
 
 | Name          | Type                          | Default         | Description                      |
 | :------------ | :---------------------------- | :-------------- | :------------------------------- |
-| **children**  | `Array<Button or ButtonLink`  |                 | The content of the ButtonGroup. [See Functional specs](#functional-specs)
+| **children**  | `React.Node`                  |                 | The content of the ButtonGroup, normally [`Button`](../Button) or [`ButtonLink`](../ButtonLink).
 | connected     | `boolean`                     | `false`         | If `true`, there will not be any spaces between individual Buttons/ButtonLinks.
 | dataTest      | `string`                      |                 | Optional prop for testing purposes.
-
-## Functional specs
-* Either Button or ButtonLink components are allowed in **children**.

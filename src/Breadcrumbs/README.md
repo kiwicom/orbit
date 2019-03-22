@@ -15,7 +15,7 @@ Table below contains all types of the props available in Breadcrumbs component.
 | Name          | Type                                    | Default         | Description                      |
 | :------------ | :-------------------------------------- | :-------------- | :------------------------------- |
 | dataTest      | `string`                                |                 | Optional prop for testing purposes.
-| **children**  | `Array<BreadcrumbsItem>`                |                 | The content of the Breadcrumbs.
+| **children**  | `React.Node`                            |                 | The content of the Breadcrumbs, normally [`BreadcrumbsItem`](#breadcrumbsitem).
 
 ## Functional specs
 * The last BreadcrumbsItem will have stronger `font-weight` automatically. Also, all meta information are automatically render too, so you don't have to specify it explicitly.

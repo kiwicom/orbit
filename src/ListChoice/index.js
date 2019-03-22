@@ -83,7 +83,9 @@ const ListChoice = (props: Props) => {
     <StyledListChoice onClick={onClick} data-test={dataTest}>
       {icon && <StyledListChoiceIcon>{icon}</StyledListChoiceIcon>}
       <StyledListChoiceContent>
-        <Heading type="title4">{title}</Heading>
+        <Heading type="title4" element="div">
+          {title}
+        </Heading>
         {description && (
           <Text type="secondary" size="small">
             {description}

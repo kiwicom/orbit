@@ -64,7 +64,7 @@ export const CardSectionContext: React.Context<ContextType> = React.createContex
   expandable: false,
   expanded: false,
   handleToggleSection: () => {},
-  onKeyPressHandler: () => {},
+  onKeyDownHandler: () => {},
 });
 
 class CardSection extends React.Component<any, Props> {
@@ -91,20 +91,11 @@ class CardSection extends React.Component<any, Props> {
     }
   };
 
-  handleKeyPress = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    if (ev.key === "Enter" || ev.key === " ") {
+  handleDownPress = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
+    if (ev.keyCode === 13 || ev.keyCode === 32) {
       ev.preventDefault();
-      this.injectCallbackAndToggleSection();
 
-      const { onClose, onExpand, expanded } = this.props;
-      if (expanded && onClose) {
-        // If is expanded -> action is closing
-        onClose();
-      }
-      if (!expanded && onExpand) {
-        // if is closed > action is expanding
-        onExpand();
-      }
+      this.injectCallbackAndToggleSection();
     }
   };
 
@@ -117,7 +108,7 @@ class CardSection extends React.Component<any, Props> {
             expandable,
             expanded,
             handleToggleSection: this.injectCallbackAndToggleSection,
-            onKeyPressHandler: this.handleKeyPress,
+            onKeyDownHandler: this.handleDownPress,
           }}
         >
           {children}

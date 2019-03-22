@@ -70,7 +70,7 @@ StyledCardSectionHeaderContent.defaultProps = {
 
 const CardSectionHeader = ({ children, actions }: Props) => (
   <CardSectionContext.Consumer>
-    {({ expandable, expanded, handleToggleSection, onKeyPressHandler }) => (
+    {({ expandable, expanded, handleToggleSection, onKeyDownHandler }) => (
       <StyledCardSectionHeader
         expandable={expandable}
         expanded={expanded}
@@ -78,7 +78,7 @@ const CardSectionHeader = ({ children, actions }: Props) => (
         aria-expanded={expandable && expanded}
         role={expandable && "button"}
         tabIndex={expandable && "0"}
-        onKeyPress={onKeyPressHandler}
+        onKeyDown={onKeyDownHandler}
       >
         <StyledCardSectionHeaderContent expandable={expandable}>
           {children}

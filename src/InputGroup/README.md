@@ -17,7 +17,7 @@ Table below contains all types of the props available in InputGroup component.
 
 | Name          | Type                          | Default      | Description                      |
 | :------------ | :---------------------------- | :----------- | :------------------------------- |
-| **children**  | `Array<InputField or Select>` |              | The children of the InputGroup.
+| **children**  | `React.Node`                  |              | The content of the InputGroup, normally [`InputField`](../InputField) or [`Select`](../Select).
 | dataTest      | `string`                      |              | Optional prop for testing purposes.
 | error         | `React.Node`                  |              | The error to display beneath the InputGroup. [See Functional specs](#functional-specs)
 | flex          | `string` or `Array<string>`   | `"0 1 auto"` | The flex attribute(s) for children of the InputGroup. [See Functional specs](#functional-specs)

@@ -32,31 +32,32 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
     value: this.props.defaultValue || 0,
   };
 
-  componentDidUpdate() {
+  onChangeCallback = (value: number) => {
     const { onChange } = this.props;
-    const { value } = this.state;
     if (onChange) {
       onChange(value);
     }
-  }
+    this.setState({ value });
+  };
 
   incrementCounter = () => {
     const { value } = this.state;
     const { maxValue, step = 1 } = this.props;
     const newValue = value + step;
-    this.setState({
-      value: newValue >= +maxValue ? maxValue : newValue,
-    });
+    const stateValue = newValue >= +maxValue ? maxValue : newValue;
+    if (stateValue && stateValue !== value) {
+      this.onChangeCallback(stateValue);
+    }
   };
 
   decrementCounter = () => {
     const { value } = this.state;
     const { minValue, step = 1 } = this.props;
     const newValue = value - step;
-
-    this.setState({
-      value: newValue <= +minValue ? minValue : newValue,
-    });
+    const stateValue = newValue <= +minValue ? minValue : newValue;
+    if (stateValue && stateValue !== value) {
+      this.onChangeCallback(stateValue);
+    }
   };
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {

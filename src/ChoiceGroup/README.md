@@ -18,7 +18,7 @@ Table below contains all types of the props available in the ChoiceGroup compone
 | Name                | Type                       | Default     | Description                      |
 | :------------------ | :------------------------- | :---------- | :------------------------------- |
 | dataTest            | `string`                   |             | Optional prop for testing purposes.
-| **children**        | `Array<Radio or Checkbox>` |             | Could accept `<Radio />` or `<Checkbox />`
+| **children**        | `React.Node`               |             | The content of the ChoiceGroup, normally [`Radio`](../Radio) or [`Checkbox`](../Checkbox).
 | error               | `Translation`              |             | The error to display beneath the ChoiceGroup. Also, the Checkboxes/Radios will turn red when you pass some valuue.
 | label               | `Translation`              |             | Heading text of `<ChoiceGroup />`
 | labelSize           | [`enum`](#enum)            | `"normal"`  | The size type of Heading.
@@ -35,7 +35,7 @@ Table below contains all types of the props available in the ChoiceGroup compone
 | `"h6"`        |
 
 ## Functional specs
-* onChange props in `<Radio />` or `<Checkbox />` will be overrided by internal onChange function
+* onChange props in `<Radio />` or `<Checkbox />` will be overrode by internal onChange function
 * If you want to handle selecting field, pass `onChange` to `<ChoiceGroup />` and it will be always triggered when `<Radio />` or `<Checkbox />` should change
 * onChange will return `SyntheticEvent` of field that should change
 ```jsx

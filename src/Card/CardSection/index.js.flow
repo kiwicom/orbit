@@ -21,6 +21,7 @@ export type ContextType = {|
   +expandable: boolean,
   +expanded: boolean,
   +handleToggleSection: () => void,
+  +onKeyDownHandler: (ev: SyntheticKeyboardEvent<HTMLDivElement>) => void | Promise<any>,
 |};
 
 declare export var CardSectionContext: React.Context<ContextType>;

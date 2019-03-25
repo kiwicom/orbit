@@ -6,9 +6,9 @@ import defaultTokens from "../defaultTokens";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 
-import type { Props } from "./index";
+import type { GetHeadingToken, Props } from "./index";
 
-const getToken = name => ({ theme, type }) => {
+export const getHeadingToken: GetHeadingToken = name => ({ theme, type }) => {
   const tokens = {
     [TOKENS.weightHeading]: {
       [TYPE_OPTIONS.DISPLAY]: theme.orbit.fontWeightHeadingDisplay,
@@ -39,8 +39,8 @@ export const StyledHeading = styled(({ element: Component, className, children, 
   </Component>
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${getToken(TOKENS.sizeHeading)};
-  font-weight: ${getToken(TOKENS.weightHeading)};
+  font-size: ${getHeadingToken(TOKENS.sizeHeading)};
+  font-weight: ${getHeadingToken(TOKENS.weightHeading)};
   color: ${({ theme, inverted }) =>
     inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
   line-height: ${({ theme }) => theme.orbit.lineHeightHeading};

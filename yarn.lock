@@ -1154,6 +1154,11 @@
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
+"@kiwicom/js@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/js/-/js-0.2.0.tgz#dff952bd4acaedc3a6edfb11714f1c7aeb430a6e"
+  integrity sha512-ft/DLW75P7Ft0YgCHivfz/awOEkrXFMiuG97ZlrLfcTdBmwawrmP4IeUzhAeDxihluBqyvGoa9OWJYVSVlLCWQ==
+
 "@kiwicom/orbit-design-tokens@^0.4.0":
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.4.0.tgz#b8d286dea59ea5f6d17a476991d4b4fa33598e40"

@@ -3,7 +3,7 @@
 import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import chaptersAddon from "react-storybook-addon-chapters";
-import { withKnobs, text, select } from "@storybook/addon-knobs";
+import { withKnobs, text } from "@storybook/addon-knobs";
 import styles from "@sambego/storybook-styles/dist/index";
 
 import { CODES } from "./consts";
@@ -20,7 +20,7 @@ storiesOf("CountryFlag", module)
     }),
   )
   .addWithChapters("Default", () => {
-    const code = select("Code", Object.values(CODES), CODES.ANYWHERE);
+    const code = text("Code", CODES.ANYWHERE);
 
     return {
       info:
@@ -37,7 +37,7 @@ storiesOf("CountryFlag", module)
     };
   })
   .addWithChapters("Playground", () => {
-    const code = select("Code", Object.values(CODES), CODES.ANYWHERE);
+    const code = text("Code", CODES.ANYWHERE);
     const name = text("Name", "Country");
     const dataTest = text("dataTest", "test");
     return {

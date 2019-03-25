@@ -66,6 +66,9 @@ const StyledTable = styled.table`
     &:nth-of-type(even) {
       background-color: ${({ theme }) => theme.orbit.backgroundTableEven};
     }
+    &:last-child {
+      border: 0;
+    }
     &:hover {
       background-color: ${({ theme }) => theme.orbit.backgroundTableHover};
     }

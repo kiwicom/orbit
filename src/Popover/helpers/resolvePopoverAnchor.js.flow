@@ -1,5 +1,5 @@
 // @flow
-import type { Anchor, Dimensions } from "../index.flow";
+import type { Anchor, Dimensions } from "../index.js.flow";
 
 export type StyledAnchor = {|
   ...Anchor,

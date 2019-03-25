@@ -1,7 +1,7 @@
 // @flow
 import { css } from "styled-components";
 
-import type { StyledAnchor } from "./resolvePopoverAnchor.flow";
+import type { StyledAnchor } from "./resolvePopoverAnchor.js.flow";
 import { ANCHORS } from "../consts";
 
 const resolvePopoverAnchor = ({

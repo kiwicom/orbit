@@ -1,7 +1,7 @@
 // @flow
 import { css } from "styled-components";
 
-import type { StyledPosition } from "./resolvePopoverPositin.flow";
+import type { StyledPosition } from "./resolvePopoverPositin.js.flow";
 import { POSITIONS } from "../consts";
 
 const resolvePopoverPosition = ({

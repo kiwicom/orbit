@@ -1,6 +1,6 @@
 // @flow
 import type { Globals, Translation } from "../../common/common.js.flow";
-import type { Positions } from "../index.flow";
+import type { Positions } from "../index.js.flow";
 
 export type Props = {|
   ...Globals,

@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import Portal from "../Portal";
 import PopoverContentWrapper from "./components/ContentWrapper";
-import type { Props, State } from "./index.flow";
+import type { Props, State } from "./index.js.flow";
 
 const StyledPopoverChild = styled.div`
   position: relative;

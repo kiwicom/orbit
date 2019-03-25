@@ -8,8 +8,8 @@ import { POSITIONS, ANCHORS } from "../consts";
 import Button from "../../Button";
 import resolvePopoverPosition from "../helpers/resolvePopoverPosition";
 import resolvePopoverAnchor from "../helpers/resolvePopoverAnchor";
-import type { Props, State } from "./ContentWrapper.flow";
-import type { Positions, Anchors } from "../index.flow";
+import type { Props, State } from "./ContentWrapper.js.flow";
+import type { Positions, Anchors } from "../index.js.flow";
 
 const StyledPopoverParent = styled.div`
   position: fixed;

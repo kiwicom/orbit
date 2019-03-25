@@ -1,5 +1,5 @@
 // @flow
-import type { Position, Dimensions } from "../index.flow";
+import type { Position, Dimensions } from "../index.js.flow";
 
 export type StyledPosition = {|
   ...Position,

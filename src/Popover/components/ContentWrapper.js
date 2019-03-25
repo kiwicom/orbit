@@ -215,7 +215,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
 
   render() {
     const { position, anchor } = this.state;
-    const { content, closeText = "Close", handleClose } = this.props;
+    const { children, closeText = "Close", handleClose } = this.props;
     return (
       <React.Fragment>
         <StyledPopoverParent
@@ -232,7 +232,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
           tabIndex="0"
         >
           <StyledPopoverContent ref={this.content}>
-            {content}
+            {children}
             <StyledTooltipClose>
               <Button type="secondary" block onClick={handleClose}>
                 {closeText}

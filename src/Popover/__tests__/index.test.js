@@ -3,15 +3,55 @@ import * as React from "react";
 import { shallow } from "enzyme";
 
 import Popover from "../index";
+import ContentWrapper from "../components/ContentWrapper";
 import Button from "../../Button";
 
 describe("Popover", () => {
-  const content = "Write some message to the user";
+  const content = "Message for a user";
+  const position = "bottom";
   const component = shallow(
-    <Popover content={content}>
+    <Popover content={content} preferredPosition={position}>
       <Button>Open</Button>
     </Popover>,
   );
+
+  it("it should create portal", () => {
+    component.setState({ shown: true });
+    component.find("Portal");
+    expect(component.find("Portal").exists()).toBe(true);
+  });
+
+  it("Should pass props", () => {
+    component.setState({ shown: true });
+    expect(
+      component
+        .find("PopoverContentWrapper")
+        .children()
+        .exists(),
+    ).toBe(true);
+    expect(component.find("PopoverContentWrapper").prop("preferredPosition")).toBe(position);
+  });
+
+  it("it should match snapshot", () => {
+    expect(component).toMatchSnapshot();
+  });
+});
+
+describe("ContentWrapper", () => {
+  const content = <Button>Content</Button>;
+  const handleClose = jest.fn();
+  const ref = React.createRef();
+  const position = "bottom";
+  const component = shallow(
+    <ContentWrapper containerRef={ref} preferredPosition={position} handleClose={handleClose}>
+      {content}
+    </ContentWrapper>,
+  );
+
+  it("Should have a child", () => {
+    expect(component.find("Button").exists()).toBe(true);
+  });
+
   it("it should match snapshot", () => {
     expect(component).toMatchSnapshot();
   });

@@ -4,7 +4,7 @@ import type { Positions } from "../index.js.flow";
 
 export type Props = {|
   ...Globals,
-  +content: React$Node,
+  +children: React$Node,
   +closeText?: Translation,
   +preferredPosition?: Positions,
   +containerRef: any | HTMLDivElement,

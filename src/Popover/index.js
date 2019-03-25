@@ -39,10 +39,11 @@ class Popover extends React.PureComponent<Props, State> {
           <Portal element="popovers">
             <PopoverContentWrapper
               containerRef={this.container.current}
-              content={content}
               preferredPosition={preferredPosition}
               handleClose={this.handleOut}
-            />
+            >
+              {content}
+            </PopoverContentWrapper>
           </Portal>
         )}
       </React.Fragment>

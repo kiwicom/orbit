@@ -29,6 +29,8 @@ yarn add @kiwicom/orbit-components
 
 Don't forget to install the [styled-components](https://github.com/styled-components/styled-components/) `^4.0.0` also.
 
+You can try `orbit-components` on [CodeSandbox](https://codesandbox.io/s/github/designkiwicom/orbit-sandbox) as well.
+
 ## Usage
 1. Import fonts that are used in orbit-components:
 

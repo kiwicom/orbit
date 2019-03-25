@@ -13,7 +13,6 @@ const StyledTableOuter = styled.div`
   max-width: 100%;
   width: 100%;
   position: relative;
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
 
   &::after,
   &::before {

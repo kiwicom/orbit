@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 import defaultTokens from "../../defaultTokens";
 import media from "../../utils/mediaQuery";
@@ -11,6 +11,26 @@ import resolvePopoverAnchor from "../helpers/resolvePopoverAnchor";
 import type { Props, State } from "./ContentWrapper.js.flow";
 import type { Positions, Anchors } from "../index.js.flow";
 
+const showAnimation = keyframes`
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+`;
+
+const opacityAnimation = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
+
 const StyledPopoverParent = styled.div`
   position: fixed;
   bottom: 0;
@@ -20,6 +40,7 @@ const StyledPopoverParent = styled.div`
   box-sizing: border-box;
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
+  animation: ${showAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
 
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
@@ -34,6 +55,7 @@ const StyledPopoverParent = styled.div`
     right: initial;
     bottom: initial;
     width: auto;
+    animation: ${opacityAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
     ${resolvePopoverPosition}
     ${resolvePopoverAnchor}
   `)}
@@ -54,10 +76,11 @@ const StyledOverlay = styled.div`
   height: 100%;
   z-index: ${({ theme }) => theme.orbit.zIndexOnTheTop - 1};
   background-color: rgba(23, 27, 30, 0.6); // TODO: token
+  animation: ${opacityAnimation} ${({ theme }) => theme.orbit.durationFast} ease-in;
 
   ${media.largeMobile(css`
     background-color: transparent;
-  `)}
+  `)};
 `;
 StyledOverlay.defaultProps = {
   theme: defaultTokens,

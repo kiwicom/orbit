@@ -317,6 +317,7 @@ class Modal extends React.PureComponent<Props, State> {
       });
       this.decideFixedFooter();
       this.setDimensions();
+      this.handleFocus();
     }, 15);
     window.addEventListener("resize", this.handleResize);
   }
@@ -428,8 +429,17 @@ class Modal extends React.PureComponent<Props, State> {
     }
   };
 
+  handleFocus() {
+    if (this.closeButton.current) {
+      this.closeButton.current.focus();
+    } else if (this.modalBody.current) {
+      this.modalBody.current.focus();
+    }
+  }
+
   modalContent: { current: any | HTMLElement } = React.createRef();
   modalBody: { current: any | HTMLElement } = React.createRef();
+  closeButton: { current: any | HTMLElement } = React.createRef();
   timeout: TimeoutID;
   offset = 40;
 
@@ -458,6 +468,7 @@ class Modal extends React.PureComponent<Props, State> {
           loaded={loaded}
           onScroll={this.handleMobileScroll}
           fixedFooter={fixedFooter}
+          aria-modal={loaded}
         >
           <ModalWrapperContent
             size={size}
@@ -478,6 +489,7 @@ class Modal extends React.PureComponent<Props, State> {
                   icon={<Close />}
                   transparent
                   dataTest={CLOSE_BUTTON_DATA_TEST}
+                  ref={this.closeButton}
                 />
               )}
             </CloseContainer>

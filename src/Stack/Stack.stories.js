@@ -390,18 +390,17 @@ storiesOf("Stack", module)
     const spacing = select("Spacing", [undefined, ...Object.values(SPACINGS)], SPACINGS.EXTRATIGHT);
     const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
     const mediumMobile = object("mediumMobile", {
-      direction: DIRECTIONS.ROWREVERSE,
+      direction: DIRECTIONS.COLUMN,
     });
     const largeMobile = object("largeMobile", {
       align: JUSTIFY.END,
     });
     const tablet = object("tablet", {
       spacing: SPACINGS.CONDENSED,
-      direction: DIRECTIONS.COLUMNREVERSE,
     });
     const desktop = object("desktop", {
       justify: JUSTIFY.BETWEEN,
-      direction: DIRECTIONS.COLUMN,
+      direction: DIRECTIONS.ROW,
       align: ALIGNS.START,
     });
     const largeDesktop = object("largeDesktop", {

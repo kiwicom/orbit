@@ -6,7 +6,7 @@ import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
-import type { ThemeProps } from "../defaultTokens";
+import type { ThemeProps } from "../defaultTheme";
 
 type Element = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 type Type = "display" | "displaySubtitle" | "title1" | "title2" | "title3" | "title4" | "title5";

@@ -4,7 +4,7 @@ import { mount } from "enzyme";
 
 import Accommodation from "../../icons/Accommodation";
 import { ICON_SIZES, ICON_COLORS } from "../consts";
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 
 describe("Icon", () => {
   const color = ICON_COLORS.ATTENTION;
@@ -14,11 +14,11 @@ describe("Icon", () => {
     expect(component.find("svg").exists()).toBe(true);
   });
   it("should have default sizing", () => {
-    expect(svg).toHaveStyleRule("height", defaultTokens.orbit.widthIconMedium);
-    expect(svg).toHaveStyleRule("width", defaultTokens.orbit.widthIconMedium);
+    expect(svg).toHaveStyleRule("height", defaultTheme.orbit.widthIconMedium);
+    expect(svg).toHaveStyleRule("width", defaultTheme.orbit.widthIconMedium);
   });
   it("should have selected color", () => {
-    expect(svg).toHaveStyleRule("color", defaultTokens.orbit.colorIconAttention);
+    expect(svg).toHaveStyleRule("color", defaultTheme.orbit.colorIconAttention);
   });
   it("should have CSS properties", () => {
     expect(svg).toHaveStyleRule("vertical-align", "middle");
@@ -44,8 +44,8 @@ describe("Icon with custom props", () => {
     expect(svg.render().prop("data-test")).toBe(dataTest);
   });
   it("should have default sizing", () => {
-    expect(svg).toHaveStyleRule("height", defaultTokens.orbit.widthIconLarge);
-    expect(svg).toHaveStyleRule("width", defaultTokens.orbit.widthIconLarge);
+    expect(svg).toHaveStyleRule("height", defaultTheme.orbit.widthIconLarge);
+    expect(svg).toHaveStyleRule("width", defaultTheme.orbit.widthIconLarge);
   });
   it("should have selected color", () => {
     expect(svg).toHaveStyleRule("color", customColor);

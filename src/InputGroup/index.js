@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import { FakeInput, Input, InputContainer } from "../InputField";
 import { SelectContainer } from "../Select";
@@ -64,7 +64,7 @@ const FakeGroup = styled(({ children, className }) => <div className={className}
 `;
 
 FakeGroup.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledChildren = styled.div`
@@ -80,7 +80,7 @@ const StyledChild = styled.div`
   }
 `;
 StyledChild.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledInputGroup = styled(({ children, className, dataTest }) => (
@@ -145,7 +145,7 @@ const StyledInputGroup = styled(({ children, className, dataTest }) => (
 `;
 
 StyledInputGroup.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class InputGroup extends React.PureComponent<Props, State> {

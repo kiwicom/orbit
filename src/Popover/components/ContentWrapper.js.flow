@@ -14,6 +14,17 @@ export type Props = {|
 export type State = {|
   position: string,
   anchor: string,
+  positions: {
+    containerTop: number,
+    containerLeft: number,
+    containerHeight: number,
+    containerWidth: number,
+    popoverHeight: number,
+    popoverWidth: number,
+    windowWidth: number,
+    windowHeight: number,
+    contentHeight: number,
+  },
 |};
 
 declare export default React$ComponentType<Props>;

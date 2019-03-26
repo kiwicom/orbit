@@ -464,7 +464,7 @@ class Modal extends React.PureComponent<Props, State> {
 
   modalContent: { current: any | HTMLElement } = React.createRef();
   modalBody: { current: any | HTMLElement } = React.createRef();
-  closeButton: { current: any | HTMLElement } = React.createRef();
+  closeButton: { current: React$ElementRef<*> | null } = React.createRef();
   firstFocusableEl: HTMLElement;
   lastFocusableEl: HTMLElement;
   timeout: TimeoutID;

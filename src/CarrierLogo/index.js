@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, BASE_URL } from "./consts";
 
 import type { Props } from "./index";
@@ -62,7 +62,7 @@ const StyledImage = styled.img.attrs(({ carrierType = "airline", carriersLength,
 `;
 
 StyledImage.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const StyledCarrierLogo = styled.div`
@@ -79,7 +79,7 @@ export const StyledCarrierLogo = styled.div`
 `;
 
 StyledCarrierLogo.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest }: Props) => (

@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import TileHeader, { StyledIconRight } from "./TileHeader";
 import TileExpandable from "./TileExpandable";
 
@@ -35,7 +35,7 @@ export const StyledTile = styled(({ theme, icon, title, external, ...props }) =>
 `;
 
 StyledTile.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class Tile extends React.PureComponent<Props, State> {

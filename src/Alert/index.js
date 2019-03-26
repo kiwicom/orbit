@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import InformationCircle from "../icons/InformationCircle";
 import Check from "../icons/Check";
 import AlertTriangle from "../icons/Alert";
@@ -111,7 +111,7 @@ const StyledAlert = styled(StyledDiv)`
 `;
 
 StyledAlert.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const IconContainer = styled(StyledDiv)`
@@ -121,7 +121,7 @@ const IconContainer = styled(StyledDiv)`
 `;
 
 IconContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ContentWrapper = styled(StyledDiv)`
@@ -141,7 +141,7 @@ const Title = styled(StyledDiv)`
 `;
 
 Title.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Content = styled(StyledDiv)`
@@ -164,7 +164,7 @@ const Content = styled(StyledDiv)`
 `;
 
 Content.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const CloseContainer = styled(StyledDiv)`
@@ -176,7 +176,7 @@ const CloseContainer = styled(StyledDiv)`
 `;
 
 CloseContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Alert = (props: Props) => {

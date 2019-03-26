@@ -14,7 +14,7 @@ const MyComponent = styled.div`
 `
 
 MyComponent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const App = () => <MyComponent spaceAfter="small" />
@@ -26,7 +26,7 @@ This function receives one parameter - object. With usage in `styled-components`
 | Name         | Type                     | Description                      |
 | :-------     | :----------------------- | :------------------------------- |
 | spaceAfter   | [`enum`](#enum)          | The value to be applied.
-| theme        | `typeof defaultTokens`   | Object with theme tokens.
+| theme        | `typeof defaultTheme`    | Theme object with tokens and rtl.
 
 > Please note that the *token value* in the documentation may not be up to date. Check [orbit.kiwi](https://orbit.kiwi/design-tokens/).
 

@@ -8,7 +8,7 @@ export type Props = {|
   +closeText?: Translation,
   +preferredPosition?: Positions,
   +containerRef: any | HTMLDivElement,
-  +handleClose: () => void,
+  +onClose: () => void,
 |};
 
 export type State = {|

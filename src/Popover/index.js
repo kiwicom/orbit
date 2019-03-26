@@ -24,7 +24,6 @@ class Popover extends React.PureComponent<Props, State> {
   };
 
   container: { current: any | HTMLDivElement } = React.createRef();
-  timeoutOutside: TimeoutID;
 
   render() {
     const { shown } = this.state;
@@ -40,7 +39,7 @@ class Popover extends React.PureComponent<Props, State> {
             <PopoverContentWrapper
               containerRef={this.container.current}
               preferredPosition={preferredPosition}
-              handleClose={this.handleOut}
+              onClose={this.handleOut}
             >
               {content}
             </PopoverContentWrapper>

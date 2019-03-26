@@ -51,9 +51,9 @@ const StyledPopoverParent = styled.div`
 
   ${media.largeMobile(css`
     position: absolute;
-    left: initial;
-    right: initial;
-    bottom: initial;
+    left: auto;
+    right: auto;
+    bottom: auto;
     width: auto;
     animation: ${opacityAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
     ${resolvePopoverPosition}
@@ -114,12 +114,14 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
       const positions = Object.keys(POSITIONS).map(k => POSITIONS[k]);
       const anchors = Object.keys(ANCHORS).map(k => ANCHORS[k]);
 
-      const defaultPosition = [
-        preferredPosition,
-        ...positions.filter(p => p !== preferredPosition),
-      ];
-
-      this.setPosition(defaultPosition, anchors);
+      if (preferredPosition) {
+        this.setPosition(
+          [preferredPosition, ...positions.filter(p => p !== preferredPosition)],
+          anchors,
+        );
+      } else {
+        this.setPosition(positions, anchors);
+      }
     });
   }
 
@@ -214,11 +216,11 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
     }
   }
 
-  handleClickWhole = (ev: SyntheticEvent<HTMLElement>) => {
+  handleClick = (ev: SyntheticEvent<HTMLElement>) => {
     ev.stopPropagation();
 
     if (ev.target === this.overlay?.current) {
-      this.props.handleClose();
+      this.props.onClose();
     }
   };
 
@@ -238,7 +240,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
 
   render() {
     const { position, anchor } = this.state;
-    const { children, closeText = "Close", handleClose } = this.props;
+    const { children, closeText = "Close", onClose } = this.props;
     return (
       <React.Fragment>
         <StyledPopoverParent
@@ -251,19 +253,19 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
           popoverHeight={this.popoverHeight}
           popoverWidth={this.popoverWidth}
           ref={this.popover}
-          onClick={this.handleClickWhole}
+          onClick={this.handleClick}
           tabIndex="0"
         >
           <StyledPopoverContent ref={this.content}>
             {children}
             <StyledTooltipClose>
-              <Button type="secondary" block onClick={handleClose}>
+              <Button type="secondary" block onClick={onClose}>
                 {closeText}
               </Button>
             </StyledTooltipClose>
           </StyledPopoverContent>
         </StyledPopoverParent>
-        <StyledOverlay ref={this.overlay} onClick={this.handleClickWhole} />
+        <StyledOverlay ref={this.overlay} onClick={this.handleClick} />
       </React.Fragment>
     );
   }

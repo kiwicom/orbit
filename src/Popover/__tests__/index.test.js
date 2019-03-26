@@ -43,7 +43,7 @@ describe("ContentWrapper", () => {
   const ref = React.createRef();
   const position = "bottom";
   const component = shallow(
-    <ContentWrapper containerRef={ref} preferredPosition={position} handleClose={handleClose}>
+    <ContentWrapper containerRef={ref} preferredPosition={position} onClose={handleClose}>
       {content}
     </ContentWrapper>,
   );

@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import defaultTokens from "../defaultTokens";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import Close from "../icons/Close";
-import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
+import { SIZES, CLOSE_BUTTON_DATA_TEST, FOCUSABLE_ELEMENT_SELECTORS, KEY_CODE_MAP } from "./consts";
 import media, { breakpoints } from "../utils/mediaQuery";
 import { StyledModalFooter } from "./ModalFooter";
 import { MobileHeader, StyledModalHeader } from "./ModalHeader";
@@ -318,7 +318,7 @@ class Modal extends React.PureComponent<Props, State> {
       });
       this.decideFixedFooter();
       this.setDimensions();
-      this.handleFocus();
+      this.manageFocus();
     }, 15);
     this.modalID = randomID("modal-");
     window.addEventListener("resize", this.handleResize);
@@ -416,6 +416,7 @@ class Modal extends React.PureComponent<Props, State> {
       ev.stopPropagation();
       onClose(ev);
     }
+    this.keyboardHandler(ev);
   };
 
   handleClickOutside = (ev: MouseEvent) => {
@@ -431,17 +432,41 @@ class Modal extends React.PureComponent<Props, State> {
     }
   };
 
-  handleFocus() {
-    if (this.closeButton.current) {
-      this.closeButton.current.focus();
-    } else if (this.modalBody.current) {
+  manageFocus() {
+    const focusableElements = this.modalContent.current.querySelectorAll(
+      FOCUSABLE_ELEMENT_SELECTORS,
+    );
+
+    if (focusableElements.length > 0) {
+      const firstFocusableEl = focusableElements[0];
+      const lastFocusableEl = focusableElements[focusableElements.length - 1];
+
+      this.firstFocusableEl = firstFocusableEl;
+      this.lastFocusableEl = lastFocusableEl;
+      firstFocusableEl.focus();
+    } else {
       this.modalBody.current.focus();
     }
   }
 
+  keyboardHandler = (e: SyntheticKeyboardEvent<HTMLElement>) => {
+    if (e.keyCode === KEY_CODE_MAP.TAB) {
+      // Rotate Focus
+      if (e.shiftKey && document.activeElement === this.firstFocusableEl) {
+        e.preventDefault();
+        this.lastFocusableEl.focus();
+      } else if (!e.shiftKey && document.activeElement === this.lastFocusableEl) {
+        e.preventDefault();
+        this.firstFocusableEl.focus();
+      }
+    }
+  };
+
   modalContent: { current: any | HTMLElement } = React.createRef();
   modalBody: { current: any | HTMLElement } = React.createRef();
   closeButton: { current: any | HTMLElement } = React.createRef();
+  firstFocusableEl: HTMLElement;
+  lastFocusableEl: HTMLElement;
   timeout: TimeoutID;
   modalID: string;
   offset = 40;

@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 
 import type { Props } from "./index";
 
@@ -12,7 +12,7 @@ const StyledBreadcrumbs = styled.nav`
 `;
 
 StyledBreadcrumbs.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledBreadcrumbsList = styled.ol`

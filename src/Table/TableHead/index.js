@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import { StyledTableCell } from "../TableCell/index";
 
 import type { Props } from "./";
@@ -19,7 +19,7 @@ const StyledTableHead = styled(({ children, className }) => (
 `;
 
 StyledTableHead.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 const TableHead = (props: Props) => <StyledTableHead>{props.children}</StyledTableHead>;
 

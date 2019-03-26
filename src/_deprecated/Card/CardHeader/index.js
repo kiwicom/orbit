@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../../defaultTokens";
+import defaultTheme from "../../../defaultTheme";
 import Heading from "../../../Heading";
 import Text from "../../../Text";
 
@@ -17,7 +17,7 @@ export const StyledCardHeader = styled.div`
 `;
 
 StyledCardHeader.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledHeadingWrapper = styled.div`
@@ -31,7 +31,7 @@ const StyledSubTitle = styled.div`
 `;
 
 StyledSubTitle.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledIcon = styled.div`
@@ -42,7 +42,7 @@ const StyledIcon = styled.div`
 `;
 
 StyledIcon.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const CardHeader = ({ icon, title, subTitle }: Props) => (

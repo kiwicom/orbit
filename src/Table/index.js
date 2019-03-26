@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { StyledTableRow } from "./TableRow";
 import { StyledTableCell } from "./TableCell";
 import { StyledTableBody } from "./TableBody";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 
 import type { Props, State } from "./index";
 
@@ -41,7 +41,7 @@ const StyledTableOuter = styled.div`
 `;
 
 StyledTableOuter.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTableInner = styled.div`
@@ -79,7 +79,7 @@ const StyledTable = styled.table`
 `;
 
 StyledTable.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class Table extends React.PureComponent<Props, State> {

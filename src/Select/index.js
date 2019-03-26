@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import ChevronDown from "../icons/ChevronDown";
 import FormFeedback from "../FormFeedback";
@@ -125,7 +125,7 @@ const StyledSelect = styled(
 `;
 
 StyledSelect.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const SelectContainer = styled(({ className, children }) => (
@@ -141,7 +141,7 @@ export const SelectContainer = styled(({ className, children }) => (
 `;
 
 SelectContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const SelectPrefix = styled(({ className, children }) => (
@@ -158,7 +158,7 @@ const SelectPrefix = styled(({ className, children }) => (
 `;
 
 SelectPrefix.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const SelectSuffix = styled(({ children, className }) => (
@@ -184,7 +184,7 @@ const SelectSuffix = styled(({ children, className }) => (
 `;
 
 SelectSuffix.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 // $FlowExpected

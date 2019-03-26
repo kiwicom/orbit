@@ -265,7 +265,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
 
   render() {
     const { position, anchor, positions } = this.state;
-    const { children, closeText = "Close", onClose } = this.props;
+    const { children, closeText = "Close", onClose, dataTest } = this.props;
     return (
       <React.Fragment>
         <StyledPopoverParent
@@ -280,6 +280,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
           ref={this.popover}
           onClick={this.handleClick}
           tabIndex="0"
+          data-test={dataTest}
         >
           <StyledPopoverContent ref={this.content}>
             {children}

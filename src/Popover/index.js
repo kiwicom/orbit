@@ -27,7 +27,7 @@ class Popover extends React.PureComponent<Props, State> {
 
   render() {
     const { shown } = this.state;
-    const { children, content, preferredPosition } = this.props;
+    const { children, content, preferredPosition, dataTest } = this.props;
 
     return (
       <React.Fragment>
@@ -40,6 +40,7 @@ class Popover extends React.PureComponent<Props, State> {
               containerRef={this.container.current}
               preferredPosition={preferredPosition}
               onClose={this.handleOut}
+              dataTest={dataTest}
             >
               {content}
             </PopoverContentWrapper>

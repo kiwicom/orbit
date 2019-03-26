@@ -309,6 +309,10 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   margin: 0;
 }
 
+.c11[data-com-onepassword-filled] {
+  background-color: inherit !important;
+}
+
 .c11:focus {
   outline: none;
 }
@@ -13659,7 +13663,7 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       [Function],
                                       ";letter-spacing:",
                                       [Function],
-                                      ";&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&:focus{outline:none;& ~ ",
+                                      ";&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&[data-com-onepassword-filled]{background-color:inherit !important;}&:focus{outline:none;& ~ ",
                                       ".c15",
                                       "{box-shadow:inset 0 0 0 ",
                                       [Function],

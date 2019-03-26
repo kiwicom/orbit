@@ -218,6 +218,10 @@ export const Input = styled(
     margin: 0;
   }
 
+  &[data-com-onepassword-filled] {
+    background-color: inherit !important;
+  }
+
   &:focus {
     outline: none;
     & ~ ${FakeInput} {

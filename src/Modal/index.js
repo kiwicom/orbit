@@ -15,6 +15,7 @@ import { right } from "../utils/rtl";
 import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
 import { DEVICES_WIDTH } from "../utils/mediaQuery/consts";
+import randomID from "../utils/randomID";
 
 import type { Props, State } from "./index";
 
@@ -319,6 +320,7 @@ class Modal extends React.PureComponent<Props, State> {
       this.setDimensions();
       this.handleFocus();
     }, 15);
+    this.modalID = randomID("modal-");
     window.addEventListener("resize", this.handleResize);
   }
 
@@ -441,6 +443,7 @@ class Modal extends React.PureComponent<Props, State> {
   modalBody: { current: any | HTMLElement } = React.createRef();
   closeButton: { current: any | HTMLElement } = React.createRef();
   timeout: TimeoutID;
+  modalID: string;
   offset = 40;
 
   render() {
@@ -462,13 +465,15 @@ class Modal extends React.PureComponent<Props, State> {
         onClick={this.handleClickOutside}
         data-test={dataTest}
         ref={this.modalBody}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={this.modalID}
       >
         <ModalWrapper
           size={size}
           loaded={loaded}
           onScroll={this.handleMobileScroll}
           fixedFooter={fixedFooter}
-          aria-modal={loaded}
         >
           <ModalWrapperContent
             size={size}
@@ -500,6 +505,7 @@ class Modal extends React.PureComponent<Props, State> {
                 setHasModalSection: this.setHasModalSection,
                 removeHasModalSection: this.removeHasModalSection,
                 hasModalSection,
+                modalID: this.modalID,
               }}
             >
               {children}

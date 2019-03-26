@@ -7,6 +7,7 @@ export type ModalContextProps = {|
   +setHasModalSection?: () => void,
   +removeHasModalSection?: () => void,
   +hasModalSection?: boolean,
+  +modalID?: string,
 |};
 
 export type ModalContextType = React.Context<ModalContextProps>;

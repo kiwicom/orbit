@@ -9,6 +9,7 @@ export const ModalContext: ModalContextType = React.createContext({
   setHasModalSection: () => {},
   removeHasModalSection: () => {},
   hasModalSection: false,
+  modalID: "",
 });
 
 export const withModalContext: WithModalContextType = Component => props => (

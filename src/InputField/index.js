@@ -189,7 +189,7 @@ export const Input = styled(
   )),
 )`
   appearance: none;
-  -webkit-text-fill-color: inherit;
+  -webkit-text-fill-color: ${({ disabled }) => disabled && "inherit"};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   border: none;
   padding: ${getPadding()};

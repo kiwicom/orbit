@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { SIZES, TYPES } from "./consts";
 import { StyledCarrierLogo } from "../CarrierLogo";
 import getSpacingToken from "../common/getSpacingToken";
@@ -69,7 +69,7 @@ const StyledList = styled(({ className, children, dataTest }) => (
 `;
 
 StyledList.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const List = ({

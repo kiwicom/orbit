@@ -30,7 +30,7 @@ const StyledComponent = styled.div`
 It’s necessary to assign every styled component using a theme defaultProps, which contains all the tokens from `orbit-design-tokens`.
 ```jsx
 StyledComponent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 ```
 ### Render

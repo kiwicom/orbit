@@ -1,5 +1,9 @@
 // @flow
 import * as React from "react";
+import type {
+  fromPlainObject as FromPlainObject,
+  getTokens as GetTokens,
+} from "@kiwicom/orbit-design-tokens";
 
 import typeof AlertType from "./Alert";
 import typeof BadgeType from "./Badge";
@@ -62,6 +66,7 @@ import typeof TableHeadType from "./Table/TableHead";
 import typeof TableRowType from "./Table/TableRow";
 import typeof StepperType from "./Stepper";
 import typeof StopoverArrowType from "./StopoverArrow";
+import type { Theme } from "./defaultTheme";
 
 declare export var InputText: any;
 declare export var InputTextarea: any;
@@ -141,7 +146,9 @@ declare export var TripSegment: TripSegmentType;
 declare export var TripSector: TripSectorType;
 declare export var TripDate: TripDateType;
 declare export var TripLayover: TripLayoverType;
-declare export var defaultTheme: any;
+declare export var defaultTheme: Theme;
+declare export var geTokens: GetTokens;
+declare export var fromPlainObject: FromPlainObject;
 
 declare export var mediaQueries: mediaQueriesType;
 declare export var breakpoints: breakpointsType;

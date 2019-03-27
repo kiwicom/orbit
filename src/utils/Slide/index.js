@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 
 import type { Props, State } from "./index";
 
@@ -18,7 +18,7 @@ export const StyledSlide = styled.div`
 `;
 
 StyledSlide.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class Slide extends React.Component<Props, State> {

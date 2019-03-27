@@ -4,7 +4,7 @@ import { mount } from "enzyme";
 
 import StopoverArrow from "../index";
 import STOPS from "../consts";
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 
 describe("StopoverArrow", () => {
   const stops = STOPS.THREE;
@@ -18,7 +18,7 @@ describe("StopoverArrow", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
   });
   it("should have styles", () => {
-    expect(component).toHaveStyleRule("color", defaultTokens.orbit.paletteInkLight);
+    expect(component).toHaveStyleRule("color", defaultTheme.orbit.paletteInkLight);
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import TOKENS from "./consts";
 import Check from "../icons/Check";
 import { StyledText } from "../Text";
@@ -50,7 +50,7 @@ const IconContainer = styled.div`
 `;
 
 IconContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const TextContainer = styled.div`
@@ -61,7 +61,7 @@ const TextContainer = styled.div`
 `;
 
 TextContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Info = styled.span`
@@ -71,7 +71,7 @@ const Info = styled.span`
 `;
 
 Info.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const LabelText = styled.span`
@@ -90,12 +90,13 @@ const LabelText = styled.span`
 `;
 
 LabelText.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Input = styled.input`
-  visibility: hidden;
-  display: none;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
 
   &:checked ~ ${TextContainer} > ${LabelText} {
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
@@ -107,10 +108,22 @@ const Input = styled.input`
   &:checked + ${IconContainer} > svg {
     visibility: visible;
   }
+
+  &:focus + ${IconContainer} {
+    border: ${({ theme }) =>
+      `2px ${theme.orbit.borderStyleInput} ${theme.orbit.borderColorCheckboxRadioFocus}`};
+  }
+
+  &:active + ${IconContainer} {
+    border-color: ${({ disabled, theme }) =>
+      disabled ? getToken(TOKENS.borderColor) : theme.orbit.borderColorCheckboxRadioActive};
+    transform: ${({ disabled, theme }) =>
+      !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
+  }
 `;
 
 Input.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const Label = styled(({ className, children, dataTest }) => (
@@ -124,7 +137,7 @@ export const Label = styled(({ className, children, dataTest }) => (
   flex-direction: row;
   align-items: self-start;
   opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityCheckboxDisabled : "1")};
-  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   position: relative;
 
   ${IconContainer} {
@@ -136,24 +149,10 @@ export const Label = styled(({ className, children, dataTest }) => (
     border-color: ${({ disabled, theme }) =>
       !disabled && theme.orbit.borderColorCheckboxRadioHover};
   }
-
-  &:active ${IconContainer} {
-    border-color: ${({ disabled, theme }) =>
-      disabled ? getToken(TOKENS.borderColor) : theme.orbit.borderColorCheckboxRadioActive};
-    transform: ${({ disabled, theme }) =>
-      !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
-  }
-  &:focus {
-    outline: 0;
-    & ${IconContainer} {
-      border: ${({ theme }) =>
-        `2px ${theme.orbit.borderStyleInput} ${theme.orbit.borderColorCheckboxRadioFocus}`};
-    }
-  }
 `;
 
 Label.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 // $FlowExpected

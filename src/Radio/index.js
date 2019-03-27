@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { StyledText } from "../Text";
 import type { Ref } from "../common/common.js.flow";
 import { rtlSpacing } from "../utils/rtl";
@@ -25,7 +25,7 @@ const Glyph = styled.span`
 `;
 
 Glyph.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const IconContainer = styled.div`
@@ -45,7 +45,7 @@ const IconContainer = styled.div`
 `;
 
 IconContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const TextContainer = styled.div`
@@ -56,7 +56,7 @@ const TextContainer = styled.div`
 `;
 
 TextContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Info = styled.span`
@@ -66,7 +66,7 @@ const Info = styled.span`
 `;
 
 Info.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const LabelText = styled.span`
@@ -84,12 +84,12 @@ const LabelText = styled.span`
 `;
 
 LabelText.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Input = styled.input`
-  visibility: hidden;
-  display: none;
+  position: absolute;
+  opacity: 0;
 
   &:checked ~ ${TextContainer} > ${LabelText} {
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
@@ -101,10 +101,16 @@ const Input = styled.input`
   &:checked + ${IconContainer} > ${Glyph} {
     visibility: visible;
   }
+
+  &:focus + ${IconContainer} {
+    outline: 0;
+    border: ${({ theme }) =>
+      `2px ${theme.orbit.borderStyleInput} ${theme.orbit.borderColorCheckboxRadioFocus}`};
+  }
 `;
 
 Input.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
@@ -134,17 +140,10 @@ const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
     transform: ${({ disabled, theme }) =>
       !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
   }
-  &:focus {
-    outline: 0;
-    & ${IconContainer} {
-      border: ${({ theme }) =>
-        `2px ${theme.orbit.borderStyleInput} ${theme.orbit.borderColorCheckboxRadioFocus}`};
-    }
-  }
 `;
 
 Label.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 // $FlowExpected

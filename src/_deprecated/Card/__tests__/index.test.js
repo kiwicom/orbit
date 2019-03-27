@@ -7,7 +7,7 @@ import CardSection from "../CardSection";
 import Heading from "../../../Heading";
 import Text from "../../../Text";
 import SPACINGS_AFTER from "../../../common/getSpacingToken/consts";
-import defaultTokens from "../../../defaultTokens";
+import defaultTheme from "../../../defaultTheme";
 
 const text = "Text for testing";
 
@@ -32,7 +32,7 @@ describe("Card", () => {
   });
   it("should have margin-bottom", () => {
     const component = mount(<Card spaceAfter={SPACINGS_AFTER.NORMAL} />);
-    expect(component).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
+    expect(component).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
   });
   it("should have data-test", () => {
     const dataTest = "test";

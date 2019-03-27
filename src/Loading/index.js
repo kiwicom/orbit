@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { TYPE_OPTIONS, TOKENS } from "./consts";
 import type { Props } from "../Loading/index";
 import { left, right } from "../utils/rtl";
@@ -61,7 +61,7 @@ export const StyledLoading = styled(({ children, className, dataTest }) => (
 `;
 
 StyledLoading.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledLoadingText = styled.div`
@@ -75,7 +75,7 @@ const StyledLoadingText = styled.div`
 `;
 
 StyledLoadingText.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const StyledSpinner = styled.svg`
@@ -95,7 +95,7 @@ const StyledSpinnerCircle = styled.circle`
 `;
 
 StyledSpinnerCircle.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledLoader = styled.div`
@@ -121,7 +121,7 @@ const StyledLoaderCircle = styled.div`
 `;
 
 StyledLoaderCircle.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Loading = (props: Props) => {

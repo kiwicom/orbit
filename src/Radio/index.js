@@ -88,8 +88,8 @@ LabelText.defaultProps = {
 };
 
 const Input = styled.input`
-  visibility: hidden;
-  display: none;
+  position: absolute;
+  opacity: 0;
 
   &:checked ~ ${TextContainer} > ${LabelText} {
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
@@ -100,6 +100,12 @@ const Input = styled.input`
 
   &:checked + ${IconContainer} > ${Glyph} {
     visibility: visible;
+  }
+
+  &:focus + ${IconContainer} {
+    outline: 0;
+    border: ${({ theme }) =>
+      `2px ${theme.orbit.borderStyleInput} ${theme.orbit.borderColorCheckboxRadioFocus}`};
   }
 `;
 
@@ -133,13 +139,6 @@ const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
       disabled ? getBorderColor() : theme.orbit.borderColorCheckboxRadioActive};
     transform: ${({ disabled, theme }) =>
       !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
-  }
-  &:focus {
-    outline: 0;
-    & ${IconContainer} {
-      border: ${({ theme }) =>
-        `2px ${theme.orbit.borderStyleInput} ${theme.orbit.borderColorCheckboxRadioFocus}`};
-    }
   }
 `;
 

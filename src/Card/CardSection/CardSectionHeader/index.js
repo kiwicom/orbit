@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { CardSectionContext } from "../index";
 import { getSize } from "../../../Icon/index";
 import { ICON_SIZES } from "../../../Icon/consts";
-import defaultTokens from "../../../defaultTokens";
+import defaultTheme from "../../../defaultTheme";
 import ChevronDown from "../../../icons/ChevronDown";
 import { left } from "../../../utils/rtl/index";
 
@@ -17,7 +17,7 @@ const StyledCardSectionIconRight = styled(ChevronDown)`
 `;
 
 StyledCardSectionIconRight.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const StyledCardSectionHeader = styled.div`
@@ -40,10 +40,16 @@ export const StyledCardSectionHeader = styled.div`
     transform: ${({ expanded }) => expanded && "rotate(-180deg)"};
     margin-${left}: ${({ theme }) => theme.orbit.spaceMedium};
   }
+  &:focus {
+    background: ${({ theme, expandable }) => expandable && theme.orbit.paletteWhiteHover};
+    outline: none;
+  }
+
+ 
 `;
 
 StyledCardSectionHeader.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledCardSectionButtons = styled.div`
@@ -51,7 +57,7 @@ const StyledCardSectionButtons = styled.div`
 `;
 
 StyledCardSectionButtons.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledCardSectionHeaderContent = styled.div`
@@ -59,16 +65,20 @@ const StyledCardSectionHeaderContent = styled.div`
 `;
 
 StyledCardSectionHeaderContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const CardSectionHeader = ({ children, actions }: Props) => (
   <CardSectionContext.Consumer>
-    {({ expandable, expanded, handleToggleSection }) => (
+    {({ expandable, expanded, handleToggleSection, onKeyDownHandler }) => (
       <StyledCardSectionHeader
         expandable={expandable}
         expanded={expanded}
         onClick={expandable && handleToggleSection}
+        aria-expanded={expandable && expanded}
+        role={expandable && "button"}
+        tabIndex={expandable && "0"}
+        onKeyDown={onKeyDownHandler}
       >
         <StyledCardSectionHeaderContent expandable={expandable}>
           {children}

@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import Heading from "../Heading";
 import Stack from "../Stack";
 import ArrowUpIcon from "../icons/ArrowUp";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import FlightDirectIcon from "../icons/FlightDirect";
 import { BASE_URL, SMALLEST_HEIGHT } from "./consts";
 import LazyImage from "../LazyImage";
@@ -42,7 +42,7 @@ const StyledOverlay = styled.div`
 `;
 
 StyledOverlay.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledOverlayHover = styled.div`
@@ -52,7 +52,7 @@ const StyledOverlayHover = styled.div`
 `;
 
 StyledOverlayHover.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledDestinationCardContent = styled.div`
@@ -68,7 +68,7 @@ const StyledDestinationCardContent = styled.div`
 `;
 
 StyledDestinationCardContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledDestinationCardHeader = styled.div`
@@ -76,7 +76,7 @@ const StyledDestinationCardHeader = styled.div`
 `;
 
 StyledDestinationCardHeader.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Shown = styled.div`
@@ -88,7 +88,7 @@ const Shown = styled.div`
 `;
 
 Shown.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ArrowUp = styled(ArrowUpIcon)`
@@ -97,7 +97,7 @@ const ArrowUp = styled(ArrowUpIcon)`
 `;
 
 ArrowUp.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledDestinationCardHiddenContent = styled.div`
@@ -106,7 +106,7 @@ const StyledDestinationCardHiddenContent = styled.div`
 `;
 
 StyledDestinationCardHiddenContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const FlightDirect = styled(FlightDirectIcon)`
@@ -120,7 +120,7 @@ const StyledDestination = styled.div`
 `;
 
 StyledDestination.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledDestinationCard = styled(({ height, imageURL, theme, ...props }) => <div {...props} />)`
@@ -155,7 +155,7 @@ const StyledDestinationCard = styled(({ height, imageURL, theme, ...props }) => 
   }
 `;
 StyledDestinationCard.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const SmallHeading = ({ children }: SmallHeadingType) => (

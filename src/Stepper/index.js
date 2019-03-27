@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Button from "../Button";
 import Minus from "../icons/Minus";
 import Plus from "../icons/Plus";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 
 import type { Props, State } from "./index";
 
@@ -37,7 +37,7 @@ const StyledStepperInput = styled.input`
 `;
 
 StyledStepperInput.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class Stepper extends React.PureComponent<Props, State> {
@@ -73,11 +73,12 @@ class Stepper extends React.PureComponent<Props, State> {
   };
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    ev.preventDefault();
     if (ev.keyCode === 40) {
+      ev.preventDefault();
       this.decrementCounter();
     }
     if (ev.keyCode === 38) {
+      ev.preventDefault();
       this.incrementCounter();
     }
   };

@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { rtlSpacing, left, right } from "../utils/rtl";
 import CloseCircle from "../icons/CloseCircle";
 import { SIZES, STATES } from "./consts";
@@ -77,7 +77,7 @@ export const StyledTag = styled.div`
 `;
 
 StyledTag.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const IconContainer = styled.div`
@@ -91,7 +91,7 @@ const IconContainer = styled.div`
 `;
 
 IconContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const CloseContainer = styled.div`
@@ -110,7 +110,20 @@ const CloseContainer = styled.div`
 `;
 
 CloseContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
+};
+
+const StyledClose = styled.div`
+  display: flex;
+  border-radius: 100%;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0 0px 2px ${({ theme }) => theme.orbit.paletteCloudNormalActive};
+  }
+`;
+StyledClose.defaultProps = {
+  theme: defaultTheme,
 };
 
 const Tag = (props: Props) => {
@@ -136,7 +149,9 @@ const Tag = (props: Props) => {
             }
           }}
         >
-          <CloseCircle size="small" />
+          <StyledClose tabIndex="0" role="button">
+            <CloseCircle size="small" />
+          </StyledClose>
         </CloseContainer>
       )}
     </StyledTag>

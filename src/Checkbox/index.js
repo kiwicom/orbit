@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import TOKENS from "./consts";
 import Check from "../icons/Check";
 import { StyledText } from "../Text";
@@ -50,7 +50,7 @@ const IconContainer = styled.div`
 `;
 
 IconContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const TextContainer = styled.div`
@@ -61,7 +61,7 @@ const TextContainer = styled.div`
 `;
 
 TextContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Info = styled.span`
@@ -71,7 +71,7 @@ const Info = styled.span`
 `;
 
 Info.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const LabelText = styled.span`
@@ -90,7 +90,7 @@ const LabelText = styled.span`
 `;
 
 LabelText.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Input = styled.input`
@@ -123,7 +123,7 @@ const Input = styled.input`
 `;
 
 Input.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const Label = styled(({ className, children, dataTest }) => (
@@ -152,7 +152,7 @@ export const Label = styled(({ className, children, dataTest }) => (
 `;
 
 Label.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 // $FlowExpected

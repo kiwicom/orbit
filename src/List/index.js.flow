@@ -11,7 +11,7 @@ export type Size = "small" | "normal" | "large";
 type Type = "primary" | "secondary";
 
 export type Props = {|
-  +children: Array<React$Element<ListItemType>> | React$Element<ListItemType>,
+  +children: React$Node,
   +size?: Size,
   +type?: Type,
   ...Globals,

@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import TYPE_OPTIONS from "./consts";
 
 import type { Props } from "./index";
@@ -41,7 +41,7 @@ export const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {..
 `;
 
 StyledFormFeedback.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const FormFeedback = (props: Props) => {

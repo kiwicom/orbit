@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Heading, { StyledHeading } from "../Heading";
 import Checkbox, { Label } from "../Checkbox";
 import Text from "../Text";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { getSize } from "../Icon";
 import { right } from "../utils/rtl";
 
@@ -26,7 +26,7 @@ const StyledListChoiceIcon = styled.div`
 `;
 
 StyledListChoiceIcon.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledListChoice = styled.div`
@@ -57,7 +57,7 @@ const StyledListChoice = styled.div`
 `;
 
 StyledListChoice.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledListChoiceContent = styled.div`
@@ -73,7 +73,7 @@ const StyledListChoiceContent = styled.div`
 `;
 
 StyledListChoiceContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ListChoice = (props: Props) => {
@@ -83,7 +83,9 @@ const ListChoice = (props: Props) => {
     <StyledListChoice onClick={onClick} data-test={dataTest}>
       {icon && <StyledListChoiceIcon>{icon}</StyledListChoiceIcon>}
       <StyledListChoiceContent>
-        <Heading type="title4">{title}</Heading>
+        <Heading type="title4" element="div">
+          {title}
+        </Heading>
         {description && (
           <Text type="secondary" size="small">
             {description}

@@ -84,7 +84,6 @@ storiesOf("TextLink", module)
     };
   })
   .addWithChapters("Link with icon", () => {
-    const href = text("Href", "https://kiwi.com");
     const title = text("Title", "TextLink with icon");
     const Icon = getIcon(getIcons("ChevronRight"));
 
@@ -96,7 +95,7 @@ storiesOf("TextLink", module)
           sections: [
             {
               sectionFn: () => (
-                <TextLink onClick={action("clicked")} href={href} icon={Icon && <Icon />}>
+                <TextLink onClick={action("clicked")} icon={Icon && <Icon />}>
                   {title}
                 </TextLink>
               ),

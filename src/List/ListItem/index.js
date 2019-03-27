@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import CircleSmall from "../../icons/CircleSmall";
 import { rtlSpacing } from "../../utils/rtl";
 
@@ -22,7 +22,7 @@ export const Item = styled.li`
 `;
 
 Item.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const IconContainer = styled.div`
@@ -32,7 +32,7 @@ export const IconContainer = styled.div`
 `;
 
 IconContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ListItem = ({ children, icon = <CircleSmall />, dataTest }: Props) => (

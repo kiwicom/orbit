@@ -3,7 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { ICON_SIZES, ICON_COLORS } from "./consts";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 
 import type { GetSize, Props } from "./index";
 
@@ -57,7 +57,7 @@ const StyledIcon = styled(({ className, viewBox, dataTest, children, ariaHidden 
 `;
 
 StyledIcon.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const OrbitIcon = (props: Props) => {

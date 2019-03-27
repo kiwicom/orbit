@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import FormFeedback from "../FormFeedback";
 import FormLabel from "../FormLabel";
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
@@ -23,7 +23,7 @@ const Field = styled.label`
 `;
 
 Field.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const getFontSize = () => ({ theme, size }) => {
@@ -96,7 +96,7 @@ const StyledTextArea = styled.textarea`
 `;
 
 StyledTextArea.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 // $FlowExpected

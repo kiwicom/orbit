@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { warning } from "@kiwicom/js";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { baseURL, CODES } from "./consts";
 
 import type { Props } from "./index";
@@ -19,7 +19,7 @@ const StyledCountryFlag = styled.div`
 `;
 
 StyledCountryFlag.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledImage = styled.img`
@@ -29,7 +29,7 @@ const StyledImage = styled.img`
 `;
 
 StyledImage.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledShadow = styled.div`
@@ -48,7 +48,7 @@ const StyledShadow = styled.div`
 `;
 
 StyledShadow.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export function getCountryProps(code: ?string, name: ?string): { code: string, name: ?string } {

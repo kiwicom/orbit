@@ -5,7 +5,8 @@ import styled, { css } from "styled-components";
 import defaultTokens from "../defaultTokens";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import Close from "../icons/Close";
-import { SIZES, CLOSE_BUTTON_DATA_TEST, FOCUSABLE_ELEMENT_SELECTORS, KEY_CODE_MAP } from "./consts";
+import { SIZES, CLOSE_BUTTON_DATA_TEST, FOCUSABLE_ELEMENT_SELECTORS } from "./consts";
+import KEY_CODE_MAP from "../common/keyMaps";
 import media, { breakpoints } from "../utils/mediaQuery";
 import { StyledModalFooter } from "./ModalFooter";
 import { MobileHeader, StyledModalHeader } from "./ModalHeader";
@@ -499,6 +500,7 @@ class Modal extends React.PureComponent<Props, State> {
           loaded={loaded}
           onScroll={this.handleMobileScroll}
           fixedFooter={fixedFooter}
+          id={this.modalID}
         >
           <ModalWrapperContent
             size={size}
@@ -530,7 +532,6 @@ class Modal extends React.PureComponent<Props, State> {
                 setHasModalSection: this.setHasModalSection,
                 removeHasModalSection: this.removeHasModalSection,
                 hasModalSection,
-                modalID: this.modalID,
               }}
             >
               {children}

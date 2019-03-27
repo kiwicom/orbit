@@ -157,21 +157,13 @@ class ModalHeader extends React.PureComponent<Props> {
   };
 
   render() {
-    const {
-      title,
-      illustration,
-      description,
-      children,
-      suppressed,
-      dataTest,
-      modalID,
-    } = this.props;
+    const { title, illustration, description, children, suppressed, dataTest } = this.props;
     const hasHeader = title || description;
     return (
       <StyledModalHeader illustration={!!illustration} suppressed={suppressed} data-test={dataTest}>
         {illustration}
         {hasHeader && (
-          <ModalTitle illustration={!!illustration} id={modalID}>
+          <ModalTitle illustration={!!illustration}>
             {title && <Heading type="title1">{title}</Heading>}
             {description && (
               <ModalDescription>

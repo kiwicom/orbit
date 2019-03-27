@@ -5,7 +5,7 @@ import { shallow, mount } from "enzyme";
 import Text from "../index";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import { SIZE_OPTIONS, TYPE_OPTIONS } from "../consts";
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 
 describe("Text", () => {
   const text = "Children text";
@@ -31,7 +31,7 @@ describe("Text", () => {
   });
   it("should have margin-bottom", () => {
     const mounted = mount(<Text spaceAfter={spaceAfter}>{text}</Text>);
-    expect(mounted).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
+    expect(mounted).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

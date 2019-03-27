@@ -59,16 +59,11 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
 }
 
 <ButtonLink
-  component="button"
   dataTest="test"
   external={true}
   href="https://kiwi.com"
-  size="normal"
   submit={true}
   tabIndex="-1"
-  transparent={false}
-  type="primary"
-  width={0}
 >
   <ButtonLink__StyledButtonLink
     buttonRef={null}
@@ -527,7 +522,6 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
         "rtl": false,
       }
     }
-    transparent={false}
     type="primary"
     width={0}
   >
@@ -1491,7 +1485,6 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "rtl": false,
         }
       }
-      transparent={false}
       type="primary"
       width={0}
     >
@@ -1953,7 +1946,6 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
             "rtl": false,
           }
         }
-        transparent={false}
         type="primary"
         width={0}
       >
@@ -2088,20 +2080,13 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
 }
 
 <ButtonLink
-  component="button"
-  external={false}
   href="https://kiwi.com"
   iconLeft={<Airplane />}
   iconRight={<ChevronDown />}
-  size="normal"
-  transparent={false}
-  type="primary"
-  width={0}
 >
   <ButtonLink__StyledButtonLink
     buttonRef={null}
     component="button"
-    external={false}
     href="https://kiwi.com"
     iconLeft={<Airplane />}
     iconRight={<ChevronDown />}
@@ -2553,14 +2538,12 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
         "rtl": false,
       }
     }
-    transparent={false}
     type="primary"
     width={0}
   >
     <StyledComponent
       buttonRef={null}
       component="button"
-      external={false}
       forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
@@ -3515,7 +3498,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
           "rtl": false,
         }
       }
-      transparent={false}
       type="primary"
       width={0}
     >
@@ -3523,7 +3505,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
         buttonRef={null}
         className="c0"
         component="button"
-        external={false}
         href="https://kiwi.com"
         iconLeft={<Airplane />}
         iconRight={<ChevronDown />}
@@ -3975,7 +3956,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
             "rtl": false,
           }
         }
-        transparent={false}
         type="primary"
         width={0}
       >

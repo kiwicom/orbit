@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { CardSectionContext } from "../index";
 import { getSize } from "../../../Icon/index";
 import { ICON_SIZES } from "../../../Icon/consts";
-import defaultTokens from "../../../defaultTokens";
+import defaultTheme from "../../../defaultTheme";
 import ChevronDown from "../../../icons/ChevronDown";
 import { left } from "../../../utils/rtl/index";
 
@@ -17,7 +17,7 @@ const StyledCardSectionIconRight = styled(ChevronDown)`
 `;
 
 StyledCardSectionIconRight.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const StyledCardSectionHeader = styled.div`
@@ -49,7 +49,7 @@ export const StyledCardSectionHeader = styled.div`
 `;
 
 StyledCardSectionHeader.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledCardSectionButtons = styled.div`
@@ -57,7 +57,7 @@ const StyledCardSectionButtons = styled.div`
 `;
 
 StyledCardSectionButtons.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledCardSectionHeaderContent = styled.div`
@@ -65,7 +65,7 @@ const StyledCardSectionHeaderContent = styled.div`
 `;
 
 StyledCardSectionHeaderContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const CardSectionHeader = ({ children, actions }: Props) => (

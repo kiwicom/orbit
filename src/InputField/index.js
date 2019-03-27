@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
 import FormFeedback from "../FormFeedback";
 import DefaultFormLabel from "../FormLabel";
@@ -57,7 +57,7 @@ const Field = styled.label`
 `;
 
 Field.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const FakeInput = styled(({ children, className }) => (
@@ -83,7 +83,7 @@ export const FakeInput = styled(({ children, className }) => (
 `;
 
 FakeInput.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const InputContainer = styled(({ children, className }) => (
@@ -112,7 +112,7 @@ export const InputContainer = styled(({ children, className }) => (
 `;
 
 InputContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledInlineLabel = styled.div`
@@ -133,7 +133,7 @@ const StyledInlineLabel = styled.div`
 `;
 
 StyledInlineLabel.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const Prefix = styled(({ children, className }) => (
@@ -156,7 +156,7 @@ export const Prefix = styled(({ children, className }) => (
 `;
 
 Prefix.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Suffix = styled(({ children, className }) => <div className={className}>{children}</div>)`
@@ -179,7 +179,7 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
 `;
 
 Suffix.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const Input = styled(
@@ -189,7 +189,7 @@ export const Input = styled(
   )),
 )`
   appearance: none;
-  -webkit-text-fill-color: inherit;
+  -webkit-text-fill-color: ${({ disabled }) => disabled && "inherit"};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   border: none;
   padding: ${getPadding()};
@@ -254,7 +254,7 @@ export const Input = styled(
 `;
 
 Input.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const FormLabel = ({
@@ -283,7 +283,7 @@ const StyledInputTags = styled.div`
 `;
 
 StyledInputTags.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledInputTagsInner = styled.div`
@@ -302,7 +302,7 @@ const StyledInputTagsInner = styled.div`
 `;
 
 StyledInputTagsInner.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 // $FlowExpected

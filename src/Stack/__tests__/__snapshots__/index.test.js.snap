@@ -107,7 +107,6 @@ exports[`Default Stack should match snapshot 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -webkit-text-fill-color: inherit;
   font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   border: none;
   padding: 0 12px;
@@ -742,7 +741,7 @@ exports[`Default Stack should match snapshot 1`] = `
         "componentStyle": ComponentStyle {
           "componentId": "Stack__StyledStack-sc-1t576ow-0",
           "isStatic": false,
-          "lastClassName": "kWdQDl",
+          "lastClassName": "jPtkIW",
           "rules": Array [
             [Function],
             ";",
@@ -7634,7 +7633,9 @@ exports[`Default Stack should match snapshot 1`] = `
                                   "isStatic": false,
                                   "lastClassName": "c4",
                                   "rules": Array [
-                                    "appearance:none;-webkit-text-fill-color:inherit;font-family:",
+                                    "appearance:none;-webkit-text-fill-color:",
+                                    [Function],
+                                    ";font-family:",
                                     [Function],
                                     ";border:none;padding:",
                                     [Function],
@@ -16131,7 +16132,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -webkit-text-fill-color: inherit;
   font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   border: none;
   padding: 0 12px;
@@ -16853,7 +16853,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "Stack__StyledStack-sc-1t576ow-0",
             "isStatic": false,
-            "lastClassName": "kWdQDl",
+            "lastClassName": "jPtkIW",
             "rules": Array [
               [Function],
               ";",
@@ -23757,7 +23757,9 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                     "isStatic": false,
                                     "lastClassName": "c4",
                                     "rules": Array [
-                                      "appearance:none;-webkit-text-fill-color:inherit;font-family:",
+                                      "appearance:none;-webkit-text-fill-color:",
+                                      [Function],
+                                      ";font-family:",
                                       [Function],
                                       ";border:none;padding:",
                                       [Function],
@@ -32251,7 +32253,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -webkit-text-fill-color: inherit;
   font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   border: none;
   padding: 0 12px;
@@ -32884,7 +32885,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
         "componentStyle": ComponentStyle {
           "componentId": "Stack__StyledStack-sc-1t576ow-0",
           "isStatic": false,
-          "lastClassName": "kWdQDl",
+          "lastClassName": "jPtkIW",
           "rules": Array [
             [Function],
             ";",
@@ -39774,7 +39775,9 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                   "isStatic": false,
                                   "lastClassName": "c4",
                                   "rules": Array [
-                                    "appearance:none;-webkit-text-fill-color:inherit;font-family:",
+                                    "appearance:none;-webkit-text-fill-color:",
+                                    [Function],
+                                    ";font-family:",
                                     [Function],
                                     ";border:none;padding:",
                                     [Function],

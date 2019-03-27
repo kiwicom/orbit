@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import ChevronRight from "../../icons/ChevronRight";
 
 import type { Props } from "./index";
@@ -30,7 +30,7 @@ const StyledBreadcrumbsItemAnchor = styled(({ active, component, children, theme
 `;
 
 StyledBreadcrumbsItemAnchor.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledBreadcrumbsItemIcon = styled(ChevronRight)`
@@ -38,7 +38,7 @@ const StyledBreadcrumbsItemIcon = styled(ChevronRight)`
 `;
 
 StyledBreadcrumbsItemIcon.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const a: React$Node = "a";

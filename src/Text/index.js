@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import {
   TYPE_OPTIONS,
   WEIGHT_OPTIONS,
@@ -72,7 +72,7 @@ export const StyledText = styled(({ element: TextElement, children, className, d
 `;
 
 StyledText.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Text = ({

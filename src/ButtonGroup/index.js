@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { StyledButtonLink } from "../ButtonLink";
 import { StyledButton } from "../Button";
 import { borderRadius, rtlSpacing } from "../utils/rtl";
@@ -35,7 +35,7 @@ const StyledButtonGroup = styled.div`
 `;
 
 StyledButtonGroup.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ButtonGroup = ({ children, connected, dataTest }: Props) => (

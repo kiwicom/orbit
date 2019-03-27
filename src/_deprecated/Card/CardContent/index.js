@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../../defaultTokens";
+import defaultTheme from "../../../defaultTheme";
 
 import type { Props } from "./index";
 
@@ -12,7 +12,7 @@ export const StyledCardContent = styled.div`
 `;
 
 StyledCardContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const CardContent = ({ children, dataTest }: Props) => (

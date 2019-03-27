@@ -59,12 +59,12 @@ All this properties - objects have the some own properties and none is required.
 
 ### enum
 
-| justify     | align       | direction   |
-| :---------- | :---------- | :---------- |
-| `"start"`   | `"start"`   | `"row"`     |
-| `"end"`     | `"end"`     | `"column"`  |
-| `"center"`  | `"center"`  |
-| `"between"` |
+| justify     | direction           | align       |
+| :---------- | :------------------ | :---------- |
+| `"start"`   | `"row"`             | `"start"`   |
+| `"end"`     | `"column"`          | `"end"`     | 
+| `"center"`  | `"row-reverse"`     | `"center"`  |
+| `"between"` | `"column-reverse"`  |
 | `"around"`  |
 
 ### spacing

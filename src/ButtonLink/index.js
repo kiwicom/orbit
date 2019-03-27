@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { TYPES, SIZES, TOKENS } from "./consts";
 import { ICON_SIZES } from "../Icon/consts";
 import { getSize } from "../Icon";
@@ -130,7 +130,7 @@ const IconContainer = styled(({ className, children }) => (
 `;
 
 IconContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const StyledButtonLink = styled(
@@ -216,7 +216,7 @@ export const StyledButtonLink = styled(
 `;
 
 StyledButtonLink.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 // $FlowExpected

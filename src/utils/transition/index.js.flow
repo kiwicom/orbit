@@ -1,5 +1,5 @@
 // @flow
-import type { ThemeProps } from "../../defaultTokens";
+import type { ThemeProps } from "../../defaultTheme";
 
 export type Transition = (
   properties: string[],

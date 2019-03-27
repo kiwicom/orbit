@@ -283,7 +283,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -webkit-text-fill-color: inherit;
   font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   border: none;
   padding: 0 12px;
@@ -13635,7 +13634,9 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     "isStatic": false,
                                     "lastClassName": "c11",
                                     "rules": Array [
-                                      "appearance:none;-webkit-text-fill-color:inherit;font-family:",
+                                      "appearance:none;-webkit-text-fill-color:",
+                                      [Function],
+                                      ";font-family:",
                                       [Function],
                                       ";border:none;padding:",
                                       [Function],

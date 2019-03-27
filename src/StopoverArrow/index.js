@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import STOPS from "./consts";
 
 import type { Props } from "./index";
@@ -16,7 +16,7 @@ const StyledArrow = styled.svg`
 `;
 
 StyledArrow.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Stops = ({ stops }: Props) => {

@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import media from "../utils/mediaQuery";
 import {
   ALIGNS,
@@ -126,7 +126,7 @@ const StyledTooltipWrapper = styled.div`
 `;
 
 StyledTooltipWrapper.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTooltipContent = styled.div`
@@ -158,7 +158,7 @@ const StyledTooltipContent = styled.div`
 `;
 
 StyledTooltipContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTooltipClose = styled.div`
@@ -169,7 +169,7 @@ const StyledTooltipClose = styled.div`
 `;
 
 StyledTooltipClose.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTooltipOverlay = styled.div`
@@ -196,7 +196,7 @@ const StyledTooltipOverlay = styled.div`
 `;
 
 StyledTooltipOverlay.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class Tooltip extends React.PureComponent<Props, State> {

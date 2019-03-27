@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import ChevronDown from "../../icons/ChevronDown";
 import { getSize } from "../../Icon";
 import { ICON_SIZES } from "../../Icon/consts";
@@ -15,7 +15,7 @@ const StyledCardSectionIconRight = styled(ChevronDown)`
 `;
 
 StyledCardSectionIconRight.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledCardSectionContent = styled.div`
@@ -32,7 +32,7 @@ const StyledCardSectionContent = styled.div`
 `;
 
 StyledCardSectionContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const StyledCardSection = styled.div`
@@ -44,7 +44,7 @@ export const StyledCardSection = styled.div`
 `;
 
 StyledCardSection.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledCardSectionHeader = styled.div`
@@ -57,7 +57,7 @@ const StyledCardSectionHeader = styled.div`
 `;
 
 StyledCardSectionHeader.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const CardSectionContext: React.Context<ContextType> = React.createContext({

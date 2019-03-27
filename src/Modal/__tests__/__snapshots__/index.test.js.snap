@@ -2,10 +2,12 @@
 
 exports[`Large Modal should match snapshot 1`] = `
 <Modal__ModalBody
+  aria-modal="true"
   data-test="test"
   onClick={[Function]}
   onKeyDown={[Function]}
   onScroll={[Function]}
+  role="dialog"
   tabIndex="0"
   theme={
     Object {

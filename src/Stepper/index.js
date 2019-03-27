@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Button from "../Button";
 import Minus from "../icons/Minus";
 import Plus from "../icons/Plus";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 
 import type { Props, State } from "./index";
 
@@ -37,7 +37,7 @@ const StyledStepperInput = styled.input`
 `;
 
 StyledStepperInput.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class Stepper extends React.PureComponent<Props, State> {

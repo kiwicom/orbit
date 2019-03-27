@@ -7,7 +7,7 @@ import Heading, { StyledHeading, getHeadingToken } from "../Heading";
 import { TYPE_OPTIONS, TOKENS } from "../Heading/consts";
 import ButtonLink, { StyledButton } from "../Button";
 import BASE_URL from "./consts";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import LazyImage from "../LazyImage";
 import mq from "../utils/mediaQuery";
 
@@ -27,7 +27,7 @@ const StyledDestinationHeader = styled.div`
 `;
 
 StyledDestinationHeader.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledOverlay = styled.div`
@@ -42,7 +42,7 @@ const StyledOverlay = styled.div`
 `;
 
 StyledOverlay.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledContent = styled.div`
@@ -72,7 +72,7 @@ const StyledContent = styled.div`
 `;
 
 StyledContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledHeader = styled.div`
@@ -91,7 +91,7 @@ const StyledHeader = styled.div`
 `;
 
 StyledHeader.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props) => {

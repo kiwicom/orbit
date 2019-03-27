@@ -3,7 +3,7 @@ import * as React from "react";
 import { shallow, mount } from "enzyme";
 
 import Alert from "../index";
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import { CLOSE_BUTTON_DATA_TEST } from "../consts";
 
@@ -26,7 +26,7 @@ describe("Alert", () => {
   });
   it("should have margin-bottom", () => {
     const component = mount(<Alert spaceAfter={SPACINGS_AFTER.NORMAL}>{message}</Alert>);
-    expect(component).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
+    expect(component).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
   });
   it("should be closable", () => {
     const onClose = jest.fn();

@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import CarrierLogo, { StyledCarrierLogo } from "../CarrierLogo";
 import Airplane from "../icons/Airplane";
 import ShowMore from "../icons/ShowMore";
@@ -41,7 +41,7 @@ export const StyledTripSegmentMilestone = styled.div`
 `;
 
 StyledTripSegmentMilestone.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTripSegmentMilestoneArrow = styled.div`
@@ -75,7 +75,7 @@ const StyledTripSegmentMilestoneArrow = styled.div`
 `;
 
 StyledTripSegmentMilestoneArrow.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTripSegmentContent = styled.div`
@@ -93,7 +93,7 @@ const StyledTripSegmentContent = styled.div`
 `;
 
 StyledTripSegmentContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledChevrons = styled.div`
@@ -107,7 +107,7 @@ const StyledChevrons = styled.div`
 `;
 
 StyledChevrons.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Chevrons = ({ expanded }: ExpandedType) => (
@@ -144,7 +144,7 @@ const StyledTripSegmentOverview = styled.div`
 `;
 
 StyledTripSegmentOverview.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTripSegmentCarrier = styled.div`
@@ -155,7 +155,7 @@ const StyledTripSegmentCarrier = styled.div`
 `;
 
 StyledTripSegmentCarrier.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTripSegmentOverviewWrapper = styled.div`
@@ -174,7 +174,7 @@ const StyledTripSegmentOverviewWrapper = styled.div`
 `;
 
 StyledTripSegmentOverviewWrapper.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTripSegmentOverviewColumn = styled.div`
@@ -187,7 +187,7 @@ const StyledTripSegmentOverviewTime = styled.div`
 `;
 
 StyledTripSegmentOverviewTime.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTripSegmentChildren = styled.div`
@@ -207,7 +207,7 @@ const StyledTripSegmentChildren = styled.div`
 `;
 
 StyledTripSegmentChildren.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const MilestoneIcon = ({ type }) => {

@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import Close from "../icons/Close";
 import { SIZES, CLOSE_BUTTON_DATA_TEST, FOCUSABLE_ELEMENT_SELECTORS } from "./consts";
@@ -64,7 +64,7 @@ const ModalBody = styled.div`
 `;
 
 ModalBody.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ModalWrapper = styled.div`
@@ -96,7 +96,7 @@ const ModalWrapper = styled.div`
 `;
 
 ModalWrapper.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const CloseContainer = styled.div`
@@ -162,7 +162,7 @@ const CloseContainer = styled.div`
 `;
 
 CloseContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ModalWrapperContent = styled.div`
@@ -298,7 +298,7 @@ const ModalWrapperContent = styled.div`
 `;
 
 ModalWrapperContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class Modal extends React.PureComponent<Props, State> {

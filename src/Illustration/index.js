@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, baseURL } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 
@@ -33,7 +33,7 @@ export const StyledImage = styled.img.attrs(({ theme, size, illustrationName }) 
 `;
 
 StyledImage.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Illustration = ({ name, size = SIZE_OPTIONS.MEDIUM, dataTest, spaceAfter }: Props) => (

@@ -3,6 +3,8 @@
 export const DIRECTIONS = {
   ROW: "row",
   COLUMN: "column",
+  ROWREVERSE: "row-reverse",
+  COLUMNREVERSE: "column-reverse",
 };
 
 export const ALIGNS = {

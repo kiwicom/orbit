@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../../defaultTokens";
+import defaultTheme from "../../../defaultTheme";
 import { CardSectionContext } from "../index";
 import Slide, { StyledSlide } from "../../../utils/Slide";
 
@@ -31,7 +31,7 @@ export const StyledCardSectionContent = styled.div`
 `;
 
 StyledCardSectionContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const withConsumer = CardSection => ({ children, visible }: Props) => (
@@ -81,7 +81,7 @@ class CardSectionContent extends React.Component<Props, State> {
 
   setHeight = () => {
     this.setState({
-      contentHeight: this.node?.current.clientHeight,
+      contentHeight: this.node?.current?.clientHeight,
     });
   };
 

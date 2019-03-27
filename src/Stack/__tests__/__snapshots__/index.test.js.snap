@@ -132,6 +132,10 @@ exports[`Default Stack should match snapshot 1`] = `
   margin: 0;
 }
 
+.c4[data-com-onepassword-filled] {
+  background-color: inherit !important;
+}
+
 .c4:focus {
   outline: none;
 }
@@ -7643,7 +7647,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                     [Function],
                                     ";letter-spacing:",
                                     [Function],
-                                    ";&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&:focus{outline:none;& ~ ",
+                                    ";&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&[data-com-onepassword-filled]{background-color:inherit !important;}&:focus{outline:none;& ~ ",
                                     ".c5",
                                     "{box-shadow:inset 0 0 0 ",
                                     [Function],
@@ -16153,6 +16157,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   margin: 0;
 }
 
+.c4[data-com-onepassword-filled] {
+  background-color: inherit !important;
+}
+
 .c4:focus {
   outline: none;
 }
@@ -23763,7 +23771,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                       [Function],
                                       ";letter-spacing:",
                                       [Function],
-                                      ";&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&:focus{outline:none;& ~ ",
+                                      ";&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&[data-com-onepassword-filled]{background-color:inherit !important;}&:focus{outline:none;& ~ ",
                                       ".c5",
                                       "{box-shadow:inset 0 0 0 ",
                                       [Function],
@@ -32270,6 +32278,10 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   margin: 0;
 }
 
+.c4[data-com-onepassword-filled] {
+  background-color: inherit !important;
+}
+
 .c4:focus {
   outline: none;
 }
@@ -39777,7 +39789,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                     [Function],
                                     ";letter-spacing:",
                                     [Function],
-                                    ";&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&:focus{outline:none;& ~ ",
+                                    ";&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&[data-com-onepassword-filled]{background-color:inherit !important;}&:focus{outline:none;& ~ ",
                                     ".c5",
                                     "{box-shadow:inset 0 0 0 ",
                                     [Function],

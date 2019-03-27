@@ -5,7 +5,7 @@ import { shallow, mount } from "enzyme";
 import Illustration from "../index";
 import { SIZE_OPTIONS } from "../consts";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 
 const size = SIZE_OPTIONS.SMALL;
 const name = "Accommodation";
@@ -34,7 +34,7 @@ describe(`Illustration of ${name}`, () => {
     expect(component.render().attr("srcset")).toContain(URL_RETINA);
   });
   it("should have margin-bottom", () => {
-    expect(mountedComponent).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
+    expect(mountedComponent).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

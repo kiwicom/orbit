@@ -3,7 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { addScrollHandler, removeScrollHandler, getScrollingElement } from "../utils/scroll";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 
 import type { Props, State } from "./index";
 
@@ -20,7 +20,7 @@ const StyledStickyContent = styled.div`
 `;
 
 StyledStickyContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class Sticky extends React.Component<Props, State> {

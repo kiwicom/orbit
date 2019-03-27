@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import Close from "../../icons/Close";
 import ButtonLink from "../../ButtonLink";
 import { StyledCardSection } from "./CardSection";
@@ -36,7 +36,7 @@ const StyledCard = styled.div`
 `;
 
 StyledCard.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const CloseContainer = styled.div`

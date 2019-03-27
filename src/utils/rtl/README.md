@@ -6,14 +6,14 @@ If you need to enable `rtl` inside `orbit-components`, set it inside `ThemeProvi
 
 ```jsx
 import { ThemeProvider } from "styled-components";
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
+import { defaultTheme } from "@kiwicom/orbit-components";
 
-<ThemeProvider theme={{ orbit: defaultTokens, rtl: true }}>
+<ThemeProvider theme={{ orbit: defaultTheme, rtl: true }}>
   <App />
 </ThemeProvider>;
 ```
 
-It's also important to pass some `orbit` object, in our case `defaultTokens` from `orbit-design-tokens`.
+It's also important to pass some `orbit` object, in our case `defaultTheme`.
 With this approach, all `orbit-components` will be ready to use with some right to left language.
 
 > In addition, you need to set up `direction` on `html` to have value `rtl`.

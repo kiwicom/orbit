@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import { rtlSpacing } from "../../utils/rtl";
 
 import type { Props } from "./index";
@@ -14,7 +14,7 @@ const StyledTripLayover = styled.div`
 `;
 
 StyledTripLayover.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const TripLayover = ({ children, dataTest }: Props) => (

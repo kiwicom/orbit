@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 
@@ -50,7 +50,7 @@ export const StyledHeading = styled(({ element: Component, className, children, 
 `;
 
 StyledHeading.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Heading = ({

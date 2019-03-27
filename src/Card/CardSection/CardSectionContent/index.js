@@ -81,7 +81,7 @@ class CardSectionContent extends React.Component<Props, State> {
 
   setHeight = () => {
     this.setState({
-      contentHeight: this.node?.current.clientHeight,
+      contentHeight: this.node?.current?.clientHeight,
     });
   };
 

@@ -3,7 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import { StyledTripSegment, StyledTripSegmentMilestone } from "../TripSegment";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { left } from "../utils/rtl";
 
 import type { Props } from "./index";
@@ -43,7 +43,7 @@ const StyledTripSector = styled.div`
 `;
 
 StyledTripSector.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const TripSector = ({ children, dataTest }: Props) => (

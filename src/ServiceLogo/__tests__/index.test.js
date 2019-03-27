@@ -2,7 +2,7 @@
 import * as React from "react";
 import { mount } from "enzyme";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import { NAME_OPTIONS, SIZE_OPTIONS, baseURL } from "../consts";
 import ServiceLogo from "../index";
 
@@ -10,7 +10,7 @@ const name = NAME_OPTIONS.AIRHELP;
 const size = SIZE_OPTIONS.LARGE;
 const grayScale = true;
 
-const SIZE = defaultTokens.orbit.heightServiceLogoLarge;
+const SIZE = defaultTheme.orbit.heightServiceLogoLarge;
 
 describe(`ServiceLogo: ${name}`, () => {
   const component = mount(<ServiceLogo name={name} size={size} />).find("img");

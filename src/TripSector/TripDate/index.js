@@ -3,7 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import Calendar from "../../icons/Calendar";
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import Text, { StyledText } from "../../Text";
 import Clock from "../../icons/Clock";
 import Stack from "../../Stack";
@@ -26,7 +26,7 @@ const StyledTripDate = styled.div`
 `;
 
 StyledTripDate.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const TripDate = ({ children, dataTest, duration }: Props) => (

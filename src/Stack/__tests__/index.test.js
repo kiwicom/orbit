@@ -7,7 +7,7 @@ import InputField from "../../InputField";
 import Button from "../../Button";
 import { ALIGNS, DIRECTIONS, JUSTIFY, SPACINGS } from "../consts";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import { breakpoints } from "../../utils/mediaQuery";
 
 const defaultValues = {
@@ -57,7 +57,7 @@ describe("Default Stack", () => {
   });
   it("should contain styles", () => {
     expect(stack).toHaveStyleRule("width", "100%");
-    expect(stack).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceLarge);
+    expect(stack).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceLarge);
     expect(stack).toHaveStyleRule("margin", "0 0 36px 0!important", {
       modifier: "& > *",
     });
@@ -176,7 +176,7 @@ describe("Stack with enabled flex", () => {
     expect(stack).toHaveStyleRule("justify-content", "center");
     expect(stack).toHaveStyleRule("align-items", "center");
     expect(stack).toHaveStyleRule("align-content", "center");
-    expect(stack).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceLarge);
+    expect(stack).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceLarge);
     expect(stack).toHaveStyleRule("margin", "0 16px 0 0!important", {
       modifier: "& > *",
     });
@@ -212,7 +212,7 @@ describe("Stack with enabled flex", () => {
     expect(stack).toHaveStyleRule("align-items", "flex-start", {
       media: breakpoints.desktop,
     });
-    expect(component).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceXSmall, {
+    expect(component).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceXSmall, {
       media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("margin", "0 0 12px 0!important", {
@@ -281,7 +281,7 @@ describe("Stack with only desktop properties", () => {
     expect(stack).toHaveStyleRule("justify-content", "flex-end", {
       media: breakpoints.desktop,
     });
-    expect(stack).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceXSmall, {
+    expect(stack).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceXSmall, {
       media: breakpoints.desktop,
     });
     expect(stack).toHaveStyleRule("margin", "0 0 12px 0!important", {
@@ -340,7 +340,7 @@ describe("Stack with mobile and some desktop properties", () => {
     expect(stack).toHaveStyleRule("justify-content", "flex-end");
     expect(stack).toHaveStyleRule("align-items", "flex-end");
     expect(stack).toHaveStyleRule("align-content", "flex-end");
-    expect(stack).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceLarge);
+    expect(stack).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceLarge);
     expect(stack).toHaveStyleRule("margin", "0 36px 0 0!important", {
       modifier: "& > *",
     });

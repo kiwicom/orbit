@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import Button from "../Button";
 import ButtonLink from "../ButtonLink";
 import FormLabel from "../FormLabel";
@@ -22,7 +22,7 @@ const Field = styled.label`
 `;
 
 Field.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const FakeInput = styled(({ children, className }) => <div className={className}>{children}</div>)`
@@ -50,7 +50,7 @@ const FakeInput = styled(({ children, className }) => <div className={className}
 `;
 
 FakeInput.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Input = styled.input`
@@ -66,7 +66,7 @@ const Input = styled.input`
 `;
 
 Input.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const getFileInputColor = ({ error, fileName }, theme) => {
@@ -88,7 +88,7 @@ const StyledFileInput = styled.div`
 `;
 
 StyledFileInput.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const InputButton = styled(Button)`
@@ -104,7 +104,7 @@ const CloseButton = styled(ButtonLink)`
 `;
 
 CloseButton.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 // $FlowExpected

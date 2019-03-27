@@ -14,6 +14,7 @@ export { default as CarrierLogo } from "./CarrierLogo";
 export { default as Checkbox } from "./Checkbox";
 export { default as ChoiceGroup } from "./ChoiceGroup";
 export { default as CountryFlag } from "./CountryFlag";
+export { default as DestinationHeader } from "./DestinationHeader";
 
 // Deprecated Card
 export { default as DeprecatedCard } from "./_deprecated/Card";
@@ -77,7 +78,8 @@ export { default as TripDate } from "./TripSector/TripDate";
 export { default as TripLayover } from "./TripSector/TripLayover";
 
 // tokens
-export { defaultTokens as defaultTheme, getTokens } from "@kiwicom/orbit-design-tokens";
+export { default as defaultTheme } from "./defaultTheme";
+export { fromPlainObject, getTokens } from "@kiwicom/orbit-design-tokens";
 
 // utilities
 export { default as mediaQueries, breakpoints } from "./utils/mediaQuery";

@@ -5,7 +5,7 @@ import { shallow, mount } from "enzyme";
 import List from "../index";
 import ListItem from "../ListItem";
 import Check from "../../icons/Check";
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe(`List with custom colored icons`, () => {
@@ -45,7 +45,7 @@ describe(`List with custom colored icons`, () => {
         </ListItem>
       </List>,
     );
-    expect(mounted).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
+    expect(mounted).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
   });
 
   it("should have children", () => {

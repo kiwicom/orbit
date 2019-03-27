@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 
 import type { Props, State, PictureProps } from "./";
 
@@ -36,7 +36,7 @@ const Image = styled.img`
 `;
 
 Image.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const getPictureType = picture => {

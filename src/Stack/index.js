@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import mediaQueries from "../utils/mediaQuery";
 import { ALIGNS, JUSTIFY, DIRECTIONS, SPACINGS } from "./consts";
 import { DEVICES_WIDTH } from "../utils/mediaQuery/consts";
@@ -40,7 +40,7 @@ const StyledStack = styled(({ className, children, dataTest }) => (
 `;
 
 StyledStack.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Stack = (props: Props) => {

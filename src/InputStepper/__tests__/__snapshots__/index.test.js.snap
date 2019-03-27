@@ -485,7 +485,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                   }
                 }
                 disabled={true}
-                external={false}
                 iconLeft={
                   <MinusCircle
                     color="secondary"
@@ -494,8 +493,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                 onClick={[Function]}
                 size="normal"
                 transparent={true}
-                type="primary"
-                width={0}
               />
             }
             required={false}
@@ -528,7 +525,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                   }
                 }
                 disabled={false}
-                external={false}
                 iconLeft={
                   <PlusCircle
                     color="secondary"
@@ -537,8 +533,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                 onClick={[Function]}
                 size="normal"
                 transparent={true}
-                type="primary"
-                width={0}
               />
             }
             tabIndex="-1"
@@ -7446,7 +7440,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       }
                                     }
                                     disabled={true}
-                                    external={false}
                                     iconLeft={
                                       <MinusCircle
                                         color="secondary"
@@ -7455,8 +7448,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     onClick={[Function]}
                                     size="normal"
                                     transparent={true}
-                                    type="primary"
-                                    width={0}
                                   >
                                     <ButtonLink__StyledButtonLink
                                       buttonRef={null}
@@ -7486,7 +7477,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         }
                                       }
                                       disabled={true}
-                                      external={false}
                                       iconLeft={
                                         <MinusCircle
                                           color="secondary"
@@ -7973,7 +7963,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                           }
                                         }
                                         disabled={true}
-                                        external={false}
                                         forwardedComponent={
                                           Object {
                                             "$$typeof": Symbol(react.forward_ref),
@@ -8964,7 +8953,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             }
                                           }
                                           disabled={true}
-                                          external={false}
                                           iconLeft={
                                             <MinusCircle
                                               color="secondary"
@@ -16923,7 +16911,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                       }
                                     }
                                     disabled={false}
-                                    external={false}
                                     iconLeft={
                                       <PlusCircle
                                         color="secondary"
@@ -16932,8 +16919,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                     onClick={[Function]}
                                     size="normal"
                                     transparent={true}
-                                    type="primary"
-                                    width={0}
                                   >
                                     <ButtonLink__StyledButtonLink
                                       buttonRef={null}
@@ -16963,7 +16948,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         }
                                       }
                                       disabled={false}
-                                      external={false}
                                       iconLeft={
                                         <PlusCircle
                                           color="secondary"
@@ -17450,7 +17434,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                           }
                                         }
                                         disabled={false}
-                                        external={false}
                                         forwardedComponent={
                                           Object {
                                             "$$typeof": Symbol(react.forward_ref),
@@ -18441,7 +18424,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             }
                                           }
                                           disabled={false}
-                                          external={false}
                                           iconLeft={
                                             <PlusCircle
                                               color="secondary"

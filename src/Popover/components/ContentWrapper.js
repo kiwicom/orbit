@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css, keyframes } from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTokens from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
 import { POSITIONS, ANCHORS } from "../consts";
 import Button from "../../Button";
@@ -116,6 +116,12 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
     },
   };
 
+  popover: { current: any | HTMLDivElement } = React.createRef();
+
+  content: { current: any | HTMLDivElement } = React.createRef();
+
+  overlay: { current: any | HTMLDivElement } = React.createRef();
+
   componentDidMount() {
     setTimeout(() => {
       this.calculatePopoverPosition();
@@ -192,7 +198,8 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
     const isInside = (p: Positions) => {
       if (p === POSITIONS.TOP && canBePositionTop) {
         return POSITIONS.TOP;
-      } else if (p === POSITIONS.BOTTOM && canBePositionBottom) {
+      }
+      if (p === POSITIONS.BOTTOM && canBePositionBottom) {
         return POSITIONS.BOTTOM;
       }
       return false;
@@ -201,7 +208,8 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
     const isInsideAnchor = (p: Anchors) => {
       if (p === ANCHORS.START && canBeAnchorLeft) {
         return ANCHORS.START;
-      } else if (p === ANCHORS.END && canBeAnchorRight) {
+      }
+      if (p === ANCHORS.END && canBeAnchorRight) {
         return ANCHORS.END;
       }
       return false;
@@ -229,6 +237,18 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
     }
   }
 
+  handleResize = () => {
+    this.calculatePopoverPosition();
+  };
+
+  handleClick = (ev: SyntheticEvent<HTMLElement>) => {
+    ev.stopPropagation();
+
+    if (ev.target === this.overlay?.current) {
+      this.props.onClose();
+    }
+  };
+
   calculatePopoverPosition() {
     this.setDimensions();
 
@@ -246,22 +266,6 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
       this.setPosition(positions, anchors);
     }
   }
-
-  handleResize = () => {
-    this.calculatePopoverPosition();
-  };
-
-  handleClick = (ev: SyntheticEvent<HTMLElement>) => {
-    ev.stopPropagation();
-
-    if (ev.target === this.overlay?.current) {
-      this.props.onClose();
-    }
-  };
-
-  popover: { current: any | HTMLDivElement } = React.createRef();
-  content: { current: any | HTMLDivElement } = React.createRef();
-  overlay: { current: any | HTMLDivElement } = React.createRef();
 
   render() {
     const { position, anchor, positions } = this.state;

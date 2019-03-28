@@ -1,6 +1,6 @@
 // @flow
 import type { Anchor, Dimensions } from "../index.js.flow";
-import type { Theme } from "../../defaultTokens.js.flow";
+import type { Theme } from "../../defaultTheme.js.flow";
 
 export type StyledAnchor = {|
   ...Anchor,

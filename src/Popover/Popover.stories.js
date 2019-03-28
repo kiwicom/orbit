@@ -1,8 +1,6 @@
 // @flow
 import * as React from "react";
-import { storiesOf, setAddon } from "@storybook/react";
-import styles from "@sambego/storybook-styles";
-import chaptersAddon from "react-storybook-addon-chapters";
+import { storiesOf } from "@storybook/react";
 import { withKnobs, text, select } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -15,149 +13,114 @@ import Button from "../Button";
 
 import Popover from "./index";
 
-setAddon(chaptersAddon);
-
 storiesOf("Popover", module)
   .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
+
+  .add(
+    "Default",
+    () => {
+      const content = text("content", "Write your text here.");
+      return (
+        <Popover content={content}>
+          <Button>Button</Button>
+        </Popover>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
   )
-  .addWithChapters("Default", () => {
-    const content = text("content", "Write your text here.");
-    return {
+  .add(
+    "Prefered Position",
+    () => {
+      const content = text("content", "Write your text here.");
+      const preferredPosition = select(
+        "preferredPosition",
+        Object.values(POSITIONS),
+        POSITIONS.TOP,
+      );
+      return (
+        <Popover content={content} preferredPosition={preferredPosition}>
+          <Button>Button</Button>
+        </Popover>
+      );
+    },
+    {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Popover content={content}>
-                  <Button>Button</Button>
-                </Popover>
-              ),
-            },
-          ],
-        },
-      ],
-    };
-  })
-  .addWithChapters("Prefered Position", () => {
-    const content = text("content", "Write your text here.");
-    const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.TOP);
-    return {
+    },
+  )
+  .add(
+    "With stack",
+    () => {
+      return (
+        <Popover
+          content={
+            <Stack>
+              <Text>More information</Text>
+              <List>
+                <ListItem>Additional information</ListItem>
+                <ListItem>Additional information</ListItem>
+                <ListItem>Additional information</ListItem>
+              </List>
+              <Button>Action</Button>
+            </Stack>
+          }
+          preferredPosition="top"
+        >
+          <Button>Button</Button>
+        </Popover>
+      );
+    },
+    {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Popover content={content} preferredPosition={preferredPosition}>
-                  <Button>Button</Button>
-                </Popover>
-              ),
-            },
-          ],
-        },
-      ],
-    };
-  })
-  .addWithChapters("With stack", () => {
-    return {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Popover
-                  content={
-                    <Stack>
-                      <Text>More information</Text>
-                      <List>
-                        <ListItem>Additional information</ListItem>
-                        <ListItem>Additional information</ListItem>
-                        <ListItem>Additional information</ListItem>
-                      </List>
-                      <Button>Action</Button>
-                    </Stack>
-                  }
-                  preferredPosition="top"
-                >
-                  <Button>Button</Button>
-                </Popover>
-              ),
-            },
-          ],
-        },
-      ],
-    };
-  })
-  .addWithChapters("Playground", () => {
-    const content = text("content", "Write your text here.");
-    const dataTest = text("dataTest", "test");
-    const preferredPosition = select(
-      "preferredPosition",
-      Object.values(POSITIONS),
-      POSITIONS.BOTTOM,
-    );
+    },
+  )
+  .add(
+    "Playground",
+    () => {
+      const content = text("content", "Write your text here.");
+      const dataTest = text("dataTest", "test");
+      const preferredPosition = select(
+        "preferredPosition",
+        Object.values(POSITIONS),
+        POSITIONS.BOTTOM,
+      );
 
-    return {
+      return (
+        <Popover dataTest={dataTest} content={content} preferredPosition={preferredPosition}>
+          <Button>Button</Button>
+        </Popover>
+      );
+    },
+    {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <Popover
-                  dataTest={dataTest}
-                  content={content}
-                  preferredPosition={preferredPosition}
-                >
-                  <Button>Button</Button>
-                </Popover>
-              ),
-            },
-          ],
-        },
-      ],
-    };
-  })
-  .addWithChapters("RTL", () => {
-    const content = text("content", "Write your text here.");
-    const dataTest = text("dataTest", "test");
-    const preferredPosition = select(
-      "preferredPosition",
-      Object.values(POSITIONS),
-      POSITIONS.BOTTOM,
-    );
+    },
+  )
+  .add(
+    "RTL",
+    () => {
+      const content = text("content", "Write your text here.");
+      const dataTest = text("dataTest", "test");
+      const preferredPosition = select(
+        "preferredPosition",
+        Object.values(POSITIONS),
+        POSITIONS.BOTTOM,
+      );
 
-    return {
+      return (
+        <RenderInRtl>
+          <Popover dataTest={dataTest} content={content} preferredPosition={preferredPosition}>
+            <Button>Button</Button>
+          </Popover>
+        </RenderInRtl>
+      );
+    },
+    {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <RenderInRtl>
-                  <Popover
-                    dataTest={dataTest}
-                    content={content}
-                    preferredPosition={preferredPosition}
-                  >
-                    <Button>Button</Button>
-                  </Popover>
-                </RenderInRtl>
-              ),
-            },
-          ],
-        },
-      ],
-    };
-  });
+    },
+  );

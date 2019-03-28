@@ -54,6 +54,7 @@ const StyledCard = styled.div`
   width: 100%;
   box-sizing: border-box;
   position: relative;
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   margin-bottom: ${getSpacingToken};
 
   ${StyledCardHeader} {

@@ -7,6 +7,7 @@ import { text, number, boolean, select } from "@storybook/addon-knobs";
 import * as Icons from "../icons";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import Stack from "../Stack";
 
 import Button from "./index";
 
@@ -95,13 +96,13 @@ storiesOf("Button", module)
     },
   )
   .add(
-    "Info buttons",
+    "Status buttons",
     () => {
       const title = text("Title", "Button");
       const IconLeft = getIcon(getIcons("iconLeft", "CloseCircle"));
 
       return (
-        <div>
+        <Stack>
           <Button
             onClick={action("clicked")}
             type="info"
@@ -134,7 +135,7 @@ storiesOf("Button", module)
           >
             {title}
           </Button>
-        </div>
+        </Stack>
       );
     },
     {

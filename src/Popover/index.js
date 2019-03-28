@@ -15,26 +15,32 @@ class Popover extends React.PureComponent<Props, State> {
     shown: false,
   };
 
+  container: { current: any | HTMLDivElement } = React.createRef();
+
   handleOut = () => {
-    this.setState({ shown: false });
+    // If open prop is present ignore custom handler
+    if (this.props.open === undefined) {
+      this.setState({ shown: false });
+    }
   };
 
   handleClick = () => {
-    this.setState({ shown: !this.state.shown });
+    // If open prop is present ignore custom handler
+    if (this.props.open === undefined) {
+      this.setState({ shown: !this.state.shown });
+    }
   };
-
-  container: { current: any | HTMLDivElement } = React.createRef();
 
   render() {
     const { shown } = this.state;
-    const { children, content, preferredPosition, dataTest } = this.props;
+    const { children, content, preferredPosition, dataTest, open } = this.props;
 
     return (
       <React.Fragment>
         <StyledPopoverChild onClick={this.handleClick} ref={this.container}>
           {children}
         </StyledPopoverChild>
-        {shown && (
+        {(shown || open) && (
           <Portal element="popovers">
             <PopoverContentWrapper
               containerRef={this.container.current}

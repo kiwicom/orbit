@@ -17,7 +17,8 @@ const resolvePopoverAnchor = ({
         ? Math.floor(containerLeft + containerWidth - popoverWidth)
         : Math.floor(containerLeft)}px;
     `;
-  } else if (anchor === ANCHORS.END) {
+  }
+  if (anchor === ANCHORS.END) {
     return css`
       left: ${Math.floor(containerLeft + containerWidth - popoverWidth)}px; // TODO: use token
     `;

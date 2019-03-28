@@ -28,6 +28,7 @@ export type Props = {|
   +content: React$Node,
   +closeText?: Translation,
   +preferredPosition?: Positions,
+  +open?: boolean,
 |};
 
 export type State = {|

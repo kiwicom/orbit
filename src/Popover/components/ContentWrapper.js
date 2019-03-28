@@ -125,7 +125,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
   componentDidMount() {
     setTimeout(() => {
       this.calculatePopoverPosition();
-    });
+    }, 15);
     window.addEventListener("resize", this.handleResize);
   }
 

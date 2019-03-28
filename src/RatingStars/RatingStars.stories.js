@@ -7,7 +7,7 @@ import MAX_STARS from "./consts";
 import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import RatingStars from "./";
+import RatingStars from ".";
 
 storiesOf("RatingStars", module)
   .add(

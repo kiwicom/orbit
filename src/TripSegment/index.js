@@ -224,6 +224,8 @@ const MilestoneIcon = ({ type }) => {
 };
 
 class TripSegment extends React.PureComponent<Props, State> {
+  node: { current: any | HTMLDivElement } = React.createRef();
+
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -267,7 +269,6 @@ class TripSegment extends React.PureComponent<Props, State> {
     }
   };
 
-  node: { current: any | HTMLDivElement } = React.createRef();
   timeout: TimeoutID;
 
   render() {

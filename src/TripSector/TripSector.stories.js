@@ -3,7 +3,6 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { text } from "@storybook/addon-knobs";
 
-import TripSector, { TripLayover, TripDate } from "../TripSector";
 import TripSegment from "../TripSegment";
 import List from "../List";
 import ListItem from "../List/ListItem";
@@ -14,6 +13,8 @@ import FlightReturn from "../icons/FlightReturn";
 import Clock from "../icons/Clock";
 import Check from "../icons/Check";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+
+import TripSector, { TripLayover, TripDate } from ".";
 
 storiesOf("TripSector", module)
   .add(

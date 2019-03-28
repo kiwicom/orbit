@@ -5,7 +5,7 @@ import { select, text } from "@storybook/addon-knobs";
 
 import STOPS from "./consts";
 
-import StopoverArrow from "./";
+import StopoverArrow from ".";
 
 storiesOf("StopoverArrow", module).add(
   "Playground",

@@ -32,6 +32,14 @@ class Sticky extends React.Component<Props, State> {
     width: 0,
   };
 
+  content: {
+    current: any | HTMLDivElement,
+  } = React.createRef();
+
+  sticky: {
+    current: any | HTMLDivElement,
+  } = React.createRef();
+
   componentDidMount() {
     this.handleTop();
     addScrollHandler(this.handleScroll);
@@ -91,13 +99,6 @@ class Sticky extends React.Component<Props, State> {
       this.stickyState(false, 0, parent.width);
     }
   };
-
-  content: {
-    current: any | HTMLDivElement,
-  } = React.createRef();
-  sticky: {
-    current: any | HTMLDivElement,
-  } = React.createRef();
 
   render() {
     const { children } = this.props;

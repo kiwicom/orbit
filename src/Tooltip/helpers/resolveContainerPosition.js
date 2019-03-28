@@ -20,19 +20,22 @@ const resolveContainerPosition = ({
         containerTop - tooltipHeight - parseFloat(TOOLTIP_ARROW_SIZE),
       )}px; // TODO: use token
     `;
-  } else if (isPositionBottom(position)) {
+  }
+  if (isPositionBottom(position)) {
     return css`
       top: ${Math.floor(
         containerTop + containerHeight + parseFloat(TOOLTIP_ARROW_SIZE),
       )}px; // TODO: use token
     `;
-  } else if (isPositionRight(position)) {
+  }
+  if (isPositionRight(position)) {
     return css`
       left: ${Math.floor(
         containerLeft + containerWidth + parseFloat(TOOLTIP_ARROW_SIZE),
       )}px; // TODO: use token
     `;
-  } else if (isPositionLeft(position)) {
+  }
+  if (isPositionLeft(position)) {
     return css`
       left: ${Math.floor(
         containerLeft - tooltipWidth - parseFloat(TOOLTIP_ARROW_SIZE),

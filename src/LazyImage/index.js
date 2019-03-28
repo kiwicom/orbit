@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 
-import type { Props, State, PictureProps } from "./";
+import type { Props, State, PictureProps } from ".";
 
 const FORMATS = {
   WEBP: "webp",
@@ -70,9 +70,11 @@ class LazyImage extends React.PureComponent<Props, State> {
   state = {
     loaded: false,
   };
+
   fullResLoaded = () => {
     this.setState({ loaded: true });
   };
+
   render() {
     const { placeholder, original, name } = this.props;
     const { loaded } = this.state;

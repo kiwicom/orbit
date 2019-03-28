@@ -207,6 +207,35 @@ class Tooltip extends React.PureComponent<Props, State> {
     shownMobile: false,
   };
 
+  container: { current: any | HTMLDivElement } = React.createRef();
+
+  tooltip: { current: any | HTMLDivElement } = React.createRef();
+
+  content: { current: any | HTMLDivElement } = React.createRef();
+
+  overlay: { current: any | HTMLDivElement } = React.createRef();
+
+  containerTop: number = 0;
+
+  containerLeft: number = 0;
+
+  containerHeight: number = 0;
+
+  containerWidth: number = 0;
+
+  tooltipWidth: number = 0;
+
+  tooltipHeight: number = 0;
+
+  windowWidth: number = 0;
+
+  windowHeight: number = 0;
+
+  contentHeight: number = 0;
+
+  // TODO: ged rid off weak types
+  closeButton: { current: any } = React.createRef();
+
   componentDidUpdate(prevProps: Props) {
     if (this.props !== prevProps) {
       this.getDimensions();
@@ -268,11 +297,14 @@ class Tooltip extends React.PureComponent<Props, State> {
     const isInside = (p: Positions) => {
       if (isPositionTop(p) && canBePositionTop) {
         return POSITIONS.TOP;
-      } else if (isPositionRight(p) && canBePositionRight) {
+      }
+      if (isPositionRight(p) && canBePositionRight) {
         return POSITIONS.RIGHT;
-      } else if (isPositionBottom(p) && canBePositionBottom) {
+      }
+      if (isPositionBottom(p) && canBePositionBottom) {
         return POSITIONS.BOTTOM;
-      } else if (isPositionLeft(p) && canBePositionLeft) {
+      }
+      if (isPositionLeft(p) && canBePositionLeft) {
         return POSITIONS.LEFT;
       }
       return false;
@@ -328,17 +360,21 @@ class Tooltip extends React.PureComponent<Props, State> {
       if (isVertical(p)) {
         if (isAlignStart(a) && canBeVerticalStart) {
           return ALIGNS.START;
-        } else if (isAlignCenter(a) && canBeVerticalCenter) {
+        }
+        if (isAlignCenter(a) && canBeVerticalCenter) {
           return ALIGNS.CENTER;
-        } else if (isAlignEnd(a) && canBeVerticalEnd) {
+        }
+        if (isAlignEnd(a) && canBeVerticalEnd) {
           return ALIGNS.END;
         }
       } else if (isHorizontal(p)) {
         if (isAlignStart(a) && canBeHorizontalStart) {
           return ALIGNS.START;
-        } else if (isAlignCenter(a) && canBeHorizontalCenter) {
+        }
+        if (isAlignCenter(a) && canBeHorizontalCenter) {
           return ALIGNS.CENTER;
-        } else if (isAlignEnd(a) && canBeHorizontalEnd) {
+        }
+        if (isAlignEnd(a) && canBeHorizontalEnd) {
           return ALIGNS.END;
         }
       }
@@ -391,23 +427,6 @@ class Tooltip extends React.PureComponent<Props, State> {
       this.setState({ shownMobile: false });
     }
   };
-
-  container: { current: any | HTMLDivElement } = React.createRef();
-  tooltip: { current: any | HTMLDivElement } = React.createRef();
-  content: { current: any | HTMLDivElement } = React.createRef();
-  overlay: { current: any | HTMLDivElement } = React.createRef();
-  // TODO: ged rid off weak types
-  closeButton: { current: any } = React.createRef();
-
-  containerTop: number = 0;
-  containerLeft: number = 0;
-  containerHeight: number = 0;
-  containerWidth: number = 0;
-  tooltipWidth: number = 0;
-  tooltipHeight: number = 0;
-  windowWidth: number = 0;
-  windowHeight: number = 0;
-  contentHeight: number = 0;
 
   render() {
     const {

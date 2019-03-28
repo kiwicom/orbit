@@ -29,7 +29,9 @@ export default class Portal extends React.Component<Props> {
   }
 
   node: ?HTMLElement;
+
   el: ?HTMLElement;
+
   render() {
     const { children } = this.props;
     if (typeof window !== "undefined" && this.el) {

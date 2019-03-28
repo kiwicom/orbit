@@ -147,6 +147,7 @@ class Card extends React.Component<Props, State> {
   };
 
   isExpanded = (index: number) => this.state.expandedSections.indexOf(index) !== -1;
+
   isInitialExpanded = (index: number) => this.state.initialExpandedSections.indexOf(index) !== -1;
 
   isExpandableCardSection = (item: any) =>

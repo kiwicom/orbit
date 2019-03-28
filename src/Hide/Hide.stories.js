@@ -6,7 +6,7 @@ import { boolean } from "@storybook/addon-knobs";
 import Separator from "../Separator";
 import ChevronLeft from "../icons/ChevronLeft";
 
-import Hide from "./";
+import Hide from ".";
 
 storiesOf("Hide", module)
   .add(

@@ -10,7 +10,7 @@ exports[`ListChoice should match snapshot 1`] = `
       ],
       "results": Array [
         Object {
-          "isThrow": false,
+          "type": "return",
           "value": undefined,
         },
       ],

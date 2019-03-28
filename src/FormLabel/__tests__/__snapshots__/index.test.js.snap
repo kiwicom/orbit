@@ -479,7 +479,6 @@ exports[`FormLabel should match snapshot 1`] = `
       "toString": [Function],
       "warnTooManyClasses": [Function],
       "withComponent": [Function],
-      Symbol(Symbol.hasInstance): [Function],
     }
   }
   forwardedRef={null}

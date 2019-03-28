@@ -827,7 +827,7 @@ storiesOf("Stack", module)
         </Stack>
         <Stack direction="row">
           <TripSector>
-            <TripDate>Mon 22 Oct</TripDate>
+            <TripDate duration="15h 10m">Mon 22 Oct</TripDate>
             <TripSegment
               carrier={{
                 code: "FR",

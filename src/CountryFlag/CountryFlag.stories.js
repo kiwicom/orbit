@@ -12,7 +12,7 @@ storiesOf("CountryFlag", module)
   .add(
     "Default",
     () => {
-      const code = select("Code", Object.values(CODES), CODES.ANYWHERE);
+      const code = text("Code", CODES.ANYWHERE);
 
       return <CountryFlag code={code} />;
     },
@@ -24,7 +24,7 @@ storiesOf("CountryFlag", module)
   .add(
     "Playground",
     () => {
-      const code = select("Code", Object.values(CODES), CODES.ANYWHERE);
+      const code = text("Code", CODES.ANYWHERE);
       const name = text("Name", "Country");
       const dataTest = text("dataTest", "test");
       return <CountryFlag code={code} name={name} dataTest={dataTest} />;

@@ -2,10 +2,12 @@
 
 exports[`Large Modal should match snapshot 1`] = `
 <Modal__ModalBody
+  aria-modal="true"
   data-test="test"
   onClick={[Function]}
   onKeyDown={[Function]}
   onScroll={[Function]}
+  role="dialog"
   tabIndex="0"
   theme={
     Object {
@@ -1810,9 +1812,7 @@ exports[`Large Modal should match snapshot 1`] = `
         }
       >
         <ButtonLink
-          component="button"
           dataTest="ModalCloseButton"
-          external={false}
           icon={<Close />}
           onClick={
             [MockFunction] {
@@ -1829,8 +1829,6 @@ exports[`Large Modal should match snapshot 1`] = `
           }
           size="normal"
           transparent={true}
-          type="primary"
-          width={0}
         />
       </Modal__CloseContainer>
       <ContextProvider

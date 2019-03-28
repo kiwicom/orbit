@@ -107,7 +107,6 @@ exports[`Default Stack should match snapshot 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -webkit-text-fill-color: inherit;
   font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   border: none;
   padding: 0 12px;
@@ -131,6 +130,10 @@ exports[`Default Stack should match snapshot 1`] = `
 .c4::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.c4[data-com-onepassword-filled] {
+  background-color: inherit !important;
 }
 
 .c4:focus {
@@ -738,7 +741,7 @@ exports[`Default Stack should match snapshot 1`] = `
         "componentStyle": ComponentStyle {
           "componentId": "Stack__StyledStack-sc-1t576ow-0",
           "isStatic": false,
-          "lastClassName": "kWdQDl",
+          "lastClassName": "bRhNIq",
           "rules": Array [
             [Function],
             ";",
@@ -7630,7 +7633,9 @@ exports[`Default Stack should match snapshot 1`] = `
                                   "isStatic": false,
                                   "lastClassName": "c4",
                                   "rules": Array [
-                                    "appearance:none;-webkit-text-fill-color:inherit;font-family:",
+                                    "appearance:none;-webkit-text-fill-color:",
+                                    [Function],
+                                    ";font-family:",
                                     [Function],
                                     ";border:none;padding:",
                                     [Function],
@@ -7642,7 +7647,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                     [Function],
                                     ";letter-spacing:",
                                     [Function],
-                                    ";&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&:focus{outline:none;& ~ ",
+                                    ";&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&[data-com-onepassword-filled]{background-color:inherit !important;}&:focus{outline:none;& ~ ",
                                     ".c5",
                                     "{box-shadow:inset 0 0 0 ",
                                     [Function],
@@ -16127,7 +16132,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -webkit-text-fill-color: inherit;
   font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   border: none;
   padding: 0 12px;
@@ -16151,6 +16155,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
 .c4::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.c4[data-com-onepassword-filled] {
+  background-color: inherit !important;
 }
 
 .c4:focus {
@@ -16845,7 +16853,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "Stack__StyledStack-sc-1t576ow-0",
             "isStatic": false,
-            "lastClassName": "kWdQDl",
+            "lastClassName": "bRhNIq",
             "rules": Array [
               [Function],
               ";",
@@ -23749,7 +23757,9 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                     "isStatic": false,
                                     "lastClassName": "c4",
                                     "rules": Array [
-                                      "appearance:none;-webkit-text-fill-color:inherit;font-family:",
+                                      "appearance:none;-webkit-text-fill-color:",
+                                      [Function],
+                                      ";font-family:",
                                       [Function],
                                       ";border:none;padding:",
                                       [Function],
@@ -23761,7 +23771,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                       [Function],
                                       ";letter-spacing:",
                                       [Function],
-                                      ";&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&:focus{outline:none;& ~ ",
+                                      ";&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&[data-com-onepassword-filled]{background-color:inherit !important;}&:focus{outline:none;& ~ ",
                                       ".c5",
                                       "{box-shadow:inset 0 0 0 ",
                                       [Function],
@@ -32243,7 +32253,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -webkit-text-fill-color: inherit;
   font-family: "Roboto",-apple-system,".SFNSText-Regular","San Francisco","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   border: none;
   padding: 0 12px;
@@ -32267,6 +32276,10 @@ exports[`Stack with flex prop should match snapshot 1`] = `
 .c4::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.c4[data-com-onepassword-filled] {
+  background-color: inherit !important;
 }
 
 .c4:focus {
@@ -32872,7 +32885,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
         "componentStyle": ComponentStyle {
           "componentId": "Stack__StyledStack-sc-1t576ow-0",
           "isStatic": false,
-          "lastClassName": "kWdQDl",
+          "lastClassName": "bRhNIq",
           "rules": Array [
             [Function],
             ";",
@@ -39762,7 +39775,9 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                   "isStatic": false,
                                   "lastClassName": "c4",
                                   "rules": Array [
-                                    "appearance:none;-webkit-text-fill-color:inherit;font-family:",
+                                    "appearance:none;-webkit-text-fill-color:",
+                                    [Function],
+                                    ";font-family:",
                                     [Function],
                                     ";border:none;padding:",
                                     [Function],
@@ -39774,7 +39789,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                     [Function],
                                     ";letter-spacing:",
                                     [Function],
-                                    ";&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&:focus{outline:none;& ~ ",
+                                    ";&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}&[data-com-onepassword-filled]{background-color:inherit !important;}&:focus{outline:none;& ~ ",
                                     ".c5",
                                     "{box-shadow:inset 0 0 0 ",
                                     [Function],

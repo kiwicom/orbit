@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import ALIGN_OPTIONS from "./consts";
 import { textAlign } from "../../utils/rtl";
 
@@ -19,7 +19,7 @@ export const StyledTableCell = styled(({ children, className }) => (
 `;
 
 StyledTableCell.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const TableCell = (props: Props) => {

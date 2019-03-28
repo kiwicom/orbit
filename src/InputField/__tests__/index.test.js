@@ -20,7 +20,7 @@ describe(`InputField with help, prefix and suffix`, () => {
   const readOnly = true;
   const minLength = 1;
   const maxLength = 10;
-  const autocomplete = "off";
+  const autoComplete = "off";
   const onChange = jest.fn();
   const onFocus = jest.fn();
   const onBlur = jest.fn();
@@ -38,7 +38,7 @@ describe(`InputField with help, prefix and suffix`, () => {
       dataTest={dataTest}
       tabIndex={tabIndex}
       readOnly={readOnly}
-      autocomplete={autocomplete}
+      autoComplete={autoComplete}
       prefix={<Search />}
       suffix={<ButtonLink transparent icon={<Visibility />} />}
       help={
@@ -84,7 +84,7 @@ describe(`InputField with help, prefix and suffix`, () => {
     expect(input.prop("minLength")).toBe(minLength);
     expect(input.render().prop("tabindex")).toBe(tabIndex);
     expect(input.render().prop("data-test")).toBe(dataTest);
-    expect(input.render().prop("autocomplete")).toBe(autocomplete);
+    expect(input.render().prop("autocomplete")).toBe(autoComplete);
     expect(input.prop("readOnly")).toBe(readOnly);
   });
   it("should contain a Button as suffix", () => {

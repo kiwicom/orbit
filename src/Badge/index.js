@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { TYPE_OPTIONS, TOKENS } from "./consts";
 import { rtlSpacing } from "../utils/rtl";
 
@@ -40,6 +40,7 @@ const StyledBadge = styled(({ className, children, dataTest }) => (
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   display: inline-flex;
+  flex: 0 0 auto;
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
@@ -55,7 +56,7 @@ const StyledBadge = styled(({ className, children, dataTest }) => (
 `;
 
 StyledBadge.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const IconContainer = styled(({ className, children }) => (
@@ -72,7 +73,7 @@ const IconContainer = styled(({ className, children }) => (
 `;
 
 IconContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledBadgeContent = styled.div``;

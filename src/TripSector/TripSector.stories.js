@@ -129,9 +129,10 @@ storiesOf("TripSector", module)
     () => {
       const date = text("date", "Mon 22 Oct");
       const dataTest = text("dataTest", "test");
+      const duration = text("duration", "15h 10m");
       return (
         <TripSector dataTest={dataTest}>
-          <TripDate>{date}</TripDate>
+          <TripDate duration={duration}>{date}</TripDate>
           <TripSegment
             carrier={{
               code: "FR",

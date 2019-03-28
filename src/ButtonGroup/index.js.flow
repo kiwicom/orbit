@@ -1,10 +1,11 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/buttongroup/
+*/
 import type { Globals } from "../common/common.js.flow";
-import ButtonLink from "../ButtonLink";
-import Button from "../Button";
 
 export type Props = {|
-  +children: Array<React$Element<typeof Button> | React$Element<typeof ButtonLink>>,
+  +children: React$Node,
   +connected?: boolean,
   ...Globals,
 |};

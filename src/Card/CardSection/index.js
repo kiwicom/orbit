@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import ChevronDown from "../../icons/ChevronDown";
 import { getSize } from "../../Icon";
 import { ICON_SIZES } from "../../Icon/consts";
@@ -15,7 +15,7 @@ const StyledCardSectionIconRight = styled(ChevronDown)`
 `;
 
 StyledCardSectionIconRight.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledCardSectionContent = styled.div`
@@ -32,7 +32,7 @@ const StyledCardSectionContent = styled.div`
 `;
 
 StyledCardSectionContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const StyledCardSection = styled.div`
@@ -44,7 +44,7 @@ export const StyledCardSection = styled.div`
 `;
 
 StyledCardSection.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledCardSectionHeader = styled.div`
@@ -57,13 +57,14 @@ const StyledCardSectionHeader = styled.div`
 `;
 
 StyledCardSectionHeader.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const CardSectionContext: React.Context<ContextType> = React.createContext({
   expandable: false,
   expanded: false,
   handleToggleSection: () => {},
+  onKeyDownHandler: () => {},
 });
 
 class CardSection extends React.Component<any, Props> {
@@ -90,12 +91,25 @@ class CardSection extends React.Component<any, Props> {
     }
   };
 
+  handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
+    if (ev.keyCode === 13 || ev.keyCode === 32) {
+      ev.preventDefault();
+
+      this.injectCallbackAndToggleSection();
+    }
+  };
+
   render() {
     const { children, dataTest, expandable, expanded } = this.props;
     return (
       <StyledCardSection data-test={dataTest} expandable={expandable} expanded={expanded}>
         <CardSectionContext.Provider
-          value={{ expandable, expanded, handleToggleSection: this.injectCallbackAndToggleSection }}
+          value={{
+            expandable,
+            expanded,
+            handleToggleSection: this.injectCallbackAndToggleSection,
+            onKeyDownHandler: this.handleKeyDown,
+          }}
         >
           {children}
         </CardSectionContext.Provider>

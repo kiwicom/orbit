@@ -6,7 +6,7 @@ import Heading from "../Heading";
 import Stack from "../Stack";
 import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
 import FormFeedback, { StyledFormFeedback } from "../FormFeedback";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 
 import type { Props } from "./index";
 
@@ -31,7 +31,7 @@ const StyledChoiceGroup = styled.div`
 `;
 
 StyledChoiceGroup.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class ChoiceGroup extends React.PureComponent<Props> {

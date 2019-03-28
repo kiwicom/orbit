@@ -1,5 +1,9 @@
 // @flow
 import * as React from "react";
+import type {
+  fromPlainObject as FromPlainObject,
+  getTokens as GetTokens,
+} from "@kiwicom/orbit-design-tokens";
 
 import typeof AlertType from "./Alert";
 import typeof BadgeType from "./Badge";
@@ -11,6 +15,8 @@ import typeof CheckboxType from "./Checkbox";
 import typeof ChoiceGroupType from "./ChoiceGroup";
 import typeof CountryFlagType from "./CountryFlag";
 import typeof CarrierLogoType from "./CarrierLogo";
+import typeof DestinationHeaderType from "./DestinationHeader";
+import typeof DestinationCardType from "./DestinationCard";
 import typeof HeadingType from "./Heading";
 import typeof HideType from "./Hide";
 import typeof InputFieldType from "./InputField";
@@ -34,6 +40,7 @@ import typeof RadioType from "./Radio";
 import typeof RatingStarsType from "./RatingStars";
 import typeof SelectType from "./Select";
 import typeof StackType from "./Stack";
+import typeof StickyType from "./Sticky";
 import typeof SeparatorType from "./Separator";
 import typeof ServiceLogoType from "./ServiceLogo";
 import typeof TextareaType from "./Textarea";
@@ -59,6 +66,7 @@ import typeof TableHeadType from "./Table/TableHead";
 import typeof TableRowType from "./Table/TableRow";
 import typeof StepperType from "./Stepper";
 import typeof StopoverArrowType from "./StopoverArrow";
+import type { Theme } from "./defaultTheme";
 
 declare export var InputText: any;
 declare export var InputTextarea: any;
@@ -78,6 +86,8 @@ declare export var CarrierLogo: CarrierLogoType;
 declare export var Checkbox: CheckboxType;
 declare export var ChoiceGroup: ChoiceGroupType;
 declare export var CountryFlag: CountryFlagType;
+declare export var DestinationHeader: DestinationHeaderType;
+declare export var DestinationCard: DestinationCardType;
 
 declare export var List: ListType;
 declare export var ListItem: ListItemType;
@@ -92,6 +102,7 @@ declare export var DeprecatedCardHeader: DeprecatedCardHeaderType;
 declare export var DeprecatedCardSection: DeprecatedCardSectionType;
 declare export var DeprecatedCardContent: DeprecatedCardContentType;
 
+declare export var Sticky: StickyType;
 declare export var Portal: PortalType;
 declare export var ClickOutside: ClickOutsideType;
 declare export var Modal: ModalType;
@@ -135,7 +146,9 @@ declare export var TripSegment: TripSegmentType;
 declare export var TripSector: TripSectorType;
 declare export var TripDate: TripDateType;
 declare export var TripLayover: TripLayoverType;
-declare export var defaultTheme: any;
+declare export var defaultTheme: Theme;
+declare export var geTokens: GetTokens;
+declare export var fromPlainObject: FromPlainObject;
 
 declare export var mediaQueries: mediaQueriesType;
 declare export var breakpoints: breakpointsType;

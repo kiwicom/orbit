@@ -449,13 +449,19 @@ exports[`TripDate should match snapshot 1`] = `
     }
   }
 >
-  <Calendar
-    size="small"
-  />
-  <Text
-    type="attention"
+  <Stack
+    direction="row"
+    shrink={true}
+    spacing="condensed"
   >
-    Fri 13 Nov
-  </Text>
+    <Calendar
+      size="small"
+    />
+    <Text
+      type="attention"
+    >
+      Fri 13 Nov
+    </Text>
+  </Stack>
 </TripDate__StyledTripDate>
 `;

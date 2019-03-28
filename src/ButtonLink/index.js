@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { TYPES, SIZES, TOKENS } from "./consts";
 import { ICON_SIZES } from "../Icon/consts";
 import { getSize } from "../Icon";
@@ -130,7 +130,7 @@ const IconContainer = styled(({ className, children }) => (
 `;
 
 IconContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const StyledButtonLink = styled(
@@ -216,7 +216,7 @@ export const StyledButtonLink = styled(
 `;
 
 StyledButtonLink.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 // $FlowExpected
@@ -224,13 +224,14 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
   const {
     external,
     children,
-    component,
+    component = "button",
     href,
     size = SIZES.NORMAL,
     icon,
     iconRight,
     type = TYPES.PRIMARY,
     onClick,
+    width = 0,
   } = props;
 
   const iconLeft = props.iconLeft || icon;
@@ -243,6 +244,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       {...props}
       onClick={onClick}
       component={component}
+      size={size}
       onlyIcon={onlyIcon}
       sizeIcon={sizeIcon}
       type={type}
@@ -250,6 +252,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       rel={href && external ? "noopener noreferrer" : undefined}
       iconLeft={iconLeft}
       buttonRef={ref}
+      width={width}
     >
       {iconLeft && (
         <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon}>
@@ -265,15 +268,6 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
     </StyledButtonLink>
   );
 });
-
-ButtonLink.defaultProps = {
-  component: "button",
-  external: false,
-  type: "primary",
-  size: "normal",
-  width: 0,
-  transparent: false,
-};
 
 ButtonLink.displayName = "ButtonLink";
 

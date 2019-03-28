@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import Heading from "../../Heading/index";
 import NewWindow from "../../icons/NewWindow";
 import ChevronRight from "../../icons/ChevronRight";
@@ -19,7 +19,7 @@ const StyledTileHeader = styled.div`
 `;
 
 StyledTileHeader.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTileTitle = styled.div`
@@ -28,7 +28,7 @@ const StyledTileTitle = styled.div`
 `;
 
 StyledTileTitle.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTileIcon = styled.div`
@@ -40,7 +40,7 @@ const StyledTileIcon = styled.div`
 `;
 
 StyledTileIcon.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTileDescription = styled.div`
@@ -57,7 +57,7 @@ const StyledTileDescription = styled.div`
 `;
 
 StyledTileDescription.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Icon = ({ icon }: IconProps) => <StyledTileIcon>{icon}</StyledTileIcon>;
@@ -78,7 +78,7 @@ export const StyledIconRight = styled.div`
 `;
 
 StyledIconRight.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const getIconRight = ({ external, isExpandable }: IconRightProps) => {

@@ -1,14 +1,15 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/inputgroup/
+*/
 import type { Globals, Translation } from "../common/common.js.flow";
-import InputField from "../InputField";
-import Select from "../Select";
 
 export type Props = {|
   +label?: Translation,
   +flex?: string | Array<string>,
   +size?: "small" | "normal",
   +help?: React$Node,
-  +children: Array<React$Element<typeof InputField> | React$Element<typeof Select>>,
+  +children: React$Node,
   +error?: React$Node,
   +onChange?: (
     ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,

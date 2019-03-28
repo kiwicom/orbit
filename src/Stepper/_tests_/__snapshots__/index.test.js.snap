@@ -5,7 +5,7 @@ exports[`Stepper should match snapshot 1`] = `
   data-test="test"
 >
   <Button
-    disabled={true}
+    disabled={false}
     iconLeft={<Minus />}
     onClick={[Function]}
     size="small"
@@ -495,7 +495,7 @@ exports[`Stepper should match snapshot 1`] = `
       }
     }
     type="text"
-    value={1}
+    value={3}
   />
   <Button
     disabled={false}

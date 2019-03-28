@@ -485,7 +485,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
-                    Symbol(Symbol.hasInstance): [Function],
                   }
                 }
                 disabled={true}
@@ -525,7 +524,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
-                    Symbol(Symbol.hasInstance): [Function],
                   }
                 }
                 disabled={false}
@@ -2841,7 +2839,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                             "toString": [Function],
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
-                            Symbol(Symbol.hasInstance): [Function],
                           }
                         }
                         forwardedRef={null}
@@ -4685,7 +4682,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                           "toString": [Function],
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
-                          Symbol(Symbol.hasInstance): [Function],
                         }
                       }
                       forwardedRef={null}
@@ -6514,7 +6510,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "toString": [Function],
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
-                                  Symbol(Symbol.hasInstance): [Function],
                                 }
                               }
                               forwardedRef={null}
@@ -7440,7 +7435,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         "toString": [Function],
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
-                                        Symbol(Symbol.hasInstance): [Function],
                                       }
                                     }
                                     disabled={true}
@@ -7477,7 +7471,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                           "toString": [Function],
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
-                                          Symbol(Symbol.hasInstance): [Function],
                                         }
                                       }
                                       disabled={true}
@@ -7963,7 +7956,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             "toString": [Function],
                                             "warnTooManyClasses": [Function],
                                             "withComponent": [Function],
-                                            Symbol(Symbol.hasInstance): [Function],
                                           }
                                         }
                                         disabled={true}
@@ -8466,7 +8458,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             "toString": [Function],
                                             "warnTooManyClasses": [Function],
                                             "withComponent": [Function],
-                                            Symbol(Symbol.hasInstance): [Function],
                                           }
                                         }
                                         forwardedRef={null}
@@ -8953,7 +8944,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                               "toString": [Function],
                                               "warnTooManyClasses": [Function],
                                               "withComponent": [Function],
-                                              Symbol(Symbol.hasInstance): [Function],
                                             }
                                           }
                                           disabled={true}
@@ -9447,7 +9437,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                   "toString": [Function],
                                                   "warnTooManyClasses": [Function],
                                                   "withComponent": [Function],
-                                                  Symbol(Symbol.hasInstance): [Function],
                                                 }
                                               }
                                               forwardedRef={null}
@@ -10391,7 +10380,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                           "toString": [Function],
                                                           "warnTooManyClasses": [Function],
                                                           "withComponent": [Function],
-                                                          Symbol(Symbol.hasInstance): [Function],
                                                         }
                                                       }
                                                       forwardedRef={null}
@@ -12233,7 +12221,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                       "toString": [Function],
                                                                       "warnTooManyClasses": [Function],
                                                                       "withComponent": [Function],
-                                                                      Symbol(Symbol.hasInstance): [Function],
                                                                     }
                                                                   }
                                                                   forwardedRef={null}
@@ -15985,7 +15972,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "toString": [Function],
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
-                                  Symbol(Symbol.hasInstance): [Function],
                                 }
                               }
                               forwardedRef={null}
@@ -16911,7 +16897,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                         "toString": [Function],
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
-                                        Symbol(Symbol.hasInstance): [Function],
                                       }
                                     }
                                     disabled={false}
@@ -16948,7 +16933,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                           "toString": [Function],
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
-                                          Symbol(Symbol.hasInstance): [Function],
                                         }
                                       }
                                       disabled={false}
@@ -17434,7 +17418,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             "toString": [Function],
                                             "warnTooManyClasses": [Function],
                                             "withComponent": [Function],
-                                            Symbol(Symbol.hasInstance): [Function],
                                           }
                                         }
                                         disabled={false}
@@ -17937,7 +17920,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                             "toString": [Function],
                                             "warnTooManyClasses": [Function],
                                             "withComponent": [Function],
-                                            Symbol(Symbol.hasInstance): [Function],
                                           }
                                         }
                                         forwardedRef={null}
@@ -18424,7 +18406,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                               "toString": [Function],
                                               "warnTooManyClasses": [Function],
                                               "withComponent": [Function],
-                                              Symbol(Symbol.hasInstance): [Function],
                                             }
                                           }
                                           disabled={false}
@@ -18918,7 +18899,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                   "toString": [Function],
                                                   "warnTooManyClasses": [Function],
                                                   "withComponent": [Function],
-                                                  Symbol(Symbol.hasInstance): [Function],
                                                 }
                                               }
                                               forwardedRef={null}
@@ -19862,7 +19842,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                           "toString": [Function],
                                                           "warnTooManyClasses": [Function],
                                                           "withComponent": [Function],
-                                                          Symbol(Symbol.hasInstance): [Function],
                                                         }
                                                       }
                                                       forwardedRef={null}
@@ -21704,7 +21683,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                                                       "toString": [Function],
                                                                       "warnTooManyClasses": [Function],
                                                                       "withComponent": [Function],
-                                                                      Symbol(Symbol.hasInstance): [Function],
                                                                     }
                                                                   }
                                                                   forwardedRef={null}
@@ -23567,7 +23545,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                                   "toString": [Function],
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
-                                  Symbol(Symbol.hasInstance): [Function],
                                 }
                               }
                               forwardedRef={null}
@@ -25416,7 +25393,6 @@ exports[`InputStepper with help, prefix and suffix should match snapshot 1`] = `
                             "toString": [Function],
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
-                            Symbol(Symbol.hasInstance): [Function],
                           }
                         }
                         forwardedRef={null}

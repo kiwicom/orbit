@@ -1029,7 +1029,6 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "toString": [Function],
           "warnTooManyClasses": [Function],
           "withComponent": [Function],
-          Symbol(Symbol.hasInstance): [Function],
         }
       }
       forwardedRef={null}
@@ -3043,7 +3042,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
           "toString": [Function],
           "warnTooManyClasses": [Function],
           "withComponent": [Function],
-          Symbol(Symbol.hasInstance): [Function],
         }
       }
       forwardedRef={null}
@@ -4887,7 +4885,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
                   "withComponent": [Function],
-                  Symbol(Symbol.hasInstance): [Function],
                 }
               }
               forwardedRef={null}
@@ -6724,7 +6721,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                               "toString": [Function],
                               "warnTooManyClasses": [Function],
                               "withComponent": [Function],
-                              Symbol(Symbol.hasInstance): [Function],
                             }
                           }
                           forwardedRef={null}
@@ -8569,7 +8565,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
                   "withComponent": [Function],
-                  Symbol(Symbol.hasInstance): [Function],
                 }
               }
               forwardedRef={null}
@@ -10408,7 +10403,6 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                               "toString": [Function],
                               "warnTooManyClasses": [Function],
                               "withComponent": [Function],
-                              Symbol(Symbol.hasInstance): [Function],
                             }
                           }
                           forwardedRef={null}

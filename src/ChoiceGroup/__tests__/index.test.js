@@ -2,7 +2,8 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import ChoiceGroup from "../";
+import ChoiceGroup from "..";
+
 import { LABEL_ELEMENTS, LABEL_SIZES } from "../consts";
 import Radio from "../../Radio";
 

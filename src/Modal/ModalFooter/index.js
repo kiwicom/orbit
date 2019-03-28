@@ -65,11 +65,13 @@ class ModalFooter extends React.PureComponent<Props> {
   componentDidMount() {
     this.callContextFunctions();
   }
+
   componentDidUpdate(prevProps: Props) {
     if (prevProps !== this.props) {
       this.callContextFunctions();
     }
   }
+
   callContextFunctions = () => {
     const { setDimensions, decideFixedFooter } = this.props;
     if (setDimensions) {
@@ -79,6 +81,7 @@ class ModalFooter extends React.PureComponent<Props> {
       decideFixedFooter();
     }
   };
+
   render() {
     const { flex = "0 1 auto", children, dataTest } = this.props;
     return (

@@ -312,6 +312,14 @@ class Modal extends React.PureComponent<Props, State> {
     hasModalSection: false,
   };
 
+  modalContent: { current: any | HTMLElement } = React.createRef();
+
+  modalBody: { current: any | HTMLElement } = React.createRef();
+
+  closeButton: { current: React$ElementRef<*> | null } = React.createRef();
+
+  offset = 40;
+
   componentDidMount() {
     this.timeout = setTimeout(() => {
       this.setState({
@@ -433,6 +441,19 @@ class Modal extends React.PureComponent<Props, State> {
     }
   };
 
+  keyboardHandler = (e: SyntheticKeyboardEvent<HTMLElement>) => {
+    if (e.keyCode === KEY_CODE_MAP.TAB) {
+      // Rotate Focus
+      if (e.shiftKey && document.activeElement === this.firstFocusableEl) {
+        e.preventDefault();
+        this.lastFocusableEl.focus();
+      } else if (!e.shiftKey && document.activeElement === this.lastFocusableEl) {
+        e.preventDefault();
+        this.firstFocusableEl.focus();
+      }
+    }
+  };
+
   manageFocus() {
     const focusableElements = this.modalContent.current.querySelectorAll(
       FOCUSABLE_ELEMENT_SELECTORS,
@@ -450,27 +471,13 @@ class Modal extends React.PureComponent<Props, State> {
     }
   }
 
-  keyboardHandler = (e: SyntheticKeyboardEvent<HTMLElement>) => {
-    if (e.keyCode === KEY_CODE_MAP.TAB) {
-      // Rotate Focus
-      if (e.shiftKey && document.activeElement === this.firstFocusableEl) {
-        e.preventDefault();
-        this.lastFocusableEl.focus();
-      } else if (!e.shiftKey && document.activeElement === this.lastFocusableEl) {
-        e.preventDefault();
-        this.firstFocusableEl.focus();
-      }
-    }
-  };
-
-  modalContent: { current: any | HTMLElement } = React.createRef();
-  modalBody: { current: any | HTMLElement } = React.createRef();
-  closeButton: { current: React$ElementRef<*> | null } = React.createRef();
   firstFocusableEl: HTMLElement;
+
   lastFocusableEl: HTMLElement;
+
   timeout: TimeoutID;
+
   modalID: string;
-  offset = 40;
 
   render() {
     const { onClose, children, size = SIZES.NORMAL, fixedFooter = false, dataTest } = this.props;

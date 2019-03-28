@@ -54,6 +54,7 @@ const StyledCard = styled.div`
   width: 100%;
   box-sizing: border-box;
   position: relative;
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   margin-bottom: ${getSpacingToken};
 
   ${StyledCardHeader} {
@@ -146,6 +147,7 @@ class Card extends React.Component<Props, State> {
   };
 
   isExpanded = (index: number) => this.state.expandedSections.indexOf(index) !== -1;
+
   isInitialExpanded = (index: number) => this.state.initialExpandedSections.indexOf(index) !== -1;
 
   isExpandableCardSection = (item: any) =>

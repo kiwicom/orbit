@@ -65,6 +65,7 @@ class TileExpandable extends React.PureComponent<Props, State> {
   };
 
   timeout: TimeoutID;
+
   node: { current: any | HTMLDivElement };
 
   render() {

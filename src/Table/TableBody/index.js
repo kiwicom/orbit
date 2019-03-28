@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 
-import type { Props } from "./";
+import type { Props } from ".";
 
 export const StyledTableBody = styled(({ children, className }) => (
   <tbody className={className}>{children}</tbody>

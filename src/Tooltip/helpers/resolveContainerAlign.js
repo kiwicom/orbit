@@ -21,18 +21,21 @@ const resolveContainerAlign = ({
       return css`
         top: ${Math.floor(containerTop + containerHeight / 2 - tooltipHeight / 2)}px;
       `;
-    } else if (isVertical(position)) {
+    }
+    if (isVertical(position)) {
       return css`
         left: ${Math.floor(containerLeft + containerWidth / 2 - tooltipWidth / 2)}px;
       `;
     }
     return null;
-  } else if (isAlignStart(align)) {
+  }
+  if (isAlignStart(align)) {
     if (isHorizontal(position)) {
       return css`
         top: ${Math.floor(containerTop - parseFloat(TOOLTIP_ARROW_SIZE))}px; // TODO: use token
       `;
-    } else if (isVertical(position)) {
+    }
+    if (isVertical(position)) {
       return css`
         left: ${Math.floor(
           containerLeft +
@@ -49,7 +52,8 @@ const resolveContainerAlign = ({
           containerTop - tooltipHeight + containerHeight + parseFloat(TOOLTIP_ARROW_SIZE),
         )}px; // TODO: use token
       `;
-    } else if (isVertical(position)) {
+    }
+    if (isVertical(position)) {
       return css`
         left: ${Math.floor(
           containerLeft + containerWidth - tooltipWidth + parseFloat(TOOLTIP_ARROW_SIZE),

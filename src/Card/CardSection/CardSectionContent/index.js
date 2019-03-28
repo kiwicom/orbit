@@ -49,6 +49,8 @@ class CardSectionContent extends React.Component<Props, State> {
     contentHeight: 0,
   };
 
+  node: { current: any | HTMLDivElement } = React.createRef();
+
   componentDidMount() {
     const { expandable } = this.props;
     if (expandable) {
@@ -84,8 +86,6 @@ class CardSectionContent extends React.Component<Props, State> {
       contentHeight: this.node?.current?.clientHeight,
     });
   };
-
-  node: { current: any | HTMLDivElement } = React.createRef();
 
   render() {
     const { children, expanded, expandable, visible } = this.props;

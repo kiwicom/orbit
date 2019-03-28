@@ -5,7 +5,7 @@ import styled from "styled-components";
 import defaultTheme from "../../defaultTheme";
 import { StyledTableCell } from "../TableCell/index";
 
-import type { Props } from "./";
+import type { Props } from ".";
 
 const StyledTableHead = styled(({ children, className }) => (
   <thead className={className}>{children}</thead>

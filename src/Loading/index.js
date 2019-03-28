@@ -4,8 +4,9 @@ import styled, { keyframes } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { TYPE_OPTIONS, TOKENS } from "./consts";
-import type { Props } from "../Loading/index";
 import { left, right } from "../utils/rtl";
+
+import type { Props } from "./index";
 
 const getToken = name => ({ type }) => {
   const tokens = {

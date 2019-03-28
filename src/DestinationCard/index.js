@@ -169,6 +169,8 @@ class DestinationCard extends React.PureComponent<Props, State> {
     hiddenContentHeight: 0,
   };
 
+  hiddenContent: { current: any | HTMLDivElement } = React.createRef();
+
   componentDidMount() {
     this.setHeight();
   }
@@ -188,8 +190,6 @@ class DestinationCard extends React.PureComponent<Props, State> {
       });
     }
   };
-
-  hiddenContent: { current: any | HTMLDivElement } = React.createRef();
 
   render() {
     const {

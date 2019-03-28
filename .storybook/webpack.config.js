@@ -21,21 +21,17 @@ const babelOptions = {
   babelrc: false,
 }
 
-module.exports = {
-  resolve: {
-    extensions: [".js", ".json"],
-  },
-  module: {
-    rules: [{
+module.exports = ({ config, mode }) => {
+  config.module.rules.push(
+    {
       test: /\.js?$/,
       use: [{
         options: babelOptions,
         loader: "babel-loader"
       }],
       exclude: /node_modules\/(?!(loki)\/).*/, // Loki is not transpilled, throws error in IE 11
-    }]
-  },
-  optimization: {
-    minimize: false
-  }
-};
+    }
+  )
+
+  return config
+}

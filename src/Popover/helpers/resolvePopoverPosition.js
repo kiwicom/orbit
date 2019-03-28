@@ -14,7 +14,8 @@ const resolvePopoverPosition = ({
     return css`
       top: ${Math.floor(containerTop - popoverHeight)}px; // TODO: use token
     `;
-  } else if (position === POSITIONS.BOTTOM) {
+  }
+  if (position === POSITIONS.BOTTOM) {
     return css`
       top: ${Math.floor(containerTop + containerHeight)}px; // TODO: use token
     `;

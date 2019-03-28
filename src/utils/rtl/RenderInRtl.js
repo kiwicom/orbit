@@ -8,17 +8,20 @@ type Props = {|
 |};
 
 class RenderInRtl extends React.PureComponent<Props> {
+  html = document.querySelector("html");
+
   componentDidMount() {
     if (this.html) {
       this.html.setAttribute("dir", "rtl");
     }
   }
+
   componentWillUnmount() {
     if (this.html) {
       this.html.removeAttribute("dir");
     }
   }
-  html = document.querySelector("html");
+
   render() {
     return (
       <ThemeProvider theme={{ orbit: defaultTokens, rtl: true }}>

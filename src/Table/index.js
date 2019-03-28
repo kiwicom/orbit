@@ -91,6 +91,12 @@ class Table extends React.PureComponent<Props, State> {
     showLeft: false,
   };
 
+  outer: { current: any | HTMLElement } = React.createRef();
+
+  inner: { current: any | HTMLElement } = React.createRef();
+
+  table: { current: any | HTMLElement } = React.createRef();
+
   componentDidMount() {
     window.addEventListener("resize", this.handleResize);
     this.handleResize();
@@ -119,10 +125,6 @@ class Table extends React.PureComponent<Props, State> {
       });
     }
   };
-
-  outer: { current: any | HTMLElement } = React.createRef();
-  inner: { current: any | HTMLElement } = React.createRef();
-  table: { current: any | HTMLElement } = React.createRef();
 
   render() {
     const { children, compact = false, dataTest } = this.props;

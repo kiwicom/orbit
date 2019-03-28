@@ -1200,7 +1200,6 @@ exports[`Default Stack should match snapshot 1`] = `
         "toString": [Function],
         "warnTooManyClasses": [Function],
         "withComponent": [Function],
-        Symbol(Symbol.hasInstance): [Function],
       }
     }
     forwardedRef={null}
@@ -4433,7 +4432,6 @@ exports[`Default Stack should match snapshot 1`] = `
                           "toString": [Function],
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
-                          Symbol(Symbol.hasInstance): [Function],
                         }
                       }
                       forwardedRef={null}
@@ -6271,7 +6269,6 @@ exports[`Default Stack should match snapshot 1`] = `
                         "toString": [Function],
                         "warnTooManyClasses": [Function],
                         "withComponent": [Function],
-                        Symbol(Symbol.hasInstance): [Function],
                       }
                     }
                     forwardedRef={null}
@@ -9950,7 +9947,6 @@ exports[`Default Stack should match snapshot 1`] = `
                                 "toString": [Function],
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
-                                Symbol(Symbol.hasInstance): [Function],
                               }
                             }
                             forwardedRef={null}
@@ -11797,7 +11793,6 @@ exports[`Default Stack should match snapshot 1`] = `
                           "toString": [Function],
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
-                          Symbol(Symbol.hasInstance): [Function],
                         }
                       }
                       forwardedRef={null}
@@ -13695,7 +13690,6 @@ exports[`Default Stack should match snapshot 1`] = `
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
                   "withComponent": [Function],
-                  Symbol(Symbol.hasInstance): [Function],
                 }
               }
               forwardedRef={null}
@@ -17312,7 +17306,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
           "toString": [Function],
           "warnTooManyClasses": [Function],
           "withComponent": [Function],
-          Symbol(Symbol.hasInstance): [Function],
         }
       }
       forwardedRef={null}
@@ -20557,7 +20550,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             "toString": [Function],
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
-                            Symbol(Symbol.hasInstance): [Function],
                           }
                         }
                         forwardedRef={null}
@@ -22395,7 +22387,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                           "toString": [Function],
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
-                          Symbol(Symbol.hasInstance): [Function],
                         }
                       }
                       forwardedRef={null}
@@ -26074,7 +26065,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                   "toString": [Function],
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
-                                  Symbol(Symbol.hasInstance): [Function],
                                 }
                               }
                               forwardedRef={null}
@@ -27921,7 +27911,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             "toString": [Function],
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
-                            Symbol(Symbol.hasInstance): [Function],
                           }
                         }
                         forwardedRef={null}
@@ -29819,7 +29808,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
-                    Symbol(Symbol.hasInstance): [Function],
                   }
                 }
                 forwardedRef={null}
@@ -33344,7 +33332,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
         "toString": [Function],
         "warnTooManyClasses": [Function],
         "withComponent": [Function],
-        Symbol(Symbol.hasInstance): [Function],
       }
     }
     forwardedRef={null}
@@ -36575,7 +36562,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           "toString": [Function],
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
-                          Symbol(Symbol.hasInstance): [Function],
                         }
                       }
                       forwardedRef={null}
@@ -38413,7 +38399,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                         "toString": [Function],
                         "warnTooManyClasses": [Function],
                         "withComponent": [Function],
-                        Symbol(Symbol.hasInstance): [Function],
                       }
                     }
                     forwardedRef={null}
@@ -42092,7 +42077,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                 "toString": [Function],
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
-                                Symbol(Symbol.hasInstance): [Function],
                               }
                             }
                             forwardedRef={null}
@@ -43939,7 +43923,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           "toString": [Function],
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
-                          Symbol(Symbol.hasInstance): [Function],
                         }
                       }
                       forwardedRef={null}
@@ -45837,7 +45820,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
                   "withComponent": [Function],
-                  Symbol(Symbol.hasInstance): [Function],
                 }
               }
               forwardedRef={null}

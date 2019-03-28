@@ -942,7 +942,6 @@ exports[`Icon should match snapshot 1`] = `
             "toString": [Function],
             "warnTooManyClasses": [Function],
             "withComponent": [Function],
-            Symbol(Symbol.hasInstance): [Function],
           }
         }
         forwardedRef={null}
@@ -2808,7 +2807,6 @@ exports[`Icon with custom props should match snapshot 1`] = `
             "toString": [Function],
             "warnTooManyClasses": [Function],
             "withComponent": [Function],
-            Symbol(Symbol.hasInstance): [Function],
           }
         }
         forwardedRef={null}

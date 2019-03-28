@@ -3184,7 +3184,7 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
           ],
           "results": Array [
             Object {
-              "isThrow": false,
+              "type": "return",
               "value": undefined,
             },
           ],
@@ -3197,7 +3197,7 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
           ],
           "results": Array [
             Object {
-              "isThrow": false,
+              "type": "return",
               "value": undefined,
             },
           ],
@@ -3211,11 +3211,11 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
           ],
           "results": Array [
             Object {
-              "isThrow": false,
+              "type": "return",
               "value": undefined,
             },
             Object {
-              "isThrow": false,
+              "type": "return",
               "value": undefined,
             },
           ],

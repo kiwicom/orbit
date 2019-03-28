@@ -6,7 +6,7 @@ import defaultTheme from "../../defaultTheme";
 import ALIGN_OPTIONS from "./consts";
 import { textAlign } from "../../utils/rtl";
 
-import type { Props } from "./";
+import type { Props } from ".";
 
 export const StyledTableCell = styled(({ children, className }) => (
   <td className={className}>{children}</td>

@@ -141,11 +141,13 @@ class ModalHeader extends React.PureComponent<Props> {
   componentDidMount() {
     this.callContextFunctions();
   }
+
   componentDidUpdate(prevProps: Props) {
     if (prevProps !== this.props) {
       this.callContextFunctions();
     }
   }
+
   callContextFunctions = () => {
     const { setDimensions, decideFixedFooter } = this.props;
     if (setDimensions) {

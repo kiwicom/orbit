@@ -11,8 +11,7 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import ButtonLink from "./index";
 
-const getIcons = (name, defaultIcon) =>
-  select(name, [undefined, ...Object.keys(Icons)], defaultIcon);
+const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
 storiesOf("ButtonLink", module)

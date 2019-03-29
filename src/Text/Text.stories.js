@@ -113,7 +113,7 @@ storiesOf("Text", module)
       const uppercase = boolean("Uppercase", false);
       const italic = boolean("Italic", false);
       const children = text("Text", customText);
-      const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const dataTest = text("dataTest", "test");
 
       return (

@@ -16,7 +16,7 @@ import Stack from "../Stack";
 
 import Alert from "./index";
 
-const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)], defaultIcon);
+const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
 storiesOf("Alert", module)
@@ -120,7 +120,7 @@ storiesOf("Alert", module)
       const button = text("Button", "I am a link");
       const closable = boolean("Closable", false);
       const Icon = getIcon(getIcons("Airplane"));
-      const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       return (
         <Alert
           type={type}

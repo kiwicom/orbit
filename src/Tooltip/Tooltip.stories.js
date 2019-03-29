@@ -15,7 +15,7 @@ import Heading from "../Heading";
 
 import Tooltip from "./index";
 
-const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)], defaultIcon);
+const getIcons = defaultIcon => select("Icon", Object.keys(Icons), defaultIcon);
 const getIcon = source => Icons[source];
 
 storiesOf("Tooltip", module)

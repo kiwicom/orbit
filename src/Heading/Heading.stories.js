@@ -162,7 +162,7 @@ storiesOf("Heading", module)
       const dataTest = text("dataTest", "test");
 
       const customTitle = text("Title", "Orbit design system");
-      const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       return (
         <Heading element={element} type={type} dataTest={dataTest} spaceAfter={spaceAfter}>
           {customTitle}

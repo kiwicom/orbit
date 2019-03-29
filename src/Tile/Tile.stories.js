@@ -11,7 +11,7 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Tile from "./index";
 
-const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)], defaultIcon);
+const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
 storiesOf("Tile", module)

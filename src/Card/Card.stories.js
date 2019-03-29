@@ -312,7 +312,7 @@ storiesOf("Card", module)
       const Icon = getIcon(getIcons("Airplane"));
       const closable = boolean("Closable", false);
       const dataTest = text("dataTest", "test");
-      const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       return (
         <Card
           closable={closable}

@@ -13,7 +13,7 @@ import TextLink from "./index";
 
 const validate = rel => (rel !== undefined && rel !== "" ? rel : undefined);
 
-const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)], defaultIcon);
+const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
 storiesOf("TextLink", module)

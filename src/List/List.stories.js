@@ -13,7 +13,7 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import List, { ListItem } from "./index";
 
-const getIcons = defaultIcon => select("Icon", [undefined, ...Object.keys(Icons)], defaultIcon);
+const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
 storiesOf("List", module)
@@ -86,7 +86,7 @@ storiesOf("List", module)
       const Icon = getIcon(getIcons("Check"));
       const iconColor = select("iconColor", Object.values(ICON_COLORS), ICON_COLORS.SUCCESS);
       const content = text("Content", "24,000 locations around the globe");
-      const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const dataTest = text("dataTest", "test");
 
       return (

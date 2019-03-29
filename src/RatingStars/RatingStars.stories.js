@@ -14,9 +14,9 @@ storiesOf("RatingStars", module)
     "Playground",
     () => {
       const rating = number("rating", 4.4, { min: 0, max: MAX_STARS });
-      const size = select("size", [undefined, ...Object.values(ICON_SIZES)]);
+      const size = select("size", [null, ...Object.values(ICON_SIZES)]);
       const color = select("color", [
-        undefined,
+        null,
         ICON_COLORS.PRIMARY,
         ICON_COLORS.SECONDARY,
         ICON_COLORS.ATTENTION,

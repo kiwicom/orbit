@@ -12,7 +12,7 @@ import Stack from "../Stack";
 import Button from "./index";
 
 const getIcons = (name, defaultIcon) =>
-  select(name, [undefined, ...Object.keys(Icons)], defaultIcon);
+  select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
 storiesOf("Button", module)

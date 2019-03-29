@@ -15,7 +15,7 @@ storiesOf("Illustration", module).add(
     const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
     const name = select("Name", Object.values(NAMES), "Accommodation");
     const dataTest = text("dataTest", "test");
-    const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)]);
+    const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
     return <Illustration size={size} name={name} dataTest={dataTest} spaceAfter={spaceAfter} />;
   },
   {

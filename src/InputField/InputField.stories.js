@@ -16,8 +16,7 @@ import Tag from "../Tag";
 
 import InputField from "./index";
 
-const getIcons = (name, defaultIcon) =>
-  select(name, [undefined, ...Object.keys(Icons)], defaultIcon);
+const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
 storiesOf("InputField", module)

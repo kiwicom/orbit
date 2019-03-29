@@ -38,7 +38,7 @@ storiesOf("InputGroup", module)
       ];
       const selectValue = select(
         "Select Value",
-        [undefined].concat(...selectOptions.map(opt => opt.value)),
+        [null].concat(...selectOptions.map(opt => opt.value)),
       );
 
       return (
@@ -71,7 +71,7 @@ storiesOf("InputGroup", module)
       const selectOptions = [{ value: 1, label: "+420" }, { value: 2, label: "+421" }];
       const selectValue = select(
         "Select Value",
-        [undefined].concat(...selectOptions.map(opt => opt.value)),
+        [null].concat(...selectOptions.map(opt => opt.value)),
       );
 
       const placeholder = text("Input Placeholder", "e.g. 123 456 789");
@@ -107,7 +107,7 @@ storiesOf("InputGroup", module)
       const selectOptions = [{ value: 1, label: "First item" }, { value: 2, label: "Second item" }];
       const selectValue = select(
         "Select Value",
-        [undefined].concat(...selectOptions.map(opt => opt.value)),
+        [null].concat(...selectOptions.map(opt => opt.value)),
       );
 
       const placeholder = text("Input Placeholder", "Placeholder");
@@ -157,7 +157,7 @@ storiesOf("InputGroup", module)
       ];
       const selectValue = select(
         "Select Value",
-        [undefined].concat(...selectOptions.map(opt => opt.value)),
+        [null].concat(...selectOptions.map(opt => opt.value)),
       );
       return (
         <RenderInRtl>

@@ -420,7 +420,7 @@ storiesOf("Modal", module)
       const description = text("Description", "Lorem ispum dolor sit amet");
       const illustration = select(
         "Illustration",
-        [undefined, ...Object.values(NAMES)],
+        [null, ...Object.values(NAMES)],
         "Accommodation",
       );
       const onClose = action("onClose");

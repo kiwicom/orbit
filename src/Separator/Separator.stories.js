@@ -17,7 +17,7 @@ storiesOf("Separator", module)
     () => {
       const spaceAfter = select(
         "spaceAfter",
-        [undefined, ...Object.values(SPACINGS_AFTER)],
+        [null, ...Object.values(SPACINGS_AFTER)],
         SPACINGS_AFTER.LARGEST,
       );
       return <Separator spaceAfter={spaceAfter} />;

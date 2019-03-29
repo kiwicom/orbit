@@ -418,11 +418,7 @@ storiesOf("Modal", module)
       const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
       const title = text("Title", "Orbit design system");
       const description = text("Description", "Lorem ispum dolor sit amet");
-      const illustration = select(
-        "Illustration",
-        [null, ...Object.values(NAMES)],
-        "Accommodation",
-      );
+      const illustration = select("Illustration", [null, ...Object.values(NAMES)], "Accommodation");
       const onClose = action("onClose");
       const fixed = boolean("fixedFooter", false);
       const suppressed = boolean("suppressed", false);

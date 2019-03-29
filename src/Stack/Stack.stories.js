@@ -328,22 +328,14 @@ storiesOf("Stack", module)
       const dataTest = text("dataTest", "test");
       const flex = boolean("flex", false);
       const inline = boolean("Inline", false);
-      const direction = select(
-        "Direction",
-        [null, ...Object.values(DIRECTIONS)],
-        DIRECTIONS.ROW,
-      );
+      const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], DIRECTIONS.ROW);
       const wrap = boolean("Wrap", false);
       const grow = boolean("Grow", true);
       const shrink = boolean("Shrink", false);
       const basis = text("Basis", undefined);
       const align = select("Align", [null, ...Object.values(ALIGNS)]);
       const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-      const spacing = select(
-        "Spacing",
-        [null, ...Object.values(SPACINGS)],
-        SPACINGS.EXTRATIGHT,
-      );
+      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.EXTRATIGHT);
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const mediumMobile = object("mediumMobile", {
         direction: DIRECTIONS.COLUMN,

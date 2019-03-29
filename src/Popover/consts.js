@@ -10,3 +10,5 @@ export const ANCHORS = {
   START: "start",
   END: "end",
 };
+
+export const POPOVER_SPACE_BETWEEN = 4;

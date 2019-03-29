@@ -8,6 +8,7 @@ export type Props = {|
   +closeText?: Translation,
   +preferredPosition?: Positions,
   +containerRef: any | HTMLDivElement,
+  +width?: number,
   +onClose: () => void,
 |};
 

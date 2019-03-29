@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
+import { withKnobs, text, select, boolean, number } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -61,11 +61,6 @@ storiesOf("Popover", module)
             content={
               <Stack>
                 <List>
-                  <ListItem>24,000 locations around the globe</ListItem>
-                  <ListItem>
-                    Lowest price car rental in
-                    <strong>Warsaw</strong>
-                  </ListItem>
                   <ListItem>From 3 star budget to 5 star luxury</ListItem>
                 </List>
                 <ButtonLink>Button</ButtonLink>
@@ -150,9 +145,11 @@ storiesOf("Popover", module)
         Object.values(POSITIONS),
         POSITIONS.BOTTOM,
       );
+      const width = number("width", 200);
 
       return (
         <Popover
+          width={width}
           dataTest={dataTest}
           content={<Button>Button</Button>}
           preferredPosition={preferredPosition}

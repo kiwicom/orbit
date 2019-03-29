@@ -29,6 +29,7 @@ export type Props = {|
   +closeText?: Translation,
   +preferredPosition?: Positions,
   +open?: boolean,
+  +width?: number,
 |};
 
 export type State = {|

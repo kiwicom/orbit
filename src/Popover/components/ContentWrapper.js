@@ -54,7 +54,7 @@ const StyledPopoverParent = styled.div`
     left: auto;
     right: auto;
     bottom: auto;
-    width: auto;
+    width: ${({ width }) => (width ? `${width}px` : "auto")};
     animation: ${opacityAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
     ${resolvePopoverPosition}
     ${resolvePopoverAnchor}
@@ -125,6 +125,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
   componentDidMount() {
     setTimeout(() => {
       this.calculatePopoverPosition();
+      this.popover.current.focus();
     }, 15);
     window.addEventListener("resize", this.handleResize);
   }
@@ -269,7 +270,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
 
   render() {
     const { position, anchor, positions } = this.state;
-    const { children, closeText = "Close", onClose, dataTest } = this.props;
+    const { children, closeText = "Close", onClose, width, dataTest } = this.props;
     return (
       <React.Fragment>
         <StyledPopoverParent
@@ -281,6 +282,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
           containerWidth={positions.containerWidth}
           popoverHeight={positions.popoverHeight}
           popoverWidth={positions.popoverWidth}
+          width={width}
           ref={this.popover}
           onClick={this.handleClick}
           tabIndex="0"

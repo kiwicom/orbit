@@ -3,6 +3,8 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
+import Button from "../Button";
+import ChevronLeft from "../icons/ChevronLeft";
 
 import type { Props } from "./index";
 
@@ -23,15 +25,32 @@ const StyledBreadcrumbsList = styled.ol`
   padding: 0;
 `;
 
-const Breadcrumbs = ({ children, dataTest }: Props) => (
+const StyledBackButton = styled(Button)`
+  margin-right: ${({ theme }) => theme.orbit.spaceSmall};
+`;
+
+StyledBackButton.defaultProps = {
+  theme: defaultTheme,
+};
+
+const Breadcrumbs = ({ children, dataTest, back }: Props) => (
   <StyledBreadcrumbs aria-label="Breadcrumb" role="navigation" data-test={dataTest}>
     <StyledBreadcrumbsList vocab="http://schema.org/" typeof="BreadcrumbList">
-      {React.Children.map(children, (item, key) =>
-        React.cloneElement(item, {
+      {back && (
+        <StyledBackButton
+          iconLeft={<ChevronLeft />}
+          circled
+          type="secondary"
+          size="small"
+          onClick={back}
+        />
+      )}
+      {React.Children.map(children, (item, key) => {
+        return React.cloneElement(item, {
           active: key === React.Children.count(children) - 1,
           contentKey: key + 1,
-        }),
-      )}
+        });
+      })}
     </StyledBreadcrumbsList>
   </StyledBreadcrumbs>
 );

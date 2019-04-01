@@ -25,25 +25,27 @@ const StyledBreadcrumbsList = styled.ol`
   padding: 0;
 `;
 
-const StyledBackButton = styled(Button)`
+const StyledBackButtonWrapper = styled.span`
   margin-right: ${({ theme }) => theme.orbit.spaceSmall};
 `;
 
-StyledBackButton.defaultProps = {
+StyledBackButtonWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const Breadcrumbs = ({ children, dataTest, back }: Props) => (
+const Breadcrumbs = ({ children, dataTest, onBack }: Props) => (
   <StyledBreadcrumbs aria-label="Breadcrumb" role="navigation" data-test={dataTest}>
     <StyledBreadcrumbsList vocab="http://schema.org/" typeof="BreadcrumbList">
-      {back && (
-        <StyledBackButton
-          iconLeft={<ChevronLeft />}
-          circled
-          type="secondary"
-          size="small"
-          onClick={back}
-        />
+      {onBack && (
+        <StyledBackButtonWrapper>
+          <Button
+            iconLeft={<ChevronLeft />}
+            circled
+            type="secondary"
+            size="small"
+            onClick={onBack}
+          />
+        </StyledBackButtonWrapper>
       )}
       {React.Children.map(children, (item, key) => {
         return React.cloneElement(item, {

@@ -15,8 +15,7 @@ Table below contains all types of the props available in Breadcrumbs component.
 | Name          | Type                                    | Default         | Description                      |
 | :------------ | :-------------------------------------- | :-------------- | :------------------------------- |
 | dataTest      | `string`                                |                 | Optional prop for testing purposes.
-| **children**  | `React.Node`                            |                 | The content of the Breadcrumbs, normally [`BreadcrumbsItem`]
-(#breadcrumbsitem).
+| **children**  | `React.Node`                            |                 | The content of the Breadcrumbs, normally [`BreadcrumbsItem`](#breadcrumbsitem).
 | back          | `event => void \| Promise`              |                 | Callback for handling back button action. If present the back button is visible
 
 ## Functional specs

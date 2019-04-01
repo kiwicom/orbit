@@ -35,7 +35,7 @@ storiesOf("Breadcrumbs", module)
   .add(
     "Playground",
     () => (
-      <Breadcrumbs back={action("clicked")}>
+      <Breadcrumbs onBack={action("clicked")}>
         <BreadcrumbsItem href="https://kiwi.com" onClick={action("clicked")}>
           Kiwi.com
         </BreadcrumbsItem>

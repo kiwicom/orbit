@@ -71,6 +71,7 @@ const OrbitIcon = (props: Props) => {
     dataTest,
     ariaHidden,
     reverseOnRtl,
+    label,
   } = props;
 
   return (
@@ -83,6 +84,7 @@ const OrbitIcon = (props: Props) => {
       color={color}
       ariaHidden={ariaHidden}
       reverseOnRtl={reverseOnRtl}
+      aria-label={label}
     >
       {children}
     </StyledIcon>

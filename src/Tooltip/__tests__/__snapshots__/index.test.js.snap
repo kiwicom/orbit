@@ -1,7 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tooltip it should match snapshot 1`] = `
+<<<<<<< HEAD
 <ContextConsumer>
   <Component />
 </ContextConsumer>
+=======
+<Fragment>
+  <Tooltip__StyledTooltipChildren
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <Airplane />
+  </Tooltip__StyledTooltipChildren>
+</Fragment>
+>>>>>>> updating snapshot
 `;

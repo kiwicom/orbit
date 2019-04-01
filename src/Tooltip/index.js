@@ -89,7 +89,6 @@ const StyledTooltipWrapper = styled.div`
   bottom: ${({ shownMobile, tooltipWidth }) => (shownMobile ? "0" : `-${tooltipWidth}px`)};
   left: 0;
   right: 0;
-
   img {
     max-width: 100%;
   }

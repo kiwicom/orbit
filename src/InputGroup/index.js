@@ -9,6 +9,7 @@ import { SelectContainer } from "../Select";
 import FormFeedback from "../FormFeedback";
 import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { right, rtlSpacing } from "../utils/rtl";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props, State } from "./index";
 
@@ -92,6 +93,7 @@ const StyledInputGroup = styled(({ children, className, dataTest }) => (
   width: 100%;
   flex-direction: column;
   position: relative;
+  margin-bottom: ${getSpacingToken};
 
   ${StyledChild} {
     ${FakeInput} {
@@ -209,11 +211,19 @@ class InputGroup extends React.PureComponent<Props, State> {
       help,
       error,
       dataTest,
+      spaceAfter,
     } = this.props;
     const { active, filled } = this.state;
 
     return (
-      <StyledInputGroup label={label} error={error} active={active} size={size} dataTest={dataTest}>
+      <StyledInputGroup
+        label={label}
+        error={error}
+        active={active}
+        size={size}
+        dataTest={dataTest}
+        spaceAfter={spaceAfter}
+      >
         {label && <FormLabel filled={filled}>{label}</FormLabel>}
         <StyledChildren>
           {React.Children.map(children, (item, key) => {

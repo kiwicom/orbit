@@ -13,6 +13,7 @@ import TextLink from "../TextLink";
 import ServiceLogo from "../ServiceLogo";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Tag from "../Tag";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import InputField from "./index";
 
@@ -370,6 +371,7 @@ storiesOf("InputField", module)
       const readOnly = boolean("readOnly", false);
       const autoComplete = text("autoComplete", "off");
       const dataTest = text("dataTest", "test");
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
         <InputField
@@ -406,6 +408,7 @@ storiesOf("InputField", module)
           onChange={action("change")}
           onFocus={action("focus")}
           onBlur={action("blur")}
+          spaceAfter={spaceAfter}
         />
       );
     },

@@ -11,6 +11,7 @@ import { getSize } from "../Icon";
 import type { Ref } from "../common/common.js.flow";
 
 import type { Props } from "./index";
+import getSpacingToken from "../common/getSpacingToken";
 
 const getSizeToken = name => ({ theme, size }) => {
   const tokens = {
@@ -308,6 +309,7 @@ export const StyledButton = styled(
     buttonRef,
     ariaControls,
     ariaExpanded,
+    spaceAfter,
     ...props
   }) => {
     const isButtonWithHref = component === "button" && props.href;
@@ -365,6 +367,7 @@ export const StyledButton = styled(
       theme,
       type,
     })}`}; // Cannot resolve with 0 0 0 1px getTypeToken(TOKENS.borderColorButton)
+  margin-bottom: ${getSpacingToken};
 
   &:hover {
     background: ${({ disabled, bordered }) =>

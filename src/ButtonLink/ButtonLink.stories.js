@@ -8,6 +8,7 @@ import { text, number, boolean, select } from "@storybook/addon-knobs";
 import * as Icons from "../icons";
 import { TYPES, SIZES } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import ButtonLink from "./index";
 
@@ -72,6 +73,7 @@ storiesOf("ButtonLink", module)
       const submit = boolean("Submit", false);
       const ariaExpanded = boolean("Aria expanded", false);
       const ariaControls = text("Aria controls", "element ID");
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
         <ButtonLink
@@ -90,6 +92,7 @@ storiesOf("ButtonLink", module)
           submit={submit}
           ariaExpanded={ariaExpanded}
           ariaControls={ariaControls}
+          spaceAfter={spaceAfter}
         >
           {title}
         </ButtonLink>

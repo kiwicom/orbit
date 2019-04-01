@@ -3,8 +3,10 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { text, array } from "@storybook/addon-knobs";
+import { select } from "@storybook/addon-knobs/src/index";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import InputFile from "./index";
 
@@ -109,6 +111,7 @@ storiesOf("InputFile", module)
       const help = text("Help", undefined);
       const allowedFileTypes = array("allowedFileTypes", ["media/*", "image/*"]);
       const dataTest = text("dataTest", "test");
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
         <InputFile
@@ -125,6 +128,7 @@ storiesOf("InputFile", module)
           onFocus={action("onFocus")}
           onBlur={action("onBlur")}
           onRemoveFile={action("removeFile")}
+          spaceAfter={spaceAfter}
         />
       );
     },

@@ -10,6 +10,7 @@ import Select from "../Select";
 import { SIZE_OPTIONS } from "./consts";
 import CountryFlag from "../CountryFlag";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import InputGroup from "./index";
 
@@ -159,6 +160,7 @@ storiesOf("InputGroup", module)
         "Select Value",
         [null].concat(...selectOptions.map(opt => opt.value)),
       );
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       return (
         <RenderInRtl>
           <InputGroup
@@ -167,6 +169,7 @@ storiesOf("InputGroup", module)
             onChange={action("onChange")}
             onFocus={action("onFocus")}
             onBlur={action("onBlur")}
+            spaceAfter={spaceAfter}
           >
             <InputField placeholder="DD" />
             <Select options={selectOptions} value={selectValue} placeholder="Month" />

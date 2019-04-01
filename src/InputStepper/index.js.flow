@@ -4,10 +4,12 @@
 */
 import type { Globals, Ref, RefType, Translation } from "../common/common.js.flow";
 import type { Size } from "../InputField/index";
+import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
   ...Globals,
   ...Ref,
+  ...spaceAfter,
   +size?: Size,
   +label?: Translation,
   +defaultValue?: number,

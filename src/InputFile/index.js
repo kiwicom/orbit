@@ -11,6 +11,7 @@ import Attachment from "../icons/Attachment";
 import CloseCircle from "../icons/CloseCircle";
 import type { Ref } from "../common/common.js.flow";
 import { rtlSpacing } from "../utils/rtl";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
 
@@ -19,6 +20,7 @@ const Field = styled.label`
   display: block;
   position: relative;
   width: 100%;
+  margin-bottom: ${getSpacingToken};
 `;
 
 Field.defaultProps = {
@@ -109,10 +111,16 @@ CloseButton.defaultProps = {
 
 // $FlowExpected
 const InputFile = React.forwardRef((props: Props, ref: Ref) => {
-  const { placeholder = "No file selected", title = "Select file", onRemoveFile, dataTest } = props;
+  const {
+    placeholder = "No file selected",
+    title = "Select file",
+    onRemoveFile,
+    dataTest,
+    spaceAfter,
+  } = props;
 
   return (
-    <Field>
+    <Field spaceAfter={spaceAfter}>
       <Input
         data-test={dataTest}
         type="file"

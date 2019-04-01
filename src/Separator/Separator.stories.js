@@ -15,11 +15,7 @@ storiesOf("Separator", module)
   .add(
     "Playground",
     () => {
-      const spaceAfter = select(
-        "spaceAfter",
-        [null, ...Object.values(SPACINGS_AFTER)],
-        SPACINGS_AFTER.LARGEST,
-      );
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       return <Separator spaceAfter={spaceAfter} />;
     },
     {

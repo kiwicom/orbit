@@ -72,7 +72,7 @@ export type Props = {|
   +customColor?: string,
   +className?: string,
   +ariaHidden?: boolean,
-  +label: string,
+  +label?: string,
   +reverseOnRtl?: boolean,
   ...Globals,
 |};

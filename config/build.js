@@ -46,11 +46,11 @@ const template = (code, config, state) => `
     import type { Props } from "./${state.componentName}.js.flow";
 
     export default function ${state.componentName}(props: Props) {
-      const { color, size, customColor, className, dataTest, ariaHidden, reverseOnRtl } = props;
+      const { color, size, customColor, className, dataTest, ariaHidden, ariaLabel, reverseOnRtl } = props;
       return (
         ${code.replace(
           /<svg\b[^>]* viewBox="(\b[^"]*)".*>([\s\S]*?)<\/svg>/g,
-          `<OrbitIcon viewBox="$1" size={size} color={color} customColor={customColor} className={className} dataTest={dataTest} ariaHidden={ariaHidden} reverseOnRtl={reverseOnRtl}>$2</OrbitIcon>`,
+          `<OrbitIcon viewBox="$1" size={size} color={color} customColor={customColor} className={className} dataTest={dataTest} ariaHidden={ariaHidden} reverseOnRtl={reverseOnRtl} ariaLabel={ariaLabel}>$2</OrbitIcon>`,
         )}
       );
     };`;
@@ -73,6 +73,7 @@ export type Props = {|
   +className?: string,
   +ariaHidden?: boolean,
   +reverseOnRtl?: boolean,
+  +ariaLabel?: string,
   ...Globals,
 |};
 

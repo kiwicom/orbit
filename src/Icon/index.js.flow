@@ -24,6 +24,7 @@ export type Props = {|
   +viewBox: string,
   +ariaHidden?: boolean,
   +reverseOnRtl?: boolean,
+  +ariaLabel?: string,
 |};
 
 declare export default React$ComponentType<Props>;

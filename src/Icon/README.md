@@ -18,8 +18,8 @@ Table below contains all types of the props available for icons in general.
 | dataTest      | `string`        |                 | Optional prop for testing purposes.
 | **size**      | [`enum`](#enum) | `"medium"`      | The size of the Icon.
 | reverseOnRtl  | `boolean`       | `false`         | If `true`, the icon will be reversed if `theme.rtl` is set to `true`.
-| label         | `string`        |                 | Adds prop adds `aria-label` to an element, useful for screenreaders.
 | ariaHidden    | `boolean`       |                 | Adds prop adds `aria-hidden` to an element, useful for screenreaders.
+| ariaLabel     | `string`        |                 | Adds prop adds `aria-label` to an element, useful for screenreaders.
 
 ### enum
 

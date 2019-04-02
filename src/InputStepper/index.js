@@ -7,7 +7,8 @@ import PlusCircle from "../icons/PlusCircle";
 import MinusCircle from "../icons/MinusCircle";
 import ButtonLink from "../ButtonLink";
 import InputField, { Input, Prefix } from "../InputField";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
+import KEY_CODE_MAP from "../common/keyMaps";
 
 import type { Props, State, ForwardedRef } from "./index";
 
@@ -18,7 +19,7 @@ const PrefixSuffix = styled(({ type, ...props }) => <div {...props} />)`
 `;
 
 PrefixSuffix.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledInputStepper = styled.div`
@@ -45,7 +46,7 @@ const StyledButtonWrapper = styled.div`
 `;
 
 StyledButtonWrapper.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 class InputStepper extends React.Component<Props & ForwardedRef, State> {
   state = {
@@ -101,7 +102,7 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
   };
 
   handleKeyDecrement = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    if (ev.keyCode === 32 || ev.keyCode === 13) {
+    if (ev.keyCode === KEY_CODE_MAP.SPACE || ev.keyCode === KEY_CODE_MAP.ENTER) {
       this.decrementCounter();
     }
   };

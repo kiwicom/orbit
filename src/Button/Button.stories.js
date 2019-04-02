@@ -239,6 +239,8 @@ storiesOf("Button", module)
       const dataTest = text("dataTest", "test");
       const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
       const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
+      const ariaExpanded = boolean("Aria expanded", false);
+      const ariaControls = text("Aria controls", "element ID");
 
       return (
         <Button
@@ -258,6 +260,8 @@ storiesOf("Button", module)
           iconRight={IconRight && <IconRight />}
           submit={submit}
           width={width}
+          ariaControls={ariaControls}
+          ariaExpanded={ariaExpanded}
         >
           {title}
         </Button>

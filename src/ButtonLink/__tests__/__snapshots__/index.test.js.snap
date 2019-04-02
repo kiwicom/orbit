@@ -37,12 +37,12 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   text-decoration: none;
 }
 
-.c0:enabled:hover {
+.c0:hover {
   background: #e5eaef;
   color: #009882!important;
 }
 
-.c0:enabled:active {
+.c0:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
@@ -50,15 +50,17 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   color: #008f7b!important;
 }
 
-.c0:enabled:focus {
-  box-shadow: 0 0 4px 1px rgba(1,118,210,0.3);
+.c0:focus {
+  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
 }
 
-.c0:enabled:focus:active {
+.c0:focus:active {
   box-shadow: none;
 }
 
 <ButtonLink
+  ariaControls="element"
+  ariaExpanded={true}
   dataTest="test"
   external={true}
   href="https://kiwi.com"
@@ -66,6 +68,8 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   tabIndex="-1"
 >
   <ButtonLink__StyledButtonLink
+    ariaControls="element"
+    ariaExpanded={true}
     buttonRef={null}
     component="button"
     dataTest="test"
@@ -526,6 +530,8 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
     width={0}
   >
     <StyledComponent
+      ariaControls="element"
+      ariaExpanded={true}
       buttonRef={null}
       component="button"
       dataTest="test"
@@ -537,7 +543,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
             "isStatic": false,
-            "lastClassName": "fQEuZU",
+            "lastClassName": "iFDAbW",
             "rules": Array [
               "font-family:",
               [Function],
@@ -561,19 +567,13 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
               [Function],
               ";opacity:",
               [Function],
-              ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;&:enabled:hover{background:",
+              ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;&:hover{",
               [Function],
-              ";color:",
+              ";}&:active{",
               [Function],
-              "!important;}&:enabled:active{transform:scale(",
+              ";}&:focus{",
               [Function],
-              ");background:",
-              [Function],
-              ";color:",
-              [Function],
-              "!important;}&:enabled:focus{box-shadow:",
-              [Function],
-              ";&:active{box-shadow:none;}}",
+              ";}",
             ],
           },
           "defaultProps": Object {
@@ -1488,6 +1488,8 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
       width={0}
     >
       <Component
+        ariaControls="element"
+        ariaExpanded={true}
         buttonRef={null}
         className="c0"
         component="button"
@@ -1949,6 +1951,8 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
         width={0}
       >
         <a
+          aria-controls="element"
+          aria-expanded={true}
           className="c0"
           data-test="test"
           href="https://kiwi.com"
@@ -2057,12 +2061,12 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   text-decoration: none;
 }
 
-.c0:enabled:hover {
+.c0:hover {
   background: #e5eaef;
   color: #009882!important;
 }
 
-.c0:enabled:active {
+.c0:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
@@ -2070,11 +2074,11 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   color: #008f7b!important;
 }
 
-.c0:enabled:focus {
-  box-shadow: 0 0 4px 1px rgba(1,118,210,0.3);
+.c0:focus {
+  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
 }
 
-.c0:enabled:focus:active {
+.c0:focus:active {
   box-shadow: none;
 }
 
@@ -2574,19 +2578,13 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
               [Function],
               ";opacity:",
               [Function],
-              ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;&:enabled:hover{background:",
+              ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;&:hover{",
               [Function],
-              ";color:",
+              ";}&:active{",
               [Function],
-              "!important;}&:enabled:active{transform:scale(",
+              ";}&:focus{",
               [Function],
-              ");background:",
-              [Function],
-              ";color:",
-              [Function],
-              "!important;}&:enabled:focus{box-shadow:",
-              [Function],
-              ";&:active{box-shadow:none;}}",
+              ";}",
             ],
           },
           "defaultProps": Object {

@@ -20,7 +20,7 @@ storiesOf("DestinationCard", module)
         image="dubai_ae"
         price="5,563 Kč"
         outbound={{ text: "One-way", type: "Direct", duration: "6h 10m" }}
-        onClick={action("Close")}
+        onClick={action("onClick")}
       />
     ),
     {
@@ -40,7 +40,7 @@ storiesOf("DestinationCard", module)
         timeOfStay="10 nights"
         outbound={{ date: "Wed 31 Oct", type: "Direct", duration: "6h 10m" }}
         inbound={{ date: "Fri 9 Nov", type: "Direct", duration: "6h 50m" }}
-        onClick={action("Close")}
+        onClick={action("onClick")}
       />
     ),
     {
@@ -60,7 +60,7 @@ storiesOf("DestinationCard", module)
         timeOfStay="10 nights"
         outbound={{ date: "Di. 24.12", type: "Zwischenstopp", duration: "20h 10m" }}
         inbound={{ date: "Do. 25.12", type: "Zwischenstopp", duration: "20h 50m" }}
-        onClick={action("Close")}
+        onClick={action("onClick")}
       />
     ),
     {
@@ -98,7 +98,7 @@ storiesOf("DestinationCard", module)
           timeOfStay={timeOfStay}
           outbound={outbound}
           inbound={inbound}
-          onClick={action("Close")}
+          onClick={action("onClick")}
         />
       );
     },
@@ -138,7 +138,7 @@ storiesOf("DestinationCard", module)
             timeOfStay={timeOfStay}
             outbound={outbound}
             inbound={inbound}
-            onClick={action("Close")}
+            onClick={action("onClick")}
           />
         </RenderInRtl>
       );

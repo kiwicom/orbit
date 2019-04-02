@@ -14,6 +14,7 @@ import { CARRIER_TYPE_OPTIONS } from "../CarrierLogo/consts";
 import { getSize } from "../Icon";
 import { ICON_SIZES } from "../Icon/consts";
 import { left, right, rtlSpacing } from "../utils/rtl";
+import KEY_CODE_MAP from "../common/keyMaps";
 
 import type { Props, State, ExpandedType } from "./index";
 
@@ -295,7 +296,7 @@ class TripSegment extends React.PureComponent<Props, State> {
   };
 
   handleOnKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    if (ev.keyCode === 13) {
+    if (ev.keyCode === KEY_CODE_MAP.ENTER || ev.keyCode === KEY_CODE_MAP.SPACE) {
       this.handleToggle();
     }
   };

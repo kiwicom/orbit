@@ -15,6 +15,8 @@ describe("ButtonLink with Icon", () => {
   const tabIndex = "-1";
   const submit = true;
   const ref = React.createRef();
+  const ariaExpanded = true;
+  const ariaControls = "element";
   const component = mount(
     <ButtonLink
       href={href}
@@ -23,6 +25,8 @@ describe("ButtonLink with Icon", () => {
       submit={submit}
       tabIndex={tabIndex}
       ref={ref}
+      ariaExpanded={ariaExpanded}
+      ariaControls={ariaControls}
     >
       {children}
     </ButtonLink>,
@@ -48,6 +52,10 @@ describe("ButtonLink with Icon", () => {
   });
   it("should have ref", () => {
     expect(ref.current).toBeDefined();
+  });
+  it("should have aria attributes", () => {
+    expect(component.render().prop("aria-controls")).toBe(ariaControls);
+    expect(component.render().prop("aria-expanded")).toBe(String(ariaExpanded));
   });
   it("should be external", () => {
     expect(button.prop("target")).toBe("_blank");

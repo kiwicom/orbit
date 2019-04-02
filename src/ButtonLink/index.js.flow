@@ -29,6 +29,8 @@ export type Props = {|
   +submit?: boolean,
   +transparent?: boolean,
   tabIndex?: string,
+  +ariaExpanded?: boolean,
+  +ariaControls?: string,
 |};
 
 declare export var StyledButtonLink: ReactComponentStyled<Props>;

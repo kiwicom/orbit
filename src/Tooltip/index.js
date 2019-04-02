@@ -233,8 +233,6 @@ class Tooltip extends React.PureComponent<Props, State> {
 
   contentHeight: number = 0;
 
-  tooltipId: string;
-
   // TODO: ged rid off weak types
   closeButton: { current: any } = React.createRef();
 
@@ -434,6 +432,8 @@ class Tooltip extends React.PureComponent<Props, State> {
     }
   };
 
+  tooltipId: string;
+
   render() {
     const {
       content,
@@ -441,6 +441,7 @@ class Tooltip extends React.PureComponent<Props, State> {
       size = SIZE_OPTIONS.SMALL,
       closeText = "Close",
       dataTest,
+      tabIndex = 0,
     } = this.props;
     const { shown, shownMobile, position, align } = this.state;
     const {
@@ -463,7 +464,7 @@ class Tooltip extends React.PureComponent<Props, State> {
           onBlur={this.handleOut}
           ref={this.container}
           aria-describedby={this.tooltipId}
-          tabIndex="0"
+          tabIndex={tabIndex}
         >
           {children}
         </StyledTooltipChildren>

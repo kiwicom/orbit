@@ -21,7 +21,7 @@ Table below contains all types of the props available in the Tooltip component.
 | preferredPosition | [`enum`](#enum)       |                 | The preferred position to choose [See Functional specs](#functional-specs)
 | size              | [`enum`](#enum)       |                 | The maximum possible size of the Tooltip.
 | closeText         | `Translation`         |                 | The text of the close button to display on mobile devices.
-
+| tabIndex          | `number`              | `0`             | Specifies the tab order of an element
 ## enum
 | position          | size        |
 | :---------------- | :---------- |

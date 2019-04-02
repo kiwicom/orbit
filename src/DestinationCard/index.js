@@ -10,6 +10,8 @@ import FlightDirectIcon from "../icons/FlightDirect";
 import { BASE_URL, SMALLEST_HEIGHT } from "./consts";
 import LazyImage from "../LazyImage";
 import Text from "../Text";
+import randomID from "../utils/randomID";
+import KEY_CODE_MAP from "../common/keyMaps";
 
 import type { Props, State } from "./index";
 
@@ -136,6 +138,9 @@ const StyledDestinationCard = styled(({ height, imageURL, theme, ...props }) => 
 
   &:hover,
   &:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
+      0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
     ${StyledOverlay} {
       opacity: 0;
     }
@@ -173,6 +178,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
 
   componentDidMount() {
     this.setHeight();
+    this.cardID = randomID("DestinationCard");
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -191,6 +197,17 @@ class DestinationCard extends React.PureComponent<Props, State> {
     }
   };
 
+  handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
+    if (
+      (ev.keyCode === KEY_CODE_MAP.ENTER || ev.keyCode === KEY_CODE_MAP.SPACE) &&
+      this.props.onClick !== undefined
+    ) {
+      this.props.onClick();
+    }
+  };
+
+  cardID: string;
+
   render() {
     const {
       dataTest,
@@ -203,6 +220,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
       inbound,
       height = 300,
       onClick,
+      tabIndex = 0,
     } = this.props;
     const { hiddenContentHeight } = this.state;
 
@@ -212,7 +230,11 @@ class DestinationCard extends React.PureComponent<Props, State> {
       <StyledDestinationCard
         data-test={dataTest}
         onClick={onClick}
+        onKeyDown={this.handleKeyDown}
         height={height >= SMALLEST_HEIGHT ? height : SMALLEST_HEIGHT}
+        tabIndex={tabIndex}
+        role="link"
+        aria-labelledby={this.cardID}
       >
         <LazyImage
           original={{
@@ -228,7 +250,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
         <StyledOverlay />
         <StyledOverlayHover />
         <StyledDestinationCardContent hiddenContentHeight={hiddenContentHeight}>
-          <StyledDestinationCardHeader>
+          <StyledDestinationCardHeader id={this.cardID}>
             <Shown>
               <Stack flex align="center" justify="start" spacing="extraTight">
                 <Heading type="title3" element="div" inverted>
@@ -238,7 +260,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
               </Stack>
             </Shown>
             <StyledDestination>
-              <Heading type="title1" inverted>
+              <Heading type="title1" element="div" inverted>
                 {destinationCity}
               </Heading>
             </StyledDestination>

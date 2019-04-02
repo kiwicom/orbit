@@ -153,6 +153,8 @@ export const StyledButtonLink = styled(
     dataTest,
     submit,
     buttonRef,
+    ariaControls,
+    ariaExpanded,
     ...props
   }) => {
     const isButtonWithHref = component === "button" && props.href;
@@ -164,6 +166,8 @@ export const StyledButtonLink = styled(
         type={!isButtonWithHref ? buttonType : undefined}
         {...props}
         ref={buttonRef}
+        aria-controls={ariaControls}
+        aria-expanded={ariaExpanded}
       >
         {children}
       </Component>
@@ -267,8 +271,6 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       iconLeft={iconLeft}
       buttonRef={ref}
       width={width}
-      aria-expanded={ariaExpanded}
-      aria-controls={ariaControls}
     >
       {iconLeft && (
         <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon}>

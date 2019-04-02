@@ -38,7 +38,7 @@ describe("Button with icon", () => {
   const tabIndex = "-1";
   const href = "https://kiwi.com";
   const ariaExpanded = true;
-  const ariaControls = "element"
+  const ariaControls = "element";
   const component = shallow(
     <Button
       size="normal"
@@ -69,7 +69,7 @@ describe("Button with icon", () => {
   });
   it("should have aria attributes", () => {
     expect(component.render().prop("aria-controls")).toBe(ariaControls);
-    expect(component.render().prop("aria-expanded")).toBe(ariaExpanded);
+    expect(component.render().prop("aria-expanded")).toBe(String(ariaExpanded));
   });
   it("should contain icons", () => {
     const button = component.find("Button__StyledButton");

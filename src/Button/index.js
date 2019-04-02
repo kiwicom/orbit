@@ -316,6 +316,8 @@ export const StyledButton = styled(
     return (
       <Component
         data-test={dataTest}
+        aria-controls={ariaControls}
+        aria-expanded={ariaExpanded}
         type={!isButtonWithHref ? buttonType : undefined}
         {...props}
         ref={buttonRef}
@@ -490,8 +492,6 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
       type={type}
       width={width}
       buttonRef={ref}
-      aria-controls={ariaControls}
-      aria-expanded={ariaExpanded}
     >
       {loading && <Loading type="buttonLoader" />}
       <StyledButtonContent loading={loading}>

@@ -59,6 +59,8 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
 }
 
 <ButtonLink
+  ariaControls="element"
+  ariaExpanded={true}
   dataTest="test"
   external={true}
   href="https://kiwi.com"
@@ -66,6 +68,8 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   tabIndex="-1"
 >
   <ButtonLink__StyledButtonLink
+    ariaControls="element"
+    ariaExpanded={true}
     buttonRef={null}
     component="button"
     dataTest="test"
@@ -526,6 +530,8 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
     width={0}
   >
     <StyledComponent
+      ariaControls="element"
+      ariaExpanded={true}
       buttonRef={null}
       component="button"
       dataTest="test"
@@ -1482,6 +1488,8 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
       width={0}
     >
       <Component
+        ariaControls="element"
+        ariaExpanded={true}
         buttonRef={null}
         className="c0"
         component="button"
@@ -1943,6 +1951,8 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
         width={0}
       >
         <a
+          aria-controls="element"
+          aria-expanded={true}
           className="c0"
           data-test="test"
           href="https://kiwi.com"

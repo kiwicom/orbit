@@ -5,7 +5,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
   aria-expanded={true}
   onKeyDown={[Function]}
   role="button"
-  tabIndex="0"
+  tabIndex={0}
   theme={
     Object {
       "orbit": Object {

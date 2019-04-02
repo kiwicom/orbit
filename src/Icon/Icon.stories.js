@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { select, text } from "@storybook/addon-knobs";
+import { select, text, boolean } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import IconList from "./IconList";
@@ -17,8 +17,18 @@ storiesOf("Icon", module)
       const color = select("Color", [null, ...Object.values(ICON_COLORS)]);
       const source = select("Icon", Object.keys(Icons), "Airplane");
       const dataTest = text("dataTest", "test");
+      const ariaLabel = text("ariaLabel", "label");
+      const ariaHidden = boolean("ariaHidden", true);
       const Icon = Icons[source];
-      return <Icon size={size} color={color} dataTest={dataTest} />;
+      return (
+        <Icon
+          size={size}
+          color={color}
+          dataTest={dataTest}
+          ariaLabel={ariaLabel}
+          ariaHidden={ariaHidden}
+        />
+      );
     },
     {
       info:

@@ -64,6 +64,7 @@ Table below contains all types of the props available in Button component.
   If you specify the children of **YourComponent** component, it will override the children prop of Button component, e.g.:
   ```jsx
   const YourComponent = props => <div {...props}>YourComponent</div>
+  ```
 
 ## Accessibility
 A button is mainly used for indicating an action, submitting a data, opening a modal etc. If you want to use Button for navigation consider using a `<TextLink>` for that.

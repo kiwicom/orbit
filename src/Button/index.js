@@ -306,6 +306,8 @@ export const StyledButton = styled(
     dataTest,
     submit,
     buttonRef,
+    ariaControls,
+    ariaExpanded,
     ...props
   }) => {
     const isButtonWithHref = component === "button" && props.href;

@@ -37,13 +37,14 @@ const reverse = ({ reverseOnRtl, theme }) =>
     transform: scale(-1, 1);
   `;
 
-const StyledIcon = styled(({ className, viewBox, dataTest, children, ariaHidden }) => (
+const StyledIcon = styled(({ className, viewBox, dataTest, children, ariaHidden, ariaLabel }) => (
   <svg
     className={className}
     viewBox={viewBox}
     data-test={dataTest}
     preserveAspectRatio="xMidYMid meet"
     aria-hidden={ariaHidden ? "true" : undefined}
+    aria-label={ariaLabel}
   >
     {children}
   </svg>
@@ -71,7 +72,7 @@ const OrbitIcon = (props: Props) => {
     dataTest,
     ariaHidden,
     reverseOnRtl,
-    label,
+    ariaLabel,
   } = props;
 
   return (
@@ -84,7 +85,7 @@ const OrbitIcon = (props: Props) => {
       color={color}
       ariaHidden={ariaHidden}
       reverseOnRtl={reverseOnRtl}
-      aria-label={label}
+      ariaLabel={ariaLabel}
     >
       {children}
     </StyledIcon>

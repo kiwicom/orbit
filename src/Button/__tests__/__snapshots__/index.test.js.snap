@@ -2,6 +2,8 @@
 
 exports[`Button with icon should match snapshot 1`] = `
 <Button__StyledButton
+  ariaControls="element"
+  ariaExpanded={true}
   buttonRef={null}
   component="button"
   dataTest="test"

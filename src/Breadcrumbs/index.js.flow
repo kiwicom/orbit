@@ -8,6 +8,7 @@ import typeof BreadcrumbsItemType from "./BreadcrumbsItem";
 export type Props = {|
   ...Globals,
   children: React$Node,
+  onBack?: (ev?: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
 |};
 
 declare export default React$ComponentType<Props>;

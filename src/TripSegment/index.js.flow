@@ -27,6 +27,7 @@ export type Props = {|
   +arrivalTime: Translation,
   +duration: Translation,
   +initialExpanded?: boolean,
+  +tabIndex?: number,
   +onClick?: () => void | Promise<any>,
 |};
 

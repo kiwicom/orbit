@@ -295,8 +295,11 @@ class TripSegment extends React.PureComponent<Props, State> {
     }
   };
 
-  handleOnKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    if (ev.keyCode === KEY_CODE_MAP.ENTER || ev.keyCode === KEY_CODE_MAP.SPACE) {
+  handleOnKeyDown = (ev: KeyboardEvent<HTMLInputElement>) => {
+    if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+      this.handleToggle();
+    } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+      ev.preventDefault();
       this.handleToggle();
     }
   };

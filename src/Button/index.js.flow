@@ -40,6 +40,8 @@ export type Props = {|
   +iconLeft?: React$Node,
   +iconRight?: React$Node,
   +tabIndex?: string,
+  +ariaExpanded?: boolean,
+  +ariaControls?: string,
 |};
 
 declare export var StyledButton: ReactComponentStyled<Props>;

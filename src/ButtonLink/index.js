@@ -248,8 +248,6 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
     type = TYPES.PRIMARY,
     onClick,
     width = 0,
-    ariaExpanded,
-    ariaControls,
   } = props;
 
   const iconLeft = props.iconLeft || icon;

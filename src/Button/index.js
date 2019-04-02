@@ -467,8 +467,6 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
     block,
     loading = false,
     width = 0,
-    ariaExpanded,
-    ariaControls,
   } = props;
   const iconLeft = props.iconLeft || icon;
   const sizeIcon = size === ICON_SIZES.SMALL ? ICON_SIZES.SMALL : ICON_SIZES.MEDIUM;

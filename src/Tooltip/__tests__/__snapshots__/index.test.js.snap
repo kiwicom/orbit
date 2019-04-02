@@ -8,7 +8,7 @@ exports[`Tooltip it should match snapshot 1`] = `
     onFocus={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    tabIndex="0"
+    tabIndex={0}
   >
     <Airplane />
   </Tooltip__StyledTooltipChildren>

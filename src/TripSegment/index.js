@@ -232,7 +232,7 @@ export const StyledTripSegment = styled.div`
 `;
 
 StyledTripSegment.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const MilestoneIcon = ({ type }) => {
@@ -312,13 +312,14 @@ class TripSegment extends React.PureComponent<Props, State> {
       duration,
       carrier,
       dataTest,
+      tabIndex = 0,
     } = this.props;
     const { expanded, initialExpanded, contentHeight } = this.state;
 
     return (
       <StyledTripSegment
         dataTest={dataTest}
-        tabIndex="0"
+        tabIndex={tabIndex}
         role="button"
         aria-expanded={expanded}
         onKeyDown={this.handleOnKeyDown}

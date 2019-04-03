@@ -29,8 +29,6 @@ yarn add @kiwicom/orbit-components
 
 Don't forget to install the [styled-components](https://github.com/styled-components/styled-components/) `^4.0.0` also.
 
-You can try `orbit-components` on [CodeSandbox](https://codesandbox.io/s/github/designkiwicom/orbit-sandbox) as well.
-
 ## Usage
 1. Import fonts that are used in orbit-components:
 
@@ -54,6 +52,9 @@ import Alert from "@kiwicom/orbit-components/lib/Alert"
 If you want to use a custom theme inside your project, it’s necessary to generate a theme object from `orbit-design-tokens` and use it in `<ThemeProvider />` component from `styled-components`. See [this document](https://github.com/kiwicom/orbit-components/tree/master/.github/theming.md) for more information.
 
 For live preview check out [Storybook](https://kiwicom.github.io/orbit-components/) or [orbit.kiwi](https://orbit.kiwi).
+
+You can also try `orbit-components` live on [CodeSandbox](https://codesandbox.io/s/github/designkiwicom/orbit-sandbox).
+
 ## Main Sections:
 * [Components](https://github.com/kiwicom/orbit-components/tree/master/src/)
 * [Icons](https://github.com/kiwicom/orbit-components/tree/master/src/Icon/README.md)

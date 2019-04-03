@@ -18,8 +18,8 @@ Use this **ONLY** for reporting bugs. For requesting new features check [this li
 <!--- Not obligatory, but suggest a fix/reason for the bug, -->
 
 ## Steps to Reproduce
-<!--- Provide a link to a live example, or an unambiguous set of steps to -->
-<!--- reproduce this bug. Include code to reproduce, if relevant -->
+<!--- Provide a link to a live example - use CodeSandox https://codesandbox.io/s/github/designkiwicom/orbit-sandbox -->
+<!--- or provide an unambiguous set of steps to reproduce this bug -->
 1.
 2.
 3.

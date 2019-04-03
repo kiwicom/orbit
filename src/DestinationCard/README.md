@@ -49,6 +49,8 @@ Table below contains all types of the props available in `outbound` object.
 
 * You don't have to pass entire src of the image. Just `dubai_ae`, `paris_fr` etc. is enough.
 
+* `OnClick` is also called on `Enter` and `Space` keypresses.
+
 * If the DestinationCard should be used for one-way trip, don't use `inbound`, only `outbound` prop. The code may look like this:
 ```jsx
 <DestinationCard

@@ -32,14 +32,14 @@ import {
 import { isAlignCenter, isAlignEnd, isAlignStart } from "./helpers/isAlign";
 import { DEVICES_WIDTH } from "../utils/mediaQuery/consts";
 import tooltipPadding from "./helpers/tooltipPadding";
+import RandomID from "../utils/randomID";
 
 import type { Props, State, Aligns, Positions } from "./index";
 
 const StyledTooltipChildren = styled.span`
-  &:focus {
+  &:focus:active {
     outline: none;
   }
-
   ${StyledText} {
     position: relative;
     display: inline-block;
@@ -236,6 +236,10 @@ class Tooltip extends React.PureComponent<Props, State> {
   // TODO: ged rid off weak types
   closeButton: { current: any } = React.createRef();
 
+  componentDidMount() {
+    this.tooltipId = RandomID("tooltip");
+  }
+
   componentDidUpdate(prevProps: Props) {
     if (this.props !== prevProps) {
       this.getDimensions();
@@ -428,6 +432,8 @@ class Tooltip extends React.PureComponent<Props, State> {
     }
   };
 
+  tooltipId: string;
+
   render() {
     const {
       content,
@@ -435,6 +441,7 @@ class Tooltip extends React.PureComponent<Props, State> {
       size = SIZE_OPTIONS.SMALL,
       closeText = "Close",
       dataTest,
+      tabIndex = 0,
     } = this.props;
     const { shown, shownMobile, position, align } = this.state;
     const {
@@ -456,13 +463,16 @@ class Tooltip extends React.PureComponent<Props, State> {
           onFocus={this.handleIn}
           onBlur={this.handleOut}
           ref={this.container}
+          aria-describedby={this.tooltipId}
+          tabIndex={tabIndex}
         >
           {children}
         </StyledTooltipChildren>
         <Portal element="tooltips">
-          <StyledTooltip role="tooltip" data-test={dataTest}>
+          <StyledTooltip data-test={dataTest}>
             <StyledTooltipOverlay
               onClick={this.handleClose}
+              onFocus={this.handleOpen}
               shownMobile={shownMobile}
               ref={this.overlay}
             />
@@ -483,6 +493,9 @@ class Tooltip extends React.PureComponent<Props, State> {
               tooltipHeight={tooltipHeight}
               tooltipWidth={tooltipWidth}
               contentHeight={contentHeight}
+              role="tooltip"
+              aria-hidden={!shown}
+              id={this.tooltipId}
             >
               <StyledTooltipContent ref={this.content}>{content}</StyledTooltipContent>
               <StyledTooltipClose>

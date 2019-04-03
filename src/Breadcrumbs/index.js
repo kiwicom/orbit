@@ -33,17 +33,17 @@ StyledBackButtonWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const Breadcrumbs = ({ children, dataTest, onBack }: Props) => (
+const Breadcrumbs = ({ children, dataTest, onGoBack }: Props) => (
   <StyledBreadcrumbs aria-label="Breadcrumb" role="navigation" data-test={dataTest}>
     <StyledBreadcrumbsList vocab="http://schema.org/" typeof="BreadcrumbList">
-      {onBack && (
+      {onGoBack && (
         <StyledBackButtonWrapper>
           <Button
             iconLeft={<ChevronLeft />}
             circled
             type="secondary"
             size="small"
-            onClick={onBack}
+            onClick={onGoBack}
           />
         </StyledBackButtonWrapper>
       )}

@@ -44,6 +44,22 @@ storiesOf("ChoiceGroup", module)
     },
   )
   .add(
+    "Filter",
+    () => {
+      const label = text("Label", "What was the reason for your cancellation?");
+      return (
+        <ChoiceGroup label={label} onChange={action("onChange")} block reverseSelection>
+          <Checkbox label="Reason one" value="one" />
+          <Checkbox label="Reason two" value="two" />
+          <Checkbox label="Reason three" value="three" />
+        </ChoiceGroup>
+      );
+    },
+    {
+      info: "Playground of ChoiceGroup",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const dataTest = text("dataTest", "test");

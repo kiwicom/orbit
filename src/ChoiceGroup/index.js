@@ -34,6 +34,20 @@ StyledChoiceGroup.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledContentWrapper = styled.div`
+  width: 100%;
+  padding: 4px;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.orbit.paletteBlueLight};
+  }
+`;
+
+StyledContentWrapper.defaultProps = {
+  theme: defaultTheme,
+};
+
 class ChoiceGroup extends React.PureComponent<Props> {
   handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
     ev.persist();
@@ -51,6 +65,8 @@ class ChoiceGroup extends React.PureComponent<Props> {
       labelElement = LABEL_ELEMENTS.H4,
       error,
       children,
+      block,
+      reverseSelection,
     } = this.props;
     return (
       <StyledChoiceGroup data-test={dataTest}>
@@ -59,13 +75,17 @@ class ChoiceGroup extends React.PureComponent<Props> {
             {label}
           </Heading>
         )}
-        <Stack direction="column" spacing="condensed">
-          {React.Children.map(children, child =>
-            React.cloneElement(child, {
-              onChange: this.handleChange,
-              hasError: !!error,
-            }),
-          )}
+        <Stack direction="column" spacing={block ? "tight" : "condensed"}>
+          {React.Children.map(children, child => {
+            return (
+              <StyledContentWrapper block={block} reverseSelectio={reverseSelection}>
+                {React.cloneElement(child, {
+                  onChange: this.handleChange,
+                  hasError: !!error,
+                })}
+              </StyledContentWrapper>
+            );
+          })}
         </Stack>
         {error && (
           <FormFeedback type="error" fixed>

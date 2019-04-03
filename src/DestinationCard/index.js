@@ -199,12 +199,13 @@ class DestinationCard extends React.PureComponent<Props, State> {
   };
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
-    if (this.props.onClick) {
+    const { onClick } = this.props;
+    if (onClick) {
       if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-        this.props.onClick();
+        onClick();
       } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
         ev.preventDefault();
-        this.props.onClick();
+        onClick();
       }
     }
   };

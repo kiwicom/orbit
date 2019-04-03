@@ -1,9 +1,8 @@
 // @flow
-import * as React from "react";
 
 export type Props = {|
   +offset?: number,
-  +children: React.Node,
+  +children: React$Node,
 |};
 
 export type State = {|

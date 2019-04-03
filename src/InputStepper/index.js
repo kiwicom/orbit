@@ -7,6 +7,8 @@ import PlusCircle from "../icons/PlusCircle";
 import MinusCircle from "../icons/MinusCircle";
 import ButtonLink from "../ButtonLink";
 import InputField, { Input, Prefix } from "../InputField";
+import defaultTheme from "../defaultTheme";
+import KEY_CODE_MAP from "../common/keyMaps";
 
 import type { Props, State, ForwardedRef } from "./index";
 
@@ -15,6 +17,10 @@ const PrefixSuffix = styled(({ type, ...props }) => <div {...props} />)`
   z-index: 3;
   cursor: ${({ disabled }) => disabled && "not-allowed"};
 `;
+
+PrefixSuffix.defaultProps = {
+  theme: defaultTheme,
+};
 
 const StyledInputStepper = styled.div`
   width: 100%;
@@ -27,6 +33,21 @@ const StyledInputStepper = styled.div`
   }
 `;
 
+const StyledButtonWrapper = styled.div`
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
+      0 0 1px 3px rgba(1, 118, 210, 0.6); //TODO: Create token
+  }
+
+  &:focus:active {
+    box-shadow: none;
+  }
+`;
+
+StyledButtonWrapper.defaultProps = {
+  theme: defaultTheme,
+};
 class InputStepper extends React.Component<Props & ForwardedRef, State> {
   state = {
     value: this.props.defaultValue || 0,
@@ -61,11 +82,12 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
   };
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    ev.preventDefault();
-    if (ev.keyCode === 40) {
+    if (ev.keyCode === KEY_CODE_MAP.ARROW_DOWN) {
+      ev.preventDefault();
       this.decrementCounter();
     }
-    if (ev.keyCode === 38) {
+    if (ev.keyCode === KEY_CODE_MAP.ARROW_UP) {
+      ev.preventDefault();
       this.incrementCounter();
     }
   };
@@ -76,6 +98,24 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
 
     if (Number.isInteger(value) && value >= minValue && value <= maxValue) {
       this.setState({ value });
+    }
+  };
+
+  handleKeyDecrement = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
+    if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+      ev.preventDefault();
+      this.decrementCounter();
+    } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+      this.decrementCounter();
+    }
+  };
+
+  handleKeyIncrement = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
+    if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+      ev.preventDefault();
+      this.incrementCounter();
+    } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+      this.incrementCounter();
     }
   };
 
@@ -119,24 +159,28 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
           tabIndex={tabIndex}
           ref={forwardedRef}
           prefix={
-            <ButtonLink
-              disabled={disabled || value <= +minValue}
-              iconLeft={<MinusCircle color="secondary" />}
-              size={size}
-              onClick={this.decrementCounter}
-              transparent
-              component={PrefixSuffix}
-            />
+            <StyledButtonWrapper role="button" tabIndex="0" onKeyDown={this.handleKeyDecrement}>
+              <ButtonLink
+                disabled={disabled || value <= +minValue}
+                iconLeft={<MinusCircle color="secondary" />}
+                size={size}
+                onClick={this.decrementCounter}
+                transparent
+                component={PrefixSuffix}
+              />
+            </StyledButtonWrapper>
           }
           suffix={
-            <ButtonLink
-              disabled={disabled || value >= +maxValue}
-              iconLeft={<PlusCircle color="secondary" />}
-              size={size}
-              onClick={this.incrementCounter}
-              transparent
-              component={PrefixSuffix}
-            />
+            <StyledButtonWrapper role="button" tabIndex="0" onKeyDown={this.handleKeyIncrement}>
+              <ButtonLink
+                disabled={disabled || value >= +maxValue}
+                iconLeft={<PlusCircle color="secondary" />}
+                size={size}
+                onClick={this.incrementCounter}
+                transparent
+                component={PrefixSuffix}
+              />
+            </StyledButtonWrapper>
           }
         />
       </StyledInputStepper>

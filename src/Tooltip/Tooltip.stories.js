@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { text, select } from "@storybook/addon-knobs";
+import { text, select, number } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { POSITIONS, SIZE_OPTIONS } from "./consts";
@@ -136,17 +136,20 @@ storiesOf("Tooltip", module)
       const dataTest = text("dataTest", "test");
       const Icon = getIcon(getIcons("Airplane"));
       const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
+      const tabIndex = number("TabIndex", 0);
       const preferredPosition = select(
         "preferredPosition",
         Object.values(POSITIONS),
         POSITIONS.BOTTOM,
       );
+
       return (
         <Tooltip
           preferredPosition={preferredPosition}
           size={size}
           content={content}
           dataTest={dataTest}
+          tabIndex={tabIndex}
         >
           <Icon />
         </Tooltip>

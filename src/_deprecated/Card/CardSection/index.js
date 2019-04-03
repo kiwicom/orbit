@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../../defaultTokens";
+import defaultTheme from "../../../defaultTheme";
 
 import type { Props } from "./index";
 
@@ -20,7 +20,7 @@ export const StyledCardSection = styled.div`
 `;
 
 StyledCardSection.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const CardSection = ({ children, dataTest }: Props) => (

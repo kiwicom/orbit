@@ -4,7 +4,7 @@ import { shallow, mount } from "enzyme";
 
 import Heading from "../index";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "../consts";
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe("Heading in H2, type Title1, not inverted", () => {
@@ -38,7 +38,7 @@ describe("Heading in H2, type Title1, not inverted", () => {
   });
   it("should have margin-bottom", () => {
     const mounted = mount(<Heading spaceAfter={SPACINGS_AFTER.NORMAL}>{children}</Heading>);
-    expect(mounted).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
+    expect(mounted).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

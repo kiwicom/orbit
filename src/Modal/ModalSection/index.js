@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
 import { StyledModalFooter } from "../ModalFooter";
 import { withModalContext } from "../ModalContext";
@@ -54,7 +54,7 @@ export const StyledModalSection = styled.section`
 `;
 
 StyledModalSection.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class ModalSection extends React.PureComponent<Props> {
@@ -65,6 +65,7 @@ class ModalSection extends React.PureComponent<Props> {
       setHasModalSection();
     }
   }
+
   componentDidUpdate(prevProps: Props) {
     if (prevProps !== this.props) {
       this.callContextFunctions();

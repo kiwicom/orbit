@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 
 import type { Props, State } from "./index";
 
@@ -18,7 +18,7 @@ export const StyledSlide = styled.div`
 `;
 
 StyledSlide.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class Slide extends React.Component<Props, State> {
@@ -26,13 +26,12 @@ class Slide extends React.Component<Props, State> {
     maxHeight: 0,
   };
 
+  expandTimeout = null;
+
+  collapseTimeout = null;
+
   componentDidMount() {
     this.setMaxHeight();
-  }
-
-  getSnapshotBeforeUpdate(prevProps: Props) {
-    if (this.props.expanded === prevProps.expanded) return null;
-    return true;
   }
 
   componentDidUpdate(prevProps: Props, prevState: State, snapshot: null | true) {
@@ -64,6 +63,11 @@ class Slide extends React.Component<Props, State> {
     }
   }
 
+  getSnapshotBeforeUpdate(prevProps: Props) {
+    if (this.props.expanded === prevProps.expanded) return null;
+    return true;
+  }
+
   setMaxHeight = () => {
     const { maxHeight } = this.props;
     this.setState({
@@ -82,9 +86,6 @@ class Slide extends React.Component<Props, State> {
       maxHeight: 0,
     });
   };
-
-  expandTimeout = null;
-  collapseTimeout = null;
 
   render() {
     const { children, expanded = false } = this.props;

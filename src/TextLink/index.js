@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 
 import type { Props, GetLinkStyleProps } from "./index";
@@ -40,7 +40,7 @@ const IconContainer = styled(({ children, className }) => (
 `;
 
 IconContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const getLinkStyle = ({
@@ -95,7 +95,7 @@ export const StyledTextLink = styled(({ theme, type, ...props }) => (
 `;
 
 StyledTextLink.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const TextLink = ({

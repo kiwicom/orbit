@@ -178,3 +178,5 @@ If you need to wrap the children into custom component, wrap all of the children
   <ModalFooter />
 </Modal>
 ```
+## Accessibility
+* When Modal is closed return focus to the element that opened the modal. You can use `onClose` callback function to achieve this. 

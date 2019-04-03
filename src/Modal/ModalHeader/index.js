@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 
 import Text from "../../Text";
 import Heading, { StyledHeading } from "../../Heading";
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
 import { StyledModalSection } from "../ModalSection";
 import { left, right, rtlSpacing } from "../../utils/rtl";
@@ -27,7 +27,7 @@ const ModalTitle = styled.div`
 `;
 
 ModalTitle.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ModalDescription = styled.div`
@@ -35,7 +35,7 @@ const ModalDescription = styled.div`
 `;
 
 ModalDescription.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const StyledModalHeader = styled.div`
@@ -92,7 +92,7 @@ export const StyledModalHeader = styled.div`
 `;
 
 StyledModalHeader.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const MobileHeader = styled.div`
@@ -130,7 +130,7 @@ export const MobileHeader = styled.div`
 `;
 
 MobileHeader.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledModalHeaderContent = styled.div`
@@ -141,11 +141,13 @@ class ModalHeader extends React.PureComponent<Props> {
   componentDidMount() {
     this.callContextFunctions();
   }
+
   componentDidUpdate(prevProps: Props) {
     if (prevProps !== this.props) {
       this.callContextFunctions();
     }
   }
+
   callContextFunctions = () => {
     const { setDimensions, decideFixedFooter } = this.props;
     if (setDimensions) {

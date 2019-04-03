@@ -2,10 +2,11 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import Close from "../icons/Close";
-import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
+import { SIZES, CLOSE_BUTTON_DATA_TEST, FOCUSABLE_ELEMENT_SELECTORS } from "./consts";
+import KEY_CODE_MAP from "../common/keyMaps";
 import media, { breakpoints } from "../utils/mediaQuery";
 import { StyledModalFooter } from "./ModalFooter";
 import { MobileHeader, StyledModalHeader } from "./ModalHeader";
@@ -15,6 +16,7 @@ import { right } from "../utils/rtl";
 import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
 import { DEVICES_WIDTH } from "../utils/mediaQuery/consts";
+import randomID from "../utils/randomID";
 
 import type { Props, State } from "./index";
 
@@ -62,7 +64,7 @@ const ModalBody = styled.div`
 `;
 
 ModalBody.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ModalWrapper = styled.div`
@@ -94,7 +96,7 @@ const ModalWrapper = styled.div`
 `;
 
 ModalWrapper.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const CloseContainer = styled.div`
@@ -160,7 +162,7 @@ const CloseContainer = styled.div`
 `;
 
 CloseContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ModalWrapperContent = styled.div`
@@ -296,7 +298,7 @@ const ModalWrapperContent = styled.div`
 `;
 
 ModalWrapperContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class Modal extends React.PureComponent<Props, State> {
@@ -310,6 +312,14 @@ class Modal extends React.PureComponent<Props, State> {
     hasModalSection: false,
   };
 
+  modalContent: { current: any | HTMLElement } = React.createRef();
+
+  modalBody: { current: any | HTMLElement } = React.createRef();
+
+  closeButton: { current: React$ElementRef<*> | null } = React.createRef();
+
+  offset = 40;
+
   componentDidMount() {
     this.timeout = setTimeout(() => {
       this.setState({
@@ -317,7 +327,9 @@ class Modal extends React.PureComponent<Props, State> {
       });
       this.decideFixedFooter();
       this.setDimensions();
+      this.manageFocus();
     }, 15);
+    this.modalID = randomID("modal-");
     window.addEventListener("resize", this.handleResize);
   }
 
@@ -413,6 +425,7 @@ class Modal extends React.PureComponent<Props, State> {
       ev.stopPropagation();
       onClose(ev);
     }
+    this.keyboardHandler(ev);
   };
 
   handleClickOutside = (ev: MouseEvent) => {
@@ -428,10 +441,43 @@ class Modal extends React.PureComponent<Props, State> {
     }
   };
 
-  modalContent: { current: any | HTMLElement } = React.createRef();
-  modalBody: { current: any | HTMLElement } = React.createRef();
+  keyboardHandler = (e: SyntheticKeyboardEvent<HTMLElement>) => {
+    if (e.keyCode === KEY_CODE_MAP.TAB) {
+      // Rotate Focus
+      if (e.shiftKey && document.activeElement === this.firstFocusableEl) {
+        e.preventDefault();
+        this.lastFocusableEl.focus();
+      } else if (!e.shiftKey && document.activeElement === this.lastFocusableEl) {
+        e.preventDefault();
+        this.firstFocusableEl.focus();
+      }
+    }
+  };
+
+  manageFocus() {
+    const focusableElements = this.modalContent.current.querySelectorAll(
+      FOCUSABLE_ELEMENT_SELECTORS,
+    );
+
+    if (focusableElements.length > 0) {
+      const firstFocusableEl = focusableElements[0];
+      const lastFocusableEl = focusableElements[focusableElements.length - 1];
+
+      this.firstFocusableEl = firstFocusableEl;
+      this.lastFocusableEl = lastFocusableEl;
+      firstFocusableEl.focus();
+    } else {
+      this.modalBody.current.focus();
+    }
+  }
+
+  firstFocusableEl: HTMLElement;
+
+  lastFocusableEl: HTMLElement;
+
   timeout: TimeoutID;
-  offset = 40;
+
+  modalID: string;
 
   render() {
     const { onClose, children, size = SIZES.NORMAL, fixedFooter = false, dataTest } = this.props;
@@ -452,12 +498,16 @@ class Modal extends React.PureComponent<Props, State> {
         onClick={this.handleClickOutside}
         data-test={dataTest}
         ref={this.modalBody}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={this.modalID}
       >
         <ModalWrapper
           size={size}
           loaded={loaded}
           onScroll={this.handleMobileScroll}
           fixedFooter={fixedFooter}
+          id={this.modalID}
         >
           <ModalWrapperContent
             size={size}
@@ -478,6 +528,7 @@ class Modal extends React.PureComponent<Props, State> {
                   icon={<Close />}
                   transparent
                   dataTest={CLOSE_BUTTON_DATA_TEST}
+                  ref={this.closeButton}
                 />
               )}
             </CloseContainer>

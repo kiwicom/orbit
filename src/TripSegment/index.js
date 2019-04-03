@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import CarrierLogo, { StyledCarrierLogo } from "../CarrierLogo";
 import Airplane from "../icons/Airplane";
 import ShowMore from "../icons/ShowMore";
@@ -14,13 +14,9 @@ import { CARRIER_TYPE_OPTIONS } from "../CarrierLogo/consts";
 import { getSize } from "../Icon";
 import { ICON_SIZES } from "../Icon/consts";
 import { left, right, rtlSpacing } from "../utils/rtl";
+import KEY_CODE_MAP from "../common/keyMaps";
 
 import type { Props, State, ExpandedType } from "./index";
-
-export const StyledTripSegment = styled.div`
-  display: flex;
-  width: 100%;
-`;
 
 export const StyledTripSegmentMilestone = styled.div`
   display: flex;
@@ -41,7 +37,7 @@ export const StyledTripSegmentMilestone = styled.div`
 `;
 
 StyledTripSegmentMilestone.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTripSegmentMilestoneArrow = styled.div`
@@ -75,7 +71,7 @@ const StyledTripSegmentMilestoneArrow = styled.div`
 `;
 
 StyledTripSegmentMilestoneArrow.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTripSegmentContent = styled.div`
@@ -93,7 +89,7 @@ const StyledTripSegmentContent = styled.div`
 `;
 
 StyledTripSegmentContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledChevrons = styled.div`
@@ -107,7 +103,7 @@ const StyledChevrons = styled.div`
 `;
 
 StyledChevrons.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Chevrons = ({ expanded }: ExpandedType) => (
@@ -125,26 +121,10 @@ const StyledTripSegmentOverview = styled.div`
   ${StyledText} {
     line-height: 1.2;
   }
-  &:hover {
-    ${StyledTripSegmentContent} {
-      border-color: ${({ theme }) => theme.orbit.paletteCloudNormalHover};
-    }
-    ${StyledTripSegmentMilestone}, ${StyledChevrons} {
-      svg {
-        color: ${({ theme }) => theme.orbit.colorIconPrimary};
-      }
-    }
-    ${StyledTripSegmentMilestoneArrow} {
-      &:before {
-        border-color: transparent ${({ theme }) => theme.orbit.paletteCloudNormalHover} transparent
-          transparent;
-      }
-    }
-  }
 `;
 
 StyledTripSegmentOverview.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTripSegmentCarrier = styled.div`
@@ -155,7 +135,7 @@ const StyledTripSegmentCarrier = styled.div`
 `;
 
 StyledTripSegmentCarrier.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTripSegmentOverviewWrapper = styled.div`
@@ -174,7 +154,7 @@ const StyledTripSegmentOverviewWrapper = styled.div`
 `;
 
 StyledTripSegmentOverviewWrapper.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTripSegmentOverviewColumn = styled.div`
@@ -187,7 +167,7 @@ const StyledTripSegmentOverviewTime = styled.div`
 `;
 
 StyledTripSegmentOverviewTime.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTripSegmentChildren = styled.div`
@@ -207,7 +187,53 @@ const StyledTripSegmentChildren = styled.div`
 `;
 
 StyledTripSegmentChildren.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
+};
+
+export const StyledTripSegment = styled.div`
+  display: flex;
+  width: 100%;
+
+  &:focus {
+    outline: 0;
+
+    ${StyledTripSegmentContent} {
+      border-color: ${({ theme }) => theme.orbit.borderColorInputFocus};
+    }
+
+    ${StyledTripSegmentMilestone}, ${StyledChevrons} {
+      svg {
+        color: ${({ theme }) => theme.orbit.colorIconPrimary};
+      }
+    }
+    ${StyledTripSegmentMilestoneArrow} {
+      &:before {
+        border-color: transparent ${({ theme }) => theme.orbit.borderColorInputFocus} transparent
+          transparent;
+      }
+    }
+  }
+
+  &:hover {
+    ${StyledTripSegmentContent} {
+      border-color: ${({ theme }) => theme.orbit.paletteCloudNormalHover};
+    }
+    ${StyledTripSegmentMilestone}, ${StyledChevrons} {
+      svg {
+        color: ${({ theme }) => theme.orbit.colorIconPrimary};
+      }
+    }
+    ${StyledTripSegmentMilestoneArrow} {
+      &:before {
+        border-color: transparent ${({ theme }) => theme.orbit.paletteCloudNormalHover} transparent
+          transparent;
+      }
+    }
+  }
+`;
+
+StyledTripSegment.defaultProps = {
+  theme: defaultTheme,
 };
 
 const MilestoneIcon = ({ type }) => {
@@ -224,6 +250,8 @@ const MilestoneIcon = ({ type }) => {
 };
 
 class TripSegment extends React.PureComponent<Props, State> {
+  node: { current: any | HTMLDivElement } = React.createRef();
+
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -267,7 +295,15 @@ class TripSegment extends React.PureComponent<Props, State> {
     }
   };
 
-  node: { current: any | HTMLDivElement } = React.createRef();
+  handleOnKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
+    if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+      this.handleToggle();
+    } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+      ev.preventDefault();
+      this.handleToggle();
+    }
+  };
+
   timeout: TimeoutID;
 
   render() {
@@ -280,11 +316,18 @@ class TripSegment extends React.PureComponent<Props, State> {
       duration,
       carrier,
       dataTest,
+      tabIndex = 0,
     } = this.props;
     const { expanded, initialExpanded, contentHeight } = this.state;
 
     return (
-      <StyledTripSegment dataTest={dataTest}>
+      <StyledTripSegment
+        dataTest={dataTest}
+        tabIndex={tabIndex}
+        role="button"
+        aria-expanded={expanded}
+        onKeyDown={this.handleOnKeyDown}
+      >
         <StyledTripSegmentMilestone onClick={this.handleToggle}>
           <MilestoneIcon type={carrier.type || CARRIER_TYPE_OPTIONS.AIRLINE} />
           <StyledTripSegmentMilestoneArrow />
@@ -321,6 +364,7 @@ class TripSegment extends React.PureComponent<Props, State> {
             expanded={expanded}
             contentHeight={contentHeight}
             initialExpanded={initialExpanded}
+            aria-hidden={expanded}
           >
             <div ref={this.node}>{children}</div>
           </StyledTripSegmentChildren>

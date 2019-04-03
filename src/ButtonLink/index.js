@@ -1,8 +1,8 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { TYPES, SIZES, TOKENS } from "./consts";
 import { ICON_SIZES } from "../Icon/consts";
 import { getSize } from "../Icon";
@@ -130,7 +130,7 @@ const IconContainer = styled(({ className, children }) => (
 `;
 
 IconContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const StyledButtonLink = styled(
@@ -153,6 +153,8 @@ export const StyledButtonLink = styled(
     dataTest,
     submit,
     buttonRef,
+    ariaControls,
+    ariaExpanded,
     ...props
   }) => {
     const isButtonWithHref = component === "button" && props.href;
@@ -164,6 +166,8 @@ export const StyledButtonLink = styled(
         type={!isButtonWithHref ? buttonType : undefined}
         {...props}
         ref={buttonRef}
+        aria-controls={ariaControls}
+        aria-expanded={ariaExpanded}
       >
         {children}
       </Component>
@@ -189,34 +193,46 @@ export const StyledButtonLink = styled(
   padding: ${buttonSpacing()};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
   font-size: ${getSizeToken(TOKENS.fontSizeButton)};
-  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityButtonDisabled : "1")};
   transition: all 0.15s ease-in-out !important;
   outline: 0;
   text-decoration: none;
 
-  &:enabled:hover {
-    background: ${({ transparent }) => !transparent && getTypeToken(TOKENS.backgroundButtonHover)};
-    color: ${getTypeToken(TOKENS.colorTextButtonHover)}!important;
+  &:hover {
+    ${({ transparent, disabled }) =>
+      !disabled &&
+      css`
+        background: ${!transparent && getTypeToken(TOKENS.backgroundButtonHover)};
+        color: ${getTypeToken(TOKENS.colorTextButtonHover)}!important;
+      `};
   }
 
-  &:enabled:active {
-    transform: scale(${({ theme }) => theme.orbit.modifierScaleButtonActive});
-    background: ${({ transparent }) => !transparent && getTypeToken(TOKENS.backgroundButtonActive)};
-    color: ${getTypeToken(TOKENS.colorTextButtonActive)}!important;
+  &:active {
+    ${({ transparent, disabled, theme }) =>
+      !disabled &&
+      css`
+        transform: scale(${theme.orbit.modifierScaleButtonActive});
+        background: ${!transparent && getTypeToken(TOKENS.backgroundButtonActive)};
+        color: ${getTypeToken(TOKENS.colorTextButtonActive)}!important;
+      `};
   }
 
-  &:enabled:focus {
-    box-shadow: ${({ transparent, theme }) => !transparent && theme.orbit.boxShadowButtonFocus};
-
-    &:active {
-      box-shadow: none;
-    }
+  &:focus {
+    ${({ disabled, theme }) =>
+      !disabled &&
+      css`
+        box-shadow: 0 0 1px 1px ${theme.orbit.colorTextButtonWhiteBordered},
+          0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
+        &:active {
+          box-shadow: none;
+        }
+      `};
   }
 `;
 
 StyledButtonLink.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 // $FlowExpected
@@ -224,13 +240,14 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
   const {
     external,
     children,
-    component,
+    component = "button",
     href,
     size = SIZES.NORMAL,
     icon,
     iconRight,
     type = TYPES.PRIMARY,
     onClick,
+    width = 0,
   } = props;
 
   const iconLeft = props.iconLeft || icon;
@@ -243,6 +260,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       {...props}
       onClick={onClick}
       component={component}
+      size={size}
       onlyIcon={onlyIcon}
       sizeIcon={sizeIcon}
       type={type}
@@ -250,6 +268,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       rel={href && external ? "noopener noreferrer" : undefined}
       iconLeft={iconLeft}
       buttonRef={ref}
+      width={width}
     >
       {iconLeft && (
         <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon}>
@@ -265,15 +284,6 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
     </StyledButtonLink>
   );
 });
-
-ButtonLink.defaultProps = {
-  component: "button",
-  external: false,
-  type: "primary",
-  size: "normal",
-  width: 0,
-  transparent: false,
-};
 
 ButtonLink.displayName = "ButtonLink";
 

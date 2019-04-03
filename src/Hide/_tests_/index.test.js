@@ -2,7 +2,8 @@
 import * as React from "react";
 import { mount } from "enzyme";
 
-import Hide from "../";
+import Hide from "..";
+
 import { breakpoints } from "../../utils/mediaQuery/index";
 import Airplane from "../../icons/Airplane";
 import { DEVICES } from "../../utils/mediaQuery/consts";

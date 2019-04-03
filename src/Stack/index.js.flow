@@ -5,7 +5,7 @@
 import type { spaceAfter } from "../common/getSpacingToken/index";
 import type { Globals } from "../common/common.js.flow";
 
-export type Direction = "row" | "column";
+export type Direction = "row" | "column" | "row-reverse" | "column-reverse";
 
 export type Align = "start" | "end" | "center";
 

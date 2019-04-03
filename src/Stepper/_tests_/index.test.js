@@ -50,7 +50,7 @@ describe("Stepper", () => {
   });
   it("should execute onChange method", () => {
     const instance = component.instance();
-    instance.componentDidUpdate();
+    instance.incrementCounter();
     expect(onChange).toHaveBeenCalled();
   });
   it("should execute onFocus method", () => {

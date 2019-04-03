@@ -3,7 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { addScrollHandler, removeScrollHandler, getScrollingElement } from "../utils/scroll";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 
 import type { Props, State } from "./index";
 
@@ -20,7 +20,7 @@ const StyledStickyContent = styled.div`
 `;
 
 StyledStickyContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class Sticky extends React.Component<Props, State> {
@@ -31,6 +31,14 @@ class Sticky extends React.Component<Props, State> {
     initialTop: 0,
     width: 0,
   };
+
+  content: {
+    current: any | HTMLDivElement,
+  } = React.createRef();
+
+  sticky: {
+    current: any | HTMLDivElement,
+  } = React.createRef();
 
   componentDidMount() {
     this.handleTop();
@@ -91,13 +99,6 @@ class Sticky extends React.Component<Props, State> {
       this.stickyState(false, 0, parent.width);
     }
   };
-
-  content: {
-    current: any | HTMLDivElement,
-  } = React.createRef();
-  sticky: {
-    current: any | HTMLDivElement,
-  } = React.createRef();
 
   render() {
     const { children } = this.props;

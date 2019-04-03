@@ -942,7 +942,6 @@ exports[`Icon should match snapshot 1`] = `
             "toString": [Function],
             "warnTooManyClasses": [Function],
             "withComponent": [Function],
-            Symbol(Symbol.hasInstance): [Function],
           }
         }
         forwardedRef={null}
@@ -1871,17 +1870,23 @@ exports[`Icon with custom props should match snapshot 1`] = `
 }
 
 <Accommodation
+  ariaHidden={true}
+  ariaLabel="Accommodation"
   customColor="#FF0000"
   dataTest="test"
   size="large"
 >
   <OrbitIcon
+    ariaHidden={true}
+    ariaLabel="Accommodation"
     customColor="#FF0000"
     dataTest="test"
     size="large"
     viewBox="0 0 24 24"
   >
     <Icon__StyledIcon
+      ariaHidden={true}
+      ariaLabel="Accommodation"
       customColor="#FF0000"
       dataTest="test"
       size="large"
@@ -2333,6 +2338,8 @@ exports[`Icon with custom props should match snapshot 1`] = `
       viewBox="0 0 24 24"
     >
       <StyledComponent
+        ariaHidden={true}
+        ariaLabel="Accommodation"
         customColor="#FF0000"
         dataTest="test"
         forwardedComponent={
@@ -2808,7 +2815,6 @@ exports[`Icon with custom props should match snapshot 1`] = `
             "toString": [Function],
             "warnTooManyClasses": [Function],
             "withComponent": [Function],
-            Symbol(Symbol.hasInstance): [Function],
           }
         }
         forwardedRef={null}
@@ -3261,6 +3267,8 @@ exports[`Icon with custom props should match snapshot 1`] = `
         viewBox="0 0 24 24"
       >
         <Component
+          ariaHidden={true}
+          ariaLabel="Accommodation"
           className="c0"
           customColor="#FF0000"
           dataTest="test"
@@ -3713,6 +3721,8 @@ exports[`Icon with custom props should match snapshot 1`] = `
           viewBox="0 0 24 24"
         >
           <svg
+            aria-hidden="true"
+            aria-label="Accommodation"
             className="c0"
             data-test="test"
             preserveAspectRatio="xMidYMid meet"

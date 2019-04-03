@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 
 import type { Props, State } from "./index";
 
@@ -29,7 +29,7 @@ const StyledTileExpandable = styled.div`
 `;
 
 StyledTileExpandable.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class TileExpandable extends React.PureComponent<Props, State> {
@@ -65,6 +65,7 @@ class TileExpandable extends React.PureComponent<Props, State> {
   };
 
   timeout: TimeoutID;
+
   node: { current: any | HTMLDivElement };
 
   render() {

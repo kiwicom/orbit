@@ -1,8 +1,8 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { ICON_SIZES } from "../Icon/consts";
 import { TYPE_OPTIONS, SIZE_OPTIONS, TOKENS } from "./consts";
 import Loading, { StyledSpinner } from "../Loading";
@@ -283,7 +283,7 @@ const IconContainer = styled(({ className, children }) => (
 `;
 
 IconContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const StyledButton = styled(
@@ -306,6 +306,8 @@ export const StyledButton = styled(
     dataTest,
     submit,
     buttonRef,
+    ariaControls,
+    ariaExpanded,
     ...props
   }) => {
     const isButtonWithHref = component === "button" && props.href;
@@ -314,6 +316,8 @@ export const StyledButton = styled(
     return (
       <Component
         data-test={dataTest}
+        aria-controls={ariaControls}
+        aria-expanded={ariaExpanded}
         type={!isButtonWithHref ? buttonType : undefined}
         {...props}
         ref={buttonRef}
@@ -351,11 +355,10 @@ export const StyledButton = styled(
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
   font-size: ${getSizeToken(TOKENS.fontSizeButton)};
-  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   transition: all 0.15s ease-in-out !important;
   outline: 0;
   opacity: ${({ disabled, theme }) => disabled && theme.orbit.opacityButtonDisabled};
-  pointer-events: ${({ disabled }) => disabled && "none"};
   box-shadow: ${({ bordered, theme, type }) =>
     bordered &&
     `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)({
@@ -414,10 +417,16 @@ export const StyledButton = styled(
     }
   }
 
-  &:enabled:focus {
-    box-shadow: ${({ bordered, theme, type }) =>
-        bordered && `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)({ theme, type })},`}
-      ${({ theme }) => theme.orbit.boxShadowButtonFocus};
+  &:focus {
+    ${({ disabled, theme }) =>
+      !disabled &&
+      css`
+        box-shadow: 0 0 1px 1px ${theme.orbit.colorTextButtonWhiteBordered},
+          0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
+        &:active {
+          box-shadow: none;
+        }
+      `};
   }
 
   ${StyledSpinner} {
@@ -427,7 +436,7 @@ export const StyledButton = styled(
 `;
 
 StyledButton.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledButtonContent = styled.div`
@@ -439,7 +448,7 @@ const StyledButtonContent = styled.div`
 `;
 
 StyledButtonContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 // $FlowExpected

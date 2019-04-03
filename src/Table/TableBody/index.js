@@ -2,9 +2,9 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 
-import type { Props } from "./";
+import type { Props } from ".";
 
 export const StyledTableBody = styled(({ children, className }) => (
   <tbody className={className}>{children}</tbody>
@@ -17,7 +17,7 @@ export const StyledTableBody = styled(({ children, className }) => (
 `;
 
 StyledTableBody.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const TableBody = (props: Props) => <StyledTableBody>{props.children}</StyledTableBody>;

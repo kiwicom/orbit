@@ -8,7 +8,8 @@ import ListItem from "../../List/ListItem";
 import TripDate from "../TripDate";
 import TripLayover from "../TripLayover";
 import Clock from "../../icons/Clock";
-import TripSector from "../";
+
+import TripSector from "..";
 
 describe("TripSector", () => {
   const dataTest = "test";

@@ -1,10 +1,8 @@
 // @flow
 import * as React from "react";
-import { storiesOf, setAddon } from "@storybook/react";
+import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import styles from "@sambego/storybook-styles";
-import chaptersAddon from "react-storybook-addon-chapters";
-import { text, withKnobs, object, boolean } from "@storybook/addon-knobs";
+import { text, object, boolean } from "@storybook/addon-knobs";
 
 import List from "../List";
 import ListItem from "../List/ListItem";
@@ -14,191 +12,153 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import TripSegment from "./index";
 
-setAddon(chaptersAddon);
-
 storiesOf("TripSegment", module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    styles({
-      padding: "20px",
-    }),
-  )
-  .addWithChapters("Default", () => ({
-    info: "TripSegments are used for showing information about one trip.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <TripSegment
-                duration="3h"
-                carrier={{
-                  code: "FR",
-                  type: "airline",
-                  name: "Ryanair",
-                }}
-                departure="Berlin TXL"
-                departureTime="11:20"
-                arrival="Moscow VKO"
-                arrivalTime="4:20"
-                onClick={action("clicked")}
-              >
-                <List size="small" type="secondary">
-                  <ListItem
-                    icon={
-                      <CarrierLogo
-                        carriers={[
-                          {
-                            code: "FR",
-                            type: "airline",
-                            name: "Ryanair",
-                          },
-                        ]}
-                      />
-                    }
-                  >
-                    Airline: Ryanair
-                  </ListItem>
-                  <ListItem icon={<InformationCircle color="secondary" />}>
-                    Flight no: D8 1762
-                  </ListItem>
-                </List>
-              </TripSegment>
-            ),
-          },
-        ],
-      },
-    ],
-  }))
-  .addWithChapters("Shown by default", () => ({
-    info: "TripSegments are used for showing information about one trip.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <TripSegment
-                initialExpanded
-                duration="3h"
-                carrier={{
-                  code: "FR",
-                  type: "airline",
-                  name: "Ryanair",
-                }}
-                departure="Berlin TXL"
-                departureTime="11:20"
-                arrival="Moscow VKO"
-                arrivalTime="4:20"
-                onClick={action("clicked")}
-              >
-                <List size="small" type="secondary">
-                  <ListItem
-                    icon={
-                      <CarrierLogo
-                        carriers={[
-                          {
-                            code: "FR",
-                            type: "airline",
-                            name: "Ryanair",
-                          },
-                        ]}
-                      />
-                    }
-                  >
-                    Airline: Ryanair
-                  </ListItem>
-                  <ListItem icon={<InformationCircle color="secondary" />}>
-                    Flight no: D8 1762
-                  </ListItem>
-                </List>
-              </TripSegment>
-            ),
-          },
-        ],
-      },
-    ],
-  }))
-  .addWithChapters("Playground", () => {
-    const initialExpanded = boolean("initialExpanded", false);
-    const duration = text("duration", "3h");
-    const carrier = object("carrier", {
-      code: "FR",
-      type: "airline",
-      name: "Ryanair",
-    });
-    const departure = text("departureCity", "Berlin TXL");
-    const arrival = text("arrivalCity", "Moscow VKO");
-    const departureTime = text("departureTime", "11:20");
-    const arrivalTime = text("arrivalTime", "14:20");
-    const dataTest = text("dataTest", "test");
-
-    return {
-      info: "TripSegments are used for showing information about one trip.",
-      chapters: [
-        {
-          sections: [
-            {
-              sectionFn: () => (
-                <TripSegment
-                  initialExpanded={initialExpanded}
-                  duration={duration}
-                  carrier={carrier}
-                  departure={departure}
-                  departureTime={departureTime}
-                  arrival={arrival}
-                  arrivalTime={arrivalTime}
-                  onClick={action("clicked")}
-                  dataTest={dataTest}
-                >
-                  <List size="small" type="secondary">
-                    <ListItem icon={<CarrierLogo carriers={[carrier]} />}>
-                      Airline: {carrier.name}
-                    </ListItem>
-                    <ListItem icon={<InformationCircle color="secondary" />}>
-                      Flight no: D8 1762
-                    </ListItem>
-                  </List>
-                </TripSegment>
-              ),
-            },
-          ],
-        },
-      ],
-    };
-  })
-  .addWithChapters("RTL", () => ({
-    info: "This is a preview of this component in RTL setup.",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => (
-              <RenderInRtl>
-                <TripSegment
-                  carrier={{
+  .add(
+    "Default",
+    () => (
+      <TripSegment
+        duration="3h"
+        carrier={{
+          code: "FR",
+          type: "airline",
+          name: "Ryanair",
+        }}
+        departure="Berlin TXL"
+        departureTime="11:20"
+        arrival="Moscow VKO"
+        arrivalTime="4:20"
+        onClick={action("clicked")}
+      >
+        <List size="small" type="secondary">
+          <ListItem
+            icon={
+              <CarrierLogo
+                carriers={[
+                  {
                     code: "FR",
                     type: "airline",
                     name: "Ryanair",
-                  }}
-                  duration="2h"
-                  departure="Barcelona BCN"
-                  departureTime="6:30"
-                  arrival="Paris BVA"
-                  arrivalTime="8:30"
-                >
-                  <List size="small" type="secondary">
-                    <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
-                      Airline: Ryanair
-                    </ListItem>
-                    <ListItem icon={<InformationCircle color="secondary" />}>
-                      Flight no: D8 1762
-                    </ListItem>
-                  </List>
-                </TripSegment>
-              </RenderInRtl>
-            ),
-          },
-        ],
-      },
-    ],
-  }));
+                  },
+                ]}
+              />
+            }
+          >
+            Airline: Ryanair
+          </ListItem>
+          <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
+        </List>
+      </TripSegment>
+    ),
+    {
+      info: "TripSegments are used for showing information about one trip.",
+    },
+  )
+  .add(
+    "Shown by default",
+    () => (
+      <TripSegment
+        initialExpanded
+        duration="3h"
+        carrier={{
+          code: "FR",
+          type: "airline",
+          name: "Ryanair",
+        }}
+        departure="Berlin TXL"
+        departureTime="11:20"
+        arrival="Moscow VKO"
+        arrivalTime="4:20"
+        onClick={action("clicked")}
+      >
+        <List size="small" type="secondary">
+          <ListItem
+            icon={
+              <CarrierLogo
+                carriers={[
+                  {
+                    code: "FR",
+                    type: "airline",
+                    name: "Ryanair",
+                  },
+                ]}
+              />
+            }
+          >
+            Airline: Ryanair
+          </ListItem>
+          <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
+        </List>
+      </TripSegment>
+    ),
+    {
+      info: "TripSegments are used for showing information about one trip.",
+    },
+  )
+  .add(
+    "Playground",
+    () => {
+      const initialExpanded = boolean("initialExpanded", false);
+      const duration = text("duration", "3h");
+      const carrier = object("carrier", {
+        code: "FR",
+        type: "airline",
+        name: "Ryanair",
+      });
+      const departure = text("departureCity", "Berlin TXL");
+      const arrival = text("arrivalCity", "Moscow VKO");
+      const departureTime = text("departureTime", "11:20");
+      const arrivalTime = text("arrivalTime", "14:20");
+      const dataTest = text("dataTest", "test");
+
+      return (
+        <TripSegment
+          initialExpanded={initialExpanded}
+          duration={duration}
+          carrier={carrier}
+          departure={departure}
+          departureTime={departureTime}
+          arrival={arrival}
+          arrivalTime={arrivalTime}
+          onClick={action("clicked")}
+          dataTest={dataTest}
+        >
+          <List size="small" type="secondary">
+            <ListItem icon={<CarrierLogo carriers={[carrier]} />}>Airline: {carrier.name}</ListItem>
+            <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
+          </List>
+        </TripSegment>
+      );
+    },
+    {
+      info: "TripSegments are used for showing information about one trip.",
+    },
+  )
+  .add(
+    "RTL",
+    () => (
+      <RenderInRtl>
+        <TripSegment
+          carrier={{
+            code: "FR",
+            type: "airline",
+            name: "Ryanair",
+          }}
+          duration="2h"
+          departure="Barcelona BCN"
+          departureTime="6:30"
+          arrival="Paris BVA"
+          arrivalTime="8:30"
+        >
+          <List size="small" type="secondary">
+            <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
+              Airline: Ryanair
+            </ListItem>
+            <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
+          </List>
+        </TripSegment>
+      </RenderInRtl>
+    ),
+    {
+      info: "This is a preview of this component in RTL setup.",
+    },
+  );

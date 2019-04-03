@@ -3,7 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import media from "../../utils/mediaQuery";
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import { StyledButton } from "../../Button";
 import { rtlSpacing } from "../../utils/rtl";
 import { StyledButtonLink } from "../../ButtonLink";
@@ -23,7 +23,7 @@ const StyledChild = styled.div`
 `;
 
 StyledChild.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const StyledModalFooter = styled.div`
@@ -58,18 +58,20 @@ export const StyledModalFooter = styled.div`
 `;
 
 StyledModalFooter.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class ModalFooter extends React.PureComponent<Props> {
   componentDidMount() {
     this.callContextFunctions();
   }
+
   componentDidUpdate(prevProps: Props) {
     if (prevProps !== this.props) {
       this.callContextFunctions();
     }
   }
+
   callContextFunctions = () => {
     const { setDimensions, decideFixedFooter } = this.props;
     if (setDimensions) {
@@ -79,6 +81,7 @@ class ModalFooter extends React.PureComponent<Props> {
       decideFixedFooter();
     }
   };
+
   render() {
     const { flex = "0 1 auto", children, dataTest } = this.props;
     return (

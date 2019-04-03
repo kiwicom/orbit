@@ -1,16 +1,17 @@
 // @flow
-import * as rtl from "../";
-import defaultTokens from "../../../defaultTokens";
+import * as rtl from "..";
+
+import defaultTheme from "../../../defaultTheme";
 
 const disabledRTL = {
   theme: {
-    ...defaultTokens,
+    ...defaultTheme,
     rtl: false,
   },
 };
 const enabledRTL = {
   theme: {
-    ...defaultTokens,
+    ...defaultTheme,
     rtl: true,
   },
 };

@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
 import CardSection, { StyledCardSection } from "./CardSection";
@@ -47,13 +47,14 @@ const StyledChildWrapper = styled.div`
 `;
 
 StyledChildWrapper.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledCard = styled.div`
   width: 100%;
   box-sizing: border-box;
   position: relative;
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   margin-bottom: ${getSpacingToken};
 
   ${StyledCardHeader} {
@@ -89,7 +90,7 @@ const StyledCard = styled.div`
 `;
 
 StyledCard.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const CloseContainer = styled.div`
@@ -146,6 +147,7 @@ class Card extends React.Component<Props, State> {
   };
 
   isExpanded = (index: number) => this.state.expandedSections.indexOf(index) !== -1;
+
   isInitialExpanded = (index: number) => this.state.initialExpandedSections.indexOf(index) !== -1;
 
   isExpandableCardSection = (item: any) =>

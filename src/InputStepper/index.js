@@ -82,11 +82,11 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
   };
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    if (ev.keyCode === 40) {
+    if (ev.keyCode === KEY_CODE_MAP.ARROW_DOWN) {
       ev.preventDefault();
       this.decrementCounter();
     }
-    if (ev.keyCode === 38) {
+    if (ev.keyCode === KEY_CODE_MAP.ARROW_UP) {
       ev.preventDefault();
       this.incrementCounter();
     }
@@ -102,13 +102,19 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
   };
 
   handleKeyDecrement = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    if (ev.keyCode === KEY_CODE_MAP.SPACE || ev.keyCode === KEY_CODE_MAP.ENTER) {
+    if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+      ev.preventDefault();
+      this.decrementCounter();
+    } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
       this.decrementCounter();
     }
   };
 
   handleKeyIncrement = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    if (ev.keyCode === 32 || ev.keyCode === 13) {
+    if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+      ev.preventDefault();
+      this.incrementCounter();
+    } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
       this.incrementCounter();
     }
   };

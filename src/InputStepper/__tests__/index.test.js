@@ -60,26 +60,7 @@ describe(`InputStepper with help, prefix and suffix`, () => {
     expect(input.prop("required")).toBe(required);
     expect(inputFieldInput.render().prop("tabindex")).toBe(tabIndex);
   });
-});
-
-describe(`InputStepper shallow snapshot`, () => {
-  const size = SIZE_OPTIONS.NORMAL;
-  const label = "Label";
-  const defaultValue = 1;
-  const step = 2;
-  const tabIndex = "-1";
-  const help = "Help message";
-  const error = "Error message";
-  const name = "name";
-  const disabled = false;
-  const maxValue = 100;
-  const minValue = 1;
-  const required = false;
-  const onChange = jest.fn();
-  const onFocus = jest.fn();
-  const onBlur = jest.fn();
-
-  const component = shallow(
+  const shallowed = shallow(
     <InputStepper
       size={size}
       label={label}
@@ -98,8 +79,7 @@ describe(`InputStepper shallow snapshot`, () => {
       onBlur={onBlur}
     />,
   );
-
   it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
+    expect(shallowed).toMatchSnapshot();
   });
 });

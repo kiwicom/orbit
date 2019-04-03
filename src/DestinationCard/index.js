@@ -136,16 +136,12 @@ const StyledDestinationCard = styled(({ height, imageURL, theme, ...props }) => 
   overflow: hidden;
   cursor: pointer;
 
-  &:hover,
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
-      0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
+  &:hover {
     ${StyledOverlay} {
       opacity: 0;
     }
     ${StyledDestination} {
-      top: 0px;
+      top: 0;
     }
     ${StyledOverlayHover} {
       opacity: 1;
@@ -157,6 +153,11 @@ const StyledDestinationCard = styled(({ height, imageURL, theme, ...props }) => 
       opacity: 1;
       top: 0;
     }
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
+      0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
   }
 `;
 StyledDestinationCard.defaultProps = {
@@ -198,11 +199,13 @@ class DestinationCard extends React.PureComponent<Props, State> {
   };
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
-    if (
-      (ev.keyCode === KEY_CODE_MAP.ENTER || ev.keyCode === KEY_CODE_MAP.SPACE) &&
-      this.props.onClick
-    ) {
-      this.props.onClick();
+    if (this.props.onClick) {
+      if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+        this.props.onClick();
+      } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+        ev.preventDefault();
+        this.props.onClick();
+      }
     }
   };
 

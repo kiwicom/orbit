@@ -52,7 +52,7 @@ StyledShadow.defaultProps = {
 };
 
 export function getCountryProps(code: ?string, name: ?string): { code: string, name: ?string } {
-  const codeNormalized = code ? code.toUpperCase() : "ANYWHERE";
+  const codeNormalized = code ? code.toUpperCase().replace("-", "_") : "ANYWHERE";
   const countryCodeExists = codeNormalized in CODES;
 
   warning(countryCodeExists, "Country code not supported: %s", code);

@@ -26,6 +26,7 @@ Table below contains all types of the props available in ButtonLink component.
 | onClick       | `event => void \| Promise`      |                 | Function for handling onClick event.
 | ref           | `func`                          |                 | Prop for forwarded ref of the Button.
 | **size**      | [`enum`](#enum)                 | `"normal"`      | The size of the ButtonLink.
+| spaceAfter    | `enum`                          |                 | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | submit        | `boolean`                       | `false`         | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.
 | transparent   | `boolean`                       | `false`         | If `true`, the ButtonLink will not have `:hover` and `:active` state.
 | **type**      | [`enum`](#enum)                 | `"primary"`     | The type of ButtonLink.

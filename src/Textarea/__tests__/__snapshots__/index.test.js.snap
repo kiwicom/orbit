@@ -925,6 +925,7 @@ exports[`Textarea number with error and help should match snapshot 1`] = `
 exports[`Textarea with help should match snapshot 1`] = `
 <Textarea__Field
   fullHeight={true}
+  spaceAfter="normal"
   theme={
     Object {
       "orbit": Object {

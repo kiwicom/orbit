@@ -7,6 +7,7 @@ import ButtonLink from "../../ButtonLink";
 import TextLink from "../../TextLink";
 import Visibility from "../../icons/Visibility";
 import Search from "../../icons/Search";
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe(`InputField with help, prefix and suffix`, () => {
   const size = "normal";
@@ -24,6 +25,7 @@ describe(`InputField with help, prefix and suffix`, () => {
   const onChange = jest.fn();
   const onFocus = jest.fn();
   const onBlur = jest.fn();
+  const spaceAfter = SPACINGS_AFTER.NORMAL;
 
   const component = shallow(
     <InputField
@@ -39,6 +41,7 @@ describe(`InputField with help, prefix and suffix`, () => {
       tabIndex={tabIndex}
       readOnly={readOnly}
       autoComplete={autoComplete}
+      spaceAfter={spaceAfter}
       prefix={<Search />}
       suffix={<ButtonLink transparent icon={<Visibility />} />}
       help={
@@ -54,6 +57,7 @@ describe(`InputField with help, prefix and suffix`, () => {
   const prefix = component.find("InputField__Prefix");
   const input = component.find("InputField__Input");
   const suffix = component.find("InputField__Suffix");
+  const field = component.find("InputField__Field");
 
   it("should contain a label", () => {
     expect(
@@ -71,6 +75,7 @@ describe(`InputField with help, prefix and suffix`, () => {
   });
   it("should have passed props", () => {
     expect(input.prop("size")).toBe(size);
+    expect(field.prop("spaceAfter")).toBe(spaceAfter);
     expect(input.prop("type")).toBe(type);
     expect(
       component

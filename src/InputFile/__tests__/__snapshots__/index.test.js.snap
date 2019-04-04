@@ -1848,6 +1848,7 @@ exports[`InputFiInputFile with error should match snapshot 1`] = `
 
 exports[`InputFile with help should match snapshot 1`] = `
 <InputFile__Field
+  spaceAfter="normal"
   theme={
     Object {
       "orbit": Object {

@@ -10,6 +10,7 @@ import TYPE_OPTIONS from "../FormFeedback/consts";
 import SIZE_OPTIONS from "./consts";
 import type { Ref } from "../common/common.js.flow";
 import { right, rtlSpacing } from "../utils/rtl";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
 
@@ -25,7 +26,12 @@ const Label = styled.label`
   position: relative;
   display: block;
   width: 100%;
+  margin-bottom: ${getSpacingToken};
 `;
+
+Label.defaultProps = {
+  theme: defaultTheme,
+};
 
 const StyledSelect = styled(
   // $FlowExpected
@@ -205,10 +211,11 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
     tabIndex,
     dataTest,
     prefix,
+    spaceAfter,
   } = props;
   const filled = !!value;
   return (
-    <Label>
+    <Label spaceAfter={spaceAfter}>
       {label && (
         <FormLabel filled={filled} disabled={disabled}>
           {label}

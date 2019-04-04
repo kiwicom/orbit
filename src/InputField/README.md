@@ -35,6 +35,7 @@ Table below contains all types of the props available in InputField component.
 | **prefix**    | `React.Node`                  |              | The prefix component for the InputField. 
 | readOnly      | `boolean`                     | `"false"`    | If `true`, the InputField be readOnly.
 | ref           | `func`                        |              | Prop for forwarded ref of the InputField. [See Functional specs](#functional-specs)
+| spaceAfter    | `enum`                        |              | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | **size**      | [`enum`](#enum)               | `"normal"`   | The size of the InputField.
 | suffix        | `React.Node`                  |              | The suffix component for the InputField. [See Functional specs](#functional-specs)
 | **type**      | [`enum`](#enum)               | `"text"`     | The type of the InputField.

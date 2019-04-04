@@ -32,6 +32,7 @@ Table below contains all types of the props available in InputStepper component.
 | onFocus         | `event => void \| Promise`  |             | Function for handling onFocus event.
 | ref             | `func`                      |             | Prop for forwarded ref of the InputStepper. [See Functional specs](#functional-specs)
 | size            | [`enum`](#enum)             | `"normal"`  | The size of the InputStepper.
+| spaceAfter      | `enum`                      |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | step            | `number`                    | `1`         | Specifies the value of step to increment and decrement.
 
 ### enum

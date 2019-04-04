@@ -5,6 +5,7 @@
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals, Ref } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Type =
   | "primary"
@@ -22,6 +23,7 @@ export type Size = "small" | "normal" | "large";
 export type Props = {|
   ...Globals,
   ...Ref,
+  ...spaceAfter,
   +children?: React$Node,
   +component?: string | React$Node,
   +href?: string,

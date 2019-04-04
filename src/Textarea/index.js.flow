@@ -3,8 +3,11 @@
   DOCUMENTATION: https://orbit.kiwi/components/textarea/
 */
 import type { Globals, Translation } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
+  ...Globals,
+  ...spaceAfter,
   +size?: "small" | "normal",
   +name?: string,
   +label?: Translation,
@@ -20,7 +23,6 @@ export type Props = {|
   +onChange?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
-  ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;

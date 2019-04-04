@@ -9,6 +9,7 @@ import SIZE_OPTIONS from "./consts";
 import CountryFlag from "../CountryFlag";
 import { CODES } from "../CountryFlag/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import Select from "./index";
 
@@ -129,6 +130,7 @@ storiesOf("Select", module)
       const option = object("Options", objectOptions);
       const value = select("Value", [undefined].concat(...objectOptions.map(opt => opt.value)));
       const dataTest = text("dataTest", "test");
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
         <Select
@@ -143,6 +145,7 @@ storiesOf("Select", module)
           onFocus={action("onFocus")}
           dataTest={dataTest}
           value={value}
+          spaceAfter={spaceAfter}
         />
       );
     },

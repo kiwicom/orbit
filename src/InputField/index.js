@@ -10,6 +10,7 @@ import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
 import { StyledTag } from "../Tag";
 import type { Ref, Translation } from "../common/common.js.flow";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
 
@@ -54,6 +55,7 @@ const Field = styled.label`
   z-index: 2;
   flex: 1 1 100%;
   width: 100%;
+  margin-bottom: ${getSpacingToken};
 `;
 
 Field.defaultProps = {
@@ -335,10 +337,11 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
     tabIndex,
     readOnly,
     autoComplete,
+    spaceAfter,
   } = props;
 
   return (
-    <Field>
+    <Field spaceAfter={spaceAfter}>
       {label && !inlineLabel && <FormLabel label={label} isFilled={!!value} required={required} />}
       <InputContainer size={size} disabled={disabled} error={error}>
         {prefix && <Prefix size={size}>{prefix}</Prefix>}

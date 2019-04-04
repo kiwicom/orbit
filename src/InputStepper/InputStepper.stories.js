@@ -6,6 +6,7 @@ import { text, number, select, boolean } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS } from "../InputField/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import InputStepper from "./index";
 
@@ -69,6 +70,7 @@ storiesOf("InputStepper", module)
       const disabled = boolean("disabled", false);
       const required = boolean("required", false);
       const dataTest = text("dataTest", "test");
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       return (
         <InputStepper
           label={label}
@@ -86,6 +88,7 @@ storiesOf("InputStepper", module)
           onChange={action("onChange")}
           onFocus={action("onFocus")}
           onBlur={action("onBlur")}
+          spaceAfter={spaceAfter}
         />
       );
     },

@@ -8,6 +8,7 @@ import * as Icons from "../icons";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Stack from "../Stack";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import Button from "./index";
 
@@ -241,6 +242,7 @@ storiesOf("Button", module)
       const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
       const ariaExpanded = boolean("Aria expanded", false);
       const ariaControls = text("Aria controls", "element ID");
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
         <Button
@@ -262,6 +264,7 @@ storiesOf("Button", module)
           width={width}
           ariaControls={ariaControls}
           ariaExpanded={ariaExpanded}
+          spaceAfter={spaceAfter}
         >
           {title}
         </Button>

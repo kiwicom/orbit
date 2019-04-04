@@ -9,6 +9,7 @@ import ButtonLink from "../ButtonLink";
 import InputField, { Input, Prefix } from "../InputField";
 import defaultTheme from "../defaultTheme";
 import KEY_CODE_MAP from "../common/keyMaps";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props, State, ForwardedRef } from "./index";
 
@@ -24,6 +25,7 @@ PrefixSuffix.defaultProps = {
 
 const StyledInputStepper = styled.div`
   width: 100%;
+  margin-bottom: ${getSpacingToken};
   ${Input} {
     text-align: center;
   }
@@ -32,6 +34,10 @@ const StyledInputStepper = styled.div`
     pointer-events: auto;
   }
 `;
+
+StyledInputStepper.defaultProps = {
+  theme: defaultTheme,
+};
 
 const StyledButtonWrapper = styled.div`
   &:focus {
@@ -48,6 +54,7 @@ const StyledButtonWrapper = styled.div`
 StyledButtonWrapper.defaultProps = {
   theme: defaultTheme,
 };
+
 class InputStepper extends React.Component<Props & ForwardedRef, State> {
   state = {
     value: this.props.defaultValue || 0,
@@ -135,10 +142,11 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
       required,
       tabIndex,
       forwardedRef,
+      spaceAfter,
     } = this.props;
     const { value } = this.state;
     return (
-      <StyledInputStepper>
+      <StyledInputStepper spaceAfter={spaceAfter}>
         <InputField
           dataTest={dataTest}
           size={size}

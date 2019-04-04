@@ -9,6 +9,7 @@ import Loading, { StyledSpinner } from "../Loading";
 import { rtlSpacing } from "../utils/rtl";
 import { getSize } from "../Icon";
 import type { Ref } from "../common/common.js.flow";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
 
@@ -308,6 +309,7 @@ export const StyledButton = styled(
     buttonRef,
     ariaControls,
     ariaExpanded,
+    spaceAfter,
     ...props
   }) => {
     const isButtonWithHref = component === "button" && props.href;
@@ -365,6 +367,7 @@ export const StyledButton = styled(
       theme,
       type,
     })}`}; // Cannot resolve with 0 0 0 1px getTypeToken(TOKENS.borderColorButton)
+  margin-bottom: ${getSpacingToken};
 
   &:hover {
     background: ${({ disabled, bordered }) =>

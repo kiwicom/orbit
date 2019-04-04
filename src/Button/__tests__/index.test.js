@@ -6,6 +6,7 @@ import { shallow } from "enzyme";
 import Button from "../index";
 import Airplane from "../../icons/Airplane";
 import ChevronDown from "../../icons/ChevronDown";
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 const children = "button";
 const onClick = jest.fn();
@@ -13,8 +14,16 @@ const onClick = jest.fn();
 describe("Button", () => {
   const submit = true;
   const ref = React.createRef();
+  const spaceAfter = SPACINGS_AFTER.NORMAL;
   const component = shallow(
-    <Button size="normal" type="secondary" onClick={onClick} submit={submit} ref={ref}>
+    <Button
+      size="normal"
+      type="secondary"
+      onClick={onClick}
+      submit={submit}
+      ref={ref}
+      spaceAfter={spaceAfter}
+    >
       {children}
     </Button>,
   );
@@ -24,6 +33,9 @@ describe("Button", () => {
   });
   it("should have type submit", () => {
     expect(button.prop("submit")).toBe(submit);
+  });
+  it("should have spaceAfter", () => {
+    expect(button.prop("spaceAfter")).toBe(spaceAfter);
   });
   it("should execute onClick method", () => {
     button.simulate("click");

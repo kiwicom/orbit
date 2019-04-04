@@ -1,13 +1,13 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled, { css, withTheme } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import defaultTheme, { type ThemeProps } from "../defaultTheme";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import Close from "../icons/Close";
 import { SIZES, CLOSE_BUTTON_DATA_TEST, FOCUSABLE_ELEMENT_SELECTORS } from "./consts";
 import KEY_CODE_MAP from "../common/keyMaps";
-import media, { breakpoints } from "../utils/mediaQuery";
+import media, { getBreakpointWidth } from "../utils/mediaQuery";
 import { StyledModalFooter } from "./ModalFooter";
 import { MobileHeader, StyledModalHeader } from "./ModalHeader";
 import { StyledModalSection } from "./ModalSection";
@@ -15,7 +15,7 @@ import { StyledHeading } from "../Heading";
 import { right } from "../utils/rtl";
 import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
-import { DEVICES_WIDTH } from "../utils/mediaQuery/consts";
+import { QUERIES } from "../utils/mediaQuery/consts";
 import randomID from "../utils/randomID";
 
 import type { Props, State } from "./index";
@@ -102,7 +102,7 @@ ModalWrapper.defaultProps = {
 const CloseContainer = styled.div`
   display: flex;
   // -ms-page needs to set up for IE on max largeMobile
-  ${({ scrolled, fixedClose }) =>
+  ${({ scrolled, fixedClose, theme }) =>
     fixedClose || scrolled
       ? css`
           position: fixed;
@@ -110,7 +110,7 @@ const CloseContainer = styled.div`
             css`
               position: -ms-page;
             `,
-            `(max-width:${DEVICES_WIDTH.largeMobile - 1}px)`,
+            `(max-width:${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px)`,
           )};
         `
       : css`
@@ -269,39 +269,44 @@ const ModalWrapperContent = styled.div`
     `,
   )};
 
-  ${onlyIE(
-    css`
-      ${StyledModalFooter} {
-        // we need to apply static position for IE only when fullyScrolled and fixedFooter
-        // or fixed when fixedFooter (overwrite -ms-page)
-        position: ${({ fullyScrolled, fixedFooter }) =>
-          (fullyScrolled && fixedFooter && "static") || (fixedFooter && "fixed")};
-        // for IE there's need to be added inset box-shadow with same background as footer has
-        box-shadow: ${({ fixedFooter, theme }) =>
-          !fixedFooter && `inset 0 0 0 1px ${theme.orbit.paletteWhite}`};
-      }
-      // also we need to clear not wanted margins
-      ${({ fullyScrolled, fixedFooter }) =>
-        fullyScrolled &&
-        fixedFooter &&
-        css`
-          ${StyledModalSection}:last-of-type {
-            margin-bottom: 0;
-          }
-          ${StyledModalHeader} {
-            margin-bottom: ${({ hasModalSection }) => !hasModalSection && "0"};
-          }
-        `};
-    `,
-    breakpoints.largeMobile,
-  )};
+  ${({ theme }) =>
+    onlyIE(
+      css`
+        ${StyledModalFooter} {
+          // we need to apply static position for IE only when fullyScrolled and fixedFooter
+          // or fixed when fixedFooter (overwrite -ms-page)
+          position: ${({ fullyScrolled, fixedFooter }) =>
+            (fullyScrolled && fixedFooter && "static") || (fixedFooter && "fixed")};
+          // for IE there's need to be added inset box-shadow with same background as footer has
+          box-shadow: ${({ fixedFooter }) =>
+            !fixedFooter && `inset 0 0 0 1px ${theme.orbit.paletteWhite}`};
+        }
+        // also we need to clear not wanted margins
+        ${({ fullyScrolled, fixedFooter }) =>
+          fullyScrolled &&
+          fixedFooter &&
+          css`
+            ${StyledModalSection}:last-of-type {
+              margin-bottom: 0;
+            }
+            ${StyledModalHeader} {
+              margin-bottom: ${({ hasModalSection }) => !hasModalSection && "0"};
+            }
+          `};
+      `,
+      getBreakpointWidth(QUERIES.LARGEMOBILE, theme),
+    )};
 `;
 
 ModalWrapperContent.defaultProps = {
   theme: defaultTheme,
 };
 
-class Modal extends React.PureComponent<Props, State> {
+export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
+  static defaultProps = {
+    theme: defaultTheme,
+  };
+
   state = {
     scrolled: false,
     loaded: false,
@@ -349,7 +354,7 @@ class Modal extends React.PureComponent<Props, State> {
 
   setScrollPosition = (value: number) => {
     const { modalContent, modalBody } = this;
-    if (window?.innerWidth >= DEVICES_WIDTH.largeMobile) {
+    if (window?.innerWidth >= getBreakpointWidth(QUERIES.LARGEMOBILE, this.props.theme, true)) {
       if (modalBody?.current?.scrollTop) {
         modalBody.current.scrollTop = value;
       }
@@ -552,7 +557,9 @@ class Modal extends React.PureComponent<Props, State> {
   }
 }
 
-export default Modal;
+const ThemedModal = withTheme(PureModal);
+ThemedModal.displayName = "Modal";
+export default ThemedModal;
 
 export { default as ModalHeader } from "./ModalHeader";
 export { default as ModalSection } from "./ModalSection";

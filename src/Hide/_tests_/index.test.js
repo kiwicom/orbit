@@ -7,7 +7,7 @@ import Hide from "..";
 import Airplane from "../../icons/Airplane";
 import { DEVICES, QUERIES } from "../../utils/mediaQuery/consts";
 import { getBreakpointWidth } from "../../utils/mediaQuery/index";
-import defaultTheme from "../../defaultTheme";
+import theme from "../../defaultTheme";
 
 describe("Hide", () => {
   const on = ["smallMobile", "largeMobile", "largeDesktop"];
@@ -31,14 +31,10 @@ describe("Hide", () => {
         viewport !== DEVICES[0] &&
         (on.indexOf(viewport) !== -1
           ? expect(component).toHaveStyleRule("display", "none", {
-              media: getBreakpointWidth(viewport)({
-                theme: defaultTheme,
-              }),
+              media: getBreakpointWidth(viewport, theme),
             })
           : expect(component).toHaveStyleRule("display", "inline-block", {
-              media: getBreakpointWidth(viewport)({
-                theme: defaultTheme,
-              }),
+              media: getBreakpointWidth(viewport, theme),
             })),
     );
     expect(component).toHaveStyleRule("display", "none");
@@ -46,13 +42,13 @@ describe("Hide", () => {
   it("should be displayed block", () => {
     component.setProps({ block: true, on: on[1] });
     expect(component).toHaveStyleRule("display", "block", {
-      media: getBreakpointWidth(QUERIES.LARGEDESKTOP)({ theme: defaultTheme }),
+      media: getBreakpointWidth(QUERIES.LARGEDESKTOP, theme),
     });
   });
   it("should be none", () => {
     component.setProps({ block: true, on: on[1] });
     expect(component).toHaveStyleRule("display", "none", {
-      media: getBreakpointWidth(QUERIES.LARGEMOBILE)({ theme: defaultTheme }),
+      media: getBreakpointWidth(QUERIES.LARGEMOBILE, theme),
     });
   });
   it("should match snapshot", () => {

@@ -3,7 +3,7 @@ import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
-import media from "../utils/mediaQuery";
+import media, { getBreakpointWidth } from "../utils/mediaQuery";
 import {
   ALIGNS,
   POSITIONS,
@@ -33,6 +33,7 @@ import { isAlignCenter, isAlignEnd, isAlignStart } from "./helpers/isAlign";
 import tooltipPadding from "./helpers/tooltipPadding";
 import RandomID from "../utils/randomID";
 import type { ThemeProps } from "../defaultTheme";
+import { QUERIES } from "../utils/mediaQuery/consts";
 
 import type { Props, State, Aligns, Positions } from "./index";
 
@@ -424,7 +425,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
 
   handleOpen = () => {
     this.getDimensions();
-    if (this.windowWidth <= this.props.theme.orbit.widthBreakpointLargeMobile) {
+    if (this.windowWidth <= +getBreakpointWidth(QUERIES.LARGEMOBILE, this.props.theme, true)) {
       this.setState({ shownMobile: true });
     }
   };

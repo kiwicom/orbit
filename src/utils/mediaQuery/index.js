@@ -5,7 +5,7 @@ import { QUERIES } from "./consts";
 
 import type { MediaQueries, GetBreakpointWidth } from ".";
 
-export const getBreakpointWidth: GetBreakpointWidth = (name, pure) => ({ theme }) => {
+export const getBreakpointWidth: GetBreakpointWidth = (name, theme, pure) => {
   const tokens = {
     [QUERIES.MEDIUMMOBILE]: theme.orbit.widthBreakpointMediumMobile,
     [QUERIES.LARGEMOBILE]: theme.orbit.widthBreakpointLargeMobile,
@@ -24,7 +24,7 @@ const mediaQueries: MediaQueries = Object.keys(QUERIES).reduce(
     ...o,
     [QUERIES[name]]: style =>
       css`
-        @media ${({ theme }) => getBreakpointWidth(QUERIES[name])({ theme })} {
+        @media ${({ theme }) => getBreakpointWidth(QUERIES[name], theme)} {
           ${style};
         }
       `,

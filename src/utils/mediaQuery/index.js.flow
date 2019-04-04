@@ -1,7 +1,7 @@
 // @flow
 import type { Interpolation } from "styled-components";
 
-import type { ThemeProps } from "../../defaultTheme";
+import type { Theme } from "../../defaultTheme";
 
 export type Devices =
   | "largeDesktop"
@@ -24,7 +24,7 @@ type Queries = {|
 
 export type MediaQueries = $ObjMap<Queries, () => QueryFunction>;
 
-export type GetBreakpointWidth = (name: string, pure?: boolean) => ThemeProps => string;
+export type GetBreakpointWidth = (name: string, theme: Theme, pure?: boolean) => string;
 
 declare export default MediaQueries;
 

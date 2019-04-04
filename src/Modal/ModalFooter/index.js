@@ -39,7 +39,7 @@ export const StyledModalFooter = styled.div`
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   @media (max-width: ${({ theme }) =>
-      Number(getBreakpointWidth(QUERIES.LARGEMOBILE, true)({ theme })) - 1}px) {
+      +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
     ${StyledButton}, ${StyledButtonLink} {
       font-size: ${({ theme }) => theme.orbit.fontSizeButtonNormal};
       height: ${({ theme }) => theme.orbit.heightButtonNormal};

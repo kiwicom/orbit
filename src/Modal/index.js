@@ -110,7 +110,7 @@ const CloseContainer = styled.div`
             css`
               position: -ms-page;
             `,
-            `(max-width:${Number(getBreakpointWidth(QUERIES.LARGEMOBILE, true)({ theme })) - 1}px)`,
+            `(max-width:${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px)`,
           )};
         `
       : css`
@@ -294,7 +294,7 @@ const ModalWrapperContent = styled.div`
             }
           `};
       `,
-      getBreakpointWidth(QUERIES.LARGEMOBILE)({ theme }),
+      getBreakpointWidth(QUERIES.LARGEMOBILE, theme),
     )};
 `;
 
@@ -354,7 +354,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
 
   setScrollPosition = (value: number) => {
     const { modalContent, modalBody } = this;
-    if (window?.innerWidth >= this.props.theme.orbit.widthBreakpointLargeMobile) {
+    if (window?.innerWidth >= getBreakpointWidth(QUERIES.LARGEMOBILE, this.props.theme, true)) {
       if (modalBody?.current?.scrollTop) {
         modalBody.current.scrollTop = value;
       }

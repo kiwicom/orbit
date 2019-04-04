@@ -424,7 +424,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
 
   handleOpen = () => {
     this.getDimensions();
-    if (this.windowWidth <= this.props.theme.orbit.widthMediaQueryLargeMobile) {
+    if (this.windowWidth <= this.props.theme.orbit.widthBreakpointLargeMobile) {
       this.setState({ shownMobile: true });
     }
   };

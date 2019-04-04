@@ -7,11 +7,11 @@ import type { MediaQueries, GetBreakpointWidth } from ".";
 
 export const getBreakpointWidth: GetBreakpointWidth = (name, pure) => ({ theme }) => {
   const tokens = {
-    [QUERIES.MEDIUMMOBILE]: theme.orbit.widthMediaQueryMediumMobile,
-    [QUERIES.LARGEMOBILE]: theme.orbit.widthMediaQueryLargeMobile,
-    [QUERIES.TABLET]: theme.orbit.widthMediaQueryTablet,
-    [QUERIES.DESKTOP]: theme.orbit.widthMediaQueryDesktop,
-    [QUERIES.LARGEDESKTOP]: theme.orbit.widthMediaQueryLargeDesktop,
+    [QUERIES.MEDIUMMOBILE]: theme.orbit.widthBreakpointMediumMobile,
+    [QUERIES.LARGEMOBILE]: theme.orbit.widthBreakpointLargeMobile,
+    [QUERIES.TABLET]: theme.orbit.widthBreakpointTablet,
+    [QUERIES.DESKTOP]: theme.orbit.widthBreakpointDesktop,
+    [QUERIES.LARGEDESKTOP]: theme.orbit.widthBreakpointLargeDesktop,
   };
   if (pure) {
     return tokens[name];

@@ -354,7 +354,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
 
   setScrollPosition = (value: number) => {
     const { modalContent, modalBody } = this;
-    if (window?.innerWidth >= this.props.theme.orbit.widthMediaQueryLargeMobile) {
+    if (window?.innerWidth >= this.props.theme.orbit.widthBreakpointLargeMobile) {
       if (modalBody?.current?.scrollTop) {
         modalBody.current.scrollTop = value;
       }

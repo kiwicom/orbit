@@ -444,7 +444,11 @@ class Modal extends React.PureComponent<Props, State> {
   keyboardHandler = (e: SyntheticKeyboardEvent<HTMLElement>) => {
     if (e.keyCode === KEY_CODE_MAP.TAB) {
       // Rotate Focus
-      if (e.shiftKey && document.activeElement === this.firstFocusableEl) {
+      if (
+        e.shiftKey &&
+        (document.activeElement === this.firstFocusableEl ||
+          document.activeElement === this.modalBody.current)
+      ) {
         e.preventDefault();
         this.lastFocusableEl.focus();
       } else if (!e.shiftKey && document.activeElement === this.lastFocusableEl) {
@@ -465,10 +469,8 @@ class Modal extends React.PureComponent<Props, State> {
 
       this.firstFocusableEl = firstFocusableEl;
       this.lastFocusableEl = lastFocusableEl;
-      firstFocusableEl.focus();
-    } else {
-      this.modalBody.current.focus();
     }
+    if (this.modalBody.current) this.modalBody.current.focus();
   }
 
   firstFocusableEl: HTMLElement;

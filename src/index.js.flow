@@ -51,7 +51,7 @@ import typeof DeprecatedCardType from "./_deprecated/Card";
 import typeof DeprecatedCardHeaderType from "./_deprecated/Card/CardHeader";
 import typeof DeprecatedCardSectionType from "./_deprecated/Card/CardSection";
 import typeof DeprecatedCardContentType from "./_deprecated/Card/CardContent";
-import typeof mediaQueriesType, { breakpoints as breakpointsType } from "./utils/mediaQuery";
+import typeof mediaQueriesType from "./utils/mediaQuery";
 import typeof PortalType from "./Portal";
 import typeof ModalType from "./Modal";
 import typeof ModalHeaderType from "./Modal/ModalHeader";
@@ -151,4 +151,3 @@ declare export var geTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;
 
 declare export var mediaQueries: mediaQueriesType;
-declare export var breakpoints: breakpointsType;

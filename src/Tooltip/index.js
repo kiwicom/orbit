@@ -1,9 +1,9 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled, { css, withTheme } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
-import media from "../utils/mediaQuery";
+import media, { getBreakpointWidth } from "../utils/mediaQuery";
 import {
   ALIGNS,
   POSITIONS,
@@ -30,9 +30,10 @@ import {
   isVertical,
 } from "./helpers/isPosition";
 import { isAlignCenter, isAlignEnd, isAlignStart } from "./helpers/isAlign";
-import { DEVICES_WIDTH } from "../utils/mediaQuery/consts";
 import tooltipPadding from "./helpers/tooltipPadding";
 import RandomID from "../utils/randomID";
+import type { ThemeProps } from "../defaultTheme";
+import { QUERIES } from "../utils/mediaQuery/consts";
 
 import type { Props, State, Aligns, Positions } from "./index";
 
@@ -199,7 +200,11 @@ StyledTooltipOverlay.defaultProps = {
   theme: defaultTheme,
 };
 
-class Tooltip extends React.PureComponent<Props, State> {
+class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
+  static defaultProps = {
+    theme: defaultTheme,
+  };
+
   state = {
     position: POSITIONS.RIGHT,
     align: ALIGNS.CENTER,
@@ -420,7 +425,7 @@ class Tooltip extends React.PureComponent<Props, State> {
 
   handleOpen = () => {
     this.getDimensions();
-    if (this.windowWidth <= DEVICES_WIDTH.largeMobile) {
+    if (this.windowWidth <= +getBreakpointWidth(QUERIES.LARGEMOBILE, this.props.theme, true)) {
       this.setState({ shownMobile: true });
     }
   };
@@ -511,4 +516,6 @@ class Tooltip extends React.PureComponent<Props, State> {
   }
 }
 
-export default Tooltip;
+const ThemedTooltip = withTheme(Tooltip);
+ThemedTooltip.displayName = "Tooltip";
+export default ThemedTooltip;

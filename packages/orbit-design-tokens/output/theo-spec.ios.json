@@ -415,6 +415,12 @@
       "name": "opacityOverlay"
     },
     {
+      "value": 992,
+      "type": "number",
+      "category": "Breakpoints",
+      "name": "widthBreakpointDesktop"
+    },
+    {
       "value": "solid",
       "type": "string",
       "category": "Border style",
@@ -474,6 +480,12 @@
       "type": "color",
       "category": "Background colors",
       "name": "backgroundButtonFacebook"
+    },
+    {
+      "value": 576,
+      "type": "number",
+      "category": "Breakpoints",
+      "name": "widthBreakpointLargeMobile"
     },
     {
       "value": "rgb(63, 72, 84)",
@@ -1177,6 +1189,12 @@
       "type": "size",
       "category": "Size (width, height)",
       "name": "widthModalNormal"
+    },
+    {
+      "value": 414,
+      "type": "number",
+      "category": "Breakpoints",
+      "name": "widthBreakpointMediumMobile"
     },
     {
       "value": "rgb(255, 255, 255)",
@@ -2032,6 +2050,12 @@
       "name": "borderColorTable"
     },
     {
+      "value": 1200,
+      "type": "number",
+      "category": "Breakpoints",
+      "name": "widthBreakpointLargeDesktop"
+    },
+    {
       "value": "rgb(210, 28, 28)",
       "type": "color",
       "category": "Colors",
@@ -2487,6 +2511,12 @@
       "type": "color",
       "category": "Background colors",
       "name": "backgroundButtonCriticalHover"
+    },
+    {
+      "value": 768,
+      "type": "number",
+      "category": "Breakpoints",
+      "name": "widthBreakpointTablet"
     },
     {
       "value": "rgb(56, 64, 75)",

@@ -7,9 +7,9 @@ import { text, boolean, select, number } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import Textarea from "./index";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 storiesOf("Textarea", module)
   .add(

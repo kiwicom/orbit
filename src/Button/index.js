@@ -9,9 +9,9 @@ import Loading, { StyledSpinner } from "../Loading";
 import { rtlSpacing } from "../utils/rtl";
 import { getSize } from "../Icon";
 import type { Ref } from "../common/common.js.flow";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
-import getSpacingToken from "../common/getSpacingToken";
 
 const getSizeToken = name => ({ theme, size }) => {
   const tokens = {

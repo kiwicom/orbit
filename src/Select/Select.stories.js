@@ -9,9 +9,9 @@ import SIZE_OPTIONS from "./consts";
 import CountryFlag from "../CountryFlag";
 import { CODES } from "../CountryFlag/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import Select from "./index";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 const objectOptions = [
   { value: 1, label: "First item" },

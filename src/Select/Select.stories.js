@@ -11,6 +11,7 @@ import { CODES } from "../CountryFlag/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Select from "./index";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 const objectOptions = [
   { value: 1, label: "First item" },
@@ -129,6 +130,7 @@ storiesOf("Select", module)
       const option = object("Options", objectOptions);
       const value = select("Value", [undefined].concat(...objectOptions.map(opt => opt.value)));
       const dataTest = text("dataTest", "test");
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
         <Select
@@ -143,6 +145,7 @@ storiesOf("Select", module)
           onFocus={action("onFocus")}
           dataTest={dataTest}
           value={value}
+          spaceAfter={spaceAfter}
         />
       );
     },

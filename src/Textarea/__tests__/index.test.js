@@ -4,6 +4,7 @@ import { shallow } from "enzyme";
 
 import Textarea from "../index";
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "../consts";
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe(`Textarea with help`, () => {
   const size = SIZE_OPTIONS.NORMAL;
@@ -18,6 +19,7 @@ describe(`Textarea with help`, () => {
   const onChange = jest.fn();
   const onFocus = jest.fn();
   const onBlur = jest.fn();
+  const spaceAfter = SPACINGS_AFTER.NORMAL;
 
   const component = shallow(
     <Textarea
@@ -34,10 +36,12 @@ describe(`Textarea with help`, () => {
       onFocus={onFocus}
       onBlur={onBlur}
       dataTest={dataTest}
+      spaceAfter={spaceAfter}
     />,
   );
 
   const area = component.find("Textarea__StyledTextArea");
+  const field = component.find("Textarea__Field");
 
   it("should contain a label", () => {
     expect(
@@ -52,6 +56,7 @@ describe(`Textarea with help`, () => {
   });
   it("should have passed props", () => {
     expect(area.prop("size")).toBe(size);
+    expect(field.prop("spaceAfter")).toBe(spaceAfter);
     expect(area.prop("name")).toBe(name);
     expect(area.prop("value")).toBe(value);
     expect(area.prop("placeholder")).toBe(placeholder);

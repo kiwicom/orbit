@@ -9,6 +9,7 @@ import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Textarea from "./index";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 storiesOf("Textarea", module)
   .add(
@@ -111,6 +112,7 @@ storiesOf("Textarea", module)
       const resize = select("resize", Object.values(RESIZE_OPTIONS), RESIZE_OPTIONS.VERTICAL);
       const maxLength = number("maxLength", undefined);
       const dataTest = text("dataTest", "test");
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
         <Textarea
@@ -128,6 +130,7 @@ storiesOf("Textarea", module)
           onFocus={action("focus")}
           onBlur={action("blur")}
           dataTest={dataTest}
+          spaceAfter={spaceAfter}
         />
       );
     },

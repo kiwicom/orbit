@@ -2036,6 +2036,46 @@
         "categoryDescription": ""
       }
     },
+    "widthBreakpointMediumMobile": {
+      "value": 414,
+      "type": "number",
+      "category": "Breakpoints",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "widthBreakpointLargeMobile": {
+      "value": 576,
+      "type": "number",
+      "category": "Breakpoints",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "widthBreakpointTablet": {
+      "value": 768,
+      "type": "number",
+      "category": "Breakpoints",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "widthBreakpointDesktop": {
+      "value": 992,
+      "type": "number",
+      "category": "Breakpoints",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "widthBreakpointLargeDesktop": {
+      "value": 1200,
+      "type": "number",
+      "category": "Breakpoints",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "borderColorInput": {
       "value": "#bac7d5",
       "type": "color",

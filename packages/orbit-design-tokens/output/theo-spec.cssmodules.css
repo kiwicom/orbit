@@ -68,6 +68,7 @@
 @value padding-button-normal-with-right-icon: 0 12px 0 16px;
 @value background-button-critical-active: rgb(178, 23, 23);
 @value opacity-overlay: "0.8";
+@value width-breakpoint-desktop: 992;
 @value border-style-input: "solid";
 @value font-size-button-small: 12px;
 /* use for all basic elements like buttons, inputs, content containers */
@@ -79,6 +80,7 @@
 @value color-text-button-primary-active: rgb(255, 255, 255);
 @value color-text-button-link-primary: rgb(0, 169, 145);
 @value background-button-facebook: rgb(59, 89, 152);
+@value width-breakpoint-large-mobile: 576;
 @value border-color-button-secondary-bordered-hover: rgb(63, 72, 84);
 @value palette-red-light-active: rgb(241, 192, 192);
 @value padding-table-compact: 8px 12px;
@@ -197,6 +199,7 @@
 @value font-size-heading-title3: 16px;
 @value background-alert-critical: rgb(250, 232, 232);
 @value width-modal-normal: 740px;
+@value width-breakpoint-medium-mobile: 414;
 @value color-text-button-facebook-active: rgb(255, 255, 255);
 @value palette-green-light: rgb(231, 243, 232);
 @value palette-social-facebook: rgb(59, 89, 152);
@@ -340,6 +343,7 @@
 @value color-text-alert-success: rgb(6, 93, 18);
 @value padding-button-large-with-right-icon: 0 16px 0 28px;
 @value border-color-table: rgb(232, 237, 241);
+@value width-breakpoint-large-desktop: 1200;
 @value color-text-error: rgb(210, 28, 28);
 @value font-weight-heading-title5: "700";
 @value color-text-button-filled-hover: rgb(255, 255, 255);
@@ -417,6 +421,7 @@
 @value border-radius-large: 6px;
 @value padding-table: 12px 16px;
 @value background-button-critical-hover: rgb(189, 25, 25);
+@value width-breakpoint-tablet: 768;
 @value color-text-button-link-secondary-active: rgb(56, 64, 75);
 @value palette-green-dark: rgb(6, 93, 18);
 @value background-card: rgb(255, 255, 255);

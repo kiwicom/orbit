@@ -69,6 +69,7 @@
   <dimen name="PADDINGBUTTONNORMALWITHRIGHTICON" category="Spacing">0 12 0 16dp</dimen>
   <color name="BACKGROUNDBUTTONCRITICALACTIVE" category="Background colors">#ffb21717</color>
   <string name="OPACITYOVERLAY" category="Opacity">0.8</string>
+  <integer name="WIDTHBREAKPOINTDESKTOP" category="Breakpoints">992</integer>
   <string name="BORDERSTYLEINPUT" category="Border style">solid</string>
   <dimen name="FONTSIZEBUTTONSMALL" category="Font size">12dp</dimen>
   <dimen name="BORDERRADIUSNORMAL" category="Border radius">3dp</dimen>
@@ -79,6 +80,7 @@
   <color name="COLORTEXTBUTTONPRIMARYACTIVE" category="Colors">#ffffffff</color>
   <color name="COLORTEXTBUTTONLINKPRIMARY" category="Colors">#ff00a991</color>
   <color name="BACKGROUNDBUTTONFACEBOOK" category="Background colors">#ff3b5998</color>
+  <integer name="WIDTHBREAKPOINTLARGEMOBILE" category="Breakpoints">576</integer>
   <color name="BORDERCOLORBUTTONSECONDARYBORDEREDHOVER" category="Border color">#ff3f4854</color>
   <color name="PALETTEREDLIGHTACTIVE" category="Color palette">#fff1c0c0</color>
   <dimen name="PADDINGTABLECOMPACT" category="Spacing">8 12dp</dimen>
@@ -196,6 +198,7 @@
   <dimen name="FONTSIZEHEADINGTITLE3" category="Font size">16dp</dimen>
   <color name="BACKGROUNDALERTCRITICAL" category="Background colors">#fffae8e8</color>
   <dimen name="WIDTHMODALNORMAL" category="Size (width, height)">740dp</dimen>
+  <integer name="WIDTHBREAKPOINTMEDIUMMOBILE" category="Breakpoints">414</integer>
   <color name="COLORTEXTBUTTONFACEBOOKACTIVE" category="Colors">#ffffffff</color>
   <color name="PALETTEGREENLIGHT" category="Color palette">#ffe7f3e8</color>
   <color name="PALETTESOCIALFACEBOOK" category="Color palette">#ff3b5998</color>
@@ -338,6 +341,7 @@
   <color name="COLORTEXTALERTSUCCESS" category="Colors">#ff065d12</color>
   <dimen name="PADDINGBUTTONLARGEWITHRIGHTICON" category="Spacing">0 16 0 28dp</dimen>
   <color name="BORDERCOLORTABLE" category="Border color">#ffe8edf1</color>
+  <integer name="WIDTHBREAKPOINTLARGEDESKTOP" category="Breakpoints">1200</integer>
   <color name="COLORTEXTERROR" category="Colors">#ffd21c1c</color>
   <string name="FONTWEIGHTHEADINGTITLE5" category="Font weight">700</string>
   <color name="COLORTEXTBUTTONFILLEDHOVER" category="Colors">#ffffffff</color>
@@ -414,6 +418,7 @@
   <dimen name="BORDERRADIUSLARGE" category="Border radius">6dp</dimen>
   <dimen name="PADDINGTABLE" category="Spacing">12 16dp</dimen>
   <color name="BACKGROUNDBUTTONCRITICALHOVER" category="Background colors">#ffbd1919</color>
+  <integer name="WIDTHBREAKPOINTTABLET" category="Breakpoints">768</integer>
   <color name="COLORTEXTBUTTONLINKSECONDARYACTIVE" category="Colors">#ff38404b</color>
   <color name="PALETTEGREENDARK" category="Color palette">#ff065d12</color>
   <color name="BACKGROUNDCARD" category="Background colors">#ffffffff</color>

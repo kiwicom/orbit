@@ -10,6 +10,7 @@ import Select from "../Select";
 import { SIZE_OPTIONS } from "./consts";
 import CountryFlag from "../CountryFlag";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import InputGroup from "./index";
 
@@ -109,10 +110,10 @@ storiesOf("InputGroup", module)
         "Select Value",
         [null].concat(...selectOptions.map(opt => opt.value)),
       );
-
       const placeholder = text("Input Placeholder", "Placeholder");
       const inputValue = text("Input Value", undefined);
       const dataTest = text("dataTest", "test");
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
         <InputGroup
@@ -125,6 +126,7 @@ storiesOf("InputGroup", module)
           onFocus={action("onFocus")}
           onBlur={action("onBlur")}
           dataTest={dataTest}
+          spaceAfter={spaceAfter}
         >
           <Select options={selectOptions} value={selectValue} />
           <InputField placeholder={placeholder} value={inputValue} />

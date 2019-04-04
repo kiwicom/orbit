@@ -9,6 +9,7 @@ import { getSize } from "../Icon";
 import { rtlSpacing } from "../utils/rtl";
 import type { Ref } from "../common/common.js.flow";
 import { SIZE_OPTIONS } from "../Button/consts";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
 
@@ -155,6 +156,7 @@ export const StyledButtonLink = styled(
     buttonRef,
     ariaControls,
     ariaExpanded,
+    spaceAfter,
     ...props
   }) => {
     const isButtonWithHref = component === "button" && props.href;
@@ -198,6 +200,7 @@ export const StyledButtonLink = styled(
   transition: all 0.15s ease-in-out !important;
   outline: 0;
   text-decoration: none;
+  margin-bottom: ${getSpacingToken};
 
   &:hover {
     ${({ transparent, disabled }) =>

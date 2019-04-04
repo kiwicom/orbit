@@ -3,8 +3,11 @@
   DOCUMENTATION: https://orbit.kiwi/components/inputgroup/
 */
 import type { Globals, Translation } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
+  ...Globals,
+  ...spaceAfter,
   +label?: Translation,
   +flex?: string | Array<string>,
   +size?: "small" | "normal",
@@ -20,7 +23,6 @@ export type Props = {|
   +onBlur?: (
     ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
   ) => void | Promise<any>,
-  ...Globals,
 |};
 
 export type State = {|

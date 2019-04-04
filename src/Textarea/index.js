@@ -8,6 +8,7 @@ import FormLabel from "../FormLabel";
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import type { Ref } from "../common/common.js.flow";
 import { rtlSpacing } from "../utils/rtl";
+import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
 
@@ -20,6 +21,7 @@ const Field = styled.label`
   position: relative;
   // for usage with Stack
   flex: ${({ fullHeight }) => fullHeight && "1"};
+  margin-bottom: ${getSpacingToken};
 `;
 
 Field.defaultProps = {
@@ -106,10 +108,11 @@ const Textarea = React.forwardRef((props: Props, ref: Ref) => {
     disabled,
     resize = RESIZE_OPTIONS.VERTICAL,
     dataTest,
+    spaceAfter,
   } = props;
 
   return (
-    <Field fullHeight={props.fullHeight}>
+    <Field fullHeight={props.fullHeight} spaceAfter={spaceAfter}>
       {props.label && (
         <FormLabel filled={!!props.value} disabled={disabled}>
           {props.label}

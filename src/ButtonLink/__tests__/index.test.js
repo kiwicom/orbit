@@ -6,6 +6,7 @@ import { mount } from "enzyme";
 import ButtonLink from "../index";
 import Airplane from "../../icons/Airplane";
 import ChevronDown from "../../icons/ChevronDown";
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 const children = "ButtonLink";
 const href = "https://kiwi.com";
@@ -17,6 +18,7 @@ describe("ButtonLink with Icon", () => {
   const ref = React.createRef();
   const ariaExpanded = true;
   const ariaControls = "element";
+  const spaceAfter = SPACINGS_AFTER.NORMAL;
   const component = mount(
     <ButtonLink
       href={href}
@@ -27,6 +29,7 @@ describe("ButtonLink with Icon", () => {
       ref={ref}
       ariaExpanded={ariaExpanded}
       ariaControls={ariaControls}
+      spaceAfter={spaceAfter}
     >
       {children}
     </ButtonLink>,
@@ -43,6 +46,9 @@ describe("ButtonLink with Icon", () => {
   });
   it("should have type submit", () => {
     expect(button.prop("submit")).toBe(submit);
+  });
+  it("should have spaceAfter", () => {
+    expect(button.prop("spaceAfter")).toBe(spaceAfter);
   });
   it("should contain a title ", () => {
     expect(button.render().text()).toBe(children);

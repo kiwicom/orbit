@@ -2599,7 +2599,9 @@ exports[`Default Stack should match snapshot 1`] = `
                     "rules": Array [
                       "font-family:",
                       [Function],
-                      ";position:relative;display:block;z-index:2;flex:1 1 100%;width:100%;",
+                      ";position:relative;display:block;z-index:2;flex:1 1 100%;width:100%;margin-bottom:",
+                      [Function],
+                      ";",
                     ],
                   },
                   "defaultProps": Object {
@@ -13204,6 +13206,8 @@ exports[`Default Stack should match snapshot 1`] = `
                       [Function],
                       ";box-shadow:",
                       [Function],
+                      ";margin-bottom:",
+                      [Function],
                       ";&:hover{background:",
                       [Function],
                       ";box-shadow:",
@@ -18717,7 +18721,9 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                       "rules": Array [
                         "font-family:",
                         [Function],
-                        ";position:relative;display:block;z-index:2;flex:1 1 100%;width:100%;",
+                        ";position:relative;display:block;z-index:2;flex:1 1 100%;width:100%;margin-bottom:",
+                        [Function],
+                        ";",
                       ],
                     },
                     "defaultProps": Object {
@@ -29322,6 +29328,8 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                         [Function],
                         ";box-shadow:",
                         [Function],
+                        ";margin-bottom:",
+                        [Function],
                         ";&:hover{background:",
                         [Function],
                         ";box-shadow:",
@@ -34729,7 +34737,9 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                     "rules": Array [
                       "font-family:",
                       [Function],
-                      ";position:relative;display:block;z-index:2;flex:1 1 100%;width:100%;",
+                      ";position:relative;display:block;z-index:2;flex:1 1 100%;width:100%;margin-bottom:",
+                      [Function],
+                      ";",
                     ],
                   },
                   "defaultProps": Object {
@@ -45333,6 +45343,8 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                       ";transition:all 0.15s ease-in-out !important;outline:0;opacity:",
                       [Function],
                       ";box-shadow:",
+                      [Function],
+                      ";margin-bottom:",
                       [Function],
                       ";&:hover{background:",
                       [Function],

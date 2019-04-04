@@ -35,6 +35,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   outline: 0;
   -webkit-text-decoration: none;
   text-decoration: none;
+  margin-bottom: 12px;
 }
 
 .c0:hover {
@@ -64,6 +65,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   dataTest="test"
   external={true}
   href="https://kiwi.com"
+  spaceAfter="normal"
   submit={true}
   tabIndex="-1"
 >
@@ -78,6 +80,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
     rel="noopener noreferrer"
     size="normal"
     sizeIcon="medium"
+    spaceAfter="normal"
     submit={true}
     tabIndex="-1"
     target="_blank"
@@ -543,7 +546,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
             "isStatic": false,
-            "lastClassName": "iFDAbW",
+            "lastClassName": "eytoOq",
             "rules": Array [
               "font-family:",
               [Function],
@@ -567,7 +570,9 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
               [Function],
               ";opacity:",
               [Function],
-              ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;&:hover{",
+              ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;margin-bottom:",
+              [Function],
+              ";&:hover{",
               [Function],
               ";}&:active{",
               [Function],
@@ -1036,6 +1041,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
       rel="noopener noreferrer"
       size="normal"
       sizeIcon="medium"
+      spaceAfter="normal"
       submit={true}
       tabIndex="-1"
       target="_blank"
@@ -1499,6 +1505,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
         rel="noopener noreferrer"
         size="normal"
         sizeIcon="medium"
+        spaceAfter="normal"
         submit={true}
         tabIndex="-1"
         target="_blank"
@@ -2578,7 +2585,9 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
               [Function],
               ";opacity:",
               [Function],
-              ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;&:hover{",
+              ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;margin-bottom:",
+              [Function],
+              ";&:hover{",
               [Function],
               ";}&:active{",
               [Function],

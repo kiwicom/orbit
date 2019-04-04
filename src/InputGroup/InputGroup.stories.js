@@ -110,10 +110,10 @@ storiesOf("InputGroup", module)
         "Select Value",
         [null].concat(...selectOptions.map(opt => opt.value)),
       );
-
       const placeholder = text("Input Placeholder", "Placeholder");
       const inputValue = text("Input Value", undefined);
       const dataTest = text("dataTest", "test");
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
         <InputGroup
@@ -126,6 +126,7 @@ storiesOf("InputGroup", module)
           onFocus={action("onFocus")}
           onBlur={action("onBlur")}
           dataTest={dataTest}
+          spaceAfter={spaceAfter}
         >
           <Select options={selectOptions} value={selectValue} />
           <InputField placeholder={placeholder} value={inputValue} />
@@ -160,7 +161,6 @@ storiesOf("InputGroup", module)
         "Select Value",
         [null].concat(...selectOptions.map(opt => opt.value)),
       );
-      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       return (
         <RenderInRtl>
           <InputGroup
@@ -169,7 +169,6 @@ storiesOf("InputGroup", module)
             onChange={action("onChange")}
             onFocus={action("onFocus")}
             onBlur={action("onBlur")}
-            spaceAfter={spaceAfter}
           >
             <InputField placeholder="DD" />
             <Select options={selectOptions} value={selectValue} placeholder="Month" />

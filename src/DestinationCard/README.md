@@ -23,6 +23,7 @@ Table below contains all types of the props available in DestinationCard compone
 | **outbound**            | [`Outbound`](#outbound)          |                  | The outbound information about the trip. [See Functional specs](#functional-specs)
 | **price**               | `Translation`                    |                  | The price of the trip.
 | timeOfStay              | `Translation`                    |                  | The time of the stay for the trip. [See Functional specs](#functional-specs)
+| tabIndex                | `string`                         | `"0"`            | Specifies the tab order of an element
 
 ### Inbound
 Table below contains all types of the props available in `inbound` object.

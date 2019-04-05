@@ -75,7 +75,6 @@
     "styled-components": "^4.2.0"
   },
   "dependencies": {
-    "@kiwicom/js": "^0.6.0",
     "@kiwicom/orbit-design-tokens": "^0.5.0"
   },
   "devDependencies": {

@@ -4,7 +4,16 @@
 */
 import type { Globals } from "../common/common.js.flow";
 
-export type Type = "neutral" | "dark" | "info" | "success" | "warning" | "critical" | "white";
+export type Type =
+  | "neutral"
+  | "dark"
+  | "info"
+  | "success"
+  | "warning"
+  | "critical"
+  | "white"
+  | "infoInverted"
+  | "criticalInverted";
 
 export type Props = {|
   +children: React$Node,

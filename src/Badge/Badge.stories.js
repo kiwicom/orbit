@@ -55,6 +55,20 @@ storiesOf("Badge", module)
     },
   )
   .add(
+    "Info Inverted",
+    () => {
+      const content = text("Content", "Badge");
+      return (
+        <Badge type={TYPE_OPTIONS.INFO_INVERTED} icon={<Icons.Sightseeing />}>
+          {content}
+        </Badge>
+      );
+    },
+    {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
     "Success",
     () => {
       const content = text("Content", "Badge");
@@ -88,6 +102,20 @@ storiesOf("Badge", module)
       const content = text("Content", "Badge");
       return (
         <Badge type={TYPE_OPTIONS.CRITICAL} icon={<Icons.Passport />}>
+          {content}
+        </Badge>
+      );
+    },
+    {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Critical Inverted",
+    () => {
+      const content = text("Content", "Badge");
+      return (
+        <Badge type={TYPE_OPTIONS.CRITICAL_INVERTED} icon={<Icons.Sightseeing />}>
           {content}
         </Badge>
       );

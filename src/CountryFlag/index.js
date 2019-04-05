@@ -54,7 +54,7 @@ export function getCountryProps(code: ?string, name: ?string): { code: string, n
   const codeNormalized = code ? code.toUpperCase().replace("-", "_") : "ANYWHERE";
   const countryCodeExists = codeNormalized in CODES;
 
-  if (!countryCodeExists && process.env.NODE_ENV !== "production") {
+  if (!countryCodeExists && process.env.NODE_ENV !== "production" && code) {
     console.warn(`Country code not supported: ${code}`);
   }
   const countryCode = countryCodeExists ? CODES[codeNormalized] : CODES.ANYWHERE;

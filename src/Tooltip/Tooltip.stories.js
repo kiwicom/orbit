@@ -136,7 +136,7 @@ storiesOf("Tooltip", module)
       const dataTest = text("dataTest", "test");
       const Icon = getIcon(getIcons("Airplane"));
       const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
-      const tabIndex = number("TabIndex", 0);
+      const tabIndex = text("TabIndex", "0");
       const preferredPosition = select(
         "preferredPosition",
         Object.values(POSITIONS),

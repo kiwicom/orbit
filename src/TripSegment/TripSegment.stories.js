@@ -109,6 +109,7 @@ storiesOf("TripSegment", module)
       const departureTime = text("departureTime", "11:20");
       const arrivalTime = text("arrivalTime", "14:20");
       const dataTest = text("dataTest", "test");
+      const tabIndex = text("TabIndex", "0");
 
       return (
         <TripSegment
@@ -121,6 +122,7 @@ storiesOf("TripSegment", module)
           arrivalTime={arrivalTime}
           onClick={action("clicked")}
           dataTest={dataTest}
+          tabIndex={tabIndex}
         >
           <List size="small" type="secondary">
             <ListItem icon={<CarrierLogo carriers={[carrier]} />}>Airline: {carrier.name}</ListItem>

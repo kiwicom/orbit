@@ -15,18 +15,19 @@ setAddon(chaptersAddon);
 
 const CustomDiv = styled.div`
   height: 400px;
+  background: rgba(0, 169, 145, 0.2);
 `;
 
 storiesOf("Layout", module)
   .addDecorator(withKnobs)
-  .addWithChapters("Default", () => ({
+  .addWithChapters("SearchLayout", () => ({
     info: "List groups related information together and make content more scalable and organized.",
     chapters: [
       {
         sections: [
           {
             sectionFn: () => (
-              <Layout>
+              <Layout type="SearchLayout">
                 <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
                   <Card>
                     <CardSection>
@@ -46,6 +47,53 @@ storiesOf("Layout", module)
                     </CardSection>
                   </Card>
                 </Hide>
+              </Layout>
+            ),
+          },
+        ],
+      },
+    ],
+  }))
+  .addWithChapters("BookingLayout", () => ({
+    info: "List groups related information together and make content more scalable and organized.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <Layout type="BookingLayout">
+                <Card>
+                  <CardSection>
+                    <CustomDiv />
+                  </CardSection>
+                </Card>
+                <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
+                  <Card>
+                    <CardSection>
+                      <CustomDiv />
+                    </CardSection>
+                  </Card>
+                </Hide>
+              </Layout>
+            ),
+          },
+        ],
+      },
+    ],
+  }))
+  .addWithChapters("MMBLayout", () => ({
+    info: "List groups related information together and make content more scalable and organized.",
+    chapters: [
+      {
+        sections: [
+          {
+            sectionFn: () => (
+              <Layout type="MMBLayout">
+                <Card>
+                  <CardSection>
+                    <CustomDiv />
+                  </CardSection>
+                </Card>
               </Layout>
             ),
           },

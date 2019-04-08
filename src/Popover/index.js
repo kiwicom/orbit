@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 
 import Portal from "../Portal";
@@ -10,52 +10,45 @@ const StyledPopoverChild = styled.div`
   position: relative;
 `;
 
-class Popover extends React.PureComponent<Props, State> {
-  state = {
-    shown: false,
-  };
+const Popover = ({ children, content, preferredPosition, dataTest, open, width }: Props) => {
+  const [shown, setShown] = useState(false);
 
-  container: { current: any | HTMLDivElement } = React.createRef();
+  const container: { current: any | HTMLDivElement } = useRef(null);
 
-  handleOut = () => {
+  const handleOut = () => {
     // If open prop is present ignore custom handler
-    if (this.props.open === undefined) {
-      this.setState({ shown: false });
+    if (open === undefined) {
+      setShown({ shown: false });
     }
   };
 
-  handleClick = () => {
+  const handleClick = () => {
     // If open prop is present ignore custom handler
-    if (this.props.open === undefined) {
-      this.setState({ shown: !this.state.shown });
+    if (open === undefined) {
+      setShown({ shown: !shown });
     }
   };
 
-  render() {
-    const { shown } = this.state;
-    const { children, content, preferredPosition, dataTest, open, width } = this.props;
-
-    return (
-      <React.Fragment>
-        <StyledPopoverChild onClick={this.handleClick} ref={this.container}>
-          {children}
-        </StyledPopoverChild>
-        {(shown || open) && (
-          <Portal element="popovers">
-            <PopoverContentWrapper
-              width={width}
-              containerRef={this.container.current}
-              preferredPosition={preferredPosition}
-              onClose={this.handleOut}
-              dataTest={dataTest}
-            >
-              {content}
-            </PopoverContentWrapper>
-          </Portal>
-        )}
-      </React.Fragment>
-    );
-  }
-}
+  return (
+    <React.Fragment>
+      <StyledPopoverChild onClick={handleClick} ref={container}>
+        {children}
+      </StyledPopoverChild>
+      {(shown || open) && (
+        <Portal element="popovers">
+          <PopoverContentWrapper
+            width={width}
+            containerRef={container.current}
+            preferredPosition={preferredPosition}
+            onClose={handleOut}
+            dataTest={dataTest}
+          >
+            {content}
+          </PopoverContentWrapper>
+        </Portal>
+      )}
+    </React.Fragment>
+  );
+};
 
 export default Popover;

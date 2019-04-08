@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled, { css, keyframes } from "styled-components";
 
 import defaultTokens from "../../defaultTheme";
@@ -99,51 +99,40 @@ const StyledTooltipClose = styled.div`
 StyledTooltipClose.defaultProps = {
   theme: defaultTokens,
 };
-class PopoverContentWrapper extends React.PureComponent<Props, State> {
-  state = {
-    position: "",
-    anchor: "start",
-    positions: {
-      containerTop: 0,
-      containerLeft: 0,
-      containerHeight: 0,
-      containerWidth: 0,
-      popoverHeight: 0,
-      popoverWidth: 0,
-      windowWidth: 0,
-      windowHeight: 0,
-      contentHeight: 0,
-    },
-  };
 
-  popover: { current: any | HTMLDivElement } = React.createRef();
+const PopoverContentWrapper = ({
+  children,
+  closeText = "Close",
+  onClose,
+  width,
+  dataTest,
+  preferredPosition,
+  containerRef,
+}: Props) => {
+  const [position, setPosition] = useState("");
+  const [anchor, setAnchor] = useState("start");
+  const [positions, setPositions] = useState({
+    containerTop: 0,
+    containerLeft: 0,
+    containerHeight: 0,
+    containerWidth: 0,
+    popoverHeight: 0,
+    popoverWidth: 0,
+    windowWidth: 0,
+    windowHeight: 0,
+    contentHeight: 0,
+  });
 
-  content: { current: any | HTMLDivElement } = React.createRef();
+  const popover: { current: any | HTMLDivElement } = useRef(null);
 
-  overlay: { current: any | HTMLDivElement } = React.createRef();
+  const content: { current: any | HTMLDivElement } = useRef(null);
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.calculatePopoverPosition();
-      this.popover.current.focus();
-    }, 15);
-    window.addEventListener("resize", this.handleResize);
-  }
+  const overlay: { current: any | HTMLDivElement } = useRef(null);
 
-  componentDidUpdate(prevProps: Props) {
-    if (this.props.children !== prevProps.children) {
-      this.calculatePopoverPosition();
-    }
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.handleResize);
-  }
-
-  setDimensions() {
-    if (this.props.containerRef && this.popover && this.content && typeof window !== "undefined") {
-      const containerDimensions = this.props.containerRef.getBoundingClientRect(); // this.props.containerRef is passed with .current
-      const popoverDimensions = this.popover.current.getBoundingClientRect();
+  const setDimensions = () => {
+    if (containerRef && popover && content && typeof window !== "undefined") {
+      const containerDimensions = containerRef.getBoundingClientRect(); // props.containerRef is passed with .current
+      const popoverDimensions = popover.current.getBoundingClientRect();
 
       // container positions and dimensions for calculation
       const containerTop = containerDimensions.top;
@@ -159,26 +148,23 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight;
 
-      const contentHeight =
-        this.content.current && this.content.current.getBoundingClientRect().height;
+      const contentHeight = content.current && content.current.getBoundingClientRect().height;
 
-      this.setState({
-        positions: {
-          containerTop,
-          containerLeft,
-          containerHeight,
-          containerWidth,
-          popoverHeight,
-          popoverWidth,
-          windowWidth,
-          windowHeight,
-          contentHeight,
-        },
+      setPositions({
+        containerTop,
+        containerLeft,
+        containerHeight,
+        containerWidth,
+        popoverHeight,
+        popoverWidth,
+        windowWidth,
+        windowHeight,
+        contentHeight,
       });
     }
-  }
+  };
 
-  setPosition(desiredPositions: Positions[], desiredAnchor: Anchors[]) {
+  const setAnchorPosition = (desiredPositions: Positions[], desiredAnchor: Anchors[]) => {
     const {
       containerTop,
       containerLeft,
@@ -188,7 +174,7 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
       popoverWidth,
       windowHeight,
       windowWidth,
-    } = this.state.positions;
+    } = positions;
 
     const canBePositionTop = containerTop - popoverHeight > 0;
     const canBePositionBottom = containerTop + containerHeight + popoverHeight < windowHeight;
@@ -227,80 +213,93 @@ class PopoverContentWrapper extends React.PureComponent<Props, State> {
 
     // set the first valid position
     // ordering in POSITIONS const is important
-    const position = possiblePositions[0];
-    if (typeof position === "string") {
-      this.setState({ position });
+    const posPosition = possiblePositions[0];
+    if (typeof posPosition === "string") {
+      setPosition({ posPosition });
     }
 
-    const anchor = possibleAnchor[0];
-    if (typeof anchor === "string") {
-      this.setState({ anchor });
-    }
-  }
-
-  handleResize = () => {
-    this.calculatePopoverPosition();
-  };
-
-  handleClick = (ev: SyntheticEvent<HTMLElement>) => {
-    ev.stopPropagation();
-
-    if (ev.target === this.overlay?.current) {
-      this.props.onClose();
+    const posAnchor = possibleAnchor[0];
+    if (typeof posAnchor === "string") {
+      setAnchor({ posAnchor });
     }
   };
 
-  calculatePopoverPosition() {
-    this.setDimensions();
+  const calculatePopoverPosition = () => {
+    setDimensions();
 
-    const { preferredPosition } = this.props;
-
-    const positions = Object.keys(POSITIONS).map(k => POSITIONS[k]);
+    const mappedPositions = Object.keys(POSITIONS).map(k => POSITIONS[k]);
     const anchors = Object.keys(ANCHORS).map(k => ANCHORS[k]);
 
     if (preferredPosition) {
-      this.setPosition(
-        [preferredPosition, ...positions.filter(p => p !== preferredPosition)],
+      setAnchorPosition(
+        [preferredPosition, ...mappedPositions.filter(p => p !== preferredPosition)],
         anchors,
       );
     } else {
-      this.setPosition(positions, anchors);
+      setAnchorPosition(mappedPositions, anchors);
     }
-  }
+  };
 
-  render() {
-    const { position, anchor, positions } = this.state;
-    const { children, closeText = "Close", onClose, width, dataTest } = this.props;
-    return (
-      <React.Fragment>
-        <StyledPopoverParent
-          anchor={anchor}
-          position={position}
-          containerTop={positions.containerTop}
-          containerLeft={positions.containerLeft}
-          containerHeight={positions.containerHeight}
-          containerWidth={positions.containerWidth}
-          popoverHeight={positions.popoverHeight}
-          popoverWidth={positions.popoverWidth}
-          width={width}
-          ref={this.popover}
-          onClick={this.handleClick}
-          tabIndex="0"
-          data-test={dataTest}
-        >
-          <StyledPopoverContent ref={this.content}>
-            {children}
-            <StyledTooltipClose>
-              <Button type="secondary" block onClick={onClose}>
-                {closeText}
-              </Button>
-            </StyledTooltipClose>
-          </StyledPopoverContent>
-        </StyledPopoverParent>
-        <StyledOverlay ref={this.overlay} onClick={this.handleClick} />
-      </React.Fragment>
-    );
-  }
-}
+  const handleResize = () => {
+    calculatePopoverPosition();
+  };
+
+  const handleClick = (ev: SyntheticEvent<HTMLElement>) => {
+    ev.stopPropagation();
+
+    if (ev.target === overlay?.current) {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    // On mount effect
+    setTimeout(() => {
+      calculatePopoverPosition();
+      popover.current.focus();
+    }, 15);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    calculatePopoverPosition();
+  }, []);
+
+  console.log(positions);
+
+  return (
+    <React.Fragment>
+      <StyledPopoverParent
+        anchor={anchor}
+        position={position}
+        containerTop={positions.containerTop}
+        containerLeft={positions.containerLeft}
+        containerHeight={positions.containerHeight}
+        containerWidth={positions.containerWidth}
+        popoverHeight={positions.popoverHeight}
+        popoverWidth={positions.popoverWidth}
+        width={width}
+        ref={popover}
+        onClick={handleClick}
+        tabIndex="0"
+        data-test={dataTest}
+      >
+        <StyledPopoverContent ref={content}>
+          {children}
+          <StyledTooltipClose>
+            <Button type="secondary" block onClick={onClose}>
+              {closeText}
+            </Button>
+          </StyledTooltipClose>
+        </StyledPopoverContent>
+      </StyledPopoverParent>
+      <StyledOverlay ref={overlay} onClick={handleClick} />
+    </React.Fragment>
+  );
+};
 
 export default PopoverContentWrapper;

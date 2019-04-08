@@ -18,6 +18,7 @@ describe("ButtonLink with Icon", () => {
   const ref = React.createRef();
   const ariaExpanded = true;
   const ariaControls = "element";
+  const role = "button";
   const spaceAfter = SPACINGS_AFTER.NORMAL;
   const component = mount(
     <ButtonLink
@@ -30,6 +31,7 @@ describe("ButtonLink with Icon", () => {
       ariaExpanded={ariaExpanded}
       ariaControls={ariaControls}
       spaceAfter={spaceAfter}
+      role={role}
     >
       {children}
     </ButtonLink>,
@@ -65,6 +67,9 @@ describe("ButtonLink with Icon", () => {
   });
   it("should be external", () => {
     expect(button.prop("target")).toBe("_blank");
+  });
+  it("should be role", () => {
+    expect(button.prop("role")).toBe(role);
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

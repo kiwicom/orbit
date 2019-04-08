@@ -86,6 +86,8 @@ const StyledFileInput = styled.div`
   color: ${({ error, fileName, theme }) => getFileInputColor({ error, fileName }, theme)};
   width: 100%;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
 `;
 

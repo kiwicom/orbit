@@ -1263,11 +1263,6 @@
     "@types/istanbul-lib-coverage" "^1.1.0"
     "@types/yargs" "^12.0.9"
 
-"@kiwicom/js@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@kiwicom/js/-/js-0.6.0.tgz#0fd384d5a5e756a825f395f7b37baf325e768fbd"
-  integrity sha512-kNVXigH9tsGbqwkdfVTyUqutEV/yvt5DGm0zheMKHtqN5Slo22UH81RQaWgClA+rEx01iZfWUiVSkuPZDherKQ==
-
 "@kiwicom/orbit-design-tokens@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.5.0.tgz#a7e20bee3b994390f6abac05bf8cf747b9d1580b"

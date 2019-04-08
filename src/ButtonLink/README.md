@@ -33,6 +33,7 @@ Table below contains all types of the props available in ButtonLink component.
 | submit        | `boolean`                       | `false`         | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.
 | tabIndex      | `string`                        |                 | Specifies the tab order of an element.
 | transparent   | `boolean`                       | `false`         | If `true`, the ButtonLink will not have `:hover` and `:active` state.
+| tabIndex      | `string`                        |                 | Specifies the tab order of an element
 | **type**      | [`enum`](#enum)                 | `"primary"`     | The type of ButtonLink.
 | width         | `number`                        | `0`             | The width of the ButtonLink. Number is defined in `px`.
 

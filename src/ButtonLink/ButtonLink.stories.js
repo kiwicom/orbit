@@ -73,6 +73,7 @@ storiesOf("ButtonLink", module)
       const submit = boolean("Submit", false);
       const ariaExpanded = boolean("Aria expanded", false);
       const ariaControls = text("Aria controls", "element ID");
+      const tabIndex = text("tabIndex", "0");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
@@ -92,6 +93,7 @@ storiesOf("ButtonLink", module)
           submit={submit}
           ariaExpanded={ariaExpanded}
           ariaControls={ariaControls}
+          tabIndex={tabIndex}
           spaceAfter={spaceAfter}
         >
           {title}

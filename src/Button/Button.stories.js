@@ -242,6 +242,7 @@ storiesOf("Button", module)
       const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
       const ariaExpanded = boolean("Aria expanded", false);
       const ariaControls = text("Aria controls", "element ID");
+      const tabIndex = text("tabIndex", "0");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
@@ -264,6 +265,7 @@ storiesOf("Button", module)
           width={width}
           ariaControls={ariaControls}
           ariaExpanded={ariaExpanded}
+          tabIndex={tabIndex}
           spaceAfter={spaceAfter}
         >
           {title}

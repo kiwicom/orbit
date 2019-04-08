@@ -10,6 +10,8 @@ const resolvePopoverPosition = ({
   containerHeight,
   popoverHeight,
 }: StyledPosition) => {
+  console.log(position, POSITIONS.TOP, containerTop);
+
   if (position === POSITIONS.TOP) {
     return css`
       top: ${Math.floor(containerTop - popoverHeight - POPOVER_SPACE_BETWEEN)}px; // TODO: use token

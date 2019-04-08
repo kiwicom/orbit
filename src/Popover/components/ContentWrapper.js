@@ -109,7 +109,7 @@ const PopoverContentWrapper = ({
   preferredPosition,
   containerRef,
 }: Props) => {
-  const [position, setPosition] = useState("");
+  const [positionDirection, setPositionDirection] = useState("bottom");
   const [anchor, setAnchor] = useState("start");
   const [positions, setPositions] = useState({
     containerTop: 0,
@@ -176,6 +176,8 @@ const PopoverContentWrapper = ({
       windowWidth,
     } = positions;
 
+    console.log(positions);
+
     const canBePositionTop = containerTop - popoverHeight > 0;
     const canBePositionBottom = containerTop + containerHeight + popoverHeight < windowHeight;
 
@@ -214,13 +216,14 @@ const PopoverContentWrapper = ({
     // set the first valid position
     // ordering in POSITIONS const is important
     const posPosition = possiblePositions[0];
+    console.log(posPosition);
     if (typeof posPosition === "string") {
-      setPosition({ posPosition });
+      setPositionDirection(posPosition);
     }
 
     const posAnchor = possibleAnchor[0];
     if (typeof posAnchor === "string") {
-      setAnchor({ posAnchor });
+      setAnchor(posAnchor);
     }
   };
 
@@ -269,13 +272,11 @@ const PopoverContentWrapper = ({
     calculatePopoverPosition();
   }, []);
 
-  console.log(positions);
-
   return (
     <React.Fragment>
       <StyledPopoverParent
         anchor={anchor}
-        position={position}
+        position={positionDirection}
         containerTop={positions.containerTop}
         containerLeft={positions.containerLeft}
         containerHeight={positions.containerHeight}

@@ -33,6 +33,7 @@ export type Props = {|
   tabIndex?: string,
   +ariaExpanded?: boolean,
   +ariaControls?: string,
+  +role?: string,
 |};
 
 declare export var StyledButtonLink: ReactComponentStyled<Props>;

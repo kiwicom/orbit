@@ -9,20 +9,19 @@ import Button from "../../Button";
 describe("Popover", () => {
   const content = "Message for a user";
   const position = "bottom";
+  const open = true;
   const component = shallow(
-    <Popover content={content} preferredPosition={position}>
+    <Popover content={content} preferredPosition={position} open={open}>
       <Button>Open</Button>
     </Popover>,
   );
 
   it("it should create portal", () => {
-    component.setState({ shown: true });
     component.find("Portal");
     expect(component.find("Portal").exists()).toBe(true);
   });
 
   it("Should pass props", () => {
-    component.setState({ shown: true });
     expect(
       component
         .find("PopoverContentWrapper")

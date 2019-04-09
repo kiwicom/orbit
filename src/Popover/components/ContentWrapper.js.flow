@@ -6,26 +6,10 @@ export type Props = {|
   ...Globals,
   +children: React$Node,
   +closeText?: Translation,
-  +preferredPosition?: Positions,
+  +preferredPosition: Positions,
   +containerRef: any | HTMLDivElement,
   +width?: number,
   +onClose: () => void,
-|};
-
-export type State = {|
-  position: string,
-  anchor: string,
-  positions: {
-    containerTop: number,
-    containerLeft: number,
-    containerHeight: number,
-    containerWidth: number,
-    popoverHeight: number,
-    popoverWidth: number,
-    windowWidth: number,
-    windowHeight: number,
-    contentHeight: number,
-  },
 |};
 
 declare export default React$ComponentType<Props>;

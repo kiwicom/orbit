@@ -8,8 +8,8 @@ import { POSITIONS, ANCHORS } from "../consts";
 import Button from "../../Button";
 import resolvePopoverPosition from "../helpers/resolvePopoverPosition";
 import resolvePopoverAnchor from "../helpers/resolvePopoverAnchor";
-import type { Props, State } from "./ContentWrapper.js.flow";
-import type { Positions, Anchors } from "../index.js.flow";
+import type { Props } from "./ContentWrapper.js.flow";
+import type { Positions, Anchors, Dimensions } from "../index.js.flow";
 
 const showAnimation = keyframes`
   from {
@@ -48,6 +48,10 @@ const StyledPopoverParent = styled.div`
   padding-top: ${({ theme }) => theme.orbit.spaceMedium};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
   z-index: ${({ theme }) => theme.orbit.zIndexOnTheTop};
+
+  &:focus {
+    outline: 0;
+  }
 
   ${media.largeMobile(css`
     position: absolute;
@@ -102,15 +106,13 @@ StyledTooltipClose.defaultProps = {
 
 const PopoverContentWrapper = ({
   children,
-  closeText = "Close",
+  closeText,
   onClose,
   width,
   dataTest,
   preferredPosition,
   containerRef,
 }: Props) => {
-  const [positionDirection, setPositionDirection] = useState("bottom");
-  const [anchor, setAnchor] = useState("start");
   const [positions, setPositions] = useState({
     containerTop: 0,
     containerLeft: 0,
@@ -122,14 +124,14 @@ const PopoverContentWrapper = ({
     windowHeight: 0,
     contentHeight: 0,
   });
+  const [positionDirection, setPositionDirection] = useState<string>("bottom");
+  const [anchor, setAnchor] = useState<string>("start");
 
   const popover: { current: any | HTMLDivElement } = useRef(null);
-
   const content: { current: any | HTMLDivElement } = useRef(null);
-
   const overlay: { current: any | HTMLDivElement } = useRef(null);
 
-  const setDimensions = () => {
+  const getDimensions = () => {
     if (containerRef && popover && content && typeof window !== "undefined") {
       const containerDimensions = containerRef.getBoundingClientRect(); // props.containerRef is passed with .current
       const popoverDimensions = popover.current.getBoundingClientRect();
@@ -150,7 +152,7 @@ const PopoverContentWrapper = ({
 
       const contentHeight = content.current && content.current.getBoundingClientRect().height;
 
-      setPositions({
+      return {
         containerTop,
         containerLeft,
         containerHeight,
@@ -160,29 +162,22 @@ const PopoverContentWrapper = ({
         windowWidth,
         windowHeight,
         contentHeight,
-      });
+      };
     }
+    return null;
   };
 
-  const setAnchorPosition = (desiredPositions: Positions[], desiredAnchor: Anchors[]) => {
-    const {
-      containerTop,
-      containerLeft,
-      containerWidth,
-      containerHeight,
-      popoverHeight,
-      popoverWidth,
-      windowHeight,
-      windowWidth,
-    } = positions;
+  const setAnchorPosition = (
+    desiredPositions: Positions[],
+    desiredAnchor: Anchors[],
+    pos: Dimensions,
+  ) => {
+    const canBePositionTop = pos.containerTop - pos.popoverHeight > 0;
+    const canBePositionBottom =
+      pos.containerTop + pos.containerHeight + pos.popoverHeight < pos.windowHeight;
 
-    console.log(positions);
-
-    const canBePositionTop = containerTop - popoverHeight > 0;
-    const canBePositionBottom = containerTop + containerHeight + popoverHeight < windowHeight;
-
-    const canBeAnchorLeft = containerLeft + popoverWidth < windowWidth;
-    const canBeAnchorRight = containerLeft + containerWidth >= popoverWidth;
+    const canBeAnchorLeft = pos.containerLeft + pos.popoverWidth < pos.windowWidth;
+    const canBeAnchorRight = pos.containerLeft + pos.containerWidth >= pos.popoverWidth;
     // returns the position name if the position can be set
     const isInside = (p: Positions) => {
       if (p === POSITIONS.TOP && canBePositionTop) {
@@ -216,7 +211,6 @@ const PopoverContentWrapper = ({
     // set the first valid position
     // ordering in POSITIONS const is important
     const posPosition = possiblePositions[0];
-    console.log(posPosition);
     if (typeof posPosition === "string") {
       setPositionDirection(posPosition);
     }
@@ -228,23 +222,30 @@ const PopoverContentWrapper = ({
   };
 
   const calculatePopoverPosition = () => {
-    setDimensions();
-
     const mappedPositions = Object.keys(POSITIONS).map(k => POSITIONS[k]);
     const anchors = Object.keys(ANCHORS).map(k => ANCHORS[k]);
 
     if (preferredPosition) {
-      setAnchorPosition(
+      return [
         [preferredPosition, ...mappedPositions.filter(p => p !== preferredPosition)],
         anchors,
-      );
-    } else {
-      setAnchorPosition(mappedPositions, anchors);
+      ];
+      // setAnchorPosition(
+      //   [preferredPosition, ...mappedPositions.filter(p => p !== preferredPosition)],
+      //   anchors,
+      // );
     }
+    return [[preferredPosition, ...mappedPositions.filter(p => p !== preferredPosition)], anchors];
   };
 
   const handleResize = () => {
-    calculatePopoverPosition();
+    const dimensions = getDimensions();
+    const popPos = calculatePopoverPosition();
+
+    if (dimensions) {
+      setAnchorPosition(popPos[0], popPos[1], dimensions);
+      setPositions(dimensions);
+    }
   };
 
   const handleClick = (ev: SyntheticEvent<HTMLElement>) => {
@@ -257,19 +258,13 @@ const PopoverContentWrapper = ({
 
   useEffect(() => {
     // On mount effect
-    setTimeout(() => {
-      calculatePopoverPosition();
-      popover.current.focus();
-    }, 15);
+    handleResize();
+    popover.current.focus();
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
-
-  useEffect(() => {
-    calculatePopoverPosition();
   }, []);
 
   return (
@@ -293,7 +288,7 @@ const PopoverContentWrapper = ({
           {children}
           <StyledTooltipClose>
             <Button type="secondary" block onClick={onClose}>
-              {closeText}
+              {closeText || "Close"}
             </Button>
           </StyledTooltipClose>
         </StyledPopoverContent>

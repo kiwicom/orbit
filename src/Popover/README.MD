@@ -15,17 +15,14 @@ Table below contains all types of the props available in the Popover component.
 
 | Name              | Type                  | Default         | Description                      |
 | :---------------- | :-------------------- | :-------------- | :------------------------------- |
-| dataTest          | `string`              |                 | Optional prop for testing purposes.
-| **children**      | `React.Node`          |                 | The reference element where the Popover will appear.
 | **content**       | `React.Node`          |                 | The content to display in the Popover.
-| preferredPosition | [`enum`](#enum)       | `"bottom"`      | The preferred position to choose [See Functional specs](#functional-specs)
 | closeText         | `Translation`         | `"Close"`       | The text of the close button to display on mobile devices.
+| **children**      | `React.Node`          |                 | The reference element where the Popover will appear.
+| dataTest          | `string`              |                 | Optional prop for testing purposes.
+| open              | `boolean`             |                 | Prop for programatically controling Popover inner state. If `open` is present open 
+| preferredPosition | [`enum`](#enum)       | `"bottom"`      | The preferred position to choose [See Functional specs](#functional-specs)
+triggers are ignored
 | width             | `number`              |                 | Width of popover, if not set the with is set to `auto`.
-| open              | `boolean`             |                 | Prop for programatically controling Popover inner state. If `open` is present open triggers are ignored
-
-
-  +open?: boolean,
-  +width?: number,
 
 ## enum
 | position          | 

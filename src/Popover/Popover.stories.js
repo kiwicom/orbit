@@ -12,9 +12,24 @@ import ListItem from "../List/ListItem";
 import Button from "../Button";
 import ButtonLink from "../ButtonLink";
 import ListChoice from "../ListChoice";
+import Text from "../Text";
 import * as Icons from "../icons";
 
 import Popover from "./index";
+
+const content = (
+  <Stack>
+    <List>
+      <ListItem>24,000 locations around the globe</ListItem>
+      <ListItem>
+        Lowest price car rental in
+        <strong>Warsaw</strong>
+      </ListItem>
+      <ListItem>From 3 star budget to 5 star luxury</ListItem>
+    </List>
+    <ButtonLink>Provide action</ButtonLink>
+  </Stack>
+);
 
 storiesOf("Popover", module)
   .addDecorator(withKnobs)
@@ -23,21 +38,7 @@ storiesOf("Popover", module)
     "Default",
     () => {
       return (
-        <Popover
-          content={
-            <Stack>
-              <List>
-                <ListItem>24,000 locations around the globe</ListItem>
-                <ListItem>
-                  Lowest price car rental in
-                  <strong>Warsaw</strong>
-                </ListItem>
-                <ListItem>From 3 star budget to 5 star luxury</ListItem>
-              </List>
-              <ButtonLink>Button</ButtonLink>
-            </Stack>
-          }
-        >
+        <Popover content={content}>
           <Button>Button</Button>
         </Popover>
       );
@@ -56,21 +57,16 @@ storiesOf("Popover", module)
         POSITIONS.TOP,
       );
       return (
-        <Stack direction="row-reverse">
-          <Popover
-            content={
-              <Stack>
-                <List>
-                  <ListItem>From 3 star budget to 5 star luxury</ListItem>
-                </List>
-                <ButtonLink>Button</ButtonLink>
-              </Stack>
-            }
-            preferredPosition={preferredPosition}
-          >
-            <Button>Button</Button>
-          </Popover>
-        </Stack>
+        <Popover
+          content={
+            <Text>
+              Provide an action for a user <ButtonLink>Link</ButtonLink>
+            </Text>
+          }
+          preferredPosition={preferredPosition}
+        >
+          <Button>Button</Button>
+        </Popover>
       );
     },
     {
@@ -126,7 +122,7 @@ storiesOf("Popover", module)
       const open = boolean("open", false);
 
       return (
-        <Popover open={open} content={<Button>Button</Button>}>
+        <Popover open={open} content={content}>
           <Button>Button</Button>
         </Popover>
       );
@@ -145,13 +141,13 @@ storiesOf("Popover", module)
         Object.values(POSITIONS),
         POSITIONS.BOTTOM,
       );
-      const width = number("width", 200);
+      const width = number("width", 350);
 
       return (
         <Popover
           width={width}
           dataTest={dataTest}
-          content={<Button>Button</Button>}
+          content={content}
           preferredPosition={preferredPosition}
         >
           <Button>Button</Button>
@@ -175,11 +171,7 @@ storiesOf("Popover", module)
 
       return (
         <RenderInRtl>
-          <Popover
-            dataTest={dataTest}
-            content={<Button>Button</Button>}
-            preferredPosition={preferredPosition}
-          >
+          <Popover dataTest={dataTest} content={content} preferredPosition={preferredPosition}>
             <Button>Button</Button>
           </Popover>
         </RenderInRtl>

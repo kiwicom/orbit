@@ -11,7 +11,7 @@ exports[`ContentWrapper it should match snapshot 1`] = `
     onClick={[Function]}
     popoverHeight={0}
     popoverWidth={0}
-    position=""
+    position="bottom"
     tabIndex="0"
     theme={
       Object {
@@ -439,6 +439,11 @@ exports[`ContentWrapper it should match snapshot 1`] = `
           "textDecorationTextLinkSecondary": "underline",
           "textDecorationTextLinkSecondaryHover": "underline",
           "widthBadgeCircled": "24px",
+          "widthBreakpointDesktop": 992,
+          "widthBreakpointLargeDesktop": 1200,
+          "widthBreakpointLargeMobile": 576,
+          "widthBreakpointMediumMobile": 414,
+          "widthBreakpointTablet": 768,
           "widthCheckbox": "20px",
           "widthCountryFlag": "24px",
           "widthIconLarge": "32px",
@@ -890,6 +895,11 @@ exports[`ContentWrapper it should match snapshot 1`] = `
               "textDecorationTextLinkSecondary": "underline",
               "textDecorationTextLinkSecondaryHover": "underline",
               "widthBadgeCircled": "24px",
+              "widthBreakpointDesktop": 992,
+              "widthBreakpointLargeDesktop": 1200,
+              "widthBreakpointLargeMobile": 576,
+              "widthBreakpointMediumMobile": 414,
+              "widthBreakpointTablet": 768,
               "widthCheckbox": "20px",
               "widthCountryFlag": "24px",
               "widthIconLarge": "32px",
@@ -1348,6 +1358,11 @@ exports[`ContentWrapper it should match snapshot 1`] = `
           "textDecorationTextLinkSecondary": "underline",
           "textDecorationTextLinkSecondaryHover": "underline",
           "widthBadgeCircled": "24px",
+          "widthBreakpointDesktop": 992,
+          "widthBreakpointLargeDesktop": 1200,
+          "widthBreakpointLargeMobile": 576,
+          "widthBreakpointMediumMobile": 414,
+          "widthBreakpointTablet": 768,
           "widthCheckbox": "20px",
           "widthCountryFlag": "24px",
           "widthIconLarge": "32px",

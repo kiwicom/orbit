@@ -12,6 +12,8 @@ export type Dimensions = {|
   popoverHeight: number,
   popoverWidth: number,
   contentHeight: number,
+  windowHeight: number,
+  windowWidth: number,
 |};
 
 export type Position = {|
@@ -30,10 +32,6 @@ export type Props = {|
   +preferredPosition?: Positions,
   +open?: boolean,
   +width?: number,
-|};
-
-export type State = {|
-  shown: boolean,
 |};
 
 declare export default React$ComponentType<Props>;

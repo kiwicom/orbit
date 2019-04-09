@@ -1,0 +1,11 @@
+// @flow
+
+import type { DimensionsCore } from "../index.js.flow";
+
+export type Anchors = "start" | "end";
+
+export type Dimensions = {|
+  ...DimensionsCore,
+|};
+
+declare export default (Anchors, Dimensions) => void;

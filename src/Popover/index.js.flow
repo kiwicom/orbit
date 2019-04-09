@@ -1,10 +1,10 @@
 // @flow
 import type { Globals, Translation } from "../common/common.js.flow";
 
-export type Positions = "top" | "bottom";
-export type Anchors = "start" | "end";
+export type PositionsCore = "top" | "bottom";
+export type AnchorsCore = "start" | "end";
 
-export type Dimensions = {|
+export type DimensionsCore = {|
   containerTop: number,
   containerLeft: number,
   containerHeight: number,
@@ -17,11 +17,11 @@ export type Dimensions = {|
 |};
 
 export type Position = {|
-  position: Positions,
+  position: PositionsCore,
 |};
 
 export type Anchor = {|
-  anchor: Anchors,
+  anchor: AnchorsCore,
 |};
 
 export type Props = {|
@@ -29,7 +29,7 @@ export type Props = {|
   +children: React$Node,
   +content: React$Node,
   +closeText?: Translation,
-  +preferredPosition?: Positions,
+  +preferredPosition?: PositionsCore,
   +open?: boolean,
   +width?: number,
 |};

@@ -1,0 +1,11 @@
+// @flow
+
+import type { PositionsCore, AnchorsCore } from "../index.js.flow";
+
+export type Positions = {|
+  positions: PositionsCore,
+|};
+
+export type Anchors = {|
+  anchors: AnchorsCore,
+|};

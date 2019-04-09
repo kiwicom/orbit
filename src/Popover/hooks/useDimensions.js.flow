@@ -1,0 +1,7 @@
+// @flow
+
+export type Params = {|
+  containerRef: ?React.ElementRef<*>,
+  popover: ?React.ElementRef<*>,
+  content: ?React.ElementRef<*>,
+|};

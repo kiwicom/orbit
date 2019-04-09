@@ -1,12 +1,12 @@
 // @flow
 import type { Globals, Translation } from "../../common/common.js.flow";
-import type { Positions } from "../index.js.flow";
+import type { PositionsCore } from "../index.js.flow";
 
 export type Props = {|
   ...Globals,
   +children: React$Node,
   +closeText?: Translation,
-  +preferredPosition: Positions,
+  +preferredPosition: PositionsCore,
   +containerRef: any | HTMLDivElement,
   +width?: number,
   +onClose: () => void,

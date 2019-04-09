@@ -65,4 +65,4 @@ storiesOf("Icon", module)
         "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
     },
   )
-  .add("List of all icons", () => <IconList />);
+  .lokiSkip("List of all icons", () => <IconList />);

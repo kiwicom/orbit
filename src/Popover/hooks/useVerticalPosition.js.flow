@@ -7,3 +7,5 @@ export type Positions = "top" | "bottom";
 export type Dimensions = {|
   ...DimensionsCore,
 |};
+
+declare export default (string, DimensionsCore) => string;

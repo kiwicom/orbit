@@ -6,7 +6,7 @@ import { ANCHORS } from "../consts";
 import type { Anchors, Dimensions } from "./useAnchorPosition.js.flow";
 
 const useAnchorPosition = (desiredAnchor: Anchors[], positions: Dimensions) => {
-  const [anchor, setAnchor] = useState<string>("bottom");
+  const [anchor, setAnchor] = useState<string>("start");
 
   useEffect(() => {
     const canBeAnchorLeft =

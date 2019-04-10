@@ -9,3 +9,5 @@ export type Positions = {|
 export type Anchors = {|
   anchors: AnchorsCore,
 |};
+
+declare export default ({}, {}, string) => [PositionsCore, AnchorsCore];

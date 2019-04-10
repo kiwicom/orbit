@@ -1,4 +1,4 @@
 // @flow
-export type LengthOf = (value: string) => ?number;
+export type LengthOf = (value: ?string) => ?number;
 
 declare export default LengthOf;

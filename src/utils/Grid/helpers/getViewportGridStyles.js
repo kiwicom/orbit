@@ -1,4 +1,5 @@
 // @flow
+import * as React from "react";
 import { css } from "styled-components";
 
 import autoPlacement from "./autoPlacement";
@@ -25,12 +26,11 @@ const getViewportGridStyles: GetViewportGridStyles = ({ viewport, index, devices
     const compatibleColumns = compatibleGridTemplate(columns, columnGap || gap);
     const compatibleRows = compatibleGridTemplate(rows, rowGap || gap);
     const childrenPlacement = autoPlacement(
-      props.children.length,
+      React.Children.count(props.children),
       compatibleColumns,
       compatibleRows,
       columnGap || gap,
       rowGap || gap,
-      viewport,
     );
 
     return css`

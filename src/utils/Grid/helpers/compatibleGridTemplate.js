@@ -1,7 +1,6 @@
 // @flow
 import splitToWords from "./splitToWords";
 import type { CompatibleGridTemplate } from "./compatibleGridTemplate";
-import isDefined from "../../../Stack/helpers/isDefined";
 
 /*
   This function is converting eg "repeat(3, 1fr) 2fr" to plain format that is compatible with IE

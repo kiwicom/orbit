@@ -4,6 +4,7 @@
  */
 import type { SplitToWords } from "./splitToWords";
 
-const splitToWords: SplitToWords = value => value.match(/[\w\\.]+(\(.*?\))?/g);
+const splitToWords: SplitToWords = value =>
+  value ? value.match(/[\w\\.]+(\(.*?\))?/g) : undefined;
 
 export default splitToWords;

@@ -1,0 +1,8 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/hide/
+*/
+
+export type Props = {||};
+
+declare export default React$ComponentType<Props>;

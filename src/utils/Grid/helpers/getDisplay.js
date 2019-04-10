@@ -1,13 +1,13 @@
 // @flow
 import { css } from "styled-components";
 
-import isDefined from "./isDefined";
+import isDefined from "../../../Stack/helpers/isDefined";
+import type { GetDisplay } from "./getDisplay";
 
-const getDisplay = inline =>
-  isDefined(inline) &&
+const getDisplay: GetDisplay = (inline, force) =>
   css`
-    display: ${inline ? "inline-grid" : "grid"};
-    display: ${inline ? "-ms-inline-grid" : "-ms-grid"};
+    display: ${(isDefined(inline) || force) && (inline ? "inline-grid" : "grid")};
+    display: ${(isDefined(inline) || force) && (inline ? "-ms-inline-grid" : "-ms-grid")};
   `;
 
 export default getDisplay;

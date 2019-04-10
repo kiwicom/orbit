@@ -3,10 +3,9 @@ import * as React from "react";
 import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
 
-import Hide from "../Hide";
 import Card, { CardSection } from "../Card";
 
-import Layout from "./index";
+import Layout, { LayoutColumn } from "./index";
 
 const CustomDiv = styled.div`
   height: 400px;
@@ -15,28 +14,30 @@ const CustomDiv = styled.div`
 
 storiesOf("Layout", module)
   .add(
-    "SearchLayout",
+    "Search",
     () => (
-      <Layout type="SearchLayout">
-        <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
+      <Layout type="Search">
+        <LayoutColumn>
           <Card>
             <CardSection>
               <CustomDiv />
             </CardSection>
           </Card>
-        </Hide>
-        <Card>
-          <CardSection>
-            <CustomDiv />
-          </CardSection>
-        </Card>
-        <Hide on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}>
+        </LayoutColumn>
+        <LayoutColumn>
           <Card>
             <CardSection>
               <CustomDiv />
             </CardSection>
           </Card>
-        </Hide>
+        </LayoutColumn>
+        <LayoutColumn>
+          <Card>
+            <CardSection>
+              <CustomDiv />
+            </CardSection>
+          </Card>
+        </LayoutColumn>
       </Layout>
     ),
     {
@@ -44,22 +45,24 @@ storiesOf("Layout", module)
     },
   )
   .add(
-    "BookingLayout",
+    "Booking",
     () => {
       return (
-        <Layout type="BookingLayout">
-          <Card>
-            <CardSection>
-              <CustomDiv />
-            </CardSection>
-          </Card>
-          <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
+        <Layout type="Booking">
+          <LayoutColumn>
             <Card>
               <CardSection>
                 <CustomDiv />
               </CardSection>
             </Card>
-          </Hide>
+          </LayoutColumn>
+          <LayoutColumn>
+            <Card>
+              <CardSection>
+                <CustomDiv />
+              </CardSection>
+            </Card>
+          </LayoutColumn>
         </Layout>
       );
     },
@@ -68,15 +71,17 @@ storiesOf("Layout", module)
     },
   )
   .add(
-    "MMBLayout",
+    "MMB",
     () => {
       return (
-        <Layout type="MMBLayout">
-          <Card>
-            <CardSection>
-              <CustomDiv />
-            </CardSection>
-          </Card>
+        <Layout type="MMB">
+          <LayoutColumn>
+            <Card>
+              <CardSection>
+                <CustomDiv />
+              </CardSection>
+            </Card>
+          </LayoutColumn>
         </Layout>
       );
     },

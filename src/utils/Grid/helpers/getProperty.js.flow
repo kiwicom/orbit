@@ -1,0 +1,11 @@
+// @flow
+import type { Props, SmallMobile } from "../index";
+import type { Devices } from "../../mediaQuery/index";
+
+export type GetProperty = (
+  property: "rows" | "columns" | "gap" | "rowGap" | "columnGap",
+  {| index: number, devices: Devices[] |},
+  { ...Props, ...SmallMobile },
+) => ?string;
+
+declare export default GetProperty;

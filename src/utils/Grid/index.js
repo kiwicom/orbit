@@ -6,11 +6,15 @@ import defaultTheme from "../../defaultTheme";
 import mediaQueries from "../mediaQuery";
 import { DEVICES } from "../mediaQuery/consts";
 import getViewportGridStyles from "./helpers/getViewportGridStyles";
-import isDefined from "./helpers/isDefined";
+import isDefined from "../../Stack/helpers/isDefined";
 
 import type { Props } from ".";
 
-const StyledGrid = styled.div`
+const StyledGrid = styled(({ className, children, dataTest }) => (
+  <div className={className} data-test={dataTest}>
+    {children}
+  </div>
+))`
   /*
     Just apply all mediaQueries (from devices map)
     smallMobile - default values are not mediaQuery and needs to be rendered differently

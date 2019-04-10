@@ -1,0 +1,6 @@
+// @flow
+import type { Interpolation } from "styled-components";
+
+export type GetDisplay = (inline: boolean, force: boolean) => Interpolation[];
+
+declare export default GetDisplay;

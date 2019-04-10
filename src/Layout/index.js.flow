@@ -1,0 +1,11 @@
+// @flow
+import typeof LayoutColumnType from "./LayoutColumn";
+
+export type Props = {|
+  type: "Search" | "Booking" | "MMB",
+  children: React$Node,
+|};
+
+declare export default React$ComponentType<Props>;
+
+declare export var LayoutColumn: LayoutColumnType;

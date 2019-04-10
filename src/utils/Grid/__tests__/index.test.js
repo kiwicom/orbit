@@ -12,7 +12,6 @@ const CustomDiv = styled.div`
 
 describe("Grid", () => {
   const inline = true;
-  const desktop = object("desktop")
 
   const component = shallow(
     <Grid inline={inline}>

@@ -25,6 +25,11 @@ export type Props = {
   +tablet?: MediaQuery,
   +desktop?: MediaQuery,
   +largeDesktop?: MediaQuery,
+  +children: React$Node,
 };
+
+export type SmallMobile = {|
+  +smallMobile: MediaQuery,
+|};
 
 declare export default React$ComponentType<Props>;

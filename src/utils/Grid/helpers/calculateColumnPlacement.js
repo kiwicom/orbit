@@ -1,6 +1,13 @@
 // @flow
 
-const calculateColumnPlacement = (childIndex, childrenCount, columnsCount, rowsCount) => {
+import type { CalculateColumnPlacement } from "./calculateColumnPlacement";
+
+const calculateColumnPlacement: CalculateColumnPlacement = (
+  childIndex,
+  childrenCount,
+  columnsCount,
+  rowsCount,
+) => {
   if (columnsCount === 1) {
     return 1;
   }

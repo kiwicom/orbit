@@ -7,6 +7,8 @@ import Stack from "../Stack";
 import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
 import FormFeedback, { StyledFormFeedback } from "../FormFeedback";
 import defaultTheme from "../defaultTheme";
+import Checkbox from "../Checkbox";
+import ButtonLink from "../ButtonLink";
 
 import type { Props } from "./index";
 
@@ -34,13 +36,32 @@ StyledChoiceGroup.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledOnlyButton = styled(ButtonLink)``;
+
 const StyledContentWrapper = styled.div`
   width: 100%;
   padding: 4px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
 
-  &:hover {
-    background-color: ${({ theme }) => theme.orbit.paletteBlueLight};
+  &:hover,
+  &:focus-within {
+    ${({ block, theme }) =>
+      block &&
+      `
+     background-color: ${theme.orbit.paletteBlueLight};
+  `}
+
+    ${StyledOnlyButton} {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  ${StyledOnlyButton} {
+    visibility: hidden;
+    opacity: 0;
   }
 `;
 
@@ -57,6 +78,12 @@ class ChoiceGroup extends React.PureComponent<Props> {
     }
   };
 
+  handleOnly = (obj: { item: {}, index: number }) => {
+    if (this.props.onOnlySelection) {
+      this.props.onOnlySelection(obj);
+    }
+  };
+
   render() {
     const {
       dataTest,
@@ -66,7 +93,8 @@ class ChoiceGroup extends React.PureComponent<Props> {
       error,
       children,
       block,
-      reverseSelection,
+      filters,
+      onOnlySelection,
     } = this.props;
     return (
       <StyledChoiceGroup data-test={dataTest}>
@@ -75,17 +103,42 @@ class ChoiceGroup extends React.PureComponent<Props> {
             {label}
           </Heading>
         )}
-        <Stack direction="column" spacing={block ? "tight" : "condensed"}>
-          {React.Children.map(children, child => {
-            return (
-              <StyledContentWrapper block={block} reverseSelectio={reverseSelection}>
-                {React.cloneElement(child, {
-                  onChange: this.handleChange,
-                  hasError: !!error,
-                })}
-              </StyledContentWrapper>
-            );
-          })}
+        <Stack direction="column" spacing={filters ? "none" : "condensed"}>
+          {filters
+            ? filters.map((child, i) => {
+                return (
+                  <StyledContentWrapper block={block} key={encodeURIComponent(child.label + i)}>
+                    <Checkbox
+                      label={child.label}
+                      value={child.value}
+                      hasError={!!error}
+                      onChange={this.handleChange}
+                    />
+                    {onOnlySelection && (
+                      <StyledOnlyButton
+                        type="secondary"
+                        size="small"
+                        onClick={() => {
+                          this.handleOnly({ item: child, index: i });
+                        }}
+                        transparent
+                      >
+                        Only
+                      </StyledOnlyButton>
+                    )}
+                  </StyledContentWrapper>
+                );
+              })
+            : React.Children.map(children, child => {
+                return (
+                  <StyledContentWrapper block={block}>
+                    {React.cloneElement(child, {
+                      onChange: this.handleChange,
+                      hasError: !!error,
+                    })}
+                  </StyledContentWrapper>
+                );
+              })}
         </Stack>
         {error && (
           <FormFeedback type="error" fixed>

@@ -2,7 +2,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { text, select } from "@storybook/addon-knobs";
+import { text, select, boolean } from "@storybook/addon-knobs";
 
 import { LABEL_ELEMENTS, LABEL_SIZES } from "./consts";
 import Radio from "../Radio";
@@ -48,11 +48,17 @@ storiesOf("ChoiceGroup", module)
     () => {
       const label = text("Label", "What was the reason for your cancellation?");
       return (
-        <ChoiceGroup label={label} onChange={action("onChange")} block reverseSelection>
-          <Checkbox label="Reason one" value="one" />
-          <Checkbox label="Reason two" value="two" />
-          <Checkbox label="Reason three" value="three" />
-        </ChoiceGroup>
+        <ChoiceGroup
+          label={label}
+          filters={[
+            { label: "Reason one", value: "one" },
+            { label: "Reason one", value: "one" },
+            { label: "Reason one", value: "one" },
+          ]}
+          onChange={action("onChange")}
+          block
+          onOnlySelection={action("onOnlySelection")}
+        />
       );
     },
     {
@@ -67,6 +73,7 @@ storiesOf("ChoiceGroup", module)
       const labelSize = select("labelSize", Object.values(LABEL_SIZES), LABEL_SIZES.NORMAL);
       const labelElement = select("labelElement", Object.values(LABEL_ELEMENTS), LABEL_ELEMENTS.H4);
       const error = text("error", "Something is wrong");
+      const block = boolean("Block", false);
       return (
         <ChoiceGroup
           dataTest={dataTest}
@@ -75,6 +82,7 @@ storiesOf("ChoiceGroup", module)
           labelElement={labelElement}
           onChange={action("onChange")}
           error={error}
+          block={block}
         >
           <Radio label="Reason one" value="one" />
           <Radio label="Reason two" value="two" />

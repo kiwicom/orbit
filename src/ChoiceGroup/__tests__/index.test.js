@@ -57,3 +57,25 @@ describe("RadioGroup", () => {
     expect(component).toMatchSnapshot();
   });
 });
+
+describe("RadioGroup Filters", () => {
+  const dataTest = "test";
+  const component = shallow(
+    <ChoiceGroup
+      dataTest={dataTest}
+      label={label}
+      onChange={onChange}
+      labelSize={labelSize}
+      labelElement={labelElement}
+      filters={choices}
+    />,
+  );
+
+  it("should render children", () => {
+    component.find("Radio").forEach((node, key) => {
+      expect(node.type()).toBe(Radio);
+      expect(node.prop("value")).toBe(choices[key].value);
+      expect(node.prop("label")).toBe(choices[key].label);
+    });
+  });
+});

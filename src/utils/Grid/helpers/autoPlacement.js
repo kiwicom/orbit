@@ -14,11 +14,11 @@ import type { AutoPlacement } from "./autoPlacement";
   The main purpose is to define a proper -ms-grid-column and -ms-grid-row for IE
   as it can't resolve auto placement by itself natively
  */
-const autoPlacement: AutoPlacement = (childrenCount, columns, rows, columnGap, rowGap) =>
-  Array(...Array(childrenCount)).map((_, i) => {
+const autoPlacement: AutoPlacement = (childrenCount, columns, rows, columnGap, rowGap) => {
+  const columnsCount = realCellsCount(columnGap, lengthOf(columns));
+  const rowsCount = realCellsCount(rowGap, lengthOf(rows));
+  return Array(...Array(childrenCount)).map((_, i) => {
     const index = i + 1;
-    const columnsCount = realCellsCount(columnGap, lengthOf(columns));
-    const rowsCount = realCellsCount(rowGap, lengthOf(rows));
     const columnIndex = calculateColumnPlacement(index, childrenCount, columnsCount, rowsCount);
     const rowIndex = calculateRowPlacement(index, columnsCount, rowsCount);
     return css`
@@ -28,5 +28,6 @@ const autoPlacement: AutoPlacement = (childrenCount, columns, rows, columnGap, r
       }
     `;
   });
+};
 
 export default autoPlacement;

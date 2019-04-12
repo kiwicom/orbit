@@ -11,7 +11,9 @@ const calculateColumnPlacement: CalculateColumnPlacement = (
   if (columnsCount === 1) {
     return 1;
   }
-  return childIndex <= childrenCount / rowsCount ? childIndex : childIndex - columnsCount;
+  return childIndex % (childrenCount / rowsCount) || childIndex <= childrenCount / rowsCount
+    ? childIndex
+    : childIndex - columnsCount;
 };
 
 export default calculateColumnPlacement;

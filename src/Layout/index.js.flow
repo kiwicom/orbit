@@ -1,7 +1,9 @@
 // @flow
 import typeof LayoutColumnType from "./LayoutColumn";
+import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
+  ...Globals,
   type: "Search" | "Booking" | "MMB",
   children: React$Node,
 |};

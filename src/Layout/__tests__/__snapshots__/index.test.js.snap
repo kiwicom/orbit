@@ -1,18 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Grid with basic props should match snapshot 1`] = `
-<Grid__StyledGrid
-  as="div"
-  data-test="test"
-  smallMobile={
+exports[`Button with icon should match snapshot 1`] = `
+<Layout__StyledLayout
+  columnGap="16px"
+  columns="1fr"
+  dataTest="test"
+  desktop={
     Object {
-      "columnGap": undefined,
-      "columns": "repeat(8, 1fr)",
-      "gap": undefined,
-      "inline": true,
-      "maxWidth": "1440px",
-      "rowGap": "20px",
-      "rows": "repeat(2, 30px)",
+      "columnGap": "24px",
+    }
+  }
+  hideOn={
+    Object {
+      "0": Array [
+        "smallMobile",
+        "mediumMobile",
+        "largeMobile",
+      ],
+      "2": Array [
+        "smallMobile",
+        "mediumMobile",
+        "largeMobile",
+        "tablet",
+        "desktop",
+      ],
+    }
+  }
+  largeDesktop={
+    Object {
+      "columns": "256px 1fr 288px",
+    }
+  }
+  maxWidth="1440px"
+  tablet={
+    Object {
+      "columns": "minmax(256px, 3fr) 7fr",
     }
   }
   theme={
@@ -466,6 +488,36 @@ exports[`Grid with basic props should match snapshot 1`] = `
     }
   }
 >
-  <indextest__CustomDiv />
-</Grid__StyledGrid>
+  <LayoutColumn
+    hideOn={
+      Array [
+        "smallMobile",
+        "mediumMobile",
+        "largeMobile",
+      ]
+    }
+    key=".0"
+  >
+    Lorem ipsum dolor sit amet
+  </LayoutColumn>
+  <LayoutColumn
+    key=".1"
+  >
+    Lorem ipsum dolor sit amet
+  </LayoutColumn>
+  <LayoutColumn
+    hideOn={
+      Array [
+        "smallMobile",
+        "mediumMobile",
+        "largeMobile",
+        "tablet",
+        "desktop",
+      ]
+    }
+    key=".2"
+  >
+    Lorem ipsum dolor sit amet
+  </LayoutColumn>
+</Layout__StyledLayout>
 `;

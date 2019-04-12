@@ -38,8 +38,8 @@ StyledGrid.defaultProps = {
 
 const Grid = ({
   inline,
-  rows = "auto",
-  columns = "auto",
+  rows = "none",
+  columns = "none",
   gap,
   rowGap,
   columnGap,

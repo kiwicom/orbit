@@ -1,11 +1,11 @@
 // @flow
-const LAYOUT_OPTIONS = {
+export const LAYOUT_OPTIONS = {
   SEARCH: "Search",
   BOOKING: "Booking",
   MMB: "MMB",
 };
 
-const LAYOUT_SETTINGS = {
+export const LAYOUT_SETTINGS = {
   [LAYOUT_OPTIONS.SEARCH]: {
     columns: "1fr",
     columnGap: "16px",

@@ -9,17 +9,15 @@ import calculateRowPlacement from "./calculateRowPlacement";
 import type { AutoPlacement } from "./autoPlacement";
 
 /*
-  TODO: explain
-  This function is converting the
-  The main purpose is to define a proper -ms-grid-column and -ms-grid-row for IE
-  as it can't resolve auto placement by itself natively
+  This functions is applying a proper -ms-grid-column and -ms-grid-row
+  as IE10+ can't resolve auto placement by itself natively
  */
 const autoPlacement: AutoPlacement = (childrenCount, columns, rows, columnGap, rowGap) => {
-  const columnsCount = realCellsCount(columnGap, lengthOf(columns));
-  const rowsCount = realCellsCount(rowGap, lengthOf(rows));
+  const columnsCount = realCellsCount(!!columnGap, lengthOf(columns));
+  const rowsCount = realCellsCount(!!rowGap, lengthOf(rows));
   return Array(...Array(childrenCount)).map((_, i) => {
     const index = i + 1;
-    const columnIndex = calculateColumnPlacement(index, childrenCount, columnsCount, rowsCount);
+    const columnIndex = calculateColumnPlacement(index, columnsCount);
     const rowIndex = calculateRowPlacement(index, columnsCount, rowsCount);
     return css`
       & > *:nth-child(${index}) {

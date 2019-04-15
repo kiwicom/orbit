@@ -2,7 +2,7 @@
 
 import type { Globals } from "../../common/common.js.flow";
 
-type BasicProps = {|
+export type BasicProps = {|
   +inline?: boolean,
   +rows?: string,
   +columns?: string,

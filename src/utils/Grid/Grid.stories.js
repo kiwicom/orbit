@@ -13,7 +13,7 @@ const CustomDiv = styled.div`
 storiesOf("Grid", module).add("Playground", () => {
   const inline = boolean("inline", false);
   const maxWidth = text("maxWidth", "1440px");
-  const columns = text("columns", "none");
+  const columns = text("columns", undefined);
   const rows = text("rows", "repeat(8, 40px)");
   const gap = text("gap", null);
   const columnGap = text("columnGap", null);
@@ -22,12 +22,12 @@ storiesOf("Grid", module).add("Playground", () => {
   const dataTest = text("dataTest", "test");
   const DivsCount = number("DivsCount", 8);
   const mediumMobile = object("mediumMobile", {
-    rowGap: "20px",
+    rowGap: "0",
   });
   const largeMobile = object("largeMobile", {
     columns: "repeat(4, 1fr)",
     rows: "repeat(2, 40px)",
-    columnGap: "20px",
+    gap: "20px",
   });
   const tablet = object("tablet", {
     columnGap: "40px",
@@ -38,13 +38,12 @@ storiesOf("Grid", module).add("Playground", () => {
     gap: "40px",
   });
   const largeDesktop = object("largeDesktop", {
-    columns: "repeat(8, minmax(10px, 100px))",
+    columns: "repeat(8, minmax(10px, 1fr))",
     rows: "40px",
   });
   return (
     <Grid
-      {...desktop}
-      /* inline={inline}
+      inline={inline}
       maxWidth={maxWidth}
       columns={columns}
       rows={rows}
@@ -57,11 +56,11 @@ storiesOf("Grid", module).add("Playground", () => {
       largeMobile={largeMobile}
       tablet={tablet}
       desktop={desktop}
-      largeDesktop={largeDesktop} */
+      largeDesktop={largeDesktop}
     >
       {Array(...Array(DivsCount)).map((_, key) => (
         // eslint-disable-next-line
-          <CustomDiv key={key} />
+        <CustomDiv key={key} />
       ))}
     </Grid>
   );

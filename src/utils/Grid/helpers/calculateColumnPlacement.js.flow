@@ -1,9 +1,4 @@
 // @flow
-export type CalculateColumnPlacement = (
-  childIndex: number,
-  childrenCount: number,
-  columnsCount: number,
-  rowsCount: number,
-) => number;
+export type CalculateColumnPlacement = (childIndex: number, columnsCount: number) => number;
 
 declare export default CalculateColumnPlacement;

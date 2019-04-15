@@ -1,4 +1,4 @@
 // @flow
-export type RealCellsCount = (gap: ?string, cells: ?number) => number;
+export type RealCellsCount = (gap: boolean, cells: ?number) => number;
 
 declare export default RealCellsCount;

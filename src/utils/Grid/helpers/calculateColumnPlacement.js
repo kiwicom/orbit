@@ -2,18 +2,14 @@
 
 import type { CalculateColumnPlacement } from "./calculateColumnPlacement";
 
-const calculateColumnPlacement: CalculateColumnPlacement = (
-  childIndex,
-  childrenCount,
-  columnsCount,
-  rowsCount,
-) => {
+const calculateColumnPlacement: CalculateColumnPlacement = (childIndex, columnsCount) => {
   if (columnsCount === 1) {
     return 1;
   }
-  return childIndex % (childrenCount / rowsCount) || childIndex <= childrenCount / rowsCount
-    ? childIndex
-    : childIndex - columnsCount;
+  if (childIndex % columnsCount) {
+    return childIndex % columnsCount;
+  }
+  return columnsCount;
 };
 
 export default calculateColumnPlacement;

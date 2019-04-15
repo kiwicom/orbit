@@ -8,6 +8,7 @@ import Grid from "@kiwicom/orbit-components/lib/utils/Grid";
 After adding import into your project you can use it simply like:
 ```jsx
 <Grid columns="4fr minmax(256px, 1fr)">
+  // you can use your custom components
   <Section>
     Hello world!
   </Section>
@@ -23,7 +24,8 @@ Table below contains all types of the props available in the Grid component.
 | Name          | Type                        | Default         | Description                      |
 | :------------ | :-------------------------- | :-------------- | :------------------------------- |
 | **children**  | `React.Node`                |                 | The content of the Grid. [See Usage](#usage)
-| columns       | `string`                    | `"none"`        | Property alias for `grid-template-columns`, [see known limitations](#known-limitations).
+| className     | `string`                    |                 | If needed, you can extend the Grid component with the `styled` factory and add your styles.
+| columns       | `string`                    | `"1fr"`         | Property alias for `grid-template-columns`, [see known limitations](#known-limitations).
 | columnGap     | `string`                    |                 | The gap size for `columns`.
 | dataTest      | `string`                    |                 | Optional prop for testing purposes.
 | desktop       | [`Object`](#media-queries)  |                 | Object for setting up properties for the desktop viewport. [See Media queries](#media-queries)
@@ -35,7 +37,7 @@ Table below contains all types of the props available in the Grid component.
 | largeMobile   | [`Object`](#media-queries)  |                 | Object for setting up properties for the largeMobile viewport. [See Media queries](#media-queries)
 | maxWidth      | `string`                    |                 | Alias for the `max-width` property of the Grid component.
 | mediumMobile  | [`Object`](#media-queries)  |                 | Object for setting up properties for the mediumMobile viewport. [See Media queries](#media-queries)
-| rows          | `string`                    | `"none"`        | Property alias for `grid-template-rows`, [see known limitations](#known-limitations).
+| rows          | `string`                    | `"1fr"`         | Property alias for `grid-template-rows`, [see known limitations](#known-limitations).
 | rowGap        | `string`                    |                 | The gap size for `rows`.
 
 ### Media Queries
@@ -53,10 +55,9 @@ All this properties - objects have the some own properties and none is required.
 | rows          | `string`                    | `"none"`        | Property alias for `grid-template-rows`, [see known limitations](#known-limitations).
 | rowGap        | `string`                    |                 | The gap size for `rows`.
 
-## Known limitations
-The old and very first specification of the CSS grid has some limitations for usage and even for this component.
-IE10+ accepts `repeat` function for the templating, it needs to be compiled to compatible version. Also needs to be said that it works with `minmax` function natively.
-The biggest problem is that IE10+ does not auto-placing it's children to the specified grid template.
-
-## Usage
-The main purpose of the Grid component is to provide compatible version of CSS Grid for IE10+
+## Usage and known limitations
+By default, this Grid component solves:
+ - Compiling the `repeat` function to old specification
+ - Auto-placement of it's children
+ 
+Even that this component solves the two - the most common issues with using the CSS Grid in IE10+, it still has some usage limitations.

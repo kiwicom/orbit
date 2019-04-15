@@ -55,9 +55,13 @@ All this properties - objects have the some own properties and none is required.
 | rows          | `string`                    | `"none"`        | Property alias for `grid-template-rows`, [see known limitations](#known-limitations).
 | rowGap        | `string`                    |                 | The gap size for `rows`.
 
-## Usage and known limitations
+## Why should you use this component
+By default, `styled-components` does not auto-prefix any of the CSS grid properties, so you would end up in auto-prefixing on your own.
+Also it needs to be said that if you want to support IE10+, you have to use only the old specification that has a lot of limitations and does not provide such flexibility as modern one.
+
+The main focus of this component is to provide API that solves the most common issues and gives you a quick way how to start using CSS Grid in your project without worries.
+
 By default, this Grid component solves:
  - Compiling the `repeat` function to old specification
  - Auto-placement of it's children
  
-Even that this component solves the two - the most common issues with using the CSS Grid in IE10+, it still has some usage limitations.

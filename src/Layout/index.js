@@ -9,6 +9,15 @@ import mq from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
+const getChildrenProps = (type, key) => {
+  if (LAYOUT_SETTINGS[type].layoutColumns) {
+    if (LAYOUT_SETTINGS[type].layoutColumns[key]) {
+      return LAYOUT_SETTINGS[type].layoutColumns[key];
+    }
+  }
+  return null;
+};
+
 const StyledLayout = styled(Grid)`
   box-sizing: border-box;
   margin: 0 auto;
@@ -28,7 +37,7 @@ const Layout = ({ children, type, dataTest }: Props) => (
   <StyledLayout {...LAYOUT_SETTINGS[type]} dataTest={dataTest}>
     {React.Children.map(children, (item, key) =>
       React.cloneElement(item, {
-        hideOn: LAYOUT_SETTINGS[type].hideOn ? LAYOUT_SETTINGS[type].hideOn[key] : undefined,
+        ...getChildrenProps(type, key),
       }),
     )}
   </StyledLayout>

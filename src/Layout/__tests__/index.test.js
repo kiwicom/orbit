@@ -21,7 +21,9 @@ describe("Button with icon", () => {
   });
   it("columns should have hide props", () => {
     component.children().forEach((node, key) => {
-      expect(node.prop("hideOn")).toBe(LAYOUT_SETTINGS[LAYOUT_OPTIONS.SEARCH].hideOn[key]);
+      expect(node.prop("hideOn")).toBe(
+        LAYOUT_SETTINGS[LAYOUT_OPTIONS.SEARCH].layoutColumns[key].hideOn,
+      );
     });
   });
   it("should match snapshot", () => {

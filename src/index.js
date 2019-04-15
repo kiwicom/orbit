@@ -40,6 +40,11 @@ export { default as TableCell } from "./Table/TableCell";
 export { default as TableRow } from "./Table/TableRow";
 export { default as TableHead } from "./Table/TableHead";
 
+// Layout & Grid
+export { default as Layout } from "./Layout";
+export { default as LayoutColumn } from "./Layout/LayoutColumn";
+export { default as Grid } from "./utils/Grid";
+
 export { default as Heading } from "./Heading";
 export { default as Hide } from "./Hide";
 export { default as Text } from "./Text";

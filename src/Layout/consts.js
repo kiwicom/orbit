@@ -19,9 +19,17 @@ export const LAYOUT_SETTINGS = {
     largeDesktop: {
       columns: "256px 1fr 288px",
     },
-    hideOn: {
-      "0": ["smallMobile", "mediumMobile", "largeMobile"],
-      "2": ["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"],
+    layoutColumns: {
+      "0": {
+        hideOn: ["smallMobile", "mediumMobile", "largeMobile"],
+        element: "aside",
+      },
+      "1": {
+        element: "main",
+      },
+      "2": {
+        hideOn: ["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"],
+      },
     },
   },
   [LAYOUT_OPTIONS.BOOKING]: {
@@ -34,6 +42,14 @@ export const LAYOUT_SETTINGS = {
     desktop: {
       columnGap: "24px",
     },
+    layoutColumns: {
+      "0": {
+        element: "main",
+      },
+      "1": {
+        element: "aside",
+      },
+    },
   },
   [LAYOUT_OPTIONS.MMB]: {
     columns: "1fr",
@@ -41,6 +57,11 @@ export const LAYOUT_SETTINGS = {
     maxWidth: "960px",
     desktop: {
       columnGap: "24px",
+    },
+    layoutColumns: {
+      "0": {
+        element: "main",
+      },
     },
   },
 };

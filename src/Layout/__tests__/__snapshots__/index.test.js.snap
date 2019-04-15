@@ -10,25 +10,33 @@ exports[`Button with icon should match snapshot 1`] = `
       "columnGap": "24px",
     }
   }
-  hideOn={
-    Object {
-      "0": Array [
-        "smallMobile",
-        "mediumMobile",
-        "largeMobile",
-      ],
-      "2": Array [
-        "smallMobile",
-        "mediumMobile",
-        "largeMobile",
-        "tablet",
-        "desktop",
-      ],
-    }
-  }
   largeDesktop={
     Object {
       "columns": "256px 1fr 288px",
+    }
+  }
+  layoutColumns={
+    Object {
+      "0": Object {
+        "element": "aside",
+        "hideOn": Array [
+          "smallMobile",
+          "mediumMobile",
+          "largeMobile",
+        ],
+      },
+      "1": Object {
+        "element": "main",
+      },
+      "2": Object {
+        "hideOn": Array [
+          "smallMobile",
+          "mediumMobile",
+          "largeMobile",
+          "tablet",
+          "desktop",
+        ],
+      },
     }
   }
   maxWidth="1440px"
@@ -489,6 +497,7 @@ exports[`Button with icon should match snapshot 1`] = `
   }
 >
   <LayoutColumn
+    element="aside"
     hideOn={
       Array [
         "smallMobile",
@@ -501,6 +510,7 @@ exports[`Button with icon should match snapshot 1`] = `
     Lorem ipsum dolor sit amet
   </LayoutColumn>
   <LayoutColumn
+    element="main"
     key=".1"
   >
     Lorem ipsum dolor sit amet

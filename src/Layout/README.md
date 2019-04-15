@@ -40,10 +40,10 @@ There is possibility to use `Search`, `Booking` or `MMB` layout.
 The Search layout consist of three columns. The first and third column hidden on smaller devices, so we can show the main section properly.
 
 To implement the Search layout into your project, you need to use this JSX markup:
-```
+```jsx
 import Layout, { LayoutColumn } from "@kiwicom/orbit-components/lib/Layout";
 
-const App = () =>
+const App = () => (
   <Layout>
     <LayoutColumn>
       The left SideBar for filters
@@ -55,6 +55,7 @@ const App = () =>
       The right SideBar for promotion
     </LayoutColumn>
   </Layout>
+);
 ```
 
 #### Columns behaviour:
@@ -65,10 +66,10 @@ const App = () =>
 The Booking layout consist of two columns.
 
 To implement the Booking layout into your project, you need to use this JSX markup:
-```
+```jsx
 import Layout, { LayoutColumn } from "@kiwicom/orbit-components/lib/Layout";
 
-const App = () =>
+const App = () => (
   <Layout>
     <LayoutColumn>
       The main section for Booking form
@@ -77,19 +78,21 @@ const App = () =>
       The left SideBar for displaying the summary
     </LayoutColumn>
   </Layout>
+);
 ```
 
 ### MMB
 The ManageMyBooking layout consist only of one column.
 
 To implement the MMB layout into your project, you need to use this JSX markup:
-```
+```jsx
 import Layout, { LayoutColumn } from "@kiwicom/orbit-components/lib/Layout";
 
-const App = () =>
+const App = () => (
   <Layout>
     <LayoutColumn>
       The main section for ManageMyBooking
     </LayoutColumn>
   </Layout>
+);
 ```

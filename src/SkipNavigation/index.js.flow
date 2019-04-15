@@ -3,6 +3,14 @@
   DOCUMENTATION: https://orbit.kiwi/components/hide/
 */
 
-export type Props = {||};
+type Option = {|
+  +value: string | number,
+  +label?: string,
+  +disabled?: boolean,
+|};
+export type Props = {|
+  sections: Option[],
+  pages: Option[],
+|};
 
 declare export default React$ComponentType<Props>;

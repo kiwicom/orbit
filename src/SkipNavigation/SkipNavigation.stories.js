@@ -1,8 +1,8 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
 
-import Separator from "../Separator";
 import Heading from "../Heading";
 import Text from "../Text";
 import TextLink from "../TextLink";
@@ -14,9 +14,18 @@ storiesOf("SkipNavigation", module).add(
   () => {
     return (
       <div>
-        <SkipNavigation>
-          <Separator />
-        </SkipNavigation>
+        <SkipNavigation
+          pages={[
+            {
+              link: "https://www.kiwi.com/cz/pages/content/terms",
+              name: "Podmínky používání",
+            },
+            {
+              name: "Podmínky",
+              callBack: action("Action Callback"),
+            },
+          ]}
+        />
 
         <Heading element="h2">User overview</Heading>
         <Text>

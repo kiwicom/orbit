@@ -7,15 +7,18 @@ exports[`Button with icon should match snapshot 1`] = `
   buttonRef={null}
   component="button"
   dataTest="test"
-  external={true}
   href="https://kiwi.com"
   iconLeft={<Airplane />}
   iconRight={<ChevronDown />}
   loading={false}
-  onClick={
+  onKeyDown={
     [MockFunction] {
       "calls": Array [
-        Array [],
+        Array [
+          Object {
+            "preventDefault": [Function],
+          },
+        ],
       ],
       "results": Array [
         Object {
@@ -25,6 +28,7 @@ exports[`Button with icon should match snapshot 1`] = `
       ],
     }
   }
+  onMouseDown={[Function]}
   onlyIcon={false}
   rel="noopener noreferrer"
   role="button"

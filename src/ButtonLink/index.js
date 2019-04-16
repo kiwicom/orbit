@@ -224,10 +224,10 @@ export const StyledButtonLink = styled(
   }
 
   &:active {
-    ${({ transparent, disabled, theme }) =>
+    ${({ transparent, disabled }) =>
       !disabled &&
       css`
-        transform: scale(${theme.orbit.modifierScaleButtonActive});
+        box-shadow: inset 0 0 8px 3px rgba(23, 27, 30, 0.15);
         background: ${!transparent && getTypeToken(TOKENS.backgroundButtonActive)};
         color: ${getTypeToken(TOKENS.colorTextButtonActive)}!important;
       `};
@@ -240,7 +240,7 @@ export const StyledButtonLink = styled(
         box-shadow: 0 0 1px 1px ${theme.orbit.colorTextButtonWhiteBordered},
           0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
         &:active {
-          box-shadow: none;
+          box-shadow: inset 0 0 8px 3px rgba(23, 27, 30, 0.15);
         }
       `};
   }
@@ -283,6 +283,16 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
     onClick,
     width = 0,
     role,
+    disabled,
+    block,
+    circled,
+    submit,
+    transparent,
+    ariaExpanded,
+    ariaControls,
+    spaceAfter,
+    dataTest,
+    tabIndex,
     title,
     block,
   } = props;
@@ -297,22 +307,40 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
     "Warning: children or title property is missing on ButtonLink. Use title property to add aria-label to be accessible for screen readers. More information https://orbit.kiwi/components/buttonlink/#accessibility",
   );
 
+  const handleMouseDown = ev => {
+    ev.preventDefault();
+    if (onClick) {
+      onClick(ev);
+    }
+  };
+
   return (
     <StyledButtonLink
-      {...props}
-      onClick={onClick}
+      onMouseDown={handleMouseDown}
+      onKeyDown={onClick}
       component={component}
       size={size}
       onlyIcon={onlyIcon}
       sizeIcon={sizeIcon}
       type={type}
+      href={href}
       target={href && external ? "_blank" : undefined}
       rel={href && external ? "noopener noreferrer" : undefined}
       iconLeft={iconLeft}
+      iconRight={iconRight}
       buttonRef={ref}
       width={width}
       role={role}
+      disabled={disabled}
       block={block}
+      circled={circled}
+      submit={submit}
+      transparent={transparent}
+      ariaExpanded={ariaExpanded}
+      ariaControls={ariaControls}
+      spaceAfter={spaceAfter}
+      tabIndex={tabIndex}
+      dataTest={dataTest}
     >
       <StyledButtonLinkContent>
         {iconLeft && (

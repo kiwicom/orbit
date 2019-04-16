@@ -407,29 +407,27 @@ export const StyledButton = styled(
   }
 
   &:active {
-    ${({ disabled, theme }) =>
-      !disabled && `transform: scale(${theme.orbit.modifierScaleButtonActive})`};
-    background: ${({ disabled, bordered }) =>
+    ${({ disabled, bordered, theme, type }) =>
       !disabled &&
-      (bordered
-        ? getTypeToken(TOKENS.backgroundButtonBorderedActive)
-        : getTypeToken(TOKENS.backgroundButtonActive))};
-    box-shadow: ${({ disabled, bordered, theme, type }) =>
-      !disabled &&
-      (bordered &&
-        `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonActive)({ theme, type })}`)};
-    color: ${({ disabled, bordered }) =>
-      !disabled &&
-      (bordered
-        ? getTypeToken(TOKENS.colorTextButtonBorderedActive)
-        : getTypeToken(TOKENS.colorTextButtonActive))}!important;
-    & ${IconContainer} {
-      color: ${({ disabled, bordered }) =>
-        !disabled &&
-        (bordered
+      css`
+        background: ${bordered
+          ? getTypeToken(TOKENS.backgroundButtonBorderedActive)
+          : getTypeToken(TOKENS.backgroundButtonActive)};
+        box-shadow: ${bordered
+          ? `inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonActive)({
+              theme,
+              type,
+            })}, inset 0px 0px 6px 3px rgba(23, 27, 30, 0.15)`
+          : `inset 0px 0px 6px 3px rgba(23, 27, 30, 0.15)`};
+        color: ${bordered
           ? getTypeToken(TOKENS.colorTextButtonBorderedActive)
-          : getTypeToken(TOKENS.colorTextButtonActive))};
-    }
+          : getTypeToken(TOKENS.colorTextButtonActive)}!important;
+        & ${IconContainer} {
+          color: ${bordered
+            ? getTypeToken(TOKENS.colorTextButtonBorderedActive)
+            : getTypeToken(TOKENS.colorTextButtonActive)};
+        }
+      `};
   }
 
   &:focus {
@@ -439,7 +437,7 @@ export const StyledButton = styled(
         box-shadow: 0 0 1px 1px ${theme.orbit.colorTextButtonWhiteBordered},
           0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
         &:active {
-          box-shadow: none;
+          box-shadow: inset 0 0 6px 3px rgba(23, 27, 30, 0.15); // TODO: create token
         }
       `};
   }
@@ -497,6 +495,14 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
     loading = false,
     width = 0,
     role,
+    onClick,
+    circled,
+    submit,
+    tabIndex,
+    ariaExpanded,
+    ariaControls,
+    spaceAfter,
+    dataTest,
     title,
   } = props;
   const iconLeft = props.iconLeft || icon;
@@ -509,10 +515,22 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
     "Warning: children or title property is missing on Button. Use title property to add aria-label to be accessible for screen readers. More information https://orbit.kiwi/components/button/api/#accessibility",
   );
 
+  const handleMouseDown = ev => {
+    /*
+      Prevent focus after clicking
+     */
+    ev.preventDefault();
+    if (onClick) {
+      onClick(ev);
+    }
+  };
+
   return (
     <StyledButton
-      {...props}
+      onMouseDown={handleMouseDown}
+      onKeyDown={onClick}
       iconLeft={iconLeft}
+      iconRight={iconRight}
       bordered={bordered}
       block={block}
       component={component}
@@ -523,10 +541,18 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
       sizeIcon={sizeIcon}
       target={href && external ? "_blank" : undefined}
       rel={href && external ? "noopener noreferrer" : undefined}
+      href={href}
       type={type}
       width={width}
       buttonRef={ref}
       role={role}
+      circled={circled}
+      submit={submit}
+      tabIndex={tabIndex}
+      ariaExpanded={ariaExpanded}
+      ariaControls={ariaControls}
+      dataTest={dataTest}
+      spaceAfter={spaceAfter}
       title={title}
     >
       {loading && <Loading type="buttonLoader" />}

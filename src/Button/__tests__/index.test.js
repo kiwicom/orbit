@@ -38,7 +38,7 @@ describe("Button", () => {
     expect(button.prop("spaceAfter")).toBe(spaceAfter);
   });
   it("should execute onClick method", () => {
-    button.simulate("click");
+    button.simulate("mousedown", { preventDefault() {} });
     expect(onClick).toHaveBeenCalled();
   });
   it("should have ref", () => {

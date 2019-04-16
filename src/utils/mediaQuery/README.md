@@ -32,7 +32,7 @@ You can use these media queries in your project:
 
 ## Breakpoints for testing purposes
 
-For testing your components with Enzyme, you can also use static breakpoints.
+For testing your components with Enzyme, especially styles, you can also use getBreakpointWidth function.
 
 Imagine that we have component and we want to test if it's contain specific styles:
 ```jsx
@@ -45,11 +45,13 @@ const StyledComponent = styled.div`
 ```
 
 In this case, our test would require to `mount` this component and than check if it's have specific styles with `toHaveStyleRule` function from package [`jest-styled-components`](https://www.npmjs.com/package/jest-styled-components):
+
+The `getBreakpointWidth` function accepts name of the viewport and theme object. You can use it like:
 ```jsx
 import * as React from "react";
 import { mount } from "enzyme";
-
-import { breakpoints } from "@kiwicom/orbit-components/lib/utils/mediaQuery"
+import theme from "@kiwicom/orbit-components/lib/defaultTheme
+import { getBreakpointWidth } from "@kiwicom/orbit-components/lib/utils/mediaQuery"
 
 import StyledComponent from "./"
 
@@ -62,7 +64,7 @@ describe("StyledComponent", () => {
   
   it("should have width 50 % on desktop viewport", () => {
     expect(component).toHaveStyleRule("width", "50%", {
-      media: breakpoints.desktop,
+      media: getBreakpointWidth("desktop", theme),
     });
   });
 });

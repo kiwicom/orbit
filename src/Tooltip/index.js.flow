@@ -37,7 +37,7 @@ export type Props = {|
   +size?: "small" | "medium",
   +closeText?: Translation,
   +preferredPosition?: Positions,
-  +tabIndex?: number,
+  +tabIndex?: string,
 |};
 
 export type State = {|

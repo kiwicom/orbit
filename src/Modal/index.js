@@ -249,7 +249,7 @@ const ModalWrapperContent = styled.div`
         fixedFooter
           ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXXLarge}!important`
           : theme.orbit.spaceXXLarge};
-      max-width: ${({ modalWidth }) => `${modalWidth}px`};
+      max-width: ${({ modalWidth }) => (modalWidth ? `${modalWidth}px` : "100%")};
       position: ${({ fullyScrolled, fixedFooter }) => fixedFooter && fullyScrolled && "absolute"};
       box-shadow: ${({ fullyScrolled }) => fullyScrolled && "none"};
     }

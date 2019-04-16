@@ -2,6 +2,8 @@
 
 import type { PositionsCore, AnchorsCore } from "../index.js.flow";
 
-export type functionType = (preferredPosition: PositionsCore) => [PositionsCore[], AnchorsCore[]];
+export type CalculatePopoverPosition = (
+  preferredPosition: PositionsCore,
+) => [PositionsCore[], AnchorsCore[]];
 
-declare export default functionType;
+declare export default CalculatePopoverPosition;

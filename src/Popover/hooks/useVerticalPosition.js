@@ -2,9 +2,9 @@
 import { useState, useEffect } from "react";
 
 import { POSITIONS } from "../consts";
-import type { Positions, Dimensions } from "./useVerticalPosition.js.flow";
+import type { UseVerticalPosition, Positions } from "./useVerticalPosition.js.flow";
 
-const useVerticalPosition = (desiredPositions: Positions[], pos: Dimensions) => {
+const useVerticalPosition: UseVerticalPosition = (desiredPositions, pos) => {
   const [positionDirection, setPositionDirection] = useState<string>("bottom");
 
   useEffect(() => {

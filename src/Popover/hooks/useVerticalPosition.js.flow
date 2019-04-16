@@ -4,8 +4,6 @@ import type { DimensionsCore } from "../index.js.flow";
 
 export type Positions = "top" | "bottom";
 
-export type Dimensions = {|
-  ...DimensionsCore,
-|};
+export type UseVerticalPosition = (position: Positions[], DimensionsCore) => string;
 
-declare export default (position: Positions[], DimensionsCore) => string;
+declare export default UseVerticalPosition;

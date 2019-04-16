@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 
 import { ANCHORS } from "../consts";
-import type { Anchors, Dimensions } from "./useHorizontalPosition.js.flow";
+import type { UseHorizontalPosition, Anchors } from "./useHorizontalPosition.js.flow";
 
-const useHorizontalPosition = (desiredAnchor: Anchors[], positions: Dimensions) => {
+const useHorizontalPosition: UseHorizontalPosition = (desiredAnchor, positions) => {
   const [anchor, setAnchor] = useState<string>("start");
 
   useEffect(() => {

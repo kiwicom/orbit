@@ -2,9 +2,11 @@
 import type { DimensionsCore } from "../index.js.flow";
 
 export type Params = {|
-  containerRef: ?React.ElementRef<*>,
-  popover: ?React.ElementRef<*>,
-  content: ?React.ElementRef<*>,
+  containerRef: ?React$ElementRef<*>,
+  popover: ?React$ElementRef<*>,
+  content: ?React$ElementRef<*>,
 |};
 
-declare export default ({}) => DimensionsCore;
+export type UseDimensions = Params => DimensionsCore;
+
+declare export default UseDimensions;

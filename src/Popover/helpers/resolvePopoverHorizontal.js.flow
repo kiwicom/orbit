@@ -1,4 +1,6 @@
 // @flow
+import type { Interpolation } from "styled-components";
+
 import type { Anchor, DimensionsCore } from "../index.js.flow";
 import type { Theme } from "../../defaultTheme.js.flow";
 
@@ -8,4 +10,6 @@ export type StyledAnchor = {|
   theme: Theme,
 |};
 
-declare export default StyledAnchor;
+export type ResolvePopoverHorizontal = StyledAnchor => Interpolation | null;
+
+declare export default ResolvePopoverHorizontal;

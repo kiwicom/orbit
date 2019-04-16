@@ -1,9 +1,9 @@
 // @flow
 import { useState, useEffect } from "react";
 
-import type { Params } from "./useDimensions.js.flow";
+import type { UseDimensions } from "./useDimensions.js.flow";
 
-const useDimensions = ({ containerRef, popover, content }: Params) => {
+const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
   const [positions, setPositions] = useState({
     containerTop: 0,
     containerLeft: 0,

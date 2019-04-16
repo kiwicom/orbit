@@ -85,6 +85,7 @@ storiesOf("DestinationCard", module)
         duration: "6h 10m",
       });
       const inbound = object("inbound", { date: "Fri 9 Nov", type: "Direct", duration: "6h 50m" });
+      const tabIndex = text("TabIndex", "0");
 
       return (
         <DestinationCard
@@ -99,6 +100,7 @@ storiesOf("DestinationCard", module)
           outbound={outbound}
           inbound={inbound}
           onClick={action("onClick")}
+          tabIndex={tabIndex}
         />
       );
     },

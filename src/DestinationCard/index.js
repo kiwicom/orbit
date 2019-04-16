@@ -224,7 +224,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
       inbound,
       height = 300,
       onClick,
-      tabIndex = 0,
+      tabIndex = "0",
     } = this.props;
     const { hiddenContentHeight } = this.state;
 

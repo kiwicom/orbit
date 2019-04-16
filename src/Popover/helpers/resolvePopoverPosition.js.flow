@@ -8,6 +8,6 @@ export type StyledPosition = {|
   ...DimensionsCore,
 |};
 
-export type ResolvePopoverPosition = StyledPosition => Interpolation | null;
+export type ResolvePopoverPosition = StyledPosition => ?Interpolation;
 
 declare export default ResolvePopoverPosition;

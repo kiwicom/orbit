@@ -17,14 +17,24 @@ const Popover = ({
   dataTest,
   open,
   width,
+  hasPadding = true,
+  onClose,
+  onOpen,
 }: Props) => {
   const [shown, setShown] = useState<boolean>(false);
   const container: { current: React$ElementRef<*> } = useRef(null);
+
+  const resolveCallback = () => {
+    if (shown) {
+      if (onClose) onClose();
+    } else if (onOpen) onOpen();
+  };
 
   const handleOut = () => {
     // If open prop is present ignore custom handler
     if (typeof open === "undefined") {
       setShown(false);
+      resolveCallback();
     }
   };
 
@@ -32,6 +42,7 @@ const Popover = ({
     // If open prop is present ignore custom handler
     if (typeof open === "undefined") {
       setShown(!shown);
+      resolveCallback();
     }
   };
 
@@ -48,6 +59,7 @@ const Popover = ({
             preferredPosition={preferredPosition}
             onClose={handleOut}
             dataTest={dataTest}
+            hasPadding={hasPadding}
           >
             {content}
           </PopoverContentWrapper>

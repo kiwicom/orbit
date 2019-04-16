@@ -44,14 +44,13 @@ const StyledPopoverParent = styled.div`
   border-top-right-radius: 9px; /* TODO: Add token */
   animation: ${showAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
-  padding: ${({ theme }) => theme.orbit.spaceSmall};
-  padding-top: ${({ theme }) => theme.orbit.spaceMedium};
+  padding: ${({ theme, hasPadding }) => (hasPadding ? theme.orbit.spaceSmall : 0)};
+  padding-top: ${({ theme, hasPadding }) => (hasPadding ? theme.orbit.spaceMedium : 0)};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
 
   &:focus {
     outline: 0;
   }
-
   ${media.largeMobile(css`
     position: absolute;
     left: auto;
@@ -65,6 +64,7 @@ const StyledPopoverParent = styled.div`
     ${resolvePopoverHorizontal}
   `)}
 `;
+
 StyledPopoverParent.defaultProps = {
   theme: defaultTokens,
 };
@@ -91,6 +91,7 @@ StyledOverlay.defaultProps = {
 };
 
 const StyledTooltipClose = styled.div`
+  padding: ${({ theme, hasPadding }) => (hasPadding ? 0 : theme.orbit.spaceSmall)};
   padding-top: ${({ theme }) => theme.orbit.spaceMedium};
 
   ${media.largeMobile(css`
@@ -111,6 +112,7 @@ const PopoverContentWrapper = ({
   dataTest,
   preferredPosition,
   containerRef,
+  hasPadding,
 }: Props) => {
   const popover: { current: React$ElementRef<*> } = useRef(null);
   const content: { current: React$ElementRef<*> } = useRef(null);
@@ -151,10 +153,11 @@ const PopoverContentWrapper = ({
         onClick={handleClick}
         tabIndex="0"
         data-test={dataTest}
+        hasPadding={hasPadding}
       >
         <StyledPopoverContent ref={content}>
           {children}
-          <StyledTooltipClose>
+          <StyledTooltipClose hasPadding={hasPadding}>
             <Button type="secondary" block onClick={onClose}>
               {closeText || "Close"}
             </Button>

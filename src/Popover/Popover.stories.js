@@ -11,23 +11,33 @@ import List from "../List";
 import ListItem from "../List/ListItem";
 import Button from "../Button";
 import ButtonLink from "../ButtonLink";
+import Stepper from "../Stepper";
 import ListChoice from "../ListChoice";
 import Text from "../Text";
 import * as Icons from "../icons";
+import ChevronDown from "../icons/ChevronDown";
 
 import Popover from "./index";
 
 const content = (
-  <Stack>
-    <List>
-      <ListItem>24,000 locations around the globe</ListItem>
-      <ListItem>
-        Lowest price car rental in <strong>&nbsp;Warsaw</strong>
-      </ListItem>
-      <ListItem>From 3 star budget to 5 star luxury</ListItem>
-    </List>
-    <ButtonLink type="secondary">Provide action</ButtonLink>
-  </Stack>
+  <div>
+    <Stack>
+      <Stack align="center">
+        <Stack spacing="none">
+          <Text>Adult</Text>
+          <Text type="secondary">11+</Text>
+        </Stack>
+        <Stepper />
+      </Stack>
+      <Stack align="center">
+        <Stack spacing="none">
+          <Text>Child</Text>
+          <Text type="secondary">2-11</Text>
+        </Stack>
+        <Stepper />
+      </Stack>
+    </Stack>
+  </div>
 );
 
 storiesOf("Popover", module)
@@ -38,7 +48,9 @@ storiesOf("Popover", module)
     () => {
       return (
         <Popover content={content}>
-          <Button>Button</Button>
+          <Button type="secondary" iconRight={<ChevronDown />}>
+            Open popover
+          </Button>
         </Popover>
       );
     },
@@ -57,14 +69,23 @@ storiesOf("Popover", module)
       );
       return (
         <Popover
+          hasPadding={false}
           content={
-            <Text>
-              Provide an action for a user <ButtonLink>Link</ButtonLink>
-            </Text>
+            <div>
+              <ListChoice
+                title="Choice Title"
+                description="Further description"
+                selectable
+                icon={<Icons.Accommodation />}
+                onClick={action("onClick")}
+              />
+            </div>
           }
           preferredPosition={preferredPosition}
         >
-          <Button>Button</Button>
+          <Button type="secondary" iconRight={<ChevronDown />}>
+            Open popover
+          </Button>
         </Popover>
       );
     },
@@ -78,6 +99,7 @@ storiesOf("Popover", module)
     () => {
       return (
         <Popover
+          hasPadding={false}
           content={
             <div>
               <ListChoice
@@ -106,7 +128,9 @@ storiesOf("Popover", module)
           }
           preferredPosition="top"
         >
-          <Button>Button</Button>
+          <Button type="secondary" iconRight={<ChevronDown />}>
+            Open popover
+          </Button>
         </Popover>
       );
     },
@@ -121,8 +145,10 @@ storiesOf("Popover", module)
       const open = boolean("open", false);
 
       return (
-        <Popover open={open} content={content}>
-          <Button>Button</Button>
+        <Popover open={open} content={content} onOpen={action("open")} onClose={action("close")}>
+          <Button type="secondary" iconRight={<ChevronDown />}>
+            Open popover
+          </Button>
         </Popover>
       );
     },
@@ -141,6 +167,7 @@ storiesOf("Popover", module)
         POSITIONS.BOTTOM,
       );
       const width = number("width", 350);
+      const hasPadding = boolean("hasPadding", true);
 
       return (
         <Popover
@@ -148,8 +175,13 @@ storiesOf("Popover", module)
           dataTest={dataTest}
           content={content}
           preferredPosition={preferredPosition}
+          hasPadding={hasPadding}
+          onOpen={action("open")}
+          onClose={action("close")}
         >
-          <Button>Button</Button>
+          <Button type="secondary" iconRight={<ChevronDown />}>
+            Open popover
+          </Button>
         </Popover>
       );
     },
@@ -171,7 +203,9 @@ storiesOf("Popover", module)
       return (
         <RenderInRtl>
           <Popover dataTest={dataTest} content={content} preferredPosition={preferredPosition}>
-            <Button>Button</Button>
+            <Button type="secondary" iconRight={<ChevronDown />}>
+              Open popover
+            </Button>
           </Popover>
         </RenderInRtl>
       );

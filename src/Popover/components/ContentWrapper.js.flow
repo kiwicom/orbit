@@ -9,6 +9,7 @@ export type Props = {|
   +preferredPosition: PositionsCore,
   +containerRef: React$ElementRef<*>,
   +width?: number,
+  +hasPadding?: boolean,
   +onClose: () => void,
 |};
 

@@ -32,6 +32,9 @@ export type Props = {|
   +preferredPosition?: PositionsCore,
   +open?: boolean,
   +width?: number,
+  +hasPadding?: boolean,
+  +onOpen?: () => void | Promise<any>,
+  +onClose?: () => void | Promise<any>,
 |};
 
 declare export default React$ComponentType<Props>;

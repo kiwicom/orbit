@@ -10,6 +10,6 @@ export type StyledAnchor = {|
   theme: Theme,
 |};
 
-export type ResolvePopoverHorizontal = StyledAnchor => Interpolation | null;
+export type ResolvePopoverHorizontal = StyledAnchor => ?Interpolation;
 
 declare export default ResolvePopoverHorizontal;

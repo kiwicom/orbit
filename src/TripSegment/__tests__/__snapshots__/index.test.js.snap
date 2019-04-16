@@ -5,7 +5,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
   aria-expanded={true}
   onKeyDown={[Function]}
   role="button"
-  tabIndex={0}
+  tabIndex="0"
   theme={
     Object {
       "orbit": Object {
@@ -3178,6 +3178,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
           >
             <Text
               align="right"
+              element="div"
               type="attention"
             >
               5:30
@@ -3637,6 +3638,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
           >
             <Text
               align="right"
+              element="div"
               type="attention"
             >
               11:20
@@ -3645,11 +3647,13 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
         </TripSegment__StyledTripSegmentOverviewColumn>
         <TripSegment__StyledTripSegmentOverviewColumn>
           <Text
+            element="div"
             type="primary"
           >
             Berlin TXL
           </Text>
           <Text
+            element="div"
             type="primary"
           >
             Moscow VKO
@@ -4109,6 +4113,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
         }
       >
         <Text
+          element="div"
           size="small"
           type="secondary"
         >

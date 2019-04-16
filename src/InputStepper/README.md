@@ -34,6 +34,7 @@ Table below contains all types of the props available in InputStepper component.
 | size            | [`enum`](#enum)             | `"normal"`  | The size of the InputStepper.
 | spaceAfter      | `enum`                      |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | step            | `number`                    | `1`         | Specifies the value of step to increment and decrement.
+| tabIndex        | `string`                    |             | Specifies the tab order of an element
 
 ### enum
 

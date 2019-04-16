@@ -251,6 +251,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
     type = TYPES.PRIMARY,
     onClick,
     width = 0,
+    role,
   } = props;
 
   const iconLeft = props.iconLeft || icon;
@@ -272,6 +273,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       iconLeft={iconLeft}
       buttonRef={ref}
       width={width}
+      role={role}
     >
       {iconLeft && (
         <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon}>

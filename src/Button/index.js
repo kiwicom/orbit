@@ -470,6 +470,7 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
     block,
     loading = false,
     width = 0,
+    role,
   } = props;
   const iconLeft = props.iconLeft || icon;
   const sizeIcon = size === ICON_SIZES.SMALL ? ICON_SIZES.SMALL : ICON_SIZES.MEDIUM;
@@ -493,6 +494,7 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
       type={type}
       width={width}
       buttonRef={ref}
+      role={role}
     >
       {loading && <Loading type="buttonLoader" />}
       <StyledButtonContent loading={loading}>

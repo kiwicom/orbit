@@ -15,7 +15,7 @@ export type Props = {|
   +price: Translation,
   +timeOfStay?: Translation,
   +height?: number,
-  +tabIndex?: number,
+  +tabIndex?: string,
   +outbound: {|
     +text?: Translation,
     +date?: Translation,

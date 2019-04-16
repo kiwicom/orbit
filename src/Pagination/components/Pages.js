@@ -2,10 +2,10 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
-import type { Props } from "./Pages";
+import defaultTheme from "../../defaultTheme";
 import Button from "../../Button";
 import PageButtonLink from "./PageButtonLink";
+import type { Props } from "./Pages";
 
 const StyledButton = styled.div`
   &:hover,
@@ -19,17 +19,17 @@ const StyledButton = styled.div`
 `;
 
 StyledButton.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
-const ActiveButton = ({ children }) => (
+const ActiveButton = ({ children }: { children: React.Node }) => (
   <Button type="secondary" component={props => <StyledButton {...props} type={undefined} />}>
     {children}
   </Button>
 );
 
-const Pages = ({ pageCount, selectedPage, onPageChange, enlargement = 1 }: Props) => {
-  const children: React.Node = Array(...Array(pageCount)).map((_, index) => {
+const Pages = ({ pageCount, selectedPage, onPageChange, enlargement = 1 }: Props): React$Node =>
+  Array(...Array(pageCount)).map((_, index) => {
     const key = index + enlargement;
     return selectedPage === key ? (
       <ActiveButton type="secondary">{key}</ActiveButton>
@@ -37,7 +37,5 @@ const Pages = ({ pageCount, selectedPage, onPageChange, enlargement = 1 }: Props
       <PageButtonLink onPageChange={onPageChange}>{key}</PageButtonLink>
     );
   });
-  return children;
-};
 
 export default Pages;

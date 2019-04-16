@@ -4,20 +4,15 @@ import * as React from "react";
 import Pages from "./Pages";
 import PageButtonLink from "./PageButtonLink";
 import MenuMeatballs from "../../icons/MenuMeatballs";
-import type { OnPageChange } from "../index";
 import type { Props } from "./CompactPages";
 
 const MeatBalls = () => <MenuMeatballs size="small" color="attention" />;
-
-const FirstPageButtonLink = ({ onPageChange }: OnPageChange) => (
-  <PageButtonLink onPageChange={onPageChange}>{1}</PageButtonLink>
-);
 
 const CompactPages = ({ pageCount, selectedPage, onPageChange }: Props) => {
   if (selectedPage > pageCount - 4) {
     return (
       <React.Fragment>
-        <FirstPageButtonLink onPageChange={onPageChange} />
+        <PageButtonLink onPageChange={onPageChange}>{1}</PageButtonLink>
         <MeatBalls />
         <Pages
           pageCount={5}
@@ -27,7 +22,8 @@ const CompactPages = ({ pageCount, selectedPage, onPageChange }: Props) => {
         />
       </React.Fragment>
     );
-  } else if (selectedPage < 5) {
+  }
+  if (selectedPage < 5) {
     return (
       <React.Fragment>
         <Pages pageCount={5} selectedPage={selectedPage} onPageChange={onPageChange} />
@@ -38,7 +34,7 @@ const CompactPages = ({ pageCount, selectedPage, onPageChange }: Props) => {
   }
   return (
     <React.Fragment>
-      <FirstPageButtonLink onPageChange={onPageChange} />
+      <PageButtonLink onPageChange={onPageChange}>{1}</PageButtonLink>
       <MeatBalls />
       <Pages
         pageCount={3}

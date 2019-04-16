@@ -6,7 +6,7 @@ import Pagination from "@kiwicom/orbit-components/lib/Pagination";
 
 After adding import into your project you can use it simply like:
 ```jsx
-<Pagination pageCount={1337} />
+<Pagination pageCount={1337} selectedPage={69} />
 ```
 ## Props
 Table below contains all types of the props available in the Pagination component.
@@ -21,9 +21,9 @@ Table below contains all types of the props available in the Pagination componen
 | **onPageChange ** | `func`        |                 | Function for handling onPageChange event. [See Functional specs](#functional-specs)
   
 ### Functional specs
-* If the `pageCount` will be bigger than 7, the compact will be rendered.
+* If the `pageCount` will be bigger than 7, the compact version will be rendered.
 
-* The prop `onPageChange` will return the new index of selected page. Use arrow function for it,  e.g.:
+* The prop `onPageChange` will return the new index of selected page. Use arrow function for it, e.g.:
 ```jsx
 <Pagination onPageChange={(selectedPage) => doSomething(selectedPage)} />
 ```

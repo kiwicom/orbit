@@ -8,14 +8,9 @@ exports[`Pagination should match snapshot 1`] = `
   spacing="tight"
 >
   <ButtonLink
-    component="button"
-    external={false}
     iconLeft={<ChevronLeft />}
     onClick={[Function]}
-    size="normal"
-    transparent={false}
     type="secondary"
-    width={0}
   >
     Předchozí
   </ButtonLink>
@@ -25,14 +20,9 @@ exports[`Pagination should match snapshot 1`] = `
     selectedPage={3}
   />
   <ButtonLink
-    component="button"
-    external={false}
     iconRight={<ChevronRight />}
     onClick={[Function]}
-    size="normal"
-    transparent={false}
     type="secondary"
-    width={0}
   >
     Následující
   </ButtonLink>

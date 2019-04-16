@@ -26,6 +26,8 @@ export const StyledImage = styled.img.attrs(({ theme, size, illustrationName }) 
       3}/${illustrationName}.png 3x`,
   };
 })`
+  display: inline-block;
+  margin: auto 0;
   max-height: ${getHeightToken};
   max-width: 100%;
   background-color: ${({ theme }) => theme.orbit.backgroundIllustration};

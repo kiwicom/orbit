@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 import { POSITIONS } from "../consts";
 import type { Positions, Dimensions } from "./useVerticalPosition.js.flow";
-// import type { Positions, Dimensions } from "../index.js.flow";
 
 const useVerticalPosition = (desiredPositions: Positions[], pos: Dimensions) => {
   const [positionDirection, setPositionDirection] = useState<string>("bottom");

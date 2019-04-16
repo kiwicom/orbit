@@ -22,12 +22,11 @@ const content = (
     <List>
       <ListItem>24,000 locations around the globe</ListItem>
       <ListItem>
-        Lowest price car rental in
-        <strong>Warsaw</strong>
+        Lowest price car rental in <strong>&nbsp;Warsaw</strong>
       </ListItem>
       <ListItem>From 3 star budget to 5 star luxury</ListItem>
     </List>
-    <ButtonLink>Provide action</ButtonLink>
+    <ButtonLink type="secondary">Provide action</ButtonLink>
   </Stack>
 );
 

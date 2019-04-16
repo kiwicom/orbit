@@ -4,15 +4,14 @@ import styled, { css, keyframes } from "styled-components";
 
 import defaultTokens from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
-import { POSITIONS, ANCHORS } from "../consts";
 import Button from "../../Button";
 import resolvePopoverPosition from "../helpers/resolvePopoverPosition";
-import resolvePopoverAnchor from "../helpers/resolvePopoverAnchor";
+import resolvePopoverHorizontal from "../helpers/resolvePopoverHorizontal";
 import calculatePopoverPosition from "../helpers/calculatePopoverPosition";
 import type { Props } from "./ContentWrapper.js.flow";
 import useDimensions from "../hooks/useDimensions";
 import useVerticalPosition from "../hooks/useVerticalPosition";
-import useAnchorPosition from "../hooks/useAnchorPosition";
+import useHorizontalPosition from "../hooks/useHorizontalPosition";
 
 const showAnimation = keyframes`
   from {
@@ -41,16 +40,13 @@ const StyledPopoverParent = styled.div`
   right: 0;
   width: 100%;
   box-sizing: border-box;
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
+  border-top-left-radius: 9px; /* TODO: Add token */
+  border-top-right-radius: 9px; /* TODO: Add token */
   animation: ${showAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
-
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
   padding: ${({ theme }) => theme.orbit.spaceSmall};
   padding-top: ${({ theme }) => theme.orbit.spaceMedium};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
-  z-index: ${({ theme }) => theme.orbit.zIndexOnTheTop};
 
   &:focus {
     outline: 0;
@@ -63,8 +59,10 @@ const StyledPopoverParent = styled.div`
     bottom: auto;
     width: ${({ width }) => (width ? `${width}px` : "auto")};
     animation: ${opacityAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+
     ${resolvePopoverPosition}
-    ${resolvePopoverAnchor}
+    ${resolvePopoverHorizontal}
   `)}
 `;
 StyledPopoverParent.defaultProps = {
@@ -81,7 +79,6 @@ const StyledOverlay = styled.div`
   right: 0;
   width: 100%;
   height: 100%;
-  z-index: ${({ theme }) => theme.orbit.zIndexOnTheTop - 1};
   background-color: rgba(23, 27, 30, 0.6); // TODO: token
   animation: ${opacityAnimation} ${({ theme }) => theme.orbit.durationFast} ease-in;
 
@@ -102,7 +99,6 @@ const StyledTooltipClose = styled.div`
     padding-bottom: 0;
   `)}
 `;
-
 StyledTooltipClose.defaultProps = {
   theme: defaultTokens,
 };
@@ -116,13 +112,13 @@ const PopoverContentWrapper = ({
   preferredPosition,
   containerRef,
 }: Props) => {
-  const popover: { current: any | HTMLDivElement } = useRef(null);
-  const content: { current: any | HTMLDivElement } = useRef(null);
-  const overlay: { current: any | HTMLDivElement } = useRef(null);
-  const position = calculatePopoverPosition(POSITIONS, ANCHORS, preferredPosition);
+  const popover: { current: React$ElementRef<*> } = useRef(null);
+  const content: { current: React$ElementRef<*> } = useRef(null);
+  const overlay: { current: React$ElementRef<*> } = useRef(null);
+  const position = calculatePopoverPosition(preferredPosition);
   const dimensions = useDimensions({ containerRef, popover, content });
   const verticalPosition = useVerticalPosition(position[0], dimensions);
-  const anchorPosition = useAnchorPosition(position[1], dimensions);
+  const horizontalPosition = useHorizontalPosition(position[1], dimensions);
 
   const handleClick = (ev: SyntheticEvent<HTMLElement>) => {
     ev.stopPropagation();
@@ -133,13 +129,16 @@ const PopoverContentWrapper = ({
   };
 
   useEffect(() => {
-    popover.current.focus();
+    if (popover.current) {
+      popover.current.focus();
+    }
   }, []);
 
   return (
     <React.Fragment>
+      <StyledOverlay ref={overlay} onClick={handleClick} />
       <StyledPopoverParent
-        anchor={anchorPosition}
+        anchor={horizontalPosition}
         position={verticalPosition}
         containerTop={dimensions.containerTop}
         containerLeft={dimensions.containerLeft}
@@ -162,7 +161,6 @@ const PopoverContentWrapper = ({
           </StyledTooltipClose>
         </StyledPopoverContent>
       </StyledPopoverParent>
-      <StyledOverlay ref={overlay} onClick={handleClick} />
     </React.Fragment>
   );
 };

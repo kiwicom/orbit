@@ -19,18 +19,18 @@ const Popover = ({
   width,
 }: Props) => {
   const [shown, setShown] = useState<boolean>(false);
-  const container: { current: any | HTMLDivElement } = useRef<HTMLDivElement>(null);
+  const container: { current: React$ElementRef<*> } = useRef(null);
 
   const handleOut = () => {
     // If open prop is present ignore custom handler
-    if (open === undefined) {
+    if (typeof open === "undefined") {
       setShown(false);
     }
   };
 
   const handleClick = () => {
     // If open prop is present ignore custom handler
-    if (open === undefined) {
+    if (typeof open === "undefined") {
       setShown(!shown);
     }
   };

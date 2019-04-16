@@ -2,12 +2,6 @@
 
 import type { PositionsCore, AnchorsCore } from "../index.js.flow";
 
-export type Positions = {|
-  positions: PositionsCore,
-|};
+export type functionType = (preferredPosition: PositionsCore) => [PositionsCore[], AnchorsCore[]];
 
-export type Anchors = {|
-  anchors: AnchorsCore,
-|};
-
-declare export default ({}, {}, string) => [PositionsCore, AnchorsCore];
+declare export default functionType;

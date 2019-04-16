@@ -8,4 +8,4 @@ export type Dimensions = {|
   ...DimensionsCore,
 |};
 
-declare export default (string, DimensionsCore) => string;
+declare export default (position: Positions[], DimensionsCore) => string;

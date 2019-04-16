@@ -8,4 +8,4 @@ export type Dimensions = {|
   ...DimensionsCore,
 |};
 
-declare export default (Anchors, Dimensions) => string;
+declare export default (Anchors[], Dimensions) => string;

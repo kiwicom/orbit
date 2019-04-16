@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 
 import { ANCHORS } from "../consts";
-import type { Anchors, Dimensions } from "./useAnchorPosition.js.flow";
+import type { Anchors, Dimensions } from "./useHorizontalPosition.js.flow";
 
-const useAnchorPosition = (desiredAnchor: Anchors[], positions: Dimensions) => {
+const useHorizontalPosition = (desiredAnchor: Anchors[], positions: Dimensions) => {
   const [anchor, setAnchor] = useState<string>("start");
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const useAnchorPosition = (desiredAnchor: Anchors[], positions: Dimensions) => {
       positions.containerLeft + positions.containerWidth >= positions.popoverWidth;
     // returns the position name if the position can be set
 
-    const isInsideAnchor = (p: Anchors) => {
+    const isInside = (p: Anchors) => {
       if (p === ANCHORS.START && canBeAnchorLeft) {
         return ANCHORS.START;
       }
@@ -25,9 +25,7 @@ const useAnchorPosition = (desiredAnchor: Anchors[], positions: Dimensions) => {
       return false;
     };
 
-    const possibleAnchor = desiredAnchor
-      .map(p => isInsideAnchor(p))
-      .filter(p => typeof p === "string");
+    const possibleAnchor = desiredAnchor.map(p => isInside(p)).filter(p => typeof p === "string");
 
     const posAnchor = possibleAnchor[0];
     if (typeof posAnchor === "string") {
@@ -38,4 +36,4 @@ const useAnchorPosition = (desiredAnchor: Anchors[], positions: Dimensions) => {
   return anchor;
 };
 
-export default useAnchorPosition;
+export default useHorizontalPosition;

@@ -19,9 +19,8 @@ Table below contains all types of the props available in the Popover component.
 | closeText         | `Translation`         | `"Close"`       | The text of the close button to display on mobile devices.
 | **children**      | `React.Node`          |                 | The reference element where the Popover will appear.
 | dataTest          | `string`              |                 | Optional prop for testing purposes.
-| open              | `boolean`             |                 | Prop for programatically controling Popover inner state. If `open` is present open 
+| open              | `boolean`             |                 | Prop for programatically controling Popover inner state. If `open` is present open triggers are ignored
 | preferredPosition | [`enum`](#enum)       | `"bottom"`      | The preferred position to choose [See Functional specs](#functional-specs)
-triggers are ignored
 | width             | `number`              |                 | Width of popover, if not set the with is set to `auto`.
 
 ## enum
@@ -41,15 +40,11 @@ triggers are ignored
 ```jsx
 <Popover
   content={
-     <Stack>
-        <Text>More information</Text>
-        <List>
-            <ListItem>Additional information</ListItem>
-            <ListItem>Additional information</ListItem>
-            <ListItem>Additional information</ListItem>
-        </List>
-        <Button>Action</Button>
-    </Stack>
+    <React.Fragment>
+      <ListChoice  title="Choice Title" description="Further description" icon={<Accommodation />} onClick={action} />
+      <ListChoice  title="Choice Title" description="Further description" icon={<Accommodation />} onClick={action} />
+      <ListChoice  title="Choice Title" description="Further description" icon={<Accommodation />} onClick={action} />
+    </React.Fragment>
   }
 >
   <Button>Open Popover</Button>

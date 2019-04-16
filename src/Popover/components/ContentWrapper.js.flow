@@ -7,7 +7,7 @@ export type Props = {|
   +children: React$Node,
   +closeText?: Translation,
   +preferredPosition: PositionsCore,
-  +containerRef: any | HTMLDivElement,
+  +containerRef: React$ElementRef<*>,
   +width?: number,
   +onClose: () => void,
 |};

@@ -18,11 +18,15 @@ storiesOf("SkipNavigation", module).add(
           pages={[
             {
               link: "https://www.kiwi.com/cz/pages/content/terms",
-              name: "Podmínky používání",
+              name: "Got to terms and condition",
             },
             {
-              name: "Podmínky",
-              callBack: action("Action Callback"),
+              name: "Add baggage",
+              callBack: action("Add baggage"),
+            },
+            {
+              name: "Reguest refund",
+              callBack: action("Reguest refund"),
             },
           ]}
         />

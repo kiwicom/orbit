@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 
 import { ANCHORS } from "../consts";
-import type { UseHorizontalPosition, Anchors } from "./useHorizontalPosition.js.flow";
+import type { UseHorizontalPosition } from "./useHorizontalPosition.js.flow";
+import type { AnchorsCore } from "../index.js.flow";
 
 const useHorizontalPosition: UseHorizontalPosition = (desiredAnchor, positions) => {
   const [anchor, setAnchor] = useState<string>("start");
@@ -15,7 +16,7 @@ const useHorizontalPosition: UseHorizontalPosition = (desiredAnchor, positions) 
       positions.containerLeft + positions.containerWidth >= positions.popoverWidth;
     // returns the position name if the position can be set
 
-    const isInside = (p: Anchors) => {
+    const isInside = (p: AnchorsCore) => {
       if (p === ANCHORS.START && canBeAnchorLeft) {
         return ANCHORS.START;
       }

@@ -1400,7 +1400,6 @@ exports[`Popover it should match snapshot 1`] = `
   >
     <PopoverContentWrapper
       containerRef={null}
-      hasPadding={true}
       onClose={[Function]}
       preferredPosition="bottom"
     >

@@ -2,7 +2,8 @@
 import { useState, useEffect } from "react";
 
 import { POSITIONS } from "../consts";
-import type { UseVerticalPosition, Positions } from "./useVerticalPosition.js.flow";
+import type { UseVerticalPosition } from "./useVerticalPosition.js.flow";
+import type { PositionsCore } from "../index.js.flow";
 
 const useVerticalPosition: UseVerticalPosition = (desiredPositions, pos) => {
   const [positionDirection, setPositionDirection] = useState<string>("bottom");
@@ -13,7 +14,7 @@ const useVerticalPosition: UseVerticalPosition = (desiredPositions, pos) => {
       pos.containerTop + pos.containerHeight + pos.popoverHeight < pos.windowHeight;
 
     // returns the position name if the position can be set
-    const isInside = (p: Positions) => {
+    const isInside = (p: PositionsCore) => {
       if (p === POSITIONS.TOP && canBePositionTop) {
         return POSITIONS.TOP;
       }

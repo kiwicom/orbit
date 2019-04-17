@@ -9,9 +9,9 @@ import Button from "../../Button";
 describe("Popover", () => {
   const content = "Message for a user";
   const position = "bottom";
-  const open = true;
+  const opened = true;
   const component = shallow(
-    <Popover content={content} preferredPosition={position} open={open}>
+    <Popover content={content} preferredPosition={position} opened={opened}>
       <Button>Open</Button>
     </Popover>,
   );

@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, text, select, boolean, number } from "@storybook/addon-knobs";
+import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -24,14 +24,14 @@ const content = (
           <Text>Adult</Text>
           <Text type="secondary">11+</Text>
         </Stack>
-        <Stepper />
+        <Stepper minValue={0} />
       </Stack>
       <Stack align="center">
         <Stack spacing="none">
           <Text>Child</Text>
           <Text type="secondary">2-11</Text>
         </Stack>
-        <Stepper />
+        <Stepper minValue={0} />
       </Stack>
     </Stack>
   </div>
@@ -66,7 +66,7 @@ storiesOf("Popover", module)
       );
       return (
         <Popover
-          hasPadding={false}
+          noPadding
           content={
             <div>
               <ListChoice
@@ -94,9 +94,11 @@ storiesOf("Popover", module)
   .add(
     "With ListChoice",
     () => {
+      const width = text("width", "250px");
       return (
         <Popover
-          hasPadding={false}
+          noPadding
+          width={width}
           content={
             <div>
               <ListChoice
@@ -139,10 +141,15 @@ storiesOf("Popover", module)
   .add(
     "Opened by prop",
     () => {
-      const open = boolean("open", false);
+      const opened = boolean("opened", false);
 
       return (
-        <Popover open={open} content={content} onOpen={action("open")} onClose={action("close")}>
+        <Popover
+          opened={opened}
+          content={content}
+          onOpen={action("open")}
+          onClose={action("close")}
+        >
           <Button type="secondary" iconRight={<ChevronDown />}>
             Open popover
           </Button>
@@ -163,8 +170,8 @@ storiesOf("Popover", module)
         Object.values(POSITIONS),
         POSITIONS.BOTTOM,
       );
-      const width = number("width", 350);
-      const hasPadding = boolean("hasPadding", true);
+      const width = text("width", "350px");
+      const noPadding = boolean("noPadding", false);
 
       return (
         <Popover
@@ -172,7 +179,7 @@ storiesOf("Popover", module)
           dataTest={dataTest}
           content={content}
           preferredPosition={preferredPosition}
-          hasPadding={hasPadding}
+          noPadding={noPadding}
           onOpen={action("open")}
           onClose={action("close")}
         >

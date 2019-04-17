@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from "react";
 import styled, { css, keyframes } from "styled-components";
 
-import defaultTokens from "../../defaultTheme";
+import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
 import Button from "../../Button";
 import resolvePopoverPosition from "../helpers/resolvePopoverPosition";
@@ -44,9 +44,10 @@ const StyledPopoverParent = styled.div`
   border-top-right-radius: 9px; /* TODO: Add token */
   animation: ${showAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
-  padding: ${({ theme, hasPadding }) => (hasPadding ? theme.orbit.spaceSmall : 0)};
-  padding-top: ${({ theme, hasPadding }) => (hasPadding ? theme.orbit.spaceMedium : 0)};
+  padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceSmall)};
+  padding-top: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
+  overflow: hidden;
 
   &:focus {
     outline: 0;
@@ -56,7 +57,7 @@ const StyledPopoverParent = styled.div`
     left: auto;
     right: auto;
     bottom: auto;
-    width: ${({ width }) => (width ? `${width}px` : "auto")};
+    width: ${({ width }) => (width ? `${width}` : "auto")};
     animation: ${opacityAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
 
@@ -66,7 +67,7 @@ const StyledPopoverParent = styled.div`
 `;
 
 StyledPopoverParent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledPopoverContent = styled.div``;
@@ -87,11 +88,11 @@ const StyledOverlay = styled.div`
   `)};
 `;
 StyledOverlay.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTooltipClose = styled.div`
-  padding: ${({ theme, hasPadding }) => (hasPadding ? 0 : theme.orbit.spaceSmall)};
+  padding: ${({ theme, noPadding }) => (noPadding ? theme.orbit.spaceSmall : 0)};
   padding-top: ${({ theme }) => theme.orbit.spaceMedium};
 
   ${media.largeMobile(css`
@@ -101,7 +102,7 @@ const StyledTooltipClose = styled.div`
   `)}
 `;
 StyledTooltipClose.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const PopoverContentWrapper = ({
@@ -112,7 +113,7 @@ const PopoverContentWrapper = ({
   dataTest,
   preferredPosition,
   containerRef,
-  hasPadding,
+  noPadding,
 }: Props) => {
   const popover: { current: React$ElementRef<*> } = useRef(null);
   const content: { current: React$ElementRef<*> } = useRef(null);
@@ -153,11 +154,11 @@ const PopoverContentWrapper = ({
         onClick={handleClick}
         tabIndex="0"
         data-test={dataTest}
-        hasPadding={hasPadding}
+        noPadding={noPadding}
       >
         <StyledPopoverContent ref={content}>
           {children}
-          <StyledTooltipClose hasPadding={hasPadding}>
+          <StyledTooltipClose noPadding={noPadding}>
             <Button type="secondary" block onClick={onClose}>
               {closeText || "Close"}
             </Button>

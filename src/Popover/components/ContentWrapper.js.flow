@@ -8,8 +8,8 @@ export type Props = {|
   +closeText?: Translation,
   +preferredPosition: PositionsCore,
   +containerRef: React$ElementRef<*>,
-  +width?: number,
-  +hasPadding?: boolean,
+  +width?: string,
+  +noPadding?: boolean,
   +onClose: () => void,
 |};
 

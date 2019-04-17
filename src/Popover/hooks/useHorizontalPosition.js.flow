@@ -1,9 +1,10 @@
 // @flow
 
-import type { DimensionsCore } from "../index.js.flow";
+import type { DimensionsCore, AnchorsCore } from "../index.js.flow";
 
-export type Anchors = "start" | "end";
-
-export type UseHorizontalPosition = (desiredAnchor: Anchors[], positions: DimensionsCore) => string;
+export type UseHorizontalPosition = (
+  desiredAnchor: AnchorsCore[],
+  positions: DimensionsCore,
+) => string;
 
 declare export default UseHorizontalPosition;

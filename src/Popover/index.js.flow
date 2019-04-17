@@ -30,9 +30,9 @@ export type Props = {|
   +content: React$Node,
   +closeText?: Translation,
   +preferredPosition?: PositionsCore,
-  +open?: boolean,
-  +width?: number,
-  +hasPadding?: boolean,
+  +opened?: boolean,
+  +width?: string,
+  +noPadding?: boolean,
   +onOpen?: () => void | Promise<any>,
   +onClose?: () => void | Promise<any>,
 |};

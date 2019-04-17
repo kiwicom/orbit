@@ -1,9 +1,7 @@
 // @flow
 
-import type { DimensionsCore } from "../index.js.flow";
+import type { DimensionsCore, PositionsCore } from "../index.js.flow";
 
-export type Positions = "top" | "bottom";
-
-export type UseVerticalPosition = (position: Positions[], DimensionsCore) => string;
+export type UseVerticalPosition = (position: PositionsCore[], DimensionsCore) => string;
 
 declare export default UseVerticalPosition;

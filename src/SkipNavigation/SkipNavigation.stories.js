@@ -6,6 +6,7 @@ import { action } from "@storybook/addon-actions";
 import Heading from "../Heading";
 import Text from "../Text";
 import TextLink from "../TextLink";
+import Card, { CardHeader } from "../Card";
 
 import SkipNavigation from ".";
 
@@ -22,16 +23,23 @@ storiesOf("SkipNavigation", module).add(
             },
             {
               name: "Add baggage",
-              callBack: action("Add baggage"),
+              onClick: action("Add baggage"),
             },
             {
               name: "Reguest refund",
-              callBack: action("Reguest refund"),
+              onClick: action("Reguest refund"),
             },
           ]}
+          feedbackUrl="#"
         />
 
-        <Heading element="h2">User overview</Heading>
+        <Heading element="h2" dataA11ySection="user-overview">
+          User overview
+        </Heading>
+
+        <Card>
+          <CardHeader title="Card with title" subTitle={null} dataA11ySection="CardTitle" />
+        </Card>
         <Text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate nunc sit amet
           ante ullamcorper pellentesque. Aenean ut felis ut lacus mattis feugiat. Curabitur
@@ -45,7 +53,9 @@ storiesOf("SkipNavigation", module).add(
           turpis ultrices id. Cras consequat mattis felis, et convallis nunc ultrices at. Donec
           suscipit elit vitae sapien rhoncus, vel tristique mi convallis.
         </Text>
-        <Heading element="h2">Booking</Heading>
+        <Heading element="h2" dataA11ySection="booking">
+          Booking
+        </Heading>
         <Text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate nunc sit amet
           ante ullamcorper pellentesque. Aenean ut felis ut lacus mattis feugiat. Curabitur
@@ -59,7 +69,9 @@ storiesOf("SkipNavigation", module).add(
           turpis ultrices id. Cras consequat mattis felis, et convallis nunc ultrices at. Donec
           suscipit elit vitae sapien rhoncus, vel tristique mi convallis.
         </Text>
-        <Heading element="h2">Booking 2</Heading>
+        <Heading element="h2" dataA11ySection="confirmation">
+          Confirmation
+        </Heading>
         <Text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate nunc sit amet
           ante ullamcorper pellentesque. Aenean ut felis ut lacus mattis feugiat. Curabitur

@@ -8,6 +8,7 @@ export type Props = {|
   +title: React$Node,
   +subTitle?: React$Node,
   +actions?: React$Node,
+  +dataA11ySection?: string,
   ...Globals,
 |};
 

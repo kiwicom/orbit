@@ -21,6 +21,7 @@ Table below contains all types of the props available in Checkbox component.
 | name         | `string`                     |         | The name for the Checkbox.
 | onChange     | `event => void \| Promise`   |         | Function for handling onChange event.
 | ref          | `func`                       |         | Prop for forwarded ref of the Checkbox. [See Functional specs](#functional-specs)
+| tabIndex     | `string`                     |         | Specifies the tab order of an element
 | value        | `string`                     |         | The value of the Checkbox.
 
 ## Functional specs

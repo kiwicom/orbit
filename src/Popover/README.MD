@@ -22,7 +22,7 @@ Table below contains all types of the props available in the Popover component.
 | noPadding        | `boolean`              | `true`          | Adds or removes padding around popover's content.
 | open              | `boolean`              |                 | Prop for programatically controling Popover inner state. If `open` is present open triggers are ignored
 | preferredPosition | [`enum`](#enum)        | `"bottom"`      | The preferred position to choose [See Functional specs](#functional-specs)
-| width             | `number`               |                 | Width of popover, if not set the with is set to `auto`.
+| width             | `string`               |                 | Width of popover, if not set the with is set to `auto`.
 | onClose           | `() => void \| Promise`|                 | Function for handling onClose.
 | onOpen            | `() => void \| Promise`|                 | Function for handling onOpen.
 

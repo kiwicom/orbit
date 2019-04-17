@@ -1380,6 +1380,7 @@ exports[`Large Modal should match snapshot 1`] = `
         fixedClose={false}
         modalWidth={0}
         scrolled={false}
+        size="large"
         theme={
           Object {
             "orbit": Object {

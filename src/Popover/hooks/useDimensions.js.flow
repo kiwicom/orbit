@@ -1,0 +1,12 @@
+// @flow
+import type { DimensionsCore } from "../index.js.flow";
+
+export type Params = {|
+  containerRef: ?React$ElementRef<*>,
+  popover: ?React$ElementRef<*>,
+  content: ?React$ElementRef<*>,
+|};
+
+export type UseDimensions = Params => DimensionsCore;
+
+declare export default UseDimensions;

@@ -1,0 +1,16 @@
+// @flow
+import type { Globals, Translation } from "../../common/common.js.flow";
+import type { PositionsCore } from "../index.js.flow";
+
+export type Props = {|
+  ...Globals,
+  +children: React$Node,
+  +closeText?: Translation,
+  +preferredPosition: PositionsCore,
+  +containerRef: React$ElementRef<*>,
+  +width?: string,
+  +noPadding?: boolean,
+  +onClose: () => void,
+|};
+
+declare export default React$ComponentType<Props>;

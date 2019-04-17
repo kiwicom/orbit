@@ -1,0 +1,13 @@
+// @flow
+import type { Interpolation } from "styled-components";
+
+import type { Position, DimensionsCore } from "../index.js.flow";
+
+export type StyledPosition = {|
+  ...Position,
+  ...DimensionsCore,
+|};
+
+export type ResolvePopoverPosition = StyledPosition => ?Interpolation;
+
+declare export default ResolvePopoverPosition;

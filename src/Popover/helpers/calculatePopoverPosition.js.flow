@@ -1,0 +1,9 @@
+// @flow
+
+import type { PositionsCore, AnchorsCore } from "../index.js.flow";
+
+export type CalculatePopoverPosition = (
+  preferredPosition: PositionsCore,
+) => [PositionsCore[], AnchorsCore[]];
+
+declare export default CalculatePopoverPosition;

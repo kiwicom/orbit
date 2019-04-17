@@ -126,7 +126,7 @@ const CloseContainer = styled.div`
   // TODO create tokens
   height: 52px;
   width: 100%;
-  max-width: ${({ modalWidth }) => `${modalWidth}px`};
+  max-width: ${({ modalWidth }) => (modalWidth ? `${modalWidth}px` : getSizeToken)};
   box-shadow: ${({ scrolled }) => scrolled && `0 2px 4px 0 rgba(23, 27, 30, 0.1)`};
   background-color: ${({ theme, scrolled }) => scrolled && theme.orbit.paletteWhite};
   border-top-left-radius: 9px; // TODO: create token
@@ -183,15 +183,16 @@ const ModalWrapperContent = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
 
-  ${({ fixedFooter, theme }) =>
+  ${({ fixedFooter, theme, footerHeight, fullyScrolled }) =>
     fixedFooter &&
+    footerHeight &&
     css`
       ${StyledModalFooter} {
+        bottom: 0;
         padding: ${theme.orbit.spaceMedium};
-        box-shadow: ${({ fullyScrolled }) =>
-          fullyScrolled
-            ? `inset 0 1px 0 ${theme.orbit.paletteCloudNormal}, 0 -2px 4px 0 rgba(23, 27, 30, 0)`
-            : `inset 0 0 0 transparent, 0 -2px 4px 0 rgba(23, 27, 30, 0.1)`};
+        box-shadow: ${fullyScrolled
+          ? `inset 0 1px 0 ${theme.orbit.paletteCloudNormal}, 0 -2px 4px 0 rgba(23, 27, 30, 0)`
+          : `inset 0 0 0 transparent, 0 -2px 4px 0 rgba(23, 27, 30, 0.1)`};
         position: fixed;
         transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
       }
@@ -249,7 +250,7 @@ const ModalWrapperContent = styled.div`
         fixedFooter
           ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXXLarge}!important`
           : theme.orbit.spaceXXLarge};
-      max-width: ${({ modalWidth }) => `${modalWidth}px`};
+      max-width: ${({ modalWidth }) => (modalWidth ? `${modalWidth}px` : getSizeToken)};
       position: ${({ fullyScrolled, fixedFooter }) => fixedFooter && fullyScrolled && "absolute"};
       box-shadow: ${({ fullyScrolled }) => fullyScrolled && "none"};
     }
@@ -527,7 +528,12 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
             footerHeight={footerHeight}
             hasModalSection={hasModalSection}
           >
-            <CloseContainer modalWidth={modalWidth} scrolled={scrolled} fixedClose={fixedClose}>
+            <CloseContainer
+              modalWidth={modalWidth}
+              size={size}
+              scrolled={scrolled}
+              fixedClose={fixedClose}
+            >
               {onClose && (
                 <ButtonLink
                   onClick={onClose}

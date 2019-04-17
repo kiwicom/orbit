@@ -7,6 +7,8 @@ export const TYPE_OPTIONS = {
   CRITICAL: "critical",
   DARK: "dark",
   WHITE: "white",
+  INFO_INVERTED: "infoInverted",
+  CRITICAL_INVERTED: "criticalInverted",
 };
 
 export const TOKENS = {

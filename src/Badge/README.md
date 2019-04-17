@@ -20,14 +20,16 @@ Table below contains all types of the props available in Badge component.
 
 ### enum
 
-| type          |
-| :------------ |
-| `"neutral"`   |
-| `"dark"`      |
-| `"info"`      |
-| `"success"`   |
-| `"warning"`   |
-| `"critical"`  |
+| type                  |
+| :-------------------- |
+| `"neutral"`           |
+| `"dark"`              |
+| `"info"`              |
+| `"success"`           |
+| `"warning"`           |
+| `"critical"`          |
+| `"infoInverted"`      |
+| `"criticalInverted"`  |
 
 ## Functional specs
 

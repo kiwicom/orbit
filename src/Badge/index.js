@@ -18,6 +18,8 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.backgroundBadgeCritical,
       [TYPE_OPTIONS.DARK]: theme.orbit.backgroundBadgeDark,
       [TYPE_OPTIONS.WHITE]: theme.orbit.backgroundBadgeWhite,
+      [TYPE_OPTIONS.INFO_INVERTED]: theme.orbit.paletteBlueNormal,
+      [TYPE_OPTIONS.CRITICAL_INVERTED]: theme.orbit.paletteRedNormal,
     },
     [TOKENS.color]: {
       [TYPE_OPTIONS.NEUTRAL]: theme.orbit.colorTextBadgeNeutral,
@@ -27,9 +29,10 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextBadgeCritical,
       [TYPE_OPTIONS.DARK]: theme.orbit.colorTextBadgeDark,
       [TYPE_OPTIONS.WHITE]: theme.orbit.colorTextBadgeWhite,
+      [TYPE_OPTIONS.INFO_INVERTED]: theme.orbit.paletteWhite,
+      [TYPE_OPTIONS.CRITICAL_INVERTED]: theme.orbit.paletteWhite,
     },
   };
-
   return tokens[name][type];
 };
 

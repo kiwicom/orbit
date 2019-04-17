@@ -21,6 +21,7 @@ Table below contains all types of the props available in Radio component.
 | name         | `string`                   |         | The name for the Radio.
 | onChange     | `event => void \| Promise` |         | Function for handling onChange event.
 | ref          | `func`                     |         | Prop for forwarded ref of the Radio. [See Functional specs](#functional-specs)
+| tabIndex     | `string`                   |         | Specifies the tab order of an element
 | value        | `string`                   |         | The value of the Radio.
 
 ## Functional specs

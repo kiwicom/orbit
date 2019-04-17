@@ -1,0 +1,7 @@
+// @flow
+
+import type { DimensionsCore, PositionsCore } from "../index.js.flow";
+
+export type UseVerticalPosition = (position: PositionsCore[], DimensionsCore) => string;
+
+declare export default UseVerticalPosition;

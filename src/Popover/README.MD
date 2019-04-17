@@ -13,15 +13,18 @@ After adding import into your project you can use it simply like:
 ## Props
 Table below contains all types of the props available in the Popover component.
 
-| Name              | Type                  | Default         | Description                      |
-| :---------------- | :-------------------- | :-------------- | :------------------------------- |
-| **content**       | `React.Node`          |                 | The content to display in the Popover.
-| closeText         | `Translation`         | `"Close"`       | The text of the close button to display on mobile devices.
-| **children**      | `React.Node`          |                 | The reference element where the Popover will appear.
-| dataTest          | `string`              |                 | Optional prop for testing purposes.
-| open              | `boolean`             |                 | Prop for programatically controling Popover inner state. If `open` is present open triggers are ignored
-| preferredPosition | [`enum`](#enum)       | `"bottom"`      | The preferred position to choose [See Functional specs](#functional-specs)
-| width             | `number`              |                 | Width of popover, if not set the with is set to `auto`.
+| Name              | Type                   | Default         | Description                      |
+| :---------------- | :--------------------- | :-------------- | :------------------------------- |
+| **content**       | `React.Node`           |                 | The content to display in the Popover.
+| closeText         | `Translation`          | `"Close"`       | The text of the close button to display on mobile devices.
+| **children**      | `React.Node`           |                 | The reference element where the Popover will appear.
+| dataTest          | `string`               |                 | Optional prop for testing purposes.
+| hasPadding        | `boolean`              | `true`          | Adds or removes padding around popover's content.
+| open              | `boolean`              |                 | Prop for programatically controling Popover inner state. If `open` is present open triggers are ignored
+| preferredPosition | [`enum`](#enum)        | `"bottom"`      | The preferred position to choose [See Functional specs](#functional-specs)
+| width             | `number`               |                 | Width of popover, if not set the with is set to `auto`.
+| onClose           | `() => void \| Promise`|                 | Function for handling onClose.
+| onOpen            | `() => void \| Promise`|                 | Function for handling onOpen.
 
 ## enum
 | position          | 

@@ -52,7 +52,6 @@ storiesOf("ChoiceGroup", module)
           label={label}
           filter
           onChange={action("onChange")}
-          block
           onOnlySelection={action("onOnlySelection")}
         >
           <Checkbox label="Reason one" value="one" />
@@ -73,16 +72,17 @@ storiesOf("ChoiceGroup", module)
       const labelSize = select("labelSize", Object.values(LABEL_SIZES), LABEL_SIZES.NORMAL);
       const labelElement = select("labelElement", Object.values(LABEL_ELEMENTS), LABEL_ELEMENTS.H4);
       const error = text("error", "Something is wrong");
-      const block = boolean("Block", false);
+      const filter = boolean("Filter", false);
       return (
         <ChoiceGroup
           dataTest={dataTest}
           label={label}
           labelSize={labelSize}
           labelElement={labelElement}
-          onChange={action("onChange")}
           error={error}
-          block={block}
+          filter={filter}
+          onOnlySelection={action("onOnlySelection")}
+          onChange={action("onChange")}
         >
           <Radio label="Reason one" value="one" />
           <Radio label="Reason two" value="two" />

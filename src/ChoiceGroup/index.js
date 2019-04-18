@@ -7,7 +7,6 @@ import Stack from "../Stack";
 import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
 import FormFeedback, { StyledFormFeedback } from "../FormFeedback";
 import defaultTheme from "../defaultTheme";
-import Checkbox from "../Checkbox";
 import ButtonLink from "../ButtonLink";
 
 import type { Props } from "./index";
@@ -78,9 +77,12 @@ class ChoiceGroup extends React.PureComponent<Props> {
     }
   };
 
-  handleOnly = (obj: { item: {}, index: number }) => {
+  handleOnly = (
+    ev: SyntheticEvent<HTMLButtonElement>,
+    child: { value: string | number, label: string },
+  ) => {
     if (this.props.onOnlySelection) {
-      this.props.onOnlySelection(obj);
+      this.props.onOnlySelection(ev, child);
     }
   };
 
@@ -93,9 +95,10 @@ class ChoiceGroup extends React.PureComponent<Props> {
       error,
       children,
       block,
-      filters,
+      filter,
       onOnlySelection,
     } = this.props;
+
     return (
       <StyledChoiceGroup data-test={dataTest}>
         {label && (
@@ -103,42 +106,26 @@ class ChoiceGroup extends React.PureComponent<Props> {
             {label}
           </Heading>
         )}
-        <Stack direction="column" spacing={filters ? "none" : "condensed"}>
-          {filters
-            ? filters.map((child, i) => {
-                return (
-                  <StyledContentWrapper block={block} key={encodeURIComponent(child.label + i)}>
-                    <Checkbox
-                      label={child.label}
-                      value={child.value}
-                      hasError={!!error}
-                      onChange={this.handleChange}
-                    />
-                    {onOnlySelection && (
-                      <StyledOnlyButton
-                        type="secondary"
-                        size="small"
-                        onClick={() => {
-                          this.handleOnly({ item: child, index: i });
-                        }}
-                        transparent
-                      >
-                        Only
-                      </StyledOnlyButton>
-                    )}
-                  </StyledContentWrapper>
-                );
-              })
-            : React.Children.map(children, child => {
-                return (
-                  <StyledContentWrapper block={block}>
-                    {React.cloneElement(child, {
-                      onChange: this.handleChange,
-                      hasError: !!error,
-                    })}
-                  </StyledContentWrapper>
-                );
-              })}
+        <Stack direction="column" spacing={filter ? "none" : "condensed"}>
+          {React.Children.map(children, child => {
+            return !filter ? (
+              <StyledContentWrapper block={block}>
+                {React.cloneElement(child, {
+                  onChange: this.handleChange,
+                  hasError: !!error,
+                })}
+              </StyledContentWrapper>
+            ) : (
+              <FilterWrapper child={child} onClick={this.handleOnly}>
+                <StyledContentWrapper block={block}>
+                  {React.cloneElement(child, {
+                    onChange: this.handleChange,
+                    hasError: !!error,
+                  })}
+                </StyledContentWrapper>
+              </FilterWrapper>
+            );
+          })}
         </Stack>
         {error && (
           <FormFeedback type="error" fixed>
@@ -150,4 +137,21 @@ class ChoiceGroup extends React.PureComponent<Props> {
   }
 }
 
+const FilterWrapper = ({ child, onClick, children }) => {
+  return (
+    <StyledContentWrapper block>
+      {children}
+      <StyledOnlyButton
+        type="secondary"
+        size="small"
+        onClick={ev => {
+          onClick(ev, { value: child.props.value, label: child.props.label });
+        }}
+        transparent
+      >
+        Only {/* TODO: Dictionary */}
+      </StyledOnlyButton>
+    </StyledContentWrapper>
+  );
+};
 export default ChoiceGroup;

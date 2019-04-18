@@ -50,15 +50,15 @@ storiesOf("ChoiceGroup", module)
       return (
         <ChoiceGroup
           label={label}
-          filters={[
-            { label: "Reason one", value: "one" },
-            { label: "Reason one", value: "one" },
-            { label: "Reason one", value: "one" },
-          ]}
+          filter
           onChange={action("onChange")}
           block
           onOnlySelection={action("onOnlySelection")}
-        />
+        >
+          <Checkbox label="Reason one" value="one" />
+          <Checkbox label="Reason two" value="two" />
+          <Checkbox label="Reason three" value="three" />
+        </ChoiceGroup>
       );
     },
     {

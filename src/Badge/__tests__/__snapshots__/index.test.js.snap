@@ -2,7 +2,6 @@
 
 exports[`Badge should match snapshot 1`] = `
 <Badge__StyledBadge
-  circled={true}
   dataTest="test"
   theme={
     Object {

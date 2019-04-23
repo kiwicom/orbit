@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Badge should match snapshot 1`] = `
+exports[`NotificationBadge should match snapshot 1`] = `
 <Badge
-  circled={true}
   dataTest="test"
+  icon={<Sightseeing />}
   type="info"
->
-  badge
-</Badge>
+/>
 `;

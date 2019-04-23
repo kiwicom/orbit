@@ -29,3 +29,7 @@ Table below contains all types of the props available in Badge component.
 | `"critical"`          |
 | `"infoInverted"`      |
 | `"criticalInverted"`  |
+
+## Functional specs
+
+* `icon` has higher priority than children. If `icon` is passed the children will not appear 

@@ -5,15 +5,20 @@ import { text, select } from "@storybook/addon-knobs";
 
 import { TYPE_OPTIONS } from "../Badge/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import * as Icons from "../icons/index";
 
 import NotificationBadge from "./index";
+
+const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
+const getIcon = source => Icons[source];
 
 storiesOf("NotificationBadge", module)
   .add(
     "Default",
     () => {
       const content = text("Content", "10");
-      return <NotificationBadge>{content}</NotificationBadge>;
+      const Icon = getIcon(getIcons(null));
+      return <NotificationBadge icon={Icon && <Icon />}>{content}</NotificationBadge>;
     },
     {
       info: "Check Orbit.Kiwi for more detailed design guidelines.",

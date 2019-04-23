@@ -2,6 +2,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/notificationbadge/
 */
+
 import type { Globals } from "../common/common.js.flow";
 import type { Type } from "../Badge/index.js.flow";
 

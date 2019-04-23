@@ -4,6 +4,6 @@
     "./config/enzymeConfig",
     "./config/registerContext"
   ],
-  "setupTestFrameworkScriptFile": "./config/jestSetupFramework",
+  "setupFilesAfterEnv": ["./config/jestSetupFramework"],
   "snapshotSerializers": ["enzyme-to-json/serializer"]
 }

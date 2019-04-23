@@ -1,11 +1,11 @@
 # Badge
 To implement Badge component into your project you'll need to add the import:
 ```jsx
-import Badge from "@kiwicom/orbit-components/lib/Badge";
+import Badge from "@kiwicom/orbit-components/lib/NotificationBadge";
 ```
 After adding import into your project you can use it simply like:
 ```jsx
-<Badge>Hello!</Badge>
+<NotificationBadge>Hello!</NotificationBadge>
 ```
 ## Props
 Table below contains all types of the props available in Badge component.
@@ -29,7 +29,3 @@ Table below contains all types of the props available in Badge component.
 | `"critical"`          |
 | `"infoInverted"`      |
 | `"criticalInverted"`  |
-
-## Functional specs
-
-* If you want to use `circled` badge, please take a look on `NotificationBadge`

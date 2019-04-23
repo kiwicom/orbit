@@ -1,19 +1,9 @@
 // @flow
 /*
-  DOCUMENTATION: https://orbit.kiwi/components/badge/
+  DOCUMENTATION: https://orbit.kiwi/components/notificationbadge/
 */
 import type { Globals } from "../common/common.js.flow";
-
-export type Type =
-  | "neutral"
-  | "dark"
-  | "info"
-  | "success"
-  | "warning"
-  | "critical"
-  | "white"
-  | "infoInverted"
-  | "criticalInverted";
+import type { Type } from "../Badge/index.js.flow";
 
 export type Props = {|
   +children: React$Node,

@@ -1,0 +1,13 @@
+// @flow
+
+import type { Props } from "../index";
+import type { RefType } from "../../common/common.js.flow";
+
+export type StateLessProps = {|
+  ...Props,
+  +value: number | string,
+  +forwardedRef: RefType,
+  +onKeyDown?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
+  +onDecrement?: (ev: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  +onIncrement?: (ev: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+|};

@@ -22,7 +22,7 @@ export type Props = {|
   +minValue?: number,
   +required?: boolean,
   tabIndex?: string,
-  +onChange?: number => void | Promise<any>,
+  +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};

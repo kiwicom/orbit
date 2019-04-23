@@ -1,0 +1,9 @@
+// @flow
+
+export type Params = {|
+  value: number,
+  minValue: number,
+  step: number,
+|};
+
+export type ValidateDecrement = Params => boolean | number;

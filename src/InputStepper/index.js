@@ -1,59 +1,13 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
 
 import { SIZE_OPTIONS } from "../InputField/consts";
-import PlusCircle from "../icons/PlusCircle";
-import MinusCircle from "../icons/MinusCircle";
-import ButtonLink from "../ButtonLink";
-import InputField, { Input, Prefix } from "../InputField";
-import defaultTheme from "../defaultTheme";
 import KEY_CODE_MAP from "../common/keyMaps";
-import getSpacingToken from "../common/getSpacingToken";
+import InputStepperStateless from "./InputStepperStateless";
+import validateIncrement from "./helpers/validateIncrement";
+import validateDecrement from "./helpers/validateDecrement";
 
 import type { Props, State, ForwardedRef } from "./index";
-
-const PrefixSuffix = styled(({ type, ...props }) => <div {...props} />)`
-  flex-shrink: 0;
-  z-index: 3;
-  cursor: ${({ disabled }) => disabled && "not-allowed"};
-`;
-
-PrefixSuffix.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledInputStepper = styled.div`
-  width: 100%;
-  margin-bottom: ${getSpacingToken};
-  ${Input} {
-    text-align: center;
-  }
-  ${Prefix} {
-    padding: 0;
-    pointer-events: auto;
-  }
-`;
-
-StyledInputStepper.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledButtonWrapper = styled.div`
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
-      0 0 1px 3px rgba(1, 118, 210, 0.6); //TODO: Create token
-  }
-
-  &:focus:active {
-    box-shadow: none;
-  }
-`;
-
-StyledButtonWrapper.defaultProps = {
-  theme: defaultTheme,
-};
 
 class InputStepper extends React.Component<Props & ForwardedRef, State> {
   state = {
@@ -71,20 +25,50 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
   incrementCounter = () => {
     const { value } = this.state;
     const { maxValue = Number.POSITIVE_INFINITY, step = 1 } = this.props;
-    const newValue = value + step;
-    const stateValue = newValue >= +maxValue ? maxValue : newValue;
-    if (stateValue !== value) {
-      this.setValueAndInjectCallback(stateValue);
+
+    const increment = validateIncrement({ value, maxValue, step });
+
+    if (increment || increment === 0) {
+      this.setValueAndInjectCallback(increment);
     }
   };
 
   decrementCounter = () => {
     const { value } = this.state;
     const { minValue = Number.NEGATIVE_INFINITY, step = 1 } = this.props;
-    const newValue = value - step;
-    const stateValue = newValue <= +minValue ? minValue : newValue;
-    if (stateValue !== value) {
-      this.setValueAndInjectCallback(stateValue);
+
+    const decrement = validateDecrement({ value, minValue, step });
+
+    if (decrement || decrement === 0) {
+      this.setValueAndInjectCallback(decrement);
+    }
+  };
+
+  handleIncrementCounter = (ev?: SyntheticKeyboardEvent<HTMLInputElement>) => {
+    if (ev && ev.type === "click") {
+      this.incrementCounter();
+    }
+    if (ev && ev.type === "keydown") {
+      if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+        ev.preventDefault();
+        this.incrementCounter();
+      } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+        this.incrementCounter();
+      }
+    }
+  };
+
+  handleDecrementCounter = (ev?: SyntheticKeyboardEvent<HTMLInputElement>) => {
+    if (ev && ev.type === "click") {
+      this.decrementCounter();
+    }
+    if (ev && ev.type === "keydown") {
+      if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+        ev.preventDefault();
+        this.decrementCounter();
+      } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+        this.decrementCounter();
+      }
     }
   };
 
@@ -108,24 +92,6 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
     }
   };
 
-  handleKeyDecrement = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-      ev.preventDefault();
-      this.decrementCounter();
-    } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-      this.decrementCounter();
-    }
-  };
-
-  handleKeyIncrement = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-      ev.preventDefault();
-      this.incrementCounter();
-    } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-      this.incrementCounter();
-    }
-  };
-
   render() {
     const {
       label,
@@ -146,52 +112,29 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
     } = this.props;
     const { value } = this.state;
     return (
-      <StyledInputStepper spaceAfter={spaceAfter}>
-        <InputField
-          dataTest={dataTest}
-          size={size}
-          label={label}
-          disabled={disabled}
-          required={required}
-          name={name}
-          error={error}
-          help={help}
-          type="number"
-          onChange={this.handleChange}
-          onBlur={onBlur}
-          onFocus={onFocus}
-          onKeyDown={this.handleKeyDown}
-          value={value || 0}
-          minValue={minValue}
-          maxValue={maxValue}
-          tabIndex={tabIndex}
-          ref={forwardedRef}
-          prefix={
-            <StyledButtonWrapper role="button" tabIndex="0" onKeyDown={this.handleKeyDecrement}>
-              <ButtonLink
-                disabled={disabled || value <= +minValue}
-                iconLeft={<MinusCircle color="secondary" />}
-                size={size}
-                onClick={this.decrementCounter}
-                transparent
-                component={PrefixSuffix}
-              />
-            </StyledButtonWrapper>
-          }
-          suffix={
-            <StyledButtonWrapper role="button" tabIndex="0" onKeyDown={this.handleKeyIncrement}>
-              <ButtonLink
-                disabled={disabled || value >= +maxValue}
-                iconLeft={<PlusCircle color="secondary" />}
-                size={size}
-                onClick={this.incrementCounter}
-                transparent
-                component={PrefixSuffix}
-              />
-            </StyledButtonWrapper>
-          }
-        />
-      </StyledInputStepper>
+      <InputStepperStateless
+        dataTest={dataTest}
+        size={size}
+        label={label}
+        disabled={disabled}
+        required={required}
+        name={name}
+        error={error}
+        help={help}
+        type="number"
+        onChange={this.handleChange}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        onKeyDown={this.handleKeyDown}
+        value={value || 0}
+        minValue={minValue}
+        maxValue={maxValue}
+        tabIndex={tabIndex}
+        forwardedRef={forwardedRef}
+        spaceAfter={spaceAfter}
+        onDecrement={this.handleDecrementCounter}
+        onIncrement={this.handleIncrementCounter}
+      />
     );
   }
 }

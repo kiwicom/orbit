@@ -86,7 +86,7 @@ const InputStepperStateless = ({
         name={name}
         error={error}
         help={help}
-        type="number"
+        type={typeof value === "number" ? "number" : "text"}
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}

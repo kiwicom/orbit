@@ -7,6 +7,7 @@ import { text, number, select, boolean } from "@storybook/addon-knobs";
 import { SIZE_OPTIONS } from "../InputField/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import InputStepperStateless from "./InputStepperStateless";
 
 import InputStepper from "./index";
 
@@ -56,6 +57,51 @@ storiesOf("InputStepper", module)
     },
   )
   .add(
+    "Stateless",
+    () => {
+      const min = number("minValue", 1);
+      const max = number("maxValue", 10);
+      const step = number("step", 2);
+      const label = text("Label", "Label");
+      const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
+      const help = text("Help", undefined);
+      const name = text("Name", "name");
+      const error = text("Error", "");
+      const disabled = boolean("disabled", false);
+      const required = boolean("required", false);
+      const dataTest = text("dataTest", "test");
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const value = text("Value", "2 Adults");
+
+      return (
+        <InputStepperStateless
+          value={value}
+          label={label}
+          size={size}
+          step={step}
+          error={error}
+          help={help}
+          name={name}
+          maxValue={max}
+          minValue={min}
+          disabled={disabled}
+          required={required}
+          dataTest={dataTest}
+          onChange={action("onChange")}
+          onFocus={action("onFocus")}
+          onBlur={action("onBlur")}
+          onKeyDown={action("onKeyDown")}
+          onDecrement={action("onDecrement")}
+          onIncrement={action("onIncrement")}
+          spaceAfter={spaceAfter}
+        />
+      );
+    },
+    {
+      info: "Standalone stateless version of a InputStepper, mainly used for working with string",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const min = number("minValue", 1);
@@ -93,7 +139,7 @@ storiesOf("InputStepper", module)
       );
     },
     {
-      info: "Some description about this type of InputStepper in general.",
+      info: "InputStepper with all possible options",
     },
   )
   .add(

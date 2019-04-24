@@ -28,7 +28,7 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
 
     const increment = validateIncrement({ value, maxValue, step });
 
-    if (increment || increment === 0) {
+    if (typeof increment === "number" || increment === 0) {
       this.setValueAndInjectCallback(increment);
     }
   };
@@ -39,12 +39,14 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
 
     const decrement = validateDecrement({ value, minValue, step });
 
-    if (decrement || decrement === 0) {
+    if (typeof decrement === "number" || decrement === 0) {
       this.setValueAndInjectCallback(decrement);
     }
   };
 
-  handleIncrementCounter = (ev?: SyntheticKeyboardEvent<HTMLInputElement>) => {
+  handleIncrementCounter = (
+    ev?: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
+  ) => {
     if (ev && ev.type === "click") {
       this.incrementCounter();
     }
@@ -58,7 +60,9 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
     }
   };
 
-  handleDecrementCounter = (ev?: SyntheticKeyboardEvent<HTMLInputElement>) => {
+  handleDecrementCounter = (
+    ev?: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
+  ) => {
     if (ev && ev.type === "click") {
       this.decrementCounter();
     }
@@ -121,7 +125,6 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
         name={name}
         error={error}
         help={help}
-        type="number"
         onChange={this.handleChange}
         onBlur={onBlur}
         onFocus={onFocus}
@@ -147,3 +150,4 @@ const ForwardedInputStepper = React.forwardRef((props, ref) => (
 ForwardedInputStepper.displayName = "InputStepper";
 
 export default ForwardedInputStepper;
+export { default as InputStepperStateless } from "./InputStepperStateless";

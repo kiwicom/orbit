@@ -71,3 +71,41 @@ class Component extends React.PureComponent<Props> {
   }
 }
 ```
+
+## InputStepperStateless
+InputStepper offers a stateless version for your custom solutions. To use `InputStepperStateless` you'll need to add the import
+
+```jsx
+import { InputStepperStateless } from "@kiwicom/orbit-components/lib/InputStepper";
+```
+
+### Props
+Table below contains all types of the props available in `InputStepperStateless` component.
+
+| Name            | Type                        | Default     | Description                                        |
+| :-------------- | :-------------------------- | :---------- | :------------------------------------------------- |
+| disabled        | `boolean`                   | `false`     | If `true`, the InputStepperStateless will be disabled.
+| error           | `React.Node`                |             | The error to display beneath the InputStepperStateless. [See Functional specs](#functional-specs)
+| help            | `React.Node`                |             | The help to display beneath the InputStepperStateless.
+| label           | `Translation`               |             | The label for the InputStepperStateless. [See Functional specs](#functional-specs)
+| maxValue        | `number`                    | `∞`         | Specifies the maximum value for the InputStepperStateless.
+| minValue        | `number`                    | `-∞`        | Specifies the minimum value for the InputStepperStateless.
+| name            | `string`                    |             | The name for the InputStepperStateless.
+| onBlur          | `event => void \| Promise`  |             | Function for handling onBlur event.
+| onChange        | `number => void \| Promise` |             | Function for handling onClick event.
+| onDecrement     | `event => void \| Promise`  |             | Function for handling decrement event.
+| onFocus         | `event => void \| Promise`  |             | Function for handling onFocus event.
+| onIncrement     | `event => void \| Promise`  |             | Function for handling increment event.
+| onKeyDown       | `event => void \| Promise`  |             | Function for handling onKeyDown event present on input.
+| ref             | `func`                      |             | Prop for forwarded ref of the InputStepperStateless. [See Functional specs](#functional-specs)
+| required        | `boolean`                   | `false`     | If `true`, the label is displayed as required.
+| size            | [`enum`](#enum)             | `"normal"`  | The size of the InputStepperStateless.
+| spaceAfter      | `enum`                      |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
+| step            | `number`                    | `1`         | Specifies the value of step to increment and decrement.
+| tabIndex        | `string`                    |             | Specifies the tab order of an element
+| value           | `number | string`           |             | Specifies the value of the InputStepperStateless.
+
+#### Usage:
+```jsx
+<InputStepperStateless value={"2 adults"}/>
+```

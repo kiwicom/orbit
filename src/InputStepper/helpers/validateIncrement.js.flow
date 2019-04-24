@@ -7,3 +7,5 @@ export type Params = {|
 |};
 
 export type ValidateIncrement = Params => boolean | number;
+
+declare export default ValidateIncrement;

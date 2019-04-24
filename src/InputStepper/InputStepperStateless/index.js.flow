@@ -1,13 +1,20 @@
 // @flow
 
-import type { Props } from "../index";
+import type { SharedProps } from "../index";
 import type { RefType } from "../../common/common.js.flow";
 
 export type StateLessProps = {|
-  ...Props,
+  ...SharedProps,
   +value: number | string,
-  +forwardedRef: RefType,
+  +forwardedRef?: RefType,
   +onKeyDown?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
-  +onDecrement?: (ev: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
-  +onIncrement?: (ev: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  +onDecrement?: (
+    ev: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
+  ) => void | Promise<any>,
+  +onIncrement?: (
+    ev: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
+  ) => void | Promise<any>,
+  +onChange?: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};
+
+declare export default React$ComponentType<StateLessProps>;

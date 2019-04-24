@@ -7,3 +7,5 @@ export type Params = {|
 |};
 
 export type ValidateDecrement = Params => boolean | number;
+
+declare export default ValidateDecrement;

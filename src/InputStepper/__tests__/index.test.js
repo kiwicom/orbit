@@ -45,7 +45,7 @@ describe(`InputStepper with help, prefix and suffix`, () => {
     />,
   );
   const input = component.find("InputField");
-  const stepper = component.find("InputStepper__StyledInputStepper");
+  const stepper = component.find("InputStepperStateless__StyledInputStepper");
   const inputFieldInput = component.find("InputField__Input");
 
   it("should contain an input", () => {

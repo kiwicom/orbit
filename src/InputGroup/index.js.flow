@@ -28,6 +28,7 @@ export type Props = {|
 export type State = {|
   active: boolean,
   filled: boolean,
+  inputID: string,
 |};
 
 declare export default React$ComponentType<Props>;

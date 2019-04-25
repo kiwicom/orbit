@@ -42,13 +42,14 @@ import Card, { CardHeader } from "@kiwicom/orbit-components/lib/Card";
 #### Props
 Table below contains all types of the props in CardHeader component.
 
-| Name          | Type                  | Default         | Description                      |
-| :------------ | :---------------------| :-------------- | :------------------------------- |
-| dataTest      | `string`              |                 | Optional prop for testing purposes.
-| icon          | `React.Node`          |                 | Displayed icon.
-| **title**     | `React.Node`          |                 | The title of the CardHeader.
-| subTitle      | `React.Node`          |                 | The description of the CardHeader.
-| actions       | `React.Node`          |                 | Actions in CardHeader especially Buttons
+| Name          | Type                    | Default         | Description                      |
+| :------------ | :---------------------- | :-------------- | :------------------------------- |
+| dataA11ySection | `string`              |                 | ID for a `<SkipNavigation>` component. 
+| dataTest        | `string`              |                 | Optional prop for testing purposes.
+| icon            | `React.Node`          |                 | Displayed icon.
+| **title**       | `React.Node`          |                 | The title of the CardHeader.
+| subTitle        | `React.Node`          |                 | The description of the CardHeader.
+| actions         | `React.Node`          |                 | Actions in CardHeader especially Buttons
 
 
 ### CardSection

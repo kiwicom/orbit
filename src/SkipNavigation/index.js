@@ -15,6 +15,10 @@ const StyledNavigation = styled.div`
   width: 100%;
   box-sizing: border-box;
 
+  &:focus {
+    outline: none;
+  }
+
   ${({ show }) =>
     !show &&
     css`
@@ -35,7 +39,7 @@ const StyledSelectWrapper = styled.div`
   max-width: 800px;
 `;
 
-const SkipNavigation = ({ pages }: Props) => {
+const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
   const [links, setLinks] = useState([]);
   const [mappedLinks, setMappedLinks] = useState<MappedOptions[]>([]);
   const [innerPages, setPages] = useState([]);
@@ -53,9 +57,9 @@ const SkipNavigation = ({ pages }: Props) => {
   };
 
   const handlePageClick = (ev: SyntheticInputEvent<HTMLSelectElement>) => {
-    if (pages) {
+    if (actions) {
       const index = Number(ev.target.value);
-      const selected = pages[index - 1];
+      const selected = actions[index - 1];
 
       if (selected.onClick) {
         selected.onClick();
@@ -73,7 +77,7 @@ const SkipNavigation = ({ pages }: Props) => {
       });
       mappedSections.unshift({
         value: 0,
-        label: "Move to section",
+        label: "Jump to section",
       }); /* TODO: Dictionary */
 
       if (selectedLinks) {
@@ -82,8 +86,8 @@ const SkipNavigation = ({ pages }: Props) => {
 
       setMappedLinks(mappedSections);
 
-      if (pages) {
-        const mappedPages = [...pages].map((el, i) => {
+      if (actions) {
+        const mappedPages = [...actions].map((el, i) => {
           return { value: i + 1, label: el.name };
         });
         mappedPages.unshift({ value: 0, label: "Common actions" }); /* TODO: Dictionary */
@@ -102,13 +106,19 @@ const SkipNavigation = ({ pages }: Props) => {
 
   return (
     <StyledNavigation tabIndex="-1" onFocus={focusIn} onBlur={focusOut} show={show}>
-      <StyledSelectWrapper>
-        <Stack align="center">
-          <Select options={mappedLinks} onChange={handleLinksClick} />
-          {innerPages && <Select options={innerPages} onChange={handlePageClick} />}
-          <ButtonLink type="secondary">Accessibility feedback</ButtonLink> {/* TODO: Dictionary */}
-        </Stack>
-      </StyledSelectWrapper>
+      <Stack justify="between">
+        <StyledSelectWrapper>
+          <Stack align="center">
+            <Select options={mappedLinks} onChange={handleLinksClick} />
+            {innerPages.length > 0 && <Select options={innerPages} onChange={handlePageClick} />}
+          </Stack>
+        </StyledSelectWrapper>
+        {feedbackUrl && (
+          <ButtonLink href={feedbackUrl} type="secondary">
+            Send feedback
+          </ButtonLink>
+        )}
+      </Stack>
     </StyledNavigation>
   );
 };

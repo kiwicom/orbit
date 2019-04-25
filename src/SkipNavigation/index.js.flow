@@ -3,7 +3,7 @@
   DOCUMENTATION: https://orbit.kiwi/components/hide/
 */
 
-type Option = {|
+type Actions = {|
   +name?: string,
   +link?: string,
   +onClick?: () => {},
@@ -15,7 +15,7 @@ export type MappedOptions = {|
   +disabled?: boolean,
 |};
 export type Props = {|
-  pages?: Option[],
+  actions?: Actions[],
   feedbackUrl?: string,
 |};
 

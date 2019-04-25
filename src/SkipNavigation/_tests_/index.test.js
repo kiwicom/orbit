@@ -7,7 +7,7 @@ import SkipNavigation from "..";
 describe("SkipNavigation", () => {
   const component = mount(
     <SkipNavigation
-      pages={[
+      actions={[
         {
           link: "https://www.kiwi.com/cz/pages/content/terms",
           name: "Got to terms and condition",

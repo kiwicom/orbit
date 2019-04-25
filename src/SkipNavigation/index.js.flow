@@ -12,7 +12,7 @@ type Option = {|
 export type MappedOptions = {|
   +value: string | number,
   +label?: string,
-  +element?: HTMLElement,
+  +disabled?: boolean,
 |};
 export type Props = {|
   pages?: Option[],

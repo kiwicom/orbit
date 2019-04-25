@@ -36,14 +36,15 @@ const StyledSelectWrapper = styled.div`
 `;
 
 const SkipNavigation = ({ pages }: Props) => {
-  const [links, setLinks] = useState<MappedOptions[]>([]);
+  const [links, setLinks] = useState([]);
+  const [mappedLinks, setMappedLinks] = useState<MappedOptions[]>([]);
   const [innerPages, setPages] = useState([]);
   const [show, setShow] = useState(false);
   let set = false;
 
   const handleLinksClick = (ev: SyntheticInputEvent<HTMLSelectElement>) => {
     const index = Number(ev.target.value);
-    const selected = links[index].element;
+    const selected = links[index - 1];
 
     if (selected) {
       selected.setAttribute("tabindex", "-1");
@@ -52,13 +53,15 @@ const SkipNavigation = ({ pages }: Props) => {
   };
 
   const handlePageClick = (ev: SyntheticInputEvent<HTMLSelectElement>) => {
-    const index = Number(ev.target.value) - 1;
-    const selected = pages[index];
+    if (pages) {
+      const index = Number(ev.target.value);
+      const selected = pages[index - 1];
 
-    if (selected.onClick) {
-      selected.onClick();
-    } else if (selected.link) {
-      window.location.href = selected.link;
+      if (selected.onClick) {
+        selected.onClick();
+      } else if (selected.link) {
+        window.location.href = selected.link;
+      }
     }
   };
 
@@ -66,15 +69,18 @@ const SkipNavigation = ({ pages }: Props) => {
     if (!set) {
       const selectedLinks = document.querySelectorAll("[data-a11y-section]");
       const mappedSections = [...selectedLinks].map((el, i) => {
-        return { value: i + 1, label: el.innerText, element: el };
+        return { value: i + 1, label: el.innerText };
       });
       mappedSections.unshift({
         value: 0,
         label: "Move to section",
-        element: null,
       }); /* TODO: Dictionary */
 
-      setLinks(mappedSections);
+      if (selectedLinks) {
+        setLinks(selectedLinks);
+      }
+
+      setMappedLinks(mappedSections);
 
       if (pages) {
         const mappedPages = [...pages].map((el, i) => {
@@ -98,7 +104,7 @@ const SkipNavigation = ({ pages }: Props) => {
     <StyledNavigation tabIndex="-1" onFocus={focusIn} onBlur={focusOut} show={show}>
       <StyledSelectWrapper>
         <Stack align="center">
-          <Select options={links} onChange={handleLinksClick} />
+          <Select options={mappedLinks} onChange={handleLinksClick} />
           {innerPages && <Select options={innerPages} onChange={handlePageClick} />}
           <ButtonLink type="secondary">Accessibility feedback</ButtonLink> {/* TODO: Dictionary */}
         </Stack>

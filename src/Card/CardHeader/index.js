@@ -6,7 +6,7 @@ import defaultTheme from "../../defaultTheme";
 import Heading, { StyledHeading } from "../../Heading";
 import Text from "../../Text";
 import { rtlSpacing } from "../../utils/rtl";
-import media from "../../utils/mediaQuery"
+import media from "../../utils/mediaQuery";
 
 import type { Props } from "./index";
 
@@ -16,7 +16,7 @@ export const StyledCardHeader = styled.div`
   padding: ${({ theme }) => theme.orbit.spaceMedium};
   box-sizing: border-box;
   color: ${({ theme }) => theme.orbit.colorHeading};
-  
+
   ${media.desktop(css`
     padding: ${({ theme }) => theme.orbit.spaceLarge};
   `)}

@@ -6,8 +6,7 @@ import defaultTheme from "../../defaultTheme";
 import ChevronDown from "../../icons/ChevronDown";
 import { getSize } from "../../Icon";
 import { ICON_SIZES } from "../../Icon/consts";
-
-import media from "../../utils/mediaQuery"
+import media from "../../utils/mediaQuery";
 
 import type { ContextType, Props } from "./index";
 
@@ -43,11 +42,10 @@ export const StyledCardSection = styled.div`
   box-sizing: border-box;
   position: relative;
   background: ${({ theme }) => theme.orbit.backgroundCard};
-  
+
   ${media.desktop(css`
     padding: ${({ theme }) => theme.orbit.spaceLarge};
   `)}
-  
 `;
 
 StyledCardSection.defaultProps = {

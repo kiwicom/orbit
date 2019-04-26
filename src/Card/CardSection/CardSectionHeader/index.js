@@ -8,7 +8,7 @@ import { ICON_SIZES } from "../../../Icon/consts";
 import defaultTheme from "../../../defaultTheme";
 import ChevronDown from "../../../icons/ChevronDown";
 import { left } from "../../../utils/rtl/index";
-import media from "../../../utils/mediaQuery"
+import media from "../../../utils/mediaQuery";
 
 import type { Props } from "./index";
 

@@ -1,11 +1,13 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import ChevronDown from "../../icons/ChevronDown";
 import { getSize } from "../../Icon";
 import { ICON_SIZES } from "../../Icon/consts";
+
+import media from "../../utils/mediaQuery"
 
 import type { ContextType, Props } from "./index";
 
@@ -37,10 +39,15 @@ StyledCardSectionContent.defaultProps = {
 
 export const StyledCardSection = styled.div`
   width: 100%;
-  padding: ${({ theme }) => theme.orbit.spaceLarge};
+  padding: ${({ theme }) => theme.orbit.spaceMedium};
   box-sizing: border-box;
   position: relative;
   background: ${({ theme }) => theme.orbit.backgroundCard};
+  
+  ${media.desktop(css`
+    padding: ${({ theme }) => theme.orbit.spaceLarge};
+  `)}
+  
 `;
 
 StyledCardSection.defaultProps = {

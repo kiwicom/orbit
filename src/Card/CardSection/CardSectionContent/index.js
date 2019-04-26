@@ -1,10 +1,11 @@
 // @flow
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
 import { CardSectionContext } from "../index";
 import Slide, { StyledSlide } from "../../../utils/Slide";
+import media from "../../../utils/mediaQuery";
 
 import type { Props, State } from "./index";
 
@@ -20,10 +21,15 @@ export const StyledCardSectionContent = styled.div`
       ? `1px solid ${theme.orbit.paletteCloudNormal}`
       : `0px solid ${theme.orbit.paletteCloudNormal}`};
   padding-top: ${({ theme, expandable, expanded, visible }) =>
-    hasPaddingTop({ expandable, expanded, visible }) && theme.orbit.spaceLarge};
+    hasPaddingTop({ expandable, expanded, visible }) && theme.orbit.spaceMedium};
   transition: padding ${({ theme }) => theme.orbit.durationFast} linear,
     border-top ${({ theme }) => theme.orbit.durationFast} linear;
   overflow: hidden;
+
+  ${media.desktop(css`
+    padding-top: ${({ theme, expandable, expanded, visible }) =>
+      hasPaddingTop({ expandable, expanded, visible }) && theme.orbit.spaceLarge};
+  `)}
 
   ${StyledSlide} {
     max-height: ${({ expandable, visible }) => expandable && visible && "none"};

@@ -1,6 +1,6 @@
 // @flow
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { CardSectionContext } from "../index";
 import { getSize } from "../../../Icon/index";
@@ -8,6 +8,7 @@ import { ICON_SIZES } from "../../../Icon/consts";
 import defaultTheme from "../../../defaultTheme";
 import ChevronDown from "../../../icons/ChevronDown";
 import { left } from "../../../utils/rtl/index";
+import media from "../../../utils/mediaQuery"
 
 import type { Props } from "./index";
 
@@ -28,9 +29,16 @@ export const StyledCardSectionHeader = styled.div`
   cursor: ${({ expandable }) => expandable && "pointer"};
   position: relative;
   min-height: ${({ expandable }) => expandable && getSize(ICON_SIZES.MEDIUM)};
-  margin: ${({ theme }) => `-${theme.orbit.spaceLarge}`};
-  padding: ${({ theme }) => theme.orbit.spaceLarge};
+  margin: ${({ theme }) => `-${theme.orbit.spaceMedium}`};
+  padding: ${({ theme }) => theme.orbit.spaceMedium};
   margin-bottom: ${({ expanded }) => expanded && 0};
+  
+  ${media.desktop(css`
+    padding: ${({ theme }) => theme.orbit.spaceLarge};
+    margin: ${({ theme }) => `-${theme.orbit.spaceLarge}`};
+    margin-bottom: ${({ expanded }) => expanded && 0};
+  `)}
+
 
   &:hover {
     background: ${({ theme, expandable }) => expandable && theme.orbit.paletteWhiteHover};

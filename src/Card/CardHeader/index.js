@@ -1,20 +1,25 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import Heading, { StyledHeading } from "../../Heading";
 import Text from "../../Text";
 import { rtlSpacing } from "../../utils/rtl";
+import media from "../../utils/mediaQuery"
 
 import type { Props } from "./index";
 
 export const StyledCardHeader = styled.div`
   position: relative;
   width: 100%;
-  padding: ${({ theme }) => theme.orbit.spaceLarge};
+  padding: ${({ theme }) => theme.orbit.spaceMedium};
   box-sizing: border-box;
   color: ${({ theme }) => theme.orbit.colorHeading};
+  
+  ${media.desktop(css`
+    padding: ${({ theme }) => theme.orbit.spaceLarge};
+  `)}
 `;
 
 StyledCardHeader.defaultProps = {

@@ -28,7 +28,7 @@ StyledCardHeader.defaultProps = {
 
 const StyledHeadingWrapper = styled.div`
   display: flex;
-  align-items: start;
+  align-items: center;
 
   ${StyledHeading} {
     width: 100%;
@@ -48,7 +48,7 @@ const StyledIcon = styled.div`
   color: ${({ theme }) => theme.orbit.colorHeading};
   display: flex;
   align-items: center;
-  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
 `;
 
 StyledIcon.defaultProps = {
@@ -59,7 +59,7 @@ const CardHeader = ({ icon, title, subTitle, actions, dataTest }: Props) => (
   <StyledCardHeader data-test={dataTest}>
     <StyledHeadingWrapper>
       {icon && <StyledIcon>{icon}</StyledIcon>}
-      <Heading type="title2" element="h2">
+      <Heading type="title3" element="h2">
         {title}
       </Heading>
       {actions}

@@ -213,7 +213,7 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
     prefix,
     spaceAfter,
   } = props;
-  const filled = !!value;
+  const filled = !(value == null || value === "");
   return (
     <Label spaceAfter={spaceAfter}>
       {label && (
@@ -232,7 +232,7 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
           size={size}
           disabled={disabled}
           error={error}
-          value={value || ""}
+          value={value == null ? "" : value}
           prefix={prefix}
           name={name}
           onFocus={onFocus}

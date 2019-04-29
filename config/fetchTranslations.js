@@ -1,12 +1,15 @@
 // @flow
 import fetch from "isomorphic-unfetch";
-import path from "path"
-import chalk from "chalk";
+import path from "path";
+import dotenv from "dotenv";
 import fs from "fs-extra";
 
+dotenv.config();
+const env = name => process.env[name] || "";
+
 const PHRASE_APP_BASE_URL = "https://api.phraseapp.com/api/v2";
-const PHRASE_APP_PROJECT_ID = "";
-const PHRASE_APP_ACCESS_TOKEN = "";
+const PHRASE_APP_PROJECT_ID = env("PHRASE_APP_PROJECT_ID");
+const PHRASE_APP_ACCESS_TOKEN = env("PHRASE_APP_ACCESS_TOKEN");
 
 const LOCALES_URL = `${PHRASE_APP_BASE_URL}/projects/${PHRASE_APP_PROJECT_ID}/locales`;
 const FILE_FORMAT = "nested_json";
@@ -33,7 +36,7 @@ const writeJSON = (filename, obj) =>
     });
   });
 
-const flatten = (obj, keyPrefix = "") =>
+const flatten = (obj = {}, keyPrefix = "") =>
   Object.entries(obj).reduce((result, [key, value]) => {
     if (value && typeof value === "object") {
       return {
@@ -60,9 +63,7 @@ const flatten = (obj, keyPrefix = "") =>
         `${LOCALES_URL}/${locale.id}/download?file_format=${FILE_FORMAT}&tags=orbit&encoding=UTF-8`,
       );
 
-      await writeJSON(path.join(LOCALES_DATA, `${locale.code}.json`), flatten(translation));
-
-      console.log(chalk.green.bold(`${locale.code} translations updated.`));
+      await writeJSON(path.join(LOCALES_DATA, `${locale.code}.json`), flatten(translation.orbit));
     }
   } catch (error) {
     console.error(error); // eslint-disable-line no-console

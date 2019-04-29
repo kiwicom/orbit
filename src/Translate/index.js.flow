@@ -1,0 +1,6 @@
+// @flow
+export type Props = {
+  tKey: string,
+};
+
+declare export default React$ComponentType<Props>;

@@ -1,14 +1,21 @@
 // @flow
 import React from "react";
-import { withTheme } from "styled-components";
 
 import { DictionaryContext } from "../Dictionary";
 import DEFAULT_DICTIONARY from "../data/dictionary/en-GB";
 
-const Translate = ({ tKey }) => (
+import type { Props } from "./index";
+
+const Translate = ({ tKey }: Props) => (
   <DictionaryContext.Consumer>
-    {dictionary => <span>{dictionary[tKey] || DEFAULT_DICTIONARY[tKey]}</span>}
+    {dictionary => {
+      if (dictionary[tKey] || DEFAULT_DICTIONARY[tKey])
+        return <span>{dictionary[tKey] || DEFAULT_DICTIONARY[tKey]}</span>;
+
+      // Fallback to key
+      return <span>{tKey}</span>;
+    }}
   </DictionaryContext.Consumer>
 );
 
-export default withTheme(Translate);
+export default Translate;

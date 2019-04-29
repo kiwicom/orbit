@@ -37,7 +37,6 @@ import { QUERIES } from "../utils/mediaQuery/consts";
 import Translate from "../Translate";
 
 import type { Props, State, Aligns, Positions } from "./index";
-import ThemeProvider from "../ThemeProvider";
 
 const StyledTooltipChildren = styled.span`
   &:focus:active {
@@ -442,13 +441,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
   tooltipId: string;
 
   render() {
-    const {
-      content,
-      children,
-      size = SIZE_OPTIONS.SMALL,
-      dataTest,
-      tabIndex = "0",
-    } = this.props;
+    const { content, children, size = SIZE_OPTIONS.SMALL, dataTest, tabIndex = "0" } = this.props;
     const { shown, shownMobile, position, align } = this.state;
     const {
       containerTop,
@@ -506,7 +499,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
               <StyledTooltipContent ref={this.content}>{content}</StyledTooltipContent>
               <StyledTooltipClose>
                 <Button type="secondary" block onClick={this.handleClose} ref={this.closeButton}>
-                  <Translate tKey="orbit.button_close" />
+                  <Translate tKey="button_close" />
                 </Button>
               </StyledTooltipClose>
             </StyledTooltipWrapper>

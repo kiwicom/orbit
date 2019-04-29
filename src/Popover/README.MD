@@ -16,7 +16,6 @@ Table below contains all types of the props available in the Popover component.
 | Name              | Type                   | Default         | Description                      |
 | :---------------- | :--------------------- | :-------------- | :------------------------------- |
 | **content**       | `React.Node`           |                 | The content to display in the Popover.
-| closeText         | `Translation`          | `"Close"`       | The text of the close button to display on mobile devices.
 | **children**      | `React.Node`           |                 | The reference element where the Popover will appear.
 | dataTest          | `string`               |                 | Optional prop for testing purposes.
 | noPadding        | `boolean`              | `true`          | Adds or removes padding around popover's content.

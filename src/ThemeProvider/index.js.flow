@@ -1,0 +1,12 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/themeprovider/
+*/
+
+export type Props = {|
+  +theme: any,
+  +dictionary?: any,
+  +children: React$Node,
+|};
+
+declare export default React$ComponentType<Props>;

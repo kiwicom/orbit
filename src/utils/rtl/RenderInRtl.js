@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { ThemeProvider } from "styled-components";
+import ThemeProvider from "../../ThemeProvider";
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 type Props = {|

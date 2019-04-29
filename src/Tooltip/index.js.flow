@@ -35,7 +35,6 @@ export type Props = {|
   +children: React$Node,
   +content: React$Node,
   +size?: "small" | "medium",
-  +closeText?: Translation,
   +preferredPosition?: Positions,
   +tabIndex?: string,
 |};

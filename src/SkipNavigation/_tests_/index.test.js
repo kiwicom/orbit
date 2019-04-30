@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { mount } from "enzyme";
+import { shallow } from "enzyme";
 
 import SkipNavigation from "..";
 
@@ -19,11 +19,11 @@ describe("SkipNavigation", () => {
   ];
   const feedbackUrl = "https://www.kiwi.com/en/";
 
-  const component = mount(<SkipNavigation actions={actions} feedbackUrl={feedbackUrl} />);
+  const component = shallow(<SkipNavigation actions={actions} feedbackUrl={feedbackUrl} />);
 
   it("Should pass props", () => {
-    expect(component.prop("feedbackUrl")).toBe(feedbackUrl);
-    expect(component.prop("actions")).toBe(actions);
+    expect(component.find("Button").exists()).toEqual(true);
+    expect(component.find("Select").exists()).toEqual(true);
   });
 
   it("should match snapshot", () => {

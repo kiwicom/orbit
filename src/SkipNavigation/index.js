@@ -44,7 +44,6 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
   const [mappedLinks, setMappedLinks] = useState<MappedOptions[]>([]);
   const [innerPages, setPages] = useState([]);
   const [show, setShow] = useState(false);
-  let set = false;
 
   const handleLinksClick = (ev: SyntheticInputEvent<HTMLSelectElement>) => {
     const index = Number(ev.target.value);
@@ -69,16 +68,18 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
     }
   };
 
-  const focusIn = () => {
-    if (!set) {
+  const handleFocus = () => {
+    if (links.length === 0) {
       const selectedLinks = document.querySelectorAll("[data-a11y-section]");
-      const mappedSections = [...selectedLinks].map((el, i) => {
-        return { value: i + 1, label: el.innerText };
-      });
-      mappedSections.unshift({
-        value: 0,
-        label: "Jump to section",
-      }); /* TODO: Dictionary */
+      const mappedSections = [
+        {
+          value: 0,
+          label: "Jump to section", // TODO: Dictionary
+        },
+        ...[...selectedLinks].map((el, i) => {
+          return { value: i + 1, label: el.innerText };
+        }),
+      ];
 
       if (selectedLinks) {
         setLinks(selectedLinks);
@@ -87,25 +88,31 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
       setMappedLinks(mappedSections);
 
       if (actions) {
-        const mappedPages = [...actions].map((el, i) => {
-          return { value: i + 1, label: el.name };
-        });
-        mappedPages.unshift({ value: 0, label: "Common actions" }); /* TODO: Dictionary */
+        const mappedPages = [
+          {
+            value: 0,
+            label: "Common actions", // TODO: Dictionary
+          },
+          ...actions.map((el, i) => {
+            return { value: i + 1, label: el.name };
+          }),
+        ];
 
         setPages(mappedPages);
       }
-      set = true;
     }
-
     setShow(true);
   };
 
-  const focusOut = () => {
-    setShow(false);
-  };
-
   return (
-    <StyledNavigation tabIndex="-1" onFocus={focusIn} onBlur={focusOut} show={show}>
+    <StyledNavigation
+      tabIndex="-1"
+      onFocus={handleFocus}
+      onBlur={() => {
+        setShow(false);
+      }}
+      show={show}
+    >
       <Stack justify="between">
         <StyledSelectWrapper>
           <Stack align="center">
@@ -114,7 +121,7 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
           </Stack>
         </StyledSelectWrapper>
         {feedbackUrl && (
-          <ButtonLink href={feedbackUrl} type="secondary">
+          <ButtonLink href={feedbackUrl} type="secondary" external>
             Send feedback
           </ButtonLink>
         )}

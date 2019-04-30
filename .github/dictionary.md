@@ -23,10 +23,11 @@ const App = () =>
 
 **Fallbacks**
 
-If translation key not exists in your language the fallback is `en_GB` which is our default lang
-If translation key not exists in both files (your language, default language), the translation key will be rendered e.g. `button_close`
+* If translation key not exists in your language the fallback is `en_GB` which is our default lang
+* If translation key not exists in both files (your language, default language), the translation key will be rendered e.g. `button_close`
 
 **Your own dictionary**
+
 There is option to add your own dictionary, just pass object containing keys and values.
 
 ```jsx

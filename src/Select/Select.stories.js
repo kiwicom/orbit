@@ -14,6 +14,7 @@ import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import Select from "./index";
 
 const objectOptions = [
+  { value: 0, label: "Zero-th item" },
   { value: 1, label: "First item" },
   { value: 2, label: "Second item" },
   { value: 3, label: "Third item" },

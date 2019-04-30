@@ -921,7 +921,7 @@ exports[`ContentWrapper it should match snapshot 1`] = `
       <Button>
         Content
       </Button>
-      <ContentWrapper__StyledTooltipClose
+      <ContentWrapper__StyledPopoverClose
         theme={
           Object {
             "orbit": Object {
@@ -1378,9 +1378,11 @@ exports[`ContentWrapper it should match snapshot 1`] = `
           onClick={[MockFunction]}
           type="secondary"
         >
-          Close
+          <Translate
+            tKey="button_close"
+          />
         </Button>
-      </ContentWrapper__StyledTooltipClose>
+      </ContentWrapper__StyledPopoverClose>
     </ContentWrapper__StyledPopoverContent>
   </ContentWrapper__StyledPopoverParent>
 </Fragment>

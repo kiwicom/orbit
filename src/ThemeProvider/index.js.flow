@@ -1,0 +1,14 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/themeprovider/
+*/
+
+import type { Translations } from "../Dictionary";
+
+export type Props = {|
+  +theme: any,
+  +dictionary?: Translations,
+  +children: React$Node,
+|};
+
+declare export default React$ComponentType<Props>;

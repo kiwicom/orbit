@@ -1,0 +1,17 @@
+// @flow
+import * as React from "react";
+
+export type Translations = {
+  [key: string]: string,
+};
+
+export type DictionaryContextType = React.Context<Translations>;
+
+export type Props = {
+  +values: Translations,
+  +children: React$Node,
+};
+
+declare export default React$ComponentType<Props>;
+
+declare export var DictionaryContext: DictionaryContextType;

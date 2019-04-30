@@ -49,7 +49,7 @@ import Alert from "@kiwicom/orbit-components/lib/Alert"
 <Alert>Hello World!</Alert>
 ```
 
-If you want to use a custom theme inside your project, it’s necessary to generate a theme object from `orbit-design-tokens` and use it in `<ThemeProvider />` component from `styled-components`. See [this document](https://github.com/kiwicom/orbit-components/tree/master/.github/theming.md) for more information.
+If you want to use custom theme or dictionary inside your project, it's necessary to wrap your app into `<ThemeProvider>`. See [this document](https://github.com/kiwicom/orbit-components/tree/master/src/ThemeProvider/README.md) for more information.
 
 For live preview check out [Storybook](https://kiwicom.github.io/orbit-components/) or [orbit.kiwi](https://orbit.kiwi).
 
@@ -60,6 +60,7 @@ You can also try `orbit-components` live on [CodeSandbox](https://codesandbox.io
 * [Icons](https://github.com/kiwicom/orbit-components/tree/master/src/Icon/README.md)
 * [Right to left languages](https://github.com/kiwicom/orbit-components/tree/master/src/utils/rtl/README.md)
 * [Theming](https://github.com/kiwicom/orbit-components/tree/master/.github/theming.md)
+* [Dictionary](https://github.com/kiwicom/orbit-components/tree/master/.github/dictionary.md)
 
 ## Contributing
 We are working on making this project fully open source. We appreciate any contributions you might make.

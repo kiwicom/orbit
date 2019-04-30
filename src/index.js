@@ -6,6 +6,7 @@ export { Icons };
 
 export { default as Alert } from "./Alert";
 export { default as Badge } from "./Badge";
+export { default as NotificationBadge } from "./NotificationBadge";
 export { default as Breadcrumbs } from "./Breadcrumbs";
 export { default as Button } from "./Button";
 export { default as ButtonGroup } from "./ButtonGroup";
@@ -15,12 +16,6 @@ export { default as Checkbox } from "./Checkbox";
 export { default as ChoiceGroup } from "./ChoiceGroup";
 export { default as CountryFlag } from "./CountryFlag";
 export { default as DestinationHeader } from "./DestinationHeader";
-
-// Deprecated Card
-export { default as DeprecatedCard } from "./_deprecated/Card";
-export { default as DeprecatedCardHeader } from "./_deprecated/Card/CardHeader";
-export { default as DeprecatedCardSection } from "./_deprecated/Card/CardSection";
-export { default as DeprecatedCardContent } from "./_deprecated/Card/CardContent";
 
 // Card
 export { default as Card } from "./Card";
@@ -72,6 +67,8 @@ export { default as Tag } from "./Tag";
 export { default as Textarea } from "./Textarea";
 export { default as Tile } from "./Tile";
 export { default as Tooltip } from "./Tooltip";
+export { default as Translate } from "./Translate";
+export { default as ThemeProvider } from "./ThemeProvider";
 
 export { default as TripSegment } from "./TripSegment";
 export { default as TripSector } from "./TripSector";

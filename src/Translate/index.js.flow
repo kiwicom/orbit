@@ -1,0 +1,12 @@
+// @flow
+
+export type Values = {
+  [key: string]: string | number,
+};
+
+export type Props = {
+  tKey: string,
+  values?: Values,
+};
+
+declare export default React$ComponentType<Props>;

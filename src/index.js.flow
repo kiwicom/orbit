@@ -7,6 +7,7 @@ import type {
 
 import typeof AlertType from "./Alert";
 import typeof BadgeType from "./Badge";
+import typeof NotificationBadgeType from "./NotificationBadge";
 import typeof BreadcrumbsType from "./Breadcrumbs";
 import typeof ButtonType from "./Button";
 import typeof ButtonLinkType from "./ButtonLink";
@@ -48,10 +49,6 @@ import typeof TextareaType from "./Textarea";
 import typeof CardType from "./Card";
 import typeof CardHeaderType from "./Card/CardHeader";
 import typeof CardSectionType from "./Card/CardSection";
-import typeof DeprecatedCardType from "./_deprecated/Card";
-import typeof DeprecatedCardHeaderType from "./_deprecated/Card/CardHeader";
-import typeof DeprecatedCardSectionType from "./_deprecated/Card/CardSection";
-import typeof DeprecatedCardContentType from "./_deprecated/Card/CardContent";
 import typeof mediaQueriesType from "./utils/mediaQuery";
 import typeof PortalType from "./Portal";
 import typeof ModalType from "./Modal";
@@ -67,6 +64,8 @@ import typeof TableHeadType from "./Table/TableHead";
 import typeof TableRowType from "./Table/TableRow";
 import typeof StepperType from "./Stepper";
 import typeof StopoverArrowType from "./StopoverArrow";
+import typeof ThemeProviderType from "./ThemeProvider";
+import typeof TranslateType from "./Translate";
 import type { Theme } from "./defaultTheme";
 
 declare export var InputText: any;
@@ -79,6 +78,7 @@ declare export var Typography: any;
 
 declare export var Alert: AlertType;
 declare export var Badge: BadgeType;
+declare export var NotificationBadge: NotificationBadgeType;
 declare export var Breadcrumbs: BreadcrumbsType;
 declare export var Button: ButtonType;
 declare export var ButtonLink: ButtonLinkType;
@@ -97,11 +97,6 @@ declare export var ListChoice: ListChoiceType;
 declare export var Card: CardType;
 declare export var CardHeader: CardHeaderType;
 declare export var CardSection: CardSectionType;
-
-declare export var DeprecatedCard: DeprecatedCardType;
-declare export var DeprecatedCardHeader: DeprecatedCardHeaderType;
-declare export var DeprecatedCardSection: DeprecatedCardSectionType;
-declare export var DeprecatedCardContent: DeprecatedCardContentType;
 
 declare export var Sticky: StickyType;
 declare export var Portal: PortalType;
@@ -148,6 +143,10 @@ declare export var TripSegment: TripSegmentType;
 declare export var TripSector: TripSectorType;
 declare export var TripDate: TripDateType;
 declare export var TripLayover: TripLayoverType;
+
+declare export var ThemeProvider: ThemeProviderType;
+declare export var Translate: TranslateType;
+
 declare export var defaultTheme: Theme;
 declare export var geTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;

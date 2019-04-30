@@ -9,19 +9,19 @@ import Sightseeing from "../../icons/Sightseeing";
 describe("Badge", () => {
   const content = "badge";
   const type = "info";
-  const circled = true;
   const dataTest = "test";
   const icon = <Sightseeing />;
+  const ariaLabel = content;
 
   const component = shallow(
-    <Badge type={type} icon={icon} circled={circled} dataTest={dataTest}>
+    <Badge type={type} icon={icon} dataTest={dataTest} ariaLabel={ariaLabel}>
       {content}
     </Badge>,
   );
   it("should have passed props", () => {
     expect(component.prop("type")).toBe(type);
-    expect(component.prop("circled")).toBe(circled);
     expect(component.render().prop("data-test")).toBe(dataTest);
+    expect(component.render().prop("aria-label")).toBe(ariaLabel);
   });
   it("should contain a content", () => {
     expect(component.render().text()).toBe(content);

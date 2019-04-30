@@ -6,6 +6,7 @@ import Select from "../Select";
 import Stack from "../Stack";
 import ButtonLink from "../Button";
 import defaultTheme from "../defaultTheme";
+import Translate from "../Translate";
 
 import type { Props, MappedOptions } from "./index";
 
@@ -122,7 +123,7 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
         </StyledSelectWrapper>
         {feedbackUrl && (
           <ButtonLink href={feedbackUrl} type="secondary" external>
-            Send feedback
+            <Translate tKey="a11ymenu_send_feedback" />
           </ButtonLink>
         )}
       </Stack>

@@ -81,10 +81,10 @@ IconContainer.defaultProps = {
 const StyledBadgeContent = styled.div``;
 
 const Badge = (props: Props) => {
-  const { type = TYPE_OPTIONS.NEUTRAL, icon, children, dataTest } = props;
+  const { type = TYPE_OPTIONS.NEUTRAL, icon, children, ariaLabel, dataTest } = props;
 
   return (
-    <StyledBadge type={type} dataTest={dataTest}>
+    <StyledBadge type={type} dataTest={dataTest} ariaLabel={ariaLabel}>
       {icon && (
         <IconContainer type={type} hasContent={!!children}>
           {icon}

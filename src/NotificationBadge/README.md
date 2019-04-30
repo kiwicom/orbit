@@ -16,6 +16,7 @@ Table below contains all types of the props available in Badge component.
 | dataTest      | `string`              |                 | Optional prop for testing purposes.
 | icon          | `React.Node`          |                 | The displayed icon on the left.
 | type          | [`enum`](#enum)       | `"neutral"`     | The color type of the Badge.
+| ariaLabel     | `string`              |                 | Adds prop adds `aria-label` to an element, useful for screenreaders.
 
 ### enum
 

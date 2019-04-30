@@ -20,11 +20,11 @@ StyledNotificationBadge.defaultProps = {
 };
 
 const NotificationBadge = (props: Props) => {
-  const { type = TYPE_OPTIONS.NEUTRAL, children, icon, dataTest } = props;
+  const { type = TYPE_OPTIONS.NEUTRAL, children, icon, ariaLabel, dataTest } = props;
 
   return (
     <StyledNotificationBadge>
-      <Badge type={type} dataTest={dataTest} icon={icon}>
+      <Badge type={type} dataTest={dataTest} icon={icon} ariaLabel={ariaLabel}>
         {!icon && children}
       </Badge>
     </StyledNotificationBadge>

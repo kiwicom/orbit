@@ -21,6 +21,7 @@ export type Props = {|
   +children: React$Node,
   +type?: Type,
   +icon?: React$Node,
+  +ariaLabel?: string,
   ...Globals,
 |};
 

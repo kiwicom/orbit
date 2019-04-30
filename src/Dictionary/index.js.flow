@@ -8,7 +8,7 @@ export type Translations = {
 export type DictionaryContextType = React.Context<Translations>;
 
 export type Props = {
-  +values?: Translations,
+  +values: Translations,
   +children: React$Node,
 };
 

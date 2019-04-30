@@ -9,9 +9,9 @@ import type { Props } from "./index";
 const ThemeProvider = ({ theme, dictionary, children }: Props) => (
   <StyledThemeProvider theme={theme}>
     {dictionary ? (
-      <Dictionary values={dictionary}>{React.children.only(children)}</Dictionary>
+      <Dictionary values={dictionary}>{React.Children.only(children)}</Dictionary>
     ) : (
-      React.children.only(children)
+      React.Children.only(children)
     )}
   </StyledThemeProvider>
 );

@@ -10,6 +10,7 @@ import FormFeedback from "../FormFeedback";
 import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { right, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
+import randomID from "../utils/randomID";
 
 import type { Props, State } from "./index";
 
@@ -84,8 +85,8 @@ StyledChild.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledInputGroup = styled(({ children, className, dataTest }) => (
-  <div className={className} data-test={dataTest}>
+const StyledInputGroup = styled(({ children, className, dataTest, role, ariaLabelledby }) => (
+  <div className={className} data-test={dataTest} role={role} aria-labelledby={ariaLabelledby}>
     {children}
   </div>
 ))`
@@ -154,10 +155,12 @@ class InputGroup extends React.PureComponent<Props, State> {
   state = {
     active: false,
     filled: false,
+    inputID: "",
   };
 
   componentDidMount() {
     this.isFilled();
+    this.setState({ inputID: randomID("InputGroup") });
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -213,7 +216,8 @@ class InputGroup extends React.PureComponent<Props, State> {
       dataTest,
       spaceAfter,
     } = this.props;
-    const { active, filled } = this.state;
+
+    const { active, filled, inputID } = this.state;
 
     return (
       <StyledInputGroup
@@ -223,8 +227,14 @@ class InputGroup extends React.PureComponent<Props, State> {
         size={size}
         dataTest={dataTest}
         spaceAfter={spaceAfter}
+        role="group"
+        ariaLabelledby={label && inputID}
       >
-        {label && <FormLabel filled={filled}>{label}</FormLabel>}
+        {label && (
+          <FormLabel filled={filled} id={inputID}>
+            {label}
+          </FormLabel>
+        )}
         <StyledChildren>
           {React.Children.map(children, (item, key) => {
             // either array, array with one length or string

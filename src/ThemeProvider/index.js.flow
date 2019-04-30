@@ -3,9 +3,11 @@
   DOCUMENTATION: https://orbit.kiwi/components/themeprovider/
 */
 
+import type { Translations } from "../Dictionary";
+
 export type Props = {|
   +theme: any,
-  +dictionary?: any,
+  +dictionary?: Translations,
   +children: React$Node,
 |};
 

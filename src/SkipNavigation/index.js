@@ -77,9 +77,10 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
           value: 0,
           label: "Jump to section", // TODO: Dictionary
         },
-        ...Object.values(selectedLinks).map((el, i) => {
-          return { value: i + 1, label: el.innerText };
-        }),
+        ...Object.keys(selectedLinks).map(key => ({
+          value: Number(key) + 1,
+          label: selectedLinks[Number(key)].innerText,
+        })),
       ];
 
       if (selectedLinks) {

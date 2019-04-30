@@ -48,6 +48,7 @@ const StyledPopoverParent = styled.div`
   padding-top: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
   overflow: hidden;
+  z-index: 1000;
 
   &:focus {
     outline: 0;
@@ -82,6 +83,7 @@ const StyledOverlay = styled.div`
   height: 100%;
   background-color: rgba(23, 27, 30, 0.6); // TODO: token
   animation: ${opacityAnimation} ${({ theme }) => theme.orbit.durationFast} ease-in;
+  z-index: 999;
 
   ${media.largeMobile(css`
     background-color: transparent;

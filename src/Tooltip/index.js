@@ -74,13 +74,13 @@ const StyledTooltipWrapper = styled.div`
   visibility: ${({ shownMobile }) => (shownMobile ? "visible" : "hidden")};
   opacity: ${({ shownMobile }) => (shownMobile ? "1" : "0")};
   transition: bottom ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
-    visibility ${({ theme }) => theme.orbit.durationFast} linear ${({ shownMobile, theme }) =>
-  !shownMobile && theme.orbit.durationNormal};
+    visibility ${({ theme }) => theme.orbit.durationFast} linear
+      ${({ shownMobile, theme }) => !shownMobile && theme.orbit.durationNormal};
   z-index: 10012; // TODO: use some good value
   bottom: ${({ shownMobile, tooltipWidth }) => (shownMobile ? "0" : `-${tooltipWidth}px`)};
   left: 0;
   right: 0;
-  
+
   img {
     max-width: 100%;
   }
@@ -117,14 +117,14 @@ const StyledTooltipWrapper = styled.div`
     position: absolute;
 
     ${tooltipArrowStyle};
-    
+
     ${resolveTooltipArrowPosition};
     ${resolveTooltipArrowAlign};
-    
+
     ${media.largeMobile(css`
       display: block;
     `)};
-      
+  }
 `;
 
 StyledTooltipWrapper.defaultProps = {

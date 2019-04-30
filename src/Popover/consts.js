@@ -11,4 +11,9 @@ export const ANCHORS = {
   END: "end",
 };
 
-export const POPOVER_SPACE_BETWEEN = 4;
+export const POPOVER_ARROW_SIZE = 14;
+export const POPOVER_PADDING = 10;
+
+export const POPOVER_TOTAL_PADDING = POPOVER_PADDING + POPOVER_ARROW_SIZE;
+
+export const POPOVER_SPACE_BETWEEN = 14;

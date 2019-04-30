@@ -92,6 +92,41 @@ storiesOf("Popover", module)
     },
   )
   .add(
+    "Opposite side",
+    () => {
+      const preferredPosition = select(
+        "preferredPosition",
+        Object.values(POSITIONS),
+        POSITIONS.BOTTOM,
+      );
+      return (
+        <Stack justify="end">
+          <Popover
+            noPadding
+            content={
+              <div>
+                <ListChoice
+                  title="Choice Title"
+                  description="Further description"
+                  selectable
+                  icon={<Icons.Accommodation />}
+                  onClick={action("onClick")}
+                />
+              </div>
+            }
+            preferredPosition={preferredPosition}
+          >
+            <Button type="secondary" iconLeft={<ChevronDown />} circled />
+          </Popover>
+        </Stack>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
     "With ListChoice",
     () => {
       const width = text("width", "250px");

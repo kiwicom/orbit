@@ -13,6 +13,10 @@ import useDimensions from "../hooks/useDimensions";
 import useVerticalPosition from "../hooks/useVerticalPosition";
 import useHorizontalPosition from "../hooks/useHorizontalPosition";
 import Translate from "../../Translate";
+import arrowStyle from "../helpers/arrowStyle";
+import resolvePopoverArrowPosition from "../helpers/resolvePopoverArrowPosition";
+import resolvePopoverArrowAlign from "../helpers/resolvePopoverArrowAlign";
+import { POPOVER_ARROW_SIZE } from "../consts";
 
 const showAnimation = keyframes`
   from {
@@ -47,7 +51,8 @@ const StyledPopoverParent = styled.div`
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
   padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
-  overflow: hidden;
+  /* border: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal}; */
+
   z-index: 1000;
 
   &:focus {
@@ -65,13 +70,43 @@ const StyledPopoverParent = styled.div`
     ${resolvePopoverPosition}
     ${resolvePopoverHorizontal}
   `)}
+
+  &:after {
+    content: "";
+    display: none;
+    position: absolute;
+
+    ${arrowStyle};
+    /* width: ${POPOVER_ARROW_SIZE}px;
+    height: ${POPOVER_ARROW_SIZE}px;
+    transform: rotate(45deg);
+    background-color: ${({ theme }) => theme.orbit.backgroundModal};
+    z-index: -1;
+    box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1}; */
+    /* border: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal}; */
+
+    ${resolvePopoverArrowPosition};
+    ${resolvePopoverArrowAlign};
+
+    ${media.largeMobile(css`
+      display: block;
+    `)};
+  }
 `;
 
 StyledPopoverParent.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledPopoverContent = styled.div``;
+const StyledPopoverContent = styled.div`
+  overflow: hidden;
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceSmall)};
+  padding-top: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
+`;
+StyledPopoverContent.defaultProps = {
+  theme: defaultTheme,
+};
 
 const StyledOverlay = styled.div`
   display: block;
@@ -158,7 +193,7 @@ const PopoverContentWrapper = ({
         noPadding={noPadding}
         role="tooltip"
       >
-        <StyledPopoverContent ref={content}>
+        <StyledPopoverContent ref={content} noPadding={noPadding}>
           {children}
           <StyledPopoverClose noPadding={noPadding}>
             <Button type="secondary" block onClick={onClose}>

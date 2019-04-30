@@ -9,6 +9,7 @@ import { TOOLTIP_ARROW_SIZE, TOOLTIP_PADDING } from "../consts";
 // TODO: use tokens for 12px and 7px - paddings and sizeTooltipArrow
 const resolveTooltipArrowAlign = ({ position, align, tooltipWidth, tooltipHeight }: Props) => {
   if (isVertical(position)) {
+    console.log(position, align);
     if (isAlignCenter(align)) {
       return css`
         left: ${Math.floor(tooltipWidth / 2 - parseFloat(TOOLTIP_ARROW_SIZE))}px; // TODO: use token

@@ -7,6 +7,7 @@ import type {
 
 import typeof AlertType from "./Alert";
 import typeof BadgeType from "./Badge";
+import typeof NotificationBadgeType from "./NotificationBadge";
 import typeof BreadcrumbsType from "./Breadcrumbs";
 import typeof ButtonType from "./Button";
 import typeof ButtonLinkType from "./ButtonLink";
@@ -63,6 +64,8 @@ import typeof TableHeadType from "./Table/TableHead";
 import typeof TableRowType from "./Table/TableRow";
 import typeof StepperType from "./Stepper";
 import typeof StopoverArrowType from "./StopoverArrow";
+import typeof ThemeProviderType from "./ThemeProvider";
+import typeof TranslateType from "./Translate";
 import type { Theme } from "./defaultTheme";
 
 declare export var InputText: any;
@@ -75,6 +78,7 @@ declare export var Typography: any;
 
 declare export var Alert: AlertType;
 declare export var Badge: BadgeType;
+declare export var NotificationBadge: NotificationBadgeType;
 declare export var Breadcrumbs: BreadcrumbsType;
 declare export var Button: ButtonType;
 declare export var ButtonLink: ButtonLinkType;
@@ -139,6 +143,10 @@ declare export var TripSegment: TripSegmentType;
 declare export var TripSector: TripSectorType;
 declare export var TripDate: TripDateType;
 declare export var TripLayover: TripLayoverType;
+
+declare export var ThemeProvider: ThemeProviderType;
+declare export var Translate: TranslateType;
+
 declare export var defaultTheme: Theme;
 declare export var geTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;

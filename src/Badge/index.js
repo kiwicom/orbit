@@ -36,8 +36,8 @@ const getTypeToken = name => ({ theme, type }) => {
   return tokens[name][type];
 };
 
-const StyledBadge = styled(({ className, children, dataTest }) => (
-  <div className={className} data-test={dataTest}>
+export const StyledBadge = styled(({ className, children, dataTest, ariaLabel }) => (
+  <div className={className} data-test={dataTest} aria-label={ariaLabel}>
     {children}
   </div>
 ))`
@@ -49,13 +49,12 @@ const StyledBadge = styled(({ className, children, dataTest }) => (
   align-items: center;
   height: ${({ theme }) => theme.orbit.heightBadge};
   line-height: ${({ theme }) => theme.orbit.heightBadge};
-  width: ${({ circled, theme }) => circled && theme.orbit.widthBadgeCircled};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
   font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
   background-color: ${getTypeToken(TOKENS.background)};
   color: ${getTypeToken(TOKENS.color)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusBadge};
-  padding: ${({ theme, circled }) => !circled && theme.orbit.paddingBadge};
+  padding: ${({ theme }) => theme.orbit.paddingBadge};
 `;
 
 StyledBadge.defaultProps = {
@@ -82,10 +81,10 @@ IconContainer.defaultProps = {
 const StyledBadgeContent = styled.div``;
 
 const Badge = (props: Props) => {
-  const { type = TYPE_OPTIONS.NEUTRAL, icon, children, circled, dataTest } = props;
+  const { type = TYPE_OPTIONS.NEUTRAL, icon, children, ariaLabel, dataTest } = props;
 
   return (
-    <StyledBadge type={type} circled={circled} dataTest={dataTest}>
+    <StyledBadge type={type} dataTest={dataTest} ariaLabel={ariaLabel}>
       {icon && (
         <IconContainer type={type} hasContent={!!children}>
           {icon}

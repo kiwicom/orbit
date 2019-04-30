@@ -1,0 +1,17 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/notificationbadge/
+*/
+
+import type { Globals } from "../common/common.js.flow";
+import type { Type } from "../Badge/index.js.flow";
+
+export type Props = {|
+  +children: React$Node,
+  +type?: Type,
+  +icon?: React$Node,
+  +ariaLabel?: string,
+  ...Globals,
+|};
+
+declare export default React$ComponentType<Props>;

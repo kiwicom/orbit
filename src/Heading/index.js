@@ -33,11 +33,13 @@ export const getHeadingToken: GetHeadingToken = name => ({ theme, type }) => {
   return tokens[name][type];
 };
 
-export const StyledHeading = styled(({ element: Component, className, children, dataTest }) => (
-  <Component className={className} data-test={dataTest}>
-    {children}
-  </Component>
-))`
+export const StyledHeading = styled(
+  ({ element: Component, className, children, dataTest, dataA11ySection }) => (
+    <Component className={className} data-test={dataTest} data-a11y-section={dataA11ySection}>
+      {children}
+    </Component>
+  ),
+)`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${getHeadingToken(TOKENS.sizeHeading)};
   font-weight: ${getHeadingToken(TOKENS.weightHeading)};
@@ -60,6 +62,7 @@ const Heading = ({
   dataTest,
   inverted = false,
   spaceAfter,
+  dataA11ySection,
 }: Props) => (
   <StyledHeading
     type={type}
@@ -67,6 +70,7 @@ const Heading = ({
     inverted={inverted}
     dataTest={dataTest}
     spaceAfter={spaceAfter}
+    dataA11ySection={dataA11ySection}
   >
     {children}
   </StyledHeading>

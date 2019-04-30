@@ -61,6 +61,7 @@ export { default as Select } from "./Select";
 export { default as Stack } from "./Stack";
 export { default as ServiceLogo } from "./ServiceLogo";
 export { default as Separator } from "./Separator";
+export { default as SkipNavigation } from "./SkipNavigation";
 export { default as Stepper } from "./Stepper";
 export { default as StopoverArrow } from "./StopoverArrow";
 export { default as Tag } from "./Tag";

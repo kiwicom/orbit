@@ -11,15 +11,17 @@ describe("Badge", () => {
   const type = "info";
   const dataTest = "test";
   const icon = <Sightseeing />;
+  const ariaLabel = content;
 
   const component = shallow(
-    <Badge type={type} icon={icon} dataTest={dataTest}>
+    <Badge type={type} icon={icon} dataTest={dataTest} ariaLabel={ariaLabel}>
       {content}
     </Badge>,
   );
   it("should have passed props", () => {
     expect(component.prop("type")).toBe(type);
     expect(component.render().prop("data-test")).toBe(dataTest);
+    expect(component.render().prop("aria-label")).toBe(ariaLabel);
   });
   it("should contain a content", () => {
     expect(component.render().text()).toBe(content);

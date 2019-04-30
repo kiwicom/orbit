@@ -168,9 +168,10 @@ storiesOf("Badge", module)
       const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO);
       const dataTest = text("dataTest", "test");
       const Icon = getIcon(getIcons("Airplane"));
+      const ariaLabel = text("ariaLabel", "test");
 
       return (
-        <Badge type={type} icon={Icon && <Icon />} dataTest={dataTest}>
+        <Badge type={type} icon={Icon && <Icon />} dataTest={dataTest} ariaLabel={ariaLabel}>
           {content}
         </Badge>
       );

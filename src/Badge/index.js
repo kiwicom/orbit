@@ -36,8 +36,8 @@ const getTypeToken = name => ({ theme, type }) => {
   return tokens[name][type];
 };
 
-export const StyledBadge = styled(({ className, children, dataTest }) => (
-  <div className={className} data-test={dataTest}>
+export const StyledBadge = styled(({ className, children, dataTest, ariaLabel }) => (
+  <div className={className} data-test={dataTest} aria-label={ariaLabel}>
     {children}
   </div>
 ))`

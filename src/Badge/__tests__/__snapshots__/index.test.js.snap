@@ -2,6 +2,7 @@
 
 exports[`Badge should match snapshot 1`] = `
 <Badge__StyledBadge
+  ariaLabel="badge"
   dataTest="test"
   theme={
     Object {

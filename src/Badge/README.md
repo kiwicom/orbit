@@ -12,11 +12,11 @@ Table below contains all types of the props available in Badge component.
 
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :---------------------| :-------------- | :------------------------------- |
-| circled       | `boolean`             | `false`         | If `true`, the Badge will have circular shape.  [See Functional specs](#functional-specs)
 | **children**  | `React.Node`          |                 | The content of the Badge.
 | dataTest      | `string`              |                 | Optional prop for testing purposes.
 | icon          | `React.Node`          |                 | The displayed icon on the left.
 | type          | [`enum`](#enum)       | `"neutral"`     | The color type of the Badge.
+| ariaLabel     | `string`              |                 | Adds prop adds `aria-label` to an element, useful for screenreaders.
 
 ### enum
 
@@ -33,4 +33,4 @@ Table below contains all types of the props available in Badge component.
 
 ## Functional specs
 
-* The `circled` property is meant to be used only for two characters. Don't combine it with any `icon` or `children`.
+* If you want to use `circled` badge, please take a look on [NotificationBadge](../NotificationBadge)

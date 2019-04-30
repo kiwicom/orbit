@@ -12,6 +12,7 @@ import type { Props } from "./ContentWrapper.js.flow";
 import useDimensions from "../hooks/useDimensions";
 import useVerticalPosition from "../hooks/useVerticalPosition";
 import useHorizontalPosition from "../hooks/useHorizontalPosition";
+import Translate from "../../Translate";
 
 const showAnimation = keyframes`
   from {
@@ -93,7 +94,7 @@ StyledOverlay.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledTooltipClose = styled.div`
+const StyledPopoverClose = styled.div`
   padding: ${({ theme, noPadding }) => (noPadding ? theme.orbit.spaceSmall : 0)};
   padding-top: ${({ theme }) => theme.orbit.spaceMedium};
 
@@ -103,13 +104,12 @@ const StyledTooltipClose = styled.div`
     padding-bottom: 0;
   `)}
 `;
-StyledTooltipClose.defaultProps = {
+StyledPopoverClose.defaultProps = {
   theme: defaultTheme,
 };
 
 const PopoverContentWrapper = ({
   children,
-  closeText,
   onClose,
   width,
   dataTest,
@@ -160,11 +160,11 @@ const PopoverContentWrapper = ({
       >
         <StyledPopoverContent ref={content}>
           {children}
-          <StyledTooltipClose noPadding={noPadding}>
+          <StyledPopoverClose noPadding={noPadding}>
             <Button type="secondary" block onClick={onClose}>
-              {closeText || "Close"}
+              <Translate tKey="button_close" />
             </Button>
-          </StyledTooltipClose>
+          </StyledPopoverClose>
         </StyledPopoverContent>
       </StyledPopoverParent>
     </React.Fragment>

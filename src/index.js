@@ -6,6 +6,7 @@ export { Icons };
 
 export { default as Alert } from "./Alert";
 export { default as Badge } from "./Badge";
+export { default as NotificationBadge } from "./NotificationBadge";
 export { default as Breadcrumbs } from "./Breadcrumbs";
 export { default as Button } from "./Button";
 export { default as ButtonGroup } from "./ButtonGroup";
@@ -66,6 +67,8 @@ export { default as Tag } from "./Tag";
 export { default as Textarea } from "./Textarea";
 export { default as Tile } from "./Tile";
 export { default as Tooltip } from "./Tooltip";
+export { default as Translate } from "./Translate";
+export { default as ThemeProvider } from "./ThemeProvider";
 
 export { default as TripSegment } from "./TripSegment";
 export { default as TripSector } from "./TripSector";

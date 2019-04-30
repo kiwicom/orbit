@@ -37,7 +37,7 @@ const StyledHeadingWrapper = styled.div`
 
 const StyledSubTitle = styled.div`
   display: flex;
-  margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
+  margin-top: ${({ theme }) => theme.orbit.spaceXXSmall};
 `;
 
 StyledSubTitle.defaultProps = {

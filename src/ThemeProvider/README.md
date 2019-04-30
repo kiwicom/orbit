@@ -3,7 +3,7 @@ orbit-components has theming support via our own `<ThemeProvider>` which adds yo
 ```jsx
 import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
 ```
-After adding import please wrap your application into `ThemeProvider` and you can provide your own [`theme`](../../.github/theming.md) and [`dictionary`](../../.github/dictionary.md)
+After adding import please wrap your application into `ThemeProvider` and you can provide your own [`theme`](https://github.com/kiwicom/orbit-components/blob/master/.github/theming.md) and [`dictionary`](https://github.com/kiwicom/orbit-components/blob/master/.github/dictionary.md)
 
 ```jsx
 <ThemeProvider theme={...} dictionary={...}>
@@ -16,5 +16,5 @@ Table below contains all types of the props available in the ThemeProvider compo
 | Name          | Type                      | Default         | Description                      |
 | :------------ | :------------------------ | :-------------- | :------------------------------- |
 | **children**  | `React.Node`              |                 | Your app
-| theme         | `[Object]`                |                 | See [`theming`](../../.github/theming.md)
-| dictionary    | `[Object]`                |                 | See [`dictionary`](../../.github/dictionary.md)
+| theme         | `[Object]`                |                 | See [`theming`](https://github.com/kiwicom/orbit-components/blob/master/.github/theming.md)
+| dictionary    | `[Object]`                |                 | See [`dictionary`](https://github.com/kiwicom/orbit-components/blob/master/.github/dictionary.md)

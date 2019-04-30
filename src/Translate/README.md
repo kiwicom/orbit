@@ -1,18 +1,16 @@
 # Translate
-We have support of our `Dictionary` see [this document](../../.github/dictionary.md)
+We have support of our `Dictionary` see [this document](https://github.com/kiwicom/orbit-components/blob/master/.github/dictionary.md)
 
 This component adds you possibility to take some strings from our dictionary. 
 
 ## Props
-Table below contains all types of the props available in ButtonLink component.
+Table below contains all types of the props available in Translate component.
 
 | Name          | Type                            | Default         | Description                      |
 | :------------ | :------------------------------ | :-------------- | :------------------------------- |
-| tKey          | `string`                        |                 | Translation key which dictionary object must contain
-| values        | [`Object`](#values)      |                 | For placeholder values [See Functional specs](#functional-specs)
+| tKey          | `string`                        |                 | Translation key that dictionary object must contain
+| values        | [`Object`](#values)             |                 | For placeholder values [See Functional specs](#functional-specs)
 
-
-Here is example with ThemeProvider
 
 **Example:**
 ```jsx

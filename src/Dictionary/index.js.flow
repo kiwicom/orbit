@@ -1,4 +1,6 @@
 // @flow
+import * as React from "react";
+
 export type Translations = {
   [key: string]: string,
 };

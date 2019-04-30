@@ -55,6 +55,7 @@
     "import/no-self-import": "off",
     "react/destructuring-assignment": "off",
     "react/no-access-state-in-setstate": "off",
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-await-in-loop": "off"
   }
 }

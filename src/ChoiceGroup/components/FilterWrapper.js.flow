@@ -1,0 +1,11 @@
+// @flow
+
+type Props = {|
+  +child: React$Element<*>,
+  +children: React$Element<*>,
+  +onOnlySelection?: (SyntheticEvent<HTMLButtonElement>, {}) => void | Promise<any>,
+|};
+
+export type FilterWrapperType = Props => React$Element<*>;
+
+declare export default FilterWrapperType;

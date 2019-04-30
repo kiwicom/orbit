@@ -6,6 +6,7 @@ import ChoiceGroup from "..";
 
 import { LABEL_ELEMENTS, LABEL_SIZES } from "../consts";
 import Radio from "../../Radio";
+import Checkbox from "../../Checkbox";
 
 const label = "Label";
 const labelSize = LABEL_SIZES.LARGE;
@@ -72,9 +73,9 @@ describe("RadioGroup Filters", () => {
       filter={filter}
       onOnlySelection={onOnlySelection}
     >
-      <Radio value="one" label="Reason one" />
-      <Radio value="two" label="Reason two" />
-      <Radio value="three" label="Reason three" />
+      <Checkbox value="one" label="Reason one" />
+      <Checkbox value="two" label="Reason two" />
+      <Checkbox value="three" label="Reason three" />
     </ChoiceGroup>,
   );
   const heading = component.find("Heading");

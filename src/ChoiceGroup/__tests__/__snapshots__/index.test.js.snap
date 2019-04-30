@@ -476,7 +476,7 @@ exports[`RadioGroup Filters should match snapshot 1`] = `
       onClick={[Function]}
       onOnlySelection={[MockFunction]}
     >
-      <Radio
+      <Checkbox
         hasError={false}
         label="Reason one"
         onChange={[Function]}
@@ -494,7 +494,7 @@ exports[`RadioGroup Filters should match snapshot 1`] = `
       onClick={[Function]}
       onOnlySelection={[MockFunction]}
     >
-      <Radio
+      <Checkbox
         hasError={false}
         label="Reason two"
         onChange={[Function]}
@@ -512,7 +512,7 @@ exports[`RadioGroup Filters should match snapshot 1`] = `
       onClick={[Function]}
       onOnlySelection={[MockFunction]}
     >
-      <Radio
+      <Checkbox
         hasError={false}
         label="Reason three"
         onChange={[Function]}

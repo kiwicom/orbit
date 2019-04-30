@@ -16,12 +16,6 @@ export { default as ChoiceGroup } from "./ChoiceGroup";
 export { default as CountryFlag } from "./CountryFlag";
 export { default as DestinationHeader } from "./DestinationHeader";
 
-// Deprecated Card
-export { default as DeprecatedCard } from "./_deprecated/Card";
-export { default as DeprecatedCardHeader } from "./_deprecated/Card/CardHeader";
-export { default as DeprecatedCardSection } from "./_deprecated/Card/CardSection";
-export { default as DeprecatedCardContent } from "./_deprecated/Card/CardContent";
-
 // Card
 export { default as Card } from "./Card";
 export { default as CardHeader } from "./Card/CardHeader";

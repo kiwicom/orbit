@@ -18,6 +18,7 @@ export type Props = {|
   +type?: Type,
   +children: React$Node,
   +inverted?: boolean,
+  +dataA11ySection?: string,
 |};
 
 export type GetHeadingToken = (name: string) => ({ ...ThemeProps, type: Type }) => string;

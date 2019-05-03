@@ -19,8 +19,8 @@ storiesOf("Button", module)
   .add(
     "Default",
     () => {
-      const title = text("Title", "Default button");
-      return <Button onClick={action("clicked")}>{title}</Button>;
+      const label = text("Label", "Default button");
+      return <Button onClick={action("clicked")}>{label}</Button>;
     },
     {
       info:
@@ -30,14 +30,14 @@ storiesOf("Button", module)
   .add(
     "Basic buttons",
     () => {
-      const title = text("Title", "Button");
+      const label = text("Label", "Button");
       const block = boolean("Block", false);
       const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
 
       return (
         <Button onClick={action("clicked")} block={block} type={type} size={size}>
-          {title}
+          {label}
         </Button>
       );
     },
@@ -49,7 +49,7 @@ storiesOf("Button", module)
   .add(
     "Button with icons",
     () => {
-      const title = text("Title", "Button");
+      const label = text("Label", "Button");
       const block = boolean("Block", false);
       const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
       const size = select("Size", Object.values(SIZE_OPTIONS), "small");
@@ -64,7 +64,7 @@ storiesOf("Button", module)
           iconLeft={IconLeft && <IconLeft />}
           iconRight={IconRight && <IconRight />}
         >
-          {title}
+          {label}
         </Button>
       );
     },
@@ -98,7 +98,7 @@ storiesOf("Button", module)
   .add(
     "Status buttons",
     () => {
-      const title = text("Title", "Button");
+      const label = text("Label", "Button");
       const IconLeft = getIcon(getIcons("iconLeft", "CloseCircle"));
 
       return (
@@ -109,7 +109,7 @@ storiesOf("Button", module)
             size="small"
             iconLeft={IconLeft && <IconLeft />}
           >
-            {title}
+            {label}
           </Button>
           <Button
             onClick={action("clicked")}
@@ -117,7 +117,7 @@ storiesOf("Button", module)
             size="small"
             iconLeft={IconLeft && <IconLeft />}
           >
-            {title}
+            {label}
           </Button>
           <Button
             onClick={action("clicked")}
@@ -125,7 +125,7 @@ storiesOf("Button", module)
             size="small"
             iconLeft={IconLeft && <IconLeft />}
           >
-            {title}
+            {label}
           </Button>
           <Button
             onClick={action("clicked")}
@@ -133,7 +133,7 @@ storiesOf("Button", module)
             size="small"
             iconLeft={IconLeft && <IconLeft />}
           >
-            {title}
+            {label}
           </Button>
         </Stack>
       );
@@ -161,18 +161,19 @@ storiesOf("Button", module)
           type={type}
           iconLeft={IconLeft && <IconLeft />}
           circled
+          title="Button"
         />
       );
     },
     {
       info:
-        "Button can be also rendered in circled shape, but only when it does have iconLeft and not have children.",
+        "Button can be also rendered in circled shape, but only when it does have iconLeft and not have children. Use title prop to ensure accessibility.",
     },
   )
   .add(
     "Destructive buttons",
     () => {
-      const title = text("Title", "Destructive button");
+      const label = text("Label", "Destructive button");
       const bordered = boolean("Bordered", false);
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
 
@@ -184,7 +185,7 @@ storiesOf("Button", module)
           size={size}
           iconLeft={<Icons.Remove />}
         >
-          {title}
+          {label}
         </Button>
       );
     },
@@ -196,7 +197,7 @@ storiesOf("Button", module)
   .add(
     "Button as a link",
     () => {
-      const title = text("Title", "I am a link");
+      const label = text("Label", "I am a link");
       const href = text("Href", "https://kiwi.com");
       const external = boolean("External", false);
       const disabled = boolean("Disabled", false);
@@ -212,7 +213,7 @@ storiesOf("Button", module)
           bordered
           iconLeft={<Icons.Airplane />}
         >
-          {title}
+          {label}
         </Button>
       );
     },
@@ -224,7 +225,7 @@ storiesOf("Button", module)
   .add(
     "Playground",
     () => {
-      const title = text("Title", "Button");
+      const label = text("Label", "Button");
       const href = text("Href", undefined);
       const external = boolean("External", false);
       const component = text("Component", "button");
@@ -244,6 +245,7 @@ storiesOf("Button", module)
       const ariaControls = text("Aria controls", "element ID");
       const tabIndex = text("tabIndex", "0");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const title = text("Title", "Additional information for accessibility");
 
       return (
         <Button
@@ -267,8 +269,9 @@ storiesOf("Button", module)
           ariaExpanded={ariaExpanded}
           tabIndex={tabIndex}
           spaceAfter={spaceAfter}
+          title={title}
         >
-          {title}
+          {label}
         </Button>
       );
     },

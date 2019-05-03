@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
+import { warning } from "@kiwicom/js";
 
 import defaultTheme from "../defaultTheme";
 import { TYPES, SIZES, TOKENS } from "./consts";
@@ -157,6 +158,7 @@ export const StyledButtonLink = styled(
     ariaControls,
     ariaExpanded,
     spaceAfter,
+    title,
     ...props
   }) => {
     const isButtonWithHref = component === "button" && props.href;
@@ -170,6 +172,7 @@ export const StyledButtonLink = styled(
         ref={buttonRef}
         aria-controls={ariaControls}
         aria-expanded={ariaExpanded}
+        aria-label={title}
       >
         {children}
       </Component>
@@ -252,12 +255,18 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
     onClick,
     width = 0,
     role,
+    title,
   } = props;
 
   const iconLeft = props.iconLeft || icon;
   const sizeIcon = size === ICON_SIZES.SMALL ? ICON_SIZES.SMALL : ICON_SIZES.MEDIUM;
 
   const onlyIcon = iconLeft && !children;
+
+  warning(
+    !(!children && !title),
+    "Warning: title is missing on Button. Use title prop to add aria-label to be accessible for screen readers",
+  );
 
   return (
     <StyledButtonLink

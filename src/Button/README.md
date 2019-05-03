@@ -34,6 +34,7 @@ Table below contains all types of the props available in Button component.
 | spaceAfter    | `enum`                            |                 | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | submit        | `boolean`                         | `false`         | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.
 | tabIndex      | `string`                          |                 | Specifies the tab order of an element.
+| title         | `string`                          |                 | Adds `aria-label`.
 | **type**      | [`enum`](#enum)                   | `"primary"`     | The type of Button.
 | width         | `number`                          | `0`             | The width of the Button. Number is defined in `px`.
 
@@ -79,3 +80,5 @@ A button is mainly used for indicating an action, submitting a data, opening a m
 * Use `disabled` prop to indicate users that button is inactive and they can't interact with it.
 
 * Use `role` and `tabIndex` when you are rendering `Button` to non-actionable HTML element as `div` or `span`. However, this should be done only in edge-cases as it is anti-pattern behavior.
+
+* Use `title` to add `aria-label` when you need to add extra informations to screen reader users or there is no `children` presented to be used as label.

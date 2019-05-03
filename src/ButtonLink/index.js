@@ -4,125 +4,18 @@ import styled, { css } from "styled-components";
 import { warning } from "@kiwicom/js";
 
 import defaultTheme from "../defaultTheme";
-import { TYPES, SIZES, TOKENS } from "./consts";
+import { TYPES, SIZES, TOKENS, BUTTON_STATES } from "./consts";
 import { ICON_SIZES } from "../Icon/consts";
 import { getSize } from "../Icon";
-import { rtlSpacing } from "../utils/rtl";
 import type { Ref } from "../common/common.js.flow";
-import { SIZE_OPTIONS } from "../Button/consts";
 import getSpacingToken from "../common/getSpacingToken";
+import getIconSpacing from "./helpers/getIconSpacing";
+import getSizeToken from "./helpers/getSizeToken";
+import getTypeToken from "./helpers/getTypeToken";
+import getButtonSpacing from "./helpers/getButtonLinkSpacing";
+import getButtonLinkBoxShadow from "./helpers/getButtonLinkBoxShadow";
 
 import type { Props } from "./index";
-
-const getSizeToken = name => ({ theme, size }) => {
-  const tokens = {
-    [TOKENS.heightButton]: {
-      [SIZES.LARGE]: theme.orbit.heightButtonLarge,
-      [SIZES.NORMAL]: theme.orbit.heightButtonNormal,
-      [SIZES.SMALL]: theme.orbit.heightButtonSmall,
-    },
-    [TOKENS.fontSizeButton]: {
-      [SIZES.LARGE]: theme.orbit.fontSizeButtonLarge,
-      [SIZES.NORMAL]: theme.orbit.fontSizeButtonNormal,
-      [SIZES.SMALL]: theme.orbit.fontSizeButtonSmall,
-    },
-  };
-  return tokens[name][size];
-};
-const getTypeToken = name => ({ theme, type }) => {
-  const tokens = {
-    [TOKENS.backgroundButton]: {
-      [TYPES.PRIMARY]: theme.orbit.backgroundButtonLinkPrimary,
-      [TYPES.SECONDARY]: theme.orbit.backgroundButtonLinkSecondary,
-    },
-    [TOKENS.backgroundButtonHover]: {
-      [TYPES.PRIMARY]: theme.orbit.backgroundButtonLinkPrimaryHover,
-      [TYPES.SECONDARY]: theme.orbit.backgroundButtonLinkSecondaryHover,
-    },
-    [TOKENS.backgroundButtonActive]: {
-      [TYPES.PRIMARY]: theme.orbit.backgroundButtonLinkPrimaryHover,
-      [TYPES.SECONDARY]: theme.orbit.backgroundButtonLinkSecondaryHover,
-    },
-    [TOKENS.colorTextButton]: {
-      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimary,
-      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondary,
-    },
-    [TOKENS.colorTextButtonHover]: {
-      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryHover,
-      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryHover,
-    },
-    [TOKENS.colorTextButtonActive]: {
-      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryActive,
-      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryActive,
-    },
-  };
-
-  return tokens[name][type];
-};
-
-const buttonSpacing = () => ({ theme, onlyIcon, iconRight, iconLeft, size }) => {
-  if (onlyIcon) return rtlSpacing(theme.orbit.paddingButtonWithoutText);
-  const tokens = {
-    [TOKENS.paddingButton]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLarge,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormal,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmall,
-    },
-    [TOKENS.paddingButtonWithIcons]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLargeWithIcons,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormalWithIcons,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithIcons,
-    },
-    [TOKENS.paddingButtonWithLeftIcon]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLargeWithLeftIcon,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormalWithLeftIcon,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithLeftIcon,
-    },
-    [TOKENS.paddingButtonWithRightIcon]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLargeWithRightIcon,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormalWithRightIcon,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithRightIcon,
-    },
-  };
-  if (iconLeft && iconRight) {
-    return rtlSpacing(tokens[TOKENS.paddingButtonWithIcons][size]);
-  }
-  if (iconLeft && !iconRight) {
-    return rtlSpacing(tokens[TOKENS.paddingButtonWithLeftIcon][size]);
-  }
-  if (!iconLeft && iconRight) {
-    return rtlSpacing(tokens[TOKENS.paddingButtonWithRightIcon][size]);
-  }
-  return rtlSpacing(tokens[TOKENS.paddingButton][size]);
-};
-
-const iconSpacing = () => ({ theme, right, size, onlyIcon }) => {
-  const tokens = {
-    [TOKENS.marginRightIcon]: {
-      [SIZES.LARGE]: theme.orbit.marginButtonIconLarge,
-      [SIZES.NORMAL]: theme.orbit.marginButtonIconNormal,
-      [SIZES.SMALL]: theme.orbit.marginButtonIconSmall,
-    },
-  };
-
-  if (onlyIcon) {
-    return null;
-  }
-
-  return rtlSpacing(
-    right
-      ? `0 0 0 ${tokens[TOKENS.marginRightIcon][size]}`
-      : `0 ${tokens[TOKENS.marginRightIcon][size]} 0 0`,
-  );
-};
-
-// media query only for IE 10+, not Edge
-const onlyIE = (style, breakpoint = "all") =>
-  css`
-    @media ${breakpoint} and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      ${style};
-    }
-  `;
 
 const IconContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
@@ -131,7 +24,7 @@ const IconContainer = styled(({ className, children }) => (
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: ${iconSpacing()};
+  margin: ${getIconSpacing()};
 
   > * {
     width: ${({ sizeIcon }) => getSize(sizeIcon)};
@@ -204,7 +97,7 @@ export const StyledButtonLink = styled(
   border: 0;
   border-radius: ${({ theme, circled }) =>
     circled ? getSizeToken(TOKENS.heightButton) : theme.orbit.borderRadiusNormal};
-  padding: ${buttonSpacing()};
+  padding: ${getButtonSpacing()};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
   font-size: ${getSizeToken(TOKENS.fontSizeButton)};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
@@ -227,22 +120,14 @@ export const StyledButtonLink = styled(
     ${({ transparent, disabled }) =>
       !disabled &&
       css`
-        box-shadow: inset 0 0 8px 3px rgba(23, 27, 30, 0.15);
         background: ${!transparent && getTypeToken(TOKENS.backgroundButtonActive)};
         color: ${getTypeToken(TOKENS.colorTextButtonActive)}!important;
+        ${getButtonLinkBoxShadow(BUTTON_STATES.ACTIVE)};
       `};
   }
 
   &:focus {
-    ${({ disabled, theme }) =>
-      !disabled &&
-      css`
-        box-shadow: 0 0 1px 1px ${theme.orbit.colorTextButtonWhiteBordered},
-          0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
-        &:active {
-          box-shadow: inset 0 0 8px 3px rgba(23, 27, 30, 0.15);
-        }
-      `};
+    ${getButtonLinkBoxShadow(BUTTON_STATES.FOCUS)};
   }
 `;
 

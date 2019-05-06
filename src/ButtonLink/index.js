@@ -265,7 +265,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
 
   warning(
     !(!children && !title),
-    "Warning: title is missing on Button. Use title prop to add aria-label to be accessible for screen readers",
+    "Warning: children or title property is missing on ButtonLink. Use title property to add aria-label to be accessible for screen readers. More information https://orbit.kiwi/components/buttonlink/#accessibility",
   );
 
   return (

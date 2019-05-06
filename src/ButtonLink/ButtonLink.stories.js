@@ -59,7 +59,7 @@ storiesOf("ButtonLink", module)
   .add(
     "Playground",
     () => {
-      const label = text("Label", "ButtonLink");
+      const children = text("Children", "ButtonLink");
       const disabled = boolean("Disabled", false);
       const block = boolean("Block", false);
       const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
@@ -99,7 +99,7 @@ storiesOf("ButtonLink", module)
           spaceAfter={spaceAfter}
           title={title}
         >
-          {label}
+          {children}
         </ButtonLink>
       );
     },

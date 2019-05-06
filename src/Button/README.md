@@ -81,4 +81,4 @@ A button is mainly used for indicating an action, submitting a data, opening a m
 
 * Use `role` and `tabIndex` when you are rendering `Button` to non-actionable HTML element as `div` or `span`. However, this should be done only in edge-cases as it is anti-pattern behavior.
 
-* Use `title` to add `aria-label` when you need to add extra informations to screen reader users or there is no `children` presented to be used as label.
+* Use `title` to add `aria-label` when you need to add extra informations to screen readers or there is no `children` presented to be used as label.

@@ -19,8 +19,8 @@ storiesOf("Button", module)
   .add(
     "Default",
     () => {
-      const label = text("Label", "Default button");
-      return <Button onClick={action("clicked")}>{label}</Button>;
+      const children = text("Children", "Default button");
+      return <Button onClick={action("clicked")}>{children}</Button>;
     },
     {
       info:
@@ -30,14 +30,14 @@ storiesOf("Button", module)
   .add(
     "Basic buttons",
     () => {
-      const label = text("Label", "Button");
+      const children = text("Children", "Button");
       const block = boolean("Block", false);
       const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
 
       return (
         <Button onClick={action("clicked")} block={block} type={type} size={size}>
-          {label}
+          {children}
         </Button>
       );
     },
@@ -49,7 +49,7 @@ storiesOf("Button", module)
   .add(
     "Button with icons",
     () => {
-      const label = text("Label", "Button");
+      const children = text("Children", "Button");
       const block = boolean("Block", false);
       const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
       const size = select("Size", Object.values(SIZE_OPTIONS), "small");
@@ -64,7 +64,7 @@ storiesOf("Button", module)
           iconLeft={IconLeft && <IconLeft />}
           iconRight={IconRight && <IconRight />}
         >
-          {label}
+          {children}
         </Button>
       );
     },
@@ -98,7 +98,7 @@ storiesOf("Button", module)
   .add(
     "Status buttons",
     () => {
-      const label = text("Label", "Button");
+      const children = text("Children", "Button");
       const IconLeft = getIcon(getIcons("iconLeft", "CloseCircle"));
 
       return (
@@ -109,7 +109,7 @@ storiesOf("Button", module)
             size="small"
             iconLeft={IconLeft && <IconLeft />}
           >
-            {label}
+            {children}
           </Button>
           <Button
             onClick={action("clicked")}
@@ -117,7 +117,7 @@ storiesOf("Button", module)
             size="small"
             iconLeft={IconLeft && <IconLeft />}
           >
-            {label}
+            {children}
           </Button>
           <Button
             onClick={action("clicked")}
@@ -125,7 +125,7 @@ storiesOf("Button", module)
             size="small"
             iconLeft={IconLeft && <IconLeft />}
           >
-            {label}
+            {children}
           </Button>
           <Button
             onClick={action("clicked")}
@@ -133,7 +133,7 @@ storiesOf("Button", module)
             size="small"
             iconLeft={IconLeft && <IconLeft />}
           >
-            {label}
+            {children}
           </Button>
         </Stack>
       );
@@ -173,7 +173,7 @@ storiesOf("Button", module)
   .add(
     "Destructive buttons",
     () => {
-      const label = text("Label", "Destructive button");
+      const children = text("Children", "Destructive button");
       const bordered = boolean("Bordered", false);
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
 
@@ -185,7 +185,7 @@ storiesOf("Button", module)
           size={size}
           iconLeft={<Icons.Remove />}
         >
-          {label}
+          {children}
         </Button>
       );
     },
@@ -197,7 +197,7 @@ storiesOf("Button", module)
   .add(
     "Button as a link",
     () => {
-      const label = text("Label", "I am a link");
+      const children = text("Children", "I am a link");
       const href = text("Href", "https://kiwi.com");
       const external = boolean("External", false);
       const disabled = boolean("Disabled", false);
@@ -213,7 +213,7 @@ storiesOf("Button", module)
           bordered
           iconLeft={<Icons.Airplane />}
         >
-          {label}
+          {children}
         </Button>
       );
     },
@@ -225,7 +225,7 @@ storiesOf("Button", module)
   .add(
     "Playground",
     () => {
-      const label = text("Label", "Button");
+      const children = text("Children", "Button");
       const href = text("Href", undefined);
       const external = boolean("External", false);
       const component = text("Component", "button");
@@ -271,7 +271,7 @@ storiesOf("Button", module)
           spaceAfter={spaceAfter}
           title={title}
         >
-          {label}
+          {children}
         </Button>
       );
     },

@@ -45,7 +45,7 @@ const StyledPopoverParent = styled.div`
   border-top-right-radius: 9px; /* TODO: Add token */
   animation: ${showAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
-  padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceSmall)};
+  padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
   padding-top: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
   overflow: hidden;

@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
+import { warning } from "@kiwicom/js";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import defaultTheme from "../defaultTheme";
@@ -54,9 +55,7 @@ export function getCountryProps(code: ?string, name: ?string): { code: string, n
   const codeNormalized = code ? code.toUpperCase().replace("-", "_") : "ANYWHERE";
   const countryCodeExists = codeNormalized in CODES;
 
-  if (!countryCodeExists && process.env.NODE_ENV !== "production" && code) {
-    console.warn(`Country code not supported: ${code}`);
-  }
+  warning(countryCodeExists, "Country code not supported: %s", code);
   const countryCode = countryCodeExists ? CODES[codeNormalized] : CODES.ANYWHERE;
   const countryName = countryCode === CODES.ANYWHERE && !name ? "Anywhere" : name;
   return { code: countryCode, name: countryName };

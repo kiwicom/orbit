@@ -77,8 +77,18 @@ describe("ButtonLink with Icon", () => {
 });
 
 describe("ButtonLink with Icon", () => {
+  const title = "With left and right icon";
+  const ariaExpanded = true;
+  const ariaControls = "element";
   const component = mount(
-    <ButtonLink iconLeft={<Airplane />} iconRight={<ChevronDown />} href={href}>
+    <ButtonLink
+      iconLeft={<Airplane />}
+      iconRight={<ChevronDown />}
+      ariaExpanded={ariaExpanded}
+      ariaControls={ariaControls}
+      href={href}
+      title={title}
+    >
       {children}
     </ButtonLink>,
   );
@@ -88,6 +98,11 @@ describe("ButtonLink with Icon", () => {
   });
   it("should have href", () => {
     expect(button.render().prop("href")).toBe(href);
+  });
+  it("should have aria attributes", () => {
+    expect(component.render().prop("aria-controls")).toBe(ariaControls);
+    expect(component.render().prop("aria-expanded")).toBe(String(ariaExpanded));
+    expect(component.render().prop("aria-label")).toBe(title);
   });
   it("should contain icons", () => {
     expect(button.find("Airplane").exists()).toBe(true);

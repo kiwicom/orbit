@@ -26,22 +26,14 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
     const { value } = this.state;
     const { maxValue = Number.POSITIVE_INFINITY, step = 1 } = this.props;
 
-    const increment = validateIncrement({ value, maxValue, step });
-
-    if (typeof increment === "number" || increment === 0) {
-      this.setValueAndInjectCallback(increment);
-    }
+    this.setValueAndInjectCallback(validateIncrement({ value, maxValue, step }));
   };
 
   decrementCounter = () => {
     const { value } = this.state;
     const { minValue = Number.NEGATIVE_INFINITY, step = 1 } = this.props;
 
-    const decrement = validateDecrement({ value, minValue, step });
-
-    if (typeof decrement === "number" || decrement === 0) {
-      this.setValueAndInjectCallback(decrement);
-    }
+    this.setValueAndInjectCallback(validateDecrement({ value, minValue, step }));
   };
 
   handleIncrementCounter = (

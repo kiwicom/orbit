@@ -6,6 +6,6 @@ export type Params = {|
   step: number,
 |};
 
-export type ValidateDecrement = Params => boolean | number;
+export type ValidateDecrement = Params => number;
 
 declare export default ValidateDecrement;

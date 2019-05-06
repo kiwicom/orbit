@@ -8,10 +8,7 @@ const validateIncrement: ValidateIncrement = ({
 }) => {
   const newValue = value + step;
   const calculatedValue = newValue >= +maxValue ? maxValue : newValue;
-  if (calculatedValue !== value) {
-    return calculatedValue;
-  }
-  return false;
+  return calculatedValue;
 };
 
 export default validateIncrement;

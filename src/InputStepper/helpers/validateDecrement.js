@@ -8,10 +8,7 @@ const validateDecrement: ValidateDecrement = ({
 }) => {
   const newValue = value - step;
   const calculatedValue = newValue <= +minValue ? minValue : newValue;
-  if (calculatedValue !== value) {
-    return calculatedValue;
-  }
-  return false;
+  return calculatedValue;
 };
 
 export default validateDecrement;

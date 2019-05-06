@@ -2115,11 +2115,16 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
 }
 
 <ButtonLink
+  ariaControls="element"
+  ariaExpanded={true}
   href="https://kiwi.com"
   iconLeft={<Airplane />}
   iconRight={<ChevronDown />}
+  title="With left and right icon"
 >
   <ButtonLink__StyledButtonLink
+    ariaControls="element"
+    ariaExpanded={true}
     buttonRef={null}
     component="button"
     href="https://kiwi.com"
@@ -2578,10 +2583,13 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
         "rtl": false,
       }
     }
+    title="With left and right icon"
     type="primary"
     width={0}
   >
     <StyledComponent
+      ariaControls="element"
+      ariaExpanded={true}
       buttonRef={null}
       component="button"
       forwardedComponent={
@@ -3543,10 +3551,13 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
           "rtl": false,
         }
       }
+      title="With left and right icon"
       type="primary"
       width={0}
     >
       <Component
+        ariaControls="element"
+        ariaExpanded={true}
         buttonRef={null}
         className="c0"
         component="button"
@@ -4006,10 +4017,14 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
             "rtl": false,
           }
         }
+        title="With left and right icon"
         type="primary"
         width={0}
       >
         <a
+          aria-controls="element"
+          aria-expanded={true}
+          aria-label="With left and right icon"
           className="c0"
           href="https://kiwi.com"
           size="normal"

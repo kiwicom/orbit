@@ -47,6 +47,7 @@ storiesOf("ButtonLink", module)
           iconLeft={IconLeft && <IconLeft />}
           onClick={action("clicked")}
           circled={circled}
+          title="Button"
         />
       );
     },
@@ -58,7 +59,7 @@ storiesOf("ButtonLink", module)
   .add(
     "Playground",
     () => {
-      const title = text("Title", "ButtonLink");
+      const children = text("Children", "ButtonLink");
       const disabled = boolean("Disabled", false);
       const block = boolean("Block", false);
       const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
@@ -75,6 +76,7 @@ storiesOf("ButtonLink", module)
       const ariaControls = text("Aria controls", "element ID");
       const tabIndex = text("tabIndex", "0");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const title = text("Title", "Additional information for accessibility");
 
       return (
         <ButtonLink
@@ -95,8 +97,9 @@ storiesOf("ButtonLink", module)
           ariaControls={ariaControls}
           tabIndex={tabIndex}
           spaceAfter={spaceAfter}
+          title={title}
         >
-          {title}
+          {children}
         </ButtonLink>
       );
     },

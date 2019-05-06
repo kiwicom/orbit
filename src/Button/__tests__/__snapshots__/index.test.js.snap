@@ -482,6 +482,7 @@ exports[`Button with icon should match snapshot 1`] = `
       "rtl": false,
     }
   }
+  title="With left and right icon"
   type="primary"
   width={0}
 >

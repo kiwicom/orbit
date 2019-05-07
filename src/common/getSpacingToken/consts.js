@@ -1,5 +1,6 @@
 // @flow
 const SPACINGS_AFTER = {
+  NONE: "none",
   SMALLEST: "smallest",
   SMALL: "small",
   NORMAL: "normal",

@@ -43,6 +43,13 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextAlertWarning,
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextAlertCritical,
     },
+    // TODO: create token
+    [TOKENS.colorTextLinkAlertHover]: {
+      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkHover,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkHover,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkHover,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteCriticalDarkHover,
+    },
   };
 
   return tokens[name][type];
@@ -154,8 +161,10 @@ const Content = styled(StyledDiv)`
     color: ${getTypeToken(TOKENS.colorTextAlert)};
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
     transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-    &:hover {
-      color: ${({ theme }) => theme.orbit.colorTextAlertLink};
+    &:hover,
+    &:focus,
+    &:active {
+      color: ${getTypeToken(TOKENS.colorTextLinkAlertHover)};
     }
   }
   & ${Item}, ${StyledText} {

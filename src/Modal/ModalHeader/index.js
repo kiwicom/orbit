@@ -58,8 +58,8 @@ export const StyledModalHeader = styled.div`
           }`) ||
         `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`,
     )};
-  border-top-left-radius: 9px; // TODO: create token
-  border-top-right-radius: 9px; // TODO: create token
+  border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
+  border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
   box-sizing: border-box;
   background-color: ${({ suppressed, theme }) =>
     suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};

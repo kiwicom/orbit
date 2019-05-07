@@ -48,8 +48,8 @@ export const StyledModalFooter = styled.div`
   ${media.largeMobile(css`
     justify-content: ${({ children }) => (children.length > 1 ? "space-between" : "flex-end")};
     // TODO: create token paddingModalFooterDesktop
-    border-bottom-left-radius: 9px;
-    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
+    border-bottom-right-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
   `)};
 
   ${StyledChild}:last-of-type {

@@ -76,10 +76,10 @@ const ModalWrapper = styled.div`
 
   position: fixed;
   width: 100%;
-  border-top-left-radius: 9px; // TODO: create token
-  border-top-right-radius: 9px; // TODO: create token
+  border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
+  border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
   transition: ${transition(["top"], "normal", "ease-in-out")};
-  top: ${({ loaded }) => (loaded ? "32px" : "100%")};
+  top: ${({ loaded, theme }) => (loaded ? theme.orbit.positionTopModalMobile : "100%")};
 
   ${onlyIE(css`
     /* IE flex bug, the content won't be centered if there is not 'height' property
@@ -117,7 +117,8 @@ const CloseContainer = styled.div`
           position: absolute;
         `};
   position: ${({ scrolled, fixedClose }) => (fixedClose || scrolled ? "fixed" : "absolute")};
-  top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled ? "32px" : "0")};
+  top: ${({ scrolled, fixedClose, theme }) =>
+    fixedClose || scrolled ? theme.orbit.positionTopModalMobile : "0"};
   right: 0;
   z-index: 800;
   justify-content: flex-end;
@@ -129,8 +130,8 @@ const CloseContainer = styled.div`
   max-width: ${({ modalWidth }) => (modalWidth ? `${modalWidth}px` : getSizeToken)};
   box-shadow: ${({ scrolled }) => scrolled && `0 2px 4px 0 rgba(23, 27, 30, 0.1)`};
   background-color: ${({ theme, scrolled }) => scrolled && theme.orbit.paletteWhite};
-  border-top-left-radius: 9px; // TODO: create token
-  border-top-right-radius: 9px; // TODO: create token
+  border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
+  border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
   transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
   
   ${media.largeMobile(css`
@@ -168,17 +169,18 @@ CloseContainer.defaultProps = {
 const ModalWrapperContent = styled.div`
   position: absolute;
   box-sizing: border-box;
-  border-top-left-radius: 9px; // TODO: create token
-  border-top-right-radius: 9px; // TODO: create token
+  border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
+  border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
   background-color: ${({ theme }) => theme.orbit.backgroundModal};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   width: 100%;
   max-height: calc(
-    100% - ${({ theme }) => theme.orbit.spaceXLarge} -
+    100% - ${({ theme }) => theme.orbit.positionTopModalMobile} -
       ${({ fixedFooter, footerHeight }) => `${fixedFooter && !!footerHeight ? footerHeight : 0}px`}
   );
-  bottom: ${({ fixedFooter, footerHeight }) =>
-    `${32 + (fixedFooter && !!footerHeight ? footerHeight : 0)}px`};
+  bottom: ${({ fixedFooter, footerHeight, theme }) =>
+    `${parseInt(theme.orbit.positionTopModalMobile, 16) +
+      (fixedFooter && !!footerHeight ? footerHeight : 0)}px`};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowModal};
   overflow-y: auto;
   overflow-x: hidden;
@@ -203,7 +205,7 @@ const ModalWrapperContent = styled.div`
     `};
 
   ${MobileHeader} {
-    top: ${({ scrolled, theme }) => scrolled && theme.orbit.spaceXLarge};
+    top: ${({ scrolled, theme }) => scrolled && theme.orbit.positionTopModalMobile};
     opacity: ${({ scrolled }) => scrolled && "1"};
     visibility: ${({ scrolled }) => scrolled && "visible"};
     transition: ${({ scrolled, theme }) =>
@@ -228,7 +230,7 @@ const ModalWrapperContent = styled.div`
   ${media.largeMobile(css`
     position: relative;
     bottom: auto;
-    border-radius: 9px;
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
     padding-bottom: 0;
     height: auto;
     overflow: visible;

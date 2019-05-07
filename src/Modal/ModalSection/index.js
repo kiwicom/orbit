@@ -20,16 +20,16 @@ export const StyledModalSection = styled.section`
   &:first-of-type {
     border-top: ${({ suppressed, theme }) =>
       suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};
-    border-top-left-radius: 9px; // TODO: create token
-    border-top-right-radius: 9px; // TODO: create token
+    border-top-left-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
+    border-top-right-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
     margin-top: ${({ suppressed, theme }) => suppressed && theme.orbit.spaceLarge};
   }
 
   &:last-of-type {
     border-bottom: ${({ suppressed, theme }) =>
       suppressed ? `1px solid ${theme.orbit.paletteCloudNormal}` : "0"};
-    border-bottom-left-radius: 9px; // TODO: create token
-    border-bottom-right-radius: 9px; // TODO: create token
+    border-bottom-left-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
+    border-bottom-right-radius: ${({ theme }) => theme.orbit.borderRadiusModal};
     & ~ ${StyledModalFooter} {
       margin-top: ${({ theme, suppressed }) => suppressed && theme.orbit.spaceMedium};
     }

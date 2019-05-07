@@ -63,6 +63,7 @@ export { default as ServiceLogo } from "./ServiceLogo";
 export { default as Separator } from "./Separator";
 export { default as SkipNavigation } from "./SkipNavigation";
 export { default as Stepper } from "./Stepper";
+export { default as StepperStateless } from "./Stepper/StepperStateless";
 export { default as StopoverArrow } from "./StopoverArrow";
 export { default as Tag } from "./Tag";
 export { default as Textarea } from "./Textarea";

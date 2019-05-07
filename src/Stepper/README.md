@@ -30,3 +30,73 @@ Table below contains all types of the props available in Stepper component.
 ```jsx
 <Stepper onChange={(value, name) => doSomething(value, name)} />
 ```
+
+# StepperStateless
+InputStepper offers a stateless version for your custom solutions. To use `StepperStateless` you'll need to add the import
+
+```jsx
+import { StepperStateless } from "@kiwicom/orbit-components/lib/InputStepper";
+```
+
+## Props
+Table below contains all types of the props available in `StepperStateless` component.
+
+| Name            | Type                          | Default     | Description                                        |
+| :-------------- | :---------------------------- | :---------- | :------------------------------------------------- |
+| dataTest        | `string`                      |             | Optional prop for testing purposes.
+| defaultValue    | `number`                      | `0`         | Specifies the value of the Stepper. [See Functional specs](#functional-specs)
+| disabled        | `boolean`                     | `false`     | If `true`, the Stepper will be disabled.
+| maxValue        | `number`                      | `∞`         | Specifies the maximum value for the Stepper.
+| minValue        | `number`                      | `-∞`        | Specifies the minimum value for the Stepper.
+| name            | `string`                      |             | The name for the Stepper.
+| onBlur          | `event => void \| Promise`    |             | Function for handling onBlur event.
+| onChange        | `number => void \| Promise`   |             | Function for handling onClick event.
+| onDecrement     | `event => void \| Promise`    |             | Function for handling decrement event.l
+| onFocus         | `event => void \| Promise`    |             | Function for handling onFocus event.
+| onIncrement     | `event => void \| Promise`    |             | Function for handling increment event.
+| onKeyDown       | `event => void \| Promise`    |             | Function for handling onKeyDown event present on input.
+| step            | `number`                      | `1`         | Specifies the value of step to increment and decrement.
+| value           | `number | string`             |             | Specifies the value of the StepperStateless.
+
+### Usage:
+```jsx
+<StepperStateless value={"2 adults"}/>
+```
+
+## Helper functions
+We provide you with helpers function for validation they can be imported like this:
+
+```jsx
+import validateIncrement from "@kiwicom/orbit-components/lib/utils/validateIncrement";
+import validateDecrement from "@kiwicom/orbit-components/lib/utils/validateDecrement";
+```
+
+### ValidateIncrement
+
+#### Arguments
+| Name            | Type                        | Default     | Description                                        |
+| :-------------- | :-------------------------- | :---------- | :------------------------------------------------- |
+| value           | `number`                    |             | Specifies the the current value.
+| maxValue        | `number`                    |  `∞`        | Specifies the maximum value for the InputStepperStateless.
+| step            | `number`                    |  `1`        | Specifies the value of step to increment and decrement.
+
+
+#### Usage 
+```js
+validateIncrement({value, maxValue, step})
+```
+
+### ValidateDecrement
+
+#### Arguments
+| Name            | Type                        | Default     | Description                                        |
+| :-------------- | :-------------------------- | :---------- | :------------------------------------------------- |
+| value           | `number`                    |             | Specifies the the current value.
+| minValue        | `number`                    |  `-∞`       | Specifies the minimum value for the InputStepperStateless.
+| step            | `number`                    |  `1`        | Specifies the value of step to increment and decrement.
+
+
+#### Usage 
+```js
+validateDecrement({value, minValue, step})
+```

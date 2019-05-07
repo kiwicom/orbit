@@ -1,0 +1,18 @@
+// @flow
+
+import type { SharedProps } from "../index";
+
+export type StateLessProps = {|
+  ...SharedProps,
+  +value: number | string,
+  +onKeyDown?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
+  +onDecrement?: (
+    ev: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
+  ) => void | Promise<any>,
+  +onIncrement?: (
+    ev: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
+  ) => void | Promise<any>,
+  +onChange?: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+|};
+
+declare export default React$ComponentType<StateLessProps>;

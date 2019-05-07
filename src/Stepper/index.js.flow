@@ -4,10 +4,8 @@
 */
 import type { Globals } from "../common/common.js.flow";
 
-export type Props = {|
+export type SharedProps = {|
   ...Globals,
-  +defaultValue?: number,
-  +step?: number,
   +name?: string,
   +disabled?: boolean,
   +maxValue?: number,
@@ -15,6 +13,11 @@ export type Props = {|
   +onChange?: (value: number) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+|};
+export type Props = {|
+  ...SharedProps,
+  +defaultValue?: number,
+  +step?: number,
 |};
 
 export type State = {|

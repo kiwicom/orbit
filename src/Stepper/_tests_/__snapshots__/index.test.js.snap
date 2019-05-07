@@ -1,52 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Stepper should match snapshot 1`] = `
-<Stepper__StyledStepper
-  data-test="test"
->
-  <Button
-    disabled={false}
-    iconLeft={<Minus />}
-    onClick={[Function]}
-    size="small"
-    type="secondary"
-  />
-  <Stepper__StyledStepperInput
-    disabled={false}
-    max={100}
-    min={1}
-    name="name"
-    onBlur={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      }
+<StepperStateless
+  dataTest="test"
+  disabled={false}
+  maxValue={100}
+  minValue={1}
+  name="name"
+  onBlur={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
     }
-    onFocus={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      }
-    }
+<<<<<<< HEAD
     onKeyDown={[Function]}
     readOnly={true}
     theme={
@@ -505,19 +478,30 @@ exports[`Stepper should match snapshot 1`] = `
           "zIndexModalOverlay": "800",
           "zIndexOnTheTop": "900",
           "zIndexSticky": "100",
+=======
+  }
+  onDecrement={[Function]}
+  onFocus={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
         },
-        "rtl": false,
-      }
+        Object {
+          "type": "return",
+          "value": undefined,
+>>>>>>> UPDATE: Stepper exporting stateless
+        },
+      ],
     }
-    type="text"
-    value={3}
-  />
-  <Button
-    disabled={false}
-    iconLeft={<Plus />}
-    onClick={[Function]}
-    size="small"
-    type="secondary"
-  />
-</Stepper__StyledStepper>
+  }
+  onIncrement={[Function]}
+  onKeyDown={[Function]}
+  value={3}
+/>
 `;

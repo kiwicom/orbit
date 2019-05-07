@@ -1,44 +1,11 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
 
-import Button from "../Button";
-import Minus from "../icons/Minus";
-import Plus from "../icons/Plus";
-import defaultTheme from "../defaultTheme";
+import StepperStateless from "./StepperStateless";
+import validateIncrement from "../utils/validateIncrement";
+import validateDecrement from "../utils/validateDecrement";
 
 import type { Props, State } from "./index";
-
-const StyledStepper = styled.div`
-  display: flex;
-  width: 100%;
-  flex: 1 1 100%;
-`;
-
-const StyledStepperInput = styled.input`
-  width: 100%;
-  height: 32px; // TODO: create token sizeStepper
-  padding: 0;
-  border: 0;
-  font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
-  color: ${({ theme }) => theme.orbit.paletteInkNormal};
-  text-align: center;
-
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  &:focus {
-    outline: none;
-  }
-`;
-
-StyledStepperInput.defaultProps = {
-  theme: defaultTheme,
-};
 
 class Stepper extends React.PureComponent<Props, State> {
   state = {
@@ -56,21 +23,15 @@ class Stepper extends React.PureComponent<Props, State> {
   incrementCounter = () => {
     const { value } = this.state;
     const { maxValue = Number.POSITIVE_INFINITY, step = 1 } = this.props;
-    const newValue = value + step;
-    const stateValue = newValue >= +maxValue ? maxValue : newValue;
-    if (stateValue !== value) {
-      this.setValueAndInjectCallback(stateValue);
-    }
+
+    this.setValueAndInjectCallback(validateIncrement({ value, maxValue, step }));
   };
 
   decrementCounter = () => {
     const { value } = this.state;
     const { minValue = Number.NEGATIVE_INFINITY, step = 1 } = this.props;
-    const newValue = value - step;
-    const stateValue = newValue <= +minValue ? minValue : newValue;
-    if (stateValue !== value) {
-      this.setValueAndInjectCallback(stateValue);
-    }
+
+    this.setValueAndInjectCallback(validateDecrement({ value, minValue, step }));
   };
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
@@ -88,34 +49,19 @@ class Stepper extends React.PureComponent<Props, State> {
     const { onBlur, onFocus, disabled, name, dataTest, maxValue, minValue } = this.props;
     const { value } = this.state;
     return (
-      <StyledStepper data-test={dataTest}>
-        <Button
-          disabled={disabled || (disabled || value <= +minValue)}
-          iconLeft={<Minus />}
-          type="secondary"
-          size="small"
-          onClick={this.decrementCounter}
-        />
-        <StyledStepperInput
-          name={name}
-          disabled={disabled}
-          type="text"
-          value={value || 0}
-          min={minValue}
-          max={maxValue}
-          onKeyDown={this.handleKeyDown}
-          onBlur={onBlur}
-          onFocus={onFocus}
-          readOnly
-        />
-        <Button
-          disabled={disabled || (disabled || value >= +maxValue)}
-          iconLeft={<Plus />}
-          type="secondary"
-          size="small"
-          onClick={this.incrementCounter}
-        />
-      </StyledStepper>
+      <StepperStateless
+        disabled={disabled}
+        dataTest={dataTest}
+        value={value}
+        name={name}
+        minValue={minValue}
+        maxValue={maxValue}
+        onKeyDown={this.handleKeyDown}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        onIncrement={this.incrementCounter}
+        onDecrement={this.decrementCounter}
+      />
     );
   }
 }

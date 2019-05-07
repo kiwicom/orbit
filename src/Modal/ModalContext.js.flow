@@ -6,6 +6,7 @@ export type ModalContextProps = {|
   +decideFixedFooter?: () => void,
   +setHasModalSection?: () => void,
   +removeHasModalSection?: () => void,
+  +manageFocus?: () => void,
   +hasModalSection?: boolean,
 |};
 

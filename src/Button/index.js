@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
+import { warning } from "@kiwicom/js";
 
 import defaultTheme from "../defaultTheme";
 import { ICON_SIZES } from "../Icon/consts";
@@ -310,6 +311,7 @@ export const StyledButton = styled(
     ariaControls,
     ariaExpanded,
     spaceAfter,
+    title,
     ...props
   }) => {
     const isButtonWithHref = component === "button" && props.href;
@@ -320,6 +322,7 @@ export const StyledButton = styled(
         data-test={dataTest}
         aria-controls={ariaControls}
         aria-expanded={ariaExpanded}
+        aria-label={title}
         type={!isButtonWithHref ? buttonType : undefined}
         {...props}
         ref={buttonRef}
@@ -471,11 +474,17 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
     loading = false,
     width = 0,
     role,
+    title,
   } = props;
   const iconLeft = props.iconLeft || icon;
   const sizeIcon = size === ICON_SIZES.SMALL ? ICON_SIZES.SMALL : ICON_SIZES.MEDIUM;
   const onlyIcon = iconLeft && !children;
   const isDisabled = loading || disabled;
+
+  warning(
+    !(!children && !title),
+    "Warning: children or title property is missing on Button. Use title property to add aria-label to be accessible for screen readers. More information https://orbit.kiwi/components/button/api/#accessibility",
+  );
 
   return (
     <StyledButton
@@ -495,6 +504,7 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
       width={width}
       buttonRef={ref}
       role={role}
+      title={title}
     >
       {loading && <Loading type="buttonLoader" />}
       <StyledButtonContent loading={loading}>

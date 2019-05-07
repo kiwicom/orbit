@@ -52,6 +52,7 @@ describe("Button with icon", () => {
   const ariaExpanded = true;
   const ariaControls = "element";
   const role = "button";
+  const title = "With left and right icon";
   const component = shallow(
     <Button
       size="normal"
@@ -65,6 +66,7 @@ describe("Button with icon", () => {
       ariaExpanded={ariaExpanded}
       ariaControls={ariaControls}
       role={role}
+      title={title}
     >
       {children}
     </Button>,
@@ -84,6 +86,7 @@ describe("Button with icon", () => {
   it("should have aria attributes", () => {
     expect(component.render().prop("aria-controls")).toBe(ariaControls);
     expect(component.render().prop("aria-expanded")).toBe(String(ariaExpanded));
+    expect(component.render().prop("aria-label")).toBe(title);
   });
   it("should have role", () => {
     expect(component.render().prop("role")).toBe(role);

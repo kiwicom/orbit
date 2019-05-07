@@ -45,6 +45,7 @@ export type Props = {|
   +ariaExpanded?: boolean,
   +ariaControls?: string,
   +role?: string,
+  +title?: string | (any => string),
 |};
 
 declare export var StyledButton: ReactComponentStyled<Props>;

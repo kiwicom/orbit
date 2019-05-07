@@ -33,7 +33,7 @@ Table below contains all types of the props available in ButtonLink component.
 | submit        | `boolean`                       | `false`         | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.
 | tabIndex      | `string`                        |                 | Specifies the tab order of an element.
 | transparent   | `boolean`                       | `false`         | If `true`, the ButtonLink will not have `:hover` and `:active` state.
-| tabIndex      | `string`                        |                 | Specifies the tab order of an element
+| title         | `string`                        |                 | Adds `aria-label`.
 | **type**      | [`enum`](#enum)                 | `"primary"`     | The type of ButtonLink.
 | width         | `number`                        | `0`             | The width of the ButtonLink. Number is defined in `px`.
 
@@ -78,3 +78,5 @@ If you use `ButtonLink` without `href` so it's rendered as a `<button>` HTML ele
 * Use `disabled` prop to indicate users that button is inactive and they can't interact with it.
 
 * Use `role` and `tabIndex` when you are rendering `ButtonLink` to non-actionable HTML element as `div` or `span`. However, this should be done only in edge-cases as it is anti-pattern behavior.
+
+* Use `title` to add `aria-label` when you need to add extra informations to screen readers or there is no `children` presented to be used as label.

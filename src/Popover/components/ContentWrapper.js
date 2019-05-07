@@ -45,8 +45,7 @@ const StyledPopoverParent = styled.div`
   border-top-right-radius: 9px; /* TODO: Add token */
   animation: ${showAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
-  padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceSmall)};
-  padding-top: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
+  padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
   overflow: hidden;
   z-index: 1000;
@@ -95,7 +94,7 @@ StyledOverlay.defaultProps = {
 };
 
 const StyledPopoverClose = styled.div`
-  padding: ${({ theme, noPadding }) => (noPadding ? theme.orbit.spaceSmall : 0)};
+  padding: ${({ theme, noPadding }) => (noPadding ? theme.orbit.spaceMedium : 0)};
   padding-top: ${({ theme }) => theme.orbit.spaceMedium};
 
   ${media.largeMobile(css`

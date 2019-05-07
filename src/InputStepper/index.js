@@ -4,8 +4,8 @@ import * as React from "react";
 import { SIZE_OPTIONS } from "../InputField/consts";
 import KEY_CODE_MAP from "../common/keyMaps";
 import InputStepperStateless from "./InputStepperStateless";
-import validateIncrement from "./helpers/validateIncrement";
-import validateDecrement from "./helpers/validateDecrement";
+import validateIncrement from "../utils/validateIncrement";
+import validateDecrement from "../utils/validateDecrement";
 
 import type { Props, State, ForwardedRef } from "./index";
 

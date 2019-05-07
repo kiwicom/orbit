@@ -1,5 +1,5 @@
 // @flow
-import type { ValidateIncrement } from "./validateIncrement.js.flow";
+import type { ValidateIncrement } from "./index.js.flow";
 
 const validateIncrement: ValidateIncrement = ({
   value,

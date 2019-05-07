@@ -72,14 +72,14 @@ class Component extends React.PureComponent<Props> {
 }
 ```
 
-## InputStepperStateless
+# InputStepperStateless
 InputStepper offers a stateless version for your custom solutions. To use `InputStepperStateless` you'll need to add the import
 
 ```jsx
 import { InputStepperStateless } from "@kiwicom/orbit-components/lib/InputStepper";
 ```
 
-### Props
+## Props
 Table below contains all types of the props available in `InputStepperStateless` component.
 
 | Name            | Type                        | Default     | Description                                        |
@@ -105,7 +105,45 @@ Table below contains all types of the props available in `InputStepperStateless`
 | tabIndex        | `string`                    |             | Specifies the tab order of an element
 | value           | `number | string`           |             | Specifies the value of the InputStepperStateless.
 
-#### Usage:
+### Usage:
 ```jsx
 <InputStepperStateless value={"2 adults"}/>
+```
+
+## Helper functions
+We provide you with helpers function for validation they can be imported like this:
+
+```jsx
+import validateIncrement from "@kiwicom/orbit-components/lib/utils/validateIncrement";
+import validateDecrement from "@kiwicom/orbit-components/lib/utils/validateDecrement";
+```
+
+### ValidateIncrement
+
+#### Arguments
+| Name            | Type                        | Default     | Description                                        |
+| :-------------- | :-------------------------- | :---------- | :------------------------------------------------- |
+| value           | `number`                    |             | Specifies the the current value.
+| maxValue        | `number`                    |  `∞`        | Specifies the maximum value for the InputStepperStateless.
+| step            | `number`                    |  `1`        | Specifies the value of step to increment and decrement.
+
+
+#### Usage 
+```js
+validateIncrement({value, maxValue, step})
+```
+
+### ValidateDecrement
+
+#### Arguments
+| Name            | Type                        | Default     | Description                                        |
+| :-------------- | :-------------------------- | :---------- | :------------------------------------------------- |
+| value           | `number`                    |             | Specifies the the current value.
+| minValue        | `number`                    |  `-∞`       | Specifies the minimum value for the InputStepperStateless.
+| step            | `number`                    |  `1`        | Specifies the value of step to increment and decrement.
+
+
+#### Usage 
+```js
+validateDecrement({value, minValue, step})
 ```

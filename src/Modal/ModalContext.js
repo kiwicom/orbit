@@ -8,6 +8,7 @@ export const ModalContext: ModalContextType = React.createContext({
   decideFixedFooter: () => {},
   setHasModalSection: () => {},
   removeHasModalSection: () => {},
+  manageFocus: () => {},
   hasModalSection: false,
 });
 

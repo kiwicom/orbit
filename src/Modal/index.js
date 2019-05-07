@@ -326,6 +326,8 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
 
   offset = 40;
 
+  focusTriggered = false;
+
   componentDidMount() {
     this.timeout = setTimeout(() => {
       this.setState({
@@ -333,7 +335,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
       });
       this.decideFixedFooter();
       this.setDimensions();
-      this.manageFocus();
+      this.setFirstFocus();
     }, 15);
     this.modalID = randomID("modal-");
     window.addEventListener("resize", this.handleResize);
@@ -383,6 +385,10 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
       this.setState({ hasModalSection: true });
     }
   };
+
+  setFirstFocus() {
+    if (this.modalBody.current) this.modalBody.current.focus();
+  }
 
   removeHasModalSection = () => {
     if (this.state.hasModalSection) this.setState({ hasModalSection: false });
@@ -450,6 +456,10 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
   keyboardHandler = (e: SyntheticKeyboardEvent<HTMLElement>) => {
     if (e.keyCode === KEY_CODE_MAP.TAB) {
       // Rotate Focus
+      if (!this.focusTriggered) {
+        this.focusTriggered = true;
+        this.manageFocus();
+      }
       if (
         e.shiftKey &&
         (document.activeElement === this.firstFocusableEl ||
@@ -464,20 +474,21 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     }
   };
 
-  manageFocus() {
-    const focusableElements = this.modalContent.current.querySelectorAll(
-      FOCUSABLE_ELEMENT_SELECTORS,
-    );
+  manageFocus = () => {
+    if (this.focusTriggered) {
+      const focusableElements = this.modalContent.current.querySelectorAll(
+        FOCUSABLE_ELEMENT_SELECTORS,
+      );
 
-    if (focusableElements.length > 0) {
-      const firstFocusableEl = focusableElements[0];
-      const lastFocusableEl = focusableElements[focusableElements.length - 1];
+      if (focusableElements.length > 0) {
+        const firstFocusableEl = focusableElements[0];
+        const lastFocusableEl = focusableElements[focusableElements.length - 1];
 
-      this.firstFocusableEl = firstFocusableEl;
-      this.lastFocusableEl = lastFocusableEl;
+        this.firstFocusableEl = firstFocusableEl;
+        this.lastFocusableEl = lastFocusableEl;
+      }
     }
-    if (this.modalBody.current) this.modalBody.current.focus();
-  }
+  };
 
   firstFocusableEl: HTMLElement;
 
@@ -551,6 +562,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
                 decideFixedFooter: this.decideFixedFooter,
                 setHasModalSection: this.setHasModalSection,
                 removeHasModalSection: this.removeHasModalSection,
+                manageFocus: this.manageFocus,
                 hasModalSection,
               }}
             >

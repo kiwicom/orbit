@@ -2,8 +2,8 @@
 
 export type Params = {|
   value: number,
-  minValue: number,
-  step: number,
+  minValue?: number,
+  step?: number,
 |};
 
 export type ValidateDecrement = Params => number;

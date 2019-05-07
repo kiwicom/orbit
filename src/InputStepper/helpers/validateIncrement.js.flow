@@ -2,8 +2,8 @@
 
 export type Params = {|
   value: number,
-  maxValue: number,
-  step: number,
+  maxValue?: number,
+  step?: number,
 |};
 
 export type ValidateIncrement = Params => number;

@@ -10,6 +10,8 @@ export type SharedProps = {|
   +disabled?: boolean,
   +maxValue?: number,
   +minValue?: number,
+  +titleIncrement?: () => string | string,
+  +titleDecrement?: () => string | string,
   +onChange?: (value: number) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,

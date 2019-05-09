@@ -51,11 +51,17 @@ const StepperStateless = ({
   onFocus,
   onIncrement,
   onDecrement,
+  titleIncrement,
+  titleDecrement,
+  disabledIncrement,
+  disabledDecrement,
 }: StateLessProps) => {
   return (
     <StyledStepper data-test={dataTest}>
       <Button
-        disabled={disabled || (typeof value === "number" && value <= +minValue)}
+        disabled={
+          disabled || disabledDecrement || (typeof value === "number" && value <= +minValue)
+        }
         iconLeft={<Minus />}
         type="secondary"
         size="small"
@@ -64,6 +70,7 @@ const StepperStateless = ({
             onDecrement(ev);
           }
         }}
+        title={titleDecrement}
       />
       <StyledStepperInput
         name={name}
@@ -82,7 +89,9 @@ const StepperStateless = ({
         readOnly
       />
       <Button
-        disabled={disabled || (typeof value === "number" && value >= +maxValue)}
+        disabled={
+          disabled || disabledIncrement || (typeof value === "number" && value >= +maxValue)
+        }
         iconLeft={<Plus />}
         type="secondary"
         size="small"
@@ -91,6 +100,7 @@ const StepperStateless = ({
             onIncrement(ev);
           }
         }}
+        title={titleIncrement}
       />
     </StyledStepper>
   );

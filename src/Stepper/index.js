@@ -46,7 +46,17 @@ class Stepper extends React.PureComponent<Props, State> {
   };
 
   render() {
-    const { onBlur, onFocus, disabled, name, dataTest, maxValue, minValue } = this.props;
+    const {
+      onBlur,
+      onFocus,
+      disabled,
+      name,
+      dataTest,
+      maxValue,
+      minValue,
+      titleIncrement,
+      titleDecrement,
+    } = this.props;
     const { value } = this.state;
     return (
       <StepperStateless
@@ -61,6 +71,8 @@ class Stepper extends React.PureComponent<Props, State> {
         onFocus={onFocus}
         onIncrement={this.incrementCounter}
         onDecrement={this.decrementCounter}
+        titleIncrement={titleIncrement}
+        titleDecrement={titleDecrement}
       />
     );
   }

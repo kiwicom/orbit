@@ -21,6 +21,8 @@ export type SharedProps = {|
   +minValue?: number,
   +required?: boolean,
   tabIndex?: string,
+  +titleIncrement?: () => string | string,
+  +titleDecrement?: () => string | string,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};

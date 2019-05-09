@@ -74,6 +74,10 @@ const InputStepperStateless = ({
   value,
   onDecrement,
   onIncrement,
+  disabledIncrement,
+  disabledDecrement,
+  titleIncrement,
+  titleDecrement,
 }: StateLessProps) => {
   return (
     <StyledInputStepper spaceAfter={spaceAfter}>
@@ -99,24 +103,30 @@ const InputStepperStateless = ({
         prefix={
           <StyledButtonWrapper role="button" tabIndex="0" onKeyDown={onDecrement}>
             <ButtonLink
-              disabled={disabled || (typeof value === "number" && value <= +minValue)}
+              disabled={
+                disabledDecrement || disabled || (typeof value === "number" && value <= +minValue)
+              }
               iconLeft={<MinusCircle color="secondary" />}
               size={size}
               onClick={onDecrement}
               transparent
               component={PrefixSuffix}
+              title={titleDecrement}
             />
           </StyledButtonWrapper>
         }
         suffix={
           <StyledButtonWrapper role="button" tabIndex="0" onKeyDown={onIncrement}>
             <ButtonLink
-              disabled={disabled || (typeof value === "number" && value >= +maxValue)}
+              disabled={
+                disabledIncrement || disabled || (typeof value === "number" && value >= +maxValue)
+              }
               iconLeft={<PlusCircle color="secondary" />}
               size={size}
               onClick={onIncrement}
               transparent
               component={PrefixSuffix}
+              title={titleIncrement}
             />
           </StyledButtonWrapper>
         }

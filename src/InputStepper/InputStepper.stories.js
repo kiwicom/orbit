@@ -69,6 +69,10 @@ storiesOf("InputStepper", module)
       const error = text("Error", "");
       const disabled = boolean("disabled", false);
       const required = boolean("required", false);
+      const disabledIncrement = boolean("Disabled Increment", false);
+      const disabledDecrement = boolean("Disabled Decrement", false);
+      const titleIncrement = text("Title increment", "Add a passenger");
+      const titleDecrement = text("Title decrement", "Remove a passenger");
       const dataTest = text("dataTest", "test");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const value = text("Value", "2 Adults");
@@ -85,6 +89,10 @@ storiesOf("InputStepper", module)
           maxValue={max}
           minValue={min}
           disabled={disabled}
+          disabledIncrement={disabledIncrement}
+          disabledDecrement={disabledDecrement}
+          titleIncrement={titleIncrement}
+          titleDecrement={titleDecrement}
           required={required}
           dataTest={dataTest}
           onChange={action("onChange")}
@@ -117,6 +125,9 @@ storiesOf("InputStepper", module)
       const required = boolean("required", false);
       const dataTest = text("dataTest", "test");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const titleIncrement = text("Title increment", "Add a passenger");
+      const titleDecrement = text("Title decrement", "Remove a passenger");
+
       return (
         <InputStepper
           label={label}
@@ -135,6 +146,8 @@ storiesOf("InputStepper", module)
           onFocus={action("onFocus")}
           onBlur={action("onBlur")}
           spaceAfter={spaceAfter}
+          titleIncrement={titleIncrement}
+          titleDecrement={titleDecrement}
         />
       );
     },

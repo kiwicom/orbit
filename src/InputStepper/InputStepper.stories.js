@@ -12,15 +12,31 @@ import InputStepperStateless from "./InputStepperStateless";
 import InputStepper from "./index";
 
 storiesOf("InputStepper", module)
-  .add("Default", () => <InputStepper onChange={action("onChange")} />, {
-    info: "Some description about this type of InputStepper in general.",
-  })
+  .add(
+    "Default",
+    () => {
+      const titleIncrement = text("Title increment", "Add a passenger");
+      const titleDecrement = text("Title decrement", "Remove a passenger");
+      return (
+        <InputStepper
+          titleIncrement={titleIncrement}
+          titleDecrement={titleDecrement}
+          onChange={action("onChange")}
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputStepper in general.",
+    },
+  )
   .add(
     "With help",
     () => {
       const label = text("Label", "Adults");
       const help = text("help", "You need to enter count of adults");
       const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
+      const titleIncrement = text("Title increment", "Add a passenger");
+      const titleDecrement = text("Title decrement", "Remove a passenger");
 
       return (
         <InputStepper
@@ -30,6 +46,8 @@ storiesOf("InputStepper", module)
           onChange={action("onChange")}
           onFocus={action("onFocus")}
           onBlur={action("onBlur")}
+          titleIncrement={titleIncrement}
+          titleDecrement={titleDecrement}
         />
       );
     },
@@ -42,6 +60,8 @@ storiesOf("InputStepper", module)
     () => {
       const label = text("Label", "Adults");
       const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
+      const titleIncrement = text("Title increment", "Add a passenger");
+      const titleDecrement = text("Title decrement", "Remove a passenger");
       return (
         <InputStepper
           label={label}
@@ -49,6 +69,8 @@ storiesOf("InputStepper", module)
           onChange={action("onChange")}
           onFocus={action("onFocus")}
           onBlur={action("onBlur")}
+          titleIncrement={titleIncrement}
+          titleDecrement={titleDecrement}
         />
       );
     },
@@ -157,11 +179,20 @@ storiesOf("InputStepper", module)
   )
   .add(
     "RTL",
-    () => (
-      <RenderInRtl>
-        <InputStepper label="My label" />
-      </RenderInRtl>
-    ),
+    () => {
+      const titleIncrement = text("Title increment", "Add a passenger");
+      const titleDecrement = text("Title decrement", "Remove a passenger");
+
+      return (
+        <RenderInRtl>
+          <InputStepper
+            titleIncrement={titleIncrement}
+            titleDecrement={titleDecrement}
+            label="My label"
+          />
+        </RenderInRtl>
+      );
+    },
     {
       info: "This is a preview of this component in RTL setup.",
     },

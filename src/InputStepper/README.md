@@ -78,7 +78,7 @@ class Component extends React.PureComponent<Props> {
 InputStepper offers a stateless version for your custom solutions. To use `InputStepperStateless` you'll need to add the import
 
 ```jsx
-import { InputStepperStateless } from "@kiwicom/orbit-components/lib/InputStepper";
+import InputStepperStateless from "@kiwicom/orbit-components/lib/InputStepperStateless"
 ```
 
 ## Props
@@ -140,6 +140,7 @@ validateIncrement({value, maxValue, step})
 ```
 
 ### ValidateDecrement
+Helper function for validating decrement. Can be used with Stateless InputStepper to make custom validation easier.
 
 #### Arguments
 | Name            | Type                        | Default     | Description                                        |

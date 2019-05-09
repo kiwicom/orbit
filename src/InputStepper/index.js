@@ -109,6 +109,8 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
       tabIndex,
       forwardedRef,
       spaceAfter,
+      titleIncrement,
+      titleDecrement,
     } = this.props;
     const { value } = this.state;
     return (
@@ -133,6 +135,8 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
         spaceAfter={spaceAfter}
         onDecrement={this.handleDecrementCounter}
         onIncrement={this.handleIncrementCounter}
+        titleIncrement={titleIncrement}
+        titleDecrement={titleDecrement}
       />
     );
   }

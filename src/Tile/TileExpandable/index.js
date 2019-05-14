@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import Slide from "../../utils/Slide";
 import defaultTheme from "../../defaultTheme";
 
 import type { Props, State } from "./index";
@@ -13,8 +14,6 @@ const StyledTileExpandable = styled.div`
       : `0px solid ${theme.orbit.paletteCloudNormal}`};
   padding: ${({ theme, expanded }) => expanded && `${theme.orbit.spaceMedium} 0`};
   margin: 0 ${({ theme }) => theme.orbit.spaceMedium};
-  max-height: ${({ contentHeight, expanded, initialExpanded }) =>
-    !initialExpanded && (expanded ? `${contentHeight}px` : "0")};
   ${({ initialExpanded, theme }) =>
     !initialExpanded &&
     css`
@@ -76,7 +75,9 @@ class TileExpandable extends React.PureComponent<Props, State> {
         contentHeight={this.state.contentHeight}
         initialExpanded={initialExpanded}
       >
-        <div ref={this.node}>{children}</div>
+        <Slide maxHeight={this.state.contentHeight} expanded={expanded}>
+          <div ref={this.node}>{children}</div>
+        </Slide>
       </StyledTileExpandable>
     );
   }

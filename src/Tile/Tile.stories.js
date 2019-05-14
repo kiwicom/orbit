@@ -8,6 +8,9 @@ import * as Icons from "../icons";
 import Stack from "../Stack";
 import Text from "../Text";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import TripSector, { TripDate } from "../TripSector";
+import TripSegment from "../TripSegment";
+import List, { ListItem } from "../List";
 
 import Tile from "./index";
 
@@ -48,6 +51,35 @@ storiesOf("Tile", module)
     },
     {
       info: "This is the default configuration of this component.",
+    },
+  )
+  .add(
+    "TripSector in Tile",
+    () => (
+      <Tile
+        title="Dynamic Tile height"
+        description="This is a example of dynamic Tile height with TripSector"
+      >
+        <TripSector dataTest="test">
+          <TripDate>Mon 22 Oct</TripDate>
+          <TripSegment
+            carrier={{ code: "FR", type: "airline", name: "Ryanair" }}
+            duration="2h"
+            departure="Barcelona BCN"
+            departureTime="6:30"
+            arrival="Paris BVA"
+            arrivalTime="8:30"
+          >
+            <List size="small" type="secondary">
+              <ListItem>Airline: Ryanair</ListItem>
+              <ListItem>Flight no: D8 1762</ListItem>
+            </List>
+          </TripSegment>
+        </TripSector>
+      </Tile>
+    ),
+    {
+      info: "TripSector in expandable Card to test if Whole TripSector is visible after expand",
     },
   )
   .add(

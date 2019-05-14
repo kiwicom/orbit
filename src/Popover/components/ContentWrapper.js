@@ -156,6 +156,7 @@ const PopoverContentWrapper = ({
         tabIndex="0"
         data-test={dataTest}
         noPadding={noPadding}
+        role="tooltip"
       >
         <StyledPopoverContent ref={content}>
           {children}

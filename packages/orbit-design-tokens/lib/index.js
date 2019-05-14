@@ -172,7 +172,7 @@ function getTokens(customFoundation) {
     backgroundButtonWhiteActive: theme.palette.cloud.lightHover,
     backgroundButtonBordered: "transparent",
     backgroundButtonBorderedHover: theme.palette.cloud.light,
-    backgroundButtonBorderedActive: theme.palette.white.normal,
+    backgroundButtonBorderedActive: theme.palette.cloud.light,
     backgroundButtonWhiteBordered: "transparent",
     backgroundButtonWhiteBorderedHover: convertHexToRgba(theme.palette.white.normal, 20),
     backgroundButtonWhiteBorderedActive: convertHexToRgba(theme.palette.white.normal, 20),

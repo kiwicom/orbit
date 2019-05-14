@@ -8,6 +8,8 @@ export type Palette = {|
     normalHover?: string,
     normalActive?: string,
     dark?: string,
+    darkHover?: string,
+    darkActive?: string,
   |},
   white: {|
     normal?: string,
@@ -40,6 +42,8 @@ export type Palette = {|
     normalHover?: string,
     normalActive?: string,
     dark?: string,
+    darkHover?: string,
+    darkActive?: string,
   |},
   red: {|
     light?: string,
@@ -49,6 +53,8 @@ export type Palette = {|
     normalHover?: string,
     normalActive?: string,
     dark?: string,
+    darkHover?: string,
+    darkActive?: string,
   |},
   green: {|
     light?: string,
@@ -58,6 +64,8 @@ export type Palette = {|
     normalHover?: string,
     normalActive?: string,
     dark?: string,
+    darkHover?: string,
+    darkActive?: string,
   |},
   blue: {|
     light?: string,
@@ -67,6 +75,8 @@ export type Palette = {|
     normalHover?: string,
     normalActive?: string,
     dark?: string,
+    darkHover?: string,
+    darkActive?: string,
   |},
   social: {|
     facebook?: string,

@@ -1257,7 +1257,7 @@
       }
     },
     "backgroundButtonBorderedActive": {
-      "value": "#fff",
+      "value": "#f5f7f9",
       "type": "color",
       "category": "Background colors",
       "meta": {

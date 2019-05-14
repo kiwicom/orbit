@@ -28,6 +28,7 @@ export type Props = {|
   +children: React$Node,
   +onClose?: onClose,
   +fixedFooter?: boolean,
+  +isMobileFullPage?: boolean,
   ...Globals,
 |};
 

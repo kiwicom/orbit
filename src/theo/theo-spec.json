@@ -1,7 +1,7 @@
 {
   "props": {
     "colorTextPrimary": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -9,7 +9,7 @@
       }
     },
     "colorTextSecondary": {
-      "value": "#7f91a8",
+      "value": "#5F738C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -25,7 +25,7 @@
       }
     },
     "colorTextError": {
-      "value": "#d21c1c",
+      "value": "#D21C1C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -33,7 +33,7 @@
       }
     },
     "colorTextInfo": {
-      "value": "#0176D2",
+      "value": "#0172CB",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -41,7 +41,7 @@
       }
     },
     "colorTextSuccess": {
-      "value": "#46B655",
+      "value": "#28A138",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -49,7 +49,7 @@
       }
     },
     "colorTextWarning": {
-      "value": "#f9971e",
+      "value": "#F9971E",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -57,7 +57,7 @@
       }
     },
     "colorTextCritical": {
-      "value": "#d21c1c",
+      "value": "#D21C1C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -73,7 +73,7 @@
       }
     },
     "colorIconPrimary": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -81,7 +81,7 @@
       }
     },
     "colorIconSecondary": {
-      "value": "#7f91a8",
+      "value": "#5F738C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -105,7 +105,7 @@
       }
     },
     "colorIconInfo": {
-      "value": "#0176D2",
+      "value": "#0172CB",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -113,7 +113,7 @@
       }
     },
     "colorIconSuccess": {
-      "value": "#46B655",
+      "value": "#28A138",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -121,7 +121,7 @@
       }
     },
     "colorIconWarning": {
-      "value": "#f9971e",
+      "value": "#F9971E",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -129,7 +129,7 @@
       }
     },
     "colorIconCritical": {
-      "value": "#d21c1c",
+      "value": "#D21C1C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -153,7 +153,7 @@
       }
     },
     "colorTextLinkPrimary": {
-      "value": "#00826f",
+      "value": "#007F6D",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -185,7 +185,7 @@
       }
     },
     "colorAlertIconSuccess": {
-      "value": "#46B655",
+      "value": "#28A138",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -193,7 +193,7 @@
       }
     },
     "colorTextAlertSuccess": {
-      "value": "#065d12",
+      "value": "#235C2B",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -201,7 +201,7 @@
       }
     },
     "colorAlertIconInfo": {
-      "value": "#0176D2",
+      "value": "#0172CB",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -209,7 +209,7 @@
       }
     },
     "colorTextAlertInfo": {
-      "value": "#003A69",
+      "value": "#004680",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -217,7 +217,7 @@
       }
     },
     "colorAlertIconWarning": {
-      "value": "#f9971e",
+      "value": "#F9971E",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -225,7 +225,7 @@
       }
     },
     "colorTextAlertWarning": {
-      "value": "#a93610",
+      "value": "#8E2A06",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -233,7 +233,7 @@
       }
     },
     "colorAlertIconCritical": {
-      "value": "#d21c1c",
+      "value": "#D21C1C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -241,7 +241,7 @@
       }
     },
     "colorTextAlertCritical": {
-      "value": "#650808",
+      "value": "#760909",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -305,7 +305,7 @@
       }
     },
     "colorTextButtonSecondary": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -313,7 +313,7 @@
       }
     },
     "colorTextButtonSecondaryHover": {
-      "value": "#3f4854",
+      "value": "#181B20",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -321,7 +321,7 @@
       }
     },
     "colorTextButtonSecondaryActive": {
-      "value": "#38404b",
+      "value": "#0B0C0F",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -449,7 +449,7 @@
       }
     },
     "colorTextButtonGoogle": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -457,7 +457,7 @@
       }
     },
     "colorTextButtonGoogleHover": {
-      "value": "#3f4854",
+      "value": "#181B20",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -465,7 +465,7 @@
       }
     },
     "colorTextButtonGoogleActive": {
-      "value": "#38404b",
+      "value": "#0B0C0F",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -473,7 +473,7 @@
       }
     },
     "colorTextButtonWhite": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -481,7 +481,7 @@
       }
     },
     "colorTextButtonWhiteHover": {
-      "value": "#3f4854",
+      "value": "#181B20",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -489,7 +489,7 @@
       }
     },
     "colorTextButtonWhiteActive": {
-      "value": "#38404b",
+      "value": "#0B0C0F",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -521,7 +521,7 @@
       }
     },
     "colorTextButtonSecondaryBordered": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -529,7 +529,7 @@
       }
     },
     "colorTextButtonSecondaryBorderedHover": {
-      "value": "#3f4854",
+      "value": "#181B20",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -537,7 +537,7 @@
       }
     },
     "colorTextButtonSecondaryBorderedActive": {
-      "value": "#38404b",
+      "value": "#0B0C0F",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -545,7 +545,7 @@
       }
     },
     "colorTextButtonInfoBordered": {
-      "value": "#0176D2",
+      "value": "#0172CB",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -553,7 +553,7 @@
       }
     },
     "colorTextButtonInfoBorderedHover": {
-      "value": "#006abd",
+      "value": "#0161AC",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -561,7 +561,7 @@
       }
     },
     "colorTextButtonInfoBorderedActive": {
-      "value": "#0064b2",
+      "value": "#01508E",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -569,7 +569,7 @@
       }
     },
     "colorTextButtonSuccessBordered": {
-      "value": "#46B655",
+      "value": "#28A138",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -577,7 +577,7 @@
       }
     },
     "colorTextButtonSuccessBorderedHover": {
-      "value": "#42ac50",
+      "value": "#238B31",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -585,7 +585,7 @@
       }
     },
     "colorTextButtonSuccessBorderedActive": {
-      "value": "#3fa34c",
+      "value": "#1D7228",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -593,7 +593,7 @@
       }
     },
     "colorTextButtonWarningBordered": {
-      "value": "#f9971e",
+      "value": "#F9971E",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -601,7 +601,7 @@
       }
     },
     "colorTextButtonWarningBorderedHover": {
-      "value": "#f48a06",
+      "value": "#F38906",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -609,7 +609,7 @@
       }
     },
     "colorTextButtonWarningBorderedActive": {
-      "value": "#e68206",
+      "value": "#D67906",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -617,7 +617,7 @@
       }
     },
     "colorTextButtonCriticalBordered": {
-      "value": "#d21c1c",
+      "value": "#D21C1C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -625,7 +625,7 @@
       }
     },
     "colorTextButtonCriticalBorderedHover": {
-      "value": "#bd1919",
+      "value": "#B91919",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -633,7 +633,7 @@
       }
     },
     "colorTextButtonCriticalBorderedActive": {
-      "value": "#b21717",
+      "value": "#9D1515",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -665,7 +665,7 @@
       }
     },
     "colorTextButtonGoogleBordered": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -673,7 +673,7 @@
       }
     },
     "colorTextButtonGoogleBorderedHover": {
-      "value": "#3f4854",
+      "value": "#181B20",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -681,7 +681,7 @@
       }
     },
     "colorTextButtonGoogleBorderedActive": {
-      "value": "#38404b",
+      "value": "#0B0C0F",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -737,7 +737,7 @@
       }
     },
     "colorTextButtonLinkSecondary": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -745,7 +745,7 @@
       }
     },
     "colorTextButtonLinkSecondaryHover": {
-      "value": "#3f4854",
+      "value": "#181B20",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -753,7 +753,7 @@
       }
     },
     "colorTextButtonLinkSecondaryActive": {
-      "value": "#38404b",
+      "value": "#0B0C0F",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -761,7 +761,7 @@
       }
     },
     "colorTextInput": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -769,7 +769,7 @@
       }
     },
     "colorTextInputPrefix": {
-      "value": "#7f91a8",
+      "value": "#5F738C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -793,7 +793,7 @@
       }
     },
     "colorTextBadgeInfo": {
-      "value": "#0176D2",
+      "value": "#0172CB",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -801,7 +801,7 @@
       }
     },
     "colorTextBadgeSuccess": {
-      "value": "#46B655",
+      "value": "#28A138",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -809,7 +809,7 @@
       }
     },
     "colorTextBadgeWarning": {
-      "value": "#f9971e",
+      "value": "#F9971E",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -817,7 +817,7 @@
       }
     },
     "colorTextBadgeCritical": {
-      "value": "#d21c1c",
+      "value": "#D21C1C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -849,7 +849,7 @@
       }
     },
     "colorTextTable": {
-      "value": "#7f91a8",
+      "value": "#5F738C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -857,7 +857,7 @@
       }
     },
     "colorTextTag": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -889,7 +889,7 @@
       }
     },
     "colorPlaceholderInputError": {
-      "value": "#d21c1c",
+      "value": "#D21C1C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -897,7 +897,7 @@
       }
     },
     "colorPlaceholderInputFile": {
-      "value": "#7f91a8",
+      "value": "#5F738C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -905,7 +905,7 @@
       }
     },
     "colorPlaceholderInputFileError": {
-      "value": "#d21c1c",
+      "value": "#D21C1C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -913,7 +913,7 @@
       }
     },
     "colorFormLabel": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -921,7 +921,7 @@
       }
     },
     "colorFormLabelFilled": {
-      "value": "#7f91a8",
+      "value": "#5F738C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -929,7 +929,7 @@
       }
     },
     "colorInfoCheckBoxRadio": {
-      "value": "#7f91a8",
+      "value": "#5F738C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -969,7 +969,7 @@
       }
     },
     "colorStopoverArrow": {
-      "value": "#7f91a8",
+      "value": "#5F738C",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -1121,7 +1121,7 @@
       }
     },
     "backgroundButtonInfo": {
-      "value": "#0176D2",
+      "value": "#0172CB",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1129,7 +1129,7 @@
       }
     },
     "backgroundButtonInfoHover": {
-      "value": "#006abd",
+      "value": "#0161AC",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1137,7 +1137,7 @@
       }
     },
     "backgroundButtonInfoActive": {
-      "value": "#0064b2",
+      "value": "#01508E",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1145,7 +1145,7 @@
       }
     },
     "backgroundButtonSuccess": {
-      "value": "#46B655",
+      "value": "#28A138",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1153,7 +1153,7 @@
       }
     },
     "backgroundButtonSuccessHover": {
-      "value": "#42ac50",
+      "value": "#238B31",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1161,7 +1161,7 @@
       }
     },
     "backgroundButtonSuccessActive": {
-      "value": "#3fa34c",
+      "value": "#1D7228",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1169,7 +1169,7 @@
       }
     },
     "backgroundButtonWarning": {
-      "value": "#f9971e",
+      "value": "#F9971E",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1177,7 +1177,7 @@
       }
     },
     "backgroundButtonWarningHover": {
-      "value": "#f48a06",
+      "value": "#F38906",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1185,7 +1185,7 @@
       }
     },
     "backgroundButtonWarningActive": {
-      "value": "#e68206",
+      "value": "#D67906",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1193,7 +1193,7 @@
       }
     },
     "backgroundButtonCritical": {
-      "value": "#d21c1c",
+      "value": "#D21C1C",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1201,7 +1201,7 @@
       }
     },
     "backgroundButtonCriticalHover": {
-      "value": "#bd1919",
+      "value": "#B91919",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1209,7 +1209,7 @@
       }
     },
     "backgroundButtonCriticalActive": {
-      "value": "#b21717",
+      "value": "#9D1515",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1353,7 +1353,7 @@
       }
     },
     "backgroundAlertSuccess": {
-      "value": "#e7f3e8",
+      "value": "#EBF4EC",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1361,7 +1361,7 @@
       }
     },
     "backgroundAlertInfo": {
-      "value": "#e0f6ff",
+      "value": "#E5F7FF",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1369,7 +1369,7 @@
       }
     },
     "backgroundAlertWarning": {
-      "value": "#fcf1cd",
+      "value": "#FDF0E3",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1377,7 +1377,7 @@
       }
     },
     "backgroundAlertCritical": {
-      "value": "#fae8e8",
+      "value": "#FAEAEA",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1393,7 +1393,7 @@
       }
     },
     "backgroundBadgeInfo": {
-      "value": "#e0f6ff",
+      "value": "#E5F7FF",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1401,7 +1401,7 @@
       }
     },
     "backgroundBadgeSuccess": {
-      "value": "#e7f3e8",
+      "value": "#EBF4EC",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1409,7 +1409,7 @@
       }
     },
     "backgroundBadgeWarning": {
-      "value": "#fcf1cd",
+      "value": "#FDF0E3",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1417,7 +1417,7 @@
       }
     },
     "backgroundBadgeCritical": {
-      "value": "#fae8e8",
+      "value": "#FAEAEA",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1425,7 +1425,7 @@
       }
     },
     "backgroundBadgeDark": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1513,7 +1513,7 @@
       }
     },
     "backgroundTagSelected": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1529,7 +1529,7 @@
       }
     },
     "backgroundTagSelectedHover": {
-      "value": "#3f4854",
+      "value": "#181B20",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1545,7 +1545,7 @@
       }
     },
     "backgroundTagSelectedActive": {
-      "value": "#38404b",
+      "value": "#0B0C0F",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -2101,7 +2101,7 @@
       }
     },
     "borderColorInputFocus": {
-      "value": "#0176D2",
+      "value": "#0172CB",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2109,7 +2109,7 @@
       }
     },
     "borderColorInputError": {
-      "value": "#d21c1c",
+      "value": "#D21C1C",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2117,7 +2117,7 @@
       }
     },
     "borderColorInputErrorHover": {
-      "value": "#bd1919",
+      "value": "#B91919",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2125,7 +2125,7 @@
       }
     },
     "borderColorInputErrorFocus": {
-      "value": "#d21c1c",
+      "value": "#D21C1C",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2181,7 +2181,7 @@
       }
     },
     "borderColorButtonSecondaryBordered": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2189,7 +2189,7 @@
       }
     },
     "borderColorButtonSecondaryBorderedHover": {
-      "value": "#3f4854",
+      "value": "#181B20",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2197,7 +2197,7 @@
       }
     },
     "borderColorButtonSecondaryBorderedActive": {
-      "value": "#38404b",
+      "value": "#0B0C0F",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2229,7 +2229,7 @@
       }
     },
     "borderColorButtonGoogleBordered": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2237,7 +2237,7 @@
       }
     },
     "borderColorButtonGoogleBorderedHover": {
-      "value": "#3f4854",
+      "value": "#181B20",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2245,7 +2245,7 @@
       }
     },
     "borderColorButtonGoogleBorderedActive": {
-      "value": "#38404b",
+      "value": "#0B0C0F",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2253,7 +2253,7 @@
       }
     },
     "borderColorButtonInfoBordered": {
-      "value": "#0176D2",
+      "value": "#0172CB",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2261,7 +2261,7 @@
       }
     },
     "borderColorButtonInfoBorderedHover": {
-      "value": "#006abd",
+      "value": "#0161AC",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2269,7 +2269,7 @@
       }
     },
     "borderColorButtonInfoBorderedActive": {
-      "value": "#0064b2",
+      "value": "#01508E",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2277,7 +2277,7 @@
       }
     },
     "borderColorButtonSuccessBordered": {
-      "value": "#46B655",
+      "value": "#28A138",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2285,7 +2285,7 @@
       }
     },
     "borderColorButtonSuccessBorderedHover": {
-      "value": "#42ac50",
+      "value": "#238B31",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2293,7 +2293,7 @@
       }
     },
     "borderColorButtonSuccessBorderedActive": {
-      "value": "#3fa34c",
+      "value": "#1D7228",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2301,7 +2301,7 @@
       }
     },
     "borderColorButtonWarningBordered": {
-      "value": "#f9971e",
+      "value": "#F9971E",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2309,7 +2309,7 @@
       }
     },
     "borderColorButtonWarningBorderedHover": {
-      "value": "#f48a06",
+      "value": "#F38906",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2317,7 +2317,7 @@
       }
     },
     "borderColorButtonWarningBorderedActive": {
-      "value": "#e68206",
+      "value": "#D67906",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2325,7 +2325,7 @@
       }
     },
     "borderColorButtonCriticalBordered": {
-      "value": "#d21c1c",
+      "value": "#D21C1C",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2333,7 +2333,7 @@
       }
     },
     "borderColorButtonCriticalBorderedHover": {
-      "value": "#bd1919",
+      "value": "#B91919",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2341,7 +2341,7 @@
       }
     },
     "borderColorButtonCriticalBorderedActive": {
-      "value": "#b21717",
+      "value": "#9D1515",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2381,7 +2381,7 @@
       }
     },
     "borderColorCheckboxRadioError": {
-      "value": "#d21c1c",
+      "value": "#D21C1C",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2389,7 +2389,7 @@
       }
     },
     "borderColorCheckboxRadioHover": {
-      "value": "#7f91a8",
+      "value": "#5F738C",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2397,7 +2397,7 @@
       }
     },
     "borderColorCheckboxRadioActive": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2405,7 +2405,7 @@
       }
     },
     "borderColorCheckboxRadioFocus": {
-      "value": "#0176D2",
+      "value": "#0172CB",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2437,7 +2437,7 @@
       }
     },
     "borderColorTagFocus": {
-      "value": "#0176D2",
+      "value": "#0172CB",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -3061,7 +3061,7 @@
       }
     },
     "boxShadowButtonFocus": {
-      "value": "0 0 4px 1px rgba(1, 118, 210, 0.3)",
+      "value": "0 0 4px 1px rgba(1, 114, 203, 0.3)",
       "type": "size",
       "category": "Box shadow",
       "meta": {
@@ -3093,7 +3093,7 @@
       }
     },
     "paletteProductLight": {
-      "value": "#E1F5F2",
+      "value": "#ECF8F7",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3101,7 +3101,7 @@
       }
     },
     "paletteProductLightHover": {
-      "value": "#bde9e2",
+      "value": "#D6F0EE",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3109,7 +3109,7 @@
       }
     },
     "paletteProductLightActive": {
-      "value": "#9addd3",
+      "value": "#C0E8E4",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3141,7 +3141,23 @@
       }
     },
     "paletteProductDark": {
-      "value": "#00826f",
+      "value": "#007F6D",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteProductDarkHover": {
+      "value": "#007060",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteProductDarkActive": {
+      "value": "#006657",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3245,7 +3261,7 @@
       }
     },
     "paletteInkLight": {
-      "value": "#7f91a8",
+      "value": "#5F738C",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3253,7 +3269,7 @@
       }
     },
     "paletteInkLightHover": {
-      "value": "#6d819c",
+      "value": "#52647A",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3261,7 +3277,7 @@
       }
     },
     "paletteInkLightActive": {
-      "value": "#5f738c",
+      "value": "#465567",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3269,7 +3285,7 @@
       }
     },
     "paletteInkNormal": {
-      "value": "#46515e",
+      "value": "#252A31",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3277,7 +3293,7 @@
       }
     },
     "paletteInkNormalHover": {
-      "value": "#3f4854",
+      "value": "#181B20",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3285,7 +3301,7 @@
       }
     },
     "paletteInkNormalActive": {
-      "value": "#38404b",
+      "value": "#0B0C0F",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3301,7 +3317,7 @@
       }
     },
     "paletteOrangeLight": {
-      "value": "#fcf1cd",
+      "value": "#FDF0E3",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3309,7 +3325,7 @@
       }
     },
     "paletteOrangeLightHover": {
-      "value": "#faeab7",
+      "value": "#FAE2C7",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3317,7 +3333,7 @@
       }
     },
     "paletteOrangeLightActive": {
-      "value": "#f9e4a1",
+      "value": "#F8D3AB",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3325,7 +3341,7 @@
       }
     },
     "paletteOrangeNormal": {
-      "value": "#f9971e",
+      "value": "#F9971E",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3333,7 +3349,7 @@
       }
     },
     "paletteOrangeNormalHover": {
-      "value": "#f48a06",
+      "value": "#F38906",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3341,7 +3357,7 @@
       }
     },
     "paletteOrangeNormalActive": {
-      "value": "#e68206",
+      "value": "#D67906",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3349,7 +3365,23 @@
       }
     },
     "paletteOrangeDark": {
-      "value": "#a93610",
+      "value": "#8E2A06",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteOrangeDarkHover": {
+      "value": "#712105",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteOrangeDarkActive": {
+      "value": "#531904",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3357,7 +3389,7 @@
       }
     },
     "paletteRedLight": {
-      "value": "#fae8e8",
+      "value": "#FAEAEA",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3365,7 +3397,7 @@
       }
     },
     "paletteRedLightHover": {
-      "value": "#f5d4d4",
+      "value": "#F4D2D2",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3373,7 +3405,7 @@
       }
     },
     "paletteRedLightActive": {
-      "value": "#f1c0c0",
+      "value": "#EEB9B9",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3381,7 +3413,7 @@
       }
     },
     "paletteRedNormal": {
-      "value": "#d21c1c",
+      "value": "#D21C1C",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3389,7 +3421,7 @@
       }
     },
     "paletteRedNormalHover": {
-      "value": "#bd1919",
+      "value": "#B91919",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3397,7 +3429,7 @@
       }
     },
     "paletteRedNormalActive": {
-      "value": "#b21717",
+      "value": "#9D1515",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3405,7 +3437,23 @@
       }
     },
     "paletteRedDark": {
-      "value": "#650808",
+      "value": "#760909",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteRedDarkHover": {
+      "value": "#5A0707",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteRedDarkActive": {
+      "value": "#3E0505",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3413,7 +3461,7 @@
       }
     },
     "paletteGreenLight": {
-      "value": "#e7f3e8",
+      "value": "#EBF4EC",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3421,7 +3469,7 @@
       }
     },
     "paletteGreenLightHover": {
-      "value": "#d7ebd8",
+      "value": "#D7EAD9",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3429,7 +3477,7 @@
       }
     },
     "paletteGreenLightActive": {
-      "value": "#c7e3c9",
+      "value": "#C3DFC7",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3437,7 +3485,7 @@
       }
     },
     "paletteGreenNormal": {
-      "value": "#46B655",
+      "value": "#28A138",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3445,7 +3493,7 @@
       }
     },
     "paletteGreenNormalHover": {
-      "value": "#42ac50",
+      "value": "#238B31",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3453,7 +3501,7 @@
       }
     },
     "paletteGreenNormalActive": {
-      "value": "#3fa34c",
+      "value": "#1D7228",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3461,7 +3509,23 @@
       }
     },
     "paletteGreenDark": {
-      "value": "#065d12",
+      "value": "#235C2B",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteGreenDarkHover": {
+      "value": "#1B4621",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteGreenDarkActive": {
+      "value": "#123016",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3469,7 +3533,7 @@
       }
     },
     "paletteBlueLight": {
-      "value": "#e0f6ff",
+      "value": "#E5F7FF",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3477,7 +3541,7 @@
       }
     },
     "paletteBlueLightHover": {
-      "value": "#c8effe",
+      "value": "#C7EEFF",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3485,7 +3549,7 @@
       }
     },
     "paletteBlueLightActive": {
-      "value": "#b0e8fe",
+      "value": "#A8E5FF",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3493,7 +3557,7 @@
       }
     },
     "paletteBlueNormal": {
-      "value": "#0176D2",
+      "value": "#0172CB",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3501,7 +3565,7 @@
       }
     },
     "paletteBlueNormalHover": {
-      "value": "#006abd",
+      "value": "#0161AC",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3509,7 +3573,7 @@
       }
     },
     "paletteBlueNormalActive": {
-      "value": "#0064b2",
+      "value": "#01508E",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3517,7 +3581,23 @@
       }
     },
     "paletteBlueDark": {
-      "value": "#003A69",
+      "value": "#004680",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteBlueDarkHover": {
+      "value": "#003561",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteBlueDarkActive": {
+      "value": "#002442",
       "type": "color",
       "category": "Color palette",
       "meta": {

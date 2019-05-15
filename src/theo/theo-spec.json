@@ -2815,8 +2815,6 @@
     "marginBottomSelectSuffix": {
       "value": "2px",
       "type": "size",
-      "category": "Spacing",
-      "meta": {
         "categoryDescription": "Use this for setting spacings for elements."
       }
     },

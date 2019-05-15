@@ -3,7 +3,7 @@
 exports[`slide util should match snapshot 1`] = `
 <Slide__StyledSlide
   expanded={true}
-  maxHeight={null}
+  maxHeight={20}
   theme={
     Object {
       "orbit": Object {

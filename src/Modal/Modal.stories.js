@@ -27,8 +27,8 @@ import TextLink from "../TextLink";
 import Checkbox from "../Checkbox";
 import Radio from "../Radio";
 import CardSectionHeader from "../Card/CardSection/CardSectionHeader";
-import CardSectionContent from "../Card/CardSection/CardSectionContent";
 import Tooltip from "../Tooltip";
+import Tile from "../Tile";
 
 import Modal, { ModalHeader, ModalSection, ModalFooter } from "./index";
 
@@ -77,32 +77,25 @@ storiesOf("Modal", module)
             <Text uppercase weight="bold">
               OUTBOUND
             </Text>
-            <Card>
-              <CardSection expandable initialExpanded>
-                <CardSectionHeader
-                  actions={
-                    <Button type="secondary" size="small">
-                      Edit
-                    </Button>
-                  }
-                >
-                  <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
-                    <Stack spacing="tight">
-                      <Text size="small" type="secondary">
-                        Sat, Mar 31 Trip length: 1h55m
-                      </Text>
-                      <Stack direction="row" spacing="tight" align="center">
-                        <Text weight="bold">London LHR</Text>
-                        <FlightDirect size="small" />
-                        <Text weight="bold">Prague PRG</Text>
-                      </Stack>
+            <Tile
+              title={
+                <Stack direction="row" align="center" justify="between" spacing="condensed">
+                  <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                  <Stack spacing="tight">
+                    <Text size="small" type="secondary">
+                      Sat, Mar 31 Trip length: 1h55m
+                    </Text>
+                    <Stack direction="row" spacing="tight" align="center">
+                      <Text weight="bold">London LHR</Text>
+                      <FlightDirect size="small" />
+                      <Text weight="bold">Prague PRG</Text>
                     </Stack>
                   </Stack>
-                </CardSectionHeader>
-                <CardSectionContent>Hidden Content</CardSectionContent>
-              </CardSection>
-            </Card>
+                </Stack>
+              }
+            >
+              Hidden Content
+            </Tile>
           </Stack>
         </ModalSection>
       </Modal>

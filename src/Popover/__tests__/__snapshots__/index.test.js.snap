@@ -465,6 +465,7 @@ exports[`ContentWrapper it should match snapshot 1`] = `
     popoverHeight={0}
     popoverWidth={0}
     position="bottom"
+    role="tooltip"
     tabIndex="0"
     theme={
       Object {

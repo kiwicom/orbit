@@ -462,6 +462,7 @@ exports[`Large Modal should match snapshot 1`] = `
 >
   <Modal__ModalWrapper
     fixedFooter={true}
+    isMobileFullPage={false}
     loaded={false}
     onScroll={[Function]}
     size="large"
@@ -922,6 +923,7 @@ exports[`Large Modal should match snapshot 1`] = `
       footerHeight={0}
       fullyScrolled={false}
       hasModalSection={false}
+      isMobileFullPage={false}
       modalWidth={0}
       scrolled={false}
       size="large"
@@ -1378,6 +1380,7 @@ exports[`Large Modal should match snapshot 1`] = `
     >
       <Modal__CloseContainer
         fixedClose={false}
+        isMobileFullPage={false}
         modalWidth={0}
         scrolled={false}
         size="large"
@@ -1857,6 +1860,7 @@ exports[`Large Modal should match snapshot 1`] = `
           Object {
             "decideFixedFooter": [Function],
             "hasModalSection": false,
+            "isMobileFullPage": false,
             "manageFocus": [Function],
             "removeHasModalSection": [Function],
             "setDimensions": [Function],

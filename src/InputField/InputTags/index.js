@@ -1,10 +1,12 @@
 // @flow
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import { rtlSpacing } from "../../utils/rtl";
 import defaultTheme from "../../defaultTheme";
 import { StyledTag } from "../../Tag";
+
+import type { Props } from "./index";
 
 const StyledInputTags = styled.div`
   margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
@@ -40,10 +42,52 @@ StyledInputTagsInner.defaultProps = {
   theme: defaultTheme,
 };
 
-const InputTags = ({ children }) => (
-  <StyledInputTags>
-    <StyledInputTagsInner>{children}</StyledInputTagsInner>
-  </StyledInputTags>
-);
+const InputTags = ({ children }: Props) => {
+  const tagsRef = React.createRef();
+
+  useEffect(() => {
+    const handleMouseMove = event => {
+      if (tagsRef && tagsRef.current) {
+        const { isDragging } = tagsRef.current;
+        if (isDragging && event.movementX) {
+          tagsRef.current.scrollLeft -= event.movementX;
+        }
+      }
+    };
+
+    const handleMouseUp = () => {
+      if (tagsRef && tagsRef.current) {
+        tagsRef.current.isDragging = false;
+      }
+    };
+
+    if (tagsRef && tagsRef.current) {
+      tagsRef.current.addEventListener("mousemove", handleMouseMove);
+      tagsRef.current.addEventListener("mouseup", handleMouseUp);
+    }
+
+    return () => {
+      if (tagsRef && tagsRef.current) {
+        tagsRef.current.removeEventListener("mousemove", handleMouseMove);
+        tagsRef.current.removeEventListener("mouseup", handleMouseUp);
+      }
+    };
+  }, []);
+
+  return (
+    <StyledInputTags>
+      <StyledInputTagsInner
+        ref={tagsRef}
+        onMouseDown={() => {
+          if (tagsRef && tagsRef.current) {
+            tagsRef.current.isDragging = true;
+          }
+        }}
+      >
+        {children}
+      </StyledInputTagsInner>
+    </StyledInputTags>
+  );
+};
 
 export default InputTags;

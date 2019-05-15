@@ -1,11 +1,7 @@
 // @flow
-var tokens = require("../../lib/index");
-var foundation = require("../../lib/foundation");
-var convertHexToRgba = require("../../lib/convertHexToRgba");
-
-var defaultTokens = tokens.defaultTokens;
-var getTokens = tokens.getTokens;
-var fromPlainObject = tokens.fromPlainObject;
+import { defaultTokens, getTokens, fromPlainObject } from "../index";
+import foundation from "../foundation";
+import convertHexToRgba from "../convertHexToRgba";
 
 describe("defaultTokens", () => {
   it("should match snapshot", () => {
@@ -14,7 +10,7 @@ describe("defaultTokens", () => {
 });
 
 describe("getTokens should accept some palette and base foundation", () => {
-  var brand = {
+  const brand = {
     palette: {
       product: {
         lightHover: "#222",
@@ -31,7 +27,7 @@ describe("getTokens should accept some palette and base foundation", () => {
       fontSizeSm: "16px",
     },
   };
-  var theme = getTokens(brand);
+  const theme = getTokens(brand);
   it("should match snapshot", () => {
     expect(theme).toMatchSnapshot();
   });
@@ -51,7 +47,7 @@ describe("getTokens should accept some palette and base foundation", () => {
 });
 
 describe("getTokens should accept some base", () => {
-  var brand = {
+  const brand = {
     base: {
       sizeSm: "1px",
       sizeMd: "2px",
@@ -60,7 +56,7 @@ describe("getTokens should accept some base", () => {
       size2xl: "5px",
     },
   };
-  var theme = getTokens(brand);
+  const theme = getTokens(brand);
   it("should match snapshot", () => {
     expect(theme).toMatchSnapshot();
   });
@@ -81,7 +77,7 @@ describe("getTokens should accept some base", () => {
 });
 
 describe("fromPlainObject should create full theme", () => {
-  var palette = {
+  const palette = {
     productLight: "#ff9999",
     productLightHover: "#ff7f7f",
     productLightActive: "#ff6666",
@@ -90,7 +86,7 @@ describe("fromPlainObject should create full theme", () => {
     productNormalActive: "#cc0000",
     productDark: "#990000",
   };
-  var theme = fromPlainObject(palette);
+  const theme = fromPlainObject(palette);
   it("should match snapshot", () => {
     expect(theme).toMatchSnapshot();
   });
@@ -108,7 +104,7 @@ describe("fromPlainObject should create full theme", () => {
 });
 
 describe("fromPlainObject with full object should create full theme", () => {
-  var palette = {
+  const palette = {
     productLight: "#ff9999",
     productLightHover: "#ff7f7f",
     productLightActive: "#ff6666",
@@ -119,7 +115,7 @@ describe("fromPlainObject with full object should create full theme", () => {
     productDarkHover: "#820000",
     productDarkActive: "#720000",
   };
-  var theme = fromPlainObject(palette);
+  const theme = fromPlainObject(palette);
   it("tokens should have exact darkHover and darkActive", () => {
     expect(theme.paletteProductDarkHover).toBe(palette.productDarkHover);
     expect(theme.paletteProductDarkActive).toBe(palette.productDarkActive);
@@ -127,7 +123,7 @@ describe("fromPlainObject with full object should create full theme", () => {
 });
 
 describe("convertHexToRgba", () => {
-  var colors = {
+  const colors = {
     lighter: "#bac7d5",
     lighterHover: "#a6b6c8",
     lighterActive: "#94a8be",
@@ -135,7 +131,7 @@ describe("convertHexToRgba", () => {
     whiteShort: "#fff",
     whiteLong: "#ffffff",
   };
-  var finalColors = {
+  const finalColors = {
     lighter: "rgba(186, 199, 213, 0.6)",
     lighterHover: "rgba(166, 182, 200, 0.23)",
     lighterActive: "rgba(148, 168, 190, 1)",

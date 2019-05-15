@@ -3,7 +3,7 @@
     "jest": true
   },
   "extends": [
-    "airbnb-base/legacy",
+    "airbnb-base",
     "plugin:flowtype/recommended",
     "prettier",
     "prettier/flowtype"
@@ -15,7 +15,18 @@
     "jest"
   ],
   "rules": {
-    "vars-on-top": "off",
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [["builtin", "external"], ["parent", "sibling"], "index"],
+        "newlines-between": "always"
+      }
+    ],
+    "import/newline-after-import": "error",
+    "import/no-mutable-exports": "error",
+    "import/no-absolute-path": "error",
+    "flowtype/require-valid-file-annotation": ["error", "always"],
+    "import/no-self-import": "off"
   }
 }

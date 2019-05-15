@@ -1,5 +1,5 @@
 # orbit-design-tokens
-Design tokens store visual design attributes. They help us make our UI more consistent and consistent and support custom themes. We use them instead of static values like HEX codes for color or sizing units.
+Design tokens are atomic pieces that store visual design attributes. They help us make our UI more consistent and consistent and support custom themes. We use them instead of static values like HEX codes for color or sizing units.
 
 ## Installation
 The first thing you will need to do is install the package into your project. 
@@ -17,7 +17,9 @@ Now that you have installed the latest version of the package, you will need to 
 
 For simple usage of defaultTokens just add this line of code to the top of the file:
 
-`import { defaultTokens } from "@kiwicom/orbit-design-tokens"`
+```jsx
+import { defaultTokens } from "@kiwicom/orbit-design-tokens"
+```
  
 Now you can use tokens by typing `defaultTokens` and just continue with the dot-notation by typing the appropriate token name you want to use f.e. `defaultTokens.colorTextPrimary`. More advanced text editors should suggest which tokens are available to you in the token object, so you can find tokens quicker than by typing the entire token name.
 
@@ -44,6 +46,8 @@ const foundation = {
       normalHover: "#e50000",
       normalActive: "#cc0000",
       dark: "#990000",
+      darkHover: "#720000",
+      darkActive: "#630000",
     },
   },
   base: {

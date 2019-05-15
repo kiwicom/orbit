@@ -1,13 +1,14 @@
-var mergeDeepRight = require("ramda/src/mergeDeepRight");
+// @flow
+import mergeDeepRight from "ramda/src/mergeDeepRight";
 
-var foundation = require("./foundation");
-var convertHexToRgba = require("./convertHexToRgba");
+import foundation from "./foundation";
+import convertHexToRgba from "./convertHexToRgba";
 
-function getTokens(customFoundation) {
+import type { GetTokens, FromPlainObject } from "./index";
+
+export const getTokens: GetTokens = customFoundation => {
   // By default it takes base foundation config
-
-  var theme = customFoundation ? mergeDeepRight(foundation, customFoundation) : foundation;
-
+  const theme = customFoundation ? mergeDeepRight(foundation, customFoundation) : foundation;
   return {
     // category:Colors
     // description:Use these tokens for text or icon colors. Don't use these for borders and background colors.
@@ -198,14 +199,14 @@ function getTokens(customFoundation) {
     backgroundServiceLogo: "transparent",
     backgroundIllustration: "transparent",
     backgroundSeparator: theme.palette.cloud.normal,
-    backgroundTableShadowLeft:
-      "linear-gradient(to left, transparent, " +
-      convertHexToRgba(theme.palette.ink.lighter, 23) +
-      ")",
-    backgroundTableShadowRight:
-      "linear-gradient(to right, transparent, " +
-      convertHexToRgba(theme.palette.ink.lighter, 23) +
-      ")",
+    backgroundTableShadowLeft: `linear-gradient(to left, transparent, ${convertHexToRgba(
+      theme.palette.ink.lighter,
+      23,
+    )})`,
+    backgroundTableShadowRight: `linear-gradient(to right, transparent, ${convertHexToRgba(
+      theme.palette.ink.lighter,
+      23,
+    )})`,
     backgroundTable: theme.palette.white.normal,
     backgroundTableEven: theme.palette.cloud.light,
     backgroundTableHover: theme.palette.cloud.normal,
@@ -371,41 +372,41 @@ function getTokens(customFoundation) {
     // description:Use this for setting spacings for elements.
     paddingAlert: theme.base.spaceMd,
     paddingAlertWithIcon: theme.base.spaceSm,
-    paddingBadge: "0 " + theme.base.spaceXs,
+    paddingBadge: `0 ${theme.base.spaceXs}`,
     paddingButtonWithoutText: "0",
-    paddingButtonSmall: "0 " + theme.base.spaceSm,
-    paddingButtonNormal: "0 " + theme.base.spaceMd,
+    paddingButtonSmall: `0 ${theme.base.spaceSm}`,
+    paddingButtonNormal: `0 ${theme.base.spaceMd}`,
     paddingButtonLarge: "0 28px",
-    paddingButtonSmallWithIcons: "0 " + theme.base.spaceXs,
-    paddingButtonNormalWithIcons: "0 " + theme.base.spaceSm,
-    paddingButtonLargeWithIcons: "0 " + theme.base.spaceMd,
-    paddingButtonSmallWithLeftIcon: "0 " + theme.base.spaceSm + " 0 " + theme.base.spaceXs,
-    paddingButtonNormalWithLeftIcon: "0 " + theme.base.spaceMd + " 0 " + theme.base.spaceSm,
-    paddingButtonLargeWithLeftIcon: "0 28px 0 " + theme.base.spaceMd,
-    paddingButtonSmallWithRightIcon: "0 " + theme.base.spaceXs + " 0 " + theme.base.spaceSm,
-    paddingButtonNormalWithRightIcon: "0 " + theme.base.spaceSm + " 0 " + theme.base.spaceMd,
-    paddingButtonLargeWithRightIcon: "0 " + theme.base.spaceMd + " 0 28px",
-    paddingTextareaSmall: theme.base.spaceXs + " " + theme.base.spaceSm,
+    paddingButtonSmallWithIcons: `0 ${theme.base.spaceXs}`,
+    paddingButtonNormalWithIcons: `0 ${theme.base.spaceSm}`,
+    paddingButtonLargeWithIcons: `0 ${theme.base.spaceMd}`,
+    paddingButtonSmallWithLeftIcon: `0 ${theme.base.spaceSm} 0 ${theme.base.spaceXs}`,
+    paddingButtonNormalWithLeftIcon: `0 ${theme.base.spaceMd} 0 ${theme.base.spaceSm}`,
+    paddingButtonLargeWithLeftIcon: `0 28px 0 ${theme.base.spaceMd}`,
+    paddingButtonSmallWithRightIcon: `0 ${theme.base.spaceXs} 0 ${theme.base.spaceSm}`,
+    paddingButtonNormalWithRightIcon: `0 ${theme.base.spaceSm} 0 ${theme.base.spaceMd}`,
+    paddingButtonLargeWithRightIcon: `0 ${theme.base.spaceMd} 0 28px`,
+    paddingTextareaSmall: `${theme.base.spaceXs} ${theme.base.spaceSm}`,
     paddingTextareaNormal: theme.base.spaceSm,
-    paddingInputSmall: "0 " + theme.base.spaceSm,
-    paddingInputNormal: "0 " + theme.base.spaceSm,
+    paddingInputSmall: `0 ${theme.base.spaceSm}`,
+    paddingInputNormal: `0 ${theme.base.spaceSm}`,
     marginButtonIconSmall: theme.base.spaceXs,
     marginButtonIconNormal: theme.base.spaceXs,
     marginButtonIconLarge: theme.base.spaceSm,
     marginButtonGroupConnected: "0 1px 0 0",
-    marginButtonGroup: "0 " + theme.base.spaceXs + " 0 0",
+    marginButtonGroup: `0 ${theme.base.spaceXs} 0 0`,
     marginTopFormFeedback: "2px",
     marginBottomSelectSuffix: "2px",
     paddingInputFile: "0 0 0 6px",
     paddingLeftSelectPrefix: "48px",
     paddingLoading: theme.base.spaceSm,
-    paddingTable: theme.base.spaceSm + " " + theme.base.spaceMd,
-    paddingTableCompact: theme.base.spaceXs + " " + theme.base.spaceSm,
-    paddingTag: "6px " + theme.base.spaceXs,
-    paddingTagWithIcon: "6px " + theme.base.spaceXs + " 6px 6px",
-    paddingTagRemovable: "6px 6px 6px " + theme.base.spaceXs,
+    paddingTable: `${theme.base.spaceSm} ${theme.base.spaceMd}`,
+    paddingTableCompact: `${theme.base.spaceXs} ${theme.base.spaceSm}`,
+    paddingTag: `6px ${theme.base.spaceXs}`,
+    paddingTagWithIcon: `6px ${theme.base.spaceXs} 6px 6px`,
+    paddingTagRemovable: `6px 6px 6px ${theme.base.spaceXs}`,
     paddingTagRemovableWithIcon: "6px",
-    marginBadgeIcon: "0 " + theme.base.space2xs + " 0 0",
+    marginBadgeIcon: `0 ${theme.base.space2xs} 0 0`,
     spaceXXXSmall: "2px",
     spaceXXSmall: theme.base.space2xs,
     spaceXSmall: theme.base.spaceXs,
@@ -436,10 +437,10 @@ function getTokens(customFoundation) {
     textDecorationTextLinkSecondaryHover: "underline",
     // category:Box shadow
     // description:
-    boxShadowButtonFocus: "0 0 4px 1px " + theme.base.boxShadowColorStatic,
-    boxShadowActionable: theme.base.boxShadowActionable + " " + theme.base.boxShadowColorActionable,
-    boxShadowElevatedLevel1: theme.base.boxShadowElevated + " " + theme.base.boxShadowColorElevated,
-    boxShadowModal: theme.base.boxShadowModal + " " + theme.base.boxShadowColorModal,
+    boxShadowButtonFocus: `0 0 4px 1px ${theme.base.boxShadowColorStatic}`,
+    boxShadowActionable: `${theme.base.boxShadowActionable} ${theme.base.boxShadowColorActionable}`,
+    boxShadowElevatedLevel1: `${theme.base.boxShadowElevated} ${theme.base.boxShadowColorElevated}`,
+    boxShadowModal: `${theme.base.boxShadowModal} ${theme.base.boxShadowColorModal}`,
     // category:Color palette
     // description: Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette.
     paletteProductLight: theme.palette.product.light,
@@ -510,10 +511,12 @@ function getTokens(customFoundation) {
     paletteSocialFacebookHover: theme.palette.social.facebookHover,
     paletteSocialFacebookActive: theme.palette.social.facebookActive,
   };
-}
+};
 
-function fromPlainObject(themePaletteColors) {
-  var theme = {
+export const defaultTokens = getTokens();
+
+export const fromPlainObject: FromPlainObject = themePaletteColors => {
+  const theme = {
     palette: {
       product: {
         light: themePaletteColors.productLight,
@@ -530,13 +533,4 @@ function fromPlainObject(themePaletteColors) {
   };
 
   return getTokens(theme);
-}
-
-var defaultTokens = getTokens();
-
-module.exports = {
-  defaultTokens: defaultTokens,
-  getTokens: getTokens,
-  fromPlainObject: fromPlainObject,
-  convertHexToRgba: convertHexToRgba,
 };

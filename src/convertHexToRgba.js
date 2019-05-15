@@ -1,14 +1,13 @@
-"use strict";
+// @flow
+import type { ConvertHexToRgba } from "./convertHexToRgba";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-function convertHexToRgba(color, opacity) {
-  var removeHash = color.replace("#", "");
-  var hex = removeHash.length === 3 ? removeHash + removeHash : removeHash;
-  var red = parseInt(hex.substring(0, 2), 16);
-  var green = parseInt(hex.substring(2, 4), 16);
-  var blue = parseInt(hex.substring(4, 6), 16);
-  return "rgba(" + red + ", " + green + ", " + blue + ", " + opacity / 100 + ")";
-}
-exports.default = convertHexToRgba;
+const convertHexToRgba: ConvertHexToRgba = (color, opacity) => {
+  const removeHash = color.replace("#", "");
+  const hex = removeHash.length === 3 ? removeHash + removeHash : removeHash;
+  const red = parseInt(hex.substring(0, 2), 16);
+  const green = parseInt(hex.substring(2, 4), 16);
+  const blue = parseInt(hex.substring(4, 6), 16);
+  return `rgba(${red}, ${green}, ${blue}, ${opacity / 100})`;
+};
+
+export default convertHexToRgba;

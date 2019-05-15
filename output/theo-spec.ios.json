@@ -1576,7 +1576,7 @@
       "name": "colorTextButtonPrimaryBorderedActive"
     },
     {
-      "value": "rgb(255, 255, 255)",
+      "value": "rgb(245, 247, 249)",
       "type": "color",
       "category": "Background colors",
       "name": "backgroundButtonBorderedActive"

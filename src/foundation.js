@@ -1,7 +1,7 @@
 // @flow
-var convertHexToRgba = require("./convertHexToRgba");
+import convertHexToRgba from "./convertHexToRgba";
 
-var palette = {
+const palette = {
   product: {
     light: "#ECF8F7",
     lightHover: "#D6F0EE",
@@ -87,7 +87,7 @@ var palette = {
   },
 };
 
-var base = {
+const base = {
   fontFamily:
     '"Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
   fontSizeSm: "12px",
@@ -128,7 +128,6 @@ var base = {
   boxShadowColorModal: convertHexToRgba(palette.ink.dark, 40),
 };
 
-module.exports = {
-  palette: palette,
-  base: base,
-};
+const foundation = { palette, base };
+
+export default foundation;

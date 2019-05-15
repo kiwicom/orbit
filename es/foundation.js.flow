@@ -1,78 +1,71 @@
 // @flow
+
+export type ProductColor = {|
+  light: string,
+  lightHover: string,
+  lightActive: string,
+  normal: string,
+  normalHover: string,
+  normalActive: string,
+  dark: string,
+  darkHover: string,
+  darkActive: string,
+|};
+
+export type StatusColor = {|
+  light: string,
+  lightHover: string,
+  lightActive: string,
+  normal: string,
+  normalHover: string,
+  normalActive: string,
+  dark: string,
+  darkHover: string,
+  darkActive: string,
+|};
+
+export type WhiteColor = {|
+  normal: string,
+|};
+
+export type CloudColor = {|
+  light: string,
+  lightHover: string,
+  lightActive: string,
+  normal: string,
+  normalHover: string,
+  normalActive: string,
+|};
+
+export type InkColor = {|
+  lighter: string,
+  lighterHover: string,
+  lighterActive: string,
+  light: string,
+  lightHover: string,
+  lightActive: string,
+  normal: string,
+  normalHover: string,
+  normalActive: string,
+  dark: string,
+|};
+
+export type SocialColor = {|
+  facebook: string,
+  facebookHover: string,
+  facebookActive: string,
+|};
+
 export type Palette = {|
-  product: {|
-    light?: string,
-    lightHover?: string,
-    lightActive?: string,
-    normal?: string,
-    normalHover?: string,
-    normalActive?: string,
-    dark?: string,
-  |},
-  white: {|
-    normal?: string,
-  |},
-  cloud: {|
-    light?: string,
-    lightHover?: string,
-    lightActive?: string,
-    normal?: string,
-    normalHover?: string,
-    normalActive?: string,
-  |},
-  ink: {|
-    lighter?: string,
-    lighterHover?: string,
-    lighterActive?: string,
-    light?: string,
-    lightHover?: string,
-    lightActive?: string,
-    normal?: string,
-    normalHover?: string,
-    normalActive?: string,
-    dark?: string,
-  |},
-  orange: {|
-    light?: string,
-    lightHover?: string,
-    lightActive?: string,
-    normal?: string,
-    normalHover?: string,
-    normalActive?: string,
-    dark?: string,
-  |},
-  red: {|
-    light?: string,
-    lightHover?: string,
-    lightActive?: string,
-    normal?: string,
-    normalHover?: string,
-    normalActive?: string,
-    dark?: string,
-  |},
-  green: {|
-    light?: string,
-    lightHover?: string,
-    lightActive?: string,
-    normal?: string,
-    normalHover?: string,
-    normalActive?: string,
-    dark?: string,
-  |},
-  blue: {|
-    light?: string,
-    lightHover?: string,
-    lightActive?: string,
-    normal?: string,
-    normalHover?: string,
-    normalActive?: string,
-    dark?: string,
-  |},
-  social: {|
-    facebook?: string,
-    facebookHover?: string,
-    facebookActive?: string,
-  |},
+  product: ProductColor,
+  white: WhiteColor,
+  cloud: CloudColor,
+  ink: InkColor,
+  orange: StatusColor,
+  red: StatusColor,
+  green: StatusColor,
+  blue: StatusColor,
+  social: SocialColor,
 |};
 
 export type Base = {|
@@ -116,9 +109,8 @@ export type Base = {|
 |};
 
 export type Foundation = {|
-  palette: $Shape<Palette>,
-  base: $Shape<Base>,
+  palette: Palette,
+  base: Base,
 |};
 
-declare export var palette: Palette;
-declare export var base: Base;
+declare export default Foundation;

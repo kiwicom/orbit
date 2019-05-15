@@ -264,7 +264,7 @@ module.exports = {
   paddingTagRemovableWithIcon: "6px",
   borderColorButtonWhiteBorderedActive: "rgb(255, 255, 255)",
   colorTextButtonPrimaryBorderedActive: "rgb(0, 143, 123)",
-  backgroundButtonBorderedActive: "rgb(255, 255, 255)",
+  backgroundButtonBorderedActive: "rgb(245, 247, 249)",
   colorIconRadioButton: "rgb(0, 169, 145)",
   paletteInkLightActive: "rgb(70, 85, 103)",
   paletteInkLightHover: "rgb(82, 100, 122)",

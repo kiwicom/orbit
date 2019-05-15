@@ -1053,7 +1053,7 @@
       "name": "colorTextButtonInfoHover"
     },
     {
-      "value": "underline",
+      "value": "none",
       "type": "string",
       "category": "Text decoration",
       "name": "textDecorationTextLinkSecondaryHover"
@@ -2621,7 +2621,7 @@
       "name": "textDecorationTextLinkPrimary"
     },
     {
-      "value": "underline",
+      "value": "none",
       "type": "string",
       "category": "Text decoration",
       "name": "textDecorationTextLinkPrimaryHover"

@@ -1,5 +1,3 @@
-// @flow
-
 const parser = require("@babel/parser");
 const fs = require("fs");
 const path = require("path");
@@ -19,9 +17,6 @@ const findGetTokens = x => x.type === "VariableDeclaration" && x.declarations.fi
 
 const ar = ast.program.body.find(findGetTokens);
 const tokenProps = ar.declarations[0].init.body.body[1].argument.properties
-// const findTokensFn = x => x.type === "FunctionDeclaration" && x.id.name === "getTokens";
-//const tokensDeclaration = ast.program.body.find(findTokensFn);
-//const tokenProps = tokensDeclaration.body.body[1].argument.properties;
 
 const camelCaseToText = text => {
   let result = text.replace(/([A-Z])/g, " $1");

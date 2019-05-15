@@ -20,6 +20,9 @@ jobs:
           name: Install dependencies
           command: npm i
       - run:
+          name: Build
+          command: npm run build
+      - run:
           name: Run all tests
           command: npm run test-ci
       - run:

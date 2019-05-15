@@ -17,8 +17,7 @@
     "pages/*"
   ],
   "scripts": {
-    "prepare": "node ./src/theo/generate-theo && yarn build",
-    "prepare:new": "node ./src/theo/generate-theo-parser",
+    "prepare": "yarn build && node ./src/theo/generate-theo-parser",
     "flow:check": "flow check",
     "build-html": "theo --setup ./src/theo/setup.js ./src/theo/theo-spec.json --format kiwi.html --dest ./pages",
     "build-web": "theo ./src/theo/theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",

@@ -82,6 +82,11 @@ class Slide extends React.Component<Props, State> {
   };
 
   collapseCallback = () => {
+    // If collapse callback is called before expandCallback
+    if (this.expandTimeout && typeof clearTimeout === "function") {
+      clearTimeout(this.expandTimeout);
+    }
+
     this.setState({
       maxHeight: 0,
     });

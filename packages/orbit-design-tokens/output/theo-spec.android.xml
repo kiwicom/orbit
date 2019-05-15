@@ -175,7 +175,7 @@
   <color name="PALETTEORANGENORMALHOVER" category="Color palette">#fff38906</color>
   <color name="PALETTEREDDARK" category="Color palette">#ff760909</color>
   <color name="COLORTEXTBUTTONINFOHOVER" category="Colors">#ffffffff</color>
-  <string name="TEXTDECORATIONTEXTLINKSECONDARYHOVER" category="Text decoration">underline</string>
+  <string name="TEXTDECORATIONTEXTLINKSECONDARYHOVER" category="Text decoration">none</string>
   <color name="COLORTEXTBUTTONGOOGLEBORDEREDACTIVE" category="Colors">#ff0b0c0f</color>
   <color name="COLORTEXTBUTTONCRITICALBORDERED" category="Colors">#ffd21c1c</color>
   <color name="COLORTEXTINPUTPREFIX" category="Colors">#ff5f738c</color>
@@ -436,7 +436,7 @@
   <string name="BACKGROUNDILLUSTRATION" category="Background colors">transparent</string>
   <dimen name="HEIGHTINPUTGROUPSEPARATORSMALL" category="Size (width, height)">16dp</dimen>
   <string name="TEXTDECORATIONTEXTLINKPRIMARY" category="Text decoration">underline</string>
-  <string name="TEXTDECORATIONTEXTLINKPRIMARYHOVER" category="Text decoration">underline</string>
+  <string name="TEXTDECORATIONTEXTLINKPRIMARYHOVER" category="Text decoration">none</string>
   <color name="BORDERCOLORBUTTONWARNINGBORDEREDHOVER" category="Border color">#fff38906</color>
   <dimen name="PADDINGBUTTONLARGEWITHLEFTICON" category="Spacing">0 28 0 16dp</dimen>
   <color name="COLORTEXTTABLE" category="Colors">#ff5f738c</color>

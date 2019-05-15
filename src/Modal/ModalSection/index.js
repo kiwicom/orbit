@@ -69,9 +69,14 @@ class ModalSection extends React.PureComponent<Props> {
   componentDidUpdate(prevProps: Props) {
     if (prevProps !== this.props) {
       this.callContextFunctions();
-      const { setHasModalSection } = this.props;
+      const { setHasModalSection, manageFocus } = this.props;
+
       if (setHasModalSection) {
         setHasModalSection();
+      }
+
+      if (manageFocus) {
+        manageFocus();
       }
     }
   }

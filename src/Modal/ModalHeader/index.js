@@ -145,6 +145,12 @@ class ModalHeader extends React.PureComponent<Props> {
   componentDidUpdate(prevProps: Props) {
     if (prevProps !== this.props) {
       this.callContextFunctions();
+
+      const { manageFocus } = this.props;
+
+      if (manageFocus) {
+        manageFocus();
+      }
     }
   }
 

@@ -432,9 +432,9 @@ export const getTokens: GetTokens = customFoundation => {
     // category:Text decoration
     // description:
     textDecorationTextLinkPrimary: "underline",
-    textDecorationTextLinkPrimaryHover: "underline",
+    textDecorationTextLinkPrimaryHover: "none",
     textDecorationTextLinkSecondary: "underline",
-    textDecorationTextLinkSecondaryHover: "underline",
+    textDecorationTextLinkSecondaryHover: "none",
     // category:Box shadow
     // description:
     boxShadowButtonFocus: `0 0 4px 1px ${theme.base.boxShadowColorStatic}`,

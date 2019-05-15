@@ -176,7 +176,7 @@
 @value palette-orange-normal-hover: rgb(243, 137, 6);
 @value palette-red-dark: rgb(118, 9, 9);
 @value color-text-button-info-hover: rgb(255, 255, 255);
-@value text-decoration-text-link-secondary-hover: "underline";
+@value text-decoration-text-link-secondary-hover: "none";
 @value color-text-button-google-bordered-active: rgb(11, 12, 15);
 @value color-text-button-critical-bordered: rgb(210, 28, 28);
 @value color-text-input-prefix: rgb(95, 115, 140);
@@ -439,7 +439,7 @@
 @value background-illustration: "transparent";
 @value height-input-group-separator-small: 16px;
 @value text-decoration-text-link-primary: "underline";
-@value text-decoration-text-link-primary-hover: "underline";
+@value text-decoration-text-link-primary-hover: "none";
 @value border-color-button-warning-bordered-hover: rgb(243, 137, 6);
 @value padding-button-large-with-left-icon: 0 28px 0 16px;
 @value color-text-table: rgb(95, 115, 140);

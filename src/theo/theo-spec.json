@@ -3037,7 +3037,7 @@
       }
     },
     "textDecorationTextLinkPrimaryHover": {
-      "value": "underline",
+      "value": "none",
       "type": "string",
       "category": "Text decoration",
       "meta": {
@@ -3053,7 +3053,7 @@
       }
     },
     "textDecorationTextLinkSecondaryHover": {
-      "value": "underline",
+      "value": "none",
       "type": "string",
       "category": "Text decoration",
       "meta": {

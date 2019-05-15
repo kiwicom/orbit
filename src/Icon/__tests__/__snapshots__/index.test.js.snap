@@ -4,6 +4,9 @@ exports[`Icon should match snapshot 1`] = `
 .c0 {
   width: 24px;
   height: 24px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   vertical-align: middle;
   fill: currentColor;
   color: #171b1e;
@@ -481,13 +484,13 @@ exports[`Icon should match snapshot 1`] = `
             "componentStyle": ComponentStyle {
               "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
               "isStatic": false,
-              "lastClassName": "gufoJX",
+              "lastClassName": "cpFVtF",
               "rules": Array [
                 "width:",
                 [Function],
                 ";height:",
                 [Function],
-                ";vertical-align:middle;fill:currentColor;color:",
+                ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
                 [Function],
                 ";",
                 [Function],
@@ -1884,6 +1887,9 @@ exports[`Icon with custom props should match snapshot 1`] = `
 .c0 {
   width: 32px;
   height: 32px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   vertical-align: middle;
   fill: currentColor;
   color: #FF0000;
@@ -2380,7 +2386,7 @@ exports[`Icon with custom props should match snapshot 1`] = `
                 [Function],
                 ";height:",
                 [Function],
-                ";vertical-align:middle;fill:currentColor;color:",
+                ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
                 [Function],
                 ";",
                 [Function],

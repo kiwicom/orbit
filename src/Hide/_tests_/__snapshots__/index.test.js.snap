@@ -4,6 +4,9 @@ exports[`Hide should match snapshot 1`] = `
 .c1 {
   width: 24px;
   height: 24px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   vertical-align: middle;
   fill: currentColor;
 }
@@ -1900,7 +1903,7 @@ exports[`Hide should match snapshot 1`] = `
                         [Function],
                         ";height:",
                         [Function],
-                        ";vertical-align:middle;fill:currentColor;color:",
+                        ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
                         [Function],
                         ";",
                         [Function],

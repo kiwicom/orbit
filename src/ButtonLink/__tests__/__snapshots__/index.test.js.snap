@@ -2005,6 +2005,9 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
 .c2 {
   width: 24px;
   height: 24px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   vertical-align: middle;
   fill: currentColor;
 }
@@ -6353,7 +6356,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                   [Function],
                                   ";height:",
                                   [Function],
-                                  ";vertical-align:middle;fill:currentColor;color:",
+                                  ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
                                   [Function],
                                   ";",
                                   [Function],
@@ -10075,7 +10078,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                   [Function],
                                   ";height:",
                                   [Function],
-                                  ";vertical-align:middle;fill:currentColor;color:",
+                                  ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
                                   [Function],
                                   ";",
                                   [Function],

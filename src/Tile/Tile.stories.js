@@ -54,7 +54,7 @@ storiesOf("Tile", module)
     },
   )
   .add(
-    "TripSector in Tile",
+    "TripSector Tile",
     () => (
       <Tile
         title="Dynamic Tile height"

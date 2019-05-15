@@ -45,10 +45,9 @@ class TileExpandable extends React.PureComponent<Props, State> {
     window.addEventListener("resize", this.setHeight);
   }
 
-  componentDidUpdate(prevProps: Props) {
-    if (prevProps.children !== this.props.children) {
-      this.setHeight();
-    }
+  componentDidUpdate() {
+    // Calculate height on expand - for dynamic components like TripSector
+    this.setHeight();
   }
 
   componentWillUnmount() {
@@ -59,7 +58,7 @@ class TileExpandable extends React.PureComponent<Props, State> {
   }
 
   setHeight = () => {
-    const contentHeight = this.node?.current.clientHeight;
+    const contentHeight = this.node?.current?.clientHeight;
     this.setState({ contentHeight });
   };
 

@@ -2,7 +2,7 @@
 import React from "react";
 
 import { DictionaryContext } from "../Dictionary";
-import DEFAULT_DICTIONARY from "../data/dictionary/en-GB";
+import DEFAULT_DICTIONARY from "../data/dictionary/en-GB.json";
 import type { Translations } from "../Dictionary";
 
 import type { Props, Values } from "./index";

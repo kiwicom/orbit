@@ -1,5 +1,13 @@
 // @flow
-import type { Foundation } from "./foundation";
+import type {
+  Base,
+  CloudColor,
+  InkColor,
+  ProductColor,
+  SocialColor,
+  StatusColor,
+  WhiteColor,
+} from "./foundation";
 
 export type Tokens = {|
   colorTextPrimary: string,
@@ -121,10 +129,6 @@ export type Tokens = {|
   colorInfoCheckBoxRadio: string,
   colorIconCheckboxRadio: string,
   colorIconCheckboxRadioDisabled: string,
-  colorLabelForm: string,
-  colorLabelFormFilled: string,
-  colorIconCheckbox: string,
-  colorIconCheckboxDisabled: string,
   colorIconRadioButton: string,
   colorIconRadioButtonDisabled: string,
   colorStopoverArrow: string,
@@ -388,8 +392,6 @@ export type Tokens = {|
   textDecorationTextLinkPrimaryHover: string,
   textDecorationTextLinkSecondary: string,
   textDecorationTextLinkSecondaryHover: string,
-  boxShadowInputFocus: string,
-  boxShadowInputErrorFocus: string,
   boxShadowButtonFocus: string,
   boxShadowActionable: string,
   boxShadowElevatedLevel1: string,
@@ -475,8 +477,27 @@ export type ThemePaletteColors = {|
   productDarkActive?: string,
 |};
 
-declare export function getTokens(customFoundation?: $Shape<Foundation>): Tokens;
+type CustomPalette = {|
+  product?: $Shape<ProductColor>,
+  white?: $Shape<WhiteColor>,
+  cloud?: $Shape<CloudColor>,
+  ink?: $Shape<InkColor>,
+  orange?: $Shape<StatusColor>,
+  red?: $Shape<StatusColor>,
+  green?: $Shape<StatusColor>,
+  blue?: $Shape<StatusColor>,
+  social?: $Shape<SocialColor>,
+|};
+type CustomBase = $Shape<Base>;
 
-declare export function fromPlainObject(themePaletteColors: ThemePaletteColors): Tokens;
+type CustomFoundation = $Shape<{|
+  palette: CustomPalette,
+  base: CustomBase,
+|}>;
 
+export type FromPlainObject = (themePaletteColors: ThemePaletteColors) => Tokens;
+export type GetTokens = (customFoundation?: CustomFoundation) => Tokens;
+
+declare export var getTokens: GetTokens;
+declare export var fromPlainObject: FromPlainObject;
 declare export var defaultTokens: Tokens;

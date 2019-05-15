@@ -1,17 +1,22 @@
-const babylon = require("babylon");
+const parser = require("@babel/parser");
 const fs = require("fs");
 const path = require("path");
-const tokens = require(path.resolve(__dirname, "../../lib/index")).defaultTokens; // used for values
+
+const { defaultTokens } = require("../../lib/index");
 
 const code = fs.readFileSync(path.resolve(__dirname, "../../lib/index.js"), "utf8");
-const ast = babylon.parse(code, {
+
+const ast = parser.parse(code, {
   sourceType: "module", // allow export
-  plugins: [],
+  allowImportExportEverywhere: true,
+  plugins: ["flow"],
 });
 
-const findTokensFn = x => x.type === "FunctionDeclaration" && x.id.name === "getTokens";
-const tokensDeclaration = ast.program.body.find(findTokensFn);
-const tokenProps = tokensDeclaration.body.body[1].argument.properties;
+const findDeclaration = x => x.id.name === "getTokens";
+const findGetTokens = x => x.type === "VariableDeclaration" && x.declarations.find(findDeclaration);
+
+const ar = ast.program.body.find(findGetTokens);
+const tokenProps = ar.declarations[0].init.body.body[1].argument.properties
 
 const camelCaseToText = text => {
   let result = text.replace(/([A-Z])/g, " $1");
@@ -48,7 +53,7 @@ const itemCommentFn = c => !categoryCommentFn(c) && !categoryDescriptionFn(c);
 
 const getInfo = (tokenProp, xcategory) => {
   const key = tokenProp.key.name;
-  const value = xcategory ? tokens[xcategory][key] : tokens[key];
+  const value = xcategory ? defaultTokens[xcategory][key] : defaultTokens[key];
   if (value == null) {
     console.error("Wrong value for", key);
     throw new Error(`Wrong value for ${key}`);
@@ -85,4 +90,4 @@ const getInfo = (tokenProp, xcategory) => {
 };
 
 const props = getProps(tokenProps);
-fs.writeFileSync(path.resolve(__dirname,"./theo-spec.json"), JSON.stringify({ props }, null, 2));
+fs.writeFileSync(path.resolve(__dirname, "./theo-spec.json"), JSON.stringify({ props }, null, 2));

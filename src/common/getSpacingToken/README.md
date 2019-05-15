@@ -33,7 +33,7 @@ This function receives one parameter - object. With usage in `styled-components`
 ### enum
 | name              | used token      | token value |
 | :---------------- | :-------------- | :---------- |
-| `"none"`          | `spaceXXSmall`  | `4px`       |
+| `"none"`          | `spaceXXSmall`  | `null`      |
 | `"smallest"`      | `spaceXXSmall`  | `4px`       |
 | `"small"`         | `spaceXSmall`   | `8px`       |
 | `"normal"`        | `spaceSmall`    | `12px`      |

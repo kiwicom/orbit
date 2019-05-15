@@ -85,6 +85,11 @@ class Slide extends React.Component<Props, State> {
     this.setState({
       maxHeight: 0,
     });
+
+    if (this.expandTimeout && typeof clearTimeout === "function") {
+      clearTimeout(this.expandTimeout);
+      this.expandTimeout = null;
+    }
   };
 
   render() {

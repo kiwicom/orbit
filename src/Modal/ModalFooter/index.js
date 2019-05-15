@@ -48,8 +48,8 @@ export const StyledModalFooter = styled.div`
   ${media.largeMobile(css`
     justify-content: ${({ children }) => (children.length > 1 ? "space-between" : "flex-end")};
     // TODO: create token paddingModalFooterDesktop
-    border-bottom-left-radius: 9px;
-    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "9px"};
+    border-bottom-right-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "9px"};
   `)};
 
   ${StyledChild}:last-of-type {
@@ -89,9 +89,9 @@ class ModalFooter extends React.PureComponent<Props> {
   };
 
   render() {
-    const { flex = "0 1 auto", children, dataTest } = this.props;
+    const { flex = "0 1 auto", children, dataTest, isMobileFullPage } = this.props;
     return (
-      <StyledModalFooter data-test={dataTest}>
+      <StyledModalFooter data-test={dataTest} isMobileFullPage={isMobileFullPage}>
         {typeof children === "object"
           ? React.Children.map(children, (item, key) => {
               if (item) {

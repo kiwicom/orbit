@@ -8,7 +8,7 @@ import FormFeedback from "../FormFeedback";
 import DefaultFormLabel from "../FormLabel";
 import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
-import { StyledTag } from "../Tag";
+import InputTags from "./InputTags";
 import type { Ref, Translation } from "../common/common.js.flow";
 import getSpacingToken from "../common/getSpacingToken";
 
@@ -273,40 +273,6 @@ const FormLabel = ({
   </DefaultFormLabel>
 );
 
-const StyledInputTags = styled.div`
-  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
-  display: flex;
-  align-items: center;
-  flex: 0 1 auto;
-  height: 100%;
-  z-index: 2;
-  min-width: 50px;
-  overflow: hidden;
-`;
-
-StyledInputTags.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledInputTagsInner = styled.div`
-  overflow-x: scroll;
-  white-space: nowrap;
-  -ms-overflow-style: none; /* IE 11 */
-  scrollbar-width: none; /* Firefox 64 */
-  
-  &::-webkit-scrollbar { 
-    display: none; 
-  }
-  
-  ${StyledTag} + ${StyledTag} {
-    margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
-  }
-`;
-
-StyledInputTagsInner.defaultProps = {
-  theme: defaultTheme,
-};
-
 // $FlowExpected
 const InputField = React.forwardRef((props: Props, ref: Ref) => {
   const {
@@ -350,11 +316,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
             <FormLabel label={label} isFilled={!!value} required={required} />
           </StyledInlineLabel>
         )}
-        {tags && (
-          <StyledInputTags>
-            <StyledInputTagsInner>{tags}</StyledInputTagsInner>
-          </StyledInputTags>
-        )}
+        {tags && <InputTags>{tags}</InputTags>}
         <Input
           data-test={dataTest}
           onChange={onChange}

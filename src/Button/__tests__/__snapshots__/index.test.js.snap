@@ -11,14 +11,10 @@ exports[`Button with icon should match snapshot 1`] = `
   iconLeft={<Airplane />}
   iconRight={<ChevronDown />}
   loading={false}
-  onKeyDown={
+  onClick={
     [MockFunction] {
       "calls": Array [
-        Array [
-          Object {
-            "preventDefault": [Function],
-          },
-        ],
+        Array [],
       ],
       "results": Array [
         Object {
@@ -28,7 +24,6 @@ exports[`Button with icon should match snapshot 1`] = `
       ],
     }
   }
-  onMouseDown={[Function]}
   onlyIcon={false}
   rel="noopener noreferrer"
   role="button"

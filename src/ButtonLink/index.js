@@ -192,17 +192,9 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
     "Warning: children or title property is missing on ButtonLink. Use title property to add aria-label to be accessible for screen readers. More information https://orbit.kiwi/components/buttonlink/#accessibility",
   );
 
-  const handleMouseDown = ev => {
-    ev.preventDefault();
-    if (onClick) {
-      onClick(ev);
-    }
-  };
-
   return (
     <StyledButtonLink
-      onMouseDown={handleMouseDown}
-      onKeyDown={onClick}
+      onClick={onClick}
       component={component}
       size={size}
       onlyIcon={onlyIcon}
@@ -223,6 +215,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       transparent={transparent}
       ariaExpanded={ariaExpanded}
       ariaControls={ariaControls}
+      title={title}
       spaceAfter={spaceAfter}
       tabIndex={tabIndex}
       dataTest={dataTest}

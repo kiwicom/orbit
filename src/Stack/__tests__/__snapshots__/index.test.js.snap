@@ -236,7 +236,7 @@ exports[`Default Stack should match snapshot 1`] = `
 }
 
 .c8:focus {
-  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
+  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,114,203,0.6);
 }
 
 .c8:focus:active {
@@ -13119,7 +13119,6 @@ exports[`Default Stack should match snapshot 1`] = `
             buttonRef={null}
             component="button"
             loading={false}
-            onMouseDown={[Function]}
             size="normal"
             sizeIcon="medium"
             theme={
@@ -14122,7 +14121,6 @@ exports[`Default Stack should match snapshot 1`] = `
               }
               forwardedRef={null}
               loading={false}
-              onMouseDown={[Function]}
               size="normal"
               sizeIcon="medium"
               theme={
@@ -14593,7 +14591,6 @@ exports[`Default Stack should match snapshot 1`] = `
                 className="c8"
                 component="button"
                 loading={false}
-                onMouseDown={[Function]}
                 size="normal"
                 sizeIcon="medium"
                 theme={
@@ -15061,7 +15058,6 @@ exports[`Default Stack should match snapshot 1`] = `
               >
                 <button
                   className="c8"
-                  onMouseDown={[Function]}
                   size="normal"
                   type="button"
                 >
@@ -16761,7 +16757,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
 }
 
 .c8:focus {
-  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
+  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,114,203,0.6);
 }
 
 .c8:focus:active {
@@ -29743,7 +29739,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
               buttonRef={null}
               component="button"
               loading={false}
-              onMouseDown={[Function]}
               size="normal"
               sizeIcon="medium"
               theme={
@@ -30746,7 +30741,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                 }
                 forwardedRef={null}
                 loading={false}
-                onMouseDown={[Function]}
                 size="normal"
                 sizeIcon="medium"
                 theme={
@@ -31217,7 +31211,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                   className="c8"
                   component="button"
                   loading={false}
-                  onMouseDown={[Function]}
                   size="normal"
                   sizeIcon="medium"
                   theme={
@@ -31685,7 +31678,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                 >
                   <button
                     className="c8"
-                    onMouseDown={[Function]}
                     size="normal"
                     type="button"
                   >
@@ -33382,7 +33374,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
 }
 
 .c8:focus {
-  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
+  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,114,203,0.6);
 }
 
 .c8:focus:active {
@@ -46261,7 +46253,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
             buttonRef={null}
             component="button"
             loading={false}
-            onMouseDown={[Function]}
             size="normal"
             sizeIcon="medium"
             theme={
@@ -47264,7 +47255,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
               }
               forwardedRef={null}
               loading={false}
-              onMouseDown={[Function]}
               size="normal"
               sizeIcon="medium"
               theme={
@@ -47735,7 +47725,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                 className="c8"
                 component="button"
                 loading={false}
-                onMouseDown={[Function]}
                 size="normal"
                 sizeIcon="medium"
                 theme={
@@ -48203,7 +48192,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
               >
                 <button
                   className="c8"
-                  onMouseDown={[Function]}
                   size="normal"
                   type="button"
                 >

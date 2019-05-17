@@ -24,7 +24,6 @@ export const StyledCardSectionContent = styled.div`
     hasPaddingTop({ expandable, expanded, visible }) && theme.orbit.spaceMedium};
   transition: padding ${({ theme }) => theme.orbit.durationFast} linear,
     border-top ${({ theme }) => theme.orbit.durationFast} linear;
-  overflow: hidden;
 
   ${media.desktop(css`
     padding-top: ${({ theme, expandable, expanded, visible }) =>

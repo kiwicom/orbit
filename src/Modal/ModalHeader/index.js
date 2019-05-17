@@ -58,8 +58,10 @@ export const StyledModalHeader = styled.div`
           }`) ||
         `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`,
     )};
-  border-top-left-radius: 9px; // TODO: create token
-  border-top-right-radius: 9px; // TODO: create token
+  border-top-left-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
+  border-top-right-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
   box-sizing: border-box;
   background-color: ${({ suppressed, theme }) =>
     suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
@@ -104,7 +106,7 @@ export const MobileHeader = styled.div`
   white-space: nowrap;
   text-overflow: ellipsis;
   // TODO use token for 52px
-  top: 16px;
+  top: ${({ isMobileFullPage }) => (isMobileFullPage ? "0" : "16px")};
   ${right}: 48px;
   ${left}: 0;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -165,10 +167,23 @@ class ModalHeader extends React.PureComponent<Props> {
   };
 
   render() {
-    const { title, illustration, description, children, suppressed, dataTest } = this.props;
+    const {
+      title,
+      illustration,
+      description,
+      children,
+      suppressed,
+      dataTest,
+      isMobileFullPage,
+    } = this.props;
     const hasHeader = title || description;
     return (
-      <StyledModalHeader illustration={!!illustration} suppressed={suppressed} data-test={dataTest}>
+      <StyledModalHeader
+        illustration={!!illustration}
+        suppressed={suppressed}
+        data-test={dataTest}
+        isMobileFullPage={isMobileFullPage}
+      >
         {illustration}
         {hasHeader && (
           <ModalTitle illustration={!!illustration}>
@@ -187,7 +202,7 @@ class ModalHeader extends React.PureComponent<Props> {
             {children}
           </StyledModalHeaderContent>
         )}
-        {title && <MobileHeader>{title}</MobileHeader>}
+        {title && <MobileHeader isMobileFullPage={isMobileFullPage}>{title}</MobileHeader>}
       </StyledModalHeader>
     );
   }

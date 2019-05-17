@@ -76,10 +76,12 @@ const ModalWrapper = styled.div`
 
   position: fixed;
   width: 100%;
-  border-top-left-radius: 9px; // TODO: create token
-  border-top-right-radius: 9px; // TODO: create token
+  border-top-left-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
+  border-top-right-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
   transition: ${transition(["top"], "normal", "ease-in-out")};
-  top: ${({ loaded }) => (loaded ? "32px" : "100%")};
+  top: ${({ loaded, isMobileFullPage }) => (loaded ? !isMobileFullPage && "32px" : "100%")};
 
   ${onlyIE(css`
     /* IE flex bug, the content won't be centered if there is not 'height' property
@@ -117,7 +119,8 @@ const CloseContainer = styled.div`
           position: absolute;
         `};
   position: ${({ scrolled, fixedClose }) => (fixedClose || scrolled ? "fixed" : "absolute")};
-  top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled ? "32px" : "0")};
+  top: ${({ scrolled, fixedClose, isMobileFullPage }) =>
+    !isMobileFullPage && (fixedClose || scrolled) ? "32px" : "0"};
   right: 0;
   z-index: 800;
   justify-content: flex-end;
@@ -129,8 +132,10 @@ const CloseContainer = styled.div`
   max-width: ${({ modalWidth }) => (modalWidth ? `${modalWidth}px` : getSizeToken)};
   box-shadow: ${({ scrolled }) => scrolled && `0 2px 4px 0 rgba(23, 27, 30, 0.1)`};
   background-color: ${({ theme, scrolled }) => scrolled && theme.orbit.paletteWhite};
-  border-top-left-radius: 9px; // TODO: create token
-  border-top-right-radius: 9px; // TODO: create token
+  border-top-left-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
+  border-top-right-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
   transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
   
   ${media.largeMobile(css`
@@ -168,17 +173,28 @@ CloseContainer.defaultProps = {
 const ModalWrapperContent = styled.div`
   position: absolute;
   box-sizing: border-box;
-  border-top-left-radius: 9px; // TODO: create token
-  border-top-right-radius: 9px; // TODO: create token
+  border-top-left-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
+  border-top-right-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
   background-color: ${({ theme }) => theme.orbit.backgroundModal};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   width: 100%;
-  max-height: calc(
-    100% - ${({ theme }) => theme.orbit.spaceXLarge} -
-      ${({ fixedFooter, footerHeight }) => `${fixedFooter && !!footerHeight ? footerHeight : 0}px`}
-  );
-  bottom: ${({ fixedFooter, footerHeight }) =>
-    `${32 + (fixedFooter && !!footerHeight ? footerHeight : 0)}px`};
+  ${({ theme, fixedFooter, footerHeight, isMobileFullPage }) =>
+    isMobileFullPage
+      ? css`
+          max-height: 100%;
+          top: 0;
+        `
+      : css`
+          max-height: calc(
+            100% - ${theme.orbit.spaceXLarge} -
+              ${`${fixedFooter && !!footerHeight ? footerHeight : 0}px`}
+          );
+        `};
+  bottom: ${({ fixedFooter, footerHeight, isMobileFullPage, theme }) =>
+    `${(!isMobileFullPage ? parseInt(theme.orbit.spaceXLarge, 10) : 0) +
+      (fixedFooter && !!footerHeight ? footerHeight : 0)}px`};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowModal};
   overflow-y: auto;
   overflow-x: hidden;
@@ -203,7 +219,8 @@ const ModalWrapperContent = styled.div`
     `};
 
   ${MobileHeader} {
-    top: ${({ scrolled, theme }) => scrolled && theme.orbit.spaceXLarge};
+    top: ${({ scrolled, theme, isMobileFullPage }) =>
+      !isMobileFullPage && scrolled && theme.orbit.spaceXLarge};
     opacity: ${({ scrolled }) => scrolled && "1"};
     visibility: ${({ scrolled }) => scrolled && "visible"};
     transition: ${({ scrolled, theme }) =>
@@ -228,7 +245,7 @@ const ModalWrapperContent = styled.div`
   ${media.largeMobile(css`
     position: relative;
     bottom: auto;
-    border-radius: 9px;
+    border-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "9px"};
     padding-bottom: 0;
     height: auto;
     overflow: visible;
@@ -499,7 +516,14 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
   modalID: string;
 
   render() {
-    const { onClose, children, size = SIZES.NORMAL, fixedFooter = false, dataTest } = this.props;
+    const {
+      onClose,
+      children,
+      size = SIZES.NORMAL,
+      fixedFooter = false,
+      dataTest,
+      isMobileFullPage = false,
+    } = this.props;
     const {
       scrolled,
       loaded,
@@ -527,6 +551,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
           onScroll={this.handleMobileScroll}
           fixedFooter={fixedFooter}
           id={this.modalID}
+          isMobileFullPage={isMobileFullPage}
         >
           <ModalWrapperContent
             size={size}
@@ -538,12 +563,14 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
             modalWidth={modalWidth}
             footerHeight={footerHeight}
             hasModalSection={hasModalSection}
+            isMobileFullPage={isMobileFullPage}
           >
             <CloseContainer
               modalWidth={modalWidth}
               size={size}
               scrolled={scrolled}
               fixedClose={fixedClose}
+              isMobileFullPage={isMobileFullPage}
             >
               {onClose && (
                 <ButtonLink
@@ -564,6 +591,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
                 removeHasModalSection: this.removeHasModalSection,
                 manageFocus: this.manageFocus,
                 hasModalSection,
+                isMobileFullPage,
               }}
             >
               {children}

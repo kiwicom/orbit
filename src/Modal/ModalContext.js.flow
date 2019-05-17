@@ -8,6 +8,7 @@ export type ModalContextProps = {|
   +removeHasModalSection?: () => void,
   +manageFocus?: () => void,
   +hasModalSection?: boolean,
+  +isMobileFullPage?: boolean,
 |};
 
 export type ModalContextType = React.Context<ModalContextProps>;

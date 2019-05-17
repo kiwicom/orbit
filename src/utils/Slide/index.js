@@ -15,6 +15,7 @@ const getMaxHeight = ({ maxHeight }) => {
 export const StyledSlide = styled.div`
   max-height: ${getMaxHeight};
   transition: max-height ${({ theme }) => theme.orbit.durationFast} linear;
+  overflow: hidden;
 `;
 
 StyledSlide.defaultProps = {
@@ -85,6 +86,11 @@ class Slide extends React.Component<Props, State> {
     this.setState({
       maxHeight: 0,
     });
+
+    if (this.expandTimeout && typeof clearTimeout === "function") {
+      clearTimeout(this.expandTimeout);
+      this.expandTimeout = null;
+    }
   };
 
   render() {

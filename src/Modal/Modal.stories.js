@@ -421,9 +421,16 @@ storiesOf("Modal", module)
       );
       const flex = array("Flex", ["0 0 auto", "1 1 100%"]);
       const dataTest = text("dataTest", "test");
+      const isMobileFullPage = boolean("isMobileFullPage", false);
       const showBack = boolean("showBackButton", true);
       return (
-        <Modal onClose={onClose} size={size} fixedFooter={fixed} dataTest={dataTest}>
+        <Modal
+          onClose={onClose}
+          size={size}
+          fixedFooter={fixed}
+          dataTest={dataTest}
+          isMobileFullPage={isMobileFullPage}
+        >
           <ModalHeader
             title={title}
             illustration={illustration && <Illustration name={illustration} size="small" />}

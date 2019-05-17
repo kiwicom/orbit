@@ -21,7 +21,6 @@ const StyledTileExpandable = styled.div`
         padding ${theme.orbit.durationFast} ease-in-out,
         border-top ${theme.orbit.durationFast} ease-in-out;
     `};
-  overflow: hidden;
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   color: ${({ theme }) => theme.orbit.colorTextPrimary};

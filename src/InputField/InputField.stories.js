@@ -243,6 +243,24 @@ storiesOf("InputField", module)
                 Brno
               </Tag>
               <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action("onRemove")}>Praha</Tag>
             </div>
           }
           error={error}

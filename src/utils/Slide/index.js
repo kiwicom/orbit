@@ -15,6 +15,7 @@ const getMaxHeight = ({ maxHeight }) => {
 export const StyledSlide = styled.div`
   max-height: ${getMaxHeight};
   transition: max-height ${({ theme }) => theme.orbit.durationFast} linear;
+  overflow: hidden;
 `;
 
 StyledSlide.defaultProps = {

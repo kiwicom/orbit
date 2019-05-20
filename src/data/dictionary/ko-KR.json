@@ -1,1 +1,12 @@
-{}
+{
+  "a11ymenu_jump_to": "바로 가기",
+  "a11ymenu_page_actions": "이 페이지의 공통적인 활동",
+  "a11ymenu_page_sections": "이 페이지의 섹션",
+  "a11ymenu_send_feedback": "의견 보내기",
+  "breadcrumbs_back": "돌아가기",
+  "button_close": "닫기",
+  "choicegroup_only": "오직",
+  "pagination_label_next": "다음",
+  "pagination_label_prev": "이전",
+  "ratingstar_description": "점수 __number__점 만점 중 __number__점"
+}

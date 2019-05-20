@@ -16,6 +16,10 @@ var NEST_RESOLVES = {
   TableCell: Table
 };
 
+var UTILS_RESOLVES = {
+  mediaQueries: "mediaQuery"
+};
+
 var parsedImportPaths = [
   "@kiwicom/orbit-components",
   "@kiwicom/orbit-components/lib/icons"
@@ -49,6 +53,8 @@ module.exports = function orbitComponents(babel) {
             if (NEST_RESOLVES[importedName]) {
               importedPath +=
                 "/" + NEST_RESOLVES[importedName] + "/" + importedName;
+            } else if (UTILS_RESOLVES[importedName]) {
+              importedPath += "/utils/" + UTILS_RESOLVES[importedName];
             } else {
               importedPath += "/" + importedName;
             }

@@ -23,6 +23,7 @@ import typeof HideType from "./Hide";
 import typeof InputFieldType from "./InputField";
 import typeof InputGroupType from "./InputGroup";
 import typeof InputStepperType from "./InputStepper";
+import typeof InputStepperStatelessType from "./InputStepper/InputStepperStateless";
 import typeof IllustrationType from "./Illustration";
 import typeof ListType from "./List";
 import typeof ListItemType from "./List/ListItem";
@@ -126,6 +127,7 @@ declare export var Illustration: IllustrationType;
 declare export var InputGroup: InputGroupType;
 declare export var InputFile: InputFileType;
 declare export var InputStepper: InputStepperType;
+declare export var InputStepperStateless: InputStepperStatelessType;
 declare export var TextLink: TextLinkType;
 declare export var Loading: LoadingType;
 

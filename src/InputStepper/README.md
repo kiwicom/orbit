@@ -35,8 +35,8 @@ Table below contains all types of the props available in InputStepper component.
 | spaceAfter      | `enum`                      |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | step            | `number`                    | `1`         | Specifies the value of step to increment and decrement.
 | tabIndex        | `string`                    |             | Specifies the tab order of an element
-| titleDecrement  | `() => string | string`     |             | Specifies `title` property on decrement `Button`.
-| titleIncrement  | `() => string | string`     |             | Specifies `title` property on increment `Button`.
+| titleDecrement  | `string | (any => string)`  |             | Specifies `title` property on decrement `Button`.
+| titleIncrement  | `string | (any => string)`  |             | Specifies `title` property on increment `Button`.
 
 ### enum
 
@@ -107,8 +107,8 @@ Table below contains all types of the props available in `InputStepperStateless`
 | spaceAfter        | `enum`                      |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-comp onents/tree/master/src/common/getSpacingToken)
 | step              | `number`                    | `1`         | Specifies the value of step to increment and decrement.
 | tabIndex          | `string`                    |             | Specifies the tab order of an element
-| titleDecrement    | `() => string | string`     |             | Specifies `title` property on decrement `Button`.
-| titleIncrement    | `() => string | string`     |             | Specifies `title` property on increment `Button`.
+| titleDecrement    | `string | (any => string)`  |             | Specifies `title` property on decrement `Button`.
+| titleIncrement    | `string | (any => string)`  |             | Specifies `title` property on increment `Button`.
 | value             | `number | string`           |             | Specifies the value of the InputStepperStateless.
 
 ### Usage:

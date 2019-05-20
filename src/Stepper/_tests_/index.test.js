@@ -3,6 +3,7 @@ import * as React from "react";
 import { shallow } from "enzyme";
 
 import Stepper from "../index";
+import StepperStateless from "../StepperStateless";
 
 describe("Stepper", () => {
   const defaultValue = 1;
@@ -30,7 +31,21 @@ describe("Stepper", () => {
       onBlur={onBlur}
     />,
   );
-  const input = component.find("Stepper__StyledStepperInput");
+
+  const statelessCompoennt = shallow(
+    <StepperStateless
+      value={defaultValue}
+      name={name}
+      maxValue={maxValue}
+      minValue={minValue}
+      disabled={disabled}
+      dataTest={dataTest}
+      onChange={onChange}
+      onFocus={onFocus}
+      onBlur={onBlur}
+    />,
+  );
+  const input = statelessCompoennt.find("StepperStateless__StyledStepperInput");
 
   it("should contain an input", () => {
     expect(input.exists()).toBe(true);
@@ -42,8 +57,8 @@ describe("Stepper", () => {
     expect(parseFloat(input.render().prop("min"))).toBe(minValue);
     expect(input.render().prop("disabled")).toBe(disabled);
     expect(
-      component
-        .find("Stepper__StyledStepper")
+      statelessCompoennt
+        .find("StepperStateless__StyledStepper")
         .render()
         .prop("data-test"),
     ).toBe(dataTest);

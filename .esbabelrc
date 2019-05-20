@@ -1,0 +1,12 @@
+{
+  "presets": ["@babel/flow"],
+  "plugins": [
+    [
+      "replace-import-path",
+      {
+        "src": "ramda/src/mergeDeepRight",
+        "dest": "ramda/es/mergeDeepRight"
+      }
+    ]
+  ]
+}

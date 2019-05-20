@@ -1,1 +1,12 @@
-{}
+{
+  "a11ymenu_jump_to": "מעבר אל",
+  "a11ymenu_page_actions": "פעולות נפוצות שעושים בדף הזה",
+  "a11ymenu_page_sections": "הקטעים בדף הזה",
+  "a11ymenu_send_feedback": "שליחת משוב",
+  "breadcrumbs_back": "חזרה",
+  "button_close": "סגירה",
+  "choicegroup_only": "רק",
+  "pagination_label_next": "הבא",
+  "pagination_label_prev": "הקודם",
+  "ratingstar_description": "דירוג של __number__ מתוך __number__"
+}

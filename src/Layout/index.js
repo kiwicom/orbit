@@ -10,10 +10,8 @@ import mq from "../utils/mediaQuery";
 import type { Props } from "./index";
 
 const getChildrenProps = (type, key) => {
-  if (LAYOUT_SETTINGS[type].layoutColumns) {
-    if (LAYOUT_SETTINGS[type].layoutColumns[key]) {
-      return LAYOUT_SETTINGS[type].layoutColumns[key];
-    }
+  if (LAYOUT_SETTINGS[type].layoutColumns && LAYOUT_SETTINGS[type].layoutColumns[key]) {
+    return LAYOUT_SETTINGS[type].layoutColumns[key];
   }
   return null;
 };

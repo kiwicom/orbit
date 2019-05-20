@@ -30,6 +30,10 @@ const StyledGrid = styled(({ className, children, dataTest }) => (
             ${getViewportGridStyles({ viewport, index, devices })};
           `,
     )};
+  // for IE it needs to be explicitly set for children columns/rows
+  & > * {
+    display: block;
+  }
 `;
 
 StyledGrid.defaultProps = {

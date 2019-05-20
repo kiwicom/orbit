@@ -1,1 +1,12 @@
-{}
+{
+  "a11ymenu_jump_to": "Springen zu",
+  "a11ymenu_page_actions": "Häufige Aktionen auf dieser Seite",
+  "a11ymenu_page_sections": "Abschnitte dieser Seite",
+  "a11ymenu_send_feedback": "Feedback senden",
+  "breadcrumbs_back": "Zurück",
+  "button_close": "Schließen",
+  "choicegroup_only": "Nur",
+  "pagination_label_next": "Weiter",
+  "pagination_label_prev": "Zurück",
+  "ratingstar_description": "Bewertung: __number__ von __number__"
+}

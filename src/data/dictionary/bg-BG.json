@@ -1,1 +1,12 @@
-{}
+{
+  "a11ymenu_jump_to": "Отиди в",
+  "a11ymenu_page_actions": "Обичайни действия на тази страница",
+  "a11ymenu_page_sections": "Раздели на тази страница",
+  "a11ymenu_send_feedback": "Изпрати отзив",
+  "breadcrumbs_back": "Назад",
+  "button_close": "Затвори",
+  "choicegroup_only": "Само",
+  "pagination_label_next": "Напред",
+  "pagination_label_prev": "Назад",
+  "ratingstar_description": "Оценка __number__ от __number__"
+}

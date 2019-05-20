@@ -64,8 +64,9 @@ const getButtonBoxShadow: GetButtonBoxShadow = state => ({ disabled, bordered, t
       &:active {
         ${bordered
           ? css`
-              box-shadow: inset 0 0 6px 3px
-                ${convertHexToRgba(theme.orbit.paletteInkDark, opacity.bordered[type])}; // TODO: create token
+              box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonActive)},
+                inset 0 0 6px 3px
+                  ${convertHexToRgba(theme.orbit.paletteInkDark, opacity.bordered[type])}; // TODO: create token
             `
           : css`
               box-shadow: inset 0 0 6px 3px

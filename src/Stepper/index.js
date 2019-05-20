@@ -79,4 +79,4 @@ class Stepper extends React.PureComponent<Props, State> {
 }
 
 export default Stepper;
-export { default as InputStepperStateless } from "./StepperStateless";
+export { default as StepperStateless } from "./StepperStateless";

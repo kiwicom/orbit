@@ -64,6 +64,7 @@ typings/
 .idea
 .vscode
 lib
+umd
 es
 .out
 .cache

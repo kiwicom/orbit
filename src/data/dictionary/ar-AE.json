@@ -1,1 +1,12 @@
-{}
+{
+  "a11ymenu_jump_to": "الانتقال السريع إلى",
+  "a11ymenu_page_actions": "الإجراءات الشائعة في هذه الصفحة",
+  "a11ymenu_page_sections": "أقسام هذه الصفحة",
+  "a11ymenu_send_feedback": "إرسال الملاحظات",
+  "breadcrumbs_back": "رجوع",
+  "button_close": "إغلاق",
+  "choicegroup_only": "فقط",
+  "pagination_label_next": "التالي",
+  "pagination_label_prev": "السابق",
+  "ratingstar_description": "تقييم __number__ من __number__"
+}

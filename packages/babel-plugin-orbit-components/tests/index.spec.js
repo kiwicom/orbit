@@ -49,12 +49,21 @@ const iconWant = `
 import Passengers from "@kiwicom/orbit-components/lib/icons/Passengers";
 `;
 
+const utils = `
+import { mediaQueries } from "@kiwicom/orbit-components";
+`;
+
+const utilsWant = `
+import mediaQueries from "@kiwicom/orbit-components/lib/utils/mediaQuery";
+`;
+
 const mixed = `
-import { Alert, ModalSection } from "@kiwicom/orbit-components";
+import { Alert, ModalSection, mediaQueries } from "@kiwicom/orbit-components";
 import { Passengers, Invoice } from "@kiwicom/orbit-components/lib/icons";
 `;
 
 const mixedWant = `
+import mediaQueries from "@kiwicom/orbit-components/lib/utils/mediaQuery";
 import ModalSection from "@kiwicom/orbit-components/lib/Modal/ModalSection";
 import Alert from "@kiwicom/orbit-components/lib/Alert";
 import Invoice from "@kiwicom/orbit-components/lib/icons/Invoice";
@@ -79,6 +88,9 @@ test(t => {
 
   const resIcon = babel.transform(icon, { plugins: [plugin] });
   t.equals(resIcon.code, iconWant.trim());
+
+  const resUtils = babel.transform(utils, { plugins: [plugin] });
+  t.equals(resUtils.code, utilsWant.trim());
 
   const resMixed = babel.transform(mixed, { plugins: [plugin] });
   t.equals(resMixed.code, mixedWant.trim());

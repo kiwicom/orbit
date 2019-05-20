@@ -20,6 +20,9 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   width: auto;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   height: 44px;
   background: transparent;
   color: #00a991!important;
@@ -563,11 +566,13 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
             "isStatic": false,
-            "lastClassName": "eytoOq",
+            "lastClassName": "daKYbT",
             "rules": Array [
               "font-family:",
               [Function],
               ";box-sizing:border-box;appearance:none;display:inline-flex;justify-content:center;align-items:center;width:",
+              [Function],
+              ";flex:",
               [Function],
               ";height:",
               [Function],
@@ -2119,6 +2124,9 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   -ms-flex-align: center;
   align-items: center;
   width: auto;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   height: 44px;
   background: transparent;
   color: #00a991!important;
@@ -2657,6 +2665,8 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
               "font-family:",
               [Function],
               ";box-sizing:border-box;appearance:none;display:inline-flex;justify-content:center;align-items:center;width:",
+              [Function],
+              ";flex:",
               [Function],
               ";height:",
               [Function],

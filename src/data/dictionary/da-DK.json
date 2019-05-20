@@ -1,1 +1,12 @@
-{}
+{
+  "a11ymenu_jump_to": "Hop til",
+  "a11ymenu_page_actions": "Typiske handlinger på denne side",
+  "a11ymenu_page_sections": "Afsnit på denne side",
+  "a11ymenu_send_feedback": "Send feedback",
+  "breadcrumbs_back": "Tilbage",
+  "button_close": "Luk",
+  "choicegroup_only": "Kun",
+  "pagination_label_next": "Næste",
+  "pagination_label_prev": "Forrige",
+  "ratingstar_description": "Vurdering __number__ ud af __number__"
+}

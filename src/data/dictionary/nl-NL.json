@@ -1,1 +1,12 @@
-{}
+{
+  "a11ymenu_jump_to": "Ga naar",
+  "a11ymenu_page_actions": "Veelvoorkomende acties op deze pagina",
+  "a11ymenu_page_sections": "Rubrieken van deze pagina",
+  "a11ymenu_send_feedback": "Feedback versturen",
+  "breadcrumbs_back": "Terug",
+  "button_close": "Sluiten",
+  "choicegroup_only": "Alleen",
+  "pagination_label_next": "Volgende",
+  "pagination_label_prev": "Vorige",
+  "ratingstar_description": "gerangschikt op plaats __number__ van de __number__"
+}

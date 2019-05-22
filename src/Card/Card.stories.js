@@ -214,12 +214,7 @@ storiesOf("Card", module)
       const title = text("Title", "Card with sections");
       const description = text("Description", "This is a description of the card.");
       return (
-        <Card>
-          <CardHeader
-            title={title}
-            subTitle={description}
-            actions={<Button size="small">Button</Button>}
-          />
+        <Card title={title} description={description} actions={<Button size="small">Button</Button>}>
           <CardSection>
             <CardSectionHeader>
               <Heading type="title3" element="h3">
@@ -256,7 +251,6 @@ storiesOf("Card", module)
         <Loading type="boxLoader" loading>
           {true && (
             <React.Fragment>
-              <CardHeader title="Test" />
               <CardSection>kek</CardSection>
             </React.Fragment>
           )}
@@ -314,8 +308,10 @@ storiesOf("Card", module)
           onClose={action("Close")}
           dataTest={dataTest}
           spaceAfter={spaceAfter}
+          title={title}
+          description={description}
+          icon={<Icon />}
         >
-          <CardHeader icon={<Icon />} title={title} subTitle={description} dataTest={dataTest} />
           <CardSection dataTest={dataTest}>
             <Heading type="title3" element="h3">
               Content with Heading and text
@@ -340,12 +336,7 @@ storiesOf("Card", module)
     "RTL",
     () => (
       <RenderInRtl>
-        <Card closable onClose={action("Close")}>
-          <CardHeader
-            icon={<Icons.Airplane />}
-            title="Title of the CardHeader"
-            subTitle="Description of the CardHeader"
-          />
+        <Card closable onClose={action("Close")} title="Title of the CardHeader" description="Description of the CardHeader" icon={<Icons.Airplane />}>
           <CardSection>
             <Heading type="title3" element="h3">
               Content with Heading and text

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
+import Text from "../Text";
 import CardSection, { StyledCardSection } from "./CardSection";
 import CardHeader, { StyledCardHeader } from "./CardHeader";
 import { StyledCardSectionContent } from "./CardSection/CardSectionContent";
@@ -47,6 +48,27 @@ const StyledChildWrapper = styled.div`
 `;
 
 StyledChildWrapper.defaultProps = {
+  theme: defaultTheme,
+};
+
+const StyledCardDescription = styled.div`
+  border-top: ${getBorder};
+  border-left: ${getBorder};
+  border-right: ${getBorder};
+`;
+
+StyledCardDescription.defaultProps = {
+  theme: defaultTheme,
+};
+
+const StyledCardContent = styled.div`
+  ${StyledChildWrapper}:first-of-type {
+    // If first section is expandable remove margin from top after expand
+    margin-top: 0;
+  }
+`;
+
+StyledCardContent.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -174,25 +196,28 @@ class Card extends React.Component<Props, State> {
   };
 
   render() {
-    const { title, icon, description, closable, dataTest, spaceAfter, onClose } = this.props;
+    const { title, icon, description, actions, closable, dataTest, spaceAfter, onClose } = this.props;
     const children = this.getChildren();
-    const hasHeader = !!title || !!icon || !!description;
+    const hasHeader = !!title || !!icon || !!actions;
     return (
       <StyledCard closable={closable} data-test={dataTest} spaceAfter={spaceAfter}>
-        {hasHeader && <CardHeader title={title} icon={icon} />}
-        {children && React.Children.map(children, (item, index) => this.renderSection(item, index))}
-        {closable && (
-          <CloseContainer>
-            <ButtonLink
-              dataTest={CLOSE_BUTTON_DATA_TEST}
-              type="secondary"
-              size="small"
-              icon={<Close />}
-              onClick={onClose}
-              transparent
-            />
-          </CloseContainer>
-        )}
+        {hasHeader && <CardHeader title={title} icon={icon} actions={actions} />}
+        <StyledCardContent>
+          {children &&
+            React.Children.map(children, (item, index) => this.renderSection(item, index))}
+          {closable && (
+            <CloseContainer>
+              <ButtonLink
+                dataTest={CLOSE_BUTTON_DATA_TEST}
+                type="secondary"
+                size="small"
+                icon={<Close />}
+                onClick={onClose}
+                transparent
+              />
+            </CloseContainer>
+          )}
+        </StyledCardContent>
       </StyledCard>
     );
   }

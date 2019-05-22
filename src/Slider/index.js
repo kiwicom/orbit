@@ -35,13 +35,19 @@ class Slider extends React.PureComponent {
       value: this.props.defaultValue || 1,
       handleIndex: null,
       parentWidth: null,
-      values: [],
     };
   }
 
   componentDidMount() {
     this.timeout = setTimeout(this.calculateWidth, 10);
     window.addEventListener("resize", this.calculateWidth);
+  }
+
+  componentWillUnmount() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+    window.removeEventListener("resize", this.calculateWidth);
   }
 
   calculateWidth = () => {
@@ -54,6 +60,148 @@ class Slider extends React.PureComponent {
   pauseEvent = e => {
     if (e.stopPropagation) e.stopPropagation();
     if (e.preventDefault) e.preventDefault();
+  };
+
+  stopPropagation = e => {
+    if (e.stopPropagation) e.stopPropagation();
+  };
+
+  moveValueByStep = step => {
+    const { value, handleIndex } = this.state;
+    if (Array.isArray(value)) {
+      const newValue = this.replaceValue(
+        this.alignValue(value[Number(handleIndex)] + step),
+        Number(handleIndex),
+      );
+      this.setState({ value: newValue });
+    } else {
+      const newValue = this.alignValue(value + step);
+      this.setState({ value: newValue });
+    }
+    this.injectCallback(this.props.onChange);
+  };
+
+  handleKeyDown = event => {
+    if (event.ctrlKey || event.shiftKey || event.altKey) return;
+    const { step = 1, min = 1, max = 100 } = this.props;
+    if (event.keyCode === KEY_CODE_MAP.ARROW_UP || event.keyCode === KEY_CODE_MAP.ARROW_RIGHT) {
+      this.pauseEvent(event);
+      this.moveValueByStep(step);
+    }
+    if (event.keyCode === KEY_CODE_MAP.ARROW_DOWN || event.keyCode === KEY_CODE_MAP.ARROW_LEFT) {
+      this.pauseEvent(event);
+      this.moveValueByStep(-step);
+    }
+    if (event.keyCode === KEY_CODE_MAP.HOME) {
+      this.pauseEvent(event);
+      this.setState({ value: min });
+      this.injectCallback(this.props.onChange);
+    }
+    if (event.keyCode === KEY_CODE_MAP.END) {
+      this.pauseEvent(event);
+      this.setState({ value: max });
+      this.injectCallback(this.props.onChange);
+    }
+  };
+
+  handleBlur = () => {
+    window.removeEventListener("keydown", this.handleKeyDown);
+    window.removeEventListener("focusout", this.handleBlur);
+    this.injectCallback(this.props.onChangeAfter);
+  };
+
+  handleOnFocus = i => e => {
+    this.setState({ handleIndex: i });
+    this.pauseEvent(e);
+    window.addEventListener("keydown", this.handleKeyDown);
+    window.addEventListener("focusout", this.handleBlur);
+    this.injectCallback(this.props.onBeforeChange);
+  };
+
+  calculateValueFromPosition = pageX => {
+    const { max = 100, min = 1 } = this.props;
+    const barRect = getBoundingClientRect(this.bar);
+    const mousePosition = pageX - barRect.left;
+    const positionRatio = mousePosition / barRect.width;
+    return Math.round((max - min) * positionRatio + min);
+  };
+
+  findClosestKey = goal =>
+    this.state.value.reduce((acc, curr, index) => {
+      return Math.abs(curr - goal) < Math.abs(this.state.value[acc] - goal) ? index : acc;
+    }, 0);
+
+  handleMove = newValue => {
+    const { value, handleIndex } = this.state;
+    if (Array.isArray(value)) {
+      const replacedValue = this.replaceValue(this.alignValue(newValue), Number(handleIndex));
+      this.setState({ value: replacedValue });
+    } else {
+      this.setState({ value: this.alignValue(newValue) });
+    }
+  };
+
+  handleBarMouseDown = event => {
+    const { value } = this.state;
+    const newValue = this.calculateValueFromPosition(event.pageX);
+    if (Array.isArray(value)) {
+      const index = this.findClosestKey(newValue);
+      const replacedValue = this.replaceValue(this.alignValue(newValue), index);
+      this.setState({ value: replacedValue });
+    } else {
+      this.setState({ value: this.alignValue(newValue) });
+    }
+  };
+
+  handleMouseMove = event => {
+    const newValue = this.calculateValueFromPosition(event.pageX);
+    this.pauseEvent(event);
+    this.handleMove(newValue);
+    this.injectCallback(this.props.onChange);
+  };
+
+  injectCallback = callback => {
+    if (callback) callback(this.state.value);
+  };
+
+  handleMouseUp = () => {
+    window.removeEventListener("mousemove", this.handleMouseMove);
+    window.removeEventListener("mouseup", this.handleMouseUp);
+    this.injectCallback(this.props.onChangeAfter);
+  };
+
+  handleMouseDown = i => event => {
+    // just allow left-click
+    if (event.button === 0 && event.buttons !== 2) {
+      if (typeof i === "number") this.setState({ handleIndex: i });
+      window.addEventListener("mousemove", this.handleMouseMove);
+      window.addEventListener("mouseup", this.handleMouseUp);
+      this.pauseEvent(event);
+      this.injectCallback(this.props.onBeforeChange);
+    }
+  };
+
+  handleOnTouchMove = event => {
+    if (event.touches.length > 1) return;
+    const newValue = this.calculateValueFromPosition(event.touches[0].pageX);
+    this.stopPropagation(event);
+    this.handleMove(newValue);
+    this.injectCallback(this.props.onChange);
+  };
+
+  handleTouchEnd = () => {
+    window.removeEventListener("touchmove", this.handleOnTouchMove);
+    window.removeEventListener("touchend", this.handleTouchEnd);
+    this.injectCallback(this.props.onChangeAfter);
+  };
+
+  handleOnTouchStart = i => event => {
+    if (event.touches.length > 1) return;
+    if (typeof i === "number") this.setState({ handleIndex: i });
+    window.addEventListener("touchmove", this.handleOnTouchMove);
+    window.addEventListener("touchend", this.handleTouchEnd);
+    this.stopPropagation(event);
+    this.injectCallback(this.props.onBeforeChange);
   };
 
   alignValueToStep = value => {
@@ -87,112 +235,30 @@ class Slider extends React.PureComponent {
     return value.map((item, key) => (key === index ? newValue : item));
   };
 
-  moveValueByStep = step => {
-    const { value, handleIndex } = this.state;
-    if (Array.isArray(value)) {
-      const newValue = this.replaceValue(
-        this.alignValue(value[Number(handleIndex)] + step),
-        Number(handleIndex),
-      );
-      this.setState({ value: newValue });
-    } else {
-      const newValue = this.alignValue(value + step);
-      this.setState({ value: newValue });
-    }
+  renderHandle = (value, i) => {
+    const { min = 1, max = 100 } = this.props;
+    const { parentWidth, handleIndex } = this.state;
+    return (
+      <Handle
+        tabIndex={0}
+        onTop={handleIndex === i}
+        valueMax={max}
+        valueMin={min}
+        valueNow={value}
+        onMouseDown={this.handleMouseDown(i)}
+        onFocus={this.handleOnFocus(i)}
+        onTouchStart={this.handleOnTouchStart(i)}
+        parentWidth={parentWidth}
+      />
+    );
   };
 
-  handleKeyDown = event => {
-    if (event.ctrlKey || event.shiftKey || event.altKey) return;
-    const { step = 1, min = 1, max = 100 } = this.props;
-    if (event.keyCode === KEY_CODE_MAP.ARROW_UP || event.keyCode === KEY_CODE_MAP.ARROW_RIGHT) {
-      this.pauseEvent(event);
-      this.moveValueByStep(step);
-    }
-    if (event.keyCode === KEY_CODE_MAP.ARROW_DOWN || event.keyCode === KEY_CODE_MAP.ARROW_LEFT) {
-      this.pauseEvent(event);
-      this.moveValueByStep(-step);
-    }
-    if (event.keyCode === KEY_CODE_MAP.HOME) {
-      this.pauseEvent(event);
-      this.setState({ value: min });
-    }
-    if (event.keyCode === KEY_CODE_MAP.END) {
-      this.pauseEvent(event);
-      this.setState({ value: max });
-    }
-  };
-
-  handleBlur = () => {
-    window.removeEventListener("keydown", this.handleKeyDown);
-    window.removeEventListener("focusout", this.handleBlur);
-  };
-
-  handleOnFocus = i => e => {
-    this.setState({ handleIndex: i });
-    this.pauseEvent(e);
-    window.addEventListener("keydown", this.handleKeyDown);
-    window.addEventListener("focusout", this.handleBlur);
-  };
-
-  calculateValueFromPosition = pageX => {
-    const { max = 100, min = 1 } = this.props;
-    const barRect = getBoundingClientRect(this.bar);
-    const mousePosition = pageX - barRect.left;
-    const positionRatio = mousePosition / barRect.width;
-    return Math.round((max - min) * positionRatio + min);
-  };
-
-  findClosestKey = goal =>
-    this.state.value.reduce((acc, curr, index) => {
-      return Math.abs(curr - goal) < Math.abs(this.state.value[acc] - goal) ? index : acc;
-    }, 0);
-
-  handleBarMouseDown = event => {
+  renderHandles = () => {
     const { value } = this.state;
-    const newValue = this.calculateValueFromPosition(event.pageX);
-    if (Array.isArray(value)) {
-      const index = this.findClosestKey(newValue);
-      const replacedValue = this.replaceValue(this.alignValue(newValue), index);
-      this.setState({ value: replacedValue });
-    } else {
-      this.setState({ value: this.alignValue(newValue) });
-    }
+    return Array.isArray(value)
+      ? value.map((handle, i) => this.renderHandle(value[i], i))
+      : this.renderHandle(value);
   };
-
-  handleMouseMove = event => {
-    const { handleIndex, value, values } = this.state;
-
-    const newValue = this.calculateValueFromPosition(event.pageX);
-    this.setState({ values: [...values, newValue] });
-    if (Array.isArray(value)) {
-      const replacedValue = this.replaceValue(this.alignValue(newValue), Number(handleIndex));
-      this.setState({ value: replacedValue });
-    } else {
-      this.setState({ value: this.alignValue(newValue) });
-    }
-  };
-
-  handleMouseUp = () => {
-    window.removeEventListener("mousemove", this.handleMouseMove);
-    window.removeEventListener("mouseup", this.handleMouseUp);
-  };
-
-  handleMouseDown = i => event => {
-    // just allow left-click
-    if (event.button === 0 && event.buttons !== 2) {
-      if (i) this.setState({ handleIndex: i });
-      window.addEventListener("mousemove", this.handleMouseMove);
-      window.addEventListener("mouseup", this.handleMouseUp);
-      this.pauseEvent(event);
-    }
-  };
-
-  componentWillUnmount() {
-    if (this.timeout) {
-      clearTimeout(this.timeout);
-    }
-    window.removeEventListener("resize", this.calculateWidth);
-  }
 
   render() {
     const { label, description, min = 1, max = 100 } = this.props;
@@ -211,29 +277,7 @@ class Slider extends React.PureComponent {
             onMouseDown={this.handleBarMouseDown}
             {...calculateBarPosition(parentWidth, value, max, min)}
           />
-          {Array.isArray(value) ? (
-            value.map((handle, i) => (
-              <Handle
-                tabIndex={0}
-                valueMax={max}
-                valueMin={min}
-                valueNow={value[i]}
-                onMouseDown={this.handleMouseDown(i)}
-                onFocus={this.handleOnFocus(i)}
-                parentWidth={parentWidth}
-              />
-            ))
-          ) : (
-            <Handle
-              tabIndex={0}
-              valueMax={max}
-              valueMin={min}
-              valueNow={value}
-              onMouseDown={this.handleMouseDown()}
-              onFocus={this.handleOnFocus()}
-              parentWidth={parentWidth}
-            />
-          )}
+          {this.renderHandles()}
         </StyledSliderInput>
       </StyledSlider>
     );

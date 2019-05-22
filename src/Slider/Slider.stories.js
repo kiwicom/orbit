@@ -43,6 +43,8 @@ storiesOf("Slider", module)
       return (
         <Slider
           onChange={action("onChange")}
+          onChangeAfter={action("onChangeAfter")}
+          onBeforeChange={action("onBeforeChange")}
           label={label}
           description={description}
           defaultValue={defaultValue}
@@ -66,6 +68,8 @@ storiesOf("Slider", module)
       return (
         <Slider
           onChange={action("onChange")}
+          onChangeAfter={action("onChangeAfter")}
+          onBeforeChange={action("onBeforeChange")}
           label={label}
           description={description}
           defaultValue={defaultValue}

@@ -11,18 +11,19 @@ const StyledBar = styled.div`
   width: 100%;
   height: 24px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 `;
 
-export const StyledBarPart = styled(({ width, left, theme, ...props }) => <div {...props} />).attrs(
-  ({ width, left }) => {
-    return {
-      style: {
-        width: `${width}px`,
-        left: `${left}px`,
-      },
-    };
-  },
-)`
+export const StyledBarPart = styled(({ width, left, theme, active, ...props }) => (
+  <div {...props} />
+)).attrs(({ width, left }) => {
+  return {
+    style: {
+      width: `${width}px`,
+      left: `${left}px`,
+    },
+  };
+})`
   position: absolute;
   height: 4px;
   top: 10px;

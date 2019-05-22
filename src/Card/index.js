@@ -7,8 +7,7 @@ import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
 import Text from "../Text";
 import CardSection, { StyledCardSection } from "./CardSection";
-import CardHeader, { StyledCardHeader } from "./CardHeader";
-import { StyledCardSectionContent } from "./CardSection/CardSectionContent";
+import CardHeader from "./CardHeader";
 import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
 import { right } from "../utils/rtl";
@@ -20,6 +19,25 @@ const getBorder = ({ theme }) =>
   `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`;
 
 const getBorderRadius = ({ theme }) => theme.orbit.borderRadiusNormal;
+
+const StyledCardDescription = styled.div`
+  border-top: ${getBorder};
+  border-left: ${getBorder};
+  border-right: ${getBorder};
+  border-bottom: ${({ isExpandedSectionAfter }) => isExpandedSectionAfter && getBorder};
+  border-radius: ${getBorderRadius};
+  padding: ${({ theme }) => theme.orbit.spaceLarge};
+  padding-bottom: ${({ hasAdjustedDescription }) => hasAdjustedDescription && 0};
+
+  &:last-of-type {
+    // For cases if is provided only description
+    border-bottom: ${getBorder};
+  }
+`;
+
+StyledCardDescription.defaultProps = {
+  theme: defaultTheme,
+};
 
 // Logic of borders radius
 const StyledChildWrapper = styled.div`
@@ -51,20 +69,26 @@ StyledChildWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledCardDescription = styled.div`
-  border-top: ${getBorder};
-  border-left: ${getBorder};
-  border-right: ${getBorder};
-`;
-
-StyledCardDescription.defaultProps = {
-  theme: defaultTheme,
-};
-
 const StyledCardContent = styled.div`
-  ${StyledChildWrapper}:first-of-type {
-    // If first section is expandable remove margin from top after expand
-    margin-top: 0;
+
+  ${StyledChildWrapper} {
+    &:first-of-type {
+      // If first section is expandable remove margin from top after expand
+      margin-top: 0;
+    
+      ${StyledCardSection}, > ${StyledLoading} {
+        border-top: ${getBorder};
+        border-top-left-radius: ${getBorderRadius};
+        border-top-right-radius: ${getBorderRadius};
+      }
+    }
+
+    &:last-of-type {
+      ${StyledCardSection} {
+        border-bottom-left-radius: ${getBorderRadius};
+        border-bottom-right-radius: ${getBorderRadius};
+      }
+    } 
   }
 `;
 
@@ -78,27 +102,6 @@ const StyledCard = styled.div`
   position: relative;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   margin-bottom: ${getSpacingToken};
-  
-  ${StyledChildWrapper} {
-  
-    &:first-of-type {
-    
-      ${StyledCardSection}, > ${StyledLoading} {
-        border-top: ${getBorder};
-        border-top-left-radius: ${getBorderRadius};
-        border-top-right-radius: ${getBorderRadius};
-      }
-      
-    }
-
-    &:last-of-type {
-      ${StyledCardSection} {
-        border-bottom-left-radius: ${getBorderRadius};
-        border-bottom-right-radius: ${getBorderRadius};
-      }
-    }
-    
-  }
 `;
 
 StyledCard.defaultProps = {
@@ -174,6 +177,23 @@ class Card extends React.Component<Props, State> {
     });
   };
 
+  isExpandableCardSection = (item: any) =>
+    item.type.name === CardSection.name && item.props.expandable;
+
+  hasAdjustedDescription = () => {
+    const children = this.getChildren();
+    if (children === undefined) {
+      return false;
+    }
+
+    // Check if first section exists
+    if (children && children[0] === undefined) {
+      return false;
+    }
+
+    return !this.isExpandableCardSection(children[0]);
+  };
+
   renderSection = (section: any, index: number) => {
     const isExpanded = this.isExpanded(index);
     const isInitialExpanded = this.isInitialExpanded(index);
@@ -196,13 +216,31 @@ class Card extends React.Component<Props, State> {
   };
 
   render() {
-    const { title, icon, description, actions, closable, dataTest, spaceAfter, onClose } = this.props;
+    const {
+      title,
+      icon,
+      description,
+      actions,
+      closable,
+      dataTest,
+      spaceAfter,
+      onClose,
+    } = this.props;
     const children = this.getChildren();
     const hasHeader = !!title || !!icon || !!actions;
+
     return (
       <StyledCard closable={closable} data-test={dataTest} spaceAfter={spaceAfter}>
         {hasHeader && <CardHeader title={title} icon={icon} actions={actions} />}
         <StyledCardContent>
+          {description && (
+            <StyledCardDescription
+              isExpandedSectionAfter={this.isExpanded(0)}
+              hasAdjustedDescription={this.hasAdjustedDescription()}
+            >
+              <Text>{description}</Text>
+            </StyledCardDescription>
+          )}
           {children &&
             React.Children.map(children, (item, index) => this.renderSection(item, index))}
           {closable && (
@@ -225,7 +263,6 @@ class Card extends React.Component<Props, State> {
 
 export default Card;
 
-export { default as CardHeader } from "./CardHeader";
 export { default as CardSection } from "./CardSection";
 export { default as CardSectionHeader } from "./CardSection/CardSectionHeader";
 export { default as CardSectionContent } from "./CardSection/CardSectionContent";

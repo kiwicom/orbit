@@ -7,10 +7,13 @@ import type { Globals } from "../common/common.js.flow";
 import typeof CardSectionType from "./CardSection/index.js.flow";
 import typeof CardSectionHeaderType from "./CardSection/CardSectionHeader/index.js.flow";
 import typeof CardSectionContentType from "./CardSection/CardSectionContent/index.js.flow";
-import typeof CardHeaderType from "./CardHeader/index.js.flow";
 
 export type Props = {|
   +children?: React$Node,
+  +title?: React$Node,
+  +description?: React$Node,
+  +actions?: React$Node,
+  +icon?: React$Node,
   +closable?: boolean,
   +onClose?: (ev: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
   ...Globals,
@@ -24,7 +27,6 @@ export type State = {|
 
 declare export default React$ComponentType<Props>;
 
-declare export var CardHeader: CardHeaderType;
 declare export var CardSection: CardSectionType;
 declare export var CardSectionHeader: CardSectionHeaderType;
 declare export var CardSectionContent: CardSectionContentType;

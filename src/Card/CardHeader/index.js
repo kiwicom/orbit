@@ -1,25 +1,20 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import Heading, { StyledHeading } from "../../Heading";
-import Text from "../../Text";
 import { rtlSpacing } from "../../utils/rtl";
-import media from "../../utils/mediaQuery";
 
 import type { Props } from "./index";
 
 export const StyledCardHeader = styled.div`
   position: relative;
   width: 100%;
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  padding-top: ${({ theme }) => theme.orbit.spaceSmall};
+  padding-bottom: ${({ theme }) => theme.orbit.spaceSmall};
   box-sizing: border-box;
   color: ${({ theme }) => theme.orbit.colorHeading};
-
-  ${media.desktop(css`
-    padding: ${({ theme }) => theme.orbit.spaceLarge};
-  `)}
 `;
 
 StyledCardHeader.defaultProps = {
@@ -34,15 +29,6 @@ const StyledHeadingWrapper = styled.div`
     width: 100%;
   }
 `;
-
-const StyledSubTitle = styled.div`
-  display: flex;
-  margin-top: ${({ theme }) => theme.orbit.spaceXXSmall};
-`;
-
-StyledSubTitle.defaultProps = {
-  theme: defaultTheme,
-};
 
 const StyledIcon = styled.div`
   color: ${({ theme }) => theme.orbit.colorHeading};
@@ -64,11 +50,6 @@ const CardHeader = ({ icon, title, subTitle, actions, dataTest, dataA11ySection 
       </Heading>
       {actions}
     </StyledHeadingWrapper>
-    {subTitle && (
-      <StyledSubTitle>
-        <Text>{subTitle}</Text>
-      </StyledSubTitle>
-    )}
   </StyledCardHeader>
 );
 CardHeader.displayName = "CardHeader";

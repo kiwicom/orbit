@@ -26,7 +26,7 @@ const StyledChildWrapper = styled.div`
   transition: margin ${({ theme, initialExpanded }) =>
     !initialExpanded && theme.orbit.durationFast} ease-in-out;
 
-  ${StyledCardSection}, ${StyledCardHeader}, > ${StyledLoading} {
+  ${StyledCardSection}, > ${StyledLoading} {
     border-top-left-radius: ${({ roundedTopBorders }) => roundedTopBorders && getBorderRadius};
     border-top-right-radius: ${({ roundedTopBorders }) => roundedTopBorders && getBorderRadius};
     border-bottom-left-radius: ${({ roundedBottomBorders }) =>
@@ -56,36 +56,26 @@ const StyledCard = styled.div`
   position: relative;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   margin-bottom: ${getSpacingToken};
-
-  ${StyledCardHeader} {
-    padding-${right}: ${({ theme, closable }) => closable && theme.orbit.spaceLarge};
-    border-bottom: ${({ hasAdjustedHeader }) => hasAdjustedHeader && 0};
-  }
-
+  
   ${StyledChildWrapper} {
-
+  
     &:first-of-type {
-      ${StyledCardHeader}, ${StyledCardSection}, > ${StyledLoading} {
+    
+      ${StyledCardSection}, > ${StyledLoading} {
         border-top: ${getBorder};
         border-top-left-radius: ${getBorderRadius};
         border-top-right-radius: ${getBorderRadius};
       }
-
-      + ${StyledChildWrapper} ${StyledCardSection} {
-        padding-top: ${({ hasAdjustedHeader }) => hasAdjustedHeader && 0};
-        
-        ${StyledCardSectionContent}:first-of-type { // if there isn't any CardSectionHeader we need to delete padding of CardSectionContent 
-          padding-top: ${({ hasAdjustedHeader }) => hasAdjustedHeader && 0};
-        }
-      }
+      
     }
 
     &:last-of-type {
-      ${StyledCardHeader}, ${StyledCardSection} {
+      ${StyledCardSection} {
         border-bottom-left-radius: ${getBorderRadius};
         border-bottom-right-radius: ${getBorderRadius};
       }
     }
+    
   }
 `;
 
@@ -150,9 +140,6 @@ class Card extends React.Component<Props, State> {
 
   isInitialExpanded = (index: number) => this.state.initialExpandedSections.indexOf(index) !== -1;
 
-  isExpandableCardSection = (item: any) =>
-    item.type.name === CardSection.name && item.props.expandable;
-
   handleToggleSection = (index: number) => {
     this.setState({
       expandedSections:
@@ -163,24 +150,6 @@ class Card extends React.Component<Props, State> {
         ...this.state.initialExpandedSections.filter(sectionIndex => sectionIndex !== index),
       ],
     });
-  };
-
-  hasAdjustedHeader = () => {
-    const children = this.getChildren();
-    if (children === undefined) {
-      return false;
-    }
-    // Check if first element is Header
-    if (children && children[0] !== undefined && children[0].type.name !== CardHeader.name) {
-      return false;
-    }
-
-    // Check if first section exists
-    if (children && children[1] === undefined) {
-      return false;
-    }
-
-    return !this.isExpandableCardSection(children[1]);
   };
 
   renderSection = (section: any, index: number) => {
@@ -205,15 +174,12 @@ class Card extends React.Component<Props, State> {
   };
 
   render() {
-    const { closable, dataTest, spaceAfter, onClose } = this.props;
+    const { title, icon, description, closable, dataTest, spaceAfter, onClose } = this.props;
     const children = this.getChildren();
+    const hasHeader = !!title || !!icon || !!description;
     return (
-      <StyledCard
-        closable={closable}
-        data-test={dataTest}
-        spaceAfter={spaceAfter}
-        hasAdjustedHeader={this.hasAdjustedHeader()}
-      >
+      <StyledCard closable={closable} data-test={dataTest} spaceAfter={spaceAfter}>
+        {hasHeader && <CardHeader title={title} icon={icon} />}
         {children && React.Children.map(children, (item, index) => this.renderSection(item, index))}
         {closable && (
           <CloseContainer>

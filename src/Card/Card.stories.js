@@ -45,11 +45,7 @@ storiesOf("Card", module)
     () => {
       const title = text("Title", "Card with title & description");
       const description = text("Description", "This is a description of the card.");
-      return (
-        <Card>
-          <CardHeader icon={<Icons.Airplane />} title={title} subTitle={description} />
-        </Card>
-      );
+      return <Card title={title} icon={<Icons.Airplane />} description={description} />;
     },
     {
       info:
@@ -112,8 +108,7 @@ storiesOf("Card", module)
       const title = text("Title", "Card with sections");
       const description = text("Description", "This is a description of the card.");
       return (
-        <Card>
-          <CardHeader title={title} subTitle={description} />
+        <Card title={title} description={description}>
           <CardSection expandable>
             <CardSectionHeader>
               <Heading type="title3" element="h3">

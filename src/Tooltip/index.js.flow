@@ -14,12 +14,6 @@ export type Dimensions = {|
   contentHeight: number,
 |};
 
-type statePositions = {|
-  ...Dimensions,
-  windowWidth: number,
-  windowHeight: number,
-|};
-
 export type Aligns = "center" | "start" | "end";
 
 export type Align = {|
@@ -50,7 +44,7 @@ export type State = {|
   ...Position,
   shown: boolean,
   shownMobile: boolean,
-  positions: statePositions,
+  render: boolean,
 |};
 
 declare export default React$ComponentType<Props>;

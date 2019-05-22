@@ -61,15 +61,6 @@ const StyledTooltip = styled.div`
   width: 100%;
 `;
 
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
-
 const StyledTooltipWrapper = styled.div`
   display: block;
   position: fixed;
@@ -83,12 +74,13 @@ const StyledTooltipWrapper = styled.div`
   visibility: ${({ shownMobile }) => (shownMobile ? "visible" : "hidden")};
   opacity: ${({ shownMobile }) => (shownMobile ? "1" : "0")};
   transition: bottom ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
-    visibility ${({ theme }) => theme.orbit.durationFast} linear ${({ shownMobile, theme }) =>
-  !shownMobile && theme.orbit.durationNormal};
+    visibility ${({ theme }) => theme.orbit.durationFast} linear
+      ${({ shownMobile, theme }) => !shownMobile && theme.orbit.durationNormal};
   z-index: 10012; // TODO: use some good value
   bottom: ${({ shownMobile, tooltipWidth }) => (shownMobile ? "0" : `-${tooltipWidth}px`)};
   left: 0;
   right: 0;
+
   img {
     max-width: 100%;
   }
@@ -132,7 +124,7 @@ const StyledTooltipWrapper = styled.div`
     ${media.largeMobile(css`
       display: block;
     `)};
-
+  }
 `;
 
 StyledTooltipWrapper.defaultProps = {
@@ -219,18 +211,26 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
     align: ALIGNS.CENTER,
     shown: false,
     shownMobile: false,
-    positions: {
-      containerTop: 0,
-      containerLeft: 0,
-      containerHeight: 0,
-      containerWidth: 0,
-      tooltipHeight: 0,
-      tooltipWidth: 0,
-      windowWidth: 0,
-      windowHeight: 0,
-      contentHeight: 0,
-    },
+    render: false,
   };
+
+  containerTop: number = 0;
+
+  containerLeft: number = 0;
+
+  containerHeight: number = 0;
+
+  containerWidth: number = 0;
+
+  tooltipWidth: number = 0;
+
+  tooltipHeight: number = 0;
+
+  windowWidth: number = 0;
+
+  windowHeight: number = 0;
+
+  contentHeight: number = 0;
 
   container: { current: any | HTMLDivElement } = React.createRef();
 
@@ -259,35 +259,21 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
       const tooltipDimensions = this.tooltip.current.getBoundingClientRect();
 
       // container positions and dimensions for calculation
-      const containerTop = containerDimensions.top;
-      const containerLeft = containerDimensions.left;
-      const containerHeight = containerDimensions.height;
-      const containerWidth = containerDimensions.width;
+      this.containerTop = containerDimensions.top;
+      this.containerLeft = containerDimensions.left;
+      this.containerHeight = containerDimensions.height;
+      this.containerWidth = containerDimensions.width;
 
       // tooltip dimensions for calculation
-      const tooltipHeight = tooltipDimensions.height;
-      const tooltipWidth = tooltipDimensions.width;
+      this.tooltipHeight = tooltipDimensions.height;
+      this.tooltipWidth = tooltipDimensions.width;
 
       // window dimensions for calculation
-      const windowWidth = window.innerWidth;
-      const windowHeight = window.innerHeight;
+      this.windowWidth = window.innerWidth;
+      this.windowHeight = window.innerHeight;
 
-      const contentHeight =
+      this.contentHeight =
         this.content.current && this.content.current.getBoundingClientRect().height;
-
-      this.setState({
-        positions: {
-          containerTop,
-          containerLeft,
-          containerHeight,
-          containerWidth,
-          tooltipHeight,
-          tooltipWidth,
-          windowWidth,
-          windowHeight,
-          contentHeight,
-        },
-      });
     }
   };
 
@@ -301,7 +287,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
       tooltipHeight,
       windowWidth,
       windowHeight,
-    } = this.state.positions;
+    } = this;
 
     const canBePositionLeft = containerLeft - tooltipWidth - TOOLTIP_ARROW_SIZE > 0;
     const canBePositionRight =
@@ -350,7 +336,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
       tooltipHeight,
       windowWidth,
       windowHeight,
-    } = this.state.positions;
+    } = this;
 
     const canBeVerticalStart =
       containerLeft + containerWidth / 2 - TOOLTIP_TOTAL_PADDING > 0 &&
@@ -414,7 +400,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
   };
 
   handleIn = () => {
-    this.setState({ shown: true });
+    this.setState({ render: true });
     setTimeout(() => {
       const { preferredPosition } = this.props;
       const positions = Object.keys(POSITIONS).map(k => POSITIONS[k]);
@@ -424,8 +410,9 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
       } else {
         this.setPosition(positions);
       }
-      // https://github.com/facebook/flow/issues/2221
+      this.setState({ shown: true });
     }, 15);
+    // https://github.com/facebook/flow/issues/2221
   };
 
   handleOut = () => {
@@ -453,7 +440,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
 
   render() {
     const { content, children, size = SIZE_OPTIONS.SMALL, dataTest, tabIndex = "0" } = this.props;
-    const { shown, shownMobile, position, align } = this.state;
+    const { shown, shownMobile, position, align, render } = this.state;
     const {
       containerTop,
       containerLeft,
@@ -462,7 +449,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
       tooltipHeight,
       tooltipWidth,
       contentHeight,
-    } = this.state.positions;
+    } = this;
 
     return (
       <React.Fragment>
@@ -479,42 +466,44 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
           {children}
         </StyledTooltipChildren>
         <Portal element="tooltips">
-          <StyledTooltip data-test={dataTest}>
-            <StyledTooltipOverlay
-              onClick={this.handleClose}
-              onFocus={this.handleOpen}
-              shownMobile={shownMobile}
-              ref={this.overlay}
-            />
-            <StyledTooltipWrapper
-              shown={shown}
-              shownMobile={shownMobile}
-              position={position}
-              align={align}
-              size={size}
-              ref={this.tooltip}
-              onMouseEnter={this.handleIn}
-              onClick={this.handleClose}
-              onMouseLeave={this.handleOut}
-              containerTop={containerTop}
-              containerLeft={containerLeft}
-              containerHeight={containerHeight}
-              containerWidth={containerWidth}
-              tooltipHeight={tooltipHeight}
-              tooltipWidth={tooltipWidth}
-              contentHeight={contentHeight}
-              role="tooltip"
-              aria-hidden={!shown}
-              id={this.tooltipId}
-            >
-              <StyledTooltipContent ref={this.content}>{content}</StyledTooltipContent>
-              <StyledTooltipClose>
-                <Button type="secondary" block onClick={this.handleClose} ref={this.closeButton}>
-                  <Translate tKey="button_close" />
-                </Button>
-              </StyledTooltipClose>
-            </StyledTooltipWrapper>
-          </StyledTooltip>
+          {render && (
+            <StyledTooltip data-test={dataTest}>
+              <StyledTooltipOverlay
+                onClick={this.handleClose}
+                onFocus={this.handleOpen}
+                shownMobile={shownMobile}
+                ref={this.overlay}
+              />
+              <StyledTooltipWrapper
+                shown={shown}
+                shownMobile={shownMobile}
+                position={position}
+                align={align}
+                size={size}
+                ref={this.tooltip}
+                onMouseEnter={this.handleIn}
+                onClick={this.handleClose}
+                onMouseLeave={this.handleOut}
+                containerTop={containerTop}
+                containerLeft={containerLeft}
+                containerHeight={containerHeight}
+                containerWidth={containerWidth}
+                tooltipHeight={tooltipHeight}
+                tooltipWidth={tooltipWidth}
+                contentHeight={contentHeight}
+                role="tooltip"
+                aria-hidden={!shown}
+                id={this.tooltipId}
+              >
+                <StyledTooltipContent ref={this.content}>{content}</StyledTooltipContent>
+                <StyledTooltipClose>
+                  <Button type="secondary" block onClick={this.handleClose} ref={this.closeButton}>
+                    <Translate tKey="button_close" />
+                  </Button>
+                </StyledTooltipClose>
+              </StyledTooltipWrapper>
+            </StyledTooltip>
+          )}
         </Portal>
       </React.Fragment>
     );

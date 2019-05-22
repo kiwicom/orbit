@@ -61,7 +61,7 @@ storiesOf("Slider", module)
     () => {
       const label = text("label", "Depart from Prague");
       const description = text("description", "01:00 PM – 11:59 PM");
-      const defaultValue = array("defaultValue", [100, 250]);
+      const defaultValue = array("defaultValue", [50, 100, 150, 200, 250]);
       const min = number("min", 100);
       const max = number("max", 300);
       const step = number("step", 10);

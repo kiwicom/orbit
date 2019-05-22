@@ -8,7 +8,7 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
   ({ left, onTop }) => {
     return {
       style: {
-        left: `${left}px`,
+        left: `${left.toFixed(2)}px`,
         zIndex: onTop ? 4 : 3,
       },
     };
@@ -81,7 +81,7 @@ const Handle = ({
       aria-valuenow={valueNow}
       aria-label={label}
       aria-valuetext={valueText}
-      left={left.toFixed(2)}
+      left={left}
     />
   );
 };

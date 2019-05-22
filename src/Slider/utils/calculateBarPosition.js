@@ -1,22 +1,19 @@
 // @flow
-const calculateBarLeftPosition = (parentWidth, value, max, min) => {
-  if (Array.isArray(value)) {
-    return ((value[0] - min) / (max - min)) * parentWidth;
-  }
-  return 0;
-};
+import type { CalculateBarPosition } from "./calculateBarPosition";
 
-const calculateBarWidth = (parentWidth, value, max, min) => {
+const calculateBarPosition: CalculateBarPosition = (parentWidth, value, max, min) => {
   if (Array.isArray(value)) {
-    return ((value[value.length - 1] - value[0]) / (max - min)) * parentWidth;
+    return {
+      left: ((value[0] - min) / (max - min)) * Number(parentWidth),
+      width: ((value[value.length - 1] - value[0]) / (max - min)) * Number(parentWidth),
+      parentWidth,
+    };
   }
-  return ((value - min) / (max - min)) * parentWidth;
-};
-
-const calculateBarPosition = (parentWidth, value, max, min) => {
-  const left = calculateBarLeftPosition(parentWidth, value, max, min).toFixed(2);
-  const width = calculateBarWidth(parentWidth, value, max, min).toFixed(2);
-  return { left, width, parentWidth };
+  return {
+    left: 0,
+    width: ((value - min) / (max - min)) * Number(parentWidth),
+    parentWidth,
+  };
 };
 
 export default calculateBarPosition;

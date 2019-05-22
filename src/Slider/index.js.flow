@@ -1,0 +1,25 @@
+// @flow
+
+import type { Translation } from "../common/common.js.flow";
+
+export type Value = number | number[];
+
+export type Props = {|
+  min?: number,
+  max?: number,
+  step?: number,
+  defaultValue?: Value,
+  onChange?: () => void,
+  onBeforeChange?: () => void,
+  onChangeAfter?: () => void,
+  label: Translation,
+  description: Translation,
+|};
+
+export type State = {|
+  value: Value,
+  handleIndex: ?number,
+  parentWidth: ?number,
+|};
+
+declare export default React$ComponentType<Props>;

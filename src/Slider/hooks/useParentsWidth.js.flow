@@ -1,4 +1,0 @@
-// @flow
-export type UseParentsWidth = (initialWidth: ?number, parentRef: ?React$ElementRef<*>) => number;
-
-declare export default UseParentsWidth;

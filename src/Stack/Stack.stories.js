@@ -19,7 +19,6 @@ import Checkbox from "../Checkbox";
 import Alert from "../Alert";
 import Badge from "../Badge";
 import ButtonLink from "../ButtonLink";
-import CardHeader from "../Card/CardHeader";
 import CarrierLogo from "../CarrierLogo";
 import Radio from "../Radio";
 import CountryFlag from "../CountryFlag";
@@ -427,9 +426,7 @@ storiesOf("Stack", module)
           </ButtonGroup>
         </Stack>
         <Stack direction="row" align="center">
-          <Card>
-            <CardHeader title="Hola amigo" />
-          </Card>
+          <Card title="Hola amigo" />
           <Card>
             <CardSection>
               <Heading type="title3">Insert your title here...</Heading>
@@ -445,11 +442,8 @@ storiesOf("Stack", module)
           </Card>
         </Stack>
         <Stack direction="column" align="center">
-          <Card>
-            <CardHeader title="Hola amigo" />
-          </Card>
-          <Card>
-            <CardHeader title="Insert your title here..." subTitle="subtitle" />
+          <Card title="Hola amigo" />
+          <Card title="Insert your title here..." description="subtitle">
             <CardSection>
               <CardSectionHeader>
                 <Heading type="title3">Insert your title here...</Heading>

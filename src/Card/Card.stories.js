@@ -19,7 +19,7 @@ import TripSector, { TripDate } from "../TripSector";
 import TripSegment from "../TripSegment";
 import List, { ListItem } from "../List";
 
-import Card, { CardHeader, CardSection, CardSectionHeader, CardSectionContent } from "./index";
+import Card, { CardSection, CardSectionHeader, CardSectionContent } from "./index";
 
 const getIcons = defaultIcon => select("Icon", Object.keys(Icons), defaultIcon);
 const getIcon = source => Icons[source];
@@ -30,11 +30,7 @@ storiesOf("Card", module)
     () => {
       const title = text("Title", "Card with title");
       const description = text("Description");
-      return (
-        <Card>
-          <CardHeader icon={<Icons.Airplane />} title={title} subTitle={description} />
-        </Card>
-      );
+      return <Card icon={<Icons.Airplane />} title={title} description={description} />;
     },
     {
       info: "This is the default configuration of this component.",
@@ -214,7 +210,11 @@ storiesOf("Card", module)
       const title = text("Title", "Card with sections");
       const description = text("Description", "This is a description of the card.");
       return (
-        <Card title={title} description={description} actions={<Button size="small">Button</Button>}>
+        <Card
+          title={title}
+          description={description}
+          actions={<Button size="small">Button</Button>}
+        >
           <CardSection>
             <CardSectionHeader>
               <Heading type="title3" element="h3">
@@ -336,7 +336,13 @@ storiesOf("Card", module)
     "RTL",
     () => (
       <RenderInRtl>
-        <Card closable onClose={action("Close")} title="Title of the CardHeader" description="Description of the CardHeader" icon={<Icons.Airplane />}>
+        <Card
+          closable
+          onClose={action("Close")}
+          title="Title of the CardHeader"
+          description="Description of the CardHeader"
+          icon={<Icons.Airplane />}
+        >
           <CardSection>
             <Heading type="title3" element="h3">
               Content with Heading and text

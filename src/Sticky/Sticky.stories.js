@@ -5,7 +5,6 @@ import { select, number } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
 import Card from "../Card";
-import CardHeader from "../Card/CardHeader";
 import CardSection from "../Card/CardSection";
 
 import FloatingCard from "./index";
@@ -19,12 +18,7 @@ storiesOf("Sticky", module).add("Playground", () => {
   return (
     <div style={{ height: "800px" }}>
       <FloatingCard offset={offset}>
-        <Card>
-          <CardHeader
-            icon={<Icon />}
-            title="FloatingCard title"
-            subTitle="This is a floating card"
-          />
+        <Card icon={<Icon />} title="FloatingCard title" description="This is a floating card">
           <CardSection>Card</CardSection>
           <CardSection>Card</CardSection>
           <CardSection>CardHeader</CardSection>

@@ -14,6 +14,7 @@ export type Props = {|
   +description?: React$Node,
   +actions?: React$Node,
   +icon?: React$Node,
+  +dataA11ySection?: string,
   +closable?: boolean,
   +onClose?: (ev: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
   ...Globals,

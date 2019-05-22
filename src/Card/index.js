@@ -221,6 +221,7 @@ class Card extends React.Component<Props, State> {
       icon,
       description,
       actions,
+      dataA11ySection,
       closable,
       dataTest,
       spaceAfter,
@@ -231,7 +232,14 @@ class Card extends React.Component<Props, State> {
 
     return (
       <StyledCard closable={closable} data-test={dataTest} spaceAfter={spaceAfter}>
-        {hasHeader && <CardHeader title={title} icon={icon} actions={actions} />}
+        {hasHeader && (
+          <CardHeader
+            title={title}
+            icon={icon}
+            actions={actions}
+            dataA11ySection={dataA11ySection}
+          />
+        )}
         <StyledCardContent>
           {description && (
             <StyledCardDescription

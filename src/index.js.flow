@@ -98,7 +98,6 @@ declare export var ListItem: ListItemType;
 declare export var ListChoice: ListChoiceType;
 
 declare export var Card: CardType;
-declare export var CardHeader: CardHeaderType;
 declare export var CardSection: CardSectionType;
 
 declare export var Sticky: StickyType;

@@ -88,7 +88,7 @@ const getIconRight = ({ external, isExpandable }: IconRightProps) => {
   if (external) {
     return <NewWindow size="medium" />;
   }
-  return <ChevronRight size="medium" />;
+  return <ChevronRight size="medium" reverseOnRtl />;
 };
 
 const IconRight = ({ external, isExpandable, isExpanded }: IconRightProps) => (

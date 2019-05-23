@@ -11,6 +11,8 @@ const resolvePopoverHorizontal: ResolvePopoverHorizontal = ({
   popoverWidth,
   theme,
 }) => {
+  console.log(anchor);
+
   if (anchor === ANCHORS.START) {
     return css`
       left: ${theme.rtl

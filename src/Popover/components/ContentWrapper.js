@@ -48,8 +48,6 @@ const StyledPopoverParent = styled.div`
   border-top-left-radius: 9px; /* TODO: Add token */
   border-top-right-radius: 9px; /* TODO: Add token */
   animation: ${showAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
-  background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
-  padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
   /* border: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal}; */
 
@@ -70,31 +68,33 @@ const StyledPopoverParent = styled.div`
     ${resolvePopoverPosition}
     ${resolvePopoverHorizontal}
   `)}
-
-  &:after {
-    content: "";
-    display: none;
-    position: absolute;
-
-    ${arrowStyle};
-    /* width: ${POPOVER_ARROW_SIZE}px;
-    height: ${POPOVER_ARROW_SIZE}px;
-    transform: rotate(45deg);
-    background-color: ${({ theme }) => theme.orbit.backgroundModal};
-    z-index: -1;
-    box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1}; */
-    /* border: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal}; */
-
-    ${resolvePopoverArrowPosition};
-    ${resolvePopoverArrowAlign};
-
-    ${media.largeMobile(css`
-      display: block;
-    `)};
-  }
 `;
 
 StyledPopoverParent.defaultProps = {
+  theme: defaultTheme,
+};
+
+const StyledPopoverArrow = styled.div`
+  display: none;
+  position: absolute;
+
+  ${arrowStyle};
+  width: ${POPOVER_ARROW_SIZE}px;
+  height: ${POPOVER_ARROW_SIZE}px;
+  transform: rotate(45deg);
+  background-color: ${({ theme }) => theme.orbit.backgroundModal};
+  box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
+  z-index: -1;
+
+  ${resolvePopoverArrowPosition};
+  ${resolvePopoverArrowAlign};
+
+  ${media.largeMobile(css`
+    display: block;
+  `)};
+`;
+
+StyledPopoverArrow.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -103,6 +103,9 @@ const StyledPopoverContent = styled.div`
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceSmall)};
   padding-top: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
+  z-index: 2;
+  padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
+  background-color: ${({ theme }) => theme.orbit.backgroundModal}; /* TODO: Add token */
 `;
 StyledPopoverContent.defaultProps = {
   theme: defaultTheme,
@@ -193,6 +196,17 @@ const PopoverContentWrapper = ({
         noPadding={noPadding}
         role="tooltip"
       >
+        <StyledPopoverArrow
+          anchor={horizontalPosition}
+          position={verticalPosition}
+          containerTop={dimensions.containerTop}
+          containerLeft={dimensions.containerLeft}
+          containerHeight={dimensions.containerHeight}
+          containerWidth={dimensions.containerWidth}
+          popoverHeight={dimensions.popoverHeight}
+          popoverWidth={dimensions.popoverWidth}
+          width={width}
+        />
         <StyledPopoverContent ref={content} noPadding={noPadding}>
           {children}
           <StyledPopoverClose noPadding={noPadding}>

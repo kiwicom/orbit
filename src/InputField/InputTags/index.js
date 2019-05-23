@@ -67,12 +67,13 @@ const InputTags = ({ children }: Props) => {
     }
 
     return () => {
-      if (tagsRef && tagsRef.current) {
-        tagsRef.current.removeEventListener("mousemove", handleMouseMove);
-        tagsRef.current.removeEventListener("mouseup", handleMouseUp);
+      const tagsNode = tagsRef?.current;
+      if (tagsNode) {
+        tagsNode.removeEventListener("mousemove", handleMouseMove);
+        tagsNode.removeEventListener("mouseup", handleMouseUp);
       }
     };
-  }, []);
+  }, [tagsRef]);
 
   return (
     <StyledInputTags>

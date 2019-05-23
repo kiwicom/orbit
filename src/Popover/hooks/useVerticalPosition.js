@@ -35,7 +35,13 @@ const useVerticalPosition: UseVerticalPosition = (desiredPositions, pos) => {
     if (typeof posPosition === "string") {
       setPositionDirection(posPosition);
     }
-  });
+  }, [
+    pos.containerTop,
+    pos.popoverHeight,
+    pos.containerHeight,
+    pos.windowHeight,
+    desiredPositions,
+  ]);
 
   return positionDirection;
 };

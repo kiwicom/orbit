@@ -32,7 +32,13 @@ const useHorizontalPosition: UseHorizontalPosition = (desiredAnchor, positions) 
     if (typeof posAnchor === "string") {
       setAnchor(posAnchor);
     }
-  });
+  }, [
+    positions.containerLeft,
+    positions.popoverWidth,
+    positions.windowWidth,
+    positions.containerWidth,
+    desiredAnchor,
+  ]);
 
   return anchor;
 };

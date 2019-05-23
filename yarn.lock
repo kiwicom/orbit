@@ -1449,10 +1449,10 @@
   resolved "https://registry.yarnpkg.com/@kiwicom/js/-/js-0.9.0.tgz#67032574d8ee318cd747001a7b4c87013214327a"
   integrity sha512-CwDiWwLWE0iWzCrL08x7jdEySAIVdmcmF/rik8gjK5oW4jA5G9fOBxsSSVm2bLtq8HG9KIz4YHDbtWO1K7LIiQ==
 
-"@kiwicom/orbit-design-tokens@^0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.6.1.tgz#c0af62f6402c5068a142117601677af8cc625f6f"
-  integrity sha512-YHrrH+hpFmukHMl9figaqFW+ldbYDrWAUu8ZHWFgf1DPNG/jUrwGPCONKx6OHLJyfQmUtdcmDFho+mV7rLfmeA==
+"@kiwicom/orbit-design-tokens@^0.6.2":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.6.2.tgz#52c6e9c43393dff6fdfc85d1bba5eb87037cce3e"
+  integrity sha512-iPQdAj2tRbRgHZkbD90aUMOULms/kO4QfclyprD7Az+W1fdzr0oH1ChWCVPqF77TuJRqQMwZnQJTCgL2vjZOIw==
   dependencies:
     ramda "^0.26.1"
 
@@ -4962,6 +4962,11 @@ eslint-plugin-prettier@^3.0.1:
   integrity sha512-/PMttrarPAY78PLvV3xfWibMOdMDl57hmlQ2XqFeA37wd+CJ7WSxV7txqjVPHi/AAFKd2lX0ZqfsOc/i5yFCSQ==
   dependencies:
     prettier-linter-helpers "^1.0.0"
+
+eslint-plugin-react-hooks@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-1.6.0.tgz#348efcda8fb426399ac7b8609607c7b4025a6f5f"
+  integrity sha512-lHBVRIaz5ibnIgNG07JNiAuBUeKhEf8l4etNx5vfAEwqQ5tcuK3jV9yjmopPgQDagQb7HwIuQVsE3IVcGrRnag==
 
 eslint-plugin-react@^7.7.0:
   version "7.12.4"

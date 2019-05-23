@@ -254,7 +254,7 @@ class Slider extends React.PureComponent<Props, State> {
   replaceValue = (newValue: number, index: ?number) => {
     const { value } = this.state;
     if (index == null || !Array.isArray(value)) return newValue;
-    return value.map((item, key) => (key === index ? newValue : item));
+    return value.map<number>((item, key) => (key === index ? newValue : item));
   };
 
   renderHandle = (value: number, i: ?number) => {

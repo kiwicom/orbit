@@ -17,6 +17,7 @@ import { Item } from "../List/ListItem";
 import { StyledText } from "../Text";
 
 import type { Props } from "./index";
+import { TranslateFunc } from "../Translate";
 
 type IconProps = {
   icon: React.Node,
@@ -228,6 +229,7 @@ const Alert = (props: Props) => {
             size="small"
             icon={<Close size="small" color={type} />}
             transparent
+            title={TranslateFunc("button_close")}
           />
         </CloseContainer>
       )}

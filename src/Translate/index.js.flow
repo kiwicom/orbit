@@ -9,4 +9,8 @@ export type Props = {
   values?: Values,
 };
 
+type TranslateFuncProps = (tKey: string, values?: Values) => string;
+
+declare export var TranslateFunc: TranslateFuncProps;
+
 declare export default React$ComponentType<Props>;

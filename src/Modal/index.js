@@ -19,6 +19,7 @@ import { QUERIES } from "../utils/mediaQuery/consts";
 import randomID from "../utils/randomID";
 
 import type { Props, State } from "./index";
+import { TranslateFunc } from "../Translate";
 
 const getSizeToken = () => ({ size, theme }) => {
   const tokens = {
@@ -580,6 +581,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
                   transparent
                   dataTest={CLOSE_BUTTON_DATA_TEST}
                   ref={this.closeButton}
+                  title={TranslateFunc("button_close")}
                 />
               )}
             </CloseContainer>

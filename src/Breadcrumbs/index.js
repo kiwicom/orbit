@@ -7,6 +7,7 @@ import Button from "../Button";
 import ChevronLeft from "../icons/ChevronLeft";
 
 import type { Props } from "./index";
+import { TranslateFunc } from "../Translate";
 
 const StyledBreadcrumbs = styled.nav`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -44,6 +45,7 @@ const Breadcrumbs = ({ children, dataTest, onGoBack }: Props) => (
             type="secondary"
             size="small"
             onClick={onGoBack}
+            title={TranslateFunc("breadcrumbs_back")}
           />
         </StyledBackButtonWrapper>
       )}

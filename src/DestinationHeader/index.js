@@ -9,6 +9,7 @@ import ButtonLink, { StyledButton } from "../Button";
 import BASE_URL from "./consts";
 import defaultTheme from "../defaultTheme";
 import LazyImage from "../LazyImage";
+import { TranslateFunc } from "../Translate";
 import mq from "../utils/mediaQuery";
 
 import type { Props } from "./index";
@@ -111,7 +112,12 @@ const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props) 
       />
       <StyledOverlay />
       <StyledContent>
-        <ButtonLink size="small" iconLeft={<ChevronLeft />} onClick={goBack} />
+        <ButtonLink
+          size="small"
+          iconLeft={<ChevronLeft />}
+          onClick={goBack}
+          title={TranslateFunc("breadcrumbs_back")}
+        />
         <StyledHeader>
           <Heading inverted type="title2">
             {destinationName}

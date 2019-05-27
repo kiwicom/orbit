@@ -7,6 +7,7 @@ import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
 import CardSection, { StyledCardSection } from "./CardSection";
 import CardHeader, { StyledCardHeader } from "./CardHeader";
+import { TranslateFunc } from "../Translate";
 import { StyledCardSectionContent } from "./CardSection/CardSectionContent";
 import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
@@ -224,6 +225,7 @@ class Card extends React.Component<Props, State> {
               icon={<Close />}
               onClick={onClose}
               transparent
+              title={TranslateFunc("button_close")}
             />
           </CloseContainer>
         )}

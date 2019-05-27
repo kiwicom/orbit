@@ -62,6 +62,24 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   box-shadow: none;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 <ButtonLink
   ariaControls="element"
   ariaExpanded={true}
@@ -570,7 +588,9 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
             "rules": Array [
               "font-family:",
               [Function],
-              ";box-sizing:border-box;appearance:none;display:inline-flex;justify-content:center;align-items:center;width:",
+              ";box-sizing:border-box;appearance:none;display:inline-flex;justify-content:",
+              [Function],
+              ";align-items:center;width:",
               [Function],
               ";flex:",
               [Function],
@@ -2038,7 +2058,41 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           tabIndex="-1"
           target="_blank"
         >
-          ButtonLink
+          <ButtonLink__StyledButtonContent>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "ButtonLink__StyledButtonContent-sc-14jv5cl-2",
+                    "isStatic": false,
+                    "lastClassName": "c1",
+                    "rules": Array [
+                      "display:flex;flex-basis:",
+                      [Function],
+                      ";justify-content:center;align-items:center;",
+                    ],
+                  },
+                  "displayName": "ButtonLink__StyledButtonContent",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "ButtonLink__StyledButtonContent-sc-14jv5cl-2",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="c1"
+              >
+                ButtonLink
+              </div>
+            </StyledComponent>
+          </ButtonLink__StyledButtonContent>
         </a>
       </Component>
     </StyledComponent>
@@ -2081,7 +2135,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   height: 24px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2100,7 +2154,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   margin: 0 0 0 8px;
 }
 
-.c3 > * {
+.c4 > * {
   width: 24px;
   height: 24px;
 }
@@ -2163,6 +2217,24 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
 
 .c0:focus:active {
   box-shadow: none;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 <ButtonLink
@@ -2664,7 +2736,9 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
             "rules": Array [
               "font-family:",
               [Function],
-              ";box-sizing:border-box;appearance:none;display:inline-flex;justify-content:center;align-items:center;width:",
+              ";box-sizing:border-box;appearance:none;display:inline-flex;justify-content:",
+              [Function],
+              ";align-items:center;width:",
               [Function],
               ";flex:",
               [Function],
@@ -4596,7 +4670,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "componentStyle": ComponentStyle {
                     "componentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
                     "isStatic": false,
-                    "lastClassName": "c3",
+                    "lastClassName": "c4",
                     "rules": Array [
                       "display:flex;flex-direction:row;align-items:center;justify-content:center;margin:",
                       [Function],
@@ -7920,7 +7994,41 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
               </Component>
             </StyledComponent>
           </ButtonLink__IconContainer>
-          ButtonLink
+          <ButtonLink__StyledButtonContent>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "ButtonLink__StyledButtonContent-sc-14jv5cl-2",
+                    "isStatic": false,
+                    "lastClassName": "c3",
+                    "rules": Array [
+                      "display:flex;flex-basis:",
+                      [Function],
+                      ";justify-content:center;align-items:center;",
+                    ],
+                  },
+                  "displayName": "ButtonLink__StyledButtonContent",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "ButtonLink__StyledButtonContent-sc-14jv5cl-2",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="c3"
+              >
+                ButtonLink
+              </div>
+            </StyledComponent>
+          </ButtonLink__StyledButtonContent>
           <ButtonLink__IconContainer
             onlyIcon={false}
             right={true}
@@ -8396,7 +8504,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                   "componentStyle": ComponentStyle {
                     "componentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
                     "isStatic": false,
-                    "lastClassName": "c3",
+                    "lastClassName": "c4",
                     "rules": Array [
                       "display:flex;flex-direction:row;align-items:center;justify-content:center;margin:",
                       [Function],
@@ -9345,7 +9453,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
               type="primary"
             >
               <Component
-                className="c3"
+                className="c4"
                 onlyIcon={false}
                 right={true}
                 size="normal"
@@ -9813,7 +9921,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                 type="primary"
               >
                 <div
-                  className="c3"
+                  className="c4"
                 >
                   <ChevronDown>
                     <OrbitIcon

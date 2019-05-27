@@ -449,13 +449,21 @@ const StyledButtonContent = styled.div`
   visibility: ${({ loading }) => loading && "hidden"};
   height: 100%;
   display: flex;
-  justify-content: center;
+  flex-basis: ${({ block }) => (block ? "100%" : "auto")};
+  justify-content: ${({ block }) => (block ? "space-between" : "center")};
   align-items: center;
 `;
 
 StyledButtonContent.defaultProps = {
   theme: defaultTheme,
 };
+
+const StyledButtonContentChildren = styled.div`
+  display: flex;
+  flex-basis: ${({ block }) => (block ? "100%" : "auto")};
+  justify-content: center;
+  align-items: center;
+`;
 
 // $FlowExpected
 const Button = React.forwardRef((props: Props, ref: Ref) => {
@@ -507,7 +515,7 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
       title={title}
     >
       {loading && <Loading type="buttonLoader" />}
-      <StyledButtonContent loading={loading}>
+      <StyledButtonContent loading={loading} block={block}>
         {iconLeft && (
           <IconContainer
             bordered={bordered}
@@ -519,7 +527,9 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
             {iconLeft}
           </IconContainer>
         )}
-        {children}
+        {children && (
+          <StyledButtonContentChildren block={block}>{children}</StyledButtonContentChildren>
+        )}
         {iconRight && (
           <IconContainer
             bordered={bordered}

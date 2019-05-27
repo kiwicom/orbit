@@ -183,7 +183,7 @@ export const StyledButtonLink = styled(
   box-sizing: border-box;
   appearance: none;
   display: inline-flex;
-  justify-content: center;
+  justify-content: ${({ block }) => (block ? "space-between" : "center")};
   align-items: center;
   width: ${({ block, width, onlyIcon }) =>
     block
@@ -242,6 +242,13 @@ StyledButtonLink.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledButtonContent = styled.div`
+  display: flex;
+  flex-basis: ${({ block }) => (block ? "100%" : "auto")};
+  justify-content: center;
+  align-items: center;
+`;
+
 // $FlowExpected
 const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
   const {
@@ -257,6 +264,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
     width = 0,
     role,
     title,
+    block,
   } = props;
 
   const iconLeft = props.iconLeft || icon;
@@ -284,13 +292,14 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       buttonRef={ref}
       width={width}
       role={role}
+      block={block}
     >
       {iconLeft && (
         <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon}>
           {iconLeft}
         </IconContainer>
       )}
-      {children}
+      {children && <StyledButtonContent block={block}>{children}</StyledButtonContent>}
       {iconRight && (
         <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon} right>
           {iconRight}

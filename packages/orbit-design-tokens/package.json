@@ -3,7 +3,6 @@
   "version": "0.6.2",
   "description": "Design tokens for Kiwi.com.",
   "main": "lib/index.js",
-  "module": "es/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/kiwicom/orbit-design-tokens.git"
@@ -25,7 +24,7 @@
     "build-android": "theo ./src/theo/theo-spec.json --transform android --format android.xml --dest ./output",
     "build:lib": "babel --out-dir lib --ignore **/*.test.js,src/theo/* src && yarn copy:lib",
     "build:es": "babel --config-file ./.babel-es --no-babelrc --out-dir es --ignore **/*.test.js,src/theo/* src && yarn copy:es",
-    "build": "yarn run build:lib && yarn run build:es && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android",
+    "build": "yarn run build:lib && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android",
     "ci-publish": "ci-publish",
     "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib",
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es",

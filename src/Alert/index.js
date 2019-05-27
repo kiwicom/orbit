@@ -15,9 +15,9 @@ import { rtlSpacing, right } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import { Item } from "../List/ListItem";
 import { StyledText } from "../Text";
+import { TranslateFunc } from "../Translate";
 
 import type { Props } from "./index";
-import { TranslateFunc } from "../Translate";
 
 type IconProps = {
   icon: React.Node,

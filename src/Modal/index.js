@@ -17,9 +17,9 @@ import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
 import { QUERIES } from "../utils/mediaQuery/consts";
 import randomID from "../utils/randomID";
+import { TranslateFunc } from "../Translate";
 
 import type { Props, State } from "./index";
-import { TranslateFunc } from "../Translate";
 
 const getSizeToken = () => ({ size, theme }) => {
   const tokens = {

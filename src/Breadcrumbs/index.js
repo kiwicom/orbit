@@ -5,9 +5,9 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import Button from "../Button";
 import ChevronLeft from "../icons/ChevronLeft";
+import { TranslateFunc } from "../Translate";
 
 import type { Props } from "./index";
-import { TranslateFunc } from "../Translate";
 
 const StyledBreadcrumbs = styled.nav`
   font-family: ${({ theme }) => theme.orbit.fontFamily};

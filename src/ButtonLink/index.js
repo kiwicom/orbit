@@ -116,6 +116,14 @@ const iconSpacing = () => ({ theme, right, size, onlyIcon }) => {
   );
 };
 
+// media query only for IE 10+, not Edge
+const onlyIE = (style, breakpoint = "all") =>
+  css`
+    @media ${breakpoint} and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      ${style};
+    }
+  `;
+
 const IconContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
@@ -183,7 +191,7 @@ export const StyledButtonLink = styled(
   box-sizing: border-box;
   appearance: none;
   display: inline-flex;
-  justify-content: ${({ block }) => (block ? "space-between" : "center")};
+  justify-content: center;
   align-items: center;
   width: ${({ block, width, onlyIcon }) =>
     block
@@ -242,9 +250,21 @@ StyledButtonLink.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledButtonContent = styled.div`
+const StyledButtonLinkContent = styled.div`
   display: flex;
-  flex-basis: ${({ block }) => (block ? "100%" : "auto")};
+  flex-basis: 100%;
+  justify-content: center;
+  align-items: center;
+  // IE flexbox bug
+  ${onlyIE(css`
+    min-width: 100%;
+    max-width: 1px;
+  `)};
+`;
+
+const StyledButtonLinkContentChildren = styled.div`
+  display: flex;
+  flex-basis: auto;
   justify-content: center;
   align-items: center;
 `;
@@ -294,17 +314,19 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       role={role}
       block={block}
     >
-      {iconLeft && (
-        <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon}>
-          {iconLeft}
-        </IconContainer>
-      )}
-      {children && <StyledButtonContent block={block}>{children}</StyledButtonContent>}
-      {iconRight && (
-        <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon} right>
-          {iconRight}
-        </IconContainer>
-      )}
+      <StyledButtonLinkContent>
+        {iconLeft && (
+          <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon}>
+            {iconLeft}
+          </IconContainer>
+        )}
+        {children && <StyledButtonLinkContentChildren>{children}</StyledButtonLinkContentChildren>}
+        {iconRight && (
+          <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon} right>
+            {iconRight}
+          </IconContainer>
+        )}
+      </StyledButtonLinkContent>
     </StyledButtonLink>
   );
 });

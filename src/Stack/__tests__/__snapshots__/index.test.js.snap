@@ -256,9 +256,9 @@ exports[`Default Stack should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -290,6 +290,13 @@ exports[`Default Stack should match snapshot 1`] = `
 @media (min-width:992px) {
   .c0 > * {
     margin: 0 0 40px 0!important;
+  }
+}
+
+@media all and (-ms-high-contrast:none),(-ms-high-contrast:active) {
+  .c9 {
+    min-width: 100%;
+    max-width: 1px;
   }
 }
 
@@ -15569,11 +15576,13 @@ exports[`Default Stack should match snapshot 1`] = `
                             "rules": Array [
                               "visibility:",
                               [Function],
-                              ";height:100%;display:flex;flex-basis:",
-                              [Function],
-                              ";justify-content:",
-                              [Function],
-                              ";align-items:center;",
+                              ";height:100%;display:flex;flex-basis:100%;justify-content:center;align-items:center;",
+                              "@media ",
+                              "all",
+                              " and (-ms-high-contrast:none),(-ms-high-contrast:active){",
+                              "min-width:100%;max-width:1px;",
+                              ";}",
+                              ";",
                             ],
                           },
                           "defaultProps": Object {
@@ -16520,12 +16529,10 @@ exports[`Default Stack should match snapshot 1`] = `
                                 "attrs": Array [],
                                 "componentStyle": ComponentStyle {
                                   "componentId": "Button__StyledButtonContentChildren-sc-1brqp3f-3",
-                                  "isStatic": false,
+                                  "isStatic": true,
                                   "lastClassName": "c10",
                                   "rules": Array [
-                                    "display:flex;flex-basis:",
-                                    [Function],
-                                    ";justify-content:center;align-items:center;",
+                                    "display:flex;flex-basis:auto;justify-content:center;align-items:center;",
                                   ],
                                 },
                                 "displayName": "Button__StyledButtonContentChildren",
@@ -16848,9 +16855,9 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -16917,6 +16924,13 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
 
   .c0 > * {
     margin: 0 0 12px 0!important;
+  }
+}
+
+@media all and (-ms-high-contrast:none),(-ms-high-contrast:active) {
+  .c9 {
+    min-width: 100%;
+    max-width: 1px;
   }
 }
 
@@ -32260,11 +32274,13 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               "rules": Array [
                                 "visibility:",
                                 [Function],
-                                ";height:100%;display:flex;flex-basis:",
-                                [Function],
-                                ";justify-content:",
-                                [Function],
-                                ";align-items:center;",
+                                ";height:100%;display:flex;flex-basis:100%;justify-content:center;align-items:center;",
+                                "@media ",
+                                "all",
+                                " and (-ms-high-contrast:none),(-ms-high-contrast:active){",
+                                "min-width:100%;max-width:1px;",
+                                ";}",
+                                ";",
                               ],
                             },
                             "defaultProps": Object {
@@ -33211,12 +33227,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                   "attrs": Array [],
                                   "componentStyle": ComponentStyle {
                                     "componentId": "Button__StyledButtonContentChildren-sc-1brqp3f-3",
-                                    "isStatic": false,
+                                    "isStatic": true,
                                     "lastClassName": "c10",
                                     "rules": Array [
-                                      "display:flex;flex-basis:",
-                                      [Function],
-                                      ";justify-content:center;align-items:center;",
+                                      "display:flex;flex-basis:auto;justify-content:center;align-items:center;",
                                     ],
                                   },
                                   "displayName": "Button__StyledButtonContentChildren",
@@ -33536,9 +33550,9 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -33570,6 +33584,13 @@ exports[`Stack with flex prop should match snapshot 1`] = `
 @media (min-width:992px) {
   .c0 > * {
     margin: 0 16px 0 0!important;
+  }
+}
+
+@media all and (-ms-high-contrast:none),(-ms-high-contrast:active) {
+  .c9 {
+    min-width: 100%;
+    max-width: 1px;
   }
 }
 
@@ -48845,11 +48866,13 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             "rules": Array [
                               "visibility:",
                               [Function],
-                              ";height:100%;display:flex;flex-basis:",
-                              [Function],
-                              ";justify-content:",
-                              [Function],
-                              ";align-items:center;",
+                              ";height:100%;display:flex;flex-basis:100%;justify-content:center;align-items:center;",
+                              "@media ",
+                              "all",
+                              " and (-ms-high-contrast:none),(-ms-high-contrast:active){",
+                              "min-width:100%;max-width:1px;",
+                              ";}",
+                              ";",
                             ],
                           },
                           "defaultProps": Object {
@@ -49796,12 +49819,10 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                 "attrs": Array [],
                                 "componentStyle": ComponentStyle {
                                   "componentId": "Button__StyledButtonContentChildren-sc-1brqp3f-3",
-                                  "isStatic": false,
+                                  "isStatic": true,
                                   "lastClassName": "c10",
                                   "rules": Array [
-                                    "display:flex;flex-basis:",
-                                    [Function],
-                                    ";justify-content:center;align-items:center;",
+                                    "display:flex;flex-basis:auto;justify-content:center;align-items:center;",
                                   ],
                                 },
                                 "displayName": "Button__StyledButtonContentChildren",

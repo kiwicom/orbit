@@ -265,6 +265,15 @@ const iconSpacing = () => ({ theme, right, size, onlyIcon }) => {
       : `0 ${tokens[TOKENS.marginRightIcon][size]} 0 0`,
   );
 };
+
+// media query only for IE 10+, not Edge
+const onlyIE = (style, breakpoint = "all") =>
+  css`
+    @media ${breakpoint} and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      ${style};
+    }
+  `;
+
 const IconContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
@@ -449,9 +458,15 @@ const StyledButtonContent = styled.div`
   visibility: ${({ loading }) => loading && "hidden"};
   height: 100%;
   display: flex;
-  flex-basis: ${({ block }) => (block ? "100%" : "auto")};
-  justify-content: ${({ block }) => (block ? "space-between" : "center")};
+  flex-basis: 100%;
+  justify-content: center;
   align-items: center;
+
+  // IE flexbox bug
+  ${onlyIE(css`
+    min-width: 100%;
+    max-width: 1px;
+  `)};
 `;
 
 StyledButtonContent.defaultProps = {
@@ -460,7 +475,7 @@ StyledButtonContent.defaultProps = {
 
 const StyledButtonContentChildren = styled.div`
   display: flex;
-  flex-basis: ${({ block }) => (block ? "100%" : "auto")};
+  flex-basis: auto;
   justify-content: center;
   align-items: center;
 `;
@@ -515,7 +530,7 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
       title={title}
     >
       {loading && <Loading type="buttonLoader" />}
-      <StyledButtonContent loading={loading} block={block}>
+      <StyledButtonContent loading={loading}>
         {iconLeft && (
           <IconContainer
             bordered={bordered}
@@ -527,9 +542,7 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
             {iconLeft}
           </IconContainer>
         )}
-        {children && (
-          <StyledButtonContentChildren block={block}>{children}</StyledButtonContentChildren>
-        )}
+        {children && <StyledButtonContentChildren>{children}</StyledButtonContentChildren>}
         {iconRight && (
           <IconContainer
             bordered={bordered}

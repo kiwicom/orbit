@@ -6,6 +6,7 @@ import defaultTheme from "../defaultTheme";
 import { StyledText } from "../Text";
 import type { Ref } from "../common/common.js.flow";
 import { rtlSpacing } from "../utils/rtl";
+import getFieldDataState from "../common/getFieldDataState";
 
 import type { Props } from "./index";
 
@@ -165,6 +166,7 @@ const Radio = React.forwardRef((props: Props, ref: Ref) => {
     <Label disabled={disabled} hasError={hasError} checked={checked}>
       <Input
         data-test={dataTest}
+        data-state={getFieldDataState(hasError)}
         value={value}
         type="radio"
         disabled={disabled}

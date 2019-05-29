@@ -39,6 +39,10 @@ describe(`Default CheckBox`, () => {
     expect(checkbox.render().prop("data-test")).toBe(dataTest);
   });
 
+  it("should have data-state", () => {
+    expect(checkbox.render().prop("data-state")).toBe("ok");
+  });
+
   it("should have tabindex", () => {
     expect(checkbox.render().prop("tabindex")).toBe(tabIndex);
   });

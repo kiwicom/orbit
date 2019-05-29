@@ -20,7 +20,7 @@ Table below contains all types of the props available for icons in general.
 
 ### enum
 
-| color            |
+| type             |
 | :--------------- |
 | `"buttonLoader"` |
 | `"searchLoader"` |

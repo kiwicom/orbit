@@ -265,6 +265,15 @@ const iconSpacing = () => ({ theme, right, size, onlyIcon }) => {
       : `0 ${tokens[TOKENS.marginRightIcon][size]} 0 0`,
   );
 };
+
+// media query only for IE 10+, not Edge
+const onlyIE = (style, breakpoint = "all") =>
+  css`
+    @media ${breakpoint} and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      ${style};
+    }
+  `;
+
 const IconContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
@@ -449,13 +458,27 @@ const StyledButtonContent = styled.div`
   visibility: ${({ loading }) => loading && "hidden"};
   height: 100%;
   display: flex;
+  flex-basis: 100%;
   justify-content: center;
   align-items: center;
+
+  // IE flexbox bug
+  ${onlyIE(css`
+    min-width: 100%;
+    max-width: 1px;
+  `)};
 `;
 
 StyledButtonContent.defaultProps = {
   theme: defaultTheme,
 };
+
+const StyledButtonContentChildren = styled.div`
+  display: flex;
+  flex-basis: auto;
+  justify-content: center;
+  align-items: center;
+`;
 
 // $FlowExpected
 const Button = React.forwardRef((props: Props, ref: Ref) => {
@@ -519,7 +542,7 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
             {iconLeft}
           </IconContainer>
         )}
-        {children}
+        {children && <StyledButtonContentChildren>{children}</StyledButtonContentChildren>}
         {iconRight && (
           <IconContainer
             bordered={bordered}

@@ -26,6 +26,7 @@ Table below contains all types of the props available in CarrierLogo component.
 | `"AirportTransportTaxi"`      |
 | `"AirportShuttle"`            |
 | `"BaggageDrop"`               |
+| `"BGYFastTrack"`              |
 | `"Boarding"`                  |
 | `"BoardingPass"`              |
 | `"BusinessTravel"`            |
@@ -46,6 +47,7 @@ Table below contains all types of the props available in CarrierLogo component.
 | `"MobileApp"`                 |
 | `"Money"`                     |
 | `"MusicalInstruments"`        |
+| `"NCEFastTrack"`              |
 | `"NetVerify"`                 |
 | `"NoBookings"`                |
 | `"NoFavoriteFlights"`         |

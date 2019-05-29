@@ -932,6 +932,7 @@ exports[`InputField number with error and help should match snapshot 1`] = `
     }
   >
     <InputField__Input
+      data-state="error"
       error={
         <div>
           Something went wrong.
@@ -3279,6 +3280,7 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
     </InputField__Prefix>
     <InputField__Input
       autoComplete="off"
+      data-state="ok"
       data-test="test"
       maxLength={10}
       minLength={1}

@@ -36,6 +36,10 @@ describe(`Default Radio`, () => {
     expect(radio.render().prop("data-test")).toBe(dataTest);
   });
 
+  it("should have data-state", () => {
+    expect(radio.render().prop("data-state")).toBe("ok");
+  });
+
   it("should have tabindex", () => {
     expect(radio.render().prop("tabindex")).toBe(tabIndex);
   });

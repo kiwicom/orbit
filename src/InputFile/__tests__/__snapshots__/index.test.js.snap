@@ -464,6 +464,7 @@ exports[`InputFiInputFile with error should match snapshot 1`] = `
   }
 >
   <InputFile__Input
+    data-state="error"
     error={
       <div>
         Error message (explain how to solve it)
@@ -2358,6 +2359,7 @@ exports[`InputFile with help should match snapshot 1`] = `
         ".pdf",
       ]
     }
+    data-state="ok"
     data-test="test"
     name="name"
     onBlur={

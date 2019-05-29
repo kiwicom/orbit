@@ -11,6 +11,7 @@ import { rtlSpacing } from "../utils/rtl";
 import InputTags from "./InputTags";
 import type { Ref, Translation } from "../common/common.js.flow";
 import getSpacingToken from "../common/getSpacingToken";
+import getFieldDataState from "../common/getFieldDataState";
 
 import type { Props } from "./index";
 
@@ -319,6 +320,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
         {tags && <InputTags>{tags}</InputTags>}
         <Input
           data-test={dataTest}
+          data-state={getFieldDataState(!!error)}
           onChange={onChange}
           onFocus={onFocus}
           onBlur={onBlur}

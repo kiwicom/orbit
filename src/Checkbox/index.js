@@ -8,6 +8,7 @@ import Check from "../icons/Check";
 import { StyledText } from "../Text";
 import { rtlSpacing } from "../utils/rtl";
 import type { Ref } from "../common/common.js.flow";
+import getFieldDataState from "../common/getFieldDataState";
 
 import type { Props } from "./index";
 
@@ -175,6 +176,7 @@ const Checkbox = React.forwardRef((props: Props, ref: Ref) => {
     <Label disabled={disabled} hasError={hasError} checked={checked}>
       <Input
         data-test={dataTest}
+        data-state={getFieldDataState(!!hasError)}
         value={value}
         type="checkbox"
         disabled={disabled}

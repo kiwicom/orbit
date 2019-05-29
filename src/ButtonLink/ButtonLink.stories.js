@@ -109,6 +109,24 @@ storiesOf("ButtonLink", module)
     },
   )
   .add(
+    "Accessibility",
+    () => {
+      const children = text("Children", "ButtonLink");
+      const ariaExpanded = boolean("Aria expanded", false);
+      const ariaControls = text("Aria controls", "element ID");
+      const title = text("Title", "Additional information for accessibility");
+
+      return (
+        <ButtonLink ariaExpanded={ariaExpanded} ariaControls={ariaControls} title={title}>
+          {children}
+        </ButtonLink>
+      );
+    },
+    {
+      info: "This is a preview of component accessibility props",
+    },
+  )
+  .add(
     "RTL",
     () => (
       <RenderInRtl>

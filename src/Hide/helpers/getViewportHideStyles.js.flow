@@ -1,0 +1,11 @@
+// @flow
+import { Interpolation } from "styled-components";
+
+import type { Devices } from "../../utils/mediaQuery/index";
+
+export type GetViewportHideStyles = (
+  on: Devices[],
+  resolveDisplayProp?: () => any => string,
+) => Interpolation[];
+
+declare export default GetViewportHideStyles;

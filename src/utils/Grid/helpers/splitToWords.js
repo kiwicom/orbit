@@ -7,7 +7,7 @@ import type { SplitToWords } from "./splitToWords";
 const splitToWords: SplitToWords = value =>
   value
     ? value.match(
-        /\d+\.\d+\w+|\w+\((\w+\([^\\(]+\)|[,]|\s+|\d+|\d+\.\d+\w+|\d+([\w]+|%))*\)|\w+\([^\\(]+\)|\d+([\w]+|%)|[\w\\-]+/g,
+        /\d+\.\d+\w+|\w+\((\w+\([^\\(]+\)|[,]|\s+|\d+|\w+(-?\w?)|\d+\.\d+\w+|\d+([\w]+|%))*\)|\w+\([^\\(]+\)|\d+([\w]+|%)|[\w\\-]+/g,
       )
     : undefined;
 

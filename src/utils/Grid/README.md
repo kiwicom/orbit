@@ -1,5 +1,5 @@
 # Grid
-The main purpose of the Grid component is to provide compatible version of **CSS Grid for IE10+** that can work only with the old specification of grid properties and options. 
+The main purpose of the Grid component is to provide compatible version of **CSS Grid for IE10+** that can works only with the old specification of grid properties and options. 
 
 To implement Grid component into your project you'll need to add the import:
 ```jsx

@@ -76,7 +76,7 @@ This component works the same way as native CSS grid, so it expects the same hie
 
 For instance, when you want to define Grid that has two columns and two rows, the complete usage should look like this:
 ```jsx
-import Grid from "@kiwicom/orbit-components/Grid"
+import Grid from "@kiwicom/orbit-components/lib/utils/Grid"
 
 // your custom component that stands for every cell
 import Cell from "./Cell"

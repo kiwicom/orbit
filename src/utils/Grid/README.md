@@ -83,10 +83,10 @@ import Cell from "./Cell"
 
 const Example = () => 
   <Grid columns="1fr 1fr" rows="1fr 1fr">
-    <Cell>First column, first row<Cell>
-    <Cell>Second column, first row<Cell>
-    <Cell>First column, second row<Cell>
-    <Cell>Second column, second row<Cell>
+    <Cell>First column, first row</Cell>
+    <Cell>Second column, first row</Cell>
+    <Cell>First column, second row</Cell>
+    <Cell>Second column, second row</Cell>
   </Grid>
 ```
  

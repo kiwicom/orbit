@@ -64,6 +64,9 @@ import typeof TableBodyType from "./Table/TableBody";
 import typeof TableCellType from "./Table/TableCell";
 import typeof TableHeadType from "./Table/TableHead";
 import typeof TableRowType from "./Table/TableRow";
+import typeof LayoutType from "./Layout";
+import typeof LayoutColumnType from "./Layout/LayoutColumn";
+import typeof GridType from "./utils/Grid";
 import typeof StepperType from "./Stepper";
 import typeof StepperStatelessType from "./Stepper/StepperStateless";
 import typeof StopoverArrowType from "./StopoverArrow";
@@ -116,6 +119,10 @@ declare export var TableBody: TableBodyType;
 declare export var TableCell: TableCellType;
 declare export var TableHead: TableHeadType;
 declare export var TableRow: TableRowType;
+
+declare export var Layout: LayoutType;
+declare export var LayoutColumn: LayoutColumnType;
+declare export var Grid: GridType;
 
 declare export var Heading: HeadingType;
 declare export var Hide: HideType;

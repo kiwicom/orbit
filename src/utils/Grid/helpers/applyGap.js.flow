@@ -1,0 +1,4 @@
+// @flow
+export type ApplyGap = (cellIndex: number, isGap: boolean) => number;
+
+declare export default ApplyGap;

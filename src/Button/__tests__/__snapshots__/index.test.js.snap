@@ -1427,7 +1427,9 @@ exports[`Button with icon should match snapshot 1`] = `
     >
       <Airplane />
     </Button__IconContainer>
-    button
+    <Button__StyledButtonContentChildren>
+      button
+    </Button__StyledButtonContentChildren>
     <Button__IconContainer
       onlyIcon={false}
       right={true}

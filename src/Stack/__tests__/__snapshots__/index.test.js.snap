@@ -7431,6 +7431,7 @@ exports[`Default Stack should match snapshot 1`] = `
                         className="c3"
                       >
                         <InputField__Input
+                          data-state="ok"
                           size="normal"
                           theme={
                             Object {
@@ -7895,6 +7896,7 @@ exports[`Default Stack should match snapshot 1`] = `
                           type="password"
                         >
                           <StyledComponent
+                            data-state="ok"
                             forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
@@ -8870,6 +8872,7 @@ exports[`Default Stack should match snapshot 1`] = `
                           >
                             <ForwardRef
                               className="c4"
+                              data-state="ok"
                               size="normal"
                               theme={
                                 Object {
@@ -9335,6 +9338,7 @@ exports[`Default Stack should match snapshot 1`] = `
                             >
                               <input
                                 className="c4"
+                                data-state="ok"
                                 type="password"
                               />
                             </ForwardRef>
@@ -24129,6 +24133,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                           className="c3"
                         >
                           <InputField__Input
+                            data-state="ok"
                             size="normal"
                             theme={
                               Object {
@@ -24593,6 +24598,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             type="password"
                           >
                             <StyledComponent
+                              data-state="ok"
                               forwardedComponent={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
@@ -25568,6 +25574,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             >
                               <ForwardRef
                                 className="c4"
+                                data-state="ok"
                                 size="normal"
                                 theme={
                                   Object {
@@ -26033,6 +26040,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               >
                                 <input
                                   className="c4"
+                                  data-state="ok"
                                   type="password"
                                 />
                               </ForwardRef>
@@ -40721,6 +40729,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                         className="c3"
                       >
                         <InputField__Input
+                          data-state="ok"
                           size="normal"
                           theme={
                             Object {
@@ -41185,6 +41194,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           type="password"
                         >
                           <StyledComponent
+                            data-state="ok"
                             forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
@@ -42160,6 +42170,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           >
                             <ForwardRef
                               className="c4"
+                              data-state="ok"
                               size="normal"
                               theme={
                                 Object {
@@ -42625,6 +42636,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             >
                               <input
                                 className="c4"
+                                data-state="ok"
                                 type="password"
                               />
                             </ForwardRef>

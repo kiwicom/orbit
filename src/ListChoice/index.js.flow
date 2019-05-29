@@ -11,7 +11,9 @@ export type Props = {|
   +selectable?: boolean,
   +selected?: boolean,
   +icon: React$Node,
-  +onClick?: (e: SyntheticEvent<HTMLDivElement>) => void | Promise<any>,
+  +onClick?: (
+    e: SyntheticEvent<HTMLDivElement> | SyntheticKeyboardEvent<HTMLElement>,
+  ) => void | Promise<any>,
 |};
 
 declare export default React$ComponentType<Props>;

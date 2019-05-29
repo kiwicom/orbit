@@ -23,7 +23,7 @@ Table below contains all types of the props available in the Tooltip component.
 | tabIndex          | `string`              | `"0"`           | Specifies the tab order of an element
 
 ## enum
-| position          | size        |
+| preferredPosition | size        |
 | :---------------- | :---------- |
 | `"right"`         | `"small"`   |
 | `"left"`          | `"medium"`  |

@@ -67,7 +67,7 @@ const InputTags = ({ children }: Props) => {
     }
 
     return () => {
-      const tagsNode = tagsRef?.current;
+      const tagsNode = tagsRef.current;
       if (tagsNode) {
         tagsNode.removeEventListener("mousemove", handleMouseMove);
         tagsNode.removeEventListener("mouseup", handleMouseUp);

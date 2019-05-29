@@ -57,7 +57,7 @@ class TileExpandable extends React.PureComponent<Props, State> {
   }
 
   setHeight = () => {
-    const contentHeight = this.node?.current?.clientHeight;
+    const contentHeight = this.node.current?.clientHeight;
     this.setState({ contentHeight });
   };
 

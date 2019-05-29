@@ -431,7 +431,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
 
   handleClose = (ev: SyntheticEvent<HTMLElement>) => {
     ev.stopPropagation();
-    if (ev.target === this.overlay?.current || ev.target === this.closeButton?.current) {
+    if (ev.target === this.overlay.current || ev.target === this.closeButton.current) {
       this.setState({ shownMobile: false });
     }
   };

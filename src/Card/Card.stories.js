@@ -342,6 +342,21 @@ storiesOf("Card", module)
     },
   )
   .add(
+    "Accessibility",
+    () => {
+      const title = text("Title", "Card with title");
+      const dataA11ySection = text("dataA11ySection", "ID-OF-CARD");
+      return (
+        <Card>
+          <CardHeader dataA11ySection={dataA11ySection} title={title} />
+        </Card>
+      );
+    },
+    {
+      info: "This is a preview of component accessibility props",
+    },
+  )
+  .add(
     "RTL",
     () => (
       <RenderInRtl>

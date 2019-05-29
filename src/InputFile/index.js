@@ -12,6 +12,7 @@ import CloseCircle from "../icons/CloseCircle";
 import type { Ref } from "../common/common.js.flow";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
+import getFieldDataState from "../common/getFieldDataState";
 
 import type { Props } from "./index";
 
@@ -125,6 +126,7 @@ const InputFile = React.forwardRef((props: Props, ref: Ref) => {
     <Field spaceAfter={spaceAfter}>
       <Input
         data-test={dataTest}
+        data-state={getFieldDataState(!!props.error)}
         type="file"
         name={props.name}
         error={props.error}

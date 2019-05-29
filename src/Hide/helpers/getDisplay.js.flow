@@ -1,0 +1,6 @@
+// @flow
+import type { Props } from "../index";
+
+export type GetDisplay = () => Props => string;
+
+declare export default GetDisplay;

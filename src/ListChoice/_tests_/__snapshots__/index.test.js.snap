@@ -16,6 +16,8 @@ exports[`ListChoice should match snapshot 1`] = `
       ],
     }
   }
+  onKeyDown={[Function]}
+  tabIndex="0"
   theme={
     Object {
       "orbit": Object {
@@ -1419,6 +1421,7 @@ exports[`ListChoice should match snapshot 1`] = `
   <Checkbox
     checked={true}
     readOnly={true}
+    tabIndex="-1"
   />
 </ListChoice__StyledListChoice>
 `;

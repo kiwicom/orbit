@@ -11,6 +11,7 @@ import SIZE_OPTIONS from "./consts";
 import type { Ref } from "../common/common.js.flow";
 import { right, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
+import getFieldDataState from "../common/getFieldDataState";
 
 import type { Props } from "./index";
 
@@ -37,11 +38,24 @@ const StyledSelect = styled(
   // $FlowExpected
   React.forwardRef(
     (
-      { className, dataTest, children, value, disabled, name, tabIndex, onChange, onFocus, onBlur },
+      {
+        className,
+        dataTest,
+        children,
+        value,
+        disabled,
+        name,
+        error,
+        tabIndex,
+        onChange,
+        onFocus,
+        onBlur,
+      },
       ref,
     ) => (
       <select
         data-test={dataTest}
+        data-state={getFieldDataState(error)}
         value={value}
         className={className}
         onChange={onChange}

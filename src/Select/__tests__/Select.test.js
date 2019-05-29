@@ -39,6 +39,9 @@ describe("Select", () => {
   it("should have data-test", () => {
     expect(select.render().prop("data-test")).toBe(dataTest);
   });
+  it("should have data-state", () => {
+    expect(select.render().prop("data-state")).toBe("ok");
+  });
   it("should have name", () => {
     expect(select.render().prop("attribs").name).toBe(name);
   });

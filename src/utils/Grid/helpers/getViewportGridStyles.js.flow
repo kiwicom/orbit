@@ -1,0 +1,12 @@
+// @flow
+import type { Interpolation } from "styled-components";
+
+import type { Devices } from "../../mediaQuery/index";
+import type { Props, SmallMobile } from "../index";
+
+export type GetViewportGridStyles = ({ viewport: Devices, index: number, devices: Devices[] }) => ({
+  ...Props,
+  ...SmallMobile,
+}) => Interpolation[] | boolean;
+
+declare export default GetViewportGridStyles;

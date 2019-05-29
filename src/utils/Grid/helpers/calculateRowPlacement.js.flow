@@ -1,0 +1,8 @@
+// @flow
+export type CalculateRowPlacement = (
+  childIndex: number,
+  columnsCount: number,
+  rowsCount: number,
+) => number;
+
+declare export default CalculateRowPlacement;

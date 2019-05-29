@@ -89,6 +89,7 @@ describe(`InputField with help, prefix and suffix`, () => {
     expect(input.prop("minLength")).toBe(minLength);
     expect(input.render().prop("tabindex")).toBe(tabIndex);
     expect(input.render().prop("data-test")).toBe(dataTest);
+    expect(input.render().prop("data-state")).toBe("ok");
     expect(input.render().prop("autocomplete")).toBe(autoComplete);
     expect(input.prop("readOnly")).toBe(readOnly);
   });
@@ -170,6 +171,14 @@ describe(`InputField number with error and help`, () => {
   });
   it("should contain FeedBack error", () => {
     expect(component.find(`FormFeedback[type="error"]`).exists()).toBe(true);
+  });
+  it("should has data-state error", () => {
+    expect(
+      component
+        .find("InputField__Input")
+        .render()
+        .prop("data-state"),
+    ).toBe("error");
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

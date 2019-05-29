@@ -68,6 +68,7 @@ describe(`InputFile with help`, () => {
     expect(field.prop("spaceAfter")).toBe(spaceAfter);
     expect(input.render().prop("tabindex")).toBe(tabIndex);
     expect(input.render().prop("data-test")).toBe(dataTest);
+    expect(input.render().prop("data-state")).toBe("ok");
   });
   it("should contain a input Button", () => {
     expect(component.find("InputFile__InputButton").exists()).toBe(true);
@@ -113,6 +114,16 @@ describe(`InputFiInputFile with error`, () => {
   it("should contain FeedBack error", () => {
     expect(component.find(`FormFeedback[type="error"]`).exists()).toBe(true);
   });
+
+  it("should has data-state error", () => {
+    expect(
+      component
+        .find("InputFile__Input")
+        .render()
+        .prop("data-state"),
+    ).toBe("error");
+  });
+
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();
   });

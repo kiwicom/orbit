@@ -160,7 +160,7 @@ storiesOf("Heading", module)
       const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
       const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DISPLAY);
       const dataTest = text("dataTest", "test");
-
+      const id = text("ID", "ID-OF-A-ELEMENT");
       const customTitle = text("Title", "Orbit design system");
       const dataA11ySection = text("dataA11ySection", "ID-OF-SECTION");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
@@ -171,6 +171,7 @@ storiesOf("Heading", module)
           type={type}
           dataTest={dataTest}
           spaceAfter={spaceAfter}
+          id={id}
         >
           {customTitle}
         </Heading>

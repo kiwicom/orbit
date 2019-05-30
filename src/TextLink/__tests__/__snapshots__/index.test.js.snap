@@ -18,6 +18,7 @@ exports[`TextLink should match snapshot 1`] = `
     }
   }
   rel="nofollow noopener noreferrer"
+  role=""
   tabIndex="-1"
   target="_blank"
   theme={

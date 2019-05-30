@@ -483,7 +483,6 @@ exports[`RadioGroup Filters should match snapshot 1`] = `
         />
       }
       key=".0"
-      onClick={[Function]}
       onOnlySelection={[MockFunction]}
     >
       <Checkbox
@@ -501,7 +500,6 @@ exports[`RadioGroup Filters should match snapshot 1`] = `
         />
       }
       key=".1"
-      onClick={[Function]}
       onOnlySelection={[MockFunction]}
     >
       <Checkbox
@@ -519,7 +517,6 @@ exports[`RadioGroup Filters should match snapshot 1`] = `
         />
       }
       key=".2"
-      onClick={[Function]}
       onOnlySelection={[MockFunction]}
     >
       <Checkbox

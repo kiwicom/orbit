@@ -1,9 +1,6 @@
 // @flow
 import * as React from "react";
-import type {
-  fromPlainObject as FromPlainObject,
-  getTokens as GetTokens,
-} from "@kiwicom/orbit-design-tokens";
+import type { GetTokens, FromPlainObject } from "@kiwicom/orbit-design-tokens/lib/index";
 
 import typeof AlertType from "./Alert";
 import typeof BadgeType from "./Badge";

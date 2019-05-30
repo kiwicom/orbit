@@ -221,7 +221,7 @@ exports[`Default Stack should match snapshot 1`] = `
   color: #fff!important;
 }
 
-.c8:hover .c11 {
+.c8:hover .c12 {
   color: #fff;
 }
 
@@ -231,7 +231,7 @@ exports[`Default Stack should match snapshot 1`] = `
   box-shadow: inset 0 0 6px 3px rgba(23,27,30,0.15);
 }
 
-.c8:active .c11 {
+.c8:active .c12 {
   color: #fff;
 }
 
@@ -243,7 +243,7 @@ exports[`Default Stack should match snapshot 1`] = `
   box-shadow: inset 0 0 6px 3px rgba(23,27,30,0.15);
 }
 
-.c8 .c10 {
+.c8 .c11 {
   width: 24px;
   height: 24px;
 }
@@ -254,6 +254,27 @@ exports[`Default Stack should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -267,6 +288,13 @@ exports[`Default Stack should match snapshot 1`] = `
 @media (min-width:992px) {
   .c0 > * {
     margin: 0 0 40px 0!important;
+  }
+}
+
+@media all and (-ms-high-contrast:none),(-ms-high-contrast:active) {
+  .c9 {
+    min-width: 100%;
+    max-width: 1px;
   }
 }
 
@@ -7401,6 +7429,7 @@ exports[`Default Stack should match snapshot 1`] = `
                         className="c3"
                       >
                         <InputField__Input
+                          data-state="ok"
                           size="normal"
                           theme={
                             Object {
@@ -7865,6 +7894,7 @@ exports[`Default Stack should match snapshot 1`] = `
                           type="password"
                         >
                           <StyledComponent
+                            data-state="ok"
                             forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
@@ -8840,6 +8870,7 @@ exports[`Default Stack should match snapshot 1`] = `
                           >
                             <ForwardRef
                               className="c4"
+                              data-state="ok"
                               size="normal"
                               theme={
                                 Object {
@@ -9305,6 +9336,7 @@ exports[`Default Stack should match snapshot 1`] = `
                             >
                               <input
                                 className="c4"
+                                data-state="ok"
                                 type="password"
                               />
                             </ForwardRef>
@@ -13633,7 +13665,7 @@ exports[`Default Stack should match snapshot 1`] = `
                       "!important;",
                       [Function],
                       ";",
-                      ".c11",
+                      ".c12",
                       "{color:",
                       [Function],
                       ";}}&:active{",
@@ -13641,7 +13673,7 @@ exports[`Default Stack should match snapshot 1`] = `
                       ";}&:focus{",
                       [Function],
                       ";}",
-                      ".c10",
+                      ".c11",
                       "{width:",
                       [Function],
                       ";height:",
@@ -15536,7 +15568,13 @@ exports[`Default Stack should match snapshot 1`] = `
                             "rules": Array [
                               "visibility:",
                               [Function],
-                              ";height:100%;display:flex;justify-content:center;align-items:center;",
+                              ";height:100%;display:flex;flex-basis:100%;justify-content:center;align-items:center;",
+                              "@media ",
+                              "all",
+                              " and (-ms-high-contrast:none),(-ms-high-contrast:active){",
+                              "min-width:100%;max-width:1px;",
+                              ";}",
+                              ";",
                             ],
                           },
                           "defaultProps": Object {
@@ -16475,7 +16513,39 @@ exports[`Default Stack should match snapshot 1`] = `
                       <div
                         className="c9"
                       >
-                        Sign In
+                        <Button__StyledButtonContentChildren>
+                          <StyledComponent
+                            forwardedComponent={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "attrs": Array [],
+                                "componentStyle": ComponentStyle {
+                                  "componentId": "Button__StyledButtonContentChildren-sc-1brqp3f-3",
+                                  "isStatic": true,
+                                  "lastClassName": "c10",
+                                  "rules": Array [
+                                    "display:flex;flex-basis:auto;justify-content:center;align-items:center;",
+                                  ],
+                                },
+                                "displayName": "Button__StyledButtonContentChildren",
+                                "foldedComponentIds": Array [],
+                                "render": [Function],
+                                "styledComponentId": "Button__StyledButtonContentChildren-sc-1brqp3f-3",
+                                "target": "div",
+                                "toString": [Function],
+                                "warnTooManyClasses": [Function],
+                                "withComponent": [Function],
+                              }
+                            }
+                            forwardedRef={null}
+                          >
+                            <div
+                              className="c10"
+                            >
+                              Sign In
+                            </div>
+                          </StyledComponent>
+                        </Button__StyledButtonContentChildren>
                       </div>
                     </StyledComponent>
                   </Button__StyledButtonContent>
@@ -16742,7 +16812,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   color: #fff!important;
 }
 
-.c8:hover .c11 {
+.c8:hover .c12 {
   color: #fff;
 }
 
@@ -16752,7 +16822,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   box-shadow: inset 0 0 6px 3px rgba(23,27,30,0.15);
 }
 
-.c8:active .c11 {
+.c8:active .c12 {
   color: #fff;
 }
 
@@ -16764,7 +16834,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   box-shadow: inset 0 0 6px 3px rgba(23,27,30,0.15);
 }
 
-.c8 .c10 {
+.c8 .c11 {
   width: 24px;
   height: 24px;
 }
@@ -16775,6 +16845,27 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -16823,6 +16914,13 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
 
   .c0 > * {
     margin: 0 0 12px 0!important;
+  }
+}
+
+@media all and (-ms-high-contrast:none),(-ms-high-contrast:active) {
+  .c9 {
+    min-width: 100%;
+    max-width: 1px;
   }
 }
 
@@ -24021,6 +24119,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                           className="c3"
                         >
                           <InputField__Input
+                            data-state="ok"
                             size="normal"
                             theme={
                               Object {
@@ -24485,6 +24584,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             type="password"
                           >
                             <StyledComponent
+                              data-state="ok"
                               forwardedComponent={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
@@ -25460,6 +25560,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                             >
                               <ForwardRef
                                 className="c4"
+                                data-state="ok"
                                 size="normal"
                                 theme={
                                   Object {
@@ -25925,6 +26026,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               >
                                 <input
                                   className="c4"
+                                  data-state="ok"
                                   type="password"
                                 />
                               </ForwardRef>
@@ -30253,7 +30355,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                         "!important;",
                         [Function],
                         ";",
-                        ".c11",
+                        ".c12",
                         "{color:",
                         [Function],
                         ";}}&:active{",
@@ -30261,7 +30363,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                         ";}&:focus{",
                         [Function],
                         ";}",
-                        ".c10",
+                        ".c11",
                         "{width:",
                         [Function],
                         ";height:",
@@ -32156,7 +32258,13 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               "rules": Array [
                                 "visibility:",
                                 [Function],
-                                ";height:100%;display:flex;justify-content:center;align-items:center;",
+                                ";height:100%;display:flex;flex-basis:100%;justify-content:center;align-items:center;",
+                                "@media ",
+                                "all",
+                                " and (-ms-high-contrast:none),(-ms-high-contrast:active){",
+                                "min-width:100%;max-width:1px;",
+                                ";}",
+                                ";",
                               ],
                             },
                             "defaultProps": Object {
@@ -33095,7 +33203,39 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                         <div
                           className="c9"
                         >
-                          Sign In
+                          <Button__StyledButtonContentChildren>
+                            <StyledComponent
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "Button__StyledButtonContentChildren-sc-1brqp3f-3",
+                                    "isStatic": true,
+                                    "lastClassName": "c10",
+                                    "rules": Array [
+                                      "display:flex;flex-basis:auto;justify-content:center;align-items:center;",
+                                    ],
+                                  },
+                                  "displayName": "Button__StyledButtonContentChildren",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "Button__StyledButtonContentChildren-sc-1brqp3f-3",
+                                  "target": "div",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                            >
+                              <div
+                                className="c10"
+                              >
+                                Sign In
+                              </div>
+                            </StyledComponent>
+                          </Button__StyledButtonContentChildren>
                         </div>
                       </StyledComponent>
                     </Button__StyledButtonContent>
@@ -33359,7 +33499,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   color: #fff!important;
 }
 
-.c8:hover .c11 {
+.c8:hover .c12 {
   color: #fff;
 }
 
@@ -33369,7 +33509,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   box-shadow: inset 0 0 6px 3px rgba(23,27,30,0.15);
 }
 
-.c8:active .c11 {
+.c8:active .c12 {
   color: #fff;
 }
 
@@ -33381,7 +33521,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   box-shadow: inset 0 0 6px 3px rgba(23,27,30,0.15);
 }
 
-.c8 .c10 {
+.c8 .c11 {
   width: 24px;
   height: 24px;
 }
@@ -33392,6 +33532,27 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -33405,6 +33566,13 @@ exports[`Stack with flex prop should match snapshot 1`] = `
 @media (min-width:992px) {
   .c0 > * {
     margin: 0 16px 0 0!important;
+  }
+}
+
+@media all and (-ms-high-contrast:none),(-ms-high-contrast:active) {
+  .c9 {
+    min-width: 100%;
+    max-width: 1px;
   }
 }
 
@@ -40535,6 +40703,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                         className="c3"
                       >
                         <InputField__Input
+                          data-state="ok"
                           size="normal"
                           theme={
                             Object {
@@ -40999,6 +41168,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           type="password"
                         >
                           <StyledComponent
+                            data-state="ok"
                             forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
@@ -41974,6 +42144,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                           >
                             <ForwardRef
                               className="c4"
+                              data-state="ok"
                               size="normal"
                               theme={
                                 Object {
@@ -42439,6 +42610,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             >
                               <input
                                 className="c4"
+                                data-state="ok"
                                 type="password"
                               />
                             </ForwardRef>
@@ -46767,7 +46939,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                       "!important;",
                       [Function],
                       ";",
-                      ".c11",
+                      ".c12",
                       "{color:",
                       [Function],
                       ";}}&:active{",
@@ -46775,7 +46947,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                       ";}&:focus{",
                       [Function],
                       ";}",
-                      ".c10",
+                      ".c11",
                       "{width:",
                       [Function],
                       ";height:",
@@ -48670,7 +48842,13 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             "rules": Array [
                               "visibility:",
                               [Function],
-                              ";height:100%;display:flex;justify-content:center;align-items:center;",
+                              ";height:100%;display:flex;flex-basis:100%;justify-content:center;align-items:center;",
+                              "@media ",
+                              "all",
+                              " and (-ms-high-contrast:none),(-ms-high-contrast:active){",
+                              "min-width:100%;max-width:1px;",
+                              ";}",
+                              ";",
                             ],
                           },
                           "defaultProps": Object {
@@ -49609,7 +49787,39 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                       <div
                         className="c9"
                       >
-                        Sign In
+                        <Button__StyledButtonContentChildren>
+                          <StyledComponent
+                            forwardedComponent={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "attrs": Array [],
+                                "componentStyle": ComponentStyle {
+                                  "componentId": "Button__StyledButtonContentChildren-sc-1brqp3f-3",
+                                  "isStatic": true,
+                                  "lastClassName": "c10",
+                                  "rules": Array [
+                                    "display:flex;flex-basis:auto;justify-content:center;align-items:center;",
+                                  ],
+                                },
+                                "displayName": "Button__StyledButtonContentChildren",
+                                "foldedComponentIds": Array [],
+                                "render": [Function],
+                                "styledComponentId": "Button__StyledButtonContentChildren-sc-1brqp3f-3",
+                                "target": "div",
+                                "toString": [Function],
+                                "warnTooManyClasses": [Function],
+                                "withComponent": [Function],
+                              }
+                            }
+                            forwardedRef={null}
+                          >
+                            <div
+                              className="c10"
+                            >
+                              Sign In
+                            </div>
+                          </StyledComponent>
+                        </Button__StyledButtonContentChildren>
                       </div>
                     </StyledComponent>
                   </Button__StyledButtonContent>

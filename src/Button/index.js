@@ -18,6 +18,14 @@ import getButtonBoxShadow from "./helpers/getButtonBoxShadow";
 
 import type { Props } from "./index";
 
+// media query only for IE 10+, not Edge
+const onlyIE = (style, breakpoint = "all") =>
+  css`
+    @media ${breakpoint} and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      ${style};
+    }
+  `;
+
 const IconContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`

@@ -17,6 +17,14 @@ import getButtonLinkBoxShadow from "./helpers/getButtonLinkBoxShadow";
 
 import type { Props } from "./index";
 
+// media query only for IE 10+, not Edge
+const onlyIE = (style, breakpoint = "all") =>
+  css`
+    @media ${breakpoint} and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      ${style};
+    }
+  `;
+
 const IconContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
@@ -169,7 +177,6 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
     width = 0,
     role,
     disabled,
-    block,
     circled,
     submit,
     transparent,

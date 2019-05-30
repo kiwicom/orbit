@@ -182,6 +182,23 @@ storiesOf("Badge", module)
     },
   )
   .add(
+    "Accessibility",
+    () => {
+      const content = text("Content", "Badge");
+      const Icon = getIcon(getIcons("Airplane"));
+      const ariaLabel = text("ariaLabel", "test");
+
+      return (
+        <Badge icon={Icon && <Icon />} ariaLabel={ariaLabel}>
+          {content}
+        </Badge>
+      );
+    },
+    {
+      info: "This is a preview of component accessibility props",
+    },
+  )
+  .add(
     "RTL",
     () => (
       <RenderInRtl>

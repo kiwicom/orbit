@@ -1,0 +1,9 @@
+// @flow
+import type { ThemeProps } from "../../defaultTheme";
+import type { Size } from "../index";
+
+type TokenName = "heightButton" | "fontSizeButton";
+
+export type GetSizeToken = (name: TokenName) => ({ ...ThemeProps, size: Size }) => string;
+
+declare export default GetSizeToken;

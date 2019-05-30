@@ -1,0 +1,13 @@
+// @flow
+import type { Interpolation } from "styled-components";
+
+import type { Props, Type } from "../index";
+import type { ThemeProps } from "../../defaultTheme";
+
+type State = "default" | "focus" | "active" | "hover";
+
+export type GetButtonBoxShadow = (
+  state: State,
+) => ({ ...Props, type: Type, ...ThemeProps }) => ?(Interpolation[]);
+
+declare export default GetButtonBoxShadow;

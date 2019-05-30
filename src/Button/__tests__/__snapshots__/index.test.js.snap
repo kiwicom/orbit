@@ -7,7 +7,6 @@ exports[`Button with icon should match snapshot 1`] = `
   buttonRef={null}
   component="button"
   dataTest="test"
-  external={true}
   href="https://kiwi.com"
   iconLeft={<Airplane />}
   iconRight={<ChevronDown />}

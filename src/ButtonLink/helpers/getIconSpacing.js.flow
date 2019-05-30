@@ -1,0 +1,12 @@
+// @flow
+import type { ThemeProps } from "../../defaultTheme";
+import type { Size } from "../index";
+
+export type GetIconSpacing = () => ({
+  ...ThemeProps,
+  right: boolean,
+  onlyIcon: boolean,
+  size: Size,
+}) => ?string;
+
+declare export default GetIconSpacing;

@@ -477,12 +477,14 @@ exports[`SkipNavigation should match snapshot 1`] = `
         <Select
           onChange={[Function]}
           options={Array []}
+          size="small"
         />
       </Stack>
     </SkipNavigation__StyledSelectWrapper>
     <Button
       external={true}
       href="https://www.kiwi.com/en/"
+      size="small"
       type="secondary"
     >
       <Translate

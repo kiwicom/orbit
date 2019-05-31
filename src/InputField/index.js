@@ -12,6 +12,7 @@ import InputTags from "./InputTags";
 import type { Ref, Translation } from "../common/common.js.flow";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
+import { StyledButtonLink } from "../ButtonLink/index";
 
 import type { Props } from "./index";
 
@@ -111,6 +112,10 @@ export const InputContainer = styled(({ children, className }) => (
       `box-shadow: inset 0 0 0 ${theme.orbit.borderWidthInput} ${
         error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
       }`};
+  }
+
+  ${StyledButtonLink}:active {
+    box-shadow: none;
   }
 `;
 

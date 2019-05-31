@@ -125,9 +125,10 @@ storiesOf("NotificationBadge", module)
       const content = text("Content", "10");
       const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO);
       const dataTest = text("dataTest", "test");
+      const ariaLabel = text("ariaLabel", "additional information for screen readers");
 
       return (
-        <NotificationBadge type={type} dataTest={dataTest}>
+        <NotificationBadge type={type} dataTest={dataTest} ariaLabel={ariaLabel}>
           {content}
         </NotificationBadge>
       );
@@ -135,6 +136,22 @@ storiesOf("NotificationBadge", module)
     {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Accessibility",
+    () => {
+      const content = text("Content", "10");
+      const ariaLabel = text("ariaLabel", "additional information for screen readers");
+
+      return (
+        <NotificationBadge type="info" ariaLabel={ariaLabel}>
+          {content}
+        </NotificationBadge>
+      );
+    },
+    {
+      info: "This is a preview of component accessibility props",
     },
   )
   .add(

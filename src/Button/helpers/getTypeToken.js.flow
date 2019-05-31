@@ -1,0 +1,24 @@
+// @flow
+import type { Type } from "../index";
+import type { ThemeProps } from "../../defaultTheme";
+
+type TokenName =
+  | "backgroundButton"
+  | "backgroundButtonHover"
+  | "backgroundButtonActive"
+  | "backgroundButtonBordered"
+  | "backgroundButtonBorderedHover"
+  | "backgroundButtonBorderedActive"
+  | "colorTextButton"
+  | "colorTextButtonBordered"
+  | "colorTextButtonHover"
+  | "colorTextButtonBorderedHover"
+  | "colorTextButtonActive"
+  | "colorTextButtonBorderedActive"
+  | "borderColorButton"
+  | "borderColorButtonHover"
+  | "borderColorButtonActive";
+
+export type GetTypeToken = (name: TokenName) => ({ ...ThemeProps, type: Type }) => string;
+
+declare export default GetTypeToken;

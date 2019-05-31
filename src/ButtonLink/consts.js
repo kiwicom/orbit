@@ -25,3 +25,8 @@ export const TOKENS = {
   paddingButtonWithRightIcon: "paddingButtonWithRightIcon",
   marginRightIcon: "marginRightIcon",
 };
+
+export const BUTTON_STATES = {
+  ACTIVE: "active",
+  FOCUS: "focus",
+};

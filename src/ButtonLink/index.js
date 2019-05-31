@@ -187,7 +187,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
     tabIndex,
     title,
     block,
-    className
+    className,
   } = props;
 
   const iconLeft = props.iconLeft || icon;

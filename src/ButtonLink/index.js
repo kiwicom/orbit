@@ -187,6 +187,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
     tabIndex,
     title,
     block,
+    className
   } = props;
 
   const iconLeft = props.iconLeft || icon;
@@ -214,6 +215,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       iconRight={iconRight}
       buttonRef={ref}
       width={width}
+      className={className}
       role={role}
       disabled={disabled}
       block={block}

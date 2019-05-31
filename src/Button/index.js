@@ -231,6 +231,7 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
     submit,
     tabIndex,
     ariaExpanded,
+    className,
     ariaControls,
     spaceAfter,
     dataTest,
@@ -264,6 +265,7 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
       href={href}
       type={type}
       width={width}
+      className={className}
       buttonRef={ref}
       role={role}
       circled={circled}

@@ -68,3 +68,4 @@ umd
 es
 .out
 .cache
+/src/Illustration/index.js.flow

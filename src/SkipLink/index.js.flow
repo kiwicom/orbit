@@ -4,8 +4,8 @@
 */
 
 type Actions = {|
-  +name?: string,
-  +link?: string,
+  +name: string,
+  +href?: string,
   +onClick?: () => {},
 |};
 
@@ -15,8 +15,8 @@ export type MappedOptions = {|
   +disabled?: boolean,
 |};
 export type Props = {|
-  actions?: Actions[],
-  feedbackUrl?: string,
+  links: Actions[],
+  description?: string,
 |};
 
 declare export default React$ComponentType<Props>;

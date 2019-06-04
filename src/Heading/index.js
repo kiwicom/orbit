@@ -71,6 +71,7 @@ const Heading = ({
   id,
 }: Props) => (
   <StyledHeading
+    id={id}
     type={type}
     element={element}
     inverted={inverted}

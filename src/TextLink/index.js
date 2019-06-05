@@ -131,8 +131,8 @@ const TextLink = ({
       rel={relValues && relValues.join(" ")}
       onClick={onClick}
       data-test={dataTest}
-      tabIndex={tabIndex || (!href ? "0" : "")}
-      role={!href ? "button" : ""}
+      tabIndex={tabIndex || (!href ? "0" : undefined)}
+      role={!href ? "button" : undefined}
     >
       {children}
       {icon && <IconContainer type={type}>{icon}</IconContainer>}

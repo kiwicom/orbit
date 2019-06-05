@@ -82,7 +82,7 @@ describe("TextLink", () => {
   });
   it("should not have tabindex and role", () => {
     expect(component.render().prop("tabindex")).toBe("-1");
-    expect(component.render().prop("role")).toBe("");
+    expect(component.render().prop("role")).toBe(undefined);
   });
   it("should have tabindex and role", () => {
     expect(componentWithoutHref.render().prop("tabindex")).toBe("0");

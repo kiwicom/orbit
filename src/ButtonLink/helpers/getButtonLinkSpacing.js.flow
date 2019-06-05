@@ -1,0 +1,12 @@
+// @flow
+import type { ThemeProps } from "../../defaultTheme";
+import type { Props, Size } from "../index";
+
+export type GetButtonLinkSpacing = () => ({
+  ...ThemeProps,
+  ...Props,
+  onlyIcon: boolean,
+  size: Size,
+}) => string;
+
+declare export default GetButtonLinkSpacing;

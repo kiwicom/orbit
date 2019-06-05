@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-components",
-  "version": "0.44.0",
+  "version": "0.45.0",
   "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook --ci -s ./static",
@@ -125,7 +125,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-react-hooks": "^1.6.0",
-    "flow-bin": "^0.89.0",
+    "flow-bin": "^0.95.0",
     "fs-extra": "^7.0.1",
     "glob": "^7.1.2",
     "isomorphic-unfetch": "^3.0.0",

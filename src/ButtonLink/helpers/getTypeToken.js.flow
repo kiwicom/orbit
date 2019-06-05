@@ -1,0 +1,15 @@
+// @flow
+import type { ThemeProps } from "../../defaultTheme";
+import type { Type } from "../index";
+
+type TokenName =
+  | "backgroundButton"
+  | "backgroundButtonHover"
+  | "backgroundButtonActive"
+  | "colorTextButton"
+  | "colorTextButtonHover"
+  | "colorTextButtonActive";
+
+export type GetTypeToken = (name: TokenName) => ({ ...ThemeProps, type: Type }) => string;
+
+declare export default GetTypeToken;

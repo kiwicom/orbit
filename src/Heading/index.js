@@ -34,8 +34,13 @@ export const getHeadingToken: GetHeadingToken = name => ({ theme, type }) => {
 };
 
 export const StyledHeading = styled(
-  ({ element: Component, className, children, dataTest, dataA11ySection }) => (
-    <Component className={className} data-test={dataTest} data-a11y-section={dataA11ySection}>
+  ({ element: Component, className, children, dataTest, dataA11ySection, id }) => (
+    <Component
+      className={className}
+      data-test={dataTest}
+      data-a11y-section={dataA11ySection}
+      id={id}
+    >
       {children}
     </Component>
   ),
@@ -63,6 +68,7 @@ const Heading = ({
   inverted = false,
   spaceAfter,
   dataA11ySection,
+  id,
 }: Props) => (
   <StyledHeading
     type={type}
@@ -71,6 +77,7 @@ const Heading = ({
     dataTest={dataTest}
     spaceAfter={spaceAfter}
     dataA11ySection={dataA11ySection}
+    id={id}
   >
     {children}
   </StyledHeading>

@@ -103,6 +103,10 @@ exports[`Default Stack should match snapshot 1`] = `
   box-shadow: inset 0 0 0 1px #a6b6c8;
 }
 
+.c3 .c11:active {
+  box-shadow: none;
+}
+
 .c4 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -221,31 +225,29 @@ exports[`Default Stack should match snapshot 1`] = `
   color: #fff!important;
 }
 
-.c8:hover .c12 {
+.c8:hover .c13 {
   color: #fff;
 }
 
 .c8:active {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
   background: #008f7b;
   color: #fff!important;
+  box-shadow: inset 0 0 6px 3px rgba(23,27,30,0.15);
 }
 
-.c8:active .c12 {
+.c8:active .c13 {
   color: #fff;
 }
 
 .c8:focus {
-  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
+  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,114,203,0.6);
 }
 
 .c8:focus:active {
-  box-shadow: none;
+  box-shadow: inset 0 0 6px 3px rgba(23,27,30,0.15);
 }
 
-.c8 .c11 {
+.c8 .c12 {
   width: 24px;
   height: 24px;
 }
@@ -6028,6 +6030,8 @@ exports[`Default Stack should match snapshot 1`] = `
                             "{",
                             [Function],
                             ";}",
+                            ".c11",
+                            ":active{box-shadow:none;}",
                           ],
                         },
                         "defaultProps": Object {
@@ -13656,36 +13660,26 @@ exports[`Default Stack should match snapshot 1`] = `
                       [Function],
                       ";transition:all 0.15s ease-in-out !important;outline:0;opacity:",
                       [Function],
-                      ";box-shadow:",
-                      [Function],
                       ";margin-bottom:",
                       [Function],
-                      ";&:hover{background:",
+                      ";",
                       [Function],
-                      ";box-shadow:",
+                      ";&:hover{background:",
                       [Function],
                       ";color:",
                       [Function],
                       "!important;",
-                      ".c12",
+                      [Function],
+                      ";",
+                      ".c13",
                       "{color:",
                       [Function],
                       ";}}&:active{",
                       [Function],
-                      ";background:",
-                      [Function],
-                      ";box-shadow:",
-                      [Function],
-                      ";color:",
-                      [Function],
-                      "!important;& ",
-                      ".c12",
-                      "{color:",
-                      [Function],
-                      ";}}&:focus{",
+                      ";}&:focus{",
                       [Function],
                       ";}",
-                      ".c11",
+                      ".c12",
                       "{width:",
                       [Function],
                       ";height:",
@@ -16706,6 +16700,10 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   box-shadow: inset 0 0 0 1px #a6b6c8;
 }
 
+.c3 .c11:active {
+  box-shadow: none;
+}
+
 .c4 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -16824,31 +16822,29 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   color: #fff!important;
 }
 
-.c8:hover .c12 {
+.c8:hover .c13 {
   color: #fff;
 }
 
 .c8:active {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
   background: #008f7b;
   color: #fff!important;
+  box-shadow: inset 0 0 6px 3px rgba(23,27,30,0.15);
 }
 
-.c8:active .c12 {
+.c8:active .c13 {
   color: #fff;
 }
 
 .c8:focus {
-  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
+  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,114,203,0.6);
 }
 
 .c8:focus:active {
-  box-shadow: none;
+  box-shadow: inset 0 0 6px 3px rgba(23,27,30,0.15);
 }
 
-.c8 .c11 {
+.c8 .c12 {
   width: 24px;
   height: 24px;
 }
@@ -22730,6 +22726,8 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                               "{",
                               [Function],
                               ";}",
+                              ".c11",
+                              ":active{box-shadow:none;}",
                             ],
                           },
                           "defaultProps": Object {
@@ -30358,36 +30356,26 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                         [Function],
                         ";transition:all 0.15s ease-in-out !important;outline:0;opacity:",
                         [Function],
-                        ";box-shadow:",
-                        [Function],
                         ";margin-bottom:",
                         [Function],
-                        ";&:hover{background:",
+                        ";",
                         [Function],
-                        ";box-shadow:",
+                        ";&:hover{background:",
                         [Function],
                         ";color:",
                         [Function],
                         "!important;",
-                        ".c12",
+                        [Function],
+                        ";",
+                        ".c13",
                         "{color:",
                         [Function],
                         ";}}&:active{",
                         [Function],
-                        ";background:",
-                        [Function],
-                        ";box-shadow:",
-                        [Function],
-                        ";color:",
-                        [Function],
-                        "!important;& ",
-                        ".c12",
-                        "{color:",
-                        [Function],
-                        ";}}&:focus{",
+                        ";}&:focus{",
                         [Function],
                         ";}",
-                        ".c11",
+                        ".c12",
                         "{width:",
                         [Function],
                         ";height:",
@@ -33405,6 +33393,10 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   box-shadow: inset 0 0 0 1px #a6b6c8;
 }
 
+.c3 .c11:active {
+  box-shadow: none;
+}
+
 .c4 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -33523,31 +33515,29 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   color: #fff!important;
 }
 
-.c8:hover .c12 {
+.c8:hover .c13 {
   color: #fff;
 }
 
 .c8:active {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
   background: #008f7b;
   color: #fff!important;
+  box-shadow: inset 0 0 6px 3px rgba(23,27,30,0.15);
 }
 
-.c8:active .c12 {
+.c8:active .c13 {
   color: #fff;
 }
 
 .c8:focus {
-  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
+  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,114,203,0.6);
 }
 
 .c8:focus:active {
-  box-shadow: none;
+  box-shadow: inset 0 0 6px 3px rgba(23,27,30,0.15);
 }
 
-.c8 .c11 {
+.c8 .c12 {
   width: 24px;
   height: 24px;
 }
@@ -39326,6 +39316,8 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                             "{",
                             [Function],
                             ";}",
+                            ".c11",
+                            ":active{box-shadow:none;}",
                           ],
                         },
                         "defaultProps": Object {
@@ -46954,36 +46946,26 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                       [Function],
                       ";transition:all 0.15s ease-in-out !important;outline:0;opacity:",
                       [Function],
-                      ";box-shadow:",
-                      [Function],
                       ";margin-bottom:",
                       [Function],
-                      ";&:hover{background:",
+                      ";",
                       [Function],
-                      ";box-shadow:",
+                      ";&:hover{background:",
                       [Function],
                       ";color:",
                       [Function],
                       "!important;",
-                      ".c12",
+                      [Function],
+                      ";",
+                      ".c13",
                       "{color:",
                       [Function],
                       ";}}&:active{",
                       [Function],
-                      ";background:",
-                      [Function],
-                      ";box-shadow:",
-                      [Function],
-                      ";color:",
-                      [Function],
-                      "!important;& ",
-                      ".c12",
-                      "{color:",
-                      [Function],
-                      ";}}&:focus{",
+                      ";}&:focus{",
                       [Function],
                       ";}",
-                      ".c11",
+                      ".c12",
                       "{width:",
                       [Function],
                       ";height:",

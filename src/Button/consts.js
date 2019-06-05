@@ -45,3 +45,10 @@ export const TOKENS = {
   borderColorButtonHover: "borderColorButtonHover",
   borderColorButtonActive: "borderColorButtonActive",
 };
+
+export const BUTTON_STATES = {
+  DEFAULT: "default",
+  HOVER: "hover",
+  ACTIVE: "active",
+  FOCUS: "focus",
+};

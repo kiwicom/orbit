@@ -8,6 +8,7 @@ import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
 import FormFeedback, { StyledFormFeedback } from "../FormFeedback";
 import defaultTheme from "../defaultTheme";
 import FilterWrapper from "./components/FilterWrapper";
+import randomID from "../utils/randomID";
 
 import type { Props } from "./index";
 
@@ -36,6 +37,8 @@ StyledChoiceGroup.defaultProps = {
 };
 
 class ChoiceGroup extends React.PureComponent<Props> {
+  groupID = randomID("ChoiceGroup");
+
   handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
     ev.persist();
     const { onChange } = this.props;
@@ -66,9 +69,14 @@ class ChoiceGroup extends React.PureComponent<Props> {
     } = this.props;
 
     return (
-      <StyledChoiceGroup data-test={dataTest}>
+      <StyledChoiceGroup data-test={dataTest} role="group" aria-labelledby={this.groupID}>
         {label && (
-          <Heading type={getHeadingSize(labelSize)} element={labelElement} spaceAfter="medium">
+          <Heading
+            id={this.groupID}
+            type={getHeadingSize(labelSize)}
+            element={labelElement}
+            spaceAfter="medium"
+          >
             {label}
           </Heading>
         )}

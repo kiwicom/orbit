@@ -118,12 +118,14 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
       <Stack justify="between">
         <StyledSelectWrapper>
           <Stack align="center">
-            <Select options={mappedLinks} onChange={handleLinksClick} />
-            {innerPages.length > 0 && <Select options={innerPages} onChange={handlePageClick} />}
+            <Select options={mappedLinks} onChange={handleLinksClick} size="small" />
+            {innerPages.length > 0 && (
+              <Select options={innerPages} onChange={handlePageClick} size="small" />
+            )}
           </Stack>
         </StyledSelectWrapper>
         {feedbackUrl && (
-          <ButtonLink href={feedbackUrl} type="secondary" external>
+          <ButtonLink href={feedbackUrl} type="secondary" external size="small">
             <Translate tKey="a11ymenu_send_feedback" />
           </ButtonLink>
         )}

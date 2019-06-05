@@ -390,6 +390,7 @@ storiesOf("InputField", module)
       const autoComplete = text("autoComplete", "off");
       const dataTest = text("dataTest", "test");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const id = text("id", "ID");
 
       return (
         <InputField
@@ -427,6 +428,7 @@ storiesOf("InputField", module)
           onFocus={action("focus")}
           onBlur={action("blur")}
           spaceAfter={spaceAfter}
+          id={id}
         />
       );
     },

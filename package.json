@@ -79,7 +79,7 @@
   },
   "dependencies": {
     "@kiwicom/js": "^0.9.0",
-    "@kiwicom/orbit-design-tokens": "^0.6.3"
+    "@kiwicom/orbit-design-tokens": "^0.6.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

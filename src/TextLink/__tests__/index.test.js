@@ -29,6 +29,8 @@ describe("TextLink", () => {
     </TextLink>,
   );
 
+  const componentWithoutHref = shallow(<TextLink>{title}</TextLink>);
+
   it("should contain a children", () => {
     expect(component.children().exists()).toBe(true);
   });
@@ -77,6 +79,14 @@ describe("TextLink", () => {
   it("should execute onClick method", () => {
     component.simulate("click");
     expect(onClick).toHaveBeenCalled();
+  });
+  it("should not have tabindex and role", () => {
+    expect(component.render().prop("tabindex")).toBe("-1");
+    expect(component.render().prop("role")).toBe(undefined);
+  });
+  it("should have tabindex and role", () => {
+    expect(componentWithoutHref.render().prop("tabindex")).toBe("0");
+    expect(componentWithoutHref.render().prop("role")).toBe("button");
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

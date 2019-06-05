@@ -78,7 +78,7 @@ class Component extends React.PureComponent<Props> {
 InputStepper offers a stateless version for your custom solutions. To use `InputStepperStateless` you'll need to add the import
 
 ```jsx
-import InputStepperStateless from "@kiwicom/orbit-components/lib/InputStepperStateless"
+import InputStepperStateless from "@kiwicom/orbit-components/lib/InputStepper/InputStepperStateless"
 ```
 
 ## Props

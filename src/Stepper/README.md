@@ -37,7 +37,7 @@ Table below contains all types of the props available in Stepper component.
 InputStepper offers a stateless version for your custom solutions. To use `StepperStateless` you'll need to add the import
 
 ```jsx
-import StepperStateless from "@kiwicom/orbit-components/lib/StepperStateless"
+import StepperStateless from "@kiwicom/orbit-components/lib/Stepper/StepperStateless"
 ```
 
 ## Props

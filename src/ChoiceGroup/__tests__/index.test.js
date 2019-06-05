@@ -20,6 +20,11 @@ const choices = [
   { value: "three", label: "Reason three" },
 ];
 
+// Mocking a random for randomID to be consistent in test.
+const mockMath = Object.create(global.Math);
+mockMath.random = () => 0.5;
+global.Math = mockMath;
+
 describe("RadioGroup", () => {
   const dataTest = "test";
   const component = shallow(

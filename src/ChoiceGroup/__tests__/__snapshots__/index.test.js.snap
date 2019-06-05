@@ -2,7 +2,7 @@
 
 exports[`RadioGroup Filters should match snapshot 1`] = `
 <ChoiceGroup__StyledChoiceGroup
-  aria-labelledby="ChoiceGroup47764-id-2231"
+  aria-labelledby="ChoiceGroup50000-id-50000"
   data-test="test"
   role="group"
   theme={
@@ -468,7 +468,7 @@ exports[`RadioGroup Filters should match snapshot 1`] = `
 >
   <Heading
     element="h5"
-    id="ChoiceGroup47764-id-2231"
+    id="ChoiceGroup50000-id-50000"
     spaceAfter="medium"
     type="title2"
   >
@@ -538,7 +538,7 @@ exports[`RadioGroup Filters should match snapshot 1`] = `
 
 exports[`RadioGroup should match snapshot 1`] = `
 <ChoiceGroup__StyledChoiceGroup
-  aria-labelledby="ChoiceGroup93368-id-5338"
+  aria-labelledby="ChoiceGroup50000-id-50000"
   data-test="test"
   role="group"
   theme={
@@ -1004,7 +1004,7 @@ exports[`RadioGroup should match snapshot 1`] = `
 >
   <Heading
     element="h5"
-    id="ChoiceGroup93368-id-5338"
+    id="ChoiceGroup50000-id-50000"
     spaceAfter="medium"
     type="title2"
   >

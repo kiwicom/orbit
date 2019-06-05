@@ -20,6 +20,7 @@ Table below contains all types of the props available in InputField component.
 | help          | `React.Node`                  |              | The help to display beneath the InputField.
 | label         | `Translation`                 |              | The label for the InputField. [See Functional specs](#functional-specs)
 | inlineLabel   | `boolean`                     |              | If true the label renders on the left side of input
+| id            | `string`                      |              | HTML `id` attribute for input.[See Accessibility specs](#accessibility)
 | maxLength     | `number`                      |              | Specifies the maximum number of characters allowed.
 | maxValue      | `number`                      |              | Specifies the maximum value for the InputField.
 | minLength     | `number`                      |              | Specifies the minimum number of characters allowed.
@@ -101,4 +102,13 @@ class Component extends React.PureComponent<Props> {
     )
   }
 }
+```
+
+## Accessibility
+* For special cases you can use your own, detached `label`. Simply like this:
+```jsx
+<label for="NICEID">Content</label>
+<InputField
+  id="NICEID"
+/>
 ```

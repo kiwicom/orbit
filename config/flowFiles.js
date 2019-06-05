@@ -16,9 +16,15 @@ const generateFlowFile = async (templatePath, replacements) => {
   await fs.writeFileSync(path.join(path.dirname(templatePath), "index.js.flow"), replacedTemplate);
 };
 
+// Illustrations
+
 generateFlowFile(path.join(__dirname, "..", "src", "Illustration", "FLOW_TEMPLATE.flow"), {
-  NAMES: `${ILLUSTRATION_NAMES.map(illustrationName => `\n  | "${String(illustrationName)}"`).join("")};`,
+  NAMES: `${ILLUSTRATION_NAMES.map(illustrationName => `\n  | "${String(illustrationName)}"`).join(
+    "",
+  )};`,
 });
+
+// ServiceLogos
 
 generateFlowFile(path.join(__dirname, "..", "src", "ServiceLogo", "FLOW_TEMPLATE.flow"), {
   NAMES: `${Object.values(SERVICE_LOGOS_NAMES)

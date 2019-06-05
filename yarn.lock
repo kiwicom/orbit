@@ -1449,10 +1449,10 @@
   resolved "https://registry.yarnpkg.com/@kiwicom/js/-/js-0.9.0.tgz#67032574d8ee318cd747001a7b4c87013214327a"
   integrity sha512-CwDiWwLWE0iWzCrL08x7jdEySAIVdmcmF/rik8gjK5oW4jA5G9fOBxsSSVm2bLtq8HG9KIz4YHDbtWO1K7LIiQ==
 
-"@kiwicom/orbit-design-tokens@^0.6.3":
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.6.3.tgz#8fcbe307705dba4449350ea9b2451cb3982a258c"
-  integrity sha512-qngnewW0qCGPG0SH9DtNF6orFvJkm/+rUGvdbQOFhILKN+UzoM5z7DUBqQPtVErmfm/GVyic4a3FdF4SJUCZKA==
+"@kiwicom/orbit-design-tokens@^0.6.4":
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.6.4.tgz#10ae70ad667db0ea329c08e705185da88b368beb"
+  integrity sha512-8K3ZcmAv0hKqD6UICVawfOp9TKdowI1HJqkPskVHMXBTiITyOcj35vVqrsv3IBmJXLmgo56I1YvqSvOWKy9xmA==
   dependencies:
     ramda "^0.26.1"
 
@@ -5534,10 +5534,10 @@ flatted@^2.0.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.0.tgz#55122b6536ea496b4b44893ee2608141d10d9916"
   integrity sha512-R+H8IZclI8AAkSBRQJLVOsxwAoHd6WC40b4QTNWIjzAa6BXOBfQcM587MXDTVPeYaopFNWHUFLx7eNmHDSxMWg==
 
-flow-bin@^0.95.0:
-  version "0.95.1"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.95.1.tgz#633113831ccff4b7ee70a2730f63fc43b69ba85f"
-  integrity sha512-06IOC/pqPMNRYtC6AMZEWYR9Fi6UdBC7gImGinPuNUpPZFnP5E9/0cBCl3DWrH4zz/gSM2HdDilU7vPGpYIr2w==
+flow-bin@^0.99.1:
+  version "0.99.1"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.99.1.tgz#0d4f413ca84a3a95d0aa64214178684dd7c6a4c5"
+  integrity sha512-dipNwJlb4MsVt3IuDgPTymCNL4GFoq3pG+GbY6DmBbl0dJPWFSA383rCTmgbfFhoeJ1XCfYBan0BPryToSxiiQ==
 
 flush-write-stream@^1.0.0:
   version "1.1.1"

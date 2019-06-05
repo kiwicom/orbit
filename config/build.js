@@ -139,7 +139,7 @@ Promise.all(
       }),
   ),
 ).then(data =>
-  fs.writeFileSync(path.join(svgPath, "icons.json"), JSON.stringify(Object.assign({}, ...data))),
+  fs.writeFileSync(path.join(__dirname, "..", "src", "data", "icons.json"), JSON.stringify(Object.assign({}, ...data))),
 );
 
 // create illustrations json file

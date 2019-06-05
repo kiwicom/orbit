@@ -150,6 +150,6 @@ const illustrationsJSON = ILLUSTRATION_NAMES.map(illustration => ({
 }));
 
 fs.writeFileSync(
-  path.join(__dirname, "..", "src", "Illustration", "illustrations.json"),
+  path.join(__dirname, "..", "src", "data", "illustrations.json"),
   JSON.stringify(illustrationsJSON),
 );

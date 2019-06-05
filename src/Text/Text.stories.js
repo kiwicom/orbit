@@ -115,9 +115,11 @@ storiesOf("Text", module)
       const children = text("Text", customText);
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const dataTest = text("dataTest", "test");
+      const id = text("id", "ID");
 
       return (
         <Text
+          id={id}
           type={type}
           element={element}
           size={size}

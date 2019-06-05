@@ -166,12 +166,12 @@ storiesOf("Heading", module)
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       return (
         <Heading
+          id={id}
           element={element}
           dataA11ySection={dataA11ySection}
           type={type}
           dataTest={dataTest}
           spaceAfter={spaceAfter}
-          id={id}
         >
           {customTitle}
         </Heading>

@@ -30,6 +30,7 @@ export type Props = {|
   +uppercase?: boolean,
   +element?: Element,
   +children: React$Node,
+  +id?: string,
   ...Globals,
   ...spaceAfter,
 |};

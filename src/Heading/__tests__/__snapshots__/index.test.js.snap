@@ -1923,6 +1923,7 @@ exports[`Heading in H2, type Title1, not inverted should match snapshot 1`] = `
 <Heading__StyledHeading
   dataTest="test"
   element="h2"
+  id="id"
   inverted={false}
   theme={
     Object {

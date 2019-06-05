@@ -28,7 +28,6 @@ const names = files.map(inputFileName => {
 });
 
 const componentPath = path.join(__dirname, "..", "src", "icons");
-const svgPath = path.join(__dirname, "..", "src", "icons", "svg");
 mkdirp(componentPath);
 
 function getViewBox(attributes) {
@@ -139,7 +138,10 @@ Promise.all(
       }),
   ),
 ).then(data =>
-  fs.writeFileSync(path.join(__dirname, "..", "src", "data", "icons.json"), JSON.stringify(Object.assign({}, ...data))),
+  fs.writeFileSync(
+    path.join(__dirname, "..", "src", "data", "icons.json"),
+    JSON.stringify(Object.assign({}, ...data)),
+  ),
 );
 
 // create illustrations json file

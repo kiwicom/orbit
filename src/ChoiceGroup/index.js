@@ -47,15 +47,6 @@ class ChoiceGroup extends React.PureComponent<Props> {
     }
   };
 
-  handleOnly = (
-    ev: SyntheticEvent<HTMLButtonElement>,
-    child: { value: string | number, label: string },
-  ) => {
-    if (this.props.onOnlySelection) {
-      this.props.onOnlySelection(ev, child);
-    }
-  };
-
   render() {
     const {
       dataTest,
@@ -90,11 +81,7 @@ class ChoiceGroup extends React.PureComponent<Props> {
                 })}
               </React.Fragment>
             ) : (
-              <FilterWrapper
-                child={child}
-                onClick={this.handleOnly}
-                onOnlySelection={onOnlySelection}
-              >
+              <FilterWrapper child={child} onOnlySelection={onOnlySelection}>
                 <React.Fragment>
                   {React.cloneElement(child, {
                     onChange: this.handleChange,

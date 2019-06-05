@@ -2,6 +2,7 @@
 
 exports[`InputField number with error and help should match snapshot 1`] = `
 <InputField__Field
+  component="div"
   theme={
     Object {
       "orbit": Object {
@@ -1884,6 +1885,8 @@ exports[`InputField number with error and help should match snapshot 1`] = `
 
 exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
 <InputField__Field
+  component="label"
+  htmlFor="id"
   spaceAfter="normal"
   theme={
     Object {
@@ -3282,6 +3285,7 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
       autoComplete="off"
       data-state="ok"
       data-test="test"
+      id="id"
       maxLength={10}
       minLength={1}
       name="name"

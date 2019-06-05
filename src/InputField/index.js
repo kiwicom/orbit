@@ -13,6 +13,7 @@ import type { Ref, Translation } from "../common/common.js.flow";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import { StyledButtonLink } from "../ButtonLink/index";
+import randomID from "../utils/randomID";
 
 import type { Props } from "./index";
 
@@ -50,7 +51,15 @@ const getDOMType = type => {
   return type;
 };
 
-const Field = styled.label`
+const Field = styled(
+  ({ component: Component, className, children, spaceAfter, theme, ...props }) => {
+    return (
+      <Component className={className} {...props}>
+        {children}
+      </Component>
+    );
+  },
+)`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   position: relative;
   display: block;
@@ -310,10 +319,17 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
     readOnly,
     autoComplete,
     spaceAfter,
+    id,
   } = props;
 
+  const forID = id || (label ? randomID("inputField") : undefined);
+
   return (
-    <Field spaceAfter={spaceAfter}>
+    <Field
+      component={label ? "label" : "div"}
+      spaceAfter={spaceAfter}
+      htmlFor={label ? forID : undefined}
+    >
       {label && !inlineLabel && <FormLabel label={label} isFilled={!!value} required={required} />}
       <InputContainer size={size} disabled={disabled} error={error}>
         {prefix && <Prefix size={size}>{prefix}</Prefix>}
@@ -347,6 +363,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           inlineLabel={inlineLabel}
           readOnly={readOnly}
           autoComplete={autoComplete}
+          id={forID}
         />
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />

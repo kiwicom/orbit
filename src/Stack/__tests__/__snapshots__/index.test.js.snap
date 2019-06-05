@@ -2232,7 +2232,7 @@ exports[`Default Stack should match snapshot 1`] = `
         >
           <InputField__Field
             component="label"
-            forID="inputField50000-id-50000"
+            htmlFor="inputField50000-id-50000"
             theme={
               Object {
                 "orbit": Object {
@@ -2696,7 +2696,6 @@ exports[`Default Stack should match snapshot 1`] = `
           >
             <StyledComponent
               component="label"
-              forID="inputField50000-id-50000"
               forwardedComponent={
                 Object {
                   "$$typeof": Symbol(react.forward_ref),
@@ -3184,6 +3183,7 @@ exports[`Default Stack should match snapshot 1`] = `
                 }
               }
               forwardedRef={null}
+              htmlFor="inputField50000-id-50000"
               theme={
                 Object {
                   "orbit": Object {
@@ -3648,7 +3648,7 @@ exports[`Default Stack should match snapshot 1`] = `
               <Component
                 className="c1"
                 component="label"
-                forID="inputField50000-id-50000"
+                htmlFor="inputField50000-id-50000"
                 theme={
                   Object {
                     "orbit": Object {
@@ -4111,6 +4111,7 @@ exports[`Default Stack should match snapshot 1`] = `
                 }
               >
                 <label
+                  className="c1"
                   htmlFor="inputField50000-id-50000"
                 >
                   <FormLabel
@@ -19402,7 +19403,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
           >
             <InputField__Field
               component="label"
-              forID="inputField50000-id-50000"
+              htmlFor="inputField50000-id-50000"
               theme={
                 Object {
                   "orbit": Object {
@@ -19866,7 +19867,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
             >
               <StyledComponent
                 component="label"
-                forID="inputField50000-id-50000"
                 forwardedComponent={
                   Object {
                     "$$typeof": Symbol(react.forward_ref),
@@ -20354,6 +20354,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                   }
                 }
                 forwardedRef={null}
+                htmlFor="inputField50000-id-50000"
                 theme={
                   Object {
                     "orbit": Object {
@@ -20818,7 +20819,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                 <Component
                   className="c1"
                   component="label"
-                  forID="inputField50000-id-50000"
+                  htmlFor="inputField50000-id-50000"
                   theme={
                     Object {
                       "orbit": Object {
@@ -21281,6 +21282,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                   }
                 >
                   <label
+                    className="c1"
                     htmlFor="inputField50000-id-50000"
                   >
                     <FormLabel
@@ -36466,7 +36468,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
         >
           <InputField__Field
             component="label"
-            forID="inputField50000-id-50000"
+            htmlFor="inputField50000-id-50000"
             theme={
               Object {
                 "orbit": Object {
@@ -36930,7 +36932,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
           >
             <StyledComponent
               component="label"
-              forID="inputField50000-id-50000"
               forwardedComponent={
                 Object {
                   "$$typeof": Symbol(react.forward_ref),
@@ -37418,6 +37419,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                 }
               }
               forwardedRef={null}
+              htmlFor="inputField50000-id-50000"
               theme={
                 Object {
                   "orbit": Object {
@@ -37882,7 +37884,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
               <Component
                 className="c1"
                 component="label"
-                forID="inputField50000-id-50000"
+                htmlFor="inputField50000-id-50000"
                 theme={
                   Object {
                     "orbit": Object {
@@ -38345,6 +38347,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                 }
               >
                 <label
+                  className="c1"
                   htmlFor="inputField50000-id-50000"
                 >
                   <FormLabel

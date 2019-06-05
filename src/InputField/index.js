@@ -51,10 +51,15 @@ const getDOMType = type => {
   return type;
 };
 
-const Field = styled(({ component, children, forID }) => {
-  const Component = component;
-  return <Component htmlFor={forID}>{children}</Component>;
-})`
+const Field = styled(
+  ({ component: Component, className, children, spaceAfter, theme, ...props }) => {
+    return (
+      <Component className={className} {...props}>
+        {children}
+      </Component>
+    );
+  },
+)`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   position: relative;
   display: block;
@@ -318,14 +323,12 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
   } = props;
 
   const forID = id || (label ? randomID("inputField") : undefined);
-  const labelNode: React$Node = "label";
-  const divNode: React$Node = "div";
 
   return (
     <Field
-      component={label ? labelNode : divNode}
+      component={label ? "label" : "div"}
       spaceAfter={spaceAfter}
-      forID={label ? forID : undefined}
+      htmlFor={label ? forID : undefined}
     >
       {label && !inlineLabel && <FormLabel label={label} isFilled={!!value} required={required} />}
       <InputContainer size={size} disabled={disabled} error={error}>

@@ -14,7 +14,7 @@ After adding import into your project you can use it simply like:
     },
     {
       name: "Reguest refund",
-      onClick: action("Reguest refund"),
+      onClick: handler,
     },
   ]}  
 />

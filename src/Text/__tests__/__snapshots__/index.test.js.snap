@@ -5,6 +5,7 @@ exports[`Text should match snapshot 1`] = `
   align="left"
   dataTest="test"
   element="p"
+  id="id"
   italic={false}
   size="small"
   spaceAfter="normal"

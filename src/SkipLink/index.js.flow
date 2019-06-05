@@ -1,6 +1,6 @@
 // @flow
 /*
-  DOCUMENTATION: https://orbit.kiwi/components/skipnavigation
+  DOCUMENTATION: https://orbit.kiwi/components/skiplink
 */
 
 type Actions = {|

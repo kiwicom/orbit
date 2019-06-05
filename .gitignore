@@ -68,3 +68,5 @@ umd
 es
 .out
 .cache
+src/icons/svg/icons.json
+src/Illustration/illustrations.json

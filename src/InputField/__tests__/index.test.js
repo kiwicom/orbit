@@ -9,10 +9,6 @@ import Visibility from "../../icons/Visibility";
 import Search from "../../icons/Search";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
-const mockMath = Object.create(global.Math);
-mockMath.random = () => 0.5;
-global.Math = mockMath;
-
 describe(`InputField with help, prefix and suffix`, () => {
   const size = "normal";
   const type = "text";

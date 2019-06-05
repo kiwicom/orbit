@@ -13,9 +13,10 @@ describe("Heading in H2, type Title1, not inverted", () => {
   const children = "My lovely heading";
   const inverted = false;
   const dataTest = "test";
+  const id = "id";
 
   const component = shallow(
-    <Heading element={element} type={type} inverted={inverted} dataTest={dataTest}>
+    <Heading element={element} type={type} inverted={inverted} dataTest={dataTest} id={id}>
       {children}
     </Heading>,
   );
@@ -31,6 +32,7 @@ describe("Heading in H2, type Title1, not inverted", () => {
     expect(component.prop("type")).toBe(type);
     expect(component.prop("element")).toBe(element);
     expect(component.prop("inverted")).toBe(inverted);
+    expect(component.prop("id")).toBe(id);
     expect(component.render().prop("data-test")).toBe(dataTest);
   });
   it(`should have been rendered in ${type}`, () => {

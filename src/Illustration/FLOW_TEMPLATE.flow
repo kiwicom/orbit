@@ -1,0 +1,17 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/illustration/
+*/
+import type { Globals } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken/index";
+
+type Name =%NAMES%
+
+export type Props = {|
+  +size?: "small" | "medium",
+  +name: Name,
+  ...Globals,
+  ...spaceAfter,
+|};
+
+declare export default React$ComponentType<Props>;

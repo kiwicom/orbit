@@ -16,6 +16,7 @@ Table below contains all types of the props available in the Text component.
 | children      | `React.Node`    |             | The content of the Text.
 | dataTest      | `string`        |             | Optional prop for testing purposes.
 | element       | [`enum`](#enum) | `"p"`       | The element used for the root node.
+| id            | `string`        |             | The `id` HTML attribute.
 | italic        | `boolean`       | `false`     | If `true`, the Text will be in italic style.
 | **size**      | [`enum`](#enum) | `"normal"`  | The size of the Text.
 | spaceAfter    | `enum`          |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)

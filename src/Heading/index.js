@@ -71,13 +71,13 @@ const Heading = ({
   id,
 }: Props) => (
   <StyledHeading
+    id={id}
     type={type}
     element={element}
     inverted={inverted}
     dataTest={dataTest}
     spaceAfter={spaceAfter}
     dataA11ySection={dataA11ySection}
-    id={id}
   >
     {children}
   </StyledHeading>

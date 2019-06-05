@@ -6,28 +6,7 @@ import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
 
-export type Name =
-  | "AirHelp"
-  | "Alipay"
-  | "Amex"
-  | "AxaAssistance"
-  | "ChinaUnionPay"
-  | "DinersClub"
-  | "Discover"
-  | "JCB"
-  | "Maestro"
-  | "MasterCard"
-  | "MIR"
-  | "NewYorkTimes"
-  | "NortonSecured"
-  | "PayPal"
-  | "Sofort"
-  | "TravelPulse"
-  | "Trustly"
-  | "UsaToday"
-  | "Visa"
-  | "VisaHQ"
-  | "Zooz";
+export type Name =%NAMES%
 
 export type Size = "small" | "medium" | "large";
 

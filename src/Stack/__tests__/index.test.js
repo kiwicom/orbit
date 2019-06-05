@@ -11,6 +11,11 @@ import theme from "../../defaultTheme";
 import { getBreakpointWidth } from "../../utils/mediaQuery";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 
+// Mocking a random for randomID to be consistent in test.
+const mockMath = Object.create(global.Math);
+mockMath.random = () => 0.5;
+global.Math = mockMath;
+
 const defaultValues = {
   align: "start",
   basis: undefined,

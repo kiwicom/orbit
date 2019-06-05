@@ -78,7 +78,6 @@ const Heading = ({
     dataTest={dataTest}
     spaceAfter={spaceAfter}
     dataA11ySection={dataA11ySection}
-    id={id}
   >
     {children}
   </StyledHeading>

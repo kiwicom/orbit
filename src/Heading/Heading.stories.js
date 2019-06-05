@@ -163,7 +163,6 @@ storiesOf("Heading", module)
       const id = text("ID", "ID-OF-A-ELEMENT");
       const customTitle = text("Title", "Orbit design system");
       const dataA11ySection = text("dataA11ySection", "ID-OF-SECTION");
-      const id = text("id", "ID");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       return (
         <Heading
@@ -173,7 +172,6 @@ storiesOf("Heading", module)
           type={type}
           dataTest={dataTest}
           spaceAfter={spaceAfter}
-          id={id}
         >
           {customTitle}
         </Heading>

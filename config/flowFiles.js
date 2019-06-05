@@ -17,11 +17,11 @@ const generateFlowFile = async (templatePath, replacements) => {
 };
 
 generateFlowFile(path.join(__dirname, "..", "src", "Illustration", "FLOW_TEMPLATE.flow"), {
-  NAMES: `${ILLUSTRATION_NAMES.map(IllustrationName => `\n  | "${IllustrationName}"`).join("")};`,
+  NAMES: `${ILLUSTRATION_NAMES.map(illustrationName => `\n  | "${String(illustrationName)}"`).join("")};`,
 });
 
 generateFlowFile(path.join(__dirname, "..", "src", "ServiceLogo", "FLOW_TEMPLATE.flow"), {
   NAMES: `${Object.values(SERVICE_LOGOS_NAMES)
-    .map(ServiceLogoName => `\n  | "${ServiceLogoName}"`)
+    .map(serviceLogoName => `\n  | "${String(serviceLogoName)}"`)
     .join("")};`,
 });

@@ -69,3 +69,5 @@ es
 .out
 .cache
 /src/Illustration/index.js.flow
+/src/ServiceLogo/index.js.flow
+

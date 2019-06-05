@@ -2,27 +2,26 @@
 import path from "path";
 import fs from "fs";
 
-import { NAMES } from "../src/Illustration/consts";
+import { NAMES as ILLUSTRATION_NAMES } from "../src/Illustration/consts";
+import { NAME_OPTIONS as SERVICE_LOGOS_NAMES } from "../src/ServiceLogo/consts";
 
-const ILLUSTRATION_PATH = path.join(__dirname, "..", "src", "Illustration");
+const generateFlowFile = async (templatePath, replacements) => {
+  const TEMPLATE = await fs.readFileSync(templatePath, "utf8");
 
-const FLOW_TEMPLATE = `// @flow
-/*
-  DOCUMENTATION: https://orbit.kiwi/components/illustration/
-*/
-import type { Globals } from "../common/common.js.flow";
-import type { spaceAfter } from "../common/getSpacingToken/index";
+  const replacedTemplate = Object.keys(replacements).reduce(
+    (acc, cur) => acc.replace(new RegExp(`%${cur}%`, "g"), replacements[cur]),
+    TEMPLATE,
+  );
 
-type Name =${NAMES.map(IllustrationName => `\n  | "${IllustrationName}"`).join("")};
+  await fs.writeFileSync(path.join(path.dirname(templatePath), "index.js.flow"), replacedTemplate);
+};
 
-export type Props = {|
-  +size?: "small" | "medium",
-  +name: Name,
-  ...Globals,
-  ...spaceAfter,
-|};
+generateFlowFile(path.join(__dirname, "..", "src", "Illustration", "FLOW_TEMPLATE.flow"), {
+  NAMES: `${ILLUSTRATION_NAMES.map(IllustrationName => `\n  | "${IllustrationName}"`).join("")};`,
+});
 
-declare export default React$ComponentType<Props>;
-`;
-
-fs.writeFileSync(path.join(ILLUSTRATION_PATH, "index.js.flow"), FLOW_TEMPLATE);
+generateFlowFile(path.join(__dirname, "..", "src", "ServiceLogo", "FLOW_TEMPLATE.flow"), {
+  NAMES: `${Object.values(SERVICE_LOGOS_NAMES)
+    .map(ServiceLogoName => `\n  | "${ServiceLogoName}"`)
+    .join("")};`,
+});

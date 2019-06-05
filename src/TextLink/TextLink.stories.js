@@ -82,6 +82,7 @@ storiesOf("TextLink", module)
       const rel = text("Rel", undefined);
       const Icon = getIcon(getIcons("ChevronRight"));
       const dataTest = text("dataTest", "test");
+      const tabIndex = text("tabIndex", "");
 
       return (
         <TextLink
@@ -93,7 +94,24 @@ storiesOf("TextLink", module)
           rel={validate(rel)}
           icon={Icon && <Icon />}
           dataTest={dataTest}
+          tabIndex={tabIndex}
         >
+          {title}
+        </TextLink>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Accessibility",
+    () => {
+      const title = text("Title", "Primary link");
+
+      return (
+        <TextLink onClick={action("clicked")} type="primary">
           {title}
         </TextLink>
       );

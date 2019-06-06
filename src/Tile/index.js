@@ -59,11 +59,15 @@ class Tile extends React.PureComponent<Props, State> {
     return !!(!href && children); // Tile is expandable if - not href && children are passed
   };
 
-  handleClick = (ev: SyntheticEvent<HTMLDivElement>) => {
-    const { onClick } = this.props;
+  toggleExpandable = () => {
     if (this.isExpandable()) {
       this.setExpanded({ expanded: !this.state.expanded, initialExpanded: false });
     }
+  };
+
+  handleClick = (ev: SyntheticEvent<HTMLDivElement>) => {
+    const { onClick } = this.props;
+    this.toggleExpandable();
     if (onClick) {
       onClick(ev);
     }
@@ -71,11 +75,15 @@ class Tile extends React.PureComponent<Props, State> {
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
     const { onClick } = this.props;
-    if (onClick) {
-      if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+    if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+      this.toggleExpandable();
+      if (onClick) {
         onClick(ev);
-      } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-        ev.preventDefault();
+      }
+    } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+      ev.preventDefault();
+      this.toggleExpandable();
+      if (onClick) {
         onClick(ev);
       }
     }

@@ -23,6 +23,7 @@ const StyledStepperInput = styled.input`
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
   color: ${({ theme }) => theme.orbit.paletteInkNormal};
   text-align: center;
+  min-width: 0;
 
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {

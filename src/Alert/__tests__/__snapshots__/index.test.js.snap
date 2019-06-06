@@ -464,8 +464,11 @@ exports[`Alert should match snapshot 1`] = `
   }
   type="info"
 >
-  <Alert__ContentWrapper>
+  <Alert__ContentWrapper
+    inlineActions={false}
+  >
     <Alert__Content
+      inlineActions={false}
       theme={
         Object {
           "orbit": Object {

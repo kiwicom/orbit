@@ -2,6 +2,7 @@
 
 exports[`DestinationCard one-way should match snapshot 1`] = `
 <DestinationCard__StyledDestinationCard
+  aria-labelledby="DestinationCard50000-id-50000"
   data-test="test"
   height={500}
   onClick={
@@ -1940,6 +1941,7 @@ exports[`DestinationCard one-way should match snapshot 1`] = `
     }
   >
     <DestinationCard__StyledDestinationCardHeader
+      id="DestinationCard50000-id-50000"
       theme={
         Object {
           "orbit": Object {

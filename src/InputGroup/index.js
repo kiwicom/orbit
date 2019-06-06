@@ -155,12 +155,12 @@ class InputGroup extends React.PureComponent<Props, State> {
   state = {
     active: false,
     filled: false,
-    inputID: "",
   };
+
+  inputID: string = randomID("InputGroup");
 
   componentDidMount() {
     this.isFilled();
-    this.setState({ inputID: randomID("InputGroup") });
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -217,7 +217,7 @@ class InputGroup extends React.PureComponent<Props, State> {
       spaceAfter,
     } = this.props;
 
-    const { active, filled, inputID } = this.state;
+    const { active, filled } = this.state;
 
     return (
       <StyledInputGroup
@@ -228,10 +228,10 @@ class InputGroup extends React.PureComponent<Props, State> {
         dataTest={dataTest}
         spaceAfter={spaceAfter}
         role="group"
-        ariaLabelledby={label && inputID}
+        ariaLabelledby={label && this.inputID}
       >
         {label && (
-          <FormLabel filled={filled} id={inputID}>
+          <FormLabel filled={filled} id={this.inputID}>
             {label}
           </FormLabel>
         )}

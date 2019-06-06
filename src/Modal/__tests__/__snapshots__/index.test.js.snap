@@ -2,6 +2,7 @@
 
 exports[`Large Modal should match snapshot 1`] = `
 <Modal__ModalBody
+  aria-labelledby="modal-50000-id-50000"
   aria-modal="true"
   data-test="test"
   onClick={[Function]}
@@ -486,6 +487,7 @@ exports[`Large Modal should match snapshot 1`] = `
 >
   <Modal__ModalWrapper
     fixedFooter={true}
+    id="modal-50000-id-50000"
     isMobileFullPage={false}
     loaded={false}
     onScroll={[Function]}

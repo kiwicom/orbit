@@ -111,7 +111,6 @@ describe(`InputGroup - Phone number`, () => {
     expect(onBlur).toHaveBeenCalled();
   });
   it("should match snapshot", () => {
-    component.setState({ inputID: "123" });
     expect(component).toMatchSnapshot();
   });
 });

@@ -125,8 +125,8 @@ const IconContainer = styled(StyledDiv)`
   flex-shrink: 0;
   margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
   color: ${getTypeToken(TOKENS.colorIconAlert)};
-  display: ${({ inlineActions }) => (inlineActions ? "flex" : "")};
-  align-items: ${({ inlineActions }) => (inlineActions ? "center" : "")};
+  display: ${({ inlineActions }) => inlineActions && "flex"};
+  align-items: ${({ inlineActions }) => inlineActions && "center"};
 `;
 
 IconContainer.defaultProps = {
@@ -138,7 +138,7 @@ const ContentWrapper = styled(StyledDiv)`
   display: flex;
   flex-direction: ${({ title, inlineActions }) => title && (inlineActions ? "row" : "column")};
   align-items: ${({ title }) => !title && "center"};
-  justify-content: ${({ inlineActions }) => (inlineActions ? "space-between" : "")};
+  justify-content: ${({ inlineActions }) => inlineActions && "space-between"};
 `;
 
 const Title = styled(StyledDiv)`

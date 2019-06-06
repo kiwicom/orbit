@@ -1,4 +1,7 @@
 // @flow
-const MAXIMUM_PAGES = 7;
+export const MAXIMUM_PAGES = 7;
 
-export default MAXIMUM_PAGES;
+export const SIZES = {
+  SMALL: "small",
+  NORMAL: "normal",
+};

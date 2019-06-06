@@ -1,9 +1,10 @@
 // @flow
-import type { OnPageChange } from "../index";
+import type { OnPageChange, Sizes } from "../index";
 
 export type Props = {|
   ...OnPageChange,
   children: number,
+  size: Sizes,
 |};
 
 declare export default React$ComponentType<Props>;

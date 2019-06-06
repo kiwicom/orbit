@@ -7,24 +7,110 @@ exports[`Pagination should match snapshot 1`] = `
   direction="row"
   spacing="tight"
 >
-  <ButtonLink
-    iconLeft={<ChevronLeft />}
-    onClick={[Function]}
-    type="secondary"
+  <Hide
+    on={
+      Array [
+        "smallMobile",
+        "mediumMobile",
+        "largeMobile",
+      ]
+    }
   >
-    Předchozí
-  </ButtonLink>
-  <CompactPages
-    onPageChange={[MockFunction]}
-    pageCount={9}
-    selectedPage={3}
-  />
-  <ButtonLink
-    iconRight={<ChevronRight />}
-    onClick={[Function]}
-    type="secondary"
+    <ButtonLink
+      iconLeft={<ChevronLeft />}
+      onClick={[Function]}
+      size="normal"
+      type="secondary"
+    />
+  </Hide>
+  <Hide
+    on={
+      Array [
+        "tablet",
+        "desktop",
+        "largeDesktop",
+      ]
+    }
   >
-    Následující
-  </ButtonLink>
+    <ButtonLink
+      iconLeft={<ChevronLeft />}
+      onClick={[Function]}
+      size="normal"
+      type="secondary"
+    />
+  </Hide>
+  <Hide
+    on={
+      Array [
+        "smallMobile",
+        "mediumMobile",
+        "largeMobile",
+      ]
+    }
+  >
+    <Stack
+      align="center"
+      direction="row"
+      spacing="tight"
+    >
+      <CompactPages
+        onPageChange={[MockFunction]}
+        pageCount={9}
+        selectedPage={3}
+        size="normal"
+      />
+    </Stack>
+  </Hide>
+  <Hide
+    on={
+      Array [
+        "tablet",
+        "desktop",
+        "largeDesktop",
+      ]
+    }
+  >
+    <ActiveButton
+      size="normal"
+      transparent={true}
+    >
+      3
+       of 
+      9
+    </ActiveButton>
+  </Hide>
+  <Hide
+    on={
+      Array [
+        "smallMobile",
+        "mediumMobile",
+        "largeMobile",
+      ]
+    }
+  >
+    <ButtonLink
+      iconLeft={<ChevronRight />}
+      iconRight={false}
+      onClick={[Function]}
+      size="normal"
+      type="secondary"
+    />
+  </Hide>
+  <Hide
+    on={
+      Array [
+        "tablet",
+        "desktop",
+        "largeDesktop",
+      ]
+    }
+  >
+    <ButtonLink
+      iconLeft={<ChevronRight />}
+      onClick={[Function]}
+      size="normal"
+      type="secondary"
+    />
+  </Hide>
 </Stack>
 `;

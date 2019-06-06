@@ -1,11 +1,11 @@
 // @flow
+
 import type { Sizes } from "../index";
 
 export type Props = {|
-  pageCount: number,
-  selectedPage: number,
-  onPageChange: number => void,
-  size: Sizes,
+  children: React$Node,
+  transparent?: boolean,
+  size?: Sizes,
 |};
 
 declare export default React$ComponentType<Props>;

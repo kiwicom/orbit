@@ -7,13 +7,15 @@ export type PageCount = {| +pageCount: number |};
 
 export type SelectedPage = {| +selectedPage?: number |};
 
+export type Sizes = "small" | "normal";
+
 export type Props = {|
   ...Globals,
   ...OnPageChange,
   ...PageCount,
   ...SelectedPage,
-  +previousLabel?: string,
-  +nextLabel?: string,
+  hideLabels?: boolean,
+  size?: Sizes,
 |};
 
 declare export default React$ComponentType<Props>;

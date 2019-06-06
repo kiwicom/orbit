@@ -5,6 +5,7 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import TileHeader, { StyledIconRight } from "./TileHeader";
 import TileExpandable from "./TileExpandable";
+import KEY_CODE_MAP from "../common/keyMaps";
 
 import type { Props, State } from "./index";
 
@@ -68,6 +69,18 @@ class Tile extends React.PureComponent<Props, State> {
     }
   };
 
+  handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
+    const { onClick } = this.props;
+    if (onClick) {
+      if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+        onClick(ev);
+      } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+        ev.preventDefault();
+        onClick(ev);
+      }
+    }
+  };
+
   render() {
     const { href, external, icon, title, description, children, dataTest } = this.props;
     const isExpandable = this.isExpandable();
@@ -78,6 +91,9 @@ class Tile extends React.PureComponent<Props, State> {
         rel={!isExpandable && external ? "noopener noreferrer" : undefined}
         href={!isExpandable ? href : undefined}
         data-test={dataTest}
+        onKeyDown={this.handleKeyDown}
+        tabIndex={href ? undefined : "0"}
+        role={href ? undefined : "button"}
       >
         <TileHeader
           icon={icon}

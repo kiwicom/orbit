@@ -4,6 +4,7 @@ exports[`Tile Default should match snapshot 1`] = `
 <Tile__StyledTile
   data-test="test"
   href="https://www.kiwi.com/"
+  onKeyDown={[Function]}
   rel="noopener noreferrer"
   target="_blank"
   theme={

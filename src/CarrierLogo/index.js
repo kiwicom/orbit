@@ -44,14 +44,41 @@ const getURLSizes = ({ size }) => {
   };
 };
 
-const StyledImage = styled.img.attrs(({ carrierType = "airline", carriersLength, size, code }) => {
-  const urlSizes =
-    carriersLength > 1 ? getURLSizes({ size: SIZE_OPTIONS.SMALL }) : getURLSizes({ size });
+const createUrlRequest = (url, code, object) => {
+  if (object && url) {
+    const request = Object.keys(object)
+      .map(key => {
+        return `${key}=${object[key]}`;
+      })
+      .join("&");
+    return `${url}${code}?${request}`;
+  }
+  return null;
+};
+
+const getCustomImage = (customImage, code) => {
+  const { url, src, srcSet } = customImage;
+  const srcRequest = createUrlRequest(url, code, src);
+  const srcSetRequest = createUrlRequest(url, code, srcSet);
   return {
-    src: `${BASE_URL}/airlines/${urlSizes.base}/${code}.png?default=${carrierType}.png`,
-    srcSet: `${BASE_URL}/airlines/${urlSizes.retina}/${code}.png?default=${carrierType}.png 2x`,
+    src: srcRequest,
+    srcSet: srcSetRequest ? `${srcSetRequest} 2x` : null,
   };
-})`
+};
+
+const StyledImage = styled.img.attrs(
+  ({ carrierType = "airline", carriersLength, size, code, customSource }) => {
+    if (!customSource) {
+      const urlSizes =
+        carriersLength > 1 ? getURLSizes({ size: SIZE_OPTIONS.SMALL }) : getURLSizes({ size });
+      return {
+        src: `${BASE_URL}/airlines/${urlSizes.base}/${code}.png?default=${carrierType}.png`,
+        srcSet: `${BASE_URL}/airlines/${urlSizes.retina}/${code}.png?default=${carrierType}.png 2x`,
+      };
+    }
+    return getCustomImage(customSource, code);
+  },
+)`
   background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   height: ${getCarrierLogoSize};
@@ -82,7 +109,7 @@ StyledCarrierLogo.defaultProps = {
   theme: defaultTheme,
 };
 
-const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest }: Props) => (
+const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest, customSource }: Props) => (
   <StyledCarrierLogo carriers={carriers} size={size} data-test={dataTest}>
     {carriers.slice(0, 4).map(carrierImage => (
       <StyledImage
@@ -93,6 +120,7 @@ const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest }: Props) =
         size={size}
         alt={carrierImage.name}
         title={carrierImage.name}
+        customSource={customSource}
       />
     ))}
   </StyledCarrierLogo>

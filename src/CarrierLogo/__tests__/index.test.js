@@ -33,6 +33,38 @@ describe("CarrierLogo images", () => {
   });
 });
 
+describe("CarrierLogo with customSource", () => {
+  it("should contains correct image", () => {
+    const component = shallow(
+      <CarrierLogo
+        carriers={[{ code: "LAL.png", name: "LAL" }]}
+        customSource={{
+          url: "//images.kiwi.com/airlines/32/",
+          src: {
+            default: "airline.png",
+          },
+          srcSet: {
+            default: "airline.png",
+          },
+        }}
+      />,
+    );
+    expect(
+      component
+        .render()
+        .children()
+        .attr("src"),
+    ).toContain("//images.kiwi.com/airlines/32/LAL.png?default=airline.png");
+
+    expect(
+      component
+        .render()
+        .children()
+        .attr("srcset"),
+    ).toContain("//images.kiwi.com/airlines/32/LAL.png?default=airline.png 2x");
+  });
+});
+
 describe("CarrierLogo fallback", () => {
   it("should have proper fallback: airline", () => {
     const component = shallow(

@@ -10,9 +10,16 @@ export type Carrier = { code: string, name: string, type?: "airline" | "bus" | "
 
 type Size = "small" | "medium" | "large";
 
+type CustomSource = {|
+  url: string,
+  src: { [key: string]: string | number },
+  srcSet: { [key: string]: string | number },
+|};
+
 export type Props = {|
   +size?: Size,
   +carriers: Carrier[],
+  +customSource?: CustomSource,
   ...Globals,
 |};
 

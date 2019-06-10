@@ -2,7 +2,6 @@
 import fs from "fs";
 import path from "path";
 import table from "markdown-table";
-import { exec } from "child_process";
 
 import {
   NAMES as ILLUSTRATION_NAMES,
@@ -44,6 +43,3 @@ illustrationResults = [Object.keys(illustrationEnums), ...illustrationResults];
 generateDocumentation(path.join(__dirname, "..", "src", "Illustration", "README_TEMPLATE.md"), {
   ENUM: table(illustrationResults),
 });
-
-exec("git add ./src/Illustration/README.md");
-exec("git commit --amend");

@@ -18,6 +18,8 @@ Table below contains all types of the props available in CarrierLogo component.
 | spaceAfter    | `enum`                           |                 | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 ### enum
 
+test
+
 | name                          | size           |
 | :---------------------------- | :------------- |
 | `"Accommodation"`             | `"small"`      |

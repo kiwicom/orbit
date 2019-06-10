@@ -32,7 +32,7 @@ Object.keys(illustrationEnums).map((property, propertyIndex) => {
     if (!illustrationResults[rowIndex]) {
       illustrationResults[rowIndex] = [];
     }
-    illustrationResults[rowIndex][propertyIndex] = `\`"${value}"\``;
+    illustrationResults[rowIndex][propertyIndex] = `\`"${String(value)}"\``;
     return [];
   });
   return [];

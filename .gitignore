@@ -71,6 +71,5 @@ es
 src/data/illustrations.json
 src/data/icons.json
 src/Illustration/index.js.flow
-src/Illustration/README.md
 src/ServiceLogo/index.js.flow
 

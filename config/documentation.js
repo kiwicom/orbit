@@ -33,7 +33,9 @@ Object.keys(illustrationEnums).map((property, propertyIndex) => {
       illustrationResults[rowIndex] = [];
     }
     illustrationResults[rowIndex][propertyIndex] = `\`"${value}"\``;
+    return [];
   });
+  return [];
 });
 
 illustrationResults = [Object.keys(illustrationEnums), ...illustrationResults];

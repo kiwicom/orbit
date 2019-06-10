@@ -16,7 +16,7 @@ const resolveTooltipArrowAlign = ({ position, align, tooltipWidth, tooltipHeight
     }
     if (isAlignStart(align)) {
       return css`
-        left: ${parseFloat(TOOLTIP_PADDING)}; // TODO: use token
+        left: ${parseFloat(TOOLTIP_PADDING)}px; // TODO: use token
       `;
     }
     if (isAlignEnd(align)) {

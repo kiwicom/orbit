@@ -224,9 +224,14 @@ const Alert = (props: Props) => {
             {title}
           </Title>
         )}
-        {children && (
-          <Content title={title} type={type} inlineActions={inlineActions}>
+        {children && !inlineActions && (
+          <Content title={title} type={type}>
             {children}
+          </Content>
+        )}
+        {inlineActions && (
+          <Content title={title} type={type} inlineActions={inlineActions}>
+            {inlineActions}
           </Content>
         )}
       </ContentWrapper>

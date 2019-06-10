@@ -468,7 +468,6 @@ exports[`Alert should match snapshot 1`] = `
     inlineActions={false}
   >
     <Alert__Content
-      inlineActions={false}
       theme={
         Object {
           "orbit": Object {

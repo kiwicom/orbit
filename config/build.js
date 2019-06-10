@@ -145,11 +145,15 @@ Promise.all(
 );
 
 // create illustrations json file
-const illustrationsJSON = ILLUSTRATION_NAMES.map(illustration => ({
-  name: illustration,
-  resized: `https://images.kiwi.com/illustrations/0x400/${illustration}.png`,
-  original: `https://images.kiwi.com/illustrations/originals/${illustration}.png`,
-}));
+const illustrationsJSON = Object.assign(
+  {},
+  ...ILLUSTRATION_NAMES.map(illustration => ({
+    [illustration]: {
+      resized: `https://images.kiwi.com/illustrations/0x400/${illustration}.png`,
+      original: `https://images.kiwi.com/illustrations/originals/${illustration}.png`,
+    },
+  })),
+);
 
 fs.writeFileSync(
   path.join(__dirname, "..", "src", "data", "illustrations.json"),

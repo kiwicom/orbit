@@ -240,9 +240,6 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
 
   overlay: { current: any | HTMLDivElement } = React.createRef();
 
-  // TODO: ged rid off weak types
-  closeButton: { current: any } = React.createRef();
-
   componentDidMount() {
     this.tooltipId = RandomID("tooltip");
   }
@@ -508,7 +505,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
               >
                 <StyledTooltipContent ref={this.content}>{content}</StyledTooltipContent>
                 <StyledTooltipClose>
-                  <Button type="secondary" block onClick={this.handleClose} ref={this.closeButton}>
+                  <Button type="secondary" block onClick={this.handleClose}>
                     <Translate tKey="button_close" />
                   </Button>
                 </StyledTooltipClose>

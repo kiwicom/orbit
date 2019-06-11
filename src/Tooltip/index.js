@@ -436,10 +436,14 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
     }, 15);
   };
 
-  handleClose = (ev: SyntheticEvent<HTMLElement>) => {
+  handleClose = () => {
+    this.setState({ shownMobile: false });
+  };
+
+  handleClickOutside = (ev: SyntheticEvent<HTMLElement>) => {
     ev.stopPropagation();
-    if (ev.target === this.overlay?.current || ev.target === this.closeButton?.current) {
-      this.setState({ shownMobile: false });
+    if (ev.target === this.overlay?.current) {
+      this.handleClose();
     }
   };
 
@@ -476,7 +480,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
           {render && (
             <StyledTooltip data-test={dataTest}>
               <StyledTooltipOverlay
-                onClick={this.handleClose}
+                onClick={this.handleClickOutside}
                 onFocus={this.handleOpen}
                 shownMobile={shownMobile}
                 ref={this.overlay}
@@ -489,7 +493,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
                 size={size}
                 ref={this.tooltip}
                 onMouseEnter={this.handleIn}
-                onClick={this.handleClose}
+                onClick={this.handleClickOutside}
                 onMouseLeave={this.handleOut}
                 containerTop={containerTop}
                 containerLeft={containerLeft}

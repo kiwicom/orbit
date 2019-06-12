@@ -28,7 +28,7 @@ Table below contains all types of the props available in Stack component.
 | largeDesktop  | [`Object`](#media-queries)  |              | Object for setting up properties for the largeDesktop viewport. [See Media queries](#media-queries)
 | largeMobile   | [`Object`](#media-queries)  |              | Object for setting up properties for the largeMobile viewport. [See Media queries](#media-queries)
 | mediumMobile  | [`Object`](#media-queries)  |              | Object for setting up properties for the mediumMobile viewport. [See Media queries](#media-queries)
-| shrink        | `boolean`                   | `true`       | If `false`, the Stack will have `flex-shrink` set to `0`.
+| shrink        | `boolean`                   | `false`      | If `false`, the Stack will have `flex-shrink` set to `0`.
 | spacing       | [`spacing`](#spacing)       | `"natural"`  | The spacing between its children.
 | spaceAfter    | `enum`                      |              | Additional `padding` to bottom of the Stack. [See this doc](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | tablet        | [`Object`](#media-queries)  |              | Object for setting up properties for the tablet viewport. [See Media queries](#media-queries)

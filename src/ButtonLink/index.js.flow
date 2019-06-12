@@ -7,8 +7,8 @@ import type { ReactComponentStyled } from "styled-components";
 import type { Globals, Ref } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
-type Type = "primary" | "secondary";
-type Size = "small" | "normal" | "large";
+export type Type = "primary" | "secondary";
+export type Size = "small" | "normal" | "large";
 
 export type Props = {|
   ...Globals,

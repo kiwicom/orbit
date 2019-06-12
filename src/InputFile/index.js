@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import Button from "../Button";
-import ButtonLink from "../ButtonLink";
+import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import FormLabel from "../FormLabel";
 import FormFeedback from "../FormFeedback";
 import Attachment from "../icons/Attachment";
@@ -49,6 +49,10 @@ const FakeInput = styled(({ children, className }) => <div className={className}
         `${theme.orbit.borderWidthInput} ${
           error ? theme.orbit.paletteRedNormalHover : theme.orbit.borderColorInputHover
         }`};
+  }
+
+  ${StyledButtonLink}:active {
+    box-shadow: none;
   }
 `;
 

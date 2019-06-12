@@ -16,7 +16,9 @@ export type Props = {|
   +children?: React$Node,
   +external?: boolean,
   +href?: string,
-  +onClick?: (e: SyntheticEvent<HTMLDivElement>) => void | Promise<any>,
+  +onClick?: (
+    e: SyntheticEvent<HTMLDivElement> | SyntheticKeyboardEvent<HTMLElement>,
+  ) => void | Promise<any>,
   expanded?: boolean,
   ...Globals,
 |};

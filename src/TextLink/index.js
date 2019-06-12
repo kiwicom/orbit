@@ -46,17 +46,17 @@ IconContainer.defaultProps = {
 export const getLinkStyle = ({
   theme,
   type,
-}: GetLinkStyleProps) => css` // Common styles for TextLink and "a" in Text 
-  
+}: GetLinkStyleProps) => css` // Common styles for TextLink and "a" in Text
+
   &, &:link, &:visited {
     color: ${getColor({ theme, type })};
     text-decoration: ${
       type === TYPE_OPTIONS.SECONDARY
         ? theme.orbit.textDecorationTextLinkSecondary
         : theme.orbit.textDecorationTextLinkPrimary
-    };  
+    };
   }
-  
+
   &:hover, &:active {
     text-decoration: ${
       type === TYPE_OPTIONS.SECONDARY
@@ -131,7 +131,8 @@ const TextLink = ({
       rel={relValues && relValues.join(" ")}
       onClick={onClick}
       data-test={dataTest}
-      tabIndex={tabIndex}
+      tabIndex={tabIndex || (!href ? "0" : undefined)}
+      role={!href ? "button" : undefined}
     >
       {children}
       {icon && <IconContainer type={type}>{icon}</IconContainer>}

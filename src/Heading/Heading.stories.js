@@ -160,11 +160,19 @@ storiesOf("Heading", module)
       const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
       const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DISPLAY);
       const dataTest = text("dataTest", "test");
-
+      const id = text("ID", "ID-OF-A-ELEMENT");
       const customTitle = text("Title", "Orbit design system");
+      const dataA11ySection = text("dataA11ySection", "ID-OF-SECTION");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       return (
-        <Heading element={element} type={type} dataTest={dataTest} spaceAfter={spaceAfter}>
+        <Heading
+          id={id}
+          element={element}
+          dataA11ySection={dataA11ySection}
+          type={type}
+          dataTest={dataTest}
+          spaceAfter={spaceAfter}
+        >
           {customTitle}
         </Heading>
       );
@@ -172,6 +180,17 @@ storiesOf("Heading", module)
     {
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Accessibility",
+    () => {
+      const dataA11ySection = text("dataA11ySection", "ID-OF-SECTION");
+      const customTitle = text("Title", "Orbit design system");
+      return <Heading dataA11ySection={dataA11ySection}>{customTitle}</Heading>;
+    },
+    {
+      info: "This is a preview of component accessibility props",
     },
   )
   .add(

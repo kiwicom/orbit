@@ -254,7 +254,14 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
   }
 
   getDimensions = () => {
-    if (this.container && this.tooltip && this.content && typeof window !== "undefined") {
+    if (
+      this.container &&
+      this.container.current &&
+      this.tooltip &&
+      this.tooltip.current &&
+      this.content &&
+      typeof window !== "undefined"
+    ) {
       const containerDimensions = this.container.current.getBoundingClientRect();
       const tooltipDimensions = this.tooltip.current.getBoundingClientRect();
 

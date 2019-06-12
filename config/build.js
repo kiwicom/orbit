@@ -1,14 +1,16 @@
 // @noflow
 /* eslint-disable import/no-extraneous-dependencies */
 
-const path = require("path");
-const fs = require("fs");
-const { JSDOM } = require("jsdom");
-const capitalize = require("capitalize");
-const camelcase = require("camelcase");
-const mkdirp = require("mkdirp");
-const glob = require("glob");
-const svgr = require("@svgr/core").default;
+import path from "path";
+import fs from "fs";
+import { JSDOM } from "jsdom";
+import capitalize from "capitalize";
+import camelcase from "camelcase";
+import mkdirp from "mkdirp";
+import glob from "glob";
+import svgr from "@svgr/core";
+
+import { NAMES as ILLUSTRATION_NAMES } from "../src/Illustration/consts";
 
 const files = glob.sync("src/icons/**/*.svg");
 
@@ -26,7 +28,6 @@ const names = files.map(inputFileName => {
 });
 
 const componentPath = path.join(__dirname, "..", "src", "icons");
-const svgPath = path.join(__dirname, "..", "src", "icons", "svg");
 mkdirp(componentPath);
 
 function getViewBox(attributes) {
@@ -137,5 +138,24 @@ Promise.all(
       }),
   ),
 ).then(data =>
-  fs.writeFileSync(path.join(svgPath, "icons.json"), JSON.stringify(Object.assign({}, ...data))),
+  fs.writeFileSync(
+    path.join(__dirname, "..", "src", "data", "icons.json"),
+    JSON.stringify(Object.assign({}, ...data)),
+  ),
+);
+
+// create illustrations json file
+const illustrationsJSON = Object.assign(
+  {},
+  ...ILLUSTRATION_NAMES.map(illustration => ({
+    [illustration]: {
+      resized: `https://images.kiwi.com/illustrations/0x400/${illustration}.png`,
+      original: `https://images.kiwi.com/illustrations/originals/${illustration}.png`,
+    },
+  })),
+);
+
+fs.writeFileSync(
+  path.join(__dirname, "..", "src", "data", "illustrations.json"),
+  JSON.stringify(illustrationsJSON),
 );

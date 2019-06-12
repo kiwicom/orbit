@@ -13,16 +13,7 @@ export type Devices =
 
 type QueryFunction = (style: Interpolation[]) => Interpolation[];
 
-type Query = {|
-  min?: number,
-  max?: number,
-|};
-
-type Queries = {|
-  [key: Devices]: Query,
-|};
-
-export type MediaQueries = $ObjMap<Queries, () => QueryFunction>;
+export type MediaQueries = { [key: Devices]: QueryFunction };
 
 export type GetBreakpointWidth = (name: string, theme: Theme, pure?: boolean) => string;
 

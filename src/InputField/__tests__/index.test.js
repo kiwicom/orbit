@@ -26,9 +26,11 @@ describe(`InputField with help, prefix and suffix`, () => {
   const onFocus = jest.fn();
   const onBlur = jest.fn();
   const spaceAfter = SPACINGS_AFTER.NORMAL;
+  const id = "id";
 
   const component = shallow(
     <InputField
+      id={id}
       size={size}
       type={type}
       name={name}
@@ -92,6 +94,7 @@ describe(`InputField with help, prefix and suffix`, () => {
     expect(input.render().prop("data-state")).toBe("ok");
     expect(input.render().prop("autocomplete")).toBe(autoComplete);
     expect(input.prop("readOnly")).toBe(readOnly);
+    expect(input.prop("id")).toBe(id);
   });
   it("should contain a Button as suffix", () => {
     expect(suffix.find("ButtonLink").exists()).toBe(true);

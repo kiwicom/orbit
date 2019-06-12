@@ -1,6 +1,4 @@
 // @flow
-import type { Translate } from "../Translate";
-
 export type Globals = {|
   +dataTest?: string,
 |};

@@ -1875,24 +1875,8 @@ exports[`Large Modal should match snapshot 1`] = `
           }
         }
       >
-        <ButtonLink
-          dataTest="ModalCloseButton"
-          icon={<Close />}
-          onClick={
-            [MockFunction] {
-              "calls": Array [
-                Array [],
-              ],
-              "results": Array [
-                Object {
-                  "type": "return",
-                  "value": undefined,
-                },
-              ],
-            }
-          }
-          size="normal"
-          transparent={true}
+        <ModalCloseButton
+          onClick={[MockFunction]}
         />
       </Modal__CloseContainer>
       <ContextProvider

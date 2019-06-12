@@ -12,9 +12,10 @@ import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
 import { right } from "../utils/rtl";
 import CLOSE_BUTTON_DATA_TEST from "./consts";
-import { withDictionary } from "../Dictionary";
+import { DictionaryContext } from "../Dictionary";
+import { pureTranslate } from "../Translate";
 
-import type { InnerProps, State } from "./index";
+import type { Props, State } from "./index";
 
 const getBorder = ({ theme }) =>
   `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`;
@@ -94,14 +95,32 @@ StyledCard.defaultProps = {
   theme: defaultTheme,
 };
 
-const CloseContainer = styled.div`
+const StyledCloseContainer = styled.div`
   position: absolute;
   top: 0;
   ${right}: 0;
   z-index: 1;
 `;
 
-class Card extends React.Component<InnerProps, State> {
+const CardCloseButton = ({ onClose }) => {
+  const dictionary = React.useContext(DictionaryContext);
+
+  return (
+    <StyledCloseContainer>
+      <ButtonLink
+        dataTest={CLOSE_BUTTON_DATA_TEST}
+        type="secondary"
+        size="small"
+        icon={<Close />}
+        onClick={onClose}
+        transparent
+        title={pureTranslate(dictionary, "button_close")}
+      />
+    </StyledCloseContainer>
+  );
+};
+
+class Card extends React.Component<Props, State> {
   state = {
     expandedSections: [],
     initialExpandedSections: [],
@@ -206,7 +225,7 @@ class Card extends React.Component<InnerProps, State> {
   };
 
   render() {
-    const { closable, dataTest, spaceAfter, onClose, translate } = this.props;
+    const { closable, dataTest, spaceAfter, onClose } = this.props;
     const children = this.getChildren();
     return (
       <StyledCard
@@ -216,25 +235,13 @@ class Card extends React.Component<InnerProps, State> {
         hasAdjustedHeader={this.hasAdjustedHeader()}
       >
         {children && React.Children.map(children, (item, index) => this.renderSection(item, index))}
-        {closable && (
-          <CloseContainer>
-            <ButtonLink
-              dataTest={CLOSE_BUTTON_DATA_TEST}
-              type="secondary"
-              size="small"
-              icon={<Close />}
-              onClick={onClose}
-              transparent
-              title={translate("button_close")}
-            />
-          </CloseContainer>
-        )}
+        {closable && <CardCloseButton onClose={onClose} />}
       </StyledCard>
     );
   }
 }
 
-export default withDictionary(Card);
+export default Card;
 
 export { default as CardHeader } from "./CardHeader";
 export { default as CardSection } from "./CardSection";

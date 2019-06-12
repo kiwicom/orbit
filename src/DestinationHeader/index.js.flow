@@ -1,14 +1,11 @@
 // @flow
 import type { Globals, Translation } from "../common/common.js.flow";
-import type { Translate } from "../Translate";
 
-type Props = {|
+export type Props = {|
   ...Globals,
   +destinationName: Translation,
   +image: string,
   +goBack?: () => void | Promise<any>,
 |};
-
-export type InnerProps = Props & Translate;
 
 declare export default React$ComponentType<Props>;

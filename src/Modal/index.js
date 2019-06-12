@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import defaultTheme, { type ThemeProps } from "../defaultTheme";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import Close from "../icons/Close";
 import { SIZES, CLOSE_BUTTON_DATA_TEST, FOCUSABLE_ELEMENT_SELECTORS } from "./consts";
@@ -17,9 +17,10 @@ import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
 import { QUERIES } from "../utils/mediaQuery/consts";
 import randomID from "../utils/randomID";
-import { withDictionary } from "../Dictionary";
+import { DictionaryContext } from "../Dictionary";
+import { pureTranslate } from "../Translate";
 
-import type { InnerProps, State } from "./index";
+import type { Props, State, onClose } from "./index";
 
 const getSizeToken = () => ({ size, theme }) => {
   const tokens = {
@@ -321,7 +322,22 @@ ModalWrapperContent.defaultProps = {
   theme: defaultTheme,
 };
 
-export class PureModal extends React.PureComponent<InnerProps, State> {
+const ModalCloseButton = ({ onClick }) => {
+  const dictionary = React.useContext(DictionaryContext);
+
+  return (
+    <ButtonLink
+      onClick={onClick}
+      size="normal"
+      icon={<Close />}
+      transparent
+      dataTest={CLOSE_BUTTON_DATA_TEST}
+      title={pureTranslate(dictionary, "button_close")}
+    />
+  );
+};
+
+export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
   static defaultProps = {
     theme: defaultTheme,
   };
@@ -340,8 +356,6 @@ export class PureModal extends React.PureComponent<InnerProps, State> {
 
   modalBody: { current: any | HTMLElement } = React.createRef();
 
-  closeButton: { current: React$ElementRef<*> | null } = React.createRef();
-
   offset = 40;
 
   focusTriggered = false;
@@ -359,7 +373,7 @@ export class PureModal extends React.PureComponent<InnerProps, State> {
     window.addEventListener("resize", this.handleResize);
   }
 
-  componentDidUpdate(prevProps: InnerProps) {
+  componentDidUpdate(prevProps: Props) {
     if (this.props.children !== prevProps.children) {
       this.decideFixedFooter();
       this.setDimensions();
@@ -524,7 +538,6 @@ export class PureModal extends React.PureComponent<InnerProps, State> {
       fixedFooter = false,
       dataTest,
       isMobileFullPage = false,
-      translate,
     } = this.props;
 
     const {
@@ -576,17 +589,7 @@ export class PureModal extends React.PureComponent<InnerProps, State> {
               fixedClose={fixedClose}
               isMobileFullPage={isMobileFullPage}
             >
-              {onClose && (
-                <ButtonLink
-                  onClick={onClose}
-                  size="normal"
-                  icon={<Close />}
-                  transparent
-                  dataTest={CLOSE_BUTTON_DATA_TEST}
-                  ref={this.closeButton}
-                  title={translate("button_close")}
-                />
-              )}
+              {onClose && <ModalCloseButton onClick={onClose} />}
             </CloseContainer>
             <ModalContext.Provider
               value={{
@@ -608,7 +611,7 @@ export class PureModal extends React.PureComponent<InnerProps, State> {
   }
 }
 
-const ThemedModal = withTheme(withDictionary(PureModal));
+const ThemedModal = withTheme(PureModal);
 ThemedModal.displayName = "Modal";
 export default ThemedModal;
 

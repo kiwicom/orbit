@@ -10,9 +10,10 @@ import BASE_URL from "./consts";
 import defaultTheme from "../defaultTheme";
 import LazyImage from "../LazyImage";
 import mq from "../utils/mediaQuery";
-import { withDictionary } from "../Dictionary";
+import { DictionaryContext } from "../Dictionary";
+import { pureTranslate } from "../Translate";
 
-import type { InnerProps } from "./index";
+import type { Props } from "./index";
 
 const StyledDestinationHeader = styled.div`
   width: 100%;
@@ -95,7 +96,20 @@ StyledHeader.defaultProps = {
   theme: defaultTheme,
 };
 
-const DestinationHeader = ({ destinationName, goBack, dataTest, image, translate }: InnerProps) => {
+const DestinationHeaderGoBackButton = ({ onClick }) => {
+  const dictionary = React.useContext(DictionaryContext);
+
+  return (
+    <ButtonLink
+      size="small"
+      iconLeft={<ChevronLeft />}
+      onClick={onClick}
+      title={pureTranslate(dictionary, "breadcrumbs_back")}
+    />
+  );
+};
+
+const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props) => {
   const destinationImage = image.toLowerCase();
   return (
     <StyledDestinationHeader data-test={dataTest}>
@@ -112,12 +126,7 @@ const DestinationHeader = ({ destinationName, goBack, dataTest, image, translate
       />
       <StyledOverlay />
       <StyledContent>
-        <ButtonLink
-          size="small"
-          iconLeft={<ChevronLeft />}
-          onClick={goBack}
-          title={translate("breadcrumbs_back")}
-        />
+        <DestinationHeaderGoBackButton onClick={goBack} />
         <StyledHeader>
           <Heading inverted type="title2">
             {destinationName}
@@ -128,4 +137,4 @@ const DestinationHeader = ({ destinationName, goBack, dataTest, image, translate
   );
 };
 
-export default withDictionary(DestinationHeader);
+export default DestinationHeader;

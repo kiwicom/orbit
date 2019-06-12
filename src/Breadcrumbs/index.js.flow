@@ -4,15 +4,12 @@
 */
 import type { Globals } from "../common/common.js.flow";
 import typeof BreadcrumbsItemType from "./BreadcrumbsItem";
-import type { Translate } from "../Translate";
 
-type Props = {|
+export type Props = {|
   ...Globals,
   children: React$Node,
   onGoBack?: (ev?: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
 |};
-
-export type InnerProps = Props & Translate;
 
 declare export default React$ComponentType<Props>;
 

@@ -15,9 +15,10 @@ import { rtlSpacing, right } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import { Item } from "../List/ListItem";
 import { StyledText } from "../Text";
-import { withDictionary } from "../Dictionary";
+import { DictionaryContext } from "../Dictionary";
+import { pureTranslate } from "../Translate";
 
-import type { InnerProps } from "./index";
+import type { Props } from "./index";
 
 type IconProps = {
   icon: React.Node,
@@ -189,7 +190,24 @@ CloseContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const Alert = (props: InnerProps) => {
+const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
+  const dictionary = React.useContext(DictionaryContext);
+
+  return (
+    <CloseContainer hasChildren={hasChildren}>
+      <ButtonLink
+        dataTest={dataTest}
+        onClick={onClick}
+        size="small"
+        icon={icon}
+        transparent
+        title={pureTranslate(dictionary, "button_close")}
+      />
+    </CloseContainer>
+  );
+};
+
+const Alert = (props: Props) => {
   const {
     type = TYPE_OPTIONS.INFO,
     title,
@@ -199,7 +217,6 @@ const Alert = (props: InnerProps) => {
     children,
     dataTest,
     spaceAfter,
-    translate,
   } = props;
   return (
     <StyledAlert
@@ -223,19 +240,15 @@ const Alert = (props: InnerProps) => {
         )}
       </ContentWrapper>
       {closable && (
-        <CloseContainer hasChildren={children}>
-          <ButtonLink
-            dataTest={CLOSE_BUTTON_DATA_TEST}
-            onClick={onClose}
-            size="small"
-            icon={<Close size="small" color={type} />}
-            transparent
-            title={translate("button_close")}
-          />
-        </CloseContainer>
+        <AlertCloseButton
+          hasChildren={children}
+          dataTest={CLOSE_BUTTON_DATA_TEST}
+          onClick={onClose}
+          icon={<Close size="small" color={type} />}
+        />
       )}
     </StyledAlert>
   );
 };
 
-export default withDictionary(Alert);
+export default Alert;

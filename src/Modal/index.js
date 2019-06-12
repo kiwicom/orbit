@@ -20,7 +20,7 @@ import randomID from "../utils/randomID";
 import { DictionaryContext } from "../Dictionary";
 import { pureTranslate } from "../Translate";
 
-import type { Props, State, onClose } from "./index";
+import type { Props, State } from "./index";
 
 const getSizeToken = () => ({ size, theme }) => {
   const tokens = {
@@ -322,7 +322,7 @@ ModalWrapperContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const ModalCloseButton = ({ onClick }) => {
+const ModalCloseButton = ({ onClick, dataTest }) => {
   const dictionary = React.useContext(DictionaryContext);
 
   return (
@@ -331,7 +331,7 @@ const ModalCloseButton = ({ onClick }) => {
       size="normal"
       icon={<Close />}
       transparent
-      dataTest={CLOSE_BUTTON_DATA_TEST}
+      dataTest={dataTest}
       title={pureTranslate(dictionary, "button_close")}
     />
   );
@@ -589,7 +589,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
               fixedClose={fixedClose}
               isMobileFullPage={isMobileFullPage}
             >
-              {onClose && <ModalCloseButton onClick={onClose} />}
+              {onClose && <ModalCloseButton onClick={onClose} dataTest={CLOSE_BUTTON_DATA_TEST} />}
             </CloseContainer>
             <ModalContext.Provider
               value={{

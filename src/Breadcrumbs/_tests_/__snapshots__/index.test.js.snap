@@ -470,8 +470,20 @@ exports[`Breadcrumbs should match snapshot 1`] = `
     typeof="BreadcrumbList"
     vocab="http://schema.org/"
   >
-    <OnGoBack
-      onGoBack={[MockFunction]}
+    <GoBackButton
+      onClick={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
     />
     <BreadcrumbsItem
       active={true}

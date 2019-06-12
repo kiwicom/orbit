@@ -102,17 +102,17 @@ const StyledCloseContainer = styled.div`
   z-index: 1;
 `;
 
-const CardCloseButton = ({ onClose }) => {
+const CardCloseButton = ({ onClick, dataTest }) => {
   const dictionary = React.useContext(DictionaryContext);
 
   return (
     <StyledCloseContainer>
       <ButtonLink
-        dataTest={CLOSE_BUTTON_DATA_TEST}
+        dataTest={dataTest}
         type="secondary"
         size="small"
         icon={<Close />}
-        onClick={onClose}
+        onClick={onClick}
         transparent
         title={pureTranslate(dictionary, "button_close")}
       />
@@ -235,7 +235,7 @@ class Card extends React.Component<Props, State> {
         hasAdjustedHeader={this.hasAdjustedHeader()}
       >
         {children && React.Children.map(children, (item, index) => this.renderSection(item, index))}
-        {closable && <CardCloseButton onClose={onClose} />}
+        {closable && <CardCloseButton onClick={onClose} dataTest={CLOSE_BUTTON_DATA_TEST} />}
       </StyledCard>
     );
   }

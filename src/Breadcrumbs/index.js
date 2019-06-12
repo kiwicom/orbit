@@ -35,7 +35,7 @@ StyledBackButtonWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const OnGoBack = ({ onGoBack }) => {
+const GoBackButton = ({ onClick }) => {
   const dictionary = React.useContext(DictionaryContext);
 
   return (
@@ -45,7 +45,7 @@ const OnGoBack = ({ onGoBack }) => {
         circled
         type="secondary"
         size="small"
-        onClick={onGoBack}
+        onClick={onClick}
         title={pureTranslate(dictionary, "breadcrumbs_back")}
       />
     </StyledBackButtonWrapper>
@@ -55,7 +55,7 @@ const OnGoBack = ({ onGoBack }) => {
 const Breadcrumbs = ({ children, dataTest, onGoBack }: Props) => (
   <StyledBreadcrumbs aria-label="Breadcrumb" role="navigation" data-test={dataTest}>
     <StyledBreadcrumbsList vocab="http://schema.org/" typeof="BreadcrumbList">
-      {onGoBack && <OnGoBack onGoBack={onGoBack} />}
+      {onGoBack && <GoBackButton onClick={onGoBack} />}
       {React.Children.map(children, (item, key) => {
         return React.cloneElement(item, {
           active: key === React.Children.count(children) - 1,

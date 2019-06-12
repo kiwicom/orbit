@@ -47,7 +47,7 @@ describe("Card", () => {
 
     const ButtonLink = component.find("CardCloseButton");
 
-    // expect(ButtonLink.prop("dataTest")).toBe(CLOSE_BUTTON_DATA_TEST);
+    expect(ButtonLink.prop("dataTest")).toBe(CLOSE_BUTTON_DATA_TEST);
     ButtonLink.simulate("click");
     expect(onClose).toHaveBeenCalled();
   });

@@ -10,9 +10,9 @@ import BASE_URL from "./consts";
 import defaultTheme from "../defaultTheme";
 import LazyImage from "../LazyImage";
 import mq from "../utils/mediaQuery";
+import { withDictionary } from "../Dictionary";
 
 import type { InnerProps } from "./index";
-import { withDictionary } from "../Dictionary";
 
 const StyledDestinationHeader = styled.div`
   width: 100%;

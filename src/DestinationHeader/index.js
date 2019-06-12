@@ -9,10 +9,10 @@ import ButtonLink, { StyledButton } from "../Button";
 import BASE_URL from "./consts";
 import defaultTheme from "../defaultTheme";
 import LazyImage from "../LazyImage";
-import { TranslateFunc } from "../Translate";
 import mq from "../utils/mediaQuery";
 
-import type { Props } from "./index";
+import type { InnerProps } from "./index";
+import { withDictionary } from "../Dictionary";
 
 const StyledDestinationHeader = styled.div`
   width: 100%;
@@ -95,7 +95,7 @@ StyledHeader.defaultProps = {
   theme: defaultTheme,
 };
 
-const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props) => {
+const DestinationHeader = ({ destinationName, goBack, dataTest, image, translate }: InnerProps) => {
   const destinationImage = image.toLowerCase();
   return (
     <StyledDestinationHeader data-test={dataTest}>
@@ -116,7 +116,7 @@ const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props) 
           size="small"
           iconLeft={<ChevronLeft />}
           onClick={goBack}
-          title={TranslateFunc("breadcrumbs_back")}
+          title={translate("breadcrumbs_back")}
         />
         <StyledHeader>
           <Heading inverted type="title2">
@@ -128,4 +128,4 @@ const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props) 
   );
 };
 
-export default DestinationHeader;
+export default withDictionary(DestinationHeader);

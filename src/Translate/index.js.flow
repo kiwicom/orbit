@@ -9,8 +9,12 @@ export type Props = {
   values?: Values,
 };
 
-type TranslateFuncProps = (tKey: string, values?: Values) => string;
+type PureTranslate = (dictionary: any, tKey: string, values?: Values) => string;
 
-declare export var TranslateFunc: TranslateFuncProps;
+export type Translate = {
+  translate: (tKey: string, values?: Values) => string,
+};
 
 declare export default React$ComponentType<Props>;
+
+declare export var pureTranslate: PureTranslate;

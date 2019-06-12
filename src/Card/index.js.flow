@@ -8,6 +8,7 @@ import typeof CardSectionType from "./CardSection/index.js.flow";
 import typeof CardSectionHeaderType from "./CardSection/CardSectionHeader/index.js.flow";
 import typeof CardSectionContentType from "./CardSection/CardSectionContent/index.js.flow";
 import typeof CardHeaderType from "./CardHeader/index.js.flow";
+import type { Translate } from "../Translate";
 
 export type Props = {|
   +children?: React$Node,
@@ -16,6 +17,8 @@ export type Props = {|
   ...Globals,
   ...spaceAfter,
 |};
+
+export type InnerProps = Props & Translate;
 
 export type State = {|
   expandedSections: Array<number>,

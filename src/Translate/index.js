@@ -1,5 +1,5 @@
 // @flow
-import React, { useContext } from "react";
+import React from "react";
 
 import { DictionaryContext } from "../Dictionary";
 import DEFAULT_DICTIONARY from "../data/dictionary/en-GB.json";
@@ -7,7 +7,7 @@ import type { Translations } from "../Dictionary";
 
 import type { Props, Values } from "./index";
 
-function pureTranslate(translations: Translations, key: string, values: Values = {}) {
+export function pureTranslate(translations: Translations, key: string, values: Values = {}) {
   const translation = translations[key] || DEFAULT_DICTIONARY[key];
 
   if (!translation) {
@@ -26,10 +26,5 @@ const Translate = ({ tKey, values }: Props) => (
     {dictionary => pureTranslate(dictionary, tKey, values)}
   </DictionaryContext.Consumer>
 );
-
-export function TranslateFunc(tKey: string, values: Values) {
-  const dictionary = useContext(DictionaryContext);
-  return pureTranslate(dictionary, tKey, values);
-}
 
 export default Translate;

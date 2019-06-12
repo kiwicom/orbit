@@ -5,9 +5,9 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import Button from "../Button";
 import ChevronLeft from "../icons/ChevronLeft";
-import { TranslateFunc } from "../Translate";
+import { withDictionary } from "../Dictionary";
 
-import type { Props } from "./index";
+import type { InnerProps } from "./index";
 
 const StyledBreadcrumbs = styled.nav`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -34,7 +34,7 @@ StyledBackButtonWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const Breadcrumbs = ({ children, dataTest, onGoBack }: Props) => (
+const Breadcrumbs = ({ children, dataTest, onGoBack, translate }: InnerProps) => (
   <StyledBreadcrumbs aria-label="Breadcrumb" role="navigation" data-test={dataTest}>
     <StyledBreadcrumbsList vocab="http://schema.org/" typeof="BreadcrumbList">
       {onGoBack && (
@@ -45,7 +45,7 @@ const Breadcrumbs = ({ children, dataTest, onGoBack }: Props) => (
             type="secondary"
             size="small"
             onClick={onGoBack}
-            title={TranslateFunc("breadcrumbs_back")}
+            title={translate("breadcrumbs_back")}
           />
         </StyledBackButtonWrapper>
       )}
@@ -59,6 +59,6 @@ const Breadcrumbs = ({ children, dataTest, onGoBack }: Props) => (
   </StyledBreadcrumbs>
 );
 
-export default Breadcrumbs;
+export default withDictionary(Breadcrumbs);
 
 export { default as BreadcrumbsItem } from "./BreadcrumbsItem";

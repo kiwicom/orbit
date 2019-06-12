@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
 
-import defaultTheme, { type ThemeProps } from "../defaultTheme";
+import defaultTheme from "../defaultTheme";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import Close from "../icons/Close";
 import { SIZES, CLOSE_BUTTON_DATA_TEST, FOCUSABLE_ELEMENT_SELECTORS } from "./consts";
@@ -17,9 +17,9 @@ import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
 import { QUERIES } from "../utils/mediaQuery/consts";
 import randomID from "../utils/randomID";
-import { TranslateFunc } from "../Translate";
+import { withDictionary } from "../Dictionary";
 
-import type { Props, State } from "./index";
+import type { InnerProps, State } from "./index";
 
 const getSizeToken = () => ({ size, theme }) => {
   const tokens = {
@@ -321,7 +321,7 @@ ModalWrapperContent.defaultProps = {
   theme: defaultTheme,
 };
 
-export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
+export class PureModal extends React.PureComponent<InnerProps, State> {
   static defaultProps = {
     theme: defaultTheme,
   };
@@ -359,7 +359,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     window.addEventListener("resize", this.handleResize);
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: InnerProps) {
     if (this.props.children !== prevProps.children) {
       this.decideFixedFooter();
       this.setDimensions();
@@ -524,7 +524,9 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
       fixedFooter = false,
       dataTest,
       isMobileFullPage = false,
+      translate,
     } = this.props;
+
     const {
       scrolled,
       loaded,
@@ -534,6 +536,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
       footerHeight,
       hasModalSection,
     } = this.state;
+
     return (
       <ModalBody
         tabIndex="0"
@@ -581,7 +584,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
                   transparent
                   dataTest={CLOSE_BUTTON_DATA_TEST}
                   ref={this.closeButton}
-                  title={TranslateFunc("button_close")}
+                  title={translate("button_close")}
                 />
               )}
             </CloseContainer>
@@ -605,7 +608,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
   }
 }
 
-const ThemedModal = withTheme(PureModal);
+const ThemedModal = withTheme(withDictionary(PureModal));
 ThemedModal.displayName = "Modal";
 export default ThemedModal;
 

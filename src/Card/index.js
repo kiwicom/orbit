@@ -7,14 +7,14 @@ import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
 import CardSection, { StyledCardSection } from "./CardSection";
 import CardHeader, { StyledCardHeader } from "./CardHeader";
-import { TranslateFunc } from "../Translate";
 import { StyledCardSectionContent } from "./CardSection/CardSectionContent";
 import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
 import { right } from "../utils/rtl";
 import CLOSE_BUTTON_DATA_TEST from "./consts";
+import { withDictionary } from "../Dictionary";
 
-import type { Props, State } from "./index";
+import type { InnerProps, State } from "./index";
 
 const getBorder = ({ theme }) =>
   `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`;
@@ -101,7 +101,7 @@ const CloseContainer = styled.div`
   z-index: 1;
 `;
 
-class Card extends React.Component<Props, State> {
+class Card extends React.Component<InnerProps, State> {
   state = {
     expandedSections: [],
     initialExpandedSections: [],
@@ -206,7 +206,7 @@ class Card extends React.Component<Props, State> {
   };
 
   render() {
-    const { closable, dataTest, spaceAfter, onClose } = this.props;
+    const { closable, dataTest, spaceAfter, onClose, translate } = this.props;
     const children = this.getChildren();
     return (
       <StyledCard
@@ -225,7 +225,7 @@ class Card extends React.Component<Props, State> {
               icon={<Close />}
               onClick={onClose}
               transparent
-              title={TranslateFunc("button_close")}
+              title={translate("button_close")}
             />
           </CloseContainer>
         )}
@@ -234,7 +234,7 @@ class Card extends React.Component<Props, State> {
   }
 }
 
-export default Card;
+export default withDictionary(Card);
 
 export { default as CardHeader } from "./CardHeader";
 export { default as CardSection } from "./CardSection";

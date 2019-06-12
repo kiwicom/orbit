@@ -6,6 +6,8 @@ import type { Globals } from "../common/common.js.flow";
 import typeof ModalSectionType from "./ModalSection";
 import typeof ModalHeaderType from "./ModalHeader";
 import typeof ModalFooterType from "./ModalFooter";
+import type { Translate } from "../Translate";
+import type { ThemeProps } from "../defaultTheme";
 
 export type State = {|
   scrolled: boolean,
@@ -31,6 +33,8 @@ export type Props = {|
   +isMobileFullPage?: boolean,
   ...Globals,
 |};
+
+export type InnerProps = Props & Translate & ThemeProps;
 
 declare export default React$ComponentType<Props>;
 

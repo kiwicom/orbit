@@ -15,9 +15,9 @@ import { rtlSpacing, right } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import { Item } from "../List/ListItem";
 import { StyledText } from "../Text";
-import { TranslateFunc } from "../Translate";
+import { withDictionary } from "../Dictionary";
 
-import type { Props } from "./index";
+import type { InnerProps } from "./index";
 
 type IconProps = {
   icon: React.Node,
@@ -189,7 +189,7 @@ CloseContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const Alert = (props: Props) => {
+const Alert = (props: InnerProps) => {
   const {
     type = TYPE_OPTIONS.INFO,
     title,
@@ -199,6 +199,7 @@ const Alert = (props: Props) => {
     children,
     dataTest,
     spaceAfter,
+    translate,
   } = props;
   return (
     <StyledAlert
@@ -229,7 +230,7 @@ const Alert = (props: Props) => {
             size="small"
             icon={<Close size="small" color={type} />}
             transparent
-            title={TranslateFunc("button_close")}
+            title={translate("button_close")}
           />
         </CloseContainer>
       )}
@@ -237,4 +238,4 @@ const Alert = (props: Props) => {
   );
 };
 
-export default Alert;
+export default withDictionary(Alert);

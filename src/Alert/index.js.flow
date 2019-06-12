@@ -4,6 +4,7 @@
 */
 import type { spaceAfter } from "../common/getSpacingToken/index";
 import type { Globals, Translation } from "../common/common.js.flow";
+import type { Translate } from "../Translate";
 
 type Type = "info" | "success" | "warning" | "critical";
 
@@ -17,5 +18,7 @@ export type Props = {|
   ...Globals,
   ...spaceAfter,
 |};
+
+export type InnerProps = Props & Translate;
 
 declare export default React$ComponentType<Props>;

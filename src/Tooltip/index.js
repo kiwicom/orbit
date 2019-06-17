@@ -420,7 +420,9 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
   };
 
   handleOut = () => {
-    this.setState({ shown: false });
+    setTimeout(() => {
+      this.setState({ shown: false });
+    }, 15);
   };
 
   handleOpen = () => {
@@ -473,8 +475,8 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
         >
           {children}
         </StyledTooltipChildren>
-        <Portal element="tooltips">
-          {render && (
+        {render && (
+          <Portal element="tooltips">
             <StyledTooltip data-test={dataTest}>
               <StyledTooltipOverlay
                 onClick={this.handleClickOutside}
@@ -500,7 +502,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
                 tooltipWidth={tooltipWidth}
                 contentHeight={contentHeight}
                 role="tooltip"
-                aria-hidden={!shown}
+                aria-hidden={!shown || !shownMobile}
                 id={this.tooltipId}
               >
                 <StyledTooltipContent ref={this.content}>{content}</StyledTooltipContent>
@@ -511,8 +513,8 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
                 </StyledTooltipClose>
               </StyledTooltipWrapper>
             </StyledTooltip>
-          )}
-        </Portal>
+          </Portal>
+        )}
       </React.Fragment>
     );
   }

@@ -32,7 +32,7 @@ The table below contains all types of the props available in Alert component.
 | `"critical"`  |
 
 ## Functional specs
-* Bypassing the `closable` prop into Alert, you will be able to handle `onClose` function and Close icon will be displayed. Also, if you want to select the Close Button element for testing purposes, use [data-test="AlertCloseButton"] selector.
+* By passing the `closable` prop into Alert, you will be able to handle `onClose` function and Close icon will be displayed. Also, if you want to select the Close Button element for testing purposes, use [data-test="AlertCloseButton"] selector.
 
 * If you set up `icon` props as `true`, Alert will have its own icon, based on selected `type`. If you want to use a different icon, just pass it to the `icon` prop as `React.Element`. Alert without `icon` prop doesn't have any icon.
 

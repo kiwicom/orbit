@@ -44,7 +44,7 @@ To implement the Search layout into your project, you need to use this JSX marku
 import Layout, { LayoutColumn } from "@kiwicom/orbit-components/lib/Layout";
 
 const App = () => (
-  <Layout>
+  <Layout type="Search">
     <LayoutColumn>
       The left SideBar for filters
     </LayoutColumn>
@@ -70,7 +70,7 @@ To implement the Booking layout into your project, you need to use this JSX mark
 import Layout, { LayoutColumn } from "@kiwicom/orbit-components/lib/Layout";
 
 const App = () => (
-  <Layout>
+  <Layout type="Booking">
     <LayoutColumn>
       The main section for Booking form
     </LayoutColumn>
@@ -89,7 +89,7 @@ To implement the MMB layout into your project, you need to use this JSX markup:
 import Layout, { LayoutColumn } from "@kiwicom/orbit-components/lib/Layout";
 
 const App = () => (
-  <Layout>
+  <Layout type="MMB">
     <LayoutColumn>
       The main section for ManageMyBooking
     </LayoutColumn>

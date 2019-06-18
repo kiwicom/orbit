@@ -160,7 +160,7 @@ Title.defaultProps = {
 const Content = styled(StyledDiv)`
   display: block;
   margin-bottom: ${({ theme, title, inlineActions }) =>
-    title && (inlineActions ? "0" : theme.orbit.spaceXSmall)};
+    title && (inlineActions ? "0" : theme.orbit.spaceXXSmall)};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
 
   & a,

@@ -1,10 +1,10 @@
 // @flow
-import type { Globals } from "../../common/common.js.flow";
+import type { Globals, Component } from "../../common/common.js.flow";
 
 export type Props = {|
   ...Globals,
   +active?: boolean,
-  +component?: any,
+  +component?: Component,
   +children: React$Node,
   +href?: string,
   +contentKey?: number,

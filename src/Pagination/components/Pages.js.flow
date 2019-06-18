@@ -1,0 +1,12 @@
+// @flow
+import type { OnPageChange, PageCount, SelectedPage, Sizes } from "../index";
+
+export type Props = {|
+  ...OnPageChange,
+  ...PageCount,
+  ...SelectedPage,
+  enlargement?: number,
+  size: Sizes,
+|};
+
+declare export default React$ComponentType<Props>;

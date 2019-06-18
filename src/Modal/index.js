@@ -17,6 +17,8 @@ import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
 import { QUERIES } from "../utils/mediaQuery/consts";
 import randomID from "../utils/randomID";
+import { DictionaryContext } from "../Dictionary";
+import { pureTranslate } from "../Translate";
 
 import type { Props, State } from "./index";
 
@@ -320,6 +322,21 @@ ModalWrapperContent.defaultProps = {
   theme: defaultTheme,
 };
 
+const ModalCloseButton = ({ onClick, dataTest }) => {
+  const dictionary = React.useContext(DictionaryContext);
+
+  return (
+    <ButtonLink
+      onClick={onClick}
+      size="normal"
+      icon={<Close />}
+      transparent
+      dataTest={dataTest}
+      title={pureTranslate(dictionary, "button_close")}
+    />
+  );
+};
+
 export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
   static defaultProps = {
     theme: defaultTheme,
@@ -338,8 +355,6 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
   modalContent: { current: any | HTMLElement } = React.createRef();
 
   modalBody: { current: any | HTMLElement } = React.createRef();
-
-  closeButton: { current: React$ElementRef<*> | null } = React.createRef();
 
   offset = 40;
 
@@ -524,6 +539,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
       dataTest,
       isMobileFullPage = false,
     } = this.props;
+
     const {
       scrolled,
       loaded,
@@ -533,6 +549,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
       footerHeight,
       hasModalSection,
     } = this.state;
+
     return (
       <ModalBody
         tabIndex="0"
@@ -572,16 +589,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
               fixedClose={fixedClose}
               isMobileFullPage={isMobileFullPage}
             >
-              {onClose && (
-                <ButtonLink
-                  onClick={onClose}
-                  size="normal"
-                  icon={<Close />}
-                  transparent
-                  dataTest={CLOSE_BUTTON_DATA_TEST}
-                  ref={this.closeButton}
-                />
-              )}
+              {onClose && <ModalCloseButton onClick={onClose} dataTest={CLOSE_BUTTON_DATA_TEST} />}
             </CloseContainer>
             <ModalContext.Provider
               value={{

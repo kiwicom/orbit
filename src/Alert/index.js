@@ -15,6 +15,8 @@ import { rtlSpacing, right } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import { Item } from "../List/ListItem";
 import { StyledText } from "../Text";
+import { DictionaryContext } from "../Dictionary";
+import { pureTranslate } from "../Translate";
 
 import type { Props } from "./index";
 
@@ -193,6 +195,23 @@ CloseContainer.defaultProps = {
   theme: defaultTheme,
 };
 
+const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
+  const dictionary = React.useContext(DictionaryContext);
+
+  return (
+    <CloseContainer hasChildren={hasChildren}>
+      <ButtonLink
+        dataTest={dataTest}
+        onClick={onClick}
+        size="small"
+        icon={icon}
+        transparent
+        title={pureTranslate(dictionary, "button_close")}
+      />
+    </CloseContainer>
+  );
+};
+
 const Alert = (props: Props) => {
   const {
     type = TYPE_OPTIONS.INFO,
@@ -236,15 +255,12 @@ const Alert = (props: Props) => {
         )}
       </ContentWrapper>
       {closable && (
-        <CloseContainer hasChildren={children}>
-          <ButtonLink
-            dataTest={CLOSE_BUTTON_DATA_TEST}
-            onClick={onClose}
-            size="small"
-            icon={<Close size="small" color={type} />}
-            transparent
-          />
-        </CloseContainer>
+        <AlertCloseButton
+          hasChildren={children}
+          dataTest={CLOSE_BUTTON_DATA_TEST}
+          onClick={onClose}
+          icon={<Close size="small" color={type} />}
+        />
       )}
     </StyledAlert>
   );

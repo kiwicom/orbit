@@ -15,7 +15,9 @@ const ORBIT_ICONS_DIR = path.join(__dirname, "../orbit-icons-font");
 
 const createSVG = () =>
   new Promise((resolve, reject) => {
-    fs.mkdirSync(ORBIT_ICONS_DIR);
+    if (!fs.existsSync(ORBIT_ICONS_DIR)) {
+      fs.mkdirSync(ORBIT_ICONS_DIR);
+    }
 
     const fontStream = new SVGIcons2SVGFontStream({
       fontName: "orbit-icons",
@@ -37,8 +39,9 @@ const createSVG = () =>
         path.join(__dirname, "../src/icons/svg/", `${iconName}.svg`),
       );
 
+      // $FlowFixMe
       icon.metadata = {
-        unicode: [String.fromCharCode(`0x${iconList[iconName].character}`)],
+        unicode: [String.fromCharCode(Number(`0x${iconList[iconName].character}`))],
         name: iconName,
       };
 

@@ -20,7 +20,7 @@ storiesOf("ButtonGroup", module)
       return (
         <ButtonGroup connected={connected} dataTest={dataTest}>
           <Button icon={<Icons.Airplane />}>Button</Button>
-          <Button icon={<Icons.ChevronDown />} />
+          <Button icon={<Icons.ChevronDown />} title="Show more" />
         </ButtonGroup>
       );
     },
@@ -39,7 +39,7 @@ storiesOf("ButtonGroup", module)
           <ButtonLink type="secondary" icon={<Icons.Airplane />}>
             Button
           </ButtonLink>
-          <ButtonLink type="secondary" icon={<Icons.ChevronDown />} />
+          <ButtonLink type="secondary" icon={<Icons.ChevronDown />} title="Show more" />
         </ButtonGroup>
       );
     },
@@ -54,7 +54,7 @@ storiesOf("ButtonGroup", module)
       <RenderInRtl>
         <ButtonGroup connected>
           <Button icon={<Icons.Airplane />}>Button</Button>
-          <Button icon={<Icons.ChevronDown />} />
+          <Button icon={<Icons.ChevronDown />} title="Show more" />
         </ButtonGroup>
       </RenderInRtl>
     ),

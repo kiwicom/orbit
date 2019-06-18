@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 
 import type { Props, GetLinkStyleProps } from "./index";
@@ -40,23 +40,23 @@ const IconContainer = styled(({ children, className }) => (
 `;
 
 IconContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const getLinkStyle = ({
   theme,
   type,
-}: GetLinkStyleProps) => css` // Common styles for TextLink and "a" in Text 
-  
-  &:link, &:visited {
+}: GetLinkStyleProps) => css` // Common styles for TextLink and "a" in Text
+
+  &, &:link, &:visited {
     color: ${getColor({ theme, type })};
     text-decoration: ${
       type === TYPE_OPTIONS.SECONDARY
         ? theme.orbit.textDecorationTextLinkSecondary
         : theme.orbit.textDecorationTextLinkPrimary
-    };  
+    };
   }
-  
+
   &:hover, &:active {
     text-decoration: ${
       type === TYPE_OPTIONS.SECONDARY
@@ -95,7 +95,7 @@ export const StyledTextLink = styled(({ theme, type, ...props }) => (
 `;
 
 StyledTextLink.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const TextLink = ({
@@ -131,7 +131,8 @@ const TextLink = ({
       rel={relValues && relValues.join(" ")}
       onClick={onClick}
       data-test={dataTest}
-      tabIndex={tabIndex}
+      tabIndex={tabIndex || (!href ? "0" : undefined)}
+      role={!href ? "button" : undefined}
     >
       {children}
       {icon && <IconContainer type={type}>{icon}</IconContainer>}

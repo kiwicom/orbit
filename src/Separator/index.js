@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
@@ -18,7 +18,7 @@ const StyledSeparator = styled.hr`
 `;
 
 StyledSeparator.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Separator = ({ spaceAfter }: Props) => <StyledSeparator spaceAfter={spaceAfter} />;

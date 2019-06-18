@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, baseURL } from "./consts";
 
 import type { Props } from "./index";
@@ -36,7 +36,7 @@ export const StyledServiceLogo = styled(({ className, name, size, grayScale, the
 `;
 
 StyledServiceLogo.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ServiceLogo = ({ name, size = SIZE_OPTIONS.MEDIUM, grayScale = false, dataTest }: Props) => (

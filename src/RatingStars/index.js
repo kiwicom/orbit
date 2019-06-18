@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import StarEmpty from "../icons/StarEmpty";
 import StarFull from "../icons/StarFull";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import MAX_STARS from "./consts";
 import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
 
@@ -22,7 +22,7 @@ const StyledRatingStars = styled.div`
 `;
 
 StyledRatingStars.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const RatingStars = ({

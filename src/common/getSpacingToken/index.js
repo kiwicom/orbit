@@ -5,6 +5,7 @@ import type { Props } from ".";
 
 const getSpacingToken = ({ spaceAfter, theme }: Props) => {
   const tokens = {
+    [SPACINGS_AFTER.NONE]: "0",
     [SPACINGS_AFTER.SMALLEST]: theme.orbit.spaceXXSmall,
     [SPACINGS_AFTER.SMALL]: theme.orbit.spaceXSmall,
     [SPACINGS_AFTER.NORMAL]: theme.orbit.spaceSmall,

@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
 import { StyledModalFooter } from "../ModalFooter";
 import { withModalContext } from "../ModalContext";
@@ -20,16 +20,20 @@ export const StyledModalSection = styled.section`
   &:first-of-type {
     border-top: ${({ suppressed, theme }) =>
       suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};
-    border-top-left-radius: 9px; // TODO: create token
-    border-top-right-radius: 9px; // TODO: create token
+    border-top-left-radius: ${({ isMobileFullPage }) =>
+      !isMobileFullPage && "9px"}; // TODO: create token
+    border-top-right-radius: ${({ isMobileFullPage }) =>
+      !isMobileFullPage && "9px"}; // TODO: create token
     margin-top: ${({ suppressed, theme }) => suppressed && theme.orbit.spaceLarge};
   }
 
   &:last-of-type {
     border-bottom: ${({ suppressed, theme }) =>
       suppressed ? `1px solid ${theme.orbit.paletteCloudNormal}` : "0"};
-    border-bottom-left-radius: 9px; // TODO: create token
-    border-bottom-right-radius: 9px; // TODO: create token
+    border-bottom-left-radius: ${({ isMobileFullPage }) =>
+      !isMobileFullPage && "9px"}; // TODO: create token
+    border-bottom-right-radius: ${({ isMobileFullPage }) =>
+      !isMobileFullPage && "9px"}; // TODO: create token
     & ~ ${StyledModalFooter} {
       margin-top: ${({ theme, suppressed }) => suppressed && theme.orbit.spaceMedium};
     }
@@ -54,7 +58,7 @@ export const StyledModalSection = styled.section`
 `;
 
 StyledModalSection.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class ModalSection extends React.PureComponent<Props> {
@@ -65,12 +69,18 @@ class ModalSection extends React.PureComponent<Props> {
       setHasModalSection();
     }
   }
+
   componentDidUpdate(prevProps: Props) {
     if (prevProps !== this.props) {
       this.callContextFunctions();
-      const { setHasModalSection } = this.props;
+      const { setHasModalSection, manageFocus } = this.props;
+
       if (setHasModalSection) {
         setHasModalSection();
+      }
+
+      if (manageFocus) {
+        manageFocus();
       }
     }
   }
@@ -94,9 +104,13 @@ class ModalSection extends React.PureComponent<Props> {
   };
 
   render() {
-    const { suppressed, children, dataTest } = this.props;
+    const { suppressed, children, dataTest, isMobileFullPage } = this.props;
     return (
-      <StyledModalSection suppressed={suppressed} data-test={dataTest}>
+      <StyledModalSection
+        suppressed={suppressed}
+        data-test={dataTest}
+        isMobileFullPage={isMobileFullPage}
+      >
         {children}
       </StyledModalSection>
     );
@@ -104,5 +118,7 @@ class ModalSection extends React.PureComponent<Props> {
 }
 
 const DecoratedComponent = withModalContext(ModalSection);
+
+// $FlowFixMe flow doesn't recognize displayName for functions
 DecoratedComponent.displayName = "ModalSection";
 export default DecoratedComponent;

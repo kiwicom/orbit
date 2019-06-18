@@ -2,14 +2,18 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
 import FormFeedback from "../FormFeedback";
 import DefaultFormLabel from "../FormLabel";
 import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
-import { StyledTag } from "../Tag";
+import InputTags from "./InputTags";
 import type { Ref, Translation } from "../common/common.js.flow";
+import getSpacingToken from "../common/getSpacingToken";
+import getFieldDataState from "../common/getFieldDataState";
+import { StyledButtonLink } from "../ButtonLink/index";
+import randomID from "../utils/randomID";
 
 import type { Props } from "./index";
 
@@ -47,17 +51,26 @@ const getDOMType = type => {
   return type;
 };
 
-const Field = styled.label`
+const Field = styled(
+  ({ component: Component, className, children, spaceAfter, theme, ...props }) => {
+    return (
+      <Component className={className} {...props}>
+        {children}
+      </Component>
+    );
+  },
+)`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   position: relative;
   display: block;
   z-index: 2;
   flex: 1 1 100%;
   width: 100%;
+  margin-bottom: ${getSpacingToken};
 `;
 
 Field.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const FakeInput = styled(({ children, className }) => (
@@ -83,7 +96,7 @@ export const FakeInput = styled(({ children, className }) => (
 `;
 
 FakeInput.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const InputContainer = styled(({ children, className }) => (
@@ -109,10 +122,14 @@ export const InputContainer = styled(({ children, className }) => (
         error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
       }`};
   }
+
+  ${StyledButtonLink}:active {
+    box-shadow: none;
+  }
 `;
 
 InputContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledInlineLabel = styled.div`
@@ -133,7 +150,7 @@ const StyledInlineLabel = styled.div`
 `;
 
 StyledInlineLabel.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const Prefix = styled(({ children, className }) => (
@@ -156,7 +173,7 @@ export const Prefix = styled(({ children, className }) => (
 `;
 
 Prefix.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Suffix = styled(({ children, className }) => <div className={className}>{children}</div>)`
@@ -179,7 +196,7 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
 `;
 
 Suffix.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const Input = styled(
@@ -189,7 +206,7 @@ export const Input = styled(
   )),
 )`
   appearance: none;
-  -webkit-text-fill-color: inherit;
+  -webkit-text-fill-color: ${({ disabled }) => disabled && "inherit"};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   border: none;
   padding: ${getPadding()};
@@ -216,6 +233,10 @@ export const Input = styled(
   &::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+
+  &[data-com-onepassword-filled] {
+    background-color: inherit !important;
   }
 
   &:focus {
@@ -250,7 +271,7 @@ export const Input = styled(
 `;
 
 Input.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const FormLabel = ({
@@ -266,40 +287,6 @@ const FormLabel = ({
     {label}
   </DefaultFormLabel>
 );
-
-const StyledInputTags = styled.div`
-  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
-  display: flex;
-  align-items: center;
-  flex: 0 1 auto;
-  height: 100%;
-  z-index: 2;
-  min-width: 50px;
-  overflow: hidden;
-`;
-
-StyledInputTags.defaultProps = {
-  theme: defaultTokens,
-};
-
-const StyledInputTagsInner = styled.div`
-  overflow-x: scroll;
-  white-space: nowrap;
-  -ms-overflow-style: none; /* IE 11 */
-  scrollbar-width: none; /* Firefox 64 */
-  
-  &::-webkit-scrollbar { 
-    display: none; 
-  }
-  
-  ${StyledTag} + ${StyledTag} {
-    margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
-  }
-`;
-
-StyledInputTagsInner.defaultProps = {
-  theme: defaultTokens,
-};
 
 // $FlowExpected
 const InputField = React.forwardRef((props: Props, ref: Ref) => {
@@ -331,10 +318,18 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
     tabIndex,
     readOnly,
     autoComplete,
+    spaceAfter,
+    id,
   } = props;
 
+  const forID = id || (label ? randomID("inputField") : undefined);
+
   return (
-    <Field>
+    <Field
+      component={label ? "label" : "div"}
+      spaceAfter={spaceAfter}
+      htmlFor={label ? forID : undefined}
+    >
       {label && !inlineLabel && <FormLabel label={label} isFilled={!!value} required={required} />}
       <InputContainer size={size} disabled={disabled} error={error}>
         {prefix && <Prefix size={size}>{prefix}</Prefix>}
@@ -343,13 +338,10 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
             <FormLabel label={label} isFilled={!!value} required={required} />
           </StyledInlineLabel>
         )}
-        {tags && (
-          <StyledInputTags>
-            <StyledInputTagsInner>{tags}</StyledInputTagsInner>
-          </StyledInputTags>
-        )}
+        {tags && <InputTags>{tags}</InputTags>}
         <Input
           data-test={dataTest}
+          data-state={getFieldDataState(!!error)}
           onChange={onChange}
           onFocus={onFocus}
           onBlur={onBlur}
@@ -371,6 +363,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           inlineLabel={inlineLabel}
           readOnly={readOnly}
           autoComplete={autoComplete}
+          id={forID}
         />
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />

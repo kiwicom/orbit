@@ -5,9 +5,10 @@ import styled from "styled-components";
 import Heading, { StyledHeading } from "../Heading";
 import Checkbox, { Label } from "../Checkbox";
 import Text from "../Text";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import { getSize } from "../Icon";
 import { right } from "../utils/rtl";
+import KEY_CODE_MAP from "../common/keyMaps";
 
 import type { Props } from "./index";
 
@@ -26,7 +27,7 @@ const StyledListChoiceIcon = styled.div`
 `;
 
 StyledListChoiceIcon.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledListChoice = styled.div`
@@ -44,11 +45,13 @@ const StyledListChoice = styled.div`
     border: none;
   }
 
+  &:focus,
   &:hover {
     background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
     ${StyledListChoiceIcon} svg {
       color: ${({ theme }) => theme.orbit.colorIconAttention};
     }
+    outline: none;
   }
 
   ${Label} {
@@ -57,7 +60,7 @@ const StyledListChoice = styled.div`
 `;
 
 StyledListChoice.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledListChoiceContent = styled.div`
@@ -73,14 +76,25 @@ const StyledListChoiceContent = styled.div`
 `;
 
 StyledListChoiceContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ListChoice = (props: Props) => {
   const { dataTest, icon, title, description, selectable, onClick, selected } = props;
 
+  const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
+    if (onClick) {
+      if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+        onClick(ev);
+      } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+        ev.preventDefault();
+        onClick(ev);
+      }
+    }
+  };
+
   return (
-    <StyledListChoice onClick={onClick} data-test={dataTest}>
+    <StyledListChoice onClick={onClick} data-test={dataTest} onKeyDown={handleKeyDown} tabIndex="0">
       {icon && <StyledListChoiceIcon>{icon}</StyledListChoiceIcon>}
       <StyledListChoiceContent>
         <Heading type="title4" element="div">
@@ -92,7 +106,7 @@ const ListChoice = (props: Props) => {
           </Text>
         )}
       </StyledListChoiceContent>
-      {selectable && <Checkbox checked={selected} readOnly />}
+      {selectable && <Checkbox checked={selected} readOnly tabIndex="-1" />}
     </StyledListChoice>
   );
 };

@@ -3,15 +3,16 @@
   DOCUMENTATION: https://orbit.kiwi/components/inputgroup/
 */
 import type { Globals, Translation } from "../common/common.js.flow";
-import InputField from "../InputField";
-import Select from "../Select";
+import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
+  ...Globals,
+  ...spaceAfter,
   +label?: Translation,
   +flex?: string | Array<string>,
   +size?: "small" | "normal",
   +help?: React$Node,
-  +children: Array<React$Element<typeof InputField> | React$Element<typeof Select>>,
+  +children: React$Node,
   +error?: React$Node,
   +onChange?: (
     ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
@@ -22,12 +23,12 @@ export type Props = {|
   +onBlur?: (
     ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
   ) => void | Promise<any>,
-  ...Globals,
 |};
 
 export type State = {|
   active: boolean,
   filled: boolean,
+  inputID: string,
 |};
 
 declare export default React$ComponentType<Props>;

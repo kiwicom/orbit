@@ -1,12 +1,12 @@
 // @flow
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 
 export type spaceAfter = {|
-  +spaceAfter?: "smallest" | "small" | "normal" | "medium" | "large" | "largest",
+  +spaceAfter?: "none" | "smallest" | "small" | "normal" | "medium" | "large" | "largest",
 |};
 
 export type Props = {|
-  +theme: typeof defaultTokens,
+  +theme: typeof defaultTheme,
   ...spaceAfter,
 |};
 

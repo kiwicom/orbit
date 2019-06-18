@@ -9,6 +9,8 @@ const Inner = styled.div`
 `;
 
 class ClickOutside extends React.PureComponent<Props> {
+  node: { current: any | HTMLDivElement } = React.createRef();
+
   componentDidMount() {
     document.addEventListener("click", this.handleClickOutside, true);
   }
@@ -28,8 +30,6 @@ class ClickOutside extends React.PureComponent<Props> {
       onClickOutside(ev);
     }
   };
-
-  node: { current: any | HTMLDivElement } = React.createRef();
 
   render() {
     const { children } = this.props;

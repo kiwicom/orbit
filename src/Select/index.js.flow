@@ -5,6 +5,7 @@
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals, Ref, Translation } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken/index";
 
 type Option = {|
   +value: string | number,
@@ -15,6 +16,9 @@ type Option = {|
 type Size = "small" | "normal";
 
 export type Props = {|
+  ...Globals,
+  ...Ref,
+  ...spaceAfter,
   +size?: Size,
   +label?: Translation,
   +placeholder?: Translation,
@@ -29,8 +33,6 @@ export type Props = {|
   +onBlur?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +options: Option[],
   +prefix?: React$Node,
-  ...Globals,
-  ...Ref,
 |};
 
 declare export var SelectContainer: ReactComponentStyled<any>;

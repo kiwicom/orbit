@@ -3,8 +3,8 @@ import * as React from "react";
 import styled from "styled-components";
 
 import { StyledTripSegment, StyledTripSegmentMilestone } from "../TripSegment";
-import defaultTokens from "../defaultTokens";
-import { left } from "../utils/rtl";
+import defaultTheme from "../defaultTheme";
+import { left, right } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -12,6 +12,8 @@ const StyledTripSector = styled.div`
   display: flex;
   position: relative;
   width: 100%;
+  padding-${right}: 2px;
+  box-sizing: border-box;
   flex-direction: column;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
 
@@ -43,7 +45,7 @@ const StyledTripSector = styled.div`
 `;
 
 StyledTripSector.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const TripSector = ({ children, dataTest }: Props) => (

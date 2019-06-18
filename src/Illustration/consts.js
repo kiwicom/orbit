@@ -7,6 +7,7 @@ export const NAMES = [
   "AirportTransportTaxi", // TODO: Get rid off 22.11
   "AirportShuttle",
   "BaggageDrop",
+  "BGYFastTrack",
   "Boarding",
   "BoardingPass",
   "BusinessTravel",
@@ -27,6 +28,7 @@ export const NAMES = [
   "MobileApp",
   "Money",
   "MusicalInstruments",
+  "NCEFastTrack",
   "NetVerify",
   "NoBookings", // TODO: Get rid off 22.11
   "NoFavoriteFlights",

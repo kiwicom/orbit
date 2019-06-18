@@ -2,20 +2,16 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import mediaQueries from "../utils/mediaQuery";
 import { ALIGNS, JUSTIFY, DIRECTIONS, SPACINGS } from "./consts";
-import { DEVICES_WIDTH } from "../utils/mediaQuery/consts";
+import { DEVICES } from "../utils/mediaQuery/consts";
 import isDefined from "./helpers/isDefined";
 import shouldUseFlex from "./helpers/shouldUseFlex";
 import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
 import getChildrenMargin from "./helpers/getChildrenMargin";
 
 import type { Props } from "./index";
-
-const sortedBreakpoints = Object.keys(DEVICES_WIDTH).sort(
-  (a, b) => DEVICES_WIDTH[a] - DEVICES_WIDTH[b],
-);
 
 const StyledStack = styled(({ className, children, dataTest }) => (
   <div className={className} data-test={dataTest}>
@@ -25,7 +21,7 @@ const StyledStack = styled(({ className, children, dataTest }) => (
   // just apply all mediaQueries
   // smallMobile - default values are not mediaQuery and needs to be rendered differently
   ${props =>
-    sortedBreakpoints.map((viewport, index, devices) =>
+    DEVICES.map((viewport, index, devices) =>
       viewport in mediaQueries
         ? mediaQueries[viewport](css`
             ${isDefined(props[viewport]) && getViewportFlexStyles(viewport)};
@@ -40,7 +36,7 @@ const StyledStack = styled(({ className, children, dataTest }) => (
 `;
 
 StyledStack.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Stack = (props: Props) => {

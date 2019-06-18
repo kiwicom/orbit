@@ -1,12 +1,13 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled, { css, withTheme } from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme, { type ThemeProps } from "../defaultTheme";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import Close from "../icons/Close";
-import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
-import media, { breakpoints } from "../utils/mediaQuery";
+import { SIZES, CLOSE_BUTTON_DATA_TEST, FOCUSABLE_ELEMENT_SELECTORS } from "./consts";
+import KEY_CODE_MAP from "../common/keyMaps";
+import media, { getBreakpointWidth } from "../utils/mediaQuery";
 import { StyledModalFooter } from "./ModalFooter";
 import { MobileHeader, StyledModalHeader } from "./ModalHeader";
 import { StyledModalSection } from "./ModalSection";
@@ -14,7 +15,8 @@ import { StyledHeading } from "../Heading";
 import { right } from "../utils/rtl";
 import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
-import { DEVICES_WIDTH } from "../utils/mediaQuery/consts";
+import { QUERIES } from "../utils/mediaQuery/consts";
+import randomID from "../utils/randomID";
 
 import type { Props, State } from "./index";
 
@@ -62,7 +64,7 @@ const ModalBody = styled.div`
 `;
 
 ModalBody.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ModalWrapper = styled.div`
@@ -74,10 +76,12 @@ const ModalWrapper = styled.div`
 
   position: fixed;
   width: 100%;
-  border-top-left-radius: 9px; // TODO: create token
-  border-top-right-radius: 9px; // TODO: create token
+  border-top-left-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
+  border-top-right-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
   transition: ${transition(["top"], "normal", "ease-in-out")};
-  top: ${({ loaded }) => (loaded ? "32px" : "100%")};
+  top: ${({ loaded, isMobileFullPage }) => (loaded ? !isMobileFullPage && "32px" : "100%")};
 
   ${onlyIE(css`
     /* IE flex bug, the content won't be centered if there is not 'height' property
@@ -94,13 +98,13 @@ const ModalWrapper = styled.div`
 `;
 
 ModalWrapper.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const CloseContainer = styled.div`
   display: flex;
   // -ms-page needs to set up for IE on max largeMobile
-  ${({ scrolled, fixedClose }) =>
+  ${({ scrolled, fixedClose, theme }) =>
     fixedClose || scrolled
       ? css`
           position: fixed;
@@ -108,14 +112,15 @@ const CloseContainer = styled.div`
             css`
               position: -ms-page;
             `,
-            `(max-width:${DEVICES_WIDTH.largeMobile - 1}px)`,
+            `(max-width:${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px)`,
           )};
         `
       : css`
           position: absolute;
         `};
   position: ${({ scrolled, fixedClose }) => (fixedClose || scrolled ? "fixed" : "absolute")};
-  top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled ? "32px" : "0")};
+  top: ${({ scrolled, fixedClose, isMobileFullPage }) =>
+    !isMobileFullPage && (fixedClose || scrolled) ? "32px" : "0"};
   right: 0;
   z-index: 800;
   justify-content: flex-end;
@@ -124,11 +129,13 @@ const CloseContainer = styled.div`
   // TODO create tokens
   height: 52px;
   width: 100%;
-  max-width: ${({ modalWidth }) => `${modalWidth}px`};
+  max-width: ${({ modalWidth }) => (modalWidth ? `${modalWidth}px` : getSizeToken)};
   box-shadow: ${({ scrolled }) => scrolled && `0 2px 4px 0 rgba(23, 27, 30, 0.1)`};
   background-color: ${({ theme, scrolled }) => scrolled && theme.orbit.paletteWhite};
-  border-top-left-radius: 9px; // TODO: create token
-  border-top-right-radius: 9px; // TODO: create token
+  border-top-left-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
+  border-top-right-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
   transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
   
   ${media.largeMobile(css`
@@ -160,36 +167,48 @@ const CloseContainer = styled.div`
 `;
 
 CloseContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ModalWrapperContent = styled.div`
   position: absolute;
   box-sizing: border-box;
-  border-top-left-radius: 9px; // TODO: create token
-  border-top-right-radius: 9px; // TODO: create token
+  border-top-left-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
+  border-top-right-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
   background-color: ${({ theme }) => theme.orbit.backgroundModal};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   width: 100%;
-  max-height: calc(
-    100% - ${({ theme }) => theme.orbit.spaceXLarge} -
-      ${({ fixedFooter, footerHeight }) => `${fixedFooter && !!footerHeight ? footerHeight : 0}px`}
-  );
-  bottom: ${({ fixedFooter, footerHeight }) =>
-    `${32 + (fixedFooter && !!footerHeight ? footerHeight : 0)}px`};
+  ${({ theme, fixedFooter, footerHeight, isMobileFullPage }) =>
+    isMobileFullPage
+      ? css`
+          max-height: 100%;
+          top: 0;
+        `
+      : css`
+          max-height: calc(
+            100% - ${theme.orbit.spaceXLarge} -
+              ${`${fixedFooter && !!footerHeight ? footerHeight : 0}px`}
+          );
+        `};
+  bottom: ${({ fixedFooter, footerHeight, isMobileFullPage, theme }) =>
+    `${(!isMobileFullPage ? parseInt(theme.orbit.spaceXLarge, 10) : 0) +
+      (fixedFooter && !!footerHeight ? footerHeight : 0)}px`};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowModal};
   overflow-y: auto;
   overflow-x: hidden;
 
-  ${({ fixedFooter, theme }) =>
+  ${({ fixedFooter, theme, footerHeight, fullyScrolled }) =>
     fixedFooter &&
+    footerHeight &&
     css`
       ${StyledModalFooter} {
+        bottom: 0;
         padding: ${theme.orbit.spaceMedium};
-        box-shadow: ${({ fullyScrolled }) =>
-          fullyScrolled
-            ? `inset 0 1px 0 ${theme.orbit.paletteCloudNormal}, 0 -2px 4px 0 rgba(23, 27, 30, 0)`
-            : `inset 0 0 0 transparent, 0 -2px 4px 0 rgba(23, 27, 30, 0.1)`};
+        box-shadow: ${fullyScrolled
+          ? `inset 0 1px 0 ${theme.orbit.paletteCloudNormal}, 0 -2px 4px 0 rgba(23, 27, 30, 0)`
+          : `inset 0 0 0 transparent, 0 -2px 4px 0 rgba(23, 27, 30, 0.1)`};
         position: fixed;
         transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
       }
@@ -200,7 +219,8 @@ const ModalWrapperContent = styled.div`
     `};
 
   ${MobileHeader} {
-    top: ${({ scrolled, theme }) => scrolled && theme.orbit.spaceXLarge};
+    top: ${({ scrolled, theme, isMobileFullPage }) =>
+      !isMobileFullPage && scrolled && theme.orbit.spaceXLarge};
     opacity: ${({ scrolled }) => scrolled && "1"};
     visibility: ${({ scrolled }) => scrolled && "visible"};
     transition: ${({ scrolled, theme }) =>
@@ -225,7 +245,7 @@ const ModalWrapperContent = styled.div`
   ${media.largeMobile(css`
     position: relative;
     bottom: auto;
-    border-radius: 9px;
+    border-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "9px"};
     padding-bottom: 0;
     height: auto;
     overflow: visible;
@@ -247,7 +267,7 @@ const ModalWrapperContent = styled.div`
         fixedFooter
           ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXXLarge}!important`
           : theme.orbit.spaceXXLarge};
-      max-width: ${({ modalWidth }) => `${modalWidth}px`};
+      max-width: ${({ modalWidth }) => (modalWidth ? `${modalWidth}px` : getSizeToken)};
       position: ${({ fullyScrolled, fixedFooter }) => fixedFooter && fullyScrolled && "absolute"};
       box-shadow: ${({ fullyScrolled }) => fullyScrolled && "none"};
     }
@@ -267,39 +287,44 @@ const ModalWrapperContent = styled.div`
     `,
   )};
 
-  ${onlyIE(
-    css`
-      ${StyledModalFooter} {
-        // we need to apply static position for IE only when fullyScrolled and fixedFooter
-        // or fixed when fixedFooter (overwrite -ms-page)
-        position: ${({ fullyScrolled, fixedFooter }) =>
-          (fullyScrolled && fixedFooter && "static") || (fixedFooter && "fixed")};
-        // for IE there's need to be added inset box-shadow with same background as footer has
-        box-shadow: ${({ fixedFooter, theme }) =>
-          !fixedFooter && `inset 0 0 0 1px ${theme.orbit.paletteWhite}`};
-      }
-      // also we need to clear not wanted margins
-      ${({ fullyScrolled, fixedFooter }) =>
-        fullyScrolled &&
-        fixedFooter &&
-        css`
-          ${StyledModalSection}:last-of-type {
-            margin-bottom: 0;
-          }
-          ${StyledModalHeader} {
-            margin-bottom: ${({ hasModalSection }) => !hasModalSection && "0"};
-          }
-        `};
-    `,
-    breakpoints.largeMobile,
-  )};
+  ${({ theme }) =>
+    onlyIE(
+      css`
+        ${StyledModalFooter} {
+          // we need to apply static position for IE only when fullyScrolled and fixedFooter
+          // or fixed when fixedFooter (overwrite -ms-page)
+          position: ${({ fullyScrolled, fixedFooter }) =>
+            (fullyScrolled && fixedFooter && "static") || (fixedFooter && "fixed")};
+          // for IE there's need to be added inset box-shadow with same background as footer has
+          box-shadow: ${({ fixedFooter }) =>
+            !fixedFooter && `inset 0 0 0 1px ${theme.orbit.paletteWhite}`};
+        }
+        // also we need to clear not wanted margins
+        ${({ fullyScrolled, fixedFooter }) =>
+          fullyScrolled &&
+          fixedFooter &&
+          css`
+            ${StyledModalSection}:last-of-type {
+              margin-bottom: 0;
+            }
+            ${StyledModalHeader} {
+              margin-bottom: ${({ hasModalSection }) => !hasModalSection && "0"};
+            }
+          `};
+      `,
+      getBreakpointWidth(QUERIES.LARGEMOBILE, theme),
+    )};
 `;
 
 ModalWrapperContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
-class Modal extends React.PureComponent<Props, State> {
+export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
+  static defaultProps = {
+    theme: defaultTheme,
+  };
+
   state = {
     scrolled: false,
     loaded: false,
@@ -310,6 +335,16 @@ class Modal extends React.PureComponent<Props, State> {
     hasModalSection: false,
   };
 
+  modalContent: { current: any | HTMLElement } = React.createRef();
+
+  modalBody: { current: any | HTMLElement } = React.createRef();
+
+  closeButton: { current: React$ElementRef<*> | null } = React.createRef();
+
+  offset = 40;
+
+  focusTriggered = false;
+
   componentDidMount() {
     this.timeout = setTimeout(() => {
       this.setState({
@@ -317,7 +352,9 @@ class Modal extends React.PureComponent<Props, State> {
       });
       this.decideFixedFooter();
       this.setDimensions();
+      this.setFirstFocus();
     }, 15);
+    this.modalID = randomID("modal-");
     window.addEventListener("resize", this.handleResize);
   }
 
@@ -337,7 +374,7 @@ class Modal extends React.PureComponent<Props, State> {
 
   setScrollPosition = (value: number) => {
     const { modalContent, modalBody } = this;
-    if (window?.innerWidth >= DEVICES_WIDTH.largeMobile) {
+    if (window?.innerWidth >= getBreakpointWidth(QUERIES.LARGEMOBILE, this.props.theme, true)) {
       if (modalBody?.current?.scrollTop) {
         modalBody.current.scrollTop = value;
       }
@@ -365,6 +402,10 @@ class Modal extends React.PureComponent<Props, State> {
       this.setState({ hasModalSection: true });
     }
   };
+
+  setFirstFocus() {
+    if (this.modalBody.current) this.modalBody.current.focus();
+  }
 
   removeHasModalSection = () => {
     if (this.state.hasModalSection) this.setState({ hasModalSection: false });
@@ -413,6 +454,7 @@ class Modal extends React.PureComponent<Props, State> {
       ev.stopPropagation();
       onClose(ev);
     }
+    this.keyboardHandler(ev);
   };
 
   handleClickOutside = (ev: MouseEvent) => {
@@ -428,13 +470,60 @@ class Modal extends React.PureComponent<Props, State> {
     }
   };
 
-  modalContent: { current: any | HTMLElement } = React.createRef();
-  modalBody: { current: any | HTMLElement } = React.createRef();
+  keyboardHandler = (e: SyntheticKeyboardEvent<HTMLElement>) => {
+    if (e.keyCode === KEY_CODE_MAP.TAB) {
+      // Rotate Focus
+      if (!this.focusTriggered) {
+        this.focusTriggered = true;
+        this.manageFocus();
+      }
+      if (
+        e.shiftKey &&
+        (document.activeElement === this.firstFocusableEl ||
+          document.activeElement === this.modalBody.current)
+      ) {
+        e.preventDefault();
+        this.lastFocusableEl.focus();
+      } else if (!e.shiftKey && document.activeElement === this.lastFocusableEl) {
+        e.preventDefault();
+        this.firstFocusableEl.focus();
+      }
+    }
+  };
+
+  manageFocus = () => {
+    if (this.focusTriggered) {
+      const focusableElements = this.modalContent.current.querySelectorAll(
+        FOCUSABLE_ELEMENT_SELECTORS,
+      );
+
+      if (focusableElements.length > 0) {
+        const firstFocusableEl = focusableElements[0];
+        const lastFocusableEl = focusableElements[focusableElements.length - 1];
+
+        this.firstFocusableEl = firstFocusableEl;
+        this.lastFocusableEl = lastFocusableEl;
+      }
+    }
+  };
+
+  firstFocusableEl: HTMLElement;
+
+  lastFocusableEl: HTMLElement;
+
   timeout: TimeoutID;
-  offset = 40;
+
+  modalID: string;
 
   render() {
-    const { onClose, children, size = SIZES.NORMAL, fixedFooter = false, dataTest } = this.props;
+    const {
+      onClose,
+      children,
+      size = SIZES.NORMAL,
+      fixedFooter = false,
+      dataTest,
+      isMobileFullPage = false,
+    } = this.props;
     const {
       scrolled,
       loaded,
@@ -452,12 +541,17 @@ class Modal extends React.PureComponent<Props, State> {
         onClick={this.handleClickOutside}
         data-test={dataTest}
         ref={this.modalBody}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={this.modalID}
       >
         <ModalWrapper
           size={size}
           loaded={loaded}
           onScroll={this.handleMobileScroll}
           fixedFooter={fixedFooter}
+          id={this.modalID}
+          isMobileFullPage={isMobileFullPage}
         >
           <ModalWrapperContent
             size={size}
@@ -469,8 +563,15 @@ class Modal extends React.PureComponent<Props, State> {
             modalWidth={modalWidth}
             footerHeight={footerHeight}
             hasModalSection={hasModalSection}
+            isMobileFullPage={isMobileFullPage}
           >
-            <CloseContainer modalWidth={modalWidth} scrolled={scrolled} fixedClose={fixedClose}>
+            <CloseContainer
+              modalWidth={modalWidth}
+              size={size}
+              scrolled={scrolled}
+              fixedClose={fixedClose}
+              isMobileFullPage={isMobileFullPage}
+            >
               {onClose && (
                 <ButtonLink
                   onClick={onClose}
@@ -478,6 +579,7 @@ class Modal extends React.PureComponent<Props, State> {
                   icon={<Close />}
                   transparent
                   dataTest={CLOSE_BUTTON_DATA_TEST}
+                  ref={this.closeButton}
                 />
               )}
             </CloseContainer>
@@ -487,7 +589,9 @@ class Modal extends React.PureComponent<Props, State> {
                 decideFixedFooter: this.decideFixedFooter,
                 setHasModalSection: this.setHasModalSection,
                 removeHasModalSection: this.removeHasModalSection,
+                manageFocus: this.manageFocus,
                 hasModalSection,
+                isMobileFullPage,
               }}
             >
               {children}
@@ -499,7 +603,9 @@ class Modal extends React.PureComponent<Props, State> {
   }
 }
 
-export default Modal;
+const ThemedModal = withTheme(PureModal);
+ThemedModal.displayName = "Modal";
+export default ThemedModal;
 
 export { default as ModalHeader } from "./ModalHeader";
 export { default as ModalSection } from "./ModalSection";

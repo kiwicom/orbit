@@ -5,16 +5,20 @@
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals, Ref, Translation } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Size = "small" | "normal";
 
 export type Props = {|
+  ...Globals,
+  ...Ref,
+  ...spaceAfter,
   +size?: Size,
   +type?: "text" | "number" | "email" | "password" | "passportid",
   +name?: string,
   +label?: Translation,
   +inlineLabel?: boolean,
-  +value?: string | number,
+  +value?: (() => string | number) | string | number,
   +placeholder?: Translation,
   +prefix?: React$Node,
   +suffix?: React$Node,
@@ -30,13 +34,12 @@ export type Props = {|
   tabIndex?: string,
   +readOnly?: boolean,
   +autoComplete?: string,
+  +id?: string,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onKeyDown?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
   +onKeyUp?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
-  ...Globals,
-  ...Ref,
 |};
 
 declare export var FakeInput: ReactComponentStyled<any>;

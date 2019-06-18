@@ -3,7 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { ICON_SIZES, ICON_COLORS } from "./consts";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 
 import type { GetSize, Props } from "./index";
 
@@ -37,19 +37,21 @@ const reverse = ({ reverseOnRtl, theme }) =>
     transform: scale(-1, 1);
   `;
 
-const StyledIcon = styled(({ className, viewBox, dataTest, children, ariaHidden }) => (
+const StyledIcon = styled(({ className, viewBox, dataTest, children, ariaHidden, ariaLabel }) => (
   <svg
     className={className}
     viewBox={viewBox}
     data-test={dataTest}
     preserveAspectRatio="xMidYMid meet"
     aria-hidden={ariaHidden ? "true" : undefined}
+    aria-label={ariaLabel}
   >
     {children}
   </svg>
 ))`
   width: ${({ size }) => getSize(size)};
   height: ${({ size }) => getSize(size)};
+  flex-shrink: 0; // prevent shrinking when used in flex-box
   vertical-align: middle;
   fill: currentColor;
   color: ${({ color, customColor }) => customColor || (color && getColor())};
@@ -57,7 +59,7 @@ const StyledIcon = styled(({ className, viewBox, dataTest, children, ariaHidden 
 `;
 
 StyledIcon.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const OrbitIcon = (props: Props) => {
@@ -71,6 +73,7 @@ const OrbitIcon = (props: Props) => {
     dataTest,
     ariaHidden,
     reverseOnRtl,
+    ariaLabel,
   } = props;
 
   return (
@@ -83,6 +86,7 @@ const OrbitIcon = (props: Props) => {
       color={color}
       ariaHidden={ariaHidden}
       reverseOnRtl={reverseOnRtl}
+      ariaLabel={ariaLabel}
     >
       {children}
     </StyledIcon>

@@ -3,6 +3,7 @@ import * as React from "react";
 import { shallow } from "enzyme";
 
 import InputFile from "../index";
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe(`InputFile with help`, () => {
   const label = "Select file";
@@ -17,6 +18,7 @@ describe(`InputFile with help`, () => {
   const onFocus = jest.fn();
   const onBlur = jest.fn();
   const onRemoveFile = jest.fn();
+  const spaceAfter = SPACINGS_AFTER.NORMAL;
 
   const component = shallow(
     <InputFile
@@ -27,6 +29,7 @@ describe(`InputFile with help`, () => {
       fileName={fileName}
       dataTest={dataTest}
       allowedFileTypes={allowedFileTypes}
+      spaceAfter={spaceAfter}
       help={
         <div>
           Supported files: <strong>PNG, JPG, PDF</strong>
@@ -40,6 +43,7 @@ describe(`InputFile with help`, () => {
     />,
   );
   const input = component.find("InputFile__Input");
+  const field = component.find("InputFile__Field");
   const closeButton = component.find("InputFile__CloseButton");
 
   it("should contain a label", () => {
@@ -61,8 +65,10 @@ describe(`InputFile with help`, () => {
         .prop("attribs").name,
     ).toBe(name);
     expect(input.prop("accept")).toBe(allowedFileTypes);
+    expect(field.prop("spaceAfter")).toBe(spaceAfter);
     expect(input.render().prop("tabindex")).toBe(tabIndex);
     expect(input.render().prop("data-test")).toBe(dataTest);
+    expect(input.render().prop("data-state")).toBe("ok");
   });
   it("should contain a input Button", () => {
     expect(component.find("InputFile__InputButton").exists()).toBe(true);
@@ -108,6 +114,16 @@ describe(`InputFiInputFile with error`, () => {
   it("should contain FeedBack error", () => {
     expect(component.find(`FormFeedback[type="error"]`).exists()).toBe(true);
   });
+
+  it("should has data-state error", () => {
+    expect(
+      component
+        .find("InputFile__Input")
+        .render()
+        .prop("data-state"),
+    ).toBe("error");
+  });
+
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();
   });

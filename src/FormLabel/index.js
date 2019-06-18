@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 
 const StyledAsterisk = styled.span`
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
@@ -13,11 +13,11 @@ const StyledAsterisk = styled.span`
 `;
 
 StyledAsterisk.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
-const FormLabel = styled(({ className, children, required, filled, dataTest }) => (
-  <span className={className} data-test={dataTest}>
+const FormLabel = styled(({ className, children, required, filled, dataTest, id }) => (
+  <span className={className} data-test={dataTest} id={id}>
     {required && <StyledAsterisk filled={filled}>* </StyledAsterisk>}
     <span>{children}</span>
   </span>
@@ -32,7 +32,7 @@ const FormLabel = styled(({ className, children, required, filled, dataTest }) =
 `;
 
 FormLabel.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export default FormLabel;

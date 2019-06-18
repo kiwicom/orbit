@@ -19,24 +19,22 @@ export type State = {|
 
 type Size = "small" | "normal" | "large";
 
-type Children =
-  | React$Element<ModalHeaderType>
-  | React$Element<ModalSectionType>
-  | React$Element<ModalFooterType>;
-
 type onClose = (
   ev: SyntheticKeyboardEvent<HTMLDivElement> | SyntheticEvent<HTMLButtonElement> | MouseEvent,
 ) => void | Promise<any>;
 
 export type Props = {|
   +size?: Size,
-  +children: Array<Children> | Children,
+  +children: React$Node,
   +onClose?: onClose,
   +fixedFooter?: boolean,
+  +isMobileFullPage?: boolean,
   ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;
+
+declare export var PureModal: React$ComponentType<Props>;
 
 declare export var ModalHeader: ModalHeaderType;
 declare export var ModalSection: ModalSectionType;

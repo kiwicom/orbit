@@ -12,6 +12,8 @@ Table below contains all types of the props available in Button component.
 
 | Name          | Type                              | Default         | Description                      |
 | :------------ | :-------------------------------- | :-------------- | :------------------------------- |
+| ariaControls  | `string`                          |                 | Id of the element the button controls.
+| ariaExpanded  | `boolean`                         |                 | Tells screen reader the controlled element from `ariaControls` is expanded
 | block         | `boolean`                         | `false`         | If `true`, the Button will grow up to the full width of its container.
 | bordered      | `boolean`                         | `false`         | If `true`, the Button will have a lighter version, with border and light background.
 | circled       | `boolean`                         | `false`         | If `true`, the Button will have circular shape.
@@ -27,8 +29,12 @@ Table below contains all types of the props available in Button component.
 | loading       | `boolean`                         | `false`         | If `true`, the loading glyph will be displayed.
 | onClick       | `event => void \| Promise`        |                 | Function for handling onClick event.
 | ref           | `func`                            |                 | Prop for forwarded ref of the Button.
+| role          | `string`                          |                 | Specifies the role of an element.
 | **size**      | [`enum`](#enum)                   | `"normal"`      | The size of the Button.
+| spaceAfter    | `enum`                            |                 | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | submit        | `boolean`                         | `false`         | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.
+| tabIndex      | `string`                          |                 | Specifies the tab order of an element.
+| title         | `string`                          |                 | Adds `aria-label`.
 | **type**      | [`enum`](#enum)                   | `"primary"`     | The type of Button.
 | width         | `number`                          | `0`             | The width of the Button. Number is defined in `px`.
 
@@ -62,3 +68,17 @@ Table below contains all types of the props available in Button component.
   If you specify the children of **YourComponent** component, it will override the children prop of Button component, e.g.:
   ```jsx
   const YourComponent = props => <div {...props}>YourComponent</div>
+  ```
+
+## Accessibility
+A button is mainly used for indicating an action, submitting a data, opening a modal etc. If you want to use Button for navigation consider using a `<TextLink>` for that.
+
+* Use `ariaControls` prop to add `aria-controls` attribute to establish the relationship between button and element which is controlled by it. `aria-controls` works only with a unique `id` of an element. 
+
+* Use `ariaExpands` prop to add `aria-expands` to indicate screenreaders, that element controlled by button through `ariaControls` is expanded or not.
+
+* Use `disabled` prop to indicate users that button is inactive and they can't interact with it.
+
+* Use `role` and `tabIndex` when you are rendering `Button` to non-actionable HTML element as `div` or `span`. However, this should be done only in edge-cases as it is anti-pattern behavior.
+
+* Use `title` to add `aria-label` when you need to add extra informations to screen readers or there is no `children` presented to be used as label.

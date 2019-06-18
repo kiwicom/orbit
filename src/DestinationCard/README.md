@@ -22,6 +22,7 @@ Table below contains all types of the props available in DestinationCard compone
 | onClick                 | `onClick`                        |                  | Function for handling onClick event.
 | **outbound**            | [`Outbound`](#outbound)          |                  | The outbound information about the trip. [See Functional specs](#functional-specs)
 | **price**               | `Translation`                    |                  | The price of the trip.
+| tabIndex                | `string`                         | `"0"`            | Specifies the tab order of an element
 | timeOfStay              | `Translation`                    |                  | The time of the stay for the trip. [See Functional specs](#functional-specs)
 
 ### Inbound
@@ -48,6 +49,8 @@ Table below contains all types of the props available in `outbound` object.
 * The minimum `height` of the DestinationCard needs to be more than 175 (px) due to the hover transition.
 
 * You don't have to pass entire src of the image. Just `dubai_ae`, `paris_fr` etc. is enough.
+
+* `OnClick` is also called on `Enter` and `Space` keypresses.
 
 * If the DestinationCard should be used for one-way trip, don't use `inbound`, only `outbound` prop. The code may look like this:
 ```jsx

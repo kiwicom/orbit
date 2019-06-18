@@ -7,6 +7,7 @@ import ButtonLink from "../../ButtonLink";
 import TextLink from "../../TextLink";
 import Visibility from "../../icons/Visibility";
 import Search from "../../icons/Search";
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe(`InputField with help, prefix and suffix`, () => {
   const size = "normal";
@@ -24,9 +25,12 @@ describe(`InputField with help, prefix and suffix`, () => {
   const onChange = jest.fn();
   const onFocus = jest.fn();
   const onBlur = jest.fn();
+  const spaceAfter = SPACINGS_AFTER.NORMAL;
+  const id = "id";
 
   const component = shallow(
     <InputField
+      id={id}
       size={size}
       type={type}
       name={name}
@@ -39,6 +43,7 @@ describe(`InputField with help, prefix and suffix`, () => {
       tabIndex={tabIndex}
       readOnly={readOnly}
       autoComplete={autoComplete}
+      spaceAfter={spaceAfter}
       prefix={<Search />}
       suffix={<ButtonLink transparent icon={<Visibility />} />}
       help={
@@ -54,6 +59,7 @@ describe(`InputField with help, prefix and suffix`, () => {
   const prefix = component.find("InputField__Prefix");
   const input = component.find("InputField__Input");
   const suffix = component.find("InputField__Suffix");
+  const field = component.find("InputField__Field");
 
   it("should contain a label", () => {
     expect(
@@ -71,6 +77,7 @@ describe(`InputField with help, prefix and suffix`, () => {
   });
   it("should have passed props", () => {
     expect(input.prop("size")).toBe(size);
+    expect(field.prop("spaceAfter")).toBe(spaceAfter);
     expect(input.prop("type")).toBe(type);
     expect(
       component
@@ -84,8 +91,10 @@ describe(`InputField with help, prefix and suffix`, () => {
     expect(input.prop("minLength")).toBe(minLength);
     expect(input.render().prop("tabindex")).toBe(tabIndex);
     expect(input.render().prop("data-test")).toBe(dataTest);
+    expect(input.render().prop("data-state")).toBe("ok");
     expect(input.render().prop("autocomplete")).toBe(autoComplete);
     expect(input.prop("readOnly")).toBe(readOnly);
+    expect(input.prop("id")).toBe(id);
   });
   it("should contain a Button as suffix", () => {
     expect(suffix.find("ButtonLink").exists()).toBe(true);
@@ -165,6 +174,14 @@ describe(`InputField number with error and help`, () => {
   });
   it("should contain FeedBack error", () => {
     expect(component.find(`FormFeedback[type="error"]`).exists()).toBe(true);
+  });
+  it("should has data-state error", () => {
+    expect(
+      component
+        .find("InputField__Input")
+        .render()
+        .prop("data-state"),
+    ).toBe("error");
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

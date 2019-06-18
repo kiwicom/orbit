@@ -2,16 +2,29 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/badge/
 */
+import { ReactComponentStyled } from "styled-components";
+
 import type { Globals } from "../common/common.js.flow";
 
-export type Type = "neutral" | "dark" | "info" | "success" | "warning" | "critical" | "white";
+export type Type =
+  | "neutral"
+  | "dark"
+  | "info"
+  | "success"
+  | "warning"
+  | "critical"
+  | "white"
+  | "infoInverted"
+  | "criticalInverted";
 
 export type Props = {|
   +children: React$Node,
   +type?: Type,
   +icon?: React$Node,
-  +circled?: boolean,
+  +ariaLabel?: string,
   ...Globals,
 |};
+
+declare export var StyledBadge: ReactComponentStyled<Props>;
 
 declare export default React$ComponentType<Props>;

@@ -2,13 +2,15 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import { FakeInput, Input, InputContainer } from "../InputField";
 import { SelectContainer } from "../Select";
 import FormFeedback from "../FormFeedback";
 import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { right, rtlSpacing } from "../utils/rtl";
+import getSpacingToken from "../common/getSpacingToken";
+import randomID from "../utils/randomID";
 
 import type { Props, State } from "./index";
 
@@ -64,7 +66,7 @@ const FakeGroup = styled(({ children, className }) => <div className={className}
 `;
 
 FakeGroup.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledChildren = styled.div`
@@ -80,11 +82,11 @@ const StyledChild = styled.div`
   }
 `;
 StyledChild.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
-const StyledInputGroup = styled(({ children, className, dataTest }) => (
-  <div className={className} data-test={dataTest}>
+const StyledInputGroup = styled(({ children, className, dataTest, role, ariaLabelledby }) => (
+  <div className={className} data-test={dataTest} role={role} aria-labelledby={ariaLabelledby}>
     {children}
   </div>
 ))`
@@ -92,6 +94,7 @@ const StyledInputGroup = styled(({ children, className, dataTest }) => (
   width: 100%;
   flex-direction: column;
   position: relative;
+  margin-bottom: ${getSpacingToken};
 
   ${StyledChild} {
     ${FakeInput} {
@@ -145,17 +148,19 @@ const StyledInputGroup = styled(({ children, className, dataTest }) => (
 `;
 
 StyledInputGroup.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class InputGroup extends React.PureComponent<Props, State> {
   state = {
     active: false,
     filled: false,
+    inputID: "",
   };
 
   componentDidMount() {
     this.isFilled();
+    this.setState({ inputID: randomID("InputGroup") });
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -209,12 +214,27 @@ class InputGroup extends React.PureComponent<Props, State> {
       help,
       error,
       dataTest,
+      spaceAfter,
     } = this.props;
-    const { active, filled } = this.state;
+
+    const { active, filled, inputID } = this.state;
 
     return (
-      <StyledInputGroup label={label} error={error} active={active} size={size} dataTest={dataTest}>
-        {label && <FormLabel filled={filled}>{label}</FormLabel>}
+      <StyledInputGroup
+        label={label}
+        error={error}
+        active={active}
+        size={size}
+        dataTest={dataTest}
+        spaceAfter={spaceAfter}
+        role="group"
+        ariaLabelledby={label && inputID}
+      >
+        {label && (
+          <FormLabel filled={filled} id={inputID}>
+            {label}
+          </FormLabel>
+        )}
         <StyledChildren>
           {React.Children.map(children, (item, key) => {
             // either array, array with one length or string

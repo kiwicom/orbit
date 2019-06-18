@@ -2,13 +2,13 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import media from "../../utils/mediaQuery";
-import defaultTokens from "../../defaultTokens";
+import media, { getBreakpointWidth } from "../../utils/mediaQuery";
+import defaultTheme from "../../defaultTheme";
 import { StyledButton } from "../../Button";
 import { rtlSpacing } from "../../utils/rtl";
 import { StyledButtonLink } from "../../ButtonLink";
 import { withModalContext } from "../ModalContext";
-import { DEVICES_WIDTH } from "../../utils/mediaQuery/consts";
+import { QUERIES } from "../../utils/mediaQuery/consts";
 
 import type { Props } from "./index";
 
@@ -23,13 +23,12 @@ const StyledChild = styled.div`
 `;
 
 StyledChild.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const StyledModalFooter = styled.div`
   display: flex;
   z-index: 800; // TODO: use z-index framework
-  bottom: 0;
   width: 100%;
   background-color: ${({ theme }) => theme.orbit.paletteWhite};
   // TODO: create token paddingModalFooter
@@ -38,7 +37,8 @@ export const StyledModalFooter = styled.div`
   // TODO: create token boxShadowActionableInverted
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
-  @media (max-width: ${DEVICES_WIDTH.largeMobile - 1}px) {
+  @media (max-width: ${({ theme }) =>
+      +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
     ${StyledButton}, ${StyledButtonLink} {
       font-size: ${({ theme }) => theme.orbit.fontSizeButtonNormal};
       height: ${({ theme }) => theme.orbit.heightButtonNormal};
@@ -48,8 +48,8 @@ export const StyledModalFooter = styled.div`
   ${media.largeMobile(css`
     justify-content: ${({ children }) => (children.length > 1 ? "space-between" : "flex-end")};
     // TODO: create token paddingModalFooterDesktop
-    border-bottom-left-radius: 9px;
-    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "9px"};
+    border-bottom-right-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "9px"};
   `)};
 
   ${StyledChild}:last-of-type {
@@ -58,18 +58,26 @@ export const StyledModalFooter = styled.div`
 `;
 
 StyledModalFooter.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class ModalFooter extends React.PureComponent<Props> {
   componentDidMount() {
     this.callContextFunctions();
   }
+
   componentDidUpdate(prevProps: Props) {
     if (prevProps !== this.props) {
       this.callContextFunctions();
+
+      const { manageFocus } = this.props;
+
+      if (manageFocus) {
+        manageFocus();
+      }
     }
   }
+
   callContextFunctions = () => {
     const { setDimensions, decideFixedFooter } = this.props;
     if (setDimensions) {
@@ -79,10 +87,11 @@ class ModalFooter extends React.PureComponent<Props> {
       decideFixedFooter();
     }
   };
+
   render() {
-    const { flex = "0 1 auto", children, dataTest } = this.props;
+    const { flex = "0 1 auto", children, dataTest, isMobileFullPage } = this.props;
     return (
-      <StyledModalFooter data-test={dataTest}>
+      <StyledModalFooter data-test={dataTest} isMobileFullPage={isMobileFullPage}>
         {typeof children === "object"
           ? React.Children.map(children, (item, key) => {
               if (item) {
@@ -99,5 +108,7 @@ class ModalFooter extends React.PureComponent<Props> {
 }
 
 const DecoratedComponent = withModalContext(ModalFooter);
+
+// $FlowFixMe flow doesn't recognize displayName for functions
 DecoratedComponent.displayName = "ModalFooter";
 export default DecoratedComponent;

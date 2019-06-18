@@ -1,24 +1,28 @@
 // @flow
 import * as React from "react";
-import { ThemeProvider } from "styled-components";
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
+
+import ThemeProvider from "../../ThemeProvider";
 
 type Props = {|
   +children: React.Node,
 |};
 
 class RenderInRtl extends React.PureComponent<Props> {
+  html = document.querySelector("html");
+
   componentDidMount() {
     if (this.html) {
       this.html.setAttribute("dir", "rtl");
     }
   }
+
   componentWillUnmount() {
     if (this.html) {
       this.html.removeAttribute("dir");
     }
   }
-  html = document.querySelector("html");
+
   render() {
     return (
       <ThemeProvider theme={{ orbit: defaultTokens, rtl: true }}>

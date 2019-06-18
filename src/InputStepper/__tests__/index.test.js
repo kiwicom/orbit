@@ -1,9 +1,10 @@
 // @flow
 import * as React from "react";
-import { mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 
 import InputStepper from "../index";
 import { SIZE_OPTIONS } from "../../InputField/consts";
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe(`InputStepper with help, prefix and suffix`, () => {
   const size = SIZE_OPTIONS.NORMAL;
@@ -21,6 +22,7 @@ describe(`InputStepper with help, prefix and suffix`, () => {
   const onChange = jest.fn();
   const onFocus = jest.fn();
   const onBlur = jest.fn();
+  const spaceAfter = SPACINGS_AFTER.NORMAL;
 
   const component = mount(
     <InputStepper
@@ -39,9 +41,11 @@ describe(`InputStepper with help, prefix and suffix`, () => {
       onChange={onChange}
       onFocus={onFocus}
       onBlur={onBlur}
+      spaceAfter={spaceAfter}
     />,
   );
   const input = component.find("InputField");
+  const stepper = component.find("InputStepperStateless__StyledInputStepper");
   const inputFieldInput = component.find("InputField__Input");
 
   it("should contain an input", () => {
@@ -49,6 +53,7 @@ describe(`InputStepper with help, prefix and suffix`, () => {
   });
 
   it("should have passed props", () => {
+    expect(stepper.prop("spaceAfter")).toBe(spaceAfter);
     expect(input.prop("size")).toBe(size);
     expect(input.prop("label")).toBe(label);
     expect(input.prop("value")).toBe(defaultValue);
@@ -60,8 +65,26 @@ describe(`InputStepper with help, prefix and suffix`, () => {
     expect(input.prop("required")).toBe(required);
     expect(inputFieldInput.render().prop("tabindex")).toBe(tabIndex);
   });
-
+  const shallowed = shallow(
+    <InputStepper
+      size={size}
+      label={label}
+      defaultValue={defaultValue}
+      step={step}
+      help={help}
+      error={error}
+      name={name}
+      disabled={disabled}
+      maxValue={maxValue}
+      minValue={minValue}
+      tabIndex={tabIndex}
+      required={required}
+      onChange={onChange}
+      onFocus={onFocus}
+      onBlur={onBlur}
+    />,
+  );
   it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
+    expect(shallowed).toMatchSnapshot();
   });
 });

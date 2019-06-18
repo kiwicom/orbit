@@ -5,7 +5,7 @@ import { shallow, mount } from "enzyme";
 import Text from "../index";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import { SIZE_OPTIONS, TYPE_OPTIONS } from "../consts";
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 
 describe("Text", () => {
   const text = "Children text";
@@ -13,8 +13,9 @@ describe("Text", () => {
   const spaceAfter = SPACINGS_AFTER.NORMAL;
   const type = TYPE_OPTIONS.PRIMARY;
   const size = SIZE_OPTIONS.SMALL;
+  const id = "id";
   const component = shallow(
-    <Text type={type} size={size} dataTest={dataTest} spaceAfter={spaceAfter}>
+    <Text type={type} size={size} dataTest={dataTest} spaceAfter={spaceAfter} id={id}>
       {text}
     </Text>,
   );
@@ -22,6 +23,7 @@ describe("Text", () => {
     expect(component.prop("type")).toBe(type);
     expect(component.prop("size")).toBe(size);
     expect(component.prop("spaceAfter")).toBe(spaceAfter);
+    expect(component.prop("id")).toBe(id);
   });
   it("should contain children", () => {
     expect(component.children().text()).toBe(text);
@@ -31,7 +33,7 @@ describe("Text", () => {
   });
   it("should have margin-bottom", () => {
     const mounted = mount(<Text spaceAfter={spaceAfter}>{text}</Text>);
-    expect(mounted).toHaveStyleRule("margin-bottom", defaultTokens.orbit.spaceSmall);
+    expect(mounted).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

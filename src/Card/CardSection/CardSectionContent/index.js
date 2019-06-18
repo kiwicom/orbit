@@ -1,10 +1,11 @@
 // @flow
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-import defaultTokens from "../../../defaultTokens";
+import defaultTheme from "../../../defaultTheme";
 import { CardSectionContext } from "../index";
 import Slide, { StyledSlide } from "../../../utils/Slide";
+import media from "../../../utils/mediaQuery";
 
 import type { Props, State } from "./index";
 
@@ -20,10 +21,14 @@ export const StyledCardSectionContent = styled.div`
       ? `1px solid ${theme.orbit.paletteCloudNormal}`
       : `0px solid ${theme.orbit.paletteCloudNormal}`};
   padding-top: ${({ theme, expandable, expanded, visible }) =>
-    hasPaddingTop({ expandable, expanded, visible }) && theme.orbit.spaceLarge};
+    hasPaddingTop({ expandable, expanded, visible }) && theme.orbit.spaceMedium};
   transition: padding ${({ theme }) => theme.orbit.durationFast} linear,
     border-top ${({ theme }) => theme.orbit.durationFast} linear;
-  overflow: hidden;
+
+  ${media.desktop(css`
+    padding-top: ${({ theme, expandable, expanded, visible }) =>
+      hasPaddingTop({ expandable, expanded, visible }) && theme.orbit.spaceLarge};
+  `)}
 
   ${StyledSlide} {
     max-height: ${({ expandable, visible }) => expandable && visible && "none"};
@@ -31,7 +36,7 @@ export const StyledCardSectionContent = styled.div`
 `;
 
 StyledCardSectionContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const withConsumer = CardSection => ({ children, visible }: Props) => (
@@ -48,6 +53,8 @@ class CardSectionContent extends React.Component<Props, State> {
   state = {
     contentHeight: 0,
   };
+
+  node: { current: any | HTMLDivElement } = React.createRef();
 
   componentDidMount() {
     const { expandable } = this.props;
@@ -81,11 +88,9 @@ class CardSectionContent extends React.Component<Props, State> {
 
   setHeight = () => {
     this.setState({
-      contentHeight: this.node?.current.clientHeight,
+      contentHeight: this.node?.current?.clientHeight,
     });
   };
-
-  node: { current: any | HTMLDivElement } = React.createRef();
 
   render() {
     const { children, expanded, expandable, visible } = this.props;

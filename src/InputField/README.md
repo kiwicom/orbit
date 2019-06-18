@@ -20,6 +20,7 @@ Table below contains all types of the props available in InputField component.
 | help          | `React.Node`                  |              | The help to display beneath the InputField.
 | label         | `Translation`                 |              | The label for the InputField. [See Functional specs](#functional-specs)
 | inlineLabel   | `boolean`                     |              | If true the label renders on the left side of input
+| id            | `string`                      |              | HTML `id` attribute for input.[See Accessibility specs](#accessibility)
 | maxLength     | `number`                      |              | Specifies the maximum number of characters allowed.
 | maxValue      | `number`                      |              | Specifies the maximum value for the InputField.
 | minLength     | `number`                      |              | Specifies the minimum number of characters allowed.
@@ -35,8 +36,10 @@ Table below contains all types of the props available in InputField component.
 | **prefix**    | `React.Node`                  |              | The prefix component for the InputField. 
 | readOnly      | `boolean`                     | `"false"`    | If `true`, the InputField be readOnly.
 | ref           | `func`                        |              | Prop for forwarded ref of the InputField. [See Functional specs](#functional-specs)
+| spaceAfter    | `enum`                        |              | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | **size**      | [`enum`](#enum)               | `"normal"`   | The size of the InputField.
 | suffix        | `React.Node`                  |              | The suffix component for the InputField. [See Functional specs](#functional-specs)
+| tabIndex      | `string`                      |              | Specifies the tab order of an element
 | **type**      | [`enum`](#enum)               | `"text"`     | The type of the InputField.
 | value         | `string`                      |              | Specifies the value of the InputField.
 
@@ -99,4 +102,13 @@ class Component extends React.PureComponent<Props> {
     )
   }
 }
+```
+
+## Accessibility
+* For special cases you can use your own, detached `label`. Simply like this:
+```jsx
+<label for="NICEID">Content</label>
+<InputField
+  id="NICEID"
+/>
 ```

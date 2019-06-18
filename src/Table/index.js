@@ -1,11 +1,11 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { StyledTableRow } from "./TableRow";
 import { StyledTableCell } from "./TableCell";
 import { StyledTableBody } from "./TableBody";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 
 import type { Props, State } from "./index";
 
@@ -13,8 +13,6 @@ const StyledTableOuter = styled.div`
   max-width: 100%;
   width: 100%;
   position: relative;
-  overflow: hidden;
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
 
   &::after,
   &::before {
@@ -41,12 +39,17 @@ const StyledTableOuter = styled.div`
 `;
 
 StyledTableOuter.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTableInner = styled.div`
   width: 100%;
-  overflow-x: ${({ showShadows }) => (showShadows ? "scroll" : "hidden")};
+  ${({ showShadows }) =>
+    showShadows &&
+    css`
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    `};
 `;
 
 const StyledTable = styled.table`
@@ -54,7 +57,6 @@ const StyledTable = styled.table`
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  max-width: 100%;
   white-space: nowrap;
 
   & ${StyledTableBody} > ${StyledTableRow} {
@@ -79,7 +81,7 @@ const StyledTable = styled.table`
 `;
 
 StyledTable.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class Table extends React.PureComponent<Props, State> {
@@ -88,6 +90,12 @@ class Table extends React.PureComponent<Props, State> {
     showRight: false,
     showLeft: false,
   };
+
+  outer: { current: any | HTMLElement } = React.createRef();
+
+  inner: { current: any | HTMLElement } = React.createRef();
+
+  table: { current: any | HTMLElement } = React.createRef();
 
   componentDidMount() {
     window.addEventListener("resize", this.handleResize);
@@ -117,10 +125,6 @@ class Table extends React.PureComponent<Props, State> {
       });
     }
   };
-
-  outer: { current: any | HTMLElement } = React.createRef();
-  inner: { current: any | HTMLElement } = React.createRef();
-  table: { current: any | HTMLElement } = React.createRef();
 
   render() {
     const { children, compact = false, dataTest } = this.props;

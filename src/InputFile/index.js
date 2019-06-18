@@ -2,15 +2,17 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import Button from "../Button";
-import ButtonLink from "../ButtonLink";
+import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import FormLabel from "../FormLabel";
 import FormFeedback from "../FormFeedback";
 import Attachment from "../icons/Attachment";
 import CloseCircle from "../icons/CloseCircle";
 import type { Ref } from "../common/common.js.flow";
 import { rtlSpacing } from "../utils/rtl";
+import getSpacingToken from "../common/getSpacingToken";
+import getFieldDataState from "../common/getFieldDataState";
 
 import type { Props } from "./index";
 
@@ -19,10 +21,11 @@ const Field = styled.label`
   display: block;
   position: relative;
   width: 100%;
+  margin-bottom: ${getSpacingToken};
 `;
 
 Field.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const FakeInput = styled(({ children, className }) => <div className={className}>{children}</div>)`
@@ -47,10 +50,14 @@ const FakeInput = styled(({ children, className }) => <div className={className}
           error ? theme.orbit.paletteRedNormalHover : theme.orbit.borderColorInputHover
         }`};
   }
+
+  ${StyledButtonLink}:active {
+    box-shadow: none;
+  }
 `;
 
 FakeInput.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const Input = styled.input`
@@ -66,7 +73,7 @@ const Input = styled.input`
 `;
 
 Input.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const getFileInputColor = ({ error, fileName }, theme) => {
@@ -84,11 +91,13 @@ const StyledFileInput = styled.div`
   color: ${({ error, fileName, theme }) => getFileInputColor({ error, fileName }, theme)};
   width: 100%;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
 `;
 
 StyledFileInput.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const InputButton = styled(Button)`
@@ -104,17 +113,24 @@ const CloseButton = styled(ButtonLink)`
 `;
 
 CloseButton.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 // $FlowExpected
 const InputFile = React.forwardRef((props: Props, ref: Ref) => {
-  const { placeholder = "No file selected", title = "Select file", onRemoveFile, dataTest } = props;
+  const {
+    placeholder = "No file selected",
+    title = "Select file",
+    onRemoveFile,
+    dataTest,
+    spaceAfter,
+  } = props;
 
   return (
-    <Field>
+    <Field spaceAfter={spaceAfter}>
       <Input
         data-test={dataTest}
+        data-state={getFieldDataState(!!props.error)}
         type="file"
         name={props.name}
         error={props.error}

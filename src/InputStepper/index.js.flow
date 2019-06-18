@@ -4,13 +4,14 @@
 */
 import type { Globals, Ref, RefType, Translation } from "../common/common.js.flow";
 import type { Size } from "../InputField/index";
+import type { spaceAfter } from "../common/getSpacingToken/index";
 
-export type Props = {|
+export type SharedProps = {|
   ...Globals,
   ...Ref,
+  ...spaceAfter,
   +size?: Size,
   +label?: Translation,
-  +defaultValue?: number,
   +step?: number,
   +help?: React$Node,
   +error?: React$Node,
@@ -20,9 +21,16 @@ export type Props = {|
   +minValue?: number,
   +required?: boolean,
   tabIndex?: string,
-  +onChange?: number => void | Promise<any>,
+  +titleIncrement?: string | (any => string),
+  +titleDecrement?: string | (any => string),
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+|};
+
+export type Props = {|
+  ...SharedProps,
+  +defaultValue?: number,
+  +onChange?: number => void | Promise<any>,
 |};
 
 export type State = {|

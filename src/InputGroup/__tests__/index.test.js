@@ -7,6 +7,7 @@ import Select from "../../Select";
 import InputField from "../../InputField";
 import CountryFlag from "../../CountryFlag";
 import { CODES } from "../../CountryFlag/consts";
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe(`InputGroup - Phone number`, () => {
   const label = "Phone number";
@@ -15,6 +16,7 @@ describe(`InputGroup - Phone number`, () => {
   const onChange = jest.fn();
   const onFocus = jest.fn();
   const onBlur = jest.fn();
+  const spaceAfter = SPACINGS_AFTER.NORMAL;
 
   const selectOptions = [{ value: 1, label: "+420" }, { value: 2, label: "+421" }];
   const selectValue = 1;
@@ -37,6 +39,7 @@ describe(`InputGroup - Phone number`, () => {
       dataTest={dataTest}
       onFocus={onFocus}
       onBlur={onBlur}
+      spaceAfter={spaceAfter}
     >
       <Select
         options={selectOptions}
@@ -48,6 +51,7 @@ describe(`InputGroup - Phone number`, () => {
   );
   const input = component.find("InputField");
   const select = component.find("Select");
+  const group = component.find("InputGroup__StyledInputGroup");
 
   it("should contain a label", () => {
     expect(
@@ -62,6 +66,9 @@ describe(`InputGroup - Phone number`, () => {
   });
   it("should contain a select", () => {
     expect(select.exists()).toBe(true);
+  });
+  it("should have spaceAFter", () => {
+    expect(group.prop("spaceAfter")).toBe(spaceAfter);
   });
   it("should contain a select", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
@@ -99,6 +106,7 @@ describe(`InputGroup - Phone number`, () => {
     expect(onBlur).toHaveBeenCalled();
   });
   it("should match snapshot", () => {
+    component.setState({ inputID: "123" });
     expect(component).toMatchSnapshot();
   });
 });

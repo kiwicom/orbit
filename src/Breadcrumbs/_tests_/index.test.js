@@ -8,8 +8,9 @@ import BreadcrumbsItem from "../BreadcrumbsItem";
 
 describe("Breadcrumbs", () => {
   const dataTest = "test";
+  const onGoBack = jest.fn();
   const component = shallow(
-    <Breadcrumbs dataTest={dataTest}>
+    <Breadcrumbs dataTest={dataTest} onGoBack={onGoBack}>
       <BreadcrumbsItem href="https://kiwi.com">Kiwi.com</BreadcrumbsItem>
     </Breadcrumbs>,
   );
@@ -26,8 +27,12 @@ describe("Breadcrumbs", () => {
     expect(list.render().prop("attribs").typeof).toBe("BreadcrumbList");
   });
   it("children should contain active and contentKey", () => {
-    expect(list.children().prop("active")).toBe(true);
-    expect(list.children().prop("contentKey")).toBe(1);
+    expect(list.find("BreadcrumbsItem").prop("active")).toBe(true);
+    expect(list.find("BreadcrumbsItem").prop("contentKey")).toBe(1);
+  });
+  it("should execute onGoBack", () => {
+    component.find("Button").simulate("click");
+    expect(onGoBack).toHaveBeenCalled();
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

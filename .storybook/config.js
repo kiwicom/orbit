@@ -1,17 +1,18 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import { configure, setAddon } from "@storybook/react";
+import { configure, addDecorator, addParameters } from "@storybook/react";
+import  { withKnobs } from "@storybook/addon-knobs"
 import 'loki/configure-react';
-import chaptersAddon, { setDefaults } from 'react-storybook-addon-chapters';
+import orbitTheme from "./orbitTheme"
+import orbitDecorator from "./orbitDecorator"
 
-setDefaults({
-  sectionOptions: {
-    showSource: true,
-    allowSourceToggling: false,
-    showPropTables: false,
-    allowPropTablesToggling: false,
+addParameters({
+  options: {
+    panelPosition: 'bottom',
+    theme: orbitTheme
   }
 });
-setAddon(chaptersAddon);
+addDecorator(orbitDecorator);
+addDecorator(withKnobs);
 
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);

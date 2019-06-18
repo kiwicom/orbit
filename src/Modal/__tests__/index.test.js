@@ -2,7 +2,7 @@
 import * as React from "react";
 import { shallow, mount } from "enzyme";
 
-import Modal from "../index";
+import { PureModal as Modal } from "../index";
 import { SIZES, CLOSE_BUTTON_DATA_TEST } from "../consts";
 import ModalHeader from "../ModalHeader";
 import ModalSection from "../ModalSection";

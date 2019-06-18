@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 
 import Text from "../../Text";
 import Heading, { StyledHeading } from "../../Heading";
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
 import { StyledModalSection } from "../ModalSection";
 import { left, right, rtlSpacing } from "../../utils/rtl";
@@ -27,7 +27,7 @@ const ModalTitle = styled.div`
 `;
 
 ModalTitle.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const ModalDescription = styled.div`
@@ -35,7 +35,7 @@ const ModalDescription = styled.div`
 `;
 
 ModalDescription.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const StyledModalHeader = styled.div`
@@ -58,8 +58,10 @@ export const StyledModalHeader = styled.div`
           }`) ||
         `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`,
     )};
-  border-top-left-radius: 9px; // TODO: create token
-  border-top-right-radius: 9px; // TODO: create token
+  border-top-left-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
+  border-top-right-radius: ${({ isMobileFullPage }) =>
+    !isMobileFullPage && "9px"}; // TODO: create token
   box-sizing: border-box;
   background-color: ${({ suppressed, theme }) =>
     suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
@@ -92,7 +94,7 @@ export const StyledModalHeader = styled.div`
 `;
 
 StyledModalHeader.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const MobileHeader = styled.div`
@@ -104,7 +106,7 @@ export const MobileHeader = styled.div`
   white-space: nowrap;
   text-overflow: ellipsis;
   // TODO use token for 52px
-  top: 16px;
+  top: ${({ isMobileFullPage }) => (isMobileFullPage ? "0" : "16px")};
   ${right}: 48px;
   ${left}: 0;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -130,7 +132,7 @@ export const MobileHeader = styled.div`
 `;
 
 MobileHeader.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledModalHeaderContent = styled.div`
@@ -141,11 +143,19 @@ class ModalHeader extends React.PureComponent<Props> {
   componentDidMount() {
     this.callContextFunctions();
   }
+
   componentDidUpdate(prevProps: Props) {
     if (prevProps !== this.props) {
       this.callContextFunctions();
+
+      const { manageFocus } = this.props;
+
+      if (manageFocus) {
+        manageFocus();
+      }
     }
   }
+
   callContextFunctions = () => {
     const { setDimensions, decideFixedFooter } = this.props;
     if (setDimensions) {
@@ -157,10 +167,23 @@ class ModalHeader extends React.PureComponent<Props> {
   };
 
   render() {
-    const { title, illustration, description, children, suppressed, dataTest } = this.props;
+    const {
+      title,
+      illustration,
+      description,
+      children,
+      suppressed,
+      dataTest,
+      isMobileFullPage,
+    } = this.props;
     const hasHeader = title || description;
     return (
-      <StyledModalHeader illustration={!!illustration} suppressed={suppressed} data-test={dataTest}>
+      <StyledModalHeader
+        illustration={!!illustration}
+        suppressed={suppressed}
+        data-test={dataTest}
+        isMobileFullPage={isMobileFullPage}
+      >
         {illustration}
         {hasHeader && (
           <ModalTitle illustration={!!illustration}>
@@ -179,11 +202,13 @@ class ModalHeader extends React.PureComponent<Props> {
             {children}
           </StyledModalHeaderContent>
         )}
-        {title && <MobileHeader>{title}</MobileHeader>}
+        {title && <MobileHeader isMobileFullPage={isMobileFullPage}>{title}</MobileHeader>}
       </StyledModalHeader>
     );
   }
 }
 const DecoratedComponent = withModalContext(ModalHeader);
+
+// $FlowFixMe flow doesn't recognize displayName for functions
 DecoratedComponent.displayName = "ModalHeader";
 export default DecoratedComponent;

@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import ChevronDown from "../icons/ChevronDown";
 import FormFeedback from "../FormFeedback";
@@ -10,6 +10,8 @@ import TYPE_OPTIONS from "../FormFeedback/consts";
 import SIZE_OPTIONS from "./consts";
 import type { Ref } from "../common/common.js.flow";
 import { right, rtlSpacing } from "../utils/rtl";
+import getSpacingToken from "../common/getSpacingToken";
+import getFieldDataState from "../common/getFieldDataState";
 
 import type { Props } from "./index";
 
@@ -25,17 +27,35 @@ const Label = styled.label`
   position: relative;
   display: block;
   width: 100%;
+  margin-bottom: ${getSpacingToken};
 `;
+
+Label.defaultProps = {
+  theme: defaultTheme,
+};
 
 const StyledSelect = styled(
   // $FlowExpected
   React.forwardRef(
     (
-      { className, dataTest, children, value, disabled, name, tabIndex, onChange, onFocus, onBlur },
+      {
+        className,
+        dataTest,
+        children,
+        value,
+        disabled,
+        name,
+        error,
+        tabIndex,
+        onChange,
+        onFocus,
+        onBlur,
+      },
       ref,
     ) => (
       <select
         data-test={dataTest}
+        data-state={getFieldDataState(error)}
         value={value}
         className={className}
         onChange={onChange}
@@ -125,7 +145,7 @@ const StyledSelect = styled(
 `;
 
 StyledSelect.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 export const SelectContainer = styled(({ className, children }) => (
@@ -141,7 +161,7 @@ export const SelectContainer = styled(({ className, children }) => (
 `;
 
 SelectContainer.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const SelectPrefix = styled(({ className, children }) => (
@@ -158,7 +178,7 @@ const SelectPrefix = styled(({ className, children }) => (
 `;
 
 SelectPrefix.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const SelectSuffix = styled(({ children, className }) => (
@@ -184,7 +204,7 @@ const SelectSuffix = styled(({ children, className }) => (
 `;
 
 SelectSuffix.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 // $FlowExpected
@@ -205,10 +225,11 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
     tabIndex,
     dataTest,
     prefix,
+    spaceAfter,
   } = props;
-  const filled = !!value;
+  const filled = !(value == null || value === "");
   return (
-    <Label>
+    <Label spaceAfter={spaceAfter}>
       {label && (
         <FormLabel filled={filled} disabled={disabled}>
           {label}
@@ -225,7 +246,7 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
           size={size}
           disabled={disabled}
           error={error}
-          value={value || ""}
+          value={value == null ? "" : value}
           prefix={prefix}
           name={name}
           onFocus={onFocus}

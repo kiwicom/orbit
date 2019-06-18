@@ -2,7 +2,9 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
+import Button from "../Button";
+import ChevronLeft from "../icons/ChevronLeft";
 
 import type { Props } from "./index";
 
@@ -12,7 +14,7 @@ const StyledBreadcrumbs = styled.nav`
 `;
 
 StyledBreadcrumbs.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledBreadcrumbsList = styled.ol`
@@ -23,15 +25,34 @@ const StyledBreadcrumbsList = styled.ol`
   padding: 0;
 `;
 
-const Breadcrumbs = ({ children, dataTest }: Props) => (
+const StyledBackButtonWrapper = styled.span`
+  margin-right: ${({ theme }) => theme.orbit.spaceSmall};
+`;
+
+StyledBackButtonWrapper.defaultProps = {
+  theme: defaultTheme,
+};
+
+const Breadcrumbs = ({ children, dataTest, onGoBack }: Props) => (
   <StyledBreadcrumbs aria-label="Breadcrumb" role="navigation" data-test={dataTest}>
     <StyledBreadcrumbsList vocab="http://schema.org/" typeof="BreadcrumbList">
-      {React.Children.map(children, (item, key) =>
-        React.cloneElement(item, {
+      {onGoBack && (
+        <StyledBackButtonWrapper>
+          <Button
+            iconLeft={<ChevronLeft />}
+            circled
+            type="secondary"
+            size="small"
+            onClick={onGoBack}
+          />
+        </StyledBackButtonWrapper>
+      )}
+      {React.Children.map(children, (item, key) => {
+        return React.cloneElement(item, {
           active: key === React.Children.count(children) - 1,
           contentKey: key + 1,
-        }),
-      )}
+        });
+      })}
     </StyledBreadcrumbsList>
   </StyledBreadcrumbs>
 );

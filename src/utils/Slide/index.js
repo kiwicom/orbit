@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import defaultTokens from "../../defaultTokens";
+import defaultTheme from "../../defaultTheme";
 
 import type { Props, State } from "./index";
 
@@ -15,10 +15,11 @@ const getMaxHeight = ({ maxHeight }) => {
 export const StyledSlide = styled.div`
   max-height: ${getMaxHeight};
   transition: max-height ${({ theme }) => theme.orbit.durationFast} linear;
+  overflow: hidden;
 `;
 
 StyledSlide.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class Slide extends React.Component<Props, State> {
@@ -26,13 +27,12 @@ class Slide extends React.Component<Props, State> {
     maxHeight: 0,
   };
 
+  expandTimeout = null;
+
+  collapseTimeout = null;
+
   componentDidMount() {
     this.setMaxHeight();
-  }
-
-  getSnapshotBeforeUpdate(prevProps: Props) {
-    if (this.props.expanded === prevProps.expanded) return null;
-    return true;
   }
 
   componentDidUpdate(prevProps: Props, prevState: State, snapshot: null | true) {
@@ -64,6 +64,11 @@ class Slide extends React.Component<Props, State> {
     }
   }
 
+  getSnapshotBeforeUpdate(prevProps: Props) {
+    if (this.props.expanded === prevProps.expanded) return null;
+    return true;
+  }
+
   setMaxHeight = () => {
     const { maxHeight } = this.props;
     this.setState({
@@ -81,10 +86,12 @@ class Slide extends React.Component<Props, State> {
     this.setState({
       maxHeight: 0,
     });
-  };
 
-  expandTimeout = null;
-  collapseTimeout = null;
+    if (this.expandTimeout && typeof clearTimeout === "function") {
+      clearTimeout(this.expandTimeout);
+      this.expandTimeout = null;
+    }
+  };
 
   render() {
     const { children, expanded = false } = this.props;

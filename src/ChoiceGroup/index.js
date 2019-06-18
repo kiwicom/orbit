@@ -6,7 +6,9 @@ import Heading from "../Heading";
 import Stack from "../Stack";
 import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
 import FormFeedback, { StyledFormFeedback } from "../FormFeedback";
-import defaultTokens from "../defaultTokens";
+import defaultTheme from "../defaultTheme";
+import FilterWrapper from "./components/FilterWrapper";
+import randomID from "../utils/randomID";
 
 import type { Props } from "./index";
 
@@ -31,10 +33,12 @@ const StyledChoiceGroup = styled.div`
 `;
 
 StyledChoiceGroup.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 class ChoiceGroup extends React.PureComponent<Props> {
+  groupID = randomID("ChoiceGroup");
+
   handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
     ev.persist();
     const { onChange } = this.props;
@@ -51,21 +55,42 @@ class ChoiceGroup extends React.PureComponent<Props> {
       labelElement = LABEL_ELEMENTS.H4,
       error,
       children,
+      filter,
+      onOnlySelection,
     } = this.props;
+
     return (
-      <StyledChoiceGroup data-test={dataTest}>
+      <StyledChoiceGroup data-test={dataTest} role="group" aria-labelledby={this.groupID}>
         {label && (
-          <Heading type={getHeadingSize(labelSize)} element={labelElement} spaceAfter="medium">
+          <Heading
+            id={this.groupID}
+            type={getHeadingSize(labelSize)}
+            element={labelElement}
+            spaceAfter="medium"
+          >
             {label}
           </Heading>
         )}
-        <Stack direction="column" spacing="condensed">
-          {React.Children.map(children, child =>
-            React.cloneElement(child, {
-              onChange: this.handleChange,
-              hasError: !!error,
-            }),
-          )}
+        <Stack direction="column" spacing={filter ? "none" : "condensed"}>
+          {React.Children.map(children, child => {
+            return !filter ? (
+              <React.Fragment>
+                {React.cloneElement(child, {
+                  onChange: this.handleChange,
+                  hasError: !!error,
+                })}
+              </React.Fragment>
+            ) : (
+              <FilterWrapper child={child} onOnlySelection={onOnlySelection}>
+                <React.Fragment>
+                  {React.cloneElement(child, {
+                    onChange: this.handleChange,
+                    hasError: !!error,
+                  })}
+                </React.Fragment>
+              </FilterWrapper>
+            );
+          })}
         </Stack>
         {error && (
           <FormFeedback type="error" fixed>

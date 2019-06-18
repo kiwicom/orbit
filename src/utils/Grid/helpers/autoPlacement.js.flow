@@ -1,0 +1,12 @@
+// @flow
+import type { Interpolation } from "styled-components";
+
+export type AutoPlacement = (
+  childrenCount: number,
+  columns: ?string,
+  rows: ?string,
+  columnGap: ?string,
+  rowGap: ?string,
+) => Interpolation[];
+
+declare export default AutoPlacement;

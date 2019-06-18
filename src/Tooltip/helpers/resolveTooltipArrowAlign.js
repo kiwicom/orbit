@@ -13,11 +13,13 @@ const resolveTooltipArrowAlign = ({ position, align, tooltipWidth, tooltipHeight
       return css`
         left: ${Math.floor(tooltipWidth / 2 - parseFloat(TOOLTIP_ARROW_SIZE))}px; // TODO: use token
       `;
-    } else if (isAlignStart(align)) {
+    }
+    if (isAlignStart(align)) {
       return css`
-        left: ${parseFloat(TOOLTIP_PADDING)}; // TODO: use token
+        left: ${parseFloat(TOOLTIP_PADDING)}px; // TODO: use token
       `;
-    } else if (isAlignEnd(align)) {
+    }
+    if (isAlignEnd(align)) {
       return css`
         right: ${parseFloat(TOOLTIP_PADDING)}px; // TODO: use token
       `;
@@ -27,11 +29,13 @@ const resolveTooltipArrowAlign = ({ position, align, tooltipWidth, tooltipHeight
       return css`
         top: ${Math.floor(tooltipHeight / 2 - parseFloat(TOOLTIP_ARROW_SIZE))}px; // TODO: use token
       `;
-    } else if (isAlignStart(align)) {
+    }
+    if (isAlignStart(align)) {
       return css`
         top: ${parseFloat(TOOLTIP_PADDING)}px; // TODO: use token
       `;
-    } else if (isAlignEnd(align)) {
+    }
+    if (isAlignEnd(align)) {
       return css`
         bottom: ${parseFloat(TOOLTIP_PADDING)}px; // TODO: use token
       `;

@@ -27,6 +27,8 @@ Table below contains all types of the props available in Textarea component.
 | ref           | `func`                      |              | Prop for forwarded ref of the Textarea. [See Functional specs](#functional-specs)
 | resize        | [`enum`](#enum)             | `"vertical"` | The resize option for Textarea.
 | size          | [`enum`](#enum)             | `"normal"`   | The size of the Textarea.
+| spaceAfter    | `enum`                      |              | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
+| tabIndex      | `string`                    |              | Specifies the tab order of an element
 | value         | `string`                    |              | Specifies the value of the Textarea.
 
 ### enum

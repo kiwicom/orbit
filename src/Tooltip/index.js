@@ -1,9 +1,9 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled, { css, withTheme } from "styled-components";
 
-import defaultTokens from "../defaultTokens";
-import media from "../utils/mediaQuery";
+import defaultTheme from "../defaultTheme";
+import media, { getBreakpointWidth } from "../utils/mediaQuery";
 import {
   ALIGNS,
   POSITIONS,
@@ -30,16 +30,18 @@ import {
   isVertical,
 } from "./helpers/isPosition";
 import { isAlignCenter, isAlignEnd, isAlignStart } from "./helpers/isAlign";
-import { DEVICES_WIDTH } from "../utils/mediaQuery/consts";
 import tooltipPadding from "./helpers/tooltipPadding";
+import RandomID from "../utils/randomID";
+import type { ThemeProps } from "../defaultTheme";
+import { QUERIES } from "../utils/mediaQuery/consts";
+import Translate from "../Translate";
 
 import type { Props, State, Aligns, Positions } from "./index";
 
 const StyledTooltipChildren = styled.span`
-  &:focus {
+  &:focus:active {
     outline: none;
   }
-
   ${StyledText} {
     position: relative;
     display: inline-block;
@@ -72,13 +74,13 @@ const StyledTooltipWrapper = styled.div`
   visibility: ${({ shownMobile }) => (shownMobile ? "visible" : "hidden")};
   opacity: ${({ shownMobile }) => (shownMobile ? "1" : "0")};
   transition: bottom ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
-    visibility ${({ theme }) => theme.orbit.durationFast} linear ${({ shownMobile, theme }) =>
-  !shownMobile && theme.orbit.durationNormal};
+    visibility ${({ theme }) => theme.orbit.durationFast} linear
+      ${({ shownMobile, theme }) => !shownMobile && theme.orbit.durationNormal};
   z-index: 10012; // TODO: use some good value
   bottom: ${({ shownMobile, tooltipWidth }) => (shownMobile ? "0" : `-${tooltipWidth}px`)};
   left: 0;
   right: 0;
-  
+
   img {
     max-width: 100%;
   }
@@ -115,18 +117,18 @@ const StyledTooltipWrapper = styled.div`
     position: absolute;
 
     ${tooltipArrowStyle};
-    
+
     ${resolveTooltipArrowPosition};
     ${resolveTooltipArrowAlign};
-    
+
     ${media.largeMobile(css`
       display: block;
     `)};
-      
+  }
 `;
 
 StyledTooltipWrapper.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTooltipContent = styled.div`
@@ -158,7 +160,7 @@ const StyledTooltipContent = styled.div`
 `;
 
 StyledTooltipContent.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTooltipClose = styled.div`
@@ -169,7 +171,7 @@ const StyledTooltipClose = styled.div`
 `;
 
 StyledTooltipClose.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
 const StyledTooltipOverlay = styled.div`
@@ -196,16 +198,51 @@ const StyledTooltipOverlay = styled.div`
 `;
 
 StyledTooltipOverlay.defaultProps = {
-  theme: defaultTokens,
+  theme: defaultTheme,
 };
 
-class Tooltip extends React.PureComponent<Props, State> {
+class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
+  static defaultProps = {
+    theme: defaultTheme,
+  };
+
   state = {
     position: POSITIONS.RIGHT,
     align: ALIGNS.CENTER,
     shown: false,
     shownMobile: false,
+    render: false,
   };
+
+  containerTop: number = 0;
+
+  containerLeft: number = 0;
+
+  containerHeight: number = 0;
+
+  containerWidth: number = 0;
+
+  tooltipWidth: number = 0;
+
+  tooltipHeight: number = 0;
+
+  windowWidth: number = 0;
+
+  windowHeight: number = 0;
+
+  contentHeight: number = 0;
+
+  container: { current: any | HTMLDivElement } = React.createRef();
+
+  tooltip: { current: any | HTMLDivElement } = React.createRef();
+
+  content: { current: any | HTMLDivElement } = React.createRef();
+
+  overlay: { current: any | HTMLDivElement } = React.createRef();
+
+  componentDidMount() {
+    this.tooltipId = RandomID("tooltip");
+  }
 
   componentDidUpdate(prevProps: Props) {
     if (this.props !== prevProps) {
@@ -214,32 +251,30 @@ class Tooltip extends React.PureComponent<Props, State> {
   }
 
   getDimensions = () => {
-    if (this.container && this.tooltip && this.content && typeof window !== "undefined") {
+    if (
+      this.container &&
+      this.container.current &&
+      this.tooltip &&
+      this.tooltip.current &&
+      this.content &&
+      typeof window !== "undefined"
+    ) {
       const containerDimensions = this.container.current.getBoundingClientRect();
       const tooltipDimensions = this.tooltip.current.getBoundingClientRect();
 
       // container positions and dimensions for calculation
-      const containerTop = containerDimensions.top;
-      const containerLeft = containerDimensions.left;
-      const containerHeight = containerDimensions.height;
-      const containerWidth = containerDimensions.width;
+      this.containerTop = containerDimensions.top;
+      this.containerLeft = containerDimensions.left;
+      this.containerHeight = containerDimensions.height;
+      this.containerWidth = containerDimensions.width;
 
       // tooltip dimensions for calculation
-      const tooltipHeight = tooltipDimensions.height;
-      const tooltipWidth = tooltipDimensions.width;
+      this.tooltipHeight = tooltipDimensions.height;
+      this.tooltipWidth = tooltipDimensions.width;
 
       // window dimensions for calculation
-      const windowWidth = window.innerWidth;
-      const windowHeight = window.innerHeight;
-
-      this.containerTop = containerTop;
-      this.containerLeft = containerLeft;
-      this.containerHeight = containerHeight;
-      this.containerWidth = containerWidth;
-      this.tooltipHeight = tooltipHeight;
-      this.tooltipWidth = tooltipWidth;
-      this.windowWidth = windowWidth;
-      this.windowHeight = windowHeight;
+      this.windowWidth = window.innerWidth;
+      this.windowHeight = window.innerHeight;
 
       this.contentHeight =
         this.content.current && this.content.current.getBoundingClientRect().height;
@@ -268,11 +303,14 @@ class Tooltip extends React.PureComponent<Props, State> {
     const isInside = (p: Positions) => {
       if (isPositionTop(p) && canBePositionTop) {
         return POSITIONS.TOP;
-      } else if (isPositionRight(p) && canBePositionRight) {
+      }
+      if (isPositionRight(p) && canBePositionRight) {
         return POSITIONS.RIGHT;
-      } else if (isPositionBottom(p) && canBePositionBottom) {
+      }
+      if (isPositionBottom(p) && canBePositionBottom) {
         return POSITIONS.BOTTOM;
-      } else if (isPositionLeft(p) && canBePositionLeft) {
+      }
+      if (isPositionLeft(p) && canBePositionLeft) {
         return POSITIONS.LEFT;
       }
       return false;
@@ -328,17 +366,21 @@ class Tooltip extends React.PureComponent<Props, State> {
       if (isVertical(p)) {
         if (isAlignStart(a) && canBeVerticalStart) {
           return ALIGNS.START;
-        } else if (isAlignCenter(a) && canBeVerticalCenter) {
+        }
+        if (isAlignCenter(a) && canBeVerticalCenter) {
           return ALIGNS.CENTER;
-        } else if (isAlignEnd(a) && canBeVerticalEnd) {
+        }
+        if (isAlignEnd(a) && canBeVerticalEnd) {
           return ALIGNS.END;
         }
       } else if (isHorizontal(p)) {
         if (isAlignStart(a) && canBeHorizontalStart) {
           return ALIGNS.START;
-        } else if (isAlignCenter(a) && canBeHorizontalCenter) {
+        }
+        if (isAlignCenter(a) && canBeHorizontalCenter) {
           return ALIGNS.CENTER;
-        } else if (isAlignEnd(a) && canBeHorizontalEnd) {
+        }
+        if (isAlignEnd(a) && canBeHorizontalEnd) {
           return ALIGNS.END;
         }
       }
@@ -362,16 +404,19 @@ class Tooltip extends React.PureComponent<Props, State> {
   };
 
   handleIn = () => {
-    const { preferredPosition } = this.props;
-    const positions = Object.keys(POSITIONS).map(k => POSITIONS[k]);
-    this.getDimensions();
-    if (preferredPosition) {
-      this.setPosition([preferredPosition, ...positions.filter(p => p !== preferredPosition)]);
-    } else {
-      this.setPosition(positions);
-    }
+    this.setState({ render: true });
+    setTimeout(() => {
+      const { preferredPosition } = this.props;
+      const positions = Object.keys(POSITIONS).map(k => POSITIONS[k]);
+      this.getDimensions();
+      if (preferredPosition) {
+        this.setPosition([preferredPosition, ...positions.filter(p => p !== preferredPosition)]);
+      } else {
+        this.setPosition(positions);
+      }
+      this.setState({ shown: true });
+    }, 15);
     // https://github.com/facebook/flow/issues/2221
-    this.setState({ shown: true });
   };
 
   handleOut = () => {
@@ -380,44 +425,30 @@ class Tooltip extends React.PureComponent<Props, State> {
 
   handleOpen = () => {
     this.getDimensions();
-    if (this.windowWidth <= DEVICES_WIDTH.largeMobile) {
+    if (this.windowWidth <= +getBreakpointWidth(QUERIES.LARGEMOBILE, this.props.theme, true)) {
       this.setState({ shownMobile: true });
     }
+    setTimeout(() => {
+      this.getDimensions();
+    }, 15);
   };
 
-  handleClose = (ev: SyntheticEvent<HTMLElement>) => {
+  handleClose = () => {
+    this.setState({ shownMobile: false });
+  };
+
+  handleClickOutside = (ev: SyntheticEvent<HTMLElement>) => {
     ev.stopPropagation();
-    if (ev.target === this.overlay?.current || ev.target === this.closeButton?.current) {
-      this.setState({ shownMobile: false });
+    if (ev.target === this.overlay?.current) {
+      this.handleClose();
     }
   };
 
-  container: { current: any | HTMLDivElement } = React.createRef();
-  tooltip: { current: any | HTMLDivElement } = React.createRef();
-  content: { current: any | HTMLDivElement } = React.createRef();
-  overlay: { current: any | HTMLDivElement } = React.createRef();
-  // TODO: ged rid off weak types
-  closeButton: { current: any } = React.createRef();
-
-  containerTop: number = 0;
-  containerLeft: number = 0;
-  containerHeight: number = 0;
-  containerWidth: number = 0;
-  tooltipWidth: number = 0;
-  tooltipHeight: number = 0;
-  windowWidth: number = 0;
-  windowHeight: number = 0;
-  contentHeight: number = 0;
+  tooltipId: string;
 
   render() {
-    const {
-      content,
-      children,
-      size = SIZE_OPTIONS.SMALL,
-      closeText = "Close",
-      dataTest,
-    } = this.props;
-    const { shown, shownMobile, position, align } = this.state;
+    const { content, children, size = SIZE_OPTIONS.SMALL, dataTest, tabIndex = "0" } = this.props;
+    const { shown, shownMobile, position, align, render } = this.state;
     const {
       containerTop,
       containerLeft,
@@ -437,46 +468,56 @@ class Tooltip extends React.PureComponent<Props, State> {
           onFocus={this.handleIn}
           onBlur={this.handleOut}
           ref={this.container}
+          aria-describedby={this.tooltipId}
+          tabIndex={tabIndex}
         >
           {children}
         </StyledTooltipChildren>
         <Portal element="tooltips">
-          <StyledTooltip role="tooltip" data-test={dataTest}>
-            <StyledTooltipOverlay
-              onClick={this.handleClose}
-              shownMobile={shownMobile}
-              ref={this.overlay}
-            />
-            <StyledTooltipWrapper
-              shown={shown}
-              shownMobile={shownMobile}
-              position={position}
-              align={align}
-              size={size}
-              ref={this.tooltip}
-              onMouseEnter={this.handleIn}
-              onClick={this.handleClose}
-              onMouseLeave={this.handleOut}
-              containerTop={containerTop}
-              containerLeft={containerLeft}
-              containerHeight={containerHeight}
-              containerWidth={containerWidth}
-              tooltipHeight={tooltipHeight}
-              tooltipWidth={tooltipWidth}
-              contentHeight={contentHeight}
-            >
-              <StyledTooltipContent ref={this.content}>{content}</StyledTooltipContent>
-              <StyledTooltipClose>
-                <Button type="secondary" block onClick={this.handleClose} ref={this.closeButton}>
-                  {closeText}
-                </Button>
-              </StyledTooltipClose>
-            </StyledTooltipWrapper>
-          </StyledTooltip>
+          {render && (
+            <StyledTooltip data-test={dataTest}>
+              <StyledTooltipOverlay
+                onClick={this.handleClickOutside}
+                onFocus={this.handleOpen}
+                shownMobile={shownMobile}
+                ref={this.overlay}
+              />
+              <StyledTooltipWrapper
+                shown={shown}
+                shownMobile={shownMobile}
+                position={position}
+                align={align}
+                size={size}
+                ref={this.tooltip}
+                onMouseEnter={this.handleIn}
+                onClick={this.handleClickOutside}
+                onMouseLeave={this.handleOut}
+                containerTop={containerTop}
+                containerLeft={containerLeft}
+                containerHeight={containerHeight}
+                containerWidth={containerWidth}
+                tooltipHeight={tooltipHeight}
+                tooltipWidth={tooltipWidth}
+                contentHeight={contentHeight}
+                role="tooltip"
+                aria-hidden={!shown}
+                id={this.tooltipId}
+              >
+                <StyledTooltipContent ref={this.content}>{content}</StyledTooltipContent>
+                <StyledTooltipClose>
+                  <Button type="secondary" block onClick={this.handleClose}>
+                    <Translate tKey="button_close" />
+                  </Button>
+                </StyledTooltipClose>
+              </StyledTooltipWrapper>
+            </StyledTooltip>
+          )}
         </Portal>
       </React.Fragment>
     );
   }
 }
 
-export default Tooltip;
+const ThemedTooltip = withTheme(Tooltip);
+ThemedTooltip.displayName = "Tooltip";
+export default ThemedTooltip;

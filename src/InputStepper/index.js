@@ -1,70 +1,79 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
 
 import { SIZE_OPTIONS } from "../InputField/consts";
-import PlusCircle from "../icons/PlusCircle";
-import MinusCircle from "../icons/MinusCircle";
-import ButtonLink from "../ButtonLink";
-import InputField, { Input, Prefix } from "../InputField";
+import KEY_CODE_MAP from "../common/keyMaps";
+import InputStepperStateless from "./InputStepperStateless";
+import validateIncrement from "../utils/validateIncrement";
+import validateDecrement from "../utils/validateDecrement";
 
 import type { Props, State, ForwardedRef } from "./index";
-
-const PrefixSuffix = styled(({ type, ...props }) => <div {...props} />)`
-  flex-shrink: 0;
-  z-index: 3;
-  cursor: ${({ disabled }) => disabled && "not-allowed"};
-`;
-
-const StyledInputStepper = styled.div`
-  width: 100%;
-  ${Input} {
-    text-align: center;
-  }
-  ${Prefix} {
-    padding: 0;
-    pointer-events: auto;
-  }
-`;
 
 class InputStepper extends React.Component<Props & ForwardedRef, State> {
   state = {
     value: this.props.defaultValue || 0,
   };
 
-  componentDidUpdate() {
+  setValueAndInjectCallback = (value: number) => {
     const { onChange } = this.props;
-    const { value } = this.state;
     if (onChange) {
       onChange(value);
     }
-  }
+    this.setState({ value });
+  };
 
   incrementCounter = () => {
     const { value } = this.state;
-    const { maxValue, step = 1 } = this.props;
-    const newValue = value + step;
-    this.setState({
-      value: newValue >= +maxValue ? maxValue : newValue,
-    });
+    const { maxValue = Number.POSITIVE_INFINITY, step = 1 } = this.props;
+    this.setValueAndInjectCallback(validateIncrement({ value, maxValue, step }));
   };
 
   decrementCounter = () => {
     const { value } = this.state;
-    const { minValue, step = 1 } = this.props;
-    const newValue = value - step;
+    const { minValue = Number.NEGATIVE_INFINITY, step = 1 } = this.props;
 
-    this.setState({
-      value: newValue <= +minValue ? minValue : newValue,
-    });
+    this.setValueAndInjectCallback(validateDecrement({ value, minValue, step }));
+  };
+
+  handleIncrementCounter = (
+    ev?: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
+  ) => {
+    if (ev && ev.type === "click") {
+      this.incrementCounter();
+    }
+    if (ev && ev.type === "keydown") {
+      if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+        ev.preventDefault();
+        this.incrementCounter();
+      } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+        this.incrementCounter();
+      }
+    }
+  };
+
+  handleDecrementCounter = (
+    ev?: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
+  ) => {
+    if (ev && ev.type === "click") {
+      this.decrementCounter();
+    }
+    if (ev && ev.type === "keydown") {
+      if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+        ev.preventDefault();
+        this.decrementCounter();
+      } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+        this.decrementCounter();
+      }
+    }
   };
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    ev.preventDefault();
-    if (ev.keyCode === 40) {
+    if (ev.keyCode === KEY_CODE_MAP.ARROW_DOWN) {
+      ev.preventDefault();
       this.decrementCounter();
     }
-    if (ev.keyCode === 38) {
+    if (ev.keyCode === KEY_CODE_MAP.ARROW_UP) {
+      ev.preventDefault();
       this.incrementCounter();
     }
   };
@@ -72,9 +81,14 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
   handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
     const { minValue = Number.NEGATIVE_INFINITY, maxValue = Number.POSITIVE_INFINITY } = this.props;
     const value = ev && parseInt(ev.target.value, 10);
+    const prevValue = this.state.value;
 
-    if (Number.isInteger(value) && value >= minValue && value <= maxValue) {
-      this.setState({ value });
+    if (prevValue <= value) {
+      this.setState({ value: validateIncrement({ value, maxValue, step: 0 }) });
+    }
+
+    if (prevValue >= value) {
+      this.setState({ value: validateDecrement({ value, minValue, step: 0 }) });
     }
   };
 
@@ -94,51 +108,36 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
       required,
       tabIndex,
       forwardedRef,
+      spaceAfter,
+      titleIncrement,
+      titleDecrement,
     } = this.props;
     const { value } = this.state;
     return (
-      <StyledInputStepper>
-        <InputField
-          dataTest={dataTest}
-          size={size}
-          label={label}
-          disabled={disabled}
-          required={required}
-          name={name}
-          error={error}
-          help={help}
-          type="number"
-          onChange={this.handleChange}
-          onBlur={onBlur}
-          onFocus={onFocus}
-          onKeyDown={this.handleKeyDown}
-          value={value || 0}
-          minValue={minValue}
-          maxValue={maxValue}
-          tabIndex={tabIndex}
-          ref={forwardedRef}
-          prefix={
-            <ButtonLink
-              disabled={disabled || value <= +minValue}
-              iconLeft={<MinusCircle color="secondary" />}
-              size={size}
-              onClick={this.decrementCounter}
-              transparent
-              component={PrefixSuffix}
-            />
-          }
-          suffix={
-            <ButtonLink
-              disabled={disabled || value >= +maxValue}
-              iconLeft={<PlusCircle color="secondary" />}
-              size={size}
-              onClick={this.incrementCounter}
-              transparent
-              component={PrefixSuffix}
-            />
-          }
-        />
-      </StyledInputStepper>
+      <InputStepperStateless
+        dataTest={dataTest}
+        size={size}
+        label={label}
+        disabled={disabled}
+        required={required}
+        name={name}
+        error={error}
+        help={help}
+        onChange={this.handleChange}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        onKeyDown={this.handleKeyDown}
+        value={value || 0}
+        minValue={minValue}
+        maxValue={maxValue}
+        tabIndex={tabIndex}
+        forwardedRef={forwardedRef}
+        spaceAfter={spaceAfter}
+        onDecrement={this.handleDecrementCounter}
+        onIncrement={this.handleIncrementCounter}
+        titleIncrement={titleIncrement}
+        titleDecrement={titleDecrement}
+      />
     );
   }
 }
@@ -151,3 +150,4 @@ const ForwardedInputStepper = React.forwardRef((props, ref) => (
 ForwardedInputStepper.displayName = "InputStepper";
 
 export default ForwardedInputStepper;
+export { default as InputStepperStateless } from "./InputStepperStateless";

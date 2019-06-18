@@ -3,22 +3,21 @@
   DOCUMENTATION: https://orbit.kiwi/components/choicegroup/
 */
 import type { Globals, Translation } from "../common/common.js.flow";
-import Radio from "../Radio";
-import Checkbox from "../Checkbox";
 
 type LabelSize = "normal" | "large";
 
 type LabelElement = "h2" | "h3" | "h4" | "h5" | "h6";
 
-type Children = React$Element<typeof Radio> | React$Element<typeof Checkbox>;
-
+export type Filters = { label: string, value: string };
 export type Props = {|
   ...Globals,
-  children: Children | Children[],
+  children: React$Node,
   label?: Translation,
   labelSize?: LabelSize,
   labelElement?: LabelElement,
   error?: Translation,
+  filter?: boolean,
+  onOnlySelection?: (SyntheticEvent<HTMLButtonElement>, {}) => void | Promise<any>,
   onChange: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};
 

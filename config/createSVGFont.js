@@ -1,41 +1,65 @@
 // @flow
-const SVGIcons2SVGFontStream = require("svgicons2svgfont");
-const fs = require("fs");
+import SVGIcons2SVGFontStream from "svgicons2svgfont";
+import path from "path";
+import fs from "fs";
+import svg2ttf from "svg2ttf";
+import ttf2woff2 from "ttf2woff2";
 
-const iconList = require("../src/icons/svg/icons.json");
+import iconList from "../src/data/icons.json";
 
-const fontStream = new SVGIcons2SVGFontStream({
-  fontName: "orbit-icons",
-  fontHeight: 1000,
-  normalize: true,
-});
+const ORBIT_ICONS_DIR = path.join(__dirname, "../orbit-icons-font");
 
 // https://github.com/fontello/ttf2eot
 // https://github.com/fontello/ttf2woff
 // https://github.com/nfroidure/ttf2woff2
 
-// Setting the font destination
-fontStream
-  .pipe(fs.createWriteStream("fonts/orbit-icons.svg"))
-  .on("finish", function() {
-    console.log("Font successfully created!");
-  })
-  .on("error", function(err) {
-    console.log(err);
+const createSVG = () =>
+  new Promise((resolve, reject) => {
+    fs.mkdirSync(ORBIT_ICONS_DIR);
+
+    const fontStream = new SVGIcons2SVGFontStream({
+      fontName: "orbit-icons",
+      fontHeight: 1000,
+      normalize: true,
+    });
+
+    fontStream
+      .pipe(fs.createWriteStream(path.join(ORBIT_ICONS_DIR, "orbit-icons.svg")))
+      .on("finish", () => {
+        resolve();
+      })
+      .on("error", err => {
+        reject(err);
+      });
+
+    Object.keys(iconList).forEach(iconName => {
+      const icon = fs.createReadStream(
+        path.join(__dirname, "../src/icons/svg/", `${iconName}.svg`),
+      );
+
+      icon.metadata = {
+        unicode: [String.fromCharCode(`0x${iconList[iconName].character}`)],
+        name: iconName,
+      };
+
+      fontStream.write(icon);
+    });
+
+    fontStream.end();
   });
 
-Object.keys(iconList).forEach(iconName => {
-  const icon = fs.createReadStream(
-    iconList[iconName].url.replace(
-      "https://raw.githubusercontent.com/kiwicom/orbit-components/master/",
-      "",
-    ),
-  );
-  icon.metadata = {
-    unicode: [String.fromCharCode(`0x${iconList[iconName].character}`)],
-    name: iconName,
-  };
-  fontStream.write(icon);
-});
+createSVG().then(() => {
+  // TTF
 
-fontStream.end();
+  const TTF_PATH = path.join(ORBIT_ICONS_DIR, "orbit-icons.ttf");
+
+  const TTF = svg2ttf(fs.readFileSync(path.join(ORBIT_ICONS_DIR, "orbit-icons.svg"), "utf8"), {});
+  fs.writeFileSync(TTF_PATH, Buffer.from(TTF.buffer));
+
+  // WOFF 2
+
+  fs.writeFileSync(
+    path.join(ORBIT_ICONS_DIR, "orbit-icons.woff2"),
+    ttf2woff2(fs.readFileSync(TTF_PATH)),
+  );
+});

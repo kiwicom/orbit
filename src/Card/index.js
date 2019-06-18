@@ -12,6 +12,8 @@ import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
 import { right } from "../utils/rtl";
 import CLOSE_BUTTON_DATA_TEST from "./consts";
+import { DictionaryContext } from "../Dictionary";
+import { pureTranslate } from "../Translate";
 
 import type { Props, State } from "./index";
 
@@ -93,12 +95,30 @@ StyledCard.defaultProps = {
   theme: defaultTheme,
 };
 
-const CloseContainer = styled.div`
+const StyledCloseContainer = styled.div`
   position: absolute;
   top: 0;
   ${right}: 0;
   z-index: 1;
 `;
+
+const CardCloseButton = ({ onClick, dataTest }) => {
+  const dictionary = React.useContext(DictionaryContext);
+
+  return (
+    <StyledCloseContainer>
+      <ButtonLink
+        dataTest={dataTest}
+        type="secondary"
+        size="small"
+        icon={<Close />}
+        onClick={onClick}
+        transparent
+        title={pureTranslate(dictionary, "button_close")}
+      />
+    </StyledCloseContainer>
+  );
+};
 
 class Card extends React.Component<Props, State> {
   state = {
@@ -215,18 +235,7 @@ class Card extends React.Component<Props, State> {
         hasAdjustedHeader={this.hasAdjustedHeader()}
       >
         {children && React.Children.map(children, (item, index) => this.renderSection(item, index))}
-        {closable && (
-          <CloseContainer>
-            <ButtonLink
-              dataTest={CLOSE_BUTTON_DATA_TEST}
-              type="secondary"
-              size="small"
-              icon={<Close />}
-              onClick={onClose}
-              transparent
-            />
-          </CloseContainer>
-        )}
+        {closable && <CardCloseButton onClick={onClose} dataTest={CLOSE_BUTTON_DATA_TEST} />}
       </StyledCard>
     );
   }

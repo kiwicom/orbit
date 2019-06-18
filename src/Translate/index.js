@@ -7,7 +7,7 @@ import type { Translations } from "../Dictionary";
 
 import type { Props, Values } from "./index";
 
-function translate(translations: Translations, key: string, values: Values = {}) {
+export function pureTranslate(translations: Translations, key: string, values: Values = {}) {
   const translation = translations[key] || DEFAULT_DICTIONARY[key];
 
   if (!translation) {
@@ -23,7 +23,7 @@ function translate(translations: Translations, key: string, values: Values = {})
 
 const Translate = ({ tKey, values }: Props) => (
   <DictionaryContext.Consumer>
-    {dictionary => translate(dictionary, tKey, values)}
+    {dictionary => pureTranslate(dictionary, tKey, values)}
   </DictionaryContext.Consumer>
 );
 

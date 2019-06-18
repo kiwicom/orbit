@@ -35,7 +35,8 @@ describe("Alert", () => {
         {message}
       </Alert>,
     );
-    const ButtonLink = component.find("Alert__CloseContainer ButtonLink");
+
+    const ButtonLink = component.find("AlertCloseButton");
     expect(ButtonLink.prop("dataTest")).toBe(CLOSE_BUTTON_DATA_TEST);
     ButtonLink.simulate("click");
     expect(onClose).toHaveBeenCalled();

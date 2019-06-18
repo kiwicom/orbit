@@ -44,7 +44,9 @@ describe("Card", () => {
   it("should be closable", () => {
     const onClose = jest.fn();
     const component = shallow(<Card onClose={onClose} closable />);
-    const ButtonLink = component.find("ButtonLink");
+
+    const ButtonLink = component.find("CardCloseButton");
+
     expect(ButtonLink.prop("dataTest")).toBe(CLOSE_BUTTON_DATA_TEST);
     ButtonLink.simulate("click");
     expect(onClose).toHaveBeenCalled();

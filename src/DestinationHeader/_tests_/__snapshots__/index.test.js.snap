@@ -1403,8 +1403,7 @@ exports[`DestinationHeader should match snapshot 1`] = `
       }
     }
   >
-    <Button
-      iconLeft={<ChevronLeft />}
+    <DestinationHeaderGoBackButton
       onClick={
         [MockFunction] {
           "calls": Array [
@@ -1418,7 +1417,6 @@ exports[`DestinationHeader should match snapshot 1`] = `
           ],
         }
       }
-      size="small"
     />
     <DestinationHeader__StyledHeader
       theme={

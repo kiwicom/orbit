@@ -10,6 +10,8 @@ import BASE_URL from "./consts";
 import defaultTheme from "../defaultTheme";
 import LazyImage from "../LazyImage";
 import mq from "../utils/mediaQuery";
+import { DictionaryContext } from "../Dictionary";
+import { pureTranslate } from "../Translate";
 
 import type { Props } from "./index";
 
@@ -94,6 +96,19 @@ StyledHeader.defaultProps = {
   theme: defaultTheme,
 };
 
+const DestinationHeaderGoBackButton = ({ onClick }) => {
+  const dictionary = React.useContext(DictionaryContext);
+
+  return (
+    <ButtonLink
+      size="small"
+      iconLeft={<ChevronLeft />}
+      onClick={onClick}
+      title={pureTranslate(dictionary, "breadcrumbs_back")}
+    />
+  );
+};
+
 const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props) => {
   const destinationImage = image.toLowerCase();
   return (
@@ -111,7 +126,7 @@ const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props) 
       />
       <StyledOverlay />
       <StyledContent>
-        <ButtonLink size="small" iconLeft={<ChevronLeft />} onClick={goBack} />
+        <DestinationHeaderGoBackButton onClick={goBack} />
         <StyledHeader>
           <Heading inverted type="title2">
             {destinationName}

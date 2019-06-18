@@ -304,6 +304,7 @@ exports[`Default Stack should match snapshot 1`] = `
 
 <Stack__StyledStack
   dataTest="test"
+  element="div"
   flex={false}
   smallMobile={
     Object {
@@ -782,6 +783,7 @@ exports[`Default Stack should match snapshot 1`] = `
 >
   <StyledComponent
     dataTest="test"
+    element="div"
     flex={false}
     forwardedComponent={
       Object {
@@ -1745,6 +1747,7 @@ exports[`Default Stack should match snapshot 1`] = `
     <Component
       className="c0"
       dataTest="test"
+      element="div"
       flex={false}
       smallMobile={
         Object {
@@ -17450,6 +17453,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
         "wrap": true,
       }
     }
+    element="div"
     flex={true}
     smallMobile={
       Object {
@@ -17941,6 +17945,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
           "wrap": true,
         }
       }
+      element="div"
       flex={true}
       forwardedComponent={
         Object {
@@ -18917,6 +18922,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
             "wrap": true,
           }
         }
+        element="div"
         flex={true}
         smallMobile={
           Object {
@@ -34543,6 +34549,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
 }
 
 <Stack__StyledStack
+  element="div"
   flex={true}
   smallMobile={
     Object {
@@ -35020,6 +35027,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   }
 >
   <StyledComponent
+    element="div"
     flex={true}
     forwardedComponent={
       Object {
@@ -35982,6 +35990,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   >
     <Component
       className="c0"
+      element="div"
       flex={true}
       smallMobile={
         Object {

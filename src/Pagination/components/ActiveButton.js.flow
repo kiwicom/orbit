@@ -1,0 +1,11 @@
+// @flow
+
+import type { Sizes } from "../index";
+
+export type Props = {|
+  children: React$Node,
+  transparent?: boolean,
+  size?: Sizes,
+|};
+
+declare export default React$ComponentType<Props>;

@@ -127,6 +127,8 @@ const IconContainer = styled(StyledDiv)`
   flex-shrink: 0;
   margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
   color: ${getTypeToken(TOKENS.colorIconAlert)};
+  display: ${({ inlineActions }) => inlineActions && "flex"};
+  align-items: ${({ inlineActions }) => inlineActions && "center"};
 `;
 
 IconContainer.defaultProps = {
@@ -136,14 +138,16 @@ IconContainer.defaultProps = {
 const ContentWrapper = styled(StyledDiv)`
   flex: 1; // IE wrapping fix
   display: flex;
-  flex-direction: ${({ title }) => title && "column"};
+  flex-direction: ${({ title, inlineActions }) => title && (inlineActions ? "row" : "column")};
   align-items: ${({ title }) => !title && "center"};
+  justify-content: ${({ inlineActions }) => inlineActions && "space-between"};
 `;
 
 const Title = styled(StyledDiv)`
   display: flex;
   align-items: center;
-  margin-bottom: ${({ theme, hasChildren }) => hasChildren && theme.orbit.spaceXSmall};
+  margin-bottom: ${({ theme, hasChildren, inlineActions }) =>
+    hasChildren && (inlineActions ? "0" : theme.orbit.spaceXSmall)};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
   line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
   min-height: ${({ theme }) => theme.orbit.heightIconMedium};
@@ -155,7 +159,8 @@ Title.defaultProps = {
 
 const Content = styled(StyledDiv)`
   display: block;
-  margin-bottom: ${({ theme, title }) => title && theme.orbit.spaceXXSmall};
+  margin-bottom: ${({ theme, title, inlineActions }) =>
+    title && (inlineActions ? "0" : theme.orbit.spaceXSmall)};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
 
   & a,
@@ -217,6 +222,7 @@ const Alert = (props: Props) => {
     children,
     dataTest,
     spaceAfter,
+    inlineActions = false,
   } = props;
   return (
     <StyledAlert
@@ -227,15 +233,24 @@ const Alert = (props: Props) => {
       spaceAfter={spaceAfter}
     >
       {icon && (
-        <IconContainer type={type}>
+        <IconContainer type={type} inlineActions={inlineActions}>
           <Icon type={type} icon={icon} />
         </IconContainer>
       )}
-      <ContentWrapper title={title}>
-        {title && <Title hasChildren={children}>{title}</Title>}
-        {children && (
+      <ContentWrapper title={title} inlineActions={inlineActions}>
+        {title && (
+          <Title hasChildren={children} inlineActions={inlineActions}>
+            {title}
+          </Title>
+        )}
+        {children && !inlineActions && (
           <Content title={title} type={type}>
             {children}
+          </Content>
+        )}
+        {inlineActions && (
+          <Content title={title} type={type} inlineActions={inlineActions}>
+            {inlineActions}
           </Content>
         )}
       </ContentWrapper>

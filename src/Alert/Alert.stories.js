@@ -108,6 +108,35 @@ storiesOf("Alert", module)
     },
   )
   .add(
+    "Inline Actions",
+    () => {
+      const type = select("Type", Object.values(TYPE_OPTIONS), "info");
+      const title = text("Title", "You can change the title by changing the Title knob");
+      const button = text("Button", "I am a link");
+      const closable = boolean("Closable", false);
+      const Icon = getIcon(getIcons("Airplane"));
+
+      return (
+        <Alert
+          type={type}
+          icon={Icon && <Icon />}
+          title={title}
+          closable={closable}
+          onClose={action("Close")}
+          inlineActions={
+            <Button type={type} size="small" href="#">
+              {button}
+            </Button>
+          }
+        />
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const type = select("Type", Object.values(TYPE_OPTIONS), "info");
@@ -121,6 +150,7 @@ storiesOf("Alert", module)
       const closable = boolean("Closable", false);
       const Icon = getIcon(getIcons("Airplane"));
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+
       return (
         <Alert
           type={type}

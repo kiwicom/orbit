@@ -5,7 +5,7 @@ import type { Globals } from "../../common/common.js.flow";
 export type Props = {|
   ...Globals,
   +children: React$Node,
-  +element?: "string",
+  +element?: string,
   +hideOn?: Devices[],
 |};
 

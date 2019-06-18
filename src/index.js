@@ -61,6 +61,7 @@ export { default as InputStepperStateless } from "./InputStepper/InputStepperSta
 export { default as Illustration } from "./Illustration";
 export { default as Popover } from "./Popover";
 export { default as TextLink } from "./TextLink";
+export { default as Pagination } from "./Pagination";
 export { default as Radio } from "./Radio";
 export { default as RatingStars } from "./RatingStars";
 export { default as Select } from "./Select";

@@ -973,7 +973,7 @@ exports[`Breadcrumbs should match snapshot 2`] = `
 >
   <BreadcrumbsItem__StyledBreadcrumbsItemAnchor
     active={true}
-    component="a"
+    component={[Function]}
     href="https://kiwi.com"
     onClick={[MockFunction]}
     property="item"

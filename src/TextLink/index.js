@@ -70,8 +70,8 @@ export const getLinkStyle = ({
       };
 `;
 
-export const StyledTextLink = styled(({ theme, type, ...props }) => (
-  <a {...props}>{props.children}</a>
+export const StyledTextLink = styled(({ theme, type, component: Component, ...props }) => (
+  <Component {...props}>{props.children}</Component>
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightLinks};
@@ -109,6 +109,8 @@ const TextLink = ({
   onClick,
   dataTest,
   tabIndex,
+  // eslint-disable-next-line jsx-a11y/anchor-has-content
+  component = props => <a {...props} />,
 }: Props) => {
   const relValues = rel ? rel.split(" ") : [];
 
@@ -133,6 +135,7 @@ const TextLink = ({
       data-test={dataTest}
       tabIndex={tabIndex || (!href ? "0" : undefined)}
       role={!href ? "button" : undefined}
+      component={component}
     >
       {children}
       {icon && <IconContainer type={type}>{icon}</IconContainer>}

@@ -3,9 +3,9 @@
 exports[`Pagination should match snapshot 1`] = `
 <Stack
   align="center"
-  component="nav"
   dataTest="test"
   direction="row"
+  element="nav"
   spacing="tight"
 >
   <Hide

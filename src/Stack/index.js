@@ -13,10 +13,10 @@ import getChildrenMargin from "./helpers/getChildrenMargin";
 
 import type { Props } from "./index";
 
-const StyledStack = styled(({ className, component: Component, children, dataTest }) => (
-  <Component className={className} data-test={dataTest}>
+const StyledStack = styled(({ className, children, dataTest }) => (
+  <div className={className} data-test={dataTest}>
     {children}
-  </Component>
+  </div>
 ))`
   // just apply all mediaQueries
   // smallMobile - default values are not mediaQuery and needs to be rendered differently
@@ -57,7 +57,7 @@ const Stack = (props: Props) => {
     tablet,
     desktop,
     largeDesktop,
-    component = "div",
+    element = "div",
   } = props;
 
   // turn on FLEX automatically or manually with prop flex
@@ -89,7 +89,7 @@ const Stack = (props: Props) => {
       tablet={tablet}
       desktop={desktop}
       largeDesktop={largeDesktop}
-      component={component}
+      as={element}
     >
       {children}
     </StyledStack>

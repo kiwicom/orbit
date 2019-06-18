@@ -18,10 +18,10 @@ Table below contains all types of the props available in Stack component.
 | align         | [`enum`](#enum)             | `"start"`    | The `align-items` and `align-content` of the Stack.
 | basis         | `string`                    | `auto`       | Specifies the basis value of `flex-basis`.
 | **children**  | `React.Node`                |              | Content of the Stack.
-| component     | `string`                    | `"div"`      | The string used for the root node.
 | dataTest      | `string`                    |              | Optional prop for testing purposes.
 | desktop       | [`Object`](#media-queries)  |              | Object for setting up properties for the desktop viewport. [See Media queries](#media-queries)
 | direction     | [`enum`](#enum)             | `"row"`      | The `flex-direction` of the Stack. [See Functional specs](#functional-specs)
+| element       | `string`                    | `"div"`      | The string used for the root node.
 | flex          | `boolean`                   | `false`      | If `true` or you specify some flex attribute, the Stack will use flex attributes.
 | grow          | `boolean`                   | `false`      | If `true`, the Stack will have `flex-grow` set to `1`, otherwise it will be `0`.
 | inline        | `boolean`                   | `false`      | If `true`, the Stack will have `display` set to `inline-flex`, otherwise it will be `flex`.

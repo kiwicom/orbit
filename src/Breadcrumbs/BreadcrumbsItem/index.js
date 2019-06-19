@@ -12,10 +12,11 @@ const StyledBreadcrumbsItem = styled.li`
   align-items: center;
 `;
 
-const StyledBreadcrumbsItemAnchor = styled(({ active, component, children, theme, ...props }) => {
-  const Component = component;
-  return <Component {...props}>{children}</Component>;
-})`
+const StyledBreadcrumbsItemAnchor = styled(
+  ({ active, component: Component, children, theme, ...props }) => (
+    <Component {...props}>{children}</Component>
+  ),
+)`
   font-weight: ${({ active, theme }) => active && theme.orbit.fontWeightBold};
   color: ${({ theme }) => theme.orbit.paletteInkLight};
   text-decoration: none;
@@ -41,15 +42,14 @@ StyledBreadcrumbsItemIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const a: React$Node = "a";
-
 const BreadcrumbsItem = ({
   active,
   children,
   dataTest,
   onClick,
   contentKey,
-  component = a,
+  // eslint-disable-next-line jsx-a11y/anchor-has-content
+  component = props => <a {...props} />,
   ...props
 }: Props) => (
   <StyledBreadcrumbsItem

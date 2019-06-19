@@ -31,7 +31,7 @@ describe("Breadcrumbs", () => {
     expect(list.find("BreadcrumbsItem").prop("contentKey")).toBe(1);
   });
   it("should execute onGoBack", () => {
-    component.find("Button").simulate("click");
+    component.find("GoBackButton").simulate("click");
     expect(onGoBack).toHaveBeenCalled();
   });
   it("should match snapshot", () => {

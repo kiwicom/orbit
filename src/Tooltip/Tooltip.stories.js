@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { text, select } from "@storybook/addon-knobs";
+import { text, select, boolean } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { POSITIONS, SIZE_OPTIONS } from "./consts";
@@ -137,6 +137,7 @@ storiesOf("Tooltip", module)
       const Icon = getIcon(getIcons("Airplane"));
       const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
       const tabIndex = text("TabIndex", "0");
+      const enabled = boolean("enabled", true);
       const preferredPosition = select(
         "preferredPosition",
         Object.values(POSITIONS),
@@ -150,6 +151,7 @@ storiesOf("Tooltip", module)
           content={content}
           dataTest={dataTest}
           tabIndex={tabIndex}
+          enabled={enabled}
         >
           <Icon />
         </Tooltip>

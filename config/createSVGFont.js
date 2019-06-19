@@ -9,10 +9,6 @@ import iconList from "../src/data/icons.json";
 
 const ORBIT_ICONS_DIR = path.join(__dirname, "../orbit-icons-font");
 
-// https://github.com/fontello/ttf2eot
-// https://github.com/fontello/ttf2woff
-// https://github.com/nfroidure/ttf2woff2
-
 const createSVG = () =>
   new Promise((resolve, reject) => {
     if (!fs.existsSync(ORBIT_ICONS_DIR)) {
@@ -52,14 +48,10 @@ const createSVG = () =>
   });
 
 createSVG().then(() => {
-  // TTF
-
   const TTF_PATH = path.join(ORBIT_ICONS_DIR, "orbit-icons.ttf");
 
   const TTF = svg2ttf(fs.readFileSync(path.join(ORBIT_ICONS_DIR, "orbit-icons.svg"), "utf8"), {});
   fs.writeFileSync(TTF_PATH, Buffer.from(TTF.buffer));
-
-  // WOFF 2
 
   fs.writeFileSync(
     path.join(ORBIT_ICONS_DIR, "orbit-icons.woff2"),

@@ -447,7 +447,14 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
   tooltipId: string;
 
   render() {
-    const { content, children, size = SIZE_OPTIONS.SMALL, dataTest, tabIndex = "0", enabled = true } = this.props;
+    const {
+      content,
+      children,
+      size = SIZE_OPTIONS.SMALL,
+      dataTest,
+      tabIndex = "0",
+      enabled = true,
+    } = this.props;
     const { shown, shownMobile, position, align, render } = this.state;
     const {
       containerTop,

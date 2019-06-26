@@ -447,7 +447,14 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
   tooltipId: string;
 
   render() {
-    const { content, children, size = SIZE_OPTIONS.SMALL, dataTest, tabIndex = "0" } = this.props;
+    const {
+      content,
+      children,
+      size = SIZE_OPTIONS.SMALL,
+      dataTest,
+      tabIndex = "0",
+      enabled = true,
+    } = this.props;
     const { shown, shownMobile, position, align, render } = this.state;
     const {
       containerTop,
@@ -469,50 +476,52 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
           onBlur={this.handleOut}
           ref={this.container}
           aria-describedby={this.tooltipId}
-          tabIndex={tabIndex}
+          tabIndex={enabled && tabIndex}
         >
           {children}
         </StyledTooltipChildren>
-        <Portal element="tooltips">
-          {render && (
-            <StyledTooltip data-test={dataTest}>
-              <StyledTooltipOverlay
-                onClick={this.handleClickOutside}
-                onFocus={this.handleOpen}
-                shownMobile={shownMobile}
-                ref={this.overlay}
-              />
-              <StyledTooltipWrapper
-                shown={shown}
-                shownMobile={shownMobile}
-                position={position}
-                align={align}
-                size={size}
-                ref={this.tooltip}
-                onMouseEnter={this.handleIn}
-                onClick={this.handleClickOutside}
-                onMouseLeave={this.handleOut}
-                containerTop={containerTop}
-                containerLeft={containerLeft}
-                containerHeight={containerHeight}
-                containerWidth={containerWidth}
-                tooltipHeight={tooltipHeight}
-                tooltipWidth={tooltipWidth}
-                contentHeight={contentHeight}
-                role="tooltip"
-                aria-hidden={!shown}
-                id={this.tooltipId}
-              >
-                <StyledTooltipContent ref={this.content}>{content}</StyledTooltipContent>
-                <StyledTooltipClose>
-                  <Button type="secondary" block onClick={this.handleClose}>
-                    <Translate tKey="button_close" />
-                  </Button>
-                </StyledTooltipClose>
-              </StyledTooltipWrapper>
-            </StyledTooltip>
-          )}
-        </Portal>
+        {enabled && (
+          <Portal element="tooltips">
+            {render && (
+              <StyledTooltip data-test={dataTest}>
+                <StyledTooltipOverlay
+                  onClick={this.handleClickOutside}
+                  onFocus={this.handleOpen}
+                  shownMobile={shownMobile}
+                  ref={this.overlay}
+                />
+                <StyledTooltipWrapper
+                  shown={shown}
+                  shownMobile={shownMobile}
+                  position={position}
+                  align={align}
+                  size={size}
+                  ref={this.tooltip}
+                  onMouseEnter={this.handleIn}
+                  onClick={this.handleClickOutside}
+                  onMouseLeave={this.handleOut}
+                  containerTop={containerTop}
+                  containerLeft={containerLeft}
+                  containerHeight={containerHeight}
+                  containerWidth={containerWidth}
+                  tooltipHeight={tooltipHeight}
+                  tooltipWidth={tooltipWidth}
+                  contentHeight={contentHeight}
+                  role="tooltip"
+                  aria-hidden={!shown}
+                  id={this.tooltipId}
+                >
+                  <StyledTooltipContent ref={this.content}>{content}</StyledTooltipContent>
+                  <StyledTooltipClose>
+                    <Button type="secondary" block onClick={this.handleClose}>
+                      <Translate tKey="button_close" />
+                    </Button>
+                  </StyledTooltipClose>
+                </StyledTooltipWrapper>
+              </StyledTooltip>
+            )}
+          </Portal>
+        )}
       </React.Fragment>
     );
   }

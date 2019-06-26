@@ -476,7 +476,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
           onBlur={this.handleOut}
           ref={this.container}
           aria-describedby={this.tooltipId}
-          tabIndex={tabIndex}
+          tabIndex={enabled && tabIndex}
         >
           {children}
         </StyledTooltipChildren>

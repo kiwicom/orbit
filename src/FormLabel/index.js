@@ -18,7 +18,11 @@ StyledAsterisk.defaultProps = {
 
 const FormLabel = styled(({ className, children, required, filled, dataTest, id }) => (
   <span className={className} data-test={dataTest} id={id}>
-    {required && <StyledAsterisk filled={filled}>* </StyledAsterisk>}
+    {required && (
+      <StyledAsterisk aria-hidden="true" filled={filled}>
+        *{" "}
+      </StyledAsterisk>
+    )}
     <span>{children}</span>
   </span>
 ))`

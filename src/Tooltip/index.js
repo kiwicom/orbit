@@ -509,7 +509,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
                 tooltipWidth={tooltipWidth}
                 contentHeight={contentHeight}
                 role="tooltip"
-                aria-hidden={!shown}
+                aria-hidden={!shown || !shownMobile}
                 id={this.tooltipId}
               >
                 <StyledTooltipContent ref={this.content}>{content}</StyledTooltipContent>

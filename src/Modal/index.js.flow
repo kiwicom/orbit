@@ -19,7 +19,7 @@ export type State = {|
 
 type Size = "small" | "normal" | "large";
 
-type onClose = (
+export type onClose = (
   ev: SyntheticKeyboardEvent<HTMLDivElement> | SyntheticEvent<HTMLButtonElement> | MouseEvent,
 ) => void | Promise<any>;
 

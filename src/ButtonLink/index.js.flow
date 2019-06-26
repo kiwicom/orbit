@@ -4,18 +4,18 @@
 */
 import type { ReactComponentStyled } from "styled-components";
 
-import type { Globals, Ref } from "../common/common.js.flow";
+import type { Globals, Ref, Component } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
-type Type = "primary" | "secondary";
-type Size = "small" | "normal" | "large";
+export type Type = "primary" | "secondary";
+export type Size = "small" | "normal" | "large";
 
 export type Props = {|
   ...Globals,
   ...Ref,
   ...spaceAfter,
   +children?: React$Node,
-  +component?: string | React$Node,
+  +component?: Component,
   +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
   +disabled?: boolean,
   +block?: boolean,

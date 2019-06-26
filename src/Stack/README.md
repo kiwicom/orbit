@@ -21,6 +21,7 @@ Table below contains all types of the props available in Stack component.
 | dataTest      | `string`                    |              | Optional prop for testing purposes.
 | desktop       | [`Object`](#media-queries)  |              | Object for setting up properties for the desktop viewport. [See Media queries](#media-queries)
 | direction     | [`enum`](#enum)             | `"row"`      | The `flex-direction` of the Stack. [See Functional specs](#functional-specs)
+| element       | `string`                    | `"div"`      | The string used for the root node.
 | flex          | `boolean`                   | `false`      | If `true` or you specify some flex attribute, the Stack will use flex attributes.
 | grow          | `boolean`                   | `false`      | If `true`, the Stack will have `flex-grow` set to `1`, otherwise it will be `0`.
 | inline        | `boolean`                   | `false`      | If `true`, the Stack will have `display` set to `inline-flex`, otherwise it will be `flex`.
@@ -28,7 +29,7 @@ Table below contains all types of the props available in Stack component.
 | largeDesktop  | [`Object`](#media-queries)  |              | Object for setting up properties for the largeDesktop viewport. [See Media queries](#media-queries)
 | largeMobile   | [`Object`](#media-queries)  |              | Object for setting up properties for the largeMobile viewport. [See Media queries](#media-queries)
 | mediumMobile  | [`Object`](#media-queries)  |              | Object for setting up properties for the mediumMobile viewport. [See Media queries](#media-queries)
-| shrink        | `boolean`                   | `true`       | If `false`, the Stack will have `flex-shrink` set to `0`.
+| shrink        | `boolean`                   | `false`      | If `true`, the Stack will have `flex-shrink` set to `1`.
 | spacing       | [`spacing`](#spacing)       | `"natural"`  | The spacing between its children.
 | spaceAfter    | `enum`                      |              | Additional `padding` to bottom of the Stack. [See this doc](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | tablet        | [`Object`](#media-queries)  |              | Object for setting up properties for the tablet viewport. [See Media queries](#media-queries)

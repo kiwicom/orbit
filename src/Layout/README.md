@@ -30,7 +30,9 @@ Table below contains all types of the props available in the LayoutColumn compon
 | Name          | Type                        | Default         | Description                      |
 | :------------ | :-------------------------- | :-------------- | :------------------------------- |
 | **children**  | `React.Node`                |                 | The children of the LayoutColumn.
+| element       | `string`                    | `"div"`         | The children of the LayoutColumn.
 | dataTest      | `string`                    |                 | Optional prop for testing purposes.
+| hideOn        | `Devices[]`                 |                 | Array of devices - viewports to hide the children on. For more info check [Hide](../Hide) component.
 
 ## Layouts
 For now, we are providing three global layouts that are necessary for our projects.
@@ -44,7 +46,7 @@ To implement the Search layout into your project, you need to use this JSX marku
 import Layout, { LayoutColumn } from "@kiwicom/orbit-components/lib/Layout";
 
 const App = () => (
-  <Layout>
+  <Layout type="Search">
     <LayoutColumn>
       The left SideBar for filters
     </LayoutColumn>
@@ -70,7 +72,7 @@ To implement the Booking layout into your project, you need to use this JSX mark
 import Layout, { LayoutColumn } from "@kiwicom/orbit-components/lib/Layout";
 
 const App = () => (
-  <Layout>
+  <Layout type="Booking">
     <LayoutColumn>
       The main section for Booking form
     </LayoutColumn>
@@ -89,7 +91,7 @@ To implement the MMB layout into your project, you need to use this JSX markup:
 import Layout, { LayoutColumn } from "@kiwicom/orbit-components/lib/Layout";
 
 const App = () => (
-  <Layout>
+  <Layout type="MMB">
     <LayoutColumn>
       The main section for ManageMyBooking
     </LayoutColumn>

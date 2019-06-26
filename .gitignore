@@ -68,3 +68,11 @@ umd
 es
 .out
 .cache
+src/data/illustrations.json
+src/data/icons.json
+src/Illustration/index.js.flow
+src/ServiceLogo/index.js.flow
+orbit-icons-font
+orbit-icons-font.zip
+orbit-svgs.zip
+

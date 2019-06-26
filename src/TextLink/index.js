@@ -46,17 +46,17 @@ IconContainer.defaultProps = {
 export const getLinkStyle = ({
   theme,
   type,
-}: GetLinkStyleProps) => css` // Common styles for TextLink and "a" in Text 
-  
+}: GetLinkStyleProps) => css` // Common styles for TextLink and "a" in Text
+
   &, &:link, &:visited {
     color: ${getColor({ theme, type })};
     text-decoration: ${
       type === TYPE_OPTIONS.SECONDARY
         ? theme.orbit.textDecorationTextLinkSecondary
         : theme.orbit.textDecorationTextLinkPrimary
-    };  
+    };
   }
-  
+
   &:hover, &:active {
     text-decoration: ${
       type === TYPE_OPTIONS.SECONDARY
@@ -70,8 +70,8 @@ export const getLinkStyle = ({
       };
 `;
 
-export const StyledTextLink = styled(({ theme, type, ...props }) => (
-  <a {...props}>{props.children}</a>
+export const StyledTextLink = styled(({ theme, type, component: Component, ...props }) => (
+  <Component {...props}>{props.children}</Component>
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightLinks};
@@ -109,6 +109,8 @@ const TextLink = ({
   onClick,
   dataTest,
   tabIndex,
+  // eslint-disable-next-line jsx-a11y/anchor-has-content
+  component = props => <a {...props} />,
 }: Props) => {
   const relValues = rel ? rel.split(" ") : [];
 
@@ -131,7 +133,9 @@ const TextLink = ({
       rel={relValues && relValues.join(" ")}
       onClick={onClick}
       data-test={dataTest}
-      tabIndex={tabIndex}
+      tabIndex={tabIndex || (!href ? "0" : undefined)}
+      role={!href ? "button" : undefined}
+      component={component}
     >
       {children}
       {icon && <IconContainer type={type}>{icon}</IconContainer>}

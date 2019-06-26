@@ -9,6 +9,7 @@ import { StyledTag } from "../../Tag";
 import type { Props } from "./index";
 
 const StyledInputTags = styled.div`
+  position: relative;
   margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
   display: flex;
   align-items: center;

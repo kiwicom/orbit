@@ -7,6 +7,10 @@ module.exports = {
     filename: "orbit-components.min.js",
   },
 
+  performance: {
+    hints: false,
+  },
+
   module: {
     rules: [
       {

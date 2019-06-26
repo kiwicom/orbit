@@ -1,9 +1,6 @@
 // @flow
 import * as React from "react";
-import type {
-  fromPlainObject as FromPlainObject,
-  getTokens as GetTokens,
-} from "@kiwicom/orbit-design-tokens";
+import type { GetTokens, FromPlainObject } from "@kiwicom/orbit-design-tokens/lib/index";
 
 import typeof AlertType from "./Alert";
 import typeof BadgeType from "./Badge";
@@ -53,6 +50,7 @@ import typeof CardHeaderType from "./Card/CardHeader";
 import typeof CardSectionType from "./Card/CardSection";
 import typeof mediaQueriesType from "./utils/mediaQuery";
 import typeof PortalType from "./Portal";
+import typeof PaginationType from "./Pagination";
 import typeof ModalType from "./Modal";
 import typeof ModalHeaderType from "./Modal/ModalHeader";
 import typeof ModalSectionType from "./Modal/ModalSection";
@@ -138,6 +136,7 @@ declare export var InputStepperStateless: InputStepperStatelessType;
 declare export var TextLink: TextLinkType;
 declare export var Loading: LoadingType;
 
+declare export var Pagination: PaginationType;
 declare export var Radio: RadioType;
 declare export var RatingStars: RatingStarsType;
 declare export var Select: SelectType;

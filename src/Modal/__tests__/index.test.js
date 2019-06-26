@@ -61,7 +61,7 @@ describe("Large Modal", () => {
   const modalHeader = component.find("ModalHeader");
   const modalSection = component.find("ModalSection");
   const modalFooter = component.find("ModalFooter");
-  const closeButton = component.find("Modal__CloseContainer").find("ButtonLink");
+  const closeButton = component.find("Modal__CloseContainer").find("ModalCloseButton");
 
   it("should have passed props", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);

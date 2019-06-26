@@ -88,25 +88,45 @@ class ModalFooter extends React.PureComponent<Props> {
     }
   };
 
+  renderWrappedChildren = () => {
+    const { children, flex = "0 1 auto" } = this.props;
+
+    const getChildFlex = key =>
+      Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
+    return React.Children.map(children, (child, key) => {
+      if (child) {
+        return (
+          <StyledChild flex={getChildFlex(key)}>
+            {React.cloneElement(child, {
+              ref: node => {
+                // Call the original ref, if any
+                const { ref } = child;
+                if (typeof ref === "function") {
+                  ref(node);
+                } else if (ref !== null) {
+                  ref.current = node;
+                }
+              },
+            })}
+          </StyledChild>
+        );
+      }
+      return null;
+    });
+  };
+
   render() {
-    const { flex = "0 1 auto", children, dataTest, isMobileFullPage } = this.props;
+    const { children, dataTest, isMobileFullPage } = this.props;
     return (
       <StyledModalFooter data-test={dataTest} isMobileFullPage={isMobileFullPage}>
-        {typeof children === "object"
-          ? React.Children.map(children, (item, key) => {
-              if (item) {
-                const childFlex =
-                  Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
-                return <StyledChild flex={childFlex}>{<item.type {...item.props} />}</StyledChild>;
-              }
-              return null;
-            })
-          : children}
+        {Array.isArray(children) ? this.renderWrappedChildren() : children}
       </StyledModalFooter>
     );
   }
 }
 
 const DecoratedComponent = withModalContext(ModalFooter);
+
+// $FlowFixMe flow doesn't recognize displayName for functions
 DecoratedComponent.displayName = "ModalFooter";
 export default DecoratedComponent;

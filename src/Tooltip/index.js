@@ -240,9 +240,6 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
 
   overlay: { current: any | HTMLDivElement } = React.createRef();
 
-  // TODO: ged rid off weak types
-  closeButton: { current: any } = React.createRef();
-
   componentDidMount() {
     this.tooltipId = RandomID("tooltip");
   }
@@ -254,7 +251,14 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
   }
 
   getDimensions = () => {
-    if (this.container && this.tooltip && this.content && typeof window !== "undefined") {
+    if (
+      this.container &&
+      this.container.current &&
+      this.tooltip &&
+      this.tooltip.current &&
+      this.content &&
+      typeof window !== "undefined"
+    ) {
       const containerDimensions = this.container.current.getBoundingClientRect();
       const tooltipDimensions = this.tooltip.current.getBoundingClientRect();
 
@@ -416,7 +420,9 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
   };
 
   handleOut = () => {
-    this.setState({ shown: false });
+    setTimeout(() => {
+      this.setState({ shown: false });
+    }, 15);
   };
 
   handleOpen = () => {
@@ -429,17 +435,28 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
     }, 15);
   };
 
-  handleClose = (ev: SyntheticEvent<HTMLElement>) => {
+  handleClose = () => {
+    this.setState({ shownMobile: false });
+  };
+
+  handleClickOutside = (ev: SyntheticEvent<HTMLElement>) => {
     ev.stopPropagation();
-    if (ev.target === this.overlay.current || ev.target === this.closeButton.current) {
-      this.setState({ shownMobile: false });
+    if (ev.target === this.overlay.current) {
+      this.handleClose();
     }
   };
 
   tooltipId: string;
 
   render() {
-    const { content, children, size = SIZE_OPTIONS.SMALL, dataTest, tabIndex = "0" } = this.props;
+    const {
+      content,
+      children,
+      size = SIZE_OPTIONS.SMALL,
+      dataTest,
+      tabIndex = "0",
+      enabled = true,
+    } = this.props;
     const { shown, shownMobile, position, align, render } = this.state;
     const {
       containerTop,
@@ -461,15 +478,15 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
           onBlur={this.handleOut}
           ref={this.container}
           aria-describedby={this.tooltipId}
-          tabIndex={tabIndex}
+          tabIndex={enabled && tabIndex}
         >
           {children}
         </StyledTooltipChildren>
-        <Portal element="tooltips">
-          {render && (
+        {enabled && render && (
+          <Portal element="tooltips">
             <StyledTooltip data-test={dataTest}>
               <StyledTooltipOverlay
-                onClick={this.handleClose}
+                onClick={this.handleClickOutside}
                 onFocus={this.handleOpen}
                 shownMobile={shownMobile}
                 ref={this.overlay}
@@ -482,7 +499,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
                 size={size}
                 ref={this.tooltip}
                 onMouseEnter={this.handleIn}
-                onClick={this.handleClose}
+                onClick={this.handleClickOutside}
                 onMouseLeave={this.handleOut}
                 containerTop={containerTop}
                 containerLeft={containerLeft}
@@ -492,19 +509,19 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
                 tooltipWidth={tooltipWidth}
                 contentHeight={contentHeight}
                 role="tooltip"
-                aria-hidden={!shown}
+                aria-hidden={!shown || !shownMobile}
                 id={this.tooltipId}
               >
                 <StyledTooltipContent ref={this.content}>{content}</StyledTooltipContent>
                 <StyledTooltipClose>
-                  <Button type="secondary" block onClick={this.handleClose} ref={this.closeButton}>
+                  <Button type="secondary" block onClick={this.handleClose}>
                     <Translate tKey="button_close" />
                   </Button>
                 </StyledTooltipClose>
               </StyledTooltipWrapper>
             </StyledTooltip>
-          )}
-        </Portal>
+          </Portal>
+        )}
       </React.Fragment>
     );
   }

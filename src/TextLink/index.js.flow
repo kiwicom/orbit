@@ -4,7 +4,7 @@
 */
 import type { ReactComponentStyled, Interpolation } from "styled-components";
 
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Component } from "../common/common.js.flow";
 import type { ThemeProps } from "../defaultTheme";
 
 type Type = "primary" | "secondary";
@@ -21,6 +21,7 @@ export type Props = {|
   +size?: Size,
   +rel?: string,
   +tabIndex?: string,
+  +component?: Component,
   ...Globals,
 |};
 

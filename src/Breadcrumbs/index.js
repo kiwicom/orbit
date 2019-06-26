@@ -5,6 +5,8 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import Button from "../Button";
 import ChevronLeft from "../icons/ChevronLeft";
+import { DictionaryContext } from "../Dictionary";
+import { pureTranslate } from "../Translate";
 
 import type { Props } from "./index";
 
@@ -33,20 +35,27 @@ StyledBackButtonWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
+const GoBackButton = ({ onClick }) => {
+  const dictionary = React.useContext(DictionaryContext);
+
+  return (
+    <StyledBackButtonWrapper>
+      <Button
+        iconLeft={<ChevronLeft />}
+        circled
+        type="secondary"
+        size="small"
+        onClick={onClick}
+        title={pureTranslate(dictionary, "breadcrumbs_back")}
+      />
+    </StyledBackButtonWrapper>
+  );
+};
+
 const Breadcrumbs = ({ children, dataTest, onGoBack }: Props) => (
   <StyledBreadcrumbs aria-label="Breadcrumb" role="navigation" data-test={dataTest}>
     <StyledBreadcrumbsList vocab="http://schema.org/" typeof="BreadcrumbList">
-      {onGoBack && (
-        <StyledBackButtonWrapper>
-          <Button
-            iconLeft={<ChevronLeft />}
-            circled
-            type="secondary"
-            size="small"
-            onClick={onGoBack}
-          />
-        </StyledBackButtonWrapper>
-      )}
+      {onGoBack && <GoBackButton onClick={onGoBack} />}
       {React.Children.map(children, (item, key) => {
         return React.cloneElement(item, {
           active: key === React.Children.count(children) - 1,

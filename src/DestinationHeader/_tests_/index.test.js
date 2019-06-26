@@ -18,7 +18,8 @@ describe("DestinationHeader", () => {
       dataTest={dataTest}
     />,
   );
-  const button = component.find("Button");
+
+  const button = component.find("DestinationHeaderGoBackButton");
   const heading = component.find("Heading");
   it("should have passed props", () => {
     expect(heading.children().text()).toBe(destinationName);

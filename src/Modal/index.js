@@ -477,8 +477,9 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     if (
       onClose &&
       this.modalContent?.current &&
-      ev.target instanceof Node &&
-      !this.modalContent.current.contains(ev.target)
+      ev.target instanceof Element &&
+      !this.modalContent.current.contains(ev.target) &&
+      /ModalBody|ModalWrapper/.test(ev.target.className)
     ) {
       // If is clicked outside of modal
       onClose(ev);

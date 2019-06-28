@@ -476,7 +476,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     const { onClose } = this.props;
     if (
       onClose &&
-      this.modalContent?.current &&
+      this.modalContent.current &&
       ev.target instanceof Element &&
       !this.modalContent.current.contains(ev.target) &&
       /ModalBody|ModalWrapper/.test(ev.target.className)

@@ -250,7 +250,7 @@ const MilestoneIcon = ({ type }) => {
 };
 
 class TripSegment extends React.PureComponent<Props, State> {
-  node: { current: any | HTMLDivElement } = React.createRef();
+  node = React.createRef<HTMLDivElement>();
 
   constructor(props: Props) {
     super(props);
@@ -279,7 +279,7 @@ class TripSegment extends React.PureComponent<Props, State> {
 
   setHeight = () => {
     this.setState({
-      contentHeight: this.node?.current?.clientHeight,
+      contentHeight: this.node.current?.clientHeight,
     });
   };
 

@@ -9,7 +9,7 @@ const Inner = styled.div`
 `;
 
 class ClickOutside extends React.PureComponent<Props> {
-  node: { current: any | HTMLDivElement } = React.createRef();
+  node = React.createRef<HTMLDivElement>();
 
   componentDidMount() {
     document.addEventListener("click", this.handleClickOutside, true);
@@ -23,7 +23,7 @@ class ClickOutside extends React.PureComponent<Props> {
     const { onClickOutside } = this.props;
     if (
       onClickOutside &&
-      this.node?.current &&
+      this.node.current &&
       ev.target instanceof Node &&
       !this.node.current.contains(ev.target)
     ) {

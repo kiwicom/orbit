@@ -15,6 +15,7 @@
 types/
 
 [lints]
+unnecessary-optional-chain=error
 
 [options]
 emoji=true

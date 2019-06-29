@@ -54,7 +54,7 @@ class Sticky extends React.Component<Props, State> {
   }
 
   handleTop = () => {
-    if (this.sticky?.current) {
+    if (this.sticky.current) {
       const values = this.sticky.current.getBoundingClientRect();
       this.setState({
         initialTop: values.top,
@@ -71,8 +71,8 @@ class Sticky extends React.Component<Props, State> {
   };
 
   handleScroll = () => {
-    const element = this.content?.current;
-    const sticky = this.sticky?.current;
+    const element = this.content.current;
+    const sticky = this.sticky.current;
     const elementHeight = element.offsetHeight;
     // $FlowFixMe
     const parent = sticky.parentNode.getBoundingClientRect();

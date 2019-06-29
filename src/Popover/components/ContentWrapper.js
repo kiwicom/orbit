@@ -127,7 +127,7 @@ const PopoverContentWrapper = ({
   const handleClick = (ev: SyntheticEvent<HTMLElement>) => {
     ev.stopPropagation();
 
-    if (ev.target === overlay?.current) {
+    if (ev.target === overlay.current) {
       onClose();
     }
   };

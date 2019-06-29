@@ -54,7 +54,7 @@ class CardSectionContent extends React.Component<Props, State> {
     contentHeight: 0,
   };
 
-  node: { current: any | HTMLDivElement } = React.createRef();
+  node = React.createRef<HTMLDivElement>();
 
   componentDidMount() {
     const { expandable } = this.props;
@@ -88,7 +88,7 @@ class CardSectionContent extends React.Component<Props, State> {
 
   setHeight = () => {
     this.setState({
-      contentHeight: this.node?.current?.clientHeight,
+      contentHeight: this.node.current?.clientHeight,
     });
   };
 

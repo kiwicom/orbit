@@ -441,7 +441,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
 
   handleClickOutside = (ev: SyntheticEvent<HTMLElement>) => {
     ev.stopPropagation();
-    if (ev.target === this.overlay?.current) {
+    if (ev.target === this.overlay.current) {
       this.handleClose();
     }
   };

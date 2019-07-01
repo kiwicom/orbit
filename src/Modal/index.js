@@ -390,10 +390,10 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
   setScrollPosition = (value: number) => {
     const { modalContent, modalBody } = this;
     if (window?.innerWidth >= getBreakpointWidth(QUERIES.LARGEMOBILE, this.props.theme, true)) {
-      if (modalBody?.current?.scrollTop) {
+      if (modalBody.current?.scrollTop) {
         modalBody.current.scrollTop = value;
       }
-    } else if (modalContent?.current?.scrollTop) {
+    } else if (modalContent.current?.scrollTop) {
       modalContent.current.scrollTop = value;
     }
   };
@@ -476,9 +476,10 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     const { onClose } = this.props;
     if (
       onClose &&
-      this.modalContent?.current &&
-      ev.target instanceof Node &&
-      !this.modalContent.current.contains(ev.target)
+      this.modalContent.current &&
+      ev.target instanceof Element &&
+      !this.modalContent.current.contains(ev.target) &&
+      /ModalBody|ModalWrapper/.test(ev.target.className)
     ) {
       // If is clicked outside of modal
       onClose(ev);

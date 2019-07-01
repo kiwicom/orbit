@@ -7,31 +7,32 @@ import { action } from "@storybook/addon-actions";
 
 import Slider from "./index";
 
-const histogramData = {
-  "1": 134,
-  "2": 110,
-  "3": 90,
-  "4": 90,
-  "5": 90,
-  "6": 90,
-  "7": 90,
-  "8": 90,
-  "9": 50,
-  "10": 50,
-  "11": 30,
-  "12": 0,
-  "13": 0,
-  "14": 0,
-  "15": 90,
-  "16": 130,
-  "17": 156,
-  "18": 146,
-  "19": 120,
-  "20": 10,
-  "21": 30,
-  "22": 30,
-  "23": 30,
-};
+const histogramData = [
+  0,
+  0,
+  10,
+  0,
+  20,
+  0,
+  0,
+  73,
+  6,
+  51,
+  35,
+  11,
+  36,
+  0,
+  3,
+  0,
+  0,
+  2,
+  0,
+  0,
+  114,
+  0,
+  0,
+  80,
+];
 
 storiesOf("Slider", module)
   .add(
@@ -61,10 +62,10 @@ storiesOf("Slider", module)
     () => {
       const label = text("label", "Depart from Prague");
       const description = text("description", "01:00 PM – 11:59 PM");
-      const defaultValue = array("defaultValue", [50, 100]);
-      const min = number("min", 50);
-      const max = number("max", 300);
-      const step = number("step", 10);
+      const defaultValue = array("defaultValue", 23);
+      const min = number("min", 1);
+      const max = number("max", 23);
+      const step = number("step", 1);
       return (
         <Slider
           onChange={action("onChange")}

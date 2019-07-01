@@ -10,6 +10,7 @@ import getBoundingClientRect from "./utils/getBoundingClientRect";
 import calculateBarPosition from "./utils/calculateBarPosition";
 import KEY_CODE_MAP from "../common/keyMaps";
 import DEFAULT_VALUES from "./consts";
+import Histogram from "./components/Histogram";
 
 import type { State, Props } from "./index";
 
@@ -24,7 +25,7 @@ const StyledSliderInput = styled.div`
   align-items: center;
   width: 100%;
   height: 24px;
-  margin-top: 16px;
+  margin-top: 10px;
 `;
 
 class Slider extends React.PureComponent<Props, State> {
@@ -283,16 +284,23 @@ class Slider extends React.PureComponent<Props, State> {
   };
 
   render() {
-    const { label, description, min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX } = this.props;
+    const {
+      label,
+      description,
+      min = DEFAULT_VALUES.MIN,
+      max = DEFAULT_VALUES.MAX,
+      histogramData,
+    } = this.props;
     const { value, parentWidth } = this.state;
     return (
       <StyledSlider>
         {label && <Heading type="title4">{label}</Heading>}
         {description && (
-          <Text type="secondary" size="small">
+          <Text type="secondary" size="small" spaceAfter={histogramData ? "normal" : "medium"}>
             {description}
           </Text>
         )}
+        {histogramData && <Histogram data={histogramData} value={value} />}
         <StyledSliderInput ref={this.container}>
           <Bar
             ref={this.bar}

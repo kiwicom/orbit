@@ -12,11 +12,18 @@ const StyledHistogram = styled.div`
   height: 53px;
 `;
 
-const StyledHistogramColumn = styled.div`
+const StyledHistogramColumn = styled(({ height, theme, ...props }) => <div {...props} />).attrs(
+  ({ height }) => {
+    return {
+      style: {
+        height: `${height.toFixed(2)}%`,
+      },
+    };
+  },
+)`
   position: relative;
   min-width: 6px;
-  width: ${({ width }) => `${width}px`};
-  height: ${({ height }) => `${height}%`};
+  flex: 1 0 auto;
   border-radius: 1px;
   background-color: ${({ theme, active }) =>
     active ? theme.orbit.paletteProductNormal : theme.orbit.paletteProductLight};
@@ -27,9 +34,9 @@ const StyledHistogramColumn = styled.div`
   :after {
     display: block;
     position: absolute;
-    bottom: -2px;
+    bottom: -3px;
     content: " ";
-    width: 6px;
+    width: 100%;
     height: 1px;
     border-radius: 1px;
     background-color: inherit;
@@ -45,14 +52,21 @@ StyledHistogramColumn.defaultProps = {
   It's need to be dependent on DOM height of the Histogram
   Column needs to be at least 6px
  */
-const Histogram = ({ data, containerWidth }) => {
-  const dataMap = Object.values(data);
-  const maxValue = Math.max(...dataMap);
+const Histogram = ({ data, value }) => {
+  const maxValue = Math.max(...data);
+  const highlightFrom = Array.isArray(value) ? value[0] - 1 : 0;
+  const highlightTo = Array.isArray(value) ? value[1] : value;
   return (
     <StyledHistogram>
-      {dataMap.map(column => (
-        <StyledHistogramColumn height={Math.round((column / maxValue) * 100)} width={12} />
-      ))}
+      {data.map((column, index) => {
+        return (
+          <StyledHistogramColumn
+            key={encodeURIComponent(index)}
+            height={Math.round((column / maxValue) * 100)}
+            active={index >= highlightFrom && index <= highlightTo}
+          />
+        );
+      })}
     </StyledHistogram>
   );
 };

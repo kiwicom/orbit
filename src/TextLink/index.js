@@ -98,6 +98,9 @@ StyledTextLink.defaultProps = {
   theme: defaultTheme,
 };
 
+// eslint-disable-next-line jsx-a11y/anchor-has-content
+const DefaultComponent = props => <a {...props} />;
+
 const TextLink = ({
   type = TYPE_OPTIONS.PRIMARY,
   size,
@@ -109,8 +112,7 @@ const TextLink = ({
   onClick,
   dataTest,
   tabIndex,
-  // eslint-disable-next-line jsx-a11y/anchor-has-content
-  component = props => <a {...props} />,
+  component = DefaultComponent,
 }: Props) => {
   const relValues = rel ? rel.split(" ") : [];
 

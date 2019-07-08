@@ -18,7 +18,7 @@ export type Type =
   | "criticalInverted";
 
 export type Props = {|
-  +children: React$Node,
+  +children?: React$Node,
   +type?: Type,
   +icon?: React$Node,
   +ariaLabel?: string,

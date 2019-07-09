@@ -1,15 +1,16 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
-import defaultTheme from "../../defaultTheme";
+import defaultTheme from "../../../defaultTheme";
 
 const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props} />).attrs(
   ({ left, onTop }) => {
     return {
       style: {
         left: `${left.toFixed(2)}px`,
-        zIndex: onTop ? 4 : 3,
+        zIndex: onTop ? 40 : 30,
       },
     };
   },
@@ -23,30 +24,30 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
   width: 24px;
   height: 24px;
   border-radius: 24px;
-  box-shadow: 0 1px 4px 0 rgba(127, 145, 168, 0.24);
-  background-color: #fff;
+  box-shadow: 0 1px 4px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkDark, 10)};
+  background-color: ${({ theme }) => theme.orbit.paletteWhite};
   cursor: pointer;
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   -webkit-tap-highlight-color: transparent;
   :after {
-    content: " ";
+    content: "";
     display: block;
     width: 8px;
     height: 8px;
-    background-color: #00a991;
+    background-color: ${({ theme }) => theme.orbit.paletteProductNormal};
     border-radius: 8px;
+  }
+  :hover {
+    box-shadow: 0 2px 6px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkDark, 10)};
   }
   :focus {
     outline: none;
-    box-shadow: 0 1px 4px 0 rgba(127, 145, 168, 0.24), inset 0 0 0 2px #0176d2;
+    box-shadow: 0 1px 4px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkDark, 10)},
+      0 0 0 2px ${({ theme }) => convertHexToRgba(theme.orbit.paletteProductNormal, 20)};
   }
   :active {
-    box-shadow: 0 1px 4px 0 rgba(127, 145, 168, 0.24), 0 0 0 4px rgba(0, 169, 145, 0.1);
-  }
-  :focus:active {
-    outline: none;
-    box-shadow: 0 1px 4px 0 rgba(127, 145, 168, 0.24), inset 0 0 0 2px #0176d2,
-      0 0 0 4px rgba(0, 169, 145, 0.1);
+    box-shadow: 0 1px 4px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkDark, 10)},
+      0 0 0 4px ${({ theme }) => convertHexToRgba(theme.orbit.paletteProductNormal, 20)};
   }
 `;
 

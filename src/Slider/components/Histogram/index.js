@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
+import defaultTheme from "../../../defaultTheme";
 
 const StyledHistogram = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ const StyledHistogramColumn = styled(({ height, theme, ...props }) => <div {...p
   },
 )`
   position: relative;
-  min-width: 6px;
+  min-width: 3px;
   flex: 1 0 auto;
   border-radius: 1px;
   background-color: ${({ theme, active }) =>
@@ -61,6 +61,7 @@ const Histogram = ({ data, value }) => {
       {data.map((column, index) => {
         return (
           <StyledHistogramColumn
+            aria-label={index}
             key={encodeURIComponent(index)}
             height={Math.round((column / maxValue) * 100)}
             active={index >= highlightFrom && index <= highlightTo}

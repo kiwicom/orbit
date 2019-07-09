@@ -1,9 +1,11 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import Text from "../Text";
 import Heading from "../Heading";
+import Stack from "../Stack";
 import Handle from "./components/Handle";
 import Bar from "./components/Bar";
 import getBoundingClientRect from "./utils/getBoundingClientRect";
@@ -11,21 +13,53 @@ import calculateBarPosition from "./utils/calculateBarPosition";
 import KEY_CODE_MAP from "../common/keyMaps";
 import DEFAULT_VALUES from "./consts";
 import Histogram from "./components/Histogram";
+import defaultTheme from "../defaultTheme";
 
 import type { State, Props } from "./index";
 
 const StyledSlider = styled.div`
   position: relative;
-  background: white;
-  padding: 16px 16px 16px 12px;
 `;
+
+StyledSlider.defaultProps = {
+  theme: defaultTheme,
+};
+
+const StyledSliderContent = styled.div`
+  display: block;
+  width: calc(100% + 48px);
+  z-index: 10;
+  position: absolute;
+  bottom: -16px;
+  left: -24px;
+  right: -24px;
+  opacity: 0;
+  visibility: hidden;
+  box-sizing: border-box;
+  padding: 12px 24px 50px 24px;
+  background: transparent;
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  ${({ focused, theme }) =>
+    focused &&
+    css`
+      visibility: visible;
+      opacity: 1;
+      background: ${theme.orbit.paletteWhite};
+      box-shadow: 0 2px 4px 0 ${convertHexToRgba(theme.orbit.paletteInkLight, 24)},
+        0 4px 12px 0 ${convertHexToRgba(theme.orbit.paletteInkLight, 32)};
+    `};
+`;
+
+StyledSliderContent.defaultProps = {
+  theme: defaultTheme,
+};
 
 const StyledSliderInput = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
   height: 24px;
-  margin-top: 10px;
 `;
 
 class Slider extends React.PureComponent<Props, State> {
@@ -41,6 +75,7 @@ class Slider extends React.PureComponent<Props, State> {
       value: this.props.defaultValue || DEFAULT_VALUES.VALUE,
       handleIndex: null,
       parentWidth: null,
+      focused: false,
     };
   }
 
@@ -97,16 +132,12 @@ class Slider extends React.PureComponent<Props, State> {
   moveValueByStep = (step: number) => {
     const { value, handleIndex } = this.state;
     if (Array.isArray(value)) {
-      const newValue = this.replaceValue(
+      return this.replaceValue(
         this.alignValue(value[Number(handleIndex)] + step),
         Number(handleIndex),
       );
-      this.setState({ value: newValue });
-    } else {
-      const newValue = this.alignValue(value + step);
-      this.setState({ value: newValue });
     }
-    this.injectCallback(this.props.onChange);
+    return this.alignValue(value + step);
   };
 
   handleKeyDown = (event: SyntheticKeyboardEvent<HTMLDivElement>) => {
@@ -118,48 +149,49 @@ class Slider extends React.PureComponent<Props, State> {
     } = this.props;
     if (event.keyCode === KEY_CODE_MAP.ARROW_UP || event.keyCode === KEY_CODE_MAP.ARROW_RIGHT) {
       this.pauseEvent(event);
-      this.moveValueByStep(step);
+      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(step));
     }
     if (event.keyCode === KEY_CODE_MAP.ARROW_DOWN || event.keyCode === KEY_CODE_MAP.ARROW_LEFT) {
       this.pauseEvent(event);
-      this.moveValueByStep(-step);
+      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(-step));
     }
     if (event.keyCode === KEY_CODE_MAP.HOME) {
       this.pauseEvent(event);
-      this.setState({ value: min });
-      this.injectCallback(this.props.onChange);
+      this.injectCallbackAndSetState(this.props.onChange, min);
     }
     if (event.keyCode === KEY_CODE_MAP.END) {
       this.pauseEvent(event);
-      this.setState({ value: max });
-      this.injectCallback(this.props.onChange);
+      this.injectCallbackAndSetState(this.props.onChange, max);
     }
   };
 
   handleBlur = () => {
+    this.setState({ focused: false });
+    const { value } = this.state;
     window.removeEventListener("keydown", this.handleKeyDown);
     window.removeEventListener("focusout", this.handleBlur);
-    this.injectCallback(this.props.onChangeAfter);
+    this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
   };
 
   handleOnFocus = (i: ?number) => (event: SyntheticKeyboardEvent<HTMLDivElement>) => {
     if (typeof i === "number") this.setState({ handleIndex: i });
+    const { value } = this.state;
+    this.setState({ focused: true });
     this.pauseEvent(event);
     window.addEventListener("keydown", this.handleKeyDown);
     window.addEventListener("focusout", this.handleBlur);
-    this.injectCallback(this.props.onBeforeChange);
+    this.injectCallbackAndSetState(this.props.onBeforeChange, value, true);
   };
 
   handleMove = (newValue: ?number) => {
     const { value, handleIndex } = this.state;
-    if (newValue) {
+    if (newValue != null) {
       if (Array.isArray(value)) {
-        const replacedValue = this.replaceValue(this.alignValue(newValue), Number(handleIndex));
-        this.setState({ value: replacedValue });
-      } else {
-        this.setState({ value: this.alignValue(newValue) });
+        return this.replaceValue(this.alignValue(newValue), Number(handleIndex));
       }
+      return this.alignValue(newValue);
     }
+    return null;
   };
 
   handleBarMouseDown = (event: SyntheticMouseEvent<HTMLDivElement>) => {
@@ -168,39 +200,48 @@ class Slider extends React.PureComponent<Props, State> {
     if (newValue) {
       if (Array.isArray(value)) {
         const index = this.findClosestKey(newValue);
-        const replacedValue = this.replaceValue(this.alignValue(newValue), index);
-        this.setState({ value: replacedValue });
+        this.injectCallbackAndSetState(
+          this.props.onChange,
+          this.replaceValue(this.alignValue(newValue), index),
+        );
       } else {
-        this.setState({ value: this.alignValue(newValue) });
+        this.injectCallbackAndSetState(this.props.onChange, this.alignValue(newValue));
       }
     }
   };
 
-  injectCallback = (callback: ?(number | number[]) => void) => {
-    if (callback) callback(this.state.value);
+  injectCallbackAndSetState = (callback: ?(number | number[]) => void, newValue, forced) => {
+    const { value } = this.state;
+    if ((newValue != null && newValue !== value) || forced) {
+      this.setState({ value: newValue });
+      callback(newValue);
+    }
   };
 
   handleMouseMove = (event: SyntheticMouseEvent<HTMLDivElement>) => {
     const newValue = this.calculateValueFromPosition(event.pageX);
     this.pauseEvent(event);
-    this.handleMove(newValue);
-    this.injectCallback(this.props.onChange);
+    this.injectCallbackAndSetState(this.props.onChange, this.handleMove(newValue));
   };
 
   handleMouseUp = () => {
+    const { value } = this.state;
+    this.setState({ focused: false });
     window.removeEventListener("mousemove", this.handleMouseMove);
     window.removeEventListener("mouseup", this.handleMouseUp);
-    this.injectCallback(this.props.onChangeAfter);
+    this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
   };
 
   handleMouseDown = (i: ?number) => (event: SyntheticMouseEvent<HTMLDivElement>) => {
     // just allow left-click
     if (event.button === 0 && event.buttons !== 2) {
+      const { value } = this.state;
+      this.setState({ focused: true });
       if (typeof i === "number") this.setState({ handleIndex: i });
       window.addEventListener("mousemove", this.handleMouseMove);
       window.addEventListener("mouseup", this.handleMouseUp);
       this.pauseEvent(event);
-      this.injectCallback(this.props.onBeforeChange);
+      this.injectCallbackAndSetState(this.props.onBeforeChange, value, true);
     }
   };
 
@@ -208,23 +249,24 @@ class Slider extends React.PureComponent<Props, State> {
     if (event.touches.length > 1) return;
     const newValue = this.calculateValueFromPosition(event.touches[0].pageX);
     this.stopPropagation(event);
-    this.handleMove(newValue);
-    this.injectCallback(this.props.onChange);
+    this.injectCallbackAndSetState(this.props.onChange, this.handleMove(newValue));
   };
 
   handleTouchEnd = () => {
+    const { value } = this.state;
     window.removeEventListener("touchmove", this.handleOnTouchMove);
     window.removeEventListener("touchend", this.handleTouchEnd);
-    this.injectCallback(this.props.onChangeAfter);
+    this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
   };
 
   handleOnTouchStart = (i: ?number) => (event: SyntheticTouchEvent<HTMLDivElement>) => {
     if (event.touches.length > 1) return;
+    const { value } = this.state;
     if (typeof i === "number") this.setState({ handleIndex: i });
     window.addEventListener("touchmove", this.handleOnTouchMove);
     window.addEventListener("touchend", this.handleTouchEnd);
     this.stopPropagation(event);
-    this.injectCallback(this.props.onBeforeChange);
+    this.injectCallbackAndSetState(this.props.onBeforeChange, value, true);
   };
 
   alignValueToStep = (value: number) => {
@@ -261,6 +303,7 @@ class Slider extends React.PureComponent<Props, State> {
   renderHandle = (value: number, i: ?number) => {
     const { min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX } = this.props;
     const { parentWidth, handleIndex } = this.state;
+    console.log()
     return (
       <Handle
         tabIndex={0}
@@ -279,28 +322,46 @@ class Slider extends React.PureComponent<Props, State> {
   renderHandles = () => {
     const { value } = this.state;
     return Array.isArray(value)
-      ? value.map<React$Node>((handle, i) => this.renderHandle(value[i], i))
+      ? value.map<React.Node>((handle, i) => this.renderHandle(value[i], i))
       : this.renderHandle(value);
   };
 
+  renderSliderTexts = biggerSpace => {
+    const { label, description, chosenText } = this.props;
+    if (!(label || description || chosenText)) return null;
+    return (
+      <Stack direction="row" spacing="none" spaceAfter={biggerSpace ? "medium" : "small"}>
+        {(label || description) && (
+          <Stack direction="column" spacing="none" basis="60%" grow>
+            {label && (
+              <Heading type="title4" element="p">
+                {label}
+              </Heading>
+            )}
+            {description && (
+              <Text type="secondary" size="small">
+                {description}
+              </Text>
+            )}
+          </Stack>
+        )}
+        {chosenText && (
+          <Stack shrink justify="end" grow={false}>
+            <Text type="primary" size="small">
+              {chosenText}
+            </Text>
+          </Stack>
+        )}
+      </Stack>
+    );
+  };
+
   render() {
-    const {
-      label,
-      description,
-      min = DEFAULT_VALUES.MIN,
-      max = DEFAULT_VALUES.MAX,
-      histogramData,
-    } = this.props;
-    const { value, parentWidth } = this.state;
+    const { min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX, histogramData } = this.props;
+    const { value, parentWidth, focused } = this.state;
     return (
       <StyledSlider>
-        {label && <Heading type="title4">{label}</Heading>}
-        {description && (
-          <Text type="secondary" size="small" spaceAfter={histogramData ? "normal" : "medium"}>
-            {description}
-          </Text>
-        )}
-        {histogramData && <Histogram data={histogramData} value={value} />}
+        {this.renderSliderTexts(true)}
         <StyledSliderInput ref={this.container}>
           <Bar
             ref={this.bar}
@@ -309,6 +370,12 @@ class Slider extends React.PureComponent<Props, State> {
           />
           {this.renderHandles()}
         </StyledSliderInput>
+        {histogramData && (
+          <StyledSliderContent focused={focused}>
+            {this.renderSliderTexts(false)}
+            <Histogram data={histogramData} value={value} />
+          </StyledSliderContent>
+        )}
       </StyledSlider>
     );
   }

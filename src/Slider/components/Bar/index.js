@@ -2,8 +2,8 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
-import type { Ref } from "../../common/common.js.flow";
+import defaultTheme from "../../../defaultTheme";
+import type { Ref } from "../../../common/common.js.flow";
 
 const StyledBar = styled.div`
   display: block;
@@ -30,7 +30,7 @@ export const StyledBarPart = styled(({ width, left, theme, active, ...props }) =
   border-radius: 4px;
   background-color: ${({ theme, active }) =>
     active ? theme.orbit.paletteProductNormal : theme.orbit.paletteInkLighter};
-  z-index: ${({ active }) => (active ? 2 : 1)};
+  z-index: ${({ active }) => (active ? 30 : 20)};
 `;
 
 StyledBarPart.defaultProps = {

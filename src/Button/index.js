@@ -183,7 +183,7 @@ StyledButton.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledButtonContent = styled.div`
+const StyledButtonContent = styled(({ theme, loading, ...props }) => <div {...props} />)`
   visibility: ${({ loading }) => loading && "hidden"};
   height: 100%;
   display: flex;

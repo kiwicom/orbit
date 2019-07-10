@@ -30,6 +30,7 @@ export type Props = {|
   +tags?: React$Node,
   +disabled?: boolean,
   +maxValue?: number,
+  +pattern?: string,
   +minValue?: number,
   +maxLength?: number,
   +minLength?: number,

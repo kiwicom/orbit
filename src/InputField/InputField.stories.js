@@ -376,6 +376,7 @@ storiesOf("InputField", module)
       const inlineLabel = boolean("inline label", false);
       const value = text("Value", "");
       const placeholder = text("Placeholder", "Placeholder");
+      const pattern = text("pattern", undefined);
       const Prefix = getIcon(getIcons("Prefix", "Search"));
       const Suffix = getIcon(getIcons("Suffix", "Visibility"));
       const help = text("Help", undefined);
@@ -401,6 +402,7 @@ storiesOf("InputField", module)
           label={label}
           inlineLabel={inlineLabel}
           value={value}
+          pattern={pattern}
           dataTest={dataTest}
           placeholder={placeholder}
           required={required}

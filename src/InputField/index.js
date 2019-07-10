@@ -316,6 +316,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
     value,
     tags,
     tabIndex,
+    pattern,
     readOnly,
     autoComplete,
     spaceAfter,
@@ -348,6 +349,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           onBlur={onBlur}
           onKeyUp={onKeyUp}
           onKeyDown={onKeyDown}
+          pattern={pattern}
           name={name}
           type={type}
           value={value}

@@ -4,6 +4,8 @@ import styled from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
 
+import type { Props } from "./index";
+
 const StyledHistogram = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -47,12 +49,7 @@ StyledHistogramColumn.defaultProps = {
   theme: defaultTheme,
 };
 
-/*
-  TODO: data grouping (if there is too much cdata columns)
-  It's need to be dependent on DOM height of the Histogram
-  Column needs to be at least 6px
- */
-const Histogram = ({ data, value }) => {
+const Histogram = ({ data, value }: Props) => {
   const maxValue = Math.max(...data);
   const highlightFrom = Array.isArray(value) ? value[0] - 1 : 0;
   const highlightTo = Array.isArray(value) ? value[1] : value;
@@ -62,7 +59,7 @@ const Histogram = ({ data, value }) => {
         return (
           <StyledHistogramColumn
             aria-label={index}
-            key={encodeURIComponent(index)}
+            key={encodeURIComponent(index.toString())}
             height={Math.round((column / maxValue) * 100)}
             active={index >= highlightFrom && index <= highlightTo}
           />

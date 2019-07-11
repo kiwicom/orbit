@@ -1,0 +1,11 @@
+// @flow
+import type { Value } from "../../index";
+
+export type Data = number[];
+
+export type Props = {|
+  data: Data,
+  value: Value,
+|};
+
+declare export default React$ComponentType<Props>;

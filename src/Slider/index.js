@@ -15,7 +15,7 @@ import DEFAULT_VALUES from "./consts";
 import Histogram from "./components/Histogram";
 import defaultTheme from "../defaultTheme";
 
-import type { State, Props } from "./index";
+import type { State, Props, Value } from "./index";
 
 const StyledSlider = styled.div`
   position: relative;
@@ -210,11 +210,17 @@ class Slider extends React.PureComponent<Props, State> {
     }
   };
 
-  injectCallbackAndSetState = (callback: ?(number | number[]) => void, newValue, forced) => {
+  injectCallbackAndSetState = (
+    callback: ?(number | number[]) => void,
+    newValue: ?Value,
+    forced: ?boolean = false,
+  ) => {
     const { value } = this.state;
     if ((newValue != null && newValue !== value) || forced) {
       this.setState({ value: newValue });
-      callback(newValue);
+      if (callback) {
+        callback(newValue);
+      }
     }
   };
 
@@ -303,7 +309,7 @@ class Slider extends React.PureComponent<Props, State> {
   renderHandle = (value: number, i: ?number) => {
     const { min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX } = this.props;
     const { parentWidth, handleIndex } = this.state;
-    console.log()
+    console.log();
     return (
       <Handle
         tabIndex={0}
@@ -326,7 +332,7 @@ class Slider extends React.PureComponent<Props, State> {
       : this.renderHandle(value);
   };
 
-  renderSliderTexts = biggerSpace => {
+  renderSliderTexts = (biggerSpace: boolean) => {
     const { label, description, chosenText } = this.props;
     if (!(label || description || chosenText)) return null;
     return (
@@ -334,7 +340,7 @@ class Slider extends React.PureComponent<Props, State> {
         {(label || description) && (
           <Stack direction="column" spacing="none" basis="60%" grow>
             {label && (
-              <Heading type="title4" element="p">
+              <Heading type="title4" element="div">
                 {label}
               </Heading>
             )}

@@ -63,9 +63,9 @@ storiesOf("Slider", module)
       const label = text("label", "Depart from Prague");
       const description = text("description", "01:00 PM – 11:59 PM");
       const chosenText = text("chosenText", "86 of 97 flights");
-      const defaultValue = array("defaultValue", [5, 15]);
+      const defaultValue = array("defaultValue", [1, 20]);
       const min = number("min", 1);
-      const max = number("max", 23);
+      const max = number("max", 24);
       const step = number("step", 1);
       return (
         <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>

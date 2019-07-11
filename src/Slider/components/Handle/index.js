@@ -9,7 +9,8 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
   ({ left, onTop }) => {
     return {
       style: {
-        left: `${left.toFixed(2)}px`,
+        // TODO: use token for deducting the half size of the Handle
+        left: `${left.toFixed(2) - 12}px`,
         zIndex: onTop ? 40 : 30,
       },
     };
@@ -36,6 +37,14 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
     height: 8px;
     background-color: ${({ theme }) => theme.orbit.paletteProductNormal};
     border-radius: 8px;
+  }
+  :before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 2px;
+    height: 18px;
+    background-color: red;
   }
   :hover {
     box-shadow: 0 2px 6px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkDark, 10)};

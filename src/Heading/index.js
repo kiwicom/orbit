@@ -12,7 +12,7 @@ export const getHeadingToken: GetHeadingToken = name => ({ theme, type }) => {
   const tokens = {
     [TOKENS.weightHeading]: {
       [TYPE_OPTIONS.DISPLAY]: theme.orbit.fontWeightHeadingDisplay,
-      [TYPE_OPTIONS.DISPLAYSUBTITLE]: theme.orbit.fontWeightNormal, // TODO: create token fontWeightHeadingSubDisplay
+      [TYPE_OPTIONS.DISPLAYSUBTITLE]: theme.orbit.fontWeightHeadingSubDisplay,
       [TYPE_OPTIONS.TITLE1]: theme.orbit.fontWeightHeadingTitle1,
       [TYPE_OPTIONS.TITLE2]: theme.orbit.fontWeightHeadingTitle2,
       [TYPE_OPTIONS.TITLE3]: theme.orbit.fontWeightHeadingTitle3,
@@ -21,12 +21,21 @@ export const getHeadingToken: GetHeadingToken = name => ({ theme, type }) => {
     },
     [TOKENS.sizeHeading]: {
       [TYPE_OPTIONS.DISPLAY]: theme.orbit.fontSizeHeadingDisplay,
-      [TYPE_OPTIONS.DISPLAYSUBTITLE]: theme.orbit.fontSizeHeadingTitle2, // TODO: create token fontSizeHeadingSubDisplay
+      [TYPE_OPTIONS.DISPLAYSUBTITLE]: theme.orbit.fontSizeHeadingSubDisplay,
       [TYPE_OPTIONS.TITLE1]: theme.orbit.fontSizeHeadingTitle1,
       [TYPE_OPTIONS.TITLE2]: theme.orbit.fontSizeHeadingTitle2,
       [TYPE_OPTIONS.TITLE3]: theme.orbit.fontSizeHeadingTitle3,
       [TYPE_OPTIONS.TITLE4]: theme.orbit.fontSizeHeadingTitle4,
       [TYPE_OPTIONS.TITLE5]: theme.orbit.fontSizeHeadingTitle5,
+    },
+    [TOKENS.lineHeight]: {
+      [TYPE_OPTIONS.DISPLAY]: theme.orbit.lineHeightHeadingDisplay,
+      [TYPE_OPTIONS.DISPLAYSUBTITLE]: theme.orbit.lineHeightHeadingSubDisplay,
+      [TYPE_OPTIONS.TITLE1]: theme.orbit.lineHeightHeadingTitle1,
+      [TYPE_OPTIONS.TITLE2]: theme.orbit.lineHeightHeadingTitle2,
+      [TYPE_OPTIONS.TITLE3]: theme.orbit.lineHeightHeadingTitle3,
+      [TYPE_OPTIONS.TITLE4]: theme.orbit.lineHeightHeadingTitle4,
+      [TYPE_OPTIONS.TITLE5]: theme.orbit.lineHeightHeadingTitle5,
     },
   };
 

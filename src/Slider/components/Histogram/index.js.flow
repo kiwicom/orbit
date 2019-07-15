@@ -6,6 +6,7 @@ export type Data = number[];
 export type Props = {|
   data: Data,
   value: Value,
+  min: number,
 |};
 
 declare export default React$ComponentType<Props>;

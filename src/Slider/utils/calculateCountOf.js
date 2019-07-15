@@ -1,6 +1,6 @@
 // @flow
 
-import type { Props } from "./calculateCountOf";
+import type { CalculateCountOf } from "./calculateCountOf";
 
 const countValues = (data, [from, to], min) => {
   return data.reduce(
@@ -14,7 +14,7 @@ const countValues = (data, [from, to], min) => {
   );
 };
 
-const calculateCountOf = (data, value, min): Props => {
+const calculateCountOf: CalculateCountOf = (data, value, min) => {
   if (Array.isArray(value)) {
     return countValues(data, [value[0], value[value.length - 1]], min);
   }

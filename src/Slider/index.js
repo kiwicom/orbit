@@ -15,7 +15,7 @@ import DEFAULT_VALUES from "./consts";
 import Histogram from "./components/Histogram";
 import defaultTheme from "../defaultTheme";
 
-import type { State, Props, Value } from "./index";
+import type { State, SliderCallback, Props, Value } from "./index";
 
 const StyledSlider = styled.div`
   position: relative;
@@ -63,11 +63,7 @@ const StyledSliderInput = styled.div`
 `;
 
 class Slider extends React.PureComponent<Props, State> {
-  container: { current: React$ElementRef<*> } = React.createRef();
-
   bar: { current: React$ElementRef<*> } = React.createRef();
-
-  timeout = null;
 
   constructor(props: Props) {
     super(props);
@@ -191,20 +187,23 @@ class Slider extends React.PureComponent<Props, State> {
   };
 
   injectCallbackAndSetState = (
-    callback: ?(number | number[]) => void,
+    callback: ?SliderCallback,
     newValue: ?Value,
     forced: ?boolean = false,
   ) => {
     const { value } = this.state;
     const isNotEqual = (a, b) => {
-      if (!Array.isArray(a) && !Array.isArray(b)) return a !== b;
-      return a.map((item, index) => b[index] === item).indexOf(false) !== -1;
+      if (Array.isArray(a) && Array.isArray(b)) {
+        return a.map((item, index) => b[index] === item).indexOf(false) !== -1;
+      }
+      return a !== b;
     };
-
-    if ((newValue != null && isNotEqual(newValue, value)) || forced) {
-      this.setState({ value: newValue });
-      if (callback) {
-        callback(newValue);
+    if (newValue != null) {
+      if (isNotEqual(newValue, value) || forced) {
+        this.setState({ value: newValue });
+        if (callback) {
+          callback(newValue);
+        }
       }
     }
   };
@@ -251,13 +250,14 @@ class Slider extends React.PureComponent<Props, State> {
   };
 
   handleOnTouchStart = (i: ?number) => (event: SyntheticTouchEvent<HTMLDivElement>) => {
-    if (event.touches.length > 1) return;
-    const { value } = this.state;
-    if (typeof i === "number") this.setState({ handleIndex: i });
-    window.addEventListener("touchmove", this.handleOnTouchMove);
-    window.addEventListener("touchend", this.handleTouchEnd);
-    this.stopPropagation(event);
-    this.injectCallbackAndSetState(this.props.onBeforeChange, value, true);
+    if (event.touches.length <= 1) {
+      const { value } = this.state;
+      if (typeof i === "number") this.setState({ handleIndex: i });
+      window.addEventListener("touchmove", this.handleOnTouchMove);
+      window.addEventListener("touchend", this.handleTouchEnd);
+      this.stopPropagation(event);
+      this.injectCallbackAndSetState(this.props.onBeforeChange, value, true);
+    }
   };
 
   alignValueToStep = (value: number) => {
@@ -291,12 +291,12 @@ class Slider extends React.PureComponent<Props, State> {
     return value.map<number>((item, key) => (key === index ? newValue : item));
   };
 
-  renderHandle = (value: number, i: ?number, arrayLength: ?number) => {
+  renderHandle = (value: number, i: ?number) => {
     const { min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX } = this.props;
     const { handleIndex } = this.state;
     return (
       <Handle
-        tabIndex={0}
+        tabIndex="0"
         onTop={handleIndex === i}
         valueMax={max}
         valueMin={min}
@@ -304,7 +304,6 @@ class Slider extends React.PureComponent<Props, State> {
         onMouseDown={this.handleMouseDown(i)}
         onFocus={this.handleOnFocus(i)}
         onTouchStart={this.handleOnTouchStart(i)}
-        arrayLength={arrayLength}
         index={i}
       />
     );
@@ -313,7 +312,7 @@ class Slider extends React.PureComponent<Props, State> {
   renderHandles = () => {
     const { value } = this.state;
     return Array.isArray(value)
-      ? value.map<React.Node>((handle, i, array) => this.renderHandle(value[i], i, array.length))
+      ? value.map<React.Node>((handle, i) => this.renderHandle(value[i], i))
       : this.renderHandle(value);
   };
 
@@ -353,7 +352,7 @@ class Slider extends React.PureComponent<Props, State> {
     return (
       <StyledSlider>
         {this.renderSliderTexts(true)}
-        <StyledSliderInput ref={this.container}>
+        <StyledSliderInput>
           <Bar
             ref={this.bar}
             onMouseDown={this.handleBarMouseDown}

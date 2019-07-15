@@ -1,0 +1,17 @@
+// @flow
+import type { Value } from "../../index";
+
+type Callback<A> = (event: A) => void;
+export type Props = {|
+  tabIndex: string,
+  onMouseDown: Callback<SyntheticMouseEvent<HTMLDivElement>>,
+  onFocus: Callback<SyntheticKeyboardEvent<HTMLDivElement>>,
+  onTouchStart: Callback<SyntheticTouchEvent<HTMLDivElement>>,
+  valueMax: number,
+  valueMin: number,
+  valueNow: number,
+  onTop: boolean,
+  index: ?number,
+|};
+
+declare export default React$ComponentType<Props>;

@@ -2,11 +2,6 @@
 import type { Data } from "../components/Histogram/index";
 import type { Value } from "../index";
 
-export type Props = {|
-  data: Data,
-  value: Value,
-|};
+export type CalculateCountOf = (data: Data, value: Value, min: number) => [number, number];
 
-type CalculateCountOf = Props => [number, number];
-
-export default CalculateCountOf;
+declare export default CalculateCountOf;

@@ -5,24 +5,25 @@ import type { Data } from "./components/Histogram/index";
 
 export type Value = number | number[];
 
+export type SliderCallback = (value: Value) => void | Promise<any>;
+
 export type Props = {|
   min?: number,
   max?: number,
   step?: number,
   defaultValue?: Value,
-  onChange?: () => void,
-  onBeforeChange?: () => void,
-  onChangeAfter?: () => void,
+  onChange?: SliderCallback,
+  onBeforeChange?: SliderCallback,
+  onChangeAfter?: SliderCallback,
   label: Translation,
-  description: Translation,
-  histogramData: Data,
-  chosenText: Translation,
+  description?: Translation,
+  histogramData?: Data,
+  chosenText?: Translation,
 |};
 
 export type State = {|
   value: Value,
   handleIndex: ?number,
-  parentWidth: ?number,
   focused: boolean,
 |};
 

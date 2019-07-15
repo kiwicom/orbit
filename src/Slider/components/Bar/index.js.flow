@@ -1,0 +1,9 @@
+// @flow
+
+export type Props = {|
+  left: number,
+  width: number,
+  onMouseDown: (event: SyntheticMouseEvent<HTMLDivElement>) => void,
+|};
+
+declare export default React$ComponentType<Props>;

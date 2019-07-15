@@ -5,6 +5,8 @@ import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba"
 
 import defaultTheme from "../../../defaultTheme";
 
+import type { Props } from "./index";
+
 const calculateLeftPosition = (valueNow, valueMin, valueMax, isFirst) => {
   // if first, stick it to the left edge
   if (isFirst) {
@@ -73,19 +75,10 @@ const Handle = ({
   valueMax,
   valueMin,
   valueNow,
-  label,
-  valueText,
   onTop,
-  arrayLength,
   index,
-}) => {
-  const left = calculateLeftPosition(
-    valueNow,
-    valueMin,
-    valueMax,
-    index === 0,
-    index + 1 === arrayLength,
-  );
+}: Props) => {
+  const left = calculateLeftPosition(valueNow, valueMin, valueMax, index === 0);
   return (
     <StyledHandle
       tabIndex={tabIndex}
@@ -97,8 +90,6 @@ const Handle = ({
       aria-valuemax={valueMax}
       aria-valuemin={valueMin}
       aria-valuenow={valueNow}
-      aria-label={label}
-      aria-valuetext={valueText}
       left={left}
     />
   );

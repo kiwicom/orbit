@@ -5,6 +5,8 @@ import styled from "styled-components";
 import defaultTheme from "../../../defaultTheme";
 import type { Ref } from "../../../common/common.js.flow";
 
+import type { Props } from "./index";
+
 const StyledBar = styled.div`
   display: block;
   position: relative;
@@ -36,8 +38,8 @@ export const StyledBarPart = styled(({ width, left, theme, active, ...props }) =
 StyledBarPart.defaultProps = {
   theme: defaultTheme,
 };
-
-const Bar = React.forwardRef(({ left, width, onMouseDown }, ref: Ref) => {
+// $FlowExpected
+const Bar = React.forwardRef(({ left, width, onMouseDown }: Props, ref: Ref) => {
   return (
     <StyledBar ref={ref} onMouseDown={onMouseDown}>
       <StyledBarPart width={100} left={0} />

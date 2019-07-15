@@ -7,7 +7,7 @@ import StarFull from "../icons/StarFull";
 import defaultTheme from "../defaultTheme";
 import MAX_STARS from "./consts";
 import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
-import { DictionaryContext } from "../Dictionary/index";
+import { DictionaryContext } from "../Dictionary";
 import { pureTranslate } from "../Translate";
 
 import type { Props } from "./index";

@@ -19,8 +19,8 @@ export const StyledBarPart = styled(({ width, left, theme, active, ...props }) =
 )).attrs(({ width, left }) => {
   return {
     style: {
-      width: `${width}px`,
-      left: `${left}px`,
+      width: `${width.toFixed(2)}%`,
+      left: `${left.toFixed(2)}%`,
     },
   };
 })`
@@ -37,10 +37,10 @@ StyledBarPart.defaultProps = {
   theme: defaultTheme,
 };
 
-const Bar = React.forwardRef(({ left, width, parentWidth, onMouseDown }, ref: Ref) => {
+const Bar = React.forwardRef(({ left, width, onMouseDown }, ref: Ref) => {
   return (
     <StyledBar ref={ref} onMouseDown={onMouseDown}>
-      <StyledBarPart width={parentWidth} />
+      <StyledBarPart width={100} left={0} />
       <StyledBarPart active left={left} width={width} />
     </StyledBar>
   );

@@ -3,14 +3,12 @@
 import type { Value } from "../index";
 
 export type CalculateBarPosition = (
-  parentWidth: ?number,
   value: Value,
   max: number,
   min: number,
 ) => {|
   left: number,
   width: number,
-  parentWidth: ?number,
 |};
 
 declare export default CalculateBarPosition;

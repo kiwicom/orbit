@@ -5,28 +5,21 @@ import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba"
 
 import defaultTheme from "../../../defaultTheme";
 
-const calculateLeftPosition = (valueNow, valueMin, valueMax, isFirst, isLast) => {
+const calculateLeftPosition = (valueNow, valueMin, valueMax, isFirst) => {
   // if first, stick it to the left edge
   if (isFirst) {
-    return ((valueNow - valueMin) / valueMax) * 100;
+    return ((valueNow - valueMin) / (valueMax - valueMin)) * 100;
   }
-  // if last, stick it to the right edge
-  if (isLast) {
-    return (valueNow / valueMax) * 100;
-  }
-  // center position
-  return (valueNow / valueMax) * 100;
+  // for every other handle
+  return ((valueNow - valueMin) / (valueMax - valueMin)) * 100;
 };
 
 const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props} />).attrs(
-  ({ left, isFirst, isLast, onTop, value }) => {
+  ({ left, onTop }) => {
     return {
       style: {
         // TODO: use token for deducting the half size of the Handle
-        left:
-          !isFirst && !isLast
-            ? `calc(${left.toFixed(2)}% + ${value - 1}px)`
-            : `calc(${left.toFixed(2)}% - 12px)`,
+        left: `calc(${left.toFixed(2)}% - 12px)`,
         zIndex: onTop ? 40 : 30,
       },
     };
@@ -53,14 +46,6 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
     height: 8px;
     background-color: ${({ theme }) => theme.orbit.paletteProductNormal};
     border-radius: 8px;
-  }
-  :before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 2px;
-    height: 18px;
-    background-color: red;
   }
   :hover {
     box-shadow: 0 2px 6px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkDark, 10)};
@@ -114,9 +99,6 @@ const Handle = ({
       aria-valuenow={valueNow}
       aria-label={label}
       aria-valuetext={valueText}
-      isLast={index + 1 === arrayLength}
-      isFirst={index === 0}
-      value={valueNow}
       left={left}
     />
   );

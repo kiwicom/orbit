@@ -14,15 +14,15 @@ const StyledHistogram = styled.div`
   height: 53px;
 `;
 
-const StyledHistogramColumn = styled(({ height, theme, ...props }) => <div {...props} />).attrs(
-  ({ height }) => {
-    return {
-      style: {
-        height: `${height.toFixed(2)}%`,
-      },
-    };
-  },
-)`
+const StyledHistogramColumn = styled(({ height, theme, active, ...props }) => (
+  <div {...props} />
+)).attrs(({ height }) => {
+  return {
+    style: {
+      height: `${height.toFixed(2)}%`,
+    },
+  };
+})`
   position: relative;
   min-width: 3px;
   flex: 1 0 auto;
@@ -49,19 +49,19 @@ StyledHistogramColumn.defaultProps = {
   theme: defaultTheme,
 };
 
-const Histogram = ({ data, value }: Props) => {
+const Histogram = ({ data, value, min }: Props) => {
   const maxValue = Math.max(...data);
-  const highlightFrom = Array.isArray(value) ? value[0] - 1 : 0;
+  const highlightFrom = Array.isArray(value) ? value[0] : 0;
   const highlightTo = Array.isArray(value) ? value[value.length - 1] : value;
   return (
     <StyledHistogram>
       {data.map((column, index) => {
+        const properIndex = index + min;
         return (
           <StyledHistogramColumn
-            aria-label={index}
-            key={encodeURIComponent(index.toString())}
+            key={encodeURIComponent(properIndex.toString())}
             height={Math.round((column / maxValue) * 100)}
-            active={index >= highlightFrom && index < highlightTo}
+            active={properIndex >= highlightFrom && properIndex <= highlightTo}
           />
         );
       })}

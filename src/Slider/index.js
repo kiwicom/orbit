@@ -74,29 +74,9 @@ class Slider extends React.PureComponent<Props, State> {
     this.state = {
       value: this.props.defaultValue || DEFAULT_VALUES.VALUE,
       handleIndex: null,
-      parentWidth: null,
       focused: false,
     };
   }
-
-  componentDidMount() {
-    this.timeout = setTimeout(this.calculateWidth, 10);
-    window.addEventListener("resize", this.calculateWidth);
-  }
-
-  componentWillUnmount() {
-    if (this.timeout) {
-      clearTimeout(this.timeout);
-    }
-    window.removeEventListener("resize", this.calculateWidth);
-  }
-
-  calculateWidth = () => {
-    const containerRect = getBoundingClientRect(this.container);
-    if (containerRect) {
-      this.setState({ parentWidth: containerRect.width });
-    }
-  };
 
   pauseEvent = (
     event: SyntheticKeyboardEvent<HTMLDivElement> | SyntheticMouseEvent<HTMLDivElement>,
@@ -313,7 +293,7 @@ class Slider extends React.PureComponent<Props, State> {
 
   renderHandle = (value: number, i: ?number, arrayLength: ?number) => {
     const { min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX } = this.props;
-    const { parentWidth, handleIndex } = this.state;
+    const { handleIndex } = this.state;
     return (
       <Handle
         tabIndex={0}
@@ -324,7 +304,6 @@ class Slider extends React.PureComponent<Props, State> {
         onMouseDown={this.handleMouseDown(i)}
         onFocus={this.handleOnFocus(i)}
         onTouchStart={this.handleOnTouchStart(i)}
-        parentWidth={parentWidth}
         arrayLength={arrayLength}
         index={i}
       />
@@ -370,7 +349,7 @@ class Slider extends React.PureComponent<Props, State> {
 
   render() {
     const { min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX, histogramData } = this.props;
-    const { value, parentWidth, focused } = this.state;
+    const { value, focused } = this.state;
     return (
       <StyledSlider>
         {this.renderSliderTexts(true)}
@@ -378,14 +357,14 @@ class Slider extends React.PureComponent<Props, State> {
           <Bar
             ref={this.bar}
             onMouseDown={this.handleBarMouseDown}
-            {...calculateBarPosition(parentWidth, value, max, min)}
+            {...calculateBarPosition(value, max, min)}
           />
           {this.renderHandles()}
         </StyledSliderInput>
         {histogramData && (
           <StyledSliderContent focused={focused}>
             {this.renderSliderTexts(false)}
-            <Histogram data={histogramData} value={value} />
+            <Histogram data={histogramData} value={value} min={min} />
           </StyledSliderContent>
         )}
       </StyledSlider>

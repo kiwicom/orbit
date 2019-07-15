@@ -1,0 +1,12 @@
+// @flow
+import type { Data } from "../components/Histogram/index";
+import type { Value } from "../index";
+
+export type Props = {|
+  data: Data,
+  value: Value,
+|};
+
+type CalculateCountOf = Props => [number, number];
+
+export default CalculateCountOf;

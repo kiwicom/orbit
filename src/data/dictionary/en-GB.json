@@ -6,7 +6,8 @@
   "breadcrumbs_back": "Back",
   "button_close": "Close",
   "choicegroup_only": "Only",
+  "loading": "Loading",
   "pagination_label_next": "Next",
   "pagination_label_prev": "Previous",
-  "ratingstar_description": "Rating __number__ out of __number__"
+  "ratingstar_description": "Rating __number__ out of __total__"
 }

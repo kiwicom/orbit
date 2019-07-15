@@ -219,6 +219,7 @@ export const getTokens: GetTokens = customFoundation => {
     // category:Font size
     // description:Use these sizing tokens for font sizes.
     fontSizeHeadingDisplay: "40px",
+    fontSizeHeadingSubDisplay: "22px",
     fontSizeHeadingTitle1: "28px",
     fontSizeHeadingTitle2: "22px",
     fontSizeHeadingTitle3: "16px",
@@ -362,6 +363,7 @@ export const getTokens: GetTokens = customFoundation => {
     fontWeightBold: theme.base.fontWeightBold,
     fontWeightLinks: theme.base.fontWeightMedium,
     fontWeightHeadingDisplay: theme.base.fontWeightBold,
+    fontWeightHeadingSubDisplay: theme.base.fontWeightNormal,
     fontWeightHeadingTitle1: theme.base.fontWeightBold,
     fontWeightHeadingTitle2: theme.base.fontWeightMedium,
     fontWeightHeadingTitle3: theme.base.fontWeightMedium,

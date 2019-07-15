@@ -52,7 +52,7 @@ StyledHistogramColumn.defaultProps = {
 const Histogram = ({ data, value }: Props) => {
   const maxValue = Math.max(...data);
   const highlightFrom = Array.isArray(value) ? value[0] - 1 : 0;
-  const highlightTo = Array.isArray(value) ? value[1] : value;
+  const highlightTo = Array.isArray(value) ? value[value.length - 1] : value;
   return (
     <StyledHistogram>
       {data.map((column, index) => {
@@ -61,7 +61,7 @@ const Histogram = ({ data, value }: Props) => {
             aria-label={index}
             key={encodeURIComponent(index.toString())}
             height={Math.round((column / maxValue) * 100)}
-            active={index >= highlightFrom && index <= highlightTo}
+            active={index >= highlightFrom && index < highlightTo}
           />
         );
       })}

@@ -216,7 +216,12 @@ class Slider extends React.PureComponent<Props, State> {
     forced: ?boolean = false,
   ) => {
     const { value } = this.state;
-    if ((newValue != null && newValue !== value) || forced) {
+    const isNotEqual = (a, b) => {
+      if (!Array.isArray(a) && !Array.isArray(b)) return a !== b;
+      return a.map((item, index) => b[index] === item).indexOf(false) !== -1;
+    };
+
+    if ((newValue != null && isNotEqual(newValue, value)) || forced) {
       this.setState({ value: newValue });
       if (callback) {
         callback(newValue);
@@ -306,10 +311,9 @@ class Slider extends React.PureComponent<Props, State> {
     return value.map<number>((item, key) => (key === index ? newValue : item));
   };
 
-  renderHandle = (value: number, i: ?number) => {
+  renderHandle = (value: number, i: ?number, arrayLength: ?number) => {
     const { min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX } = this.props;
     const { parentWidth, handleIndex } = this.state;
-    console.log();
     return (
       <Handle
         tabIndex={0}
@@ -321,6 +325,8 @@ class Slider extends React.PureComponent<Props, State> {
         onFocus={this.handleOnFocus(i)}
         onTouchStart={this.handleOnTouchStart(i)}
         parentWidth={parentWidth}
+        arrayLength={arrayLength}
+        index={i}
       />
     );
   };
@@ -328,7 +334,7 @@ class Slider extends React.PureComponent<Props, State> {
   renderHandles = () => {
     const { value } = this.state;
     return Array.isArray(value)
-      ? value.map<React.Node>((handle, i) => this.renderHandle(value[i], i))
+      ? value.map<React.Node>((handle, i, array) => this.renderHandle(value[i], i, array.length))
       : this.renderHandle(value);
   };
 

@@ -5,12 +5,28 @@ import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba"
 
 import defaultTheme from "../../../defaultTheme";
 
+const calculateLeftPosition = (valueNow, valueMin, valueMax, isFirst, isLast) => {
+  // if first, stick it to the left edge
+  if (isFirst) {
+    return ((valueNow - valueMin) / valueMax) * 100;
+  }
+  // if last, stick it to the right edge
+  if (isLast) {
+    return (valueNow / valueMax) * 100;
+  }
+  // center position
+  return (valueNow / valueMax) * 100;
+};
+
 const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props} />).attrs(
-  ({ left, onTop }) => {
+  ({ left, isFirst, isLast, onTop, value }) => {
     return {
       style: {
         // TODO: use token for deducting the half size of the Handle
-        left: `${left.toFixed(2) - 12}px`,
+        left:
+          !isFirst && !isLast
+            ? `calc(${left.toFixed(2)}% + ${value - 1}px)`
+            : `calc(${left.toFixed(2)}% - 12px)`,
         zIndex: onTop ? 40 : 30,
       },
     };
@@ -75,9 +91,16 @@ const Handle = ({
   label,
   valueText,
   onTop,
-  parentWidth,
+  arrayLength,
+  index,
 }) => {
-  const left = ((valueNow - valueMin) / (valueMax - valueMin)) * parentWidth;
+  const left = calculateLeftPosition(
+    valueNow,
+    valueMin,
+    valueMax,
+    index === 0,
+    index + 1 === arrayLength,
+  );
   return (
     <StyledHandle
       tabIndex={tabIndex}
@@ -91,6 +114,9 @@ const Handle = ({
       aria-valuenow={valueNow}
       aria-label={label}
       aria-valuetext={valueText}
+      isLast={index + 1 === arrayLength}
+      isFirst={index === 0}
+      value={valueNow}
       left={left}
     />
   );

@@ -29,6 +29,7 @@ export const IconContainer = styled.div`
   display: flex;
   align-items: center;
   margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+  flex: 0 0 auto;
 `;
 
 IconContainer.defaultProps = {

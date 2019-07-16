@@ -362,14 +362,23 @@ class Slider extends React.PureComponent<Props, State> {
     );
   };
 
+  renderHeading = (hasHistogram: boolean) => {
+    if (hasHistogram) {
+      return (
+        <Hide on={["smallMobile", "mediumMobile"]} block>
+          {this.renderSliderTexts(true)}
+        </Hide>
+      );
+    }
+    return this.renderSliderTexts(true);
+  };
+
   render() {
     const { min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX, histogramData } = this.props;
     const { value, focused } = this.state;
     return (
       <StyledSlider>
-        <Hide on={["smallMobile", "mediumMobile"]} block>
-          {this.renderSliderTexts(true)}
-        </Hide>
+        {this.renderHeading(!!histogramData)}
         {histogramData && (
           <StyledSliderContent focused={focused}>
             {this.renderSliderTexts(false)}

@@ -13,11 +13,17 @@ const calculateLeftPosition = (valueNow, valueMin, valueMax, isFirst) => {
     return ((valueNow - valueMin) / (valueMax - valueMin)) * 100;
   }
   // for every other handle
-  return ((valueNow - valueMin) / (valueMax - valueMin)) * 100;
+  // +1 cause of last position
+  return ((valueNow - valueMin + 1) / (valueMax - valueMin + 1)) * 100;
+
+
+
+  // previously
+  // return ((valueNow - valueMin) / (valueMax - valueMin)) * 100;
 };
 
 const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props} />).attrs(
-  ({ left, onTop }) => {
+  ({ left, onTop, isFirst }) => {
     return {
       style: {
         // TODO: use token for deducting the half size of the Handle
@@ -41,6 +47,7 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
   cursor: pointer;
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   -webkit-tap-highlight-color: transparent;
+  will-change: left;
   :after {
     content: "";
     display: block;
@@ -91,6 +98,7 @@ const Handle = ({
       aria-valuemin={valueMin}
       aria-valuenow={valueNow}
       left={left}
+      isFirst={index === 0}
     />
   );
 };

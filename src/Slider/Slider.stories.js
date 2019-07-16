@@ -18,20 +18,11 @@ storiesOf("Slider", module)
     () => {
       const label = text("label", "Depart from Prague");
       const description = text("description", "01:00 PM – 11:59 PM");
-      const defaultValue = number("defaultValue", 10);
-      return (
-        <Slider
-          onChange={action("onChange")}
-          onChangeAfter={action("onChangeAfter")}
-          onBeforeChange={action("onBeforeChange")}
-          label={label}
-          description={description}
-          defaultValue={defaultValue}
-        />
-      );
+      return <Slider onChange={action("onChange")} label={label} description={description} />;
     },
     {
-      info: "Some description about this type of component.",
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     },
   )
   .add(
@@ -39,7 +30,7 @@ storiesOf("Slider", module)
     () => {
       const label = text("label", "Depart from Prague");
       const description = text("description", "01:00 PM – 11:59 PM");
-      const defaultValue = number("defaultValue", 10);
+      const defaultValue = number("defaultValue", 12);
       const min = number("min", 1);
       const max = number("max", 24);
       const histogramData = createHistogramData(min, max);
@@ -49,8 +40,6 @@ storiesOf("Slider", module)
         <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
           <Slider
             onChange={action("onChange")}
-            onChangeAfter={action("onChangeAfter")}
-            onBeforeChange={action("onBeforeChange")}
             label={label}
             description={description}
             chosenText={chosenText}
@@ -63,7 +52,8 @@ storiesOf("Slider", module)
       );
     },
     {
-      info: "Some description about this type of component.",
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     },
   )
   .add(
@@ -90,7 +80,8 @@ storiesOf("Slider", module)
       );
     },
     {
-      info: "Some description about this type of component.",
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     },
   )
   .add(
@@ -98,9 +89,9 @@ storiesOf("Slider", module)
     () => {
       const label = text("label", "Depart from Prague");
       const description = text("description", "01:00 PM – 11:59 PM");
-      const defaultValue = array("defaultValue", [110, 115]);
-      const min = number("min", 110);
-      const max = number("max", 134);
+      const defaultValue = array("defaultValue", [12, 24]);
+      const min = number("min", 1);
+      const max = number("max", 24);
       const step = number("step", 1);
       const histogramData = createHistogramData(min, max);
       const [chosenFrom, chosenTo] = calculateCountOf(histogramData, defaultValue, min);
@@ -124,6 +115,7 @@ storiesOf("Slider", module)
       );
     },
     {
-      info: "Some description about this type of component.",
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     },
   );

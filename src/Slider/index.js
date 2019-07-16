@@ -6,6 +6,7 @@ import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba"
 import Text from "../Text";
 import Heading from "../Heading";
 import Stack from "../Stack";
+import Hide from "../Hide";
 import Handle from "./components/Handle";
 import Bar from "./components/Bar";
 import getBoundingClientRect from "./utils/getBoundingClientRect";
@@ -14,6 +15,7 @@ import KEY_CODE_MAP from "../common/keyMaps";
 import DEFAULT_VALUES from "./consts";
 import Histogram from "./components/Histogram";
 import defaultTheme from "../defaultTheme";
+import mq from "../utils/mediaQuery";
 
 import type { State, SliderCallback, Props, Value } from "./index";
 
@@ -27,28 +29,33 @@ StyledSlider.defaultProps = {
 
 const StyledSliderContent = styled.div`
   display: block;
-  width: calc(100% + 48px);
-  z-index: 10;
-  position: absolute;
-  bottom: -16px;
-  left: -24px;
-  right: -24px;
-  opacity: 0;
-  visibility: hidden;
+  width: 100%;
   box-sizing: border-box;
-  padding: 12px 24px 50px 24px;
-  background: transparent;
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  ${({ focused, theme }) =>
-    focused &&
-    css`
-      visibility: visible;
-      opacity: 1;
-      background: ${theme.orbit.paletteWhite};
-      box-shadow: 0 2px 4px 0 ${convertHexToRgba(theme.orbit.paletteInkLight, 24)},
-        0 4px 12px 0 ${convertHexToRgba(theme.orbit.paletteInkLight, 32)};
-    `};
+  padding-bottom: 10px;
+
+  ${mq.largeMobile(css`
+    width: calc(100% + 48px);
+    z-index: 10;
+    position: absolute;
+    bottom: -16px;
+    left: -24px;
+    right: -24px;
+    opacity: 0;
+    visibility: hidden;
+    padding: 12px 24px 50px 24px;
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+    transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+    background: transparent;
+    ${({ focused, theme }) =>
+      focused &&
+      css`
+        visibility: visible;
+        opacity: 1;
+        background: ${theme.orbit.paletteWhite};
+        box-shadow: 0 2px 4px 0 ${convertHexToRgba(theme.orbit.paletteInkLight, 24)},
+          0 4px 12px 0 ${convertHexToRgba(theme.orbit.paletteInkLight, 32)};
+      `};
+  `)};
 `;
 
 StyledSliderContent.defaultProps = {
@@ -62,16 +69,31 @@ const StyledSliderInput = styled.div`
   height: 24px;
 `;
 
+const isNotEqual = (a: Value, b: Value) => {
+  if (Array.isArray(a) && Array.isArray(b)) {
+    return a.map((item, index) => b[index] === item).indexOf(false) !== -1;
+  }
+  return a !== b;
+};
+
 class Slider extends React.PureComponent<Props, State> {
   bar: { current: React$ElementRef<*> } = React.createRef();
 
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      value: this.props.defaultValue || DEFAULT_VALUES.VALUE,
-      handleIndex: null,
-      focused: false,
-    };
+  state = {
+    value: this.props.defaultValue || DEFAULT_VALUES.VALUE,
+    handleIndex: null,
+    focused: false,
+  };
+
+  componentDidUpdate(prevProps: Props) {
+    const { defaultValue } = this.props;
+    if (isNotEqual(prevProps.defaultValue, defaultValue)) {
+      const newValue = Array.isArray(defaultValue)
+        ? defaultValue.map(item => Number(item))
+        : Number(defaultValue);
+      // eslint-disable-nextline react/no-did-update-set-state
+      this.setState({ value: newValue });
+    }
   }
 
   pauseEvent = (
@@ -192,12 +214,6 @@ class Slider extends React.PureComponent<Props, State> {
     forced: ?boolean = false,
   ) => {
     const { value } = this.state;
-    const isNotEqual = (a, b) => {
-      if (Array.isArray(a) && Array.isArray(b)) {
-        return a.map((item, index) => b[index] === item).indexOf(false) !== -1;
-      }
-      return a !== b;
-    };
     if (newValue != null) {
       if (isNotEqual(newValue, value) || forced) {
         this.setState({ value: newValue });
@@ -351,7 +367,15 @@ class Slider extends React.PureComponent<Props, State> {
     const { value, focused } = this.state;
     return (
       <StyledSlider>
-        {this.renderSliderTexts(true)}
+        <Hide on={["smallMobile", "mediumMobile"]} block>
+          {this.renderSliderTexts(true)}
+        </Hide>
+        {histogramData && (
+          <StyledSliderContent focused={focused}>
+            {this.renderSliderTexts(false)}
+            <Histogram data={histogramData} value={value} min={min} />
+          </StyledSliderContent>
+        )}
         <StyledSliderInput>
           <Bar
             ref={this.bar}
@@ -360,12 +384,6 @@ class Slider extends React.PureComponent<Props, State> {
           />
           {this.renderHandles()}
         </StyledSliderInput>
-        {histogramData && (
-          <StyledSliderContent focused={focused}>
-            {this.renderSliderTexts(false)}
-            <Histogram data={histogramData} value={value} min={min} />
-          </StyledSliderContent>
-        )}
       </StyledSlider>
     );
   }

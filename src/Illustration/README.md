@@ -8,7 +8,7 @@ After adding import into your project you can use it simply like:
 <Illustration name="Accommodation" size="small" />
 ```
 ## Props
-Table below contains all types of the props available in CarrierLogo component.
+Table below contains all types of the props available in Illustration component.
 
 | Name          | Type                             | Default         | Description                      |
 | :------------ | :------------------------------- | :-------------- | :------------------------------- |

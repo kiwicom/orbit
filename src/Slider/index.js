@@ -9,8 +9,6 @@ import Stack from "../Stack";
 import Hide from "../Hide";
 import Handle from "./components/Handle";
 import Bar from "./components/Bar";
-import getBoundingClientRect from "./utils/getBoundingClientRect";
-import calculateBarPosition from "./utils/calculateBarPosition";
 import KEY_CODE_MAP from "../common/keyMaps";
 import DEFAULT_VALUES from "./consts";
 import Histogram from "./components/Histogram";
@@ -18,6 +16,44 @@ import defaultTheme from "../defaultTheme";
 import mq from "../utils/mediaQuery";
 
 import type { State, SliderCallback, Props, Value } from "./index";
+
+const getBoundingClientRect = ref => {
+  if (ref && ref.current) {
+    return ref.current.getBoundingClientRect();
+  }
+  return null;
+};
+
+const sort = (arr: Value) => {
+  if (Array.isArray(arr)) {
+    return arr.slice().sort((a, b) => a - b);
+  }
+  return arr;
+};
+
+const isFirst = (value, valueNow, index) => {
+  if (Array.isArray(value)) {
+    const max = Math.max(...value);
+    const min = Math.min(...value);
+    const maxEqualsMin = max === min;
+    const minEqualsValueNow = min === valueNow;
+    if (index === 0) {
+      if (maxEqualsMin) {
+        return true;
+      }
+      if (minEqualsValueNow) {
+        return true;
+      }
+    }
+    if (maxEqualsMin) {
+      return false;
+    }
+    if (minEqualsValueNow) {
+      return true;
+    }
+  }
+  return false;
+};
 
 const StyledSlider = styled.div`
   position: relative;
@@ -71,7 +107,7 @@ const StyledSliderInput = styled.div`
 
 const isNotEqual = (a: Value, b: Value) => {
   if (Array.isArray(a) && Array.isArray(b)) {
-    return a.map((item, index) => b[index] === item).indexOf(false) !== -1;
+    return a.toString() !== b.toString();
   }
   return a !== b;
 };
@@ -86,12 +122,12 @@ class Slider extends React.PureComponent<Props, State> {
   };
 
   componentDidUpdate(prevProps: Props) {
-    const { defaultValue } = this.props;
-    if (isNotEqual(prevProps.defaultValue, defaultValue)) {
+    const { defaultValue = DEFAULT_VALUES.VALUE } = this.props;
+    if (isNotEqual(prevProps.defaultValue || DEFAULT_VALUES.VALUE, defaultValue)) {
       const newValue = Array.isArray(defaultValue)
         ? defaultValue.map(item => Number(item))
         : Number(defaultValue);
-      // eslint-disable-nextline react/no-did-update-set-state
+      // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ value: newValue });
     }
   }
@@ -307,20 +343,22 @@ class Slider extends React.PureComponent<Props, State> {
     return value.map<number>((item, key) => (key === index ? newValue : item));
   };
 
-  renderHandle = (value: number, i: ?number) => {
+  renderHandle = (valueNow: number, i: ?number) => {
     const { min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX } = this.props;
-    const { handleIndex } = this.state;
+    const { handleIndex, value } = this.state;
+    const key = i && encodeURIComponent(i.toString());
     return (
       <Handle
         tabIndex="0"
         onTop={handleIndex === i}
         valueMax={max}
         valueMin={min}
-        valueNow={value}
+        valueNow={valueNow}
         onMouseDown={this.handleMouseDown(i)}
         onFocus={this.handleOnFocus(i)}
         onTouchStart={this.handleOnTouchStart(i)}
-        index={i}
+        isFirst={isFirst(value, valueNow, i)}
+        key={key}
       />
     );
   };
@@ -328,13 +366,13 @@ class Slider extends React.PureComponent<Props, State> {
   renderHandles = () => {
     const { value } = this.state;
     return Array.isArray(value)
-      ? value.map<React.Node>((handle, i) => this.renderHandle(value[i], i))
+      ? value.map<React.Node>((valueNow, i) => this.renderHandle(valueNow, i))
       : this.renderHandle(value);
   };
 
   renderSliderTexts = (biggerSpace: boolean) => {
-    const { label, description, chosenText } = this.props;
-    if (!(label || description || chosenText)) return null;
+    const { label, description, leftDescription } = this.props;
+    if (!(label || description || leftDescription)) return null;
     return (
       <Stack direction="row" spacing="none" spaceAfter={biggerSpace ? "medium" : "small"}>
         {(label || description) && (
@@ -351,10 +389,11 @@ class Slider extends React.PureComponent<Props, State> {
             )}
           </Stack>
         )}
-        {chosenText && (
+
+        {leftDescription && (
           <Stack shrink justify="end" grow={false}>
             <Text type="primary" size="small">
-              {chosenText}
+              {leftDescription}
             </Text>
           </Stack>
         )}
@@ -376,20 +415,23 @@ class Slider extends React.PureComponent<Props, State> {
   render() {
     const { min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX, histogramData } = this.props;
     const { value, focused } = this.state;
+    const sortedValue = sort(value);
     return (
       <StyledSlider>
         {this.renderHeading(!!histogramData)}
         {histogramData && (
           <StyledSliderContent focused={focused}>
             {this.renderSliderTexts(false)}
-            <Histogram data={histogramData} value={value} min={min} />
+            <Histogram data={histogramData} value={sortedValue} min={min} />
           </StyledSliderContent>
         )}
         <StyledSliderInput>
           <Bar
             ref={this.bar}
             onMouseDown={this.handleBarMouseDown}
-            {...calculateBarPosition(value, max, min)}
+            value={sortedValue}
+            max={max}
+            min={min}
           />
           {this.renderHandles()}
         </StyledSliderInput>

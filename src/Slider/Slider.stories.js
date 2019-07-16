@@ -18,7 +18,17 @@ storiesOf("Slider", module)
     () => {
       const label = text("label", "Depart from Prague");
       const description = text("description", "01:00 PM – 11:59 PM");
-      return <Slider onChange={action("onChange")} label={label} description={description} />;
+      const min = number("min", 1);
+      const max = number("max", 24);
+      return (
+        <Slider
+          onChange={action("onChange")}
+          label={label}
+          description={description}
+          min={min}
+          max={max}
+        />
+      );
     },
     {
       info:
@@ -35,14 +45,14 @@ storiesOf("Slider", module)
       const max = number("max", 24);
       const histogramData = createHistogramData(min, max);
       const [chosenFrom, chosenTo] = calculateCountOf(histogramData, defaultValue, min);
-      const chosenText = `${chosenFrom} of ${chosenTo} flights`;
+      const leftDescription = `${chosenFrom} of ${chosenTo} flights`;
       return (
         <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
           <Slider
             onChange={action("onChange")}
             label={label}
             description={description}
-            chosenText={chosenText}
+            leftDescription={leftDescription}
             defaultValue={defaultValue}
             max={max}
             min={min}
@@ -68,8 +78,6 @@ storiesOf("Slider", module)
       return (
         <Slider
           onChange={action("onChange")}
-          onChangeAfter={action("onChangeAfter")}
-          onBeforeChange={action("onBeforeChange")}
           label={label}
           description={description}
           defaultValue={defaultValue}
@@ -95,7 +103,7 @@ storiesOf("Slider", module)
       const step = number("step", 1);
       const histogramData = createHistogramData(min, max);
       const [chosenFrom, chosenTo] = calculateCountOf(histogramData, defaultValue, min);
-      const chosenText = `${chosenFrom} of ${chosenTo} flights`;
+      const leftDescription = `${chosenFrom} of ${chosenTo} flights`;
       return (
         <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
           <Slider
@@ -104,7 +112,7 @@ storiesOf("Slider", module)
             onBeforeChange={action("onBeforeChange")}
             label={label}
             description={description}
-            chosenText={chosenText}
+            leftDescription={leftDescription}
             defaultValue={defaultValue}
             histogramData={histogramData}
             min={min}

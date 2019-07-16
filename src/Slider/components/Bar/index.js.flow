@@ -1,8 +1,11 @@
 // @flow
 
+import type { Value } from "../../index";
+
 export type Props = {|
-  left: number,
-  width: number,
+  value: Value,
+  max: number,
+  min: number,
   onMouseDown: (event: SyntheticMouseEvent<HTMLDivElement>) => void,
 |};
 

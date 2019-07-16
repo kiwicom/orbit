@@ -10,20 +10,14 @@ import type { Props } from "./index";
 const calculateLeftPosition = (valueNow, valueMin, valueMax, isFirst) => {
   // if first, stick it to the left edge
   if (isFirst) {
-    return ((valueNow - valueMin) / (valueMax - valueMin)) * 100;
+    return ((valueNow - valueMin) / (valueMax - valueMin + 1)) * 100;
   }
-  // for every other handle
-  // +1 cause of last position
+  // for every other handle stick on the right edge
   return ((valueNow - valueMin + 1) / (valueMax - valueMin + 1)) * 100;
-
-
-
-  // previously
-  // return ((valueNow - valueMin) / (valueMax - valueMin)) * 100;
 };
 
 const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props} />).attrs(
-  ({ left, onTop, isFirst }) => {
+  ({ left, onTop }) => {
     return {
       style: {
         // TODO: use token for deducting the half size of the Handle
@@ -83,9 +77,14 @@ const Handle = ({
   valueMin,
   valueNow,
   onTop,
-  index,
+  isFirst,
 }: Props) => {
-  const left = calculateLeftPosition(valueNow, valueMin, valueMax, index === 0);
+  const left = React.useMemo(() => calculateLeftPosition(valueNow, valueMin, valueMax, isFirst), [
+    isFirst,
+    valueMax,
+    valueMin,
+    valueNow,
+  ]);
   return (
     <StyledHandle
       tabIndex={tabIndex}
@@ -98,7 +97,6 @@ const Handle = ({
       aria-valuemin={valueMin}
       aria-valuenow={valueNow}
       left={left}
-      isFirst={index === 0}
     />
   );
 };

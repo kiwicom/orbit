@@ -16,6 +16,19 @@ const StyledBar = styled.div`
   -webkit-tap-highlight-color: transparent;
 `;
 
+const calculateBarPosition = (value, max, min) => {
+  if (Array.isArray(value)) {
+    return {
+      left: ((value[0] - min) / (max - min + 1)) * 100,
+      width: ((value[value.length - 1] - value[0] + 1) / (max - min + 1)) * 100,
+    };
+  }
+  return {
+    left: 0,
+    width: ((value - min + 1) / (max - min + 1)) * 100,
+  };
+};
+
 export const StyledBarPart = styled(({ width, left, theme, active, ...props }) => (
   <div {...props} />
 )).attrs(({ width, left }) => {
@@ -39,7 +52,12 @@ StyledBarPart.defaultProps = {
   theme: defaultTheme,
 };
 // $FlowExpected
-const Bar = React.forwardRef(({ left, width, onMouseDown }: Props, ref: Ref) => {
+const Bar = React.forwardRef(({ onMouseDown, value, max, min }: Props, ref: Ref) => {
+  const { left, width } = React.useMemo(() => calculateBarPosition(value, max, min), [
+    max,
+    min,
+    value,
+  ]);
   return (
     <StyledBar ref={ref} onMouseDown={onMouseDown}>
       <StyledBarPart width={100} left={0} />

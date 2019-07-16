@@ -1,6 +1,6 @@
 // @flow
 
-import type { Translation } from "../common/common.js.flow";
+import type { Translation, Globals } from "../common/common.js.flow";
 import type { Data } from "./components/Histogram/index";
 
 export type Value = number | number[];
@@ -8,6 +8,7 @@ export type Value = number | number[];
 export type SliderCallback = (value: Value) => void | Promise<any>;
 
 export type Props = {|
+  ...Globals,
   min?: number,
   max?: number,
   step?: number,
@@ -18,7 +19,7 @@ export type Props = {|
   label: Translation,
   description?: Translation,
   histogramData?: Data,
-  chosenText?: Translation,
+  leftDescription?: Translation,
 |};
 
 export type State = {|

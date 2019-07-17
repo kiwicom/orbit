@@ -119,7 +119,7 @@ class Slider extends React.PureComponent<Props, State> {
     if (event.stopPropagation) event.stopPropagation();
   };
 
-  calculateValueFromPosition = (pageX: number) => {
+  calculateValueFromPosition = (pageX: number, throughClick?: boolean) => {
     const barRect = getBoundingClientRect(this.bar);
     const { histogramData } = this.props;
     const { handleIndex, value } = this.state;
@@ -127,16 +127,11 @@ class Slider extends React.PureComponent<Props, State> {
       const { max = DEFAULT_VALUES.MAX, min = DEFAULT_VALUES.MIN } = this.props;
       const mousePosition = pageX - barRect.left;
       const positionRatio = mousePosition / barRect.width;
+      const closestKey = this.findClosestKey(Math.round(max - min) * positionRatio + min);
       if (
-        (handleIndex === 0 && !Array.isArray(value)) ||
-        handleIndex === null ||
-        (!histogramData && !Array.isArray(value))
+        (handleIndex === null && !histogramData) ||
+        ((handleIndex === 0 || (throughClick && closestKey === 0)) && Array.isArray(value))
       ) {
-        console.log("first");
-        // WHEN
-        // is simple without slider
-        // is range
-        // is range with histogram
         return Math.round((max - min + 1) * positionRatio + min);
       }
       return Math.round((max - min + 1) * positionRatio + min - 1);
@@ -220,7 +215,8 @@ class Slider extends React.PureComponent<Props, State> {
 
   handleBarMouseDown = (event: SyntheticMouseEvent<HTMLDivElement>) => {
     const { value } = this.state;
-    const newValue = this.calculateValueFromPosition(event.pageX);
+    this.setState({ handleIndex: null });
+    const newValue = this.calculateValueFromPosition(event.pageX, true);
     if (newValue) {
       if (Array.isArray(value)) {
         const index = this.findClosestKey(newValue);

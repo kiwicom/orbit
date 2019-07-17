@@ -29,6 +29,8 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
 )`
   display: flex;
   position: absolute;
+  right: 0;
+  bottom: 0;
   flex: 0 0 24px;
   align-items: center;
   justify-content: center;

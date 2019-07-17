@@ -16,6 +16,32 @@ const calculateLeftPosition = (valueNow, valueMin, valueMax, isFirst) => {
   return ((valueNow - valueMin + 1) / (valueMax - valueMin + 1)) * 100;
 };
 
+const isFirst = (value, valueNow, index, hasHistogram) => {
+  if (Array.isArray(value)) {
+    const max = Math.max(...value);
+    const min = Math.min(...value);
+    const maxEqualsMin = max === min;
+    const minEqualsValueNow = min === valueNow;
+    if (index === 0) {
+      if (maxEqualsMin) {
+        return true;
+      }
+      if (minEqualsValueNow) {
+        return true;
+      }
+    }
+    if (maxEqualsMin) {
+      return false;
+    }
+    if (minEqualsValueNow) {
+      return true;
+    }
+  } else {
+    return !hasHistogram;
+  }
+  return false;
+};
+
 const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props} />).attrs(
   ({ left, onTop }) => {
     return {
@@ -79,10 +105,13 @@ const Handle = ({
   valueMin,
   valueNow,
   onTop,
-  isFirst,
+  value,
+  index,
+  hasHistogram,
 }: Props) => {
-  const left = React.useMemo(() => calculateLeftPosition(valueNow, valueMin, valueMax, isFirst), [
-    isFirst,
+  const first = isFirst(value, valueNow, index, hasHistogram);
+  const left = React.useMemo(() => calculateLeftPosition(valueNow, valueMin, valueMax, first), [
+    first,
     valueMax,
     valueMin,
     valueNow,

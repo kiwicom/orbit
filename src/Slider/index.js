@@ -31,30 +31,6 @@ const sort = (arr: Value) => {
   return arr;
 };
 
-const isFirst = (value, valueNow, index) => {
-  if (Array.isArray(value)) {
-    const max = Math.max(...value);
-    const min = Math.min(...value);
-    const maxEqualsMin = max === min;
-    const minEqualsValueNow = min === valueNow;
-    if (index === 0) {
-      if (maxEqualsMin) {
-        return true;
-      }
-      if (minEqualsValueNow) {
-        return true;
-      }
-    }
-    if (maxEqualsMin) {
-      return false;
-    }
-    if (minEqualsValueNow) {
-      return true;
-    }
-  }
-  return false;
-};
-
 const StyledSlider = styled.div`
   position: relative;
 `;
@@ -67,7 +43,7 @@ const StyledSliderContent = styled.div`
   display: block;
   width: 100%;
   box-sizing: border-box;
-  padding-bottom: 10px;
+  padding-bottom: ${({ theme }) => theme.orbit.spaceXSmall};
 
   ${mq.largeMobile(css`
     width: calc(100% + 48px);
@@ -78,7 +54,7 @@ const StyledSliderContent = styled.div`
     right: -24px;
     opacity: 0;
     visibility: hidden;
-    padding: 12px 24px 50px 24px;
+    padding: 12px 24px 48px 24px;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
     transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
     background: transparent;
@@ -145,11 +121,25 @@ class Slider extends React.PureComponent<Props, State> {
 
   calculateValueFromPosition = (pageX: number) => {
     const barRect = getBoundingClientRect(this.bar);
+    const { histogramData } = this.props;
+    const { handleIndex, value } = this.state;
     if (barRect) {
       const { max = DEFAULT_VALUES.MAX, min = DEFAULT_VALUES.MIN } = this.props;
       const mousePosition = pageX - barRect.left;
       const positionRatio = mousePosition / barRect.width;
-      return Math.round((max - min) * positionRatio + min);
+      if (
+        (handleIndex === 0 && !Array.isArray(value)) ||
+        handleIndex === null ||
+        (!histogramData && !Array.isArray(value))
+      ) {
+        console.log("first");
+        // WHEN
+        // is simple without slider
+        // is range
+        // is range with histogram
+        return Math.round((max - min + 1) * positionRatio + min);
+      }
+      return Math.round((max - min + 1) * positionRatio + min - 1);
     }
     return null;
   };
@@ -344,7 +334,7 @@ class Slider extends React.PureComponent<Props, State> {
   };
 
   renderHandle = (valueNow: number, i: ?number) => {
-    const { min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX } = this.props;
+    const { min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX, histogramData } = this.props;
     const { handleIndex, value } = this.state;
     const key = i && encodeURIComponent(i.toString());
     return (
@@ -357,7 +347,9 @@ class Slider extends React.PureComponent<Props, State> {
         onMouseDown={this.handleMouseDown(i)}
         onFocus={this.handleOnFocus(i)}
         onTouchStart={this.handleOnTouchStart(i)}
-        isFirst={isFirst(value, valueNow, i)}
+        value={value}
+        hasHistogram={!!histogramData}
+        index={i}
         key={key}
       />
     );
@@ -432,6 +424,7 @@ class Slider extends React.PureComponent<Props, State> {
             value={sortedValue}
             max={max}
             min={min}
+            hasHistogram={!!histogramData}
           />
           {this.renderHandles()}
         </StyledSliderInput>

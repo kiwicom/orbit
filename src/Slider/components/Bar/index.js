@@ -16,7 +16,7 @@ const StyledBar = styled.div`
   -webkit-tap-highlight-color: transparent;
 `;
 
-const calculateBarPosition = (value, max, min) => {
+const calculateBarPosition = (value, max, min, hasHistogram) => {
   if (Array.isArray(value)) {
     return {
       left: ((value[0] - min) / (max - min + 1)) * 100,
@@ -25,7 +25,7 @@ const calculateBarPosition = (value, max, min) => {
   }
   return {
     left: 0,
-    width: ((value - min + 1) / (max - min + 1)) * 100,
+    width: ((value - min + (hasHistogram ? 1 : 0)) / (max - min + 1)) * 100,
   };
 };
 
@@ -52,8 +52,9 @@ StyledBarPart.defaultProps = {
   theme: defaultTheme,
 };
 // $FlowExpected
-const Bar = React.forwardRef(({ onMouseDown, value, max, min }: Props, ref: Ref) => {
-  const { left, width } = React.useMemo(() => calculateBarPosition(value, max, min), [
+const Bar = React.forwardRef(({ onMouseDown, value, max, min, hasHistogram }: Props, ref: Ref) => {
+  const { left, width } = React.useMemo(() => calculateBarPosition(value, max, min, hasHistogram), [
+    hasHistogram,
     max,
     min,
     value,

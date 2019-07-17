@@ -12,6 +12,8 @@ const StyledHistogram = styled.div`
   align-items: flex-end;
   width: 100%;
   height: 52px;
+  padding-bottom: 3px;
+  overflow: hidden;
 `;
 
 const StyledHistogramColumn = styled(({ height, theme, active, ...props }) => (

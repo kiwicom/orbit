@@ -126,9 +126,15 @@ storiesOf("NotificationBadge", module)
       const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO);
       const dataTest = text("dataTest", "test");
       const ariaLabel = text("ariaLabel", "additional information for screen readers");
+      const Icon = getIcon(getIcons("Airplane"));
 
       return (
-        <NotificationBadge type={type} dataTest={dataTest} ariaLabel={ariaLabel}>
+        <NotificationBadge
+          type={type}
+          dataTest={dataTest}
+          ariaLabel={ariaLabel}
+          icon={Icon && <Icon />}
+        >
           {content}
         </NotificationBadge>
       );

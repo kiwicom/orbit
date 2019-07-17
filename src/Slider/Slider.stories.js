@@ -17,14 +17,14 @@ storiesOf("Slider", module)
     "Default",
     () => {
       const label = text("label", "Depart from Prague");
-      const description = text("description", "01:00 PM – 11:59 PM");
+      const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
       const min = number("min", 1);
       const max = number("max", 24);
       return (
         <Slider
           onChange={action("onChange")}
           label={label}
-          description={description}
+          valueDescription={valueDescription}
           min={min}
           max={max}
         />
@@ -39,20 +39,20 @@ storiesOf("Slider", module)
     "Slider with Histogram",
     () => {
       const label = text("label", "Depart from Prague");
-      const description = text("description", "01:00 PM – 11:59 PM");
+      const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
       const defaultValue = number("defaultValue", 12);
       const min = number("min", 1);
       const max = number("max", 24);
       const histogramData = createHistogramData(min, max);
       const [chosenFrom, chosenTo] = calculateCountOf(histogramData, defaultValue, min);
-      const leftDescription = `${chosenFrom} of ${chosenTo} flights`;
+      const histogramDescription = `${chosenFrom} of ${chosenTo} flights`;
       return (
         <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
           <Slider
             onChange={action("onChange")}
             label={label}
-            description={description}
-            leftDescription={leftDescription}
+            valueDescription={valueDescription}
+            histogramDescription={histogramDescription}
             defaultValue={defaultValue}
             max={max}
             min={min}
@@ -70,7 +70,7 @@ storiesOf("Slider", module)
     "Range Slider",
     () => {
       const label = text("label", "Depart from Prague");
-      const description = text("description", "01:00 PM – 11:59 PM");
+      const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
       const defaultValue = array("defaultValue", [110, 115]);
       const min = number("min", 110);
       const max = number("max", 134);
@@ -79,7 +79,7 @@ storiesOf("Slider", module)
         <Slider
           onChange={action("onChange")}
           label={label}
-          description={description}
+          valueDescription={valueDescription}
           defaultValue={defaultValue}
           min={min}
           max={max}
@@ -96,14 +96,14 @@ storiesOf("Slider", module)
     "Range Slider with Histogram",
     () => {
       const label = text("label", "Depart from Prague");
-      const description = text("description", "01:00 PM – 11:59 PM");
+      const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
       const defaultValue = array("defaultValue", [12, 24]);
       const min = number("min", 1);
       const max = number("max", 24);
       const step = number("step", 1);
       const histogramData = createHistogramData(min, max);
       const [chosenFrom, chosenTo] = calculateCountOf(histogramData, defaultValue, min);
-      const leftDescription = `${chosenFrom} of ${chosenTo} flights`;
+      const histogramDescription = `${chosenFrom} of ${chosenTo} flights`;
       return (
         <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
           <Slider
@@ -111,8 +111,8 @@ storiesOf("Slider", module)
             onChangeAfter={action("onChangeAfter")}
             onBeforeChange={action("onBeforeChange")}
             label={label}
-            description={description}
-            leftDescription={leftDescription}
+            valueDescription={valueDescription}
+            histogramDescription={histogramDescription}
             defaultValue={defaultValue}
             histogramData={histogramData}
             min={min}

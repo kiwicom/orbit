@@ -17,9 +17,9 @@ export type Props = {|
   onBeforeChange?: SliderCallback,
   onChangeAfter?: SliderCallback,
   label: Translation,
-  description?: Translation,
+  valueDescription?: Translation,
   histogramData?: Data,
-  leftDescription?: Translation,
+  histogramDescription?: Translation,
 |};
 
 export type State = {|

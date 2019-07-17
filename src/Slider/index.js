@@ -359,29 +359,28 @@ class Slider extends React.PureComponent<Props, State> {
   };
 
   renderSliderTexts = (biggerSpace: boolean) => {
-    const { label, description, leftDescription } = this.props;
-    if (!(label || description || leftDescription)) return null;
+    const { label, valueDescription, histogramDescription } = this.props;
+    if (!(label || valueDescription || histogramDescription)) return null;
     return (
       <Stack direction="row" spacing="none" spaceAfter={biggerSpace ? "medium" : "small"}>
-        {(label || description) && (
+        {(label || histogramDescription) && (
           <Stack direction="column" spacing="none" basis="60%" grow>
             {label && (
               <Heading type="title4" element="div">
                 {label}
               </Heading>
             )}
-            {description && (
+            {valueDescription && (
               <Text type="secondary" size="small">
-                {description}
+                {valueDescription}
               </Text>
             )}
           </Stack>
         )}
-
-        {leftDescription && (
+        {histogramDescription && (
           <Stack shrink justify="end" grow={false}>
             <Text type="primary" size="small">
-              {leftDescription}
+              {histogramDescription}
             </Text>
           </Stack>
         )}

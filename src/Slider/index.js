@@ -154,7 +154,7 @@ class Slider extends React.PureComponent<Props, State> {
       }
       // simple slider without histogram
       if (handleIndex === null && !hasHistogram) {
-        this.calculateValue(positionRatio);
+        return this.calculateValue(positionRatio);
       }
       return this.calculateValue(positionRatio, true, true);
     }
@@ -331,7 +331,6 @@ class Slider extends React.PureComponent<Props, State> {
       return value - gap + step;
     }
     return value - gap;
-    // TODO: when current value is 1 and next should be 6, needs to be 5
   };
 
   alignValueToMaxMin = (value: number) => {

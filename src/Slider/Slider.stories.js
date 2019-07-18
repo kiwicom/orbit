@@ -117,11 +117,36 @@ storiesOf("Slider", module)
     () => {
       const label = text("label", "Depart from Prague");
       const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
-      const defaultValue = array("defaultValue", [12, 12]);
+      const defaultValue = array("defaultValue", [12, 24]);
       const min = number("min", 1);
       const max = number("max", 24);
       const step = number("step", 1);
-      const histogramData = array("histogramData", [11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2]);
+      const histogramData = array("histogramData", [
+        11,
+        25,
+        37,
+        5,
+        21,
+        27,
+        24,
+        33,
+        16,
+        21,
+        22,
+        2,
+        11,
+        25,
+        37,
+        5,
+        21,
+        27,
+        24,
+        33,
+        16,
+        21,
+        22,
+        2,
+      ]);
       const histogramDescription = text("histogramDescription", "20 of 133 flights");
       return (
         <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>

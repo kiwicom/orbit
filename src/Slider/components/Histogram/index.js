@@ -71,7 +71,8 @@ const Histogram = ({ data, value, min, loading = false, loadingText }: Props) =>
           <Loading type="inlineLoader" text={loadingText} />
         </StyledLoadingContainer>
       ) : (
-        data && data.map((column, index) => {
+        data &&
+        data.map((column, index) => {
           const properIndex = index + min;
           return (
             <StyledHistogramColumn

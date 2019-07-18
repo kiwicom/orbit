@@ -66,17 +66,17 @@ const Histogram = ({ data, value, min, loading = false, loadingText }: Props) =>
   const highlightTo = Array.isArray(value) ? value[value.length - 1] : value;
   return (
     <StyledHistogram>
-      {loading ? (
+      {loading && !data ? (
         <StyledLoadingContainer>
           <Loading type="inlineLoader" text={loadingText} />
         </StyledLoadingContainer>
       ) : (
-        data.map((column, index) => {
+        data && data.map((column, index) => {
           const properIndex = index + min;
           return (
             <StyledHistogramColumn
               key={encodeURIComponent(properIndex.toString())}
-              height={Math.round((column / maxValue) * 100)}
+              height={maxValue && Math.round((column / maxValue) * 100)}
               active={properIndex >= highlightFrom && properIndex <= highlightTo}
             />
           );

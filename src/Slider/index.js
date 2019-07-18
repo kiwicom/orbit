@@ -119,11 +119,9 @@ class Slider extends React.PureComponent<Props, State> {
     if (event.stopPropagation) event.stopPropagation();
   };
 
-  findRealIndex = (goal, value) => {
-    const realValues = sort(value)
-      .map((item, index) => (item === goal ? index : null))
-      .filter(item => typeof item === "number");
-    return realValues[0];
+  calculateValue = (ratio: number, addition?: boolean, deduction?: boolean) => {
+    const { max = DEFAULT_VALUES.MAX, min = DEFAULT_VALUES.MIN } = this.props;
+    return Math.round((max - min + (addition ? 1 : 0)) * ratio + min - (deduction ? 1 : 0));
   };
 
   calculateValueFromPosition = (pageX: number, throughClick?: boolean) => {
@@ -131,34 +129,34 @@ class Slider extends React.PureComponent<Props, State> {
     const { histogramData, histogramLoading } = this.props;
     const { handleIndex, value } = this.state;
     if (barRect) {
-      const { max = DEFAULT_VALUES.MAX, min = DEFAULT_VALUES.MIN } = this.props;
       const mousePosition = pageX - barRect.left;
       const positionRatio = mousePosition / barRect.width;
-      const closestKey = this.findClosestKey(
-        Math.round(max - min) * positionRatio + min,
-        sort(value),
-      );
       const hasHistogram = histogramLoading || !!histogramData;
-      if (isNotEqual(sort(value), value)) {
-        const realIndex = handleIndex !== null && this.findRealIndex(value[handleIndex], value);
-        console.log("true");
+      // when range slider
+      if (Array.isArray(value)) {
         if (value[0] === value[value.length - 1]) {
-          console.log("jsou stejné");
+          if (this.calculateValue(positionRatio, true, true) >= value[value.length - 1]) {
+            return this.calculateValue(positionRatio, true, true);
+          }
+          return this.calculateValue(positionRatio, true);
         }
-        if (realIndex === 0) {
-          return Math.round((max - min + 1) * positionRatio + min);
+        if (isNotEqual(sort(value), value)) {
+          if (handleIndex === 0) {
+            return this.calculateValue(positionRatio, true, true);
+          }
+          return this.calculateValue(positionRatio, true);
         }
-        return Math.round((max - min + 1) * positionRatio + min - 1);
-      }
-      // when range slider and when clicked and it should move the first handle, or if the first handle is moving
-      if ((handleIndex === 0 || (throughClick && closestKey === 0)) && Array.isArray(value)) {
-        return Math.round((max - min + 1) * positionRatio + min);
+        const closestKey = this.findClosestKey(this.calculateValue(positionRatio), sort(value));
+        // when first handle of range slider or when clicked and it should move the first handle, or if the first handle is moving
+        if (handleIndex === 0 || (throughClick && closestKey === 0)) {
+          return this.calculateValue(positionRatio, true);
+        }
       }
       // simple slider without histogram
       if (handleIndex === null && !hasHistogram) {
-        return Math.round((max - min) * positionRatio + min);
+        this.calculateValue(positionRatio);
       }
-      return Math.round((max - min + 1) * positionRatio + min - 1);
+      return this.calculateValue(positionRatio, true, true);
     }
     return null;
   };
@@ -166,7 +164,9 @@ class Slider extends React.PureComponent<Props, State> {
   findClosestKey = (goal: number, value: Value) => {
     return Array.isArray(value)
       ? value.reduce((acc, curr, index) => {
-          return Math.abs(curr - goal) < Math.abs(value[acc] - goal) ? index : acc;
+          return Array.isArray(value) && Math.abs(curr - goal) < Math.abs(value[acc] - goal)
+            ? index
+            : acc;
         }, 0)
       : null;
   };

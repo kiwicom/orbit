@@ -7,9 +7,13 @@ import defaultTheme from "../../../defaultTheme";
 
 import type { Props } from "./index";
 
-const calculateLeftPosition = (valueNow, valueMin, valueMax, isFirst) => {
+const calculateLeftPosition = (valueNow, valueMin, valueMax, isFirst, isSimple) => {
   // if first, stick it to the left edge
   if (isFirst) {
+    // if simple (one handle and without histogram)
+    if (isSimple) {
+      return ((valueNow - valueMin) / (valueMax - valueMin)) * 100;
+    }
     return ((valueNow - valueMin) / (valueMax - valueMin + 1)) * 100;
   }
   // for every other handle stick on the right edge
@@ -110,12 +114,8 @@ const Handle = ({
   hasHistogram,
 }: Props) => {
   const first = isFirst(value, valueNow, index, hasHistogram);
-  const left = React.useMemo(() => calculateLeftPosition(valueNow, valueMin, valueMax, first), [
-    first,
-    valueMax,
-    valueMin,
-    valueNow,
-  ]);
+  const isSimple = !hasHistogram && !Array.isArray(value);
+  const left = calculateLeftPosition(valueNow, valueMin, valueMax, first, isSimple);
   return (
     <StyledHandle
       tabIndex={tabIndex}

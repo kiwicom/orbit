@@ -20,6 +20,8 @@ export type Props = {|
   valueDescription?: Translation,
   histogramData?: Data,
   histogramDescription?: Translation,
+  histogramLoading?: boolean,
+  histogramLoadingText?: Translation,
 |};
 
 export type State = {|

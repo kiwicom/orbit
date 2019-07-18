@@ -119,28 +119,51 @@ class Slider extends React.PureComponent<Props, State> {
     if (event.stopPropagation) event.stopPropagation();
   };
 
+  findRealIndex = (goal, value) => {
+    const realValues = sort(value)
+      .map((item, index) => (item === goal ? index : null))
+      .filter(item => typeof item === "number");
+    return realValues[0];
+  };
+
   calculateValueFromPosition = (pageX: number, throughClick?: boolean) => {
     const barRect = getBoundingClientRect(this.bar);
-    const { histogramData } = this.props;
+    const { histogramData, histogramLoading } = this.props;
     const { handleIndex, value } = this.state;
     if (barRect) {
       const { max = DEFAULT_VALUES.MAX, min = DEFAULT_VALUES.MIN } = this.props;
       const mousePosition = pageX - barRect.left;
       const positionRatio = mousePosition / barRect.width;
-      const closestKey = this.findClosestKey(Math.round(max - min) * positionRatio + min);
-      if (
-        (handleIndex === null && !histogramData) ||
-        ((handleIndex === 0 || (throughClick && closestKey === 0)) && Array.isArray(value))
-      ) {
+      const closestKey = this.findClosestKey(
+        Math.round(max - min) * positionRatio + min,
+        sort(value),
+      );
+      const hasHistogram = histogramLoading || !!histogramData;
+      if (isNotEqual(sort(value), value)) {
+        const realIndex = handleIndex !== null && this.findRealIndex(value[handleIndex], value);
+        console.log("true");
+        if (value[0] === value[value.length - 1]) {
+          console.log("jsou stejné");
+        }
+        if (realIndex === 0) {
+          return Math.round((max - min + 1) * positionRatio + min);
+        }
+        return Math.round((max - min + 1) * positionRatio + min - 1);
+      }
+      // when range slider and when clicked and it should move the first handle, or if the first handle is moving
+      if ((handleIndex === 0 || (throughClick && closestKey === 0)) && Array.isArray(value)) {
         return Math.round((max - min + 1) * positionRatio + min);
+      }
+      // simple slider without histogram
+      if (handleIndex === null && !hasHistogram) {
+        return Math.round((max - min) * positionRatio + min);
       }
       return Math.round((max - min + 1) * positionRatio + min - 1);
     }
     return null;
   };
 
-  findClosestKey = (goal: number) => {
-    const { value } = this.state;
+  findClosestKey = (goal: number, value: Value) => {
     return Array.isArray(value)
       ? value.reduce((acc, curr, index) => {
           return Math.abs(curr - goal) < Math.abs(value[acc] - goal) ? index : acc;
@@ -219,7 +242,7 @@ class Slider extends React.PureComponent<Props, State> {
     const newValue = this.calculateValueFromPosition(event.pageX, true);
     if (newValue) {
       if (Array.isArray(value)) {
-        const index = this.findClosestKey(newValue);
+        const index = this.findClosestKey(newValue, value);
         this.injectCallbackAndSetState(
           this.props.onChange,
           this.replaceValue(this.alignValue(newValue), index),
@@ -289,6 +312,7 @@ class Slider extends React.PureComponent<Props, State> {
 
   handleOnTouchStart = (i: ?number) => (event: SyntheticTouchEvent<HTMLDivElement>) => {
     if (event.touches.length <= 1) {
+      this.setState({ focused: true });
       const { value } = this.state;
       if (typeof i === "number") this.setState({ handleIndex: i });
       window.addEventListener("touchmove", this.handleOnTouchMove);
@@ -330,7 +354,12 @@ class Slider extends React.PureComponent<Props, State> {
   };
 
   renderHandle = (valueNow: number, i: ?number) => {
-    const { min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX, histogramData } = this.props;
+    const {
+      min = DEFAULT_VALUES.MIN,
+      max = DEFAULT_VALUES.MAX,
+      histogramData,
+      histogramLoading,
+    } = this.props;
     const { handleIndex, value } = this.state;
     const key = i && encodeURIComponent(i.toString());
     return (
@@ -344,7 +373,7 @@ class Slider extends React.PureComponent<Props, State> {
         onFocus={this.handleOnFocus(i)}
         onTouchStart={this.handleOnTouchStart(i)}
         value={value}
-        hasHistogram={!!histogramData}
+        hasHistogram={histogramLoading || !!histogramData}
         index={i}
         key={key}
       />
@@ -400,16 +429,29 @@ class Slider extends React.PureComponent<Props, State> {
   };
 
   render() {
-    const { min = DEFAULT_VALUES.MIN, max = DEFAULT_VALUES.MAX, histogramData } = this.props;
+    const {
+      min = DEFAULT_VALUES.MIN,
+      max = DEFAULT_VALUES.MAX,
+      histogramData,
+      histogramLoading = false,
+      histogramLoadingText,
+    } = this.props;
     const { value, focused } = this.state;
     const sortedValue = sort(value);
+    const hasHistogram = histogramLoading || !!histogramData;
     return (
       <StyledSlider>
-        {this.renderHeading(!!histogramData)}
-        {histogramData && (
+        {this.renderHeading(hasHistogram)}
+        {hasHistogram && (
           <StyledSliderContent focused={focused}>
             {this.renderSliderTexts(false)}
-            <Histogram data={histogramData} value={sortedValue} min={min} />
+            <Histogram
+              data={histogramData}
+              value={sortedValue}
+              min={min}
+              loading={histogramLoading}
+              loadingText={histogramLoadingText}
+            />
           </StyledSliderContent>
         )}
         <StyledSliderInput>
@@ -419,7 +461,7 @@ class Slider extends React.PureComponent<Props, State> {
             value={sortedValue}
             max={max}
             min={min}
-            hasHistogram={!!histogramData}
+            hasHistogram={hasHistogram}
           />
           {this.renderHandles()}
         </StyledSliderInput>

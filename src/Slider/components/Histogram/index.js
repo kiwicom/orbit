@@ -3,6 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
+import Loading from "../../../Loading";
 
 import type { Props } from "./index";
 
@@ -14,6 +15,14 @@ const StyledHistogram = styled.div`
   height: 52px;
   padding-bottom: 3px;
   overflow: hidden;
+`;
+
+const StyledLoadingContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 `;
 
 const StyledHistogramColumn = styled(({ height, theme, active, ...props }) => (
@@ -51,22 +60,28 @@ StyledHistogramColumn.defaultProps = {
   theme: defaultTheme,
 };
 
-const Histogram = ({ data, value, min }: Props) => {
-  const maxValue = Math.max(...data);
+const Histogram = ({ data, value, min, loading = false, loadingText }: Props) => {
+  const maxValue = !!data && Math.max(...data);
   const highlightFrom = Array.isArray(value) ? value[0] : 0;
   const highlightTo = Array.isArray(value) ? value[value.length - 1] : value;
   return (
     <StyledHistogram>
-      {data.map((column, index) => {
-        const properIndex = index + min;
-        return (
-          <StyledHistogramColumn
-            key={encodeURIComponent(properIndex.toString())}
-            height={Math.round((column / maxValue) * 100)}
-            active={properIndex >= highlightFrom && properIndex <= highlightTo}
-          />
-        );
-      })}
+      {loading ? (
+        <StyledLoadingContainer>
+          <Loading type="inlineLoader" text={loadingText} />
+        </StyledLoadingContainer>
+      ) : (
+        data.map((column, index) => {
+          const properIndex = index + min;
+          return (
+            <StyledHistogramColumn
+              key={encodeURIComponent(properIndex.toString())}
+              height={Math.round((column / maxValue) * 100)}
+              active={properIndex >= highlightFrom && properIndex <= highlightTo}
+            />
+          );
+        })
+      )}
     </StyledHistogram>
   );
 };

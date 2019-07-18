@@ -1,32 +1,42 @@
 // @flow
 import * as React from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
-import { TYPE_OPTIONS, TOKENS } from "./consts";
+import TYPE_OPTIONS from "./consts";
 import { left, right } from "../utils/rtl";
 
 import type { Props } from "./index";
 
-const getToken = name => ({ type }) => {
+const getHeight = ({ type }) => {
   const tokens = {
-    [TOKENS.ALIGN]: {
-      [TYPE_OPTIONS.BUTTON_LOADER]: "center",
-      [TYPE_OPTIONS.SEARCH_LOADER]: "start",
-      [TYPE_OPTIONS.BOX_LOADER]: "center",
-      [TYPE_OPTIONS.PAGE_LOADER]: "center",
-      [TYPE_OPTIONS.INLINE_LOADER]: "center",
-    },
-    [TOKENS.HEIGHT]: {
-      [TYPE_OPTIONS.BUTTON_LOADER]: "100%",
-      [TYPE_OPTIONS.SEARCH_LOADER]: "40px",
-      [TYPE_OPTIONS.BOX_LOADER]: "80px",
-      [TYPE_OPTIONS.PAGE_LOADER]: "120px",
-      [TYPE_OPTIONS.INLINE_LOADER]: "auto",
-    },
+    [TYPE_OPTIONS.BUTTON_LOADER]: "center",
+    [TYPE_OPTIONS.SEARCH_LOADER]: "start",
+    [TYPE_OPTIONS.BOX_LOADER]: "center",
+    [TYPE_OPTIONS.PAGE_LOADER]: "center",
+    [TYPE_OPTIONS.INLINE_LOADER]: "center",
+    [TYPE_OPTIONS.BUTTON_LOADER]: "100%",
+    [TYPE_OPTIONS.SEARCH_LOADER]: "40px",
+    [TYPE_OPTIONS.BOX_LOADER]: "80px",
+    [TYPE_OPTIONS.PAGE_LOADER]: "120px",
+    [TYPE_OPTIONS.INLINE_LOADER]: "19px",
   };
 
-  return tokens[name][type];
+  return css`
+    ${type === TYPE_OPTIONS.INLINE_LOADER ? "min-height" : "height"}: ${tokens[type]}
+  `;
+};
+
+const getAlign = ({ type }) => {
+  const tokens = {
+    [TYPE_OPTIONS.BUTTON_LOADER]: "center",
+    [TYPE_OPTIONS.SEARCH_LOADER]: "start",
+    [TYPE_OPTIONS.BOX_LOADER]: "center",
+    [TYPE_OPTIONS.PAGE_LOADER]: "center",
+    [TYPE_OPTIONS.INLINE_LOADER]: "center",
+  };
+
+  return tokens[type];
 };
 
 // Animations
@@ -50,12 +60,12 @@ export const StyledLoading = styled(({ children, className, dataTest }) => (
   top: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
   ${left}: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
   width: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "100%"};
-  height: ${getToken(TOKENS.HEIGHT)};
+  ${getHeight};
   padding: ${({ theme, type }) =>
     type !== TYPE_OPTIONS.INLINE_LOADER && theme.orbit.paddingLoading};
   display: ${({ type }) => (type === TYPE_OPTIONS.INLINE_LOADER ? "inline-flex" : "flex")};
   flex-direction: ${({ type }) => (type === TYPE_OPTIONS.PAGE_LOADER ? "column" : "row")};
-  justify-content: ${getToken(TOKENS.ALIGN)};
+  justify-content: ${getAlign};
   align-items: center;
   overflow: hidden;
   box-sizing: border-box;

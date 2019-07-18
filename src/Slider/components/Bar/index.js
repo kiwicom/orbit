@@ -23,9 +23,10 @@ const calculateBarPosition = (value, max, min, hasHistogram) => {
       width: ((value[value.length - 1] - value[0] + 1) / (max - min + 1)) * 100,
     };
   }
+  const addition = hasHistogram ? 1 : 0;
   return {
     left: 0,
-    width: ((value - min + (hasHistogram ? 1 : 0)) / (max - min + 1)) * 100,
+    width: ((value - min + addition) / (max - min + addition)) * 100,
   };
 };
 
@@ -53,12 +54,7 @@ StyledBarPart.defaultProps = {
 };
 // $FlowExpected
 const Bar = React.forwardRef(({ onMouseDown, value, max, min, hasHistogram }: Props, ref: Ref) => {
-  const { left, width } = React.useMemo(() => calculateBarPosition(value, max, min, hasHistogram), [
-    hasHistogram,
-    max,
-    min,
-    value,
-  ]);
+  const { left, width } = calculateBarPosition(value, max, min, hasHistogram);
   return (
     <StyledBar ref={ref} onMouseDown={onMouseDown}>
       <StyledBarPart width={100} left={0} />

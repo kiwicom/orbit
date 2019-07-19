@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import { left as leftRight } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 import type { Ref } from "../../../common/common.js.flow";
 
@@ -32,11 +33,11 @@ const calculateBarPosition = (value, max, min, hasHistogram) => {
 
 export const StyledBarPart = styled(({ width, left, theme, active, ...props }) => (
   <div {...props} />
-)).attrs(({ width, left }) => {
+)).attrs(({ width, left, theme }) => {
   return {
     style: {
       width: `${width.toFixed(2)}%`,
-      left: `${left.toFixed(2)}%`,
+      [leftRight({ theme })]: `${left.toFixed(2)}%`,
     },
   };
 })`

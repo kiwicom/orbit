@@ -31,3 +31,5 @@ export type State = {|
 |};
 
 declare export default React$ComponentType<Props>;
+
+declare export var PureSlider: React$ComponentType<Props>;

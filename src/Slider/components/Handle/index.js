@@ -3,6 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
+import { left as leftRight } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 
 import type { Props } from "./index";
@@ -47,11 +48,11 @@ const isFirst = (value, valueNow, index, hasHistogram) => {
 };
 
 const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props} />).attrs(
-  ({ left, onTop }) => {
+  ({ left, onTop, theme }) => {
     return {
       style: {
         // TODO: use token for deducting the half size of the Handle
-        left: `calc(${left.toFixed(2)}% - 12px)`,
+        [leftRight({ theme })]: `calc(${left.toFixed(2)}% - 12px)`,
         zIndex: onTop ? 40 : 30,
       },
     };

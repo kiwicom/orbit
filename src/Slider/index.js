@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled, { css, withTheme } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import Text from "../Text";
@@ -14,6 +14,7 @@ import DEFAULT_VALUES from "./consts";
 import Histogram from "./components/Histogram";
 import defaultTheme from "../defaultTheme";
 import mq from "../utils/mediaQuery";
+import type { ThemeProps } from "../defaultTheme";
 
 import type { State, SliderCallback, Props, Value } from "./index";
 
@@ -88,7 +89,11 @@ const isNotEqual = (a: Value, b: Value) => {
   return a !== b;
 };
 
-class Slider extends React.PureComponent<Props, State> {
+export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
+  static defaultProps = {
+    theme: defaultTheme,
+  };
+
   bar: { current: React$ElementRef<*> } = React.createRef();
 
   state = {
@@ -126,10 +131,14 @@ class Slider extends React.PureComponent<Props, State> {
 
   calculateValueFromPosition = (pageX: number, throughClick?: boolean) => {
     const barRect = getBoundingClientRect(this.bar);
-    const { histogramData, histogramLoading } = this.props;
+    const {
+      histogramData,
+      histogramLoading,
+      theme: { rtl },
+    } = this.props;
     const { handleIndex, value } = this.state;
     if (barRect) {
-      const mousePosition = pageX - barRect.left;
+      const mousePosition = (rtl ? barRect.right : pageX) - (rtl ? pageX : barRect.left);
       const positionRatio = mousePosition / barRect.width;
       const hasHistogram = histogramLoading || !!histogramData;
       // when range slider
@@ -147,7 +156,7 @@ class Slider extends React.PureComponent<Props, State> {
           return this.calculateValue(positionRatio, true);
         }
         const closestKey = this.findClosestKey(this.calculateValue(positionRatio), sort(value));
-        // when first handle of range slider or when clicked and it should move the first handle, or if the first handle is moving
+        // when first handle of range slider or when clicked and it should move the first handle
         if (handleIndex === 0 || (throughClick && closestKey === 0)) {
           return this.calculateValue(positionRatio, true);
         }
@@ -188,14 +197,25 @@ class Slider extends React.PureComponent<Props, State> {
       step = DEFAULT_VALUES.STEP,
       min = DEFAULT_VALUES.MIN,
       max = DEFAULT_VALUES.MAX,
+      theme: { rtl },
     } = this.props;
-    if (event.keyCode === KEY_CODE_MAP.ARROW_UP || event.keyCode === KEY_CODE_MAP.ARROW_RIGHT) {
+    if (event.keyCode === KEY_CODE_MAP.ARROW_UP) {
       this.pauseEvent(event);
       this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(step));
     }
-    if (event.keyCode === KEY_CODE_MAP.ARROW_DOWN || event.keyCode === KEY_CODE_MAP.ARROW_LEFT) {
+    if (event.keyCode === KEY_CODE_MAP.ARROW_DOWN) {
       this.pauseEvent(event);
       this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(-step));
+    }
+    if (event.keyCode === KEY_CODE_MAP.ARROW_RIGHT) {
+      const switchStep = rtl ? -step : step;
+      this.pauseEvent(event);
+      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(switchStep));
+    }
+    if (event.keyCode === KEY_CODE_MAP.ARROW_LEFT) {
+      const switchStep = rtl ? step : -step;
+      this.pauseEvent(event);
+      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(switchStep));
     }
     if (event.keyCode === KEY_CODE_MAP.HOME) {
       this.pauseEvent(event);
@@ -263,7 +283,7 @@ class Slider extends React.PureComponent<Props, State> {
       if (isNotEqual(newValue, value) || forced) {
         this.setState({ value: newValue });
         if (callback) {
-          callback(newValue);
+          callback(sort(newValue));
         }
       }
     }
@@ -469,4 +489,6 @@ class Slider extends React.PureComponent<Props, State> {
   }
 }
 
-export default Slider;
+const ThemedSlider = withTheme(PureSlider);
+ThemedSlider.displayName = "Slider";
+export default ThemedSlider;

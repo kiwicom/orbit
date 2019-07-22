@@ -208,9 +208,9 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       onlyIcon={onlyIcon}
       sizeIcon={sizeIcon}
       type={type}
-      href={href}
-      target={href && external ? "_blank" : undefined}
-      rel={href && external ? "noopener noreferrer" : undefined}
+      href={!disabled ? href : null}
+      target={!disabled && href && external ? "_blank" : undefined}
+      rel={!disabled && href && external ? "noopener noreferrer" : undefined}
       iconLeft={iconLeft}
       iconRight={iconRight}
       buttonRef={ref}

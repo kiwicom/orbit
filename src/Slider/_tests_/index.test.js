@@ -342,19 +342,6 @@ describe("Range Slider", () => {
 });
 
 describe("Range Slider in render", () => {
-  beforeEach(() => {
-    // $FlowExpected
-    Element.prototype.getBoundingClientRect = jest.fn(() => {
-      return {
-        width: 400,
-        height: 0,
-        top: 0,
-        left: 28,
-        bottom: 0,
-        right: 428,
-      };
-    });
-  });
   const min = 1;
   const max = 24;
   const dataTest = "test";
@@ -374,6 +361,9 @@ describe("Range Slider in render", () => {
   });
   test("should have Hide component", () => {
     expect(slider.find("Hide").exists()).toBe(true);
+  });
+  test("calculateValueFromPosition should return null", () => {
+    expect(component.instance().calculateValueFromPosition(52)).toBe(null);
   });
   test("should have two Handles", () => {
     const children = slider.find("Slider__StyledSliderInput").find("Handle");

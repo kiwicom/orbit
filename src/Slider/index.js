@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import { warning } from "@kiwicom/js";
 
 import Text from "../Text";
 import Heading from "../Heading";
@@ -456,7 +457,17 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       histogramLoading = false,
       histogramLoadingText,
       dataTest,
+      step = DEFAULT_VALUES.STEP,
     } = this.props;
+    if (histogramData) {
+      const properHistogramLength = (max - min + step) / step;
+      warning(
+        histogramData.length === properHistogramLength,
+        `Warning: Length of histogramData array is ${
+          histogramData.length
+        }, but should be ${properHistogramLength}. This will cause broken visuals of the whole Histogram.`,
+      );
+    }
     const { value, focused } = this.state;
     const sortedValue = this.sortArray(value);
     const hasHistogram = histogramLoading || !!histogramData;

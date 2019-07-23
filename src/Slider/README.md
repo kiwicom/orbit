@@ -45,7 +45,7 @@ The exact same type will be then returned with all callbacks. e.g.:
 
 ## Histogram
 * If you need to use `Slider` component together will `Histogram`, use property `histogramData` for that.
-* You need pass the same amount of data that is possible to select by definition of `min`, `max` and `step` property. The total count of columns should be `(max - min) / step`.
+* You need pass the same amount of data that is possible to select by definition of `min`, `max` and `step` property. The total count of columns should be `(max - min + step) / step`.
 * The Histogram won't be visible on desktop devices until the user will focus one of the handles. On mobile devices is the Histogram always shown.
 * By default, the `histogramLoadingText` is null and only glyph of `inlineLoader` will appear.
 * With Histogram, it's recommended to use also `histogramDescription` property, where you should display the total count of selected data from the array. For it, you can use the [`calculateCountOf`](#calculatecountof) function.

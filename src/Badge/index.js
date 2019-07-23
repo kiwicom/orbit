@@ -47,8 +47,8 @@ export const StyledBadge = styled(({ className, children, dataTest, ariaLabel })
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
-  height: ${({ theme }) => theme.orbit.heightBadge};
-  line-height: ${({ theme }) => theme.orbit.heightBadge};
+  min-height: ${({ theme }) => theme.orbit.heightBadge};
+  line-height: 14px;
   font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
   font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
   background-color: ${getTypeToken(TOKENS.background)};
@@ -78,7 +78,16 @@ IconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledBadgeContent = styled.div``;
+const StyledBadgeContent = styled.div`
+  padding: 5px 0;
+  > span {
+    line-height: 14px;
+  }
+`;
+
+StyledBadgeContent.defaultProps = {
+  theme: defaultTheme,
+};
 
 const Badge = (props: Props) => {
   const { type = TYPE_OPTIONS.NEUTRAL, icon, children, ariaLabel, dataTest } = props;

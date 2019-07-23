@@ -294,7 +294,6 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
       windowHeight,
     } = this;
 
-    console.log(desiredPositions);
     const canBePositionLeft = containerLeft - tooltipWidth - TOOLTIP_ARROW_SIZE > 0;
     const canBePositionRight =
       containerLeft + containerWidth + tooltipWidth + TOOLTIP_ARROW_SIZE < windowWidth;

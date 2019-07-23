@@ -7,7 +7,7 @@ export type Value = number | number[];
 
 export type SliderCallback = (value: Value) => void | Promise<any>;
 
-export type AriaLabel = string | string[];
+export type AriaLabel = Translation | Translation[];
 
 export type Props = {|
   ...Globals,
@@ -21,7 +21,7 @@ export type Props = {|
   label?: Translation,
   valueDescription?: Translation,
   ariaLabel?: AriaLabel,
-  ariaValueText?: string,
+  ariaValueText?: Translation,
   histogramData?: Data,
   histogramDescription?: Translation,
   histogramLoading?: boolean,

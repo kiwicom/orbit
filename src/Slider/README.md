@@ -14,20 +14,22 @@ Table below contains all types of the props available in the Slider component.
 
 | Name                  | Type                                  | Default         | Description                     |
 | :-------------------- | :------------------------------------ | :-------------- | :------------------------------ |
+| ariaLabel             | `Translation or Translation[]`        |                 | `aria-label` attribute or attributes for handles. See [functional specs](#functional-specs).
+| ariaValueText         | `Translation`                         |                 | Readable text alternative of current value (aria-valueNow).
 | dataTest              | `string`                              |                 | Optional prop for testing purposes.
-| min                   | `number`                              | `1`             | The minimum value of the Slider.
-| max                   | `number`                              | `100`           | The maximum value of the Slider.
-| step                  | `number`                              | `1`             | Value that should be added or subtracted when Handle moves. The `max` and `min` should be divisible by this number and it should be integer.
 | defaultValue          | [`Value`](#value)                     | `1`             | Initial value of the Slider when it mounts. See [value type](#value) for advanced usage.
-| onChange              | `Value => void \| Promise`            |                 | Callback for handling onChange event. See [functional specs](#functional-specs) for advanced usage.
-| onChangeBefore        | `Value => void \| Promise`            |                 | Callback for handling onChangeBefore event. See [functional specs](#functional-specs) for advanced usage.
-| onChangeAfter         | `Value => void \| Promise`            |                 | Calback for handling onChangeAfter event. See [functional specs](#functional-specs) for advanced usage.
-| label                 | `Translation`                         |                 | The label of the Slider. Should communicate what is the purpose of it.
-| valueDescription      | `Translation`                         |                 | Text property where you should display the select value range.
 | histogramData         | `number[]`                            |                 | Property for passing the histogram's data. See [Histogram](#histogram) for more info.
 | histogramDescription  | `Translation`                         |                 | Text property where you should display the total count of displayed data. See [Histogram](#histogram) for more info.
 | histogramLoading      | `boolean`                             | `false`         | If `true` the Loading component will replace the Histogram. See [Histogram](#histogram) for more info.
 | histogramLoadingText  | `Translation`                         |                 | The text of the Histogram when it's loading. See [Histogram](#histogram) for more info.
+| label                 | `Translation`                         |                 | The label of the Slider. Should communicate what is the purpose of it.
+| max                   | `number`                              | `100`           | The maximum value of the Slider.
+| min                   | `number`                              | `1`             | The minimum value of the Slider.
+| onChange              | `Value => void \| Promise`            |                 | Callback for handling onChange event. See [functional specs](#functional-specs) for advanced usage.
+| onChangeBefore        | `Value => void \| Promise`            |                 | Callback for handling onChangeBefore event. See [functional specs](#functional-specs) for advanced usage.
+| onChangeAfter         | `Value => void \| Promise`            |                 | Calback for handling onChangeAfter event. See [functional specs](#functional-specs) for advanced usage.
+| step                  | `number`                              | `1`             | Value that should be added or subtracted when Handle moves. The `max` and `min` should be divisible by this number and it should be integer.
+| valueDescription      | `Translation`                         |                 | Text property where you should display the select value range.
 
 ## Value
 The `Slider` component supports usage with one handle and also with multiple handles.
@@ -51,6 +53,7 @@ The exact same type will be then returned with all callbacks. e.g.:
 * With Histogram, it's recommended to use also `histogramDescription` property, where you should display the total count of selected data from the array. For it, you can use the [`calculateCountOf`](#calculatecountof) function.
 
 ## Functional specs
+* When you use range type of the `Slider` component, you should specify `ariaLabel` property as array of labels. For instance: `["First handle", "Second handle]`. If you use simple `Slider`, just one string (not array) is enough.
 * In every case of using the `Slider` component on **mobile devices**, the `Slider` should be wrapped in the [`Popover`](../Popover). For instance like this:
 ```jsx
 const MobileSlider = () => {

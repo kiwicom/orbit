@@ -55,6 +55,7 @@ export const getLinkStyle = ({
         ? theme.orbit.textDecorationTextLinkSecondary
         : theme.orbit.textDecorationTextLinkPrimary
     };
+      font-weight: ${theme.orbit.fontWeightLinks};
   }
 
   &:hover, &:active {

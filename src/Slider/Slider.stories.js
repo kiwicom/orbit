@@ -348,34 +348,6 @@ storiesOf("Slider", module)
     },
   )
   .add(
-    "Slider with loading Histogram",
-    () => {
-      const histogramDescription = text("histogramDescription", "20 of 133 flights");
-      const histogramLoading = boolean("histogramLoading", true);
-      const histogramLoadingText = text("histogramLoadingText", "Loading connection data...");
-
-      return (
-        <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
-          <Slider
-            onChange={action("onChange")}
-            label="Depart from Prague"
-            valueDescription="01:00 PM – 11:59 PM"
-            histogramDescription={histogramDescription}
-            defaultValue={5}
-            histogramLoading={histogramLoading}
-            histogramLoadingText={histogramLoadingText}
-            min={1}
-            max={24}
-          />
-        </div>
-      );
-    },
-    {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-    },
-  )
-  .add(
     "RTL Slider with loading Histogram",
     () => {
       const histogramDescription = text("histogramDescription", "20 of 133 flights");

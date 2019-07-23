@@ -15,6 +15,8 @@ const StyledBar = styled.div`
   height: 24px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
 `;
 
 export const calculateBarPosition: CalculateBarPosition = (value, max, min, hasHistogram) => {

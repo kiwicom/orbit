@@ -33,7 +33,7 @@ const StyledSliderContent = styled.div`
   box-sizing: border-box;
   padding-bottom: ${({ theme }) => theme.orbit.spaceXSmall};
 
-  ${mq.largeMobile(css`
+  ${mq.tablet(css`
     width: calc(100% + 48px);
     z-index: 10;
     position: absolute;
@@ -441,7 +441,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   renderHeading = (hasHistogram: boolean) => {
     if (hasHistogram) {
       return (
-        <Hide on={["smallMobile", "mediumMobile"]} block>
+        <Hide on={["smallMobile", "mediumMobile", "largeMobile"]} block>
           {this.renderSliderTexts(true)}
         </Hide>
       );
